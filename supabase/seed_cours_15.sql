@@ -1,6 +1,556 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 15/16). À exécuter après seed.sql.
 
+-- Cours : Contrôle de gestion Master 2 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-cg-m2', (select id from public.levels where name = 'Master 2'), null, 'Contrôle de gestion', 'Contrôle de gestion Master 2 : réussir ses examens', 'Préparation aux examens de Master 2 en Contrôle de gestion : contrôle de gestion des groupes et consolidation du pilotage, audit de la performance et contrôle interne avancé, méthodologie du mémoire professionnel et de la soutenance. Études de cas de groupe sénégalais et africains fictifs, calculs vérifiés, sujet type d''examen corrigé, et quatre cours vidéo de 1h30 dont un atelier de simulation de soutenance.', true, 732
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 2 en Contrôle de gestion', 'Le Master 2 en Contrôle de gestion est l''année qui vous mène à la fois aux examens des matières avancées et, le plus souvent, à la soutenance d''un mémoire professionnel ou de recherche. Les enjeux changent de nature : vous devez démontrer une capacité d''analyse critique sur des situations de groupe complexes, et vous devez aussi être capable de défendre oralement un travail personnel devant un jury.
+
+## Ce qui distingue le Master 2 du Master 1
+
+En Master 1, vous avez appris à articuler plusieurs outils de contrôle de gestion pour piloter la performance d''une entreprise ou d''un groupe simple à deux filiales. En Master 2, l''échelle change : on raisonne au niveau d''un groupe à plusieurs filiales, parfois international, avec des enjeux de consolidation comptable et de pilotage de la performance consolidée. On ajoute également une dimension de contrôle et d''audit : vérifier que les chiffres produits par le contrôle de gestion sont fiables, que les processus internes maîtrisent les risques, et que le dispositif de contrôle interne du groupe est robuste.
+
+Enfin, le Master 2 est généralement l''année du mémoire professionnel : un travail personnel, documenté, qui applique les méthodes de contrôle de gestion à un cas réel ou à une problématique précise, suivi d''une soutenance orale devant un jury. Réussir cette année suppose donc de maîtriser à la fois le contenu technique des matières et la méthode de production et de défense d''un mémoire.
+
+## Les trois matières avancées de l''année
+
+- Contrôle de gestion des groupes et consolidation du pilotage : maîtriser les mécanismes de consolidation (périmètre, méthodes, élimination des opérations intragroupe, intérêts minoritaires) du point de vue du contrôleur de gestion, et construire un reporting de pilotage consolidé cohérent avec ces retraitements.
+- Audit de la performance et contrôle interne avancé : comprendre les démarches d''audit interne et d''audit de performance, les techniques de sondage et d''évaluation du contrôle interne, et savoir produire des recommandations d''amélioration.
+- Méthodologie du mémoire professionnel et soutenance : construire une problématique, une démarche de recherche ou d''étude de cas, un plan rigoureux, et préparer une soutenance orale convaincante.
+
+## Méthode de travail au niveau Master 2
+
+Les études de cas de consolidation exigent une grande rigueur de présentation : schématisez toujours l''organigramme du groupe (quelle filiale, quel pourcentage de détention, quelle méthode de consolidation) avant de calculer quoi que ce soit. En audit de performance, prenez l''habitude de distinguer clairement le constat (ce que révèle le contrôle ou le sondage), la cause probable, le risque associé, et la recommandation : c''est la structure attendue d''un rapport d''audit, et c''est aussi celle qu''un correcteur attend dans une copie d''examen.
+
+Pour le mémoire, la méthode de travail est différente d''un examen classique : il s''agit d''un travail long, étalé sur plusieurs mois, qui demande une problématique claire, une revue de la littérature ou des pratiques existantes, une méthode de collecte ou d''analyse des données explicite, et une discussion critique des résultats. La soutenance, quant à elle, se prépare comme un exercice oral à part entière : un temps de présentation limité (souvent 15 à 20 minutes), suivi de questions du jury, qui exigent une connaissance approfondie de votre propre travail et une capacité à argumenter sous pression.
+
+## Plan de révision sur 6 semaines
+
+- Semaine 1 : mécanismes de consolidation (périmètre, méthodes d''intégration, pourcentages de contrôle et d''intérêt).
+- Semaine 2 : élimination des opérations intragroupe, calcul des intérêts minoritaires ; exercices chiffrés complets.
+- Semaine 3 : audit interne, contrôle interne, démarche d''audit de performance, techniques de sondage.
+- Semaine 4 : exercices de synthèse combinant consolidation et audit sur un cas de groupe complet.
+- Semaine 5 : méthodologie du mémoire (problématique, plan, méthode) et préparation de la soutenance.
+- Semaine 6 : sujet type complet en conditions chronométrées, puis simulation de soutenance (atelier méthodologie).
+
+## Points clés à retenir
+
+- La consolidation d''un groupe élimine les opérations intragroupe et répartit le résultat entre le groupe et les intérêts minoritaires selon le pourcentage de détention.
+- L''audit de performance combine constat, cause, risque et recommandation ; les techniques de sondage permettent d''extrapoler un taux d''anomalie à une population entière.
+- La réussite du mémoire professionnel repose autant sur la rigueur méthodologique du document écrit que sur la qualité de l''argumentation orale lors de la soutenance.
+- Il n''y a pas de duplication entre les matières de M1 (performance globale, centres de responsabilité, systèmes d''information) et celles de M2 (consolidation, audit, mémoire) : chaque année ajoute un niveau de complexité propre.
+
+## Exercices pratiques
+
+1. Expliquez en quelques lignes pourquoi la consolidation d''un groupe à plusieurs filiales est un enjeu de contrôle de gestion et pas seulement un enjeu de comptabilité.
+2. Citez les quatre éléments attendus dans la structuration d''un constat d''audit de performance.
+3. Un groupe détient 70 % d''une filiale. Si le résultat consolidé retraité de cette filiale est de 240 725 000 FCFA, quelle est la part du groupe et quelle est la part des intérêts minoritaires ?
+4. Quelle est la différence entre un mémoire professionnel et un mémoire de recherche, dans le contexte du Master 2 ?
+5. Citez trois bonnes pratiques pour bien préparer l''oral de soutenance d''un mémoire.
+
+## Corrigé
+
+1. La consolidation détermine comment la performance de chaque filiale est agrégée et présentée au niveau du groupe : les choix de méthode de consolidation, de retraitement des opérations intragroupe, et de répartition entre groupe et intérêts minoritaires ont un effet direct sur les indicateurs de pilotage (résultat consolidé, ROI, EVA) que le contrôleur de gestion utilise pour évaluer la performance globale et celle de chaque filiale. C''est donc un enjeu de pilotage, qui dépasse la seule technique comptable.
+2. Le constat (ce que révèle le contrôle), la cause probable (pourquoi cette situation existe), le risque associé (quelles conséquences si rien n''est fait), et la recommandation (l''action corrective proposée).
+3. Part du groupe = 240 725 000 × 0,70 = 168 507 500 FCFA. Part des intérêts minoritaires = 240 725 000 × 0,30 = 72 217 500 FCFA.
+4. Un mémoire professionnel s''appuie généralement sur une expérience ou un cas d''entreprise concret (souvent un stage ou une mission), avec un objectif d''application pratique des outils de contrôle de gestion ; un mémoire de recherche mobilise davantage une problématique théorique, une revue de littérature académique approfondie, et une méthode de collecte de données plus proche de la recherche en gestion. Les deux exigent rigueur méthodologique et esprit critique, mais leur finalité et leur public diffèrent.
+5. Exemples acceptés : maîtriser parfaitement son propre travail (chiffres, méthode, limites) pour répondre sans hésitation aux questions du jury ; préparer et chronométrer sa présentation pour respecter le temps imparti ; anticiper les questions critiques probables (limites de la méthode, choix non retenus) et préparer des réponses argumentées plutôt que défensives. D''autres bonnes pratiques pertinentes sont acceptées.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en Contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Contrôle de gestion des groupes et consolidation du pilotage : l''essentiel pour l''examen', 'Le contrôle de gestion des groupes prolonge la logique des centres de responsabilité et du prix de cession interne étudiée en Master 1, en l''appliquant à un ensemble de filiales dont les comptes doivent être consolidés pour donner une image fidèle de la performance du groupe dans son ensemble. Maîtriser les mécanismes de consolidation, du point de vue du contrôleur de gestion, est indispensable pour produire un reporting de pilotage consolidé cohérent.
+
+## Le périmètre et les méthodes de consolidation
+
+La consolidation regroupe les comptes de plusieurs entités juridiquement distinctes mais économiquement liées, pour présenter une situation financière et une performance globales du groupe. Le périmètre de consolidation dépend du pourcentage de contrôle (le pouvoir de décision) et du pourcentage d''intérêt (la part de capital détenue) de la société mère dans chaque filiale.
+
+On distingue classiquement trois méthodes selon le niveau de contrôle : l''intégration globale, lorsque la société mère contrôle exclusivement la filiale (généralement une détention supérieure à 50 % des droits de vote), qui consiste à intégrer 100 % des actifs, passifs, charges et produits de la filiale, puis à faire apparaître la part des minoritaires séparément ; l''intégration proportionnelle, utilisée en cas de contrôle conjoint avec d''autres actionnaires, qui intègre les éléments de la filiale à hauteur du pourcentage d''intérêt du groupe ; et la mise en équivalence, utilisée en cas d''influence notable mais sans contrôle (généralement entre 20 % et 50 % des droits de vote), qui ne consolide pas les éléments ligne à ligne mais substitue la valeur des titres par une quote-part de la situation nette de l''entreprise associée.
+
+Pour le contrôleur de gestion, la méthode retenue change radicalement la lecture du reporting consolidé : une filiale en intégration globale apparaît avec 100 % de son activité dans les agrégats du groupe (chiffre d''affaires, charges), alors qu''une filiale mise en équivalence n''apparaît que par une seule ligne de résultat net. Deux groupes de taille comparable peuvent donc afficher des niveaux de chiffre d''affaires très différents selon la nature de leurs participations, sans que cela reflète une différence réelle de taille économique.
+
+## L''élimination des opérations intragroupe
+
+Le principe fondamental de la consolidation, déjà rencontré en Master 1 avec le prix de cession interne, est l''élimination de toutes les opérations réalisées entre entités du même groupe : ventes intragroupe, marges sur stocks internes non encore vendus à des tiers, dividendes versés par une filiale à sa mère. Sans cette élimination, le groupe afficherait un chiffre d''affaires et un résultat artificiellement gonflés par des transactions qui n''ont créé aucune valeur avec l''extérieur.
+
+Prenons un exemple chiffré. Le Groupe Teranga Agro-Industries détient 70 % de Teranga Distribution (intégration globale). Le résultat social de Teranga Distribution (dans ses comptes individuels) est de 249 900 000 FCFA. Mais le stock final de Teranga Distribution contient 500 tonnes de mil transformé achetées à Teranga Céréales au prix de cession interne négocié de 243 350 FCFA, alors que le coût complet réel de production chez Teranga Céréales est de 225 000 FCFA la tonne. Ce stock contient donc une marge interne de (243 350 − 225 000) × 500 = 9 175 000 FCFA, qui n''a pas encore été réalisée avec un client extérieur au groupe et doit être éliminée.
+
+Le résultat de Teranga Distribution retraité pour la consolidation est donc de 249 900 000 − 9 175 000 = 240 725 000 FCFA. Ce résultat retraité est celui qui doit être réparti entre le groupe et les intérêts minoritaires, et non le résultat social initial.
+
+## Les intérêts minoritaires
+
+Lorsqu''une filiale est consolidée par intégration globale mais que la société mère ne détient pas 100 % de son capital, la part de capitaux propres et de résultat qui revient aux autres actionnaires est isolée dans une ligne spécifique du bilan et du compte de résultat consolidés : les intérêts minoritaires (ou participations ne donnant pas le contrôle).
+
+Dans notre exemple, le groupe détient 70 % de Teranga Distribution. La part du groupe dans le résultat retraité de 240 725 000 FCFA est de 240 725 000 × 0,70 = 168 507 500 FCFA. La part des intérêts minoritaires est de 240 725 000 × 0,30 = 72 217 500 FCFA. De la même façon, si les capitaux propres consolidés retraités de Teranga Distribution (après élimination de la marge interne sur stock) s''élèvent, par exemple, à 1 490 825 000 FCFA, les intérêts minoritaires au bilan consolidé représentent 1 490 825 000 × 0,30 = 447 247 500 FCFA.
+
+## L''enjeu de pilotage pour le contrôleur de gestion
+
+Ces mécanismes ne sont pas qu''une contrainte comptable : ils ont un effet direct sur les indicateurs de pilotage. Le résultat consolidé part du groupe, et non le résultat social de chaque filiale, est la mesure de référence pour évaluer la création de valeur réellement captée par les actionnaires de la société mère. Un contrôleur de gestion de groupe doit donc toujours raisonner sur des données retraitées (après élimination des marges internes), et jamais sur une simple addition des résultats sociaux de chaque filiale, qui surestimerait systématiquement la performance réelle du groupe tant qu''il subsiste des stocks internes non écoulés à l''extérieur.
+
+## Points clés à retenir
+
+- Le périmètre et la méthode de consolidation (intégration globale, proportionnelle, mise en équivalence) dépendent du niveau de contrôle et modifient radicalement la lecture du reporting consolidé.
+- Les opérations intragroupe doivent être systématiquement éliminées, en particulier la marge interne incluse dans les stocks non encore vendus à des tiers.
+- Les intérêts minoritaires isolent la part de résultat et de capitaux propres qui revient aux actionnaires autres que la société mère, en proportion de leur détention.
+- Le contrôleur de gestion doit piloter la performance du groupe sur des données consolidées et retraitées, jamais sur une simple addition des résultats sociaux de chaque filiale.
+
+## Exercices pratiques
+
+1. Expliquez la différence entre pourcentage de contrôle et pourcentage d''intérêt, et pourquoi cette distinction détermine la méthode de consolidation à appliquer.
+2. Un groupe détient 55 % des droits de vote d''une filiale, en contrôle conjoint avec un autre actionnaire qui détient les 45 % restants, dans un accord de contrôle partagé. Quelle méthode de consolidation serait a priori applicable, et que signifierait-elle concrètement pour les agrégats du groupe ?
+3. Un groupe détient 60 % d''une filiale dont le résultat social est de 140 000 000 FCFA, incluant une marge interne à éliminer de 18 000 000 FCFA sur un stock non encore vendu à l''extérieur. Calculez le résultat consolidé retraité de la filiale, puis la part du groupe et les intérêts minoritaires.
+4. Pourquoi une addition pure et simple des résultats sociaux de toutes les filiales d''un groupe peut-elle surestimer la performance réelle du groupe ?
+5. Un groupe envisage de réduire sa détention dans une filiale de 65 % à 45 %, en cédant 20 % du capital à un investisseur extérieur. Expliquez en quelques lignes comment ce changement de pourcentage de détention pourrait modifier la méthode de consolidation applicable et la lecture du reporting du groupe.
+
+## Corrigé
+
+1. Le pourcentage de contrôle mesure le pouvoir de décision (généralement lié aux droits de vote), tandis que le pourcentage d''intérêt mesure la part de capital et donc de résultat financier détenue. La méthode de consolidation dépend avant tout du niveau de contrôle : un contrôle exclusif conduit à l''intégration globale, un contrôle conjoint à l''intégration proportionnelle, une influence notable sans contrôle à la mise en équivalence, quel que soit le pourcentage d''intérêt exact dans chaque cas.
+2. Un contrôle conjoint entre deux actionnaires à parts proches relève a priori de l''intégration proportionnelle : les éléments de la filiale (actifs, passifs, charges, produits) seraient intégrés dans les comptes du groupe à hauteur de son pourcentage d''intérêt, ici 55 %, et non à 100 % comme en intégration globale. Les agrégats du groupe (chiffre d''affaires, charges) n''intégreraient donc qu''une fraction de l''activité de la filiale, proportionnelle à la détention du groupe, sans ligne d''intérêts minoritaires puisque chaque coactionnaire n''intègre que sa propre quote-part.
+3. Résultat consolidé retraité = 140 000 000 − 18 000 000 = 122 000 000 FCFA. Part du groupe = 122 000 000 × 0,60 = 73 200 000 FCFA. Intérêts minoritaires = 122 000 000 × 0,40 = 48 800 000 FCFA.
+4. Parce qu''une telle addition inclut le résultat social de chaque filiale sans éliminer les opérations intragroupe, en particulier les marges internes sur les stocks non encore vendus à des clients extérieurs au groupe ; ces marges ne constituent pas une création de valeur réelle pour le groupe tant qu''elles ne sont pas réalisées avec l''extérieur, et leur maintien dans l''addition surestime donc la performance réelle, parfois significativement si les volumes de stocks internes sont importants.
+5. Une détention ramenée de 65 % à 45 % fait probablement perdre au groupe le contrôle exclusif de la filiale, qui passerait d''une intégration globale (100 % des agrégats intégrés, avec intérêts minoritaires) à une mise en équivalence si le groupe ne conserve qu''une influence notable sans contrôle (généralement le cas entre 20 % et 50 %). Dans ce cas, la filiale n''apparaîtrait plus ligne à ligne dans les comptes consolidés : son chiffre d''affaires et ses charges disparaîtraient des agrégats du groupe, remplacés par une seule ligne de résultat net correspondant à la quote-part du groupe dans son résultat. Le chiffre d''affaires consolidé du groupe baisserait donc mécaniquement, sans que l''activité économique réelle du groupe élargi (filiale incluse) n''ait changé, ce qui impose au contrôleur de gestion d''expliquer clairement cet effet de périmètre à la direction générale pour éviter une lecture erronée de la performance.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Contrôle de gestion des groupes et consolidation du pilotage : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Audit de la performance et contrôle interne avancé : l''essentiel pour l''examen', 'L''audit de la performance et le contrôle interne avancé complètent la panoplie du contrôleur de gestion de Master 2 : il ne s''agit plus seulement de produire des indicateurs de pilotage, mais de vérifier la fiabilité des processus et des données qui alimentent ces indicateurs, et de proposer des recommandations d''amélioration argumentées.
+
+## Le contrôle interne : définition et composantes
+
+Le contrôle interne désigne l''ensemble des dispositifs mis en place par une organisation pour maîtriser ses risques et atteindre ses objectifs : fiabilité de l''information financière, efficacité et efficience des opérations, conformité aux lois et règlements. Un dispositif de contrôle interne robuste repose sur plusieurs composantes complémentaires : un environnement de contrôle (culture, valeurs, organisation claire des responsabilités), une évaluation des risques (identification et hiérarchisation des risques qui menacent les objectifs), des activités de contrôle (procédures, séparation des tâches, autorisations), une information et communication fiables, et un pilotage ou suivi régulier du dispositif lui-même.
+
+Le contrôleur de gestion n''est pas l''auditeur du contrôle interne, mais il en est un utilisateur et souvent un contributeur direct : la fiabilité du contrôle interne conditionne directement la fiabilité des données qu''il utilise pour construire ses tableaux de bord et ses analyses d''écarts. Un contrôle interne défaillant sur le processus de saisie des ventes, par exemple, peut produire des indicateurs de performance commerciale trompeurs.
+
+## L''audit interne et l''audit de performance
+
+L''audit interne est une fonction indépendante qui évalue, de façon systématique et méthodique, les processus de gestion des risques, de contrôle et de gouvernance d''une organisation, et formule des recommandations pour les améliorer. L''audit de performance, qui intéresse particulièrement le contrôleur de gestion, se concentre sur l''efficacité et l''efficience d''un processus ou d''une activité : utilise-t-on les ressources de façon économe, les objectifs sont-ils atteints, les procédures en place permettent-elles d''atteindre ces objectifs de façon fiable ?
+
+Un rapport d''audit de performance suit généralement une structure en quatre éléments pour chaque point relevé : le constat, c''est-à-dire ce que révèle objectivement le contrôle ou l''observation ; la cause probable, c''est-à-dire pourquoi cette situation existe (procédure mal conçue, absence de contrôle, erreur humaine répétée) ; le risque associé, c''est-à-dire les conséquences possibles si rien n''est corrigé ; et la recommandation, c''est-à-dire l''action corrective concrète proposée, idéalement assortie d''un responsable et d''un délai de mise en œuvre.
+
+## Les techniques de sondage en audit
+
+Faute de pouvoir contrôler l''intégralité d''une population d''opérations (toutes les factures, toutes les commandes), l''auditeur recourt fréquemment à des techniques de sondage : il contrôle un échantillon représentatif, mesure un taux d''anomalie dans cet échantillon, puis extrapole ce taux à la population entière pour estimer l''ampleur du problème.
+
+Prenons un exemple chiffré. Un auditeur contrôle un échantillon de 80 factures parmi une population de 2 400 factures émises sur l''année par une filiale du Groupe Teranga Agro-Industries. Il constate 6 anomalies (erreurs de tarification, de remise ou d''imputation comptable) dans cet échantillon. Le taux d''anomalie dans l''échantillon est de 6 / 80 = 0,075, soit 7,5 %. En appliquant ce taux à la population entière, le nombre d''anomalies extrapolées est de 0,075 × 2 400 = 180 factures potentiellement affectées.
+
+Ce chiffre de 180 factures ne signifie pas que l''auditeur a identifié précisément 180 erreurs : c''est une estimation statistique, qui dépend de la représentativité de l''échantillon et de sa taille. Un échantillon trop petit, ou mal constitué (par exemple en ne sélectionnant que les plus grosses factures), produirait une extrapolation peu fiable. C''est pourquoi la méthode de constitution de l''échantillon (sondage aléatoire, stratifié selon les montants, ou autre) doit être documentée et justifiée dans le rapport d''audit, et le niveau de confiance statistique de l''extrapolation doit être explicitement discuté plutôt que présenté comme une certitude.
+
+## Du constat d''audit à la recommandation
+
+Reprenons notre exemple pour construire un constat d''audit complet. Constat : un taux d''anomalie de tarification de 7,5 % a été relevé sur un échantillon de factures, extrapolé à environ 180 factures sur l''année pour l''ensemble de la population. Cause probable : l''absence de contrôle de second niveau systématique sur les remises commerciales accordées par les commerciaux avant facturation. Risque associé : une perte financière cumulée potentiellement significative sur l''année, ainsi qu''un risque de traitement inéquitable entre clients si les remises ne suivent pas une grille cohérente. Recommandation : mettre en place un contrôle de second niveau obligatoire au-delà d''un certain seuil de remise, avec validation par un responsable hiérarchique avant émission de la facture, et un audit de suivi six mois plus tard pour vérifier la baisse du taux d''anomalie.
+
+Cette structuration en quatre temps (constat, cause, risque, recommandation) est exactement celle que les correcteurs attendent dans vos réponses d''examen face à un cas d''audit de performance : une réponse qui se limite au constat chiffré, sans cause ni recommandation opérationnelle, reste incomplète.
+
+## Points clés à retenir
+
+- Le contrôle interne repose sur cinq composantes complémentaires (environnement de contrôle, évaluation des risques, activités de contrôle, information et communication, pilotage) et conditionne la fiabilité des données du contrôle de gestion.
+- Un rapport d''audit de performance structure chaque point en quatre temps : constat, cause probable, risque associé, recommandation.
+- Les techniques de sondage permettent d''extrapoler un taux d''anomalie observé sur un échantillon à l''ensemble d''une population, à condition que l''échantillon soit représentatif et sa méthode de constitution documentée.
+- L''extrapolation statistique d''un sondage est une estimation, pas une certitude, et son niveau de confiance doit être explicitement discuté.
+
+## Exercices pratiques
+
+1. Citez les cinq composantes classiques du contrôle interne.
+2. Expliquez la structure en quatre temps attendue dans un rapport d''audit de performance (constat, cause, risque, recommandation) en illustrant chaque élément par un exemple.
+3. Un auditeur contrôle un échantillon de 60 bons de commande parmi une population de 1 800 bons, et constate 3 anomalies. Calculez le taux d''anomalie de l''échantillon et le nombre d''anomalies extrapolées à la population.
+4. Pourquoi la méthode de constitution d''un échantillon (aléatoire, stratifié, ou autre) doit-elle être documentée dans un rapport d''audit ?
+5. Expliquez pourquoi le contrôleur de gestion, bien qu''il ne soit pas lui-même l''auditeur du contrôle interne, est directement concerné par la qualité de ce dispositif.
+6. Cas pratique complet : un audit de performance sur le processus de gestion des stocks d''une filiale du Groupe Teranga Agro-Industries révèle un écart de 4,2 % entre les quantités théoriques en stock (selon le système d''information) et les quantités réellement comptées lors d''un inventaire physique. Rédigez un constat d''audit complet (constat, cause probable, risque associé, recommandation) en quatre à six lignes.
+
+## Corrigé
+
+1. Environnement de contrôle, évaluation des risques, activités de contrôle, information et communication, pilotage (suivi du dispositif).
+2. Constat : description objective et chiffrée de ce que révèle le contrôle, par exemple un taux d''anomalie de 7,5 % sur un échantillon de factures. Cause probable : explication plausible de la situation, par exemple l''absence de contrôle de second niveau sur les remises commerciales. Risque associé : conséquence possible si rien n''est corrigé, par exemple une perte financière cumulée ou un traitement inéquitable entre clients. Recommandation : action corrective concrète, par exemple la mise en place d''un contrôle de validation obligatoire au-delà d''un seuil de remise.
+3. Taux d''anomalie = 3 / 60 = 0,05, soit 5 %. Anomalies extrapolées = 0,05 × 1 800 = 90 bons de commande.
+4. Parce que la fiabilité de l''extrapolation du taux d''anomalie à la population entière dépend directement de la représentativité de l''échantillon ; un échantillon mal constitué (par exemple en sélectionnant uniquement les transactions les plus simples à contrôler, ou les plus importantes en montant) produirait une estimation biaisée, qui ne reflète pas fidèlement le taux d''anomalie réel sur l''ensemble de la population.
+5. Parce que la fiabilité des indicateurs de pilotage (tableaux de bord, analyses d''écarts, calculs de ROI ou d''EVA) dépend directement de la fiabilité des données produites par les processus opérationnels. Si le contrôle interne de ces processus est défaillant (par exemple une saisie des ventes non fiabilisée), les indicateurs construits par le contrôleur de gestion à partir de ces données seront eux-mêmes trompeurs, même si le calcul de l''indicateur lui-même est techniquement correct.
+6. Constat : un écart de 4,2 % a été relevé entre les quantités théoriques en stock selon le système d''information et les quantités réellement comptées à l''inventaire physique. Cause probable : des mouvements de stock non ou mal enregistrés dans le système (sorties non saisies, erreurs de référence produit). Risque associé : une mauvaise estimation du coût des stocks dans les états financiers et dans le calcul des coûts complets, et un risque de rupture de stock non anticipée. Recommandation : renforcer la fréquence des inventaires tournants et le contrôle de concordance entre mouvements physiques et mouvements système, avec un responsable désigné pour le suivi mensuel de l''écart.', 'texte', 45, false, 30
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Audit de la performance et contrôle interne avancé : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Méthodologie du mémoire professionnel et de la soutenance : l''essentiel pour l''examen', 'La méthodologie du mémoire professionnel et de la soutenance est une matière à part dans votre parcours de Master 2 : elle ne porte pas sur une technique de contrôle de gestion particulière, mais sur la façon de construire, rédiger et défendre un travail personnel qui mobilise l''ensemble des compétences acquises durant votre formation.
+
+## Choisir et formuler une problématique
+
+Le mémoire professionnel part d''une problématique : une question précise, à laquelle le mémoire doit répondre de façon argumentée, en mobilisant des concepts de contrôle de gestion et une analyse de terrain (cas d''entreprise, stage, mission). Une bonne problématique est spécifique (elle porte sur une situation ou un enjeu précis, pas sur un sujet trop vaste comme « le contrôle de gestion dans les entreprises africaines »), elle est pertinente au regard des enjeux de l''entreprise ou du secteur étudié, et elle est traitable dans le temps et avec les moyens dont vous disposez réellement pour réaliser le mémoire.
+
+Un exemple de problématique bien formulée, dans l''esprit des cas étudiés cette année : « Dans quelle mesure la mise en place d''un système d''information décisionnel unifié peut-elle améliorer la fiabilité du reporting consolidé d''un groupe agro-industriel sénégalais à plusieurs filiales ? » Cette formulation est spécifique (un type de groupe, un enjeu précis), ancrée dans un cas concret, et suffisamment délimitée pour être traitée dans le cadre d''un mémoire.
+
+## Construire un plan de mémoire rigoureux
+
+Le plan d''un mémoire professionnel suit généralement une logique en trois temps. Une première partie pose le cadre théorique et le contexte : revue des concepts et outils de contrôle de gestion mobilisés, présentation du secteur et de l''entreprise étudiée. Une deuxième partie présente la méthode d''étude retenue (étude de cas, entretiens, analyse de données internes) et les résultats obtenus, avec les preuves et les données chiffrées qui les étayent. Une troisième partie discute ces résultats de façon critique : que signifient-ils pour l''entreprise ? quelles sont les limites de l''étude ? quelles recommandations peut-on en tirer, et avec quelles réserves ?
+
+Cette troisième partie est souvent la plus faible dans les mémoires d''étudiants, par manque d''habitude de la distance critique : beaucoup se contentent de décrire leurs résultats sans les discuter réellement. Or c''est précisément cette capacité de discussion critique, et non la seule description des faits, qui différencie un mémoire de bon niveau d''un mémoire simplement correct.
+
+## La revue de la littérature ou des pratiques existantes
+
+Avant de présenter vos propres résultats, un mémoire doit situer son apport par rapport à ce qui existe déjà : des travaux académiques sur le sujet, des référentiels professionnels (normes, guides de bonnes pratiques), ou des pratiques observées dans d''autres entreprises comparables. Cette revue ne doit jamais se limiter à une liste de résumés juxtaposés : elle doit construire un raisonnement qui identifie ce qui est déjà connu, ce qui reste discuté ou mal résolu, et la place que votre propre travail vient occuper dans cet ensemble. Attention, par ailleurs, à ne jamais inventer de référence ou de citation que vous n''avez pas effectivement consultée : toute source mobilisée doit être réelle et vérifiable, sous peine de fragiliser gravement la crédibilité de l''ensemble du mémoire devant le jury.
+
+## Préparer la soutenance orale
+
+La soutenance est un exercice oral distinct de la rédaction du mémoire, qui obéit à ses propres règles. Le temps de présentation est généralement limité (souvent 15 à 20 minutes, à vérifier selon les modalités propres à votre établissement), ce qui impose de sélectionner l''essentiel plutôt que de résumer l''intégralité du mémoire : la problématique, la méthode en quelques mots, les deux ou trois résultats les plus significatifs, et les recommandations principales.
+
+La seconde partie de la soutenance, les questions du jury, est souvent celle qui différencie le plus les candidats. Le jury cherche à vérifier que vous maîtrisez réellement votre travail (et pas seulement que vous l''avez récité), en posant des questions sur vos choix méthodologiques, sur les limites de votre étude, ou sur des approfondissements possibles. Trois attitudes sont à privilégier : répondre avec précision plutôt que de façon évasive, assumer les limites de votre travail plutôt que de les nier (un bon candidat connaît les faiblesses de son propre mémoire et peut les expliquer), et rester calme même face à une question qui déstabilise, en prenant quelques secondes de réflexion avant de répondre plutôt que de répondre dans la précipitation.
+
+## Points clés à retenir
+
+- Une bonne problématique de mémoire est spécifique, pertinente et traitable avec les moyens réellement disponibles.
+- Le plan en trois temps (cadre et contexte, méthode et résultats, discussion critique) structure un mémoire professionnel rigoureux ; la discussion critique est souvent le point faible à travailler en priorité.
+- La revue de la littérature ou des pratiques doit construire un raisonnement, jamais une simple juxtaposition de résumés, et ne doit jamais s''appuyer sur des sources inventées.
+- La soutenance exige une sélection de l''essentiel dans le temps imparti, et une capacité à répondre avec précision et sans défensive aux questions du jury.
+
+## Exercices pratiques
+
+1. Reformulez la problématique suivante, jugée trop vague, pour la rendre spécifique et traitable : « Le contrôle de gestion dans les entreprises sénégalaises ».
+2. Décrivez les trois grandes parties attendues dans le plan d''un mémoire professionnel de contrôle de gestion.
+3. Pourquoi la troisième partie d''un mémoire (discussion critique) est-elle souvent la plus faible chez les étudiants, et comment y remédier ?
+4. Citez deux attitudes à privilégier et une attitude à éviter lors des questions du jury en soutenance.
+5. Expliquez pourquoi inventer une référence ou une citation dans un mémoire est une faute grave, même si elle semble anodine ou si elle « sonne bien » dans le texte.
+
+## Corrigé
+
+1. Exemple de reformulation acceptable : « Comment une PME sénégalaise du secteur agro-industriel peut-elle mettre en place un contrôle budgétaire simple et adapté à ses moyens, pour mieux maîtriser sa trésorerie ? » Cette version est spécifique (un secteur, un outil précis, un objectif clair), contrairement à la version initiale beaucoup trop générale. D''autres reformulations spécifiques et cohérentes sont acceptées.
+2. Première partie : cadre théorique et contexte (concepts mobilisés, présentation du secteur et de l''entreprise). Deuxième partie : méthode d''étude retenue et résultats obtenus, avec les données qui les étayent. Troisième partie : discussion critique des résultats (portée, limites, recommandations).
+3. Elle est souvent la plus faible par manque d''habitude de la distance critique : les étudiants se contentent fréquemment de décrire leurs résultats sans les interroger. Pour y remédier, il faut systématiquement se poser trois questions après chaque résultat présenté : qu''est-ce que ce résultat signifie réellement pour l''entreprise ? quelles sont les limites de la méthode utilisée pour l''obtenir ? et quelles réserves faut-il apporter à toute recommandation qui en découle ?
+4. Attitudes à privilégier : répondre avec précision plutôt que de façon évasive, et assumer les limites de son propre travail plutôt que de les nier. Attitude à éviter : répondre dans la précipitation, sans prendre quelques secondes de réflexion face à une question qui déstabilise, ce qui conduit souvent à des réponses imprécises ou contradictoires avec le contenu du mémoire.
+5. Parce qu''un mémoire professionnel engage la crédibilité académique et professionnelle de son auteur : une référence inventée, si elle est découverte par le jury (par une simple vérification), détruit la confiance accordée à l''ensemble du travail, y compris aux parties qui étaient par ailleurs solides et bien menées. Au-delà de la sanction académique possible, c''est une faute d''intégrité intellectuelle qui n''a pas sa place dans un travail présenté comme personnel et vérifié.', 'texte', 45, false, 40
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire professionnel et de la soutenance : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 2 en Contrôle de gestion (corrigé)', 'Ce sujet type regroupe les deux matières techniques avancées du Master 2 en Contrôle de gestion : le contrôle de gestion des groupes et la consolidation du pilotage, et l''audit de la performance et le contrôle interne avancé. La méthodologie du mémoire, de nature différente, est traitée séparément dans le cours vidéo d''atelier de cette année. Ce sujet n''a pas de valeur officielle et le barème est purement indicatif.
+
+## Présentation du cas
+
+Le Groupe Baobab Industries (groupe fictif sénégalais) regroupe une société mère et une filiale, Baobab Logistique, détenue à 65 %, consolidée par intégration globale. Baobab Logistique vend des prestations de transport à d''autres entités du groupe, et une partie de ses coûts est, par ailleurs, soumise à un audit de performance portant sur la gestion de son parc de véhicules.
+
+Données de consolidation : le résultat social de Baobab Logistique est de 165 000 000 FCFA. Ce résultat inclut une marge interne de 14 500 000 FCFA sur des prestations facturées à une autre filiale du groupe, non encore intégralement consommées par celle-ci à la clôture de l''exercice, qui doit être éliminée. Les capitaux propres sociaux de Baobab Logistique avant retraitement sont de 420 000 000 FCFA.
+
+Données d''audit : un auditeur interne contrôle un échantillon de 50 ordres de mission parmi une population de 1 500 ordres de mission émis sur l''année pour les chauffeurs de Baobab Logistique, et constate 4 anomalies (kilomètres facturés non justifiés par le carnet de bord, ou incohérents avec le trajet déclaré).
+
+## Questions (barème indicatif sur 20)
+
+1. (3 points) Calculez le résultat consolidé retraité de Baobab Logistique après élimination de la marge interne, puis la part du groupe et la part des intérêts minoritaires dans ce résultat.
+2. (2 points) Calculez les intérêts minoritaires au bilan consolidé sur les capitaux propres, en supposant que les capitaux propres retraités après élimination de la marge interne s''élèvent à 405 500 000 FCFA.
+3. (2 points) Expliquez en trois ou quatre lignes pourquoi l''élimination de la marge interne sur les prestations non consommées est nécessaire avant de répartir le résultat entre groupe et intérêts minoritaires.
+4. (3 points) Calculez le taux d''anomalie de l''échantillon d''ordres de mission, puis le nombre d''anomalies extrapolées à la population entière.
+5. (4 points) Rédigez un constat d''audit complet (constat, cause probable, risque associé, recommandation) pour la situation révélée à la question 4.
+6. (3 points) En quoi la fiabilité du dispositif de contrôle interne sur les ordres de mission de Baobab Logistique peut-elle avoir un effet direct sur la fiabilité du résultat consolidé calculé à la question 1 ? Justifiez par un mécanisme précis.
+7. (3 points) Rédigez une synthèse argumentée (huit à dix lignes) qui relie les résultats de consolidation et d''audit pour formuler une recommandation prioritaire à la direction générale du groupe.
+
+## Corrigé détaillé
+
+1. Résultat consolidé retraité = 165 000 000 − 14 500 000 = 150 500 000 FCFA. Part du groupe = 150 500 000 × 0,65 = 97 825 000 FCFA. Intérêts minoritaires = 150 500 000 × 0,35 = 52 675 000 FCFA.
+2. Intérêts minoritaires au bilan = 405 500 000 × 0,35 = 141 925 000 FCFA.
+3. Sans cette élimination, le résultat consolidé intégrerait une marge réalisée sur une opération interne au groupe, qui n''a pas encore été validée par une consommation ou une revente à l''extérieur du groupe. Cette marge ne correspond à aucune création de valeur réelle avec un tiers extérieur à la date de clôture, et son maintien dans le résultat consolidé surestimerait la performance réelle du groupe, ainsi que la part effectivement attribuable aux actionnaires de la société mère et aux intérêts minoritaires.
+4. Taux d''anomalie = 4 / 50 = 0,08, soit 8 %. Anomalies extrapolées = 0,08 × 1 500 = 120 ordres de mission.
+5. Constat : un taux d''anomalie de 8 % a été relevé sur un échantillon d''ordres de mission, portant sur des kilomètres facturés non justifiés ou incohérents avec le trajet déclaré, extrapolé à environ 120 ordres de mission sur l''année. Cause probable : l''absence de contrôle systématique de cohérence entre le carnet de bord des chauffeurs et les kilomètres facturés aux filiales clientes. Risque associé : une surfacturation possible des prestations de transport entre filiales, qui fausserait à la fois les coûts supportés par les filiales clientes et le prix de cession interne réellement pratiqué. Recommandation : mettre en place un contrôle de cohérence systématique entre carnet de bord et facturation avant validation de chaque ordre de mission, avec un audit de suivi dans les six mois.
+6. Si les kilomètres facturés par Baobab Logistique à d''autres filiales sont surfacturés, la marge intragroupe réellement réalisée par Baobab Logistique est artificiellement gonflée. Cette marge, bien qu''intragroupe et destinée à être éliminée en consolidation, doit d''abord être correctement identifiée et chiffrée pour être éliminée à son juste montant ; si le contrôle interne ne permet pas de détecter la surfacturation, le montant de la marge interne à éliminer (14 500 000 FCFA dans cet exemple) pourrait lui-même être sous-estimé ou mal documenté, ce qui fragiliserait la fiabilité du résultat consolidé retraité calculé à la question 1, indépendamment même de la question de la répartition entre groupe et minoritaires.
+7. Synthèse attendue : les deux volets du cas, consolidation et audit, ne doivent pas être traités de façon indépendante. L''audit révèle un taux d''anomalie significatif (8 %) sur la facturation intragroupe de transport, ce qui questionne directement la fiabilité du montant de marge interne éliminé lors de la consolidation (14 500 000 FCFA) : si une partie de cette marge résulte d''une surfacturation non détectée, le résultat consolidé retraité de 150 500 000 FCFA pourrait lui-même être imprécis, avec un effet direct sur la part attribuée au groupe et aux intérêts minoritaires. La recommandation prioritaire à la direction générale est donc de traiter ces deux enjeux de façon coordonnée : renforcer en urgence le contrôle interne sur la facturation intragroupe de transport (cohérence carnet de bord et facturation), puis revoir, une fois ce contrôle fiabilisé, le montant exact de marge interne à éliminer lors de la prochaine clôture consolidée, plutôt que de considérer les deux chantiers comme indépendants.
+
+## Exercices pratiques complémentaires
+
+1. Si le pourcentage de détention du groupe dans Baobab Logistique passait de 65 % à 100 % (rachat des parts minoritaires), quel type de ligne disparaîtrait du bilan et du compte de résultat consolidés, et pourquoi ?
+2. Proposez une action de contrôle interne préventive (avant même tout audit) qui aurait pu réduire le taux d''anomalie constaté à la question 4 de l''exercice principal.
+
+## Corrigé
+
+1. La ligne des intérêts minoritaires (au bilan et au compte de résultat consolidés) disparaîtrait, puisque le groupe détiendrait 100 % du capital de Baobab Logistique : il n''y aurait alors plus aucun autre actionnaire dont la part de capitaux propres ou de résultat devrait être isolée séparément de celle du groupe.
+2. Exemple de réponse acceptée : la mise en place d''un système de géolocalisation des véhicules, croisé automatiquement avec les kilomètres facturés, qui aurait permis de détecter les incohérences dès la saisie, avant même la facturation, plutôt que de les découvrir a posteriori lors d''un audit. Toute autre action de contrôle préventif pertinente et correctement justifiée est acceptée.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 en Contrôle de gestion (corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Contrôle de gestion des groupes et consolidation du pilotage', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en Contrôle de gestion. Objectifs : maîtriser les méthodes de consolidation d''un groupe (périmètre, intégration globale, proportionnelle, mise en équivalence), savoir éliminer les opérations intragroupe et calculer les intérêts minoritaires, comprendre l''enjeu de ces mécanismes pour le pilotage de la performance consolidée. Prérequis : prix de cession interne et centres d''investissement vus en Master 1. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et mise en perspective
+
+Bonjour à toutes et à tous. Nous commençons le premier des trois cours vidéo du Master 2, consacré au contrôle de gestion des groupes et à la consolidation du pilotage. Vous avez vu en Master 1 comment évaluer la performance de centres de responsabilité au sein d''un groupe simple à deux filiales, avec le prix de cession interne. Aujourd''hui, nous allons voir comment ces mécanismes s''articulent avec les règles de consolidation comptable, qui déterminent la façon dont la performance de chaque filiale est agrégée pour donner une vision globale du groupe.
+
+Plan de la séance : le périmètre et les méthodes de consolidation ; l''élimination des opérations intragroupe, avec un calcul chiffré complet ; les intérêts minoritaires ; un quiz à mi-séance ; puis un cas pratique complet et l''évaluation finale.
+
+## 05:00 – 20:00 · Le périmètre et les méthodes de consolidation
+
+La consolidation regroupe les comptes de plusieurs entités juridiquement distinctes mais économiquement liées, pour présenter une image globale du groupe. Trois méthodes existent, selon le niveau de contrôle de la société mère sur chaque filiale.
+
+L''intégration globale s''applique en cas de contrôle exclusif, généralement une détention supérieure à 50 % des droits de vote : on intègre 100 % des actifs, passifs, charges et produits de la filiale, puis on isole la part des minoritaires séparément. L''intégration proportionnelle s''applique en cas de contrôle conjoint avec d''autres actionnaires : on intègre les éléments de la filiale seulement à hauteur du pourcentage d''intérêt du groupe. La mise en équivalence s''applique en cas d''influence notable sans contrôle, généralement entre 20 % et 50 % des droits de vote : on ne consolide pas ligne à ligne, on substitue la valeur des titres par une quote-part de la situation nette de l''entreprise associée.
+
+Voici un point essentiel pour l''examen : la méthode retenue change radicalement la lecture du reporting. Une filiale en intégration globale apparaît avec 100 % de son activité dans les agrégats du groupe. Une filiale mise en équivalence n''apparaît que par une seule ligne de résultat net. Deux groupes de taille économique comparable peuvent donc afficher des chiffres d''affaires consolidés très différents selon la nature de leurs participations, sans différence réelle de taille économique sous-jacente. Vous devez toujours vérifier, face à un cas, quelle méthode s''applique à chaque filiale avant de faire le moindre calcul.
+
+## 20:00 – 40:00 · L''élimination des opérations intragroupe : calcul complet
+
+Le principe fondamental de la consolidation est l''élimination de toutes les opérations réalisées entre entités du même groupe. Sans cette élimination, le groupe afficherait un résultat artificiellement gonflé par des transactions qui n''ont créé aucune valeur avec l''extérieur.
+
+Faisons le calcul ensemble sur le cas du Groupe Teranga Agro-Industries. Le groupe détient 70 % de Teranga Distribution, consolidée par intégration globale. Le résultat social de Teranga Distribution, dans ses comptes individuels, est de 249 900 000 FCFA. Mais le stock final de Teranga Distribution contient 500 tonnes de mil transformé achetées à Teranga Céréales au prix de cession interne négocié de 243 350 FCFA, alors que le coût complet réel de production chez Teranga Céréales est de 225 000 FCFA la tonne.
+
+Calculons la marge interne incluse dans ce stock : (243 350 moins 225 000) fois 500, soit 18 350 fois 500, soit 9 175 000 FCFA. Cette marge n''a pas encore été réalisée avec un client extérieur au groupe, puisque le produit est toujours en stock chez Teranga Distribution : elle doit donc être éliminée.
+
+Le résultat de Teranga Distribution retraité pour la consolidation est donc de 249 900 000 moins 9 175 000, soit 240 725 000 FCFA. C''est ce résultat retraité, et non le résultat social initial de 249 900 000 FCFA, qui doit être réparti entre le groupe et les intérêts minoritaires. Notez bien ce point : l''erreur la plus fréquente en examen consiste à oublier cette étape de retraitement et à répartir directement le résultat social, ce qui fausse tout le calcul qui suit.
+
+## 40:00 – 50:00 · Les intérêts minoritaires
+
+Lorsqu''une filiale est consolidée par intégration globale mais que la société mère ne détient pas 100 % de son capital, la part qui revient aux autres actionnaires est isolée dans une ligne spécifique : les intérêts minoritaires.
+
+Reprenons notre exemple. Le groupe détient 70 % de Teranga Distribution. La part du groupe dans le résultat retraité de 240 725 000 FCFA est de 240 725 000 fois 0,70, soit 168 507 500 FCFA. La part des intérêts minoritaires est de 240 725 000 fois 0,30, soit 72 217 500 FCFA. Vérifions que la somme des deux redonne bien le résultat retraité : 168 507 500 plus 72 217 500 égale 240 725 000 FCFA. C''est une vérification simple que vous devez systématiquement faire à l''examen pour détecter une erreur de calcul.
+
+De la même façon, si les capitaux propres consolidés retraités de Teranga Distribution s''élèvent à 1 490 825 000 FCFA, les intérêts minoritaires au bilan consolidé représentent 1 490 825 000 fois 0,30, soit 447 247 500 FCFA.
+
+## 50:00 – 55:00 · Pause active et quiz interactif
+
+Première question : quelle méthode de consolidation s''applique en cas de contrôle conjoint avec un autre actionnaire ? Réponse : l''intégration proportionnelle.
+
+Deuxième question : pourquoi faut-il éliminer la marge interne incluse dans un stock non encore vendu à l''extérieur du groupe avant de répartir le résultat ? Réponse : parce que cette marge ne correspond à aucune création de valeur réelle avec un tiers extérieur au groupe à la date de clôture, et son maintien surestimerait la performance réelle du groupe.
+
+Troisième question : dans notre exemple, quelle vérification simple permet de détecter une erreur dans le calcul de la part du groupe et des intérêts minoritaires ? Réponse : vérifier que la somme des deux parts redonne exactement le résultat consolidé retraité.
+
+## 55:00 – 1:18:00 · Cas pratique complet et enjeu de pilotage
+
+Prenons un cas pratique complet, nouveau par rapport aux leçons texte. Le Groupe Casamance Négoce détient 55 % de sa filiale Casamance Transit, consolidée par intégration globale, spécialisée dans le transit de marchandises au port de Dakar. Le résultat social de Casamance Transit est de 96 000 000 FCFA, incluant une marge interne de 11 000 000 FCFA sur des prestations de transit facturées à une autre filiale du groupe, non encore intégralement consommées à la clôture.
+
+Calculons ensemble. Résultat retraité : 96 000 000 moins 11 000 000, soit 85 000 000 FCFA. Part du groupe : 85 000 000 fois 0,55, soit 46 750 000 FCFA. Intérêts minoritaires : 85 000 000 fois 0,45, soit 38 250 000 FCFA. Vérification : 46 750 000 plus 38 250 000 égale bien 85 000 000 FCFA.
+
+Quel est l''enjeu de pilotage derrière ce calcul ? Le contrôleur de gestion du groupe ne doit jamais présenter à la direction générale le résultat social de 96 000 000 FCFA comme la contribution de Casamance Transit à la performance du groupe : c''est le résultat retraité de 85 000 000 FCFA, et plus précisément la part du groupe de 46 750 000 FCFA, qui mesure la création de valeur réellement captée par les actionnaires de la société mère. Présenter le chiffre non retraité à un comité de direction, même par simplification, risquerait de fausser l''appréciation de la performance réelle du groupe et de ses filiales.
+
+## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
+
+Récapitulons. La méthode de consolidation (intégration globale, proportionnelle, mise en équivalence) dépend du niveau de contrôle et change radicalement la lecture des agrégats du groupe. Les opérations intragroupe doivent systématiquement être éliminées, en particulier les marges internes sur stocks ou prestations non encore consommées à l''extérieur. Les intérêts minoritaires isolent la part de résultat et de capitaux propres qui revient aux autres actionnaires, en proportion de leur détention, et la vérification de leur somme avec la part du groupe est un réflexe à conserver pour détecter vos erreurs de calcul.
+
+Cinq questions pour l''évaluation finale.
+
+Première question : quelle méthode de consolidation s''applique en cas d''influence notable sans contrôle ? Réponse : la mise en équivalence.
+
+Deuxième question : un groupe détient 80 % d''une filiale dont le résultat social est de 60 000 000 FCFA, incluant une marge interne à éliminer de 8 000 000 FCFA. Calculez le résultat retraité, la part du groupe et les intérêts minoritaires. Réponse : résultat retraité = 60 000 000 moins 8 000 000, soit 52 000 000 FCFA. Part du groupe = 52 000 000 fois 0,80, soit 41 600 000 FCFA. Intérêts minoritaires = 52 000 000 fois 0,20, soit 10 400 000 FCFA.
+
+Troisième question : pourquoi une filiale mise en équivalence n''apparaît-elle que par une seule ligne de résultat net dans les comptes consolidés ? Réponse : parce que cette méthode s''applique en cas d''influence notable sans contrôle, et qu''elle substitue simplement la valeur des titres détenus par une quote-part de la situation nette de l''entreprise associée, sans intégrer ligne à ligne ses actifs, passifs, charges et produits.
+
+Quatrième question : quelle vérification simple permet de détecter une erreur dans un calcul d''intérêts minoritaires ? Réponse : vérifier que la part du groupe additionnée à la part des intérêts minoritaires redonne exactement le résultat consolidé retraité de la filiale.
+
+Cinquième question : pourquoi le contrôleur de gestion d''un groupe ne doit-il jamais présenter le résultat social d''une filiale, sans retraitement, comme mesure de sa contribution à la performance du groupe ? Réponse : parce que le résultat social peut inclure des marges intragroupe non encore réalisées avec l''extérieur, qui surestiment la création de valeur réelle ; seul le résultat consolidé retraité, et la part qui en revient au groupe selon son pourcentage de détention, mesure correctement cette contribution.
+
+Merci pour votre attention, je vous retrouve dans le prochain cours vidéo consacré à l''audit de la performance et au contrôle interne avancé.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Contrôle de gestion des groupes et consolidation du pilotage');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Audit de la performance et contrôle interne avancé', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en Contrôle de gestion. Objectifs : comprendre les composantes du contrôle interne, savoir structurer un rapport d''audit de performance en quatre temps (constat, cause, risque, recommandation), savoir calculer et interpréter un sondage d''audit avec extrapolation à une population. Prérequis : notions de contrôle de gestion opérationnel. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs de la séance
+
+Bonjour à toutes et à tous. Ce deuxième cours vidéo du Master 2 porte sur l''audit de la performance et le contrôle interne avancé. Nous allons voir comment le contrôleur de gestion s''articule avec la fonction d''audit interne, comment structurer un rapport d''audit de façon rigoureuse, et comment utiliser les techniques de sondage pour estimer l''ampleur d''un problème sans contrôler l''intégralité d''une population d''opérations.
+
+Plan de la séance : les composantes du contrôle interne ; la structure d''un rapport d''audit de performance ; les techniques de sondage, avec un calcul chiffré complet ; un quiz à mi-séance ; puis un cas pratique complet et l''évaluation finale.
+
+## 05:00 – 18:00 · Le contrôle interne et ses composantes
+
+Le contrôle interne désigne l''ensemble des dispositifs mis en place par une organisation pour maîtriser ses risques et atteindre ses objectifs : fiabilité de l''information financière, efficacité et efficience des opérations, conformité aux lois et règlements. Il repose sur cinq composantes complémentaires, que vous devez savoir citer et illustrer à l''examen.
+
+L''environnement de contrôle, c''est la culture, les valeurs et l''organisation claire des responsabilités dans l''entreprise. L''évaluation des risques, c''est l''identification et la hiérarchisation des risques qui menacent les objectifs. Les activités de contrôle, ce sont les procédures concrètes : séparation des tâches, autorisations, rapprochements. L''information et la communication, c''est la circulation fiable de l''information nécessaire à la prise de décision. Le pilotage, enfin, c''est le suivi régulier du dispositif de contrôle interne lui-même, pour vérifier qu''il reste efficace dans le temps.
+
+Le contrôleur de gestion n''est pas l''auditeur du contrôle interne, mais il en est directement dépendant : la fiabilité des indicateurs qu''il produit (tableaux de bord, analyses d''écarts, ROI, EVA) repose entièrement sur la fiabilité des données issues des processus opérationnels. Un contrôle interne défaillant sur la saisie des ventes, par exemple, produit des indicateurs de performance commerciale trompeurs, même si le calcul de l''indicateur lui-même est parfaitement correct.
+
+## 18:00 – 30:00 · La structure d''un rapport d''audit de performance
+
+L''audit de performance se concentre sur l''efficacité et l''efficience d''un processus : utilise-t-on les ressources de façon économe, les objectifs sont-ils atteints, les procédures permettent-elles de les atteindre de façon fiable ? Un rapport d''audit de performance structure chaque point relevé en quatre temps, que je vous demande de noter et de mémoriser, car c''est très probablement ce qui vous sera demandé à l''examen.
+
+Premièrement, le constat : ce que révèle objectivement le contrôle ou l''observation, de façon factuelle et si possible chiffrée. Deuxièmement, la cause probable : pourquoi cette situation existe, quelle défaillance de procédure ou quel facteur humain l''explique. Troisièmement, le risque associé : quelles conséquences possibles si rien n''est corrigé. Quatrièmement, la recommandation : l''action corrective concrète proposée, idéalement avec un responsable désigné et un délai de mise en œuvre.
+
+Retenez bien ceci : une réponse d''examen qui se limite au constat chiffré, sans cause ni recommandation opérationnelle, est considérée comme incomplète, même si le calcul est juste. Les correcteurs valorisent la capacité à aller jusqu''à la recommandation concrète.
+
+## 30:00 – 50:00 · Les techniques de sondage : calcul complet
+
+Faute de pouvoir contrôler l''intégralité d''une population d''opérations, l''auditeur recourt à des techniques de sondage : il contrôle un échantillon représentatif, mesure un taux d''anomalie dans cet échantillon, puis extrapole ce taux à la population entière.
+
+Faisons le calcul ensemble. Un auditeur contrôle un échantillon de 80 factures parmi une population de 2 400 factures émises sur l''année par une filiale du Groupe Teranga Agro-Industries, et constate 6 anomalies, c''est-à-dire des erreurs de tarification, de remise ou d''imputation comptable. Calculons le taux d''anomalie dans l''échantillon : 6 divisé par 80, soit 0,075, soit 7,5 %. Appliquons maintenant ce taux à la population entière : 0,075 fois 2 400, soit 180 factures potentiellement affectées sur l''année.
+
+Point de vigilance essentiel, que l''examen aime tester : ce chiffre de 180 factures n''est pas un constat certain, c''est une estimation statistique. Elle dépend directement de la représentativité de l''échantillon et de sa taille. Un échantillon trop petit, ou mal constitué, par exemple en ne sélectionnant que les plus grosses factures, produirait une extrapolation peu fiable. C''est pourquoi la méthode de constitution de l''échantillon doit toujours être documentée et justifiée dans le rapport d''audit.
+
+Construisons maintenant le constat d''audit complet pour cet exemple. Constat : un taux d''anomalie de tarification de 7,5 % a été relevé sur l''échantillon, extrapolé à environ 180 factures sur l''année. Cause probable : l''absence de contrôle de second niveau systématique sur les remises commerciales avant facturation. Risque associé : une perte financière cumulée potentiellement significative, et un risque de traitement inéquitable entre clients. Recommandation : un contrôle de validation obligatoire au-delà d''un certain seuil de remise, avec un audit de suivi six mois plus tard.
+
+## 50:00 – 55:00 · Pause active et quiz interactif
+
+Première question : citez les cinq composantes du contrôle interne. Réponse : environnement de contrôle, évaluation des risques, activités de contrôle, information et communication, pilotage.
+
+Deuxième question : quels sont les quatre éléments attendus dans un constat d''audit de performance ? Réponse : constat, cause probable, risque associé, recommandation.
+
+Troisième question : un auditeur contrôle un échantillon de 100 opérations parmi une population de 3 000, et constate 9 anomalies. Calculez le taux d''anomalie et le nombre d''anomalies extrapolées. Réponse : taux = 9 divisé par 100, soit 9 %. Extrapolation = 0,09 fois 3 000, soit 270 opérations.
+
+## 55:00 – 1:18:00 · Cas pratique complet
+
+Prenons un cas pratique complet et nouveau. Un auditeur interne contrôle, pour la filiale Teranga Distribution, un échantillon de 45 bons de livraison parmi une population de 1 350 bons émis sur l''année, et constate 5 anomalies : des écarts entre les quantités livrées mentionnées sur le bon et les quantités effectivement réceptionnées par les clients, signées sans vérification systématique.
+
+Calculons le taux d''anomalie : 5 divisé par 45, soit environ 0,111, soit 11,1 %. Extrapolons à la population : 0,111 fois 1 350, soit environ 150 bons de livraison potentiellement affectés.
+
+Construisons le constat complet. Constat : un taux d''anomalie de 11,1 % a été relevé sur les bons de livraison, extrapolé à environ 150 bons sur l''année. Cause probable : l''absence de contrôle de concordance systématique entre quantités livrées et quantités réceptionnées avant signature du client. Risque associé : des litiges commerciaux avec les clients, une image de fiabilité dégradée, et un risque de pertes financières si des quantités livrées ne sont pas correctement facturées. Recommandation : mettre en place un contrôle de concordance obligatoire avant signature, avec une procédure de double vérification pour les livraisons dépassant un certain volume, et un audit de suivi dans les six mois pour vérifier la baisse du taux d''anomalie.
+
+## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
+
+Récapitulons les points essentiels. Le contrôle interne repose sur cinq composantes complémentaires et conditionne directement la fiabilité des données du contrôle de gestion. Un rapport d''audit de performance structure chaque point en quatre temps : constat, cause probable, risque associé, recommandation. Les techniques de sondage permettent d''extrapoler un taux d''anomalie à une population entière, à condition que l''échantillon soit représentatif, et cette extrapolation reste une estimation statistique, pas une certitude.
+
+Cinq questions pour l''évaluation finale.
+
+Première question : quelle composante du contrôle interne correspond au suivi régulier du dispositif lui-même ? Réponse : le pilotage.
+
+Deuxième question : un auditeur contrôle un échantillon de 40 opérations parmi une population de 1 200, et constate 2 anomalies. Calculez le taux d''anomalie et le nombre d''anomalies extrapolées. Réponse : taux = 2 divisé par 40, soit 5 %. Extrapolation = 0,05 fois 1 200, soit 60 opérations.
+
+Troisième question : pourquoi une réponse d''examen qui se limite au constat chiffré, sans cause ni recommandation, est-elle considérée comme incomplète ? Réponse : parce qu''un rapport d''audit de performance doit permettre à l''organisation d''agir concrètement sur la situation relevée ; sans cause identifiée ni recommandation opérationnelle, le constat reste descriptif et n''apporte pas la valeur ajoutée attendue d''une démarche d''audit.
+
+Quatrième question : pourquoi la méthode de constitution d''un échantillon doit-elle être documentée dans un rapport d''audit ? Réponse : parce que la fiabilité de l''extrapolation dépend directement de la représentativité de l''échantillon, et qu''un échantillon mal constitué produirait une estimation biaisée du taux d''anomalie réel de la population.
+
+Cinquième question : donnez un exemple de risque associé à un taux d''anomalie élevé sur des bons de livraison non vérifiés avant signature du client. Réponse : par exemple un risque de litige commercial avec les clients, ou un risque de pertes financières si des quantités livrées ne sont pas correctement facturées ; toute réponse pertinente et justifiée est acceptée.
+
+Merci pour votre attention, je vous retrouve dans le prochain cours vidéo consacré à la méthodologie du mémoire professionnel et de la soutenance.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Audit de la performance et contrôle interne avancé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et de la soutenance', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en Contrôle de gestion. Objectifs : savoir formuler une problématique de mémoire spécifique et traitable, construire un plan de mémoire rigoureux en trois temps, mener une revue de littérature ou des pratiques existantes de façon honnête et argumentée, préparer la présentation orale de soutenance. Prérequis : aucun prérequis technique de contrôle de gestion, cette séance porte sur la méthode. Matériel : tableau ou diaporama, un exemple de problématique de mémoire.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et enjeux de la séance
+
+Bonjour à toutes et à tous. Ce troisième cours vidéo du Master 2 est d''une nature différente des précédents : nous ne allons pas approfondir une technique de contrôle de gestion, mais la méthode de construction et de défense de votre mémoire professionnel. C''est un exercice qui compte autant, sinon plus, dans votre réussite de l''année que les matières techniques, car il mobilise l''ensemble de votre formation sur un travail personnel et long.
+
+Plan de la séance : formuler une problématique ; construire un plan rigoureux en trois temps ; mener une revue de littérature honnête ; préparer la soutenance orale ; un quiz à mi-séance ; et l''évaluation finale.
+
+## 05:00 – 20:00 · Choisir et formuler une problématique
+
+Le mémoire professionnel part d''une problématique : une question précise à laquelle le mémoire doit répondre de façon argumentée. Une bonne problématique réunit trois qualités. Elle est spécifique : elle porte sur une situation ou un enjeu précis, pas sur un sujet trop vaste. Elle est pertinente : elle correspond à un enjeu réel pour l''entreprise ou le secteur étudié. Elle est traitable : vous disposez réellement des moyens, du temps et de l''accès aux données nécessaires pour y répondre dans le cadre du mémoire.
+
+Prenons un exemple de mauvaise problématique, trop vague : « Le contrôle de gestion dans les entreprises sénégalaises ». C''est un sujet, pas une problématique : il n''y a pas de question précise, et le périmètre est bien trop large pour être traité sérieusement dans un mémoire. Reformulons-la : « Comment une PME sénégalaise du secteur agro-industriel peut-elle mettre en place un contrôle budgétaire simple et adapté à ses moyens, pour mieux maîtriser sa trésorerie ? » Cette version est spécifique (un secteur, un outil précis, un objectif clair), pertinente, et traitable dans le cadre d''un mémoire appuyé sur un cas d''entreprise réel.
+
+Exercice pour vous, à faire en pause sur votre feuille : reformulez la problématique suivante, elle aussi trop vague, pour la rendre spécifique : « La performance globale dans les groupes africains ». Je vous laisse trente secondes avant de proposer une piste de correction. Une reformulation possible : « Comment un groupe agro-industriel sénégalais à deux filiales peut-il construire un indice de performance globale pondéré qui évite le risque de masquage d''une dégradation sociale ou environnementale isolée ? » Vous retrouvez ici une question précise, ancrée dans un cas, et directement reliée aux outils vus en Master 1.
+
+## 20:00 – 38:00 · Construire un plan de mémoire rigoureux
+
+Le plan d''un mémoire professionnel suit une logique en trois temps, que je vous demande de noter précisément. Première partie : le cadre théorique et le contexte, c''est-à-dire la revue des concepts et outils de contrôle de gestion mobilisés, et la présentation du secteur et de l''entreprise étudiée. Deuxième partie : la méthode d''étude retenue (étude de cas, entretiens, analyse de données internes) et les résultats obtenus, avec les preuves et les données chiffrées qui les étayent. Troisième partie : la discussion critique de ces résultats, c''est-à-dire ce qu''ils signifient réellement pour l''entreprise, les limites de l''étude, et les recommandations qui en découlent, avec leurs réserves.
+
+J''insiste particulièrement sur cette troisième partie, car c''est statistiquement la plus faible dans les mémoires d''étudiants. Beaucoup se contentent de décrire leurs résultats sans jamais vraiment les discuter. Or c''est précisément cette capacité de distance critique qui différencie un mémoire de bon niveau d''un mémoire simplement correct. La méthode concrète pour travailler cette partie : après chaque résultat présenté, posez-vous systématiquement trois questions. Qu''est-ce que ce résultat signifie réellement pour l''entreprise étudiée ? Quelles sont les limites de la méthode qui a permis d''obtenir ce résultat ? Et quelles réserves faut-il apporter à toute recommandation qui en découlerait ?
+
+## 38:00 – 50:00 · La revue de la littérature ou des pratiques existantes
+
+Avant de présenter vos propres résultats, un mémoire doit situer son apport par rapport à ce qui existe déjà : des travaux académiques, des référentiels professionnels, ou des pratiques observées dans des entreprises comparables. Cette revue ne doit jamais se limiter à une liste de résumés juxtaposés les uns après les autres : elle doit construire un raisonnement qui identifie ce qui est déjà bien établi, ce qui reste discuté, et la place que votre propre travail vient occuper dans cet ensemble.
+
+Point absolument essentiel, que je veux que vous reteniez sans ambiguïté : vous ne devez jamais inventer de référence ou de citation que vous n''avez pas effectivement consultée. Une référence inventée, si elle est découverte par le jury, même par une vérification rapide, détruit immédiatement la confiance accordée à l''ensemble de votre travail, y compris les parties qui étaient par ailleurs solides. C''est une faute d''intégrité intellectuelle qui n''a pas sa place dans un travail présenté comme personnel et vérifié, et qui peut avoir des conséquences académiques sérieuses.
+
+## 50:00 – 55:00 · Pause active et quiz interactif
+
+Première question : citez les trois qualités attendues d''une bonne problématique de mémoire. Réponse : spécifique, pertinente, traitable.
+
+Deuxième question : quelles sont les trois parties attendues dans le plan d''un mémoire professionnel ? Réponse : cadre théorique et contexte ; méthode et résultats ; discussion critique.
+
+Troisième question : quelles sont les trois questions à se poser systématiquement pour travailler la partie de discussion critique ? Réponse : que signifie ce résultat pour l''entreprise ? quelles sont les limites de la méthode ? quelles réserves pour les recommandations ?
+
+## 55:00 – 1:18:00 · Préparer la soutenance orale
+
+La soutenance est un exercice oral distinct de la rédaction du mémoire. Le temps de présentation est généralement limité, souvent 15 à 20 minutes selon les modalités de votre établissement, ce qui impose de sélectionner l''essentiel plutôt que de résumer l''intégralité du document : la problématique, la méthode en quelques phrases, les deux ou trois résultats les plus significatifs, et les recommandations principales.
+
+La seconde partie de la soutenance, les questions du jury, est souvent celle qui différencie le plus les candidats. Le jury cherche à vérifier que vous maîtrisez réellement votre travail, et pas seulement que vous l''avez récité, en posant des questions sur vos choix méthodologiques, sur les limites de votre étude, ou sur des approfondissements possibles.
+
+Trois attitudes sont à privilégier, notez-les bien. Premièrement, répondre avec précision plutôt que de façon évasive : si vous ne savez pas répondre précisément à une question, il est plus crédible de le reconnaître et de proposer une piste de réflexion que de noyer la réponse dans des généralités. Deuxièmement, assumer les limites de votre propre travail plutôt que de les nier : un bon candidat connaît les faiblesses de son propre mémoire et peut les expliquer sereinement, ce qui rassure le jury sur sa capacité d''analyse critique. Troisièmement, rester calme même face à une question qui déstabilise, en prenant quelques secondes de réflexion avant de répondre plutôt que de répondre dans la précipitation, ce qui conduit souvent à des réponses imprécises ou même contradictoires avec le contenu du mémoire.
+
+Simulons une question de jury typique, pour vous entraîner. Imaginez que le jury vous demande : « Vous avez étudié un seul groupe fictif pour illustrer votre méthode. En quoi vos conclusions seraient-elles différentes avec un groupe ayant trois filiales plutôt que deux ? » Une bonne réponse ne doit ni paniquer, ni éluder : elle doit assumer la limite (un cas à deux filiales ne permet effectivement pas de généraliser directement à des structures plus complexes), puis proposer une piste argumentée (avec trois filiales, les flux de cession interne croisés entre plusieurs paires d''entités rendraient l''arbitrage de la direction générale plus complexe, et mériteraient une étude complémentaire).
+
+## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
+
+Récapitulons. Une bonne problématique est spécifique, pertinente et traitable. Le plan en trois temps structure un mémoire rigoureux, avec une attention particulière à la discussion critique, souvent le point faible à travailler en priorité. La revue de littérature doit construire un raisonnement et ne jamais s''appuyer sur des sources inventées. La soutenance exige de sélectionner l''essentiel dans le temps imparti, et de répondre aux questions du jury avec précision, en assumant les limites de son travail plutôt qu''en les niant.
+
+Cinq questions pour l''évaluation finale.
+
+Première question : pourquoi « Le contrôle de gestion dans les entreprises sénégalaises » n''est-il pas une problématique acceptable pour un mémoire ? Réponse : parce que ce n''est pas une question précise, et que le périmètre est bien trop large pour être traité sérieusement dans le cadre d''un mémoire ; il manque la spécificité et le caractère traitable attendus.
+
+Deuxième question : quelle est la partie du plan la plus souvent faible chez les étudiants, et pourquoi ? Réponse : la discussion critique, par manque d''habitude de prendre de la distance par rapport à ses propres résultats, que l''on a tendance à seulement décrire plutôt qu''à interroger.
+
+Troisième question : pourquoi inventer une référence dans un mémoire est-il particulièrement grave ? Réponse : parce que, si elle est découverte, elle détruit la confiance accordée à l''ensemble du travail, y compris les parties par ailleurs solides, et constitue une faute d''intégrité intellectuelle aux conséquences académiques potentiellement sérieuses.
+
+Quatrième question : face à une question de jury qui vous déstabilise, quelle est la meilleure attitude à adopter ? Réponse : prendre quelques secondes de réflexion avant de répondre, plutôt que de répondre dans la précipitation, et répondre avec précision en assumant, si nécessaire, les limites de son propre travail.
+
+Cinquième question : pourquoi assumer les limites de son propre mémoire rassure-t-il le jury, plutôt que de l''affaiblir ? Réponse : parce que cela démontre une capacité réelle d''analyse critique et une bonne connaissance des limites méthodologiques de son propre travail, ce qui est précisément ce qu''un jury de Master attend d''un candidat, plutôt qu''une présentation artificiellement parfaite et donc peu crédible.
+
+Merci pour votre attention, je vous retrouve dans le dernier cours vidéo de ce Master 2, un atelier pratique de préparation à la soutenance.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et de la soutenance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en Contrôle de gestion. Objectifs : s''entraîner concrètement à la présentation orale d''un mémoire et aux questions du jury, à travers une simulation complète de soutenance commentée. Prérequis : le cours vidéo précédent sur la méthodologie du mémoire. Matériel : tableau ou diaporama, chronomètre.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs de l''atelier
+
+Bonjour à toutes et à tous. Ce quatrième et dernier cours vidéo de votre Master 2 est un atelier pratique : nous allons simuler, pas à pas et de façon commentée, une soutenance complète de mémoire professionnel, de la présentation initiale jusqu''aux questions du jury. L''objectif n''est pas d''apprendre une nouvelle notion de contrôle de gestion, mais de vous entraîner concrètement à l''exercice oral qui vous attend, en observant ce qui fonctionne et ce qui ne fonctionne pas dans une présentation de soutenance.
+
+Le mémoire fictif que nous allons simuler porte sur la problématique suivante, dans l''esprit des cas étudiés cette année : « Comment un groupe agro-industriel sénégalais à deux filiales peut-il fiabiliser son résultat consolidé lorsque la facturation intragroupe fait l''objet d''anomalies détectées par un audit interne ? » Vous reconnaissez ici un sujet qui combine consolidation et audit, les deux matières techniques de cette année.
+
+## 05:00 – 20:00 · Simulation de la présentation initiale (15 minutes chronométrées)
+
+Voici comment une présentation de 15 minutes pourrait être structurée, et je vous invite à noter le minutage indicatif de chaque partie, car le respect du temps imparti est lui-même évalué par le jury.
+
+Minutes 0 à 2 : présentation de la problématique et de son intérêt. « Mon mémoire porte sur la fiabilisation du résultat consolidé d''un groupe à deux filiales, lorsque la facturation intragroupe de prestations de transport présente des anomalies détectées par un audit interne. Cette question est importante car elle relie deux enjeux normalement traités séparément : la consolidation comptable et le contrôle interne, alors que, comme je vais le montrer, ils s''influencent directement. »
+
+Minutes 2 à 5 : présentation rapide du cadre et de la méthode. « Je me suis appuyé sur un cas de groupe à deux filiales, avec une analyse de la méthode de consolidation par intégration globale et des techniques de sondage d''audit. J''ai construit un exemple chiffré complet pour illustrer le mécanisme central de mon mémoire. »
+
+Minutes 5 à 11 : présentation des résultats principaux, avec des chiffres clés. « Mon analyse montre que, dans le cas étudié, un taux d''anomalie de 8 % sur la facturation intragroupe de transport peut remettre en cause la fiabilité du montant de marge interne éliminé en consolidation, ici 14 500 000 FCFA, et donc la fiabilité du résultat consolidé retraité, qui s''élevait à 150 500 000 FCFA dans mon exemple. »
+
+Minutes 11 à 14 : discussion critique et recommandations. « Ce résultat montre que la consolidation et l''audit interne ne devraient jamais être traités comme deux chantiers indépendants dans un groupe. Ma recommandation principale est de coordonner le renforcement du contrôle interne sur la facturation intragroupe avec la révision du processus de retraitement comptable en consolidation. La limite principale de mon étude est qu''elle repose sur un seul cas illustratif, et mériterait d''être confrontée à des données réelles sur plusieurs groupes pour en vérifier la généralité. »
+
+Minutes 14 à 15 : conclusion et transition vers les questions. « Je reste à votre disposition pour toute question. »
+
+## 20:00 – 25:00 · Commentaire sur la présentation simulée
+
+Qu''est-ce qui fonctionne bien dans cette présentation ? D''abord, le respect strict du minutage : chaque partie a une durée indicative claire, et le candidat ne cherche pas à tout dire, mais à sélectionner l''essentiel. Ensuite, la présence de chiffres clés précis (8 %, 14 500 000 FCFA, 150 500 000 FCFA) plutôt que de formulations vagues, ce qui montre une maîtrise réelle du travail. Enfin, et c''est le point le plus important, la discussion critique assume explicitement une limite de l''étude (un seul cas illustratif) plutôt que de la cacher, ce qui, nous l''avons vu dans le cours précédent, rassure le jury sur la capacité d''analyse critique du candidat plutôt que de l''affaiblir.
+
+## 25:00 – 55:00 · Simulation des questions du jury
+
+Passons maintenant à la partie la plus formatrice de cet atelier : la simulation des questions du jury, avec un commentaire après chaque question pour analyser ce qui fait une bonne réponse.
+
+Question du jury numéro un : « Vous présentez un taux d''anomalie de 8 % extrapolé à 120 ordres de mission sur l''année. Comment avez-vous vérifié que votre échantillon de 50 ordres était représentatif ? » Bonne réponse attendue : « J''ai constitué mon échantillon par tirage aléatoire parmi la population totale de 1 500 ordres de mission, en veillant à couvrir l''ensemble de l''année plutôt qu''une seule période, afin d''éviter un biais saisonnier. Je reconnais cependant que la taille de l''échantillon, 50 sur 1 500, reste limitée, et qu''un échantillon plus large aurait renforcé la fiabilité statistique de mon extrapolation. » Remarquez que cette réponse ne nie pas la limite, mais l''assume avec précision.
+
+Question du jury numéro deux : « Si le pourcentage de détention du groupe dans la filiale passait de 70 % à 100 %, qu''est-ce qui changerait concrètement dans votre analyse ? » Bonne réponse attendue : « La ligne des intérêts minoritaires disparaîtrait des comptes consolidés, puisque le groupe détiendrait l''intégralité du capital. Le mécanisme d''élimination de la marge interne resterait identique et tout aussi nécessaire, mais la répartition du résultat retraité entre groupe et minoritaires n''aurait plus lieu d''être : l''intégralité de ce résultat reviendrait au groupe. » Cette réponse montre une maîtrise technique précise, mobilisée immédiatement sur une variante du cas, ce qui est exactement ce que recherche le jury.
+
+Question du jury numéro trois, plus déstabilisante : « Votre recommandation de coordonner contrôle interne et consolidation me semble assez générale. Concrètement, par quoi l''entreprise devrait-elle commencer dans les trois premiers mois ? » Bonne réponse attendue, après quelques secondes de réflexion assumées à voix haute : « C''est une remarque pertinente. Concrètement, je recommanderais de commencer par un contrôle de cohérence automatisé entre le carnet de bord des chauffeurs et la facturation intragroupe, car c''est la cause racine identifiée dans mon audit, avant même de revoir le processus de consolidation lui-même, qui ne peut être fiabilisé que si la donnée source l''est déjà. » Cette réponse transforme une critique en occasion de préciser et d''approfondir sa recommandation, plutôt que de se contenter de la répéter.
+
+## 55:00 – 1:05:00 · Pause active et quiz interactif
+
+Première question : pourquoi le respect strict du minutage d''une présentation de soutenance est-il lui-même un critère d''évaluation ? Réponse : parce qu''il démontre la capacité du candidat à sélectionner l''essentiel de son travail et à communiquer de façon structurée, des compétences professionnelles attendues d''un contrôleur de gestion, au-delà du seul contenu technique.
+
+Deuxième question : face à une question de jury qui pointe une limite réelle du travail, quelle attitude est la plus crédible ? Réponse : reconnaître explicitement la limite plutôt que de la nier, puis si possible indiquer comment elle pourrait être traitée dans un travail ultérieur ou avec davantage de moyens.
+
+Troisième question : pourquoi mobiliser des chiffres précis dans une présentation orale est-il préférable à des formulations vagues ? Réponse : parce que cela démontre une maîtrise réelle et concrète du travail réalisé, et facilite la discussion avec le jury sur des bases factuelles plutôt que des généralités difficiles à questionner ou à défendre précisément.
+
+## 1:05:00 – 1:25:00 · Entraînement individuel guidé
+
+Je vous propose maintenant un exercice d''entraînement individuel. Prenez votre propre sujet de mémoire, ou le sujet type que vous avez étudié dans ce Master 2, et rédigez, en cinq minutes, les deux premières minutes de votre propre présentation de soutenance : la problématique et son intérêt. Puis, dans un second temps de cinq minutes, anticipez une question de jury probable sur votre travail, et rédigez une réponse qui assume une limite réelle plutôt que de la nier.
+
+Cet exercice, que je vous encourage à refaire plusieurs fois avant votre véritable soutenance, avec si possible un camarade ou un enseignant qui joue le rôle du jury, est la meilleure préparation pratique que je puisse vous recommander : la maîtrise d''une soutenance s''acquiert par la répétition, pas par la seule lecture de conseils méthodologiques.
+
+## 1:25:00 – 1:30:00 · Synthèse finale et évaluation
+
+Pour conclure ce Master 2 : une bonne soutenance combine une présentation structurée et chronométrée, des chiffres précis plutôt que des généralités, et une capacité à transformer les questions critiques du jury en occasions de préciser et d''approfondir son travail, plutôt qu''à les vivre comme des attaques à repousser.
+
+Cinq questions pour l''évaluation finale de ce cours vidéo et de ce Master 2.
+
+Première question : combien de temps dure généralement la présentation initiale d''une soutenance de mémoire professionnel ? Réponse : généralement 15 à 20 minutes, selon les modalités propres à chaque établissement, qu''il convient toujours de vérifier précisément à l''avance.
+
+Deuxième question : quelle est la meilleure attitude face à une question de jury qui révèle une limite réelle de votre travail ? Réponse : reconnaître explicitement cette limite avec précision, plutôt que de la nier ou de l''éluder, et si possible proposer une piste pour la traiter dans un travail ultérieur.
+
+Troisième question : pourquoi est-il recommandé de s''entraîner à la soutenance avec un camarade ou un enseignant jouant le rôle du jury ? Réponse : parce que la maîtrise de cet exercice oral s''acquiert par la répétition en conditions proches du réel, et qu''un retour extérieur permet d''identifier des formulations faibles ou des questions auxquelles on n''avait pas pensé à l''avance.
+
+Quatrième question : dans la simulation étudiée, quelle était la cause racine identifiée pour le taux d''anomalie sur la facturation intragroupe de transport ? Réponse : l''absence de contrôle de cohérence systématique entre le carnet de bord des chauffeurs et la facturation intragroupe avant validation.
+
+Cinquième question : pourquoi mobiliser des chiffres précis issus de son propre travail, plutôt que des généralités, renforce-t-il la crédibilité d''une présentation de soutenance ? Réponse : parce que cela démontre une maîtrise concrète et vérifiable du travail réalisé, et permet au jury d''évaluer la rigueur réelle de la démarche plutôt qu''une présentation superficielle difficile à distinguer d''un travail mal maîtrisé.
+
+Merci à toutes et à tous pour votre participation à ce Master 2 en Contrôle de gestion. Bon courage pour vos examens et votre soutenance.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-cg-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance');
+
 -- Cours : Master 1 Comptabilité : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'mas-compta-m1', (select id from public.levels where name = 'Master 1'), null, 'Comptabilité', 'Master 1 Comptabilité : réussir ses examens', 'Préparation aux examens de Master 1 en Comptabilité : consolidation approfondie des comptes de groupe, normes IFRS et comparaison avec le SYSCOHADA révisé, fiscalité internationale et prix de transfert. Études de cas d''entreprises sénégalaises fictives, exercices corrigés et sujet type d''examen. Public : étudiants de Master 1 ayant validé une Licence en Comptabilité (SYSCOHADA, droit OHADA, sociétés, fiscalité, états financiers, consolidation simple, audit).', true, 741
@@ -2071,540 +2621,3 @@ Réponse : identifier d''abord la question économétrique et les données, anal
 Bon courage à toutes et à tous pour la suite de votre préparation et vos examens de Master 1.', 'video', 90, false, 90
 from public.courses c where c.slug = 'mas-eco-m1'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — cas pratique filé');
-
--- Cours : Droit des affaires Master 1 : réussir ses examens
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-droit-m1', (select id from public.levels where name = 'Master 1'), null, 'Droit des affaires', 'Droit des affaires Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en droit des affaires : gouvernance et groupes de sociétés, contrats d''affaires et concurrence, arbitrage et modes alternatifs de résolution des litiges. Public : étudiants de Master 1 ayant validé une Licence en droit des affaires (introduction au droit, obligations, sociétés OHADA, droit du travail de base).', true, 771
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 1 en droit des affaires', '## Objectifs de la leçon
-
-Le Master 1 en droit des affaires marque un changement de registre par rapport à la Licence. Vous ne vous contentez plus de restituer des mécanismes juridiques : on attend de vous une analyse critique, la capacité à qualifier des montages complexes (groupes de sociétés, contrats d''affaires sophistiqués, clauses de résolution des litiges) et à argumenter en incertitude, c''est-à-dire lorsque plusieurs qualifications juridiques sont défendables. Cette leçon pose le cadre de l''année : les attentes des examinateurs, les matières au programme, la méthode de travail adaptée au Master, et un plan de révision réaliste sur six semaines.
-
-## Ce qui change par rapport à la Licence
-
-En Licence 3, vous avez étudié le droit des sociétés commerciales OHADA dans sa dimension statutaire (constitution, organes, dissolution) et le droit des sûretés et des procédures collectives. En Master 1, l''approche se déplace vers la gouvernance et les groupes de sociétés : comment une société mère pilote ses filiales, comment se contrôlent les conventions passées entre une société et ses dirigeants ou actionnaires significatifs (les conventions dites réglementées), et comment les contrats d''affaires organisent des relations économiques durables plutôt que de simples échanges ponctuels. On y ajoute les modes alternatifs de résolution des litiges, en particulier l''arbitrage, essentiel dans les relations d''affaires internationales et régionales.
-
-L''examinateur de Master ne demande plus seulement « quelle est la règle ? » mais « quelle qualification retenir face à des faits ambigus, et avec quelles conséquences pratiques pour l''entreprise ? ». Un cas pratique de Master mêle souvent plusieurs branches du droit (sociétés, contrats, concurrence, arbitrage) dans une même situation d''entreprise, et exige une hiérarchisation des arguments plutôt qu''une récitation.
-
-## Les matières de l''année
-
-Le programme de Master 1 en droit des affaires, tel que couvert par ce cours, s''organise autour de trois axes :
-
-- Droit des sociétés approfondi et gouvernance : groupes de sociétés, notion de contrôle, conventions réglementées, responsabilité des dirigeants dans les montages complexes.
-- Droit des contrats d''affaires et de la concurrence : clauses complexes (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité) et principes du droit de la concurrence applicables aux pratiques anticoncurrentielles.
-- Arbitrage et modes alternatifs de résolution des litiges : logique de la clause compromissoire, déroulement d''un arbitrage, rôle de la Cour commune de justice et d''arbitrage (CCJA) de l''OHADA dans le paysage régional, médiation et conciliation.
-
-Ces trois matières ne sont pas étanches : un contrat d''affaires entre deux sociétés d''un même groupe peut relever à la fois du droit des conventions réglementées, du droit de la concurrence s''il restreint l''accès au marché, et contenir une clause d''arbitrage. C''est précisément cette transversalité que les examens de Master évaluent.
-
-## Méthode de travail avancée
-
-Trois outils structurent le travail en Master :
-
-- L''étude de cas complexe : partir d''un scénario d''entreprise (souvent sénégalais ou ouest-africain, fictif) comportant plusieurs acteurs, plusieurs contrats et un ou plusieurs litiges potentiels. La méthode consiste à cartographier les parties, les actes juridiques en cause, puis à qualifier chaque élément avant de répondre à la question posée.
-- Le business case : analyse d''une décision d''entreprise (restructuration de groupe, négociation d''un contrat-cadre, choix d''un mode de résolution des litiges) en croisant l''angle juridique et l''angle économique. Il ne s''agit pas seulement de dire ce qui est licite, mais ce qui est opportun pour l''entreprise, compte tenu des risques.
-- La revue de littérature ciblée : savoir situer une question dans les débats doctrinaux (sans inventer de référence précise), reconnaître les tendances d''évolution du droit des affaires OHADA, et construire un raisonnement nuancé plutôt qu''une réponse binaire.
-
-Pour chaque matière, construisez une fiche de synthèse avec : définitions clés, conditions d''application, effets juridiques, et un exemple d''entreprise type. Complétez-la par une liste de points de vigilance (erreurs fréquentes de qualification).
-
-## Plan de révision sur six semaines
-
-- Semaines 1 et 2 : droit des sociétés approfondi et gouvernance. Reprendre les bases de Licence 3 (sociétés commerciales OHADA) puis construire les fiches sur les groupes et les conventions réglementées.
-- Semaines 3 et 4 : droit des contrats d''affaires et de la concurrence. Travailler les clauses complexes à partir de modèles de contrats commentés, puis les principes de la concurrence.
-- Semaine 5 : arbitrage et modes alternatifs de résolution des litiges. Comprendre la logique de la clause compromissoire et le rôle de la CCJA en général, sans entrer dans le détail procédural précis qui relève d''un cours spécialisé.
-- Semaine 6 : entraînement sur sujets types, cas transversaux, et relecture des fiches. Prévoir au moins deux simulations d''examen en temps limité (3 heures), avec autocorrection stricte.
-
-Chaque semaine doit se terminer par un exercice écrit complet (pas seulement une lecture), car la compétence évaluée en Master est la rédaction argumentée, pas la seule connaissance.
-
-## Points clés à retenir
-
-- Le Master exige une analyse transversale et critique, pas une récitation de règles.
-- Les trois matières de l''année (sociétés/gouvernance, contrats d''affaires/concurrence, arbitrage/MARL) s''articulent souvent dans un même cas pratique d''examen.
-- La méthode de l''étude de cas complexe et du business case doit être pratiquée dès le début de la révision, pas seulement la veille de l''examen.
-- Aucune donnée chiffrée officielle (taux, seuils, numéros d''articles) ne doit être mémorisée comme certaine sans vérification du texte en vigueur : utilisez les valeurs de ce cours comme illustrations pédagogiques.
-
-## Exercices pratiques
-
-1. Listez les trois matières avancées du programme de M1 en droit des affaires et, pour chacune, indiquez une notion de Licence 3 sur laquelle elle s''appuie directement.
-2. Expliquez en cinq lignes la différence entre une approche « récitation de la règle » et une approche « qualification en incertitude », à partir d''un exemple au choix.
-3. Construisez le squelette d''une fiche de synthèse (rubriques, sans contenu) que vous utiliserez pour la matière « gouvernance et groupes de sociétés ».
-4. Proposez un planning hebdomadaire personnel sur six semaines, en adaptant celui proposé ci-dessus à vos contraintes (travail, stage, autres matières).
-5. Citez deux raisons pour lesquelles un même cas pratique d''examen de Master peut mobiliser à la fois le droit des sociétés, le droit des contrats et l''arbitrage.
-
-## Corrigé
-
-1. Gouvernance et groupes de sociétés s''appuie sur le droit des sociétés commerciales OHADA (L3) ; contrats d''affaires et concurrence s''appuie sur le droit des obligations (contrat, L1/L2) et le droit commercial général OHADA (L2) ; arbitrage et MARL s''appuie sur les institutions et les bases de la procédure vues en introduction au droit (L1) ainsi que sur le droit commercial.
-2. La récitation de la règle consiste à énoncer une condition ou une définition sans la rattacher aux faits (« l''article prévoit que... »). La qualification en incertitude consiste à confronter des faits ambigus à plusieurs qualifications possibles et à argumenter le choix retenu, par exemple déterminer si un accord entre deux filiales constitue une convention réglementée ou un contrat de droit commun selon la qualité des parties signataires.
-3. Exemple de squelette : définition de la notion, conditions d''application, procédure ou formalisme associé, sanctions en cas de non-respect, exemple d''entreprise type, points de vigilance.
-4. Le planning doit respecter la logique progressive (sociétés d''abord, puis contrats/concurrence, puis arbitrage, puis entraînement) mais peut être compressé ou étendu selon le temps disponible ; l''essentiel est de conserver une semaine complète d''entraînement en fin de parcours.
-5. D''une part, les opérations d''affaires réelles combinent rarement une seule branche du droit : un contrat entre sociétés d''un même groupe touche à la fois à la gouvernance et au droit des contrats. D''autre part, les examens de Master visent à vérifier la capacité à transférer des connaissances d''une matière à l''autre, ce qui est précisément ce que travaille l''étude de cas transversale.', 'texte', 40, true, 10
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en droit des affaires');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Droit des sociétés approfondi et gouvernance : groupes de sociétés et conventions réglementées', '## Objectifs de la leçon
-
-Cette leçon approfondit le droit des sociétés au-delà du cadre statutaire vu en Licence : elle traite des groupes de sociétés et de la gouvernance, c''est-à-dire des règles qui encadrent le pouvoir au sein d''une société et entre sociétés liées. Deux notions structurent la matière : le contrôle (qui permet de qualifier un ensemble de sociétés comme un groupe) et les conventions réglementées (les contrats passés entre une société et des personnes qui y exercent une influence, qui font l''objet d''un contrôle renforcé pour éviter les conflits d''intérêts).
-
-## La notion de groupe de sociétés
-
-Un groupe de sociétés n''est pas, en droit OHADA, une personne morale unique : chaque société conserve sa personnalité juridique propre, son patrimoine et sa responsabilité. Le groupe est une réalité économique organisée autour d''un lien de contrôle, que le droit encadre plutôt que de créer un sujet de droit nouveau.
-
-Le contrôle est le pouvoir de déterminer en fait les décisions en assemblée générale, que ce pouvoir résulte d''une détention majoritaire du capital, d''un accord entre associés, ou de la capacité à nommer ou révoquer la majorité des dirigeants. On distingue :
-
-- Le contrôle de droit, qui résulte de la détention d''une majorité des droits de vote.
-- Le contrôle de fait, qui résulte d''une influence déterminante sans détention majoritaire, par exemple lorsqu''un actionnaire minoritaire dispose en pratique de la majorité dans les assemblées en raison de la dispersion du capital des autres actionnaires.
-- Le contrôle conjoint, lorsque plusieurs associés exercent ensemble le pouvoir de décision en vertu d''un accord.
-
-Illustration (cas fictif pour l''exemple) : la société Teranga Industries SA détient 55 % du capital de sa filiale Sahel Logistique SARL. Elle exerce un contrôle de droit. Si elle ne détenait que 30 % du capital, mais que les 70 % restants étaient répartis entre douze actionnaires dispersés n''agissant jamais ensemble, elle pourrait néanmoins exercer un contrôle de fait si elle obtient systématiquement la majorité en assemblée.
-
-## Les conséquences juridiques du contrôle
-
-Le contrôle emporte plusieurs conséquences pratiques qu''il faut savoir repérer dans un cas pratique :
-
-- Comptes consolidés : une société mère qui contrôle des filiales peut devoir établir des comptes consolidés présentant le groupe comme une seule entité économique, sans remettre en cause l''autonomie juridique de chaque société.
-- Obligations d''information renforcées entre sociétés liées, notamment lors d''opérations significatives (cessions d''actifs importants, garanties données par une filiale au profit de sa mère).
-- Vigilance accrue sur les conventions entre sociétés liées, qui peuvent dissimuler un transfert de valeur au détriment d''une filiale minoritaire (prix de transfert non justifiés économiquement).
-
-## Les conventions réglementées
-
-Une convention réglementée est un contrat conclu entre une société et une personne qui exerce une influence sur elle : un dirigeant, un actionnaire significatif, ou une société avec laquelle ces personnes ont elles-mêmes des liens. L''idée directrice est simple : lorsque la même personne se trouve de part et d''autre d''un contrat, le risque de conflit d''intérêts justifie un contrôle procédural renforcé, sans pour autant interdire la convention, qui peut être parfaitement légitime économiquement.
-
-La logique procédurale, de façon générale, repose sur trois temps :
-
-- L''information préalable des organes compétents (conseil d''administration ou organe équivalent) avant ou dès la conclusion de la convention, lorsque la personne intéressée ne peut prendre seule la décision.
-- L''autorisation ou, selon les cas, la ratification par l''organe compétent, la personne intéressée ne participant pas au vote sur sa propre convention.
-- L''information de l''assemblée générale des associés, qui peut statuer sur les conventions et, le cas échéant, en tirer les conséquences si elles se révèlent défavorables à la société.
-
-Les conventions dites « courantes », conclues à des conditions normales (c''est-à-dire comparables à celles pratiquées avec des tiers indépendants), échappent en principe à ce formalisme renforcé, car le risque de conflit d''intérêts y est réputé faible. La qualification « courante et à conditions normales » est souvent au cœur des cas pratiques : il s''agit de comparer les conditions du contrat litigieux à celles du marché.
-
-Illustration chiffrée (fictive pour l''exemple) : le directeur général de Sahel Logistique SARL est également propriétaire à titre personnel d''un entrepôt qu''il loue à la société pour 3 000 000 FCFA par mois. Si le prix de marché pour un entrepôt comparable dans la même zone est de 1 800 000 FCFA par mois, l''écart de 1 200 000 FCFA par mois (soit 14 400 000 FCFA sur l''année) constitue un indice fort que la convention n''est pas conclue à des conditions normales, ce qui justifie son traitement comme convention réglementée, avec les conséquences en cas d''absence d''autorisation (responsabilité éventuelle du dirigeant, voire nullité dans certains cas).
-
-## Sanctions en cas de non-respect du formalisme
-
-Les conséquences générales à envisager, selon les circonstances et sans préjudice du texte applicable qu''il faut toujours vérifier, sont les suivantes :
-
-- La responsabilité civile du dirigeant qui a conclu la convention sans l''autorisation requise, s''il en résulte un préjudice pour la société.
-- La possibilité, selon la gravité, que la convention soit annulée si elle a causé un préjudice imputable à l''absence d''autorisation.
-- Un risque réputationnel et de gouvernance, notamment vis-à-vis des partenaires financiers.
-
-## Cas d''entreprise : groupe Baobab Négoce
-
-La société Baobab Négoce SA, basée à Dakar, contrôle à 70 % sa filiale Baobab Transit SARL, spécialisée dans le transport de marchandises. Le président de Baobab Négoce SA, M. Ndiaye, est également actionnaire à 40 % d''une société tierce, Rapid Fret SARL, qui fournit des prestations de transport sous-traité à Baobab Transit SARL pour un montant annuel de 45 000 000 FCFA. Les tarifs pratiqués par Rapid Fret SARL sont supérieurs de 20 % à ceux du marché constatés chez deux autres sous-traitants comparables.
-
-Analyse : le contrat constitue potentiellement une convention réglementée, car M. Ndiaye, dirigeant de la société mère, a un intérêt personnel significatif (40 %) dans le cocontractant. Le prix de marché théorique est de 45 000 000 ÷ 1,20 = 37 500 000 FCFA, soit un surcoût de 7 500 000 FCFA, ce qui écarte la qualification de convention courante. L''autorisation préalable de l''organe compétent aurait dû être respectée ; à défaut, la responsabilité de M. Ndiaye pourrait être recherchée pour ce préjudice.
-
-## Points clés à retenir
-
-- Le groupe n''a pas de personnalité juridique propre ; chaque société reste autonome, mais le contrôle emporte des obligations spécifiques.
-- Le contrôle peut être de droit, de fait, ou conjoint ; il se caractérise en fait, pas seulement en pourcentage de capital.
-- Une convention réglementée se définit par la qualité des parties (lien d''influence), pas par son objet.
-- Les conventions courantes à conditions normales échappent au formalisme renforcé ; la comparaison au prix de marché est l''outil clé.
-- Vérifiez toujours le texte en vigueur pour les règles précises de majorité, de délai et de sanction : les mécanismes exposés ici sont généraux et pédagogiques.
-
-## Exercices pratiques
-
-1. Définissez le contrôle de droit et le contrôle de fait, et donnez un exemple distinct pour chacun.
-2. Pourquoi une convention « courante et à conditions normales » échappe-t-elle en principe au formalisme renforcé des conventions réglementées ?
-3. Un administrateur d''une société vend à celle-ci un véhicule professionnel à un prix identique à celui pratiqué par un concessionnaire pour un véhicule comparable. Cette convention doit-elle être qualifiée de réglementée ? Justifiez.
-4. Cas pratique : la société Fouta Agro SA contrôle à 60 % sa filiale Fouta Semences SARL. Le directeur général de Fouta Agro SA, actionnaire à 25 % d''une société de transport Express Nord SARL, fait conclure par Fouta Semences SARL un contrat de transport annuel de 30 000 000 FCFA avec Express Nord SARL, alors que le prix de marché pour une prestation comparable serait de 24 000 000 FCFA. Qualifiez la situation et chiffrez l''écart par rapport au marché.
-5. Quelles sont, de façon générale, les trois étapes procédurales associées au contrôle d''une convention réglementée ?
-6. En reprenant le cas Baobab Négoce ci-dessus, indiquez quel organe aurait dû autoriser préalablement le contrat avec Rapid Fret SARL.
-
-## Corrigé
-
-1. Le contrôle de droit résulte de la majorité des droits de vote (ex. 55 % du capital). Le contrôle de fait résulte d''une influence déterminante sans majorité, par exemple un actionnaire à 30 % obtenant systématiquement la majorité en assemblée du fait de la dispersion du capital restant.
-2. Parce que le risque de conflit d''intérêts est réputé faible lorsque les conditions sont identiques à celles négociées avec un tiers indépendant : l''intérêt personnel ne se traduit alors par aucun avantage anormal.
-3. Non, en principe : si le prix est identique au marché, la convention est courante et à conditions normales, même si l''administrateur a un intérêt personnel dans l''opération.
-4. L''écart de prix est de 30 000 000 − 24 000 000 = 6 000 000 FCFA, soit 25 % au-dessus du marché. Le lien (directeur général actionnaire à 25 %) et cet écart écartent la qualification de convention courante : autorisation préalable requise.
-5. Information préalable de l''organe compétent, autorisation sans participation au vote de l''intéressé, puis information de l''assemblée générale.
-6. Le conseil d''administration de Baobab Transit SARL aurait dû autoriser le contrat. À défaut, et si le préjudice (7 500 000 FCFA) est démontré, la responsabilité de M. Ndiaye pourrait être engagée.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des sociétés approfondi et gouvernance : groupes de sociétés et conventions réglementées');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Droit des contrats d''affaires et de la concurrence : clauses complexes et pratiques anticoncurrentielles', '## Objectifs de la leçon
-
-Cette leçon traite des contrats d''affaires sophistiqués, c''est-à-dire des contrats qui organisent une relation économique durable entre entreprises (distribution, approvisionnement, partenariat industriel, cession de participations) et qui comportent des clauses complexes dont la rédaction et l''interprétation exigent une maîtrise fine. Elle introduit ensuite les principes généraux du droit de la concurrence applicables aux pratiques anticoncurrentielles, sans entrer dans le détail procédural d''une autorité de concurrence précise.
-
-## Les clauses complexes des contrats d''affaires
-
-### La clause d''exclusivité
-
-La clause d''exclusivité engage une partie (souvent un fournisseur ou un distributeur) à ne pas contracter avec des concurrents de son partenaire, en contrepartie d''avantages (garantie de débouchés, investissement commercial). Elle doit être distinguée selon qu''elle est unilatérale (seule une partie est liée) ou réciproque. Sa validité dépend généralement de sa durée, de son champ géographique et de la proportionnalité entre la contrainte imposée et la contrepartie obtenue : une exclusivité trop large, trop longue, ou sans contrepartie réelle, peut être requalifiée ou jugée abusive, en particulier si elle a pour effet de restreindre significativement la concurrence sur un marché.
-
-### La clause de non-concurrence
-
-Elle interdit à une partie (souvent le cédant d''un fonds de commerce ou d''actions, ou un ancien partenaire) d''exercer une activité concurrente pendant une durée et sur un territoire déterminés après la fin du contrat. Pour être valable, elle doit généralement être limitée dans le temps, dans l''espace, et proportionnée à l''intérêt légitime qu''elle protège (éviter que le cédant ne récupère immédiatement la clientèle qu''il vient de céder, par exemple). Une clause de non-concurrence de dix ans sur l''ensemble du territoire national, sans lien avec l''activité réellement cédée, serait un exemple d''excès susceptible d''être sanctionné.
-
-### La clause d''earn-out
-
-Fréquente dans les cessions d''entreprises, la clause d''earn-out prévoit qu''une partie du prix de cession n''est payée qu''après la réalisation d''objectifs futurs (chiffre d''affaires, résultat) sur une période définie après la cession. Elle permet de concilier les attentes d''un cédant optimiste sur l''avenir de son entreprise et la prudence d''un acquéreur qui veut limiter son risque.
-
-Illustration chiffrée (fictive pour l''exemple) : la cession des actions de Teranga Agro-Transformation SARL est fixée à un prix de base de 200 000 000 FCFA, complété par un earn-out égal à 10 % du chiffre d''affaires additionnel réalisé au-delà de 150 000 000 FCFA sur les deux exercices suivant la cession, plafonné à 40 000 000 FCFA. Si le chiffre d''affaires cumulé des deux exercices atteint 230 000 000 FCFA, l''earn-out théorique serait de 10 % × (230 000 000 − 150 000 000) = 10 % × 80 000 000 = 8 000 000 FCFA, bien en-deçà du plafond ; le prix total payé serait donc de 208 000 000 FCFA.
-
-### La clause de hardship (imprévision)
-
-Elle permet à une partie de demander une renégociation du contrat lorsque survient un changement de circonstances imprévisible lors de la conclusion, qui rend l''exécution excessivement onéreuse, sans pour autant rendre l''exécution impossible (ce qui relèverait de la force majeure). La clause de hardship organise par avance la procédure de renégociation (délai, méthode, recours à un tiers en cas d''échec), évitant que les parties ne restent bloquées sur l''alternative brutale entre exécuter à perte ou rompre le contrat.
-
-Illustration : un contrat d''approvisionnement agricole fixe un prix pour trois ans. Une sécheresse exceptionnelle double le coût d''achat pour le fournisseur. Avec une clause de hardship, il peut demander une renégociation ; sans elle, il doit en principe exécuter aux conditions initiales, sauf à démontrer une impossibilité (force majeure), plus difficile à établir qu''une simple aggravation du coût.
-
-### La clause limitative de responsabilité
-
-Elle plafonne, par avance, le montant des dommages-intérêts dus en cas de manquement contractuel, souvent en pourcentage du prix du contrat. Valable entre professionnels, elle perd son effet en cas de faute particulièrement grave, et ne peut vider l''obligation essentielle de toute portée réelle.
-
-## Principes généraux du droit de la concurrence
-
-Le droit de la concurrence vise à protéger le fonctionnement concurrentiel des marchés, dans l''intérêt des entreprises et des consommateurs. En Master 1, il convient de connaître les grandes catégories de pratiques anticoncurrentielles, sans entrer dans le détail procédural d''une autorité déterminée (national ou communautaire), qui relève d''un enseignement spécialisé.
-
-- Les ententes anticoncurrentielles : accords ou pratiques concertées entre entreprises concurrentes qui ont pour objet ou pour effet de restreindre la concurrence, par exemple une fixation concertée des prix, une répartition des marchés ou des clients, ou une limitation concertée de la production.
-- L''abus de position dominante : le fait, pour une entreprise qui détient une position dominante sur un marché (c''est-à-dire la capacité de s''y comporter indépendamment de ses concurrents et de ses clients dans une mesure appréciable), d''exploiter cette position de façon abusive, par exemple en imposant des prix excessifs, en pratiquant des prix d''éviction destinés à exclure un concurrent, ou en imposant des conditions commerciales discriminatoires sans justification objective.
-- Les pratiques restrictives dans les relations contractuelles verticales (entre un fournisseur et un distributeur, par exemple), qui peuvent être anticoncurrentielles lorsqu''elles ont pour effet de cloisonner les marchés de façon excessive, au-delà de ce qui est nécessaire pour organiser légitimement un réseau de distribution.
-
-Le lien avec les clauses complexes étudiées plus haut est direct : une clause d''exclusivité très large entre un fournisseur dominant et l''ensemble de ses distributeurs peut, selon son ampleur et ses effets, être analysée comme une pratique restrictive de concurrence, alors que la même clause entre deux acteurs de taille modeste, sur un marché très concurrentiel, pose beaucoup moins de difficulté.
-
-## Cas d''entreprise : réseau de distribution Sahel Boissons
-
-Sahel Boissons SA, producteur de boissons basé à Thiès, conclut avec quinze distributeurs régionaux des contrats comportant une clause d''exclusivité réciproque de dix ans, interdisant à chaque distributeur de vendre des boissons concurrentes et à Sahel Boissons SA de vendre à d''autres distributeurs dans la même zone. Sahel Boissons SA détient 65 % du marché national des boissons gazeuses.
-
-Analyse : la durée de dix ans et la position de Sahel Boissons SA sur le marché (65 %, ce qui peut constituer une position dominante selon les critères du marché pertinent) sont des facteurs de risque. Une clause d''exclusivité de cette ampleur, appliquée à l''ensemble d''un réseau de distribution par une entreprise en position dominante, peut avoir pour effet de verrouiller durablement l''accès au marché pour des concurrents potentiels, ce qui est caractéristique d''une pratique susceptible d''être qualifiée d''abus si elle ne répond à aucune justification objective suffisante (investissements spécifiques des distributeurs à amortir, par exemple). Une analyse rigoureuse comparerait la durée et l''ampleur de l''exclusivité aux standards du secteur et à la justification économique avancée par Sahel Boissons SA.
-
-## Points clés à retenir
-
-- Chaque clause complexe (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité) répond à une logique économique propre qu''il faut identifier avant de juger de sa validité.
-- La validité des clauses restrictives de liberté (exclusivité, non-concurrence) dépend généralement de leur proportionnalité : durée, champ géographique, contrepartie.
-- Les pratiques anticoncurrentielles se répartissent en ententes, abus de position dominante, et pratiques restrictives verticales ; une même clause contractuelle peut, selon son contexte et son ampleur, basculer d''une clause licite à une pratique anticoncurrentielle.
-- Aucun seuil précis de part de marché ou de durée maximale ne doit être mémorisé comme règle absolue sans vérification du texte en vigueur ; ce cours donne la méthode d''analyse, pas des seuils officiels.
-
-## Exercices pratiques
-
-1. Distinguez la clause d''exclusivité et la clause de non-concurrence par leur objet et par leur moment d''application dans la vie du contrat.
-2. Expliquez l''intérêt économique d''une clause d''earn-out pour un acquéreur et pour un cédant, respectivement.
-3. Un contrat d''approvisionnement de cinq ans à prix fixe ne comporte aucune clause de hardship. Un choc exogène fait tripler le coût de la matière première pour le fournisseur. Quelles sont ses options juridiques, en principe ?
-4. Cas pratique chiffré : la cession des parts de Casamance Pêche SARL est fixée à 90 000 000 FCFA, avec un earn-out de 15 % du chiffre d''affaires additionnel au-delà de 60 000 000 FCFA sur l''exercice suivant, plafonné à 20 000 000 FCFA. Le chiffre d''affaires de l''exercice suivant atteint 95 000 000 FCFA. Calculez le prix total payé.
-5. Qu''est-ce qui distingue une entente anticoncurrentielle d''un abus de position dominante quant au nombre d''entreprises impliquées ?
-6. Pourquoi une clause d''exclusivité identique peut-elle être licite entre deux petites entreprises et poser un problème de concurrence lorsqu''elle est imposée par une entreprise en position dominante ?
-
-## Corrigé
-
-1. La clause d''exclusivité organise l''exécution du contrat (interdiction de contracter avec des concurrents pendant la durée du contrat), alors que la clause de non-concurrence s''applique en principe après la fin du contrat, pour protéger un intérêt légitime (clientèle cédée, savoir-faire) une fois la relation terminée.
-2. Pour l''acquéreur, l''earn-out limite le risque : il ne paie la part variable que si les performances futures confirment la valeur de l''entreprise. Pour le cédant, elle permet de capter une partie de la valeur future qu''il estime probable, sans l''imposer intégralement à l''acquéreur dès la cession.
-3. En principe, sans clause de hardship, le fournisseur reste tenu d''exécuter le contrat aux conditions initiales fixées, l''aggravation du coût n''étant pas, en elle-même, un cas de force majeure (qui suppose une impossibilité d''exécuter, pas seulement une difficulté économique). Il pourrait tenter une négociation amiable, mais n''a pas de droit automatique à une révision du prix en l''absence de clause ou de disposition légale spécifique applicable.
-4. L''earn-out théorique est de 15 % × (95 000 000 − 60 000 000) = 15 % × 35 000 000 = 5 250 000 FCFA, inférieur au plafond de 20 000 000 FCFA. Le prix total payé est donc de 90 000 000 + 5 250 000 = 95 250 000 FCFA.
-5. Une entente suppose un accord ou une pratique concertée entre au moins deux entreprises (généralement concurrentes) ; un abus de position dominante est le fait d''une seule entreprise qui détient individuellement (ou parfois collectivement) une position dominante sur un marché.
-6. Parce que l''analyse concurrentielle s''intéresse à l''effet réel sur le marché : une exclusivité entre deux petits acteurs a un effet négligeable, alors que la même clause imposée par un acteur dominant à l''ensemble de son réseau peut verrouiller l''accès au marché pour des concurrents.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des contrats d''affaires et de la concurrence : clauses complexes et pratiques anticoncurrentielles');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Arbitrage et modes alternatifs de résolution des litiges : clause compromissoire et rôle de la CCJA', '## Objectifs de la leçon
-
-Cette leçon présente l''arbitrage et les modes alternatifs de résolution des litiges (MARL) dans les relations d''affaires, avec une attention particulière à la logique de la clause compromissoire et au rôle de la Cour commune de justice et d''arbitrage (CCJA) de l''OHADA dans le paysage régional. L''objectif du Master 1 est de comprendre la logique d''ensemble et les avantages comparés de ces modes de résolution des litiges, non de maîtriser le détail procédural fin, qui relève d''un enseignement spécialisé d''arbitrage.
-
-## Pourquoi recourir à l''arbitrage et aux MARL dans les affaires
-
-Les entreprises qui contractent, en particulier dans un cadre régional ou international, préfèrent souvent éviter la juridiction étatique de l''une ou l''autre des parties, pour plusieurs raisons :
-
-- La neutralité : aucune des parties ne souhaite être jugée devant les tribunaux du pays de son cocontractant.
-- La confidentialité : l''arbitrage se déroule, en principe, de façon confidentielle, contrairement à une procédure judiciaire généralement publique.
-- La spécialisation : les parties choisissent des arbitres ayant une expertise technique ou sectorielle précise.
-- La rapidité relative et la flexibilité procédurale.
-- L''exécution transfrontalière généralement facilitée des sentences arbitrales, grâce à des conventions internationales de reconnaissance et d''exécution.
-
-Les modes alternatifs de résolution des litiges comprennent, au-delà de l''arbitrage proprement dit :
-
-- La médiation : un tiers neutre (le médiateur) aide les parties à trouver elles-mêmes une solution amiable, sans trancher le litige à leur place.
-- La conciliation : proche de la médiation, le conciliateur peut être plus actif dans la proposition de solutions, selon les traditions et les textes applicables.
-- L''arbitrage : à la différence de la médiation et de la conciliation, l''arbitre tranche le litige par une décision (la sentence arbitrale), qui a, en principe, une force obligatoire comparable à un jugement, mais rendue par un tribunal privé choisi par les parties plutôt que par une juridiction étatique.
-
-## La clause compromissoire
-
-La clause compromissoire est la clause, insérée dans un contrat avant la survenance d''un litige, par laquelle les parties conviennent de soumettre à l''arbitrage les différends qui pourraient naître de ce contrat. Elle se distingue du compromis d''arbitrage, qui est l''accord conclu après la naissance du litige pour le soumettre à l''arbitrage.
-
-Une clause compromissoire bien rédigée précise généralement :
-
-- Le siège de l''arbitrage (le lieu juridique de référence pour la procédure, qui n''est pas nécessairement le lieu où se tiennent les audiences).
-- Le règlement d''arbitrage applicable (celui d''une institution d''arbitrage déterminée, ou un arbitrage ad hoc sans institution).
-- La langue de la procédure.
-- Le nombre d''arbitres (souvent un ou trois) et la méthode de leur désignation.
-- Le droit applicable au fond du litige, qui peut être distinct de la loi du siège de l''arbitrage.
-
-L''absence de précision sur ces points n''empêche pas nécessairement l''arbitrage, les règlements institutionnels prévoyant des mécanismes de désignation par défaut, mais elle crée un risque de contestation et de retard.
-
-L''effet essentiel de la clause compromissoire est de dessaisir, en principe, les juridictions étatiques du litige : si une partie saisit malgré tout un tribunal étatique en violation de la clause, l''autre partie peut en principe soulever l''incompétence de ce tribunal au profit de l''arbitrage convenu. On parle de l''effet négatif de la clause (elle écarte la compétence étatique) et de son effet positif (elle fonde la compétence du tribunal arbitral).
-
-## La CCJA de l''OHADA : rôle en général
-
-La Cour commune de justice et d''arbitrage (CCJA) est l''organe juridictionnel commun aux États membres de l''OHADA. Elle exerce, en matière d''arbitrage, un double rôle qu''il convient de connaître en général, sans entrer dans le détail procédural fin :
-
-- Un rôle d''appui à l''arbitrage institutionnel : la CCJA peut administrer des arbitrages selon son propre règlement, en particulier pour les litiges relatifs aux contrats exécutés ou à exécuter dans l''espace OHADA, lorsque les parties ont choisi ce cadre.
-- Un rôle juridictionnel vis-à-vis des sentences arbitrales rendues sous son égide, notamment pour leur reconnaissance et leur exécution dans l''espace OHADA, ainsi qu''un contrôle limité de leur régularité, sans réexaminer le fond du litige déjà tranché par les arbitres.
-
-Au-delà de l''arbitrage, la CCJA joue également un rôle de juridiction de cassation commune pour l''interprétation et l''application des actes uniformes OHADA (droit des sociétés, droit commercial général, sûretés, etc.), ce qui favorise une interprétation harmonisée du droit des affaires dans l''ensemble de la zone, limitant les divergences entre juridictions nationales.
-
-Pour un cas pratique de Master 1, il suffit en général de savoir identifier qu''un litige entrant dans le champ de l''OHADA, assorti d''une clause d''arbitrage faisant référence à la CCJA ou à son règlement, peut être porté devant cette institution, sans qu''il soit demandé de détailler précisément les délais ou les voies de recours internes à la procédure, qui relèvent d''un enseignement spécialisé.
-
-## Choisir entre arbitrage, médiation et juridiction étatique
-
-Le choix du mode de résolution des litiges dépend de plusieurs facteurs que l''on doit savoir mettre en balance dans un cas pratique :
-
-- La nature de la relation : une relation d''affaires que les parties souhaitent préserver à long terme s''oriente plutôt vers la médiation, plus propice à une solution négociée que l''arbitrage, procédure contradictoire qui tranche en faveur d''une partie.
-- Le montant et la complexité du litige : un litige technique de montant élevé justifie souvent le coût et la durée d''un arbitrage avec des arbitres spécialisés, alors qu''un litige de faible montant peut être disproportionné par rapport au coût d''un arbitrage.
-- Le besoin d''exécution transfrontalière : lorsque les parties ou leurs actifs sont situés dans des pays différents, l''arbitrage offre souvent de meilleures perspectives d''exécution qu''un jugement étatique.
-- Le besoin de confidentialité : particulièrement important lorsque le litige touche à des secrets d''affaires ou pourrait nuire à la réputation d''une partie si rendu public.
-
-## Cas d''entreprise : litige Delta Cacao
-
-La société Delta Cacao SA, basée en Côte d''Ivoire, a conclu avec Sahel Négoce SA, basée au Sénégal, un contrat de fourniture de fèves de cacao sur trois ans, comportant une clause compromissoire désignant un arbitrage à trois arbitres, sous un règlement d''arbitrage faisant référence à la CCJA, siège à Abidjan, droit applicable au fond : droit ivoirien. Un désaccord survient sur la qualité des livraisons de la deuxième année, Sahel Négoce SA estimant avoir subi un préjudice de 60 000 000 FCFA du fait de fèves non conformes.
-
-Analyse : la clause compromissoire dessaisit en principe les juridictions étatiques sénégalaises et ivoiriennes du litige ; Sahel Négoce SA ne pourrait donc pas saisir directement un tribunal sénégalais sans que Delta Cacao SA ne puisse soulever l''incompétence de ce tribunal au profit de l''arbitrage convenu. Le litige relève du champ de l''OHADA (contrat de fourniture entre entreprises ayant une activité dans l''espace OHADA) et peut être porté devant un arbitrage administré selon le règlement visé, le siège fixé à Abidjan déterminant le cadre juridique de référence pour la procédure, sans préjudice du droit ivoirien choisi pour trancher le fond du différend sur la conformité des livraisons.
-
-## Points clés à retenir
-
-- L''arbitrage tranche le litige par une sentence obligatoire ; la médiation et la conciliation aident les parties à trouver elles-mêmes une solution, sans l''imposer.
-- La clause compromissoire, insérée avant le litige, a pour effet d''écarter la compétence des juridictions étatiques au profit de l''arbitrage convenu.
-- Une clause compromissoire bien rédigée précise le siège, le règlement applicable, la langue, le nombre d''arbitres et le droit applicable au fond.
-- La CCJA de l''OHADA joue un rôle d''appui à l''arbitrage institutionnel et un rôle juridictionnel de reconnaissance et d''exécution des sentences, ainsi qu''un rôle de cassation commune pour le droit uniforme OHADA ; les détails procéduraux fins ne sont pas exigés en Master 1 et relèvent d''un enseignement spécialisé.
-- Le choix entre arbitrage, médiation et juridiction étatique dépend de la nature de la relation, du montant du litige, du besoin d''exécution transfrontalière et du besoin de confidentialité.
-
-## Exercices pratiques
-
-1. Distinguez la clause compromissoire du compromis d''arbitrage par leur moment de conclusion.
-2. Citez trois éléments qu''une clause compromissoire bien rédigée devrait préciser.
-3. Expliquez la différence entre l''effet négatif et l''effet positif de la clause compromissoire.
-4. Pourquoi une entreprise souhaitant préserver une relation commerciale durable avec son partenaire pourrait-elle préférer la médiation à l''arbitrage en cas de différend ?
-5. Dans le cas Delta Cacao ci-dessus, le tribunal de commerce de Dakar peut-il, en principe, trancher directement le litige si Sahel Négoce SA le saisit malgré la clause compromissoire ? Justifiez.
-6. Citez deux rôles généraux de la CCJA de l''OHADA en matière d''arbitrage.
-
-## Corrigé
-
-1. La clause compromissoire est conclue avant la naissance du litige, au sein du contrat initial, pour les différends futurs et éventuels ; le compromis d''arbitrage est conclu après la naissance du litige, pour ce litige précisément identifié.
-2. Par exemple : le siège de l''arbitrage, le règlement d''arbitrage applicable, et le nombre d''arbitres (on pouvait aussi citer la langue de la procédure ou le droit applicable au fond).
-3. L''effet négatif écarte la compétence des juridictions étatiques pour le litige couvert par la clause ; l''effet positif fonde, à l''inverse, la compétence du tribunal arbitral pour statuer sur ce même litige.
-4. Parce que la médiation vise une solution négociée et consensuelle qui préserve la relation entre les parties, alors que l''arbitrage, comme une procédure judiciaire, tranche en faveur d''une partie contre l''autre, ce qui peut davantage détériorer la relation commerciale future.
-5. En principe non, ou plus précisément le tribunal de commerce de Dakar devrait se déclarer incompétent si Delta Cacao SA soulève l''exception d''incompétence fondée sur la clause compromissoire, puisque celle-ci a dessaisi les juridictions étatiques du litige au profit de l''arbitrage convenu.
-6. Un rôle d''appui à l''arbitrage institutionnel (administration d''arbitrages selon son propre règlement) et un rôle juridictionnel de reconnaissance et d''exécution des sentences arbitrales rendues sous son égide (on pouvait aussi citer son rôle de cassation commune pour le droit uniforme OHADA).', 'texte', 45, false, 40
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Arbitrage et modes alternatifs de résolution des litiges : clause compromissoire et rôle de la CCJA');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 1 en droit des affaires (entraînement, corrigé détaillé)', '## Sujet type d''examen de Master 1 en droit des affaires (entraînement non officiel, barème indicatif)
-
-Durée indicative : 3 heures. Ce sujet est un entraînement pédagogique, non un sujet officiel ; le barème proposé est indicatif et peut être adapté par votre enseignant.
-
-### Énoncé
-
-La société Jolof Industries SA, basée à Dakar, est la société mère d''un groupe comprenant deux filiales : Jolof Emballages SARL (détenue à 80 %) et Jolof Distribution SARL (détenue à 45 %, les 55 % restants étant détenus par neuf actionnaires minoritaires n''agissant jamais ensemble, ce qui permet en pratique à Jolof Industries SA d''obtenir systématiquement la majorité en assemblée générale).
-
-Premier fait : le directeur général de Jolof Industries SA, M. Faye, est également actionnaire majoritaire (70 %) d''une société de transport, Rapid Cargo SARL, qui fournit à Jolof Distribution SARL l''intégralité de ses prestations de transport pour un montant annuel de 54 000 000 FCFA. Le prix de marché pour des prestations comparables, selon deux devis obtenus auprès de transporteurs concurrents, serait de 42 000 000 FCFA par an. Le contrat a été conclu par le directeur général de Jolof Distribution SARL sans consultation préalable du conseil d''administration.
-
-Deuxième fait : Jolof Emballages SARL, qui détient 58 % du marché régional de l''emballage plastique alimentaire, impose à l''ensemble de ses douze distributeurs un contrat d''exclusivité réciproque de huit ans, leur interdisant de distribuer des emballages concurrents, sans contrepartie financière spécifique autre que les conditions commerciales habituelles.
-
-Troisième fait : le contrat entre Jolof Emballages SARL et l''un de ses distributeurs, Teranga Pack SARL, comporte une clause compromissoire désignant un arbitrage à arbitre unique, siège à Dakar, règlement de la CCJA, droit sénégalais applicable au fond. Un litige survient sur une rupture anticipée du contrat par Jolof Emballages SARL, Teranga Pack SARL réclamant 15 000 000 FCFA de dommages-intérêts. Jolof Emballages SARL saisit directement le tribunal de commerce de Dakar sans mentionner la clause compromissoire, espérant une procédure plus rapide.
-
-### Questions
-
-1. (6 points) Qualifiez le lien de contrôle entre Jolof Industries SA et chacune de ses deux filiales, en précisant le type de contrôle en cause pour Jolof Distribution SARL.
-2. (8 points) Analysez le premier fait : le contrat entre Jolof Distribution SARL et Rapid Cargo SARL constitue-t-il une convention réglementée ? Chiffrez l''écart par rapport au prix de marché et indiquez les conséquences possibles de l''absence de consultation du conseil d''administration.
-3. (8 points) Analysez le deuxième fait au regard des principes généraux du droit de la concurrence : la clause d''exclusivité réciproque de huit ans imposée par Jolof Emballages SARL pose-t-elle un risque de qualification comme pratique anticoncurrentielle ? Justifiez en identifiant les éléments pertinents.
-4. (8 points) Analysez le troisième fait : la saisine du tribunal de commerce de Dakar par Jolof Emballages SARL est-elle conforme à la clause compromissoire ? Quelle réaction procédurale Teranga Pack SARL pourrait-elle opposer, et quel rôle la CCJA pourrait-elle jouer dans la suite du dossier ?
-
-### Corrigé détaillé
-
-1. Jolof Industries SA exerce un contrôle de droit sur Jolof Emballages SARL (détention de 80 % du capital, majorité évidente des droits de vote). Sur Jolof Distribution SARL, elle détient seulement 45 % du capital, ce qui est minoritaire en droit, mais la dispersion des 55 % restants entre neuf actionnaires n''agissant jamais ensemble lui permet d''obtenir systématiquement la majorité en assemblée : il s''agit donc d''un contrôle de fait, et non d''un contrôle de droit, bien que les conséquences pratiques du contrôle (vigilance sur les conventions, information renforcée) soient similaires.
-
-2. Le contrat entre Jolof Distribution SARL et Rapid Cargo SARL présente les caractéristiques d''une convention réglementée : M. Faye, directeur général de la société mère Jolof Industries SA, est également actionnaire majoritaire (70 %) du cocontractant Rapid Cargo SARL, ce qui crée un lien d''influence pertinent même s''il n''est pas formellement dirigeant de Jolof Distribution SARL (une analyse complète devrait vérifier s''il exerce également une fonction ou une influence directe sur cette filiale, ce qui est cohérent avec son rôle de dirigeant du groupe). L''écart de prix est de 54 000 000 − 42 000 000 = 12 000 000 FCFA par an, soit environ 28,6 % au-dessus du marché (12 000 000 / 42 000 000 ≈ 0,286), ce qui écarte la qualification de convention courante à conditions normales. L''absence de consultation préalable du conseil d''administration de Jolof Distribution SARL constitue un manquement au formalisme applicable aux conventions réglementées ; les conséquences possibles sont, selon les circonstances, la responsabilité civile du dirigeant ayant conclu le contrat pour le préjudice correspondant au surcoût (12 000 000 FCFA par an), et un risque de contestation de la convention par les actionnaires minoritaires de Jolof Distribution SARL.
-
-3. La clause d''exclusivité réciproque de huit ans, imposée par Jolof Emballages SARL à l''ensemble de son réseau de douze distributeurs, pose un risque réel de qualification anticoncurrentielle pour plusieurs raisons convergentes : premièrement, Jolof Emballages SARL détient 58 % du marché régional de l''emballage plastique alimentaire, ce qui peut constituer une position dominante selon la définition du marché pertinent ; deuxièmement, la durée de huit ans est longue et l''exclusivité est appliquée systématiquement à l''ensemble du réseau, ce qui peut avoir un effet cumulatif de verrouillage du marché pour les concurrents de Jolof Emballages SARL qui chercheraient à accéder aux mêmes distributeurs ; troisièmement, l''absence de contrepartie financière spécifique (au-delà des conditions commerciales habituelles) affaiblit la justification économique de cette contrainte. L''ensemble de ces éléments (position dominante probable, durée longue, absence de contrepartie spécifique, effet cumulatif sur l''ensemble du réseau) est caractéristique d''une pratique susceptible d''être analysée comme un abus de position dominante, sous réserve d''une analyse plus fine du marché pertinent et des justifications économiques que pourrait avancer Jolof Emballages SARL (investissements spécifiques à amortir, par exemple).
-
-4. La saisine directe du tribunal de commerce de Dakar par Jolof Emballages SARL n''est pas conforme à la clause compromissoire, qui a pour effet de dessaisir en principe les juridictions étatiques du litige couvert par le contrat. Teranga Pack SARL peut soulever l''exception d''incompétence du tribunal de commerce de Dakar en se fondant sur la clause compromissoire, ce qui devrait conduire le tribunal à se déclarer incompétent au profit de l''arbitrage convenu (arbitre unique, règlement CCJA, siège Dakar, droit sénégalais au fond). Le litige, relatif à un contrat de distribution exécuté dans l''espace OHADA, pourrait ensuite être porté devant un arbitrage administré selon le règlement de la CCJA, qui jouerait son rôle d''appui institutionnel à la procédure arbitrale, puis, le cas échéant, un rôle de reconnaissance et d''exécution de la sentence arbitrale qui serait rendue sur la demande de dommages-intérêts de 15 000 000 FCFA formulée par Teranga Pack SARL.
-
-## Exercices pratiques (questions complémentaires)
-
-1. Dans le sujet ci-dessus, si Jolof Industries SA ne détenait que 20 % de Jolof Distribution SARL, sans lien particulier avec les autres actionnaires, la qualification de contrôle de fait serait-elle encore pertinente ? Justifiez.
-2. Proposez une contrepartie financière spécifique que Jolof Emballages SARL pourrait négocier avec ses distributeurs pour renforcer la justification économique de la clause d''exclusivité, tout en réduisant le risque concurrentiel.
-3. Si le conseil d''administration de Jolof Distribution SARL avait autorisé préalablement le contrat avec Rapid Cargo SARL, en toute connaissance de l''écart de prix constaté, la qualification de convention réglementée changerait-elle les conséquences juridiques ? Expliquez.
-4. Si la clause compromissoire du troisième fait avait désigné un arbitrage ad hoc (sans institution), quel aurait été l''impact sur l''intervention éventuelle de la CCJA ?
-5. Résumez, en cinq lignes, le fil conducteur transversal reliant les trois faits du sujet (gouvernance de groupe, concurrence, résolution des litiges) dans la gestion des risques juridiques d''un groupe de sociétés.
-
-## Corrigé
-
-1. La qualification de contrôle de fait dépendrait de la réalité du pouvoir de décision en assemblée, pas seulement du pourcentage détenu : à 20 % sans lien particulier avec les autres actionnaires (qui pourraient, par exemple, agir de façon coordonnée ou être eux-mêmes majoritaires de fait), il serait plus difficile de démontrer que Jolof Industries SA obtient systématiquement la majorité ; une analyse des résultats effectifs des assemblées précédentes serait nécessaire pour trancher, et en l''absence d''une telle démonstration, la qualification de contrôle ne serait pas retenue.
-2. Par exemple, un financement ou une subvention des investissements commerciaux spécifiques des distributeurs (présentoirs, formation, garantie de volumes minimums d''achat par Jolof Emballages SARL), qui constituerait une contrepartie réelle et proportionnée à la contrainte d''exclusivité, renforçant sa justification économique et réduisant le risque de qualification abusive.
-3. L''autorisation préalable par le conseil d''administration ne change pas la qualification de convention réglementée (qui dépend de la qualité des parties, pas du respect de la procédure), mais elle change les conséquences pratiques : le respect du formalisme réduit significativement le risque de responsabilité du dirigeant ayant conclu le contrat, car la décision a été prise collectivement, en connaissance de l''écart de prix, par l''organe compétent, même si les actionnaires minoritaires pourraient encore contester l''opportunité économique de la décision par d''autres voies.
-4. Un arbitrage ad hoc, sans institution, ne ferait en principe pas intervenir la CCJA dans l''administration de la procédure elle-même (désignation des arbitres selon le règlement institutionnel, par exemple) ; toutefois, la CCJA pourrait encore intervenir en aval pour la reconnaissance et l''exécution de la sentence arbitrale dans l''espace OHADA, ce rôle juridictionnel n''étant pas conditionné au caractère institutionnel ou ad hoc de l''arbitrage initial.
-5. Les trois faits illustrent qu''un groupe de sociétés doit gérer simultanément plusieurs familles de risques juridiques liés à ses choix d''organisation : les conflits d''intérêts internes entre dirigeants et sociétés liées (gouvernance), les effets externes de sa puissance économique sur le marché (concurrence), et la sécurisation contractuelle du règlement des différends avec ses partenaires (arbitrage). Une gestion rigoureuse de ces trois dimensions, en amont de la signature des contrats plutôt qu''au moment du litige, réduit fortement l''exposition juridique et financière du groupe.', 'texte', 50, false, 50
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 en droit des affaires (entraînement, corrigé détaillé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Droit des sociétés approfondi et gouvernance', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : permettre à l''étudiant de maîtriser la notion de contrôle entre sociétés et le régime des conventions réglementées, en étant capable de qualifier une situation d''entreprise complexe et d''en tirer les conséquences pratiques. Matériel recommandé : tableau ou diaporama avec un organigramme de groupe vierge à compléter, calculatrice pour les exemples chiffrés. Prérequis : droit des sociétés commerciales OHADA (notions de capital, d''organes sociaux, d''assemblée générale) vu en Licence 3.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux
-
-Bonjour à toutes et à tous. Dans cette séance, nous allons travailler une notion centrale du droit des sociétés approfondi : la gouvernance des groupes, à travers deux piliers, le contrôle et les conventions réglementées. Pourquoi cette matière est-elle si importante en pratique ? Parce qu''une très grande partie des grandes entreprises africaines fonctionnent aujourd''hui sous forme de groupes : une société holding qui détient des participations dans plusieurs filiales, parfois dans des secteurs différents. Cette organisation présente des avantages économiques réels — mutualisation des ressources, diversification des risques, optimisation de la gestion — mais elle crée aussi des risques juridiques spécifiques, en particulier le risque que les dirigeants ou les actionnaires significatifs utilisent leur position pour favoriser une société du groupe au détriment d''une autre, ou au détriment des actionnaires minoritaires. C''est ce risque que le droit des conventions réglementées cherche à encadrer. Gardez cette idée directrice en tête tout au long de la séance : le droit ne cherche pas à empêcher les relations entre sociétés liées, qui sont souvent légitimes et nécessaires, mais à s''assurer qu''elles ne dissimulent pas un transfert de valeur injustifié.
-
-## 05:00 – 15:00 · La notion de contrôle
-
-Commençons par la notion de contrôle, qui est le fondement même de la notion de groupe. Je vous rappelle qu''en droit OHADA, le groupe n''est pas un sujet de droit : chaque société du groupe garde sa personnalité juridique propre. Ce qui unit les sociétés du groupe, c''est un lien de fait et de droit : le contrôle. On distingue trois formes de contrôle qu''il faut absolument savoir reconnaître dans un cas pratique. D''abord, le contrôle de droit : une société détient la majorité des droits de vote d''une autre, et peut donc, mathématiquement, imposer ses décisions en assemblée. Ensuite, le contrôle de fait : une société ne détient pas la majorité du capital, mais obtient, en pratique, la majorité des voix exprimées en assemblée, parce que les autres actionnaires sont dispersés et n''agissent jamais ensemble. Prenons un exemple au tableau : une société détient 35 % du capital d''une autre société, le reste étant détenu par vingt actionnaires individuels qui ne se coordonnent jamais. Si, lors des trois dernières assemblées générales, cette société a systématiquement obtenu plus de 50 % des voix exprimées parce que les petits actionnaires ne se déplacent pas tous, on est en présence d''un contrôle de fait. Enfin, le contrôle conjoint : plusieurs associés exercent ensemble le pouvoir de décision en vertu d''un accord explicite, par exemple un pacte d''actionnaires qui prévoit un vote commun. Cette distinction n''est pas un exercice théorique : elle détermine le périmètre du groupe, l''obligation éventuelle de comptes consolidés, et surtout la vigilance à exercer sur les conventions entre sociétés liées, que nous allons étudier maintenant.
-
-## 15:00 – 30:00 · Les conventions réglementées : logique et procédure
-
-Passons au cœur de la séance : les conventions réglementées. Je vous propose la définition suivante, que vous devez pouvoir reformuler avec vos propres mots à l''examen : une convention réglementée est un contrat conclu entre une société et une personne qui exerce une influence sur elle — un dirigeant, un actionnaire significatif, ou une société liée à ces personnes. L''idée est simple : quand la même personne négocie des deux côtés de la table, implicitement ou explicitement, le risque de conflit d''intérêts justifie un contrôle procédural renforcé. Attention : ce contrôle renforcé ne signifie pas interdiction. Beaucoup de conventions réglementées sont parfaitement légitimes et bonnes pour l''entreprise — par exemple, un dirigeant qui met à disposition de sa société un bien personnel à un prix juste. Le droit organise une procédure en trois temps que vous devez connaître par cœur : premièrement, l''information préalable de l''organe compétent, généralement le conseil d''administration ; deuxièmement, l''autorisation ou la ratification par cet organe, la personne intéressée ne participant pas au vote sur sa propre convention — c''est un point très souvent oublié par les étudiants et qui vaut des points à l''examen ; troisièmement, l''information de l''assemblée générale des associés. Il existe une exception importante : les conventions dites courantes, conclues à des conditions normales, c''est-à-dire comparables à ce qu''un tiers indépendant aurait négocié. Ces conventions échappent au formalisme renforcé. C''est là que se trouve la vraie difficulté pratique des cas d''examen : comment déterminer si une convention est courante et à conditions normales ? La méthode est la comparaison avec le prix de marché. Prenons un exemple chiffré au tableau : un directeur général loue à sa société un entrepôt qu''il possède personnellement, pour 3 000 000 FCFA par mois. Le prix de marché pour un bien comparable est de 1 800 000 FCFA par mois. L''écart est de 1 200 000 FCFA par mois, soit 14 400 000 FCFA par an. Cet écart très significatif écarte la qualification de convention courante : c''est une convention réglementée qui devait suivre la procédure en trois temps.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Je vous propose une courte pause active de cinq minutes. Avant de reprendre, réfléchissez individuellement à cette question, que nous corrigerons ensemble à l''oral : si le même directeur général avait loué l''entrepôt au prix exact de 1 800 000 FCFA par mois, identique au marché, la convention devrait-elle encore suivre la procédure en trois temps ? Notez votre réponse et votre justification, nous en discuterons au retour de la pause. (Réponse attendue : non, en principe, car il s''agirait alors d''une convention courante conclue à des conditions normales, échappant au formalisme renforcé, même si le dirigeant a un intérêt personnel dans l''opération — l''important est l''absence d''avantage anormal, pas l''existence du lien d''intérêt en lui-même.)
-
-## 35:00 – 50:00 · Cas d''entreprise filé : groupe Baobab Négoce
-
-Reprenons avec un cas d''entreprise complet, que nous allons résoudre ensemble étape par étape, exactement selon la méthode que vous devrez appliquer à l''examen. Baobab Négoce SA, basée à Dakar, contrôle à 70 % sa filiale Baobab Transit SARL. Le président de Baobab Négoce SA, M. Ndiaye, est actionnaire à 40 % d''une société tierce, Rapid Fret SARL, qui fournit des prestations de transport sous-traité à Baobab Transit SARL pour 45 000 000 FCFA par an. Les tarifs de Rapid Fret SARL sont supérieurs de 20 % aux tarifs du marché constatés chez deux concurrents comparables. Première étape de la méthode : identifier le lien de contrôle. Baobab Négoce SA détient 70 % de Baobab Transit SARL : c''est un contrôle de droit, sans ambiguïté. Deuxième étape : identifier les parties au contrat litigieux et leurs liens d''intérêt. Le contrat est conclu entre Baobab Transit SARL (la filiale) et Rapid Fret SARL. M. Ndiaye, qui est président de la société mère Baobab Négoce SA, détient 40 % de Rapid Fret SARL : c''est un lien d''intérêt significatif qui justifie d''examiner la qualification de convention réglementée, même s''il n''est pas formellement dirigeant de la filiale elle-même — en pratique, son influence sur le groupe rend cette vigilance pertinente. Troisième étape : chiffrer l''écart par rapport au marché. Le prix de marché théorique, si le tarif pratiqué (45 000 000 FCFA) représente 120 % du prix de marché (c''est-à-dire 100 % plus 20 % de majoration), se calcule ainsi : prix de marché = 45 000 000 ÷ 1,20 = 37 500 000 FCFA. Le surcoût est donc de 45 000 000 − 37 500 000 = 7 500 000 FCFA. Quatrième étape : conclure sur la qualification et les conséquences. L''écart significatif écarte la qualification de convention courante. La procédure d''autorisation préalable aurait dû être respectée. À défaut, la responsabilité de M. Ndiaye pourrait être recherchée par les actionnaires minoritaires de Baobab Transit SARL pour le préjudice correspondant au surcoût de 7 500 000 FCFA.
-
-## 50:00 – 65:00 · Approfondissement : sanctions et vigilance pratique
-
-Allons plus loin sur les conséquences du non-respect du formalisme, question fréquente à l''examen, en gardant à l''esprit qu''il faut toujours vérifier le texte précis en vigueur : je vous donne ici la logique générale, pédagogique, pas des références d''articles. Premièrement, la responsabilité civile du dirigeant qui a conclu la convention sans l''autorisation requise, s''il en résulte un préjudice — c''est la conséquence la plus fréquemment retenue à l''examen, celle que nous avons appliquée dans le cas Baobab Négoce. Deuxièmement, selon la gravité, la possibilité que la convention soit remise en cause si elle a causé un préjudice imputable à l''absence d''autorisation. Troisièmement, un risque réputationnel et de gouvernance vis-à-vis des partenaires financiers. Pour une entreprise, la vigilance se traduit par une cartographie des conventions intra-groupe et une vérification systématique du prix de marché avant tout contrat avec une personne liée.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Je vous propose maintenant un quiz de cinq questions, à choix de réponse courte, pour vérifier votre compréhension avant la synthèse finale. Première question : le contrôle de fait suppose-t-il la détention de la majorité du capital ? Réponse : non, il suppose une influence déterminante en pratique sans détention majoritaire. Deuxième question : une convention courante à conditions normales doit-elle suivre la procédure d''autorisation préalable renforcée ? Réponse : non, en principe, elle en est dispensée. Troisième question : qui ne doit pas participer au vote d''autorisation d''une convention réglementée au sein de l''organe compétent ? Réponse : la personne intéressée elle-même. Quatrième question : le groupe de sociétés a-t-il, en droit OHADA, une personnalité juridique propre distincte de ses sociétés membres ? Réponse : non, chaque société du groupe garde sa personnalité juridique propre. Cinquième question : dans le cas Baobab Négoce, quel est le montant du surcoût annuel identifié ? Réponse : 7 500 000 FCFA. Si vous avez eu des difficultés sur l''une de ces questions, reprenez la section correspondante de vos fiches avant l''examen.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Pour conclure cette séance, reprenons les points essentiels. Premièrement, le contrôle se définit par le pouvoir de fait sur les décisions en assemblée, pas seulement par un pourcentage de capital : il peut être de droit, de fait, ou conjoint. Deuxièmement, une convention réglementée se caractérise par la qualité des parties — l''existence d''un lien d''influence — et non par son objet : n''importe quel type de contrat peut être une convention réglementée s''il est conclu avec une personne liée. Troisièmement, la procédure en trois temps (information, autorisation sans le vote de l''intéressé, information de l''assemblée) est la colonne vertébrale du régime, et son non-respect ouvre la voie à la responsabilité du dirigeant. Quatrièmement, la comparaison avec le prix de marché est l''outil méthodologique central pour qualifier ou écarter le caractère « courant et à conditions normales » d''une convention — c''est la compétence la plus directement transférable à vos examens et à votre future pratique professionnelle. Pensez toujours, face à un cas pratique, à appliquer la méthode en quatre étapes que nous avons utilisée : identifier le contrôle, identifier les parties et leurs liens d''intérêt, chiffrer l''écart par rapport au marché, conclure sur la qualification et les conséquences.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Pour terminer, voici cinq questions d''évaluation finale avec leurs réponses, que je vous invite à retravailler par écrit avant la prochaine séance. Question 1 : qu''est-ce qui distingue le contrôle de droit du contrôle de fait ? Réponse : le contrôle de droit résulte de la détention de la majorité des droits de vote ; le contrôle de fait résulte d''une influence déterminante en pratique, en l''absence de majorité, du fait de la dispersion des autres actionnaires. Question 2 : citez les trois étapes de la procédure applicable aux conventions réglementées. Réponse : information préalable de l''organe compétent, autorisation ou ratification sans participation au vote de la personne intéressée, information de l''assemblée générale des associés. Question 3 : quelle est la conséquence générale en cas d''absence d''autorisation d''une convention réglementée qui cause un préjudice à la société ? Réponse : la responsabilité civile du dirigeant qui a conclu la convention peut être engagée pour ce préjudice. Question 4 : comment qualifier une convention dont le prix est identique au prix de marché pour un bien ou un service comparable ? Réponse : convention courante conclue à des conditions normales, échappant en principe au formalisme renforcé. Question 5 : dans un groupe où la société mère détient 30 % du capital d''une filiale, le reste étant détenu par quinze actionnaires dispersés n''agissant jamais ensemble, et où la société mère obtient systématiquement la majorité en assemblée, quel type de contrôle est caractérisé ? Réponse : un contrôle de fait. Merci à toutes et à tous pour votre attention ; la prochaine séance portera sur les contrats d''affaires et la concurrence.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des sociétés approfondi et gouvernance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Droit des contrats d''affaires et de la concurrence', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : savoir identifier, rédiger et apprécier la validité des clauses complexes des contrats d''affaires (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité), et reconnaître les principes généraux du droit de la concurrence applicables aux pratiques anticoncurrentielles. Matériel recommandé : tableau ou diaporama, extraits de modèles de clauses contractuelles, calculatrice. Prérequis : droit des obligations (le contrat) et droit commercial général OHADA vus en Licence.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Après avoir travaillé la gouvernance des groupes dans la séance précédente, nous abordons aujourd''hui les contrats d''affaires sophistiqués et le droit de la concurrence. Ces deux thèmes sont liés par un fil conducteur que je veux que vous ayez en tête dès le départ : une clause contractuelle qui est parfaitement licite entre deux petites entreprises peut devenir problématique, au regard du droit de la concurrence, lorsqu''elle est imposée par une entreprise puissante sur un marché. C''est cette bascule, de la liberté contractuelle à la régulation concurrentielle, que nous allons apprendre à repérer.
-
-## 05:00 – 20:00 · Les clauses complexes : exclusivité et non-concurrence
-
-Commençons par la clause d''exclusivité. Elle engage une partie à ne pas contracter avec des concurrents de son partenaire. Elle peut être unilatérale ou réciproque. Sa validité dépend de trois critères que vous devez systématiquement examiner dans un cas pratique : la durée, le champ géographique, et la proportionnalité par rapport à la contrepartie obtenue. Une exclusivité de deux ans sur une zone limitée, en contrepartie d''un investissement commercial réel du bénéficiaire, est généralement acceptable. Une exclusivité de quinze ans sur tout le territoire national, sans contrepartie spécifique, est un signal d''alerte. Passons à la clause de non-concurrence, qui s''applique en principe après la fin du contrat, souvent lors de la cession d''un fonds de commerce ou de titres sociaux. Elle doit être limitée dans le temps, dans l''espace, et proportionnée à l''intérêt légitime qu''elle protège — typiquement, empêcher le cédant de récupérer immédiatement la clientèle qu''il vient de céder. Exemple au tableau : une clause de non-concurrence de dix ans sur l''ensemble du territoire national, pour la cession d''un commerce de quartier qui ne rayonnait que sur sa ville, serait manifestement disproportionnée par rapport à l''intérêt légitime à protéger, qui se limite à la zone de chalandise réelle du commerce cédé.
-
-## 20:00 – 35:00 · Earn-out et hardship : deux outils de gestion du risque dans le temps
-
-Abordons maintenant deux clauses qui organisent la relation entre les parties dans la durée, face à l''incertitude de l''avenir. La clause d''earn-out, d''abord : elle est utilisée dans les cessions d''entreprises pour concilier les attentes du cédant, souvent optimiste sur l''avenir de son entreprise, et la prudence de l''acquéreur, qui veut limiter son risque. Une partie du prix n''est payée qu''après la réalisation d''objectifs futurs. Travaillons un exemple chiffré ensemble : la cession des actions d''une société de transformation agroalimentaire est fixée à un prix de base de 200 000 000 FCFA, complété par un earn-out égal à 10 % du chiffre d''affaires additionnel réalisé au-delà de 150 000 000 FCFA sur les deux exercices suivant la cession, plafonné à 40 000 000 FCFA. Si le chiffre d''affaires cumulé des deux exercices atteint 230 000 000 FCFA, calculons : l''earn-out théorique est de 10 % multiplié par (230 000 000 moins 150 000 000), soit 10 % multiplié par 80 000 000, soit 8 000 000 FCFA. Ce montant est bien en-deçà du plafond de 40 000 000 FCFA, donc l''earn-out effectivement dû est de 8 000 000 FCFA, et le prix total payé par l''acquéreur est de 200 000 000 plus 8 000 000, soit 208 000 000 FCFA. Retenez bien cette méthode de calcul en deux temps : calculer l''earn-out théorique selon la formule contractuelle, puis le comparer au plafond pour déterminer le montant effectivement dû. Passons à la clause de hardship, ou clause d''imprévision : elle permet à une partie de demander une renégociation du contrat lorsque survient un changement de circonstances imprévisible qui rend l''exécution excessivement onéreuse, sans la rendre impossible — ce qui la distingue nettement de la force majeure. Exemple : un contrat d''approvisionnement en matières premières agricoles à prix fixe sur trois ans ; une sécheresse exceptionnelle double le coût d''achat pour le fournisseur. Avec une clause de hardship, le fournisseur peut demander une renégociation organisée du prix ; sans elle, il reste en principe tenu d''exécuter aux conditions initiales, sauf à démontrer une impossibilité, ce qui est beaucoup plus difficile à établir qu''une simple aggravation du coût.
-
-## 35:00 – 40:00 · Pause active et question au groupe
-
-Prenons cinq minutes de pause active. Question à préparer pour notre retour : pourquoi une clause de hardship est-elle particulièrement utile dans un contrat de longue durée portant sur des matières premières agricoles, plutôt que dans un contrat ponctuel de courte durée ? Réfléchissez-y et nous en discuterons au retour. (Réponse attendue : parce que les contrats de longue durée sont davantage exposés à des changements de circonstances imprévisibles sur leur durée d''exécution — climatiques, économiques — et que, sans mécanisme de renégociation organisée, les parties seraient contraintes à l''alternative brutale entre exécuter à perte ou chercher une rupture, souvent plus coûteuse et conflictuelle qu''une renégociation encadrée.)
-
-## 40:00 – 50:00 · La clause limitative de responsabilité
-
-Terminons les clauses complexes avec la clause limitative de responsabilité, qui plafonne par avance le montant des dommages-intérêts qu''une partie pourra devoir à l''autre en cas de manquement contractuel, souvent exprimé en pourcentage du prix du contrat ou en multiple d''un montant annuel. Ces clauses sont généralement valables entre professionnels, mais deux limites doivent être retenues : d''une part, elles perdent leur effet en cas de faute particulièrement grave de la partie qui chercherait à s''en prévaloir ; d''autre part, un plafond fixé à un niveau si bas qu''il viderait l''obligation essentielle du contrat de toute portée réelle peut être remis en cause, car une partie ne peut pas s''engager tout en se protégeant d''avance contre toute conséquence réelle de son inexécution.
-
-## 50:00 – 65:00 · Principes généraux du droit de la concurrence
-
-Passons maintenant au droit de la concurrence, dont la logique est différente : il ne s''agit plus seulement de protéger l''équilibre entre deux contractants, mais de protéger le fonctionnement concurrentiel du marché dans son ensemble, dans l''intérêt de toutes les entreprises et des consommateurs. Trois catégories de pratiques sont à connaître. Premièrement, les ententes anticoncurrentielles : des accords entre entreprises concurrentes qui restreignent la concurrence — fixation concertée des prix, répartition des marchés ou des clients, limitation concertée de la production. Deuxièmement, l''abus de position dominante : une entreprise qui détient une position dominante — c''est-à-dire la capacité de se comporter indépendamment de ses concurrents et de ses clients dans une mesure appréciable — exploite cette position de façon abusive, par exemple par des prix d''éviction destinés à exclure un concurrent, ou des conditions discriminatoires sans justification. Troisièmement, les pratiques restrictives verticales, entre un fournisseur et un distributeur, qui peuvent devenir anticoncurrentielles lorsqu''elles cloisonnent excessivement les marchés. Travaillons maintenant le cas d''entreprise filé : Sahel Boissons SA, producteur basé à Thiès, conclut avec quinze distributeurs régionaux des contrats d''exclusivité réciproque de dix ans, et détient 65 % du marché national des boissons gazeuses. Analysons ensemble, selon la méthode à appliquer dans un cas pratique : d''abord, la position de marché — 65 % est un indice fort de position dominante, à confirmer par la définition précise du marché pertinent ; ensuite, l''ampleur de la pratique — une exclusivité systématique sur l''ensemble du réseau de quinze distributeurs a un effet cumulatif bien plus fort qu''une exclusivité isolée avec un seul distributeur ; enfin, la durée — dix ans est une durée longue qui prolonge l''effet de verrouillage du marché pour les concurrents potentiels. La combinaison de ces trois éléments (position dominante probable, ampleur systématique, durée longue) est caractéristique d''un risque de qualification d''abus de position dominante, sous réserve de l''analyse du marché pertinent et des justifications économiques avancées par l''entreprise.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Voici cinq questions pour vérifier votre compréhension. Première question : qu''est-ce qui distingue la force majeure de la situation visée par une clause de hardship ? Réponse : la force majeure rend l''exécution impossible, alors que la clause de hardship vise une exécution devenue seulement excessivement onéreuse, sans impossibilité. Deuxième question : dans l''exemple d''earn-out travaillé, pourquoi le montant effectivement dû est-il de 8 000 000 FCFA et non de 40 000 000 FCFA ? Réponse : parce que le plafond de 40 000 000 FCFA n''est qu''un maximum ; le montant effectivement dû résulte du calcul selon la formule contractuelle (10 % du chiffre d''affaires additionnel), qui donne ici 8 000 000 FCFA, inférieur au plafond. Troisième question : une entente anticoncurrentielle suppose-t-elle qu''une entreprise détienne une position dominante ? Réponse : non, l''entente suppose un accord entre plusieurs entreprises, indépendamment de leur taille respective, alors que l''abus suppose qu''une entreprise détienne individuellement une position dominante. Quatrième question : une clause limitative de responsabilité produit-elle son effet en cas de faute particulièrement grave ? Réponse : non, en principe, une faute particulièrement grave prive la clause de son effet. Cinquième question : dans le cas Sahel Boissons, quels sont les trois éléments qui convergent pour caractériser un risque de qualification anticoncurrentielle ? Réponse : la position dominante probable (65 % du marché), l''ampleur systématique de l''exclusivité sur l''ensemble du réseau, et la durée longue de dix ans.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Pour synthétiser cette séance : chaque clause complexe répond à une logique économique précise qu''il faut identifier avant d''en juger la validité — l''exclusivité et la non-concurrence restreignent la liberté d''une partie et doivent être proportionnées ; l''earn-out et le hardship organisent la gestion du risque dans le temps ; la limitation de responsabilité plafonne les conséquences financières d''un manquement, sous réserve des fautes graves. Sur le droit de la concurrence, retenez la méthode d''analyse en trois temps que nous avons appliquée au cas Sahel Boissons : évaluer la position de marché de l''entreprise, évaluer l''ampleur et la systématicité de la pratique contractuelle en cause, évaluer sa durée et sa justification économique. C''est la combinaison de ces facteurs, et non un seul critère isolé, qui permet de qualifier un risque de pratique anticoncurrentielle. Cette méthode de pondération multi-critères est exactement ce qu''un examinateur de Master attend de vous : pas une réponse binaire, mais une analyse nuancée des facteurs en présence.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit. Question 1 : citez les trois critères de validité d''une clause d''exclusivité ou de non-concurrence. Réponse : la durée, le champ géographique, et la proportionnalité par rapport à la contrepartie ou à l''intérêt légitime protégé. Question 2 : dans une cession à 90 000 000 FCFA avec un earn-out de 15 % du chiffre d''affaires additionnel au-delà de 60 000 000 FCFA, plafonné à 20 000 000 FCFA, quel est le prix total si le chiffre d''affaires de l''exercice suivant atteint 95 000 000 FCFA ? Réponse : earn-out théorique = 15 % × (95 000 000 − 60 000 000) = 15 % × 35 000 000 = 5 250 000 FCFA, inférieur au plafond ; prix total = 90 000 000 + 5 250 000 = 95 250 000 FCFA. Question 3 : quelle est la différence essentielle entre une entente et un abus de position dominante quant au nombre d''acteurs impliqués ? Réponse : l''entente implique au moins deux entreprises en accord ; l''abus implique une seule entreprise qui détient individuellement une position dominante. Question 4 : une clause de hardship permet-elle d''obtenir automatiquement une révision du prix ? Réponse : non, elle organise seulement une procédure de renégociation ; elle ne garantit pas un résultat déterminé à l''avance. Question 5 : pourquoi la même clause d''exclusivité peut-elle être licite entre deux petites entreprises et poser un problème de concurrence entre un acteur dominant et son réseau ? Réponse : parce que l''analyse concurrentielle s''intéresse à l''effet réel sur la structure du marché, qui dépend du pouvoir de marché de l''entreprise qui impose la clause, pas seulement du contenu littéral de la clause. Merci pour votre attention ; la prochaine séance portera sur l''arbitrage et les modes alternatifs de résolution des litiges.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des contrats d''affaires et de la concurrence');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Arbitrage et modes alternatifs de résolution des litiges', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : comprendre la logique de la clause compromissoire, les avantages comparés des modes alternatifs de résolution des litiges, et le rôle général de la CCJA de l''OHADA en matière d''arbitrage. Matériel recommandé : tableau ou diaporama, exemple de clause compromissoire type à annoter. Prérequis : institutions et bases de la procédure vues en Licence 1, droit commercial général OHADA vu en Licence 2.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Nous terminons aujourd''hui le cycle des trois matières de Master 1 avec l''arbitrage et les modes alternatifs de résolution des litiges. C''est une matière différente des deux précédentes : il ne s''agit plus de qualifier une opération d''affaires, mais de comprendre comment les entreprises choisissent, par avance, la façon dont elles régleront leurs désaccords futurs. Gardez à l''esprit, pendant toute la séance, que l''objectif du Master 1 est de comprendre la logique d''ensemble et les grands mécanismes, pas de maîtriser le détail procédural fin d''un arbitrage, qui relève d''un enseignement spécialisé que certains d''entre vous approfondiront peut-être en Master 2 ou en formation professionnelle.
-
-## 05:00 – 15:00 · Pourquoi choisir l''arbitrage et les MARL dans les affaires
-
-Pourquoi des entreprises, en particulier dans un cadre régional, préfèrent-elles souvent éviter la juridiction étatique de leur cocontractant ? Cinq raisons structurent la réponse. La neutralité, d''abord : aucune partie ne souhaite être jugée devant les tribunaux du pays de l''autre, par crainte d''un traitement moins favorable, même si cette crainte n''est pas toujours justifiée en pratique. La confidentialité, ensuite : l''arbitrage se déroule en principe de façon confidentielle, contrairement à une procédure judiciaire généralement publique, ce qui protège les secrets d''affaires des parties. La spécialisation : les parties choisissent des arbitres ayant une expertise sectorielle précise, alors qu''un juge étatique traite des litiges de toute nature. La flexibilité procédurale et la rapidité relative, les parties pouvant organiser elles-mêmes certains aspects de la procédure. Enfin, l''exécution transfrontalière généralement facilitée des sentences arbitrales, grâce à des conventions internationales de reconnaissance et d''exécution, ce qui est essentiel lorsque les parties ou leurs actifs sont situés dans des pays différents. Au-delà de l''arbitrage, rappelons les autres modes alternatifs : la médiation, où un tiers neutre aide les parties à trouver elles-mêmes une solution sans trancher le litige, et la conciliation, proche de la médiation mais où le conciliateur peut être plus actif dans la proposition de solutions.
-
-## 15:00 – 30:00 · La clause compromissoire : rédaction et effets
-
-Entrons maintenant dans le détail de la clause compromissoire, qui est l''outil juridique central de cette matière. Définition à retenir : c''est la clause insérée dans un contrat avant la survenance d''un litige, par laquelle les parties conviennent de soumettre à l''arbitrage les différends qui pourraient naître de ce contrat. Distinguez-la bien du compromis d''arbitrage, conclu après la naissance du litige pour ce litige précisément identifié — cette distinction de vocabulaire est souvent demandée à l''examen. Une clause compromissoire bien rédigée doit préciser cinq éléments que je vous demande de mémoriser : le siège de l''arbitrage, qui est le lieu juridique de référence pour la procédure, et qui n''est pas nécessairement le lieu où se tiennent physiquement les audiences ; le règlement d''arbitrage applicable, celui d''une institution déterminée, ou un arbitrage ad hoc sans institution ; la langue de la procédure ; le nombre d''arbitres, souvent un ou trois, et la méthode de leur désignation ; et le droit applicable au fond du litige, qui peut être différent de la loi du siège. L''absence de précision sur ces points n''empêche pas nécessairement l''arbitrage, car les règlements institutionnels prévoient des mécanismes de désignation par défaut, mais elle crée un risque de contestation et de retard. Venons-en maintenant à l''effet essentiel de la clause : elle dessaisit, en principe, les juridictions étatiques du litige couvert. On parle d''effet négatif (elle écarte la compétence étatique) et d''effet positif (elle fonde la compétence du tribunal arbitral). Si une partie saisit malgré tout un tribunal étatique en violation de la clause, l''autre partie peut soulever l''exception d''incompétence au profit de l''arbitrage convenu — retenez bien ce mécanisme, car il est systématiquement testé dans les cas pratiques de ce chapitre.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Prenons cinq minutes de pause active. Question à préparer : une entreprise qui a signé une clause compromissoire peut-elle, si elle le souhaite au moment du litige, décider unilatéralement de saisir plutôt un tribunal étatique parce qu''elle estime que ce sera plus rapide ? Réfléchissez à la réponse et à sa justification. (Réponse attendue : non, en principe, elle ne peut pas décider unilatéralement d''écarter la clause compromissoire qu''elle a signée ; si elle saisit malgré tout un tribunal étatique, l''autre partie peut soulever l''exception d''incompétence fondée sur la clause, ce qui devrait conduire le tribunal à se déclarer incompétent au profit de l''arbitrage convenu.)
-
-## 35:00 – 50:00 · Le rôle de la CCJA de l''OHADA en matière d''arbitrage
-
-Abordons maintenant la Cour commune de justice et d''arbitrage, la CCJA, organe juridictionnel commun aux États membres de l''OHADA. Son rôle en matière d''arbitrage se décompose en deux fonctions que vous devez pouvoir citer et distinguer. Premièrement, un rôle d''appui à l''arbitrage institutionnel : la CCJA peut administrer des arbitrages selon son propre règlement, en particulier pour des litiges relatifs à des contrats exécutés ou à exécuter dans l''espace OHADA, lorsque les parties ont choisi ce cadre dans leur clause compromissoire. Deuxièmement, un rôle juridictionnel vis-à-vis des sentences rendues sous son égide : reconnaissance et exécution de ces sentences dans l''espace OHADA, avec un contrôle limité de leur régularité, sans réexamen du fond du litige déjà tranché par les arbitres — ce point est important, la CCJA ne rejuge pas l''affaire, elle vérifie la régularité de la sentence. Au-delà de l''arbitrage, j''ajoute, pour la culture générale du droit des affaires OHADA, que la CCJA joue également un rôle de juridiction de cassation commune pour l''interprétation des actes uniformes — droit des sociétés, droit commercial général, sûretés — ce qui favorise une interprétation harmonisée du droit dans toute la zone et limite les divergences entre juridictions nationales. Pour un cas pratique de Master 1, il vous suffit de savoir identifier qu''un litige entrant dans le champ de l''OHADA, assorti d''une clause de référence à la CCJA, peut être porté devant cette institution, sans qu''on vous demande de détailler les délais précis ou les voies de recours internes à la procédure, qui relèvent d''un enseignement spécialisé d''arbitrage. Travaillons maintenant le cas filé : Delta Cacao SA, basée en Côte d''Ivoire, et Sahel Négoce SA, basée au Sénégal, ont un contrat de fourniture de fèves de cacao sur trois ans avec une clause compromissoire : arbitrage à trois arbitres, règlement CCJA, siège à Abidjan, droit ivoirien au fond. Un désaccord survient sur la qualité des livraisons, Sahel Négoce SA réclamant 60 000 000 FCFA. Analysons : la clause dessaisit en principe les juridictions étatiques sénégalaises et ivoiriennes ; le litige relève du champ OHADA et peut être porté devant un arbitrage administré selon le règlement visé ; le siège à Abidjan fixe le cadre juridique de référence pour la procédure, sans préjudice du droit ivoirien choisi pour trancher le fond sur la conformité des livraisons.
-
-## 50:00 – 65:00 · Choisir entre arbitrage, médiation et juridiction étatique
-
-Terminons la partie théorique par les critères de choix entre ces différents modes, qui est une question fréquente de business case. Quatre facteurs à mettre en balance systématiquement. La nature de la relation : une relation d''affaires que les parties veulent préserver à long terme s''oriente plutôt vers la médiation, plus propice à une solution négociée que l''arbitrage, qui tranche en faveur d''une partie. Le montant et la complexité du litige : un litige technique et élevé justifie souvent le coût d''un arbitrage spécialisé, alors qu''un litige de faible montant rendrait ce coût disproportionné — nous avons vu un exemple de ce type dans le cours précédent, avec un contrat de 2 000 000 FCFA assorti d''une clause d''arbitrage à trois arbitres sous règlement complexe, manifestement disproportionnée. Le besoin d''exécution transfrontalière : lorsque les parties ou leurs actifs sont dans des pays différents, l''arbitrage offre souvent de meilleures perspectives d''exécution. Le besoin de confidentialité : important lorsque le litige touche à des secrets d''affaires. Un bon candidat au Master doit, face à un cas pratique, mettre en balance ces quatre facteurs plutôt que de recommander systématiquement l''arbitrage, qui n''est pas toujours la meilleure option.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Cinq questions pour vérifier votre compréhension. Première question : la clause compromissoire est-elle conclue avant ou après la naissance du litige ? Réponse : avant, ce qui la distingue du compromis d''arbitrage, conclu après. Deuxième question : que se passe-t-il, en principe, si une partie saisit un tribunal étatique en violation d''une clause compromissoire ? Réponse : l''autre partie peut soulever l''exception d''incompétence, et le tribunal devrait se déclarer incompétent au profit de l''arbitrage convenu. Troisième question : citez deux rôles généraux de la CCJA en matière d''arbitrage. Réponse : un rôle d''appui à l''arbitrage institutionnel et un rôle juridictionnel de reconnaissance et d''exécution des sentences. Quatrième question : pourquoi la médiation peut-elle être préférable à l''arbitrage pour préserver une relation commerciale durable ? Réponse : parce qu''elle vise une solution négociée et consensuelle, alors que l''arbitrage tranche en faveur d''une partie contre l''autre. Cinquième question : dans le cas Delta Cacao, quel est le droit applicable au fond du litige, distinct du siège de l''arbitrage ? Réponse : le droit ivoirien, alors que le siège de l''arbitrage est fixé à Abidjan — ces deux éléments coïncident ici, mais auraient pu être différents.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Synthétisons cette séance, qui clôt le cycle des trois matières de Master 1. L''arbitrage se distingue de la médiation et de la conciliation par son caractère tranchant : une sentence obligatoire, alors que les autres modes aident seulement les parties à trouver elles-mêmes une solution. La clause compromissoire, insérée avant le litige, a pour effet d''écarter la compétence étatique au profit de l''arbitrage convenu, et doit être rédigée avec soin sur cinq points : siège, règlement, langue, nombre d''arbitres, droit applicable au fond. La CCJA de l''OHADA joue un double rôle en matière d''arbitrage, d''appui institutionnel et de reconnaissance-exécution des sentences, en plus de son rôle de cassation commune pour le droit uniforme — rôle qu''il faut savoir situer sans en détailler la procédure fine. Enfin, le choix entre les modes de résolution des litiges doit toujours résulter d''une mise en balance de plusieurs facteurs (nature de la relation, montant, exécution transfrontalière, confidentialité), jamais d''un réflexe automatique. Cette approche en facteurs multiples, que nous avons retrouvée dans les trois matières de l''année, est exactement la compétence d''analyse que le Master 1 cherche à développer chez vous.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit avant la synthèse générale de fin d''année. Question 1 : définissez la clause compromissoire et distinguez-la du compromis d''arbitrage. Réponse : la clause compromissoire est conclue avant le litige, dans le contrat initial, pour les différends futurs ; le compromis d''arbitrage est conclu après la naissance du litige, pour ce litige précisément identifié. Question 2 : citez les cinq éléments qu''une clause compromissoire bien rédigée doit préciser. Réponse : le siège, le règlement applicable, la langue, le nombre d''arbitres et leur méthode de désignation, et le droit applicable au fond. Question 3 : quels sont les deux rôles généraux de la CCJA en matière d''arbitrage ? Réponse : appui à l''arbitrage institutionnel et rôle juridictionnel de reconnaissance et d''exécution des sentences rendues sous son égide. Question 4 : citez trois des cinq raisons pour lesquelles les entreprises préfèrent souvent l''arbitrage à la juridiction étatique dans les relations d''affaires internationales. Réponse : par exemple la neutralité, la confidentialité, et l''exécution transfrontalière facilitée (on pouvait aussi citer la spécialisation des arbitres ou la flexibilité procédurale). Question 5 : pourquoi un litige de faible montant assorti d''une clause d''arbitrage institutionnel complexe à trois arbitres pose-t-il un problème d''opportunité économique ? Réponse : parce que le coût et la durée de cette procédure risquent de dépasser, ou d''être disproportionnés par rapport à, l''enjeu financier réel du litige, ce qui rend ce choix économiquement inadapté pour des montants modestes. Merci à toutes et à tous : nous nous retrouvons pour la séance de synthèse transversale qui clôturera l''année de Master 1.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Arbitrage et modes alternatifs de résolution des litiges');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Synthèse transversale et atelier cas pratique (groupe Sine Agro)', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : synthèse transversale de l''année de Master 1 à travers un cas pratique d''entreprise filé mêlant gouvernance de groupe, contrats d''affaires et concurrence, arbitrage ; entraînement à la méthode de résolution d''un cas pratique complexe en temps limité. Matériel recommandé : tableau ou diaporama avec l''organigramme du groupe étudié, chronomètre pour simuler les conditions d''examen. Prérequis : les trois séances vidéo précédentes de Master 1.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction à l''atelier de synthèse
-
-Bonjour à toutes et à tous. Cette séance clôt le cycle de Master 1 : ce n''est pas un cours nouveau, mais un atelier de synthèse transversale, construit autour d''un cas pratique d''entreprise unique qui va mobiliser, successivement, les trois matières que nous avons étudiées — gouvernance et groupes de sociétés, contrats d''affaires et concurrence, arbitrage et modes alternatifs de résolution des litiges. L''objectif est double : consolider vos connaissances en les reliant entre elles, et vous entraîner à la méthode de résolution d''un cas complexe en conditions proches de l''examen, avec gestion du temps.
-
-## 05:00 – 15:00 · Présentation du cas d''entreprise filé : groupe Sine Agro
-
-Voici le cas que nous allons résoudre ensemble pendant toute la séance. Le groupe Sine Agro, basé à Kaolack, est structuré autour d''une société holding, Sine Agro Holding SA, qui détient 75 % de Sine Agro Production SARL (activité de transformation de céréales) et 40 % de Sine Agro Export SARL (activité d''exportation), les 60 % restants de cette dernière étant détenus par onze actionnaires individuels qui, historiquement, n''ont jamais voté ensemble contre les propositions de la holding lors des cinq dernières assemblées générales. Premier fait à traiter : le directeur général de Sine Agro Holding SA, Mme Diallo, est actionnaire à 50 % d''une société d''emballage, Pack Sine SARL, qui fournit à Sine Agro Production SARL l''intégralité de ses emballages pour 36 000 000 FCFA par an, alors que deux devis concurrents indépendants situent le prix de marché à 27 000 000 FCFA par an pour une prestation comparable. Le contrat a été signé par le directeur général de Sine Agro Production SARL sans consultation préalable de son conseil d''administration. Deuxième fait : Sine Agro Export SARL, qui détient 52 % du marché régional de l''exportation de céréales transformées vers les pays voisins, impose à ses neuf partenaires logistiques locaux une clause d''exclusivité réciproque de sept ans, sans contrepartie financière spécifique. Troisième fait : le contrat entre Sine Agro Export SARL et l''un de ses partenaires logistiques, Express Sine SARL, comporte une clause compromissoire (arbitre unique, règlement CCJA, siège Dakar, droit sénégalais au fond). Un litige survient sur une rupture anticipée, Express Sine SARL réclamant 18 000 000 FCFA ; Sine Agro Export SARL saisit directement le tribunal de commerce de Kaolack sans mentionner la clause.
-
-## 15:00 – 30:00 · Résolution guidée : la gouvernance du groupe
-
-Prenons le premier bloc de questions, exactement comme à l''examen, chronomètre en main — comptez-vous quinze minutes pour cette partie si vous étiez en conditions réelles. Première sous-question : qualifiez le lien de contrôle entre la holding et chacune de ses deux filiales. Pour Sine Agro Production SARL, 75 % du capital : contrôle de droit, sans ambiguïté. Pour Sine Agro Export SARL, 40 % du capital, mais majorité systématique obtenue en assemblée depuis cinq ans face à des actionnaires dispersés n''ayant jamais voté ensemble : c''est un contrôle de fait. Deuxième sous-question : le contrat entre Sine Agro Production SARL et Pack Sine SARL constitue-t-il une convention réglementée ? Mme Diallo, directrice générale de la holding, détient 50 % de Pack Sine SARL : lien d''intérêt significatif. Calculons l''écart : 36 000 000 moins 27 000 000 égale 9 000 000 FCFA, soit un taux de majoration de 9 000 000 divisé par 27 000 000, soit environ 33,3 % au-dessus du marché. Cet écart très significatif écarte la qualification de convention courante : c''est une convention réglementée, et l''absence de consultation préalable du conseil d''administration de Sine Agro Production SARL constitue un manquement procédural, ouvrant la voie à la responsabilité civile de la personne ayant engagé la société sans autorisation, pour un préjudice correspondant au surcoût de 9 000 000 FCFA par an.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Cinq minutes de pause active. Question à préparer : si Mme Diallo n''était que directrice générale de Sine Agro Holding SA, sans aucune participation au capital de Pack Sine SARL, le contrat entre Sine Agro Production SARL et Pack Sine SARL poserait-il encore un risque de qualification de convention réglementée du simple fait de l''appartenance au même groupe ? Réfléchissez-y. (Réponse attendue : pas automatiquement du seul fait de l''appartenance au groupe ; la qualification de convention réglementée dépend de l''existence d''un lien d''influence identifié entre une personne physique ou morale liée et l''une des sociétés concernées, pas de la seule structure de groupe en elle-même ; en l''absence de tout lien d''intérêt personnel de Mme Diallo dans Pack Sine SARL, l''opération resterait une relation commerciale ordinaire entre deux sociétés, à apprécier sous l''angle du droit commun des contrats plutôt que sous celui des conventions réglementées.)
-
-## 35:00 – 55:00 · Résolution guidée : concurrence et arbitrage
-
-Continuons avec le deuxième bloc. Troisième sous-question : la clause d''exclusivité réciproque de sept ans imposée par Sine Agro Export SARL à ses neuf partenaires logistiques pose-t-elle un risque de qualification anticoncurrentielle ? Reprenons la méthode en trois facteurs étudiée précédemment. Position de marché : 52 % du marché régional de l''exportation, indice fort de position dominante possible, sous réserve de la définition précise du marché pertinent. Ampleur : l''exclusivité est appliquée systématiquement à l''ensemble des neuf partenaires, ce qui crée un effet cumulatif de verrouillage pour des concurrents qui chercheraient à accéder aux mêmes partenaires logistiques. Durée et justification : sept ans est une durée longue, et l''absence de contrepartie financière spécifique affaiblit la justification économique de la contrainte. La combinaison de ces trois facteurs constitue un risque réel de qualification d''abus de position dominante, sous réserve d''une analyse plus fine du marché pertinent. Quatrième sous-question : la saisine directe du tribunal de commerce de Kaolack par Sine Agro Export SARL est-elle conforme à la clause compromissoire ? Non : la clause dessaisit en principe les juridictions étatiques du litige couvert ; Express Sine SARL peut soulever l''exception d''incompétence fondée sur la clause, ce qui devrait conduire le tribunal à se déclarer incompétent au profit de l''arbitrage convenu — arbitre unique, règlement CCJA, siège Dakar, droit sénégalais au fond — pour la demande de 18 000 000 FCFA. La CCJA jouerait alors son rôle d''appui institutionnel à la procédure arbitrale, puis, le cas échéant, un rôle de reconnaissance et d''exécution de la sentence qui serait rendue.
-
-## 55:00 – 65:00 · Quiz interactif transversal
-
-Cinq questions qui mobilisent les trois matières ensemble. Première question : dans le cas Sine Agro, quel est le montant du surcoût annuel identifié dans le contrat d''emballage ? Réponse : 9 000 000 FCFA. Deuxième question : quel type de contrôle caractérise le lien entre la holding et Sine Agro Export SARL ? Réponse : un contrôle de fait. Troisième question : quels sont les trois facteurs qui convergent pour caractériser un risque d''abus de position dominante dans le cas de l''exclusivité logistique ? Réponse : la position de marché (52 %), l''ampleur systématique sur les neuf partenaires, et la durée longue (sept ans) sans contrepartie spécifique. Quatrième question : la saisine du tribunal de commerce de Kaolack est-elle valable malgré la clause compromissoire ? Réponse : non, en principe, sous réserve que l''autre partie soulève l''exception d''incompétence. Cinquième question : quel est le point commun méthodologique entre l''analyse de la convention réglementée et l''analyse de la clause d''exclusivité anticoncurrentielle ? Réponse : dans les deux cas, la méthode consiste à comparer la situation litigieuse à une référence objective (le prix de marché pour la convention réglementée, les standards de proportionnalité et de justification économique pour l''exclusivité) plutôt qu''à juger sur la seule base du lien d''intérêt ou de la puissance économique en eux-mêmes.
-
-## 65:00 – 80:00 · Rédaction guidée en temps limité
-
-Je vous propose maintenant un exercice de rédaction en temps limité, pour vous entraîner aux conditions réelles d''examen. Vous avez quinze minutes, chronomètre en main, pour rédiger une réponse structurée à la question suivante : « En reprenant le cas Sine Agro, rédigez une recommandation destinée au conseil d''administration de Sine Agro Holding SA, identifiant les trois principaux risques juridiques du groupe et une mesure corrective pour chacun. » Pendant que vous rédigez, je vous rappelle la structure attendue : une phrase d''introduction qui annonce les trois risques, puis, pour chacun, un paragraphe qui qualifie juridiquement le risque, chiffre son impact lorsque c''est possible, et propose une mesure corrective concrète. À la fin des quinze minutes, voici une proposition de corrigé que vous pourrez comparer à votre rédaction : premier risque, la convention réglementée non autorisée avec Pack Sine SARL, exposant Mme Diallo et la société à un risque de responsabilité civile pour le surcoût de 9 000 000 FCFA par an ; mesure corrective : soumettre rétroactivement la convention à l''autorisation du conseil d''administration de Sine Agro Production SARL et renégocier le tarif au niveau du marché. Deuxième risque, l''exposition à une qualification d''abus de position dominante pour la clause d''exclusivité logistique ; mesure corrective : réduire la durée de l''exclusivité et introduire une contrepartie financière spécifique (par exemple un financement des investissements logistiques des partenaires) pour renforcer sa justification économique. Troisième risque, le non-respect de la clause compromissoire dans le litige avec Express Sine SARL, qui expose le groupe à une perte de temps procédurale si le tribunal de commerce se déclare incompétent ; mesure corrective : retirer la saisine du tribunal de commerce et engager directement la procédure d''arbitrage convenue, pour éviter un double contentieux.
-
-## 80:00 – 85:00 · Synthèse générale de l''année de Master 1
-
-Pour conclure cette année de Master 1 en droit des affaires, retenez la méthode transversale que nous avons appliquée tout au long de ce cas filé : face à un ensemble de faits d''entreprise, il faut systématiquement cartographier les structures de contrôle, identifier les parties liées et leurs intérêts, comparer les éléments chiffrés à une référence objective de marché, puis vérifier la cohérence des choix contractuels de résolution des litiges avec le comportement effectif des parties. Cette méthode, applicable à la gouvernance, à la concurrence et à l''arbitrage, est exactement ce qui distingue une copie de Master d''une copie de Licence : la capacité à faire dialoguer plusieurs branches du droit sur un même ensemble de faits, plutôt qu''à traiter chaque question de façon isolée.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation finale pour clore l''année. Question 1 : quelle est la différence entre un contrôle de droit et un contrôle de fait, illustrée par le cas Sine Agro ? Réponse : le contrôle de droit (75 % sur Sine Agro Production SARL) résulte de la majorité du capital ; le contrôle de fait (40 % sur Sine Agro Export SARL avec majorité systématique en assemblée) résulte d''une influence déterminante sans majorité formelle. Question 2 : quel est le taux de majoration du contrat d''emballage par rapport au prix de marché dans le cas Sine Agro ? Réponse : environ 33,3 %, calculé comme 9 000 000 divisé par 27 000 000. Question 3 : citez les trois facteurs d''analyse d''un risque anticoncurrentiel appliqués au cas de l''exclusivité logistique. Réponse : la position de marché, l''ampleur et la systématicité de la pratique, et la durée associée à la justification économique. Question 4 : quelle est la conséquence procédurale générale d''une saisine d''un tribunal étatique en violation d''une clause compromissoire, si l''autre partie soulève l''exception d''incompétence ? Réponse : le tribunal étatique devrait se déclarer incompétent au profit de l''arbitrage convenu. Question 5 : quelle est la compétence transversale centrale que ce cycle de Master 1 a cherché à développer ? Réponse : la capacité à analyser un ensemble de faits d''entreprise en mobilisant simultanément plusieurs branches du droit des affaires (gouvernance, contrats et concurrence, résolution des litiges), avec une méthode fondée sur la comparaison à des références objectives plutôt que sur des réponses automatiques. Merci à toutes et à tous pour votre travail cette année ; bon courage pour vos examens de Master 1.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Synthèse transversale et atelier cas pratique (groupe Sine Agro)');

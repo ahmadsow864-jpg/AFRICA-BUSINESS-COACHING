@@ -4454,6 +4454,72 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "mas-cg-m2",
+  "level": "Master 2",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Contrôle de gestion Master 2 : réussir ses examens",
+  "description": "Préparation aux examens de Master 2 en Contrôle de gestion : contrôle de gestion des groupes et consolidation du pilotage, audit de la performance et contrôle interne avancé, méthodologie du mémoire professionnel et de la soutenance. Études de cas de groupe sénégalais et africains fictifs, calculs vérifiés, sujet type d'examen corrigé, et quatre cours vidéo de 1h30 dont un atelier de simulation de soutenance.",
+  "sort": 732,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Le Master 2 en Contrôle de gestion est l'année qui vous mène à la fois aux examens des matières avancées et, le plus souvent, à la soutenance d'un mémoire professionnel ou de recherche. Les enjeux changent de nature : vous devez démontrer une capacité d'analyse critique sur des situations de groupe complexes, et vous devez aussi être capable de défendre oralement un travail personnel devant un jury.\n\n## Ce qui distingue le Master 2 du Master 1\n\nEn Master 1, vous avez appris à articuler plusieurs outils de contrôle de gestion pour piloter la performance d'une entreprise ou d'un groupe simple à deux filiales. En Master 2, l'échelle change : on raisonne au niveau d'un groupe à plusieurs filiales, parfois international, avec des enjeux de consolidation comptable et de pilotage de la performance consolidée. On ajoute également une dimension de contrôle et d'audit : vérifier que les chiffres produits par le contrôle de gestion sont fiables, que les processus internes maîtrisent les risques, et que le dispositif de contrôle interne du groupe est robuste.\n\nEnfin, le Master 2 est généralement l'année du mémoire professionnel : un travail personnel, documenté, qui applique les méthodes de contrôle de gestion à un cas réel ou à une problématique précise, suivi d'une soutenance orale devant un jury. Réussir cette année suppose donc de maîtriser à la fois le contenu technique des matières et la méthode de production et de défense d'un mémoire.\n\n## Les trois matières avancées de l'année\n\n- Contrôle de gestion des groupes et consolidation du pilotage : maîtriser les mécanismes de consolidation (périmètre, méthodes, élimination des opérations intragroupe, intérêts minoritaires) du point de vue du contrôleur de gestion, et construire un reporting de pilotage consolidé cohérent avec ces retraitements.\n- Audit de la performance et contrôle interne avancé : comprendre les démarches d'audit interne et d'audit de performance, les techniques de sondage et d'évaluation du contrôle interne, et savoir produire des recommandations d'amélioration.\n- Méthodologie du mémoire professionnel et soutenance : construire une problématique, une démarche de recherche ou d'étude de cas, un plan rigoureux, et préparer une soutenance orale convaincante.\n\n## Méthode de travail au niveau Master 2\n\nLes études de cas de consolidation exigent une grande rigueur de présentation : schématisez toujours l'organigramme du groupe (quelle filiale, quel pourcentage de détention, quelle méthode de consolidation) avant de calculer quoi que ce soit. En audit de performance, prenez l'habitude de distinguer clairement le constat (ce que révèle le contrôle ou le sondage), la cause probable, le risque associé, et la recommandation : c'est la structure attendue d'un rapport d'audit, et c'est aussi celle qu'un correcteur attend dans une copie d'examen.\n\nPour le mémoire, la méthode de travail est différente d'un examen classique : il s'agit d'un travail long, étalé sur plusieurs mois, qui demande une problématique claire, une revue de la littérature ou des pratiques existantes, une méthode de collecte ou d'analyse des données explicite, et une discussion critique des résultats. La soutenance, quant à elle, se prépare comme un exercice oral à part entière : un temps de présentation limité (souvent 15 à 20 minutes), suivi de questions du jury, qui exigent une connaissance approfondie de votre propre travail et une capacité à argumenter sous pression.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : mécanismes de consolidation (périmètre, méthodes d'intégration, pourcentages de contrôle et d'intérêt).\n- Semaine 2 : élimination des opérations intragroupe, calcul des intérêts minoritaires ; exercices chiffrés complets.\n- Semaine 3 : audit interne, contrôle interne, démarche d'audit de performance, techniques de sondage.\n- Semaine 4 : exercices de synthèse combinant consolidation et audit sur un cas de groupe complet.\n- Semaine 5 : méthodologie du mémoire (problématique, plan, méthode) et préparation de la soutenance.\n- Semaine 6 : sujet type complet en conditions chronométrées, puis simulation de soutenance (atelier méthodologie).\n\n## Points clés à retenir\n\n- La consolidation d'un groupe élimine les opérations intragroupe et répartit le résultat entre le groupe et les intérêts minoritaires selon le pourcentage de détention.\n- L'audit de performance combine constat, cause, risque et recommandation ; les techniques de sondage permettent d'extrapoler un taux d'anomalie à une population entière.\n- La réussite du mémoire professionnel repose autant sur la rigueur méthodologique du document écrit que sur la qualité de l'argumentation orale lors de la soutenance.\n- Il n'y a pas de duplication entre les matières de M1 (performance globale, centres de responsabilité, systèmes d'information) et celles de M2 (consolidation, audit, mémoire) : chaque année ajoute un niveau de complexité propre.\n\n## Exercices pratiques\n\n1. Expliquez en quelques lignes pourquoi la consolidation d'un groupe à plusieurs filiales est un enjeu de contrôle de gestion et pas seulement un enjeu de comptabilité.\n2. Citez les quatre éléments attendus dans la structuration d'un constat d'audit de performance.\n3. Un groupe détient 70 % d'une filiale. Si le résultat consolidé retraité de cette filiale est de 240 725 000 FCFA, quelle est la part du groupe et quelle est la part des intérêts minoritaires ?\n4. Quelle est la différence entre un mémoire professionnel et un mémoire de recherche, dans le contexte du Master 2 ?\n5. Citez trois bonnes pratiques pour bien préparer l'oral de soutenance d'un mémoire.\n\n## Corrigé\n\n1. La consolidation détermine comment la performance de chaque filiale est agrégée et présentée au niveau du groupe : les choix de méthode de consolidation, de retraitement des opérations intragroupe, et de répartition entre groupe et intérêts minoritaires ont un effet direct sur les indicateurs de pilotage (résultat consolidé, ROI, EVA) que le contrôleur de gestion utilise pour évaluer la performance globale et celle de chaque filiale. C'est donc un enjeu de pilotage, qui dépasse la seule technique comptable.\n2. Le constat (ce que révèle le contrôle), la cause probable (pourquoi cette situation existe), le risque associé (quelles conséquences si rien n'est fait), et la recommandation (l'action corrective proposée).\n3. Part du groupe = 240 725 000 × 0,70 = 168 507 500 FCFA. Part des intérêts minoritaires = 240 725 000 × 0,30 = 72 217 500 FCFA.\n4. Un mémoire professionnel s'appuie généralement sur une expérience ou un cas d'entreprise concret (souvent un stage ou une mission), avec un objectif d'application pratique des outils de contrôle de gestion ; un mémoire de recherche mobilise davantage une problématique théorique, une revue de littérature académique approfondie, et une méthode de collecte de données plus proche de la recherche en gestion. Les deux exigent rigueur méthodologique et esprit critique, mais leur finalité et leur public diffèrent.\n5. Exemples acceptés : maîtriser parfaitement son propre travail (chiffres, méthode, limites) pour répondre sans hésitation aux questions du jury ; préparer et chronométrer sa présentation pour respecter le temps imparti ; anticiper les questions critiques probables (limites de la méthode, choix non retenus) et préparer des réponses argumentées plutôt que défensives. D'autres bonnes pratiques pertinentes sont acceptées."
+   },
+   {
+    "title": "Contrôle de gestion des groupes et consolidation du pilotage : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Audit de la performance et contrôle interne avancé : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Méthodologie du mémoire professionnel et de la soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 en Contrôle de gestion (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : Contrôle de gestion des groupes et consolidation du pilotage",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Audit de la performance et contrôle interne avancé",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire professionnel et de la soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "mas-compta-m1",
   "level": "Master 1",
   "subject": "Comptabilité",
