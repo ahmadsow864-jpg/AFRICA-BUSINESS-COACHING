@@ -6096,6 +6096,8 @@ Texte du formateur : « Seize bus, c''est beaucoup. Peut-on accepter 15 minutes 
 
 Texte du formateur : « En heure creuse, la demande tombe à 180 voyageurs par heure : 3 passages suffisent, soit 20 minutes d''intervalle et seulement 6 bus. On libère donc des bus pour l''entretien en milieu de journée. »
 
+Texte du formateur : « Pour le transport du personnel de l''usine, la logique change : ce sont les prises de poste qui commandent. L''équipe du matin compte 210 personnes réparties dans quatre quartiers. Avec des minibus de 30 places, il faut au moins 7 circuits, que l''on répartit selon les effectifs de chaque quartier, en arrivant sur le site quelques minutes avant la prise de poste. »
+
 ## 18:00 – 30:00 · Véhicules de réserve et chauffeurs
 
 Texte du formateur : « Restons sur un scénario plus modeste de 8 bus en ligne. Il faut une réserve pour les pannes et l''entretien : avec un taux interne de 10 %, cela fait 1 bus de plus, 9 au total. Côté chauffeurs : 8 bus, deux services par jour, sept jours sur sept, cela fait 112 services par semaine. Si un chauffeur assure 6 services par semaine, il en faut environ 18,7. Avec une marge de 10 % pour les congés et absences, on arrive à 21 chauffeurs. »
@@ -6130,6 +6132,8 @@ Correction : 1) rotation 80 min, 4 véhicules ; 2) 6 passages par heure, interva
 Texte du formateur : « Parlons maintenant de ce qui ne se négocie pas : la sécurité. Trois piliers. Le véhicule : vérification chaque matin, entretien préventif, extincteur et trousse de secours à bord. Le conducteur : permis adapté, zéro alcool, pas de téléphone en main, respect des vitesses, repos suffisant. L''organisation : pas de surcharge, des horaires réalistes, une procédure d''accident connue de tous. »
 
 Visuel : check-list de prise de service et schéma de la procédure en cas d''accident.
+
+Texte du formateur : « Arrêtons-nous sur la procédure en cas d''accident, car le stress fait oublier les bons gestes. Premier réflexe : sécuriser, avec les feux de détresse et le triangle, et faire descendre les voyageurs du côté opposé à la circulation si c''est sans danger. Deuxième réflexe : alerter les secours et l''exploitation, en donnant le lieu exact et le nombre de blessés. Troisième réflexe : porter assistance sans déplacer un blessé, sauf danger immédiat comme un risque d''incendie. Ensuite seulement viennent le constat, les témoignages et les photos. Le lendemain, on analyse l''accident avec le chauffeur pour comprendre ce qui s''est passé et éviter qu''il se reproduise. L''objectif n''est pas de trouver un coupable à tout prix, mais d''améliorer le système. »
 
 Texte du formateur : « Côté qualité, mesurons. Le mois dernier, 1 240 départs prévus, 1 091 à l''heure : 88 % de ponctualité. 3 accidents matériels pour 450 000 km : environ 0,67 accident pour 100 000 km. Ces chiffres sont des repères internes, que l''on compare de mois en mois et de ligne en ligne. »
 
