@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 12/13). À exécuter après seed.sql.
+-- Cours (partie 12/16). À exécuter après seed.sql.
 
 -- Cours : Droit des affaires Licence 3 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

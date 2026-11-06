@@ -4056,5 +4056,731 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "mas-rh-m1",
+  "level": "Master 1",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Ressources humaines Master 1 : réussir ses examens",
+  "description": "Préparation aux examens de Master 1 en ressources humaines : stratégie RH et posture de business partner, audit social et diagnostic RH avancé, droit social avancé et gestion des contentieux. Études de cas d'entreprises sénégalaises et africaines fictives, exercices corrigés et sujet type d'examen. Public : étudiants de Master 1 RH ayant validé les fondamentaux de Licence.",
+  "sort": 701,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Le Master 1 en ressources humaines marque une rupture nette avec la Licence. Vous ne révisez plus des\ndéfinitions et des procédures de base : vous devez démontrer une capacité d'analyse critique, de diagnostic\net de décision en situation d'incertitude, sur des cas d'entreprise complexes et souvent incomplets, comme\ndans la réalité d'une direction des ressources humaines (DRH) africaine confrontée à la croissance, à la\nrestructuration ou à la conflictualité sociale.\n\n## Ce qui change par rapport à la Licence\n\nEn Licence, vous avez appris les briques : introduction à la GRH, droit du travail de base, comportement\norganisationnel, recrutement, paie, formation, GPEC, dialogue social, rémunération et SIRH. Le Master 1\nsuppose ces briques acquises et vous demande de les assembler au service d'une décision stratégique. Trois\nexigences nouvelles structurent l'année : la stratégie RH doit être alignée sur la stratégie d'entreprise\n(logique de business partner, et non plus seulement de gestionnaire administratif) ; le pilotage RH doit\ns'appuyer sur un audit social rigoureux et des indicateurs avancés, pas seulement sur l'intuition du\ndirigeant ; et le droit social doit être mobilisé pour anticiper et gérer des contentieux réels (licenciement\ncontesté, négociation collective, procédure prud'homale), pas seulement pour citer un texte.\n\n## Les trois matières avancées de l'année\n\nLa première matière, stratégie RH et alignement avec la stratégie d'entreprise, vous apprend à lire un plan\nstratégique d'entreprise (croissance, diversification, internationalisation, réduction de coûts) et à en\ndéduire les choix RH cohérents : effectifs cibles, compétences critiques, organisation, politique de\nrémunération, calendrier social. C'est la logique du HR business partner, qui siège au comité de direction et\nparle le langage du chiffre d'affaires et de la marge, pas seulement celui du droit du travail.\n\nLa deuxième matière, audit social et diagnostic RH, vous enseigne à construire et interpréter des indicateurs\navancés (taux de rotation, taux d'absentéisme, taux de promotion interne, masse salariale rapportée au chiffre\nd'affaires, climat social) et à produire un bilan social argumenté qui éclaire une décision, par exemple un\nplan de départs volontaires ou un plan de fidélisation.\n\nLa troisième matière, droit social avancé et gestion des contentieux, approfondit les situations à risque :\nrupture du contrat de travail (licenciement pour motif personnel ou économique), négociation collective\n(accords d'entreprise, conventions collectives) et contentieux devant les juridictions du travail. L'objectif\nn'est pas de mémoriser des articles de loi précis, le cadre législatif sénégalais étant en transition (projet\nde code du travail en discussion), mais de maîtriser les mécanismes, les risques et les bonnes pratiques de\nsécurisation, en vérifiant toujours le texte en vigueur au moment des faits.\n\n## Méthode de travail pour le Master 1\n\nÀ ce niveau, trois outils de travail deviennent indispensables. D'abord, l'étude de cas complexe : un dossier\nd'entreprise fictive, avec des données chiffrées parfois contradictoires ou incomplètes, dans lequel vous\ndevez identifier le problème RH réel avant de proposer une solution argumentée. Ensuite, le business case :\nvous devez chiffrer l'impact financier de vos recommandations (coût d'un plan de formation, économie d'un\nplan de départs, coût d'un contentieux) et les présenter comme le ferait un consultant devant un comité de\ndirection. Enfin, la revue de littérature : pour les matières les plus conceptuelles (stratégie RH, GPEC\navancée), vous devez être capable de synthétiser plusieurs approches théoriques (par exemple les modèles de\nl'alignement stratégique RH) et de les discuter de façon critique, sans réciter un seul auteur comme une\nvérité unique.\n\nBeaucoup d'étudiants qui réussissent bien un partiel de Master 1 échouent sur l'étude de cas parce qu'ils se\nprécipitent sur la solution avant d'avoir posé un diagnostic rigoureux. La méthode conseillée est systématique :\nlire le cas deux fois, lister les faits (chiffres, dates, acteurs), formuler le ou les problèmes RH sous-jacents,\nmobiliser les concepts pertinents des trois matières, proposer une ou plusieurs solutions argumentées en\nanticipant leurs limites, puis conclure par une recommandation chiffrée et un plan d'action daté.\n\n## Plan de révision sur six semaines\n\nSemaine 1 : reprendre les bases de Licence en droit du travail et comportement organisationnel pour s'assurer\nqu'aucune brique ne manque, puis lire l'intégralité du cours de stratégie RH et alignement.\n\nSemaine 2 : travailler la stratégie RH en profondeur, avec au moins trois cas pratiques complets, en\ns'entraînant à chiffrer un business case simple (coût d'un recrutement stratégique, retour sur investissement\nd'une politique de rétention).\n\nSemaine 3 : passer à l'audit social et au diagnostic RH, construire soi-même un petit tableau d'indicateurs\nà partir de données fictives, et s'entraîner à rédiger une synthèse de bilan social en une page.\n\nSemaine 4 : traiter le droit social avancé et la gestion des contentieux, en se concentrant sur les mécanismes\n(étapes d'un licenciement sécurisé, logique d'une négociation collective, déroulement d'une procédure\nprud'homale en principe) plutôt que sur des numéros d'articles.\n\nSemaine 5 : faire et refaire le sujet type d'examen multi-matières dans les conditions du jour J (temps\nlimité, sans notes), puis corriger soi-même avant de comparer au corrigé détaillé.\n\nSemaine 6 : révision croisée, en reliant les trois matières entre elles (par exemple : comment un diagnostic\nsocial révèle un risque juridique qui doit être intégré dans la stratégie RH), et relecture active des\nquatre cours vidéo, en reformulant à voix haute les points clés sans regarder le support.\n\n## Points clés à retenir\n\n- Le Master 1 évalue la capacité à relier stratégie d'entreprise, diagnostic RH chiffré et sécurisation\njuridique, pas la restitution isolée de connaissances.\n- Toute recommandation RH doit être argumentée et, autant que possible, chiffrée.\n- Le cadre légal sénégalais étant en transition, privilégiez la maîtrise des mécanismes et la prudence sur\nles chiffres précis, en rappelant systématiquement qu'il faut vérifier le texte en vigueur.\n- La méthode de l'étude de cas (faits, problème, concepts, solution argumentée, recommandation) doit devenir\nun réflexe avant chaque partiel.\n\n## Exercices pratiques\n\n1. Expliquez en cinq lignes la différence entre une fonction RH administrative et une fonction RH business\npartner.\n2. Citez trois indicateurs RH avancés utiles à un audit social et justifiez chacun en une phrase.\n3. Un directeur général sénégalais vous dit : « je veux réduire ma masse salariale de 10 % cette année ».\nListez trois options RH possibles avant tout licenciement, avec un avantage et un risque pour chacune.\n4. Pourquoi est-il risqué, dans un devoir de droit social, de citer un numéro d'article précis du futur code\ndu travail sénégalais sans réserve ? Proposez une formulation prudente alternative.\n5. Construisez un plan de révision personnel sur six semaines en adaptant celui proposé ci-dessus à votre\nemploi du temps, en indiquant au moins deux jalons de contrôle (auto-évaluation).\n\n## Corrigé\n\n1. La fonction RH administrative gère les actes (paie, contrats, absences) de façon réactive et conforme ;\nla fonction RH business partner participe à la définition de la stratégie d'entreprise, anticipe les besoins\nen compétences et en organisation, et est évaluée sur sa contribution à la performance globale, pas seulement\nsur la conformité des dossiers.\n2. Par exemple : le taux de rotation (turnover), qui révèle un risque de perte de compétences et un coût de\nremplacement ; le taux d'absentéisme, qui peut signaler un problème de climat social ou de conditions de\ntravail ; le ratio masse salariale sur chiffre d'affaires, qui mesure la soutenabilité économique de la\npolitique salariale.\n3. Option 1 : gel des recrutements et non-remplacement des départs naturels (avantage : pas de coût social\nimmédiat ; risque : perte de compétences si les départs touchent des postes clés). Option 2 : plan de\ndéparts volontaires négocié (avantage : image sociale préservée, choix laissé au salarié ; risque : coût\nfinancier immédiat et possible départ des meilleurs talents). Option 3 : réduction du temps de travail ou\nde la rémunération variable (avantage : préserve l'emploi ; risque : démotivation et perte d'attractivité).\n4. C'est risqué parce que le code du travail sénégalais est en cours de réforme (projet de loi en discussion)\net qu'un article cité de mémoire peut être obsolète ou inexact au moment de l'examen. Formulation prudente :\n« sous réserve de vérification du texte en vigueur, le mécanisme général prévoit généralement… ».\n5. Réponse libre ; un bon plan reprend la logique faits → notions → entraînement → correction → synthèse, et\nfixe au moins une auto-évaluation après la troisième semaine et une avant l'examen."
+   },
+   {
+    "title": "Stratégie RH et alignement avec la stratégie d'entreprise (business partner) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Audit social et diagnostic RH (indicateurs avancés, bilan social) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Droit social avancé et gestion des contentieux : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 RH (entraînement multi-matières, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Stratégie RH et business partner",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Audit social et diagnostic RH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit social avancé et gestion des contentieux",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier transversal — stratégie RH, audit social et droit social",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-rh-m2",
+  "level": "Master 2",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Ressources humaines Master 2 : réussir ses examens",
+  "description": "Préparation aux examens de Master 2 en ressources humaines : conduite du changement et transformation RH (SIRH avancé, digitalisation), rémunération stratégique et politique de talents (people review, succession planning), méthodologie du mémoire professionnel et de la soutenance. Études de cas d'entreprises sénégalaises et africaines fictives, exercices corrigés et sujet type d'examen. Public : étudiants de Master 2 RH ayant validé le Master 1.",
+  "sort": 702,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Le Master 2 en ressources humaines est l'année de la professionnalisation complète : vous devez\ndémontrer que vous pouvez piloter une transformation RH, construire une politique de rémunération et de\ntalents cohérente avec la stratégie de l'entreprise, et conduire un travail de recherche appliquée (le\nmémoire professionnel) jusqu'à sa soutenance. Les exigences de rigueur et d'analyse critique du Master 1 sont\nreconduites et approfondies, avec cette fois une dimension supplémentaire : la capacité à produire et\ndéfendre, à l'oral, un travail personnel structuré.\n\n## Ce qui change par rapport au Master 1\n\nEn Master 1, vous avez appris à aligner la stratégie RH sur la stratégie d'entreprise, à construire un\ndiagnostic social chiffré et à sécuriser des décisions de droit social. Le Master 2 mobilise ces acquis au\nservice de trois nouveaux enjeux. D'abord, la conduite du changement et la transformation RH : comment faire\névoluer une organisation, ses outils (SIRH avancé, digitalisation des processus RH) et sa culture, sans perdre\nl'adhésion des équipes. Ensuite, la rémunération stratégique et la politique de talents : comment construire\nune politique salariale et de gestion des carrières qui attire, retient et développe les profils clés, via des\noutils comme la people review et le succession planning. Enfin, la méthodologie du mémoire professionnel et de\nla soutenance : comment transformer une problématique RH réelle, rencontrée en stage ou en entreprise, en un\ntravail de recherche appliquée rigoureux, puis le défendre devant un jury.\n\n## Les trois matières avancées de l'année\n\nLa conduite du changement et la transformation RH vous apprend à analyser les résistances au changement\n(individuelles, collectives, organisationnelles), à choisir une démarche de conduite du changement adaptée au\ncontexte (communication, formation, accompagnement managérial), et à piloter un projet de digitalisation RH\n(par exemple le passage à un SIRH avancé intégrant la gestion des talents) en anticipant les risques\nd'adoption par les utilisateurs, pas seulement les aspects techniques.\n\nLa rémunération stratégique et la politique de talents approfondit la rémunération vue en Licence (qui portait\nsur les mécanismes de base de la paie) pour aborder la rémunération comme un outil stratégique : architecture\nde rémunération globale, politique de différenciation selon la criticité des postes, et outils de gestion des\ntalents comme la people review (revue collective des collaborateurs clés et de leur potentiel) et le\nsuccession planning (préparation anticipée de la relève sur les postes critiques).\n\nLa méthodologie du mémoire professionnel et de la soutenance vous enseigne à formuler une problématique RH\npertinente et traitable, à structurer une démarche d'analyse rigoureuse (revue de littérature, méthodologie de\ncollecte de données, analyse, recommandations), et à préparer une soutenance orale convaincante devant un jury,\nen anticipant les questions critiques qu'il pourrait poser.\n\n## Méthode de travail pour le Master 2\n\nTrois outils deviennent centraux cette année. D'abord, le diagnostic de changement : avant toute recommandation\nde transformation, vous devez identifier précisément qui résiste, pourquoi, et à quel stade du projet, plutôt\nque de proposer une communication générique. Ensuite, le business case RH appliqué aux talents : vous devez\nêtre capable de chiffrer l'impact d'une politique de rémunération ou de fidélisation (coût d'un dispositif,\ncoût du turnover évité) et de le présenter comme un investissement, pas seulement une dépense. Enfin, la\ndémarche de recherche appliquée : pour le mémoire, vous devez savoir distinguer une problématique de recherche\n(une question qui demande une investigation) d'une simple question descriptive, et construire une méthodologie\ncohérente (entretiens, étude de cas, analyse documentaire) pour y répondre.\n\nUn piège fréquent en Master 2 est de traiter la conduite du changement comme un sujet uniquement\ncommunicationnel, en oubliant la dimension organisationnelle (qui perd du pouvoir, qui gagne des\nresponsabilités, quels processus sont réellement modifiés). De même, beaucoup d'étudiants réduisent la\npolitique de talents à un sujet de rémunération financière, en oubliant les leviers non financiers\n(reconnaissance, parcours de carrière, autonomie), pourtant essentiels dans un contexte de ressources\nbudgétaires souvent contraintes pour beaucoup d'entreprises africaines.\n\n## Plan de révision sur six semaines\n\nSemaine 1 : reprendre les acquis du Master 1 (stratégie RH, diagnostic social, droit social) pour s'assurer\nqu'ils sont mobilisables, puis lire l'intégralité du cours sur la conduite du changement et la transformation\nRH.\n\nSemaine 2 : travailler la conduite du changement en profondeur, avec au moins deux cas pratiques complets, en\ns'entraînant à construire un diagnostic des résistances au changement à partir d'un cas donné.\n\nSemaine 3 : passer à la rémunération stratégique et à la politique de talents, en s'entraînant à construire une\ngrille de criticité des postes et un exercice simple de succession planning.\n\nSemaine 4 : traiter la méthodologie du mémoire professionnel, en rédigeant un exemple de problématique de\nrecherche à partir d'une situation professionnelle fictive ou réelle, et en construisant un plan de mémoire type.\n\nSemaine 5 : faire et refaire le sujet type d'examen multi-matières dans les conditions du jour J, puis comparer\nau corrigé détaillé et identifier les points faibles.\n\nSemaine 6 : révision croisée entre les trois matières, en s'entraînant à l'oral sur une présentation courte de\ntrois minutes de son sujet de mémoire (ou d'un sujet fictif), exercice proche de l'épreuve de soutenance, et\nrelecture active des quatre cours vidéo, dont l'atelier dédié à la méthodologie du mémoire.\n\n## Points clés à retenir\n\n- Le Master 2 évalue la capacité à piloter une transformation RH, à construire une politique de talents\nchiffrée, et à mener une démarche de recherche appliquée rigoureuse jusqu'à sa défense orale.\n- La conduite du changement exige un diagnostic précis des résistances avant toute action de communication.\n- La politique de talents combine des leviers financiers et non financiers ; ne réduisez jamais ce sujet à la\nseule rémunération.\n- La méthodologie du mémoire doit être travaillée comme une matière à part entière, avec autant de rigueur que\nles matières RH classiques.\n\n## Exercices pratiques\n\n1. Expliquez la différence entre une résistance au changement individuelle et une résistance organisationnelle,\navec un exemple pour chacune.\n2. Citez deux leviers non financiers de fidélisation des talents et justifiez leur intérêt dans un contexte de\nbudget contraint.\n3. Qu'est-ce qu'une people review, et en quoi se distingue-t-elle d'un simple entretien annuel d'évaluation ?\n4. Formulez, en une phrase, une problématique de mémoire professionnel pertinente à partir du thème suivant :\n« la digitalisation du processus de recrutement dans une PME sénégalaise ».\n5. Construisez un plan de révision personnel sur six semaines en adaptant celui proposé ci-dessus à votre\nemploi du temps, en indiquant au moins deux jalons de contrôle.\n\n## Corrigé\n\n1. Une résistance individuelle est liée à la perception personnelle d'un salarié (peur de perdre ses\ncompétences, de perdre en autonomie) ; une résistance organisationnelle est liée à la structure elle-même\n(un processus de décision qui perd en rapidité, un service qui perd en influence), indépendamment des\npersonnes concernées.\n2. Par exemple : la reconnaissance non financière (valorisation publique des réussites, responsabilités\nélargies) et les parcours de carrière visibles (mobilité interne, projets valorisants), qui coûtent peu\nfinancièrement mais répondent à des attentes fortes de motivation et de développement professionnel.\n3. La people review est un exercice collectif, mené par le management et la DRH, qui évalue et compare les\ncollaborateurs clés de l'organisation sur leur performance et leur potentiel, en vue de décisions de\ndéveloppement ou de succession ; l'entretien annuel est, lui, un exercice individuel et bilatéral entre un\nsalarié et son manager, centré sur l'année écoulée.\n4. Exemple de problématique : « Dans quelle mesure la digitalisation du processus de recrutement permet-elle à\nune PME sénégalaise d'améliorer la qualité de ses recrutements sans dégrader l'expérience candidat ? » Une\nbonne problématique interroge une tension ou un arbitrage, elle ne se contente pas de décrire un phénomène.\n5. Réponse libre ; un bon plan reprend la logique faits → notions → entraînement → correction → synthèse, avec\nune attention particulière à l'entraînement oral pour la méthodologie du mémoire."
+   },
+   {
+    "title": "Conduite du changement et transformation RH (SIRH avancé, digitalisation) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Rémunération stratégique et politique de talents (people review, succession planning) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Méthodologie du mémoire professionnel et de la soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 RH (entraînement multi-matières, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Conduite du changement et transformation RH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Rémunération stratégique et politique de talents",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire professionnel et de la soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie du mémoire — cas transversal",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-projet-m1",
+  "level": "Master 1",
+  "subject": "Gestion de projets",
+  "module": null,
+  "title": "Gestion de projets Master 1 : réussir ses examens",
+  "description": "Ce cours prépare les examens de première année de Master en gestion de projets : management multi-projets et bureau de projets (PMO), gestion de projets complexes et internationaux (parties prenantes multiples, contrats, financement bailleurs), négociation et gestion des conflits. Il comprend des fiches avancées, des cas d'entreprise sénégalais et africains fictifs, un sujet type et quatre cours vidéo de 1h30, dont un cas transversal filé. Prérequis : Licence en gestion de projets (planification, coûts, risques, agile, montage et évaluation, portefeuille, suivi-évaluation, marchés publics).",
+  "sort": 711,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Gestion de projets",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\nComprendre les spécificités du Master en gestion de projets, situer les trois matières avancées de l'année (management multi-projets et PMO, projets complexes et internationaux, négociation et gestion des conflits), connaître les épreuves attendues (étude de cas, mémoire professionnel ou de recherche, soutenance) et bâtir un plan de révision sur six semaines.\n\n## Le Master en gestion de projets : un changement de posture\n\nLa Licence vous a formé aux fondamentaux : planifier, budgétiser, gérer les risques, travailler en agile, monter et évaluer un projet, piloter un portefeuille, suivre-évaluer, respecter les règles de la commande publique. Le Master 1 change de posture : vous n'exécutez plus seulement un projet, vous apprenez à faire tenir ensemble plusieurs projets concurrents pour les ressources, à conduire des projets complexes mêlant plusieurs pays, plusieurs bailleurs et plusieurs cultures contractuelles, et à négocier et désamorcer des conflits avec des parties prenantes aux intérêts divergents. L'analyse critique remplace l'application mécanique d'un outil : un jury de Master attend que vous justifiiez un choix, que vous discutiez ses limites et que vous proposiez une alternative argumentée.\n\nLe Master 1 prépare aussi, selon les établissements, un stage long ou un projet tutoré donnant lieu à un mémoire professionnel : un travail qui applique une démarche rigoureuse à une situation réelle ou réaliste, avec une revue de la littérature professionnelle, une méthodologie explicite et des recommandations opérationnelles. Les modalités précises (durée du stage, poids du mémoire, barème de soutenance) sont fixées par votre établissement : consultez son règlement des études.\n\n## Les trois matières avancées de l'année\n\n- Management multi-projets et PMO : gouvernance de portefeuille, bureau de projets (PMO), arbitrage de ressources partagées, modèles de maturité organisationnelle, reporting consolidé pour un comité de direction.\n- Gestion de projets complexes et internationaux : cartographie de parties prenantes multiples, choix et risques des différents types de contrats, montages de financement associant bailleurs, banques de développement et capitaux privés, gestion du risque de change et des différences culturelles et réglementaires.\n- Négociation et gestion des conflits dans les projets : préparation d'une négociation (positions, intérêts, meilleure alternative), zone d'accord possible, styles de gestion des conflits, méthode de négociation raisonnée, médiation interne.\n\nCes trois matières se combinent naturellement : un PMO arbitre entre plusieurs projets internationaux et doit souvent négocier avec un bailleur, un partenaire ou un contractant quand un conflit surgit sur les ressources ou le périmètre. Le sujet type et les cours vidéo de cette année illustrent systématiquement ces liens.\n\n## Les types d'épreuves attendues\n\n- Étude de cas de portefeuille : classer des projets par notation pondérée, identifier une suraffectation de ressource et proposer un arbitrage.\n- Étude de cas de montage international : analyser un plan de financement multi-bailleurs, choisir un type de contrat adapté au risque, cartographier les parties prenantes.\n- Cas de négociation : préparer une négociation (position, intérêts, BATNA, zone d'accord possible) et rédiger les arguments d'ouverture.\n- Questions de cours et mini-dissertation : par exemple « Le bureau de projets est-il un organe de contrôle ou un organe de service ? », à argumenter avec des exemples.\n- Selon l'établissement : soutenance intermédiaire du projet tutoré ou du rapport de stage.\n\n## Méthode de travail au niveau Master\n\nAu Master, une bonne réponse ne se limite pas à appliquer une formule : elle pose d'abord le contexte (quels enjeux, quelles contraintes), mobilise un cadre d'analyse (matrice de priorisation, cartographie des parties prenantes, zone d'accord possible), produit un calcul ou un raisonnement rigoureux, puis discute les limites de la méthode et propose une recommandation. Entraînez-vous à toujours conclure par une phrase de décision : « je recommande… parce que… », et à citer une limite ou un risque de votre propre recommandation. C'est ce regard critique qui distingue une copie de Master d'une copie de Licence.\n\nPour l'étude de cas d'entreprise, lisez l'énoncé deux fois : la première pour comprendre le contexte, la seconde en surlignant les chiffres et les contraintes. Construisez systématiquement un tableau avant de calculer. Pour une revue de littérature professionnelle (mémoire), distinguez les sources académiques, les rapports d'organisations (bailleurs, institutions) et les retours d'expérience de praticiens, et croisez-les plutôt que de les juxtaposer.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : management multi-projets, gouvernance de portefeuille, rôle et modèles de PMO ; deux exercices de notation pondérée.\n- Semaine 2 : résolution de suraffectation de ressources et lecture de tableaux de bord consolidés multi-projets.\n- Semaine 3 : projets complexes et internationaux, cartographie des parties prenantes, types de contrats et montages de financement multi-bailleurs ; un cas chiffré par jour.\n- Semaine 4 : négociation et gestion des conflits : préparation de négociation, zone d'accord possible, styles de gestion des conflits, méthode raisonnée ; deux simulations écrites.\n- Semaine 5 : cas transversaux combinant les trois matières ; avancement du mémoire ou du projet tutoré (plan détaillé, premières sources).\n- Semaine 6 : deux sujets types en conditions réelles, corrections, fiches de synthèse, relecture du mémoire.\n\n## Points clés\n\n- Le Master analyse et argumente ; la Licence appliquait des outils.\n- Trois matières : management multi-projets et PMO, projets complexes et internationaux, négociation et gestion des conflits.\n- Toute réponse de Master se conclut par une recommandation justifiée et une limite assumée.\n\n## Exercices pratiques\n\n1. Citez les trois matières avancées du Master 1 et un outil caractéristique de chacune.\n2. Pourquoi une étude de cas de Master exige-t-elle une recommandation argumentée plutôt qu'un simple calcul ?\n3. Donnez un exemple de situation où le PMO, le montage international et la négociation interviennent simultanément.\n4. Quelle est la différence entre une revue de littérature académique et une revue de pratiques professionnelles pour un mémoire ?\n5. Cas pratique : Moussa, en Master 1, doit rendre un rapport d'étape de son projet tutoré dans quatre semaines et passer ses examens dans six semaines. Proposez une organisation hebdomadaire.\n\n## Corrigé\n\n1. Management multi-projets et PMO : la matrice de notation pondérée ou le tableau de bord consolidé. Projets complexes et internationaux : la cartographie des parties prenantes ou le plan de financement multi-bailleurs. Négociation et conflits : la zone d'accord possible (ZOPA) ou la grille des styles de gestion des conflits.\n\n2. Parce que plusieurs choix sont souvent défendables (prioriser tel projet, choisir tel type de contrat, accepter telle concession) : le jury évalue la qualité du raisonnement, la prise en compte des contraintes et la conscience des limites, pas seulement le résultat chiffré.\n\n3. Exemple : un PMO doit arbitrer les ressources entre deux projets internationaux financés par des bailleurs différents ; le retard de l'un déclenche un désaccord avec le contractant local, que le chef de projet doit négocier avant que le bailleur ne s'inquiète du calendrier.\n\n4. La revue académique s'appuie sur des travaux de recherche validés, avec une démarche méthodologique explicite et des références citées avec précision. La revue de pratiques professionnelles s'appuie sur des rapports d'organisations, des études de cas et des retours d'expérience, utiles pour ancrer le mémoire dans la réalité du terrain, mais à croiser avec la littérature académique pour prendre de la hauteur.\n\n5. Exemple : chaque matin, deux heures de révision selon le plan de six semaines ; chaque après-midi, une heure et demie sur le projet tutoré (collecte de données semaines 1 et 2, analyse semaines 3 et 4, rédaction du rapport d'étape semaines 3 à 6) ; la dernière semaine, priorité aux sujets types le matin et à la relecture finale du rapport l'après-midi."
+   },
+   {
+    "title": "Management multi-projets et bureau de projets (PMO) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 85
+   },
+   {
+    "title": "Gestion de projets complexes et internationaux : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 85
+   },
+   {
+    "title": "Négociation et gestion des conflits dans les projets : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 85
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 en Gestion de projets",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Management multi-projets et bureau de projets (PMO)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de projets complexes et internationaux",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Négociation et gestion des conflits dans les projets",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier transversal — arbitrage, montage international et négociation",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-projet-m2",
+  "level": "Master 2",
+  "subject": "Gestion de projets",
+  "module": null,
+  "title": "Gestion de projets Master 2 : réussir ses examens",
+  "description": "Ce cours prépare les examens de deuxième année de Master en gestion de projets : transformation digitale et innovation projet (méthodes hybrides, agilité à l'échelle), pilotage de la performance et audit de projets, méthodologie du mémoire professionnel et soutenance. Il comprend des fiches avancées, des cas d'entreprise sénégalais et africains fictifs, un sujet type et quatre cours vidéo de 1h30, dont un atelier complet de méthodologie du mémoire et simulation de soutenance. Prérequis : Master 1 en gestion de projets (management multi-projets, PMO, projets internationaux, négociation).",
+  "sort": 712,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Gestion de projets",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\nComprendre les spécificités de la dernière année de Master en gestion de projets, situer les trois matières avancées (transformation digitale et innovation projet, pilotage de la performance et audit de projets, méthodologie du mémoire professionnel et soutenance), connaître les épreuves attendues et bâtir un plan de révision sur six semaines qui intègre la préparation du mémoire.\n\n## Le Master 2 : l'année de la synthèse et de la soutenance\n\nLe Master 2 est l'année où tout converge : les outils techniques du Master 1 (PMO, montages internationaux, négociation) et de la Licence doivent désormais s'articuler avec une capacité à innover dans la pratique projet, à mesurer et auditer la performance, et à produire un travail personnel approfondi, le mémoire professionnel ou de recherche, défendu devant un jury. Les modalités précises (durée du stage, poids du mémoire et de la soutenance, composition du jury) sont fixées par votre établissement : consultez son règlement.\n\nLe Master 2 ne répète pas le Master 1 : il n'y revient pas sur la gouvernance multi-projets, les contrats internationaux ou la négociation déjà traités, mais s'appuie sur eux pour aller plus loin, vers la transformation des pratiques projet elles-mêmes, leur évaluation rigoureuse, et la capacité à produire et défendre un travail de recherche appliquée.\n\n## Les trois matières avancées de l'année\n\n- Transformation digitale et innovation projet : méthodes hybrides combinant approches prédictives et agiles, cadres d'agilité à l'échelle pour plusieurs équipes coordonnées, outils numériques de pilotage, apport et limites de l'intelligence artificielle dans la gestion de projet.\n- Pilotage de la performance et audit de projets : modèles de maturité organisationnelle, tableaux de bord équilibrés multidimensionnels, audit de projet et de portefeuille, revue post-projet et capitalisation des enseignements.\n- Méthodologie du mémoire professionnel et soutenance : construction d'une problématique, revue de littérature académique et professionnelle, choix d'une méthodologie de collecte et d'analyse, structuration du mémoire, préparation et simulation de la soutenance.\n\n## Les types d'épreuves attendues\n\n- Étude de cas de transformation digitale : choisir une démarche hybride ou une forme d'agilité à l'échelle adaptée à un contexte donné, calculer un retour sur investissement ou une capacité d'équipe.\n- Étude de cas d'audit : calculer des indicateurs de performance consolidés, situer une organisation sur un modèle de maturité, rédiger des recommandations d'audit.\n- Questions de méthodologie : critiquer une problématique de mémoire, proposer un plan détaillé, identifier les limites d'une méthode de collecte de données.\n- Mini-dissertation ou question de synthèse transversale.\n- Soutenance du mémoire professionnel ou de recherche, devant un jury, avec questions.\n\n## Méthode de travail pour cette dernière année\n\nAu Master 2, chaque calcul doit déboucher sur une lecture managériale : un retour sur investissement se compare à un seuil de décision explicite, un score de maturité situe l'organisation sur une trajectoire de progression, un indicateur de performance se compare à une cible et à une tendance. Pour le mémoire, commencez tôt : une problématique mûrit par itérations successives, rarement du premier jet, et une revue de littérature solide croise sources académiques et pratiques professionnelles plutôt que de les juxtaposer.\n\nPour la soutenance, préparez un exposé court (souvent 15 à 20 minutes selon votre établissement) qui va droit à la problématique, à la méthode et aux résultats, laissant le temps aux questions du jury, qui comptent souvent autant que l'exposé lui-même dans l'appréciation finale.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : méthodes hybrides et agilité à l'échelle ; deux cas de choix de démarche.\n- Semaine 2 : calculs de retour sur investissement digital et de capacité d'équipe ; fiches outils numériques et apports de l'intelligence artificielle.\n- Semaine 3 : modèles de maturité, tableaux de bord équilibrés, audit de projet ; un cas chiffré par jour.\n- Semaine 4 : méthodologie du mémoire : problématique, revue de littérature, méthode de collecte ; relecture critique de son propre plan de mémoire.\n- Semaine 5 : cas transversaux combinant les trois matières ; répétition de la soutenance devant un pair ou un tuteur.\n- Semaine 6 : deux sujets types en conditions réelles, corrections, répétition finale de la soutenance, fiches de synthèse.\n\n## Points clés\n\n- Le Master 2 articule transformation des pratiques, mesure de la performance et production d'un travail de recherche appliquée.\n- Trois matières : transformation digitale et innovation, pilotage de la performance et audit, méthodologie du mémoire et soutenance.\n- La soutenance se prépare comme un exercice en soi, distinct de la rédaction du mémoire.\n\n## Exercices pratiques\n\n1. Citez les trois matières avancées du Master 2 et un outil caractéristique de chacune.\n2. Pourquoi le Master 2 ne revient-il pas sur la négociation ou les contrats internationaux déjà traités en Master 1 ?\n3. Que doit comporter, au minimum, l'exposé d'une soutenance de mémoire professionnel ?\n4. Pourquoi une problématique de mémoire mûrit-elle rarement du premier jet ?\n5. Cas pratique : Aïda, en Master 2, doit rendre son mémoire dans huit semaines, le soutenir dans dix semaines, et passer ses examens dans six semaines. Proposez une organisation.\n\n## Corrigé\n\n1. Transformation digitale et innovation : le calcul de retour sur investissement d'un outil numérique ou le choix d'une méthode hybride. Pilotage et audit : le tableau de bord équilibré ou le modèle de maturité. Méthodologie du mémoire : le plan détaillé ou la grille de préparation de la soutenance.\n\n2. Parce que ce sont des matières déjà traitées en profondeur en Master 1 ; le Master 2 s'appuie sur ces acquis pour aller vers la transformation des pratiques, leur mesure et la production d'un travail de recherche appliquée, sans répéter ce qui a déjà été vu.\n\n3. Au minimum : la présentation claire de la problématique, la méthode retenue et sa justification, les principaux résultats, et des recommandations opérationnelles, dans un temps limité qui laisse une place réelle aux questions du jury.\n\n4. Parce qu'elle doit à la fois être suffisamment précise pour être traitée dans le temps disponible, suffisamment riche pour mériter un mémoire, et ancrée dans un terrain réel ou réaliste : ces trois exigences se concilient rarement dès la première formulation et s'affinent au fil des lectures et des premiers échanges avec le terrain.\n\n5. Exemple : chaque matin, deux heures de révision selon le plan de six semaines ; chaque après-midi, une heure et demie sur le mémoire (finalisation de la rédaction semaines 1 et 2, relecture et mise en forme semaines 3 et 4) ; les semaines 5 et 6, alternance entre sujets types le matin et répétitions de soutenance l'après-midi, devant un tuteur ou un pair, chronométrées."
+   },
+   {
+    "title": "Transformation digitale et innovation projet : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 85
+   },
+   {
+    "title": "Pilotage de la performance et audit de projets : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 85
+   },
+   {
+    "title": "Méthodologie du mémoire professionnel et soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 85
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 en Gestion de projets",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Transformation digitale et innovation projet",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Pilotage de la performance et audit de projets",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire professionnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie du mémoire et simulation de soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-info-m1",
+  "level": "Master 1",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique Master 1 : réussir ses examens (architectures logicielles, bases de données avancées, cybersécurité)",
+  "description": "Préparation aux examens de Master 1 en Informatique : architectures logicielles et microservices, bases de données avancées et Big Data, cybersécurité avancée. Cas d'entreprise sénégalais fictifs, exercices corrigés et quatre cours vidéo de 1h30. Public : étudiants de Master 1 Informatique ayant validé une Licence (algorithmique, bases de données, réseaux, génie logiciel).",
+  "sort": 721,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\nCette première leçon pose le cadre du Master 1 en Informatique et la méthode pour réussir les examens de\nl'année. Elle s'adresse à des étudiants qui ont déjà validé une Licence en Informatique (algorithmique,\narchitecture des ordinateurs, structures de données, bases de données relationnelles, réseaux, UML et génie\nlogiciel, développement web, sécurité de base). Le Master 1 change de nature : on ne révise plus des notions\nisolées, on les combine pour concevoir des systèmes complets, on argumente des choix techniques, et on commence\nà produire un travail de recherche ou un travail professionnel encadré (mémoire, projet tutoré, stage).\n\n## Ce qui change entre la Licence et le Master 1\n\nEn Licence, l'évaluation porte surtout sur la restitution de méthodes : écrire un algorithme correct, normaliser\nune base de données, calculer un sous-réseau IPv4. En Master 1, elle porte sur la décision argumentée face à un\nproblème ouvert : quelle architecture pour un système qui doit évoluer, quelle base de données pour un volume\nqui grossit vite, quelles mesures de sécurité prioriser avec un budget limité. Les sujets donnent souvent un cas\nd'entreprise (PME sénégalaise ou administration, fictifs) avec des contraintes réalistes, et demandent une\nanalyse structurée plutôt qu'une seule bonne réponse.\n\nTrois matières structurent cette année de Master 1 :\n\n- Architectures logicielles et microservices : découper une application en services indépendants, les exposer\n  par des API REST avancées (versionnage, pagination, sécurité des échanges, gestion des erreurs), et\n  comprendre le principe des conteneurs pour les déployer de façon reproductible.\n- Bases de données avancées et Big Data : les bases NoSQL (document, clé-valeur, colonne, graphe) en complément\n  du relationnel, et la modélisation décisionnelle (schémas en étoile et en flocon) pour des entrepôts de\n  données qui alimentent des tableaux de bord.\n- Cybersécurité avancée : la cryptographie appliquée (chiffrement symétrique et asymétrique, hachage,\n  certificats), la démarche d'audit de vulnérabilités, et la gouvernance de la sécurité des systèmes\n  d'information (politique de sécurité, gestion des risques, continuité d'activité).\n\n## Le mémoire professionnel ou de recherche, le stage, les études de cas\n\nEn Master 1, la plupart des établissements introduisent un travail personnel encadré : un stage suivi d'un\nrapport, un projet tutoré en équipe avec un cahier des charges réaliste, ou les premiers chapitres d'un mémoire\n(contexte, problématique, état de l'art). Ce travail n'est pas annexe : il compte souvent pour une part\nimportante de la validation de l'année, et développe des compétences que les examens classiques ne mesurent\npas : cadrer un besoin flou, choisir une méthode de projet, documenter des choix techniques, respecter des\ndélais.\n\nPour les études de cas d'entreprise, qui reviennent en examen comme en projet tutoré, la méthode est toujours la\nmême : lire l'énoncé deux fois (contexte métier, puis contraintes techniques chiffrées), reformuler le problème\nen une phrase, lister les options avec leurs avantages et leurs limites, choisir une option en la justifiant par\nrapport aux contraintes données (budget, délai, compétences, volume de données, niveau de sécurité requis), puis\ndétailler la mise en œuvre. Un correcteur de Master valorise un raisonnement cohérent avec une conclusion\ndiscutable plutôt qu'une réponse \"parfaite\" non justifiée.\n\n## Méthode de travail avancée pour cette année\n\nLa charge de travail augmente et les sujets deviennent transversaux : un même cas d'examen peut mobiliser à la\nfois l'architecture, les données et la sécurité. Trois habitudes de travail aident à progresser : le business\ncase chiffré (s'entraîner à estimer des ordres de grandeur, nombre de requêtes par seconde, volume de données en\ngigaoctets, coût approximatif d'une solution, car les correcteurs valorisent la capacité à raisonner avec des\nchiffres plutôt qu'avec des généralités) ; la fiche de synthèse par matière (une page recto, avec le vocabulaire\ntechnique, les schémas clés et deux ou trois exemples d'application) ; et la simulation d'examen en conditions\nréelles (traiter un sujet type en temps limité, sans notes, puis le corriger soi-même avant de regarder le\ncorrigé, pour s'habituer à gérer le temps).\n\n## Plan de révision sur six semaines\n\nSemaine 1 et 2 : architectures logicielles et microservices. Revoir les principes du REST, le découpage en\nservices, les patrons d'architecture (API Gateway, communication asynchrone), et les notions de base des\nconteneurs (image, conteneur, isolation des dépendances), sans entrer dans le détail d'un outil précis.\n\nSemaine 3 et 4 : bases de données avancées et Big Data. Revoir les familles NoSQL et leurs cas d'usage, les\nschémas en étoile et en flocon, les notions de volumétrie, et pratiquer des requêtes d'agrégation sur un schéma\ndécisionnel simplifié.\n\nSemaine 5 : cybersécurité avancée. Revoir les mécanismes de cryptographie (chiffrement, hachage, signature), la\ndémarche d'audit (cartographie des actifs, vulnérabilités, hiérarchisation des risques), et les principes de\ngouvernance (politique de sécurité, plan de continuité).\n\nSemaine 6 : entraînement transversal. Traiter au moins deux sujets type combinant les trois matières, revoir les\npoints faibles identifiés, et relire ses fiches de synthèse la veille plutôt que d'apprendre une notion nouvelle\ndans l'urgence.\n\n## Points clés à retenir\n\n- Le Master 1 évalue la capacité à argumenter des choix techniques sur des cas ouverts, pas seulement à\n  restituer des méthodes.\n- Trois matières avancées structurent l'année : architectures logicielles et microservices, bases de données\n  avancées et Big Data, cybersécurité avancée.\n- Le travail personnel encadré (stage, projet tutoré, premiers chapitres de mémoire) fait partie intégrante de\n  la validation de l'année et développe des compétences méthodologiques durables.\n- Une méthode de cas structurée (contexte, contraintes, options, choix justifié, mise en œuvre) s'applique à\n  toutes les matières.\n- Un plan de révision progressif sur six semaines, terminé par un entraînement transversal chronométré, est la\n  meilleure préparation aux examens.\n\n## Exercices pratiques\n\n1. Expliquez en cinq lignes la différence entre l'évaluation attendue en Licence et celle attendue en Master 1\n   en Informatique.\n2. Citez les trois matières avancées de ce programme de Master 1 et donnez, pour chacune, un exemple concret de\n   problème qu'elle permet de résoudre.\n3. Une PME sénégalaise de e-commerce (fictive) voit son trafic multiplié par 4 en un an. Proposez, en quelques\n   phrases, une démarche (pas une solution technique détaillée) pour analyser si son architecture actuelle doit\n   évoluer.\n4. Pourquoi un correcteur de Master valorise-t-il un raisonnement cohérent avec une conclusion discutable plutôt\n   qu'une réponse jugée \"parfaite\" mais non justifiée ?\n5. Construisez votre propre planning de révision sur six semaines en reprenant la structure proposée, en\n   l'adaptant à votre emploi du temps réel (cours, stage, vie personnelle).\n6. Citez deux habitudes de travail avancées utiles en Master 1 et expliquez pourquoi elles sont plus efficaces\n   qu'un simple réapprentissage du cours par cœur.\n7. Quel est le rôle du stage, du projet tutoré ou des premiers chapitres de mémoire dans la validation de\n   l'année de Master 1, au-delà de la note elle-même ?\n\n## Corrigé\n\n1. En Licence, l'évaluation porte sur la restitution correcte de méthodes déjà enseignées. En Master 1, elle\n   porte sur la capacité à analyser un problème ouvert, souvent présenté comme un cas d'entreprise, à comparer\n   plusieurs options et à justifier un choix argumenté selon des contraintes réalistes (budget, délai, volume\n   de données, niveau de sécurité).\n2. Architectures et microservices : découper une application monolithique devenue difficile à maintenir en\n   services indépendants exposés par des API. Bases de données avancées et Big Data : choisir une base NoSQL\n   orientée document pour un catalogue très variable, ou un schéma en étoile pour un tableau de bord des ventes.\n   Cybersécurité avancée : mettre en place un chiffrement des échanges et un plan de réponse aux incidents pour\n   un système traitant des données sensibles.\n3. Mesurer précisément la charge actuelle et son évolution, identifier les points qui saturent en premier,\n   évaluer si un renforcement simple des serveurs suffit ou si un découpage en services et une meilleure\n   gestion des données sont nécessaires, puis chiffrer les options avant de décider.\n4. Parce que la démarche de raisonnement démontre la maîtrise réelle des notions ; une réponse jugée \"parfaite\"\n   sans justification peut être due au hasard, alors qu'un raisonnement cohérent, même avec une conclusion\n   discutable, montre une compétence transférable.\n5. Réponse libre : un planning concret sur six semaines, avec des créneaux réalistes, respectant la progression\n   proposée (architectures, puis données, puis sécurité, puis entraînement transversal).\n6. Le business case chiffré et la simulation d'examen chronométrée sont plus efficaces qu'un réapprentissage par\n   cœur car elles entraînent directement la compétence évaluée : raisonner avec des données concrètes, dans un\n   temps limité.\n7. Ce travail développe des compétences méthodologiques (cadrage d'un besoin, choix d'une méthode de projet,\n   documentation des décisions, gestion des délais) non mesurées par un examen classique, mais essentielles\n   pour la suite des études et la vie professionnelle, et prépare au mémoire de Master 2.\n"
+   },
+   {
+    "title": "Architectures logicielles et microservices : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Bases de données avancées et Big Data : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cybersécurité avancée : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 Informatique (corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : Architectures logicielles et microservices",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Bases de données avancées et Big Data",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Cybersécurité avancée",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier transversal — architecture, données et sécurité (cas Agri Connect Sénégal)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-cg-m1",
+  "level": "Master 1",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Contrôle de gestion Master 1 : réussir ses examens",
+  "description": "Préparation aux examens de Master 1 en Contrôle de gestion : pilotage de la performance globale (RSE, triple bottom line), gestion par centres de responsabilité et prix de cession interne avancé, systèmes d'information décisionnels (ERP, reporting consolidé). Études de cas d'entreprise sénégalaises et africaines fictives, calculs vérifiés, sujet type d'examen corrigé et quatre cours vidéo de 1h30.",
+  "sort": 731,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Le Master 1 en Contrôle de gestion marque une rupture nette avec la Licence. Les examens ne se limitent plus au calcul correct d'un coût ou d'un écart : ils évaluent votre capacité à analyser une situation de gestion complexe, à articuler plusieurs outils entre eux, à argumenter un choix de méthode et à vous situer dans la stratégie globale de l'entreprise ou du groupe. Le correcteur attend un raisonnement de contrôleur de gestion senior, pas seulement un technicien du calcul.\n\n## Ce qui change par rapport à la Licence\n\nEn Licence, vous avez appris à calculer : coûts complets, coûts partiels, écarts budgétaires, coûts ABC, indicateurs de tableau de bord. En Master 1, ces outils deviennent des briques que vous devez combiner pour répondre à des problématiques de pilotage : comment faire converger la performance économique, sociale et environnementale d'un groupe ? Comment fixer un prix de cession interne qui soit à la fois équitable entre filiales et cohérent avec la stratégie du groupe ? Comment un système d'information décisionnel fiabilise-t-il le reporting consolidé mensuel ?\n\nLes études de cas d'examen portent sur des groupes ou des entreprises de taille significative, souvent multi-activités ou multi-sites, confrontés à des arbitrages réels : investir ou non dans une nouvelle unité, déléguer ou centraliser une décision, choisir entre plusieurs scénarios de performance globale. Vous devez mobiliser une analyse critique : discuter les limites d'un indicateur, les biais d'une méthode de cession interne, les risques d'un système d'information mal paramétré.\n\n## Les trois matières avancées de l'année\n\n- Contrôle de gestion stratégique et pilotage de la performance globale : relier le contrôle de gestion à la stratégie de l'entreprise, intégrer la responsabilité sociétale des entreprises (RSE) et la logique de triple bottom line (performance économique, sociale, environnementale) dans les outils de pilotage.\n- Gestion de la performance par centres de responsabilité et prix de cession interne avancé : construire une organisation en centres de responsabilité (coût, profit, investissement), évaluer leur performance par le ROI et l'EVA, et maîtriser les méthodes avancées de fixation des prix de cession interne entre filiales d'un même groupe.\n- Systèmes d'information décisionnels (ERP, reporting consolidé) : comprendre le rôle d'un ERP et des outils de Business Intelligence dans la production d'un reporting de gestion fiable, rapide et consolidé à l'échelle d'un groupe.\n\n## Méthode de travail au niveau Master\n\nLe travail attendu change de nature. Une étude de cas complexe ne se résout pas en appliquant une formule : il faut d'abord qualifier le problème (quel est l'enjeu de pilotage réel ?), choisir les outils pertinents parmi ceux que vous connaissez, les mettre en œuvre avec rigueur numérique, puis discuter les résultats (que signifient-ils pour le dirigeant ? quelles sont les limites de l'analyse ?). Beaucoup d'étudiants perdent des points non pas sur le calcul, mais sur l'absence de discussion critique en fin de réponse.\n\nLa revue de littérature courte devient un réflexe : quand une question porte sur un concept (RSE, EVA, prix de cession interne), rappelez en deux ou trois phrases le cadre théorique avant de l'appliquer au cas. Cela montre au correcteur que vous maîtrisez le concept et pas seulement la formule.\n\nEnfin, les cas d'entreprise de Master mêlent souvent plusieurs filiales ou plusieurs centres de responsabilité : prenez l'habitude de schématiser l'organisation (qui vend à qui, qui décide de quoi) avant de calculer, pour ne pas vous perdre dans les flux internes.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : contrôle de gestion stratégique, RSE et triple bottom line ; relire les notions de Licence sur le tableau de bord prospectif pour bien voir la progression.\n- Semaine 2 : exercices chiffrés sur le tableau de bord RSE et la construction d'indicateurs de performance globale pondérés.\n- Semaine 3 : centres de responsabilité, ROI, EVA ; cas d'entreprise sur l'évaluation de filiales.\n- Semaine 4 : prix de cession interne avancé (méthodes du coût, du marché, négociée) ; exercices sur l'impact de chaque méthode sur la marge des filiales et sur le résultat consolidé.\n- Semaine 5 : systèmes d'information décisionnels, ERP, reporting consolidé ; qualité des données et délais de clôture.\n- Semaine 6 : sujet type complet en conditions chronométrées, puis révision ciblée des points faibles identifiés.\n\n## Points clés à retenir\n\n- Le Master 1 exige d'articuler plusieurs outils de contrôle de gestion pour répondre à une problématique de pilotage, pas seulement de calculer juste.\n- La RSE et la triple bottom line transforment le tableau de bord classique en un outil de pilotage de la performance globale.\n- Le prix de cession interne n'a pas d'effet sur le résultat consolidé du groupe, mais il redistribue la performance entre filiales : c'est un enjeu d'évaluation et de motivation des responsables.\n- La qualité et la rapidité du reporting consolidé dépendent directement de la fiabilité du système d'information décisionnel.\n\n## Exercices pratiques\n\n1. Expliquez en cinq lignes en quoi la logique de triple bottom line modifie la définition même de la performance d'une entreprise par rapport à une approche strictement financière.\n2. Citez trois méthodes de fixation d'un prix de cession interne et donnez, pour chacune, un avantage et une limite.\n3. Un centre de profit dégage un résultat d'exploitation de 245 100 000 FCFA avec des capitaux investis de 1 200 000 000 FCFA. Calculez son ROI.\n4. Pourquoi un prix de cession interne différent ne change-t-il pas le résultat consolidé du groupe, alors qu'il change le résultat de chaque filiale prise séparément ?\n5. Citez deux risques liés à un ERP mal paramétré pour la production d'un reporting consolidé mensuel.\n6. Un groupe veut mettre en place un tableau de bord RSE. Proposez un indicateur simple pour chacun des trois axes (économique, social, environnemental).\n\n## Corrigé\n\n1. La triple bottom line (« triple résultat ») affirme qu'une entreprise performante doit créer de la valeur sur trois dimensions simultanées : économique (rentabilité, création de valeur financière), sociale (conditions de travail, emploi local, formation) et environnementale (empreinte carbone, gestion des ressources, déchets). Une entreprise très rentable financièrement mais dégradant fortement son environnement ou ses conditions sociales n'est plus considérée comme pleinement performante. Le contrôle de gestion doit donc produire des indicateurs sur les trois axes et pas seulement des indicateurs financiers.\n2. Méthode du coût complet majoré d'une marge : avantage, simple à mettre en œuvre et traçable ; limite, elle peut intégrer l'inefficience du centre vendeur dans le prix. Méthode du prix du marché ajusté des économies internes : avantage, elle rapproche le prix d'une référence externe objective ; limite, elle suppose l'existence d'un marché externe comparable, ce qui n'est pas toujours le cas. Méthode du prix négocié entre responsables : avantage, elle respecte l'autonomie des centres de responsabilité ; limite, elle peut être longue à négocier et source de conflits internes.\n3. ROI = résultat d'exploitation / capitaux investis = 245 100 000 / 1 200 000 000 = 0,2042, soit environ 20,4 %.\n4. Le prix de cession interne est une opération intragroupe : ce que le centre vendeur gagne en plus, le centre acheteur le paie en plus, et inversement. Au niveau consolidé, cette opération s'élimine : seule compte la marge réalisée avec un client final extérieur au groupe. Le prix de cession interne est donc un outil de répartition interne de la performance, pas un levier de création de valeur pour le groupe dans son ensemble.\n5. Un ERP mal paramétré peut produire des doublons ou des pertes de données lors de la consolidation de plusieurs filiales (incohérence des référentiels comptables), et peut allonger fortement les délais de clôture si les interfaces entre modules ne sont pas fiabilisées, retardant le reporting de gestion au moment où les décideurs en ont le plus besoin.\n6. Exemples possibles : axe économique, taux de marge opérationnelle ou ROI ; axe social, taux de formation du personnel ou taux d'accidents du travail ; axe environnemental, volume de déchets rapporté à la production ou consommation d'énergie par unité produite. D'autres indicateurs pertinents et correctement justifiés sont acceptés."
+   },
+   {
+    "title": "Contrôle de gestion stratégique et pilotage de la performance globale (RSE, triple bottom line) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Gestion de la performance par centres de responsabilité et prix de cession interne avancé : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Systèmes d'information décisionnels (ERP, reporting consolidé) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 en Contrôle de gestion (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : Contrôle de gestion stratégique et pilotage de la performance globale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Centres de responsabilité et prix de cession interne avancé",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Systèmes d'information décisionnels",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier transversal — synthèse du Master 1 en Contrôle de gestion",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-compta-m1",
+  "level": "Master 1",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Master 1 Comptabilité : réussir ses examens",
+  "description": "Préparation aux examens de Master 1 en Comptabilité : consolidation approfondie des comptes de groupe, normes IFRS et comparaison avec le SYSCOHADA révisé, fiscalité internationale et prix de transfert. Études de cas d'entreprises sénégalaises fictives, exercices corrigés et sujet type d'examen. Public : étudiants de Master 1 ayant validé une Licence en Comptabilité (SYSCOHADA, droit OHADA, sociétés, fiscalité, états financiers, consolidation simple, audit).",
+  "sort": 741,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les spécificités du Master en Comptabilité par rapport à la Licence : analyse critique, cas complexes, recherche appliquée, décisions en incertitude.\n- Identifier les trois matières avancées de l'année de Master 1 et leur articulation avec le mémoire et le stage.\n- Mettre en place une méthode de travail de niveau Master : étude de cas complexe, business case, revue de littérature.\n- Construire un plan de révision réaliste sur six semaines avant les examens.\n\nCe cours de Master 1 en Comptabilité prolonge la Licence (comptabilité générale 1 et 2, mathématiques financières, droit des affaires OHADA, droit des sociétés, fiscalité des entreprises, états financiers SYSCOHADA, consolidation simple, audit et contrôle interne). Il ne reprend pas ces bases : il suppose qu'elles sont acquises et vous demande de les mobiliser dans des situations plus complexes, avec davantage d'incertitude et de jugement professionnel.\n\n## 1. Ce qui change entre la Licence et le Master\n\nEn Licence, l'examen vérifie surtout que vous savez appliquer une méthode à un cas relativement balisé : enregistrer une opération, calculer un impôt, consolider deux sociétés avec un seul écart. En Master, l'exercice change de nature. On vous donne un dossier d'entreprise incomplet, parfois contradictoire, et on attend que vous posiez un diagnostic, que vous choisissiez une méthode parmi plusieurs possibles en justifiant ce choix, et que vous discutiez les limites de votre propre solution. La comptabilité n'est plus seulement une technique d'enregistrement : elle devient un outil d'aide à la décision, mobilisé dans des contextes de groupes de sociétés, d'opérations internationales, de restructurations.\n\nTrois conséquences pratiques pour vos révisions :\n\n- Apprenez les mécanismes, pas seulement les formules. Un correcteur de Master pénalise une formule appliquée sans comprendre pourquoi elle s'applique à ce cas précis.\n- Entraînez-vous à argumenter par écrit. Beaucoup de questions demandent de justifier un choix (méthode de consolidation, méthode de valorisation, type d'opinion d'audit) en une dizaine de lignes structurées.\n- Croisez les matières. Un même cas d'entreprise peut mobiliser consolidation, IFRS et fiscalité internationale dans une seule copie, exactement comme la leçon « Sujet type d'examen » de ce cours vous y entraînera.\n\n## 2. Les trois matières avancées de l'année\n\nLe Master 1 en Comptabilité approfondit trois domaines qui n'étaient qu'esquissés en Licence :\n\n- La consolidation approfondie des comptes de groupe : retraitements d'homogénéisation, écarts d'évaluation et d'acquisition, variations de pourcentage de détention, traitement des minoritaires.\n- Les normes IFRS, en complément du référentiel SYSCOHADA révisé : principes généraux, comparaison point par point avec les règles OHADA, cas où les deux référentiels convergent ou divergent.\n- La fiscalité internationale et les prix de transfert : résidence fiscale, établissement stable, conventions de non double imposition, méthodes de détermination d'un prix de transfert.\n\nCes trois matières ne sont pas indépendantes. Un groupe sénégalais qui consolide une filiale installée dans un autre pays de l'UEMOA doit à la fois homogénéiser les comptes (consolidation), s'interroger sur le référentiel comptable applicable aux entités cotées ou à certaines filiales (IFRS) et documenter les prix pratiqués entre les sociétés du groupe (prix de transfert). C'est pourquoi les sujets d'examen de Master aiment construire un même cas d'entreprise filé sur plusieurs questions.\n\n## 3. Le mémoire et le stage, en toile de fond\n\nSelon l'établissement, le Master 1 peut comporter un stage et une initiation au mémoire, dont la rédaction complète et la soutenance interviennent le plus souvent en Master 2 (voir le cours de Master 2 pour la méthodologie détaillée). Dès le Master 1, repérez un terrain d'observation : une entreprise, un secteur, une problématique qui vous intéresse. Les cas traités en consolidation, IFRS ou fiscalité internationale peuvent devenir le point de départ d'une courte revue de littérature : ce que disent les textes, confronté à un cas concret, même fictif pour l'entraînement.\n\n## 4. Une méthode de travail de niveau Master\n\nQuatre habitudes à prendre dès le début de l'année :\n\n- L'étude de cas complexe : face à un dossier de plusieurs pages, commencez par un tableau de synthèse des faits (dates, montants, pourcentages), avant les calculs. La moitié des erreurs viennent d'une lecture trop rapide de l'énoncé.\n- Le business case : au-delà du calcul juste, demandez « et alors ? ». Un écart d'acquisition de 34 125 000 FCFA n'est qu'un chiffre si vous ne dites pas ce qu'il implique pour les comptes du groupe ou pour un test de dépréciation.\n- La revue de littérature courte : une fiche d'une page par matière avancée, résumant le référentiel (SYSCOHADA, IFRS, convention fiscale type) avec vos propres mots.\n- La vérification systématique des calculs : reprenez chaque calcul avec une calculatrice avant de le considérer comme acquis.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : relire les bases de Licence indispensables (consolidation simple, méthodes de consolidation, calcul d'un impôt sur les sociétés) sans s'y attarder ; ficher les notions nouvelles de consolidation approfondie (écarts d'évaluation, retraitements).\n- Semaine 2 : travailler la consolidation approfondie à travers des cas complets, du périmètre jusqu'aux écritures de consolidation, variations de pourcentage incluses.\n- Semaine 3 : construire les fiches IFRS/SYSCOHADA, norme par norme ; faire le tableau comparatif pour chaque thème (juste valeur, location, reconnaissance du revenu, dépréciation, consolidation).\n- Semaine 4 : fiscalité internationale et prix de transfert, avec au moins deux cas pratiques chiffrés (méthode du prix comparable, méthode du coût majoré).\n- Semaine 5 : traiter un sujet type complet dans les conditions de l'examen (temps limité), puis corriger soi-même avant de regarder le corrigé.\n- Semaine 6 : reprendre uniquement ses points faibles identifiés en semaine 5, refaire les exercices ratés, relire les fiches de synthèse une dernière fois, se reposer la veille de l'examen.\n\n## Points clés à retenir\n\n- Le Master demande d'argumenter un choix de méthode, pas seulement de l'appliquer.\n- Les trois matières avancées de l'année (consolidation approfondie, IFRS, fiscalité internationale) se recoupent souvent dans un même cas d'entreprise.\n- Une fiche de synthèse par norme ou par méthode, rédigée avec ses propres mots, vaut mieux qu'un résumé copié.\n- Le plan de six semaines réserve toujours une semaine finale consacrée aux points faibles, pas à relire ce qu'on maîtrise déjà.\n\n## Exercices pratiques\n\n1. Listez, pour chacune des trois matières avancées du Master 1, un exemple de situation d'entreprise sénégalaise ou africaine où elle s'appliquerait concrètement.\n2. Expliquez en cinq lignes la différence entre « appliquer une méthode » et « justifier le choix d'une méthode », avec un exemple tiré de la consolidation.\n3. Construisez votre propre calendrier de révision sur six semaines en indiquant, pour chaque semaine, la matière et l'objectif précis (ex. « semaine 2 : savoir calculer un écart d'évaluation net d'impôt différé »).\n4. Citez deux raisons pour lesquelles un correcteur de Master peut refuser une bonne réponse numérique si le raisonnement n'est pas expliqué.\n5. Donnez un exemple de problématique de mémoire, même provisoire, que l'une des trois matières avancées pourrait inspirer.\n\n## Corrigé\n\n1. Consolidation approfondie : un groupe dakarois à participations croisées dans plusieurs filiales ouest-africaines, qui doit déterminer qui contrôle qui. IFRS : une société sénégalaise cotée sur une place régionale, qui doit présenter des comptes IFRS en plus de ses comptes SYSCOHADA. Fiscalité internationale : une filiale sénégalaise qui vend des produits semi-finis à sa mère installée ailleurs et doit documenter le prix pratiqué.\n2. Appliquer une méthode, c'est suivre une procédure connue (intégrer globalement une filiale contrôlée à plus de 50 %). Justifier, c'est expliquer pourquoi cette méthode convient au cas précis : démontrer un contrôle exclusif (majorité des droits de vote, pas seulement du capital) avant de choisir l'intégration globale plutôt que la mise en équivalence.\n3. Réponse libre ; six lignes datées, chacune avec une matière et un objectif mesurable, la sixième semaine étant réservée aux points faibles identifiés en semaine 5.\n4. Un résultat juste obtenu par une méthode inadaptée (mise en équivalence appliquée à une filiale contrôlée à 80 %) révèle une mauvaise compréhension, même si le chiffre est correct par coïncidence ; et le barème de Master valorise explicitement la démonstration, pas seulement le résultat.\n5. Exemples : « Comment les groupes sénégalais cotés articulent-ils comptes SYSCOHADA et IFRS lorsqu'ils lèvent des capitaux sur une place régionale ? » ou « Quelles méthodes de prix de transfert les PME exportatrices sénégalaises mobilisent-elles pour leurs transactions avec un pays voisin ? » Toute problématique précise et vérifiable est acceptée."
+   },
+   {
+    "title": "Consolidation approfondie des comptes de groupe : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Normes IFRS et comparaison avec le SYSCOHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Fiscalité internationale et prix de transfert : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : Consolidation approfondie des comptes de groupe",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Normes IFRS et comparaison avec le SYSCOHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Fiscalité internationale et prix de transfert",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier de synthèse transversal (groupe Teranga Agro-Industries)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-fin-m1",
+  "level": "Master 1",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance Master 1 : évaluation, ingénierie financière et gestion de portefeuille",
+  "description": "Cours de préparation aux examens de Master 1 Finance : évaluation d'entreprise approfondie (DCF, multiples, approche patrimoniale), ingénierie financière et fusions-acquisitions, gestion de portefeuille et marchés financiers avancés. Pour étudiants de Master 1 ayant déjà validé les bases de la Licence Finance (analyse financière, VAN/TRI, CMPC). Cas d'entreprise sénégalais fictifs chiffrés et vérifiés.",
+  "sort": 751,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que le Master 1 Finance exige de plus que la Licence : analyse critique, autonomie, rigueur méthodologique.\n- Identifier les trois matières avancées de l'année et leur articulation avec le mémoire ou le stage.\n- Construire un plan de révision réaliste sur six semaines avant les examens.\n\n## Le Master 1 Finance : ce qui change par rapport à la Licence\n\nEn Licence, vous avez appris à calculer : VAN, TRI, coût moyen pondéré du capital, ratios d'analyse financière, bases des marchés financiers. Le Master 1 part du principe que ces outils sont maîtrisés et vous demande autre chose : les mobiliser dans des situations ambiguës, où plusieurs méthodes donnent des réponses différentes et où il faut argumenter un choix.\n\nTrois évolutions marquent le passage en M1.\n\n- Le raisonnement en incertitude plutôt qu'en certitude : on ne vous donne plus un taux d'actualisation unique à appliquer, on vous demande de le justifier, de tester sa sensibilité, de discuter une fourchette de valeurs.\n- La convergence des méthodes : en évaluation d'entreprise par exemple, on attend que vous croisiez approche par les flux (DCF), approche par les comparables (multiples) et approche patrimoniale, puis que vous expliquiez les écarts plutôt que de choisir un seul chiffre.\n- L'ouverture vers la décision d'entreprise réelle : fusion-acquisition, montage financier, gestion de portefeuille ne sont plus des exercices isolés mais des cas où une banque, un fonds ou une direction financière doit trancher avec des informations incomplètes.\n\nLe Master 1 Finance prépare aussi, selon les établissements, à un mémoire de recherche appliquée ou professionnel et, souvent, à un stage en banque, en cabinet d'audit, en direction financière d'entreprise ou en société de gestion. Même quand le mémoire est soutenu en fin de M2, le M1 est le moment où l'on choisit son thème et où l'on commence la revue de littérature : un diagnostic financier approfondi, une opération de croissance externe observée en stage, ou une problématique de gestion de portefeuille sont des pistes classiques.\n\n## Les trois matières avancées de l'année\n\nCe cours d'examen couvre les trois matières clés du M1 Finance, sans répéter ce qui a déjà été vu en Licence.\n\n- Évaluation d'entreprise approfondie : la méthode des flux de trésorerie actualisés (DCF), les multiples de comparables boursiers et transactionnels, et l'approche patrimoniale avec goodwill. Vous saurez produire une fourchette de valeur argumentée pour une entreprise, pas un chiffre isolé.\n- Ingénierie financière et fusions-acquisitions : comment structurer une opération de rachat, calculer une parité d'échange, mesurer l'effet dilutif ou relutif sur le bénéfice par action, et comprendre la mécanique d'un rachat par effet de levier (LBO).\n- Gestion de portefeuille et marchés financiers avancés : diversification, construction d'un portefeuille de deux actifs, frontière efficiente simplifiée, et modèle d'évaluation des actifs financiers (CAPM) appliqué au calcul du rendement exigé d'une action.\n\nCes trois blocs ne sont pas cloisonnés : un même cas d'entreprise peut mobiliser l'évaluation pour fixer un prix de rachat, l'ingénierie financière pour structurer l'opération, et la gestion de portefeuille pour analyser l'impact sur un investisseur minoritaire. Les examens de M1 testent justement cette capacité à faire dialoguer les matières.\n\n## Mémoire, stage et études de cas : la méthode de travail avancée\n\nLa méthode de travail change de nature en Master. Trois outils reviennent sans cesse, aussi bien dans les examens que dans le mémoire.\n\n- Le cas d'entreprise complexe : un énoncé long, avec des informations parfois redondantes ou à trier, qui imite un dossier réel (états financiers, rapport annuel, communiqué de presse d'une opération). Le travail consiste à extraire les données utiles avant de calculer.\n- La revue de littérature courte : avant de résoudre un cas, un bon candidat rappelle en deux ou trois phrases le cadre théorique mobilisé (par exemple, pourquoi le CAPM suppose des marchés efficients et ce que cela implique pour l'interprétation du bêta) ; cela montre la maîtrise conceptuelle, pas seulement le calcul.\n- Le business case argumenté : conclure un exercice non par un chiffre seul, mais par une recommandation structurée (acheter, vendre, refuser l'offre, renégocier la parité), avec les limites de l'analyse clairement énoncées.\n\nPour le mémoire professionnel, cette méthode se prolonge sur plusieurs mois : poser une problématique précise, construire une méthodologie (étude de cas unique, comparaison d'entreprises, entretiens), collecter des données vérifiables, puis rédiger en citant ses sources. Un mémoire sur « l'évaluation des PME non cotées en zone UEMOA » par exemple devra justifier pourquoi le DCF est privilégié sur le marché par rapport aux multiples de marchés boursiers peu profonds.\n\n## Plan de révision sur six semaines\n\nUn plan de révision pour l'examen de M1 Finance doit équilibrer calcul, compréhension conceptuelle et entraînement sur cas complexes.\n\n- Semaines 1 et 2 : reprise active de l'évaluation d'entreprise. Refaites un DCF complet à la main, un multiple de comparables, une approche patrimoniale avec goodwill, sur un même cas, et comparez les résultats.\n- Semaines 3 et 4 : ingénierie financière et fusions-acquisitions. Entraînez-vous sur des parités d'échange, des calculs de dilution ou relution du bénéfice par action, et un montage LBO simple avec plan de remboursement de dette.\n- Semaine 5 : gestion de portefeuille. Reprenez les formules de variance et de covariance d'un portefeuille à deux actifs, le calcul du bêta et du rendement attendu par le CAPM, et le ratio de Sharpe.\n- Semaine 6 : entraînement croisé sur des sujets type combinant les trois matières, dans les conditions de l'examen (temps limité, calculatrice simple, pas de formulaire fourni dans la plupart des cas).\n\nChaque semaine, terminez par un exercice chronométré et un corrigé détaillé, en notant systématiquement les erreurs récurrentes : oubli de l'impôt sur une économie fiscale, confusion entre valeur d'entreprise et valeur des capitaux propres, erreur de signe dans un flux de trésorerie.\n\n## Points clés\n\n- Le Master 1 exige de croiser plusieurs méthodes et d'argumenter les écarts, pas de produire un chiffre unique.\n- Trois matières structurent l'année : évaluation d'entreprise, ingénierie financière et fusions-acquisitions, gestion de portefeuille et marchés financiers avancés.\n- Le mémoire démarre souvent en M1 par le choix du thème et une première revue de littérature.\n- La révision doit combiner calcul rigoureux, rappel conceptuel et entraînement chronométré sur cas complexes.\n\n## Exercices\n\n1. Expliquez en trois phrases pourquoi un évaluateur sérieux calcule la valeur d'une entreprise par plusieurs méthodes plutôt qu'une seule.\n2. Citez les trois matières avancées du programme de M1 Finance présentées dans cette leçon.\n3. Pourquoi la distinction entre valeur d'entreprise et valeur des capitaux propres est-elle centrale en évaluation ?\n4. Proposez un découpage de six semaines de révision adapté à votre propre emploi du temps, en gardant la logique de cette leçon.\n5. Donnez un exemple de thème de mémoire professionnel en finance qui mobiliserait à la fois l'évaluation d'entreprise et la gestion de portefeuille.\n\n## Corrigé\n\n1. Chaque méthode repose sur des hypothèses différentes (flux futurs actualisés pour le DCF, comparaison de marché pour les multiples, patrimoine comptable corrigé pour l'approche patrimoniale) ; elles peuvent diverger fortement, et comparer les résultats permet de détecter une hypothèse trop optimiste ou un comparable mal choisi, puis de proposer une fourchette de valeur argumentée plutôt qu'un chiffre fragile.\n2. Évaluation d'entreprise approfondie ; ingénierie financière et fusions-acquisitions ; gestion de portefeuille et marchés financiers avancés.\n3. La valeur d'entreprise rémunère l'ensemble des financeurs (actionnaires et créanciers), alors que la valeur des capitaux propres ne rémunère que les actionnaires ; confondre les deux conduit à surestimer ou sous-estimer le prix réellement payé pour acquérir le contrôle d'une société, car il faut toujours retrancher la dette financière nette de la valeur d'entreprise pour obtenir la valeur des capitaux propres.\n4. Réponse libre ; un bon plan conserve la progression proposée (évaluation, puis ingénierie financière, puis portefeuille, puis entraînement croisé) et prévoit un exercice chronométré chaque semaine.\n5. Exemple possible : « L'évaluation des cibles de croissance externe par les fonds d'investissement actifs en zone UEMOA et son impact sur la composition des portefeuilles institutionnels », qui combine évaluation (comment chiffrer la cible), ingénierie financière (comment structurer le rachat) et gestion de portefeuille (comment le fonds pilote son risque global)."
+   },
+   {
+    "title": "Évaluation d'entreprise approfondie : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Ingénierie financière et fusions-acquisitions : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Gestion de portefeuille et marchés financiers avancés : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 Finance (entraînement corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : Évaluation d'entreprise approfondie (DCF, multiples, approche patrimoniale)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Ingénierie financière et fusions-acquisitions",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de portefeuille et marchés financiers avancés",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier cas pratique transversal - évaluation et montage d'une opération de croissance externe",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-eco-m1",
+  "level": "Master 1",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Master 1 : réussir ses examens",
+  "description": "Préparation aux examens de Master 1 en Économie : économétrie appliquée, économie industrielle et organisation des marchés, politiques économiques en macroéconomie ouverte. Pour étudiants ayant validé une Licence en Économie (micro/macro, maths, statistiques, économie du développement, monétaire et internationale, publique). Fiches avancées, cas d'entreprise sénégalais/africains fictifs, exercices corrigés, sujet type d'examen et quatre cours vidéo de 1h30.",
+  "sort": 761,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Objectifs de la leçon\n\nCette première leçon pose le cadre de votre année de Master 1 en Économie. Elle explique ce qui change par rapport à la Licence, présente les trois matières avancées du semestre, et propose une méthode de travail et un plan de révision sur six semaines. À la fin de cette leçon, vous saurez organiser votre préparation aux examens partiels et, le cas échéant, à votre premier travail de recherche encadré (mémoire ou dossier de recherche).\n\nCe qui change entre la Licence et le Master 1\n\nEn Licence, vous avez appris les outils de base : microéconomie et macroéconomie 1 et 2, mathématiques pour économistes, une introduction aux statistiques et à l'économétrie, l'économie du développement, l'économie monétaire et internationale, l'économie publique. Le Master 1 ne répète pas ces bases : il les mobilise comme des prérequis acquis et vous demande de les combiner pour analyser des situations complexes, souvent avec des données chiffrées à traiter vous-même.\n\nTrois ruptures caractérisent le passage en Master 1 :\n- Vous ne vous contentez plus d'appliquer une formule : vous devez choisir la méthode adaptée à un problème, justifier ce choix, et discuter ses limites (validité des hypothèses, robustesse des résultats).\n- Les exercices prennent la forme de cas d'entreprise ou de politique économique complets, avec plusieurs variables en jeu, parfois des données partielles ou bruitées, comme dans la réalité professionnelle.\n- L'évaluation porte aussi sur la capacité à communiquer un résultat économique à un décideur (note de synthèse, recommandation argumentée), pas seulement à calculer un résultat.\n\nLes trois matières de ce semestre\n\n1. Économétrie appliquée. Vous allez approfondir la régression linéaire multiple : interprétation économique des coefficients, tests d'hypothèses sur un ou plusieurs paramètres, diagnostic de la qualité d'un modèle (R² ajusté, significativité globale avec le test F), et une sensibilisation aux problèmes qui biaisent les estimations (variable omise, multicolinéarité, hétéroscédasticité). L'objectif n'est pas de refaire des calculs à la main sur des données réelles complexes, mais de savoir lire, interpréter et critiquer une sortie de régression, et de construire un modèle simple vous-même sur un jeu de données réduit.\n\n2. Économie industrielle et organisation des marchés. Cette matière approfondit la concurrence imparfaite déjà vue en Licence 2 (monopole, oligopole simple) vers des structures de marché plus réalistes : oligopole avec différenciation de produit, concurrence par les quantités (Cournot) et par les prix (Bertrand), collusion et cartels, pratiques anticoncurrentielles, et le rôle de la régulation économique (autorités de la concurrence, régulation sectorielle des télécommunications, de l'énergie ou des transports en Afrique de l'Ouest).\n\n3. Politiques économiques et macroéconomie ouverte avancée. Vous retravaillez les politiques budgétaire et monétaire dans un cadre d'économie ouverte (taux de change, mobilité des capitaux, contraintes d'une union monétaire comme la zone UEMOA), avec une attention particulière à l'arbitrage entre croissance, stabilité des prix et soutenabilité de la dette publique.\n\nMéthode de travail en Master 1\n\nLa méthode de travail doit évoluer vers une démarche de type recherche appliquée :\n- Lecture active d'un cas ou d'un article avant le cours : identifiez le problème économique posé, les données disponibles, la question à laquelle on cherche une réponse.\n- Formalisation : traduisez le problème en équations ou en modèle simple avant de calculer quoi que ce soit.\n- Calcul rigoureux, avec vérification (ordre de grandeur, signe attendu des coefficients, cohérence avec la théorie).\n- Discussion critique : un résultat chiffré n'a de valeur que s'il est interprété avec ses limites (échantillon petit, hypothèses du modèle, causalité versus corrélation).\n- Rédaction synthétique : vous devez être capable de résumer un résultat en cinq lignes pour un lecteur non spécialiste, compétence indispensable si vous rédigez un mémoire professionnel ou de recherche en fin de Master.\n\nLe mémoire ou le dossier de recherche\n\nSelon votre parcours, le Master 1 peut inclure un dossier de recherche encadré (parfois appelé « mémoire de M1 ») ou un stage avec rapport. Dans tous les cas, la méthode est la même : poser une question précise, mobiliser une revue de littérature courte (quelques références académiques ou institutionnelles sérieuses, jamais inventées), choisir une méthode adaptée aux données disponibles, présenter des résultats honnêtes même s'ils sont partiels, et conclure avec des limites clairement identifiées. Ne citez jamais un auteur, un chiffre officiel ou une étude que vous n'avez pas vérifiés : en cas de doute, formulez le constat en termes généraux plutôt que d'inventer une référence précise.\n\nPlan de révision sur six semaines\n\nSemaine 1 : consolidation des prérequis. Reprenez vos notes de Licence sur la régression simple, le monopole et duopole, et les mécanismes IS-LM / offre-demande globale en économie fermée. Ne commencez pas le Master 1 avec des lacunes sur ces bases.\n\nSemaine 2 : économétrie appliquée, partie 1. Régression multiple, lecture des coefficients, écart-types, tests de Student sur un coefficient.\n\nSemaine 3 : économétrie appliquée, partie 2. Test F global, R² ajusté, première sensibilisation aux biais (variable omise, multicolinéarité). Faites au moins un exercice complet avec un jeu de données simple, à la main ou avec un tableur.\n\nSemaine 4 : économie industrielle. Cournot, Bertrand, différenciation de produit, à partir d'exemples sénégalais ou ouest-africains fictifs (télécommunications, distribution, agro-industrie).\n\nSemaine 5 : politiques économiques et macroéconomie ouverte. Reprenez les mécanismes de change fixe en union monétaire, les canaux de transmission de la politique monétaire de la BCEAO en termes généraux, et les contraintes de soutenabilité de la dette.\n\nSemaine 6 : révision croisée et sujets types. Refaites les sujets d'examen type de cette série de leçons, chronométrez-vous, et identifiez vos points faibles pour les trois derniers jours avant l'examen.\n\nPoints clés à retenir\n- Le Master 1 mobilise les outils de Licence pour résoudre des problèmes complexes, pas pour les refaire à l'identique.\n- L'économétrie appliquée demande de savoir interpréter et critiquer un modèle, pas seulement de connaître une formule.\n- L'économie industrielle avancée porte sur les stratégies des firmes en oligopole et le rôle de la régulation.\n- Les politiques économiques s'étudient désormais en économie ouverte, avec les contraintes de l'union monétaire.\n- Un mémoire ou un dossier de recherche doit être rigoureux : jamais de référence ou de chiffre inventé.\n\n## Exercices pratiques\n\n1. Expliquez en cinq lignes la différence entre corrélation et causalité, avec un exemple économique sénégalais fictif.\n2. Citez deux structures de marché étudiées en Licence et deux structures nouvelles étudiées en Master 1 en économie industrielle.\n3. Pourquoi un modèle de régression avec un R² très élevé n'est-il pas forcément un « bon » modèle du point de vue économique ?\n4. Dans une union monétaire comme l'UEMOA, pourquoi la politique monétaire nationale indépendante n'est-elle pas possible pour chaque État membre ?\n5. Construisez un planning de révision personnel sur six semaines en adaptant les priorités ci-dessus à votre propre emploi du temps.\n\n## Corrigé\n\n1. La corrélation signale que deux variables évoluent ensemble statistiquement ; la causalité signifie que l'une provoque l'autre. Exemple fictif : dans une région sénégalaise, le nombre d'agences bancaires et le volume des exportations locales peuvent être corrélés sans que l'un cause l'autre : tous deux peuvent dépendre d'une troisième variable, comme le dynamisme économique général de la région.\n2. Licence : monopole simple, duopole simple (type Cournot basique). Master 1 : oligopole avec différenciation de produit, concurrence à la Bertrand, collusion et cartels, régulation sectorielle.\n3. Un R² élevé peut provenir d'une corrélation fortuite, d'un échantillon trop petit, ou de variables qui bougent ensemble sans lien économique logique (par exemple deux séries qui croissent toutes deux avec le temps). Il faut aussi vérifier la significativité des coefficients, leur signe (cohérent avec la théorie économique) et la robustesse du modèle.\n4. Parce que la politique monétaire (taux directeur, masse monétaire) est décidée au niveau de la banque centrale commune (BCEAO) pour l'ensemble de la zone ; un État membre ne peut donc pas ajuster seul son taux d'intérêt ou dévaluer sa propre monnaie pour répondre à un choc spécifique à son économie.\n5. Réponse libre : l'essentiel est de répartir les six semaines entre consolidation des prérequis, les trois matières, puis la révision croisée, avec des points de contrôle (auto-évaluations) chaque semaine."
+   },
+   {
+    "title": "Économétrie appliquée : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Économie industrielle et organisation des marchés : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Politiques économiques et macroéconomie ouverte avancée : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économétrie appliquée",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie industrielle et organisation des marchés",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Politiques économiques et macroéconomie ouverte avancée",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier transversal — cas pratique filé",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-droit-m1",
+  "level": "Master 1",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Master 1 : réussir ses examens",
+  "description": "Préparation aux examens de Master 1 en droit des affaires : gouvernance et groupes de sociétés, contrats d'affaires et concurrence, arbitrage et modes alternatifs de résolution des litiges. Public : étudiants de Master 1 ayant validé une Licence en droit des affaires (introduction au droit, obligations, sociétés OHADA, droit du travail de base).",
+  "sort": 771,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 40,
+    "content": "## Objectifs de la leçon\n\nLe Master 1 en droit des affaires marque un changement de registre par rapport à la Licence. Vous ne vous contentez plus de restituer des mécanismes juridiques : on attend de vous une analyse critique, la capacité à qualifier des montages complexes (groupes de sociétés, contrats d'affaires sophistiqués, clauses de résolution des litiges) et à argumenter en incertitude, c'est-à-dire lorsque plusieurs qualifications juridiques sont défendables. Cette leçon pose le cadre de l'année : les attentes des examinateurs, les matières au programme, la méthode de travail adaptée au Master, et un plan de révision réaliste sur six semaines.\n\n## Ce qui change par rapport à la Licence\n\nEn Licence 3, vous avez étudié le droit des sociétés commerciales OHADA dans sa dimension statutaire (constitution, organes, dissolution) et le droit des sûretés et des procédures collectives. En Master 1, l'approche se déplace vers la gouvernance et les groupes de sociétés : comment une société mère pilote ses filiales, comment se contrôlent les conventions passées entre une société et ses dirigeants ou actionnaires significatifs (les conventions dites réglementées), et comment les contrats d'affaires organisent des relations économiques durables plutôt que de simples échanges ponctuels. On y ajoute les modes alternatifs de résolution des litiges, en particulier l'arbitrage, essentiel dans les relations d'affaires internationales et régionales.\n\nL'examinateur de Master ne demande plus seulement « quelle est la règle ? » mais « quelle qualification retenir face à des faits ambigus, et avec quelles conséquences pratiques pour l'entreprise ? ». Un cas pratique de Master mêle souvent plusieurs branches du droit (sociétés, contrats, concurrence, arbitrage) dans une même situation d'entreprise, et exige une hiérarchisation des arguments plutôt qu'une récitation.\n\n## Les matières de l'année\n\nLe programme de Master 1 en droit des affaires, tel que couvert par ce cours, s'organise autour de trois axes :\n\n- Droit des sociétés approfondi et gouvernance : groupes de sociétés, notion de contrôle, conventions réglementées, responsabilité des dirigeants dans les montages complexes.\n- Droit des contrats d'affaires et de la concurrence : clauses complexes (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité) et principes du droit de la concurrence applicables aux pratiques anticoncurrentielles.\n- Arbitrage et modes alternatifs de résolution des litiges : logique de la clause compromissoire, déroulement d'un arbitrage, rôle de la Cour commune de justice et d'arbitrage (CCJA) de l'OHADA dans le paysage régional, médiation et conciliation.\n\nCes trois matières ne sont pas étanches : un contrat d'affaires entre deux sociétés d'un même groupe peut relever à la fois du droit des conventions réglementées, du droit de la concurrence s'il restreint l'accès au marché, et contenir une clause d'arbitrage. C'est précisément cette transversalité que les examens de Master évaluent.\n\n## Méthode de travail avancée\n\nTrois outils structurent le travail en Master :\n\n- L'étude de cas complexe : partir d'un scénario d'entreprise (souvent sénégalais ou ouest-africain, fictif) comportant plusieurs acteurs, plusieurs contrats et un ou plusieurs litiges potentiels. La méthode consiste à cartographier les parties, les actes juridiques en cause, puis à qualifier chaque élément avant de répondre à la question posée.\n- Le business case : analyse d'une décision d'entreprise (restructuration de groupe, négociation d'un contrat-cadre, choix d'un mode de résolution des litiges) en croisant l'angle juridique et l'angle économique. Il ne s'agit pas seulement de dire ce qui est licite, mais ce qui est opportun pour l'entreprise, compte tenu des risques.\n- La revue de littérature ciblée : savoir situer une question dans les débats doctrinaux (sans inventer de référence précise), reconnaître les tendances d'évolution du droit des affaires OHADA, et construire un raisonnement nuancé plutôt qu'une réponse binaire.\n\nPour chaque matière, construisez une fiche de synthèse avec : définitions clés, conditions d'application, effets juridiques, et un exemple d'entreprise type. Complétez-la par une liste de points de vigilance (erreurs fréquentes de qualification).\n\n## Plan de révision sur six semaines\n\n- Semaines 1 et 2 : droit des sociétés approfondi et gouvernance. Reprendre les bases de Licence 3 (sociétés commerciales OHADA) puis construire les fiches sur les groupes et les conventions réglementées.\n- Semaines 3 et 4 : droit des contrats d'affaires et de la concurrence. Travailler les clauses complexes à partir de modèles de contrats commentés, puis les principes de la concurrence.\n- Semaine 5 : arbitrage et modes alternatifs de résolution des litiges. Comprendre la logique de la clause compromissoire et le rôle de la CCJA en général, sans entrer dans le détail procédural précis qui relève d'un cours spécialisé.\n- Semaine 6 : entraînement sur sujets types, cas transversaux, et relecture des fiches. Prévoir au moins deux simulations d'examen en temps limité (3 heures), avec autocorrection stricte.\n\nChaque semaine doit se terminer par un exercice écrit complet (pas seulement une lecture), car la compétence évaluée en Master est la rédaction argumentée, pas la seule connaissance.\n\n## Points clés à retenir\n\n- Le Master exige une analyse transversale et critique, pas une récitation de règles.\n- Les trois matières de l'année (sociétés/gouvernance, contrats d'affaires/concurrence, arbitrage/MARL) s'articulent souvent dans un même cas pratique d'examen.\n- La méthode de l'étude de cas complexe et du business case doit être pratiquée dès le début de la révision, pas seulement la veille de l'examen.\n- Aucune donnée chiffrée officielle (taux, seuils, numéros d'articles) ne doit être mémorisée comme certaine sans vérification du texte en vigueur : utilisez les valeurs de ce cours comme illustrations pédagogiques.\n\n## Exercices pratiques\n\n1. Listez les trois matières avancées du programme de M1 en droit des affaires et, pour chacune, indiquez une notion de Licence 3 sur laquelle elle s'appuie directement.\n2. Expliquez en cinq lignes la différence entre une approche « récitation de la règle » et une approche « qualification en incertitude », à partir d'un exemple au choix.\n3. Construisez le squelette d'une fiche de synthèse (rubriques, sans contenu) que vous utiliserez pour la matière « gouvernance et groupes de sociétés ».\n4. Proposez un planning hebdomadaire personnel sur six semaines, en adaptant celui proposé ci-dessus à vos contraintes (travail, stage, autres matières).\n5. Citez deux raisons pour lesquelles un même cas pratique d'examen de Master peut mobiliser à la fois le droit des sociétés, le droit des contrats et l'arbitrage.\n\n## Corrigé\n\n1. Gouvernance et groupes de sociétés s'appuie sur le droit des sociétés commerciales OHADA (L3) ; contrats d'affaires et concurrence s'appuie sur le droit des obligations (contrat, L1/L2) et le droit commercial général OHADA (L2) ; arbitrage et MARL s'appuie sur les institutions et les bases de la procédure vues en introduction au droit (L1) ainsi que sur le droit commercial.\n2. La récitation de la règle consiste à énoncer une condition ou une définition sans la rattacher aux faits (« l'article prévoit que... »). La qualification en incertitude consiste à confronter des faits ambigus à plusieurs qualifications possibles et à argumenter le choix retenu, par exemple déterminer si un accord entre deux filiales constitue une convention réglementée ou un contrat de droit commun selon la qualité des parties signataires.\n3. Exemple de squelette : définition de la notion, conditions d'application, procédure ou formalisme associé, sanctions en cas de non-respect, exemple d'entreprise type, points de vigilance.\n4. Le planning doit respecter la logique progressive (sociétés d'abord, puis contrats/concurrence, puis arbitrage, puis entraînement) mais peut être compressé ou étendu selon le temps disponible ; l'essentiel est de conserver une semaine complète d'entraînement en fin de parcours.\n5. D'une part, les opérations d'affaires réelles combinent rarement une seule branche du droit : un contrat entre sociétés d'un même groupe touche à la fois à la gouvernance et au droit des contrats. D'autre part, les examens de Master visent à vérifier la capacité à transférer des connaissances d'une matière à l'autre, ce qui est précisément ce que travaille l'étude de cas transversale."
+   },
+   {
+    "title": "Droit des sociétés approfondi et gouvernance : groupes de sociétés et conventions réglementées",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Droit des contrats d'affaires et de la concurrence : clauses complexes et pratiques anticoncurrentielles",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Arbitrage et modes alternatifs de résolution des litiges : clause compromissoire et rôle de la CCJA",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 en droit des affaires (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des sociétés approfondi et gouvernance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des contrats d'affaires et de la concurrence",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Arbitrage et modes alternatifs de résolution des litiges",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Synthèse transversale et atelier cas pratique (groupe Sine Agro)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-mkt-m1",
+  "level": "Master 1",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Master 1 : réussir ses examens",
+  "description": "Préparation aux examens de Master 1 en Marketing et commerce : marketing stratégique approfondi et branding, marketing international et export, stratégie de distribution et trade marketing. Études de cas d'entreprises sénégalaises fictives, calculs chiffrés vérifiés, sujet type et quatre cours vidéo de 1h30. Public : étudiants de Master 1 ayant validé une Licence en marketing et commerce.",
+  "sort": 781,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 1 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 40,
+    "content": "Le Master 1 en Marketing et commerce marque une rupture nette avec la Licence. On ne vous demande plus\nseulement de connaître des outils (mix marketing, étude de marché, techniques de vente) : on vous demande de les\nmobiliser pour analyser des situations complexes, souvent incertaines, et de construire une argumentation de niveau\ncadre. Les examens de M1 prennent trois formes principales : des épreuves écrites de cas (étude d'un cas d'entreprise\nréel ou fictif, avec questions de diagnostic et de recommandation), des dossiers de recherche appliquée (mini-mémoire\nou dossier d'étude portant sur une problématique marketing précise, avec revue de littérature courte), et parfois une\nsoutenance orale de dossier de stage ou de projet tuteuré. Il faut donc préparer à la fois des connaissances\nthéoriques solides et une méthode de raisonnement transférable à des cas inédits.\n\n## Les trois matières avancées de l'année\n\nCe cours d'examen couvre trois matières clés du M1 Marketing et commerce, qui prolongent sans jamais répéter les\nfondamentaux déjà vus en Licence :\n\n- Le marketing stratégique approfondi et le branding : modèles de capital-marque, positionnement complexe,\n  repositionnement, architecture de marque.\n- Le marketing international et export : choix des modes d'entrée à l'étranger, arbitrage entre standardisation et\n  adaptation de l'offre.\n- La stratégie de distribution et le trade marketing : conception des canaux, gestion de la relation\n  fabricant-distributeur, merchandising et budgets coopératifs.\n\nCes trois matières se répondent : une marque forte (matière 1) facilite l'entrée sur un marché export (matière 2),\nqui elle-même suppose une stratégie de distribution adaptée au pays cible (matière 3). Les sujets d'examen de M1\naiment précisément tester cette articulation en vous demandant de suivre une même entreprise fictive sur les trois\ndimensions.\n\n## La méthode de travail attendue en Master\n\nEn Licence, on valorisait la restitution organisée d'un cours. En Master, on valorise le diagnostic argumenté. Trois\nréflexes à développer :\n\n- L'étude de cas complexe : face à un cas d'entreprise (souvent 1 à 2 pages de contexte chiffré), commencez toujours\n  par un diagnostic structuré (forces/faiblesses internes, opportunités/menaces externes, ou modèle des 5 forces de\n  Porter si pertinent) avant de proposer une recommandation. Une recommandation sans diagnostic explicite est\n  sanctionnée, même si elle est pertinente sur le fond.\n- Le business case chiffré : en M1, on attend que vous sachiez construire et interpréter de petits calculs\n  (seuil de rentabilité d'un mode d'entrée, marge d'un circuit de distribution, valeur d'une marque). Un correcteur\n  de Master valorise un raisonnement chiffré juste et explicité plus qu'une récitation théorique non appliquée.\n- La revue de littérature courte : pour un dossier de recherche appliquée, on vous demande de situer votre\n  problématique par rapport à deux ou trois courants ou auteurs de référence du marketing (par exemple le débat\n  standardisation/adaptation de Levitt et Kotler), sans invention de citations ou de références que vous ne\n  maîtrisez pas précisément. Mieux vaut citer un concept sobrement et correctement que d'inventer une référence\n  précise non vérifiée.\n\n## Plan de révision sur six semaines\n\n- Semaines 1 et 2 : reprendre en profondeur le marketing stratégique et le branding (leçon 2), avec, pour chaque\n  concept, un exemple d'entreprise sénégalaise ou africaine que vous pouvez mobiliser à l'examen.\n- Semaines 3 et 4 : traiter le marketing international et export (leçon 3) ; s'entraîner à construire des seuils de\n  rentabilité comparant deux modes d'entrée, exercice classique des sujets de M1.\n- Semaine 5 : travailler la stratégie de distribution et le trade marketing (leçon 4) ; mémoriser les mécanismes de\n  calcul de marge en cascade sur un circuit de distribution (prix public, marge détaillant, marge distributeur, prix\n  de cession fabricant).\n- Semaine 6 : traiter le sujet type d'examen (leçon 5) en conditions chronométrées (3 heures), puis reprendre les\n  quatre cours vidéo d'1h30 en vous arrêtant sur les quiz intermédiaires.\n\n## Points de vigilance pour l'examen\n\n- Un cas d'entreprise fictif doit rester cohérent du début à la fin de votre copie : ne changez pas les chiffres\n  donnés dans l'énoncé.\n- Un calcul juste mais non interprété (vous donnez un chiffre sans dire ce qu'il signifie pour la décision) ne\n  rapporte qu'une partie des points en Master.\n- Les correcteurs de Master attendent une structure visible : titres de parties, phrase de diagnostic, phrase de\n  recommandation. Une copie dense et non structurée, même juste sur le fond, perd des points de forme.\n\n## Exercices pratiques\n\n1. Listez les trois matières avancées de ce cours de M1 et expliquez en une phrase chacune pourquoi elle prolonge,\n   sans la répéter, une matière vue en Licence 3 Marketing et commerce.\n2. Pourquoi un correcteur de Master sanctionne-t-il une recommandation sans diagnostic explicite, même si elle est\n   pertinente ?\n3. Construisez votre propre planning de révision sur six semaines en reprenant la trame proposée, en l'adaptant à\n   votre emploi du temps réel.\n4. Expliquez la différence entre une récitation théorique et un raisonnement chiffré appliqué à un cas, à l'aide\n   d'un exemple que vous inventez (une entreprise fictive de votre choix, sans données officielles précises).\n\n## Corrigé\n\n1. Marketing stratégique approfondi et branding : prolonge le marketing stratégique de Licence 3 en introduisant les\n   modèles de capital-marque et le positionnement complexe (repositionnement, architecture de marque), non traités\n   en Licence. Marketing international et export : prolonge le commerce international de Licence 3 en se concentrant\n   sur le choix argumenté des modes d'entrée et l'arbitrage standardisation/adaptation, plus avancé que les notions\n   de base du commerce international. Stratégie de distribution et trade marketing : prolonge le marketing\n   opérationnel de Licence 2 en se concentrant sur la conception des canaux et la relation fabricant-distributeur,\n   non abordées en détail en Licence.\n2. Parce qu'en Master, on évalue la capacité à construire un raisonnement professionnel complet : le diagnostic\n   prouve que la recommandation découle d'une analyse de la situation réelle de l'entreprise, et non d'une intuition\n   ou d'une récitation. Une bonne idée non justifiée par un diagnostic ne prouve pas la maîtrise de la méthode\n   attendue d'un futur cadre marketing.\n3. Réponse libre : l'essentiel est de retrouver, dans le planning personnel, les six blocs proposés (deux semaines\n   de marketing stratégique et branding, deux semaines d'international et export, une semaine de distribution et\n   trade marketing, une semaine de sujet type et de révision vidéo), avec des jours précis et des créneaux\n   réalistes.\n4. Exemple de réponse : une récitation théorique dirait « le seuil de rentabilité est le niveau d'activité pour\n   lequel les charges totales égalent le chiffre d'affaires ». Un raisonnement chiffré appliqué calculerait, pour une\n   entreprise fictive « Petit Marché SA » qui envisage d'exporter vers un pays voisin, le seuil de rentabilité en\n   tonnes de deux modes d'entrée (export direct et implantation locale), comparerait les deux seuils aux volumes\n   réellement prévus par l'énoncé, puis conclurait sur le mode d'entrée le plus adapté à ce volume précis. C'est\n   cette dernière démarche qui est valorisée en Master."
+   },
+   {
+    "title": "Marketing stratégique approfondi et branding : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Marketing international et export : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Stratégie de distribution et trade marketing : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing stratégique approfondi et branding",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing international et export",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Stratégie de distribution et trade marketing",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier cas pratique transversal — branding, export et distribution",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];

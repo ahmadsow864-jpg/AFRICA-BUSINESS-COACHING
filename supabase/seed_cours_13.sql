@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 13/13). À exécuter après seed.sql.
+-- Cours (partie 13/16). À exécuter après seed.sql.
 
 -- Cours : Logistique et transport Licence 2 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1507,3 +1507,2160 @@ Correction : OTIF 92 %, écart de moins 3 points ; coût logistique 9 %, écart 
 Retenez : émissions égalent tonnes, kilomètres et facteur ; Kraljic oriente la stratégie achats ; on décide sur le TCO ; on note les fournisseurs avec une grille fixée à l''avance ; un tableau de bord sert à agir. Refaites le dossier 3 du sujet type. Merci et bonne fin de Licence.', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-log-l3'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Logistique durable, achats et pilotage par indicateurs');
+
+-- Cours : Ressources humaines Master 1 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-rh-m1', (select id from public.levels where name = 'Master 1'), null, 'Ressources humaines', 'Ressources humaines Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en ressources humaines : stratégie RH et posture de business partner, audit social et diagnostic RH avancé, droit social avancé et gestion des contentieux. Études de cas d''entreprises sénégalaises et africaines fictives, exercices corrigés et sujet type d''examen. Public : étudiants de Master 1 RH ayant validé les fondamentaux de Licence.', true, 701
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 1 en ressources humaines', 'Le Master 1 en ressources humaines marque une rupture nette avec la Licence. Vous ne révisez plus des
+définitions et des procédures de base : vous devez démontrer une capacité d''analyse critique, de diagnostic
+et de décision en situation d''incertitude, sur des cas d''entreprise complexes et souvent incomplets, comme
+dans la réalité d''une direction des ressources humaines (DRH) africaine confrontée à la croissance, à la
+restructuration ou à la conflictualité sociale.
+
+## Ce qui change par rapport à la Licence
+
+En Licence, vous avez appris les briques : introduction à la GRH, droit du travail de base, comportement
+organisationnel, recrutement, paie, formation, GPEC, dialogue social, rémunération et SIRH. Le Master 1
+suppose ces briques acquises et vous demande de les assembler au service d''une décision stratégique. Trois
+exigences nouvelles structurent l''année : la stratégie RH doit être alignée sur la stratégie d''entreprise
+(logique de business partner, et non plus seulement de gestionnaire administratif) ; le pilotage RH doit
+s''appuyer sur un audit social rigoureux et des indicateurs avancés, pas seulement sur l''intuition du
+dirigeant ; et le droit social doit être mobilisé pour anticiper et gérer des contentieux réels (licenciement
+contesté, négociation collective, procédure prud''homale), pas seulement pour citer un texte.
+
+## Les trois matières avancées de l''année
+
+La première matière, stratégie RH et alignement avec la stratégie d''entreprise, vous apprend à lire un plan
+stratégique d''entreprise (croissance, diversification, internationalisation, réduction de coûts) et à en
+déduire les choix RH cohérents : effectifs cibles, compétences critiques, organisation, politique de
+rémunération, calendrier social. C''est la logique du HR business partner, qui siège au comité de direction et
+parle le langage du chiffre d''affaires et de la marge, pas seulement celui du droit du travail.
+
+La deuxième matière, audit social et diagnostic RH, vous enseigne à construire et interpréter des indicateurs
+avancés (taux de rotation, taux d''absentéisme, taux de promotion interne, masse salariale rapportée au chiffre
+d''affaires, climat social) et à produire un bilan social argumenté qui éclaire une décision, par exemple un
+plan de départs volontaires ou un plan de fidélisation.
+
+La troisième matière, droit social avancé et gestion des contentieux, approfondit les situations à risque :
+rupture du contrat de travail (licenciement pour motif personnel ou économique), négociation collective
+(accords d''entreprise, conventions collectives) et contentieux devant les juridictions du travail. L''objectif
+n''est pas de mémoriser des articles de loi précis, le cadre législatif sénégalais étant en transition (projet
+de code du travail en discussion), mais de maîtriser les mécanismes, les risques et les bonnes pratiques de
+sécurisation, en vérifiant toujours le texte en vigueur au moment des faits.
+
+## Méthode de travail pour le Master 1
+
+À ce niveau, trois outils de travail deviennent indispensables. D''abord, l''étude de cas complexe : un dossier
+d''entreprise fictive, avec des données chiffrées parfois contradictoires ou incomplètes, dans lequel vous
+devez identifier le problème RH réel avant de proposer une solution argumentée. Ensuite, le business case :
+vous devez chiffrer l''impact financier de vos recommandations (coût d''un plan de formation, économie d''un
+plan de départs, coût d''un contentieux) et les présenter comme le ferait un consultant devant un comité de
+direction. Enfin, la revue de littérature : pour les matières les plus conceptuelles (stratégie RH, GPEC
+avancée), vous devez être capable de synthétiser plusieurs approches théoriques (par exemple les modèles de
+l''alignement stratégique RH) et de les discuter de façon critique, sans réciter un seul auteur comme une
+vérité unique.
+
+Beaucoup d''étudiants qui réussissent bien un partiel de Master 1 échouent sur l''étude de cas parce qu''ils se
+précipitent sur la solution avant d''avoir posé un diagnostic rigoureux. La méthode conseillée est systématique :
+lire le cas deux fois, lister les faits (chiffres, dates, acteurs), formuler le ou les problèmes RH sous-jacents,
+mobiliser les concepts pertinents des trois matières, proposer une ou plusieurs solutions argumentées en
+anticipant leurs limites, puis conclure par une recommandation chiffrée et un plan d''action daté.
+
+## Plan de révision sur six semaines
+
+Semaine 1 : reprendre les bases de Licence en droit du travail et comportement organisationnel pour s''assurer
+qu''aucune brique ne manque, puis lire l''intégralité du cours de stratégie RH et alignement.
+
+Semaine 2 : travailler la stratégie RH en profondeur, avec au moins trois cas pratiques complets, en
+s''entraînant à chiffrer un business case simple (coût d''un recrutement stratégique, retour sur investissement
+d''une politique de rétention).
+
+Semaine 3 : passer à l''audit social et au diagnostic RH, construire soi-même un petit tableau d''indicateurs
+à partir de données fictives, et s''entraîner à rédiger une synthèse de bilan social en une page.
+
+Semaine 4 : traiter le droit social avancé et la gestion des contentieux, en se concentrant sur les mécanismes
+(étapes d''un licenciement sécurisé, logique d''une négociation collective, déroulement d''une procédure
+prud''homale en principe) plutôt que sur des numéros d''articles.
+
+Semaine 5 : faire et refaire le sujet type d''examen multi-matières dans les conditions du jour J (temps
+limité, sans notes), puis corriger soi-même avant de comparer au corrigé détaillé.
+
+Semaine 6 : révision croisée, en reliant les trois matières entre elles (par exemple : comment un diagnostic
+social révèle un risque juridique qui doit être intégré dans la stratégie RH), et relecture active des
+quatre cours vidéo, en reformulant à voix haute les points clés sans regarder le support.
+
+## Points clés à retenir
+
+- Le Master 1 évalue la capacité à relier stratégie d''entreprise, diagnostic RH chiffré et sécurisation
+juridique, pas la restitution isolée de connaissances.
+- Toute recommandation RH doit être argumentée et, autant que possible, chiffrée.
+- Le cadre légal sénégalais étant en transition, privilégiez la maîtrise des mécanismes et la prudence sur
+les chiffres précis, en rappelant systématiquement qu''il faut vérifier le texte en vigueur.
+- La méthode de l''étude de cas (faits, problème, concepts, solution argumentée, recommandation) doit devenir
+un réflexe avant chaque partiel.
+
+## Exercices pratiques
+
+1. Expliquez en cinq lignes la différence entre une fonction RH administrative et une fonction RH business
+partner.
+2. Citez trois indicateurs RH avancés utiles à un audit social et justifiez chacun en une phrase.
+3. Un directeur général sénégalais vous dit : « je veux réduire ma masse salariale de 10 % cette année ».
+Listez trois options RH possibles avant tout licenciement, avec un avantage et un risque pour chacune.
+4. Pourquoi est-il risqué, dans un devoir de droit social, de citer un numéro d''article précis du futur code
+du travail sénégalais sans réserve ? Proposez une formulation prudente alternative.
+5. Construisez un plan de révision personnel sur six semaines en adaptant celui proposé ci-dessus à votre
+emploi du temps, en indiquant au moins deux jalons de contrôle (auto-évaluation).
+
+## Corrigé
+
+1. La fonction RH administrative gère les actes (paie, contrats, absences) de façon réactive et conforme ;
+la fonction RH business partner participe à la définition de la stratégie d''entreprise, anticipe les besoins
+en compétences et en organisation, et est évaluée sur sa contribution à la performance globale, pas seulement
+sur la conformité des dossiers.
+2. Par exemple : le taux de rotation (turnover), qui révèle un risque de perte de compétences et un coût de
+remplacement ; le taux d''absentéisme, qui peut signaler un problème de climat social ou de conditions de
+travail ; le ratio masse salariale sur chiffre d''affaires, qui mesure la soutenabilité économique de la
+politique salariale.
+3. Option 1 : gel des recrutements et non-remplacement des départs naturels (avantage : pas de coût social
+immédiat ; risque : perte de compétences si les départs touchent des postes clés). Option 2 : plan de
+départs volontaires négocié (avantage : image sociale préservée, choix laissé au salarié ; risque : coût
+financier immédiat et possible départ des meilleurs talents). Option 3 : réduction du temps de travail ou
+de la rémunération variable (avantage : préserve l''emploi ; risque : démotivation et perte d''attractivité).
+4. C''est risqué parce que le code du travail sénégalais est en cours de réforme (projet de loi en discussion)
+et qu''un article cité de mémoire peut être obsolète ou inexact au moment de l''examen. Formulation prudente :
+« sous réserve de vérification du texte en vigueur, le mécanisme général prévoit généralement… ».
+5. Réponse libre ; un bon plan reprend la logique faits → notions → entraînement → correction → synthèse, et
+fixe au moins une auto-évaluation après la troisième semaine et une avant l''examen.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en ressources humaines');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Stratégie RH et alignement avec la stratégie d''entreprise (business partner) : l''essentiel pour l''examen', 'La stratégie RH et son alignement avec la stratégie d''entreprise constituent le cœur de la posture de
+HR business partner : la fonction RH n''est plus seulement un service support qui applique des règles, elle
+participe à la définition des choix de l''entreprise et en organise la traduction en termes de compétences,
+d''organisation et de rémunération.
+
+## Notions clés
+
+L''alignement stratégique RH consiste à faire correspondre les leviers RH (recrutement, formation,
+organisation, rémunération, mobilité) aux orientations stratégiques de l''entreprise (croissance,
+diversification, internationalisation, réduction de coûts, transformation digitale). Un cadre utile, à
+discuter de façon critique plutôt qu''à réciter, distingue quatre rôles possibles de la fonction RH : le rôle
+administratif (gestion des actes), le rôle d''expert fonctionnel (paie, droit, SIRH), le rôle de partenaire
+stratégique (participation aux choix de l''entreprise) et le rôle d''agent de changement (accompagnement des
+transformations). Le Master 1 attend de vous que vous sachiez situer une pratique RH dans l''un de ces rôles
+et argumenter pourquoi une entreprise donnée devrait, à un moment donné, en privilégier un autre.
+
+Le business partner s''appuie sur une méthode simple : partir du plan stratégique de l''entreprise, en extraire
+les implications en matière d''effectifs et de compétences (combien de personnes, avec quelles compétences, à
+quel horizon), puis construire un plan RH daté et chiffré qui accompagne ce plan stratégique, en identifiant
+les risques (pénurie de compétences, résistance au changement, coût social) et les leviers pour les maîtriser.
+
+## Méthode d''analyse d''un cas de stratégie RH
+
+Face à un cas d''entreprise, la méthode recommandée suit quatre étapes. Premièrement, identifier la stratégie
+d''entreprise affichée (croissance organique, croissance par acquisition, diversification géographique,
+automatisation). Deuxièmement, en déduire les besoins RH induits (effectifs, compétences rares, organisation
+cible). Troisièmement, évaluer l''écart entre la situation RH actuelle et cette cible (c''est l''écart stratégique
+RH). Quatrièmement, proposer un plan d''action RH daté, chiffré et priorisé pour combler cet écart, en
+anticipant au moins un risque majeur et la façon de le limiter.
+
+## Cas d''entreprise fictif : Teranga Agro-Industries
+
+Teranga Agro-Industries est une entreprise agroalimentaire fictive basée à Dakar, employant 480 salariés et
+réalisant un chiffre d''affaires annuel de 18 milliards de FCFA. Sa direction générale a validé un plan
+stratégique à trois ans visant à tripler la capacité de transformation de céréales locales et à ouvrir deux
+nouvelles usines, l''une à Kaolack, l''autre à Saint-Louis, afin de réduire la dépendance aux importations et de
+répondre à une demande régionale UEMOA en croissance. Le plan prévoit un doublement du chiffre d''affaires en
+trois ans.
+
+La DRH, nouvellement associée au comité de direction, doit présenter un plan RH d''accompagnement. L''analyse
+des effectifs actuels montre que l''usine de Dakar emploie 300 ouvriers de production, 90 techniciens de
+maintenance et qualité, et 90 fonctions support (finance, commercial, RH, logistique). Le taux de rotation des
+techniciens qualifiés est de 18 % par an, nettement supérieur à celui des ouvriers de production (7 %), ce qui
+traduit une tension sur ce type de compétence sur le marché dakarois.
+
+Pour les deux nouvelles usines, l''entreprise estime avoir besoin, à terme, de 260 ouvriers de production
+supplémentaires, 70 techniciens supplémentaires et 40 fonctions support supplémentaires, soit un besoin total
+de 370 postes nouveaux. Vérifions l''arithmétique : 260 + 70 + 40 = 370, ce qui correspond bien à l''annonce de
+la direction générale. Avec un effectif actuel de 480 et un besoin additionnel de 370, l''effectif total cible
+à trois ans est de 480 + 370 = 850 salariés, soit une progression de 370 / 480, c''est-à-dire environ 77 %, sur
+la période (calcul vérifié : 370 divisé par 480 égale 0,7708, arrondi à 77 %).
+
+L''écart stratégique RH majeur identifié par la DRH concerne les 140 techniciens supplémentaires à recruter
+(70 pour chaque nouvelle usine), alors que le marché local de Kaolack et de Saint-Louis offre un bassin de
+compétences techniques plus restreint que Dakar, et que le taux de rotation déjà observé à Dakar (18 %) laisse
+craindre une difficulté à fidéliser ces profils rares une fois recrutés.
+
+La DRH propose un plan en trois axes : un axe « formation interne », avec la création d''un centre de formation
+technique partagé entre les trois sites, pour qualifier localement des jeunes diplômés plutôt que de dépendre
+exclusivement du recrutement externe ; un axe « fidélisation », avec une prime de rareté de compétence
+clairement identifiée comme un dispositif propre à l''entreprise (et non un taux légal) pour les techniciens
+critiques, assortie d''un parcours de carrière visible ; et un axe « mobilité interne », en proposant à des
+techniciens expérimentés de Dakar d''ouvrir les nouvelles usines contre une prime de mobilité géographique et
+un logement de fonction temporaire, ce qui limite le risque d''implantation sans savoir-faire disponible sur
+place au démarrage.
+
+## Points clés
+
+- L''alignement stratégique RH part toujours de la stratégie d''entreprise, jamais l''inverse.
+- Chiffrer l''écart entre effectifs actuels et effectifs cibles est un exercice attendu : vérifiez toujours vos
+additions et vos pourcentages.
+- Un plan RH crédible combine plusieurs leviers (formation, fidélisation, mobilité) plutôt qu''une solution
+unique, et anticipe au moins un risque concret lié au contexte local.
+- Toute prime ou dispositif chiffré proposé dans un exemple est une création d''entreprise fictive, jamais un
+taux légal, sauf mention contraire explicite.
+
+## Exercices pratiques
+
+1. Dans le cas Teranga, recalculez le besoin total de postes si la direction révise son objectif à 300
+ouvriers, 80 techniciens et 50 fonctions support supplémentaires. Quel est le nouvel effectif cible ?
+2. Expliquez pourquoi un taux de rotation de 18 % chez les techniciens est plus préoccupant stratégiquement
+que le même taux chez les ouvriers de production dans ce cas précis.
+3. Citez deux risques, autres que la pénurie de compétences, qu''une ouverture d''usine dans une nouvelle ville
+peut faire peser sur la stratégie RH.
+4. Pourquoi la DRH doit-elle siéger au comité de direction pour qu''un plan RH comme celui de Teranga soit
+réellement efficace, et pas seulement correct sur le papier ?
+5. Cas pratique complet : Dakar Digital Solutions, entreprise de services fictive de 150 salariés, veut doubler
+son activité en deux ans grâce à l''intelligence artificielle appliquée à la relation client. Elle estime avoir
+besoin de 60 postes, dont 25 en compétences data/IA quasi inexistantes localement. Rédigez un diagnostic de
+l''écart stratégique RH et un plan d''action en trois axes argumentés.
+6. Quelle différence faites-vous entre une fonction RH qui « suit » la stratégie et une fonction RH qui « co-
+construit » la stratégie ? Donnez un exemple concret pour chacune.
+
+## Corrigé
+
+1. Nouveau besoin total : 300 + 80 + 50 = 430 postes. Nouvel effectif cible : 480 + 430 = 910 salariés.
+2. Parce que les techniciens sont une compétence rare sur le marché local des nouvelles implantations : leur
+perte est plus coûteuse à remplacer (délai, formation, risque de rupture de production), alors que le marché
+d''ouvriers de production est plus large et plus facile à reconstituer rapidement.
+3. Par exemple : le risque d''image employeur (difficulté à attirer des talents si la nouvelle usine est perçue
+comme isolée) et le risque social local (relations avec les communautés et autorités locales, attentes
+d''emploi local qui peuvent créer des tensions si elles ne sont pas satisfaites).
+4. Parce qu''un plan RH décidé après les choix stratégiques n''est qu''un ajustement administratif ; siéger au
+comité de direction permet à la DRH d''influencer les choix eux-mêmes (calendrier, implantation, ambition) en
+fonction de la disponibilité réelle des compétences, ce qui réduit le risque d''échec du plan stratégique.
+5. Diagnostic attendu : l''écart porte sur les 25 postes data/IA, compétence quasi absente localement, ce qui
+peut retarder le projet si rien n''est anticipé. Plan en trois axes : formation accélérée d''un vivier interne
+reconverti via un centre de formation ; recrutement ciblé d''un petit noyau d''experts seniors formant ensuite
+les équipes locales ; politique de rétention spécifique pour éviter que l''investissement ne profite à des
+concurrents.
+6. Une fonction RH qui « suit » la stratégie reçoit les décisions déjà prises et organise leur mise en œuvre RH ;
+une fonction RH qui « co-construit » la stratégie est associée avant la décision et peut alerter sur un risque
+RH qui modifie le choix lui-même, par exemple en proposant un calendrier d''ouverture d''usine plus progressif si
+le vivier de techniciens est jugé insuffisant.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Stratégie RH et alignement avec la stratégie d''entreprise (business partner) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Audit social et diagnostic RH (indicateurs avancés, bilan social) : l''essentiel pour l''examen', 'L''audit social et le diagnostic RH permettent de transformer des données RH brutes en informations
+utiles à la décision. À ce niveau de Master, on attend une capacité à construire des indicateurs avancés, à
+les interpréter avec prudence et à les restituer dans un bilan social argumenté, sans confondre corrélation et
+causalité ni appliquer des seuils universels qui n''existent pas.
+
+## Notions clés
+
+L''audit social est une démarche d''évaluation systématique des pratiques et des résultats RH d''une organisation,
+au regard de ses objectifs (conformité, performance, climat social). Le diagnostic RH en est le produit : une
+analyse qui identifie les forces, les faiblesses et les risques RH d''une organisation à un moment donné. Le
+bilan social, dans les grandes entreprises, est le document qui rassemble ces indicateurs sur une période,
+généralement l''année écoulée, afin de permettre un suivi dans le temps.
+
+Les indicateurs avancés les plus mobilisés en Master 1 incluent : le taux de rotation (nombre de départs sur
+une période rapporté à l''effectif moyen), le taux d''absentéisme (jours d''absence rapportés aux jours
+théoriquement travaillés), le taux de promotion interne (nombre de promotions rapporté à l''effectif), le ratio
+masse salariale sur chiffre d''affaires (qui mesure le poids économique du coût du travail), et des indicateurs
+de climat social (résultats d''enquêtes internes, nombre d''incidents disciplinaires, nombre de recours).
+
+Un principe méthodologique essentiel : un indicateur isolé ne signifie presque rien. Un taux de rotation de
+15 % peut être excellent dans un secteur où la moyenne est de 30 %, et alarmant dans un secteur où la moyenne
+est de 5 %. Le diagnostic RH exige donc systématiquement une comparaison : dans le temps (évolution sur
+plusieurs années), dans l''espace (comparaison à des entreprises comparables, quand c''est possible et prudent),
+et par segment (par métier, par site, par ancienneté), car une moyenne globale peut masquer des situations très
+différentes.
+
+## Méthode de construction d''un diagnostic RH
+
+La méthode recommandée comprend quatre étapes : collecter les données disponibles (effectifs, mouvements,
+absences, masse salariale, résultats d''enquêtes) ; calculer les indicateurs pertinents en vérifiant les
+formules et les unités ; interpréter chaque indicateur en le comparant à une référence pertinente (évolution
+interne, segment, éventuellement secteur si la donnée est fiable) ; et formuler un diagnostic global qui relie
+les indicateurs entre eux (par exemple, un absentéisme élevé combiné à une rotation élevée sur le même site
+suggère un problème de conditions de travail ou de management local, plutôt que deux problèmes indépendants).
+
+## Cas d''entreprise fictif : Groupe Sahel Logistique
+
+Le Groupe Sahel Logistique est une entreprise fictive de transport et d''entreposage, basée à Dakar avec un
+site secondaire à Thiès, employant au total 600 salariés (420 à Dakar, 180 à Thiès). La DRH doit préparer le
+bilan social annuel pour le comité de direction.
+
+Données du site de Dakar : 420 salariés en moyenne sur l''année, 63 départs sur la période (volontaires et
+involontaires confondus). Le taux de rotation de Dakar se calcule ainsi : 63 divisé par 420, soit 0,15, donc
+15 %.
+
+Données du site de Thiès : 180 salariés en moyenne, 45 départs sur la période. Le taux de rotation de Thiès se
+calcule ainsi : 45 divisé par 180, soit 0,25, donc 25 %.
+
+Le taux de rotation global du groupe se calcule en rapportant le total des départs au total des effectifs :
+63 + 45 = 108 départs, pour 420 + 180 = 600 salariés en moyenne, soit 108 divisé par 600, c''est-à-dire 0,18,
+donc 18 %. Ce chiffre global de 18 % est trompeur pris isolément : il masque un écart important entre les deux
+sites (15 % contre 25 %), un écart de 10 points de pourcentage qui mérite une explication avant toute action
+corrective uniforme.
+
+Sur l''absentéisme, le site de Thiès enregistre 2 700 jours d''absence sur l''année pour 180 salariés travaillant
+en moyenne 220 jours théoriques chacun, soit un total théorique de 180 fois 220, c''est-à-dire 39 600
+jours-salarié théoriques. Le taux d''absentéisme de Thiès est donc de 2 700 divisé par 39 600, soit environ
+0,068, donc environ 6,8 %. Le site de Dakar, sur la même base de calcul, enregistre 1 800 jours d''absence pour
+420 salariés à 220 jours théoriques, soit 420 fois 220 égale 92 400 jours-salarié théoriques ; le taux
+d''absentéisme de Dakar est de 1 800 divisé par 92 400, soit environ 0,0195, donc environ 2 %.
+
+Le diagnostic RH de la DRH relie ces deux indicateurs pour le site de Thiès : un taux de rotation de 25 % et un
+taux d''absentéisme d''environ 6,8 %, nettement supérieurs à ceux de Dakar, suggèrent un problème local propre
+au site (conditions de travail, qualité du management, attractivité du site), plutôt qu''une politique RH
+globale du groupe qui serait uniformément mauvaise. La recommandation n''est donc pas une mesure générale pour
+tout le groupe, mais une investigation ciblée sur le site de Thiès (entretiens de départ, enquête de climat
+social locale) avant de décider d''un plan d''action.
+
+## Points clés
+
+- Un indicateur RH ne vaut que par la comparaison qui l''accompagne : jamais de lecture isolée.
+- Toujours vérifier les formules (numérateur, dénominateur, unités) avant de calculer un taux.
+- Un diagnostic RH croise plusieurs indicateurs pour distinguer un problème ponctuel d''un problème structurel,
+et un problème global d''un problème localisé à un site ou un segment.
+- Le bilan social doit déboucher sur une recommandation d''action, pas seulement sur une liste de chiffres.
+
+## Exercices pratiques
+
+1. Recalculez le taux de rotation du site de Thiès si, sur l''année suivante, les départs tombent à 27 pour un
+effectif moyen inchangé de 180.
+2. Expliquez pourquoi comparer le taux de rotation de Sahel Logistique à celui d''une entreprise d''un autre
+secteur (par exemple la banque) serait une erreur méthodologique.
+3. Citez trois sources de données qu''une DRH peut mobiliser, en plus des chiffres de rotation et
+d''absentéisme, pour affiner un diagnostic social.
+4. Pourquoi est-il dangereux de décider une mesure RH applicable à tout un groupe sur la seule base d''un taux
+de rotation global, comme le 18 % calculé pour Sahel Logistique ?
+5. Cas pratique complet : une entreprise fictive, Baobab Télécom, a un effectif moyen de 900 salariés et a
+enregistré 108 départs sur l''année, ainsi que 19 800 jours d''absence pour un total théorique de 198 000
+jours-salarié. Calculez le taux de rotation et le taux d''absentéisme, puis rédigez en dix lignes un diagnostic
+prudent (sans comparaison externe disponible) sur ce que ces deux chiffres suggèrent et ce qu''il faudrait
+vérifier avant de conclure.
+6. Quelle différence faites-vous entre un audit social et un simple reporting RH mensuel ?
+
+## Corrigé
+
+1. Nouveau taux de rotation de Thiès : 27 divisé par 180, soit 0,15, donc 15 %, ce qui ramènerait Thiès au
+même niveau que Dakar et confirmerait, si cela se vérifiait, que la situation initiale était ponctuelle.
+2. Parce que les secteurs ont des dynamiques de marché du travail très différentes (mobilité normale des
+salariés, saisonnalité, pénibilité) ; comparer des taux de rotation entre secteurs sans ajustement conduit à
+des conclusions erronées. Il faut comparer à des références du même secteur ou, à défaut, suivre l''évolution
+dans le temps de la même entreprise.
+3. Par exemple : les entretiens de départ, les enquêtes de climat social ou d''engagement, et les indicateurs
+disciplinaires (avertissements, sanctions) ou de sécurité au travail (accidents, incidents).
+4. Parce que le chiffre global de 18 % mélange deux situations très différentes (15 % et 25 %) ; une mesure
+uniforme risquerait de ne pas traiter le vrai problème (concentré à Thiès) et de coûter inutilement sur le
+site qui fonctionne bien (Dakar).
+5. Taux de rotation : 108 divisé par 900, soit 0,12, donc 12 %. Taux d''absentéisme : 19 800 divisé par 198 000,
+soit 0,10, donc 10 %. Diagnostic prudent : ces taux semblent élevés en valeur absolue mais ne peuvent être
+qualifiés de préoccupants sans comparaison (historique, secteur) ; il faudrait vérifier l''évolution sur
+plusieurs années et croiser avec les motifs de départ et d''absence.
+6. Un reporting RH mensuel suit des chiffres de routine (effectifs, absences) de façon descriptive ; un audit
+social va plus loin en évaluant les pratiques RH au regard d''objectifs (conformité, performance, équité) et en
+produisant un diagnostic argumenté destiné à éclairer une décision, pas seulement à informer.', 'texte', 55, false, 30
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Audit social et diagnostic RH (indicateurs avancés, bilan social) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Droit social avancé et gestion des contentieux : l''essentiel pour l''examen', 'Le droit social avancé et la gestion des contentieux forment la troisième matière clé du Master 1. Il
+ne s''agit plus de connaître les notions de base du contrat de travail, mais de savoir anticiper et gérer les
+situations à risque : rupture du contrat, négociation collective et contentieux devant les juridictions du
+travail. Le cadre légal sénégalais étant en transition (un projet de réforme du code du travail est en
+discussion), ce cours privilégie la compréhension des mécanismes et des bonnes pratiques de sécurisation, et
+rappelle systématiquement la nécessité de vérifier le texte en vigueur au moment des faits, plutôt que de
+citer des articles précis qui pourraient être obsolètes.
+
+## Notions clés
+
+La rupture du contrat de travail peut être volontaire (démission, rupture négociée) ou imposée par
+l''employeur (licenciement). Le licenciement se distingue classiquement entre motif personnel (lié au
+comportement ou à l''aptitude du salarié) et motif économique (lié à la situation de l''entreprise :
+réorganisation, difficultés économiques, suppression de poste). Dans les deux cas, la sécurisation juridique
+repose sur trois piliers généraux, dont le contenu précis doit être vérifié dans le texte en vigueur : un motif
+réel et sérieux, une procédure respectée (information, délais, éventuelle consultation des représentants du
+personnel), et une traçabilité des faits (documents, évaluations, avertissements antérieurs pour un motif
+personnel disciplinaire).
+
+La négociation collective désigne le processus par lequel employeur et représentants des salariés (syndicats,
+délégués du personnel) élaborent des accords collectifs, qui peuvent compléter ou préciser la convention
+collective de branche applicable. Elle est centrale dans la gestion du dialogue social, abordée de façon plus
+générale en Licence, mais qui doit ici être articulée à une gestion de risque : un accord mal négocié ou mal
+appliqué peut lui-même devenir source de contentieux.
+
+Le contentieux prud''homal (devant les juridictions du travail, dont la dénomination précise varie selon les
+pays et les réformes) est la voie par laquelle un salarié ou un employeur peut contester une décision ou
+demander réparation. En principe général, la procédure commence souvent par une tentative de conciliation,
+avant un éventuel jugement au fond ; la logique à retenir pour l''examen est celle des étapes et des enjeux
+(preuve, délais de prescription qu''il faut vérifier dans le texte applicable, risques financiers), pas la
+mémorisation de délais précis en jours qui doivent impérativement être vérifiés dans le texte en vigueur au
+moment des faits.
+
+## Méthode d''analyse d''un cas de droit social avancé
+
+Devant un cas de droit social, la méthode attendue est : qualifier juridiquement la situation (type de rupture,
+type de motif) ; identifier les risques de contestation (absence de motif réel et sérieux, vice de procédure,
+rupture de l''égalité de traitement) ; évaluer les moyens de sécurisation disponibles avant la décision (dossier
+disciplinaire complet, respect des étapes procédurales, alternative au licenciement) ; et, si un contentieux
+est déjà engagé, analyser la position de chaque partie (preuves disponibles, risques financiers et
+réputationnels) pour recommander une stratégie (poursuite du contentieux, transaction, conciliation).
+
+## Cas d''entreprise fictif : Dakar Industries Métalliques
+
+Dakar Industries Métalliques est une entreprise fictive de fabrication métallique employant 85 salariés. Le
+directeur d''usine souhaite licencier Monsieur Fall, chef d''équipe depuis six ans, à la suite d''un incident où
+ce dernier aurait, selon le rapport du superviseur, quitté son poste sans autorisation pendant deux heures, ce
+qui aurait provoqué un arrêt de la chaîne de production estimé à 1 200 000 FCFA de perte de production
+(chiffre fictif pour l''exemple).
+
+En examinant le dossier, la DRH constate trois éléments. Premièrement, Monsieur Fall n''a aucun antécédent
+disciplinaire en six ans d''ancienneté : aucun avertissement écrit au dossier. Deuxièmement, le rapport du
+superviseur est le seul élément de preuve ; aucun témoignage écrit d''un autre salarié, aucune relevé horaire
+de badge n''a été produit à l''appui. Troisièmement, Monsieur Fall affirme avoir dû quitter son poste pour un
+motif familial urgent et avoir prévenu oralement un collègue, information non vérifiée par l''entreprise avant
+la décision envisagée.
+
+Le diagnostic juridique de la DRH est le suivant : un licenciement immédiat pour motif personnel disciplinaire,
+fondé sur un fait isolé non corroboré par des preuves solides et sans antécédent du salarié, présente un risque
+élevé de contestation pour absence de motif suffisamment établi, en particulier si le salarié démontre devant
+la juridiction compétente qu''il avait averti un collègue et qu''aucune enquête contradictoire n''a été menée
+avant la décision.
+
+La recommandation de la DRH est double : sur le plan procédural, mener d''abord un entretien contradictoire
+formel avec Monsieur Fall, recueillir sa version et celle du collègue qu''il dit avoir prévenu, avant toute
+décision, afin de compléter le dossier de preuve ; sur le plan de la sanction, envisager, si les faits sont
+confirmés mais isolés et sans antécédent, une sanction disciplinaire intermédiaire (avertissement écrit ou mise
+à pied) plutôt qu''un licenciement immédiat, ce qui réduit le risque de contentieux tout en marquant la gravité
+du fait auprès du collectif de travail. Si l''entreprise souhaite malgré tout licencier, elle devra documenter
+solidement le dossier avant toute notification, en vérifiant scrupuleusement les étapes procédurales en vigueur.
+
+## Points clés
+
+- Un licenciement se sécurise avant la décision, par la constitution d''un dossier de preuve et le respect
+d''une procédure contradictoire, pas après.
+- L''absence d''antécédent disciplinaire et la faiblesse de la preuve sont deux facteurs qui augmentent fortement
+le risque de contestation d''un licenciement pour motif personnel.
+- Ne jamais citer un délai ou un article précis du code du travail sénégalais sans réserve explicite, le texte
+étant en transition ; privilégier la description du mécanisme général.
+- Une sanction disciplinaire graduée est souvent une option plus sûre juridiquement qu''un licenciement immédiat
+pour un fait isolé.
+
+## Exercices pratiques
+
+1. Pourquoi l''absence d''antécédent disciplinaire de Monsieur Fall affaiblit-elle la position de l''employeur
+dans ce cas ?
+2. Citez deux éléments de preuve que l''entreprise aurait pu chercher à réunir avant d''envisager une sanction,
+dans le cas Dakar Industries Métalliques.
+3. Expliquez la différence entre un licenciement pour motif personnel et un licenciement pour motif économique,
+et pourquoi cette distinction est centrale pour la stratégie de défense de l''employeur en cas de contentieux.
+4. Pourquoi le projet de réforme du code du travail sénégalais doit-il vous inciter, à l''examen, à privilégier
+les mécanismes généraux plutôt que des articles précis ?
+5. Cas pratique complet : une entreprise fictive de distribution, Sahel Market, souhaite supprimer dix postes
+de magasinier dans un entrepôt en raison de l''automatisation d''une partie de la chaîne logistique. Identifiez
+le type de motif de licenciement concerné, listez trois précautions procédurales générales que l''entreprise
+devrait envisager avant toute notification (sans citer de délai précis), et proposez une alternative partielle
+au licenciement pur et simple pour une partie des postes concernés.
+## Corrigé
+
+1. Parce que l''absence d''antécédent rend plus difficile de démontrer un comportement fautif grave et récurrent ;
+un fait isolé chez un salarié jusque-là sans reproche est généralement perçu comme moins sérieux qu''une faute
+s''inscrivant dans un historique documenté, ce qui pèse en faveur du salarié en cas de contestation.
+2. Par exemple : un relevé de badge ou de pointage horaire objectif, et un témoignage écrit du collègue que
+Monsieur Fall affirme avoir prévenu, ce qui permettrait de vérifier sa version des faits.
+3. Le motif personnel concerne le comportement ou l''aptitude individuelle du salarié (faute, insuffisance
+professionnelle) et la défense de l''employeur porte alors sur la preuve des faits reprochés ; le motif
+économique concerne la situation de l''entreprise (difficultés, réorganisation, suppression de poste) et la
+défense porte alors sur la réalité économique invoquée et sur le respect de critères généraux d''ordre des
+licenciements et de recherche de reclassement, selon le mécanisme applicable.
+4. Parce qu''un article cité de mémoire peut changer de numérotation ou de contenu avec la réforme en cours ; une
+copie qui décrit le mécanisme général (ce qui doit exister : motif réel et sérieux, procédure, traçabilité) sans
+se tromper sur un numéro d''article précis est plus solide et plus honnête qu''une copie qui invente une référence
+légale inexacte.
+5. Il s''agit d''un motif économique (réorganisation liée à l''automatisation). Précautions générales : documenter
+la réalité du motif économique, respecter une procédure d''information et, selon le mécanisme applicable, de
+consultation des représentants du personnel, et retenir des critères objectifs de choix des postes supprimés
+plutôt qu''un choix arbitraire. Alternative partielle : reclasser une partie des dix magasiniers sur des postes
+liés à la maintenance des nouveaux équipements, ce qui réduit le nombre de suppressions effectives.
+', 'texte', 55, false, 40
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit social avancé et gestion des contentieux : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 1 RH (entraînement multi-matières, corrigé détaillé)', 'Ce sujet type rassemble les trois matières avancées du Master 1 en ressources humaines : stratégie RH
+et alignement avec la stratégie d''entreprise, audit social et diagnostic RH, droit social avancé et gestion des
+contentieux. Il n''a pas de caractère officiel et le barème indiqué est purement indicatif, destiné à vous aider
+à répartir votre temps de révision et le jour de l''épreuve.
+
+## Sujet (durée indicative : 3 heures, barème indicatif sur 20 points)
+
+Vous êtes consultant RH junior intervenant auprès de l''entreprise fictive Teranga Textiles, société de
+confection employant 340 salariés à Rufisque, qui connaît une croissance rapide de ses commandes à l''export
+vers la sous-région UEMOA.
+
+Partie 1 (8 points) : Stratégie RH. La direction générale annonce un doublement de la capacité de production en
+dix-huit mois, nécessitant le recrutement de 180 opérateurs de confection et de 20 techniciens de maintenance
+industrielle, alors que le marché local de Rufisque peine à fournir des techniciens qualifiés (seuls 4
+techniciens qualifiés recrutés sur les 20 recherchés en six mois de campagne). Analysez l''écart stratégique RH
+et proposez un plan d''action en au moins deux axes argumentés.
+
+Partie 2 (6 points) : Audit social. Les données suivantes sont fournies : effectif moyen 340 salariés, 51
+départs sur l''année, 7 480 jours d''absence pour un total théorique de 74 800 jours-salarié. Calculez le taux de
+rotation et le taux d''absentéisme, puis rédigez un diagnostic prudent en dix lignes maximum.
+
+Partie 3 (6 points) : Droit social avancé. Un opérateur de confection, employé depuis deux ans, a été absent
+sans justification pendant trois jours consécutifs ; il affirme avoir été hospitalisé mais n''a transmis aucun
+justificatif à ce jour, deux semaines après son retour. La direction envisage un licenciement pour faute.
+Analysez les risques juridiques de cette décision en l''état du dossier et proposez une démarche de
+sécurisation avant toute décision.
+
+## Corrigé détaillé
+
+Partie 1. L''écart stratégique RH majeur ne porte pas sur les 180 opérateurs de confection, pour lesquels le
+marché local de Rufisque offre vraisemblablement un bassin suffisant compte tenu du secteur textile
+traditionnellement implanté dans la zone, mais sur les 20 techniciens de maintenance industrielle, compétence
+rare localement : seuls 4 sur 20 ont été recrutés en six mois, soit un taux de réalisation de 4 divisé par 20,
+c''est-à-dire 20 %, largement insuffisant au regard du calendrier de dix-huit mois annoncé. Un plan d''action
+crédible combine au moins deux axes : un axe de formation accélérée, par exemple un partenariat avec un centre
+de formation technique régional pour qualifier des profils existants (mécaniciens généralistes reconvertis à
+la maintenance industrielle textile) sur une durée compatible avec le calendrier ; et un axe de recrutement
+élargi géographiquement, en ouvrant la recherche à d''autres villes ou pays de la sous-région UEMOA avec une
+proposition de mobilité (logement, prime d''installation), ce qui élargit le bassin de recrutement au-delà de
+Rufisque. Un troisième axe possible, à valoriser s''il est mentionné, est la révision du calendrier de montée en
+puissance pour les lignes nécessitant le plus de maintenance, afin de ne pas dépendre immédiatement des 20
+techniciens complets.
+
+Partie 2. Taux de rotation : 51 divisé par 340, soit 0,15, donc 15 %. Taux d''absentéisme : 7 480 divisé par
+74 800, soit 0,10, donc 10 %. Diagnostic prudent attendu : ces deux taux ne peuvent être qualifiés
+d''excellents ou de préoccupants sans comparaison (évolution sur plusieurs années, éventuellement secteur
+textile si une donnée fiable existe) ; dans un contexte de forte croissance et de recrutement massif récent, un
+taux de rotation de 15 % peut en partie refléter un turnover normal de nouveaux embauchés en période d''essai, ce
+qu''il faudrait vérifier en segmentant le taux par ancienneté avant de conclure à un problème de fidélisation
+généralisé.
+
+Partie 3. Les risques juridiques sont élevés en l''état du dossier : l''absence de trois jours n''est à ce jour
+pas documentée comme fautive de façon certaine, puisque le salarié invoque une hospitalisation et qu''aucune
+vérification n''a été faite ; décider un licenciement avant d''avoir cherché à obtenir ou vérifier un justificatif
+médical exposerait l''entreprise à une contestation sérieuse si le salarié produit ultérieurement une preuve
+d''hospitalisation. La démarche de sécurisation recommandée est de solliciter formellement et par écrit le
+salarié pour qu''il produise un justificatif dans un délai raisonnable, de mener un entretien contradictoire pour
+recueillir sa version complète, et de ne qualifier la situation (absence injustifiée fautive ou absence
+justifiée tardivement) qu''une fois cette démarche effectuée, avant toute décision disciplinaire.
+
+## Exercices pratiques (questions complémentaires)
+
+1. Dans la partie 1, que changerait-il à votre analyse si l''entreprise découvrait que les 4 techniciens déjà
+recrutés quittent systématiquement l''entreprise avant la fin de leur période d''essai ?
+2. Dans la partie 2, si l''absentéisme de 10 % se révélait concentré à 90 % sur un seul atelier de 40 salariés,
+comment cela changerait-il votre diagnostic et votre recommandation ?
+3. Dans la partie 3, quelle différence feriez-vous si le salarié avait déjà deux avertissements écrits pour
+absences injustifiées au cours de l''année précédente ?
+4. Proposez une question d''examen supplémentaire, à cheval entre la stratégie RH et le droit social, portant
+sur le cas Teranga Textiles.
+
+## Corrigé
+
+1. Cela changerait fondamentalement le diagnostic : le problème ne serait plus seulement un problème de
+recrutement (attirer des techniciens) mais un problème de fidélisation et probablement d''intégration ou de
+conditions de travail ; il faudrait ajouter un axe « intégration et accompagnement » au plan (tutorat,
+parcours d''intégration renforcé, vérification des conditions de travail réelles des techniciens) avant de
+continuer à recruter, sous peine de voir l''effort de recrutement ne jamais se traduire en effectif stable.
+2. Un absentéisme concentré à 90 % sur un seul atelier de 40 salariés (sur 340) indique un problème localisé et
+non un problème global de l''entreprise ; le diagnostic devrait se recentrer sur cet atelier spécifique (conditions
+de travail, management local, type de poste) et la recommandation porterait sur une investigation ciblée
+(entretiens, visite de poste) plutôt que sur une mesure RH applicable à l''ensemble des 340 salariés.
+3. Avec deux avertissements écrits préalables pour le même type de fait, le dossier disciplinaire serait
+nettement plus solide : l''absence actuelle s''inscrirait dans un historique documenté, ce qui renforcerait la
+position de l''employeur même sans justificatif immédiat, tout en gardant la prudence de vérifier la procédure
+contradictoire avant toute décision finale.
+4. Exemple de question : « La direction de Teranga Textiles envisage de recruter les techniciens manquants en
+leur proposant un contrat à durée déterminée de dix-huit mois calé sur le projet de doublement de capacité.
+Quels sont les avantages et les risques, RH et juridiques, de ce choix par rapport à une embauche en contrat à
+durée indéterminée ? » Une bonne réponse relierait la flexibilité recherchée par l''entreprise (avantage RH) au
+risque de moindre attractivité du poste pour des techniciens rares qui préfèrent souvent la stabilité (risque
+stratégique), ainsi qu''au risque juridique de requalification si le contrat à durée déterminée est utilisé de
+façon répétée pour un besoin en réalité durable, ce qui doit toujours être vérifié au regard du mécanisme en
+vigueur.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 RH (entraînement multi-matières, corrigé détaillé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Stratégie RH et business partner', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en ressources humaines. Objectifs : savoir analyser l''alignement
+entre une stratégie d''entreprise et un plan RH, et construire un plan d''action RH chiffré et priorisé face à un
+cas d''entreprise complexe. Matériel : tableau ou diaporama, dossier de cas distribué en amont (cas Teranga
+Agro-Industries ou équivalent), calculatrice. Prérequis : notions de base de GRH et de GPEC vues en Licence.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et enjeux du business partner
+
+Bonjour à toutes et à tous, bienvenue dans ce cours consacré à la stratégie RH et à l''alignement avec la
+stratégie d''entreprise. Je vous propose de commencer par une question simple : à votre avis, qu''est-ce qui
+distingue un directeur des ressources humaines qui se contente d''administrer le personnel d''un directeur des
+ressources humaines qui est un véritable partenaire stratégique de l''entreprise ? Prenez trente secondes pour y
+réfléchir. La réponse que nous allons construire ensemble aujourd''hui tourne autour d''une idée centrale : le
+business partner ne répond pas aux demandes de l''entreprise, il anticipe les besoins RH que la stratégie de
+l''entreprise va créer, avant même qu''ils ne deviennent urgents.
+
+## 05:00 – 15:00 · Les quatre rôles de la fonction RH
+
+Je vous présente un cadre de lecture, à discuter de façon critique et non à réciter mécaniquement : la fonction
+RH peut jouer quatre rôles. Le rôle administratif, qui gère les actes (contrats, paie, absences). Le rôle
+d''expert fonctionnel, qui maîtrise des domaines techniques comme le droit social ou le SIRH. Le rôle de
+partenaire stratégique, qui participe à la définition des choix de l''entreprise. Et le rôle d''agent de
+changement, qui accompagne les transformations organisationnelles. Regardez le diaporama : je vous montre
+quatre exemples de situations RH, et nous allons ensemble les classer dans l''un de ces quatre rôles. Un
+licenciement individuel bien géré relève surtout de l''expertise fonctionnelle. Une participation à la décision
+d''ouvrir une nouvelle usine relève du rôle de partenaire stratégique. Gardez cette grille en tête, nous allons
+l''utiliser tout au long du cours.
+
+## 15:00 – 30:00 · Méthode d''analyse de l''écart stratégique RH
+
+Voici la méthode en quatre étapes que je vous demande de maîtriser parfaitement. Premièrement, identifiez la
+stratégie d''entreprise affichée dans le cas : croissance, diversification, réduction de coûts, automatisation.
+Deuxièmement, déduisez-en les implications RH : quels effectifs, quelles compétences, à quel horizon.
+Troisièmement, comparez cette cible à la situation RH actuelle pour identifier l''écart stratégique RH : c''est
+souvent là que se trouve le vrai problème à traiter, pas dans les chiffres globaux. Quatrièmement, construisez
+un plan d''action RH daté, chiffré et priorisé. Prenons l''exemple du cas Teranga Agro-Industries que vous avez dû
+lire avant ce cours : l''entreprise veut tripler sa capacité et ouvrir deux usines, avec un effectif cible de 850
+salariés contre 480 actuellement, soit 370 postes nouveaux. Vérifions ensemble : 260 ouvriers plus 70
+techniciens plus 40 fonctions support égale bien 370. L''écart stratégique majeur ne porte pas sur les 260
+ouvriers, faciles à recruter localement, mais sur les 70 techniciens de maintenance, compétence rare, alors que
+le taux de rotation des techniciens à Dakar est déjà de 18 %, contre seulement 7 % chez les ouvriers. C''est ce
+diagnostic ciblé, et non une impression générale, qui doit guider votre plan d''action.
+
+## 30:00 – 40:00 · Construire un plan d''action en plusieurs axes
+
+Un bon plan RH combine toujours plusieurs leviers, jamais un seul. Pour Teranga, nous avons proposé trois axes :
+la formation interne, via un centre de formation technique partagé entre les sites, pour qualifier localement
+de nouveaux techniciens plutôt que de dépendre uniquement du marché externe ; la fidélisation, via un dispositif
+propre à l''entreprise, clairement présenté comme fictif dans notre exemple, pour retenir les techniciens déjà en
+poste ; et la mobilité interne, en proposant à des techniciens expérimentés de Dakar d''ouvrir les nouveaux sites
+contre une prime de mobilité. Notez bien que chaque axe répond à un risque précis : la formation répond au
+risque de pénurie externe, la fidélisation répond au risque de perte des compétences déjà acquises, et la
+mobilité répond au risque de démarrage sans savoir-faire sur un nouveau site.
+
+## 40:00 – 48:00 · Quiz interactif à mi-parcours
+
+Faisons une pause active. Première question : dans le cas Teranga, pourquoi l''écart stratégique RH porte-t-il
+davantage sur les techniciens que sur les ouvriers de production ? Deuxième question : si le taux de rotation
+des techniciens passait de 18 % à 30 % l''année suivante, que faudrait-il réviser dans le plan d''action ?
+Troisième question : citez un risque, autre que la pénurie de compétences, lié à l''implantation d''une nouvelle
+usine dans une ville différente. Prenez deux minutes pour noter vos réponses, puis nous les reprenons ensemble.
+Pour la première question, la réponse attendue est que les techniciens constituent une compétence rare sur le
+marché local, contrairement aux ouvriers, plus facilement remplaçables. Pour la deuxième, il faudrait renforcer
+l''axe fidélisation et probablement revoir le calendrier d''ouverture, car un turnover en forte hausse signale que
+les mesures existantes ne suffisent plus. Pour la troisième, on peut citer le risque d''image employeur ou le
+risque de tensions avec les communautés locales en matière d''emploi.
+
+## 48:00 – 65:00 · Étude de cas filée : Dakar Digital Solutions
+
+Passons à un second cas, que je vous invite à traiter avec moi en temps réel. Dakar Digital Solutions, entreprise
+de services fictive, emploie 150 salariés et veut doubler son activité en deux ans en misant sur l''intelligence
+artificielle appliquée à la relation client. Elle estime avoir besoin de 60 postes supplémentaires, dont 25 dans
+des compétences data et intelligence artificielle, quasi inexistantes sur le marché local. Appliquons la méthode
+en quatre étapes. Étape un : la stratégie est une croissance portée par une innovation technologique. Étape
+deux : le besoin RH porte sur 60 postes, dont 25 critiques. Étape trois : l''écart stratégique majeur porte sur
+ces 25 postes rares, le reste du besoin étant plus classique. Étape quatre : le plan d''action doit combiner une
+reconversion accélérée de profils informatiques internes existants, un recrutement ciblé d''un petit noyau
+d''experts seniors capables de former les équipes, et une politique de rétention spécifique pour ces profils très
+recherchés, afin que l''investissement de formation ne profite pas finalement à la concurrence.
+
+## 65:00 – 75:00 · Les limites et risques de la posture business partner
+
+Je veux insister sur un point souvent oublié dans les copies : la posture de business partner a aussi ses
+limites. Un risque fréquent est que la fonction RH, en voulant trop s''aligner sur la stratégie d''entreprise,
+perde de vue sa mission de garant de l''équité et de la conformité sociale ; un plan de croissance peut, par
+exemple, pousser à recruter très vite au détriment de la qualité de l''intégration, ou à négliger le droit
+social dans l''urgence. Un bon business partner sait dire à la direction générale qu''un calendrier stratégique
+est irréaliste au regard des contraintes RH réelles, plutôt que de l''accepter sans discussion. C''est cette
+capacité à la fois d''alignement et de recul critique qui est évaluée dans vos copies de Master.
+
+## 75:00 – 85:00 · Synthèse et méthode de rédaction en examen
+
+Pour synthétiser : face à un cas d''examen sur ce thème, suivez toujours la méthode en quatre étapes, vérifiez
+systématiquement vos calculs (additions, pourcentages), proposez plusieurs axes d''action argumentés et reliés
+chacun à un risque précis, et n''hésitez pas à exprimer une réserve critique sur la stratégie elle-même si les
+données du cas le justifient. C''est cette combinaison de rigueur chiffrée et de recul analytique qui distingue
+une copie de Master 1 d''une simple récitation de cours.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Cinq questions pour conclure. Un, quelle est la différence entre le rôle d''expert fonctionnel et le rôle de
+partenaire stratégique de la fonction RH ? Deux, dans le cas Teranga, à combien s''élève l''effectif cible total
+à trois ans et quel est le pourcentage de progression par rapport à l''effectif actuel ? Trois, pourquoi un plan
+RH doit-il combiner plusieurs leviers plutôt qu''un seul ? Quatre, citez un risque de la posture business partner
+évoqué dans ce cours. Cinq, dans le cas Dakar Digital Solutions, quel est l''écart stratégique RH principal ?
+Réponses : un, l''expert fonctionnel maîtrise un domaine technique RH (droit, paie, SIRH) tandis que le
+partenaire stratégique participe aux choix de l''entreprise elle-même. Deux, l''effectif cible est de 850
+salariés, soit une progression d''environ 77 % par rapport à 480. Trois, parce qu''une solution unique est
+fragile face aux aléas et qu''un plan robuste doit couvrir plusieurs risques à la fois. Quatre, par exemple le
+risque de négliger l''équité ou la conformité sociale au profit de la vitesse stratégique. Cinq, le besoin de 25
+postes en compétences data et intelligence artificielle, quasi absentes du marché local. Merci à toutes et à
+tous, je vous retrouve pour le prochain cours consacré à l''audit social et au diagnostic RH.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Stratégie RH et business partner');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Audit social et diagnostic RH', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en ressources humaines. Objectifs : savoir calculer et interpréter
+les indicateurs RH avancés, et construire un diagnostic social argumenté à partir de données chiffrées. Matériel
+: tableau ou diaporama, calculatrice, dossier de cas Groupe Sahel Logistique. Prérequis : notions de base de
+suivi RH vues en Licence (paie, administration du personnel).
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : pourquoi un chiffre seul ne dit rien
+
+Bonjour à toutes et à tous. Je commence par une affirmation volontairement provocante : un indicateur RH isolé,
+sans comparaison, ne vaut presque rien. Un taux de rotation de 20 % vous semble-t-il élevé ? Vous ne pouvez pas
+répondre sans savoir dans quel secteur, dans quelle entreprise, et par rapport à quelle évolution. C''est le fil
+rouge de tout ce cours sur l''audit social : la rigueur du calcul ne suffit pas, il faut toujours l''accompagner
+d''une comparaison pertinente avant d''interpréter.
+
+## 05:00 – 18:00 · Les indicateurs RH avancés et leurs formules
+
+Reprenons les formules essentielles, en vérifiant bien numérateur et dénominateur. Le taux de rotation : nombre
+de départs sur la période, divisé par l''effectif moyen de la période. Le taux d''absentéisme : nombre de
+jours d''absence, divisé par le nombre théorique de jours travaillés sur la période. Le ratio masse salariale
+sur chiffre d''affaires : masse salariale totale, divisée par le chiffre d''affaires. Le taux de promotion
+interne : nombre de promotions, divisé par l''effectif. Je vous montre à l''écran un tableau récapitulatif avec
+ces quatre formules ; notez-les précisément, une erreur de dénominateur est l''erreur la plus fréquente que je
+vois dans les copies.
+
+## 18:00 – 35:00 · Étude de cas filée : Groupe Sahel Logistique, calculs
+
+Passons au cas du Groupe Sahel Logistique, entreprise fictive de transport et d''entreposage avec un site à
+Dakar (420 salariés en moyenne) et un site à Thiès (180 salariés en moyenne). Calculons ensemble le taux de
+rotation de chaque site. À Dakar, 63 départs sur l''année : 63 divisé par 420 égale 0,15, donc 15 %. À Thiès, 45
+départs sur l''année : 45 divisé par 180 égale 0,25, donc 25 %. Calculons maintenant le taux global du groupe :
+total des départs, 63 plus 45 égale 108 ; total des effectifs, 420 plus 180 égale 600 ; taux global, 108 divisé
+par 600 égale 0,18, donc 18 %. Posez-vous la question : ce chiffre de 18 % vous dit-il quelque chose d''utile sur
+Thiès ou sur Dakar prise séparément ? Non : il les mélange et masque un écart de dix points entre les deux
+sites. C''est exactement le piège que je vous demande d''éviter dans vos copies : ne jamais vous arrêter à une
+moyenne globale.
+
+## 35:00 – 48:00 · Croiser les indicateurs : l''absentéisme de Thiès
+
+Poursuivons avec l''absentéisme. À Thiès, 2 700 jours d''absence pour 180 salariés à 220 jours théoriques chacun,
+soit un total théorique de 180 fois 220 égale 39 600 jours-salarié. Le taux d''absentéisme est donc de 2 700
+divisé par 39 600, soit environ 0,068, donc environ 6,8 %. À Dakar, 1 800 jours d''absence pour 420 salariés à
+220 jours théoriques, soit 420 fois 220 égale 92 400 jours-salarié théoriques ; le taux d''absentéisme est de
+1 800 divisé par 92 400, soit environ 0,0195, donc environ 2 %. Observez : Thiès cumule un taux de rotation de
+25 % et un taux d''absentéisme de 6,8 %, tous deux nettement supérieurs à Dakar. Quand deux indicateurs pointent
+dans la même direction sur le même site, c''est un signal fort qu''il existe un problème local spécifique
+(conditions de travail, management, attractivité du site), plutôt que deux problèmes indépendants ou un hasard
+statistique.
+
+## 48:00 – 56:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : que feriez-vous si, au contraire, le taux de rotation de Thiès était élevé
+mais le taux d''absentéisme identique à celui de Dakar ? Deuxième question : pourquoi est-il incorrect de
+comparer directement le taux de rotation de Sahel Logistique à celui d''une banque ? Troisième question :
+citez une source de données, autre que le calcul de taux, qui permettrait d''affiner le diagnostic sur Thiès.
+Notez vos réponses. Pour la première, une rotation élevée sans absentéisme élevé associé orienterait plutôt
+vers un problème d''attractivité externe (salaires, concurrence locale) que vers un problème de conditions de
+travail internes, ce qui changerait la piste d''investigation. Pour la deuxième, les secteurs ont des
+dynamiques de marché du travail différentes, et comparer sans ajustement sectoriel conduit à des conclusions
+erronées. Pour la troisième, on peut citer les entretiens de départ ou une enquête de climat social menée
+spécifiquement sur le site de Thiès. Ajoutons une nuance utile en examen : si l''enquête révélait que le turnover
+de Thiès est en réalité concentré sur un seul atelier d''une quarantaine de salariés, le diagnostic basculerait
+d''un problème de site vers un problème d''équipe ou de management de proximité, ce qui changerait totalement la
+nature de la recommandation à formuler.
+
+## 56:00 – 70:00 · Second cas chiffré : Baobab Télécom
+
+Prenons un second exemple pour systématiser la méthode. Baobab Télécom, entreprise fictive, a un effectif
+moyen de 900 salariés, 108 départs sur l''année, et 19 800 jours d''absence pour un total théorique de 198 000
+jours-salarié. Calculons : taux de rotation, 108 divisé par 900 égale 0,12, donc 12 %. Taux d''absentéisme,
+19 800 divisé par 198 000 égale 0,10, donc 10 %. Sans aucune donnée de comparaison externe ni historique
+interne, que pouvons-nous honnêtement conclure ? Rien de définitif : nous pouvons seulement formuler des
+hypothèses à vérifier, par exemple en segmentant ces chiffres par ancienneté, par métier ou par site, et en
+regardant leur évolution sur les trois dernières années avant de qualifier la situation de préoccupante ou
+non. C''est cette rigueur, plutôt qu''une conclusion hâtive, qui est valorisée dans vos copies.
+
+## 70:00 – 80:00 · Construire un bilan social argumenté
+
+Un bilan social ne doit jamais être une simple liste de chiffres : il doit déboucher sur un diagnostic et une
+recommandation. La structure que je vous recommande : présenter les indicateurs clés avec leur évolution ;
+identifier les écarts significatifs (entre sites, entre segments, dans le temps) ; croiser au moins deux
+indicateurs pour distinguer un problème ponctuel d''un problème structurel ; et conclure par une recommandation
+d''action précise et priorisée, par exemple « mener une investigation qualitative ciblée sur le site de Thiès
+avant toute décision de politique salariale generale », plutôt qu''une mesure uniforme pour tout le groupe.
+
+## 80:00 – 85:00 · Les limites et précautions méthodologiques de l''audit social
+
+Avant de conclure, j''attire votre attention sur trois précautions supplémentaires que les correcteurs
+apprécient particulièrement. Premièrement, attention aux effectifs moyens : si l''effectif d''une entreprise
+varie beaucoup en cours d''année (saisonnalité, recrutement massif en fin d''année), un effectif moyen mal
+calculé fausse tous les taux qui en découlent ; vérifiez toujours comment cet effectif moyen a été obtenu avant
+de l''utiliser. Deuxièmement, attention à la confusion entre corrélation et causalité : parce que deux
+indicateurs évoluent dans le même sens sur un même site, comme la rotation et l''absentéisme à Thiès, cela ne
+prouve pas qu''ils ont la même cause ; ce sont des signaux convergents qui justifient une investigation, pas une
+preuve en soi. Troisièmement, attention au contexte culturel et social local : dans certains contextes
+africains, un absentéisme peut aussi refléter des contraintes externes, comme l''éloignement du lieu de travail
+ou des obligations familiales, et non uniquement un désengagement ; un bon diagnostic RH explore toujours les
+motifs réels avant d''attribuer une cause unique à un chiffre. Gardez également en tête qu''un audit social
+sérieux documente ses sources : indiquez toujours, dans une copie, d''où viennent vos chiffres et quelles
+hypothèses de calcul vous retenez, par exemple le nombre de jours théoriques travaillés utilisé pour calculer
+un taux d''absentéisme, car un correcteur attentif vérifiera la cohérence de vos hypothèses avant même de
+regarder le résultat chiffré final.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Cinq questions. Un, quelle est la formule du taux de rotation ? Deux, dans le cas Sahel Logistique, pourquoi le
+taux global de 18 % est-il trompeur ? Trois, que signifie le fait que Thiès cumule rotation et absentéisme
+élevés par rapport à Dakar ? Quatre, dans le cas Baobab Télécom, quels taux avez-vous calculés ? Cinq, citez
+deux éléments indispensables à la structure d''un bilan social argumenté. Réponses : un, le nombre de départs
+sur la période divisé par l''effectif moyen de la période. Deux, parce qu''il mélange deux situations très
+différentes, 15 % à Dakar et 25 % à Thiès, et masque l''écart entre les deux sites. Trois, cela suggère un
+problème local spécifique au site de Thiès plutôt que deux phénomènes indépendants. Quatre, un taux de
+rotation de 12 % et un taux d''absentéisme de 10 %. Cinq, par exemple l''identification des écarts significatifs
+et une recommandation d''action priorisée. Merci à toutes et à tous, rendez-vous pour le cours sur le droit
+social avancé et la gestion des contentieux.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Audit social et diagnostic RH');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Droit social avancé et gestion des contentieux', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en ressources humaines. Objectifs : savoir analyser les risques
+juridiques d''une décision de rupture du contrat de travail et proposer une démarche de sécurisation, en
+contexte de transition du cadre légal sénégalais. Matériel : tableau ou diaporama, dossier de cas Dakar
+Industries Métalliques. Prérequis : notions de base de droit du travail vues en Licence.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et avertissement méthodologique
+
+Bonjour à toutes et à tous. Avant de commencer, un avertissement important : le code du travail sénégalais est
+actuellement en transition, avec un projet de réforme en discussion. Je ne vais donc citer aucun article précis
+ni aucun délai exact dans ce cours : nous allons travailler sur les mécanismes généraux, ceux qui structurent
+le droit social dans la plupart des systèmes comparables, et je vous rappellerai à chaque étape qu''il faut
+vérifier le texte en vigueur au moment des faits. C''est cette posture de prudence qui sera valorisée dans vos
+copies, bien plus qu''une fausse précision.
+
+## 05:00 – 15:00 · Les trois piliers de la sécurisation d''un licenciement
+
+Trois piliers généraux structurent la sécurisation d''un licenciement, qu''il soit pour motif personnel ou
+économique. Premier pilier : un motif réel et sérieux, c''est-à-dire des faits établis et suffisamment graves
+pour justifier la rupture. Deuxième pilier : une procédure respectée, incluant une information du salarié et,
+selon les cas, une consultation des représentants du personnel. Troisième pilier : une traçabilité des faits,
+c''est-à-dire des documents, évaluations ou avertissements antérieurs qui permettent, en cas de contestation, de
+démontrer la réalité et la gravité du motif invoqué. Retenez cette grille en trois piliers, nous allons
+l''appliquer immédiatement à un cas concret.
+
+## 15:00 – 30:00 · Étude de cas filée : Dakar Industries Métalliques
+
+Prenons le cas de Monsieur Fall, chef d''équipe depuis six ans dans l''entreprise fictive Dakar Industries
+Métalliques, que le directeur d''usine souhaite licencier après un incident où il aurait quitté son poste sans
+autorisation pendant deux heures, provoquant un arrêt de chaîne estimé à 1 200 000 FCFA de perte, chiffre
+fictif pour l''exemple. Appliquons notre grille en trois piliers. Premier pilier, le motif réel et sérieux :
+l''unique preuve est le rapport du superviseur, sans témoignage complémentaire ni relevé horaire objectif ;
+c''est un motif fragile en l''état. Deuxième pilier, la procédure : rien n''indique qu''un entretien contradictoire
+a été mené avec Monsieur Fall avant d''envisager la sanction. Troisième pilier, la traçabilité : Monsieur Fall n''a
+aucun antécédent disciplinaire en six ans, ce qui affaiblit l''argument d''un comportement fautif récurrent.
+Conclusion à ce stade : les trois piliers sont fragiles, le risque de contestation est élevé si l''entreprise
+licencie immédiatement.
+
+## 30:00 – 42:00 · Construire une recommandation de sécurisation
+
+Face à ce diagnostic, quelle recommandation professionnelle formuler ? Je vous propose une démarche en deux
+temps. D''abord, avant toute décision, compléter le dossier : mener un entretien contradictoire formel avec
+Monsieur Fall pour recueillir sa version, et chercher à vérifier son affirmation selon laquelle il aurait
+prévenu un collègue avant de quitter son poste. Ensuite, sur la sanction elle-même : si les faits sont confirmés
+mais restent isolés et sans antécédent, envisager une sanction disciplinaire intermédiaire, comme un
+avertissement écrit, plutôt qu''un licenciement immédiat, ce qui réduit fortement le risque juridique tout en
+marquant la gravité du fait. C''est cette logique de gradation et de sécurisation préalable, et non la sévérité
+immédiate, qui démontre la maîtrise du droit social avancé.
+
+## 42:00 – 50:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : parmi les trois piliers, lequel est le plus fragile dans le cas de Monsieur
+Fall et pourquoi ? Deuxième question : que changerait, dans votre recommandation, le fait que Monsieur Fall ait
+déjà deux avertissements écrits pour un comportement similaire au cours de l''année précédente ? Troisième
+question : pourquoi est-il risqué de citer un délai précis en jours dans une copie portant sur le droit social
+sénégalais actuellement ? Notez vos réponses. Pour la première, le pilier le plus fragile est la traçabilité et
+le motif réel et sérieux, faute de preuve solide et d''antécédent. Pour la deuxième, deux avertissements
+préalables renforceraient nettement le dossier disciplinaire et pourraient justifier une sanction plus sévère,
+y compris un licenciement, avec un risque juridique réduit. Pour la troisième, parce que le cadre légal est en
+transition et qu''un délai mémorisé peut être obsolète au moment de l''examen ou des faits réels.
+
+## 50:00 – 62:00 · La négociation collective comme source de risque
+
+Changeons de dimension : la négociation collective. Un accord collectif mal rédigé ou mal appliqué peut lui-
+même devenir une source de contentieux. Exemple : une entreprise négocie avec les représentants du personnel
+un accord prévoyant une prime de productivité, mais l''accord est rédigé de façon ambiguë sur son mode de
+calcul. Deux ans plus tard, des salariés contestent le montant perçu, estimant que l''accord prévoyait un calcul
+plus favorable. Ce type de contentieux collectif aurait pu être évité par une rédaction précise et des exemples
+chiffrés annexés à l''accord. Retenez : la qualité rédactionnelle d''un accord collectif est elle-même un outil de
+prévention des contentieux, pas seulement son contenu négocié.
+
+## 62:00 – 72:00 · Principes généraux du contentieux prud''homal
+
+Abordons maintenant les principes généraux d''un contentieux devant les juridictions du travail, toujours sans
+délai précis. La logique généralement observée est la suivante : une tentative de conciliation précède souvent
+un éventuel jugement au fond, ce qui laisse une fenêtre pour trouver un accord amiable, par exemple une
+transaction financière, avant d''aller plus loin. Pour l''employeur, la décision de poursuivre jusqu''au jugement
+ou de transiger dépend de l''évaluation de trois éléments : la solidité de son dossier de preuve, le risque
+financier chiffrable d''une condamnation éventuelle, et le risque réputationnel, notamment si le litige devient
+public ou affecte le climat social interne. Un bon professionnel RH sait présenter cette analyse de risque à sa
+direction de façon factuelle, sans dramatiser ni minimiser.
+
+## 72:00 – 78:00 · Le licenciement économique : points de vigilance spécifiques
+
+Un mot particulier sur le motif économique, souvent moins travaillé que le motif personnel par les étudiants.
+Au-delà des trois piliers déjà vus, un licenciement économique suppose généralement de démontrer la réalité
+économique invoquée (difficultés réelles, réorganisation justifiée par la sauvegarde de la compétitivité, ou
+mutation technologique), de respecter un ordre de choix des postes supprimés fondé sur des critères objectifs
+plutôt qu''arbitraires, et d''envisager, selon le mécanisme applicable, une recherche de reclassement avant la
+rupture effective. Un professionnel RH avisé documente chacun de ces éléments avant même d''annoncer le projet,
+car c''est souvent l''absence de cette documentation préalable, plus que le motif économique lui-même, qui est
+sanctionnée en cas de contestation, un examinateur ou un conciliateur jugeant d''abord la méthode suivie par
+l''employeur avant de se prononcer sur le fond du motif invoqué.
+
+## 78:00 – 83:00 · Synthèse méthodologique
+
+Pour synthétiser ce cours, retenez la méthode en quatre étapes face à un cas de droit social avancé : qualifier
+juridiquement la situation ; identifier les risques de contestation au regard des trois piliers de
+sécurisation ; évaluer les moyens de sécurisation disponibles avant toute décision ; et, si un contentieux est
+déjà engagé, analyser la position de chaque partie pour recommander une stratégie. Rappelez-vous aussi la règle
+d''or de ce module : jamais de numéro d''article ni de délai précis sans réserve explicite sur la nécessité de
+vérifier le texte en vigueur.
+
+## 83:00 – 90:00 · Évaluation finale
+
+Six questions pour conclure. Zéro, pourquoi un licenciement économique exige-t-il, en plus des trois piliers
+généraux, un critère de choix objectif des postes supprimés ? Réponse : parce que, à motif économique égal,
+l''employeur doit démontrer qu''il n''a pas choisi arbitrairement qui perd son emploi, sous peine que la décision
+soit contestée pour rupture d''égalité de traitement entre salariés placés dans une situation comparable. Un,
+quels sont les trois piliers de sécurisation d''un licenciement ? Deux,
+pourquoi le cas de Monsieur Fall présente-t-il un risque juridique élevé en l''état ? Trois, que recommande-t-on
+avant toute décision disciplinaire dans ce cas ? Quatre, pourquoi un accord collectif mal rédigé peut-il devenir
+une source de contentieux ? Cinq, sur quels trois éléments l''employeur doit-il s''appuyer pour décider entre
+poursuite d''un contentieux et transaction ? Réponses : un, un motif réel et sérieux, une procédure respectée, et
+une traçabilité des faits. Deux, parce que la seule preuve est un rapport non corroboré et que le salarié n''a
+aucun antécédent disciplinaire. Trois, mener un entretien contradictoire et chercher à vérifier la version du
+salarié avant toute sanction. Quatre, parce qu''une ambiguïté de rédaction peut être interprétée différemment
+par les salariés et l''employeur, créant un désaccord ultérieur sur son application. Cinq, la solidité du
+dossier de preuve, le risque financier chiffrable, et le risque réputationnel. Merci à toutes et à tous, rendez-
+vous pour le dernier cours vidéo, l''atelier transversal qui relie stratégie RH, audit social et droit social sur
+un même cas d''entreprise.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit social avancé et gestion des contentieux');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier transversal — stratégie RH, audit social et droit social', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en ressources humaines. Objectifs : mobiliser ensemble les trois
+matières de l''année (stratégie RH, audit social, droit social avancé) sur un cas d''entreprise transversal
+unique, pour s''entraîner dans des conditions proches de l''examen. Matériel : tableau ou diaporama, dossier de
+cas complet distribué en amont, calculatrice. Prérequis : avoir suivi les trois cours vidéo précédents.
+
+## Déroulé minuté
+
+## 00:00 – 06:00 · Présentation de l''atelier et du cas transversal
+
+Bonjour à toutes et à tous. Cette dernière séance est un atelier de synthèse : nous allons traiter un seul cas
+d''entreprise fictive, Rufisque Confection Export, en mobilisant successivement les trois matières de l''année,
+exactement comme vous devrez le faire le jour de l''examen. L''objectif n''est pas d''apprendre de nouvelles
+notions, mais de vous entraîner à passer rapidement et rigoureusement d''une matière à l''autre sur un même
+dossier, ce qui est souvent le point faible des copies, même chez les étudiants qui connaissent bien chaque
+matière séparément.
+
+## 06:00 – 12:00 · Présentation du cas Rufisque Confection Export
+
+Rufisque Confection Export est une entreprise fictive de confection textile employant 340 salariés, en forte
+croissance grâce à des commandes à l''export vers la sous-région UEMOA. La direction générale annonce un
+doublement de la capacité de production en dix-huit mois, nécessitant 180 opérateurs supplémentaires et 20
+techniciens de maintenance industrielle, alors que seuls 4 techniciens sur 20 ont été recrutés en six mois de
+campagne. Par ailleurs, les données sociales de l''année montrent 51 départs pour un effectif moyen de 340, et
+7 480 jours d''absence pour un total théorique de 74 800 jours-salarié. Enfin, un opérateur de confection,
+employé depuis deux ans, est absent sans justificatif depuis trois jours, affirmant avoir été hospitalisé, et
+la direction envisage un licenciement pour faute.
+
+## 12:00 – 28:00 · Séquence 1 : volet stratégie RH
+
+Reprenons la méthode en quatre étapes vue dans le premier cours vidéo. La stratégie annoncée est une croissance
+par doublement de capacité. Le besoin RH induit est de 200 postes supplémentaires au total, 180 opérateurs et
+20 techniciens. Vérifions : 180 plus 20 égale bien 200. L''écart stratégique majeur porte sur les techniciens :
+seuls 4 recrutés sur 20 en six mois, soit un taux de réalisation de 4 divisé par 20, c''est-à-dire 20 %,
+largement insuffisant face au calendrier de dix-huit mois. Le plan d''action que nous proposons combine un axe
+de formation accélérée par partenariat avec un centre de formation technique régional, et un axe de
+recrutement élargi à la sous-région UEMOA avec appui à la mobilité. Notez que, comme pour Teranga Agro-
+Industries, le problème ne porte pas sur le volume global de recrutement mais sur un segment de compétence
+rare, identifié par la comparaison entre le besoin et la capacité réelle du marché.
+
+## 28:00 – 44:00 · Séquence 2 : volet audit social
+
+Passons au diagnostic social. Taux de rotation : 51 divisé par 340, soit 0,15, donc 15 %. Taux d''absentéisme :
+7 480 divisé par 74 800, soit 0,10, donc 10 %. Comme nous l''avons vu dans le deuxième cours vidéo, ces chiffres
+ne peuvent pas être interprétés isolément. Dans ce contexte précis de forte croissance et de recrutement massif
+récent, posons l''hypothèse suivante, à vérifier : une partie du taux de rotation de 15 % pourrait correspondre à
+des départs de salariés récemment recrutés en période d''essai, ce qui serait moins préoccupant qu''un taux
+identique touchant des salariés anciens. La recommandation méthodologique est de demander, avant de conclure,
+une segmentation du taux de rotation par ancienneté : c''est exactement le type de réserve critique qui valorise
+une copie de Master 1 par rapport à une copie qui se contenterait de qualifier 15 % de « élevé » ou « normal »
+sans justification.
+
+## 44:00 – 52:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : pourquoi l''écart stratégique RH de Rufisque Confection Export porte-t-il sur
+les techniciens et non sur les opérateurs ? Deuxième question : quelle donnée supplémentaire demanderiez-vous
+avant de qualifier le taux de rotation de 15 % de préoccupant ou non ? Troisième question : à ce stade, que
+savons-nous déjà sur le risque juridique du dossier de l''opérateur absent ? Notez vos réponses. Pour la
+première, parce que les techniciens sont une compétence rare localement, avec un taux de réalisation de
+recrutement de seulement 20 % face au besoin. Pour la deuxième, la segmentation du taux de rotation par
+ancienneté, pour distinguer les départs en période d''essai des départs de salariés confirmés. Pour la
+troisième, nous savons seulement que l''absence n''est à ce jour pas documentée comme fautive de façon certaine,
+ce qui doit nous rendre prudents avant toute décision, point que nous allons développer maintenant.
+
+## 52:00 – 70:00 · Séquence 3 : volet droit social avancé
+
+Appliquons la grille en trois piliers du troisième cours vidéo au cas de l''opérateur absent. Premier pilier, le
+motif réel et sérieux : l''absence de justificatif à ce jour n''établit pas encore une faute certaine, puisque le
+salarié invoque une hospitalisation non vérifiée. Deuxième pilier, la procédure : rien n''indique qu''un entretien
+contradictoire a été mené ni qu''une demande formelle de justificatif a été adressée au salarié. Troisième
+pilier, la traçabilité : nous ne connaissons pas, dans cet énoncé, les antécédents disciplinaires de ce salarié,
+ce qui est une donnée manquante importante à signaler dans votre copie plutôt qu''à ignorer. La recommandation
+de sécurisation est la même logique que pour Monsieur Fall : solliciter formellement un justificatif, mener un
+entretien contradictoire, et ne qualifier la situation qu''une fois ces démarches effectuées, avant toute
+décision de licenciement.
+
+## 70:00 – 80:00 · Relier les trois volets entre eux
+
+C''est ici le cœur de l''atelier : montrer que les trois volets ne sont pas trois exercices séparés, mais un seul
+diagnostic d''entreprise. Le besoin stratégique de recruter rapidement 200 personnes crée une pression sur les
+équipes RH et les managers, qui peut elle-même expliquer en partie des indicateurs sociaux dégradés (rotation,
+absentéisme) si l''intégration des nouveaux recrutés est négligée dans l''urgence ; et cette même pression peut
+pousser un manager à vouloir sanctionner rapidement, sans respecter la procédure, pour « faire un exemple »
+dans une période de tension liée à la montée en charge de production, ce qui est précisément le risque que nous
+devons signaler à la direction. Une bonne copie de synthèse relie explicitement ces trois dimensions plutôt que
+de les traiter comme trois questions indépendantes.
+
+## 80:00 – 84:00 · Une dernière nuance : la temporalité des trois volets
+
+Avant de passer à la méthode finale, une nuance importante : les trois volets de ce cas n''ont pas la même
+urgence de décision. Le volet droit social (l''absence de l''opérateur) appelle une action immédiate, sous
+quelques jours, car un silence de l''entreprise peut lui-même être interprété comme une forme d''acceptation
+tacite ou, au contraire, retarder une sanction nécessaire. Le volet audit social (comprendre le taux de
+rotation) est une action de moyen terme, à mener sur plusieurs semaines avec une segmentation fine des
+données. Le volet stratégie RH (sécuriser le recrutement des techniciens) est une action de long terme, sur
+les dix-huit mois du projet. Une bonne copie doit savoir hiérarchiser ces trois temporalités dans ses
+recommandations, plutôt que de les traiter comme des actions de même urgence.
+
+## 84:00 – 87:00 · Méthode de rédaction en conditions d''examen
+
+Pour conclure sur la méthode : en trois heures d''épreuve, consacrez un temps proportionné à chaque volet,
+commencez toujours par poser clairement le ou les problèmes avant de proposer une solution, vérifiez
+systématiquement vos calculs à voix basse avant de les écrire, et terminez chaque partie par une recommandation
+explicite et priorisée. Si le temps le permet, ajoutez toujours une phrase de lien entre les volets, comme nous
+venons de le faire : c''est souvent ce qui différencie une très bonne copie d''une bonne copie.
+
+## 87:00 – 90:00 · Évaluation finale
+
+Cinq questions rapides pour conclure l''année. Un, dans le cas Rufisque, quel est le taux de réalisation du
+recrutement des techniciens ? Deux, quel est le taux de rotation et le taux d''absentéisme calculés ? Trois,
+quel est le pilier le plus fragile dans le dossier de l''opérateur absent ? Quatre, citez un lien possible entre
+la pression stratégique de recrutement et les indicateurs sociaux. Cinq, quelle est la méthode générale à
+appliquer face à tout cas transversal de Master 1 ? Réponses : un, 20 %, soit 4 recrutés sur 20 recherchés.
+Deux, 15 % de rotation et 10 % d''absentéisme. Trois, le motif réel et sérieux, faute de justificatif vérifié.
+Quatre, une pression de recrutement et de montée en charge peut dégrader l''intégration des nouveaux salariés et
+expliquer en partie une rotation ou un absentéisme élevés. Cinq, poser le problème, mobiliser les concepts
+pertinents de chaque matière, vérifier les calculs, proposer une solution argumentée et priorisée, et relier les
+volets entre eux. Merci à toutes et à tous pour votre travail cette année, et bon courage pour vos examens de
+Master 1.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-rh-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — stratégie RH, audit social et droit social');
+
+-- Cours : Ressources humaines Master 2 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-rh-m2', (select id from public.levels where name = 'Master 2'), null, 'Ressources humaines', 'Ressources humaines Master 2 : réussir ses examens', 'Préparation aux examens de Master 2 en ressources humaines : conduite du changement et transformation RH (SIRH avancé, digitalisation), rémunération stratégique et politique de talents (people review, succession planning), méthodologie du mémoire professionnel et de la soutenance. Études de cas d''entreprises sénégalaises et africaines fictives, exercices corrigés et sujet type d''examen. Public : étudiants de Master 2 RH ayant validé le Master 1.', true, 702
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 2 en ressources humaines', 'Le Master 2 en ressources humaines est l''année de la professionnalisation complète : vous devez
+démontrer que vous pouvez piloter une transformation RH, construire une politique de rémunération et de
+talents cohérente avec la stratégie de l''entreprise, et conduire un travail de recherche appliquée (le
+mémoire professionnel) jusqu''à sa soutenance. Les exigences de rigueur et d''analyse critique du Master 1 sont
+reconduites et approfondies, avec cette fois une dimension supplémentaire : la capacité à produire et
+défendre, à l''oral, un travail personnel structuré.
+
+## Ce qui change par rapport au Master 1
+
+En Master 1, vous avez appris à aligner la stratégie RH sur la stratégie d''entreprise, à construire un
+diagnostic social chiffré et à sécuriser des décisions de droit social. Le Master 2 mobilise ces acquis au
+service de trois nouveaux enjeux. D''abord, la conduite du changement et la transformation RH : comment faire
+évoluer une organisation, ses outils (SIRH avancé, digitalisation des processus RH) et sa culture, sans perdre
+l''adhésion des équipes. Ensuite, la rémunération stratégique et la politique de talents : comment construire
+une politique salariale et de gestion des carrières qui attire, retient et développe les profils clés, via des
+outils comme la people review et le succession planning. Enfin, la méthodologie du mémoire professionnel et de
+la soutenance : comment transformer une problématique RH réelle, rencontrée en stage ou en entreprise, en un
+travail de recherche appliquée rigoureux, puis le défendre devant un jury.
+
+## Les trois matières avancées de l''année
+
+La conduite du changement et la transformation RH vous apprend à analyser les résistances au changement
+(individuelles, collectives, organisationnelles), à choisir une démarche de conduite du changement adaptée au
+contexte (communication, formation, accompagnement managérial), et à piloter un projet de digitalisation RH
+(par exemple le passage à un SIRH avancé intégrant la gestion des talents) en anticipant les risques
+d''adoption par les utilisateurs, pas seulement les aspects techniques.
+
+La rémunération stratégique et la politique de talents approfondit la rémunération vue en Licence (qui portait
+sur les mécanismes de base de la paie) pour aborder la rémunération comme un outil stratégique : architecture
+de rémunération globale, politique de différenciation selon la criticité des postes, et outils de gestion des
+talents comme la people review (revue collective des collaborateurs clés et de leur potentiel) et le
+succession planning (préparation anticipée de la relève sur les postes critiques).
+
+La méthodologie du mémoire professionnel et de la soutenance vous enseigne à formuler une problématique RH
+pertinente et traitable, à structurer une démarche d''analyse rigoureuse (revue de littérature, méthodologie de
+collecte de données, analyse, recommandations), et à préparer une soutenance orale convaincante devant un jury,
+en anticipant les questions critiques qu''il pourrait poser.
+
+## Méthode de travail pour le Master 2
+
+Trois outils deviennent centraux cette année. D''abord, le diagnostic de changement : avant toute recommandation
+de transformation, vous devez identifier précisément qui résiste, pourquoi, et à quel stade du projet, plutôt
+que de proposer une communication générique. Ensuite, le business case RH appliqué aux talents : vous devez
+être capable de chiffrer l''impact d''une politique de rémunération ou de fidélisation (coût d''un dispositif,
+coût du turnover évité) et de le présenter comme un investissement, pas seulement une dépense. Enfin, la
+démarche de recherche appliquée : pour le mémoire, vous devez savoir distinguer une problématique de recherche
+(une question qui demande une investigation) d''une simple question descriptive, et construire une méthodologie
+cohérente (entretiens, étude de cas, analyse documentaire) pour y répondre.
+
+Un piège fréquent en Master 2 est de traiter la conduite du changement comme un sujet uniquement
+communicationnel, en oubliant la dimension organisationnelle (qui perd du pouvoir, qui gagne des
+responsabilités, quels processus sont réellement modifiés). De même, beaucoup d''étudiants réduisent la
+politique de talents à un sujet de rémunération financière, en oubliant les leviers non financiers
+(reconnaissance, parcours de carrière, autonomie), pourtant essentiels dans un contexte de ressources
+budgétaires souvent contraintes pour beaucoup d''entreprises africaines.
+
+## Plan de révision sur six semaines
+
+Semaine 1 : reprendre les acquis du Master 1 (stratégie RH, diagnostic social, droit social) pour s''assurer
+qu''ils sont mobilisables, puis lire l''intégralité du cours sur la conduite du changement et la transformation
+RH.
+
+Semaine 2 : travailler la conduite du changement en profondeur, avec au moins deux cas pratiques complets, en
+s''entraînant à construire un diagnostic des résistances au changement à partir d''un cas donné.
+
+Semaine 3 : passer à la rémunération stratégique et à la politique de talents, en s''entraînant à construire une
+grille de criticité des postes et un exercice simple de succession planning.
+
+Semaine 4 : traiter la méthodologie du mémoire professionnel, en rédigeant un exemple de problématique de
+recherche à partir d''une situation professionnelle fictive ou réelle, et en construisant un plan de mémoire type.
+
+Semaine 5 : faire et refaire le sujet type d''examen multi-matières dans les conditions du jour J, puis comparer
+au corrigé détaillé et identifier les points faibles.
+
+Semaine 6 : révision croisée entre les trois matières, en s''entraînant à l''oral sur une présentation courte de
+trois minutes de son sujet de mémoire (ou d''un sujet fictif), exercice proche de l''épreuve de soutenance, et
+relecture active des quatre cours vidéo, dont l''atelier dédié à la méthodologie du mémoire.
+
+## Points clés à retenir
+
+- Le Master 2 évalue la capacité à piloter une transformation RH, à construire une politique de talents
+chiffrée, et à mener une démarche de recherche appliquée rigoureuse jusqu''à sa défense orale.
+- La conduite du changement exige un diagnostic précis des résistances avant toute action de communication.
+- La politique de talents combine des leviers financiers et non financiers ; ne réduisez jamais ce sujet à la
+seule rémunération.
+- La méthodologie du mémoire doit être travaillée comme une matière à part entière, avec autant de rigueur que
+les matières RH classiques.
+
+## Exercices pratiques
+
+1. Expliquez la différence entre une résistance au changement individuelle et une résistance organisationnelle,
+avec un exemple pour chacune.
+2. Citez deux leviers non financiers de fidélisation des talents et justifiez leur intérêt dans un contexte de
+budget contraint.
+3. Qu''est-ce qu''une people review, et en quoi se distingue-t-elle d''un simple entretien annuel d''évaluation ?
+4. Formulez, en une phrase, une problématique de mémoire professionnel pertinente à partir du thème suivant :
+« la digitalisation du processus de recrutement dans une PME sénégalaise ».
+5. Construisez un plan de révision personnel sur six semaines en adaptant celui proposé ci-dessus à votre
+emploi du temps, en indiquant au moins deux jalons de contrôle.
+
+## Corrigé
+
+1. Une résistance individuelle est liée à la perception personnelle d''un salarié (peur de perdre ses
+compétences, de perdre en autonomie) ; une résistance organisationnelle est liée à la structure elle-même
+(un processus de décision qui perd en rapidité, un service qui perd en influence), indépendamment des
+personnes concernées.
+2. Par exemple : la reconnaissance non financière (valorisation publique des réussites, responsabilités
+élargies) et les parcours de carrière visibles (mobilité interne, projets valorisants), qui coûtent peu
+financièrement mais répondent à des attentes fortes de motivation et de développement professionnel.
+3. La people review est un exercice collectif, mené par le management et la DRH, qui évalue et compare les
+collaborateurs clés de l''organisation sur leur performance et leur potentiel, en vue de décisions de
+développement ou de succession ; l''entretien annuel est, lui, un exercice individuel et bilatéral entre un
+salarié et son manager, centré sur l''année écoulée.
+4. Exemple de problématique : « Dans quelle mesure la digitalisation du processus de recrutement permet-elle à
+une PME sénégalaise d''améliorer la qualité de ses recrutements sans dégrader l''expérience candidat ? » Une
+bonne problématique interroge une tension ou un arbitrage, elle ne se contente pas de décrire un phénomène.
+5. Réponse libre ; un bon plan reprend la logique faits → notions → entraînement → correction → synthèse, avec
+une attention particulière à l''entraînement oral pour la méthodologie du mémoire.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en ressources humaines');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Conduite du changement et transformation RH (SIRH avancé, digitalisation) : l''essentiel pour l''examen', 'La conduite du changement et la transformation RH constituent le premier pilier avancé du Master 2 :
+il s''agit de savoir piloter une transformation organisationnelle, notamment une digitalisation RH via un SIRH
+avancé, en anticipant les résistances plutôt qu''en les découvrant en cours de projet.
+
+## Notions clés
+
+La conduite du changement est l''ensemble des démarches qui visent à faire évoluer une organisation (processus,
+outils, comportements) en maintenant l''adhésion et la performance des équipes pendant la transition. Un cadre
+utile, à discuter de façon critique, distingue trois registres de résistance : la résistance liée à la
+compréhension (le changement n''est pas compris ou mal expliqué), la résistance liée à la capacité (le salarié
+ne se sent pas outillé pour changer, manque de formation) et la résistance liée à l''adhésion (le changement est
+compris et possible, mais rejeté pour des raisons de valeurs, de pouvoir ou de confiance). Un diagnostic de
+changement doit identifier lequel de ces registres domine, car le levier d''action diffère fortement selon le
+cas : plus de communication ne résout pas un problème de capacité, et plus de formation ne résout pas un
+problème d''adhésion.
+
+La transformation RH désigne spécifiquement l''évolution des processus et outils RH eux-mêmes, en particulier
+le passage à un SIRH avancé qui intègre non seulement la paie et l''administration du personnel, mais aussi la
+gestion des talents, le pilotage des compétences et l''analyse de données RH. Cette digitalisation RH est
+souvent un projet à fort enjeu de conduite du changement, car elle touche à la fois les équipes RH elles-mêmes
+(nouveaux outils de travail) et l''ensemble des salariés (self-service RH, dématérialisation des démarches).
+
+## Méthode d''analyse d''un cas de conduite du changement
+
+Face à un cas, la méthode recommandée suit quatre étapes. Premièrement, décrire précisément le changement
+envisagé (quoi, pour qui, à quel horizon). Deuxièmement, identifier les acteurs concernés et, pour chacun,
+le registre de résistance dominant (compréhension, capacité, adhésion). Troisièmement, construire un plan
+d''accompagnement différencié par acteur, et non une communication unique pour tous. Quatrièmement, définir des
+indicateurs de suivi de l''adoption (taux d''utilisation réel d''un nouvel outil, nombre d''incidents remontés,
+enquêtes de perception) pour ajuster le plan en cours de route plutôt que d''attendre la fin du projet pour
+évaluer le succès.
+
+## Cas d''entreprise fictif : Baobab Assurances
+
+Baobab Assurances est une compagnie d''assurance fictive employant 260 salariés répartis entre le siège à Dakar
+(160 salariés) et quatre agences régionales (100 salariés au total). La direction générale a décidé de déployer
+un nouveau SIRH avancé, intégrant un module de self-service pour les demandes de congés et d''avances, un module
+de gestion des talents avec évaluation continue, et un tableau de bord RH en temps réel pour les managers.
+
+Le diagnostic de changement mené par la DRH révèle trois situations différentes. Au siège, les équipes RH
+elles-mêmes expriment une résistance liée à la capacité : elles maîtrisent mal les nouveaux outils d''analyse de
+données et craignent de ne pas pouvoir répondre aux questions des managers lors du lancement. Dans les agences
+régionales, les salariés expriment une résistance liée à la compréhension : ils ne savent pas précisément ce
+que le nouvel outil va changer dans leur quotidien et craignent, à tort, la suppression de postes administratifs
+locaux. Chez certains managers de proximité, enfin, apparaît une résistance liée à l''adhésion : le tableau de
+bord en temps réel est perçu comme un outil de contrôle renforcé de leur hiérarchie plutôt que comme une aide à
+la décision, ce qui génère une méfiance de fond.
+
+Face à ce diagnostic différencié, la DRH construit un plan en trois volets. Pour l''équipe RH du siège (problème
+de capacité) : un programme de formation intensive de deux semaines sur le nouvel outil, avec un accompagnement
+individualisé pendant le premier mois d''utilisation réelle. Pour les agences régionales (problème de
+compréhension) : une tournée d''information dans chaque agence, avec des exemples concrets illustrant ce qui
+change réellement au quotidien, et une clarification explicite qu''aucune suppression de poste n''est prévue à ce
+stade. Pour les managers réticents (problème d''adhésion) : des ateliers de co-construction où les managers
+participent eux-mêmes à la définition des indicateurs affichés dans leur tableau de bord, afin qu''ils le
+perçoivent comme un outil à leur service plutôt qu''un outil de surveillance imposé.
+
+Sur le plan du suivi, la DRH retient trois indicateurs : le taux d''utilisation effective du module self-service
+par les salariés (cible fixée par la direction, par exemple à 70 % des demandes de congés dématérialisées au
+bout de trois mois, chiffre fictif pour l''exemple), le nombre d''incidents techniques ou de blocages remontés par
+semaine, et un score de perception recueilli par une enquête courte auprès des managers deux mois après le
+lancement.
+
+## Points clés
+
+- Un diagnostic de changement doit distinguer les registres de résistance (compréhension, capacité, adhésion)
+pour chaque groupe d''acteurs, car le levier d''action diffère selon le registre identifié.
+- Un plan d''accompagnement du changement est rarement uniforme : il se différencie selon les acteurs et leurs
+résistances spécifiques.
+- La digitalisation RH via un SIRH avancé n''est pas qu''un projet technique : c''est un projet de conduite du
+changement à part entière, qui doit être piloté comme tel.
+- Des indicateurs de suivi de l''adoption, mesurés en cours de projet, permettent d''ajuster le plan avant qu''un
+échec ne soit constaté trop tard.
+
+## Exercices pratiques
+
+1. Dans le cas Baobab Assurances, pourquoi serait-il inefficace de traiter la résistance des managers de
+proximité uniquement par une campagne de communication générale sur les bénéfices du nouvel outil ?
+2. Citez un indicateur de suivi de l''adoption, autre que ceux proposés dans le cas, qui pourrait être utile pour
+ce projet de SIRH.
+3. Expliquez pourquoi un même projet de digitalisation RH peut générer des résistances de nature différente
+selon les groupes d''acteurs concernés.
+4. Pourquoi la DRH du siège, qui est à l''origine du projet, peut-elle elle-même être une source de résistance
+au changement, comme dans le cas Baobab Assurances ?
+5. Cas pratique complet : une entreprise fictive de distribution, Sahel Retail, déploie un nouveau module de
+gestion des talents dans son SIRH, incluant une auto-évaluation annuelle en ligne pour tous les salariés. Les
+retours informels montrent que les salariés de plus de cinquante ans, peu familiers des outils numériques,
+risquent de ne pas réaliser leur auto-évaluation dans les délais. Identifiez le registre de résistance
+probablement dominant pour ce groupe, et proposez un plan d''accompagnement en deux mesures concrètes.
+## Corrigé
+
+1. Parce que les managers de proximité ont un problème d''adhésion, lié à la méfiance envers l''usage qui sera
+fait du tableau de bord, et non un problème de compréhension des bénéfices annoncés ; une communication
+générale sur les bénéfices ne traite pas la méfiance de fond, et peut même la renforcer si elle est perçue
+comme une tentative de minimiser leurs inquiétudes légitimes.
+2. Par exemple, le temps moyen de traitement d''une demande de congé avant et après la mise en place du
+self-service, qui permet de vérifier objectivement un gain d''efficacité annoncé par le projet.
+3. Parce que chaque groupe d''acteurs est concerné différemment par le changement : les équipes RH doivent
+maîtriser un nouvel outil technique (capacité), les salariés des agences craignent un impact sur leur emploi
+(compréhension), et les managers craignent un impact sur leur relation hiérarchique (adhésion) ; un même
+projet touche donc des enjeux très différents selon la position de chacun.
+4. Parce qu''une équipe RH qui ne maîtrise pas encore un nouvel outil peut, sans le vouloir, communiquer son
+propre manque d''assurance aux autres acteurs, ou retarder le projet par prudence excessive ; la conduite du
+changement s''applique aussi à l''équipe porteuse du projet, pas seulement à ses destinataires.
+5. Le registre de résistance probablement dominant est la capacité (manque de familiarité avec les outils
+numériques), bien qu''une part de résistance par adhésion (crainte d''être mal jugé par un outil numérique) ne
+soit pas à exclure. Plan en deux mesures : organiser des sessions d''accompagnement individuel ou en petits
+groupes pour ce segment de salariés avant l''échéance, et proposer une alternative d''assistance (aide d''un
+collègue ou d''un référent RH désigné) pendant la période de réalisation de l''auto-évaluation.
+', 'texte', 55, false, 20
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Conduite du changement et transformation RH (SIRH avancé, digitalisation) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Rémunération stratégique et politique de talents (people review, succession planning) : l''essentiel pour l''examen', 'La rémunération stratégique et la politique de talents constituent le deuxième pilier avancé du
+Master 2 : il s''agit de dépasser la gestion technique de la paie, vue en Licence, pour construire une
+architecture de rémunération et des outils de gestion des talents cohérents avec la stratégie de l''entreprise
+et sa capacité financière réelle.
+
+## Notions clés
+
+La rémunération stratégique repose sur l''idée que tous les postes n''ont pas la même criticité pour
+l''entreprise, et que la politique salariale doit en tenir compte plutôt que d''appliquer une grille uniforme.
+La criticité d''un poste combine généralement deux dimensions : sa rareté sur le marché du travail (difficulté
+à recruter un remplaçant) et son impact sur la performance de l''entreprise (contribution directe au chiffre
+d''affaires, à l''innovation, ou à des risques majeurs si le poste est vacant). Un poste à forte criticité
+justifie une politique de rémunération et de fidélisation renforcée ; un poste à faible criticité peut être
+géré avec une politique plus standard, ce qui permet à l''entreprise de concentrer ses ressources limitées sur
+ce qui compte le plus stratégiquement.
+
+La people review est un exercice collectif périodique, mené par le management et la DRH, qui évalue les
+collaborateurs clés de l''organisation sur deux axes généralement combinés dans une matrice : leur performance
+actuelle et leur potentiel d''évolution future. Cet exercice permet d''identifier les collaborateurs à fort
+potentiel à développer en priorité, et les postes où un risque de vacance critique existe faute de relève
+identifiée.
+
+Le succession planning est la démarche qui consiste à anticiper, pour les postes les plus critiques de
+l''organisation (direction générale, directions fonctionnelles clés, expertises rares), qui pourrait occuper ce
+poste en cas de départ, et à préparer activement cette relève (formation, exposition à des responsabilités
+croissantes, mentorat), plutôt que de découvrir une vacance sans solution le jour où elle survient.
+
+## Méthode de construction d''une politique de rémunération et de talents
+
+La méthode recommandée comprend quatre étapes : cartographier la criticité des postes de l''organisation (rareté
+et impact) ; identifier, via une people review, les collaborateurs à fort potentiel et les postes à risque de
+vacance critique ; construire un plan de succession pour les postes les plus critiques, avec un horizon de
+préparation réaliste ; et articuler ces décisions avec une architecture de rémunération différenciée, en
+combinant systématiquement des leviers financiers (salaire fixe, variable, avantages) et non financiers
+(reconnaissance, parcours de carrière, autonomie), car une entreprise à ressources contraintes ne peut pas
+toujours répondre uniquement par le salaire.
+
+## Cas d''entreprise fictif : Sahel Industries Pharmaceutiques
+
+Sahel Industries Pharmaceutiques est une entreprise fictive de fabrication de médicaments génériques, employant
+210 salariés à Dakar, en croissance continue grâce à des contrats d''approvisionnement régionaux UEMOA. La DRH
+doit préparer la people review annuelle et proposer une politique de rémunération et de fidélisation adaptée.
+
+La cartographie de criticité réalisée par la DRH identifie trois postes de pharmacien responsable de production
+comme hautement critiques : ce sont des postes réglementés, rares sur le marché local (une dizaine de
+pharmaciens qualifiés disponibles dans la région selon l''estimation de la DRH), et dont l''absence prolongée
+peut interrompre une ligne de production entière. À l''inverse, les 60 postes d''opérateurs de conditionnement
+sont jugés peu critiques : compétence plus répandue, impact individuel limité sur la production globale.
+
+La people review révèle que, sur les trois pharmaciens responsables actuels, un seul dispose d''un adjoint
+identifié et formé capable de le remplacer en cas de départ ; les deux autres postes n''ont aucune relève
+préparée. Par ailleurs, la people review identifie quatre jeunes ingénieurs qualité à fort potentiel, dont la
+DRH estime qu''ils pourraient, avec une préparation de deux à trois ans, accéder à des responsabilités de
+pharmacien responsable adjoint.
+
+Sur la base de ce diagnostic, la DRH construit un plan de succession ciblé sur les deux postes de pharmacien
+responsable sans relève : deux des quatre ingénieurs qualité à fort potentiel sont désignés pour intégrer un
+parcours de professionnalisation de deux ans, combinant formation complémentaire, exposition progressive à des
+responsabilités de production, et mentorat direct par les pharmaciens responsables en poste. Parallèlement, la
+DRH propose une politique de rémunération différenciée : pour les trois postes de pharmacien responsable, une
+prime de rareté de compétence propre à l''entreprise (fictive pour l''exemple) et un accès prioritaire à des
+formations continues valorisantes ; pour les opérateurs de conditionnement, une politique salariale plus
+standard, mais accompagnée d''un parcours de carrière interne visible (possibilité d''évoluer vers des postes de
+technicien qualité après quelques années), ce qui répond à un besoin de reconnaissance sans peser lourdement
+sur la masse salariale de ce segment plus large de l''effectif.
+
+## Points clés
+
+- La criticité d''un poste combine sa rareté sur le marché et son impact sur la performance de l''entreprise ;
+elle justifie une politique de rémunération et de fidélisation différenciée, pas uniforme.
+- La people review combine performance actuelle et potentiel futur pour identifier les talents à développer et
+les postes à risque de vacance critique.
+- Le succession planning doit être anticipé avec un horizon réaliste (souvent plusieurs années pour des postes
+très qualifiés), et non improvisé au moment d''un départ.
+- Une politique de talents efficace combine toujours des leviers financiers et non financiers, en particulier
+dans des contextes où les ressources budgétaires sont contraintes.
+
+## Exercices pratiques
+
+1. Dans le cas Sahel Industries Pharmaceutiques, pourquoi les postes de pharmacien responsable sont-ils jugés
+plus critiques que les postes d''opérateur de conditionnement, alors que les deux catégories sont indispensables
+à la production ?
+2. Expliquez la différence entre la performance et le potentiel dans une matrice de people review, avec un
+exemple où un collaborateur a une forte performance actuelle mais un potentiel jugé limité.
+3. Pourquoi un plan de succession préparé seulement au moment de l''annonce d''un départ est-il généralement
+risqué pour un poste à forte criticité ?
+4. Citez deux leviers non financiers que la DRH pourrait proposer aux opérateurs de conditionnement, en
+complément de la politique salariale standard évoquée dans le cas.
+5. Cas pratique complet : une entreprise fictive de télécommunications, Teranga Telecom, identifie que son
+unique expert en cybersécurité, en poste depuis quatre ans, est régulièrement sollicité par des concurrents
+régionaux. Aucune relève n''est identifiée pour ce poste. Proposez, en une quinzaine de lignes, un diagnostic de
+criticité et un plan combinant fidélisation à court terme et succession planning à moyen terme.
+## Corrigé
+
+1. Parce que les postes de pharmacien responsable combinent une forte rareté sur le marché local (poste
+réglementé, peu de profils disponibles) et un impact élevé en cas de vacance (arrêt possible d''une ligne de
+production), alors que les opérateurs de conditionnement, bien qu''indispensables collectivement, sont plus
+facilement remplaçables individuellement et leur absence a un impact plus limité et plus facilement absorbable.
+2. La performance mesure la contribution actuelle dans le poste occupé ; le potentiel mesure la capacité
+estimée à occuper, à l''avenir, des responsabilités plus larges ou différentes. Exemple : un excellent technicien
+de maintenance, très performant dans son rôle actuel, mais qui ne souhaite pas ou ne montre pas de capacité à
+encadrer une équipe, aura une performance élevée et un potentiel de management jugé limité.
+3. Parce que la préparation d''un remplaçant qualifié (formation, exposition progressive aux responsabilités,
+acquisition de la confiance des équipes) prend du temps ; improviser au moment du départ expose l''entreprise à
+une période de vacance ou à un remplacement mal préparé, avec un risque opérationnel ou réglementaire
+important pour un poste critique.
+4. Par exemple : un parcours de carrière interne visible (évolution possible vers des postes de technicien
+qualité), déjà mentionné dans le cas, et une reconnaissance non financière comme la valorisation des bonnes
+pratiques de conditionnement auprès de l''ensemble de l''équipe, ou une plus grande autonomie dans l''organisation
+quotidienne du poste.
+5. Diagnostic de criticité : le poste d''expert cybersécurité est hautement critique (rareté confirmée par la
+sollicitation de concurrents, impact majeur en cas de départ dans un secteur sensible aux risques numériques) et
+sans aucune relève, ce qui constitue un risque stratégique immédiat. Plan à court terme : sécuriser la
+fidélisation par un entretien direct identifiant ses attentes réelles (rémunération, mais aussi projets
+valorisants, autonomie, reconnaissance), et envisager une prime de rétention propre à l''entreprise si pertinent.
+Plan à moyen terme : lancer un succession planning en identifiant un ou deux profils internes à potentiel
+(informatique générale) pour une montée en compétence progressive sur deux à trois ans, combinée si possible à
+un recrutement externe complémentaire pour ne pas dépendre d''une seule personne à l''avenir.
+', 'texte', 55, false, 30
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Rémunération stratégique et politique de talents (people review, succession planning) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Méthodologie du mémoire professionnel et de la soutenance : l''essentiel pour l''examen', 'La méthodologie du mémoire professionnel et de la soutenance constitue le troisième pilier du Master 2.
+Contrairement aux deux matières précédentes, il ne s''agit pas d''un contenu RH à proprement parler, mais d''une
+compétence méthodologique transversale : savoir transformer une problématique professionnelle réelle en un
+travail de recherche appliquée rigoureux, puis le défendre à l''oral devant un jury.
+
+## Notions clés
+
+Le mémoire professionnel se distingue d''un mémoire de recherche académique classique par son point de départ :
+il part généralement d''une situation professionnelle vécue (en stage, en emploi, ou observée dans une
+entreprise) et vise à produire des recommandations opérationnelles, tout en mobilisant un cadre conceptuel et
+une méthodologie rigoureuse. Une problématique de mémoire pertinente n''est pas une simple question descriptive
+(« comment fonctionne le recrutement dans l''entreprise X ? ») mais une question qui interroge une tension, un
+écart ou un arbitrage (« dans quelle mesure la digitalisation du recrutement permet-elle d''améliorer la qualité
+des embauches sans dégrader l''expérience candidat dans une PME aux ressources limitées ? »).
+
+La structure générale attendue d''un mémoire professionnel comprend : une introduction qui pose le contexte et
+la problématique ; une revue de littérature ou cadre conceptuel, qui mobilise plusieurs approches théoriques
+pertinentes et les discute de façon critique, sans se limiter à un seul auteur ; une partie méthodologique, qui
+explique et justifie la démarche de collecte de données (entretiens, étude de cas, analyse documentaire,
+observation) ; une partie d''analyse, qui confronte les données recueillies au cadre conceptuel ; et une partie
+de recommandations, qui propose des pistes d''action concrètes et réalistes pour l''organisation concernée.
+
+La soutenance orale est un exercice distinct de la rédaction : elle suppose de synthétiser un travail de
+plusieurs mois en une présentation courte (souvent quinze à vingt minutes, selon le règlement de
+l''établissement, à vérifier localement), suivie d''une séance de questions du jury. La qualité d''une soutenance
+ne se mesure pas uniquement à la clarté de l''exposé, mais aussi à la capacité à répondre avec assurance et
+honnêteté intellectuelle aux critiques et aux limites du travail, plutôt qu''à les nier ou à les éviter.
+
+## Méthode de construction d''un mémoire professionnel
+
+La méthode recommandée suit cinq étapes. Premièrement, partir d''une situation professionnelle concrète et la
+transformer en question de recherche en identifiant la tension ou l''arbitrage sous-jacent. Deuxièmement,
+construire un cadre conceptuel en mobilisant plusieurs approches théoriques pertinentes de la discipline RH
+concernée, en les comparant plutôt qu''en en choisissant une seule sans justification. Troisièmement, choisir une
+méthodologie de collecte de données adaptée à la question posée et aux contraintes réelles d''accès au terrain
+(nombre d''entretiens réalisables, documents disponibles), en étant honnête sur ces limites. Quatrièmement,
+analyser les données en les reliant explicitement au cadre conceptuel, sans se contenter de les décrire.
+Cinquièmement, formuler des recommandations réalistes, en tenant compte des contraintes réelles de
+l''organisation (budget, culture, calendrier), plutôt que des recommandations théoriquement idéales mais
+inapplicables.
+
+## Cas d''application fictif : mémoire sur la digitalisation du recrutement chez Sahel PME Services
+
+Prenons un exemple fictif de construction de mémoire. Un étudiant en stage chez Sahel PME Services, une
+entreprise de services aux entreprises fictive de 80 salariés à Dakar, observe que le processus de recrutement
+repose encore entièrement sur des candidatures papier et des entretiens non structurés, ce qui génère des
+délais longs (en moyenne 45 jours entre la publication d''une offre et l''embauche, chiffre fictif pour
+l''exemple) et une perception mitigée des candidats, révélée par des commentaires informels recueillis par
+l''étudiant.
+
+La transformation en problématique de recherche pourrait donner : « Dans quelle mesure l''introduction d''outils
+numériques de recrutement (plateforme de candidature en ligne, entretiens structurés) peut-elle réduire les
+délais de recrutement d''une PME sénégalaise sans dégrader la qualité de la relation avec les candidats ? »
+Cette formulation interroge bien un arbitrage (gain d''efficacité contre risque de déshumanisation du processus),
+plutôt que de simplement décrire la situation actuelle.
+
+Le cadre conceptuel mobiliserait, de façon critique, au moins deux familles d''approches : les théories sur
+l''expérience candidat et la marque employeur, et les approches sur la digitalisation des processus RH et ses
+risques d''adoption, déjà vues en partie dans le cours sur la conduite du changement. La méthodologie proposée
+pourrait combiner une analyse documentaire des données de recrutement internes (délais, taux d''abandon de
+candidature) et quelques entretiens semi-structurés avec des managers et des candidats récents, en reconnaissant
+explicitement la limite d''un échantillon réduit, propre à un mémoire professionnel réalisé dans un temps
+contraint.
+
+Les recommandations finales, pour rester réalistes au regard d''une PME de 80 salariés à budget limité, privilégieraient
+une solution progressive et peu coûteuse (par exemple une plateforme de candidature en ligne simple plutôt
+qu''un SIRH complet) plutôt qu''une transformation complète immédiatement, en proposant un calendrier de
+déploiement en plusieurs phases avec des indicateurs de suivi simples (délai moyen de recrutement, taux de
+satisfaction des candidats mesuré par une courte enquête).
+
+## Points clés
+
+- Une problématique de mémoire doit interroger une tension ou un arbitrage, pas simplement décrire une
+situation.
+- Le cadre conceptuel doit mobiliser et discuter plusieurs approches théoriques, jamais une seule citée comme
+une vérité unique.
+- La méthodologie doit être adaptée aux contraintes réelles du terrain, et ses limites doivent être reconnues
+explicitement plutôt que dissimulées.
+- Les recommandations doivent rester réalistes au regard des contraintes concrètes de l''organisation étudiée
+(budget, taille, culture).
+- La soutenance évalue autant la capacité à défendre et nuancer son travail face aux questions critiques que la
+qualité de l''exposé initial.
+
+## Exercices pratiques
+
+1. Reformulez la question suivante, trop descriptive, en une véritable problématique de recherche : « Comment
+se passe l''intégration des nouveaux salariés dans l''entreprise X ? »
+2. Pourquoi un cadre conceptuel qui ne mobilise qu''un seul auteur est-il généralement jugé insuffisant pour un
+mémoire de Master 2 ?
+3. Dans le cas Sahel PME Services, pourquoi est-il important que l''étudiant reconnaisse explicitement la limite
+d''un échantillon réduit d''entretiens, plutôt que de la passer sous silence ?
+4. Citez deux types de questions qu''un jury de soutenance pourrait poser sur le mémoire concernant Sahel PME
+Services, et pour chacune, esquissez l''attitude attendue de l''étudiant pour y répondre.
+5. Pourquoi des recommandations « idéales » mais trop coûteuses pour une PME de 80 salariés seraient-elles un
+point faible du mémoire, même si elles sont conceptuellement justes ?
+
+## Corrigé
+
+1. Exemple de reformulation : « Dans quelle mesure le processus d''intégration actuel de l''entreprise X permet-il
+de réduire le turnover des nouveaux salariés au cours de leur première année, et quels ajustements seraient
+nécessaires pour renforcer son efficacité ? » Cette version interroge un effet (le turnover) et ouvre sur des
+recommandations, contrairement à la version purement descriptive initiale.
+2. Parce qu''un mémoire de Master 2 doit démontrer une capacité d''analyse critique et de mise en perspective ; se
+limiter à un seul auteur empêche de montrer que l''on comprend les débats et les nuances existant dans la
+discipline, et donne l''impression d''une connaissance superficielle plutôt qu''approfondie.
+3. Parce que la crédibilité scientifique d''un travail repose aussi sur l''honnêteté méthodologique : reconnaître
+qu''un échantillon réduit limite la généralisation des conclusions montre une maîtrise méthodologique mature,
+alors que prétendre à une représentativité non fondée fragiliserait l''ensemble du travail si le jury le
+remarque, ce qui est très probable.
+4. Par exemple : une question sur la représentativité de l''échantillon d''entretiens (« comment savez-vous que ces
+quelques entretiens reflètent l''ensemble des candidats ? »), à laquelle l''étudiant doit répondre en reconnaissant
+la limite tout en expliquant les précautions prises pour en limiter l''impact ; et une question sur la
+faisabilité budgétaire des recommandations (« l''entreprise a-t-elle les moyens de mettre en œuvre ce que vous
+proposez ? »), à laquelle l''étudiant doit répondre en montrant qu''il a bien intégré la contrainte budgétaire
+dans ses recommandations, ce qui est précisément le cas dans l''exemple traité.
+5. Parce qu''un mémoire professionnel est évalué aussi sur son applicabilité réelle pour l''organisation étudiée ;
+des recommandations inapplicables, même conceptuellement justes, montrent un manque de recul professionnel et
+une déconnexion entre la théorie mobilisée et la réalité concrète du terrain, ce qui est précisément ce que le
+mémoire professionnel doit éviter par rapport à un travail purement académique.', 'texte', 55, false, 40
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire professionnel et de la soutenance : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 2 RH (entraînement multi-matières, corrigé détaillé)', 'Ce sujet type rassemble les trois matières avancées du Master 2 en ressources humaines : conduite du
+changement et transformation RH, rémunération stratégique et politique de talents, méthodologie du mémoire
+professionnel et de la soutenance. Il n''a pas de caractère officiel et le barème indiqué est purement
+indicatif.
+
+## Sujet (durée indicative : 3 heures, barème indicatif sur 20 points)
+
+Vous êtes consultant RH junior intervenant auprès de l''entreprise fictive Kaolack Agro-Export, société de
+transformation et d''exportation de produits agricoles employant 310 salariés, qui vient d''acquérir un nouveau
+SIRH intégrant un module de gestion des talents et déploie en parallèle une politique de fidélisation de ses
+cadres techniques.
+
+Partie 1 (7 points) : Conduite du changement. Le déploiement du nouveau SIRH se heurte à une faible adoption du
+module de self-service par les salariés de production (seulement 22 % des demandes de congés dématérialisées
+après deux mois, contre un objectif de 70 % fixé par la direction), alors que les cadres administratifs
+l''utilisent massivement (85 % de dématérialisation). Analysez les causes probables de cet écart et proposez un
+plan d''accompagnement différencié.
+
+Partie 2 (7 points) : Rémunération stratégique et talents. L''entreprise identifie trois ingénieurs qualité
+jugés critiques (rareté locale, impact majeur sur les certifications export), dont un seul dispose d''une
+relève identifiée. Proposez un diagnostic de criticité et un plan combinant fidélisation et succession
+planning.
+
+Partie 3 (6 points) : Méthodologie du mémoire. Vous accompagnez un étudiant en stage dans cette entreprise qui
+souhaite écrire son mémoire sur « le SIRH dans l''entreprise ». Reformulez ce thème en une problématique de
+recherche pertinente et proposez un plan de mémoire en quatre parties.
+
+## Corrigé détaillé
+
+Partie 1. L''écart d''adoption (22 % contre 85 %) suggère un problème concentré chez les salariés de production,
+probablement lié à un registre de résistance par capacité (accès limité aux outils numériques pendant le temps
+de travail en atelier, moindre familiarité avec les interfaces numériques) plutôt que par adhésion ou
+compréhension, bien que ces deux registres ne soient pas à exclure sans vérification. Un plan d''accompagnement
+différencié proposerait, pour les salariés de production, des bornes numériques dédiées accessibles sur le site
+de production, un accompagnement par des référents désignés dans chaque atelier, et une communication simplifiée
+rappelant concrètement la procédure ; pour les cadres administratifs, déjà bien adoptés, un suivi allégé limité
+à la résolution des incidents résiduels.
+
+Partie 2. Diagnostic de criticité : les trois postes d''ingénieur qualité sont hautement critiques (rareté
+locale confirmée, impact direct sur les certifications export, donc sur la capacité commerciale de
+l''entreprise), et deux des trois postes n''ont aucune relève, ce qui constitue un risque stratégique majeur pour
+la continuité des certifications. Plan combiné : à court terme, un entretien de fidélisation ciblé pour les
+trois ingénieurs en poste, avec une prime de rareté de compétence propre à l''entreprise et une valorisation de
+leur rôle dans les certifications ; à moyen terme, un succession planning identifiant deux profils internes à
+potentiel pour une montée en compétence progressive sur deux à trois ans vers les deux postes sans relève,
+combiné éventuellement à un recrutement externe complémentaire pour sécuriser davantage le dispositif.
+
+Partie 3. Le thème « le SIRH dans l''entreprise » est purement descriptif et doit être transformé en
+problématique. Exemple : « Dans quelle mesure le déploiement d''un SIRH avancé permet-il d''améliorer l''efficacité
+de la gestion des talents dans une entreprise agro-industrielle sénégalaise, tout en garantissant l''adoption de
+l''outil par l''ensemble des catégories de salariés ? » Plan de mémoire en quatre parties : une revue de
+littérature critique sur la digitalisation RH et la conduite du changement ; une méthodologie combinant analyse
+des données d''adoption du SIRH et entretiens avec des salariés de différentes catégories ; une analyse des
+écarts d''adoption observés, reliée au cadre conceptuel sur les registres de résistance ; et des recommandations
+opérationnelles différenciées par catégorie de salariés, dans la limite des contraintes budgétaires réelles de
+l''entreprise.
+
+## Exercices pratiques (questions complémentaires)
+
+1. Dans la partie 1, que changerait-il à votre analyse si une enquête révélait que les salariés de production
+comprennent très bien l''outil mais refusent de l''utiliser par méfiance envers la dématérialisation de leurs
+données personnelles ?
+2. Dans la partie 2, quelle différence feriez-vous si l''un des deux postes sans relève concernait un ingénieur
+proche de la retraite, avec un départ attendu dans six mois seulement ?
+3. Dans la partie 3, proposez une question que le jury pourrait poser à l''étudiant sur la représentativité de
+ses entretiens, et l''attitude de réponse attendue.
+4. Proposez une question d''examen supplémentaire, à cheval entre la conduite du changement et la politique de
+talents, portant sur le cas Kaolack Agro-Export.
+
+## Corrigé
+
+1. Cela changerait le diagnostic du registre de résistance : il ne s''agirait plus d''un problème de capacité
+mais d''un problème d''adhésion, lié à la confiance envers l''outil et son usage des données ; le plan
+d''accompagnement devrait alors porter sur la transparence (expliquer clairement comment les données sont
+utilisées et protégées) plutôt que sur l''accès technique aux outils, ce qui est un levier d''action très
+différent.
+2. Avec un départ attendu dans six mois seulement, le succession planning classique sur deux à trois ans
+deviendrait inadapté : il faudrait privilégier une solution d''urgence, par exemple un recrutement externe
+accéléré ou une solution temporaire (prestataire externe, tutorat intensif très court d''un profil interne déjà
+partiellement formé), tout en acceptant un niveau de risque plus élevé sur la continuité des certifications à
+très court terme.
+3. Exemple de question : « Avec seulement quelques entretiens, comment pouvez-vous être sûr que vos conclusions
+reflètent l''ensemble des salariés de production ? » L''attitude attendue est de reconnaître honnêtement la
+limite de représentativité, d''expliquer les précautions prises (diversité des profils interrogés, recoupement
+avec les données quantitatives d''adoption) et de montrer que les conclusions sont présentées comme des
+hypothèses à confirmer plutôt que comme des certitudes absolues.
+4. Exemple de question : « L''entreprise envisage de conditionner une partie de la prime de rareté des
+ingénieurs qualité à l''utilisation effective du nouveau module de gestion des talents du SIRH. Quels risques,
+en matière de conduite du changement, cette décision pourrait-elle créer ? » Une bonne réponse identifierait le
+risque de transformer une résistance initialement liée à la capacité ou à la compréhension en une résistance
+par adhésion, les salariés concernés pouvant percevoir cette conditionnalité comme une pression ou une
+sanction déguisée plutôt que comme un accompagnement, ce qui pourrait fragiliser la politique de fidélisation
+plutôt que la renforcer.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 RH (entraînement multi-matières, corrigé détaillé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Conduite du changement et transformation RH', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en ressources humaines. Objectifs : savoir diagnostiquer les
+résistances au changement selon leur registre (compréhension, capacité, adhésion) et construire un plan
+d''accompagnement différencié pour un projet de transformation RH, notamment de digitalisation via un SIRH
+avancé. Matériel : tableau ou diaporama, dossier de cas Baobab Assurances. Prérequis : notions de base de GRH
+vues en Licence et en Master 1.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : pourquoi les projets de transformation RH échouent
+
+Bonjour à toutes et à tous. Je commence par un constat que beaucoup d''études professionnelles mettent en
+avant : la majorité des échecs de projets de transformation RH, en particulier de digitalisation, ne viennent
+pas d''un problème technique de l''outil choisi, mais d''un défaut de conduite du changement. L''outil fonctionne
+très bien techniquement, mais les salariés ne l''utilisent pas comme prévu. Aujourd''hui, nous allons apprendre à
+diagnostiquer précisément pourquoi, plutôt que de répondre par une communication générique qui, le plus
+souvent, ne règle rien.
+
+## 05:00 – 15:00 · Les trois registres de résistance au changement
+
+Voici le cadre central de ce cours, à discuter de façon critique et non à réciter mécaniquement. Trois
+registres de résistance peuvent exister chez un acteur confronté à un changement. Le registre de compréhension
+: le changement n''est pas compris, ou mal expliqué. Le registre de capacité : le changement est compris, mais
+l''acteur ne se sent pas outillé pour l''opérer, faute de formation ou de moyens. Le registre d''adhésion : le
+changement est compris et possible, mais rejeté pour des raisons de valeurs, de confiance ou de pouvoir. Je
+vous montre à l''écran trois courtes situations ; essayons ensemble de les classer. Un salarié qui ne sait pas
+qu''un nouvel outil existe relève de la compréhension. Un salarié qui connaît l''outil mais n''a jamais reçu de
+formation relève de la capacité. Un manager qui comprend parfaitement l''outil mais craint qu''il réduise son
+pouvoir de décision relève de l''adhésion.
+
+## 15:00 – 30:00 · Méthode de diagnostic et étude de cas filée : Baobab Assurances
+
+Appliquons la méthode en quatre étapes du cours écrit. Baobab Assurances, compagnie d''assurance fictive de 260
+salariés, déploie un nouveau SIRH avancé avec self-service, gestion des talents et tableau de bord managérial.
+Premièrement, décrivons le changement : un outil qui transforme la gestion des congés, l''évaluation continue et
+le pilotage managérial. Deuxièmement, identifions les acteurs et leur registre dominant. Au siège, l''équipe RH
+elle-même exprime une résistance de capacité : elle maîtrise mal les nouveaux outils d''analyse de données.
+Dans les agences régionales, les salariés expriment une résistance de compréhension : ils ne savent pas
+précisément ce qui va changer et craignent, à tort, des suppressions de postes. Chez certains managers de
+proximité, apparaît une résistance d''adhésion : le tableau de bord en temps réel est perçu comme un outil de
+contrôle renforcé plutôt qu''une aide à la décision.
+
+## 30:00 – 42:00 · Construire un plan d''accompagnement différencié
+
+Troisième étape de la méthode : construire un plan différencié, jamais une communication unique pour tous.
+Pour l''équipe RH du siège, problème de capacité : un programme de formation intensive de deux semaines, avec
+accompagnement individualisé le premier mois. Pour les agences régionales, problème de compréhension : une
+tournée d''information avec des exemples concrets, et une clarification explicite qu''aucune suppression de
+poste n''est prévue. Pour les managers réticents, problème d''adhésion : des ateliers de co-construction où les
+managers participent eux-mêmes à la définition des indicateurs de leur tableau de bord, pour qu''ils le
+perçoivent comme un outil à leur service. Remarquez bien : trois problèmes différents, trois leviers d''action
+complètement différents. C''est l''erreur la plus fréquente que je corrige dans les copies, l''utilisation d''un
+seul levier, en général la communication, pour tous les problèmes.
+
+## 42:00 – 50:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : pourquoi une formation technique supplémentaire ne résoudrait-elle pas le
+problème des managers réticents dans le cas Baobab Assurances ? Deuxième question : quel registre de
+résistance dominerait, selon vous, chez un salarié qui refuse d''utiliser un outil numérique simplement parce
+qu''il n''a jamais utilisé d''ordinateur de sa vie ? Troisième question : citez un risque si l''entreprise traite
+la résistance des agences régionales uniquement par une sanction ou une obligation stricte d''utilisation.
+Notez vos réponses. Pour la première, parce que les managers comprennent déjà l''outil et savent s''en servir :
+leur problème est un problème de confiance et de perception du contrôle, pas de compétence technique. Pour la
+deuxième, cela relève typiquement d''un registre de capacité, qu''il faut traiter par un accompagnement progressif
+et personnalisé, pas par une obligation. Pour la troisième, imposer l''usage sans traiter la peur de suppression de
+poste risquerait de renforcer la méfiance générale envers la direction, au-delà du seul projet SIRH.
+
+## 50:00 – 65:00 · Les indicateurs de suivi de l''adoption
+
+Quatrième étape de la méthode : définir des indicateurs de suivi, pour ajuster le plan en cours de route plutôt
+que de découvrir un échec en fin de projet. Pour Baobab Assurances, nous avons retenu trois indicateurs : le
+taux d''utilisation effective du module self-service, avec un objectif fictif pour l''exemple de 70 % de
+dématérialisation des demandes de congés au bout de trois mois ; le nombre d''incidents techniques ou de
+blocages remontés chaque semaine ; et un score de perception recueilli par une enquête courte auprès des
+managers deux mois après le lancement. Un bon pilote de changement regarde ces indicateurs toutes les
+semaines, pas seulement au bilan final, et ajuste son plan d''accompagnement si un indicateur dévie fortement
+de la trajectoire attendue.
+
+## 65:00 – 78:00 · Étude de cas filée : Sahel Retail
+
+Passons à un second cas pour systématiser la méthode. Sahel Retail, entreprise fictive de distribution, déploie
+un module d''auto-évaluation annuelle en ligne pour tous les salariés. Les retours informels montrent que les
+salariés de plus de cinquante ans, peu familiers des outils numériques, risquent de ne pas réaliser leur
+auto-évaluation dans les délais. Quel registre domine ici ? Principalement la capacité, avec peut-être une
+composante d''adhésion si ces salariés craignent d''être mal jugés par un outil numérique impersonnel. Le plan
+d''accompagnement combinerait des sessions d''accompagnement individuel ou en petits groupes avant l''échéance, et
+une alternative d''assistance, comme l''aide d''un collègue ou d''un référent RH désigné, pendant la période de
+réalisation. Notez que cette solution respecte la dignité des salariés concernés : elle ne les stigmatise pas
+publiquement, elle leur offre un accompagnement discret et efficace.
+
+## 78:00 – 83:00 · Qui pilote le projet : DSI seule ou DRH associée
+
+Un dernier point avant de synthétiser : qui doit piloter un tel projet ? Un projet de transformation RH piloté
+uniquement par la direction des systèmes d''information risque de privilégier les aspects techniques, fiabilité,
+sécurité, délais, au détriment de l''adoption humaine et de la cohérence avec les pratiques RH existantes. Un
+projet co-piloté par la DRH garantit que les enjeux de conduite du changement, d''adhésion des équipes et de
+cohérence avec la politique RH globale sont pris en compte dès la conception du projet, et pas seulement
+découverts au moment du déploiement, une fois l''outil déjà configuré techniquement.
+
+## 83:00 – 85:00 · Synthèse et méthode de rédaction en examen
+
+Pour synthétiser : face à un cas d''examen sur ce thème, identifiez systématiquement le registre de résistance
+dominant pour chaque groupe d''acteurs avant de proposer un plan, ne proposez jamais un levier unique pour des
+problèmes de nature différente, et prévoyez toujours des indicateurs de suivi permettant d''ajuster le plan en
+cours de route. Souvenez-vous aussi que l''équipe porteuse du projet, y compris la DRH elle-même, peut être
+source de résistance : ne l''oubliez jamais dans votre diagnostic.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Six questions pour conclure. Zéro, pourquoi un projet de transformation RH mérite-t-il d''être co-piloté par la
+DRH et pas seulement par la direction des systèmes d''information ? Réponse : parce qu''un pilotage uniquement
+technique néglige souvent l''adoption humaine et la cohérence avec la politique RH globale, deux dimensions que
+seule la DRH peut porter pleinement dès la conception du projet. Un, quels sont les trois registres de
+résistance au changement ? Deux, dans le
+cas Baobab Assurances, quel registre domine chez les managers de proximité et pourquoi ? Trois, pourquoi un
+plan d''accompagnement du changement doit-il être différencié plutôt qu''uniforme ? Quatre, citez un indicateur
+de suivi de l''adoption d''un projet de SIRH. Cinq, dans le cas Sahel Retail, quel registre domine chez les
+salariés de plus de cinquante ans et quelle solution respecte leur dignité ? Réponses : un, compréhension,
+capacité, adhésion. Deux, l''adhésion, car le tableau de bord est perçu comme un outil de contrôle renforcé
+plutôt qu''une aide à la décision. Trois, parce que des groupes d''acteurs différents ont des résistances de
+nature différente, qui appellent des leviers d''action différents. Quatre, par exemple le taux d''utilisation
+effective du module self-service. Cinq, la capacité, et une solution d''accompagnement individuel discret plutôt
+qu''une obligation stricte sans soutien. Merci à toutes et à tous, je vous retrouve pour le prochain cours
+consacré à la rémunération stratégique et à la politique de talents.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Conduite du changement et transformation RH');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Rémunération stratégique et politique de talents', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en ressources humaines. Objectifs : savoir cartographier la
+criticité des postes d''une organisation, construire une people review et un plan de succession planning, et
+articuler une politique de rémunération différenciée combinant leviers financiers et non financiers. Matériel
+: tableau ou diaporama, dossier de cas Sahel Industries Pharmaceutiques. Prérequis : notions de base de
+rémunération vues en Licence.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : tous les postes ne se valent pas stratégiquement
+
+Bonjour à toutes et à tous. Une question pour commencer : si votre entreprise devait réduire son budget de
+formation et de fidélisation de 20 %, sur quels postes concentreriez-vous les ressources restantes ? La
+réponse spontanée est souvent « sur les postes les plus importants », mais encore faut-il savoir comment
+définir objectivement cette importance. C''est exactement l''objet de ce cours : construire une méthode
+rigoureuse pour identifier les postes réellement critiques, plutôt que de se fier à une intuition ou à la
+hiérarchie formelle de l''organigramme.
+
+## 05:00 – 15:00 · La cartographie de criticité des postes
+
+La criticité d''un poste combine deux dimensions à évaluer séparément. La rareté sur le marché du travail :
+combien de profils qualifiés sont disponibles pour occuper ce poste en cas de besoin. L''impact sur la
+performance de l''entreprise : que se passe-t-il concrètement si ce poste reste vacant plusieurs semaines ou
+mois. Un poste peut être rare mais à faible impact, ou fréquent mais à fort impact : c''est la combinaison des
+deux qui définit la criticité réelle. Je vous montre à l''écran une matrice à deux axes ; nous allons y placer
+plusieurs exemples de postes pour nous entraîner à cette classification avant de passer au cas pratique.
+
+## 15:00 – 32:00 · Étude de cas filée : Sahel Industries Pharmaceutiques, cartographie
+
+Sahel Industries Pharmaceutiques, entreprise fictive de 210 salariés, doit préparer sa people review annuelle.
+Trois postes de pharmacien responsable de production sont identifiés comme hautement critiques : postes
+réglementés, rares localement, une dizaine de profils qualifiés disponibles dans la région selon l''estimation
+de la DRH, et dont l''absence prolongée peut interrompre une ligne de production entière. À l''inverse, les 60
+postes d''opérateurs de conditionnement sont jugés peu critiques : compétence plus répandue, impact individuel
+limité sur la production globale, même si collectivement ils restent indispensables. Remarquez cette nuance
+importante : un poste peut être individuellement peu critique tout en étant collectivement indispensable ; ce
+n''est pas une contradiction, c''est précisément ce qui justifie une politique différenciée plutôt qu''une
+politique uniforme pour tous les postes de production.
+
+## 32:00 – 48:00 · La people review et le succession planning
+
+Passons à la people review. Elle croise deux axes pour chaque collaborateur clé : sa performance actuelle et
+son potentiel d''évolution future. Pour Sahel Industries Pharmaceutiques, la people review révèle que, sur les
+trois pharmaciens responsables actuels, un seul dispose d''un adjoint identifié et formé ; les deux autres postes
+n''ont aucune relève préparée. Elle identifie également quatre jeunes ingénieurs qualité à fort potentiel,
+capables, avec une préparation de deux à trois ans, d''accéder à des responsabilités de pharmacien responsable
+adjoint. Le succession planning construit à partir de ce diagnostic désigne deux de ces quatre ingénieurs pour
+intégrer un parcours de professionnalisation de deux ans, combinant formation complémentaire, exposition
+progressive aux responsabilités de production, et mentorat direct par les pharmaciens responsables en poste.
+Notez l''horizon : deux à trois ans, pas deux à trois mois ; un succession planning sérieux pour un poste très
+qualifié prend du temps, et c''est précisément pour cela qu''il doit être anticipé largement avant qu''un départ
+ne survienne.
+
+## 48:00 – 56:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : pourquoi est-il dangereux d''attendre l''annonce d''un départ pour lancer un
+succession planning sur un poste aussi critique que pharmacien responsable ? Deuxième question : un
+collaborateur très performant dans son poste actuel a-t-il nécessairement un potentiel élevé pour un poste
+supérieur ? Troisième question : pourquoi les 60 opérateurs de conditionnement, jugés peu critiques
+individuellement, ne doivent-ils pas être totalement négligés dans la politique RH ? Notez vos réponses. Pour
+la première, parce que la préparation d''un remplaçant qualifié prend du temps ; improviser expose l''entreprise
+à une vacance ou un remplacement mal préparé, avec un risque réglementaire majeur pour ce type de poste. Pour
+la deuxième, non : performance et potentiel sont deux dimensions distinctes, un excellent technicien peut ne
+pas vouloir ou ne pas montrer de capacité à encadrer une équipe. Pour la troisième, parce que collectivement ils
+restent indispensables à la production et qu''un désengagement massif de ce segment, même peu critique
+individuellement, aurait un impact cumulé important.
+
+## 56:00 – 70:00 · Construire une architecture de rémunération différenciée
+
+Passons à la politique de rémunération elle-même. Pour les trois postes de pharmacien responsable, hautement
+critiques, la DRH propose une prime de rareté de compétence propre à l''entreprise, clairement présentée comme
+fictive dans notre exemple, et un accès prioritaire à des formations continues valorisantes. Pour les 60
+opérateurs de conditionnement, une politique salariale plus standard, mais accompagnée d''un parcours de
+carrière interne visible, par exemple la possibilité d''évoluer vers des postes de technicien qualité après
+quelques années d''ancienneté. Observez la logique : nous ne proposons pas uniquement de l''argent pour les
+postes critiques et rien pour les autres ; nous combinons systématiquement des leviers financiers et non
+financiers, en dosant leur importance relative selon la criticité du poste et les contraintes budgétaires
+réelles de l''entreprise.
+
+## 70:00 – 80:00 · Second cas chiffré : Teranga Telecom
+
+Prenons un second exemple pour systématiser la méthode. Teranga Telecom, entreprise fictive de
+télécommunications, identifie que son unique expert en cybersécurité, en poste depuis quatre ans, est
+régulièrement sollicité par des concurrents régionaux, sans aucune relève identifiée. Le diagnostic de
+criticité est clair : rareté confirmée par la sollicitation externe répétée, impact majeur dans un secteur
+sensible aux risques numériques. Le plan combine fidélisation à court terme, par un entretien direct identifiant
+ses attentes réelles et, si pertinent, une prime de rétention propre à l''entreprise, et succession planning à
+moyen terme, en identifiant un ou deux profils internes à potentiel pour une montée en compétence progressive
+sur deux à trois ans, éventuellement combinée à un recrutement externe complémentaire pour ne pas dépendre
+d''une seule personne. Notez la symétrie avec le cas Sahel Industries Pharmaceutiques : dans les deux cas, la
+méthode reste identique, cartographier la criticité, mener une people review, construire un succession
+planning à l''horizon pertinent, puis articuler une rémunération différenciée ; seuls les chiffres et le
+secteur changent d''un cas à l''autre, pas la démarche elle-même, ce qui est précisément ce qui doit vous
+rassurer pour l''examen : une seule méthode, applicable à des contextes variés.
+
+## 80:00 – 85:00 · Un dernier risque à anticiper : l''équité perçue
+
+Avant de synthétiser, un risque que les copies oublient souvent : pourquoi est-il risqué, dans une entreprise à
+ressources contraintes, de répondre systématiquement à un risque de départ d''un talent clé par une simple
+augmentation de salaire ? Parce qu''une réponse uniquement salariale est coûteuse à répéter pour chaque talent
+sollicité par la concurrence, qu''elle peut créer des tensions d''équité perçue avec d''autres collaborateurs non
+concernés, et qu''elle ne traite pas nécessairement les causes réelles d''attractivité externe, comme le manque de
+perspectives ou une reconnaissance insuffisante. Une politique combinant plusieurs leviers est généralement plus
+soutenable financièrement et plus efficace dans la durée qu''une simple course à l''augmentation salariale. Gardez en tête, pour vos copies,
+que ce risque d''équité perçue ne signifie pas qu''il faut refuser toute prime différenciée : il signifie
+qu''une politique de rémunération différenciée doit toujours être accompagnée d''une explication transparente de
+ses critères, la criticité objective du poste, et non l''appréciation informelle d''un manager, afin de rester
+perçue comme juste par l''ensemble des collaborateurs, y compris ceux qui n''en bénéficient pas directement.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Cinq questions pour conclure. Un, quelles sont les deux dimensions de la criticité d''un poste ? Deux, quels
+sont les deux axes croisés dans une people review ? Trois, dans le cas Sahel Industries Pharmaceutiques,
+combien de postes de pharmacien responsable n''ont aucune relève identifiée ? Quatre, pourquoi un succession
+planning doit-il être anticipé largement avant un départ ? Cinq, dans le cas Teranga Telecom, citez une mesure
+à court terme et une mesure à moyen terme. Réponses : un, la rareté sur le marché du travail et l''impact sur la
+performance de l''entreprise. Deux, la performance actuelle et le potentiel d''évolution future. Trois, deux
+postes sur trois. Quatre, parce que la préparation d''un remplaçant qualifié prend du temps, souvent plusieurs
+années pour un poste très qualifié. Cinq, à court terme un entretien de fidélisation et une éventuelle prime de
+rétention ; à moyen terme un succession planning sur deux à trois ans avec des profils internes à potentiel.
+Merci à toutes et à tous, rendez-vous pour le cours sur la méthodologie du mémoire professionnel et la
+soutenance.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Rémunération stratégique et politique de talents');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et de la soutenance', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en ressources humaines. Objectifs : savoir formuler une
+problématique de mémoire professionnel pertinente, construire un plan de mémoire rigoureux, et préparer une
+soutenance orale convaincante devant un jury. Matériel : tableau ou diaporama, dossier de cas Sahel PME
+Services. Prérequis : avoir lu le cours écrit sur la méthodologie du mémoire.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : le mémoire n''est pas un résumé de stage
+
+Bonjour à toutes et à tous. Je commence par corriger une confusion très fréquente : un mémoire professionnel
+n''est pas un résumé narratif de votre stage ou de votre expérience professionnelle. C''est un travail de
+recherche appliquée, qui part d''une situation professionnelle réelle mais qui doit la transformer en une
+véritable question d''investigation, mobiliser un cadre conceptuel rigoureux, et aboutir à des recommandations
+argumentées. Si votre mémoire se contente de raconter ce que vous avez fait en stage, vous n''avez pas encore de
+mémoire, vous avez un journal de bord. Notre objectif aujourd''hui est de vous apprendre à faire ce saut.
+
+## 05:00 – 18:00 · Formuler une problématique de recherche pertinente
+
+Une problématique de recherche pertinente interroge toujours une tension, un écart ou un arbitrage, jamais
+seulement une description. Prenons un exemple concret et corrigeons-le ensemble. Thème de départ, trop
+descriptif : « comment se passe l''intégration des nouveaux salariés dans l''entreprise X ? ». Reformulation en
+problématique : « dans quelle mesure le processus d''intégration actuel de l''entreprise X permet-il de réduire
+le turnover des nouveaux salariés au cours de leur première année, et quels ajustements seraient nécessaires
+pour renforcer son efficacité ? ». Observez la différence : la première version ne débouche sur rien de
+précis ; la seconde interroge un effet mesurable, le turnover, et ouvre explicitement sur des recommandations.
+Entraînez-vous systématiquement à ce type de reformulation avant de choisir définitivement votre sujet de
+mémoire.
+
+## 18:00 – 32:00 · Étude de cas filée : Sahel PME Services
+
+Prenons le cas fictif de Sahel PME Services, entreprise de services aux entreprises de 80 salariés à Dakar. Un
+étudiant en stage observe que le recrutement repose entièrement sur des candidatures papier et des entretiens
+non structurés, générant des délais longs, en moyenne 45 jours entre publication et embauche, chiffre fictif
+pour l''exemple, et une perception mitigée des candidats. La problématique construite est : « dans quelle mesure
+l''introduction d''outils numériques de recrutement peut-elle réduire les délais de recrutement d''une PME
+sénégalaise sans dégrader la qualité de la relation avec les candidats ? ». Remarquez que cette problématique
+relie explicitement deux enjeux en tension, l''efficacité et la qualité relationnelle, ce qui est précisément ce
+qui en fait une bonne problématique de mémoire professionnel plutôt qu''une simple question technique.
+
+## 32:00 – 45:00 · Construire le cadre conceptuel et la méthodologie
+
+Le cadre conceptuel de ce mémoire mobiliserait, de façon critique, au moins deux familles d''approches : les
+théories sur l''expérience candidat et la marque employeur, et les approches sur la digitalisation des processus
+RH et ses risques d''adoption, que vous avez déjà rencontrées dans le cours sur la conduite du changement. C''est
+important : les trois matières du Master 2 ne sont pas cloisonnées, votre mémoire peut et doit souvent mobiliser
+des concepts vus dans plusieurs matières. Sur la méthodologie, la démarche proposée combine une analyse
+documentaire des données internes de recrutement, délais, taux d''abandon de candidature, et quelques entretiens
+semi-structurés avec des managers et des candidats récents. Point essentiel : reconnaissez explicitement, dans
+votre mémoire, la limite d''un échantillon réduit d''entretiens, propre à un travail réalisé en temps contraint ;
+cette honnêteté méthodologique est valorisée, pas sanctionnée, par un jury.
+
+## 45:00 – 53:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : pourquoi la problématique initiale « comment se passe l''intégration » est-
+elle insuffisante pour un mémoire de Master 2 ? Deuxième question : pourquoi est-il utile, dans ce mémoire, de
+mobiliser des concepts vus dans le cours sur la conduite du changement, alors que le sujet porte sur le
+recrutement ? Troisième question : que risque un étudiant qui prétend que ses quelques entretiens sont
+représentatifs de l''ensemble des candidats de l''entreprise ? Notez vos réponses. Pour la première, parce
+qu''elle est purement descriptive et ne débouche sur aucune recommandation ni aucun effet mesurable. Pour la
+deuxième, parce que l''introduction d''un outil numérique de recrutement est elle-même un projet de changement,
+avec des risques de résistance et d''adoption similaires à ceux étudiés pour le SIRH. Pour la troisième, il
+risque une question déstabilisante du jury sur la représentativité, qui fragiliserait la crédibilité de
+l''ensemble du travail s''il ne peut pas reconnaître honnêtement cette limite.
+
+## 53:00 – 65:00 · Construire des recommandations réalistes
+
+Les recommandations finales doivent toujours tenir compte des contraintes réelles de l''organisation étudiée.
+Pour une PME de 80 salariés à budget limité comme Sahel PME Services, privilégiez une solution progressive et
+peu coûteuse, par exemple une plateforme de candidature en ligne simple, plutôt qu''un SIRH complet
+immédiatement hors de portée financière. Proposez un calendrier de déploiement en plusieurs phases, avec des
+indicateurs de suivi simples comme le délai moyen de recrutement et un score de satisfaction des candidats
+mesuré par une courte enquête. Une recommandation théoriquement parfaite mais inapplicable au budget réel de
+l''entreprise est un point faible du mémoire, même si le raisonnement conceptuel qui la sous-tend est juste.
+
+## 65:00 – 78:00 · Préparer la soutenance orale
+
+Passons maintenant à la soutenance elle-même, souvent sous-préparée par les étudiants qui se concentrent
+uniquement sur la rédaction. Une bonne soutenance commence par une synthèse claire en quelques minutes,
+rappelant la problématique, la méthodologie et les principales recommandations, sans relire le mémoire mot à
+mot. Mais l''essentiel se joue dans la séance de questions du jury. Entraînez-vous à anticiper au moins trois
+types de questions : des questions sur la représentativité ou les limites méthodologiques, déjà évoquées ;
+des questions sur la faisabilité des recommandations, par exemple « l''entreprise a-t-elle les moyens de mettre
+en œuvre ce que vous proposez ? » ; et des questions sur le cadre conceptuel, par exemple « pourquoi avez-vous
+choisi cette approche plutôt qu''une autre ? ». L''attitude attendue face à une critique n''est jamais de la nier
+ou de se justifier de façon défensive, mais de la reconnaître avec assurance, d''expliquer les précautions prises
+pour en limiter l''impact, et de montrer la maturité professionnelle de considérer les conclusions comme des
+hypothèses à confirmer plutôt que comme des certitudes absolues.
+
+## 78:00 – 82:00 · Une dernière mise en garde : éviter le mémoire catalogue
+
+Un dernier conseil avant de synthétiser : évitez le piège du mémoire catalogue, qui tente de traiter toutes les
+dimensions possibles d''un sujet large sans jamais approfondir aucune d''entre elles. Un bon mémoire professionnel
+fait des choix explicites de périmètre, les justifie en introduction, et les assume jusqu''à la soutenance ; un
+jury valorise toujours davantage une analyse approfondie sur un périmètre resserré qu''un survol superficiel de
+plusieurs sujets juxtaposés.
+
+## 82:00 – 85:00 · Synthèse méthodologique
+
+Retenez cinq réflexes pour votre propre mémoire : transformez toujours un thème descriptif en une problématique
+qui interroge une tension ; mobilisez plusieurs approches théoriques et discutez-les de façon critique ; soyez
+honnête sur les limites méthodologiques de votre travail ; gardez vos recommandations réalistes au regard des
+contraintes concrètes de l''organisation ; et préparez votre soutenance en anticipant les questions critiques du
+jury plutôt qu''en espérant qu''elles ne viennent pas.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Six questions pour conclure. Zéro, pourquoi un mémoire qui se limite à raconter le déroulement d''un stage
+n''est-il pas encore un mémoire professionnel au sens attendu ? Réponse : parce qu''il lui manque la
+transformation en question de recherche, le cadre conceptuel critique et les recommandations argumentées, qui
+seuls permettent de dépasser le simple récit narratif d''une expérience. Un, qu''est-ce qui distingue une
+problématique de recherche d''une simple question
+descriptive ? Deux, dans le cas Sahel PME Services, quelle est la problématique construite ? Trois, pourquoi
+faut-il reconnaître explicitement les limites méthodologiques d''un mémoire plutôt que les dissimuler ? Quatre,
+citez un type de question que peut poser un jury de soutenance. Cinq, pourquoi une recommandation
+théoriquement idéale peut-elle constituer un point faible du mémoire ? Réponses : un, la problématique de
+recherche interroge une tension, un écart ou un arbitrage, et ouvre sur des recommandations, contrairement à
+une question purement descriptive. Deux, dans quelle mesure l''introduction d''outils numériques de recrutement
+peut-elle réduire les délais sans dégrader la qualité de la relation avec les candidats. Trois, parce que
+l''honnêteté méthodologique renforce la crédibilité du travail, alors que la dissimulation expose à une question
+déstabilisante du jury qui fragiliserait l''ensemble de la soutenance. Quatre, par exemple une question sur la
+représentativité des données ou sur la faisabilité budgétaire des recommandations. Cinq, parce qu''elle peut être
+inapplicable au regard des contraintes réelles, budgétaires ou organisationnelles, de l''entreprise étudiée.
+Merci à toutes et à tous, rendez-vous pour le dernier cours vidéo, l''atelier transversal consacré à la
+méthodologie du mémoire.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et de la soutenance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier méthodologie du mémoire — cas transversal', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 2 en ressources humaines. Objectifs : s''entraîner en atelier à
+construire, de bout en bout, un projet de mémoire professionnel à partir d''une situation d''entreprise
+transversale mobilisant les trois matières de l''année, et s''exercer à une mini-soutenance orale. Matériel :
+tableau ou diaporama, dossier de cas complet, chronomètre pour l''exercice de soutenance. Prérequis : avoir
+suivi les trois cours vidéo précédents.
+
+## Déroulé minuté
+
+## 00:00 – 06:00 · Présentation de l''atelier méthodologie du mémoire
+
+Bonjour à toutes et à tous. Cette dernière séance est un atelier entièrement consacré à la méthodologie du
+mémoire professionnel, mais appliquée à un cas transversal qui mobilise aussi la conduite du changement et la
+politique de talents, exactement comme votre propre mémoire devra probablement le faire si votre sujet touche
+à une transformation RH. L''objectif est double : vous entraîner à construire un projet de mémoire complet en
+temps limité, et vous exercer à une mini-soutenance orale, l''épreuve la plus redoutée et la moins préparée par
+les étudiants.
+
+## 06:00 – 14:00 · Présentation du cas transversal : Kaolack Agro-Export
+
+Kaolack Agro-Export est une entreprise fictive de transformation et d''exportation de produits agricoles
+employant 310 salariés. Elle vient d''acquérir un nouveau SIRH intégrant un module de gestion des talents et
+déploie en parallèle une politique de fidélisation de ses cadres techniques. Le déploiement du SIRH se heurte à
+une faible adoption chez les salariés de production, 22 % de dématérialisation des demandes de congés après
+deux mois contre un objectif de 70 % fixé par la direction, alors que les cadres administratifs atteignent
+85 %. Par ailleurs, trois ingénieurs qualité sont identifiés comme critiques pour les certifications export,
+dont un seul dispose d''une relève identifiée. Un étudiant en stage dans cette entreprise souhaite écrire son
+mémoire sur ce contexte.
+
+## 14:00 – 28:00 · Construire la problématique à partir du cas transversal
+
+Premier exercice de l''atelier : transformer ce contexte riche en une problématique de mémoire unique et
+précise, sans essayer de tout traiter à la fois, ce qui est une erreur fréquente. Une problématique trop large
+serait : « comment améliorer la gestion des talents chez Kaolack Agro-Export ? ». Une problématique resserrée
+et pertinente pourrait être : « dans quelle mesure le déploiement d''un SIRH avancé permet-il d''améliorer
+l''efficacité de la gestion des talents dans une entreprise agro-industrielle sénégalaise, tout en garantissant
+l''adoption de l''outil par l''ensemble des catégories de salariés ? ». Remarquez que cette problématique choisit
+délibérément de se concentrer sur le lien entre digitalisation et adoption, en laissant la question spécifique
+des ingénieurs qualité comme un exemple d''illustration plutôt que comme un second sujet distinct ; un bon
+mémoire traite un sujet précis en profondeur plutôt que plusieurs sujets superficiellement.
+
+## 28:00 – 42:00 · Construire le plan de mémoire
+
+Deuxième exercice : construire le plan en quatre parties. Partie un, revue de littérature critique sur la
+digitalisation RH et la conduite du changement, mobilisant les registres de résistance vus dans le premier
+cours vidéo de l''année. Partie deux, méthodologie combinant l''analyse des données d''adoption du SIRH, taux de
+dématérialisation par catégorie de salariés, et des entretiens avec des salariés de différentes catégories,
+production et administratifs, pour comprendre les causes de l''écart observé. Partie trois, analyse des
+résultats, reliant explicitement les écarts d''adoption observés au cadre conceptuel sur les registres de
+résistance, par exemple en vérifiant si l''écart entre production et administratifs relève davantage de la
+capacité, de la compréhension ou de l''adhésion. Partie quatre, recommandations opérationnelles différenciées par
+catégorie de salariés, dans la limite des contraintes budgétaires réelles de l''entreprise.
+
+## 42:00 – 50:00 · Quiz interactif à mi-parcours
+
+Pause active. Première question : pourquoi est-il préférable, dans ce cas, de concentrer le mémoire sur
+l''adoption du SIRH plutôt que de traiter à la fois ce sujet et la succession planning des ingénieurs qualité ?
+Deuxième question : quelle partie du plan de mémoire permettrait d''expliquer pourquoi les salariés de production
+adoptent moins le SIRH que les cadres administratifs ? Troisième question : quel registre de résistance
+l''étudiant devrait-il vérifier en priorité chez les salariés de production, au regard de ce que nous avons vu
+dans le premier cours vidéo de l''année ? Notez vos réponses. Pour la première, parce qu''un mémoire professionnel
+doit traiter un sujet précis en profondeur ; vouloir couvrir deux sujets distincts, digitalisation et
+succession planning, risquerait de produire une analyse superficielle sur les deux. Pour la deuxième, la partie
+trois, l''analyse des résultats, reliée au cadre conceptuel. Pour la troisième, le registre de capacité, probable
+compte tenu de l''accès limité aux outils numériques en situation de production, sans exclure une vérification du
+registre de compréhension ou d''adhésion.
+
+## 50:00 – 62:00 · Exercice de mini-soutenance : construire une synthèse de trois minutes
+
+Troisième exercice, le plus exigeant : je vous demande maintenant de préparer, en vous chronométrant, une
+synthèse orale de trois minutes de ce projet de mémoire, comme si vous étiez l''étudiant devant un jury. Votre
+synthèse doit couvrir, dans cet ordre et sans dépasser le temps : la problématique en une phrase, le contexte de
+l''entreprise en deux phrases, la méthodologie en deux phrases, les principaux résultats attendus ou déjà
+observés en trois phrases, et une recommandation phare en une phrase. Entraînez-vous à voix haute, maintenant,
+en vous chronométrant réellement : c''est un exercice que beaucoup d''étudiants ne font jamais avant le jour de
+leur soutenance, et qui fait pourtant une différence considérable sur la clarté perçue par le jury.
+
+## 62:00 – 76:00 · Exercice de questions-réponses simulées
+
+Quatrième exercice : anticipons les questions du jury sur ce projet précis. Question possible : « votre
+problématique parle de toutes les catégories de salariés, mais vous semblez vous concentrer surtout sur les
+salariés de production ; pourquoi ? » Réponse attendue : reconnaître ce choix, l''expliquer par le fait que
+l''écart d''adoption le plus significatif se situe précisément là, tout en précisant que les cadres administratifs
+sont traités comme groupe de comparaison plutôt qu''ignorés. Question possible : « comment savez-vous que votre
+recommandation de bornes numériques dédiées en atelier sera réellement utilisée ? » Réponse attendue :
+reconnaître qu''il s''agit d''une hypothèse à tester, proposer un indicateur de suivi concret après mise en place,
+et citer, si pertinent, un registre de résistance résiduel possible, par exemple l''adhésion, qui pourrait
+nécessiter un accompagnement complémentaire si la seule solution technique ne suffit pas.
+
+## 76:00 – 81:00 · Ce que révèle cet atelier sur votre propre mémoire
+
+Avant de conclure, un dernier point de méthode transférable à votre propre travail : notez comment, dans cet
+atelier, nous avons systématiquement relié un concept d''une matière, les registres de résistance vus pour la
+conduite du changement, à l''analyse d''une autre matière, la gestion des talents et le SIRH. C''est exactement
+cette capacité à faire dialoguer les matières de l''année, plutôt qu''à les traiter en silos séparés, qui
+distingue un mémoire professionnel de Master 2 réellement abouti d''un simple empilement de chapitres
+indépendants les uns des autres.
+
+## 81:00 – 85:00 · Synthèse de l''atelier et conseils finaux pour l''année de Master 2
+
+Pour conclure cette dernière séance de l''année, trois conseils finaux. Premièrement, choisissez un sujet de
+mémoire suffisamment précis pour être traité en profondeur dans le temps dont vous disposez, plutôt qu''un sujet
+trop vaste qui vous obligerait à rester superficiel. Deuxièmement, entraînez-vous à l''oral bien avant la date
+de soutenance, en vous chronométrant réellement comme nous venons de le faire, et en simulant des questions
+critiques avec un camarade ou un enseignant. Troisièmement, rappelez-vous que la qualité d''un mémoire
+professionnel se juge autant à son honnêteté méthodologique et à la pertinence opérationnelle de ses
+recommandations qu''à l''élégance de sa rédaction.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Cinq questions pour conclure l''année. Un, dans le cas Kaolack Agro-Export, quelle problématique resserrée avons-
+nous construite ? Deux, quelles sont les quatre parties du plan de mémoire proposé ? Trois, pourquoi est-il
+préférable de traiter un sujet précis en profondeur plutôt que deux sujets superficiellement ? Quatre, citez les
+cinq éléments attendus dans une synthèse orale de trois minutes. Cinq, quelle attitude adopter face à une
+question critique du jury sur une limite méthodologique ? Réponses : un, dans quelle mesure le déploiement d''un
+SIRH avancé améliore-t-il la gestion des talents tout en garantissant l''adoption par toutes les catégories de
+salariés. Deux, revue de littérature, méthodologie, analyse des résultats, recommandations. Trois, parce qu''un
+mémoire professionnel doit démontrer une capacité d''analyse approfondie, difficile à atteindre si le sujet est
+trop large. Quatre, la problématique en une phrase, le contexte en deux phrases, la méthodologie en deux
+phrases, les résultats attendus en trois phrases, et une recommandation phare en une phrase. Cinq, reconnaître
+la limite avec assurance, expliquer les précautions prises, et présenter les conclusions comme des hypothèses à
+confirmer plutôt que comme des certitudes. Merci à toutes et à tous pour votre travail cette année, et bon
+courage pour la rédaction et la soutenance de votre mémoire professionnel.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-rh-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie du mémoire — cas transversal');
