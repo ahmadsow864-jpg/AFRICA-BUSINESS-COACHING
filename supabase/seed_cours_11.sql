@@ -1854,8 +1854,7 @@ on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Réussir ses examens de Licence 1 en droit des affaires (méthodologie juridique)', '## Objectifs de la leçon
 
-- Comprendre l''organisation de la Licence 1 en droit (ou en droit des affaires) dans le système LMD : semestres, unités d''enseignement, crédits, évaluations.
-- Connaître les matières clés de la première année et ce que le correcteur attend de vous.
+- Comprendre l''organisation de la Licence 1 et les attentes du correcteur.
 - Maîtriser les trois exercices juridiques de base : le cas pratique, la dissertation et le commentaire d''arrêt.
 - Disposer d''un plan de révision sur 6 semaines.
 
@@ -1934,7 +1933,6 @@ Le commentaire lui-même suit un plan en deux parties : souvent, la première ex
 
 ## Points clés
 
-- Le système LMD organise l''année en semestres, UE et crédits ; le règlement de votre établissement fait foi.
 - Les trois matières clés de L1 : introduction au droit, droit des obligations (contrat), institutions administratives et droit constitutionnel.
 - Le cas pratique repose sur le syllogisme ; la dissertation sur une problématique et un plan en deux parties ; le commentaire sur la fiche d''arrêt.
 
@@ -1958,9 +1956,7 @@ select c.id, 'Introduction au droit : l''essentiel pour l''examen', '## Objectif
 
 - Définir le droit et distinguer droit objectif et droits subjectifs.
 - Hiérarchiser les sources du droit applicables au Sénégal, y compris le droit OHADA.
-- Décrire l''organisation judiciaire en termes généraux.
-- Distinguer personnes physiques et personnes morales.
-- Maîtriser les règles de base de la preuve.
+- Décrire l''organisation judiciaire, les personnes et les règles de preuve.
 
 ## 1. Qu''est-ce que le droit ?
 
@@ -2017,7 +2013,6 @@ Exemple. Le grossiste fictif Baobab Alimentation, à Kaolack, réclame 3 450 000
 ## Points clés
 
 - Hiérarchie : Constitution, traités (dont OHADA), lois, règlements ; jurisprudence, coutume et doctrine complètent.
-- Double degré de juridiction, cassation par la Cour suprême ou, en droit OHADA, par la CCJA.
 - Personnes physiques et morales ; capacité de jouissance et d''exercice ; patrimoine.
 - La charge de la preuve pèse sur le demandeur ; preuve libre des faits juridiques et, entre commerçants, des actes de commerce.
 
@@ -2041,10 +2036,8 @@ from public.courses c where c.slug = 'lic-droit-l1'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Droit des obligations 1 (le contrat) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Définir l''obligation et le contrat, et classer les contrats.
-- Expliquer la formation du contrat : offre, acceptation, pourparlers, avant-contrats.
-- Maîtriser les conditions de validité et la sanction de leur absence : la nullité.
-- Exposer les effets du contrat entre les parties et à l''égard des tiers, et les sanctions de l''inexécution.
+- Maîtriser la formation, la validité (et la nullité) et les effets du contrat.
+- Connaître les sanctions de l''inexécution.
 
 ## 1. Notions de base
 
@@ -2644,8 +2637,7 @@ from public.courses c where c.slug = 'lic-droit-l2'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Droit commercial général OHADA : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Définir le commerçant et l''entreprenant selon l''Acte uniforme relatif au droit commercial général (AUDCG).
-- Identifier les actes de commerce, décrire le fonds de commerce et maîtriser le bail à usage professionnel.
+- Maîtriser les notions clés de l''Acte uniforme relatif au droit commercial général (AUDCG) : commerçant, entreprenant, actes de commerce, fonds de commerce, bail.
 
 ## 1. Le commerçant
 
@@ -2708,7 +2700,6 @@ Exemple : un commerçant paie 450 000 FCFA de loyer mensuel. Les parties convien
 
 - Commerçant : actes de commerce par nature, à titre de profession habituelle, de façon indépendante, avec capacité ; immatriculation au RCCM.
 - Fonds de commerce : clientèle et enseigne ou nom commercial au minimum ; vente, location-gérance, nantissement.
-- Bail professionnel : droit au renouvellement et indemnité d''éviction en cas de refus sans motif grave et légitime.
 
 ## Exercices pratiques
 
@@ -2730,8 +2721,7 @@ from public.courses c where c.slug = 'lic-droit-l2'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Droit des obligations 2 (responsabilité civile) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Énoncer les trois conditions de la responsabilité civile.
-- Distinguer responsabilité du fait personnel, du fait des choses et du fait d''autrui.
+- Maîtriser les conditions et les régimes de la responsabilité délictuelle.
 - Maîtriser la responsabilité contractuelle et ses causes d''exonération.
 - Chiffrer une réparation, y compris en cas de partage de responsabilité.
 
@@ -2789,7 +2779,6 @@ Exemple chiffré. Un camion de la société fictive Fleuve Transports percute la
 - Trois conditions : dommage, fait générateur, lien de causalité.
 - Fait personnel : faute appréciée in abstracto ; fait des choses : responsabilité du gardien, exonération par la seule cause étrangère ; fait d''autrui : parents, commettants, autres cas prévus.
 - Responsabilité contractuelle : obligation de moyens ou de résultat ; principe de non-cumul.
-- Réparation intégrale, réduite en cas de faute de la victime.
 
 ## Exercices pratiques
 
@@ -2813,7 +2802,6 @@ select c.id, 'Droit du travail (relations individuelles) : l''essentiel pour l''
 
 - Situer les sources du droit du travail sénégalais dans un contexte de transition.
 - Qualifier le contrat de travail et distinguer CDI et CDD.
-- Décrire l''exécution et la suspension du contrat.
 - Analyser les modes de rupture et calculer des indemnités (taux fictifs pour l''exemple).
 
 ## 1. Les sources, dans un contexte de transition
@@ -2861,7 +2849,6 @@ Exemple chiffré (taux fictifs pour l''exemple). La société fictive Atlantique
 
 - Sources : Code du travail de 1997 en cours de remplacement, conventions collectives, conventions OIT, contrat.
 - Le lien de subordination est le critère du contrat de travail ; le juge requalifie.
-- CDI forme normale ; CDD écrit et encadré ; période d''essai écrite.
 - Rupture : démission, licenciement personnel ou économique, licenciement abusif ; CDD rompu avant terme seulement dans des cas limités.
 
 ## Exercices pratiques

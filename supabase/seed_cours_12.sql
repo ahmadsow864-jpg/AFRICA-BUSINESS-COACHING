@@ -83,9 +83,7 @@ from public.courses c where c.slug = 'lic-droit-l3'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Droit des sociétés commerciales OHADA : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Expliquer les éléments du contrat de société et les étapes de la constitution.
-- Comparer SARL, SA et SAS : associés, capital, organes, cession des titres.
-- Maîtriser les règles de fonctionnement : décisions collectives, affectation du résultat, responsabilité des dirigeants.
+- Expliquer la constitution des sociétés, comparer SARL, SA et SAS, maîtriser l''affectation du résultat.
 
 ## 1. Le contrat de société et la constitution
 
@@ -97,7 +95,7 @@ On retient trois éléments spécifiques :
 - La vocation aux bénéfices et la contribution aux pertes.
 - L''affectio societatis : la volonté de collaborer sur un pied d''égalité à l''œuvre commune.
 
-Étapes de la constitution : rédaction des statuts (dénomination, forme, objet, siège, capital, apports, durée, organes), souscription et libération des apports, dépôt des fonds auprès d''une banque ou d''un notaire selon les règles applicables, accomplissement des formalités (au Sénégal, souvent par le guichet unique de création d''entreprise), puis immatriculation au RCCM. La société acquiert la personnalité morale à compter de son immatriculation. Les actes accomplis pour la société en formation peuvent être repris par elle après immatriculation ; à défaut, leurs auteurs en restent tenus.
+Étapes de la constitution : rédaction des statuts (dénomination, forme, objet, siège, capital, apports, durée, organes), souscription et libération des apports, dépôt des fonds auprès d''une banque ou d''un notaire selon les règles applicables, accomplissement des formalités (au Sénégal, souvent par le guichet unique de création d''entreprise), puis immatriculation au RCCM. La société acquiert la personnalité morale à compter de son immatriculation.
 
 ## 2. La SARL
 
@@ -149,13 +147,12 @@ from public.courses c where c.slug = 'lic-droit-l3'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Droit des sûretés et des procédures collectives OHADA : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Distinguer sûretés personnelles et sûretés réelles et présenter les principales sûretés OHADA.
-- Comprendre la logique de l''ordre de paiement des créanciers.
-- Présenter les procédures collectives OHADA : conditions d''ouverture, objectifs, effets.
+- Présenter les sûretés OHADA et la logique de l''ordre de paiement.
+- Présenter les procédures collectives OHADA.
 
 ## 1. Les sûretés : notions générales
 
-Une sûreté est l''affectation au bénéfice d''un créancier d''un bien, d''un ensemble de biens ou d''un patrimoine, afin de garantir l''exécution d''une obligation. Sans sûreté, le créancier est chirographaire : il n''a que le droit de gage général sur le patrimoine de son débiteur, en concours avec tous les autres créanciers. La matière est régie par l''Acte uniforme portant organisation des sûretés (AUS), révisé en 2010.
+Une sûreté est l''affectation d''un bien ou d''un patrimoine à la garantie d''une obligation. Sans sûreté, le créancier est chirographaire : il n''a que le droit de gage général sur le patrimoine de son débiteur, en concours avec tous les autres créanciers. La matière est régie par l''Acte uniforme portant organisation des sûretés (AUS), révisé en 2010.
 
 ## 2. Les sûretés personnelles
 
