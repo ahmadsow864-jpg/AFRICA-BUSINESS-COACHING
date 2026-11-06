@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 10/11). À exécuter après seed.sql.
+-- Cours (partie 10/12). À exécuter après seed.sql.
 
 -- Cours : Licence 2 Comptabilité : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

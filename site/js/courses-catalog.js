@@ -3338,6 +3338,186 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "lic-eco-l1",
+  "level": "Licence 1",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en sciences économiques (système LMD, contexte Sénégal et UEMOA). Le cours couvre la microéconomie 1 (consommateur, producteur, offre et demande, élasticités, équilibre), la macroéconomie 1 (comptabilité nationale, PIB, inflation, chômage, circuit économique) et les mathématiques pour économistes (fonctions, dérivées, optimisation simple). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : mathématiques du baccalauréat.",
+  "sort": 361,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 d'économie dans le système LMD.\n- Identifier les matières clés de l'année et ce que les examinateurs attendent.\n- Maîtriser une méthode de révision et un plan de six semaines avant les examens.\n\n## Le système LMD en Licence 1\n\nLe système LMD (Licence, Master, Doctorat) organise les études universitaires du Sénégal et des autres pays de l'UEMOA. La licence se prépare en six semestres ; la Licence 1 correspond aux semestres 1 et 2. Chaque semestre est découpé en unités d'enseignement (UE), qui regroupent plusieurs éléments constitutifs (les matières). Chaque UE donne droit à un nombre de crédits lorsqu'elle est validée. Dans le schéma LMD courant, un semestre représente 30 crédits et la licence 180 crédits, mais la répartition exacte des crédits, les coefficients, les règles de compensation entre matières et entre UE, ainsi que les conditions de passage en deuxième année, sont fixés par la maquette et le règlement des examens de votre université ou de votre école. Procurez-vous ce règlement dès la rentrée et lisez-le : beaucoup d'étudiants découvrent trop tard qu'une note éliminatoire ou une absence au contrôle continu les empêche de valider une UE.\n\nL'évaluation combine en général un contrôle continu (devoirs, travaux dirigés, interrogations) et un examen terminal en fin de semestre. Une session de rattrapage est souvent prévue pour les UE non validées. Retenez une règle simple : chaque note de TD compte, et l'assiduité aux travaux dirigés est la meilleure préparation aux examens, car les sujets reprennent très souvent la logique des exercices de TD.\n\n## Les matières clés de la Licence 1\n\n- Microéconomie 1 : comportement du consommateur (préférences, contrainte budgétaire, choix optimal), comportement du producteur (production, coûts, maximisation du profit), offre, demande, élasticités et équilibre du marché.\n- Macroéconomie 1 : comptabilité nationale, mesure du PIB par trois approches, PIB nominal et réel, inflation et indice des prix, chômage, circuit économique et agents économiques.\n- Mathématiques pour économistes : fonctions usuelles, dérivées et dérivées partielles, élasticité, optimisation simple avec ou sans contrainte.\n\nCes trois matières forment le socle de toute la licence. La Licence 2 approfondira les structures de marché, le modèle IS-LM et l'économétrie ; la Licence 3 traitera du développement, de la monnaie, de l'économie internationale et de l'économie publique. Les lacunes de première année se paient donc pendant trois ans.\n\nSelon les établissements, d'autres enseignements complètent l'année : introduction au droit, comptabilité, statistique descriptive, histoire des faits économiques, informatique, langues, techniques d'expression. Ce cours se concentre sur les trois matières qui pèsent le plus dans les résultats.\n\n## Les types d'épreuves\n\n- L'exercice chiffré : calculer un équilibre de marché, une élasticité, un optimum du consommateur, un PIB. On attend la démarche complète, les unités et une phrase d'interprétation.\n- La question de cours : définir une notion (coût marginal, déflateur, taux de chômage), énoncer une propriété, expliquer un mécanisme.\n- Le QCM : il teste la précision des définitions ; lisez chaque proposition jusqu'au bout, car un mot change souvent le sens.\n- La dissertation ou le commentaire court : par exemple « Le PIB mesure-t-il le bien-être ? ». On attend une introduction qui définit les termes, une problématique, un plan en deux ou trois parties et une conclusion.\n- Le cas pratique : une situation (une boulangerie de Thiès, une coopérative rizicole fictive de la vallée du fleuve) à analyser avec les outils du cours.\n- Le projet ou dossier, plus rare en L1 : une petite étude documentaire présentée à l'écrit ou à l'oral.\n\n## Méthode de révision\n\nPremière règle : comprendre avant d'apprendre. En économie, une formule n'a de valeur que si vous savez ce qu'elle représente. Quand vous écrivez Cm = P, vous devez pouvoir dire en une phrase pourquoi l'entreprise en concurrence produit jusqu'à ce point.\n\nDeuxième règle : fabriquer des fiches. Une fiche par chapitre, au maximum deux pages : définitions exactes, formules avec leurs conditions d'utilisation, un schéma décrit (par exemple le graphique offre-demande avec ses axes), un exemple chiffré résolu et les erreurs fréquentes.\n\nTroisième règle : s'entraîner à la main et chronométré. Refaites les exercices de TD sans regarder le corrigé, puis des sujets d'examen des années précédentes. Calculatrice autorisée ou non : vérifiez-le dans le règlement et entraînez-vous dans les mêmes conditions.\n\nQuatrième règle : travailler en groupe, avec méthode. Le groupe de révision est très efficace si chacun prépare une partie et l'explique aux autres. Expliquer est le meilleur test de compréhension.\n\nCinquième règle : soigner la présentation. Encadrez les résultats, indiquez les unités (FCFA, kilogrammes, milliards de FCFA), justifiez chaque étape et terminez chaque calcul par une interprétation économique.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : bilan. Rassembler cours, TD et anciens sujets ; repérer les chapitres mal maîtrisés ; revoir les dérivées et la résolution d'équations (mathématiques).\n- Semaine 2 : microéconomie, consommateur et producteur. Fiches, puis exercices d'optimum du consommateur et de maximisation du profit.\n- Semaine 3 : microéconomie, marché et élasticités. Équilibre, prix plafond ou plancher, élasticités et recette totale.\n- Semaine 4 : macroéconomie. Les trois approches du PIB, PIB réel, indice des prix, taux de chômage, circuit économique.\n- Semaine 5 : mathématiques et transversalité. Optimisation avec et sans contrainte, puis exercices mêlant maths et micro.\n- Semaine 6 : sujets blancs en conditions réelles (un par matière), correction, relecture des fiches, repos la veille de l'épreuve.\n\n## Le jour de l'examen\n\nLisez tout le sujet pendant les cinq premières minutes et repérez le barème. Commencez par l'exercice que vous maîtrisez le mieux pour sécuriser des points. Répartissez votre temps selon le barème. Gardez dix minutes pour relire : signes, unités, reports de résultats d'une question à l'autre.\n\n## Points clés\n\n- Le règlement des examens de votre établissement fixe les crédits, coefficients et règles de compensation : lisez-le.\n- Trois piliers en L1 : microéconomie 1, macroéconomie 1, mathématiques pour économistes.\n- Comprendre, ficher, s'entraîner, expliquer, présenter proprement.\n\n## Exercices\n\n- Exercice 1 : citez les trois matières principales de la Licence 1 d'économie et, pour chacune, deux notions clés.\n- Exercice 2 : distinguez unité d'enseignement, élément constitutif et crédit.\n- Exercice 3 : rédigez une fiche de révision sur l'élasticité-prix de la demande (définition, formule, interprétation, exemple).\n- Exercice 4 : construisez votre propre plan de révision de six semaines en tenant compte de vos points faibles.\n\n## Corrigé\n\n- Exercice 1 : microéconomie 1 (optimum du consommateur, équilibre du marché) ; macroéconomie 1 (PIB, taux de chômage) ; mathématiques (dérivée, optimisation sous contrainte).\n- Exercice 2 : l'unité d'enseignement regroupe des matières cohérentes ; l'élément constitutif est une matière de l'UE ; le crédit mesure la charge de travail et s'acquiert lorsque l'UE est validée selon le règlement de l'établissement.\n- Exercice 3 : l'élasticité-prix mesure la variation en pourcentage de la quantité demandée suite à une variation de 1 % du prix : e = (ΔQ/Q) / (ΔP/P). Si |e| < 1, la demande est inélastique et une hausse de prix augmente la recette ; si |e| > 1, elle est élastique. Exemple : prix +10 %, quantité −5 %, e = −0,5.\n- Exercice 4 : réponse personnelle ; un bon plan commence par un diagnostic, consacre plus de temps aux points faibles et se termine par des sujets blancs chronométrés."
+   },
+   {
+    "title": "Microéconomie 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Macroéconomie 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mathématiques pour économistes : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Microéconomie 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Macroéconomie 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques pour économistes",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-eco-l2",
+  "level": "Licence 2",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en sciences économiques (système LMD, contexte Sénégal et UEMOA). Le cours couvre la microéconomie 2 (concurrence, monopole, oligopole, théorie des jeux), la macroéconomie 2 (modèle keynésien, IS-LM, politiques budgétaire et monétaire) et la statistique et l'économétrie introductive (régression simple et interprétation). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : microéconomie, macroéconomie et mathématiques de Licence 1.",
+  "sort": 362,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Connaître les matières clés et les épreuves typiques.\n- Organiser six semaines de révision efficaces.\n\n## La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 du cycle de licence. Comme en première année, chaque semestre est composé d'unités d'enseignement (UE) regroupant des matières (éléments constitutifs), et chaque UE validée apporte des crédits. Dans le schéma LMD courant, un semestre représente 30 crédits ; mais les coefficients, les règles de compensation, la place du contrôle continu et les conditions d'admission en Licence 3 sont propres à chaque établissement. Le règlement des examens de votre université ou école fait foi : relisez-le, notamment pour les UE de Licence 1 éventuellement non acquises, que certains établissements permettent de repasser en parallèle.\n\nCe qui change en Licence 2 : le niveau d'abstraction augmente. On passe de la description (mesurer le PIB, tracer une offre et une demande) à la modélisation (expliquer pourquoi une entreprise en monopole fixe un prix plus élevé, pourquoi une hausse des dépenses publiques fait monter le taux d'intérêt). Les examens demandent davantage de raisonnement graphique et d'interprétation, et moins de simple restitution.\n\n## Les matières clés de la Licence 2\n\n- Microéconomie 2 : structures de marché. Concurrence parfaite à court et long terme, monopole, perte sèche, oligopole (Cournot, Bertrand, Stackelberg), introduction à la théorie des jeux (stratégie dominante, équilibre de Nash, dilemme du prisonnier).\n- Macroéconomie 2 : modèle keynésien et multiplicateur, modèle IS-LM, efficacité des politiques budgétaire et monétaire, effet d'éviction, spécificités d'une union monétaire comme l'UEMOA.\n- Statistique et économétrie introductive : statistiques descriptives à deux variables, covariance et corrélation, régression linéaire simple par les moindres carrés ordinaires, coefficient de détermination, test de significativité, interprétation.\n\nCes matières prolongent la Licence 1 sans la répéter. Elles préparent la Licence 3, consacrée à l'économie du développement, à l'économie monétaire et internationale et à l'économie publique. Selon les établissements, l'année comprend aussi l'histoire de la pensée économique, la comptabilité nationale approfondie, le droit, l'informatique (tableur, logiciel statistique) et les langues.\n\n## Les types d'épreuves\n\n- L'exercice chiffré long : par exemple « monopole puis duopole de Cournot » ou « équilibre IS-LM puis politique budgétaire ». Les questions s'enchaînent : une erreur au début se propage, d'où l'importance de vérifier chaque résultat intermédiaire.\n- Le graphique commenté : déplacement de IS ou de LM, perte sèche du monopole. On attend des axes nommés, des courbes repérées, les points d'équilibre avant et après.\n- La question de réflexion : « La politique budgétaire est-elle efficace dans une union monétaire ? ». Plan structuré, mobilisation des modèles, exemples.\n- L'exercice d'économétrie : calcul à la main d'une régression sur 4 à 8 observations, ou lecture d'une sortie de logiciel (coefficients, écarts-types, t de Student, R²) et interprétation.\n- Le QCM ou vrai-faux justifié.\n- Le dossier ou mini-projet : collecte de données, régression sur tableur, rapport de quelques pages.\n\n## Méthode de révision\n\nRévisez par modèles. Pour chaque modèle (monopole, Cournot, keynésien, IS-LM, régression), une fiche avec : hypothèses, équations, méthode de résolution pas à pas, graphique décrit, résultat type, interprétation, limites.\n\nEntraînez-vous aux enchaînements. Les sujets de Licence 2 font souvent comparer deux situations : concurrence et monopole, monopole et duopole, politique budgétaire avec et sans effet d'éviction. Prenez l'habitude de présenter un tableau comparatif final : il impressionne favorablement le correcteur et vous oblige à vérifier la cohérence.\n\nPour l'économétrie, refaites les calculs à la main avec un tableau de colonnes (x, y, écarts, produits, carrés). C'est long la première fois, rapide la dixième. Apprenez aussi à lire une sortie de logiciel.\n\nEnfin, liez théorie et réalité : un marché de ciment avec peu de producteurs, une compagnie aérienne en situation de quasi-monopole sur une ligne, la politique monétaire commune de la BCEAO. Les correcteurs apprécient les exemples bien choisis, à condition de ne pas inventer de chiffres réels.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : diagnostic et remise à niveau (dérivées, systèmes de deux équations, sommes et moyennes).\n- Semaine 2 : microéconomie 2, concurrence et monopole (calculs de surplus et de perte sèche).\n- Semaine 3 : microéconomie 2, oligopole et théorie des jeux (fonctions de réaction, matrices de gains).\n- Semaine 4 : macroéconomie 2, modèle keynésien, multiplicateurs, IS-LM et politiques.\n- Semaine 5 : statistique et économétrie : régression à la main, lecture de sorties, interprétation.\n- Semaine 6 : sujets blancs complets, correction, fiches de synthèse, repos.\n\n## Points clés\n\n- La Licence 2 demande de modéliser et d'interpréter, pas seulement de calculer.\n- Une fiche par modèle, un tableau comparatif par chapitre.\n- Le règlement des examens de votre établissement fixe les règles de validation.\n\n## Exercices\n\n- Exercice 1 : citez les trois matières clés de la Licence 2 et un modèle central pour chacune.\n- Exercice 2 : expliquez la différence entre un exercice de Licence 1 et un exercice de Licence 2 sur un même thème (par exemple le marché).\n- Exercice 3 : construisez la fiche-type du modèle de monopole (hypothèses, condition d'optimum, résultat, limites).\n- Exercice 4 : proposez un planning hebdomadaire pour la semaine 4 du plan de révision.\n\n## Corrigé\n\n- Exercice 1 : microéconomie 2 (monopole ou Cournot) ; macroéconomie 2 (IS-LM) ; économétrie (régression linéaire simple par les MCO).\n- Exercice 2 : en Licence 1, on calcule un équilibre de concurrence ; en Licence 2, on compare cet équilibre à celui d'un monopole ou d'un oligopole, on mesure la perte de bien-être et on interprète le pouvoir de marché.\n- Exercice 3 : hypothèses : un seul vendeur, pas de substitut proche, barrières à l'entrée ; condition : recette marginale = coût marginal ; résultat : quantité plus faible et prix plus élevé qu'en concurrence, perte sèche ; limites : menace d'entrée, régulation, demande élastique.\n- Exercice 4 : par exemple lundi multiplicateurs, mardi courbe IS, mercredi courbe LM, jeudi équilibre et politiques, vendredi exercice de synthèse chronométré, samedi correction et fiche."
+   },
+   {
+    "title": "Microéconomie 2 (structures de marché) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Macroéconomie 2 (keynésien, IS-LM, politiques) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Statistiques et économétrie introductive : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Microéconomie 2",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Macroéconomie 2",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Statistiques et économétrie introductive",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-eco-l3",
+  "level": "Licence 3",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en sciences économiques (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'économie du développement (théories, IDH, pauvreté et inégalités, cas africains fictifs), l'économie monétaire et internationale (monnaie, UEMOA et BCEAO, balance des paiements, change) et l'économie publique (biens publics, externalités, fiscalité, dépense publique). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : microéconomie, macroéconomie et économétrie de Licence 1 et 2.",
+  "sort": 363,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3, année de diplôme, dans le système LMD.\n- Identifier les matières clés et les attentes des examinateurs.\n- Organiser six semaines de révision en intégrant le mémoire ou le rapport éventuel.\n\n## La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle : sa validation donne le diplôme de licence, porte d'entrée vers les masters ou vers l'emploi. L'organisation reste celle des années précédentes : des unités d'enseignement (UE) composées de matières, des crédits acquis par UE validée, un contrôle continu et des examens de fin de semestre. Dans le schéma LMD courant, la licence complète représente 180 crédits ; mais les coefficients, les compensations, les conditions de délivrance du diplôme et l'éventuelle obligation de stage, de rapport ou de mémoire sont fixés par chaque établissement. Vérifiez votre règlement : les UE de L1 et L2 doivent toutes être acquises pour obtenir la licence.\n\nCe qui change en Licence 3 : les matières deviennent appliquées. On ne se contente plus de résoudre un modèle ; on l'utilise pour analyser une économie, une politique publique, une situation monétaire. Les sujets sont plus ouverts, les dissertations plus fréquentes, et l'on attend une culture économique solide sur l'Afrique de l'Ouest et l'UEMOA.\n\n## Les matières clés de la Licence 3\n\n- Économie du développement : croissance et développement, grandes théories (étapes, dualisme, structuralisme, dépendance, capabilités, institutions), indicateurs (PIB par habitant, IDH), pauvreté et inégalités (taux de pauvreté, Gini), enjeux africains : informel, agriculture, rente des ressources naturelles, capital humain.\n- Économie monétaire et internationale : fonctions et formes de la monnaie, création monétaire, banque centrale et politique monétaire, UEMOA et BCEAO, balance des paiements, taux de change nominal et réel, régimes de change.\n- Économie publique : biens publics, externalités, fiscalité (incidence, perte sèche, progressivité), dépense publique et soutenabilité de la dette.\n\nCes matières mobilisent tout ce qui précède : la microéconomie (surplus, élasticités) pour l'économie publique, la macroéconomie (IS-LM, multiplicateur) pour la monnaie, l'économétrie pour lire les études empiriques. Selon les établissements, l'année comprend aussi la croissance, l'économie du travail, l'économie industrielle, la méthodologie de recherche et un rapport de stage ou un mémoire.\n\n## Les types d'épreuves\n\n- La dissertation : « La croissance suffit-elle à réduire la pauvreté ? », « Avantages et limites d'une union monétaire pour ses membres ». On attend une problématique, un plan argumenté, des théories citées avec justesse et des exemples.\n- Le commentaire de texte ou de données : un extrait d'article ou un tableau de chiffres (fictifs à l'entraînement) à analyser.\n- L'exercice chiffré : calculer un IDH, un indice de Gini, un solde de la balance des paiements, un taux de change croisé, une incidence fiscale, une taxe pigouvienne.\n- Le QCM ou les questions courtes.\n- Le rapport, le mémoire ou l'exposé, avec une soutenance orale dans certains parcours.\n\n## Méthode de révision\n\nRévisez par problématiques. Pour chaque chapitre, préparez trois sujets de dissertation probables et leur plan détaillé. Le correcteur attend une réflexion organisée, pas une récitation.\n\nConstituez un carnet de références : auteurs et idées (Rostow, Lewis, Prebisch, Amin, Sen, Pigou, Coase, Samuelson, Mundell), concepts (malédiction des ressources, trilemme, passager clandestin), et exemples qualitatifs africains. Ne citez jamais un chiffre réel dont vous n'êtes pas certain : mieux vaut écrire « une part importante de l'emploi relève de l'informel » qu'un pourcentage inventé.\n\nGardez l'entraînement au calcul : les exercices chiffrés rapportent des points sûrs. Suivez l'actualité économique de la sous-région à travers des sources fiables (publications de la BCEAO, de la Commission de l'UEMOA, de l'ANSD, des institutions internationales).\n\nSi vous avez un mémoire ou un rapport, planifiez-le à part : il ne doit pas dévorer le temps de révision des examens.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : diagnostic, carnet de références, rappels de L1-L2 (surplus, élasticités, IS-LM).\n- Semaine 2 : économie du développement : théories, indicateurs, exercices IDH, Gini, pauvreté.\n- Semaine 3 : économie monétaire : monnaie, création monétaire, BCEAO, politique monétaire.\n- Semaine 4 : économie internationale : balance des paiements, change, régimes de change, trilemme.\n- Semaine 5 : économie publique : biens publics, externalités, incidence fiscale, dette.\n- Semaine 6 : deux dissertations et un sujet chiffré complet en conditions réelles, correction, repos.\n\n## Points clés\n\n- La Licence 3 est l'année du diplôme : toutes les UE du cycle doivent être acquises.\n- Les sujets sont plus ouverts : problématiser, argumenter, illustrer.\n- Ne jamais inventer de statistiques réelles ; raisonner sur des mécanismes et des exemples qualitatifs.\n\n## Exercices\n\n- Exercice 1 : citez les trois matières clés de la Licence 3 et deux notions par matière.\n- Exercice 2 : proposez une problématique pour le sujet « Le franc CFA : atout ou contrainte ? ».\n- Exercice 3 : pourquoi vaut-il mieux ne pas citer de statistique dont on n'est pas sûr ?\n- Exercice 4 : construisez votre carnet de références avec cinq auteurs et leur idée principale.\n\n## Corrigé\n\n- Exercice 1 : développement (IDH, seuil de pauvreté) ; monnaie et international (balance des paiements, taux de change réel) ; économie publique (bien public, taxe pigouvienne).\n- Exercice 2 : par exemple : « Dans quelle mesure l'appartenance à une union monétaire à change fixe protège-t-elle la stabilité des États membres tout en limitant leurs marges de manœuvre ? ».\n- Exercice 3 : une statistique fausse décrédibilise toute la copie ; le correcteur connaît souvent les ordres de grandeur. Un raisonnement juste sans chiffre vaut mieux qu'un chiffre faux.\n- Exercice 4 : par exemple Rostow (étapes de la croissance), Lewis (dualisme et transfert de main-d'œuvre), Sen (capabilités), Pigou (taxe corrigeant les externalités), Mundell (zones monétaires optimales, trilemme)."
+   },
+   {
+    "title": "Économie du développement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Économie monétaire et internationale : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Économie publique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie du développement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie monétaire et internationale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie publique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "lic-mkt-l1",
   "level": "Licence 1",
   "subject": "Marketing et commerce",
