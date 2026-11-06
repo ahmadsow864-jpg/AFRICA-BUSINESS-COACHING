@@ -1680,7 +1680,7 @@ select c.id, 'La chaîne logistique : flux, acteurs et coûts', '## Objectifs de
 
 La chaîne logistique (en anglais supply chain) est l''ensemble des étapes qui permettent de mettre un produit à la disposition du client, au bon endroit, au bon moment, en bonne quantité, en bon état et au meilleur coût. Elle commence chez le fournisseur de matières premières et se termine chez le consommateur final. Pour une entreprise de distribution, elle couvre l''achat, le transport d''approvisionnement, la réception, le stockage, la préparation des commandes, le transport de livraison et le service après-livraison.
 
-On parle souvent des « 5 B » de la logistique : le bon produit, en bonne quantité, au bon endroit, au bon moment, au bon coût. Chaque fois qu''un de ces « B » manque, le client est insatisfait ou l''entreprise perd de l''argent.
+On résume souvent cet objectif par les « 5 B » : bon produit, bonne quantité, bon endroit, bon moment, bon coût.
 
 ## Les trois flux
 
@@ -1703,7 +1703,7 @@ Entre la commande et la livraison, plusieurs acteurs interviennent :
 - le distributeur (grossiste, demi-grossiste, détaillant) ;
 - le client final.
 
-Dans une petite entreprise, plusieurs rôles sont souvent tenus par la même personne : le gérant passe les commandes, suit le stock et organise les livraisons. Plus l''entreprise grandit, plus il devient nécessaire de séparer ces fonctions et de formaliser les procédures.
+Dans une petite entreprise, le gérant tient souvent plusieurs de ces rôles ; en grandissant, il faut les séparer et formaliser les procédures.
 
 ## Le coût logistique total
 
@@ -1733,14 +1733,9 @@ Coût logistique mensuel : 28 000 × 500 = 14 000 000 FCFA.
 
 Ce calcul permet de raisonner. Si le gérant obtient une baisse de 1 000 FCFA par tonne sur la distribution en regroupant mieux ses livraisons, il économise 500 000 FCFA par mois, soit 6 000 000 FCFA par an. On voit aussi que la distribution représente 9 500 / 28 000, soit environ 33,9 % du coût logistique : c''est un poste prioritaire à surveiller.
 
-## Méthode : cartographier sa chaîne en quatre étapes
+## Méthode : cartographier sa chaîne
 
-- Étape 1 : dessiner le parcours de la marchandise, du fournisseur au client, en listant chaque lieu (port, entrepôt, dépôt, point de vente).
-- Étape 2 : pour chaque étape, noter qui agit, quel document circule et combien de temps cela prend.
-- Étape 3 : relever les coûts de chaque étape sur un mois.
-- Étape 4 : repérer les points faibles : attentes, doubles manipulations, documents manquants, postes de coût les plus lourds.
-
-Cette cartographie simple, faite sur une feuille ou un tableur, est le point de départ de toute amélioration.
+Dessinez le parcours de la marchandise (port, entrepôt, dépôt, point de vente), notez pour chaque étape qui agit, quel document circule, combien de temps et combien d''argent elle consomme, puis repérez les attentes, doubles manipulations et postes de coût les plus lourds.
 
 ## Points clés
 
@@ -1778,9 +1773,9 @@ Savoir organiser un entrepôt, classer les articles avec la méthode ABC, valori
 
 ## Le rôle de l''entrepôt
 
-L''entrepôt n''est pas un simple local où l''on entasse la marchandise. Il remplit quatre fonctions : la réception (contrôle des quantités et de l''état des produits), le stockage (rangement sûr et accessible), la préparation des commandes (prélèvement des articles demandés) et l''expédition (chargement et documents). Un entrepôt bien organisé distingue physiquement ces zones : quai de réception, zone de stockage, zone de préparation, quai d''expédition.
+L''entrepôt remplit quatre fonctions : la réception (contrôle des quantités et de l''état des produits), le stockage (rangement sûr et accessible), la préparation des commandes (prélèvement des articles demandés) et l''expédition (chargement et documents). Un entrepôt bien organisé distingue physiquement ces zones : quai de réception, zone de stockage, zone de préparation, quai d''expédition.
 
-Quelques règles de base : chaque emplacement porte une adresse (allée, rayonnage, niveau), chaque article a une fiche de stock, les produits lourds sont rangés en bas, les produits les plus demandés sont placés près de la zone de préparation, et rien n''entre ni ne sort sans document.
+Règles de base : chaque emplacement a une adresse (allée, rayonnage, niveau), les produits les plus demandés sont près de la préparation, et rien n''entre ni ne sort sans document.
 
 ## La méthode ABC
 
@@ -1833,7 +1828,7 @@ L''inventaire consiste à compter physiquement les stocks et à comparer avec le
 - Inventaire tournant : on compte une partie des articles chaque semaine, les articles A plus souvent.
 - Inventaire permanent : c''est la tenue continue des fiches de stock, qui donne à tout moment le stock théorique.
 
-Bonnes pratiques : compter en binôme, utiliser des fiches de comptage pré-numérotées, bloquer les mouvements pendant le comptage, recompter en cas d''écart important.
+Bonnes pratiques : compter en binôme, bloquer les mouvements pendant le comptage, recompter en cas d''écart important.
 
 Écart d''inventaire = stock physique − stock théorique. Taux d''écart = écart / stock théorique.
 
@@ -1966,7 +1961,7 @@ Connaître les principaux documents qui accompagnent une marchandise, comprendre
 
 ## Pourquoi des documents ?
 
-Chaque déplacement de marchandise doit être prouvé et tracé. Les documents servent à prouver ce qui a été remis et reçu, à transférer la responsabilité d''un acteur à l''autre, à permettre le dédouanement et à déclencher la facturation et le paiement. Un document manquant peut bloquer un conteneur au port pendant des jours et générer des frais de stationnement importants.
+Les documents prouvent ce qui a été remis et reçu, transfèrent la responsabilité d''un acteur à l''autre, permettent le dédouanement et déclenchent le paiement. Un document manquant peut bloquer un conteneur au port et générer des frais importants.
 
 ## Les principaux documents
 
@@ -1974,7 +1969,6 @@ Chaque déplacement de marchandise doit être prouvé et tracé. Les documents s
 - Le bon de livraison : il accompagne la marchandise ; le client le signe à la réception, en notant les réserves éventuelles (colis abîmés, manquants).
 - La lettre de voiture : document du transport routier qui matérialise le contrat de transport entre l''expéditeur, le transporteur et le destinataire.
 - Le connaissement (Bill of Lading) : document du transport maritime. Il prouve la prise en charge de la marchandise par le transporteur et, dans sa forme négociable, il représente la marchandise elle-même : celui qui le détient peut en prendre livraison.
-- La lettre de transport aérien : son équivalent pour l''aérien, non négociable.
 - La facture commerciale : elle indique la valeur de la marchandise et sert de base au dédouanement.
 - La liste de colisage : détail du contenu de chaque colis (poids, dimensions, nombre).
 - Le certificat d''origine : il atteste du pays d''origine, ce qui peut avoir un effet sur les droits applicables.
@@ -2007,7 +2001,7 @@ Quelques règles très utilisées, en principe :
 - DAP (rendu au lieu de destination) : le vendeur supporte frais et risques jusqu''au lieu convenu, marchandise prête à être déchargée ; l''acheteur s''occupe du dédouanement import.
 - DDP (rendu droits acquittés) : le vendeur assume tout, y compris le dédouanement import et les droits.
 
-Point souvent mal compris : en CFR et CIF, le vendeur paie le transport jusqu''à destination, mais si la marchandise est endommagée en mer, c''est l''acheteur qui supporte le risque (d''où l''intérêt de l''assurance).
+Point souvent mal compris : en CFR et CIF, si la marchandise est endommagée en mer, c''est l''acheteur qui supporte le risque.
 
 ## Exemple : coût de revient rendu entrepôt
 
