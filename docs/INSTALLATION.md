@@ -34,6 +34,9 @@ le site, Supabase (offre gratuite pour démarrer) héberge la base de données e
 2. Ouvrez **SQL Editor → New query**, collez tout le contenu de
    `supabase/migrations/001_schema.sql`, cliquez **Run**.
 3. Nouvelle requête : collez `supabase/seed.sql`, cliquez **Run**.
+4. Puis, une requête à la fois : `supabase/seed_cours_1.sql`, `seed_cours_2.sql`,
+   `seed_cours_3.sql`, `seed_cours_4.sql` (les 27 cours et leurs 162 leçons).
+   Ces fichiers peuvent être relancés sans créer de doublons.
 
 ## Étape 2 — Régler l'authentification
 
@@ -168,10 +171,31 @@ Ils tournent aussi automatiquement sur GitHub à chaque modification
 Les textes de départ sont dans `site/js/data.js`. Après modification :
 
 ```bash
-node tools/generate-seed.mjs   # régénère supabase/seed.sql
+node tools/generate-seed.mjs   # régénère supabase/seed*.sql et site/js/courses-catalog.js
 ```
 
 Une fois Supabase branché, il est plus simple de tout modifier depuis `/admin/`.
+
+## Les cours fournis
+
+27 cours complets (162 leçons) rangés dans `content/courses/` (un fichier par cours) :
+
+- **Formation professionnelle** (un cours par module) : paie Sénégal, paie UEMOA/CEDEAO,
+  transport et logistique, carburant, gestion du transport, parkings d'entreprise, parkings
+  publics, station-service, flottes, vente de véhicules, GPS, apprendre et enseigner en ligne.
+- **Collège / lycée** : Maths 6e, Français 5e, SVT 4e, Maths 3e (BFEM), Maths, Physique-Chimie
+  et Philosophie Terminale.
+- **Université** : Économie et Comptabilité (L1), Informatique (L1), Statistiques (L2), GRH et
+  Finance (M1), Management stratégique (M2), Méthodologie de la recherche (Doctorat).
+
+Chaque cours : 5 leçons écrites avec exercices et corrigés (la 1re gratuite) + 1 cours vidéo de
+1h30 fourni sous forme de **plan minuté et texte complet du formateur**, prêt à être filmé.
+Une fois la vidéo tournée et mise en ligne (YouTube non répertorié, Vimeo…), collez son lien
+dans **Admin → Cours & leçons → Leçons → Modifier → Lien vidéo**.
+
+Les cours ont été rédigés avec une IA : faites-les relire par un enseignant ou un professionnel
+du domaine avant publication commerciale (en particulier les numéros de comptes SYSCOHADA,
+les taux marqués « fictifs » et les références juridiques).
 
 ## Limites connues
 

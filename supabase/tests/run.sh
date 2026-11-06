@@ -18,4 +18,6 @@ PSQL=(psql -h "$WORK" -p 54329 -U postgres -d postgres -v ON_ERROR_STOP=1 -q)
 "${PSQL[@]}" -f "$ROOT/supabase/migrations/001_schema.sql"
 "${PSQL[@]}" -f "$ROOT/supabase/migrations/001_schema.sql"   # ré-exécution : doit rester sans erreur
 "${PSQL[@]}" -f "$ROOT/supabase/seed.sql"
+for f in "$ROOT"/supabase/seed_cours_*.sql; do [ -e "$f" ] && "${PSQL[@]}" -f "$f"; done
+for f in "$ROOT"/supabase/seed_cours_*.sql; do [ -e "$f" ] && "${PSQL[@]}" -f "$f"; done   # ré-exécution sans doublon
 "${PSQL[@]}" -tA -f "$HERE/rls_test.sql" 2>&1 | grep -E "OK :|ÉCHEC|ERROR|ERREUR|===" || true

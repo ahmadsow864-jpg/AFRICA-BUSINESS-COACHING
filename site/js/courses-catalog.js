@@ -914,6 +914,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "management-strategique-master2",
+  "level": "Master 2",
+  "subject": "Management",
+  "module": null,
+  "title": "Management stratégique M2 : diagnostic, choix, changement et entrepreneuriat en Afrique",
+  "description": "Ce cours forme au diagnostic stratégique (PESTEL, cinq forces, ressources, chaîne de valeur, SWOT), aux choix stratégiques, à la conduite du changement, à la gouvernance et à l'entrepreneuriat dans le contexte africain. Il s'adresse aux étudiants de Master 2 et aux cadres dirigeants en formation. Prérequis : bases du management, du marketing et de la finance d'entreprise.",
+  "sort": 70,
+  "lessons": [
+   {
+    "title": "La démarche stratégique et le diagnostic externe : PESTEL et cinq forces",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\n- Situer la démarche de management stratégique et ses étapes.\n- Analyser le macro-environnement avec le modèle PESTEL.\n- Analyser l'intensité concurrentielle d'un secteur avec les cinq forces de Porter.\n\n## 1. La démarche stratégique\n\nLa stratégie est l'ensemble des choix d'allocation de ressources qui engagent l'organisation sur le long terme, afin de lui donner une position durablement favorable dans son environnement. Elle répond à trois questions : où en sommes-nous ? où voulons-nous aller ? comment y aller ?\n\nLa démarche classique, souvent associée au modèle LCAG (Learned, Christensen, Andrews, Guth) de la Harvard Business School, comprend :\n\n- La définition de la vocation : mission, vision, valeurs.\n- Le diagnostic externe (opportunités et menaces) et interne (forces et faiblesses).\n- La formulation et le choix des options stratégiques.\n- Le déploiement : structures, ressources, plans d'action, conduite du changement.\n- Le contrôle et l'ajustement.\n\nCette vision planificatrice a été critiquée par Henry Mintzberg : une partie de la stratégie réalisée est émergente, issue d'apprentissages et d'ajustements successifs. Dans des environnements instables, comme beaucoup de marchés africains soumis à des chocs (prix des matières premières, climat, crises sécuritaires, changements réglementaires), il faut combiner orientation de long terme et capacité d'adaptation.\n\n## 2. Le diagnostic externe : le modèle PESTEL\n\nLe PESTEL analyse six dimensions du macro-environnement :\n\n- Politique : stabilité des institutions, politiques sectorielles, relations régionales, commande publique.\n- Économique : croissance, inflation, pouvoir d'achat, accès au crédit, taux de change (fixe dans l'UEMOA vis-à-vis de l'euro, mais variable vis-à-vis des autres monnaies), poids de l'informel.\n- Socioculturel : démographie jeune, urbanisation rapide, habitudes de consommation, rôle des réseaux communautaires et religieux, langues.\n- Technologique : diffusion de la téléphonie mobile et de la monnaie électronique, accès à l'énergie, infrastructures numériques.\n- Écologique : changement climatique, pluviométrie, désertification, gestion des déchets plastiques, exigences environnementales des partenaires.\n- Légal : droit OHADA des affaires, fiscalité, réglementation sectorielle, protection des données, droit du travail (en transition au Sénégal avec le projet de nouveau Code du travail).\n\nMéthode : pour chaque dimension, identifier les tendances, évaluer leur impact (fort, moyen, faible) et leur probabilité, puis les traduire en opportunités ou en menaces pour l'entreprise. Un PESTEL utile ne se contente pas d'une liste : il hiérarchise.\n\nLes accords d'intégration régionale méritent une attention particulière : l'UEMOA, la CEDEAO et la Zone de libre-échange continentale africaine (ZLECAf) modifient progressivement les conditions d'accès aux marchés voisins, avec des calendriers et des règles d'origine qu'il faut suivre dans les textes officiels.\n\n## 3. L'analyse sectorielle : les cinq forces de Porter\n\nMichael Porter montre que la rentabilité moyenne d'un secteur dépend de cinq forces :\n\n- L'intensité de la rivalité entre concurrents existants (nombre, croissance du marché, différenciation, coûts fixes, barrières à la sortie).\n- La menace de nouveaux entrants, qui dépend des barrières à l'entrée : économies d'échelle, capitaux nécessaires, accès à la distribution, réglementation, image de marque.\n- La menace des produits de substitution, qui satisfont le même besoin autrement.\n- Le pouvoir de négociation des fournisseurs (concentration, importance de leur produit, coûts de changement).\n- Le pouvoir de négociation des clients (concentration, volume d'achat, sensibilité au prix, information).\n\nOn y ajoute parfois une sixième force : le rôle des pouvoirs publics, déterminant en Afrique (licences, prix administrés, commande publique, politique douanière).\n\n## Exemple : le secteur du ciment en Afrique de l'Ouest (analyse simplifiée et générale)\n\n- Rivalité : quelques grands producteurs ; produit peu différencié ; concurrence par les prix et la logistique.\n- Nouveaux entrants : barrières élevées (investissement très lourd, accès au calcaire, autorisations), mais des investisseurs internationaux entrent périodiquement.\n- Substituts : faibles pour la construction moderne ; matériaux locaux (terre stabilisée, briques de terre comprimée) en développement pour des raisons de coût et de confort thermique.\n- Fournisseurs : l'énergie est un poste majeur ; les fournisseurs d'énergie et de combustibles ont un pouvoir important.\n- Clients : grands distributeurs et entreprises de BTP négocient fortement ; les particuliers achètent au détail.\n- Pouvoirs publics : grands projets d'infrastructures, politique de prix et de douane.\n\nConclusion : secteur à barrières d'entrée fortes, mais à rentabilité sensible aux coûts énergétiques et aux prix ; les facteurs clés de succès sont la maîtrise des coûts de production et la logistique de distribution.\n\n## 4. Groupes stratégiques et facteurs clés de succès\n\nUn groupe stratégique rassemble les entreprises d'un secteur qui suivent des stratégies proches (gamme, prix, zone géographique, canaux). Les facteurs clés de succès (FCS) sont les éléments que toute entreprise doit maîtriser pour réussir dans le secteur : par exemple, pour la boutique de quartier, la proximité, le crédit informel accordé aux clients fidèles et l'approvisionnement régulier.\n\n## Points clés\n\n- La stratégie combine vision de long terme et capacité d'adaptation (stratégies délibérées et émergentes).\n- Le PESTEL hiérarchise les tendances du macro-environnement en opportunités et menaces.\n- Les cinq forces de Porter expliquent la rentabilité d'un secteur ; l'État est souvent une sixième force en Afrique.\n- Groupes stratégiques et FCS précisent l'analyse concurrentielle.\n\n## Exercices\n\n- Exercice 1 : Réalisez un PESTEL synthétique pour une entreprise de livraison de repas à Dakar (deux éléments par dimension).\n- Exercice 2 : Analysez la menace des substituts pour une entreprise de transport interurbain par car.\n- Exercice 3 : Citez trois barrières à l'entrée dans le secteur bancaire.\n- Exercice 4 : Distinguez stratégie délibérée et stratégie émergente avec un exemple.\n\n## Corrigé\n\n- Exercice 1 : P : réglementation de la circulation des deux-roues, politique de soutien au numérique. E : pouvoir d'achat des classes moyennes urbaines, coût du carburant. S : urbanisation et embouteillages, habitudes de repas pris hors domicile. T : diffusion du smartphone, paiement mobile. E : emballages plastiques et réglementation, chaleur (conservation). L : statut des livreurs (droit du travail en transition), protection des données clients.\n- Exercice 2 : Substituts : covoiturage, transport en taxi-brousse, minibus, train lorsque la ligne existe, avion pour les longues distances, et même le transfert d'argent qui évite certains déplacements. La menace dépend du prix relatif, du confort, de la sécurité et de la régularité.\n- Exercice 3 : Capitaux minimums réglementaires et agrément des autorités, réseau d'agences ou infrastructure numérique coûteuse, confiance et réputation, accès aux systèmes de paiement.\n- Exercice 4 : Délibérée : un groupe décide d'ouvrir des filiales dans trois pays voisins selon un plan quinquennal. Émergente : une entreprise de cosmétiques découvre que ses ventes en ligne via les réseaux sociaux dépassent celles des boutiques et réoriente progressivement sa distribution."
+   },
+   {
+    "title": "Diagnostic interne : ressources, chaîne de valeur et SWOT",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les choix stratégiques : stratégies génériques, croissance et portefeuille",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Conduite du changement et gouvernance d'entreprise",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Entrepreneuriat en Afrique : modèles d'affaires, financement et croissance",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : élaborer et déployer la stratégie d'un groupe familial",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "philosophie-terminale",
   "level": "Terminale",
   "subject": "Philosophie",
@@ -1003,6 +1051,54 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : une journée de gestion dans une station-service",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "methodologie-recherche-doctorat",
+  "level": "Doctorat",
+  "subject": "Méthodologie de la recherche",
+  "module": null,
+  "title": "Méthodologie de la recherche doctorale : de la problématique à la soutenance",
+  "description": "Ce séminaire doctoral accompagne la construction d'une thèse : question de recherche et revue de littérature, posture épistémologique, méthodes qualitatives, quantitatives et mixtes, collecte et analyse des données, rédaction, éthique et soutenance. Il s'appuie sur des exemples de terrains africains. Il s'adresse aux doctorants et aux étudiants de Master recherche ayant un thème de thèse, même provisoire.",
+  "sort": 80,
+  "lessons": [
+   {
+    "title": "De la question de départ à la problématique : revue de littérature et hypothèses",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\n- Passer d'un thème de recherche à une question de recherche précise et à une problématique.\n- Conduire une revue de littérature systématique et critique.\n- Formuler des objectifs et, le cas échéant, des hypothèses.\n\n## 1. Du thème à la question de départ\n\nUne thèse de doctorat est une contribution originale à la connaissance. Elle commence rarement par une question claire : on part d'un thème (par exemple « la microfinance et les femmes au Sénégal »), trop large pour être étudié. Le travail des premiers mois consiste à le resserrer.\n\nUne bonne question de départ, selon la tradition des manuels de méthode en sciences sociales (Quivy et Van Campenhoudt), possède trois qualités :\n\n- Clarté : elle est précise, univoque et concise.\n- Faisabilité : elle peut être traitée avec les ressources, le temps et l'accès au terrain dont dispose le doctorant.\n- Pertinence : elle vise à comprendre ou expliquer, et non à juger ; elle s'inscrit dans un débat scientifique.\n\nExemple : « La microfinance est-elle bonne pour les femmes ? » est vague et normative. Une meilleure version : « Dans quelle mesure l'accès au crédit de groupe modifie-t-il la participation des commerçantes de Kaolack aux décisions économiques du ménage ? ».\n\n## 2. La revue de littérature\n\nLa revue de littérature n'est pas un résumé de lectures : c'est une analyse critique et structurée de l'état des connaissances, qui fait apparaître ce que l'on sait, les débats, les limites et les zones d'ombre. Elle justifie la question de recherche et positionne la contribution.\n\nMéthode :\n\n- Définir les mots-clés et leurs synonymes, en français et en anglais (la majorité des publications est en anglais).\n- Interroger les bases de données bibliographiques et les archives ouvertes, ainsi que la littérature grise (rapports d'organismes, thèses soutenues dans les universités africaines, documents des instituts nationaux de statistique et des banques centrales).\n- Fixer des critères d'inclusion et d'exclusion (période, langue, type d'étude, zone géographique).\n- Lire d'abord les titres et résumés, puis les textes retenus en entier.\n- Construire une grille de lecture : auteurs, année, question, théorie, terrain, méthode, résultats, limites.\n- Organiser la synthèse par thèmes ou par débats, et non par auteur.\n- Gérer les références avec un logiciel bibliographique dès le début.\n\nPour certaines questions, on réalise une revue systématique, avec un protocole explicite et reproductible, voire une méta-analyse qui combine statistiquement les résultats d'études comparables.\n\nUne attention particulière doit être portée aux travaux produits en Afrique et sur l'Afrique : ils sont souvent moins visibles dans les grandes bases internationales, mais indispensables pour contextualiser la recherche.\n\n## 3. De la revue à la problématique\n\nLa problématique est la construction intellectuelle qui relie la question de recherche à un cadre théorique et à un « gap » identifié dans la littérature. Elle répond à : quel problème scientifique précis ? pourquoi est-il important ? sous quel angle théorique l'aborde-t-on ? que va-t-on apporter de nouveau ?\n\nTypes de contributions : combler un manque empirique (un terrain jamais étudié), tester une théorie dans un nouveau contexte, réconcilier des résultats contradictoires, proposer un nouveau concept ou un nouveau modèle, améliorer une méthode.\n\n## 4. Objectifs et hypothèses\n\n- Objectif général : ce que la recherche vise globalement.\n- Objectifs spécifiques : déclinaisons opérationnelles, mesurables.\n- Hypothèses : réponses provisoires à la question, formulées de façon testable dans une démarche hypothético-déductive (quantitative le plus souvent). Une hypothèse relie des concepts opérationnalisés en variables.\n- Propositions ou questions de recherche secondaires : dans une démarche qualitative exploratoire, on parle plutôt de propositions ou de questions qui guident l'enquête.\n\nExemple : objectif général : analyser l'effet du crédit de groupe sur l'autonomie économique des commerçantes. Hypothèse H1 : l'ancienneté dans un groupe de crédit est positivement associée à la participation aux décisions d'investissement du ménage. Variables : ancienneté (en cycles de prêt), indice de participation aux décisions (construit à partir d'un questionnaire).\n\n## 5. Le cadre conceptuel\n\nOn définit chaque concept, ses dimensions et ses indicateurs. Par exemple, « autonomie économique » peut comprendre la maîtrise des revenus, la participation aux décisions et la liberté de déplacement pour le commerce ; chaque dimension est mesurée par des indicateurs (questions précises). Ce passage du concept à l'indicateur est appelé opérationnalisation.\n\n## Points clés\n\n- Une bonne question de départ est claire, faisable et pertinente.\n- La revue de littérature est critique et organisée par thèmes ; elle identifie un manque.\n- La problématique relie question, théorie et contribution attendue.\n- Les concepts sont opérationnalisés en dimensions et indicateurs.\n\n## Exercices\n\n- Exercice 1 : Améliorez la question : « Comment améliorer l'agriculture au Sénégal ? ».\n- Exercice 2 : Proposez cinq critères d'inclusion pour une revue de littérature sur l'adoption du paiement mobile par les petites entreprises en Afrique de l'Ouest.\n- Exercice 3 : Formulez une hypothèse testable à partir de la question : « L'usage de la monnaie électronique favorise-t-il l'épargne des ménages ruraux ? ».\n- Exercice 4 : Opérationnalisez le concept de « performance d'une PME » en trois dimensions et deux indicateurs par dimension.\n\n## Corrigé\n\n- Exercice 1 : Par exemple : « Quels facteurs expliquent l'adoption des semences certifiées de riz par les producteurs de la vallée du fleuve Sénégal ? ». La question est précise, explicative et faisable.\n- Exercice 2 : Publications de 2010 à aujourd'hui ; articles évalués par les pairs, thèses et rapports institutionnels ; études portant sur au moins un pays d'Afrique de l'Ouest ; population de micro, petites ou moyennes entreprises ; études empiriques mesurant l'adoption ou l'usage.\n- Exercice 3 : H1 : les ménages ruraux qui utilisent la monnaie électronique depuis au moins un an ont une probabilité plus élevée de détenir une épargne formelle ou semi-formelle que les ménages non utilisateurs, à caractéristiques socio-économiques comparables.\n- Exercice 4 : Financière : évolution du chiffre d'affaires, rentabilité. Commerciale : part de marché locale, fidélité des clients. Sociale : nombre d'emplois créés, taux de rotation du personnel."
+   },
+   {
+    "title": "Épistémologie et posture du chercheur",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Choisir son design : méthodes qualitatives, quantitatives et mixtes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Collecte et analyse des données",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Rédiger la thèse, éthique de la recherche et soutenance",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : construire la cohérence de sa thèse",
     "kind": "video",
     "is_free": false,
     "duration_min": 90

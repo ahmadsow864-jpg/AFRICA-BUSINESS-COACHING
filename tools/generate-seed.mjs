@@ -1,6 +1,6 @@
 // Génère supabase/seed.sql à partir de site/js/data.js (source unique des contenus).
 // Utilisation : node tools/generate-seed.mjs
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync, unlinkSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import vm from "node:vm";
@@ -46,7 +46,15 @@ const courses = existsSync(dir)
 courses.sort((a, b) => (a.sort || 0) - (b.sort || 0) || a.slug.localeCompare(b.slug));
 const serviceIds = new Set(data.services.map((x) => x.id));
 let nLessons = 0;
+const courseFiles = [];
+let cur = null;
 for (const c of courses) {
+  // Les cours sont répartis dans plusieurs fichiers (≈ 300 Ko max) pour l'éditeur SQL de Supabase.
+  if (!cur || cur.size > 300000) {
+    cur = { lines: [], size: 0 };
+    courseFiles.push(cur);
+  }
+  const before = out.length;
   if (!/^[a-z0-9-]{2,80}$/.test(c.slug)) throw new Error("slug invalide : " + c.slug);
   if (!levelNames.has(c.level)) throw new Error(c.slug + " : niveau inconnu " + c.level);
   if (c.module && !serviceIds.has(c.module)) throw new Error(c.slug + " : module inconnu " + c.module);
@@ -62,9 +70,19 @@ from public.courses c where c.slug = ${q(c.slug)}
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = ${q(l.title)});`);
   });
   out.push("");
+  const chunk = out.splice(before);
+  cur.lines.push(...chunk);
+  cur.size += chunk.join("\n").length;
 }
 
 writeFileSync(join(root, "supabase/seed.sql"), out.join("\n"));
+for (const f of readdirSync(join(root, "supabase")).filter((f) => /^seed_cours_\d+\.sql$/.test(f))) {
+  unlinkSync(join(root, "supabase", f)); // anciens fichiers supprimés puis régénérés ci-dessous
+}
+courseFiles.forEach((f, i) => {
+  writeFileSync(join(root, `supabase/seed_cours_${i + 1}.sql`),
+    `-- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.\n-- Cours (partie ${i + 1}/${courseFiles.length}). À exécuter après seed.sql.\n\n` + f.lines.join("\n"));
+});
 
 // Catalogue public pour le site sans base : titres de toutes les leçons,
 // mais texte complet UNIQUEMENT pour les leçons gratuites (le reste est réservé aux abonnés).

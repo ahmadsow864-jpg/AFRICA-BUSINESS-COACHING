@@ -34,12 +34,20 @@
         if (lines.length > 1) renderContent(box, lines.slice(1).join("\n"));
         return;
       }
-      var lines2 = block.split("\n");
-      if (lines2.every(function (l) { return /^\s*- /.test(l); })) {
-        box.appendChild(h("ul", { class: "lesson-list" }, lines2.map(function (l) { return h("li", { text: l.replace(/^\s*- /, "") }); })));
-        return;
-      }
-      box.appendChild(h("p", { class: "lesson-text", text: block }));
+      // Regroupe les lignes consécutives : « - » = liste à puces, sinon paragraphe.
+      var para = [], list = null;
+      function flushPara() { if (para.length) { box.appendChild(h("p", { class: "lesson-text", text: para.join("\n") })); para = []; } }
+      block.split("\n").forEach(function (line) {
+        if (/^\s*- /.test(line)) {
+          flushPara();
+          if (!list) { list = h("ul", { class: "lesson-list" }); box.appendChild(list); }
+          list.appendChild(h("li", { text: line.replace(/^\s*- /, "") }));
+        } else {
+          list = null;
+          para.push(line);
+        }
+      });
+      flushPara();
     });
   }
 
@@ -215,7 +223,7 @@
     document.title = c.title + " — Éducation en ligne";
     $("c-title").textContent = c.title;
     $("c-desc").textContent = c.description || "";
-    $("c-level").textContent = (c.levels ? CYCLES[c.levels.cycle] + " · " + c.levels.name : "") + (c.subject ? " · " + c.subject : "");
+    $("c-level").textContent = (c.levels ? (CYCLES[c.levels.cycle] === c.levels.name ? c.levels.name : CYCLES[c.levels.cycle] + " · " + c.levels.name) : "") + (c.subject ? " · " + c.subject : "");
 
     var ol = $("c-outline");
     outline.forEach(function (l) {
@@ -228,7 +236,7 @@
     });
     if (!outline.length) ol.appendChild(h("li", { class: "muted", text: "Leçons en préparation." }));
 
-    async function openLesson(l) {
+    async function openLesson(l, noScroll) {
       A.clear(box).appendChild(h("p", { class: "muted", text: "Chargement…" }));
       var data = null;
       if (sb && l.id) {
@@ -256,9 +264,9 @@
         box.appendChild(h("p", { class: "msg msg--info", text: "Vidéo en cours de tournage : voici le plan minuté et le texte complet de la séance." }));
       }
       renderContent(box, data.content);
-      box.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (!noScroll) box.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    if (outline[0]) openLesson(outline[0]);
+    if (outline[0]) openLesson(outline[0], true);
   }
 
   // ===================== ESPACE ÉLÈVE =====================

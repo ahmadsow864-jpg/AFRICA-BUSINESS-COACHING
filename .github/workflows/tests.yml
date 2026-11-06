@@ -14,8 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: seed.sql à jour avec site/js/data.js
-        run: node tools/generate-seed.mjs && git diff --exit-code supabase/seed.sql
+      - name: Cours valides
+        run: python3 tools/check-courses.py
+      - name: Fichiers générés à jour (seed, catalogue)
+        run: node tools/generate-seed.mjs && git add -N . && git diff --exit-code supabase/ site/js/courses-catalog.js
       - name: Syntaxe JavaScript
         run: for f in site/js/*.js site/admin/*.js; do node --check "$f"; done
       - name: Tests de sécurité (RLS) sur PostgreSQL

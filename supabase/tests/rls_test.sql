@@ -8,6 +8,11 @@ begin
   raise notice 'OK : %', label;
 end $$;
 
+-- Contenus initiaux chargés une seule fois (seed relancé deux fois)
+select pg_temp.ok((select count(*) = (select count(distinct slug) from public.courses where slug is not null) from public.courses where slug is not null), 'cours du seed sans doublon');
+select pg_temp.ok((select count(*) = 6 * (select count(*) from public.courses where slug is not null) from public.lessons l join public.courses c on c.id = l.course_id where c.slug is not null), 'leçons du seed sans doublon (6 par cours)');
+select pg_temp.ok((select count(*) = (select count(*) from public.courses where slug is not null) from public.lessons where kind = 'video' and duration_min = 90), 'un cours vidéo de 1h30 par cours');
+
 -- Utilisateurs de test
 insert into auth.users (id, email, raw_user_meta_data) values
   ('00000000-0000-0000-0000-0000000000a1', 'admin@test.sn',  '{"full_name":"Admin"}'),
