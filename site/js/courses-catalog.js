@@ -5310,5 +5310,71 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "mas-log-m2",
+  "level": "Master 2",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Master 2 : reussir ses examens",
+  "description": "Preparation aux examens de Master 2 en Logistique et transport : logistique 4.0 et digitalisation de la chaine d'approvisionnement (tracabilite, systemes d'information logistiques), achats strategiques et relations fournisseurs avancees, methodologie du memoire professionnel et soutenance. Cas d'entreprises senegalaises et africaines fictifs, calculs verifies, sujet type et atelier methodologique final. Public : etudiants de Master 2 en logistique, transport ou supply chain, en fin de cycle.",
+  "sort": 792,
+  "lessons": [
+   {
+    "title": "Reussir ses examens de Master 2 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Le Master 2 en Logistique et Transport est l'annee de la specialisation la plus poussee et de la bascule vers la vie professionnelle. Les matieres abordent desormais la logistique 4.0 (digitalisation, tracabilite, systemes d'information logistiques), les achats strategiques avances, et surtout la methodologie du memoire professionnel ou de recherche, qui conclut generalement le cycle par une soutenance devant un jury. Le niveau d'exigence attendu correspond a celui d'un futur cadre ou consultant senior : capacite a batir un business case complet, a argumenter un choix technologique face a une direction generale, et a produire un travail de recherche applique rigoureux sur un sujet logistique reel.\n\nCette annee repose sur trois piliers : la logistique 4.0 et la digitalisation de la chaine d'approvisionnement, qui vous apprend a evaluer la rentabilite d'un investissement technologique (WMS, TMS, IoT, tracabilite) et a comprendre les enjeux de la donnee logistique ; les achats strategiques et les relations fournisseurs avancees, qui mobilisent des outils de segmentation (matrice de Kraljic) et de calcul du cout total de possession (TCO) pour optimiser une politique d'achat ; et la methodologie du memoire professionnel, qui vous accompagne dans la construction, la redaction et la soutenance d'un travail de fin d'etudes.\n\n## Les specificites du Master 2 : vers la vie professionnelle\n\nLe Master 2 se distingue du Master 1 par une orientation plus nettement professionnalisante. Les cas d'etude integrent systematiquement une dimension d'investissement (faut-il acheter ce logiciel, ce systeme de tracabilite) et une dimension de negociation (comment arbitrer entre plusieurs fournisseurs sur des criteres multiples, pas seulement le prix). Le memoire professionnel, enfin, vous demande de mobiliser l'ensemble des competences acquises depuis la Licence pour produire un travail original, documente, et defendable devant un jury exigeant.\n\nTrois exigences methodologiques structurent cette annee. Premierement, la maitrise des outils de decision d'investissement (payback, VAN, TRI) appliques a des projets logistiques concrets, avec une discussion systematique des hypotheses retenues. Deuxiemement, la capacite a arbitrer entre des criteres multiples et parfois contradictoires, par exemple le prix le plus bas face au cout total de possession le plus avantageux, qui ne designent pas toujours le meme fournisseur. Troisiemement, la rigueur methodologique de la recherche appliquee : formuler une problematique precise, construire une methodologie adaptee (etude de cas, entretiens, analyse documentaire), et presenter des resultats discutes avec esprit critique.\n\n## Les matieres de l'annee et leur articulation\n\n- Logistique 4.0 et digitalisation de la chaine d'approvisionnement : vous apprenez a evaluer la rentabilite d'un investissement technologique (systeme de gestion d'entrepot, tracabilite, systemes d'information logistiques) et a comprendre les enjeux de la donnee partagee entre partenaires.\n- Achats strategiques et relations fournisseurs avancees : vous mobilisez la matrice de Kraljic pour segmenter un portefeuille d'achats, et le calcul du cout total de possession (TCO) pour comparer des fournisseurs au-dela du seul prix affiche.\n- Methodologie du memoire professionnel et soutenance : vous construisez pas a pas votre travail de fin d'etudes, de la problematique a la soutenance, en appliquant les memes exigences de rigueur que dans les deux autres matieres.\n\nCes trois matieres convergent vers une meme competence : la capacite a construire un dossier de decision argumente, chiffre et documente, que ce soit pour justifier un investissement technologique, choisir un fournisseur, ou defendre un memoire devant un jury. La quatrieme sequence video de ce module est d'ailleurs entierement consacree a un atelier methodologique pratique sur le memoire et la soutenance, car cette competence conditionne directement votre reussite finale du diplome.\n\n## Methode de travail avancee : business case, negociation argumentee, recherche appliquee\n\nLe business case d'investissement technologique vous demande de comparer un cout d'investissement (licence logicielle, integration, formation) a des benefices attendus (gains de productivite, reduction d'erreurs, reduction de stock), a l'aide d'indicateurs comme le payback, la valeur actuelle nette (VAN) et le taux de rentabilite interne (TRI). Explicitez toujours le taux d'actualisation retenu et l'horizon d'analyse, car ces hypotheses determinent fortement le resultat final presente a la direction.\n\nLa negociation argumentee avec les fournisseurs repose sur une comparaison multicriteres : le prix affiche n'est qu'un element parmi d'autres (qualite, delai, cout total de possession, capacite d'innovation, responsabilite sociale et environnementale). Une bonne copie de Master 2 sait construire un tableau de score pondere et discuter les resultats, plutot que de se limiter a comparer deux prix unitaires.\n\nLa recherche appliquee, enfin, structure votre memoire professionnel : une problematique precise, une revue de la litterature qui mobilise les concepts du cours sans se limiter a les reciter, une methodologie adaptee a votre terrain (etude de cas en entreprise, entretiens, analyse de donnees), et une discussion honnete des limites de votre travail. C'est cette rigueur qui sera evaluee lors de la soutenance, bien plus que le simple volume de pages produites.\n\n## Plan de revision sur six semaines\n\n- Semaines 1-2 : logistique 4.0 et digitalisation (lecon 2) : business case d'investissement technologique, calculs de payback, VAN, TRI refaits a la main sur des donnees differentes de celles du cours.\n- Semaines 3-4 : achats strategiques et relations fournisseurs avancees (lecon 3) : matrice de Kraljic, calcul du TCO, construction d'un tableau de score pondere, entrainement sur des cas varies.\n- Semaine 5 : methodologie du memoire et soutenance (lecon 4) : structure du memoire, plan type, preparation de la soutenance ; relecture transversale des liens entre les trois matieres de l'annee.\n- Semaine 6 : sujet type (lecon 5) en conditions d'examen chronometrees, puis revision des quatre cours video, dont l'atelier methodologique final, quiz et evaluations refaits sans regarder le corrige avant d'avoir termine.\n\n## Points cles a retenir\n\n- Le Master 2 est l'annee de la professionnalisation finale : chaque decision logistique doit etre presentee comme un dossier d'investissement ou de negociation argumente et chiffre.\n- La digitalisation et les achats strategiques partagent une meme logique : depasser le seul critere apparent (le cout d'un logiciel, le prix d'un fournisseur) pour integrer l'ensemble des couts et benefices reels.\n- Le memoire professionnel mobilise l'ensemble des competences acquises depuis la Licence ; sa methodologie doit etre aussi rigoureuse que celle d'un exercice chiffre.\n- Le plan de revision doit integrer, dès les premieres semaines, un temps specifique consacre a l'avancement du memoire, qui ne peut pas attendre la derniere semaine.\n\n## Exercices pratiques\n\n1. Quelle difference majeure distingue l'approche d'un investissement technologique en Master 2 de celle d'un simple calcul de rentabilite isole ?\n2. Citez les trois matieres du Master 2 logistique et transport et le fil conducteur qui les relie.\n3. Pourquoi un tableau de score pondere est-il plus pertinent qu'une simple comparaison de prix pour choisir un fournisseur strategique ?\n4. Quelles sont les quatre grandes etapes d'un memoire professionnel en logistique, de la problematique a la soutenance ?\n5. Proposez un planning resserre pour un etudiant disposant de six heures par semaine, en integrant l'avancement du memoire.\n\n## Corrige\n\n1. Un calcul de rentabilite isole se limite au chiffre (payback, VAN) ; une approche de Master 2 integre en plus la justification des hypotheses retenues (taux d'actualisation, horizon, gains estimes) et une recommandation de gestion argumentee pour une direction qui doit decider dans l'incertitude.\n2. Logistique 4.0 et digitalisation, achats strategiques et relations fournisseurs, methodologie du memoire professionnel. Le fil conducteur est la capacite a construire un dossier de decision chiffre et documente, que ce soit pour un investissement technologique, un choix de fournisseur, ou un travail de recherche applique.\n3. Le prix seul ignore des couts caches (transport, douane, non-qualite, risque de rupture) et des criteres qualitatifs (innovation, responsabilite sociale) qui conditionnent la performance reelle a long terme d'une relation fournisseur strategique ; un score pondere integre ces dimensions dans une decision argumentee.\n4. Definition d'une problematique precise, revue de litterature mobilisant les concepts du cours, methodologie de recherche adaptee au terrain etudie, et soutenance defendant les resultats et leurs limites devant un jury.\n5. Deux heures par semaine pour chaque matiere (digitalisation, achats, methodologie) les quatre premieres semaines, puis bascule progressive vers l'avancement effectif du memoire a partir de la semaine 3, en parallele des revisions, pour eviter de tout concentrer sur les dernieres semaines avant la soutenance."
+   },
+   {
+    "title": "Logistique 4.0 et digitalisation de la chaine d'approvisionnement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Achats strategiques et relations fournisseurs avancees : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Methodologie du memoire professionnel et soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 logistique et transport (entrainement, corrige detaille)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours video (1h30) : Logistique 4.0 et digitalisation de la chaine d'approvisionnement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours video (1h30) : Achats strategiques et relations fournisseurs avancees",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours video (1h30) : Methodologie du memoire professionnel et soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours video (1h30) : Atelier methodologie - construire et defendre son memoire professionnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];
