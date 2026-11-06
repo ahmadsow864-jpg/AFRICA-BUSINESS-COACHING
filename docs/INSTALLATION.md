@@ -1,6 +1,6 @@
 # Mettre le site en ligne — Guide pas à pas
 
-Ce guide explique comment rendre le site **Africa Business Coaching** opérationnel :
+Ce guide explique comment rendre le site **Africa Business Development Consulting** opérationnel :
 site public, espace administrateur sécurisé et plateforme Éducation en ligne.
 
 Durée estimée : 30 à 45 minutes. Aucun serveur à louer : GitHub Pages (gratuit) héberge

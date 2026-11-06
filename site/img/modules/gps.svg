@@ -7,7 +7,6 @@
     <clipPath id="gps-clip"><path d="M140 180L300 150L460 180L620 150V420L460 450L300 420L140 450Z"/></clipPath>
     <path id="gps-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
   </defs>
-  <rect width="800" height="500" rx="36" fill="url(#gps-bg)"/>
   <circle cx="110" cy="100" r="64" fill="#cfe0f8" opacity=".8"/>
   <g fill="#2f6fde" opacity=".22"><circle cx="60" cy="400" r="4"/><circle cx="80" cy="400" r="4"/><circle cx="100" cy="400" r="4"/><circle cx="60" cy="420" r="4"/><circle cx="80" cy="420" r="4"/><circle cx="100" cy="420" r="4"/></g>
   <!-- map -->

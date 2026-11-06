@@ -15,7 +15,6 @@
     </g>
     <path id="parking-entreprise-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
   </defs>
-  <rect width="800" height="500" rx="36" fill="url(#parking-entreprise-bg)"/>
   <circle cx="420" cy="90" r="70" fill="#d3deeb" opacity=".7"/>
   <g fill="#2f6fde" opacity=".2"><circle cx="720" cy="60" r="4"/><circle cx="740" cy="60" r="4"/><circle cx="760" cy="60" r="4"/><circle cx="720" cy="80" r="4"/><circle cx="740" cy="80" r="4"/><circle cx="760" cy="80" r="4"/></g>
   <!-- ground -->

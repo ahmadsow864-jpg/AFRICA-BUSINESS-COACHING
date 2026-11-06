@@ -1,6 +1,6 @@
 // Génère supabase/seed.sql à partir de site/js/data.js (source unique des contenus).
 // Utilisation : node tools/generate-seed.mjs
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import vm from "node:vm";
@@ -30,10 +30,56 @@ const levels = [
   ["lycee", "Seconde"], ["lycee", "Première"], ["lycee", "Terminale"],
   ["licence", "Licence 1"], ["licence", "Licence 2"], ["licence", "Licence 3"],
   ["master", "Master 1"], ["master", "Master 2"],
-  ["doctorat", "Doctorat"]
+  ["doctorat", "Doctorat"],
+  ["pro", "Formation professionnelle"]
 ];
 out.push("insert into public.levels (cycle, name, sort) values");
 out.push(levels.map(([c, n], i) => `  (${q(c)}, ${q(n)}, ${(i + 1) * 10})`).join(",\n") + "\non conflict (name) do nothing;\n");
 
+// ----- Cours (content/courses/*.json) -----
+const levelNames = new Set(levels.map((l) => l[1]));
+const dir = join(root, "content/courses");
+const courses = existsSync(dir)
+  ? readdirSync(dir).filter((f) => f.endsWith(".json")).sort()
+      .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+  : [];
+courses.sort((a, b) => (a.sort || 0) - (b.sort || 0) || a.slug.localeCompare(b.slug));
+const serviceIds = new Set(data.services.map((x) => x.id));
+let nLessons = 0;
+for (const c of courses) {
+  if (!/^[a-z0-9-]{2,80}$/.test(c.slug)) throw new Error("slug invalide : " + c.slug);
+  if (!levelNames.has(c.level)) throw new Error(c.slug + " : niveau inconnu " + c.level);
+  if (c.module && !serviceIds.has(c.module)) throw new Error(c.slug + " : module inconnu " + c.module);
+  out.push(`-- Cours : ${c.title.replace(/\n/g, " ")}`);
+  out.push(`insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select ${q(c.slug)}, (select id from public.levels where name = ${q(c.level)}), ${c.module ? q(c.module) : "null"}, ${q(c.subject || "")}, ${q(c.title)}, ${q(c.description || "")}, true, ${c.sort || 100}
+on conflict (slug) do nothing;`);
+  c.lessons.forEach((l, i) => {
+    nLessons++;
+    out.push(`insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, ${q(l.title)}, ${q(l.content)}, ${q(l.kind === "video" ? "video" : "texte")}, ${Number(l.duration_min) || 45}, ${l.is_free ? "true" : "false"}, ${(i + 1) * 10}
+from public.courses c where c.slug = ${q(c.slug)}
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = ${q(l.title)});`);
+  });
+  out.push("");
+}
+
 writeFileSync(join(root, "supabase/seed.sql"), out.join("\n"));
-console.log("supabase/seed.sql généré :", data.services.length, "services,", levels.length, "niveaux.");
+
+// Catalogue public pour le site sans base : titres de toutes les leçons,
+// mais texte complet UNIQUEMENT pour les leçons gratuites (le reste est réservé aux abonnés).
+const catalog = courses.map((c) => ({
+  slug: c.slug, level: c.level, subject: c.subject || "", module: c.module || null,
+  title: c.title, description: c.description || "", sort: c.sort || 100,
+  lessons: c.lessons.map((l) => Object.assign(
+    { title: l.title, kind: l.kind === "video" ? "video" : "texte", is_free: !!l.is_free, duration_min: Number(l.duration_min) || 45 },
+    l.is_free ? { content: l.content } : {}
+  ))
+}));
+writeFileSync(join(root, "site/js/courses-catalog.js"),
+  "// Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.\n" +
+  "// Catalogue public : seules les leçons gratuites contiennent leur texte.\n" +
+  "window.ABC_CATALOG = " + JSON.stringify(catalog, null, 1) + ";\n");
+
+console.log("supabase/seed.sql généré :", data.services.length, "services,", levels.length, "niveaux,",
+  courses.length, "cours,", nLessons, "leçons.");

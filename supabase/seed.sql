@@ -38,5 +38,6 @@ insert into public.levels (cycle, name, sort) values
   ('licence', 'Licence 3', 100),
   ('master', 'Master 1', 110),
   ('master', 'Master 2', 120),
-  ('doctorat', 'Doctorat', 130)
+  ('doctorat', 'Doctorat', 130),
+  ('pro', 'Formation professionnelle', 140)
 on conflict (name) do nothing;

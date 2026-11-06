@@ -1,11 +1,11 @@
-// Espace administrateur — Africa Business Coaching
+// Espace administrateur — Africa Business Development Consulting
 // La sécurité réelle est assurée côté Supabase (RLS + MFA aal2) : cette page ne fait
 // qu'afficher ce que la base autorise. Sans double authentification, aucune donnée admin n'est lisible.
 (function () {
   var A = window.ABC, h = A.h, sb = A.sb;
   var IDLE_MINUTES = 30;
   var POLES = A.data.poles;
-  var CYCLES = { college: "Collège", lycee: "Lycée", licence: "Licence", master: "Master", doctorat: "Doctorat" };
+  var CYCLES = { pro: "Formation professionnelle", college: "Collège", lycee: "Lycée", licence: "Licence", master: "Master", doctorat: "Doctorat" };
   var me = null;
   var LABELS = { nouveau: "Nouveau", traite: "Traité", archive: "Archivé", en_attente: "En attente", active: "Active", refusee: "Refusée", expiree: "Expirée" };
   function statusTag(st) { return h("span", { class: "status status--" + st, text: LABELS[st] || st }); }
@@ -90,7 +90,7 @@
     for (var i = 0; i < all.length; i++) {
       if (all[i].status !== "verified") await sb.auth.mfa.unenroll({ factorId: all[i].id });
     }
-    var en = await sb.auth.mfa.enroll({ factorType: "totp", friendlyName: "Admin ABC " + new Date().toISOString().slice(0, 10) });
+    var en = await sb.auth.mfa.enroll({ factorType: "totp", friendlyName: "Admin ABDC " + new Date().toISOString().slice(0, 10) });
     if (en.error) return A.notice($("mfa-msg"), "Erreur MFA : " + en.error.message, "error");
     mfaFactorId = en.data.id;
     if (/^data:image\/svg\+xml/.test(en.data.totp.qr_code)) $("mfa-qr").setAttribute("src", en.data.totp.qr_code);
@@ -361,9 +361,10 @@
     c.appendChild(h("p", { class: "actions" },
       btn("+ Nouvelle leçon", function () { lessonForm(c, course, null); }),
       btn("← Retour aux cours", function () { go("courses"); }, "btn--ghost")));
-    c.appendChild(table(["Ordre", "Leçon", "Accès", ""], r.data.map(function (l) {
+    c.appendChild(table(["Ordre", "Leçon", "Type", "Accès", ""], r.data.map(function (l) {
       return h("tr", null,
         h("td", { text: String(l.sort) }), h("td", { text: l.title }),
+        h("td", { text: (l.kind === "video" ? "Vidéo" : "Texte") + " · " + l.duration_min + " min" }),
         h("td", { text: l.is_free ? "Gratuite" : "Abonnés" }),
         h("td", { class: "actions" },
           btn("Modifier", function () { lessonForm(c, course, l); }),
@@ -374,12 +375,16 @@
 
   function lessonForm(c, course, l) {
     var isNew = !l;
-    l = l || { title: "", content: "", video_url: "", is_free: false, sort: 100 };
+    l = l || { title: "", content: "", video_url: "", is_free: false, sort: 100, kind: "texte", duration_min: 45 };
     var form = h("form", { class: "form form--light form--wide" },
       field("Titre", input("title", l.title, { required: true, maxlength: 160 })),
-      field("Contenu (paragraphes séparés par une ligne vide)", textarea("content", l.content, 14)),
+      field("Contenu (blocs séparés par une ligne vide ; « ## » = intertitre ; « - » = liste)", textarea("content", l.content, 18)),
       field("Lien vidéo (https://…, optionnel)", input("video_url", l.video_url, { type: "url" })),
-      field("Ordre", input("sort", l.sort, { type: "number" })),
+      h("div", { class: "form__row" },
+        field("Type", select("kind", [["texte", "Leçon écrite"], ["video", "Cours vidéo"]], l.kind || "texte")),
+        field("Durée (minutes)", input("duration_min", l.duration_min || 45, { type: "number", min: 1, max: 600 })),
+        field("Ordre", input("sort", l.sort, { type: "number" }))
+      ),
       checkbox("is_free", l.is_free, "Leçon gratuite (visible sans abonnement)"),
       h("div", { class: "actions" }, h("button", { class: "btn", type: "submit", text: "Enregistrer" }), btn("Annuler", function () { lessonsView(c, course); }, "btn--ghost"))
     );
@@ -387,7 +392,8 @@
       e.preventDefault();
       var el = form.elements;
       var row = { course_id: course.id, title: el.title.value.trim(), content: el.content.value, video_url: el.video_url.value.trim(),
-        sort: Number(el.sort.value) || 0, is_free: el.is_free.checked };
+        sort: Number(el.sort.value) || 0, is_free: el.is_free.checked,
+        kind: el.kind.value, duration_min: Math.min(600, Math.max(1, Number(el.duration_min.value) || 45)) };
       if (row.video_url && !/^https:\/\//.test(row.video_url)) return flash("Le lien vidéo doit commencer par https://", "error");
       var r = isNew ? await sb.from("lessons").insert(row) : await sb.from("lessons").update(row).eq("id", l.id);
       if (!fail(r)) { lessonsView(c, course); flash("Leçon enregistrée.", "ok"); }

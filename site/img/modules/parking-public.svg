@@ -12,7 +12,6 @@
     </g>
     <path id="parking-public-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
   </defs>
-  <rect width="800" height="500" rx="36" fill="url(#parking-public-bg)"/>
   <circle cx="660" cy="90" r="54" fill="#fdef42" opacity=".45"/>
   <!-- skyline -->
   <g fill="#d6cdef" opacity=".9">

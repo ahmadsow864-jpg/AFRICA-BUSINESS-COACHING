@@ -2,14 +2,46 @@
 (function () {
   var A = window.ABC, h = A.h, sb = A.sb;
   var page = document.body.getAttribute("data-page");
-  var CYCLES = { college: "Collège", lycee: "Lycée", licence: "Licence", master: "Master", doctorat: "Doctorat" };
+  var CYCLES = { pro: "Formation professionnelle", college: "Collège", lycee: "Lycée", licence: "Licence", master: "Master", doctorat: "Doctorat" };
+  var CATALOG = window.ABC_CATALOG || [];
   var STATUS = { en_attente: "En attente de validation", active: "Active", refusee: "Refusée", expiree: "Expirée" };
   var DEFAULT_LEVELS = [
     ["college", "6e"], ["college", "5e"], ["college", "4e"], ["college", "3e"],
     ["lycee", "Seconde"], ["lycee", "Première"], ["lycee", "Terminale"],
     ["licence", "Licence 1"], ["licence", "Licence 2"], ["licence", "Licence 3"],
-    ["master", "Master 1"], ["master", "Master 2"], ["doctorat", "Doctorat"]
+    ["master", "Master 1"], ["master", "Master 2"], ["doctorat", "Doctorat"], ["pro", "Formation professionnelle"]
   ].map(function (l, i) { return { id: i + 1, cycle: l[0], name: l[1], sort: i }; });
+
+  // Cours du catalogue intégré (utilisé tant que la base n'est pas branchée).
+  function catalogCourses(levels) {
+    var byName = {};
+    levels.forEach(function (l) { byName[l.name] = l.id; });
+    return CATALOG.map(function (c) {
+      return { slug: c.slug, level_id: byName[c.level], subject: c.subject, title: c.title, description: c.description, sort: c.sort, lessons: c.lessons };
+    });
+  }
+  function courseHref(c) { return "cours.html?" + (c.slug ? "c=" + encodeURIComponent(c.slug) : "id=" + encodeURIComponent(c.id)); }
+  function duration(m) { m = Number(m) || 0; return m >= 60 ? Math.floor(m / 60) + "h" + (m % 60 ? String(m % 60).padStart(2, "0") : "") : m + " min"; }
+
+  // Mise en forme sûre d'une leçon : "## " = intertitre, lignes "- " = liste, sinon paragraphe.
+  function renderContent(box, text) {
+    String(text || "").split(/\n\s*\n/).forEach(function (block) {
+      block = block.replace(/^\n+|\s+$/g, "");
+      if (!block) return;
+      if (/^## /.test(block)) {
+        var lines = block.split("\n");
+        box.appendChild(h("h3", { class: "lesson-h", text: lines[0].slice(3) }));
+        if (lines.length > 1) renderContent(box, lines.slice(1).join("\n"));
+        return;
+      }
+      var lines2 = block.split("\n");
+      if (lines2.every(function (l) { return /^\s*- /.test(l); })) {
+        box.appendChild(h("ul", { class: "lesson-list" }, lines2.map(function (l) { return h("li", { text: l.replace(/^\s*- /, "") }); })));
+        return;
+      }
+      box.appendChild(h("p", { class: "lesson-text", text: block }));
+    });
+  }
 
   function $(id) { return document.getElementById(id); }
   function price(p) { return p.price_xof === 0 ? "Gratuit" : new Intl.NumberFormat("fr-FR").format(p.price_xof) + " FCFA"; }
@@ -35,19 +67,24 @@
     if (sb) {
       var r = await Promise.all([
         sb.from("levels").select("*").order("sort"),
-        sb.from("courses").select("id,level_id,subject,title,description,sort").eq("published", true).order("sort"),
+        sb.from("courses").select("id,slug,level_id,subject,title,description,sort").eq("published", true).order("sort"),
         sb.from("plans").select("*").eq("active", true).order("price_xof")
       ]);
       if (!r[0].error && r[0].data.length) levels = r[0].data;
-      courses = r[1].data || [];
+      courses = (r[1].data || []).map(function (c) {
+        var local = CATALOG.filter(function (x) { return x.slug && x.slug === c.slug; })[0];
+        return Object.assign({ lessons: local ? local.lessons : [] }, c);
+      });
       plans = r[2].data || [];
-    } else {
-      A.notice(cmsg, "La plateforme ouvre très bientôt : les cours seront publiés ici par l'administrateur.", "info");
     }
+    if (!courses.length) courses = catalogCourses(levels);
 
-    var currentCycle = levels[0] ? levels[0].cycle : "college", currentLevel = null;
+    var wanted = new URLSearchParams(location.search).get("niveau");
+    var start = levels.filter(function (l) { return l.name === wanted; })[0];
+    var currentCycle = start ? start.cycle : "pro", currentLevel = start ? start.id : null;
     var cf = $("cycle-filters");
     Object.keys(CYCLES).forEach(function (c) {
+      if (!levels.some(function (l) { return l.cycle === c; })) return;
       cf.appendChild(h("button", { class: "filter", "data-cycle": c, text: CYCLES[c], onclick: function () { currentCycle = c; currentLevel = null; draw(); } }));
     });
 
@@ -62,14 +99,17 @@
       var grid = A.clear($("courses"));
       var list = courses.filter(function (c) { return c.level_id === currentLevel; });
       list.forEach(function (c) {
-        grid.appendChild(h("a", { class: "card card--course", href: "cours.html?id=" + encodeURIComponent(c.id) },
+        var ls = c.lessons || [];
+        var mins = ls.reduce(function (t, l) { return t + (Number(l.duration_min) || 0); }, 0);
+        grid.appendChild(h("a", { class: "card card--course", href: courseHref(c) },
           c.subject ? h("span", { class: "card__pole card__pole--static", text: c.subject }) : null,
           h("h3", { text: c.title }),
-          h("p", { text: (c.description || "").slice(0, 180) }),
+          h("p", { text: (c.description || "").slice(0, 220) }),
+          ls.length ? h("p", { class: "course-meta", text: ls.length + " leçons · " + duration(mins) + (ls.some(function (l) { return l.kind === "video"; }) ? " · 🎬 cours vidéo 1h30" : "") }) : null,
           h("span", { class: "card__more", text: "Ouvrir le cours →" })
         ));
       });
-      if (sb) A.notice(cmsg, list.length ? "" : "Aucun cours publié pour ce niveau pour le moment.", list.length ? "" : "info");
+      A.notice(cmsg, list.length ? "" : "Aucun cours publié pour ce niveau pour le moment.", list.length ? "" : "info");
     }
     draw();
 
@@ -150,48 +190,75 @@
 
   // ===================== PAGE COURS =====================
   async function initCours() {
-    var id = new URLSearchParams(location.search).get("id") || "";
+    var qs = new URLSearchParams(location.search);
+    var slug = qs.get("c") || "", id = qs.get("id") || "";
     var box = $("c-lesson");
-    if (!sb) { $("c-title").textContent = "Plateforme bientôt disponible"; return; }
-    var r = await sb.from("courses").select("id,title,description,subject,levels(name,cycle)").eq("id", id).maybeSingle();
-    if (r.error || !r.data) { $("c-title").textContent = "Cours introuvable"; return; }
-    var c = r.data;
+    var c = null, outline = [], local = CATALOG.filter(function (x) { return x.slug === slug; })[0];
+
+    if (sb) {
+      var q = sb.from("courses").select("id,slug,title,description,subject,levels(name,cycle)");
+      q = slug ? q.eq("slug", slug) : q.eq("id", id);
+      var r = await q.maybeSingle();
+      if (r.data) {
+        c = r.data;
+        var o = await sb.rpc("course_outline", { p_course: c.id });
+        outline = o.data || [];
+      }
+    }
+    if (!c && local) {
+      var lv = DEFAULT_LEVELS.filter(function (l) { return l.name === local.level; })[0];
+      c = { title: local.title, description: local.description, subject: local.subject, levels: lv ? { name: lv.name, cycle: lv.cycle } : null };
+      outline = local.lessons.map(function (l, i) { return Object.assign({ idx: i }, l); });
+    }
+    if (!c) { $("c-title").textContent = "Cours introuvable"; return; }
+
     document.title = c.title + " — Éducation en ligne";
     $("c-title").textContent = c.title;
     $("c-desc").textContent = c.description || "";
     $("c-level").textContent = (c.levels ? CYCLES[c.levels.cycle] + " · " + c.levels.name : "") + (c.subject ? " · " + c.subject : "");
 
-    var o = await sb.rpc("course_outline", { p_course: id });
     var ol = $("c-outline");
-    (o.data || []).forEach(function (l) {
+    outline.forEach(function (l) {
       ol.appendChild(h("li", null, h("button", { class: "lesson-link", onclick: function () { openLesson(l); } },
-        h("span", { text: l.title }),
+        h("span", { class: "lesson-link__title" },
+          h("span", { text: l.title }),
+          h("small", { class: "muted", text: (l.kind === "video" ? "🎬 Vidéo · " : "📄 ") + duration(l.duration_min) })),
         h("span", { class: "tag" + (l.is_free ? " tag--free" : ""), text: l.is_free ? "Gratuit" : "🔒 Abonnés" })
       )));
     });
-    if (!(o.data || []).length) ol.appendChild(h("li", { class: "muted", text: "Leçons en préparation." }));
+    if (!outline.length) ol.appendChild(h("li", { class: "muted", text: "Leçons en préparation." }));
 
     async function openLesson(l) {
       A.clear(box).appendChild(h("p", { class: "muted", text: "Chargement…" }));
-      var q = await sb.from("lessons").select("title,content,video_url").eq("id", l.id).maybeSingle();
+      var data = null;
+      if (sb && l.id) {
+        var q2 = await sb.from("lessons").select("title,content,video_url,kind,duration_min").eq("id", l.id).maybeSingle();
+        data = q2.data;
+      } else if (l.content) {
+        data = l;
+      }
       A.clear(box);
-      if (!q.data) {
-        var sess = await sb.auth.getSession();
-        box.appendChild(h("h2", { text: l.title }));
-        box.appendChild(h("p", { class: "msg msg--info", text: sess.data.session
-          ? "Cette leçon est réservée aux abonnés de ce niveau. Demandez un abonnement depuis votre espace."
-          : "Cette leçon est réservée aux abonnés. Connectez-vous ou créez un compte." }));
-        box.appendChild(h("a", { class: "btn", href: sess.data.session ? "espace.html" : "index.html#compte", text: sess.data.session ? "Mon espace" : "Se connecter" }));
+      box.appendChild(h("h2", { text: l.title }));
+      box.appendChild(h("p", { class: "course-meta", text: (l.kind === "video" ? "🎬 Cours vidéo · " : "📄 Leçon · ") + duration(l.duration_min) }));
+      if (!data) {
+        var sess = sb ? await sb.auth.getSession() : { data: {} };
+        var logged = !!(sess.data && sess.data.session);
+        box.appendChild(h("p", { class: "msg msg--info", text: !sb
+          ? "Cette leçon est réservée aux abonnés. Les abonnements ouvriront au lancement de la plateforme."
+          : logged ? "Cette leçon est réservée aux abonnés de ce niveau. Demandez un abonnement depuis votre espace."
+                   : "Cette leçon est réservée aux abonnés. Connectez-vous ou créez un compte." }));
+        if (sb) box.appendChild(h("a", { class: "btn", href: logged ? "espace.html" : "index.html#compte", text: logged ? "Mon espace" : "Se connecter" }));
         return;
       }
-      box.appendChild(h("h2", { text: q.data.title }));
-      if (/^https:\/\//.test(q.data.video_url || "")) {
-        box.appendChild(h("p", null, h("a", { class: "btn btn--small", href: q.data.video_url, target: "_blank", rel: "noopener noreferrer", text: "▶ Regarder la vidéo" })));
+      if (/^https:\/\//.test(data.video_url || "")) {
+        box.appendChild(h("p", null, h("a", { class: "btn btn--small", href: data.video_url, target: "_blank", rel: "noopener noreferrer", text: "▶ Regarder la vidéo" })));
+      } else if (l.kind === "video") {
+        box.appendChild(h("p", { class: "msg msg--info", text: "Vidéo en cours de tournage : voici le plan minuté et le texte complet de la séance." }));
       }
-      String(q.data.content || "").split(/\n\s*\n/).forEach(function (para) {
-        if (para.trim()) box.appendChild(h("p", { class: "lesson-text", text: para.trim() }));
-      });
+      renderContent(box, data.content);
+      box.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    if (outline[0]) openLesson(outline[0]);
   }
 
   // ===================== ESPACE ÉLÈVE =====================

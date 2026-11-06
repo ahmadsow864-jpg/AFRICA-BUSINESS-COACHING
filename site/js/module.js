@@ -12,7 +12,7 @@
       document.getElementById("m-cta").textContent = "Voir tous les services";
       return;
     }
-    document.title = s.title + " — Africa Business Coaching";
+    document.title = s.title + " — Africa Business Development Consulting";
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", s.short);
     document.getElementById("m-pole").textContent = A.data.poles[s.pole] || "";
@@ -32,6 +32,16 @@
     var vis = document.getElementById("m-visual");
     if (img) vis.appendChild(h("img", { src: img, alt: "Illustration " + s.title, width: "800", height: "500" }));
     else vis.appendChild(h("span", { class: "card__icon card__icon--big", text: s.icon || "" }));
+
+    var course = (window.ABC_CATALOG || []).filter(function (c) { return c.module === s.id; })[0];
+    if (course) {
+      var mins = course.lessons.reduce(function (t, l) { return t + (Number(l.duration_min) || 0); }, 0);
+      document.getElementById("m-course").appendChild(h("div", { class: "module-course" },
+        h("strong", { text: "🎓 Formation associée : " + course.title }),
+        h("p", { class: "course-meta", text: course.lessons.length + " leçons · environ " + Math.round(mins / 60) + " h · dont un cours vidéo de 1h30" }),
+        h("a", { href: "education/cours.html?c=" + encodeURIComponent(course.slug), text: "Voir la formation →" })
+      ));
+    }
 
     var ul = document.getElementById("m-features");
     (s.features || []).forEach(function (f) { ul.appendChild(h("li", { text: f })); });

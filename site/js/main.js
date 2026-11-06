@@ -1,4 +1,4 @@
-// Africa Business Coaching — page d'accueil
+// Africa Business Development Consulting — page d'accueil
 (function () {
   var A = window.ABC, h = A.h;
   var services = [];

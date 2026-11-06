@@ -10,7 +10,6 @@
     <path id="paie-uemoa-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
     <clipPath id="paie-uemoa-clip"><circle cx="400" cy="246" r="168"/></clipPath>
   </defs>
-  <rect width="800" height="500" rx="36" fill="url(#paie-uemoa-bg)"/>
   <circle cx="120" cy="100" r="70" fill="#cfe0f8" opacity=".7"/>
   <circle cx="700" cy="410" r="90" fill="#cfe0f8" opacity=".7"/>
   <g fill="#2f6fde" opacity=".2"><circle cx="700" cy="60" r="4"/><circle cx="720" cy="60" r="4"/><circle cx="740" cy="60" r="4"/><circle cx="700" cy="80" r="4"/><circle cx="720" cy="80" r="4"/><circle cx="740" cy="80" r="4"/></g>

@@ -1,7 +1,7 @@
 {
-  "name": "ABC Administration",
-  "short_name": "ABC Admin",
-  "description": "Espace administrateur Africa Business Coaching",
+  "name": "ABDC Administration",
+  "short_name": "ABDC Admin",
+  "description": "Espace administrateur Africa Business Development Consulting",
   "lang": "fr",
   "start_url": "./index.html",
   "scope": "./",

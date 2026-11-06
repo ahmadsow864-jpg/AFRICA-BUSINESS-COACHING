@@ -1,5 +1,5 @@
 -- =====================================================================
--- Africa Business Coaching — Schéma Supabase (site, administration, éducation)
+-- Africa Business Development Consulting — Schéma Supabase (site, administration, éducation)
 -- À exécuter une fois dans Supabase : SQL Editor → New query → Run.
 -- Toute la sécurité repose sur les politiques RLS ci-dessous : le navigateur
 -- n'utilise que la clé publique "anon", jamais la clé "service_role".
@@ -134,7 +134,7 @@ create index if not exists contact_messages_created_idx on public.contact_messag
 -- ---------------------------------------------------------------------
 create table if not exists public.levels (
   id     int generated always as identity primary key,
-  cycle  text not null check (cycle in ('college', 'lycee', 'licence', 'master', 'doctorat')),
+  cycle  text not null check (cycle in ('college', 'lycee', 'licence', 'master', 'doctorat', 'pro')),
   name   text not null unique check (char_length(name) between 1 and 60),
   sort   int not null default 100
 );
@@ -142,6 +142,8 @@ create table if not exists public.levels (
 create table if not exists public.courses (
   id           uuid primary key default gen_random_uuid(),
   level_id     int not null references public.levels (id) on delete restrict,
+  module_id    text references public.services (id) on delete set null,
+  slug         text unique check (slug ~ '^[a-z0-9-]{2,80}$'),
   subject      text not null default '' check (char_length(subject) <= 80),
   title        text not null check (char_length(title) between 2 and 160),
   description  text not null default '' check (char_length(description) <= 4000),
@@ -157,6 +159,8 @@ create table if not exists public.lessons (
   title       text not null check (char_length(title) between 2 and 160),
   content     text not null default '' check (char_length(content) <= 50000),
   video_url   text not null default '' check (video_url = '' or video_url ~ '^https://'),
+  kind        text not null default 'texte' check (kind in ('texte', 'video')),
+  duration_min int not null default 45 check (duration_min between 1 and 600),
   is_free     boolean not null default false,
   sort        int not null default 100,
   created_at  timestamptz not null default now()
@@ -208,11 +212,11 @@ $$;
 
 -- Sommaire public d'un cours publié : titres des leçons (sans le contenu payant).
 create or replace function public.course_outline(p_course uuid)
-returns table (id uuid, title text, is_free boolean, sort int)
+returns table (id uuid, title text, is_free boolean, sort int, kind text, duration_min int)
 language sql stable security definer
 set search_path = public
 as $$
-  select l.id, l.title, l.is_free, l.sort
+  select l.id, l.title, l.is_free, l.sort, l.kind, l.duration_min
   from public.lessons l
   join public.courses c on c.id = l.course_id
   where l.course_id = p_course and (c.published or public.is_admin())
