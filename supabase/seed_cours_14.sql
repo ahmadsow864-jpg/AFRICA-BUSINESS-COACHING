@@ -3533,6 +3533,16 @@ pourquoi prévoir un repère visuel pour vérifier le temps à mi-parcours de so
 pouvoir ajuster son rythme en direct si nécessaire, plutôt que de découvrir un dépassement de temps seulement à
 la fin, quand il est trop tard pour corriger.
 
+Avant de clore définitivement cet atelier et ce module, je veux insister sur un dernier point qui résume en
+réalité tout ce que nous avons vu dans ces quatre séances vidéo : la préparation, qu''elle concerne une
+architecture logicielle, un modèle de data science, un projet informatique ou une soutenance de mémoire, suit
+toujours la même logique. On part d''un problème concret, jamais d''une récitation théorique abstraite ; on
+construit une réponse structurée, étape par étape, en s''appuyant sur des chiffres vérifiés chaque fois que
+c''est possible plutôt que sur des impressions vagues ; et on reconnaît honnêtement les limites de ce qu''on
+propose, plutôt que de prétendre à une solution parfaite. C''est cette même démarche qui vous servira aussi bien
+le jour de vos examens que, plus tard, dans votre vie professionnelle, face à des problèmes réels qui n''auront
+jamais de solution unique et évidente.
+
 Merci pour votre travail sur l''ensemble de ce module de Master 2. Bonne préparation pour vos examens, votre
 mémoire et votre soutenance.
 ', 'video', 90, false, 90
