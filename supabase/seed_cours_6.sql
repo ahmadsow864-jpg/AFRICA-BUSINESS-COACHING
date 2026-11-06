@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 6/7). À exécuter après seed.sql.
+-- Cours (partie 6/13). À exécuter après seed.sql.
 
 -- Cours : SVT Terminale S : réussir l'épreuve du Bac
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

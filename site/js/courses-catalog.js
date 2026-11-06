@@ -2256,5 +2256,1805 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "lic-rh-l1",
+  "level": "Licence 1",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Ressources humaines Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'introduction à la GRH, les bases du droit du travail (contrat, durée du travail, rupture, en tenant compte de la transition vers un nouveau Code du travail) et le comportement organisationnel et la communication. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis.",
+  "sort": 301,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 en système LMD : semestres, unités d'enseignement (UE), crédits et modalités d'évaluation.\n- Connaître les matières clés de la première année en ressources humaines et ce que l'on attend de vous à l'examen.\n- Disposer d'une méthode de révision efficace et d'un plan de travail sur 6 semaines.\n- Savoir aborder chaque type d'épreuve : cas pratique, QCM, dissertation, exercice chiffré, projet.\n\n## 1. La Licence 1 dans le système LMD\n\nLe système LMD (Licence, Master, Doctorat) est adopté par les universités et écoles de l'espace UEMOA, dont le Sénégal. La Licence compte trois années de deux semestres. Chaque semestre regroupe des unités d'enseignement (UE) qui rassemblent une ou plusieurs matières, par exemple une UE « Fondamentaux de la GRH ».\n\nChaque UE porte des crédits qui traduisent le volume de travail demandé (cours, TD, travail personnel) et s'obtiennent en validant l'UE. Crédits, coefficients, règles de compensation et conditions de passage varient d'un établissement à l'autre : seul le règlement des études de votre établissement fait foi.\n\nRetenez trois mécanismes généraux :\n\n- Le contrôle continu : devoirs, exposés, travaux dirigés, petits tests pendant le semestre.\n- L'examen semestriel (ou examen terminal) : épreuve écrite en fin de semestre, souvent la plus lourde dans la note finale.\n- La session de rattrapage : seconde chance pour les UE non validées, selon les règles de l'établissement.\n\n## 2. Les matières de la Licence 1 en ressources humaines\n\nLa première année pose les fondations. Ce cours travaille trois matières clés, à côté des matières de tronc commun (économie, comptabilité, expression écrite, informatique).\n\n- Introduction à la GRH : définitions, évolution de la fonction, missions du service RH, acteurs, grands processus (recruter, rémunérer, former, gérer les carrières, gérer les relations sociales).\n- Droit du travail (bases) : sources du droit du travail, contrat de travail, période d'essai, durée du travail, suspension et rupture du contrat, rôle de l'inspection du travail. Le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026) : vous devez connaître les mécanismes et rester prudent sur les détails.\n- Comportement organisationnel et communication : motivation, leadership, travail en groupe, culture d'entreprise, communication interpersonnelle et interne, gestion des conflits.\n\n## 3. Méthode de révision\n\nRéviser, ce n'est pas relire. Pour retenir durablement, utilisez trois outils.\n\nPremier outil : la fiche de synthèse, une page par chapitre (définitions, schéma, étapes d'une méthode, un exemple), rédigée par vous-même.\n\nDeuxième outil : la récupération active. Fermez le cours et essayez de restituer : « Quels sont les éléments du contrat de travail ? », « Citez trois théories de la motivation et leur auteur ». Ce qui ne revient pas est à retravailler.\n\nTroisième outil : l'entraînement sur sujets en temps limité, pour arriver à l'examen avec des réflexes.\n\nTravaillez aussi en petit groupe une fois par semaine : expliquer une notion à un camarade est une excellente façon de la comprendre.\n\n## 4. Les types d'épreuves et comment les aborder\n\nLe cas pratique : une situation d'entreprise est décrite (par exemple, la société fictive Teranga Distribution à Thiès qui embauche un magasinier) et vous devez l'analyser. Méthode en quatre temps : relever les faits utiles ; identifier le problème (juridique ou managérial) ; rappeler la règle ou le concept ; appliquer aux faits et conclure clairement.\n\nLe QCM : lisez toutes les propositions ; méfiez-vous des mots absolus (« toujours », « jamais ») ; vérifiez si les mauvaises réponses enlèvent des points.\n\nLa dissertation ou question de réflexion : par exemple « La GRH est-elle une fonction stratégique dans les PME sénégalaises ? ». Introduction (accroche, définitions, problématique, annonce du plan), deux ou trois parties argumentées avec exemples, conclusion (réponse et ouverture).\n\nL'exercice chiffré : en L1, il s'agit surtout de calculs simples d'effectif, de taux d'absentéisme, d'heures de travail ou de coûts. Posez la formule, faites l'application numérique, donnez l'unité, interprétez le résultat en une phrase.\n\nLe projet ou dossier : par exemple rédiger une fiche de poste ou une note interne, en respectant consigne, forme et délais.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : Introduction à la GRH. Fiches sur les définitions, l'histoire de la fonction, les missions et les acteurs. Un QCM d'auto-évaluation.\n- Semaine 2 : Droit du travail, partie 1. Sources, contrat de travail, période d'essai, CDD et CDI. Deux cas pratiques.\n- Semaine 3 : Droit du travail, partie 2. Durée du travail, heures supplémentaires, congés, suspension et rupture du contrat. Deux cas pratiques.\n- Semaine 4 : Comportement organisationnel. Motivation, leadership, groupes, culture. Une question de réflexion rédigée.\n- Semaine 5 : Communication et conflits. Schéma de la communication, communication interne, gestion des conflits. Un exercice de rédaction de note.\n- Semaine 6 : Sujets types en conditions réelles (sujet de la leçon 5), correction, reprise des fiches faibles, repos la veille.\n\n## Points clés\n\n- Le règlement des études de votre établissement fait foi pour les crédits, coefficients et compensations.\n- Trois matières clés en L1 RH : introduction à la GRH, droit du travail (bases), comportement organisationnel et communication.\n- Réviser = fiches + récupération active + entraînement chronométré.\n- Chaque type d'épreuve a sa méthode : maîtrisez-la avant le jour J.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez avec vos mots la différence entre une UE et une matière, et entre contrôle continu et examen semestriel.\n- Exercice 2. Rédigez la liste des étapes de la méthode du cas pratique et appliquez-la au cas suivant : Awa, embauchée par une boutique fictive de Ziguinchor, a signé un contrat de travail sans date de fin ; elle se demande si elle est en CDD ou en CDI.\n- Exercice 3. Proposez une problématique et un plan en deux parties pour le sujet : « La communication interne est-elle un luxe pour une petite entreprise ? ».\n- Exercice 4. Dans un atelier fictif, 20 salariés devaient travailler 160 heures chacun dans le mois ; 128 heures d'absence ont été relevées. Calculez le taux d'absentéisme.\n- Exercice 5 (cas pratique). Moussa a 6 semaines avant ses examens et travaille le week-end dans un commerce. Il dispose de 3 heures par jour du lundi au vendredi. Construisez-lui un plan de révision réaliste.\n\n## Corrigé\n\nExercice 1. Une matière est un enseignement précis (par exemple le droit du travail) ; une UE est un bloc qui regroupe une ou plusieurs matières et auquel sont attachés des crédits. Le contrôle continu évalue l'étudiant tout au long du semestre (devoirs, TD, exposés) ; l'examen semestriel est une épreuve finale, généralement écrite, en fin de semestre.\n\nExercice 2. Étapes : relever les faits ; poser le problème ; rappeler la règle ; appliquer et conclure. Application : Awa a signé un contrat sans terme précis. Problème : quelle est la nature de son contrat ? Règle générale : le contrat à durée indéterminée est la forme normale ; le contrat à durée déterminée doit préciser son terme ou l'objet qui le justifie, en principe par écrit. Conclusion : sauf disposition particulière à vérifier dans le texte en vigueur, un contrat sans date de fin ni objet précis s'analyse comme un CDI.\n\nExercice 3. Problématique possible : une petite entreprise, aux moyens limités, peut-elle se passer d'organiser la circulation de l'information entre ses salariés ? Plan : I. Une communication interne souvent informelle et jugée coûteuse dans les petites structures (proximité, oral, manque de temps). II. Une nécessité pour la performance et le climat social (consignes claires, motivation, prévention des conflits), avec des outils simples et peu coûteux (réunion hebdomadaire, tableau d'affichage, groupe de messagerie professionnelle).\n\nExercice 4. Heures théoriques = 20 × 160 = 3 200 heures. Taux d'absentéisme = 128 / 3 200 × 100 = 4 % du temps de travail prévu.\n\nExercice 5. Moussa dispose de 15 heures par semaine, soit 90 heures en 6 semaines. Répartition proposée : semaine 1, introduction à la GRH (15 h) ; semaines 2 et 3, droit du travail (30 h) ; semaine 4, comportement organisationnel (15 h) ; semaine 5, communication et conflits (15 h) ; semaine 6, deux sujets complets en conditions réelles et révision des fiches (15 h). Chaque jour : 2 heures de fiches et exercices, 1 heure de récupération active."
+   },
+   {
+    "title": "Introduction à la GRH : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit du travail (bases) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Comportement organisationnel et communication : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 RH (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction à la GRH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit du travail (bases)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comportement organisationnel et communication",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-rh-l2",
+  "level": "Licence 2",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Ressources humaines Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre le recrutement et l'intégration, la gestion de la paie et l'administration du personnel (mécanismes, avec des taux fictifs pour l'exemple) et la formation et la gestion des compétences. Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : les acquis de la Licence 1 RH (introduction à la GRH, bases du droit du travail).",
+  "sort": 302,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la L1.\n- Identifier les trois matières clés de l'année et les compétences attendues à l'examen.\n- Adopter une méthode de révision adaptée aux matières techniques (paie, indicateurs) et rédactionnelles.\n- Planifier six semaines de révision et savoir traiter chaque type d'épreuve.\n\n## 1. La Licence 2 dans le système LMD\n\nEn système LMD, la Licence 2 correspond aux semestres 3 et 4. Les unités d'enseignement (UE) deviennent plus professionnalisantes : après les fondamentaux de la L1 (introduction à la GRH, bases du droit du travail, comportement organisationnel), vous entrez dans les processus opérationnels de la fonction RH. Chaque UE est créditée ; le nombre de crédits, les coefficients, les règles de compensation et de rattrapage dépendent de votre établissement et figurent dans son règlement des études. Lisez-le dès la rentrée : certaines écoles exigent une note minimale dans chaque matière fondamentale, d'autres compensent à l'intérieur de l'UE.\n\nLa L2 est souvent l'année du premier stage ou des premiers projets tutorés. Les enseignants attendent davantage de rigueur technique (calculs justes, documents bien présentés) et de capacité à proposer des solutions concrètes.\n\n## 2. Les matières clés de la Licence 2 RH\n\n- Recrutement et intégration : définition du besoin, fiche de poste et profil, sourcing, sélection (CV, tests, entretiens, grilles d'évaluation), décision, accueil et intégration, indicateurs de recrutement.\n- Gestion de la paie et administration du personnel : structure du bulletin de paie, du salaire de base au net à payer, cotisations sociales et retenues fiscales (mécanismes ; à l'examen, les taux sont fournis par l'énoncé), charges patronales et coût employeur, obligations administratives (registres, dossiers, déclarations), écriture comptable de la paie.\n- Formation et gestion des compétences : notion de compétence, référentiels, analyse des besoins, plan et budget de formation, ingénierie pédagogique, évaluation des formations, indicateurs.\n\nLes matières de tronc commun (comptabilité, statistiques, droit des affaires OHADA, anglais, informatique) restent importantes : la paie mobilise la comptabilité, les indicateurs mobilisent les statistiques.\n\n## 3. Méthode de révision adaptée à la L2\n\nPour les matières techniques comme la paie, la règle d'or est la répétition : refaites les bulletins jusqu'à les produire sans hésitation, en respectant toujours le même ordre de calcul. Construisez une fiche « ordre de calcul » et une fiche « erreurs fréquentes » (oublier un plafond, appliquer un taux patronal à la place d'un taux salarial, oublier de déduire un acompte).\n\nPour les matières rédactionnelles (recrutement, formation), préparez des « boîtes à outils » : les étapes d'un processus, deux ou trois outils par étape, un exemple d'entreprise. Exemple : pour l'intégration, retenez le livret d'accueil, le parrainage et le rapport d'étonnement.\n\nDans tous les cas, entraînez-vous sur des sujets complets en temps limité et corrigez-vous avec un barème.\n\n## 4. Les types d'épreuves en L2\n\n- L'exercice chiffré de paie : on vous donne une situation (salaire, primes, heures supplémentaires, avantages, acompte) et des taux. Présentez le bulletin en tableau : rubrique, base, taux, montant salarial, montant patronal. Vérifiez par un contrôle : brut − retenues salariales = net.\n- Le cas pratique de recrutement ou de formation : analysez le besoin, proposez une démarche argumentée et des outils (fiche de poste, grille d'entretien, plan de formation), chiffrez si possible (coût, budget).\n- Le QCM ou les questions de cours : définitions précises (sourcing, onboarding, compétence, plan de formation, coût employeur).\n- La question de réflexion : par exemple « Le recrutement par cooptation est-il un atout ou un risque pour l'entreprise ? ».\n- Le projet : par exemple rédiger une annonce de recrutement ou un plan de formation pour une PME fictive.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : Recrutement. Processus complet, outils de sélection, grilles pondérées, indicateurs (coût par recrutement, taux de transformation). Deux cas.\n- Semaine 2 : Intégration et administration du personnel. Dossier du salarié, registres, déclarations, documents de fin de contrat. Un QCM.\n- Semaine 3 : Paie, partie 1. Du salaire de base au brut, cotisations salariales, net à payer. Cinq bulletins.\n- Semaine 4 : Paie, partie 2. Charges patronales, coût employeur, écriture comptable, cas du cadre. Cinq bulletins.\n- Semaine 5 : Formation et compétences. Référentiel, analyse des besoins, plan et budget, évaluation à quatre niveaux. Deux cas.\n- Semaine 6 : Sujet type complet (leçon 5) en 3 heures, correction, reprise des fiches « erreurs fréquentes ».\n\n## Points clés\n\n- La L2 entre dans les processus opérationnels : recruter, payer, former.\n- Paie : un ordre de calcul fixe et un contrôle systématique.\n- À l'examen, les taux de cotisation et d'impôt sont fournis : on vous évalue sur le mécanisme.\n- Le règlement des études de votre établissement fixe crédits et compensations.\n\n## Exercices pratiques\n\n- Exercice 1. Citez dans l'ordre les grandes étapes du calcul d'un bulletin de paie.\n- Exercice 2. Expliquez la différence entre une cotisation salariale et une cotisation patronale.\n- Exercice 3. Un salaire brut de 400 000 FCFA supporte 32 000 FCFA de cotisations salariales et 25 000 FCFA de retenue fiscale (montants fictifs). Un acompte de 60 000 FCFA a été versé. Calculez le net à payer.\n- Exercice 4. Dans un recrutement, 120 candidatures ont été reçues, 24 candidats convoqués à un entretien, 6 en second entretien et 2 embauchés. Calculez le taux de transformation entre chaque étape et le taux global.\n- Exercice 5 (cas pratique). Mariama, étudiante en L2, a un stage de 4 semaines qui chevauche les semaines 2 à 5 de son plan de révision. Adaptez son plan.\n\n## Corrigé\n\nExercice 1. Salaire de base ; ajout des primes, indemnités, heures supplémentaires et avantages en nature pour obtenir le brut ; calcul des cotisations salariales ; calcul de la retenue fiscale selon la base et le barème fournis ; net = brut − cotisations salariales − retenues fiscales ; net à payer = net − acomptes et autres retenues ; calcul des charges patronales et du coût employeur.\n\nExercice 2. La cotisation salariale est retenue sur le salaire brut : elle diminue ce que reçoit le salarié. La cotisation patronale est payée par l'employeur en plus du brut : elle augmente le coût du travail sans figurer dans le net du salarié.\n\nExercice 3. Net = 400 000 − 32 000 − 25 000 = 343 000 FCFA. Net à payer = 343 000 − 60 000 = 283 000 FCFA.\n\nExercice 4. Candidatures vers premier entretien : 24 / 120 = 20 %. Premier vers second entretien : 6 / 24 = 25 %. Second entretien vers embauche : 2 / 6 ≈ 33,3 %. Taux global : 2 / 120 ≈ 1,7 %.\n\nExercice 5. Mariama conserve le principe du plan mais réduit le volume quotidien pendant le stage : une heure par jour en semaine, consacrée à la récupération active sur ses fiches, et des séances de 3 heures le samedi et le dimanche pour les bulletins de paie et les cas. Elle utilise son stage comme ressource : observer comment l'entreprise organise l'accueil, consulter (avec autorisation et en respectant la confidentialité) un modèle de bulletin anonymisé. La semaine 6, libérée, est entièrement consacrée au sujet type et aux points faibles."
+   },
+   {
+    "title": "Recrutement et intégration : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion de la paie et administration du personnel : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Formation et gestion des compétences : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 RH (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Recrutement et intégration",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de la paie et administration du personnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Formation et gestion des compétences",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-rh-l3",
+  "level": "Licence 3",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Ressources humaines Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre la GPEC et le pilotage RH (tableaux de bord, indicateurs), les relations sociales et le dialogue social, la rémunération globale et le système d'information RH (SIRH). Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : les acquis des Licences 1 et 2 RH (droit du travail, recrutement, paie, formation).",
+  "sort": 303,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les enjeux de la Licence 3, année de diplôme et d'orientation.\n- Identifier les trois matières clés de l'année et le niveau d'analyse attendu.\n- Adopter une méthode de révision orientée vers l'analyse, le chiffrage et la recommandation.\n- Planifier six semaines de révision et maîtriser les épreuves de synthèse.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle du LMD. Sa validation, avec l'ensemble des crédits de la Licence, permet d'obtenir le diplôme et de candidater en Master ou d'entrer dans la vie professionnelle. Les UE de L3 sont plus intégratrices : elles demandent de mobiliser les acquis de L1 (droit du travail, comportement organisationnel) et de L2 (recrutement, paie, formation) pour traiter des problèmes de pilotage. Beaucoup d'établissements y ajoutent un stage avec rapport et soutenance, ou un mémoire de fin de cycle. Crédits, coefficients, compensations et conditions de délivrance du diplôme sont fixés par le règlement des études de votre établissement : lisez-le attentivement.\n\n## 2. Les matières clés de la Licence 3 RH\n\n- GPEC et pilotage RH : démarche de gestion prévisionnelle des emplois et des compétences, pyramide des âges, projection des effectifs, analyse des écarts, plans d'action ; tableaux de bord sociaux et indicateurs (rotation, absentéisme, structure des effectifs, masse salariale).\n- Relations sociales et dialogue social : acteurs (représentants du personnel, syndicats, organisations d'employeurs, État), négociation collective, information et consultation, prévention et règlement des conflits collectifs, dans un contexte sénégalais marqué par la réforme du Code du travail (projet de loi n°15/2026), à aborder avec prudence.\n- Rémunération globale et SIRH : composantes de la rémunération, équité interne et externe, politique salariale, pilotage de la masse salariale (effets niveau, masse et report) ; système d'information RH : modules, projet, protection des données.\n\n## 3. Ce qui change dans les attentes des correcteurs\n\nEn L1, on vérifie que vous connaissez les notions. En L2, que vous savez appliquer des techniques. En L3, on attend que vous sachiez diagnostiquer, chiffrer et recommander. Une bonne copie de L3 :\n\n- Part des données du cas et calcule les bons indicateurs.\n- Interprète les chiffres (« le taux de rotation de 18 % est élevé pour des emplois qualifiés »), au lieu de les laisser sans commentaire.\n- Propose des actions hiérarchisées, chiffrées si possible, avec leurs limites et risques.\n- Montre une conscience du contexte : PME ou grande entreprise, secteur, climat social, cadre juridique en évolution.\n\n## 4. Méthode de révision\n\nConstruisez trois outils.\n\nLe formulaire d'indicateurs : sur une page, toutes les formules (taux de rotation, absentéisme, âge moyen, effet niveau, effet masse, effet report, compa-ratio, coût d'une hausse de salaire), avec un exemple chiffré pour chacune.\n\nLes schémas de démarche : la GPEC en cinq étapes, la procédure de négociation, la conduite d'un projet SIRH. Vous devez pouvoir les redessiner de mémoire.\n\nLa banque d'arguments : pour chaque grand thème, trois arguments pour, trois arguments contre, un exemple africain fictif mais réaliste. Ils nourrissent les questions de réflexion et les recommandations.\n\n## 5. Les types d'épreuves en L3\n\n- L'étude de cas de synthèse : un dossier d'entreprise de plusieurs pages (annexes chiffrées, organigramme, extraits de procès-verbaux) et des questions qui croisent les matières. Lisez d'abord les questions, puis les annexes en notant les données utiles.\n- L'exercice chiffré : projection d'effectifs, tableau de bord, coût d'une politique salariale.\n- La note de synthèse ou la note de recommandation à la direction : en-tête, objet, contexte, analyse, recommandations, conclusion ; style clair et neutre.\n- La dissertation : par exemple « Le dialogue social est-il un frein ou un levier de performance ? ».\n- La soutenance de stage ou de projet : structurer, respecter le temps, préparer les questions.\n\n## 6. Plan de révision sur 6 semaines\n\n- Semaine 1 : GPEC. Démarche, pyramide des âges, projection des ressources, écarts, plans d'action. Deux cas chiffrés.\n- Semaine 2 : Pilotage RH. Tableau de bord social, indicateurs, interprétation, alertes. Construction d'un tableau de bord complet.\n- Semaine 3 : Relations sociales. Acteurs, instances, négociation, conflits collectifs. Une note de recommandation.\n- Semaine 4 : Rémunération globale. Composantes, équité, masse salariale (effets niveau, masse, report), coût des mesures salariales. Quatre exercices.\n- Semaine 5 : SIRH. Modules, projet, protection des données, indicateurs. Une dissertation. Révision des formulaires.\n- Semaine 6 : Sujet type complet (leçon 5) en 4 heures, correction, reprise des points faibles.\n\n## Points clés\n\n- En L3 : diagnostiquer, chiffrer, recommander.\n- Trois matières : GPEC et pilotage, relations sociales, rémunération globale et SIRH.\n- Un formulaire d'indicateurs et des schémas de démarche sont vos meilleurs outils.\n- Les recommandations doivent être hiérarchisées et réalistes.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez en quoi les attentes d'un correcteur de L3 diffèrent de celles de L1.\n- Exercice 2. Une entreprise compte 200 salariés en moyenne sur l'année ; elle a enregistré 30 départs et 34 arrivées. Calculez le taux de rotation selon la formule (départs + arrivées) / 2 / effectif moyen × 100.\n- Exercice 3. Rédigez l'en-tête et le plan d'une note à la directrice générale sur la hausse de l'absentéisme.\n- Exercice 4. Une hausse générale de 3 % est appliquée à une masse salariale annuelle de 600 000 000 FCFA dès le 1er janvier. Quel est son coût annuel, hors charges patronales ?\n- Exercice 5 (cas pratique). Khadija prépare sa L3 et doit rendre son rapport de stage en semaine 4. Adaptez le plan de 6 semaines.\n\n## Corrigé\n\nExercice 1. En L1, on évalue la connaissance des notions et des règles de base ; en L3, on évalue la capacité à analyser un dossier complexe, à calculer et interpréter des indicateurs, et à formuler des recommandations argumentées et hiérarchisées, en mobilisant plusieurs matières.\n\nExercice 2. Taux de rotation = ((30 + 34) / 2) / 200 × 100 = 32 / 200 × 100 = 16 %.\n\nExercice 3. En-tête : de (service RH), à (directrice générale), date, objet : « Hausse de l'absentéisme : analyse et propositions ». Plan : 1. Constat chiffré (évolution du taux, services et motifs concernés) ; 2. Causes probables ; 3. Coûts estimés ; 4. Recommandations hiérarchisées ; 5. Indicateurs de suivi.\n\nExercice 4. Coût = 600 000 000 × 3 % = 18 000 000 FCFA par an, hors charges patronales.\n\nExercice 5. Semaines 1 à 3 : une heure par jour sur le programme (GPEC, pilotage, relations sociales) et le reste sur le rapport. Semaine 4 : priorité au rapport, avec seulement une relecture quotidienne du formulaire d'indicateurs. Semaine 5 : rémunération globale et SIRH en intensif. Semaine 6 : sujet type et révisions. Le stage peut nourrir les révisions : un tableau de bord ou un accord observé pendant le stage, anonymisé, fournit des exemples précieux."
+   },
+   {
+    "title": "GPEC et pilotage RH : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Relations sociales et dialogue social : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Rémunération globale et SIRH : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 RH (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : GPEC et pilotage RH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Relations sociales et dialogue social",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Rémunération globale et SIRH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-projet-l1",
+  "level": "Licence 1",
+  "subject": "Gestion de projets",
+  "module": null,
+  "title": "Gestion de projets Licence 1 : réussir ses examens",
+  "description": "Ce cours prépare les partiels et examens semestriels de première année de Licence en gestion de projets : fondamentaux du management de projet (cycle de vie, acteurs, cadrage, cahier des charges), outils de planification (WBS, Gantt, PERT et chemin critique) et communication en équipe projet. Il propose des fiches de révision, des exercices corrigés, un sujet type et trois cours vidéo de 1h30. Aucun prérequis autre que le niveau baccalauréat.",
+  "sort": 311,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Gestion de projets",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\nÀ la fin de cette leçon, vous saurez comment est organisée votre première année de Licence en gestion de projets dans le système LMD, quelles matières vous attendent aux partiels et aux examens semestriels, quels types d'épreuves vous devrez affronter et comment bâtir un plan de révision efficace sur six semaines.\n\n## Le système LMD en quelques mots\n\nLe système LMD (Licence, Master, Doctorat) est appliqué dans les universités publiques et la plupart des écoles privées du Sénégal et de l'espace UEMOA. La Licence se prépare en trois ans, soit six semestres. Chaque semestre regroupe plusieurs unités d'enseignement (UE). Une UE rassemble des matières proches, appelées éléments constitutifs (EC), par exemple une UE « Fondamentaux du management de projet » qui contient un cours magistral et des travaux dirigés.\n\nChaque UE donne des crédits. Les crédits mesurent la charge de travail de l'étudiant (cours, TD, travail personnel), pas seulement les heures passées en amphithéâtre. Le nombre exact de crédits par UE, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : consultez toujours le règlement des études et le guide de l'étudiant de votre université ou de votre école. Retenez le principe général : une UE validée est acquise définitivement, et une note faible dans une matière peut parfois être compensée par une bonne note dans une autre matière de la même UE ou du même semestre, selon les règles locales.\n\n## Les matières clés de la Licence 1 en gestion de projets\n\nEn première année, l'objectif est de poser les bases. Ce cours se concentre sur trois matières centrales, que vous retrouverez sous des intitulés proches dans la plupart des maquettes :\n\n- Fondamentaux du management de projet : définition d'un projet, cycle de vie, acteurs (maître d'ouvrage, maître d'œuvre, chef de projet, parties prenantes), cadrage, note de cadrage et cahier des charges.\n- Outils de planification : structure de découpage du projet (WBS ou organigramme des tâches), diagramme de Gantt, réseau PERT et calcul du chemin critique avec les marges.\n- Communication et travail en équipe projet : plan de communication, réunions, comptes rendus, rôles dans l'équipe, gestion des conflits, matrice des responsabilités.\n\nCes matières s'accompagnent souvent de cours transversaux (économie générale, comptabilité, mathématiques appliquées, informatique bureautique, expression écrite) qui ne sont pas traités ici mais qui comptent dans votre moyenne. Les notions de coûts, de risques et de méthodes agiles seront approfondies en Licence 2, et l'évaluation financière de projets en Licence 3.\n\n## Les types d'épreuves\n\nAux partiels comme aux examens semestriels, vous rencontrerez principalement cinq formats.\n\n- Le cas pratique : un texte décrit une organisation fictive (une ONG à Kaolack, une PME de transformation de fruits à Ziguinchor) et vous demande de cadrer le projet, d'identifier les acteurs ou de proposer un plan de communication. On attend une réponse appliquée au cas, pas une récitation du cours.\n- L'exercice chiffré : calcul des dates au plus tôt et au plus tard, des marges et du chemin critique d'un réseau PERT, construction d'un Gantt, calcul d'une durée moyenne avec trois estimations.\n- Le QCM ou les questions courtes : définitions précises (qu'est-ce qu'un livrable ? un jalon ? la marge libre ?).\n- La dissertation ou question de réflexion : par exemple « Le chef de projet doit-il être avant tout un technicien ou un communicant ? ». On attend une introduction, un plan en deux ou trois parties et une conclusion.\n- Le projet tutoré ou dossier de groupe : rédaction d'une note de cadrage, présentation orale, travail collectif évalué.\n\n## Méthode de révision\n\nRévisez en trois temps. D'abord, comprenez : relisez le cours en reformulant chaque notion avec vos propres mots et un exemple sénégalais. Ensuite, mémorisez : fabriquez des fiches courtes (une notion, une définition, un exemple, un piège). Enfin, entraînez-vous : refaites les exercices de TD sans regarder la correction, chronométrez-vous et comparez ensuite.\n\nPour les exercices de planification, la régularité compte plus que la quantité. Un réseau PERT par jour pendant deux semaines vaut mieux que dix réseaux la veille de l'examen. Écrivez toujours vos calculs dans un tableau propre : tâche, durée, antériorités, début au plus tôt, fin au plus tôt, début au plus tard, fin au plus tard, marge totale, marge libre. Le correcteur suit votre raisonnement ligne par ligne et peut vous accorder des points même si une erreur s'est glissée au début.\n\nTravaillez aussi en groupe. La gestion de projets est un métier collectif : expliquer le chemin critique à un camarade est le meilleur moyen de vérifier que vous l'avez compris.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : relecture des fondamentaux (définitions, cycle de vie, acteurs). Fiches de vocabulaire. Une question de cours par jour.\n- Semaine 2 : cadrage et cahier des charges. Rédiger une note de cadrage complète sur un projet fictif (par exemple l'ouverture d'une cantine scolaire à Saint-Louis).\n- Semaine 3 : WBS et Gantt. Construire deux WBS et deux Gantt à la main, puis sur tableur.\n- Semaine 4 : PERT et chemin critique. Un réseau par jour, avec calcul des marges totales et libres.\n- Semaine 5 : communication et équipe. Plan de communication, matrice RACI, gestion de conflits. Entraînement à la rédaction de comptes rendus.\n- Semaine 6 : sujets types en conditions réelles (3 heures), correction, reprise des points faibles, repos la veille.\n\n## Points clés à retenir\n\n- Lisez le règlement des études de votre établissement pour connaître les crédits et les règles de compensation.\n- Trois matières clés en L1 : fondamentaux, planification, communication et équipe.\n- Les exercices chiffrés rapportent des points sûrs si la méthode est rigoureuse et présentée en tableau.\n- Révisez tôt, régulièrement et en vous entraînant sur des sujets complets.\n\n## Exercices pratiques\n\n1. Citez trois matières clés de la Licence 1 en gestion de projets et donnez pour chacune une notion importante.\n2. Quelle est la différence entre une UE et un EC ?\n3. Expliquez pourquoi un crédit ne correspond pas seulement à des heures de cours.\n4. Classez les épreuves suivantes par type : « Calculez le chemin critique », « Le chef de projet est-il un manager ? », « Rédigez la note de cadrage du projet de l'association Jappo ».\n5. Cas pratique : Aminata dispose de six semaines avant ses examens, mais elle travaille le samedi dans une boutique à Pikine. Proposez-lui un plan de révision réaliste en indiquant le contenu de chaque semaine et le nombre d'heures par jour.\n\n## Corrigé\n\n1. Fondamentaux du management de projet (cycle de vie) ; outils de planification (chemin critique) ; communication et travail en équipe projet (plan de communication). D'autres notions sont acceptées si elles relèvent bien de la matière.\n\n2. L'UE (unité d'enseignement) est un ensemble cohérent de matières qui donne des crédits. L'EC (élément constitutif) est l'une des matières qui composent l'UE. Une UE peut contenir un ou plusieurs EC.\n\n3. Le crédit mesure la charge de travail totale de l'étudiant : cours, TD, TP, travail personnel, préparation des examens. Deux matières ayant le même volume horaire en salle peuvent donc représenter des charges différentes.\n\n4. « Calculez le chemin critique » : exercice chiffré. « Le chef de projet est-il un manager ? » : dissertation ou question de réflexion. « Rédigez la note de cadrage » : cas pratique.\n\n5. Proposition : du lundi au vendredi, 3 heures par jour ; le dimanche, 4 heures ; le samedi, révision légère de fiches dans les transports (30 minutes). Semaine 1 : fondamentaux ; semaine 2 : cadrage et cahier des charges ; semaine 3 : WBS et Gantt ; semaine 4 : PERT ; semaine 5 : communication et équipe ; semaine 6 : sujets complets en 3 heures le dimanche et le mercredi, reprise des erreurs les autres jours. L'essentiel est que le plan soit réaliste, régulier et qu'il comporte des entraînements en conditions d'examen."
+   },
+   {
+    "title": "Fondamentaux du management de projet : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Outils de planification (WBS, Gantt, PERT) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Communication et travail en équipe projet : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 en Gestion de projets",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Fondamentaux du management de projet",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Communication et travail en équipe projet",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-projet-l2",
+  "level": "Licence 2",
+  "subject": "Gestion de projets",
+  "module": null,
+  "title": "Gestion de projets Licence 2 : réussir ses examens",
+  "description": "Ce cours prépare les examens de deuxième année de Licence en gestion de projets : gestion des coûts et du budget (estimation, suivi, valeur acquise), gestion des risques et de la qualité, méthodes agiles (Scrum, Kanban). Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30 accompagnent la révision. Prérequis : les bases de la Licence 1 (cycle de vie, WBS, PERT).",
+  "sort": 312,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Gestion de projets",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\nComprendre ce qui change en deuxième année de Licence, connaître les matières clés et le type d'épreuves, adopter une méthode de révision adaptée aux exercices chiffrés et aux études de cas, et suivre un plan de révision de six semaines.\n\n## Rappel : la Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 du parcours LMD. Comme en première année, les enseignements sont regroupés en unités d'enseignement (UE) qui donnent des crédits, eux-mêmes composés d'éléments constitutifs (EC). Le nombre de crédits, les coefficients, les règles de compensation, de rattrapage et de passage en Licence 3 dépendent de chaque université ou école : le règlement des études de votre établissement fait foi. Un conseil : vérifiez dès la rentrée si vous avez des UE de Licence 1 non validées à rattraper, car elles s'ajoutent à votre charge de travail.\n\n## Ce qui change par rapport à la Licence 1\n\nEn Licence 1, vous avez appris à définir, cadrer et planifier un projet. En Licence 2, on passe à la maîtrise : combien coûte le projet et comment suivre ce coût, quels événements peuvent le faire dérailler et comment garantir la qualité du résultat, et comment travailler autrement quand le besoin évolue sans cesse, avec les méthodes agiles. Les exercices deviennent plus chiffrés et les cas pratiques plus proches des situations réelles des entreprises, ONG et administrations de la sous-région.\n\n## Les matières clés de la Licence 2\n\n- Gestion des coûts et budget : méthodes d'estimation (analogique, paramétrique, ascendante, à trois points), construction du budget, réserves, courbe en S, suivi des dépenses et méthode de la valeur acquise (indicateurs CV, SV, CPI, SPI, EAC, ETC, VAC, TCPI).\n- Gestion des risques et de la qualité : identification, matrice probabilité-impact, valeur monétaire attendue, stratégies de réponse, registre des risques ; plan qualité, coût de la qualité, outils (Pareto, Ishikawa, roue de Deming).\n- Méthodes agiles : valeurs et principes, Scrum (rôles, événements, artefacts), Kanban (visualisation, limitation du travail en cours, flux), vélocité, burndown, user stories.\n\nCes matières s'appuient sur la Licence 1 : impossible de calculer une valeur acquise sans WBS ni planning. Revoyez donc rapidement le PERT et le Gantt avant de commencer. Les autres matières de votre maquette (comptabilité analytique, statistiques, droit, anglais, informatique) comptent aussi dans votre moyenne, mais ne sont pas traitées ici.\n\n## Les types d'épreuves en Licence 2\n\n- Exercice chiffré de valeur acquise : à partir d'un tableau de lots (budget, avancement prévu, avancement réel, coût réel), calculer et interpréter les indicateurs. C'est un grand classique.\n- Exercice d'estimation : calculer un coût par la méthode paramétrique ou à trois points, construire un budget avec réserves.\n- Étude de cas risques : à partir d'un texte, identifier les risques, les coter, calculer la valeur monétaire attendue et proposer des réponses.\n- Questions de cours et QCM sur Scrum et Kanban : rôles, durée des événements, définition de « terminé ».\n- Question de réflexion : « Les méthodes agiles sont-elles adaptées aux projets de construction ? »\n- Projet tutoré : par exemple, piloter en Scrum le développement d'une petite application pour une association étudiante.\n\n## Méthode de révision\n\nPour la valeur acquise, apprenez les formules par cœur, mais surtout leur sens. CPI = EV / AC : combien de valeur produite pour 1 FCFA dépensé. SPI = EV / PV : quelle part du travail prévu a été réalisée. Un indice inférieur à 1 est défavorable, supérieur à 1 favorable. Les écarts (CV, SV) négatifs sont défavorables. Si vous retenez cette logique, vous retrouverez toujours les formules.\n\nPour les risques, entraînez-vous à transformer un texte en registre : cause, événement, conséquence. Pour l'agile, faites une fiche comparative Scrum / Kanban / approche prédictive.\n\nPrésentez toujours vos calculs avec la formule, l'application numérique, le résultat avec son unité (FCFA, millions de FCFA, semaines) et une phrase d'interprétation. Une valeur sans interprétation perd des points.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : rappels de L1 (WBS, PERT) et estimation des coûts. Trois exercices d'estimation.\n- Semaine 2 : budget, courbe en S, valeur acquise. Un exercice complet chaque jour.\n- Semaine 3 : risques (registre, matrice, valeur monétaire attendue) et qualité (Pareto, Ishikawa, coût de la qualité).\n- Semaine 4 : agile (Scrum, Kanban, vélocité, burndown, loi de Little).\n- Semaine 5 : études de cas multi-matières et questions de réflexion.\n- Semaine 6 : deux sujets types en 3 heures, correction, révision des fiches, repos la veille.\n\n## Points clés\n\n- La Licence 2 passe de la planification à la maîtrise : coûts, risques, qualité, agilité.\n- La valeur acquise est l'exercice incontournable : formules, calcul, interprétation.\n- Le règlement des études de votre établissement fixe les crédits et les règles de passage.\n\n## Exercices pratiques\n\n1. Citez les trois matières clés de la Licence 2 et un outil de chacune.\n2. Que signifie un CPI de 0,9 ? Et un SPI de 1,1 ?\n3. Pourquoi faut-il revoir le PERT de Licence 1 avant d'étudier la valeur acquise ?\n4. Transformez la phrase suivante en risque structuré (cause, événement, conséquence) : « Il pleut beaucoup en août à Ziguinchor. »\n5. Cas pratique : Ibrahima a une UE de Licence 1 à rattraper et travaille comme stagiaire deux après-midi par semaine. Construisez son plan de révision de six semaines.\n\n## Corrigé\n\n1. Coûts et budget : la valeur acquise. Risques et qualité : la matrice probabilité-impact ou le diagramme de Pareto. Méthodes agiles : le Scrum avec le sprint, ou le tableau Kanban.\n\n2. CPI de 0,9 : pour 1 FCFA dépensé, le projet n'a produit que 0,90 FCFA de valeur ; il y a dépassement de coût. SPI de 1,1 : le projet a réalisé 110 % du travail prévu à cette date ; il est en avance.\n\n3. La valeur acquise compare le travail réalisé au travail planifié. Il faut donc une WBS (pour découper le budget par lot) et un planning (pour savoir ce qui devait être fait à chaque date).\n\n4. Cause : fortes pluies d'août à Ziguinchor. Événement : arrêt ou ralentissement des travaux de terrassement. Conséquence : retard de plusieurs semaines et surcoût de main-d'œuvre.\n\n5. Exemple : réserver les matinées des jours de stage et les autres journées complètes à la révision. Semaine 1 : UE de L1 à rattraper et rappels de PERT ; semaine 2 : coûts et valeur acquise ; semaine 3 : risques et qualité ; semaine 4 : agile ; semaine 5 : cas multi-matières et nouvelle séance sur l'UE de L1 ; semaine 6 : sujets types. L'important est de prévoir explicitement du temps pour l'UE à rattraper et des entraînements en conditions réelles."
+   },
+   {
+    "title": "Gestion des coûts et budget : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Gestion des risques et de la qualité : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 70
+   },
+   {
+    "title": "Méthodes agiles (Scrum, Kanban) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 70
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 en Gestion de projets",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des coûts et budget",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des risques et de la qualité",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodes agiles (Scrum, Kanban)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-projet-l3",
+  "level": "Licence 3",
+  "subject": "Gestion de projets",
+  "module": null,
+  "title": "Gestion de projets Licence 3 : réussir ses examens",
+  "description": "Ce cours prépare les examens de troisième année de Licence en gestion de projets : montage et évaluation de projets de développement (cadre logique, faisabilité, VAN et TRI), gestion de portefeuille et pilotage par tableaux de bord, suivi-évaluation et principes généraux des marchés publics. Il comprend des fiches, des exercices corrigés, un sujet type et trois cours vidéo de 1h30. Prérequis : Licence 2 (coûts, valeur acquise, risques).",
+  "sort": 313,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Gestion de projets",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\nComprendre les enjeux de la dernière année de Licence, identifier les matières clés, connaître les types d'épreuves et le travail de fin d'études, et organiser six semaines de révision efficaces.\n\n## La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle du système LMD. Elle donne accès au diplôme de Licence lorsque l'ensemble des crédits des six semestres est validé, selon les règles de l'établissement. Elle conditionne aussi l'admission en Master, souvent sur dossier : les notes de Licence 3, le stage et le mémoire ou rapport de fin d'études pèsent lourd. Les crédits, coefficients, conditions de compensation et modalités de rattrapage sont fixés par chaque université ou école ; lisez attentivement votre règlement des études et le guide du mémoire ou du rapport de stage.\n\n## Ce qui change par rapport à la Licence 2\n\nEn Licence 1, vous avez appris à cadrer et planifier ; en Licence 2, à maîtriser coûts, risques, qualité et à travailler en agile. En Licence 3, on prend de la hauteur : comment monter un projet de développement et convaincre un financeur ; comment décider entre plusieurs projets et piloter un ensemble de projets ; comment suivre et évaluer les résultats, et acheter dans le respect des règles de la commande publique. Les sujets mêlent calculs financiers, raisonnement stratégique et connaissance des pratiques des bailleurs, des administrations et des ONG.\n\n## Les matières clés de la Licence 3\n\n- Montage et évaluation de projets de développement : cycle du projet, analyse des problèmes et des objectifs, cadre logique, études de faisabilité, critères financiers (VAN, TRI, indice de profitabilité, délai de récupération actualisé), notions d'analyse économique.\n- Gestion de portefeuille et pilotage : distinction projet, programme, portefeuille ; sélection et priorisation (notation pondérée, contrainte budgétaire) ; bureau des projets ; conception et lecture de tableaux de bord.\n- Suivi-évaluation et marchés publics : chaîne de résultats, indicateurs, situation de référence et cibles, plan de suivi-évaluation, critères d'évaluation ; principes généraux de la commande publique, étapes d'une procédure, évaluation des offres.\n\nCes matières mobilisent tout ce qui précède : la valeur acquise de Licence 2 alimente les tableaux de bord, la planification de Licence 1 sert à construire le chronogramme d'un projet de développement. Les autres enseignements de votre maquette (finance, droit, anglais, méthodologie) comptent aussi dans la moyenne mais ne sont pas traités ici.\n\n## Les types d'épreuves\n\n- Exercice de choix d'investissement : calculer la VAN, le TRI par interpolation, l'indice de profitabilité et le délai de récupération ; comparer deux projets.\n- Cas de montage de projet : à partir d'un texte, construire l'arbre à problèmes et le cadre logique avec des indicateurs objectivement vérifiables.\n- Cas de portefeuille : classer des projets par notation pondérée, choisir sous contrainte budgétaire, commenter un tableau de bord.\n- Cas de suivi-évaluation : calculer des taux de réalisation, juger un projet selon les critères d'évaluation.\n- Questions sur la commande publique : principes, étapes, évaluation d'offres sur un exemple chiffré.\n- Dissertation : « Un projet rentable financièrement est-il forcément un bon projet de développement ? »\n- Mémoire ou rapport de stage, avec soutenance.\n\n## Méthode de révision\n\nPour les calculs financiers, maîtrisez le facteur d'actualisation 1 / (1 + t)^n et construisez toujours un tableau : année, flux, facteur, flux actualisé, cumul. Le cumul donne directement la VAN et le délai de récupération. Pour le TRI, entraînez-vous à l'interpolation linéaire entre deux taux qui encadrent le zéro.\n\nPour le cadre logique, apprenez la logique verticale (si les activités sont réalisées et que les hypothèses se vérifient, alors les résultats sont atteints…) et la logique horizontale (indicateur, source de vérification). Pour la commande publique, retenez les principes et les étapes ; ne citez jamais de seuils ou d'articles dont vous n'êtes pas certain : expliquez le mécanisme et renvoyez au texte en vigueur.\n\nPréparez en parallèle votre mémoire ou rapport : les révisions et la rédaction se nourrissent mutuellement.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : cycle du projet, arbre à problèmes, cadre logique ; deux cadres logiques complets.\n- Semaine 2 : faisabilité et critères financiers ; un exercice de VAN/TRI par jour.\n- Semaine 3 : portefeuille, notation pondérée, sélection sous contrainte, tableaux de bord.\n- Semaine 4 : suivi-évaluation (indicateurs, critères) et commande publique (principes, étapes, évaluation des offres).\n- Semaine 5 : études de cas multi-matières et dissertations ; avancement du mémoire.\n- Semaine 6 : deux sujets types en conditions réelles, corrections, fiches finales, repos.\n\n## Points clés\n\n- La Licence 3 conclut le premier cycle et prépare le Master.\n- Trois matières : montage et évaluation, portefeuille et pilotage, suivi-évaluation et marchés publics.\n- Tableau d'actualisation systématique ; prudence sur les références réglementaires.\n\n## Exercices pratiques\n\n1. Citez les trois matières clés de la Licence 3 et un outil de chacune.\n2. Calculez le facteur d'actualisation à 10 % pour l'année 3 (arrondi à 4 décimales).\n3. Qu'est-ce que la logique verticale du cadre logique ?\n4. Pourquoi ne faut-il pas citer un seuil de marché public dont on n'est pas sûr ?\n5. Cas pratique : Fatou doit rendre son rapport de stage dans huit semaines et passer ses examens dans six. Proposez une organisation.\n\n## Corrigé\n\n1. Montage et évaluation : le cadre logique ou la VAN. Portefeuille et pilotage : la notation pondérée ou le tableau de bord. Suivi-évaluation et marchés publics : l'indicateur avec situation de référence et cible, ou la grille d'évaluation des offres.\n\n2. 1 / 1,1³ = 1 / 1,331 ≈ 0,7513.\n\n3. C'est l'enchaînement de causalité de bas en haut : les activités, sous réserve des hypothèses, produisent les résultats ; les résultats, sous réserve des hypothèses, permettent d'atteindre l'objectif spécifique ; celui-ci contribue à l'objectif global.\n\n4. Les seuils et articles changent avec les réformes et diffèrent selon les pays et les bailleurs. Une erreur fait perdre des points et, dans la vie professionnelle, peut entraîner l'annulation d'une procédure. Il vaut mieux expliquer le mécanisme et renvoyer au texte en vigueur.\n\n5. Exemple : chaque matin, 3 heures de révision selon le plan de six semaines ; chaque après-midi, 2 heures de rédaction du rapport (plan validé en semaine 1, partie descriptive en semaines 2 et 3, analyse en semaines 4 et 5) ; pendant la semaine des examens, pause sur le rapport ; semaines 7 et 8, finalisation, relecture et préparation de la soutenance."
+   },
+   {
+    "title": "Montage et évaluation de projets de développement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 80
+   },
+   {
+    "title": "Gestion de portefeuille et pilotage par tableaux de bord : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 70
+   },
+   {
+    "title": "Suivi-évaluation et marchés publics : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en Gestion de projets",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Montage et évaluation de projets de développement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de portefeuille et pilotage par tableaux de bord",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Suivi-évaluation et marchés publics",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-info-l1",
+  "level": "Licence 1",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique Licence 1 : réussir ses examens (algorithmique, architecture, mathématiques)",
+  "description": "Ce cours prépare aux partiels et examens semestriels de Licence 1 en informatique : algorithmique et programmation en Python, architecture des ordinateurs et systèmes de numération (binaire, hexadécimal, logique booléenne), mathématiques pour l'informatique (logique, ensembles, matrices). Il réunit fiches de cours, exercices corrigés, un sujet type d'examen et trois cours vidéo de 1h30. Prérequis : niveau baccalauréat scientifique ou équivalent, aucune expérience de programmation exigée.",
+  "sort": 321,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Comprendre comment est organisée une année de Licence 1 dans le système LMD.\n- Connaître les trois matières clés de l'année et ce que les examinateurs attendent.\n- Identifier les types d'épreuves et la bonne façon d'y répondre.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités et écoles du Sénégal et de l'espace UEMOA fonctionnent selon le système LMD : Licence, Master, Doctorat. La Licence se prépare en trois années, soit six semestres. La Licence 1 correspond aux semestres 1 et 2.\n\nChaque semestre est découpé en unités d'enseignement (UE). Une UE regroupe une ou plusieurs matières, parfois appelées éléments constitutifs (EC ou ECUE). Par exemple, une UE « Programmation » peut contenir un cours d'algorithmique et des travaux pratiques en Python. À chaque UE est attaché un nombre de crédits, qui mesure la charge de travail demandée à l'étudiant (cours, TD, TP et travail personnel).\n\nRetiens trois mécanismes généraux, sachant que leurs règles précises (note minimale, coefficients, nombre de crédits pour passer) varient d'un établissement à l'autre et figurent dans le règlement des examens de ta faculté ou de ton école :\n\n- La capitalisation : une UE validée reste acquise, même si l'année n'est pas entièrement validée.\n- La compensation : selon le règlement, une note faible dans une matière peut être compensée par une bonne note dans une autre matière de la même UE, ou entre UE d'un même semestre.\n- La session de rattrapage : elle permet de repasser les épreuves non validées. Ne compte pas dessus : la préparer pendant les vacances coûte plus cher en énergie que réussir en session normale.\n\nConseil pratique : dès la rentrée, récupère la maquette de ta formation (liste des UE, coefficients, crédits, modalités de contrôle) et colle-la au début de ton classeur.\n\n## 2. Les matières clés de la Licence 1 Informatique\n\nCe cours couvre les trois piliers qu'on retrouve dans presque toutes les maquettes de première année.\n\n- Algorithmique et programmation (Python) : variables, conditions, boucles, fonctions, listes, chaînes de caractères, algorithmes classiques (somme, maximum, recherche, tri). On attend que tu saches écrire un algorithme correct, le traduire en Python et suivre son exécution à la main.\n- Architecture des ordinateurs et systèmes de numération : modèle de von Neumann, processeur, mémoire, bus, conversions entre décimal, binaire et hexadécimal, codage des entiers négatifs, logique booléenne et portes logiques. On attend des calculs exacts et une présentation claire des étapes.\n- Mathématiques pour l'informatique : logique propositionnelle, tables de vérité, ensembles, cardinaux, matrices simples. On attend de la rigueur dans les notations et des justifications courtes mais complètes.\n\nCes trois matières se répondent : la logique booléenne de l'architecture est la même que la logique propositionnelle des mathématiques, et les conditions d'un programme Python sont des expressions booléennes. Réviser l'une aide à comprendre les autres.\n\n## 3. Les types d'épreuves et comment y répondre\n\n- Exercice d'algorithmique sur papier : on te demande d'écrire une fonction. Écris d'abord l'idée en une phrase, puis le code bien indenté, puis teste-le à la main sur un petit exemple. Un code sans indentation lisible perd des points, même s'il est juste.\n- Trace d'exécution : on te donne un programme et on te demande ce qu'il affiche. Fais un tableau avec une colonne par variable et une ligne par tour de boucle. Ne saute aucune étape.\n- QCM : très fréquent en architecture et en mathématiques. Lis toutes les propositions ; méfie-toi des questions où plusieurs réponses sont justes. Si le barème pénalise les mauvaises réponses, ne réponds pas au hasard.\n- Exercice chiffré : conversions, complément à deux, produits de matrices. Pose chaque étape, encadre le résultat, vérifie par la conversion inverse.\n- Questions de cours : définitions (bit, octet, registre, tautologie, matrice identité…). Apprends des définitions courtes et exactes, accompagnées d'un exemple.\n- TP noté ou projet : un petit programme à rendre. On évalue le fonctionnement, la lisibilité (noms de variables, commentaires) et le respect des consignes et des délais.\n- Cas pratique : un problème concret, par exemple calculer la facture d'une boutique de Thiès ou les frais d'un transfert d'argent. Il faut modéliser (quelles données, quel résultat ?) avant de coder.\n\n## 4. Une méthode de révision qui marche\n\nLire son cours ne suffit pas. Ce qui fait progresser, c'est de produire : écrire du code, faire des conversions, refaire des exercices sans regarder le corrigé.\n\n- Fiches : une fiche par chapitre, avec définitions, méthodes et un exemple résolu. Pas plus d'une page recto verso.\n- Programmation à la main : l'examen se passe souvent sans ordinateur. Entraîne-toi à écrire du Python sur papier, puis vérifie sur machine (ordinateur, ou même un interpréteur Python sur téléphone).\n- Rappel actif : ferme le cours et réécris de mémoire, par exemple, la table de vérité de l'implication ou l'algorithme du tri par sélection.\n- Annales : les sujets des années précédentes, quand ton département les met à disposition, montrent le style de l'enseignant. Fais-les en temps limité.\n- Travail en groupe : expliquer un exercice à un camarade est le meilleur test de compréhension. Trois ou quatre étudiants, deux séances par semaine, c'est un bon rythme.\n- Sommeil et santé : une nuit blanche avant un examen d'algorithmique fait perdre plus de points qu'elle n'en fait gagner.\n\n## 5. Le jour de l'épreuve\n\nLis tout le sujet pendant les cinq premières minutes et repère le barème. Commence par l'exercice que tu maîtrises le mieux pour prendre confiance. Garde dix minutes à la fin pour relire : indentation, parenthèses, conversions vérifiées, unités indiquées.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : bilan. Relis les trois maquettes de cours, liste les chapitres, classe-les en « maîtrisé », « fragile », « pas compris ». Commence les fiches d'algorithmique.\n- Semaine 2 : Python. Conditions, boucles, fonctions, listes ; 2 exercices par jour, dont une trace d'exécution.\n- Semaine 3 : architecture et numération. Conversions quotidiennes (10 minutes par jour), complément à deux, portes logiques, tables de vérité.\n- Semaine 4 : mathématiques pour l'informatique. Logique, ensembles, matrices ; refais tous les TD.\n- Semaine 5 : sujets complets. Deux sujets types en temps limité, correction sévère, retour sur les points faibles.\n- Semaine 6 : consolidation. Relecture des fiches, rappel actif, un dernier sujet, repos la veille de chaque épreuve.\n\n## Points clés\n\n- Le système LMD repose sur des UE, des crédits, la capitalisation et, selon le règlement, la compensation : vérifie les règles de ton établissement.\n- Trois piliers en L1 : programmation, architecture et numération, mathématiques pour l'informatique.\n- On réussit en produisant : code à la main, conversions, exercices refaits sans corrigé.\n\n## Exercices pratiques\n\n1. Cite trois documents à récupérer auprès de ta scolarité dès la rentrée et explique à quoi sert chacun.\n2. Un étudiant dit : « Je relis mon cours de Python trois fois, je suis prêt. » Quelle erreur de méthode commet-il ?\n3. Pour une trace d'exécution, comment organiser ta copie ?\n4. Échauffement : que vaut 7 // 2 en Python ? et 7 % 2 ?\n5. Échauffement : convertis 13 en binaire.\n6. Établis ton propre planning de la semaine 3 jour par jour.\n\n## Corrigé\n\n1. La maquette de la formation (liste des UE, matières, crédits), le règlement des examens (règles de validation, compensation, rattrapage) et le calendrier universitaire (dates des partiels et des sessions). Ils permettent de savoir où mettre ses efforts et quand.\n2. Il se contente d'une lecture passive. Il doit écrire du code à la main, faire des traces d'exécution et refaire des exercices sans corrigé.\n3. Un tableau avec une colonne par variable (et une colonne « affichage »), une ligne par instruction importante ou par tour de boucle.\n4. 7 // 2 vaut 3 (quotient entier) et 7 % 2 vaut 1 (reste). En effet 7 = 2 × 3 + 1.\n5. 13 = 8 + 4 + 1, donc 13 s'écrit 1101 en binaire.\n6. Exemple : lundi conversions décimal-binaire-hexadécimal ; mardi complément à deux ; mercredi modèle de von Neumann et cycle d'instruction ; jeudi portes logiques ; vendredi tables de vérité et De Morgan ; samedi mini-sujet de 1 heure ; dimanche repos et relecture des fiches."
+   },
+   {
+    "title": "Algorithmique et programmation (Python) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Architecture des ordinateurs et systèmes de numération : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Mathématiques pour l'informatique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 Informatique (corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Algorithmique et programmation en Python",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Architecture des ordinateurs et systèmes de numération",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques pour l'informatique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-info-l2",
+  "level": "Licence 2",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique Licence 2 : réussir ses examens (structures de données, bases de données, réseaux)",
+  "description": "Ce cours prépare aux partiels et examens de Licence 2 en informatique : structures de données et complexité des algorithmes, bases de données relationnelles et SQL (modélisation, normalisation, requêtes), réseaux informatiques (modèles OSI et TCP/IP, adressage IPv4 et calcul de sous-réseaux). Il contient des fiches de cours, des exercices corrigés vérifiés, un sujet type d'examen et trois cours vidéo de 1h30. Prérequis : programmation Python et numération binaire de Licence 1.",
+  "sort": 322,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Connaître les trois matières clés de l'année et les compétences évaluées.\n- Savoir répondre aux types d'épreuves propres à la Licence 2 : calcul de complexité, modélisation de données, requêtes SQL sur papier, calcul de sous-réseaux.\n- Construire un plan de révision sur six semaines.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 de la Licence. On y retrouve l'organisation en unités d'enseignement (UE) dotées de crédits, avec les mécanismes de capitalisation, de compensation et de session de rattrapage. Leurs règles exactes (moyenne minimale, compensation entre UE, conditions de passage en Licence 3 avec ou sans dettes de crédits) dépendent du règlement des examens de ton université ou de ton école : relis-le en début d'année, car elles peuvent différer de celles de Licence 1.\n\nCe qui change surtout, c'est le niveau d'abstraction. En Licence 1, on apprenait à écrire un programme qui marche. En Licence 2, on apprend à choisir la bonne structure de données, à estimer le coût d'un algorithme, à concevoir une base de données propre et à comprendre comment les machines communiquent. Les enseignants attendent des justifications : pourquoi cette structure, pourquoi cette clé, pourquoi ce masque.\n\n## 2. Les matières clés de la Licence 2\n\n- Structures de données et complexité : piles, files, listes chaînées, tables de hachage, arbres binaires de recherche ; notation O, comparaison d'algorithmes de recherche et de tri. On attend des comptages d'opérations justifiés et des schémas clairs.\n- Bases de données relationnelles et SQL : modèle entité-association, cardinalités, passage au modèle relationnel, dépendances fonctionnelles et formes normales, requêtes SQL (sélection, jointure, regroupement, sous-requête). On attend des schémas cohérents et des requêtes exactes, écrites à la main.\n- Réseaux informatiques : modèles OSI et TCP/IP, protocoles usuels, adressage IPv4, masques, découpage en sous-réseaux. On attend des calculs binaires exacts et la bonne couche pour chaque notion.\n\nCes matières s'appuient sur la Licence 1 : le binaire et le ET logique servent au calcul des adresses réseau, la logique et les ensembles servent au SQL, et la programmation Python sert à implémenter les structures de données.\n\n## 3. Les types d'épreuves et comment y répondre\n\n- Exercice de complexité : on te donne un algorithme, tu comptes les opérations en fonction de n. Écris le nombre de tours de chaque boucle, fais la somme, puis donne l'ordre de grandeur. Une réponse « O(n²) » sans justification rapporte peu.\n- Exercice sur les structures : dessiner l'état d'une pile, d'une file ou d'un arbre après une suite d'opérations. Dessine chaque étape ; c'est long mais sûr.\n- Modélisation : à partir d'un texte décrivant une activité (une pharmacie, une agence de transport, une mutuelle de santé), construire le schéma entité-association puis le schéma relationnel. Souligne les clés primaires, marque les clés étrangères d'un dièse.\n- Requêtes SQL sur papier : écris une clause par ligne (SELECT, FROM, JOIN, WHERE, GROUP BY, HAVING, ORDER BY). Relis en te demandant quelles lignes sortent vraiment.\n- Calcul de sous-réseaux : adresse réseau, diffusion, plage d'hôtes, nombre d'hôtes. Présente le dernier octet en binaire : c'est là que se jouent les erreurs.\n- QCM de cours : couches OSI, numéros de ports courants, propriétés des formes normales.\n- TP noté ou projet : souvent une petite base de données avec ses requêtes, ou l'implémentation d'une structure en Python.\n\n## 4. Méthode de révision\n\n- Une fiche par notion, avec un exemple résolu : une fiche « sous-réseaux », une fiche « jointures », une fiche « arbres binaires de recherche ».\n- Pratique quotidienne et courte : un calcul de sous-réseau par jour, une requête SQL par jour. La répétition rend ces exercices automatiques.\n- Vérification sur machine : installe un interpréteur Python et un petit SGBD (SQLite, par exemple, qui fonctionne sans serveur). Écris tes requêtes à la main, puis exécute-les pour vérifier. Pour les réseaux, le module ipaddress de Python permet de contrôler tes calculs.\n- Annales et sujets types en temps limité, puis correction sévère.\n- Travail en binôme : l'un modélise, l'autre critique le schéma ; puis on échange.\n\n## 5. Le jour de l'épreuve\n\nCommence par lire le sujet en entier et repère les exercices « mécaniques » (calcul de sous-réseau, requête simple) : ce sont des points presque sûrs. Garde du temps pour la modélisation, qui demande de la réflexion. En fin d'épreuve, relis les requêtes : un oubli de condition de jointure ou de GROUP BY change complètement le résultat.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : bilan et fiches. Liste les chapitres des trois matières, classe-les selon ta maîtrise, rédige les fiches manquantes.\n- Semaine 2 : structures de données et complexité. Piles, files, listes chaînées, arbres ; un exercice de comptage d'opérations par jour.\n- Semaine 3 : bases de données. Modélisation lundi et mardi, normalisation mercredi, SQL du jeudi au samedi.\n- Semaine 4 : réseaux. Modèles en couches et protocoles, puis adressage et sous-réseaux, un calcul par jour.\n- Semaine 5 : deux sujets complets en temps limité, correction, retour ciblé sur les erreurs.\n- Semaine 6 : consolidation, rappel actif sur les fiches, dernier sujet, sommeil régulier.\n\n## Points clés\n\n- Les règles de validation dépendent du règlement de ton établissement : vérifie-les.\n- En Licence 2, on justifie ses choix : structure, clé, masque.\n- Vérifie tes réponses sur machine pendant les révisions : Python, SQLite, module ipaddress.\n\n## Exercices pratiques\n\n1. Cite trois compétences de Licence 1 réutilisées en Licence 2 et indique dans quelle matière.\n2. Pourquoi présenter le dernier octet d'une adresse en binaire dans un calcul de sous-réseau ?\n3. Une requête SQL sur papier doit-elle être écrite sur une seule ligne ? Justifie.\n4. Échauffement : combien vaut pow(2, 10) ? Et log₂(1 024) ?\n5. Échauffement : combien d'adresses contient un bloc de 8 bits ?\n6. Propose ta semaine 4 jour par jour.\n\n## Corrigé\n\n1. Le ET logique et le binaire (réseaux : calcul de l'adresse réseau), les ensembles et la logique (bases de données : sélection, union, intersection), la programmation Python (structures de données).\n2. Parce que le masque coupe souvent cet octet en deux : la partie réseau et la partie hôte ne sont visibles qu'en binaire.\n3. Non : une clause par ligne rend la requête lisible et permet de vérifier chaque partie (tables, conditions, regroupements).\n4. pow(2, 10) = 1 024, donc log₂(1 024) = 10.\n5. pow(2, 8) = 256 adresses.\n6. Exemple : lundi modèle OSI ; mardi modèle TCP/IP et encapsulation ; mercredi protocoles et ports ; jeudi adresse réseau et diffusion ; vendredi découpage en sous-réseaux ; samedi découpage à longueur variable ; dimanche repos et relecture."
+   },
+   {
+    "title": "Structures de données et complexité : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Bases de données relationnelles et SQL : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Réseaux informatiques : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 Informatique (corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Structures de données et complexité",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Bases de données relationnelles et SQL",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Réseaux informatiques et adressage IPv4",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-info-l3",
+  "level": "Licence 3",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique Licence 3 : réussir ses examens (génie logiciel, web et API, sécurité)",
+  "description": "Ce cours prépare aux examens de Licence 3 en informatique : génie logiciel et UML (cycle de vie, diagrammes, tests), développement web et API (HTML, CSS, JavaScript, HTTP, REST) et sécurité informatique (menaces, cryptographie de base, bonnes pratiques). Il propose des fiches de cours, des exercices corrigés, un sujet type d'examen et trois cours vidéo de 1h30. Prérequis : programmation, bases de données et réseaux de Licence 1 et 2.",
+  "sort": 323,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le parcours LMD et comprendre ses enjeux : diplôme, stage, poursuite en Master ou insertion professionnelle.\n- Connaître les trois matières clés de l'année et les compétences évaluées.\n- Savoir traiter les épreuves typiques : étude de cas UML, conception d'API, analyse de sécurité, projet.\n- Bâtir un plan de révision sur six semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6, les derniers de la Licence. Elle conserve l'organisation en unités d'enseignement (UE) et en crédits, avec capitalisation, compensation selon le règlement et session de rattrapage. Selon les établissements, elle comprend aussi un projet tutoré, un stage en entreprise ou un mémoire de fin de cycle, évalués par un rapport et une soutenance. Les modalités exactes (poids du stage, conditions d'obtention du diplôme, dettes de crédits autorisées) figurent dans le règlement de ta formation : vérifie-les dès la rentrée.\n\nL'enjeu est double : obtenir la Licence, et constituer un dossier solide pour l'admission en Master ou pour un premier emploi (développeur, technicien réseau, administrateur de bases de données, analyste en sécurité). Les notes de Licence 3 et le projet comptent souvent beaucoup dans ces dossiers.\n\n## 2. Les matières clés de la Licence 3\n\n- Génie logiciel et UML : cycle de vie du logiciel, méthodes (cascade, cycle en V, itératif, agile), recueil des exigences, diagrammes UML (cas d'utilisation, classes, séquence, activité, états), stratégies de test. On attend des diagrammes corrects et justifiés à partir d'un texte.\n- Développement web et API : HTML, CSS, JavaScript, protocole HTTP, conception d'API REST. On attend du code lisible, une bonne connaissance des méthodes et codes HTTP, et des routes REST cohérentes.\n- Sécurité informatique : menaces et vulnérabilités, cryptographie de base (symétrique, asymétrique, hachage, signature), bonnes pratiques (authentification, mises à jour, sauvegardes, moindre privilège). On attend des explications précises et des recommandations réalistes.\n\nCes matières forment un tout : un projet web se conçoit avec UML, s'implémente avec HTML, CSS, JavaScript et une API, se teste, et doit être sécurisé dès la conception. Les sujets d'examen mélangent volontiers les trois.\n\n## 3. Les types d'épreuves\n\n- Étude de cas UML : un texte décrit un système (gestion des abonnements d'une salle de sport, plateforme de livraison). Tu dois produire un diagramme de cas d'utilisation, un diagramme de classes, parfois un diagramme de séquence. Commence par souligner les acteurs (noms de personnes ou de systèmes externes), les actions (verbes) et les informations (noms porteurs de données).\n- Conception d'API : proposer les routes REST d'un service, avec méthodes, codes de retour et exemples de JSON. Sois systématique : une ressource, ses opérations, ses codes.\n- Lecture de code web : prévoir l'affichage d'un script JavaScript, corriger une feuille de style, calculer la largeur d'une boîte CSS.\n- Analyse de sécurité : repérer une injection SQL dans un extrait de code, proposer une politique de mots de passe, expliquer un échange de clés. On attend la vulnérabilité, son impact et la correction.\n- Exercices de cryptographie : chiffrement par décalage, petit calcul RSA, propriétés d'une fonction de hachage.\n- QCM : codes HTTP, ports, notions UML et de sécurité.\n- Projet et soutenance : démonstration d'une application, présentation de la conception et des tests. Prépare une démonstration courte, qui fonctionne, et sache justifier chaque choix technique.\n\n## 4. Méthode de révision\n\n- Fiches de synthèse : une par diagramme UML (notation, règles, exemple), une pour HTTP (méthodes et codes), une pour la cryptographie (types d'algorithmes et usages).\n- Pratique : refaire les études de cas des TD sans regarder la correction ; écrire une petite page web avec un formulaire et un appel à une API ; tester les exemples de cryptographie en Python.\n- Annales et sujets types en temps limité.\n- Révisions en groupe : un étudiant joue le client qui décrit son besoin, les autres modélisent. C'est l'exercice le plus proche d'une vraie étude de cas.\n- Projet : ne laisse pas le projet dévorer tes révisions. Planifie-le avec des jalons hebdomadaires.\n\n## 5. Le jour de l'épreuve\n\nLis le sujet en entier, puis relis l'étude de cas en soulignant acteurs, actions et données. Fais un brouillon de diagramme avant de le recopier proprement : un diagramme raturé est difficile à corriger. Pour les questions de sécurité, structure tes réponses en trois temps : menace, conséquence, contre-mesure.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : bilan, fiches, planning du projet.\n- Semaine 2 : génie logiciel. Cycles de vie et méthodes agiles lundi, cas d'utilisation mardi, classes mercredi et jeudi, séquence vendredi, tests samedi.\n- Semaine 3 : web. HTML et CSS, puis JavaScript et DOM, puis HTTP et REST ; construis une mini-application.\n- Semaine 4 : sécurité. Menaces, injection et XSS, cryptographie symétrique et asymétrique, hachage et mots de passe, bonnes pratiques.\n- Semaine 5 : deux sujets complets en temps limité, correction et reprise des points faibles.\n- Semaine 6 : consolidation, rappel actif, préparation de la soutenance si elle a lieu à la même période.\n\n## Points clés\n\n- La Licence 3 conclut la Licence : règlement, stage et projet comptent ; renseigne-toi tôt.\n- Génie logiciel, web et sécurité se combinent dans les sujets.\n- Pour la sécurité : menace, conséquence, contre-mesure.\n\n## Exercices pratiques\n\n1. Dans la phrase « Le caissier enregistre le paiement du client », repère l'acteur, l'action et la donnée.\n2. Pourquoi faire un brouillon de diagramme avant de le recopier ?\n3. Échauffement : que signifie le code HTTP 404 ?\n4. Échauffement : quelle est la différence entre chiffrer et hacher un mot de passe ?\n5. Propose ta semaine 4 jour par jour.\n\n## Corrigé\n\n1. Acteur : le caissier (il interagit avec le système) ; action : enregistrer le paiement (futur cas d'utilisation) ; donnée : le paiement (futur attribut ou classe Paiement, lié à Client).\n2. Parce que la première version est rarement juste : il faut ajuster les multiplicités, déplacer des attributs, ajouter des classes. Un diagramme final propre est plus lisible et mieux noté.\n3. La ressource demandée n'existe pas sur le serveur (Not Found).\n4. Un chiffrement est réversible avec une clé ; un hachage est à sens unique. On stocke les mots de passe hachés (avec un sel), jamais chiffrés de façon réversible, et encore moins en clair.\n5. Exemple : lundi menaces et triade confidentialité-intégrité-disponibilité ; mardi injection SQL et XSS ; mercredi chiffrement symétrique ; jeudi chiffrement asymétrique et RSA ; vendredi hachage, signature et certificats ; samedi bonnes pratiques et mini-sujet ; dimanche repos."
+   },
+   {
+    "title": "Génie logiciel et UML : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Développement web et API : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sécurité informatique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 Informatique (corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Génie logiciel et UML",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Développement web et API",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Sécurité informatique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-cg-l1",
+  "level": "Licence 1",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Contrôle de gestion Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de première année de Licence en contrôle de gestion : introduction au contrôle de gestion et à l'organisation, comptabilité analytique en coûts complets, mathématiques et statistiques de gestion. Fiches de cours, cas d'entreprises fictives d'Afrique de l'Ouest, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : bases de la comptabilité générale (SYSCOHADA révisé) et aisance avec les pourcentages.",
+  "sort": 331,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la première année de Licence en contrôle de gestion dans le système LMD.\n- Identifier les matières clés de l'année et les compétences attendues à l'examen.\n- Connaître les types d'épreuves et adopter une méthode de révision efficace.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nDans les universités et écoles de gestion du Sénégal et de l'espace UEMOA, la Licence suit le système LMD (Licence, Master, Doctorat). L'année est découpée en deux semestres. Chaque semestre regroupe des unités d'enseignement (UE) qui rassemblent plusieurs matières (éléments constitutifs). Chaque UE est affectée d'un nombre de crédits qui reflète la charge de travail de l'étudiant, cours magistraux, travaux dirigés et travail personnel compris.\n\nLes modalités précises (nombre de crédits par UE, poids du contrôle continu, règles de compensation entre matières, sessions de rattrapage) varient d'un établissement à l'autre. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité. Ne vous fiez pas aux rumeurs de couloir : une seule note éliminatoire mal anticipée peut coûter un semestre.\n\n## 2. Les matières clés de l'année\n\nEn première année, la filière contrôle de gestion pose les fondations. Trois matières concentrent l'essentiel des exercices d'examen et sont traitées dans ce cours :\n\n- Introduction au contrôle de gestion et à l'organisation : missions du contrôleur, notions de performance (efficacité, efficience, économie), structures d'organisation, centres de responsabilité, cycle de pilotage.\n- Comptabilité analytique 1 : distinction entre charges directes et indirectes, incorporation des charges, tableau de répartition des centres d'analyse, unités d'œuvre, calcul des coûts complets (achat, production, revient) et du résultat analytique.\n- Mathématiques et statistiques de gestion : pourcentages et indices, intérêts simples et composés, actualisation, emprunts indivis, statistique descriptive et ajustement linéaire, utilisé pour séparer charges fixes et charges variables.\n\nCes matières s'appuient sur d'autres enseignements de l'année : comptabilité générale (SYSCOHADA révisé), microéconomie, droit des affaires (OHADA), informatique de gestion (tableur). La comptabilité générale est indispensable : la comptabilité analytique part des charges enregistrées en classe 6.\n\n## 3. Les types d'épreuves\n\n- L'exercice chiffré : le plus fréquent. Exemple : compléter un tableau de répartition puis calculer un coût de revient. Les points se gagnent sur la démarche et la présentation autant que sur le résultat final.\n- Le cas pratique : une entreprise fictive, plusieurs annexes, une série de questions enchaînées. Une erreur au début se propage ; le correcteur applique en général la règle de la « cohérence » si vous montrez votre méthode.\n- Les questions de cours et le QCM : définitions précises (charge supplétive, unité d'œuvre, centre de profit), avec parfois justification demandée.\n- La dissertation ou la question de réflexion : par exemple « Le contrôle de gestion est-il un outil de surveillance ou d'aide à la décision ? ». Il faut une introduction, un plan en deux ou trois parties et des exemples.\n- Le projet ou dossier : en contrôle continu, construire un petit modèle de coûts sur tableur pour une entreprise réelle ou fictive.\n\n## 4. Méthode de révision\n\nLa méthode la plus efficace combine trois gestes. D'abord, la fiche : une page par chapitre, avec les définitions, les formules et un schéma décrit en mots (par exemple : charges de la comptabilité générale → tri direct/indirect → centres d'analyse → unités d'œuvre → coûts). Ensuite, l'entraînement : refaire les exercices de TD sans regarder le corrigé, chronomètre en main. Enfin, l'auto-correction : comparer ligne par ligne et noter dans un carnet d'erreurs les fautes récurrentes (oubli des charges supplétives, mauvais choix de l'unité d'œuvre, confusion entre quantités produites et vendues).\n\nPour les exercices chiffrés, adoptez une présentation systématique : tableau clair, unités indiquées (FCFA, heures, kg), résultats intermédiaires encadrés par une phrase. Vérifiez toujours une égalité de contrôle : total de la répartition primaire égal aux charges incorporées, stock initial plus entrées égal à sorties plus stock final, résultat analytique concordant avec le résultat de la comptabilité générale.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : relecture des cours d'introduction au contrôle de gestion ; fiches de définitions ; 2 dissertations rédigées en plan détaillé.\n- Semaine 2 : comptabilité analytique, incorporation des charges et tableau de répartition ; 4 exercices de répartition, dont un avec prestations réciproques.\n- Semaine 3 : coûts d'achat, inventaire permanent (CUMP), coûts de production et de revient ; 2 cas complets avec concordance des résultats.\n- Semaine 4 : mathématiques financières (intérêts, actualisation, tableaux d'emprunt) ; statistiques (moyenne, écart-type, ajustement par les moindres carrés).\n- Semaine 5 : sujets d'annales ou sujets types en conditions réelles (3 heures, sans document) ; correction et carnet d'erreurs.\n- Semaine 6 : révision ciblée des points faibles, relecture des fiches, sommeil régulier. La veille de l'épreuve, pas de nouveau chapitre.\n\nTravailler en groupe de trois ou quatre étudiants est très rentable pour les cas pratiques : chacun corrige la copie d'un autre, ce qui oblige à expliquer la méthode.\n\n## 6. Le jour de l'épreuve\n\nLisez tout le sujet pendant les dix premières minutes et repérez les questions indépendantes. Répartissez votre temps selon le barème. Commencez par les questions que vous maîtrisez. Soignez la présentation des tableaux. Si vous êtes bloqué, posez une hypothèse explicite (« à défaut, je retiens un coût d'unité d'œuvre de 400 FCFA ») et poursuivez : vous sauverez les points de la suite. Gardez dix minutes à la fin pour relire les calculs et les unités.\n\n## Points clés\n\n- Lire le règlement des études : crédits, compensation et rattrapage dépendent de votre établissement.\n- Trois matières clés : introduction au contrôle de gestion, comptabilité analytique 1, mathématiques et statistiques de gestion.\n- Une méthode : fiche, entraînement chronométré, carnet d'erreurs.\n- Toujours une égalité de contrôle dans les calculs.\n\n## Exercices\n\n- Exercice 1 : citez trois types d'épreuves et, pour chacun, une erreur fréquente à éviter.\n- Exercice 2 : construisez votre propre plan de révision sur 6 semaines en tenant compte de vos points faibles.\n- Exercice 3 : rédigez la fiche « schéma des coûts complets » en cinq étapes.\n\n## Corrigé\n\n- Exercice 1 : exercice chiffré, oublier les unités et les résultats intermédiaires ; cas pratique, ne pas exploiter toutes les annexes ; dissertation, réciter le cours sans problématique ni exemples.\n- Exercice 2 : réponse personnelle ; un bon plan affecte plus de temps aux matières faibles, prévoit au moins deux sujets complets en conditions réelles et une dernière semaine allégée.\n- Exercice 3 : 1) partir des charges de la comptabilité générale ; 2) retirer les charges non incorporables et ajouter les charges supplétives ; 3) affecter les charges directes aux coûts et répartir les charges indirectes dans les centres (répartition primaire puis secondaire) ; 4) calculer le coût des unités d'œuvre et imputer les centres aux coûts ; 5) calculer coûts d'achat, de production, de revient et résultat analytique, puis vérifier la concordance avec la comptabilité générale."
+   },
+   {
+    "title": "Introduction au contrôle de gestion et à l'organisation : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Comptabilité analytique 1 (coûts complets) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mathématiques et statistiques de gestion : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 en Contrôle de gestion (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction au contrôle de gestion et à l'organisation",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité analytique 1 (coûts complets)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques et statistiques de gestion",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-cg-l2",
+  "level": "Licence 2",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Contrôle de gestion Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de deuxième année de Licence en contrôle de gestion : comptabilité analytique en coûts partiels (seuil de rentabilité, levier opérationnel, imputation rationnelle), gestion budgétaire (ventes, production, trésorerie) et analyse des écarts sur coûts et sur marge. Fiches, cas d'entreprises fictives sénégalaises, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : coûts complets et statistiques de Licence 1.",
+  "sort": 332,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la deuxième année de Licence en contrôle de gestion dans le système LMD.\n- Identifier les matières clés de l'année et ce que les correcteurs attendent.\n- Choisir une méthode de révision adaptée aux épreuves de calcul et d'analyse.\n- Organiser six semaines de révision.\n\n## 1. La Licence 2 dans le système LMD\n\nLa deuxième année se déroule, comme la première, en deux semestres composés d'unités d'enseignement (UE) créditées. Elle marque un changement de niveau : on ne vous demande plus seulement de calculer un coût, mais de l'utiliser pour décider et de commenter un résultat. Les règles de validation (crédits, compensation entre UE, part du contrôle continu, session de rattrapage, conditions de passage en L3) sont propres à chaque université ou école : consultez le règlement des études de votre établissement et la maquette de votre parcours.\n\n## 2. Les matières clés de l'année\n\nCe cours couvre trois matières centrales, qui forment la boîte à outils du contrôleur de gestion opérationnel :\n\n- Comptabilité analytique 2 : méthode des coûts variables (direct costing), marge sur coût variable, seuil de rentabilité, point mort, marge et indice de sécurité, levier opérationnel, coûts spécifiques et décision d'abandon d'un produit, imputation rationnelle des charges fixes.\n- Gestion budgétaire : démarche budgétaire, prévision des ventes (tendance et saisonnalité), budget des ventes, budget de production et lissage, budget des approvisionnements, budget de trésorerie.\n- Analyse des écarts : coûts préétablis (standards), écart global, écarts sur matières (prix, quantité), sur main-d'œuvre directe (taux, rendement), sur charges indirectes (budget, activité, rendement), écarts sur marge (prix, quantité).\n\nCes matières prolongent la comptabilité analytique 1 (coûts complets) et les statistiques de Licence 1. Elles dialoguent avec la finance d'entreprise (trésorerie, investissement) et la fiscalité, enseignées en parallèle.\n\n## 3. Ce que les correcteurs attendent\n\nEn Licence 2, une copie excellente se distingue par trois qualités. La rigueur : formules posées avant les chiffres, unités et signes des écarts indiqués (favorable ou défavorable). La cohérence : les chiffres d'une question à l'autre se raccordent (le budget de production découle du budget des ventes, la somme des écarts redonne l'écart global). L'analyse : chaque résultat est commenté en une ou deux phrases opérationnelles (« le seuil est atteint fin septembre : la marge de manœuvre est faible face à une baisse des ventes »).\n\nLes épreuves prennent plusieurs formes :\n\n- Exercice chiffré court : calculer un seuil de rentabilité, un écart sur matières.\n- Cas pratique de synthèse : une entreprise, plusieurs annexes, budgets puis écarts.\n- QCM et questions de cours : définitions (charge de structure, coût standard, budget flexible).\n- Question de réflexion : « Les budgets sont-ils encore utiles dans un environnement instable ? »\n- Dossier de contrôle continu : construire un budget de trésorerie sur tableur.\n\n## 4. Méthode de révision\n\nFaites une fiche par matière avec trois rubriques : définitions, formules, pièges. Exemples de pièges : confondre taux de marge sur coût variable et marge unitaire ; oublier le stock initial dans le budget de production ; décaisser des ventes alors qu'il s'agit d'encaisser ; inverser le signe d'un écart.\n\nPour chaque formule, apprenez aussi la lecture économique. Le seuil de rentabilité, c'est le chiffre d'affaires pour lequel la marge sur coût variable couvre exactement les charges fixes. L'écart sur quantité de matière, c'est le gaspillage ou l'économie de matière valorisé au prix prévu. Cette lecture vous permettra de retrouver une formule oubliée.\n\nEntraînez-vous à chronométrer : un budget de trésorerie trimestriel doit tenir en vingt minutes, une analyse complète des écarts sur coûts en trente minutes.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : comptabilité analytique 2, coûts variables, seuil, point mort, levier ; 6 exercices courts.\n- Semaine 2 : coûts spécifiques, imputation rationnelle ; 1 cas de décision (abandon d'un produit) ; 1 dissertation en plan détaillé.\n- Semaine 3 : gestion budgétaire, ventes, production, lissage, approvisionnements ; 3 exercices.\n- Semaine 4 : budget de trésorerie ; 2 budgets complets avec bilan prévisionnel des créances et dettes.\n- Semaine 5 : analyse des écarts sur coûts et sur marge ; 3 cas complets ; un sujet type en 3 heures.\n- Semaine 6 : deuxième sujet type, carnet d'erreurs, révision des fiches ; repos la veille.\n\n## 6. Le jour J\n\nLisez l'ensemble du sujet, repérez les dossiers indépendants et commencez par celui que vous maîtrisez le mieux. Présentez les budgets en tableaux mois par mois ou trimestre par trimestre, avec des totaux. Pour les écarts, adoptez une convention de signe claire, annoncez-la, et indiquez toujours « favorable » ou « défavorable » en toutes lettres.\n\n## Points clés\n\n- Les règles de validation dépendent de votre établissement : lisez le règlement des études.\n- Trois matières : comptabilité analytique 2, gestion budgétaire, analyse des écarts.\n- Formule, chiffre, commentaire : la trilogie d'une bonne réponse.\n\n## Exercices\n\n- Exercice 1 : citez deux pièges fréquents par matière.\n- Exercice 2 : expliquez en une phrase la lecture économique du seuil de rentabilité.\n- Exercice 3 : proposez un découpage de votre temps pour un sujet de 3 heures noté sur 20, avec trois dossiers de 7, 6 et 7 points.\n\n## Corrigé\n\n- Exercice 1 : comptabilité analytique 2, confondre marge unitaire et taux de marge ; oublier que le point mort suppose une activité régulière. Gestion budgétaire, oublier le stock initial ; confondre ventes et encaissements. Écarts, inverser les signes ; calculer l'écart sur quantité au prix réel au lieu du prix standard.\n- Exercice 2 : c'est le niveau de chiffre d'affaires à partir duquel la marge sur coût variable couvre toutes les charges fixes, donc où le résultat est nul.\n- Exercice 3 : 10 minutes de lecture, environ 55 minutes pour chaque dossier de 7 points et 45 minutes pour le dossier de 6 points, 15 minutes de relecture."
+   },
+   {
+    "title": "Comptabilité analytique 2 (coûts partiels, seuil, imputation rationnelle) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion budgétaire (ventes, production, trésorerie) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Analyse des écarts (sur coûts et sur marge) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 en Contrôle de gestion (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité analytique 2 (coûts partiels)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion budgétaire",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Analyse des écarts",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-cg-l3",
+  "level": "Licence 3",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Contrôle de gestion Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de troisième année de Licence en contrôle de gestion : méthode ABC et coût cible, tableaux de bord et balanced scorecard, contrôle de gestion des PME et du secteur public, prix de cession interne. Fiches, cas d'entreprises et d'organisations fictives d'Afrique de l'Ouest, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : coûts complets et partiels, budgets et analyse des écarts (L1 et L2).",
+  "sort": 333,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la troisième année de Licence en contrôle de gestion et ses enjeux (diplôme, poursuite en Master, insertion).\n- Identifier les matières clés de l'année et les attentes des correcteurs.\n- Adopter une méthode de révision qui combine calcul et analyse critique.\n- Planifier six semaines de révision.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 conclut le premier cycle du système LMD. Ses deux semestres sont organisés en unités d'enseignement créditées ; l'obtention de l'ensemble des crédits de la Licence donne le diplôme. Beaucoup de parcours prévoient aussi un stage ou un mémoire de fin de cycle. Les règles précises (crédits, compensation, rattrapage, poids du stage, conditions d'admission en Master) relèvent du règlement de votre établissement : consultez-le dès la rentrée, car les dossiers de candidature en Master s'appuient souvent sur les résultats de Licence 3.\n\n## 2. Les matières clés de l'année\n\nEn Licence 3, le contrôle de gestion devient stratégique et s'ouvre à des contextes variés. Ce cours traite trois matières :\n\n- Méthode ABC et coût cible : limites des coûts complets traditionnels, activités et inducteurs, calcul des coûts par activités, gestion par les activités, coût cible (target costing) et analyse de la valeur.\n- Tableaux de bord et indicateurs de performance : conception d'un tableau de bord, choix des indicateurs, balanced scorecard (tableau de bord prospectif) et carte stratégique, pilotage par les feux de signalisation.\n- Contrôle de gestion des PME et du secteur public, prix de cession interne : spécificités des PME, budget-programme et performance publique dans l'espace UEMOA, centres de profit et d'investissement, prix de cession interne, ROI et résultat résiduel.\n\nCes matières mobilisent tout l'acquis de L1 et L2 : coûts complets et partiels, budgets, écarts. Elles dialoguent avec la stratégie, la finance d'entreprise et le management des organisations.\n\n## 3. Ce que les correcteurs attendent\n\nEn L3, le calcul juste ne suffit plus : on attend un regard critique. Pour la méthode ABC, il faut savoir calculer, mais aussi expliquer pourquoi les résultats diffèrent de la méthode traditionnelle et ce que l'entreprise doit en faire. Pour le tableau de bord, il faut justifier le choix d'un indicateur au regard de la stratégie. Pour les prix de cession interne, il faut montrer l'effet sur le comportement des responsables de division, pas seulement sur les chiffres.\n\nTypes d'épreuves fréquents :\n\n- Cas pratique de synthèse : une entreprise ou un groupe fictif, plusieurs dossiers (coûts par activités, coût cible, tableau de bord, prix de cession).\n- Exercices chiffrés : coût d'un inducteur, résultat par division selon le prix de cession, ROI et résultat résiduel.\n- Dissertation : « Le balanced scorecard est-il adapté aux PME africaines ? », « Peut-on piloter la performance d'un service public ? ».\n- Commentaire de document : un article ou un extrait de rapport à analyser.\n- Projet ou mémoire : conception d'un tableau de bord pour une organisation réelle, souvent lors du stage.\n\n## 4. Méthode de révision\n\nFaites des fiches en deux colonnes : à gauche la méthode (étapes de calcul), à droite les apports et les limites. Par exemple : méthode ABC, étapes (identifier les activités, rattacher les ressources, choisir les inducteurs, calculer le coût unitaire de chaque inducteur, affecter aux produits) ; apports (meilleure traçabilité des charges indirectes, révélation des subventions croisées entre produits) ; limites (coût de mise en place, subjectivité des rattachements, charges de structure difficiles à rattacher).\n\nPour les dissertations, préparez une banque d'exemples sénégalais et africains fictifs mais réalistes : une PME agroalimentaire de Thiès, une institution de microfinance, un hôpital régional, une commune, un groupe industriel à plusieurs divisions. Préparez aussi quelques références d'auteurs bien identifiées (Kaplan et Norton pour le balanced scorecard ; Cooper et Kaplan pour la méthode ABC), sans inventer de citations.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : méthode ABC, 3 cas de calcul et 1 comparaison avec la méthode des centres d'analyse.\n- Semaine 2 : coût cible et analyse de la valeur ; 2 cas ; 1 dissertation sur le pilotage par les coûts.\n- Semaine 3 : tableaux de bord et balanced scorecard ; construire un tableau de bord complet pour une entreprise de votre choix.\n- Semaine 4 : contrôle de gestion des PME et du secteur public ; prix de cession interne, ROI et résultat résiduel ; 3 cas.\n- Semaine 5 : sujet type complet en 3 heures, puis correction et carnet d'erreurs.\n- Semaine 6 : deuxième sujet type, révision des fiches, entraînement aux introductions de dissertation.\n\n## 6. Le jour J\n\nLisez le sujet entièrement ; identifiez les dossiers indépendants ; gérez votre temps selon le barème. Dans les dossiers de calcul, présentez des tableaux propres et vérifiez toujours un total (la somme des coûts par activités redonne les charges indirectes ; la somme des résultats des divisions redonne le résultat du groupe). Réservez du temps aux questions de commentaire : elles valent souvent autant de points que les calculs et départagent les copies.\n\n## Points clés\n\n- La L3 est l'année de la synthèse et de l'esprit critique.\n- Trois matières : ABC et coût cible ; tableaux de bord et balanced scorecard ; PME, secteur public et prix de cession interne.\n- Toujours un total de contrôle et un commentaire.\n\n## Exercices\n\n- Exercice 1 : rédigez la fiche « méthode ABC » en deux colonnes.\n- Exercice 2 : proposez une problématique et un plan pour la dissertation « Le balanced scorecard est-il adapté aux PME africaines ? ».\n- Exercice 3 : quels totaux de contrôle utiliser dans un exercice sur les prix de cession interne ?\n\n## Corrigé\n\n- Exercice 1 : voir la section 4 ; ajoutez la formule « coût unitaire de l'inducteur = coût de l'activité / volume de l'inducteur ».\n- Exercice 2 : problématique, un outil conçu pour de grandes entreprises peut-il être utile à des structures aux ressources limitées ? Plan : I. Un outil pertinent pour clarifier la stratégie et équilibrer les indicateurs ; II. Des conditions d'adaptation : peu d'indicateurs, données simples, implication du dirigeant.\n- Exercice 3 : la somme des résultats des divisions égale le résultat du groupe, quel que soit le prix de cession (tant que les volumes ne changent pas) ; les achats internes de l'une égalent les ventes internes de l'autre."
+   },
+   {
+    "title": "Méthode ABC et coût cible : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Tableaux de bord et indicateurs de performance (balanced scorecard) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Contrôle de gestion des PME et du secteur public, prix de cession interne : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en Contrôle de gestion (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthode ABC et coût cible",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Tableaux de bord et balanced scorecard",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Contrôle de gestion des PME et du secteur public, prix de cession interne",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-compta-l1",
+  "level": "Licence 1",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Licence 1 Comptabilité : réussir ses examens",
+  "description": "Ce cours prépare les étudiants de première année de Licence en comptabilité, finance ou gestion (universités et écoles du Sénégal et de l'espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : la comptabilité générale selon le SYSCOHADA révisé (partie double, journal, grand livre, balance, achats, ventes et TVA), les mathématiques financières (intérêts simples et composés, escompte, annuités) et l'introduction au droit des affaires OHADA (commerçant et sociétés). Fiches, exercices corrigés aux calculs vérifiés, sujet d'entraînement et trois cours vidéo de 1h30. Prérequis : niveau Baccalauréat, aisance avec les pourcentages.",
+  "sort": 341,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la première année de Licence dans le système LMD.\n- Identifier les matières clés de l'année et ce que les correcteurs attendent.\n- Connaître les types d'épreuves et la méthode pour chacun.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités et grandes écoles du Sénégal et de l'espace UEMOA ont adopté le système LMD (Licence, Master, Doctorat). La Licence se prépare en trois années, soit six semestres. Chaque semestre est découpé en unités d'enseignement (UE), elles-mêmes composées d'éléments constitutifs (les matières). Chaque UE vaut un nombre de crédits ; une année complète correspond en général à 60 crédits, mais le nombre de crédits par UE, les coefficients et les règles de compensation varient d'un établissement à l'autre. Lisez attentivement le règlement des examens de votre établissement : c'est lui qui fait foi.\n\nRetenez trois idées. D'abord, la note d'une UE combine souvent un contrôle continu (devoirs, exposés, travaux dirigés) et un examen terminal. Ensuite, la compensation entre matières d'une même UE, ou entre UE d'un même semestre, existe souvent mais selon des règles locales. Enfin, une session de rattrapage est généralement prévue : ne comptez pas sur elle, préparez la première session sérieusement.\n\n## 2. Les matières clés de l'année\n\nCe cours se concentre sur trois matières qui pèsent lourd en Licence 1 Comptabilité :\n\n- Comptabilité générale 1 : principes du SYSCOHADA révisé, partie double, journal, grand livre, balance, achats, ventes, réductions commerciales et financières, TVA.\n- Mathématiques financières : intérêts simples, escompte commercial, intérêts composés, valeur actuelle, annuités, tableau d'amortissement d'un emprunt.\n- Introduction au droit des affaires OHADA : le commerçant, les actes de commerce, le registre du commerce, les grandes formes de sociétés.\n\nD'autres matières complètent l'année (économie générale, statistique descriptive, informatique, techniques d'expression, anglais des affaires). Elles sont traitées dans d'autres cours de la plateforme. En Licence 2, vous approfondirez les travaux d'inventaire, la comptabilité des sociétés et la fiscalité ; en Licence 3, les états financiers, la consolidation et l'audit.\n\n## 3. Ce que les correcteurs attendent\n\nEn comptabilité, une écriture juste mais mal présentée perd des points. Le correcteur vérifie : la date, les numéros et intitulés de comptes, le sens débit ou crédit, les montants, l'équilibre de chaque écriture et un libellé clair. En mathématiques financières, il attend la formule littérale, l'application numérique, le résultat arrondi correctement et une phrase de conclusion. En droit, il attend un raisonnement : identifier le problème juridique, rappeler la règle, l'appliquer aux faits, conclure.\n\n## 4. Les types d'épreuves et la méthode\n\n- Exercice chiffré : lisez tout l'énoncé avant de calculer, notez les données dans la marge, posez la formule, calculez, vérifiez l'ordre de grandeur.\n- Cas pratique comptable : une entreprise fictive et une liste d'opérations à enregistrer. Travaillez opération par opération, contrôlez l'équilibre de chaque écriture, puis reportez au grand livre et établissez la balance.\n- QCM : éliminez d'abord les réponses absurdes ; méfiez-vous des pièges sur le sens débit ou crédit et sur les bases de calcul de la TVA.\n- Dissertation ou question de cours (surtout en droit) : introduction (définition, intérêt du sujet, problématique, annonce du plan), deux parties équilibrées, pas de hors-sujet.\n- Cas pratique juridique : faits, problème de droit, règle applicable, application, solution.\n- Projet ou dossier : certains enseignants demandent un dossier en groupe, par exemple la tenue de la comptabilité d'une petite entreprise sur un mois.\n\n## 5. Gérer son temps le jour de l'examen\n\nPrenez cinq minutes pour lire tout le sujet et répartir votre temps selon le barème. Commencez par la partie où vous êtes le plus solide pour gagner confiance. Gardez dix minutes à la fin pour relire : équilibre des écritures, unités, conclusions. Une copie propre, avec des résultats encadrés et des étapes numérotées, se corrige plus facilement et inspire confiance au correcteur.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : principes comptables, classes de comptes, partie double. Refaire dix écritures simples par jour.\n- Semaine 2 : achats et ventes, réductions commerciales et financières, TVA ; grand livre et balance.\n- Semaine 3 : intérêts simples, escompte commercial, intérêts composés, valeur actuelle.\n- Semaine 4 : annuités et tableau d'amortissement d'emprunt ; fiches de formules.\n- Semaine 5 : droit OHADA (commerçant, actes de commerce, RCCM, sociétés) ; entraînement aux cas pratiques juridiques.\n- Semaine 6 : sujets complets en temps limité, correction, révision des points faibles.\n\nChaque semaine, consacrez une séance à revoir les erreurs des semaines précédentes. Travaillez en petit groupe une fois par semaine : expliquer une notion à un camarade est la meilleure façon de vérifier qu'on la maîtrise.\n\n## 7. Les outils indispensables\n\n- Une calculatrice autorisée par votre établissement, que vous savez utiliser pour les puissances (touche x^y).\n- Un plan de comptes SYSCOHADA révisé à jour. Dans ce cours, quand un numéro de compte est cité, vérifiez l'intitulé dans le plan de comptes officiel.\n- Des fiches de synthèse d'une page par chapitre.\n- Les sujets des années précédentes, s'ils sont disponibles à la bibliothèque ou auprès des associations d'étudiants.\n\n## Points clés\n\n- Le règlement des examens de votre établissement fixe les crédits, coefficients et règles de compensation.\n- Trois matières clés dans ce cours : comptabilité générale, mathématiques financières, droit OHADA.\n- Chaque type d'épreuve a sa méthode : formule puis calcul, ou problème puis règle puis solution.\n- Un plan de six semaines, avec révisions régulières des erreurs, vaut mieux qu'un bachotage de dernière minute.\n\n## Exercices pratiques\n\n- Exercice 1 : citez les trois niveaux du système LMD et le nombre de semestres d'une Licence.\n- Exercice 2 : quelle différence faites-vous entre une UE et un élément constitutif ?\n- Exercice 3 : un étudiant dispose de 2 heures pour un sujet noté sur 20 : comptabilité 10 points, mathématiques financières 6 points, droit 4 points. Proposez une répartition du temps en gardant 10 minutes de relecture et 5 minutes de lecture initiale.\n- Exercice 4 : quelles sont les cinq vérifications à faire sur chaque écriture comptable ?\n- Exercice 5 (cas pratique) : Fatou a trois semaines avant ses examens et se sent faible en mathématiques financières. Adaptez le plan de six semaines en un plan de trois semaines.\n\n## Corrigé\n\n- Exercice 1 : Licence, Master, Doctorat. La Licence comprend six semestres (trois années).\n- Exercice 2 : l'UE est un regroupement cohérent de matières, auquel sont attachés des crédits ; l'élément constitutif est une matière à l'intérieur de l'UE (par exemple, Comptabilité générale 1 dans une UE Techniques comptables).\n- Exercice 3 : 120 − 5 − 10 = 105 minutes à répartir sur 20 points, soit 5,25 minutes par point. Comptabilité : 10 × 5,25 = 52,5 minutes, environ 52 minutes ; mathématiques financières : 6 × 5,25 = 31,5 minutes, environ 32 minutes ; droit : 4 × 5,25 = 21 minutes. Total : 52 + 32 + 21 = 105 minutes.\n- Exercice 4 : la date et le libellé ; les numéros et intitulés de comptes ; le sens débit ou crédit ; les montants ; l'égalité total débit = total crédit.\n- Exercice 5 : semaine 1 : comptabilité (principes, achats, ventes, TVA, balance) en séances courtes, et une séance quotidienne de mathématiques financières (intérêts simples, escompte) ; semaine 2 : mathématiques financières (intérêts composés, annuités, emprunts) en priorité, plus le droit OHADA ; semaine 3 : deux sujets complets en temps limité, corrections et fiches de formules relues chaque jour. L'essentiel est de donner plus de temps à la matière faible sans abandonner les autres."
+   },
+   {
+    "title": "Comptabilité générale 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mathématiques financières : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des affaires OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité générale 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques financières",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des affaires OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-compta-l2",
+  "level": "Licence 2",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Licence 2 Comptabilité : réussir ses examens",
+  "description": "Ce cours prépare les étudiants de deuxième année de Licence en comptabilité, finance ou gestion (Sénégal, espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : la comptabilité générale 2 et les travaux d'inventaire selon le SYSCOHADA révisé (amortissements linéaire et dégressif, dépréciations, provisions, régularisations), la comptabilité des sociétés (constitution, affectation du résultat, augmentation de capital) et la fiscalité des entreprises (mécanismes de l'impôt sur les sociétés et de la TVA, avec des taux fictifs). Fiches, exercices corrigés aux écritures vérifiées, sujet d'entraînement et trois cours vidéo de 1h30. Prérequis : comptabilité générale de Licence 1 (partie double, achats, ventes, TVA).",
+  "sort": 342,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la Licence 1.\n- Identifier les matières clés de l'année et les attentes des correcteurs.\n- Maîtriser la méthode de chaque type d'épreuve.\n- Organiser six semaines de révision efficaces.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 de la Licence. Comme en première année, les enseignements sont organisés en unités d'enseignement (UE) dotées de crédits, avec en général 60 crédits pour l'année ; mais la répartition des crédits, les coefficients, la part du contrôle continu et les règles de compensation dépendent de votre établissement. Le règlement des examens et le guide de l'étudiant de votre université ou école font foi : lisez-les en début d'année.\n\nCe qui change : on ne vous demande plus seulement d'enregistrer des opérations courantes, mais de raisonner sur la clôture de l'exercice, sur la vie juridique des sociétés et sur les conséquences fiscales des opérations. Les sujets deviennent plus longs, plus liés entre eux, et un même cas pratique peut mêler comptabilité, droit et fiscalité.\n\n## 2. Les matières clés de l'année\n\n- Comptabilité générale 2 et travaux d'inventaire : amortissements linéaire et dégressif, dépréciations des stocks et des créances, provisions pour risques et charges, régularisations des charges et des produits, variation des stocks.\n- Comptabilité des sociétés : constitution (apports en numéraire et en nature, libération du capital), affectation du résultat, augmentation de capital et droit préférentiel de souscription.\n- Fiscalité des entreprises : mécanisme de l'impôt sur les sociétés (du résultat comptable au résultat fiscal), acomptes, TVA (fait générateur, exigibilité, droit à déduction, prorata).\n\nD'autres matières accompagnent l'année (comptabilité analytique, droit des affaires approfondi, statistiques, informatique de gestion, anglais) et sont traitées dans d'autres cours. Les mathématiques financières et l'introduction au droit OHADA, vues en Licence 1, sont supposées acquises ; les états financiers, la consolidation et l'audit seront étudiés en Licence 3.\n\n## 3. Les attentes des correcteurs\n\nEn travaux d'inventaire, le correcteur attend un calcul justifié (base, taux, durée, prorata), l'écriture correcte et, souvent, l'impact sur le résultat. En comptabilité des sociétés, il attend que vous appliquiez les règles juridiques (réserve légale, libération du capital) avant de comptabiliser. En fiscalité, il attend un tableau de passage clair du résultat comptable au résultat fiscal, avec chaque réintégration et chaque déduction justifiée en une phrase. Rappelez toujours, quand vous utilisez un taux d'impôt donné par l'énoncé, qu'il s'agit de l'hypothèse du sujet.\n\n## 4. Les types d'épreuves et la méthode\n\n- Cas pratique d'inventaire : une liste d'informations au 31 décembre. Pour chacune : calcul, écriture, impact sur le résultat. Terminez par un récapitulatif.\n- Exercice de comptabilité des sociétés : commencez par le calcul juridique (bénéfice distribuable, nombre d'actions nouvelles, valeur du droit), puis passez l'écriture.\n- Exercice de fiscalité : tableau de passage, impôt dû, acomptes et solde, écritures.\n- QCM : attention aux pièges de prorata temporis, de plafond de réserve légale et de base de TVA.\n- Question de réflexion : par exemple, « pourquoi la prudence conduit-elle à déprécier mais pas à réévaluer ? ». Réponse structurée en deux ou trois idées.\n\n## 5. Organiser son temps\n\nUn sujet de Licence 2 de trois heures comporte souvent un grand cas d'inventaire. Ne vous noyez pas dans un calcul : si un élément vous bloque, posez une hypothèse explicite et continuez. Gardez un tableau récapitulatif des impacts sur le résultat : il vous permet de vérifier la cohérence de vos écritures.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : amortissements linéaire et dégressif, prorata temporis, tableaux d'amortissement, cessions simples.\n- Semaine 2 : dépréciations des stocks et des créances, provisions pour risques et charges, reprises.\n- Semaine 3 : régularisations (charges et produits constatés d'avance, charges à payer, produits à recevoir), variation des stocks ; un grand cas d'inventaire.\n- Semaine 4 : constitution des sociétés, affectation du résultat, augmentation de capital et droit préférentiel de souscription.\n- Semaine 5 : impôt sur les sociétés (tableau de passage, acomptes), TVA (déduction, prorata, liquidation).\n- Semaine 6 : deux sujets complets en temps limité, correction, fiches de synthèse.\n\n## Points clés\n\n- Le règlement des examens de votre établissement fixe crédits, coefficients et compensation.\n- Trois matières clés : inventaire, sociétés, fiscalité.\n- Toujours : calcul justifié, écriture équilibrée, impact sur le résultat.\n- Les taux fiscaux des sujets sont des hypothèses : ne les apprenez pas comme des taux officiels.\n\n## Exercices pratiques\n\n- Exercice 1 : citez trois différences d'attentes entre la Licence 1 et la Licence 2 en comptabilité.\n- Exercice 2 : quelles sont les trois étapes à rédiger pour chaque information d'un cas d'inventaire ?\n- Exercice 3 : un sujet de 3 heures comprend un cas d'inventaire sur 10 points, un exercice de sociétés sur 5 points et un exercice de fiscalité sur 5 points. Répartissez 165 minutes utiles.\n- Exercice 4 : pourquoi faut-il faire le calcul juridique avant l'écriture en comptabilité des sociétés ? Donnez un exemple.\n- Exercice 5 (cas pratique) : Ousmane a raté le partiel du semestre 3 à cause des travaux d'inventaire. Il lui reste quatre semaines avant le rattrapage. Proposez-lui un plan.\n\n## Corrigé\n\n- Exercice 1 : en Licence 2, on raisonne sur la clôture de l'exercice (inventaire), on applique des règles juridiques (sociétés) et on mesure les conséquences fiscales ; les sujets sont plus longs et transversaux.\n- Exercice 2 : le calcul justifié, l'écriture équilibrée, l'impact sur le résultat.\n- Exercice 3 : 165 minutes pour 20 points, soit 8,25 minutes par point : inventaire 82,5 minutes (environ 82), sociétés 41,25 minutes (environ 41), fiscalité 41,25 minutes (environ 42) ; total 165.\n- Exercice 4 : l'écriture traduit une décision encadrée par le droit. Exemple : la dotation à la réserve légale dépend du plafond fixé par les textes ; si la réserve a déjà atteint ce plafond, aucune dotation n'est due, et l'écriture change.\n- Exercice 5 : semaine 1 : amortissements (linéaire, dégressif, prorata) avec dix exercices courts ; semaine 2 : dépréciations, provisions et régularisations ; semaine 3 : deux grands cas d'inventaire corrigés, avec tableau des impacts ; semaine 4 : un sujet complet en temps limité et relecture des fiches. Chaque jour, refaire sans aide un exercice déjà corrigé."
+   },
+   {
+    "title": "Comptabilité générale 2 et travaux d'inventaire : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Comptabilité des sociétés : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Fiscalité des entreprises : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité générale 2 et travaux d'inventaire",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité des sociétés",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Fiscalité des entreprises",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-compta-l3",
+  "level": "Licence 3",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Licence 3 Comptabilité : réussir ses examens",
+  "description": "Ce cours prépare les étudiants de troisième année de Licence en comptabilité, finance ou audit (Sénégal, espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : les états financiers du SYSCOHADA révisé (bilan, compte de résultat, tableau des flux de trésorerie), la consolidation et les opérations spéciales (méthodes de consolidation, écart d'acquisition, fusion simple) et l'audit et le contrôle interne (démarche, risques, assertions, normes en termes généraux). Fiches, exercices corrigés aux calculs vérifiés, sujet d'entraînement et trois cours vidéo de 1h30. Prérequis : comptabilité générale, travaux d'inventaire et comptabilité des sociétés (Licence 1 et 2).",
+  "sort": 343,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le parcours LMD et comprendre ses enjeux (diplôme, poursuite en Master, insertion).\n- Identifier les matières clés de l'année et le niveau d'exigence attendu.\n- Maîtriser les types d'épreuves de troisième année, y compris le projet ou le rapport de stage.\n- Construire un plan de révision de six semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6. Elle conclut le premier cycle : sa validation donne le diplôme de Licence et conditionne l'accès au Master (souvent sur dossier). Comme les années précédentes, elle est organisée en unités d'enseignement (UE) dotées de crédits, avec en général 60 crédits pour l'année ; la répartition, les coefficients, la place du stage et les règles de compensation sont fixés par chaque établissement. Le règlement des examens fait foi.\n\nDans beaucoup de filières comptables, la Licence 3 comporte un stage en entreprise ou en cabinet, suivi d'un rapport et parfois d'une soutenance. C'est aussi l'année où les recruteurs commencent à regarder vos relevés de notes : la régularité compte.\n\n## 2. Les matières clés de l'année\n\n- États financiers SYSCOHADA : établissement et analyse du bilan, du compte de résultat et du tableau des flux de trésorerie (TFT) ; soldes significatifs ; capacité d'autofinancement globale ; fonds de roulement, besoin de financement, trésorerie nette.\n- Consolidation et opérations spéciales : périmètre, pourcentages de contrôle et d'intérêt, méthodes (intégration globale, intégration proportionnelle, mise en équivalence), élimination des titres et écart d'acquisition, opérations réciproques ; fusion simple (parité d'échange, prime de fusion).\n- Audit et contrôle interne : objectifs de l'audit, démarche (prise de connaissance, évaluation des risques, contrôle interne, contrôles substantifs, rapport), assertions, seuil de signification, référentiels en termes généraux.\n\nD'autres matières complètent l'année (contrôle de gestion, finance d'entreprise, droit fiscal approfondi, droit du travail, informatique comptable). Elles sont traitées dans d'autres cours. Les travaux d'inventaire, la comptabilité des sociétés et la fiscalité, vus en Licence 2, sont supposés maîtrisés : ils servent de base à l'établissement des états financiers.\n\n## 3. Le niveau d'exigence\n\nEn Licence 3, on ne vous demande plus seulement de calculer : on vous demande d'interpréter. Un TFT juste mais sans commentaire perd une partie des points. Un calcul d'écart d'acquisition doit être suivi de son traitement. Une question d'audit attend une démarche argumentée, pas une liste récitée. Les correcteurs valorisent la précision du vocabulaire : valeur ajoutée, excédent brut d'exploitation, capacité d'autofinancement globale, contrôle exclusif, influence notable, assertion d'exhaustivité, risque de non-détection.\n\n## 4. Les types d'épreuves et la méthode\n\n- Exercice d'états financiers : à partir d'une balance ou de données, présenter le compte de résultat en cascade, calculer la CAFG, établir le TFT ; commenter en cinq à dix lignes.\n- Cas de consolidation : déterminer les pourcentages, choisir la méthode, éliminer les titres, calculer l'écart d'acquisition et les intérêts minoritaires.\n- Cas de fusion : évaluer les sociétés, calculer la parité, le nombre d'actions à créer et la prime de fusion, passer les écritures chez l'absorbante.\n- Cas d'audit : identifier les faiblesses de contrôle interne, les risques et les assertions concernées, proposer des tests et des recommandations.\n- Dissertation ou question de réflexion : par exemple, « l'auditeur garantit-il l'absence de fraude ? ».\n- Rapport de stage : description de l'entreprise, missions réalisées, analyse critique, recommandations.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan et compte de résultat SYSCOHADA ; soldes en cascade ; dix exercices courts.\n- Semaine 2 : CAFG, TFT, fonds de roulement, besoin de financement, trésorerie ; commentaires.\n- Semaine 3 : consolidation : pourcentages, méthodes, élimination des titres, écart d'acquisition, opérations réciproques.\n- Semaine 4 : fusion simple ; puis audit : démarche, risques, assertions, seuil de signification.\n- Semaine 5 : contrôle interne (composantes, séparation des tâches, cycles ventes, achats, trésorerie) ; cas d'audit.\n- Semaine 6 : deux sujets complets en temps limité, corrections, fiches.\n\n## Points clés\n\n- La Licence 3 conclut le cycle : régularité et interprétation sont valorisées.\n- Trois matières clés : états financiers, consolidation et opérations spéciales, audit et contrôle interne.\n- Toujours compléter un calcul par une interprétation.\n\n## Exercices pratiques\n\n- Exercice 1 : citez deux différences entre les attentes de Licence 2 et de Licence 3.\n- Exercice 2 : quelles étapes suivez-vous dans un cas de fusion simple ?\n- Exercice 3 : vous disposez de 4 heures pour un sujet : états financiers 8 points, consolidation 6 points, audit 6 points. Répartissez 225 minutes utiles.\n- Exercice 4 : pourquoi le vocabulaire précis est-il valorisé en audit ? Donnez deux exemples de termes.\n- Exercice 5 (cas pratique) : Aïcha doit rendre son rapport de stage et préparer ses examens en même temps. Proposez une organisation sur six semaines.\n\n## Corrigé\n\n- Exercice 1 : en Licence 3, on attend une interprétation des résultats (commentaire du TFT, traitement de l'écart d'acquisition) et une démarche argumentée (audit), en plus du calcul.\n- Exercice 2 : évaluer les deux sociétés ; calculer la valeur unitaire des titres ; déterminer la parité ; calculer le nombre d'actions à créer, l'augmentation de capital et la prime de fusion ; passer les écritures chez l'absorbante.\n- Exercice 3 : 225 ÷ 20 = 11,25 minutes par point : états financiers 90 minutes ; consolidation 67,5 minutes (environ 67) ; audit 67,5 minutes (environ 68) ; total 225.\n- Exercice 4 : parce que chaque terme correspond à un concept précis, avec ses conséquences. Exemples : « assertion d'exhaustivité » (toutes les opérations sont enregistrées), « risque de non-détection » (risque que les contrôles de l'auditeur ne détectent pas une anomalie significative).\n- Exercice 5 : réserver deux demi-journées par semaine au rapport (plan en semaine 1, rédaction semaines 2 à 4, relecture semaine 5) et suivre le plan de révision le reste du temps ; en semaine 6, priorité aux sujets complets, le rapport étant terminé."
+   },
+   {
+    "title": "États financiers SYSCOHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Consolidation et opérations spéciales : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Audit et contrôle interne : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : États financiers SYSCOHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Consolidation et opérations spéciales",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Audit et contrôle interne",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-fin-l1",
+  "level": "Licence 1",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance Licence 1 : réussir les examens de première année",
+  "description": "Ce cours prépare aux partiels et examens de première année de Licence en finance : introduction au système financier de l'UEMOA (banques, BCEAO, microfinance, BRVM), mathématiques financières appliquées (valeur actuelle et acquise, emprunts indivis, tableaux d'amortissement) et statistiques descriptives appliquées à la finance. Il s'adresse aux étudiants des universités et écoles du Sénégal et de l'espace UEMOA. Prérequis : niveau baccalauréat en mathématiques (pourcentages, puissances).",
+  "sort": 351,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Comprendre comment est organisée une première année de Licence dans le système LMD.\n- Identifier les matières de finance de la Licence 1 et ce que les examinateurs attendent dans chacune.\n- Connaître les grands types d'épreuves et la manière de les aborder.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités et grandes écoles du Sénégal et de l'espace UEMOA appliquent le système LMD (Licence, Master, Doctorat). La Licence se déroule en six semestres. Chaque semestre regroupe plusieurs unités d'enseignement (UE) ; chaque UE contient une ou plusieurs matières (on parle aussi d'éléments constitutifs, EC) et donne droit à un nombre de crédits.\n\nQuelques principes généraux, qui varient d'un établissement à l'autre :\n\n- Une UE est validée lorsque sa moyenne atteint le seuil fixé par le règlement des études ; les notes des matières d'une même UE peuvent souvent se compenser entre elles.\n- La note d'une matière combine en général un contrôle continu (devoirs, exposés, travaux dirigés) et un examen terminal de fin de semestre.\n- Une session de rattrapage est prévue pour les UE non validées.\n- Les crédits obtenus sont capitalisés : une UE validée reste acquise.\n\nLe nombre exact de crédits, les coefficients, les seuils de validation et les règles de compensation sont fixés par chaque établissement. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité. Ne vous fiez pas aux rumeurs de couloir.\n\n## 2. Les matières de finance de la Licence 1\n\nCe cours couvre les trois matières de finance que l'on retrouve dans la plupart des maquettes de première année :\n\n- Introduction à la finance et au système financier : rôle de la finance, finance directe et indirecte, banques, BCEAO, systèmes financiers décentralisés (microfinance), marché financier régional et BRVM. Les sujets mêlent questions de cours et petits calculs (marge d'intérêt, rendement d'une action, taux réel).\n- Mathématiques financières appliquées : intérêts simples et composés, valeur acquise et valeur actuelle, annuités, emprunts indivis et tableaux d'amortissement. C'est la matière la plus calculatoire : la rigueur et la présentation comptent autant que le résultat.\n- Statistiques descriptives pour la finance : moyenne, médiane, mode, variance, écart-type, coefficient de variation, séries groupées en classes, indices et taux de croissance, covariance et corrélation de deux séries de rentabilités.\n\nLes maîtriser vous prépare directement à l'analyse financière et aux marchés financiers de Licence 2, puis aux décisions d'investissement et de financement de Licence 3.\n\n## 3. Les types d'épreuves et comment les aborder\n\n- L'exercice chiffré : calculer une valeur actuelle, dresser un tableau d'amortissement, calculer une variance. Posez la formule, remplacez les lettres par les valeurs, donnez le résultat avec son unité (FCFA, %) et une phrase d'interprétation.\n- Le cas pratique : une entreprise ou un ménage fictif doit prendre une décision (choisir entre deux offres de prêt, comparer deux placements). On attend une démarche structurée : hypothèses, calculs, comparaison, conclusion argumentée.\n- Le QCM : lisez toutes les propositions avant de répondre ; méfiez-vous des réponses presque justes (taux proportionnel au lieu de taux équivalent, variance au lieu d'écart-type). Vérifiez si les mauvaises réponses sont pénalisées.\n- La question de cours ou la courte dissertation : en introduction à la finance, on peut vous demander « Montrez le rôle des banques dans le financement de l'économie ». Il faut une introduction (définitions, problématique), un plan en deux ou trois parties et une conclusion.\n- Le projet ou dossier : certains enseignants demandent un travail de groupe (par exemple, présenter une société cotée à la BRVM à partir de documents publics). La note tient compte du fond, de la forme et de la présentation orale.\n\n## 4. Les erreurs qui coûtent des points\n\n- Confondre taux annuel et taux mensuel, ou oublier de convertir une durée en jours ou en mois.\n- Utiliser l'intérêt simple là où l'énoncé impose l'intérêt composé (et inversement).\n- Présenter un tableau d'amortissement dont la dernière ligne ne ramène pas le capital restant dû à zéro.\n- Confondre variance et écart-type, ou oublier que l'écart-type s'exprime dans la même unité que la série.\n- Donner un résultat sans phrase de conclusion.\n- Recopier des chiffres « officiels » appris par cœur sans en être sûr : dans ce cours, tous les taux d'intérêt et d'impôt des exemples sont fictifs pour l'exemple. Pour un taux réel (taux directeur, taux d'usure, fiscalité), il faut toujours consulter la source officielle en vigueur (BCEAO, administration fiscale).\n\n## 5. Méthode de révision\n\n- Fiches : une fiche par chapitre avec les définitions, les formules encadrées et un exemple résolu.\n- Formulaire : une page unique regroupant toutes les formules de mathématiques financières et de statistiques. Relisez-la chaque jour.\n- Entraînement actif : refaites les exercices de TD sans regarder la correction, puis comparez.\n- Calculatrice : entraînez-vous avec la calculatrice autorisée à l'examen (puissances, puissances négatives, mémoires, mode statistique).\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : système financier (acteurs, rôle de la BCEAO, microfinance, marché financier régional) ; fiches de cours et petits calculs de rendement.\n- Semaine 2 : intérêts simples et composés, valeur acquise, valeur actuelle, taux proportionnels et équivalents.\n- Semaine 3 : annuités et emprunts indivis (amortissement constant, annuités constantes, remboursement in fine) ; trois tableaux d'amortissement complets.\n- Semaine 4 : statistiques descriptives (séries simples et séries classées, paramètres de position et de dispersion).\n- Semaine 5 : indices, taux de croissance moyen, covariance et corrélation ; reprise des points faibles.\n- Semaine 6 : sujets d'examen blancs en temps limité (voir la leçon 5), correction et relecture du formulaire.\n\nLa veille de l'examen, ne commencez rien de nouveau : relisez vos fiches, préparez votre matériel (pièce d'identité, carte d'étudiant, calculatrice, stylos) et dormez suffisamment.\n\n## Points clés\n\n- Le règlement des études de votre établissement fixe les crédits, les coefficients et les règles de validation : lisez-le.\n- Trois matières de finance en Licence 1 : système financier, mathématiques financières, statistiques descriptives.\n- Formule, application numérique, résultat avec unité, interprétation : cette démarche rapporte des points dans toutes les épreuves chiffrées.\n\n## Exercices pratiques\n\n- Exercice 1 : citez les trois matières de finance de ce cours et, pour chacune, deux notions à maîtriser.\n- Exercice 2 : un étudiant obtient 9 de moyenne en mathématiques financières et 13 en statistiques, deux matières de même coefficient dans la même UE, et le seuil de validation de l'UE est de 10 dans son établissement. Calculez la moyenne de l'UE si la compensation est autorisée, et concluez.\n- Exercice 3 : proposez la structure (introduction, deux parties, conclusion) d'une réponse au sujet « Le rôle de la microfinance dans le financement des petites entreprises ».\n- Exercice 4 (cas pratique) : Awa, étudiante à Saint-Louis, a quatre semaines au lieu de six avant ses examens. Adaptez le plan de révision.\n\n## Corrigé\n\n- Exercice 1 : système financier (rôle de la BCEAO, différence entre finance directe et indirecte) ; mathématiques financières (valeur actuelle, tableau d'amortissement) ; statistiques (écart-type, coefficient de variation). D'autres réponses sont acceptables si elles figurent dans le programme.\n- Exercice 2 : moyenne = (9 + 13) / 2 = 11. Si la compensation est autorisée dans l'UE, celle-ci est validée avec 11, même si la note de mathématiques financières est inférieure à 10. Sans compensation, il faudrait repasser cette matière au rattrapage. Seul le règlement de l'établissement permet de trancher.\n- Exercice 3 : introduction (définir la microfinance et la petite entreprise, constater la difficulté d'accès au crédit bancaire, problématique : la microfinance comble-t-elle ce manque ?) ; partie 1 : les apports (proximité, petits montants, garanties adaptées comme la caution solidaire, épargne de proximité) ; partie 2 : les limites (coût du crédit plus élevé, durées courtes, risque de surendettement, besoin de supervision) ; conclusion : la microfinance est complémentaire des banques et du marché financier, et non un substitut.\n- Exercice 4 : semaine 1 : système financier et intérêts simples et composés ; semaine 2 : annuités et emprunts indivis ; semaine 3 : statistiques descriptives complètes ; semaine 4 : deux sujets blancs en temps limité et relecture du formulaire. On fusionne les révisions et on garde obligatoirement l'entraînement en conditions d'examen."
+   },
+   {
+    "title": "Introduction à la finance et au système financier : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mathématiques financières appliquées : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Statistiques descriptives pour la finance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 Finance (entraînement corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction à la finance et au système financier",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques financières appliquées",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Statistiques descriptives pour la finance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-fin-l2",
+  "level": "Licence 2",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance Licence 2 : réussir les examens de deuxième année",
+  "description": "Ce cours prépare aux examens de deuxième année de Licence en finance : analyse financière selon le SYSCOHADA révisé (soldes intermédiaires de gestion, CAF, bilan fonctionnel, FR, BFR, trésorerie nette, ratios), gestion de trésorerie (plan de trésorerie, financements à court terme) et marchés financiers (actions, obligations, rendement, évaluation simple). Il s'adresse aux étudiants de Licence 2 du Sénégal et de l'espace UEMOA. Prérequis : comptabilité générale et mathématiques financières de Licence 1.",
+  "sort": 352,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Connaître les trois matières de finance de l'année et les attentes des correcteurs.\n- Maîtriser les types d'épreuves de Licence 2, en particulier le cas de diagnostic financier.\n- Organiser six semaines de révision efficaces.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 du cycle de Licence. Comme en première année, chaque semestre est découpé en unités d'enseignement (UE) qui donnent des crédits, et chaque UE regroupe une ou plusieurs matières évaluées par un contrôle continu et un examen terminal, avec une session de rattrapage. Les crédits, coefficients, seuils de validation, règles de compensation et conditions de passage en Licence 3 sont propres à chaque établissement : consultez le règlement des études et la maquette de votre filière auprès de la scolarité.\n\nCe qui change en Licence 2 : les matières deviennent plus intégrées. Un même sujet peut demander de lire des états financiers, de calculer un besoin de financement, puis de proposer une solution de financement à court terme ou un placement. L'examinateur évalue désormais votre capacité à interpréter et à recommander, pas seulement à calculer.\n\n## 2. Les matières de finance de la Licence 2\n\n- Analyse financière : lecture du compte de résultat et du bilan selon le SYSCOHADA révisé, soldes intermédiaires de gestion (marge commerciale, valeur ajoutée, excédent brut d'exploitation, résultat d'exploitation, résultat des activités ordinaires, résultat hors activités ordinaires, résultat net), capacité d'autofinancement, bilan fonctionnel, fonds de roulement, besoin en fonds de roulement, trésorerie nette, ratios.\n- Gestion de trésorerie : plan (ou budget) de trésorerie, encaissements et décaissements, financements à court terme (découvert, escompte, affacturage, crédit de campagne, facilités de caisse), placements de trésorerie excédentaire, calcul du coût réel d'un financement.\n- Marchés financiers 1 : fonctionnement du marché financier régional (BRVM, SGI, Dépositaire central / Banque de règlement), actions (rendement, dividende, PER, modèle de Gordon-Shapiro), obligations (prix, coupon, rendement actuariel, relation inverse entre taux et prix), rendement d'un portefeuille simple.\n\nCes matières s'appuient directement sur la comptabilité générale et les mathématiques financières de Licence 1 : si vos tableaux d'amortissement ou vos calculs d'actualisation sont fragiles, révisez-les en priorité.\n\n## 3. Les types d'épreuves\n\n- Le cas de diagnostic financier : on vous donne un compte de résultat et un bilan d'une entreprise fictive. On attend les SIG, la CAF, le bilan fonctionnel, deux ou trois ratios et un commentaire structuré (forces, faiblesses, recommandations). C'est l'épreuve reine de la Licence 2.\n- Le plan de trésorerie : construire un budget mensuel, repérer les mois déficitaires, choisir le financement le moins coûteux. La présentation en tableau (ici décrite ligne par ligne) doit être claire et vérifiable.\n- L'exercice d'évaluation : prix d'une obligation, valeur d'une action par le modèle de Gordon-Shapiro, rendement d'un placement.\n- Le QCM ou les questions de cours : définitions (BFR, CAF, coupon couru, SGI), relations (si les taux montent, le prix des obligations baisse).\n- Le commentaire ou la courte dissertation : « L'entreprise rentable peut-elle faire faillite ? » (oui, par manque de trésorerie : c'est l'occasion de mobiliser FR, BFR et TN).\n\n## 4. Les erreurs fréquentes\n\n- Confondre résultat et trésorerie : une entreprise bénéficiaire peut avoir une trésorerie négative si son BFR explose.\n- Oublier les retraitements du bilan fonctionnel (amortissements cumulés en ressources stables, valeurs brutes en emplois stables).\n- Intégrer les produits de cession d'immobilisations dans la CAF : c'est faux, ils en sont exclus.\n- Inscrire les ventes du mois dans les encaissements du mois alors que les clients paient à 30 ou 60 jours.\n- Calculer le coût d'un escompte sur la valeur nominale de l'effet au lieu du montant net réellement reçu.\n- Oublier qu'une hausse des taux fait baisser le prix des obligations existantes.\n- Utiliser des taux réels de mémoire : dans ce cours, les taux d'intérêt et d'impôt des exemples sont fictifs pour l'exemple. Pour un dossier réel, consultez les textes et publications officiels en vigueur.\n\n## 5. Méthode de révision\n\n- Une fiche par matière avec les schémas : bilan fonctionnel en quatre masses, cascade des SIG, plan de trésorerie type.\n- Un formulaire unique (CAF, FR, BFR, TN, ratios, Gordon-Shapiro, prix d'une obligation, coût de l'escompte).\n- Une méthode de commentaire : constat chiffré, explication, conséquence, recommandation.\n- Des sujets complets en temps limité, car la gestion du temps est le premier facteur d'échec dans les cas de diagnostic.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : rappel du compte de résultat et du bilan SYSCOHADA ; cascade des SIG ; CAF par les deux méthodes.\n- Semaine 2 : bilan fonctionnel, FR, BFR, TN ; ratios de structure, d'activité et de rentabilité ; rédaction de commentaires.\n- Semaine 3 : plan de trésorerie (budgets des encaissements et des décaissements) ; financements à court terme et calcul de leur coût.\n- Semaine 4 : marchés financiers : organisation régionale, actions (rendement, PER, Gordon-Shapiro).\n- Semaine 5 : obligations (prix, rendement actuariel, coupon couru) ; reprise des points faibles.\n- Semaine 6 : deux sujets d'examen blancs (voir la leçon 5) en conditions réelles, correction, relecture du formulaire.\n\n## Points clés\n\n- En Licence 2, on attend des calculs justes et une interprétation argumentée.\n- Le diagnostic financier (SIG, CAF, FR, BFR, TN, ratios) est le cœur de l'année.\n- Résultat et trésorerie sont deux choses différentes.\n\n## Exercices pratiques\n\n- Exercice 1 : citez dans l'ordre les soldes intermédiaires de gestion du SYSCOHADA révisé, de la marge commerciale au résultat net.\n- Exercice 2 : vrai ou faux : « Une entreprise bénéficiaire ne peut pas avoir de problème de trésorerie. » Justifiez.\n- Exercice 3 : proposez un plan de commentaire pour un diagnostic financier.\n- Exercice 4 (cas pratique) : Ousmane, étudiant à Dakar, doit aussi préparer un stage pendant ses six semaines de révision. Il dispose de deux heures par soir en semaine et du samedi. Proposez une répartition.\n\n## Corrigé\n\n- Exercice 1 : marge commerciale, valeur ajoutée, excédent brut d'exploitation, résultat d'exploitation, résultat financier, résultat des activités ordinaires, résultat hors activités ordinaires, résultat net. Le chiffre d'affaires figure aussi dans le tableau des SIG.\n- Exercice 2 : faux. Le résultat mesure l'enrichissement, la trésorerie mesure l'argent disponible. Si les clients paient tard, si les stocks gonflent ou si l'entreprise investit sans financement à long terme, la trésorerie peut devenir négative malgré un bénéfice.\n- Exercice 3 : 1) activité et rentabilité (évolution du chiffre d'affaires, VA, EBE, résultat net, CAF) ; 2) équilibre financier (FR, BFR, TN) ; 3) structure et solvabilité (autonomie, endettement, capacité de remboursement) ; 4) conclusion et recommandations.\n- Exercice 4 : soirs de semaine (2 heures) : fiches et exercices courts d'une matière par soir, en tournant sur les trois matières ; samedi : un cas complet en temps limité. Semaines 1 et 2 : analyse financière ; semaines 3 et 4 : trésorerie puis marchés financiers ; semaines 5 et 6 : sujets blancs. On garde au moins un sujet complet par semaine en fin de période."
+   },
+   {
+    "title": "Analyse financière : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion de trésorerie : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Marchés financiers 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 Finance (entraînement corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Analyse financière",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de trésorerie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marchés financiers 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-fin-l3",
+  "level": "Licence 3",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance Licence 3 : réussir les examens de troisième année",
+  "description": "Ce cours prépare aux examens de troisième année de Licence en finance : décisions d'investissement (VAN, TRI, indice de profitabilité, délai de récupération, avenir risqué), décisions de financement et coût du capital (CMPC, effet de levier, politique de dividende) et gestion des risques financiers de change et de taux. Il s'adresse aux étudiants de Licence 3 du Sénégal et de l'espace UEMOA. Prérequis : analyse financière, mathématiques financières et notions de marchés financiers des deux premières années.",
+  "sort": 353,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le parcours LMD et mesurer ses enjeux (diplôme, accès au Master, insertion).\n- Connaître les trois matières de finance de l'année et leur logique commune : la création de valeur.\n- Préparer les épreuves typiques de Licence 3, en particulier le cas de synthèse investissement-financement.\n- Suivre un plan de révision sur six semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6, qui terminent le cycle de Licence. Comme les années précédentes, elle est organisée en unités d'enseignement (UE) créditées, évaluées par contrôle continu et examen terminal, avec une session de rattrapage. Le nombre de crédits, les coefficients, les règles de compensation, l'existence éventuelle d'un stage ou d'un mémoire de fin de cycle et les conditions d'obtention du diplôme dépendent de chaque établissement : le règlement des études et la maquette de la filière font foi.\n\nEnjeu particulier : les résultats de Licence 3 pèsent souvent dans l'admission en Master et dans les premières candidatures (banques, cabinets, directions financières, institutions de microfinance). Viser la mention est un objectif raisonnable si vous travaillez avec méthode.\n\n## 2. Les matières de finance de la Licence 3\n\nLes trois matières de ce cours répondent à une même question : comment l'entreprise crée-t-elle de la valeur pour ceux qui la financent ?\n\n- Décisions d'investissement : flux de trésorerie d'un projet, valeur actuelle nette (VAN), taux de rentabilité interne (TRI), indice de profitabilité (IP), délai de récupération simple et actualisé, comparaison de projets, choix en avenir risqué simple (espérance et écart-type de la VAN, scénarios).\n- Décisions de financement et coût du capital : coût des capitaux propres (modèle de Gordon-Shapiro, MEDAF), coût de la dette après impôt, coût moyen pondéré du capital (CMPC), effet de levier financier, politique de dividende, choix entre sources de financement.\n- Gestion des risques financiers : risque de change (expositions, couverture à terme, options simples, techniques internes), risque de taux (emprunts à taux variable, effet des taux sur le prix des obligations, swap et FRA dans leur principe).\n\nLe lien entre les trois : un projet n'est intéressant que si sa rentabilité dépasse le coût des ressources qui le financent (le CMPC sert de taux d'actualisation), et cette rentabilité peut être menacée par des risques de change ou de taux qu'il faut identifier et couvrir.\n\nCes matières mobilisent tout ce qui précède : mathématiques financières et statistiques (Licence 1), analyse financière, trésorerie et marchés financiers (Licence 2).\n\n## 3. Les types d'épreuves\n\n- Le cas de synthèse : un projet d'investissement d'une entreprise fictive, avec calcul des flux, VAN, TRI, puis choix d'un mode de financement et calcul du CMPC. C'est l'épreuve la plus fréquente et la plus longue.\n- L'exercice de couverture : un importateur ou un exportateur exposé au dollar ; on compare l'absence de couverture, la couverture à terme et l'option.\n- Les questions de réflexion : « Une entreprise doit-elle s'endetter pour améliorer la rentabilité de ses actionnaires ? », « La politique de dividende influence-t-elle la valeur de l'entreprise ? ». On attend une argumentation théorique et chiffrée.\n- Le QCM : définitions précises (TRI, CMPC, effet de massue, cours à terme, prime d'option).\n- Le dossier ou l'exposé : par exemple, analyser le financement d'un projet d'infrastructure en partenariat public-privé à partir de documents publics.\n\n## 4. Les erreurs fréquentes\n\n- Inclure les frais financiers dans les flux d'un projet : ils sont déjà pris en compte par le taux d'actualisation.\n- Oublier l'économie d'impôt sur les amortissements, le BFR initial ou sa récupération finale, la valeur résiduelle nette d'impôt.\n- Calculer le coût de la dette avant impôt dans le CMPC.\n- Pondérer le CMPC avec des valeurs comptables quand l'énoncé donne des valeurs de marché.\n- Conclure sur le TRI seul quand les projets sont de tailles différentes.\n- Oublier qu'entre le franc CFA et l'euro la parité est fixe (1 euro = 655,957 FCFA) : le risque de change d'une entreprise de l'UEMOA porte surtout sur les autres devises (dollar, yuan, livre, naira…).\n- Utiliser de mémoire des taux réels : dans ce cours, tous les taux d'intérêt, d'impôt et de marché sont fictifs pour l'exemple.\n\n## 5. Méthode de révision\n\n- Fiche « flux d'un projet » : investissement, BFR, flux d'exploitation après impôt, valeur résiduelle, récupération du BFR.\n- Fiche « coût du capital » : formules du coût des fonds propres, coût de la dette après impôt, CMPC, formule de l'effet de levier.\n- Fiche « couverture » : tableau comparatif des résultats selon le cours futur (sans couverture, à terme, option).\n- Entraînement chronométré : un cas de synthèse doit être traité en 1h30 à 2h.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : flux de trésorerie d'un projet, VAN, IP, délais de récupération.\n- Semaine 2 : TRI, conflits de critères, avenir risqué (espérance, écart-type, scénarios).\n- Semaine 3 : coût des fonds propres, coût de la dette, CMPC.\n- Semaine 4 : effet de levier, politique de dividende, choix de financement.\n- Semaine 5 : risque de change et risque de taux, couvertures.\n- Semaine 6 : deux sujets complets (leçon 5) en conditions d'examen, correction et relecture des fiches.\n\n## Points clés\n\n- Le fil rouge de l'année : créer de la valeur en investissant à une rentabilité supérieure au coût du capital, en maîtrisant les risques.\n- Le cas de synthèse investissement-financement est l'épreuve reine.\n- Les flux d'un projet excluent les frais financiers.\n\n## Exercices pratiques\n\n- Exercice 1 : expliquez en trois phrases le lien entre VAN, CMPC et création de valeur.\n- Exercice 2 : listez les éléments qui composent les flux de trésorerie d'un projet d'investissement.\n- Exercice 3 : vrai ou faux : « Une entreprise sénégalaise qui importe des machines facturées en euros supporte un risque de change important. » Justifiez.\n- Exercice 4 (cas pratique) : Mariama, étudiante en Licence 3 à Dakar, a un stage de fin d'études qui se termine deux semaines avant les examens. Construisez son plan de révision.\n\n## Corrigé\n\n- Exercice 1 : le CMPC mesure le coût moyen des ressources (fonds propres et dettes) de l'entreprise. On actualise les flux d'un projet à ce taux : si la VAN est positive, le projet rapporte plus que ce qu'il coûte à financer. Il crée alors de la valeur pour les apporteurs de capitaux.\n- Exercice 2 : investissement initial (prix, frais d'installation), BFR initial et ses variations, flux d'exploitation après impôt (EBE moins impôt, ou résultat net d'exploitation plus dotations), valeur résiduelle nette d'impôt, récupération du BFR en fin de projet. Les frais financiers sont exclus.\n- Exercice 3 : faux. La parité entre le franc CFA de l'UEMOA et l'euro est fixe (1 euro = 655,957 FCFA). Le risque de change sur l'euro est donc très limité tant que cette parité est maintenue ; il est plus important pour une facturation en dollars ou en autres devises.\n- Exercice 4 : pendant le stage (4 semaines) : 1h30 par soir sur les fiches et exercices courts (semaine 1 investissement, semaine 2 financement, semaine 3 risques, semaine 4 révision des fiches) et un cas complet chaque samedi ; les deux dernières semaines, à temps plein : un sujet complet tous les deux jours, correction le lendemain, reprise des points faibles."
+   },
+   {
+    "title": "Décisions d'investissement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Décisions de financement et coût du capital : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion des risques financiers : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 Finance (entraînement corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Décisions d'investissement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Décisions de financement et coût du capital",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des risques financiers",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-eco-l1",
+  "level": "Licence 1",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en sciences économiques (système LMD, contexte Sénégal et UEMOA). Le cours couvre la microéconomie 1 (consommateur, producteur, offre et demande, élasticités, équilibre), la macroéconomie 1 (comptabilité nationale, PIB, inflation, chômage, circuit économique) et les mathématiques pour économistes (fonctions, dérivées, optimisation simple). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : mathématiques du baccalauréat.",
+  "sort": 361,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 d'économie dans le système LMD.\n- Identifier les matières clés de l'année et ce que les examinateurs attendent.\n- Maîtriser une méthode de révision et un plan de six semaines avant les examens.\n\n## Le système LMD en Licence 1\n\nLe système LMD (Licence, Master, Doctorat) organise les études universitaires du Sénégal et des autres pays de l'UEMOA. La licence se prépare en six semestres ; la Licence 1 correspond aux semestres 1 et 2. Chaque semestre est découpé en unités d'enseignement (UE), qui regroupent plusieurs éléments constitutifs (les matières). Chaque UE donne droit à un nombre de crédits lorsqu'elle est validée. Dans le schéma LMD courant, un semestre représente 30 crédits et la licence 180 crédits, mais la répartition exacte des crédits, les coefficients, les règles de compensation entre matières et entre UE, ainsi que les conditions de passage en deuxième année, sont fixés par la maquette et le règlement des examens de votre université ou de votre école. Procurez-vous ce règlement dès la rentrée et lisez-le : beaucoup d'étudiants découvrent trop tard qu'une note éliminatoire ou une absence au contrôle continu les empêche de valider une UE.\n\nL'évaluation combine en général un contrôle continu (devoirs, travaux dirigés, interrogations) et un examen terminal en fin de semestre. Une session de rattrapage est souvent prévue pour les UE non validées. Retenez une règle simple : chaque note de TD compte, et l'assiduité aux travaux dirigés est la meilleure préparation aux examens, car les sujets reprennent très souvent la logique des exercices de TD.\n\n## Les matières clés de la Licence 1\n\n- Microéconomie 1 : comportement du consommateur (préférences, contrainte budgétaire, choix optimal), comportement du producteur (production, coûts, maximisation du profit), offre, demande, élasticités et équilibre du marché.\n- Macroéconomie 1 : comptabilité nationale, mesure du PIB par trois approches, PIB nominal et réel, inflation et indice des prix, chômage, circuit économique et agents économiques.\n- Mathématiques pour économistes : fonctions usuelles, dérivées et dérivées partielles, élasticité, optimisation simple avec ou sans contrainte.\n\nCes trois matières forment le socle de toute la licence. La Licence 2 approfondira les structures de marché, le modèle IS-LM et l'économétrie ; la Licence 3 traitera du développement, de la monnaie, de l'économie internationale et de l'économie publique. Les lacunes de première année se paient donc pendant trois ans.\n\nSelon les établissements, d'autres enseignements complètent l'année : introduction au droit, comptabilité, statistique descriptive, histoire des faits économiques, informatique, langues, techniques d'expression. Ce cours se concentre sur les trois matières qui pèsent le plus dans les résultats.\n\n## Les types d'épreuves\n\n- L'exercice chiffré : calculer un équilibre de marché, une élasticité, un optimum du consommateur, un PIB. On attend la démarche complète, les unités et une phrase d'interprétation.\n- La question de cours : définir une notion (coût marginal, déflateur, taux de chômage), énoncer une propriété, expliquer un mécanisme.\n- Le QCM : il teste la précision des définitions ; lisez chaque proposition jusqu'au bout, car un mot change souvent le sens.\n- La dissertation ou le commentaire court : par exemple « Le PIB mesure-t-il le bien-être ? ». On attend une introduction qui définit les termes, une problématique, un plan en deux ou trois parties et une conclusion.\n- Le cas pratique : une situation (une boulangerie de Thiès, une coopérative rizicole fictive de la vallée du fleuve) à analyser avec les outils du cours.\n- Le projet ou dossier, plus rare en L1 : une petite étude documentaire présentée à l'écrit ou à l'oral.\n\n## Méthode de révision\n\nPremière règle : comprendre avant d'apprendre. En économie, une formule n'a de valeur que si vous savez ce qu'elle représente. Quand vous écrivez Cm = P, vous devez pouvoir dire en une phrase pourquoi l'entreprise en concurrence produit jusqu'à ce point.\n\nDeuxième règle : fabriquer des fiches. Une fiche par chapitre, au maximum deux pages : définitions exactes, formules avec leurs conditions d'utilisation, un schéma décrit (par exemple le graphique offre-demande avec ses axes), un exemple chiffré résolu et les erreurs fréquentes.\n\nTroisième règle : s'entraîner à la main et chronométré. Refaites les exercices de TD sans regarder le corrigé, puis des sujets d'examen des années précédentes. Calculatrice autorisée ou non : vérifiez-le dans le règlement et entraînez-vous dans les mêmes conditions.\n\nQuatrième règle : travailler en groupe, avec méthode. Le groupe de révision est très efficace si chacun prépare une partie et l'explique aux autres. Expliquer est le meilleur test de compréhension.\n\nCinquième règle : soigner la présentation. Encadrez les résultats, indiquez les unités (FCFA, kilogrammes, milliards de FCFA), justifiez chaque étape et terminez chaque calcul par une interprétation économique.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : bilan. Rassembler cours, TD et anciens sujets ; repérer les chapitres mal maîtrisés ; revoir les dérivées et la résolution d'équations (mathématiques).\n- Semaine 2 : microéconomie, consommateur et producteur. Fiches, puis exercices d'optimum du consommateur et de maximisation du profit.\n- Semaine 3 : microéconomie, marché et élasticités. Équilibre, prix plafond ou plancher, élasticités et recette totale.\n- Semaine 4 : macroéconomie. Les trois approches du PIB, PIB réel, indice des prix, taux de chômage, circuit économique.\n- Semaine 5 : mathématiques et transversalité. Optimisation avec et sans contrainte, puis exercices mêlant maths et micro.\n- Semaine 6 : sujets blancs en conditions réelles (un par matière), correction, relecture des fiches, repos la veille de l'épreuve.\n\n## Le jour de l'examen\n\nLisez tout le sujet pendant les cinq premières minutes et repérez le barème. Commencez par l'exercice que vous maîtrisez le mieux pour sécuriser des points. Répartissez votre temps selon le barème. Gardez dix minutes pour relire : signes, unités, reports de résultats d'une question à l'autre.\n\n## Points clés\n\n- Le règlement des examens de votre établissement fixe les crédits, coefficients et règles de compensation : lisez-le.\n- Trois piliers en L1 : microéconomie 1, macroéconomie 1, mathématiques pour économistes.\n- Comprendre, ficher, s'entraîner, expliquer, présenter proprement.\n\n## Exercices\n\n- Exercice 1 : citez les trois matières principales de la Licence 1 d'économie et, pour chacune, deux notions clés.\n- Exercice 2 : distinguez unité d'enseignement, élément constitutif et crédit.\n- Exercice 3 : rédigez une fiche de révision sur l'élasticité-prix de la demande (définition, formule, interprétation, exemple).\n- Exercice 4 : construisez votre propre plan de révision de six semaines en tenant compte de vos points faibles.\n\n## Corrigé\n\n- Exercice 1 : microéconomie 1 (optimum du consommateur, équilibre du marché) ; macroéconomie 1 (PIB, taux de chômage) ; mathématiques (dérivée, optimisation sous contrainte).\n- Exercice 2 : l'unité d'enseignement regroupe des matières cohérentes ; l'élément constitutif est une matière de l'UE ; le crédit mesure la charge de travail et s'acquiert lorsque l'UE est validée selon le règlement de l'établissement.\n- Exercice 3 : l'élasticité-prix mesure la variation en pourcentage de la quantité demandée suite à une variation de 1 % du prix : e = (ΔQ/Q) / (ΔP/P). Si |e| < 1, la demande est inélastique et une hausse de prix augmente la recette ; si |e| > 1, elle est élastique. Exemple : prix +10 %, quantité −5 %, e = −0,5.\n- Exercice 4 : réponse personnelle ; un bon plan commence par un diagnostic, consacre plus de temps aux points faibles et se termine par des sujets blancs chronométrés."
+   },
+   {
+    "title": "Microéconomie 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Macroéconomie 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mathématiques pour économistes : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Microéconomie 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Macroéconomie 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques pour économistes",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-eco-l2",
+  "level": "Licence 2",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en sciences économiques (système LMD, contexte Sénégal et UEMOA). Le cours couvre la microéconomie 2 (concurrence, monopole, oligopole, théorie des jeux), la macroéconomie 2 (modèle keynésien, IS-LM, politiques budgétaire et monétaire) et la statistique et l'économétrie introductive (régression simple et interprétation). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : microéconomie, macroéconomie et mathématiques de Licence 1.",
+  "sort": 362,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Connaître les matières clés et les épreuves typiques.\n- Organiser six semaines de révision efficaces.\n\n## La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 du cycle de licence. Comme en première année, chaque semestre est composé d'unités d'enseignement (UE) regroupant des matières (éléments constitutifs), et chaque UE validée apporte des crédits. Dans le schéma LMD courant, un semestre représente 30 crédits ; mais les coefficients, les règles de compensation, la place du contrôle continu et les conditions d'admission en Licence 3 sont propres à chaque établissement. Le règlement des examens de votre université ou école fait foi : relisez-le, notamment pour les UE de Licence 1 éventuellement non acquises, que certains établissements permettent de repasser en parallèle.\n\nCe qui change en Licence 2 : le niveau d'abstraction augmente. On passe de la description (mesurer le PIB, tracer une offre et une demande) à la modélisation (expliquer pourquoi une entreprise en monopole fixe un prix plus élevé, pourquoi une hausse des dépenses publiques fait monter le taux d'intérêt). Les examens demandent davantage de raisonnement graphique et d'interprétation, et moins de simple restitution.\n\n## Les matières clés de la Licence 2\n\n- Microéconomie 2 : structures de marché. Concurrence parfaite à court et long terme, monopole, perte sèche, oligopole (Cournot, Bertrand, Stackelberg), introduction à la théorie des jeux (stratégie dominante, équilibre de Nash, dilemme du prisonnier).\n- Macroéconomie 2 : modèle keynésien et multiplicateur, modèle IS-LM, efficacité des politiques budgétaire et monétaire, effet d'éviction, spécificités d'une union monétaire comme l'UEMOA.\n- Statistique et économétrie introductive : statistiques descriptives à deux variables, covariance et corrélation, régression linéaire simple par les moindres carrés ordinaires, coefficient de détermination, test de significativité, interprétation.\n\nCes matières prolongent la Licence 1 sans la répéter. Elles préparent la Licence 3, consacrée à l'économie du développement, à l'économie monétaire et internationale et à l'économie publique. Selon les établissements, l'année comprend aussi l'histoire de la pensée économique, la comptabilité nationale approfondie, le droit, l'informatique (tableur, logiciel statistique) et les langues.\n\n## Les types d'épreuves\n\n- L'exercice chiffré long : par exemple « monopole puis duopole de Cournot » ou « équilibre IS-LM puis politique budgétaire ». Les questions s'enchaînent : une erreur au début se propage, d'où l'importance de vérifier chaque résultat intermédiaire.\n- Le graphique commenté : déplacement de IS ou de LM, perte sèche du monopole. On attend des axes nommés, des courbes repérées, les points d'équilibre avant et après.\n- La question de réflexion : « La politique budgétaire est-elle efficace dans une union monétaire ? ». Plan structuré, mobilisation des modèles, exemples.\n- L'exercice d'économétrie : calcul à la main d'une régression sur 4 à 8 observations, ou lecture d'une sortie de logiciel (coefficients, écarts-types, t de Student, R²) et interprétation.\n- Le QCM ou vrai-faux justifié.\n- Le dossier ou mini-projet : collecte de données, régression sur tableur, rapport de quelques pages.\n\n## Méthode de révision\n\nRévisez par modèles. Pour chaque modèle (monopole, Cournot, keynésien, IS-LM, régression), une fiche avec : hypothèses, équations, méthode de résolution pas à pas, graphique décrit, résultat type, interprétation, limites.\n\nEntraînez-vous aux enchaînements. Les sujets de Licence 2 font souvent comparer deux situations : concurrence et monopole, monopole et duopole, politique budgétaire avec et sans effet d'éviction. Prenez l'habitude de présenter un tableau comparatif final : il impressionne favorablement le correcteur et vous oblige à vérifier la cohérence.\n\nPour l'économétrie, refaites les calculs à la main avec un tableau de colonnes (x, y, écarts, produits, carrés). C'est long la première fois, rapide la dixième. Apprenez aussi à lire une sortie de logiciel.\n\nEnfin, liez théorie et réalité : un marché de ciment avec peu de producteurs, une compagnie aérienne en situation de quasi-monopole sur une ligne, la politique monétaire commune de la BCEAO. Les correcteurs apprécient les exemples bien choisis, à condition de ne pas inventer de chiffres réels.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : diagnostic et remise à niveau (dérivées, systèmes de deux équations, sommes et moyennes).\n- Semaine 2 : microéconomie 2, concurrence et monopole (calculs de surplus et de perte sèche).\n- Semaine 3 : microéconomie 2, oligopole et théorie des jeux (fonctions de réaction, matrices de gains).\n- Semaine 4 : macroéconomie 2, modèle keynésien, multiplicateurs, IS-LM et politiques.\n- Semaine 5 : statistique et économétrie : régression à la main, lecture de sorties, interprétation.\n- Semaine 6 : sujets blancs complets, correction, fiches de synthèse, repos.\n\n## Points clés\n\n- La Licence 2 demande de modéliser et d'interpréter, pas seulement de calculer.\n- Une fiche par modèle, un tableau comparatif par chapitre.\n- Le règlement des examens de votre établissement fixe les règles de validation.\n\n## Exercices\n\n- Exercice 1 : citez les trois matières clés de la Licence 2 et un modèle central pour chacune.\n- Exercice 2 : expliquez la différence entre un exercice de Licence 1 et un exercice de Licence 2 sur un même thème (par exemple le marché).\n- Exercice 3 : construisez la fiche-type du modèle de monopole (hypothèses, condition d'optimum, résultat, limites).\n- Exercice 4 : proposez un planning hebdomadaire pour la semaine 4 du plan de révision.\n\n## Corrigé\n\n- Exercice 1 : microéconomie 2 (monopole ou Cournot) ; macroéconomie 2 (IS-LM) ; économétrie (régression linéaire simple par les MCO).\n- Exercice 2 : en Licence 1, on calcule un équilibre de concurrence ; en Licence 2, on compare cet équilibre à celui d'un monopole ou d'un oligopole, on mesure la perte de bien-être et on interprète le pouvoir de marché.\n- Exercice 3 : hypothèses : un seul vendeur, pas de substitut proche, barrières à l'entrée ; condition : recette marginale = coût marginal ; résultat : quantité plus faible et prix plus élevé qu'en concurrence, perte sèche ; limites : menace d'entrée, régulation, demande élastique.\n- Exercice 4 : par exemple lundi multiplicateurs, mardi courbe IS, mercredi courbe LM, jeudi équilibre et politiques, vendredi exercice de synthèse chronométré, samedi correction et fiche."
+   },
+   {
+    "title": "Microéconomie 2 (structures de marché) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Macroéconomie 2 (keynésien, IS-LM, politiques) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Statistiques et économétrie introductive : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Microéconomie 2",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Macroéconomie 2",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Statistiques et économétrie introductive",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-eco-l3",
+  "level": "Licence 3",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en sciences économiques (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'économie du développement (théories, IDH, pauvreté et inégalités, cas africains fictifs), l'économie monétaire et internationale (monnaie, UEMOA et BCEAO, balance des paiements, change) et l'économie publique (biens publics, externalités, fiscalité, dépense publique). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : microéconomie, macroéconomie et économétrie de Licence 1 et 2.",
+  "sort": 363,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3, année de diplôme, dans le système LMD.\n- Identifier les matières clés et les attentes des examinateurs.\n- Organiser six semaines de révision en intégrant le mémoire ou le rapport éventuel.\n\n## La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle : sa validation donne le diplôme de licence, porte d'entrée vers les masters ou vers l'emploi. L'organisation reste celle des années précédentes : des unités d'enseignement (UE) composées de matières, des crédits acquis par UE validée, un contrôle continu et des examens de fin de semestre. Dans le schéma LMD courant, la licence complète représente 180 crédits ; mais les coefficients, les compensations, les conditions de délivrance du diplôme et l'éventuelle obligation de stage, de rapport ou de mémoire sont fixés par chaque établissement. Vérifiez votre règlement : les UE de L1 et L2 doivent toutes être acquises pour obtenir la licence.\n\nCe qui change en Licence 3 : les matières deviennent appliquées. On ne se contente plus de résoudre un modèle ; on l'utilise pour analyser une économie, une politique publique, une situation monétaire. Les sujets sont plus ouverts, les dissertations plus fréquentes, et l'on attend une culture économique solide sur l'Afrique de l'Ouest et l'UEMOA.\n\n## Les matières clés de la Licence 3\n\n- Économie du développement : croissance et développement, grandes théories (étapes, dualisme, structuralisme, dépendance, capabilités, institutions), indicateurs (PIB par habitant, IDH), pauvreté et inégalités (taux de pauvreté, Gini), enjeux africains : informel, agriculture, rente des ressources naturelles, capital humain.\n- Économie monétaire et internationale : fonctions et formes de la monnaie, création monétaire, banque centrale et politique monétaire, UEMOA et BCEAO, balance des paiements, taux de change nominal et réel, régimes de change.\n- Économie publique : biens publics, externalités, fiscalité (incidence, perte sèche, progressivité), dépense publique et soutenabilité de la dette.\n\nCes matières mobilisent tout ce qui précède : la microéconomie (surplus, élasticités) pour l'économie publique, la macroéconomie (IS-LM, multiplicateur) pour la monnaie, l'économétrie pour lire les études empiriques. Selon les établissements, l'année comprend aussi la croissance, l'économie du travail, l'économie industrielle, la méthodologie de recherche et un rapport de stage ou un mémoire.\n\n## Les types d'épreuves\n\n- La dissertation : « La croissance suffit-elle à réduire la pauvreté ? », « Avantages et limites d'une union monétaire pour ses membres ». On attend une problématique, un plan argumenté, des théories citées avec justesse et des exemples.\n- Le commentaire de texte ou de données : un extrait d'article ou un tableau de chiffres (fictifs à l'entraînement) à analyser.\n- L'exercice chiffré : calculer un IDH, un indice de Gini, un solde de la balance des paiements, un taux de change croisé, une incidence fiscale, une taxe pigouvienne.\n- Le QCM ou les questions courtes.\n- Le rapport, le mémoire ou l'exposé, avec une soutenance orale dans certains parcours.\n\n## Méthode de révision\n\nRévisez par problématiques. Pour chaque chapitre, préparez trois sujets de dissertation probables et leur plan détaillé. Le correcteur attend une réflexion organisée, pas une récitation.\n\nConstituez un carnet de références : auteurs et idées (Rostow, Lewis, Prebisch, Amin, Sen, Pigou, Coase, Samuelson, Mundell), concepts (malédiction des ressources, trilemme, passager clandestin), et exemples qualitatifs africains. Ne citez jamais un chiffre réel dont vous n'êtes pas certain : mieux vaut écrire « une part importante de l'emploi relève de l'informel » qu'un pourcentage inventé.\n\nGardez l'entraînement au calcul : les exercices chiffrés rapportent des points sûrs. Suivez l'actualité économique de la sous-région à travers des sources fiables (publications de la BCEAO, de la Commission de l'UEMOA, de l'ANSD, des institutions internationales).\n\nSi vous avez un mémoire ou un rapport, planifiez-le à part : il ne doit pas dévorer le temps de révision des examens.\n\n## Plan de révision sur 6 semaines\n\n- Semaine 1 : diagnostic, carnet de références, rappels de L1-L2 (surplus, élasticités, IS-LM).\n- Semaine 2 : économie du développement : théories, indicateurs, exercices IDH, Gini, pauvreté.\n- Semaine 3 : économie monétaire : monnaie, création monétaire, BCEAO, politique monétaire.\n- Semaine 4 : économie internationale : balance des paiements, change, régimes de change, trilemme.\n- Semaine 5 : économie publique : biens publics, externalités, incidence fiscale, dette.\n- Semaine 6 : deux dissertations et un sujet chiffré complet en conditions réelles, correction, repos.\n\n## Points clés\n\n- La Licence 3 est l'année du diplôme : toutes les UE du cycle doivent être acquises.\n- Les sujets sont plus ouverts : problématiser, argumenter, illustrer.\n- Ne jamais inventer de statistiques réelles ; raisonner sur des mécanismes et des exemples qualitatifs.\n\n## Exercices\n\n- Exercice 1 : citez les trois matières clés de la Licence 3 et deux notions par matière.\n- Exercice 2 : proposez une problématique pour le sujet « Le franc CFA : atout ou contrainte ? ».\n- Exercice 3 : pourquoi vaut-il mieux ne pas citer de statistique dont on n'est pas sûr ?\n- Exercice 4 : construisez votre carnet de références avec cinq auteurs et leur idée principale.\n\n## Corrigé\n\n- Exercice 1 : développement (IDH, seuil de pauvreté) ; monnaie et international (balance des paiements, taux de change réel) ; économie publique (bien public, taxe pigouvienne).\n- Exercice 2 : par exemple : « Dans quelle mesure l'appartenance à une union monétaire à change fixe protège-t-elle la stabilité des États membres tout en limitant leurs marges de manœuvre ? ».\n- Exercice 3 : une statistique fausse décrédibilise toute la copie ; le correcteur connaît souvent les ordres de grandeur. Un raisonnement juste sans chiffre vaut mieux qu'un chiffre faux.\n- Exercice 4 : par exemple Rostow (étapes de la croissance), Lewis (dualisme et transfert de main-d'œuvre), Sen (capabilités), Pigou (taxe corrigeant les externalités), Mundell (zones monétaires optimales, trilemme)."
+   },
+   {
+    "title": "Économie du développement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Économie monétaire et internationale : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Économie publique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie du développement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie monétaire et internationale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie publique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-droit-l1",
+  "level": "Licence 1",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en droit et droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre l'introduction au droit (sources, organisation judiciaire, personnes, preuve), le droit des obligations 1 (formation, validité et effets du contrat) et les institutions administratives et le droit constitutionnel, avec la méthodologie juridique : cas pratique, dissertation, commentaire d'arrêt. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis.",
+  "sort": 371,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en droit des affaires (méthodologie juridique)",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 et les attentes du correcteur.\n- Maîtriser les trois exercices juridiques de base : le cas pratique, la dissertation et le commentaire d'arrêt.\n- Disposer d'un plan de révision sur 6 semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités et écoles du Sénégal et de l'espace UEMOA ont adopté le système LMD (Licence, Master, Doctorat). La Licence se déroule sur trois années de deux semestres. Chaque semestre regroupe des unités d'enseignement (UE), par exemple une UE « Fondamentaux du droit privé » qui réunit l'introduction au droit et le droit des obligations.\n\nChaque UE porte des crédits, qui mesurent le volume de travail (cours magistraux, travaux dirigés, travail personnel). Le nombre de crédits, les coefficients, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : seul le règlement des études de votre faculté ou de votre école fait foi.\n\nTrois mécanismes se retrouvent presque partout :\n\n- Le contrôle continu : interrogations en travaux dirigés (TD), fiches d'arrêt, exposés, petits devoirs sur table.\n- L'examen semestriel : une épreuve écrite de 2 à 4 heures, souvent décisive dans la note finale, parfois complétée par un oral.\n- La session de rattrapage : une seconde chance pour les UE non validées, selon les règles de l'établissement.\n\n## 2. Les matières clés de la Licence 1\n\nCe cours travaille trois matières fondamentales, à côté des enseignements de tronc commun (économie, histoire des institutions, langues, techniques d'expression).\n\n- Introduction au droit : définition du droit, distinction entre droit objectif et droits subjectifs, sources du droit (Constitution, traités dont le traité OHADA, lois, règlements, jurisprudence, coutume, doctrine), organisation judiciaire en termes généraux, personnes physiques et morales, preuve.\n- Droit des obligations 1 : le contrat. Au Sénégal, la matière est régie principalement par le Code des obligations civiles et commerciales (COCC). On étudie la formation du contrat, ses conditions de validité, la nullité et les effets du contrat.\n- Institutions administratives et droit constitutionnel : l'État, la Constitution, la séparation des pouvoirs, les régimes politiques, puis l'organisation administrative (centralisation, déconcentration, décentralisation) et les grandes notions de service public.\n\n## 3. Ce que le correcteur attend\n\nEn droit, on n'évalue pas la quantité de connaissances récitées, mais la capacité à raisonner avec la règle de droit. Une copie juridique réussie :\n\n- emploie un vocabulaire exact (on ne confond pas « nullité » et « résolution », « loi » et « décret ») ;\n- cite la règle applicable sans inventer de numéro d'article : si vous n'êtes pas sûr du numéro, écrivez « le COCC dispose que… » ou « l'Acte uniforme relatif au droit commercial général prévoit que… » ;\n- suit un plan apparent, annoncé et respecté ;\n- conclut clairement en répondant à la question posée.\n\n## 4. Méthode n°1 : le cas pratique\n\nLe cas pratique présente une situation de fait (un litige entre des personnes) et vous demande de la résoudre en droit. La méthode repose sur le syllogisme juridique : majeure (la règle), mineure (les faits), conclusion.\n\n- Étape 1. Résumer les faits utiles en les qualifiant juridiquement : « Awa » devient « la venderesse », « l'accord sur le prix » devient « l'échange des consentements ».\n- Étape 2. Poser le problème de droit sous forme de question générale : « Un contrat conclu par un mineur non émancipé est-il valable ? »\n- Étape 3. Exposer la règle de droit applicable (principe, conditions, exceptions).\n- Étape 4. Appliquer la règle aux faits, condition par condition.\n- Étape 5. Conclure par une réponse nette, éventuellement nuancée (« sous réserve de prouver que… »).\n\nS'il y a plusieurs problèmes, on les traite l'un après l'autre, chacun avec son syllogisme. Pas d'introduction historique : allez droit au problème.\n\n## 5. Méthode n°2 : la dissertation juridique\n\nLa dissertation porte sur un sujet théorique (« La force obligatoire du contrat », « La décentralisation au Sénégal »). Elle exige une démonstration organisée.\n\n- L'introduction comporte : une accroche, la définition des termes du sujet, le contexte (sources, évolution), l'intérêt du sujet, la problématique (la question centrale) et l'annonce du plan.\n- Le développement suit en principe deux parties, chacune divisée en deux sous-parties (I. A. B. ; II. A. B.), avec des titres courts et explicatifs.\n- Chaque partie commence par un chapeau (quelques lignes qui annoncent les sous-parties) et des transitions relient les parties.\n- La conclusion est facultative dans de nombreuses facultés ; si vous en faites une, elle doit ouvrir le sujet sans le résumer mécaniquement.\n\nExemple de plan sur « La force obligatoire du contrat » : I. Un principe affirmé (A. Le contrat, loi des parties ; B. Le contrat s'impose au juge) ; II. Un principe aménagé (A. Les tempéraments légaux ; B. Les aménagements conventionnels).\n\n## 6. Méthode n°3 : le commentaire d'arrêt\n\nOn vous remet une décision de justice. Vous devez l'expliquer, puis l'apprécier. Le travail commence par la fiche d'arrêt :\n\n- Les faits : qui a fait quoi, qualifié juridiquement.\n- La procédure : quelle juridiction a statué en premier, qui a fait appel, qui s'est pourvu en cassation.\n- Les prétentions des parties : les arguments opposés.\n- Le problème de droit : la question juridique tranchée par la juridiction.\n- La solution : ce qu'a décidé la juridiction, et sur quel fondement.\n\nLe commentaire lui-même suit un plan en deux parties : souvent, la première explique le sens de la solution, la seconde en apprécie la valeur (conformité aux textes, opportunité, portée). Attention : ne remplacez jamais l'analyse de la décision par une récitation du cours. Dans ce cours, les décisions proposées à l'entraînement sont fictives et présentées comme telles : on n'invente aucune jurisprudence réelle.\n\n## 7. Plan de révision sur 6 semaines\n\n- Semaine 1 : relire l'introduction au droit ; fiches sur les sources et l'organisation judiciaire.\n- Semaine 2 : droit des obligations (formation et validité du contrat) ; deux cas pratiques.\n- Semaine 3 : droit des obligations (nullités, effets du contrat) ; une fiche d'arrêt.\n- Semaine 4 : droit constitutionnel et institutions administratives ; une dissertation (plan détaillé).\n- Semaine 5 : sujets types en temps limité ; correction avec la grille de méthode.\n- Semaine 6 : relecture des fiches, apprentissage des définitions, repos la veille de l'examen.\n\n## Points clés\n\n- Les trois matières clés de L1 : introduction au droit, droit des obligations (contrat), institutions administratives et droit constitutionnel.\n- Le cas pratique repose sur le syllogisme ; la dissertation sur une problématique et un plan en deux parties ; le commentaire sur la fiche d'arrêt.\n\n## Exercices pratiques\n\n- Exercice 1. Citez les trois éléments du syllogisme juridique.\n- Exercice 2. Transformez cette question de fait en problème de droit : « Moussa, 16 ans, peut-il obtenir l'annulation de la vente de sa moto qu'il a conclue seul ? »\n- Exercice 3. Rédigez l'annonce de plan d'une dissertation sur « La loi et le règlement ».\n- Exercice 4. Classez ces éléments dans les rubriques d'une fiche d'arrêt : « la cour d'appel a rejeté la demande » ; « le vendeur soutient que la vente était parfaite » ; « un commerçant a livré des sacs de riz non payés ».\n\n## Corrigé\n\n- Exercice 1. La majeure (la règle de droit applicable), la mineure (les faits qualifiés juridiquement) et la conclusion (la solution qui découle de l'application de la règle aux faits).\n- Exercice 2. « Un contrat conclu par un mineur non émancipé, sans l'intervention de son représentant légal, peut-il être annulé ? » On passe de la personne (Moussa) à la catégorie juridique (le mineur non émancipé) et de l'objet (la moto) à l'acte (le contrat).\n- Exercice 3. Exemple : « Si la loi et le règlement se distinguent par leur auteur et leur domaine (I), ils s'articulent dans une hiérarchie qui garantit la cohérence de l'ordre juridique (II). »\n- Exercice 4. « Un commerçant a livré des sacs de riz non payés » : faits. « Le vendeur soutient que la vente était parfaite » : prétentions des parties. « La cour d'appel a rejeté la demande » : procédure."
+   },
+   {
+    "title": "Introduction au droit : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des obligations 1 (le contrat) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Institutions administratives et droit constitutionnel : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 en droit (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction au droit",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des obligations 1 (le contrat)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Institutions administratives et droit constitutionnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-droit-l2",
+  "level": "Licence 2",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre le droit commercial général OHADA (commerçant, entreprenant, actes de commerce, fonds de commerce, bail à usage professionnel), le droit des obligations 2 (responsabilité civile délictuelle et contractuelle) et le droit du travail (relations individuelles, en tenant compte de la transition vers un nouveau Code du travail). Fiches, cas pratiques et exercices chiffrés corrigés (taux fictifs), sujet type et trois cours vidéo de 1h30. Prérequis : les acquis de la Licence 1 (introduction au droit, contrat).",
+  "sort": 372,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le système LMD et comprendre ce qui change par rapport à la L1.\n- Connaître les trois matières clés de l'année : droit commercial général OHADA, droit des obligations 2 (responsabilité civile), droit du travail.\n- Adapter la méthode du cas pratique et du commentaire aux exigences de la L2.\n- Disposer d'un plan de révision sur 6 semaines.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4. Comme en L1, chaque semestre regroupe des unités d'enseignement (UE) dotées de crédits, évaluées par un contrôle continu (TD, devoirs, fiches d'arrêt) et un examen semestriel, avec une session de rattrapage. Les coefficients, les règles de compensation et les conditions de passage relèvent du règlement des études de votre établissement : c'est lui seul qui fait foi.\n\nCe qui change en L2 : les matières deviennent techniques et se rapprochent de la vie des affaires. Les sujets d'examen sont plus souvent des cas pratiques complexes, avec plusieurs personnes, plusieurs problèmes et parfois des calculs (indemnités, dommages-intérêts, loyers). Le correcteur attend une qualification précise des faits et une connaissance sûre des textes, en particulier des Actes uniformes de l'OHADA.\n\n## 2. Les trois matières clés\n\n- Droit commercial général OHADA : l'Acte uniforme relatif au droit commercial général (AUDCG), révisé en 2010, régit le commerçant, l'entreprenant, les actes de commerce, le Registre du commerce et du crédit mobilier (RCCM), le fonds de commerce et le bail à usage professionnel (souvent appelé bail commercial).\n- Droit des obligations 2 : la responsabilité civile. Responsabilité délictuelle (fait personnel, fait des choses, fait d'autrui) et responsabilité contractuelle (inexécution du contrat). Au Sénégal, la matière relève principalement du Code des obligations civiles et commerciales (COCC).\n- Droit du travail : les relations individuelles de travail (formation, exécution, suspension et rupture du contrat de travail). Le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026). Apprenez les mécanismes, et vérifiez auprès de vos enseignants le texte applicable à la date de votre examen.\n\n## 3. Les épreuves et la méthode\n\nLe cas pratique reste l'épreuve reine. En L2, trois exigences s'ajoutent :\n\n- Identifier tous les problèmes : lisez l'énoncé deux fois, soulignez chaque événement et demandez-vous « quelle règle s'applique ici ? ». Un énoncé de dix lignes cache souvent trois ou quatre problèmes.\n- Hiérarchiser : traitez d'abord les questions préalables (qualification de commerçant, existence d'un contrat de travail), dont dépend le reste.\n- Chiffrer quand c'est demandé : posez le calcul, les données et le résultat ; vérifiez les ordres de grandeur.\n\nLe commentaire de décision et la dissertation restent possibles, notamment en responsabilité civile. Les décisions proposées dans ce cours sont fictives et présentées comme telles : on n'invente aucune jurisprudence réelle. À l'examen, on peut aussi vous demander des questions de cours courtes : définissez avec précision, puis illustrez.\n\nRappel de la grille du cas pratique : faits qualifiés, problème de droit, règle, application, conclusion. Ne citez aucun numéro d'article dont vous n'êtes pas certain ; écrivez « l'Acte uniforme relatif au droit commercial général prévoit que… ».\n\n## 4. Les pièges classiques de la L2\n\n- Confondre commerçant et entreprenant : l'entreprenant est une personne physique qui exerce une petite activité et s'enregistre par simple déclaration ; le commerçant est immatriculé au RCCM.\n- Confondre responsabilité contractuelle et délictuelle : s'il existe un contrat valable entre l'auteur et la victime, et que le dommage résulte de son inexécution, on raisonne en principe sur le terrain contractuel.\n- Oublier la qualification du contrat de travail : sans lien de subordination, il n'y a pas de contrat de travail, quelle que soit l'appellation choisie par les parties.\n- Présenter des taux légaux de mémoire : dans ce cours, les taux utilisés en droit du travail sont fictifs pour l'exemple ; vérifiez toujours le texte en vigueur.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : droit commercial général (commerçant, entreprenant, actes de commerce, RCCM) ; deux cas pratiques de qualification.\n- Semaine 2 : fonds de commerce et bail commercial ; un cas pratique avec calcul de loyer ou d'indemnité.\n- Semaine 3 : responsabilité du fait personnel, du fait des choses et du fait d'autrui ; une fiche de décision.\n- Semaine 4 : responsabilité contractuelle, causes d'exonération, réparation chiffrée ; une dissertation (plan détaillé).\n- Semaine 5 : droit du travail (contrat, période d'essai, suspension, rupture) ; un cas pratique avec calcul d'indemnités fictives.\n- Semaine 6 : sujet type en 3 heures, correction, relecture des fiches et repos.\n\nExemple de répartition du temps pour une épreuve de 3 heures : 20 minutes de lecture et de brouillon (repérage des problèmes), 2 heures 15 de rédaction, 25 minutes de relecture et de vérification des calculs.\n\n## Points clés\n\n- La L2 rapproche le droit de la vie des affaires : droit commercial général OHADA, responsabilité civile, droit du travail.\n- Le cas pratique domine : identifier tous les problèmes, traiter d'abord les questions préalables, chiffrer proprement.\n- Les taux de droit du travail utilisés ici sont fictifs ; le Code du travail sénégalais est en transition.\n\n## Exercices pratiques\n\n- Exercice 1. Citez les trois matières clés de la L2 et l'Acte uniforme ou le code principal de chacune.\n- Exercice 2. Dans l'énoncé suivant, repérez les problèmes juridiques sans les résoudre : « Modou, qui vend des pièces détachées sur un marché de Thiès sans être enregistré, a embauché un apprenti sans contrat écrit. En déchargeant un carton, l'apprenti a blessé un client. »\n- Exercice 3. Quelle question préalable faut-il trancher avant de calculer des indemnités de licenciement ?\n- Exercice 4. Répartissez 3 heures d'épreuve selon la méthode proposée et justifiez le temps de relecture.\n- Exercice 5. Corrigez la phrase : « Selon l'article X de l'Acte uniforme, le commerçant doit… », écrite par un étudiant qui ne connaît pas le numéro exact.\n\n## Corrigé\n\n- Exercice 1. Droit commercial général : Acte uniforme relatif au droit commercial général (OHADA). Responsabilité civile : Code des obligations civiles et commerciales (COCC). Droit du travail : Code du travail sénégalais, en transition vers un nouveau texte, et conventions collectives.\n- Exercice 2. 1) Modou a-t-il la qualité de commerçant, et quelles sont les conséquences de son absence d'immatriculation ou de déclaration ? 2) Le contrat qui le lie à l'apprenti est-il un contrat d'apprentissage ou de travail, et quelles sont les conséquences de l'absence d'écrit ? 3) Qui répond du dommage causé au client : l'apprenti (fait personnel), Modou (fait d'autrui, en tant que commettant ou maître d'apprentissage) ? Quelle est la nature de la responsabilité envers le client ?\n- Exercice 3. L'existence d'un contrat de travail (lien de subordination) et le mode de rupture (licenciement, démission, faute grave), dont dépend le droit aux indemnités.\n- Exercice 4. 20 minutes de lecture et brouillon, 2 h 15 de rédaction, 25 minutes de relecture. La relecture permet de corriger les erreurs de calcul, de vérifier que chaque problème a une conclusion et d'améliorer la lisibilité.\n- Exercice 5. « L'Acte uniforme relatif au droit commercial général prévoit que le commerçant doit… ». On cite le texte sans inventer de numéro."
+   },
+   {
+    "title": "Droit commercial général OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des obligations 2 (responsabilité civile) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit du travail (relations individuelles) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 en droit des affaires (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit commercial général OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des obligations 2 (responsabilité civile)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit du travail (relations individuelles)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-droit-l3",
+  "level": "Licence 3",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre le droit des sociétés commerciales OHADA (SARL, SA, SAS : constitution, fonctionnement, organes, affectation du résultat), le droit des sûretés et des procédures collectives OHADA et le droit fiscal des affaires (principes, IS, TVA, retenues, contrôle, avec des taux fictifs). Fiches, exercices chiffrés corrigés, sujet type transversal et trois cours vidéo de 1h30. Prérequis : les acquis des Licences 1 et 2 (obligations, droit commercial général).",
+  "sort": 373,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le système LMD et préparer la poursuite en Master.\n- Connaître les trois matières clés de l'année : droit des sociétés commerciales OHADA, droit des sûretés et des procédures collectives OHADA, droit fiscal des affaires.\n- Adapter la méthode aux sujets transversaux, qui mêlent plusieurs matières.\n- Disposer d'un plan de révision sur 6 semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle. Comme les années précédentes, elle est organisée en unités d'enseignement (UE) dotées de crédits, évaluées par un contrôle continu et un examen semestriel, avec une session de rattrapage. La validation de la Licence ouvre l'accès au Master, souvent sur dossier : vos résultats de L3 comptent beaucoup. Les règles de compensation, de crédits et de passage relèvent du règlement des études de votre établissement, qui seul fait foi.\n\nEn L3, beaucoup d'établissements demandent aussi un rapport de stage ou un mémoire court : c'est l'occasion d'appliquer le droit des affaires à une entreprise réelle, avec son accord et dans le respect de la confidentialité.\n\n## 2. Les trois matières clés\n\n- Droit des sociétés commerciales OHADA : l'Acte uniforme relatif au droit des sociétés commerciales et du groupement d'intérêt économique (AUSCGIE), révisé en 2014, régit la constitution, le fonctionnement et la dissolution des sociétés. On étudie surtout la SARL, la SA et la SAS, créée par la réforme de 2014.\n- Droit des sûretés et des procédures collectives OHADA : l'Acte uniforme portant organisation des sûretés (révisé en 2010) organise les garanties du crédit (cautionnement, gage, nantissement, hypothèque…). L'Acte uniforme portant organisation des procédures collectives d'apurement du passif (révisé en 2015) traite l'entreprise en difficulté : conciliation, règlement préventif, redressement judiciaire, liquidation des biens.\n- Droit fiscal des affaires : principes généraux de l'impôt, impôt sur les sociétés, TVA, impôts sur le revenu des capitaux mobiliers, procédures de contrôle. Au Sénégal, la matière repose sur le Code général des impôts, dans le cadre des directives de l'UEMOA. Dans ce cours, tous les taux utilisés sont fictifs pour l'exemple.\n\n## 3. Les épreuves de L3\n\n- Le cas pratique transversal : une même entreprise fictive pose des questions de droit des sociétés (qui décide ?), de sûretés (qui est payé en premier ?) et de fiscalité (combien d'impôt ?). Il faut passer d'une matière à l'autre sans confusion.\n- L'exercice chiffré : répartition des bénéfices, ordre de paiement des créanciers, calcul de l'impôt sur les sociétés ou de la TVA. Présentez les données, les formules, les résultats et une phrase d'interprétation.\n- La dissertation ou le commentaire : par exemple « La SAS, société de liberté ? » ou « La place du créancier dans les procédures collectives ». Les décisions éventuellement proposées dans ce cours sont fictives et présentées comme telles.\n- Les questions de cours : définitions précises (cessation des paiements, affectio societatis, assiette de l'impôt).\n\n## 4. Méthode : le raisonnement en trois temps\n\nPour chaque question d'un cas transversal, suivez trois temps :\n\n- Qualifier : quelle société ? quelle sûreté ? quel impôt ? quelle procédure ? Une mauvaise qualification fausse toute la suite.\n- Appliquer la règle : citez l'Acte uniforme ou le code sans inventer de numéro d'article (« l'AUSCGIE prévoit que… »).\n- Chiffrer et conclure : un résultat chiffré n'est complet qu'avec sa conclusion juridique (« la décision est valablement adoptée », « le créancier chirographaire reçoit 30 % de sa créance »).\n\n## 5. Pièges fréquents\n\n- Confondre les organes : dans une SARL, le gérant ; dans une SA, le conseil d'administration et le directeur général (ou le président-directeur général), ou l'administrateur général ; dans une SAS, le président obligatoire et les organes que prévoient les statuts.\n- Confondre sûreté personnelle (une personne s'engage : la caution) et sûreté réelle (un bien est affecté : gage, hypothèque).\n- Confondre règlement préventif (avant la cessation des paiements) et redressement judiciaire (après).\n- Confondre résultat comptable et résultat fiscal : le second s'obtient à partir du premier par des réintégrations et des déductions.\n- Présenter des taux fiscaux de mémoire : utilisez ceux de l'énoncé.\n\n## 6. Plan de révision sur 6 semaines\n\n- Semaine 1 : constitution des sociétés (statuts, apports, immatriculation) ; SARL.\n- Semaine 2 : SA et SAS ; affectation du résultat ; un exercice chiffré.\n- Semaine 3 : sûretés personnelles et réelles ; ordre de paiement simplifié.\n- Semaine 4 : procédures collectives ; un cas pratique complet.\n- Semaine 5 : fiscalité (principes, IS, TVA, retenues sur dividendes) ; trois exercices chiffrés.\n- Semaine 6 : sujet type transversal en 4 heures, correction, repos.\n\n## Points clés\n\n- La L3 couvre les sociétés, les sûretés et procédures collectives, et la fiscalité des affaires.\n- Les cas transversaux exigent de qualifier, appliquer, chiffrer et conclure.\n- Les taux fiscaux de ce cours sont fictifs ; les numéros d'articles ne sont cités que si l'on en est certain.\n\n## Exercices pratiques\n\n- Exercice 1. Associez chaque matière à son texte de référence : sociétés, sûretés, procédures collectives, fiscalité.\n- Exercice 2. Qualifiez : a) un ami garantit le prêt d'un commerçant ; b) un commerçant affecte son camion à la garantie d'un prêt ; c) une banque prend une garantie sur l'immeuble d'une société.\n- Exercice 3. Une société a un résultat comptable de 20 000 000 FCFA ; elle a comptabilisé 1 000 000 FCFA de charges non déductibles. Quel est son résultat fiscal, sans autre retraitement ?\n- Exercice 4. Dans une SAS, quel organe est obligatoire ?\n- Exercice 5. Une entreprise n'arrive plus à payer ses dettes exigibles avec ses disponibilités. Quel est le nom de cette situation, et quelles procédures deviennent possibles ?\n\n## Corrigé\n\n- Exercice 1. Sociétés : AUSCGIE ; sûretés : Acte uniforme portant organisation des sûretés ; procédures collectives : Acte uniforme portant organisation des procédures collectives d'apurement du passif ; fiscalité : Code général des impôts (cadre UEMOA).\n- Exercice 2. a) Cautionnement, sûreté personnelle ; b) gage, sûreté réelle mobilière (avec ou sans dépossession selon les modalités) ; c) hypothèque, sûreté réelle immobilière.\n- Exercice 3. 20 000 000 + 1 000 000 = 21 000 000 FCFA : les charges non déductibles sont réintégrées.\n- Exercice 4. Le président, qui représente la société à l'égard des tiers.\n- Exercice 5. La cessation des paiements. Elle ouvre le redressement judiciaire si l'entreprise peut être sauvée, ou la liquidation des biens dans le cas contraire ; le règlement préventif n'est plus possible."
+   },
+   {
+    "title": "Droit des sociétés commerciales OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des sûretés et des procédures collectives OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit fiscal des affaires : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en droit des affaires (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des sociétés commerciales OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des sûretés et des procédures collectives OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit fiscal des affaires",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-mkt-l1",
+  "level": "Licence 1",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de première année de Licence en marketing et commerce (universités et écoles du Sénégal et de l'espace UEMOA, système LMD). Le cours couvre trois matières clés : les fondamentaux du marketing (besoins, marché, segmentation-ciblage-positionnement, mix 4P/7P), le comportement du consommateur et les techniques de vente et de négociation commerciale. Fiches de cours, cas d'entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : niveau Baccalauréat et aisance avec les pourcentages.",
+  "sort": 381,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre comment est organisée la première année de Licence dans le système LMD.\n- Identifier les trois matières clés de l'année en marketing et commerce et ce que les correcteurs attendent.\n- Connaître les différents types d'épreuves et la bonne manière d'y répondre.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités publiques et les écoles de commerce du Sénégal, comme celles des autres pays de l'espace UEMOA, appliquent le système LMD : Licence, Master, Doctorat. La Licence se déroule en trois années, soit six semestres. Chaque semestre regroupe des unités d'enseignement (UE), et chaque UE contient une ou plusieurs matières, appelées aussi éléments constitutifs (EC).\n\nChaque UE donne droit à des crédits lorsqu'elle est validée. Les crédits mesurent la charge de travail de l'étudiant : cours, travaux dirigés, travail personnel. Le nombre de crédits par UE, les coefficients, les règles de compensation entre matières et les conditions de passage en deuxième année varient d'un établissement à l'autre. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité ou du département.\n\nEn général, la note d'une matière combine un contrôle continu (devoirs, exposés, travaux dirigés, participation) et un examen de fin de semestre. Une session de rattrapage est souvent prévue pour les UE non validées. Retenez une règle simple : une note faible dans une matière peut parfois être compensée par d'autres notes de la même UE, mais une absence à un examen ne se compense presque jamais.\n\n## 2. Les matières clés de l'année\n\nLa première année installe le vocabulaire et les raisonnements de base du marketing et de la vente. Ce cours se concentre sur trois matières qui pèsent lourd dans la plupart des maquettes :\n\n- Fondamentaux du marketing : besoins et demande, notion de marché, part de marché, segmentation, ciblage, positionnement, et marketing-mix (4P puis 7P pour les services).\n- Comportement du consommateur : motivations, processus de décision d'achat, facteurs d'influence, attitudes, fidélité.\n- Techniques de vente et négociation commerciale : étapes de l'entretien de vente, découverte des besoins, argumentation, traitement des objections, conclusion, préparation d'une négociation et calcul de l'impact d'une remise.\n\nSelon les établissements, l'année comprend aussi l'économie générale, la comptabilité générale, les mathématiques et statistiques, l'expression écrite et orale, l'informatique et l'anglais commercial.\n\n## 3. Les types d'épreuves et ce qu'on attend de vous\n\n- La question de cours : définir une notion et l'illustrer. Exemple : « Définissez la segmentation et donnez trois critères. » Le correcteur attend une définition précise, une structure et un exemple concret.\n- Le QCM ou le vrai-faux : il teste la précision du vocabulaire. Lisez chaque proposition jusqu'au bout ; un seul mot change souvent le sens.\n- L'exercice chiffré : part de marché, taux de pénétration, score d'attitude, taux de transformation, impact d'une remise sur la marge. Écrivez toujours la formule, puis le calcul, puis le résultat avec son unité, puis une phrase d'interprétation.\n- Le cas pratique : une entreprise, souvent sénégalaise, avec un problème. Il faut faire un diagnostic court, proposer des actions justifiées et rester réaliste au regard du contexte (budget, circuits de distribution, habitudes des clients).\n- La dissertation ou question de réflexion : par exemple « Le marketing crée-t-il des besoins ? ». On attend une introduction avec définition des termes et problématique, un plan en deux ou trois parties, des exemples, une conclusion.\n- Le projet ou le dossier en groupe : étude d'un produit, plan de lancement, jeu de rôle de vente filmé. La forme compte : rapport structuré, sources citées, répartition des tâches.\n\n## 4. La méthode de révision\n\nRéviser le marketing, ce n'est pas réciter des définitions. Il faut savoir les appliquer à un cas. Voici une méthode en quatre temps.\n\n- Fiche : pour chaque chapitre, une page maximum avec les définitions, les formules et un schéma décrit avec vos mots.\n- Exemples : associez à chaque notion un exemple sénégalais tiré de votre quotidien (boutique de quartier, marché Sandaga, vendeur de crédit téléphonique, restaurant de dibiterie).\n- Entraînement : refaites les exercices de TD sans regarder le corrigé, puis comparez.\n- Oral : expliquez une notion à un camarade en deux minutes. Si vous n'y arrivez pas, vous ne la maîtrisez pas encore.\n\nExemple de mini-fiche. Part de marché en valeur = chiffre d'affaires de l'entreprise / chiffre d'affaires total du marché × 100. Si une laiterie fictive de Thiès réalise 360 000 000 FCFA sur un marché de 2 400 000 000 FCFA, sa part de marché est de 15 %. Une ligne d'interprétation : l'entreprise est un acteur moyen, loin d'un leader qui détiendrait 35 %.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan. Rassemblez cours, TD et anciens sujets. Listez les chapitres et notez pour chacun votre niveau (acquis, fragile, non vu).\n- Semaine 2 : fondamentaux du marketing. Fiches sur le marché, les indicateurs, la démarche segmentation-ciblage-positionnement et le mix. Exercices de part de marché.\n- Semaine 3 : comportement du consommateur. Fiches sur les motivations, le processus d'achat, les influences et les attitudes. Exercices de score multi-attributs.\n- Semaine 4 : techniques de vente et négociation. Fiches sur les étapes de la vente, la méthode SONCAS, la reformulation, les objections. Jeux de rôle à deux et calculs de remise.\n- Semaine 5 : sujets types en temps limité. Un sujet complet par séance de trois heures, puis correction sérieuse.\n- Semaine 6 : consolidation. Relecture des fiches, reprise des erreurs fréquentes, repos la veille de l'épreuve.\n\nPrévoyez des séances courtes et régulières, par exemple deux heures par jour, plutôt que des nuits blanches. Travaillez en petit groupe une fois par semaine pour les jeux de rôle de vente : c'est la meilleure préparation aux oraux.\n\n## Points clés\n\n- Lisez le règlement des études de votre établissement : crédits, coefficients et compensation y sont fixés.\n- Trois matières clés cette année : fondamentaux du marketing, comportement du consommateur, vente et négociation.\n- Pour chaque calcul : formule, application, résultat avec unité, interprétation.\n- Six semaines suffisent si le travail est régulier et tourné vers l'application.\n\n## Exercices pratiques\n\n- Exercice 1. Citez quatre types d'épreuves que vous pouvez rencontrer en Licence 1 et, pour chacune, une erreur à éviter.\n- Exercice 2. Une boutique fictive de cosmétiques de la Médina réalise 54 000 000 FCFA de ventes annuelles sur un marché local estimé à 360 000 000 FCFA. Calculez sa part de marché en valeur et interprétez-la.\n- Exercice 3. Rédigez une mini-fiche (cinq lignes maximum) sur la notion de besoin.\n- Exercice 4. Cas pratique. Awa, étudiante en Licence 1, révise uniquement en relisant ses cours la nuit précédant chaque examen. Ses notes en exercices chiffrés sont faibles. Diagnostiquez ses erreurs de méthode et proposez-lui trois changements concrets.\n\n## Corrigé\n\n- Exercice 1. Question de cours : éviter la définition approximative sans exemple. QCM : éviter de répondre sans lire chaque proposition en entier. Exercice chiffré : ne pas oublier la formule et l'interprétation. Cas pratique : ne pas proposer d'actions déconnectées du budget et de la cible. Dissertation : ne pas écrire sans problématique ni plan.\n- Exercice 2. Part de marché = 54 000 000 / 360 000 000 × 100 = 15 %. La boutique détient près d'un sixième du marché local : c'est un acteur significatif mais pas dominant ; il faut connaître la part des concurrents pour savoir si elle est leader.\n- Exercice 3. Exemple : « Le besoin est un sentiment de manque ressenti par une personne (avoir faim, se protéger, être reconnu). Il existe avant le marketing. Le désir est la forme que prend la réponse au besoin selon la culture (manger un thiéboudienne). La demande est un désir accompagné d'un pouvoir d'achat. Le marketing agit surtout sur les désirs et la demande. »\n- Exercice 4. Diagnostic : révision tardive, passive (relecture) et sans entraînement aux calculs, plus le manque de sommeil. Propositions : réviser dès six semaines avant l'examen, deux heures par jour ; refaire les exercices de TD sans corrigé ; rédiger des fiches avec formules et exemples ; faire un sujet complet chronométré par semaine ; dormir la veille de l'épreuve."
+   },
+   {
+    "title": "Fondamentaux du marketing : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Comportement du consommateur : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Techniques de vente et négociation commerciale : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Fondamentaux du marketing",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comportement du consommateur",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Techniques de vente et négociation commerciale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-mkt-l2",
+  "level": "Licence 2",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de deuxième année de Licence en marketing et commerce (Sénégal, espace UEMOA, système LMD). Trois matières clés : les études de marché (questionnaire, échantillonnage, analyse chiffrée des résultats), le marketing opérationnel (prix, marges, seuil de rentabilité, distribution, communication) et le marketing digital (réseaux sociaux, référencement, indicateurs de performance, mobile money et e-commerce en Afrique). Fiches, cas d'entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : les fondamentaux du marketing de Licence 1.",
+  "sort": 382,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la deuxième année de Licence dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Identifier les trois matières clés de l'année et leurs exigences.\n- Adapter sa méthode aux épreuves de Licence 2, plus chiffrées et plus appliquées.\n- Organiser six semaines de révision efficaces.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 de la Licence. Comme en première année, chaque semestre regroupe des unités d'enseignement (UE) composées de matières, et chaque UE validée apporte des crédits. Le nombre de crédits, les coefficients, la place du contrôle continu et les règles de compensation et de rattrapage sont fixés par chaque établissement : consultez la maquette de votre filière et le règlement des études.\n\nCe qui change en Licence 2, c'est le niveau d'exigence. En première année, on vérifiait que vous connaissiez le vocabulaire : marché, segmentation, mix. En deuxième année, on vous demande de produire des outils : un questionnaire, un plan d'échantillonnage, un prix calculé, un seuil de rentabilité, un tableau de bord de campagne digitale. Les copies qui récitent sans calculer ni justifier plafonnent vite.\n\n## 2. Les matières clés de l'année\n\n- Études de marché : objectifs d'une étude, études documentaires, qualitatives et quantitatives, rédaction d'un questionnaire, méthodes d'échantillonnage, taille d'échantillon, analyse des résultats (tri à plat, tri croisé, moyenne, écart-type, intervalle de confiance, test du khi-deux).\n- Marketing opérationnel : politique de prix (coûts, marges, coefficient multiplicateur, seuil de rentabilité, élasticité), politique de distribution (canaux, circuits, marges des intermédiaires), politique de communication (cibles, messages, médias, budget, coût pour mille contacts).\n- Marketing digital : présence sur les réseaux sociaux, référencement naturel et payant, indicateurs de performance (taux de clic, taux de conversion, coût par clic, coût d'acquisition, retour sur dépenses publicitaires), mobile money et e-commerce en Afrique.\n\nD'autres matières figurent souvent au programme : statistiques, comptabilité analytique, droit commercial, communication écrite, anglais des affaires, informatique de gestion. Elles sont utiles ici, notamment les statistiques pour les études de marché et les coûts pour la fixation des prix.\n\n## 3. Les épreuves de Licence 2\n\n- Exercice chiffré : taille d'échantillon, intervalle de confiance, prix de vente à partir d'un taux de marque, seuil de rentabilité, indicateurs digitaux. Présentez toujours : formule, application numérique, résultat avec unité, interprétation.\n- Rédaction d'outil : écrire cinq questions d'un questionnaire, construire un plan de quotas, rédiger un brief de campagne.\n- Cas pratique : une entreprise fictive souhaite lancer un produit ; vous devez proposer une étude, puis un mix chiffré.\n- Questions de réflexion : « Les réseaux sociaux remplacent-ils la publicité traditionnelle ? » Introduction, problématique, plan, exemples.\n- Dossier ou projet : réalisation d'une petite enquête de terrain en groupe, avec rapport et soutenance.\n\n## 4. Méthode de travail\n\n- Construisez un formulaire unique d'une ou deux pages avec toutes les formules de l'année : taille d'échantillon, intervalle de confiance, khi-deux, taux de marge et de marque, seuil de rentabilité, élasticité, coût pour mille, taux de clic, taux de conversion, coût d'acquisition, retour sur dépenses publicitaires.\n- Pour chaque formule, inventez un exemple en FCFA et refaites-le de tête une semaine plus tard.\n- Entraînez-vous à rédiger : un bon questionnaire ne s'improvise pas le jour de l'examen.\n- Observez votre environnement : affiches, promotions dans les boutiques, publications sponsorisées sur votre téléphone. Ce sont des exemples réels à analyser (sans citer les marques comme modèles à copier).\n\nExemple de ligne de formulaire. Seuil de rentabilité en valeur = charges fixes / taux de marge sur coûts variables. Une entreprise fictive avec 36 000 000 FCFA de charges fixes et un taux de marge sur coûts variables d'un tiers doit réaliser 36 000 000 / (1/3) = 108 000 000 FCFA de chiffre d'affaires pour ne pas perdre d'argent.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan des cours et TD, constitution du formulaire, repérage des chapitres fragiles.\n- Semaine 2 : études de marché. Questionnaire, échantillonnage, taille d'échantillon, traitement des résultats.\n- Semaine 3 : marketing opérationnel, partie prix et seuil de rentabilité ; puis distribution.\n- Semaine 4 : communication et marketing digital : indicateurs, campagnes, mobile money, e-commerce.\n- Semaine 5 : deux sujets complets en temps limité, avec correction.\n- Semaine 6 : reprise des erreurs, révision du formulaire, repos avant les épreuves.\n\n## Points clés\n\n- En Licence 2, on attend des outils et des calculs, pas seulement des définitions.\n- Trois matières clés : études de marché, marketing opérationnel, marketing digital.\n- Un formulaire personnel et des exemples en FCFA sont vos meilleurs alliés.\n- Chaque calcul se termine par une phrase d'interprétation et, si possible, une décision.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez en trois phrases la différence d'exigence entre la Licence 1 et la Licence 2.\n- Exercice 2. Une entreprise fictive a 18 000 000 FCFA de charges fixes et un taux de marge sur coûts variables de 30 %. Calculez son seuil de rentabilité en valeur.\n- Exercice 3. Listez six formules que doit contenir votre formulaire et précisez la matière de chacune.\n- Exercice 4. Cas pratique. Moussa, étudiant en Licence 2, connaît ses définitions mais perd des points sur les calculs et les cas. Il dispose de six semaines et peut travailler deux heures par jour en semaine. Proposez-lui un plan de travail détaillé.\n- Exercice 5. Donnez un exemple d'action de marketing digital que vous avez observée au Sénégal (sans citer de marque) et analysez sa cible et son objectif.\n\n## Corrigé\n\n- Exercice 1. En Licence 1, on attend surtout la maîtrise du vocabulaire et des démarches de base. En Licence 2, on attend la production d'outils (questionnaire, plan de quotas, prix, budget) et des calculs exacts. La justification des choix et l'interprétation des résultats deviennent décisives.\n- Exercice 2. Seuil de rentabilité = 18 000 000 / 0,30 = 60 000 000 FCFA de chiffre d'affaires.\n- Exercice 3. Exemples : taille d'échantillon n = z² × p × (1 − p) / e² (études de marché) ; intervalle de confiance d'une proportion (études de marché) ; taux de marque = marge / prix de vente HT (marketing opérationnel) ; seuil de rentabilité = charges fixes / taux de marge sur coûts variables (marketing opérationnel) ; taux de clic = clics / impressions (marketing digital) ; coût d'acquisition = dépense / nombre de conversions (marketing digital).\n- Exercice 4. Semaine 1 : formulaire et liste des exercices de TD ratés. Semaines 2 à 4 : chaque jour, trente minutes de fiche puis une heure trente d'exercices chiffrés, en suivant l'ordre études, prix et distribution, communication et digital. Le samedi, un cas pratique complet. Semaine 5 : deux sujets types chronométrés. Semaine 6 : reprise des erreurs et révision du formulaire. Il doit rédiger chaque calcul avec formule et interprétation.\n- Exercice 5. Exemple : une pâtisserie de quartier publie des vidéos courtes de ses gâteaux le vendredi avec un numéro de commande par messagerie. Cible : familles et jeunes actifs du quartier qui préparent les fêtes du week-end. Objectif : générer des commandes directes et fidéliser. Indicateurs utiles : nombre de messages reçus, commandes, panier moyen."
+   },
+   {
+    "title": "Études de marché : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Marketing opérationnel : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Marketing digital : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Études de marché",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing opérationnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing digital",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-mkt-l3",
+  "level": "Licence 3",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de troisième année de Licence en marketing et commerce (Sénégal, espace UEMOA/OHADA, système LMD). Trois matières clés : le marketing stratégique (diagnostic, matrices BCG et Ansoff, plan marketing), la gestion de la relation client et de la force de vente (CRM, valeur client, dimensionnement, animation et rémunération des vendeurs) et le commerce international (principes des incoterms, techniques d'export, paiement international). Fiches, cas d'entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : Licence 2 en marketing ou gestion.",
+  "sort": 383,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la troisième année dans le parcours LMD et comprendre ses enjeux (diplôme, poursuite en Master, insertion).\n- Identifier les trois matières clés de l'année et leurs attentes.\n- Maîtriser les épreuves de synthèse : cas d'entreprise, plan marketing, note de recommandation.\n- Planifier six semaines de révision en tenant compte du stage ou du mémoire.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et clôt le premier cycle. Sa validation donne le diplôme de Licence. Comme les années précédentes, elle est organisée en unités d'enseignement qui apportent des crédits ; le nombre de crédits, les coefficients, les règles de compensation, le poids du stage et du rapport de stage ou du mémoire sont propres à chaque établissement. Vérifiez la maquette et le règlement des études, en particulier les conditions d'admission en Master si vous visez une poursuite d'études.\n\nLa Licence 3 est une année de synthèse. Les correcteurs n'attendent plus seulement des calculs justes : ils veulent un raisonnement de décideur. Un diagnostic, des options, un choix argumenté, un plan d'action chiffré.\n\n## 2. Les matières clés de l'année\n\n- Marketing stratégique : diagnostic externe (PESTEL, forces concurrentielles) et interne (ressources, compétences), synthèse SWOT, segmentation stratégique en domaines d'activité, matrices de portefeuille (BCG), choix de développement (Ansoff), stratégies concurrentielles, plan marketing.\n- Gestion de la relation client et de la force de vente : CRM et base de données clients, segmentation RFM, valeur vie client, fidélisation, satisfaction ; dimensionnement, organisation, animation, rémunération et contrôle des vendeurs.\n- Commerce international : choix des marchés, modes d'entrée, techniques d'export, documents, principes des incoterms, calcul d'un prix export, moyens de paiement et gestion du risque de change.\n\nSelon les établissements, l'année comporte aussi le marketing des services, le droit des contrats et de la concurrence dans l'espace OHADA et UEMOA, la gestion de projet, le management, l'anglais des affaires et la méthodologie du mémoire.\n\n## 3. Les épreuves de Licence 3\n\n- Cas d'entreprise de synthèse (trois ou quatre heures) : un dossier de plusieurs pages sur une entreprise fictive, souvent avec annexes chiffrées. On attend un diagnostic structuré, des calculs (portefeuille BCG, valeur client, prix export) et des recommandations.\n- Plan marketing ou note de recommandation : rédaction professionnelle, destinée à un dirigeant.\n- Questions de réflexion : « La fidélisation coûte-t-elle moins cher que la conquête ? », « Une PME sénégalaise doit-elle exporter ? ».\n- Exercices techniques : choix d'un incoterm, calcul d'un prix CIF, rémunération d'un vendeur, taille de la force de vente.\n- Soutenance de stage ou de projet : présentation orale, questions du jury.\n\n## 4. Méthode : raisonner comme un décideur\n\nPour tout cas, appliquez la démarche suivante :\n\n- Lire les questions avant le dossier, puis lire le dossier en annotant les chiffres.\n- Diagnostiquer : opportunités et menaces de l'environnement, forces et faiblesses de l'entreprise.\n- Calculer ce qui est demandé, proprement, avec formules et interprétation.\n- Recommander : objectifs, stratégie, actions, budget, calendrier, indicateurs de suivi.\n- Vérifier la cohérence : chaque action répond à un problème du diagnostic.\n\nExemple de phrase de recommandation : « Le DAS jus est un dilemme (part de marché relative de 0,5, croissance de 15 %). Nous recommandons d'investir pendant deux ans pour devenir leader sur la région de Dakar, financé par les liquidités du DAS huile, vache à lait. »\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan, fiches de méthode (diagnostic, BCG, Ansoff, plan marketing, valeur client, prix export).\n- Semaine 2 : marketing stratégique. Deux cas de diagnostic et un plan marketing complet.\n- Semaine 3 : relation client et force de vente. Calculs de valeur client, d'attrition, de taille de force de vente, de rémunération.\n- Semaine 4 : commerce international. Incoterms, prix export, crédit documentaire, risque de change.\n- Semaine 5 : deux cas de synthèse chronométrés, corrigés en groupe.\n- Semaine 6 : reprise des erreurs, préparation des oraux, repos.\n\nSi vous êtes en stage, réservez au moins une heure chaque soir et une demi-journée le week-end. Utilisez votre entreprise d'accueil comme terrain d'exemples, en respectant la confidentialité.\n\n## Points clés\n\n- Licence 3 : année de synthèse, raisonnement de décideur.\n- Trois matières clés : marketing stratégique, relation client et force de vente, commerce international.\n- Démarche : diagnostic, calculs, recommandations chiffrées, cohérence.\n- Révisions organisées autour de cas complets.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez la différence entre un diagnostic et une recommandation.\n- Exercice 2. Citez trois types d'épreuves de Licence 3 et une attente du correcteur pour chacune.\n- Exercice 3. Rédigez la structure (titres seulement) d'une note de recommandation de deux pages adressée au directeur commercial d'une PME.\n- Exercice 4. Cas pratique. Khady, en stage dans une entreprise de distribution à Dakar, a six semaines avant ses examens et ne peut réviser que le soir. Proposez-lui un planning et deux façons d'utiliser son stage pour réviser.\n- Exercice 5. Donnez deux arguments pour et deux arguments contre l'idée qu'une PME sénégalaise devrait exporter dans la sous-région.\n\n## Corrigé\n\n- Exercice 1. Le diagnostic décrit et analyse la situation (environnement, forces, faiblesses) sans prendre de décision. La recommandation propose des choix et des actions justifiés par le diagnostic, avec moyens, calendrier et indicateurs.\n- Exercice 2. Cas de synthèse : un diagnostic structuré et des recommandations cohérentes. Exercice technique : des calculs justes et interprétés. Question de réflexion : une problématique, un plan, des exemples.\n- Exercice 3. Objet et contexte ; constat et diagnostic ; options envisagées ; recommandation ; plan d'action (actions, responsables, calendrier, budget) ; indicateurs de suivi ; conclusion.\n- Exercice 4. Lundi à jeudi : une heure de fiche et d'exercices sur la matière de la semaine (stratégie, puis relation client, puis international). Samedi : un cas complet de trois heures. Semaine 5 : deux sujets chronométrés. Semaine 6 : reprise des erreurs. Utiliser le stage : observer la segmentation des clients de l'entreprise et la rémunération des commerciaux, et analyser un dossier d'importation pour comprendre incoterms et paiements.\n- Exercice 5. Pour : marché sous-régional plus large que le marché national ; libre circulation des produits originaires au sein de l'UEMOA et monnaie commune avec les pays de l'Union, qui supprime le risque de change dans cette zone. Contre : coûts logistiques et de prospection élevés ; concurrence de produits importés et besoin d'adapter l'offre aux goûts locaux."
+   },
+   {
+    "title": "Marketing stratégique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion de la relation client et force de vente : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Commerce international : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing stratégique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de la relation client et force de vente",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Commerce international",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-log-l1",
+  "level": "Licence 1",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en logistique et transport (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'introduction à la logistique et à la chaîne d'approvisionnement, la gestion des stocks (méthode ABC, quantité économique de Wilson, stock de sécurité, point de commande) et la géographie des transports avec les grands modes et corridors ouest-africains. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis en dehors des bases de calcul.",
+  "sort": 391,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 dans le système LMD.\n- Connaître les matières clés de la première année en logistique et transport.\n- Adopter une méthode de révision efficace pour les exercices chiffrés et les questions de cours.\n- Identifier les types d'épreuves et savoir comment les aborder.\n- Suivre un plan de révision sur six semaines.\n\n## Le système LMD en quelques mots\n\nLes universités publiques et la plupart des écoles et instituts privés du Sénégal et de l'espace UEMOA appliquent le système LMD : Licence, Master, Doctorat. La Licence se prépare en trois ans, soit six semestres. Chaque semestre est découpé en unités d'enseignement (UE), qui regroupent plusieurs éléments constitutifs (les matières). Chaque UE donne droit à un nombre de crédits lorsqu'elle est validée.\n\nLes règles précises (nombre de crédits par UE, compensation entre matières, note éliminatoire, session de rattrapage, conditions de passage en année supérieure) varient d'un établissement à l'autre. Votre premier réflexe doit donc être de lire le règlement des études de votre établissement et la maquette de votre parcours. Ne vous fiez pas aux rumeurs entre étudiants : demandez les documents officiels à la scolarité.\n\nRetenez trois idées générales :\n\n- La note d'une matière combine souvent un contrôle continu (devoirs, travaux dirigés, exposés) et un examen final.\n- Une UE peut être validée par compensation entre ses matières, selon les règles de l'établissement.\n- La session de rattrapage existe en général, mais il vaut mieux ne pas compter dessus.\n\n## Les matières clés de la Licence 1\n\nEn première année, la maquette d'un parcours logistique et transport comprend des matières de tronc commun (économie générale, mathématiques, comptabilité, droit, informatique, langues, techniques d'expression) et des matières de spécialité. Ce cours se concentre sur trois matières de spécialité qui reviennent dans presque toutes les maquettes :\n\n- Introduction à la logistique et à la chaîne d'approvisionnement : définitions, flux, acteurs, coûts logistiques, taux de service.\n- Gestion des stocks : méthode ABC, quantité économique de Wilson, stock de sécurité, point de commande, indicateurs de rotation.\n- Géographie des transports et modes de transport : route, rail, maritime, aérien, intermodalité, corridors ouest-africains.\n\nCes matières se complètent. Un sujet d'examen peut très bien vous demander de calculer une quantité économique de commande, puis de choisir un mode de transport pour livrer cette commande, puis d'en mesurer le coût logistique total.\n\n## Méthode de révision\n\nLa logistique est une discipline à la fois descriptive et quantitative. Il faut donc réviser de deux façons.\n\nPour les notions de cours :\n\n- Faites une fiche par chapitre avec les définitions exactes (logistique, chaîne d'approvisionnement, flux tendus, rupture de charge, corridor, etc.).\n- Apprenez à illustrer chaque définition par un exemple sénégalais ou ouest-africain : un grossiste de Dakar, une coopérative agricole de la vallée du fleuve, un transporteur de la route de Tambacounda.\n- Dessinez les schémas de mémoire : la chaîne fournisseur, production, distribution, client avec les trois flux (physique, d'information, financier).\n\nPour les exercices chiffrés :\n\n- Écrivez toujours la formule avant de remplacer les lettres par les chiffres.\n- Indiquez les unités (unités par an, FCFA par commande, FCFA par unité et par an, jours).\n- Vérifiez la cohérence du résultat : une quantité économique supérieure à la demande annuelle est suspecte.\n- Refaites les exercices corrigés sans regarder la solution, puis comparez.\n\n## Les types d'épreuves\n\n- Questions de cours : définir, distinguer, expliquer. Répondez par une définition précise suivie d'un exemple. Une réponse de cinq lignes bien construite vaut mieux qu'une page vague.\n- QCM : lisez toutes les propositions ; méfiez-vous des mots absolus (toujours, jamais). Si le QCM comporte des points négatifs, ne répondez pas au hasard.\n- Exercice chiffré : stocks (Wilson, point de commande), coûts logistiques, coût de transport à la tonne-kilomètre. Présentez les calculs ligne par ligne et concluez par une phrase.\n- Cas pratique : une entreprise fictive, plusieurs questions liées. Il faut diagnostiquer, calculer puis recommander. La recommandation doit s'appuyer sur vos calculs.\n- Dissertation ou question de réflexion : par exemple « Le transport est-il un frein au développement des pays enclavés d'Afrique de l'Ouest ? ». Plan en deux ou trois parties, arguments, exemples, conclusion nuancée.\n- Projet ou dossier : étude d'une chaîne logistique réelle observée (marché, entrepôt, gare routière), rendue par écrit et parfois présentée oralement.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : introduction à la logistique. Fiches de définitions, schéma des flux, calcul du coût logistique et du taux de service.\n- Semaine 2 : gestion des stocks, partie 1. Méthode ABC, indicateurs de stock (stock moyen, rotation, couverture).\n- Semaine 3 : gestion des stocks, partie 2. Formule de Wilson, stock de sécurité, point de commande, remises sur quantité.\n- Semaine 4 : géographie des transports. Comparaison des modes, intermodalité, corridors ouest-africains, calculs à la tonne-kilomètre.\n- Semaine 5 : entraînement mixte. Un sujet type complet en temps limité, puis correction.\n- Semaine 6 : révision ciblée de vos erreurs, relecture des fiches, repos la veille.\n\nChaque semaine, prévoyez au moins trois séances de deux heures, dont une consacrée uniquement aux exercices. Le jour de l'examen, lisez tout le sujet, répartissez le temps selon le barème et gardez dix minutes pour relire calculs et unités.\n\n## Points clés\n\n- Lisez le règlement des études de votre établissement : il fixe les règles de validation.\n- Trois matières de spécialité structurent ce cours : logistique générale, stocks, transports.\n- Toujours écrire la formule, les unités et une phrase de conclusion.\n- Entraînez-vous en temps limité avant l'examen.\n\n## Exercices pratiques\n\nExercice 1. Citez les trois flux qui circulent dans une chaîne logistique et donnez un exemple de chacun pour un grossiste en riz de Kaolack (entreprise fictive).\n\nExercice 2. Un sujet de 3 heures comporte quatre parties notées 4, 8, 4 et 4 points. Proposez une répartition du temps en gardant 15 minutes de lecture et 10 minutes de relecture.\n\nExercice 3. Un étudiant a obtenu 9 sur 20 en gestion des stocks et 13 sur 20 en géographie des transports, deux matières d'une même UE de coefficients 2 et 1. Calculez la moyenne de l'UE. Que faut-il vérifier dans le règlement pour savoir si l'UE est validée ?\n\nExercice 4. Rédigez une introduction de dix lignes pour le sujet de réflexion : « Le transport est-il un frein au développement des pays enclavés d'Afrique de l'Ouest ? ».\n\n## Corrigé\n\nExercice 1. Le flux physique : les sacs de riz qui arrivent du port de Dakar par camion et repartent vers les boutiques. Le flux d'information : les bons de commande des boutiquiers, les bons de livraison, l'état des stocks. Le flux financier : les paiements des clients (espèces, mobile money, virement) et les règlements aux fournisseurs et aux transporteurs.\n\nExercice 2. Temps disponible pour composer : 180 − 15 − 10 = 155 minutes. Total des points : 20. Partie de 4 points : 155 × 4/20 = 31 minutes. Partie de 8 points : 155 × 8/20 = 62 minutes. Répartition : 31, 62, 31 et 31 minutes, soit 155 minutes.\n\nExercice 3. Moyenne de l'UE = (9 × 2 + 13 × 1) / (2 + 1) = 31/3 ≈ 10,33 sur 20. Il faut vérifier si la compensation entre matières est autorisée à l'intérieur de l'UE, et s'il existe une note éliminatoire par matière. Si la compensation est admise et qu'aucune note éliminatoire n'est fixée au-dessus de 9, l'UE est validée.\n\nExercice 4. Une bonne introduction comprend une accroche (par exemple : pour un importateur de Bamako ou de Ouagadougou, les marchandises débarquées dans un port côtier doivent encore parcourir plus de mille kilomètres), la définition des termes (transport, pays enclavé, développement), la problématique (le transport n'est-il qu'un coût supplémentaire ou peut-il devenir un levier d'intégration régionale ?) et l'annonce du plan (I. Un handicap réel en coûts et en délais ; II. Des corridors et des politiques régionales qui peuvent transformer la contrainte)."
+   },
+   {
+    "title": "Introduction à la logistique et à la chaîne d'approvisionnement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion des stocks : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Géographie des transports et modes de transport : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 logistique et transport (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction à la logistique et à la chaîne d'approvisionnement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des stocks",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Géographie des transports et modes de transport",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-log-l2",
+  "level": "Licence 2",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en logistique et transport (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'entreposage et la manutention (implantation, préparation de commandes, indicateurs), le transport routier et la gestion de flotte (coût de revient kilométrique, optimisation des tournées) et le commerce international et la douane (Incoterms 2020, documents, transit, dédouanement). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : notions de Licence 1 (stocks, modes de transport).",
+  "sort": 392,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Connaître les trois matières de spécialité traitées dans ce cours.\n- Adapter sa méthode de révision à des matières plus techniques et plus réglementaires.\n- Connaître les types d'épreuves et suivre un plan de révision sur six semaines.\n\n## La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 du parcours. Comme en première année, chaque semestre est organisé en unités d'enseignement (UE) composées de plusieurs matières, et chaque UE validée apporte des crédits. Les règles de validation, de compensation, de note éliminatoire et de rattrapage dépendent de chaque université ou école : consultez le règlement des études et la maquette de votre parcours auprès de la scolarité.\n\nCe qui change en deuxième année : les matières deviennent plus opérationnelles. On ne se contente plus de définir la logistique ; on dimensionne un entrepôt, on calcule le coût de revient d'un camion, on choisit un Incoterm et on prépare un dossier de dédouanement. Les sujets d'examen contiennent davantage de cas pratiques complets.\n\n## Les matières clés de la Licence 2\n\nÀ côté des matières transversales (comptabilité analytique, statistiques, droit des contrats et des transports, anglais professionnel, informatique de gestion), trois matières de spécialité structurent ce cours :\n\n- Entreposage et manutention : rôle de l'entrepôt, implantation, équipements, préparation de commandes, indicateurs de performance.\n- Transport routier et gestion de flotte : coût de revient kilométrique, tarification, seuil de rentabilité, indicateurs de flotte, optimisation des tournées.\n- Commerce international et douane : Incoterms 2020, documents du commerce international, rôle du transitaire et du commissionnaire en douane, régimes douaniers, calcul de la valeur en douane et des droits avec des taux fictifs.\n\nCes matières sont liées. Une marchandise importée par conteneur passe la douane, est transportée par la route jusqu'à un entrepôt, puis préparée et livrée aux clients. Un bon sujet de synthèse suit justement ce parcours.\n\n## Méthode de révision\n\nPour les matières calculatoires (entrepôt, transport routier) :\n\n- Construisez un formulaire d'une page : taux d'occupation, productivité, coût de revient kilométrique, seuil de rentabilité, économies de Clarke et Wright.\n- Refaites chaque exemple du cours en changeant un chiffre, pour vérifier que vous comprenez le raisonnement et pas seulement le résultat.\n- Présentez toujours les calculs dans un tableau ou une liste claire, avec les unités.\n\nPour la matière réglementaire (commerce international et douane) :\n\n- Apprenez les onze Incoterms 2020 en deux groupes : les sept règles utilisables pour tout mode de transport, et les quatre règles réservées au transport maritime et fluvial.\n- Pour chaque Incoterm, retenez deux choses : où se transfère le risque, qui paie le transport principal.\n- Ne citez jamais un taux de droit de douane de mémoire : à l'examen, utilisez les taux fournis par l'énoncé. Dans la vie professionnelle, on consulte le tarif officiel en vigueur.\n\n## Les types d'épreuves\n\n- Questions de cours : définir un Incoterm, distinguer transitaire et commissionnaire en douane, expliquer le principe du « marche en avant » dans un entrepôt.\n- QCM : très fréquents sur les Incoterms et les documents.\n- Exercices chiffrés : capacité d'un entrepôt, effectif de préparateurs, coût de revient kilométrique, devis, calcul de valeur en douane.\n- Cas pratique : une entreprise fictive importe, stocke et distribue ; plusieurs questions enchaînées.\n- Projet : plan d'implantation d'un entrepôt, étude de la flotte d'une PME, dossier d'importation complet.\n\nConseil : dans un cas pratique, les erreurs se propagent. Si vous n'êtes pas sûr d'un résultat intermédiaire, indiquez-le, puis poursuivez avec votre chiffre. Le correcteur valorise souvent la méthode juste appliquée à un résultat faux.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : entreposage, partie 1. Rôles de l'entrepôt, implantation, flux, équipements, calcul de capacité.\n- Semaine 2 : entreposage, partie 2. Préparation de commandes, indicateurs, dimensionnement des effectifs.\n- Semaine 3 : transport routier. Coût de revient kilométrique, devis, seuil de rentabilité, indicateurs de flotte.\n- Semaine 4 : tournées et commerce international, partie 1. Méthode de Clarke et Wright, Incoterms 2020.\n- Semaine 5 : douane. Documents, régimes, valeur en douane, calcul des droits avec taux fictifs ; puis un sujet type en temps limité.\n- Semaine 6 : correction du sujet type, révision ciblée des erreurs, fiches de synthèse.\n\nPrévoyez des séances courtes et régulières pour les Incoterms (vingt minutes par jour avec des cartes mémoire) et des séances longues pour les cas pratiques.\n\n## Points clés\n\n- La Licence 2 est plus opérationnelle : dimensionner, chiffrer, choisir.\n- Formulaire d'une page pour l'entrepôt et le transport routier.\n- Incoterms : risque et transport principal, en deux groupes.\n- Jamais de taux douanier inventé : utilisez ceux de l'énoncé.\n\n## Exercices pratiques\n\nExercice 1. Citez les onze Incoterms 2020 en les classant en deux groupes.\n\nExercice 2. Pour un sujet de 4 heures comportant quatre dossiers notés 5, 6, 5 et 4 points, proposez une répartition du temps avec 15 minutes de lecture et 15 minutes de relecture.\n\nExercice 3. Expliquez pourquoi il ne faut pas inventer un taux de droit de douane dans une copie.\n\nExercice 4. Décrivez en cinq étapes le parcours d'un conteneur importé, du navire jusqu'au client final, en citant à chaque étape la matière de Licence 2 concernée.\n\nExercice 5. Proposez trois questions de cours que vous pourriez poser à un camarade sur l'entreposage.\n\n## Corrigé\n\nExercice 1. Tous modes : EXW, FCA, CPT, CIP, DAP, DPU, DDP. Maritime et voies navigables : FAS, FOB, CFR, CIF.\n\nExercice 2. Temps de composition : 240 − 15 − 15 = 210 minutes. Par point : 210 / 20 = 10,5 minutes. Répartition : 52,5 ; 63 ; 52,5 et 42 minutes, soit 210 minutes.\n\nExercice 3. Les taux changent, dépendent du produit, de son origine et des accords applicables. Un taux inventé fausse tout le calcul et montre un manque de rigueur. À l'examen, on utilise les taux fournis ; en entreprise, on consulte le tarif officiel en vigueur ou un commissionnaire agréé.\n\nExercice 4. Déchargement au port et formalités (commerce international et douane) ; enlèvement du conteneur et transport par camion (transport routier) ; réception et rangement à l'entrepôt (entreposage) ; préparation des commandes (entreposage) ; livraison par tournées (transport routier et gestion de flotte).\n\nExercice 5. Exemples : qu'est-ce qu'un taux d'occupation ? Quelle différence entre préparation « homme vers produit » et « produit vers homme » ? Pourquoi place-t-on les articles à forte rotation près des quais ?"
+   },
+   {
+    "title": "Entreposage et manutention : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Transport routier et gestion de flotte : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Commerce international et douane : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 logistique et transport (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Entreposage et manutention",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Transport routier et gestion de flotte",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Commerce international et douane",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-log-l3",
+  "level": "Licence 3",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en logistique et transport (système LMD, contexte Sénégal et UEMOA). Le cours couvre le supply chain management (prévision de la demande, planification, effet coup de fouet), le transport maritime et portuaire (conteneurisation, fret, opérations portuaires) et la logistique durable, les achats et le pilotage par indicateurs (tableaux de bord, coûts logistiques). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : Licence 1 et 2 (stocks, transport, entreposage, Incoterms).",
+  "sort": 393,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les enjeux de la Licence 3, dernière année du premier cycle LMD.\n- Connaître les trois matières de spécialité traitées dans ce cours.\n- Adapter sa méthode aux sujets de synthèse et aux exercices de prévision.\n- Suivre un plan de révision sur six semaines.\n\n## La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6. Elle conclut le premier cycle : sa validation donne le diplôme de Licence et conditionne l'accès au Master ou l'entrée dans la vie professionnelle. Comme les années précédentes, elle est organisée en unités d'enseignement (UE) et en crédits ; les règles de validation, de compensation et de rattrapage sont fixées par chaque établissement. Beaucoup de parcours prévoient aussi un stage et un rapport ou un mémoire de fin de cycle : renseignez-vous tôt sur le calendrier et les exigences auprès de votre scolarité.\n\nEn troisième année, on attend de vous une vision d'ensemble. Il ne suffit plus de calculer une quantité économique ou un coût de revient : il faut piloter une chaîne logistique entière, prévoir la demande, coordonner les partenaires, choisir des fournisseurs, mesurer la performance et intégrer l'environnement.\n\n## Les matières clés de la Licence 3\n\nÀ côté des matières transversales (contrôle de gestion, recherche opérationnelle, droit des transports internationaux, anglais, méthodologie du mémoire), trois matières de spécialité structurent ce cours :\n\n- Supply chain management : prévision de la demande (moyenne mobile, lissage exponentiel, régression linéaire), mesure de l'erreur, planification et calcul des besoins, effet coup de fouet et collaboration.\n- Transport maritime et portuaire : conteneurisation, types de navires et de services, fret et surcharges, connaissement, opérations portuaires et indicateurs.\n- Logistique durable, achats et pilotage par indicateurs : empreinte carbone du transport, logistique inverse, processus achats, coût total de possession, évaluation des fournisseurs, tableaux de bord.\n\nCes matières ne reprennent pas celles des années précédentes, mais elles s'appuient sur elles : la gestion des stocks de Licence 1 et les Incoterms de Licence 2 sont supposés connus.\n\n## Méthode de révision\n\n- Pour les prévisions : entraînez-vous à remplir à la main des tableaux de lissage et de régression ; présentez les colonnes (période, demande, prévision, erreur) et vérifiez chaque ligne.\n- Pour le maritime : apprenez le vocabulaire précis (EVP, FCL, LCL, ligne régulière, tramping, connaissement, surestaries, détention, BAF, THC) et sachez l'illustrer.\n- Pour le pilotage : pour chaque indicateur, retenez sa formule, son unité, son sens d'amélioration (plus haut ou plus bas est mieux) et une action corrective possible.\n- Pour les questions de synthèse : construisez des plans en deux parties avec des exemples ouest-africains, en restant prudent sur les chiffres que vous ne pouvez pas vérifier.\n\n## Les types d'épreuves\n\n- Questions de cours et QCM : définitions, comparaison de méthodes.\n- Exercices chiffrés : prévision, calcul des besoins, fret maritime, remplissage d'un conteneur, coût total de possession, notation des fournisseurs, indicateurs.\n- Cas de synthèse : une entreprise fictive importe par voie maritime, prévoit ses ventes, choisit ses fournisseurs et pilote ses coûts ; on vous demande un diagnostic et un plan d'action.\n- Dissertation : par exemple « La logistique durable est-elle compatible avec la réduction des coûts ? ».\n- Rapport de stage ou mémoire : diagnostic d'une chaîne logistique réelle avec recommandations.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : prévision de la demande. Méthodes, erreurs (MAD, MAPE), signal de suivi.\n- Semaine 2 : planification et calcul des besoins, effet coup de fouet et collaboration.\n- Semaine 3 : transport maritime. Conteneurs, navires, fret, surcharges, connaissement.\n- Semaine 4 : opérations portuaires et indicateurs ; logistique durable.\n- Semaine 5 : achats et pilotage ; puis un sujet type complet en temps limité.\n- Semaine 6 : correction, révision des erreurs, fiches de synthèse, préparation de l'oral éventuel du stage.\n\n## Points clés\n\n- La Licence 3 exige une vision globale de la chaîne.\n- Trois matières : supply chain management, maritime et portuaire, durable, achats et pilotage.\n- Pour chaque indicateur : formule, unité, sens, action.\n- Prudence sur les chiffres non vérifiables.\n\n## Exercices pratiques\n\nExercice 1. Citez trois méthodes de prévision de la demande et une limite de chacune.\n\nExercice 2. Pour un indicateur « taux de service », précisez la formule, l'unité et le sens d'amélioration.\n\nExercice 3. Proposez un plan en deux parties pour le sujet : « La logistique durable est-elle compatible avec la réduction des coûts ? ».\n\nExercice 4. Un sujet de 4 heures comporte trois dossiers notés 7, 7 et 6 points. Répartissez le temps avec 20 minutes de lecture et de relecture au total.\n\nExercice 5. Expliquez en quoi les Incoterms vus en Licence 2 sont utiles pour la matière « transport maritime et portuaire ».\n\n## Corrigé\n\nExercice 1. Moyenne mobile : réagit lentement et ne suit pas une tendance. Lissage exponentiel simple : prend du retard lorsque la demande croît régulièrement. Régression linéaire : suppose une tendance stable et ignore les ruptures ou la saisonnalité si on ne la modélise pas.\n\nExercice 2. Taux de service = commandes livrées complètes et à l'heure / commandes totales × 100 ; unité : pourcentage ; plus il est élevé, mieux c'est.\n\nExercice 3. I. Des convergences réelles : moins de kilomètres à vide, meilleur remplissage, moins de carburant, emballages réutilisables, donc moins de coûts et moins d'émissions. II. Des arbitrages : certains investissements verts coûtent cher au départ, le transport lent et massifié allonge les délais ; d'où l'intérêt de raisonner en coût total sur la durée de vie.\n\nExercice 4. Temps de composition : 240 − 20 = 220 minutes, soit 11 minutes par point. Répartition : 77, 77 et 66 minutes.\n\nExercice 5. L'Incoterm détermine qui réserve et paie le fret maritime, qui supporte le risque pendant la traversée et qui paie les frais portuaires au départ et à l'arrivée. Il conditionne donc l'organisation du transport maritime."
+   },
+   {
+    "title": "Supply chain management : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Transport maritime et portuaire : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Logistique durable, achats et pilotage par indicateurs : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 logistique et transport (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Supply chain management",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Transport maritime et portuaire",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Logistique durable, achats et pilotage par indicateurs",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];
