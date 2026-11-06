@@ -1202,6 +1202,438 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "bfem-mathematiques",
+  "level": "3e",
+  "subject": "Mathématiques",
+  "module": null,
+  "title": "Mathématiques : réussir l'épreuve du BFEM",
+  "description": "Ce cours de préparation à l'examen révise tout le programme de mathématiques du collège (6e à 3e), en insistant sur la classe de 3e : activités numériques, activités géométriques, statistiques et organisation de données. Chaque leçon propose des fiches de rappel, des méthodes de rédaction et de nombreux exercices corrigés, puis un sujet d'entraînement complet et une séance vidéo de révision de veille d'examen. Prérequis : avoir suivi le programme de 3e ou être en train de le terminer.",
+  "sort": 101,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Connaître l'organisation habituelle d'un sujet de mathématiques au BFEM et les types d'exercices.\n- Adopter une méthode efficace le jour de l'épreuve : lecture, brouillon, rédaction, relecture.\n- Repérer et éviter les erreurs les plus fréquentes.\n- Construire un plan de révision réaliste sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nLe sujet de mathématiques du BFEM est généralement organisé en grandes parties qui reprennent le programme du collège : des activités numériques (calculs sur les nombres, racines carrées, calcul littéral, équations, inéquations, systèmes, fonctions), des activités géométriques (Pythagore, Thalès, trigonométrie, angles inscrits, vecteurs, repérage) et souvent un exercice de statistiques ou d'organisation de données. La durée de l'épreuve, son coefficient et la répartition exacte des points sont fixés par les textes officiels en vigueur : renseigne-toi auprès de ton établissement et ne te fie pas aux rumeurs.\n\nLes questions s'enchaînent souvent : le résultat d'une question sert dans la suivante. L'expression « en déduire » t'indique qu'il faut utiliser ce qui précède. Si tu bloques sur une question, admets son résultat (écris « j'admets que… ») et continue : tu peux gagner les points des questions suivantes.\n\n## Les verbes de consigne à bien comprendre\n\n- Calculer : donner un résultat, en écrivant les étapes.\n- Développer : transformer un produit en somme.\n- Factoriser : transformer une somme en produit.\n- Simplifier : écrire sous la forme la plus réduite (fraction irréductible, a√b avec b le plus petit possible).\n- Justifier, démontrer : citer les données, la propriété utilisée, puis conclure.\n- Résoudre : trouver toutes les solutions et les présenter clairement.\n- Construire : faire une figure précise avec les instruments, en laissant les traits de construction.\n- Vérifier : remplacer et constater que l'égalité est vraie.\n\n## La méthode le jour de l'épreuve\n\n- Lire tout le sujet calmement avant d'écrire, en soulignant les données et les verbes.\n- Commencer par l'exercice où tu te sens le plus sûr, mais numéroter clairement chaque réponse.\n- Utiliser le brouillon pour chercher, puis recopier proprement les étapes utiles.\n- Rédiger en géométrie selon le schéma : « On sait que… (données). Or… (propriété). Donc… (conclusion). »\n- Encadrer ou souligner les résultats finaux, avec l'unité quand il y en a une (cm, cm², F CFA, km/h).\n- Garder environ dix minutes à la fin pour relire : signes, unités, recopie des nombres.\n\n## Les erreurs fréquentes\n\n- Confondre (a + b)² et a² + b² : en réalité (a + b)² = a² + 2ab + b².\n- Écrire −3² = 9 : en fait −3² = −9, alors que (−3)² = 9.\n- Oublier de changer le sens d'une inégalité quand on multiplie ou divise par un nombre négatif.\n- Écrire √(a + b) = √a + √b : c'est faux, par exemple √(9 + 16) = 5 alors que √9 + √16 = 7.\n- Utiliser le théorème de Pythagore dans un triangle qui n'est pas rectangle.\n- Appliquer Thalès sans vérifier que les droites sont parallèles et les points alignés dans le même ordre.\n- Oublier de mettre la calculatrice en mode degrés en trigonométrie.\n- Oublier de vérifier les solutions d'un système dans les deux équations.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : nombres (fractions, puissances, écriture scientifique) et racines carrées.\n- Semaine 2 : calcul littéral, identités remarquables, factorisation.\n- Semaine 3 : équations, inéquations, systèmes, mise en équation de problèmes.\n- Semaine 4 : fonctions linéaires et affines, proportionnalité, pourcentages.\n- Semaine 5 : Pythagore, Thalès, trigonométrie.\n- Semaine 6 : angles inscrits, vecteurs, repérage, équations de droites.\n- Semaine 7 : statistiques, puis un premier sujet complet en temps limité.\n- Semaine 8 : deux sujets complets, révision des fiches et des erreurs notées dans un carnet.\n\nConseil : travaille un peu chaque jour (45 minutes à 1 heure) plutôt que beaucoup la veille. Fais-toi une fiche par chapitre : formules, une méthode, un exemple corrigé. Révise à plusieurs : à Dakar comme à Kolda, beaucoup d'élèves progressent en s'expliquant les exercices entre camarades.\n\n## Points clés\n\n- Lire tout le sujet, comprendre les verbes, utiliser les résultats précédents.\n- Rédiger : données, propriété, conclusion.\n- Relire en fin d'épreuve en cherchant les erreurs classiques.\n\n## Exercices pratiques\n\nExercice 1. Pour chaque consigne, dis si l'on attend une somme ou un produit : a) développer (x + 2)(x − 5) ; b) factoriser x² − 25.\n\nExercice 2. Trouve l'erreur dans chaque calcul et corrige-le : a) (x + 3)² = x² + 9 ; b) −4² = 16 ; c) √36 + √64 = √100.\n\nExercice 3. Un élève résout −2x > 6 et écrit x > −3. Explique son erreur et donne la bonne réponse.\n\nExercice 4. Un élève écrit : « Le triangle ABC a pour côtés AB = 4 cm, AC = 5 cm, BC = 6 cm, donc BC² = AB² + AC². » Pourquoi ce raisonnement est-il incorrect ?\n\nExercice 5. Pour un sujet d'entraînement de 2 heures (durée choisie pour l'exercice), propose une répartition du temps entre les activités numériques, les activités géométriques, les statistiques et la relecture.\n\nExercice 6. Rédige proprement, avec « On sait que… Or… Donc… », la justification suivante : le triangle EFG est rectangle en E, EF = 3 cm et EG = 4 cm ; calculer FG.\n\n## Corrigé\n\nExercice 1. a) Développer : on attend une somme, (x + 2)(x − 5) = x² − 5x + 2x − 10 = x² − 3x − 10. b) Factoriser : on attend un produit, x² − 25 = (x − 5)(x + 5).\n\nExercice 2. a) Il manque le double produit : (x + 3)² = x² + 6x + 9. b) Le carré ne porte que sur 4 : −4² = −16. c) √36 + √64 = 6 + 8 = 14, alors que √100 = 10 : la racine d'une somme n'est pas la somme des racines.\n\nExercice 3. En divisant par −2, nombre négatif, il faut changer le sens de l'inégalité : x < −3.\n\nExercice 4. On ne sait pas que le triangle est rectangle. D'ailleurs 6² = 36 alors que 4² + 5² = 16 + 25 = 41 : l'égalité est fausse, donc d'après la contraposée du théorème de Pythagore, le triangle n'est pas rectangle.\n\nExercice 5. Une répartition possible : 5 minutes de lecture du sujet, 45 minutes pour les activités numériques, 45 minutes pour la géométrie (figures comprises), 15 minutes pour les statistiques, 10 minutes de relecture. Total : 120 minutes.\n\nExercice 6. On sait que le triangle EFG est rectangle en E. Or, d'après le théorème de Pythagore, FG² = EF² + EG². Donc FG² = 3² + 4² = 9 + 16 = 25 et FG = √25 = 5 cm."
+   },
+   {
+    "title": "Activités numériques : nombres, calcul littéral, équations et fonctions",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Activités géométriques : Pythagore, Thalès, trigonométrie, vecteurs et repérage",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Statistiques et organisation de données",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille d'examen",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-francais",
+  "level": "3e",
+  "subject": "Français",
+  "module": null,
+  "title": "Français : réussir l'épreuve du BFEM",
+  "description": "Ce cours de préparation à l'examen révise le programme de français du collège (6e à 3e) sous l'angle des épreuves du BFEM : compréhension de texte et étude de la langue, dictée et orthographe, rédaction (récit, argumentation, lettre). Il s'appuie sur la littérature sénégalaise et africaine (Birago Diop, Mariama Bâ, Ousmane Sembène, Aminata Sow Fall, Léopold Sédar Senghor) et propose de nombreux exercices corrigés, un sujet d'entraînement complet et une séance vidéo de veille d'examen. Prérequis : niveau de fin de 3e ou en cours d'acquisition.",
+  "sort": 102,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Savoir quelles compétences l'examen de français évalue et sous quelles formes.\n- Adopter une méthode pour chaque type d'exercice.\n- Connaître les erreurs qui coûtent le plus de points.\n- Organiser ses révisions sur 8 semaines.\n\n## Ce que l'on attend de toi\n\nL'évaluation du français au BFEM porte, de manière générale, sur trois grandes compétences : comprendre un texte, maîtriser la langue (grammaire, conjugaison, vocabulaire, orthographe) et produire un texte écrit organisé. On retrouve habituellement une dictée accompagnée de questions sur un texte, et une rédaction où le candidat choisit un sujet parmi plusieurs propositions. La forme exacte des épreuves, leur durée, leurs coefficients et leurs barèmes sont fixés par les textes officiels en vigueur : renseigne-toi auprès de tes professeurs, car ces modalités peuvent évoluer.\n\n## Les types d'exercices\n\n- La dictée : un texte lu par l'examinateur, que tu dois écrire sans faute. Elle évalue l'orthographe d'usage (l'écriture des mots) et l'orthographe grammaticale (les accords).\n- Les questions de compréhension : retrouver une information, expliquer une expression, dégager l'idée principale, justifier par une citation du texte.\n- Les questions de langue : nature et fonction des mots, types de propositions, transformation de phrases (voix passive, discours indirect), identification et conjugaison des temps, vocabulaire (synonymes, antonymes, familles de mots, figures de style).\n- La rédaction : un récit, un texte argumentatif, une lettre, parfois une description ou un dialogue à insérer dans un récit.\n\n## Méthode générale\n\nPour les questions : lis le texte deux fois, la première pour comprendre l'histoire, la seconde crayon en main pour souligner les personnages, les lieux, les mots difficiles. Réponds toujours par une phrase complète qui reprend les termes de la question. Quand on te demande de justifier, cite le texte entre guillemets.\n\nPour la dictée : écoute la première lecture sans écrire, pour saisir le sens. Écris ensuite par groupes de mots. À la relecture, fais trois passages : un pour les accords sujet-verbe, un pour les accords dans le groupe nominal et les participes passés, un pour les homophones et les accents.\n\nPour la rédaction : consacre un vrai temps au brouillon (analyse du sujet, idées, plan), puis rédige directement au propre l'introduction et la conclusion, en soignant l'écriture et la présentation.\n\n## Les erreurs fréquentes\n\n- Répondre hors sujet : par exemple raconter quand on demande d'argumenter.\n- Recopier une phrase du texte sans l'expliquer.\n- Confondre nature (ce qu'est le mot : nom, verbe, adjectif…) et fonction (son rôle dans la phrase : sujet, COD…).\n- Oublier les accords du participe passé et confondre les terminaisons -é, -er, -ez, -ait.\n- Mélanger les temps dans un récit (passer du passé simple au présent sans raison).\n- Écrire une lettre sans lieu, date, formule d'appel ni formule de politesse.\n- Négliger la ponctuation et les majuscules.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : classes grammaticales et fonctions ; lecture d'un conte de Birago Diop.\n- Semaine 2 : propositions et phrase complexe ; une dictée par jour de cinq lignes.\n- Semaine 3 : conjugaison (indicatif, subjonctif, conditionnel, impératif) et concordance des temps.\n- Semaine 4 : vocabulaire et figures de style ; lecture d'extraits de Senghor.\n- Semaine 5 : orthographe grammaticale et homophones ; rédaction d'un récit.\n- Semaine 6 : argumentation ; lecture d'Une si longue lettre de Mariama Bâ ; rédaction d'une lettre.\n- Semaine 7 : sujet complet en temps limité, puis correction.\n- Semaine 8 : deuxième sujet complet ; révision des fiches et de ton carnet d'erreurs.\n\nConseil : lis chaque jour, même vingt minutes. La lecture régulière est la meilleure préparation à la fois pour l'orthographe, le vocabulaire et la rédaction.\n\n## Points clés\n\n- Trois compétences : comprendre, maîtriser la langue, écrire.\n- Des réponses rédigées, justifiées par le texte.\n- Une relecture méthodique en plusieurs passages.\n\n## Exercices pratiques\n\nExercice 1. Dans la phrase « Le vieux pêcheur raccommode ses filets », donne la nature et la fonction de « pêcheur » et de « filets ».\n\nExercice 2. Transforme la réponse suivante en réponse complète : Question : « Où se passe l'histoire ? » Réponse d'un élève : « Saint-Louis. »\n\nExercice 3. Corrige les erreurs : « Les élèves on travailler toute la nuit et il sont fatigué. »\n\nExercice 4. Lis ce sujet : « Un camarade affirme que la lecture ne sert à rien à l'époque du téléphone portable. Tu n'es pas de son avis. Rédige un texte argumenté pour le convaincre. » Quel est le type de texte attendu ? Quelle est ta thèse ?\n\nExercice 5. Classe ces éléments dans l'ordre d'une lettre : formule de politesse ; lieu et date ; corps de la lettre ; signature ; formule d'appel.\n\nExercice 6. Construis ton propre emploi du temps de révision pour une semaine en prévoyant au moins une dictée, une lecture et une rédaction.\n\n## Corrigé\n\nExercice 1. « pêcheur » : nom commun, noyau du groupe nominal sujet du verbe « raccommode ». « filets » : nom commun, noyau du groupe nominal complément d'objet direct du verbe « raccommode ».\n\nExercice 2. « L'histoire se passe à Saint-Louis. »\n\nExercice 3. « Les élèves ont travaillé toute la nuit et ils sont fatigués. » « ont » est l'auxiliaire avoir (on peut dire « avaient ») ; après l'auxiliaire avoir, on écrit le participe passé « travaillé » ; « ils » est au pluriel ; « fatigués » s'accorde avec « ils ».\n\nExercice 4. Un texte argumentatif. Ta thèse : la lecture reste utile, et même indispensable, malgré le téléphone portable (par exemple parce qu'elle enrichit le vocabulaire, développe l'imagination et l'esprit critique, et que le téléphone lui-même permet de lire).\n\nExercice 5. Lieu et date ; formule d'appel ; corps de la lettre ; formule de politesse ; signature.\n\nExercice 6. Réponse personnelle. Exemple : lundi, dictée de dix lignes et relecture en trois passages ; mardi, vingt minutes de lecture et fiche de vocabulaire ; mercredi, exercices de conjugaison ; jeudi, analyse d'un sujet et plan ; vendredi, rédaction complète ; samedi, correction et carnet d'erreurs ; dimanche, repos ou lecture libre."
+   },
+   {
+    "title": "Compréhension de texte et étude de la langue",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Dictée et orthographe",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "La rédaction : récit, argumentation et lettre",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille d'examen",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-anglais",
+  "level": "3e",
+  "subject": "Anglais",
+  "module": null,
+  "title": "Anglais : réussir l'épreuve du BFEM",
+  "description": "Ce cours de préparation à l'examen révise l'anglais du collège (6e à 3e) en vue de l'épreuve du BFEM : compréhension écrite (reading comprehension), grammaire (temps, modaux, voix passive, discours rapporté, conditionnels, comparatifs), vocabulaire et expression écrite (lettre, court essai). Les explications sont en français, les exemples et exercices en anglais, avec des situations sénégalaises. Il comprend un sujet d'entraînement corrigé et une séance vidéo de veille d'examen. Prérequis : bases de l'anglais du collège.",
+  "sort": 103,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Savoir quelles compétences l'épreuve d'anglais évalue et sous quelle forme.\n- Adopter une méthode pour chaque type d'exercice.\n- Repérer les erreurs les plus fréquentes des élèves francophones.\n- Planifier ses révisions sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nL'épreuve d'anglais du BFEM s'appuie généralement sur un texte : on vérifie d'abord que tu l'as compris (reading comprehension), puis on évalue ta maîtrise de la langue (grammaire et vocabulaire), et enfin ta capacité à écrire quelques lignes ou un court texte en anglais (writing). La durée, le coefficient et le barème sont fixés par les textes officiels en vigueur : demande confirmation à ton professeur et ne te fie pas aux informations qui circulent sans source.\n\n## Les types d'exercices\n\n- True or false : dire si une phrase est vraie ou fausse et la justifier par une citation du texte (« Justify your answer by quoting the text »).\n- Answer the questions : répondre par une phrase complète en anglais.\n- Find in the text words or expressions meaning… : retrouver un synonyme ou une définition.\n- What do the words refer to? : dire à qui ou à quoi renvoie un pronom (it, they, him, its).\n- Exercices de grammaire : mettre le verbe au bon temps, transformer à la voix passive, au discours indirect, compléter avec un modal, un comparatif, une proposition conditionnelle.\n- Writing : une lettre ou un e-mail à un ami, un court paragraphe ou essai sur un thème donné.\n\n## Méthode\n\n- Lis d'abord les questions, puis le texte : tu sauras quoi chercher.\n- Lis le texte deux fois : une fois pour le sens général (qui, où, quand, quoi), une fois pour les détails.\n- Ne traduis pas mot à mot : devine le sens d'un mot inconnu grâce au contexte.\n- Pour True or false, recopie la phrase exacte du texte entre guillemets.\n- Réponds avec des phrases complètes : Question « Where does Awa live? » ; réponse : « She lives in Ziguinchor. »\n- En grammaire, identifie d'abord l'indice : un mot comme « yesterday » appelle le prétérit, « since » appelle le present perfect.\n- En expression écrite, fais un plan, utilise des phrases simples et correctes plutôt que des phrases longues pleines d'erreurs.\n\n## Les erreurs fréquentes\n\n- Oublier le -s de la troisième personne au présent : she works, he goes.\n- Écrire « I am agree » au lieu de « I agree ».\n- Employer « did » avec un verbe au prétérit : « Did you went? » au lieu de « Did you go? ».\n- Utiliser le present perfect avec une date passée : « I have seen him yesterday » au lieu de « I saw him yesterday ».\n- Confondre since (point de départ : since 2020) et for (durée : for three years).\n- Mettre un -s à information, advice, furniture, qui sont indénombrables.\n- Écrire « people is » au lieu de « people are ».\n- Tomber dans les faux amis : actually (en fait), library (bibliothèque), sensible (raisonnable), to assist (aider), eventually (finalement).\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : présent simple et présent progressif ; vocabulaire de la famille et de l'école.\n- Semaine 2 : prétérit, past continuous, verbes irréguliers (une liste de vingt verbes par jour).\n- Semaine 3 : present perfect, past perfect, futur ; textes courts de compréhension.\n- Semaine 4 : modaux et voix passive.\n- Semaine 5 : discours rapporté, conditionnels, comparatifs et superlatifs.\n- Semaine 6 : vocabulaire thématique (environnement, santé, métiers, fêtes) et mots de liaison ; une lettre.\n- Semaine 7 : sujet complet en temps limité et correction.\n- Semaine 8 : second sujet complet ; révision des fiches et du carnet d'erreurs.\n\nConseil : écoute ou lis un peu d'anglais chaque jour (chansons, émissions, articles simples) et répète les verbes irréguliers à voix haute.\n\n## Points clés\n\n- Comprendre le texte avant de répondre.\n- Toujours justifier et répondre par des phrases complètes.\n- Chercher l'indice de temps en grammaire.\n\n## Exercices pratiques\n\nExercise 1. Correct the mistakes: a) She speak English very well. b) I am agree with you. c) Did he went to Dakar? d) The people is happy.\n\nExercise 2. Since or for? a) I have lived in Thiès … 2019. b) She has studied English … four years. c) We have been friends … we were children.\n\nExercise 3. Answer with a complete sentence: « What is the capital of Senegal? »\n\nExercise 4. Give the French meaning of these false friends: actually, library, eventually.\n\nExercise 5. Which tense does each time marker suggest? a) yesterday ; b) since Monday ; c) right now ; d) every day ; e) tomorrow.\n\nExercise 6. Read this sentence: « Binta gave her brother a book because he likes reading. » What do « her » and « he » refer to?\n\n## Corrigé\n\nExercise 1. a) She speaks English very well. b) I agree with you. c) Did he go to Dakar? d) The people are happy.\n\nExercise 2. a) since 2019 (point de départ). b) for four years (durée). c) since we were children (point de départ exprimé par une proposition).\n\nExercise 3. Dakar is the capital of Senegal.\n\nExercise 4. actually : en fait, en réalité ; library : bibliothèque ; eventually : finalement, à la fin.\n\nExercise 5. a) prétérit (simple past). b) present perfect. c) présent progressif (present continuous). d) présent simple. e) futur (will ou be going to).\n\nExercise 6. « her » renvoie à Binta ; « he » renvoie au frère de Binta (her brother)."
+   },
+   {
+    "title": "Reading comprehension : comprendre un texte en anglais",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Grammar : temps, modaux, passif, discours rapporté, conditionnels, comparatifs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Vocabulary and writing : la lettre et le court essai",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille d'examen",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-histoire-geographie",
+  "level": "3e",
+  "subject": "Histoire-Géographie",
+  "module": null,
+  "title": "Histoire-Géographie : réussir l'épreuve du BFEM",
+  "description": "Ce cours prépare les élèves de 3e à l'épreuve d'Histoire-Géographie du BFEM en révisant le programme du collège, avec un accent sur la 3e : l'Afrique et le monde du XIXe au XXe siècle, puis le Sénégal, l'Afrique et les grands ensembles mondiaux. Il entraîne aux méthodes d'examen (analyse de document, croquis et carte, dissertation courte) grâce à des fiches, des exercices corrigés et un sujet d'entraînement complet. Prérequis : savoir lire une carte simple et situer les grandes périodes de l'histoire.",
+  "sort": 104,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce que l'on attend de vous à l'épreuve d'Histoire-Géographie du BFEM.\n- Connaître les trois grands types d'exercices : analyse de document, croquis ou carte, dissertation courte.\n- Éviter les erreurs les plus fréquentes.\n- Organiser ses révisions sur huit semaines.\n\n## Ce que l'épreuve évalue\n\nL'épreuve d'Histoire-Géographie du BFEM vérifie trois choses : vos connaissances (dates, faits, notions, localisations), votre capacité à exploiter un document (texte, carte, tableau statistique, graphique, image) et votre capacité à rédiger une réponse organisée. La durée de l'épreuve, son coefficient et son barème sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement et ne vous fiez pas aux rumeurs. Ce cours vous prépare à toutes les formes d'exercices habituellement proposées.\n\nLe programme révisé couvre tout le collège, avec un poids particulier sur la 3e. En histoire : la traite négrière et ses conséquences, la conquête coloniale et les résistances africaines, l'Afrique dans les deux guerres mondiales, la décolonisation et le Sénégal indépendant. En géographie : le Sénégal (milieu physique, population, économie, régions), l'Afrique et les grands ensembles du monde.\n\n## Type 1 : l'analyse de document\n\nOn vous donne un document et des questions. La méthode tient en quatre étapes.\n\n- Présenter le document : nature (texte, carte, tableau, photo), auteur, date, source, thème.\n- Lire les questions avant le document, pour savoir ce que l'on cherche.\n- Relever les informations utiles dans le document en citant entre guillemets ou en reprenant les chiffres.\n- Expliquer avec vos connaissances : le document ne dit jamais tout, c'est vous qui apportez le contexte.\n\nExemple : un tableau donne la population du Sénégal à plusieurs recensements. Il ne suffit pas de recopier les chiffres ; il faut dire que la population augmente fortement, puis expliquer pourquoi (natalité encore élevée, baisse de la mortalité) et quelles en sont les conséquences (besoins en écoles, en emplois, en logements).\n\n## Type 2 : le croquis et la carte\n\nOn peut vous demander de compléter un fond de carte (placer des villes, des fleuves, des régions) ou de réaliser un croquis simple. Les règles d'or :\n\n- Un titre précis, par exemple « Les grandes zones d'activités économiques du Sénégal ».\n- Une légende organisée en deux ou trois parties.\n- Des figurés adaptés : points pour les villes, lignes pour les fleuves et les routes, surfaces colorées pour les zones.\n- Une orientation (flèche du nord) et un travail propre, au crayon puis à la couleur.\n\n## Type 3 : la dissertation courte\n\nC'est une réponse rédigée à une question, par exemple : « Montrez que la colonisation a profondément transformé l'économie du Sénégal. » Le plan attendu est simple.\n\n- Introduction : définir les mots clés, situer dans le temps et l'espace, poser le problème, annoncer le plan.\n- Développement : deux ou trois parties, chacune avec une idée principale, des arguments et des exemples précis (dates, lieux, personnages).\n- Conclusion : répondre clairement à la question et ouvrir sur une idée voisine.\n\n## Les erreurs les plus fréquentes\n\n- Paraphraser le document sans l'expliquer.\n- Confondre les dates : par exemple placer la conférence de Berlin en 1960 au lieu de 1884-1885.\n- Oublier le titre ou la légende d'un croquis.\n- Écrire une dissertation sans introduction ni plan visible.\n- Mal gérer son temps et laisser une partie blanche.\n- Inventer des chiffres : en cas de doute, mieux vaut rester général que d'être faux.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : méthodes (analyse de document, croquis, dissertation) et frise chronologique générale XIXe-XXe siècle.\n- Semaine 2 : traite négrière, conquête coloniale, résistances africaines.\n- Semaine 3 : système colonial (AOF, économie de traite) et Première Guerre mondiale.\n- Semaine 4 : Seconde Guerre mondiale, décolonisation, Sénégal indépendant.\n- Semaine 5 : le Sénégal, milieu physique et population.\n- Semaine 6 : le Sénégal, économie et régions ; l'Afrique.\n- Semaine 7 : le monde et ses grands ensembles ; fonds de carte à connaître par cœur.\n- Semaine 8 : sujets complets en temps limité, correction, fiches de dernière minute.\n\nChaque jour, prévoyez 30 à 45 minutes : 15 minutes de relecture de fiche, 15 minutes d'exercice, quelques minutes pour réciter les dates sans regarder. Travaillez à deux avec un camarade : l'un interroge, l'autre répond.\n\n## Construire ses fiches\n\nUne bonne fiche tient sur une page : un titre, cinq à huit dates ou chiffres essentiels, trois à cinq notions définies, deux ou trois personnages, un petit croquis si possible. Écrivez avec vos propres mots. Relisez vos fiches régulièrement plutôt qu'une seule fois la veille.\n\n## Points clés\n\n- Trois exercices types : analyse de document, croquis ou carte, dissertation courte.\n- Toujours présenter le document et l'expliquer avec ses connaissances.\n- Un croquis sans titre ni légende perd une grande partie de sa valeur.\n- La régularité vaut mieux que le bachotage de dernière minute.\n\n## Exercices pratiques\n\nExercice 1 (facile). Citez les trois types d'exercices de l'épreuve et donnez pour chacun une règle essentielle.\n\nExercice 2 (facile). Quelles informations doit contenir la présentation d'un document ?\n\nExercice 3 (moyen). Un élève écrit : « Le document montre que la population augmente. » Pourquoi cette réponse est-elle insuffisante ? Améliorez-la.\n\nExercice 4 (moyen). Proposez un titre et une légende en trois parties pour un croquis intitulé sur les activités économiques du Sénégal.\n\nExercice 5 (moyen). Rédigez l'introduction d'une dissertation sur le sujet : « Les résistances africaines à la conquête coloniale au Sénégal ».\n\nExercice 6 (difficile). Construisez votre propre planning de révision pour la semaine 2, jour par jour, en respectant la durée conseillée.\n\n## Corrigé\n\nExercice 1. Analyse de document : toujours présenter le document puis l'expliquer avec ses connaissances. Croquis ou carte : un titre, une légende organisée et des figurés adaptés. Dissertation courte : introduction, développement en parties, conclusion.\n\nExercice 2. La nature du document, l'auteur, la date, la source et le thème (ou idée générale).\n\nExercice 3. La réponse se contente de paraphraser. Version améliorée : « Le tableau montre que la population du Sénégal augmente fortement entre les recensements. Cette croissance s'explique par une natalité encore élevée et par la baisse de la mortalité grâce aux progrès de la santé. Elle entraîne de grands besoins en écoles, en emplois et en logements, surtout dans les villes comme Dakar. »\n\nExercice 4. Titre : « Les grandes zones d'activités économiques du Sénégal ». Légende : 1. L'agriculture (bassin arachidier, vallée du fleuve Sénégal pour le riz, Niayes pour le maraîchage) ; 2. La pêche et l'industrie (côte atlantique, ports de Dakar et de Mbour, industries de la région de Dakar) ; 3. Les services et le tourisme (Dakar, Petite-Côte, Saint-Louis, Casamance).\n\nExercice 5. Exemple : « Au XIXe siècle, la France entreprend la conquête du territoire de l'actuel Sénégal. Face à cette domination, les Africains résistent : on appelle résistance l'ensemble des actions armées ou pacifiques menées contre l'occupation coloniale. Comment les peuples du Sénégal se sont-ils opposés à la conquête ? Nous verrons d'abord les résistances armées, puis les résistances pacifiques et religieuses. »\n\nExercice 6. Exemple : lundi, la traite atlantique (fiche, 15 min ; questions sur un document, 15 min) ; mardi, ses conséquences pour l'Afrique ; mercredi, la conférence de Berlin et le partage ; jeudi, Lat Dior et El Hadj Omar ; vendredi, Samory Touré et Cheikh Ahmadou Bamba ; samedi, Aline Sitoé Diatta et révision de la frise ; dimanche, récitation des dates avec un camarade. Toute proposition régulière de 30 à 45 minutes par jour est acceptée."
+   },
+   {
+    "title": "Histoire (1) : traite, colonisation et résistances africaines",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Histoire (2) : guerres mondiales, décolonisation et Sénégal indépendant",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Géographie : le Sénégal, l'Afrique et le monde",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille d'examen en Histoire-Géographie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-education-civique",
+  "level": "3e",
+  "subject": "Éducation civique",
+  "module": null,
+  "title": "Éducation civique : réussir l'épreuve du BFEM",
+  "description": "Ce cours prépare les élèves de 3e à l'épreuve d'Éducation civique du BFEM en révisant le programme du collège : citoyenneté, droits et devoirs, droits de l'enfant et droits humains, institutions de la République du Sénégal, démocratie et élections, intégration africaine, environnement et santé publique. Chaque leçon associe des fiches de révision, des exercices progressifs corrigés et des conseils de méthode, avec un sujet d'entraînement complet. Prérequis : aucun, au-delà des connaissances de base du collège.",
+  "sort": 105,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce qu'évalue l'épreuve d'Éducation civique du BFEM.\n- Connaître les types d'exercices et la méthode pour chacun.\n- Repérer les erreurs fréquentes.\n- Planifier ses révisions sur huit semaines.\n\n## Ce que l'épreuve évalue\n\nL'Éducation civique forme le citoyen. À l'examen, on attend de vous trois compétences : connaître des notions précises (citoyenneté, démocratie, droits, institutions), les appliquer à une situation de la vie quotidienne et donner un avis argumenté. La durée, le coefficient et le barème de l'épreuve sont fixés selon les textes officiels en vigueur : vérifiez-les auprès de votre établissement.\n\nLe programme du collège est révisé dans ce cours en trois grands blocs : la citoyenneté, les droits et devoirs, les droits de l'enfant et les droits humains ; les institutions de la République du Sénégal, la démocratie et les élections ; l'intégration africaine, l'environnement et la santé publique.\n\n## Les types d'exercices\n\n- Questions de cours : définir une notion, citer des exemples. Une définition doit être courte, exacte et complète.\n- Étude de document : un texte (article de la Constitution présenté en extrait, coupure de journal, affiche de sensibilisation), une image ou un tableau, suivi de questions.\n- Situation-problème : un cas concret (un enfant retiré de l'école pour travailler, un quartier envahi par les déchets, un jeune qui refuse d'aller voter). Il faut identifier le problème, citer la règle ou le droit concerné, proposer des solutions.\n- Question d'opinion argumentée : « Pensez-vous que… ? Justifiez. » Il faut prendre position et donner au moins deux arguments avec exemples.\n\n## Méthode pour la situation-problème\n\n- Lire la situation et souligner les personnes, les faits et le lieu.\n- Nommer le problème avec le vocabulaire civique : « violation du droit à l'éducation », « atteinte à l'environnement », « incivisme ».\n- Rappeler la règle : le droit ou le devoir en jeu, le texte qui le protège (par exemple la Convention relative aux droits de l'enfant) sans inventer de numéro d'article.\n- Proposer des solutions à plusieurs niveaux : individuel, familial, communautaire, État.\n\nExemple : « Dans un village, Awa, 12 ans, a été retirée de l'école pour aider sa mère au marché. » Problème : violation du droit à l'éducation. Règle : la Convention relative aux droits de l'enfant reconnaît le droit de tout enfant à l'éducation, et la loi sénégalaise prévoit la scolarisation obligatoire. Solutions : sensibiliser les parents, impliquer le chef de village, le comité de gestion de l'école, les services sociaux.\n\n## Méthode pour l'opinion argumentée\n\n- Une phrase de position claire : « Je pense que voter est un devoir essentiel du citoyen. »\n- Deux ou trois arguments, chacun suivi d'un exemple.\n- Une conclusion qui reprend la position.\n\n## Erreurs fréquentes\n\n- Donner une définition vague : « la démocratie, c'est la liberté ». Préférez : « régime politique dans lequel le pouvoir appartient au peuple, qui l'exerce directement ou par ses représentants élus ».\n- Confondre droits et devoirs.\n- Confondre les pouvoirs : l'Assemblée nationale vote les lois, elle ne les applique pas.\n- Inventer des chiffres ou des articles de loi.\n- Répondre sans proposer de solution dans une situation-problème.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : méthodes et vocabulaire de base (citoyen, nation, État, République, droit, devoir).\n- Semaine 2 : citoyenneté, nationalité, symboles de la République, civisme.\n- Semaine 3 : droits de l'enfant et droits humains.\n- Semaine 4 : institutions de la République et séparation des pouvoirs.\n- Semaine 5 : démocratie, élections, partis politiques, société civile.\n- Semaine 6 : intégration africaine (UA, CEDEAO, UEMOA).\n- Semaine 7 : environnement et santé publique.\n- Semaine 8 : sujets complets en temps limité et fiches de dernière minute.\n\nConsacrez 30 minutes par jour : 10 minutes de fiche, 15 minutes d'exercice, 5 minutes de récitation des définitions.\n\n## Points clés\n\n- Quatre formes d'exercices : questions de cours, étude de document, situation-problème, opinion argumentée.\n- Une situation-problème se traite en trois temps : problème, règle, solutions.\n- Les définitions doivent être apprises mot à mot.\n\n## Exercices pratiques\n\nExercice 1 (facile). Citez les quatre types d'exercices de l'épreuve.\n\nExercice 2 (facile). Corrigez la définition : « La démocratie, c'est faire ce qu'on veut. »\n\nExercice 3 (moyen). Situation : des élèves écrivent sur les murs de leur collège. Nommez le problème et proposez deux solutions.\n\nExercice 4 (moyen). Rédigez une position argumentée en cinq lignes sur : « Faut-il porter l'uniforme scolaire ? »\n\nExercice 5 (moyen). Traitez la situation d'Awa en ajoutant une solution que peut prendre l'État.\n\nExercice 6 (difficile). Établissez votre planning détaillé pour la semaine 3.\n\n## Corrigé\n\nExercice 1. Questions de cours, étude de document, situation-problème, question d'opinion argumentée.\n\nExercice 2. La démocratie est un régime politique dans lequel le pouvoir appartient au peuple, qui l'exerce directement ou par l'intermédiaire de représentants élus, dans le respect des lois et des libertés. La liberté y est encadrée par la loi : elle s'arrête là où commence celle des autres.\n\nExercice 3. Problème : incivisme, dégradation d'un bien public. Solutions : sensibilisation par le gouvernement scolaire et les professeurs, application du règlement intérieur, réparation par les auteurs (nettoyage), création d'un espace d'expression comme un journal mural.\n\nExercice 4. Exemple : « Je pense que l'uniforme est utile. D'abord, il réduit les différences visibles entre élèves riches et pauvres et limite les moqueries. Ensuite, il renforce le sentiment d'appartenance à l'établissement. Certes, il a un coût pour les familles, mais il évite d'acheter de nombreux vêtements. L'uniforme favorise donc l'égalité et la cohésion. » Toute position bien argumentée est acceptée.\n\nExercice 5. En plus des solutions locales, l'État peut faire appliquer l'obligation scolaire, construire des écoles de proximité, développer des cantines scolaires et des bourses, et mener des campagnes en faveur de la scolarisation des filles.\n\nExercice 6. Exemple : lundi, définition et caractères des droits humains ; mardi, la Déclaration universelle de 1948 ; mercredi, la Convention relative aux droits de l'enfant de 1989 ; jeudi, la Charte africaine des droits et du bien-être de l'enfant ; vendredi, situations-problèmes sur le travail des enfants ; samedi, sujet d'opinion sur le mariage précoce ; dimanche, récitation avec un camarade."
+   },
+   {
+    "title": "Citoyenneté, droits et devoirs, droits de l'enfant et droits humains",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Institutions de la République, démocratie et élections",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Intégration africaine, environnement et santé publique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille d'examen en Éducation civique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-svt",
+  "level": "3e",
+  "subject": "SVT",
+  "module": null,
+  "title": "Sciences de la vie et de la Terre : réussir l'épreuve du BFEM",
+  "description": "Ce cours prépare les élèves de 3e à l'épreuve de Sciences de la vie et de la Terre du BFEM en révisant le programme du collège : fonctions de nutrition et de relation chez l'Homme, reproduction et puberté, immunité et santé (VIH/SIDA, paludisme, vaccination), géologie du Sénégal (sols, roches, érosion), écologie et environnement. Il entraîne aux méthodes d'analyse de schéma, de graphique et d'expérience à travers des fiches, des exercices corrigés et un sujet d'entraînement complet. Prérequis : notions de SVT de la 6e à la 4e.",
+  "sort": 106,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce qu'évalue l'épreuve de SVT au BFEM.\n- Maîtriser les méthodes d'analyse de schéma, de graphique et d'expérience.\n- Éviter les erreurs fréquentes.\n- Organiser ses révisions sur huit semaines.\n\n## Ce que l'épreuve évalue\n\nL'épreuve de SVT vérifie deux types de compétences. D'abord la restitution des connaissances : définir, légender un schéma, décrire un mécanisme (la digestion, le réflexe, la réponse immunitaire). Ensuite le raisonnement scientifique : exploiter un document (schéma, graphique, tableau, résultats d'expérience) pour en tirer une conclusion. La durée, le coefficient et le barème de l'épreuve sont fixés selon les textes officiels en vigueur ; renseignez-vous auprès de votre établissement.\n\nLe programme révisé couvre le collège, avec un accent sur la 3e : nutrition et relation chez l'Homme ; reproduction, puberté, immunité et santé ; géologie et écologie, notamment au Sénégal.\n\n## Méthode 1 : analyser un schéma\n\n- Lire le titre et repérer ce que représente le schéma (organe, appareil, coupe, cycle).\n- Légender avec des traits fins, à la règle, horizontaux, sans croisements.\n- Utiliser le vocabulaire exact : « alvéole pulmonaire », pas « petite boule ».\n- Si l'on vous demande d'expliquer, suivez les flèches dans l'ordre.\n\n## Méthode 2 : analyser un graphique\n\nRetenez la démarche « je vois, je sais, je conclus ».\n\n- Je vois : je décris la courbe en citant les valeurs (abscisse, ordonnée, unités). Par exemple : « La concentration d'anticorps passe de 0 à 10 unités entre le jour 5 et le jour 15. »\n- Je sais : j'utilise mes connaissances pour expliquer.\n- Je conclus : je réponds à la question posée en une phrase.\n\nLes mots de description : augmente, diminue, reste constant, atteint un maximum, devient nul. Découpez la courbe en phases et décrivez-les une à une.\n\n## Méthode 3 : analyser une expérience\n\nUne expérience scientifique suit la démarche expérimentale :\n\n- Le problème : la question que l'on se pose.\n- L'hypothèse : une réponse possible à vérifier.\n- Le protocole : ce que l'on fait, avec un seul facteur qui change.\n- Le témoin : le montage identique où le facteur étudié est absent ; il permet de comparer.\n- Les résultats : ce que l'on observe.\n- L'interprétation et la conclusion : l'hypothèse est validée ou rejetée.\n\nExemple : on veut savoir si la salive agit sur l'amidon. Tube A : empois d'amidon + salive à 37 °C. Tube B (témoin) : empois d'amidon + eau à 37 °C. Après quelques minutes, l'eau iodée ne bleuit plus dans le tube A mais reste bleu-noir dans le tube B ; la liqueur de Fehling chauffée donne un précipité rouge brique dans le tube A. Conclusion : la salive transforme l'amidon en un sucre réducteur (le maltose) grâce à une enzyme, l'amylase salivaire.\n\n## Erreurs fréquentes\n\n- Décrire un graphique sans citer de valeurs ni d'unités.\n- Oublier le témoin dans une expérience.\n- Confondre description (« je vois ») et explication (« je sais »).\n- Schémas trop petits, sans titre, légendes en désordre.\n- Confusions classiques : virus et bactérie, respiration et ventilation, réflexe et acte volontaire.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : méthodes (schéma, graphique, expérience) et vocabulaire de base.\n- Semaine 2 : digestion et absorption ; respiration.\n- Semaine 3 : circulation, sang, excrétion.\n- Semaine 4 : système nerveux, réflexes, mouvement.\n- Semaine 5 : puberté, reproduction, contraception, infections sexuellement transmissibles.\n- Semaine 6 : immunité, VIH/SIDA, paludisme, vaccination.\n- Semaine 7 : sols, roches, érosion au Sénégal ; écologie.\n- Semaine 8 : sujets complets en temps limité, correction, fiches de dernière minute.\n\nChaque jour : 15 minutes de fiche, 20 minutes d'exercice, 5 minutes pour refaire de mémoire un schéma.\n\n## Points clés\n\n- Graphique : je vois, je sais, je conclus.\n- Expérience : un seul facteur varie, toujours un témoin.\n- Schéma : titre, légendes à la règle, vocabulaire exact.\n\n## Exercices pratiques\n\nExercice 1 (facile). Citez les étapes de la démarche expérimentale.\n\nExercice 2 (facile). À quoi sert un témoin dans une expérience ?\n\nExercice 3 (moyen). Décrivez la courbe suivante : la température corporelle d'un élève est de 37 °C à 8 h, monte à 39,5 °C à 14 h, puis redescend à 37,5 °C à 20 h.\n\nExercice 4 (moyen). Un élève conclut : « La salive digère l'amidon » après avoir observé seulement le tube A. Que lui manque-t-il ?\n\nExercice 5 (moyen). Proposez une expérience pour montrer que la température influence l'action de l'amylase salivaire.\n\nExercice 6 (difficile). Rédigez votre planning détaillé de la semaine 6.\n\n## Corrigé\n\nExercice 1. Problème, hypothèse, protocole (avec témoin), résultats, interprétation, conclusion.\n\nExercice 2. Le témoin est un montage identique dans lequel le facteur étudié est absent. En comparant, on peut attribuer la différence de résultat à ce seul facteur.\n\nExercice 3. La température est de 37 °C à 8 h ; elle augmente jusqu'à un maximum de 39,5 °C à 14 h, soit une hausse de 2,5 °C ; puis elle diminue jusqu'à 37,5 °C à 20 h, sans revenir tout à fait à sa valeur initiale. Explication possible : une fièvre, réaction de l'organisme à une infection.\n\nExercice 4. Il lui manque un tube témoin (amidon + eau) : sans lui, il ne peut pas prouver que c'est la salive, et non le temps ou la chaleur, qui a fait disparaître l'amidon.\n\nExercice 5. Préparer trois tubes contenant le même volume d'empois d'amidon et de salive, placés à 0 °C (glace), à 37 °C et à 90 °C, plus un tube témoin sans salive à 37 °C. Après un même temps, tester à l'eau iodée. Résultat attendu : l'amidon a disparu seulement à 37 °C ; à 0 °C l'enzyme est inactive (son action reprend si on réchauffe le tube), à 90 °C elle est détruite. Conclusion : l'amylase agit de façon optimale vers la température du corps.\n\nExercice 6. Exemple : lundi, barrières naturelles et phagocytose ; mardi, anticorps et lymphocytes ; mercredi, graphique de la réponse primaire et secondaire ; jeudi, vaccination et sérothérapie ; vendredi, VIH/SIDA ; samedi, paludisme et son cycle ; dimanche, exercice de synthèse. Toute organisation régulière est acceptée."
+   },
+   {
+    "title": "Nutrition et relation chez l'Homme",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Reproduction, puberté, immunité et santé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Géologie et écologie : sols, roches, érosion et environnement au Sénégal",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille d'examen en SVT",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-sciences-physiques",
+  "level": "3e",
+  "subject": "Sciences physiques",
+  "module": null,
+  "title": "Sciences physiques (PC) : réussir l'épreuve du BFEM",
+  "description": "Ce cours d'examen révise le programme de sciences physiques du collège, avec un accent sur la 4e et la 3e : mélanges et corps purs, atomes et ions, équations-bilans, acides, bases et pH, métaux, électricité (loi d'Ohm, puissance, énergie), forces et équilibre, réflexion, réfraction et lentilles. Il propose des fiches de révision, des exercices progressifs corrigés et un sujet d'entraînement complet. Prérequis : avoir suivi les classes de 6e à 3e et savoir utiliser une calculatrice.",
+  "sort": 107,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir comment se présente une épreuve de sciences physiques (PC) au BFEM.\n- Connaître les grands types d'exercices et la manière de les rédiger.\n- Repérer les erreurs qui font perdre le plus de points.\n- Organiser ses révisions sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nL'épreuve de sciences physiques du BFEM évalue le programme du collège, avec un poids important pour les chapitres de 4e et de 3e. Le sujet est en général partagé entre une partie de chimie et une partie de physique. La durée, le coefficient et le barème dépendent des textes officiels en vigueur : renseigne-toi auprès de ton établissement et ne te fie pas aux rumeurs.\n\nCe qui ne change pas d'une année à l'autre, c'est la nature des questions. On retrouve presque toujours :\n- des questions de cours : définir un mot (corps pur, ion, lentille convergente), énoncer une loi (loi d'Ohm, conservation de la masse) ;\n- des questions d'application directe : calculer une intensité, une puissance, un poids, une vergence ;\n- des équations-bilans à écrire et à équilibrer ;\n- des schémas : circuit électrique, construction de l'image donnée par une lentille, représentation d'une force ;\n- des exercices à étapes, où chaque réponse sert à la suivante.\n\n## La méthode de résolution en 5 étapes\n\nPour tout exercice de calcul, adopte toujours le même plan. Les correcteurs l'attendent et il te protège des oublis.\n\n- Étape 1 : lire tout l'énoncé et souligner les données avec leurs unités.\n- Étape 2 : convertir les données dans les unités du Système international (mètre, kilogramme, seconde, ampère, volt, ohm, watt, joule).\n- Étape 3 : écrire la formule littérale (exemple : U = R × I).\n- Étape 4 : remplacer par les valeurs numériques, puis calculer.\n- Étape 5 : donner le résultat avec son unité et, si on le demande, une phrase de conclusion.\n\nExemple rédigé. Une résistance de 100 Ω est traversée par un courant de 50 mA. Calculer la tension à ses bornes.\nDonnées : R = 100 Ω ; I = 50 mA = 0,050 A.\nFormule : U = R × I.\nApplication numérique : U = 100 × 0,050 = 5 V.\nConclusion : la tension aux bornes de la résistance est de 5 V.\n\n## Les unités à connaître par cœur\n\n- Intensité I : ampère (A) ; 1 mA = 0,001 A.\n- Tension U : volt (V).\n- Résistance R : ohm (Ω) ; 1 kΩ = 1 000 Ω.\n- Puissance P : watt (W) ; 1 kW = 1 000 W.\n- Énergie E : joule (J) ou kilowattheure (kWh) ; 1 Wh = 3 600 J et 1 kWh = 3 600 000 J.\n- Masse m : kilogramme (kg) ; 1 g = 0,001 kg.\n- Poids P et force F : newton (N).\n- Intensité de la pesanteur g : newton par kilogramme (N/kg).\n- Distance focale f : mètre (m) ; vergence C : dioptrie (δ).\n- Concentration massique : gramme par litre (g/L).\n\n## Les erreurs fréquentes\n\n- Oublier l'unité ou en mettre une fausse : un résultat sans unité est souvent compté faux.\n- Calculer avec des milliampères ou des centimètres sans convertir.\n- Confondre masse (en kg, ne change pas) et poids (en N, dépend du lieu).\n- Écrire une équation-bilan non équilibrée : il faut le même nombre d'atomes de chaque élément de chaque côté.\n- Dessiner un circuit sans respecter les symboles normalisés, ou placer l'ampèremètre en dérivation et le voltmètre en série (c'est l'inverse).\n- Pour les lentilles, oublier les rayons particuliers ou tracer sans règle.\n- Recopier une formule au hasard : chaque lettre doit correspondre à une donnée identifiée.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : méthode, unités et conversions ; mélanges et corps purs ; techniques de séparation.\n- Semaine 2 : atomes, molécules, ions ; formules chimiques ; réactions chimiques et équations-bilans.\n- Semaine 3 : solutions aqueuses, concentration, acides et bases, pH ; métaux et leurs réactions.\n- Semaine 4 : électricité 1 : circuits série et dérivation, intensité, tension, résistance, loi d'Ohm.\n- Semaine 5 : électricité 2 : puissance et énergie électriques, facture d'électricité, sécurité.\n- Semaine 6 : mécanique : forces, poids et masse, équilibre d'un solide.\n- Semaine 7 : optique : réflexion, réfraction, lentilles, construction d'images.\n- Semaine 8 : sujets d'entraînement complets en temps limité, puis reprise des points faibles.\n\nChaque séance de révision peut suivre ce rythme : 15 minutes pour relire une fiche, 30 minutes d'exercices sans regarder le corrigé, 15 minutes de correction en notant ses erreurs dans un cahier spécial. Ce cahier d'erreurs devient ton meilleur outil la dernière semaine.\n\n## Points clés\n\n- Toujours : données, conversion, formule, calcul, unité.\n- Les schémas se font à la règle et au crayon, avec une légende.\n- Le programme de 4e et de 3e est le cœur de l'épreuve.\n\n## Exercices pratiques\n\nExercice 1 : Convertir : 250 mA en A ; 2,2 kΩ en Ω ; 1 500 W en kW ; 350 g en kg.\n\nExercice 2 : Convertir 2 kWh en joules.\n\nExercice 3 : Une lentille a une distance focale de 25 cm. Exprimer cette distance en mètres.\n\nExercice 4 : Repérer l'erreur dans cette réponse : « P = U × I = 220 × 0,5 = 110 ».\n\nExercice 5 : Un élève écrit : « La masse de Moussa est de 500 N. » Corriger sa phrase sachant que g = 10 N/kg.\n\nExercice 6 : Rédiger complètement selon la méthode en 5 étapes : une lampe est traversée par un courant de 200 mA sous une tension de 6 V. Calculer sa puissance.\n\n## Corrigé\n\nExercice 1 : 250 mA = 0,25 A ; 2,2 kΩ = 2 200 Ω ; 1 500 W = 1,5 kW ; 350 g = 0,35 kg.\n\nExercice 2 : 1 kWh = 3 600 000 J, donc 2 kWh = 7 200 000 J (soit 7,2 × 10⁶ J).\n\nExercice 3 : 25 cm = 0,25 m.\n\nExercice 4 : Le calcul est juste mais l'unité manque. Il faut écrire P = 110 W.\n\nExercice 5 : 500 N est un poids, pas une masse. Correction : « Le poids de Moussa est de 500 N. » Sa masse vaut m = P / g = 500 / 10 = 50 kg.\n\nExercice 6 : Données : U = 6 V ; I = 200 mA = 0,2 A. Formule : P = U × I. Application numérique : P = 6 × 0,2 = 1,2 W. Conclusion : la puissance de la lampe est de 1,2 W."
+   },
+   {
+    "title": "Chimie : matière, atomes, ions, réactions, acides, bases et métaux",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Électricité : circuits, loi d'Ohm, puissance et énergie",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Mécanique et optique : forces, poids, équilibre, lentilles",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive « veille d'examen » en sciences physiques",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-espagnol",
+  "level": "3e",
+  "subject": "Espagnol (LV2)",
+  "module": null,
+  "title": "Espagnol LV2 : réussir l'épreuve du BFEM",
+  "description": "Ce cours d'examen prépare l'épreuve d'espagnol LV2 du BFEM : méthode de compréhension écrite, vocabulaire thématique (famille, école, ville, santé, environnement), grammaire essentielle (ser et estar, présent, prétérit, futur, gustar, impératif, comparatifs) et expression écrite. Les explications sont en français et les exemples en espagnol. Prérequis : les bases d'espagnol acquises de la 4e à la 3e.",
+  "sort": 108,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce qu'on attend de toi à l'épreuve d'espagnol LV2 du BFEM.\n- Connaître les types d'exercices et une méthode pour chacun.\n- Éviter les erreurs les plus fréquentes.\n- Organiser tes révisions sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nL'épreuve d'espagnol LV2 s'appuie en général sur un texte court en espagnol (récit, dialogue, lettre, article simple) suivi de questions. On y trouve habituellement trois grandes familles d'exercices : la compréhension du texte, des exercices de langue (grammaire, conjugaison, vocabulaire) et une petite expression écrite. La durée, le coefficient et le barème dépendent des textes officiels en vigueur : renseigne-toi auprès de tes professeurs.\n\nLes consignes sont souvent rédigées en espagnol. Il faut donc les comprendre parfaitement :\n- Lee el texto : lis le texte.\n- Contesta a las preguntas : réponds aux questions.\n- Di si es verdadero o falso y justifica : dis si c'est vrai ou faux et justifie.\n- Busca en el texto : cherche dans le texte.\n- Completa con : complète avec.\n- Conjuga los verbos en presente / en pretérito / en futuro : conjugue les verbes au présent, au prétérit, au futur.\n- Traduce al francés : traduis en français.\n- Redacta / Escribe unas líneas : rédige quelques lignes.\n\n## Méthode pour la compréhension écrite\n\n- Lis d'abord le titre, la source et les questions : ils annoncent le sujet.\n- Lis le texte une première fois en entier sans t'arrêter aux mots inconnus.\n- Repère qui parle, où, quand, ce qui se passe (¿quién?, ¿dónde?, ¿cuándo?, ¿qué?).\n- Relis en cherchant la réponse à chaque question et souligne la phrase du texte qui la justifie.\n- Réponds par une phrase complète en espagnol, en reprenant les mots de la question.\n\nExemple. Question : ¿Dónde vive Moussa? Réponse attendue : Moussa vive en Saint-Louis, con sus padres. Une réponse d'un seul mot (« Saint-Louis ») rapporte moins de points.\n\n## Les mots interrogatifs à reconnaître\n\nIls portent toujours un accent écrit :\n- ¿Quién? / ¿Quiénes? : qui ?\n- ¿Qué? : que, quoi, quel ?\n- ¿Dónde? / ¿Adónde? : où ? / vers où ?\n- ¿Cuándo? : quand ?\n- ¿Cómo? : comment ?\n- ¿Por qué? : pourquoi ? (réponse : porque, parce que)\n- ¿Cuánto? / ¿Cuántos? : combien ?\n- ¿Cuál? : lequel, quel ?\n\nBien les identifier permet de savoir exactement quelle information chercher dans le texte.\n\n## Méthode pour « vrai ou faux »\n\nOn écrit « Verdadero » ou « Falso » puis on recopie entre guillemets la courte phrase du texte qui prouve la réponse. Sans justification, la réponse ne vaut presque rien.\n\n## Méthode pour l'expression écrite\n\n- Lis bien le sujet : à qui écris-tu, sur quoi, combien de lignes ?\n- Fais un petit plan au brouillon : introduction, deux ou trois idées, conclusion.\n- Utilise des phrases simples et correctes plutôt que des phrases longues et fausses.\n- Emploie des mots de liaison : primero (d'abord), luego (ensuite), además (de plus), pero (mais), porque (parce que), por eso (c'est pourquoi), por fin (enfin).\n- Relis en vérifiant les accords, les accents et les terminaisons des verbes.\n\n## Les erreurs fréquentes\n\n- Oublier les accents écrits : está (il est) n'est pas esta (cette) ; habló (il a parlé) n'est pas hablo (je parle).\n- Oublier les signes d'ouverture ¿ et ¡ : ¿Cómo estás? ¡Qué bonito!\n- Confondre ser et estar.\n- Calquer le français : « je suis 15 ans » se dit tengo quince años (avoir).\n- Écrire un mot français à la place d'un mot espagnol (faux amis) : embarazada veut dire « enceinte », pas « embarrassée » ; constipado signifie « enrhumé ».\n- Répondre en français alors qu'on demande une réponse en espagnol.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : consignes de l'épreuve, présent de l'indicatif, ser et estar.\n- Semaine 2 : vocabulaire de la famille et de l'école ; compréhension de textes courts.\n- Semaine 3 : gustar et verbes du même type, comparatifs et superlatifs.\n- Semaine 4 : vocabulaire de la ville, de la santé et de l'environnement.\n- Semaine 5 : prétérit (passé simple espagnol), réguliers et irréguliers.\n- Semaine 6 : futur et impératif ; expression écrite (lettre, description, récit).\n- Semaine 7 : sujets d'entraînement complets en temps limité.\n- Semaine 8 : révision des tableaux de conjugaison et du cahier d'erreurs.\n\nChaque jour, apprends dix mots nouveaux avec une phrase d'exemple, lis un petit texte à voix haute et conjugue deux verbes à tous les temps étudiés.\n\n## Exercices pratiques\n\nExercice 1 : Traduire les consignes : Contesta a las preguntas. Busca en el texto. Conjuga en futuro.\n\nExercice 2 : Ajouter les signes et accents manquants : Como te llamas? Que calor!\n\nExercice 3 : Répondre par une phrase complète : ¿Dónde vive Awa? (Elle vit à Ziguinchor.)\n\nExercice 4 : Corriger l'erreur : « Yo soy quince años. »\n\nExercice 5 : Texte : « Fatou se levanta a las seis. Después, va al colegio en autobús. » Vrai ou faux, justifier : Fatou va al colegio a pie.\n\nExercice 6 : Relier les idées avec un mot de liaison : Me gusta el colegio. Las clases son interesantes.\n\n## Corrigé\n\nExercice 1 : Réponds aux questions. Cherche dans le texte. Conjugue au futur.\n\nExercice 2 : ¿Cómo te llamas? ¡Qué calor!\n\nExercice 3 : Awa vive en Ziguinchor.\n\nExercice 4 : Yo tengo quince años.\n\nExercice 5 : Falso : « va al colegio en autobús ».\n\nExercice 6 : Me gusta el colegio porque las clases son interesantes."
+   },
+   {
+    "title": "Vocabulaire thématique et compréhension écrite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Grammaire 1 : ser et estar, présent, gustar, comparatifs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Grammaire 2 : prétérit, futur, impératif et expression écrite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive « veille d'examen » en espagnol",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bfem-arabe",
+  "level": "3e",
+  "subject": "Arabe (LV2)",
+  "module": null,
+  "title": "Arabe LV2 : réussir l'épreuve du BFEM",
+  "description": "Ce cours d'examen prépare l'épreuve d'arabe LV2 du BFEM : lecture et compréhension d'un texte, grammaire de base (pronoms, phrase nominale et phrase verbale, accompli et inaccompli, nombres, accords), vocabulaire thématique et expression écrite. Les explications sont en français, les exemples en arabe vocalisé avec translittération. Prérequis : savoir lire l'alphabet arabe et connaître les bases étudiées au collège.",
+  "sort": 109,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce que l'on attend de toi à l'épreuve d'arabe LV2 du BFEM.\n- Comprendre les consignes écrites en arabe.\n- Adopter une méthode pour chaque type d'exercice et éviter les erreurs fréquentes.\n- Organiser tes révisions sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nL'épreuve d'arabe LV2 s'appuie en général sur un texte court en arabe, souvent vocalisé, suivi de questions. On y trouve habituellement trois familles d'exercices : la compréhension du texte, des exercices de langue (grammaire, conjugaison, vocabulaire) et une petite production écrite. La durée, le coefficient et le barème dépendent des textes officiels en vigueur : renseigne-toi auprès de ton professeur.\n\n## Convention de translittération utilisée dans ce cours\n\nPour t'aider à lire, chaque exemple arabe est suivi d'une transcription en lettres latines :\n- ā, ī, ū : voyelles longues (alif, yāʾ, wāw) ;\n- ʿ : la lettre ʿayn (ع) ; ʾ : la hamza (ء) ;\n- ḥ (ح), ṣ (ص), ḍ (ض), ṭ (ط), ẓ (ظ) : consonnes emphatiques ou profondes ;\n- th (ث), dh (ذ), kh (خ), gh (غ), sh (ش).\n\n## Les consignes à connaître\n\n- اِقْرَأِ النَّصَّ (iqraʾi n-naṣṣa) : lis le texte.\n- أَجِبْ عَنِ الْأَسْئِلَةِ (ajib ʿani l-asʾilati) : réponds aux questions.\n- صَحِيحٌ أَمْ خَطَأٌ؟ (ṣaḥīḥun am khaṭaʾun?) : vrai ou faux ?\n- اِمْلَأِ الْفَرَاغَ (imlaʾi l-farāgha) : remplis le vide, complète.\n- ضَعْ خَطًّا تَحْتَ (ḍaʿ khaṭṭan taḥta) : souligne.\n- صَرِّفِ الْفِعْلَ (ṣarrifi l-fiʿla) : conjugue le verbe.\n- تَرْجِمْ إِلَى الْفَرَنْسِيَّةِ (tarjim ilā l-faransiyyati) : traduis en français.\n- اُكْتُبْ (uktub) : écris.\n\n## Méthode pour la compréhension\n\n- Lis le titre et les questions avant le texte : ils t'indiquent le thème.\n- Lis le texte une première fois en entier, sans t'arrêter sur les mots inconnus.\n- Repère les mots interrogatifs des questions : مَنْ (man, qui ?), مَا / مَاذَا (mā / mādhā, quoi ?), أَيْنَ (ayna, où ?), مَتَى (matā, quand ?), كَيْفَ (kayfa, comment ?), كَمْ (kam, combien ?), لِمَاذَا (limādhā, pourquoi ?), هَلْ (hal, est-ce que ?).\n- Cherche dans le texte la phrase qui contient la réponse et souligne-la.\n- Réponds par une phrase complète en reprenant les mots de la question.\n\nExemple. Question : أَيْنَ يَسْكُنُ عُمَرُ؟ (ayna yaskunu ʿUmaru? : où habite Omar ?). Réponse complète : يَسْكُنُ عُمَرُ فِي دَاكَار (yaskunu ʿUmaru fī Dākār : Omar habite à Dakar).\n\n## Méthode pour la production écrite\n\n- Lis bien le sujet : de quoi dois-tu parler, en combien de lignes ?\n- Prépare au brouillon une liste de mots et de phrases simples que tu maîtrises.\n- Écris des phrases courtes : une phrase nominale ou verbale correcte vaut mieux qu'une phrase longue et fausse.\n- Relie tes idées avec وَ (wa, et), ثُمَّ (thumma, puis), لَكِنَّ (lākinna, mais), لِأَنَّ (li-anna, parce que).\n- Relis : accords, points sur les lettres, tāʾ marbūṭa (ة), article.\n\n## Les erreurs fréquentes\n\n- Confondre des lettres proches : ح et ه, ع et ء, س et ص, ت et ط, د et ض, ز, ذ et ظ.\n- Oublier ou mal placer les points : ب ت ث ن ي ne se distinguent que par eux.\n- Confondre la tāʾ marbūṭa (ة) du féminin et le hāʾ (ه) : مَدْرَسَةٌ (madrasatun, école) mais كِتَابُهُ (kitābuhu, son livre).\n- Oublier l'accord en genre : on dit الْبِنْتُ صَغِيرَةٌ (al-bintu ṣaghīratun) et non الْبِنْتُ صَغِيرٌ.\n- Écrire le verbe au masculin avec un sujet féminin : ذَهَبَتْ فَاطِمَةُ (dhahabat Fāṭimatu).\n- Traduire mot à mot depuis le français.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : lecture, voyelles, signes (sukūn, shadda, tanwīn), article et lettres solaires.\n- Semaine 2 : pronoms personnels et suffixes possessifs ; démonstratifs.\n- Semaine 3 : phrase nominale, phrase verbale, négation, interrogation.\n- Semaine 4 : conjugaison à l'accompli et à l'inaccompli ; futur.\n- Semaine 5 : nombres et accords (adjectif, verbe, pluriel non humain).\n- Semaine 6 : vocabulaire : famille, école, ville, santé, environnement.\n- Semaine 7 : production écrite (se présenter, décrire, raconter) et sujets d'entraînement.\n- Semaine 8 : sujets complets en temps limité et relecture du cahier d'erreurs.\n\nChaque jour : lis à voix haute un petit texte vocalisé, apprends huit mots avec leur pluriel, conjugue un verbe aux deux formes.\n\n## Exercices pratiques\n\nExercice 1 : Traduire les consignes : أَجِبْ عَنِ الْأَسْئِلَةِ ; صَرِّفِ الْفِعْلَ ; اُكْتُبْ.\n\nExercice 2 : Donner le sens des interrogatifs : أَيْنَ ; مَتَى ; كَمْ ; لِمَاذَا.\n\nExercice 3 : Classer selon la dernière lettre (ة ou ه) : مَدْرَسَة ; بَيْتُهُ ; سَيَّارَة ; قَلَمُهُ.\n\nExercice 4 : Corriger : الْمُعَلِّمَةُ مُجْتَهِدٌ.\n\nExercice 5 : Répondre par une phrase complète : أَيْنَ تَسْكُنُ عَائِشَةُ؟ (Elle habite à Dakar.)\n\nExercice 6 : Citer quatre paires de lettres qu'il ne faut pas confondre.\n\n## Corrigé\n\nExercice 1 : Réponds aux questions ; conjugue le verbe ; écris.\n\nExercice 2 : أَيْنَ (ayna) : où ? ; مَتَى (matā) : quand ? ; كَمْ (kam) : combien ? ; لِمَاذَا (limādhā) : pourquoi ?\n\nExercice 3 : Avec ة (tāʾ marbūṭa, féminin) : مَدْرَسَة (madrasa, école), سَيَّارَة (sayyāra, voiture). Avec ه (pronom « son, sa ») : بَيْتُهُ (baytuhu, sa maison), قَلَمُهُ (qalamuhu, son stylo).\n\nExercice 4 : الْمُعَلِّمَةُ مُجْتَهِدَةٌ (al-muʿallimatu mujtahidatun : l'enseignante est travailleuse). L'adjectif s'accorde au féminin.\n\nExercice 5 : تَسْكُنُ عَائِشَةُ فِي دَاكَار (taskunu ʿĀʾishatu fī Dākār).\n\nExercice 6 : Par exemple : ح / ه ; ع / ء ; س / ص ; ت / ط ; د / ض ; ذ / ظ."
+   },
+   {
+    "title": "Lecture et compréhension d'un texte",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Grammaire : pronoms, phrase nominale et verbale, conjugaison",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Nombres, accords, vocabulaire thématique et expression écrite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive « veille d'examen » en arabe",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-gps-avance",
   "level": "Formation professionnelle",
   "subject": "Géolocalisation et télématique",
