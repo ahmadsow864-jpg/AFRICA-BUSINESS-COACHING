@@ -1,6 +1,779 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 19/21). À exécuter après seed.sql.
 
+-- Cours : Doctorat Gestion de projets : préparer l'examen de qualification doctorale
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'doc-projet', (select id from public.levels where name = 'Doctorat'), null, 'Gestion de projets', 'Doctorat Gestion de projets : préparer l''examen de qualification doctorale', 'Cours de préparation à l''examen de qualification doctorale (comprehensive exam) en gestion de projets : les grands courants théoriques du champ (approche rationnelle et planificatrice versus approches comportementales et agilité), les méthodes de recherche propres à la discipline (étude de cas longitudinale, recherche-action, enquêtes de maturité organisationnelle), et un entraînement complet à l''oral de soutenance devant un jury doctoral. Public : doctorants en gestion de projets préparant leur examen de qualification.', true, 802
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir son examen de qualification doctorale en gestion de projets', 'Objectifs de la leçon
+
+Cette première leçon pose le cadre de votre préparation à l''examen de qualification doctorale en gestion de projets. Vous allez comprendre la nature exacte de cette épreuve, ce qu''un jury doctoral attend réellement de vous, et comment organiser un plan de travail réaliste sur huit semaines. L''objectif n''est pas d''empiler des lectures, mais de construire une vision structurée et critique du champ de la gestion de projets, capable de résister aux questions d''un jury exigeant.
+
+La nature de l''épreuve
+
+L''examen de qualification doctorale (souvent appelé « comprehensive exam » dans la tradition anglo-saxonne, ou « examen de synthèse » dans certains programmes francophones) n''est pas un examen de connaissances factuelles. C''est une épreuve de maturité scientifique. Elle vise à vérifier trois choses : que vous maîtrisez l''état de l''art de votre discipline (les grands courants théoriques, leurs auteurs, leurs débats, leurs limites) ; que vous êtes capable de positionner un projet de recherche doctoral dans cette littérature, c''est-à-dire de dire précisément ce que votre thèse apporte de neuf ; et que vous savez argumenter à l''oral, sous la contradiction, devant un jury qui va chercher les failles de votre raisonnement.
+
+Concrètement, l''épreuve se déroule en général en deux temps. D''abord une production écrite : une note de synthèse ou un état de l''art sur un sous-champ de la gestion de projets (par exemple l''agilité, la gouvernance de projet, le risque), parfois accompagnée d''une note de positionnement de votre propre projet de thèse. Ensuite une soutenance orale devant un jury de deux à cinq enseignants-chercheurs, où vous présentez votre champ et votre projet pendant une quinzaine de minutes, puis répondez à des questions pendant quarante-cinq minutes à une heure. Les formats varient selon les établissements, mais cette structure (écrit de synthèse puis oral de défense) est très répandue dans les programmes doctoraux africains et francophones qui s''inspirent des standards internationaux.
+
+Ce que le jury évalue réellement
+
+Un jury doctoral ne cherche pas à vous piéger sur une date ou un nom d''auteur. Il évalue votre capacité à raisonner en chercheur. Cinq critères reviennent systématiquement, quel que soit le champ disciplinaire.
+
+Premièrement, la maîtrise cartographique du champ : savez-vous situer les grands courants les uns par rapport aux autres, qui pense quoi, pourquoi et depuis quand ? Deuxièmement, l''esprit critique : savez-vous montrer les limites et les critiques d''un courant, et pas seulement le résumer ? Troisièmement, la rigueur méthodologique : savez-vous expliquer comment la recherche se mène dans votre champ ? Quatrièmement, la capacité de positionnement : savez-vous dire précisément ce que votre thèse interroge et apporte ? Cinquièmement, la solidité face à la contradiction : savez-vous nuancer votre propos sans vous effondrer au premier désaccord ?
+
+Une erreur fréquente est de préparer l''épreuve comme un cours magistral à réciter. Le jury attend un dialogue de chercheur à chercheur, même si vous êtes encore doctorant. Mieux vaut connaître moins de courants mais les maîtriser en profondeur que de survoler dix courants sans pouvoir en discuter sérieusement aucun.
+
+Méthode de travail : fiches de lecture, cartographie, note de synthèse
+
+La préparation méthodique repose sur trois outils complémentaires que vous allez utiliser tout au long de ce cours.
+
+La fiche de lecture. Pour chaque texte ou auteur important, rédigez une fiche courte et standardisée : la question posée, la thèse défendue, les concepts clés, la méthode utilisée, les limites critiquées, et un lien possible avec votre projet de thèse. Une fiche utile tient sur une demi-page et doit vous permettre, six mois plus tard, de vous souvenir de l''essentiel sans relire le texte entier.
+
+La cartographie des courants. Un tableau qui place les grands courants théoriques les uns par rapport aux autres : présupposés, questions posées, oppositions ou complémentarités, auteurs fondateurs, critiques adressées. C''est l''outil que nous allons construire ensemble dans les leçons 2 et 3, pour deux grands débats structurants du champ.
+
+La note de synthèse. Un document de quelques pages qui résume, pour un sous-thème donné, l''état des connaissances : ce qu''on sait, ce qui fait débat, ce qui reste à explorer. C''est l''exercice le plus proche de ce que le jury attendra à l''écrit. Nous en verrons un exemple corrigé dans la cinquième leçon.
+
+Plan de travail sur huit semaines
+
+Une préparation sérieuse à l''examen de qualification s''étale idéalement sur deux mois, à raison de plusieurs heures par semaine. Voici une trame indicative, à adapter à votre calendrier et à l''avancement de votre propre projet de thèse.
+
+Semaines 1 et 2 : cartographie générale du champ. Vous repérez au moins quatre à cinq grands courants théoriques, leurs auteurs fondateurs et leurs idées principales, et vous commencez vos fiches de lecture.
+
+Semaines 3 et 4 : approfondissement des débats que vous jugez les plus pertinents pour votre thèse. C''est le moment de comparer les positions et de repérer les critiques croisées entre courants.
+
+Semaines 5 et 6 : les méthodes de recherche du champ (études de cas, enquêtes, recherche-action), et l''ébauche du protocole méthodologique de votre propre thèse.
+
+Semaine 7 : rédaction de votre note de synthèse écrite et de votre note de positionnement de thèse.
+
+Semaine 8 : simulation de soutenance, présentation orale de quinze minutes, anticipation des questions probables du jury, et si possible un oral d''entraînement devant des collègues. La cinquième vidéo de ce cours propose une simulation complète que vous pourrez utiliser comme répétition générale.
+
+Pourquoi la gestion de projets est un champ particulièrement riche pour cet exercice
+
+La gestion de projets est un champ de recherche relativement jeune en tant que discipline académique autonome, mais extrêmement actif. Elle emprunte à l''ingénierie, à la théorie des organisations, à la sociologie du travail et à la psychologie. Cette hybridité en fait un terrain fertile pour les débats théoriques : faut-il penser le projet comme un processus à planifier et contrôler, ou comme une réalité sociale complexe et émergente ? Comment mesurer son « succès » : par le respect du budget et des délais, ou par la valeur créée pour les parties prenantes ? Ces questions, creusées dans les leçons suivantes, sont directement mobilisables dans votre examen, quel que soit le sujet précis de votre thèse.
+
+## Exercices pratiques
+
+1. Renseignez-vous sur le format exact de l''examen de qualification doctorale dans votre propre établissement (durée de l''écrit, durée de l''oral, composition du jury) et comparez-le à la structure générale présentée dans cette leçon. Identifiez les points communs et les particularités locales.
+
+2. Dressez une première liste, même provisoire, de quatre à cinq grands courants théoriques de la gestion de projets que vous pensez devoir maîtriser. Justifiez en une phrase pourquoi chacun vous semble pertinent pour votre projet de thèse.
+
+3. Rédigez une fiche de lecture type (le gabarit, pas encore remplie) que vous utiliserez pour chaque texte important de votre préparation. Listez les six à huit rubriques qu''elle devra comporter.
+
+4. Construisez votre propre plan de travail sur huit semaines, en tenant compte de vos contraintes réelles (enseignement, terrain de thèse, vie personnelle). Identifiez la semaine la plus à risque de report et prévoyez une marge de sécurité.
+
+5. Expliquez en cinq à huit lignes, comme si vous répondiez à un membre du jury, pourquoi la gestion de projets constitue selon vous un champ de recherche à part entière, et non une simple boîte à outils managériale.
+
+## Corrigé
+
+1. Il n''existe pas de corrigé unique : chaque établissement a ses propres règles (certains organisent un seul oral sans écrit préalable, d''autres exigent un mémoire de synthèse de trente à soixante pages). L''essentiel est que vous ayez formellement vérifié, auprès de votre école doctorale ou de votre directeur de thèse, la durée exacte de chaque épreuve, les modalités de notation et la composition du jury, plutôt que de vous fier à des rumeurs entre doctorants.
+
+2. Une liste plausible, qui sera précisément développée dans les leçons 2 et 3 : (a) l''approche rationnelle et séquentielle de la planification de projet, héritée du génie industriel ; (b) les approches comportementales et l''agilité organisationnelle, centrées sur les personnes et la complexité ; (c) la gouvernance de projet et la question des parties prenantes ; (d) la gestion des risques et de l''incertitude en projet ; (e) la maturité organisationnelle en gestion de projet. Le choix final dépend de votre sujet de thèse : un projet sur les équipes agiles mettra l''accent sur (a) et (b), un projet sur la gouvernance publique de grands projets mettra l''accent sur (c).
+
+3. Un gabarit robuste comporte : référence complète du texte ; question de recherche posée ; thèse ou résultat principal ; concepts clés mobilisés (avec leur définition en une phrase) ; méthode de recherche utilisée le cas échéant ; limites reconnues par l''auteur ou relevées par la critique ultérieure ; courant théorique de rattachement ; lien possible avec votre propre projet de thèse.
+
+4. La correction ici est personnelle : vérifiez que votre plan respecte l''ordre logique (cartographie générale avant approfondissement, approfondissement avant rédaction, rédaction avant simulation orale) et qu''il prévoit au moins une semaine tampon avant l''oral réel.
+
+5. Une bonne réponse insiste sur trois points : la gestion de projets a développé un corpus théorique propre (cycle de vie, parties prenantes, gouvernance, agilité) qui dépasse la simple application d''outils ; elle fait l''objet de revues académiques dédiées et de débats théoriques vifs (par exemple sur la définition même du succès d''un projet) ; elle mobilise des méthodes de recherche spécifiques, en particulier l''étude de cas longitudinale et la recherche-action, adaptées à l''étude de phénomènes organisationnels complexes et temporellement bornés que sont les projets.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en gestion de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Débat théorique n°1 : l''approche rationnelle et planificatrice du projet', 'Objectifs de la leçon
+
+Cette leçon présente le premier grand courant structurant de la gestion de projets : l''approche rationnelle et planificatrice, souvent qualifiée de « hard skills » ou d''approche classique du cycle de vie de projet. Vous allez en comprendre les fondements, ses auteurs et jalons fondateurs, son évolution historique, et surtout ses limites, qui ont ouvert la voie aux approches comportementales étudiées dans la leçon suivante.
+
+Définition et présupposés de l''approche rationnelle
+
+L''approche rationnelle de la gestion de projets repose sur une idée simple : un projet est un système d''actions complexe mais fondamentalement maîtrisable, à condition de le découper, de le planifier et de le contrôler avec rigueur. Le projet y est pensé comme une séquence d''étapes logiques (le « cycle de vie du projet ») : initiation, planification, exécution, contrôle, clôture. À chaque étape correspondent des outils : la structure de découpage du projet (le WBS, qui décompose le projet en lots de travail), les diagrammes de réseau et le chemin critique pour ordonner les tâches dans le temps, les outils de budgétisation et de suivi des coûts.
+
+Le présupposé central est que l''incertitude d''un projet peut être réduite, pour l''essentiel, par un effort de planification suffisamment détaillé en amont. La réussite du projet se mesure alors par le respect de trois contraintes simultanées, souvent représentées comme un triangle : le coût, le délai et la qualité ou le périmètre technique. On parle du « triangle de fer » du projet : on ne peut, en théorie, améliorer l''un de ces sommets sans dégrader au moins un des deux autres.
+
+Jalons historiques et apports fondateurs
+
+Les racines de cette approche se trouvent dans l''ingénierie industrielle et militaire du vingtième siècle. Les grands programmes d''armement et les chantiers d''infrastructures du milieu du siècle ont été les premiers terrains où des méthodes de planification formalisée ont été développées à grande échelle, pour coordonner des milliers d''intervenants sur des délais contraints. C''est dans ce contexte qu''ont émergé les techniques de réseau comme la méthode du chemin critique et les techniques d''évaluation probabiliste de programme (PERT), qui permettent de calculer la durée minimale d''un projet et d''identifier les tâches dont le retard retarderait l''ensemble.
+
+Dans les décennies suivantes, ces techniques se sont diffusées vers l''ensemble des secteurs économiques, portées par la professionnalisation du métier de chef de projet : apparition d''associations professionnelles dédiées à partir des années 1960-1970, développement de corpus de bonnes pratiques standardisés, diffusion de certifications. Ce mouvement a consolidé l''approche rationnelle comme référentiel dominant, présenté comme un ensemble de processus standardisables, applicables à tout secteur à condition d''être exécutés avec discipline.
+
+Cette approche a aussi été nourrie par la recherche opérationnelle, qui a fourni l''appareil mathématique de l''ordonnancement de tâches et de l''analyse de risques probabilisée.
+
+Ce que cette approche a durablement apporté au champ
+
+Il serait injuste de réduire l''approche rationnelle à un courant dépassé. Elle a apporté des outils robustes qui restent utilisés quotidiennement, quelle que soit la sensibilité théorique du praticien : la décomposition structurée du travail, qui force à clarifier le périmètre d''un projet avant de s''y engager ; les outils de planification et d''ordonnancement, indispensables dès qu''un projet mobilise de nombreuses tâches interdépendantes ; la discipline budgétaire et le suivi des écarts, qui permettent de détecter tôt une dérive ; le vocabulaire commun (jalon, livrable, chemin critique, périmètre) qui facilite la communication entre acteurs. Sur le plan académique, elle a aussi installé la gestion de projet comme objet d''étude légitime, avec ses propres revues et formations universitaires.
+
+Limites et critiques de l''approche rationnelle
+
+Les critiques se sont accumulées à partir des années 1980-1990, à mesure que la recherche empirique montrait que les projets réels se comportaient rarement comme le prévoyait le modèle séquentiel.
+
+Première limite : l''hypothèse d''une planification exhaustive en amont se heurte à la réalité de nombreux projets à forte innovation (logiciels, recherche et développement), où les besoins évoluent en cours de route et où l''information nécessaire n''existe simplement pas au moment où il faudrait planifier. Planifier dans le détail un résultat encore incertain revient à construire un plan largement fictif.
+
+Deuxième limite : l''approche rationnelle traite le projet comme un système technique, en sous-estimant sa dimension humaine et politique. Un projet mobilise des acteurs aux intérêts divergents (maître d''ouvrage, équipe, utilisateurs, sous-traitants), dont les jeux de pouvoir et les résistances au changement influencent souvent davantage la trajectoire réelle du projet que la qualité du planning initial.
+
+Troisième limite : la focalisation sur le triangle coût-délai-qualité a été critiquée comme un indicateur de succès trop étroit. Un projet peut respecter son budget et son calendrier tout en étant un échec si le produit livré ne répond pas aux besoins réels des utilisateurs. C''est le débat sur la mesure du succès, approfondi en leçon 5, en regard de l''approche par la création de valeur.
+
+Quatrième limite, plus empirique : des études menées sur de grands projets (infrastructures, systèmes d''information) ont documenté des dépassements de coûts et de délais récurrents, suggérant que la planification rationnelle seule ne suffit pas à maîtriser les projets complexes. Ce constat a nourri des travaux sur les biais cognitifs des décideurs (sous-estimation systématique des coûts au moment de la décision) et sur les mécanismes politiques qui conduisent à lancer des projets dont le dépassement était prévisible.
+
+Pourquoi ce courant reste indispensable à connaître
+
+Malgré ces critiques, aucun chercheur sérieux ne propose d''abandonner purement et simplement les outils de l''approche rationnelle. Le débat contemporain n''est pas « planification contre absence de planification », mais : à quelles conditions la planification rationnelle reste-t-elle pertinente ? Cette question de contingence structure une bonne partie de la recherche actuelle, et fait le lien avec le courant comportemental et agile étudié dans la prochaine leçon.
+
+## Exercices pratiques
+
+1. Expliquez, en vos propres termes, pourquoi le triangle coût-délai-qualité est à la fois un outil utile et une simplification potentiellement trompeuse de ce qu''est la réussite d''un projet.
+
+2. Identifiez un type de projet pour lequel l''approche rationnelle et planificatrice vous semble particulièrement adaptée, et un type de projet pour lequel elle vous semble particulièrement mal adaptée. Justifiez chaque choix par au moins deux arguments.
+
+3. Un jury vous demande : « L''approche rationnelle de la gestion de projet est-elle un courant théorique, ou une simple collection d''outils techniques ? » Rédigez un plan de réponse en trois points.
+
+4. Expliquez le lien entre la professionnalisation du métier de chef de projet (associations professionnelles, certifications, corpus de bonnes pratiques) et la diffusion de l''approche rationnelle comme référentiel dominant du champ.
+
+5. En quoi les critiques adressées à l''approche rationnelle (dimension humaine négligée, biais cognitifs des décideurs, mesure étroite du succès) préparent-elles, selon vous, l''émergence d''un courant concurrent ? Formulez une hypothèse, sans encore connaître le contenu de la leçon suivante.
+
+6. Discutez l''affirmation suivante, qui pourrait être posée par un membre du jury : « Les dépassements de coûts et de délais récurrents observés sur les grands projets prouvent que l''approche rationnelle a échoué. » Nuancez cette affirmation.
+
+## Corrigé
+
+1. Le triangle coût-délai-qualité est utile car il rend visible les compromis inévitables de toute gestion de projet : on ne peut généralement pas tout optimiser à la fois. Il est trompeur s''il devient le seul critère de succès, car il ignore la satisfaction réelle des utilisateurs et la valeur effectivement créée après la livraison du projet.
+
+2. Un projet de construction d''infrastructure physique à périmètre stable (un pont, une route, un bâtiment standard) se prête bien à l''approche rationnelle, car les besoins sont connus à l''avance et la technique est maîtrisée. Un projet de développement d''un produit numérique innovant, où les besoins des utilisateurs sont découverts progressivement, s''y prête mal, car planifier dans le détail un résultat encore incertain produit un plan largement fictif, rapidement obsolète.
+
+3. Plan possible : (a) rappeler que l''approche s''appuie sur des outils techniques réels, mais que leur usage repose sur des présupposés théoriques explicites (projet maîtrisable par la planification, succès défini par le triangle coût-délai-qualité) ; (b) montrer que ces présupposés ont été théorisés et diffusés par une communauté professionnelle et académique, ce qui en fait un courant et non une boîte à outils isolée ; (c) conclure que c''est précisément parce que ce sont des présupposés théoriques qu''ils ont pu être questionnés par d''autres courants.
+
+4. La professionnalisation a joué un rôle d''institutionnalisation : en formant les chefs de projet à un référentiel commun, en certifiant leur maîtrise de ce référentiel et en diffusant des corpus de bonnes pratiques standardisés à travers les secteurs et les pays, les associations professionnelles ont contribué à faire de l''approche rationnelle la grammaire de référence du métier, bien au-delà de son origine initiale dans l''ingénierie et la défense.
+
+5. Une hypothèse plausible est que la négligence de la dimension humaine et politique du projet, documentée par la critique, a ouvert la voie à des courants qui replacent les comportements des acteurs, la communication, le leadership et l''adaptation au centre de l''analyse du projet, plutôt que les seuls outils de planification technique. C''est précisément l''objet de la leçon suivante.
+
+6. Il faut nuancer : l''existence de dépassements récurrents ne prouve pas à elle seule que la méthode de planification est fausse, elle peut aussi révéler des causes externes (pressions politiques pour sous-estimer les coûts, complexité intrinsèque de certains projets, changements de périmètre). La recherche sérieuse distingue les défaillances de méthode des défaillances de gouvernance ou des biais de décision, explications différentes mais complémentaires.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Débat théorique n°1 : l''approche rationnelle et planificatrice du projet');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Débat théorique n°2 : approches comportementales et agilité organisationnelle', 'Objectifs de la leçon
+
+Après avoir étudié l''approche rationnelle et planificatrice, cette leçon aborde le second grand courant structurant de la gestion de projets : les approches comportementales et l''agilité organisationnelle, souvent résumées par l''expression « soft skills ». Vous verrez en quoi ce courant s''est construit en tension avec le précédent, quelles idées et quels mouvements l''ont porté, et quelles limites lui sont à leur tour adressées.
+
+Définition et présupposés des approches comportementales
+
+Les approches comportementales partent d''un constat inverse de celui de l''approche rationnelle : un projet n''est pas d''abord un système technique à planifier, mais une réalité sociale faite de personnes, de relations, de communication et d''incertitude irréductible. La performance d''un projet dépendrait donc moins de la qualité du plan initial que de la capacité de l''équipe à collaborer, à communiquer et à s''adapter à des informations nouvelles.
+
+Ce courant regroupe plusieurs familles de travaux complémentaires. D''une part, les recherches sur le leadership de projet, la motivation des équipes, la gestion des conflits et la confiance entre les membres, qui s''inscrivent dans la tradition du comportement organisationnel appliqué au contexte spécifique du projet. D''autre part, et de façon plus récente, le mouvement de l''agilité, né dans le développement de logiciels à la fin des années 1990, qui propose une remise en cause frontale du modèle séquentiel de planification détaillée.
+
+L''agilité et la complexité comme réponse à l''incertitude
+
+Le mouvement agile part d''un diagnostic simple : dans de nombreux projets, en particulier à forte composante d''innovation ou de développement logiciel, il est illusoire de vouloir figer un périmètre détaillé en début de projet, parce que les besoins réels ne sont découverts que progressivement, au contact des utilisateurs. Plutôt que de planifier exhaustivement puis d''exécuter, l''agilité propose de travailler par cycles courts et itératifs : on livre rapidement une version partielle mais fonctionnelle du produit, on recueille un retour, on ajuste, et on recommence. La valeur n''est plus définie une fois pour toutes en amont, mais coconstruite progressivement avec les parties prenantes.
+
+Ce renversement méthodologique s''accompagne d''un renversement des valeurs : la collaboration avec le client plutôt que la négociation contractuelle rigide d''un périmètre figé ; l''adaptation au changement plutôt que le suivi strict d''un plan ; les individus et leurs interactions plutôt que les seuls processus et outils. Ces valeurs, formalisées au début des années 2000 par un collectif de praticiens du développement logiciel, ont ensuite débordé largement le secteur informatique pour infuser la gestion de projets dans de nombreux autres secteurs.
+
+Au plan théorique, ce courant s''appuie sur une lecture des organisations comme systèmes adaptatifs complexes : un projet y est vu non comme une machine qu''on peut entièrement spécifier à l''avance, mais comme un système vivant, où l''ordre émerge de l''interaction entre les acteurs plutôt que d''être imposé par un plan central. Cette lecture rejoint des travaux plus anciens en théorie des organisations sur l''improvisation organisée et la capacité des équipes à s''auto-organiser face à l''imprévu.
+
+Les « soft skills » comme facteur de performance
+
+Un pan important de la recherche comportementale s''est attaché à documenter empiriquement le rôle des compétences non techniques dans la réussite des projets : le style de leadership du chef de projet, la qualité de la communication, la gestion constructive des conflits, la confiance mutuelle entre membres de l''équipe. Plusieurs travaux ont montré, à travers études de cas et enquêtes, que ces dimensions expliquent une part significative de la réussite perçue des projets, parfois davantage que la sophistication des outils de planification utilisés.
+
+Cette ligne de recherche a aussi nourri une réflexion sur la professionnalisation du métier de chef de projet au-delà de la seule maîtrise technique : savoir animer une équipe transversale et temporaire, négocier avec des parties prenantes aux intérêts divergents, maintenir la motivation d''une équipe en conditions d''incertitude.
+
+Tensions et complémentarités avec l''approche rationnelle
+
+Le rapport entre ce courant et l''approche rationnelle n''est pas une simple succession chronologique où l''un remplacerait l''autre. C''est un rapport de tension féconde, qui structure une bonne partie du débat théorique contemporain. D''un côté, les défenseurs de l''agilité soulignent que l''approche rationnelle échoue sur les projets complexes et incertains, et que vouloir tout planifier à l''avance y produit une illusion de maîtrise. De l''autre, les défenseurs d''une approche plus mesurée rappellent que l''agilité suppose des conditions précises (petites équipes, possibilité réelle d''itérer, client disponible pour donner des retours fréquents), non réunies dans tous les contextes, par exemple pour de grands projets d''infrastructure physique où l''on ne peut pas « livrer un pont à moitié ».
+
+De ce débat est né un courant de recherche sur la contingence méthodologique : plutôt que d''opposer frontalement planification et agilité, on cherche à identifier les facteurs de contexte (taille du projet, degré d''incertitude, dispersion de l''équipe, secteur) qui rendent l''une ou l''autre approche plus pertinente, ou qui justifient des approches hybrides.
+
+Limites et critiques des approches comportementales et agiles
+
+Ce courant a lui aussi fait l''objet de critiques sérieuses. Certains chercheurs observent que les discours sur l''agilité ont parfois été adoptés de façon superficielle (on affiche un vocabulaire agile sans changer réellement les pratiques de gouvernance), ce qui produit un écart entre discours managérial et pratiques effectives. D''autres soulignent que la littérature sur les soft skills reste faiblement opérationnalisée : il est plus difficile de mesurer rigoureusement « la qualité du leadership » que « le respect d''un délai ». Enfin, l''application de l''agilité à des contextes très différents du développement logiciel d''origine reste un sujet de débat ouvert.
+
+## Exercices pratiques
+
+1. Expliquez en quoi le mouvement agile constitue une remise en cause, au moins partielle, des présupposés de l''approche rationnelle étudiée dans la leçon précédente.
+
+2. Identifiez trois conditions de contexte qui rendent, selon la littérature, une approche agile particulièrement pertinente, et discutez un type de projet où ces conditions ne sont pas réunies.
+
+3. Un jury vous demande : « Diriez-vous que l''agilité a remplacé l''approche rationnelle en gestion de projets, ou qu''elle l''a complétée ? » Construisez un plan de réponse nuancé en trois temps.
+
+4. En quoi la critique de « l''agilité de façade » (adoption superficielle du vocabulaire agile sans changement réel des pratiques) illustre-t-elle une difficulté plus générale de la recherche en gestion, à savoir distinguer le discours managérial de la pratique effective ?
+
+5. Comparez la manière dont l''approche rationnelle et l''approche comportementale/agile définissent chacune la notion de « risque » dans un projet. Quelles différences voyez-vous ?
+
+6. Rédigez un court paragraphe (six à dix lignes) présentant, comme si vous en faisiez la synthèse pour un jury, le rapport de tension et de complémentarité entre les deux courants étudiés dans les leçons 2 et 3.
+
+## Corrigé
+
+1. L''approche rationnelle suppose qu''un projet peut être spécifié et planifié de façon exhaustive en amont, et que l''essentiel de la performance tient à la qualité de cette planification initiale. L''agilité remet en cause ce présupposé pour les projets à forte incertitude : elle affirme que les besoins réels ne peuvent être connus qu''au fil de l''eau, et propose donc de remplacer la planification exhaustive initiale par des cycles courts d''itération, de retour d''expérience et d''ajustement.
+
+2. Trois conditions souvent citées : une équipe de taille réduite pouvant collaborer étroitement ; la possibilité de découper le produit en incréments livrables de façon autonome ; la disponibilité d''un client ou d''utilisateurs capables de donner des retours fréquents et informés. Un grand projet d''infrastructure physique (un barrage, une autoroute) réunit mal ces conditions : l''équipe est vaste et dispersée, l''ouvrage n''est pas véritablement livrable « par morceaux » utilisables séparément, et les utilisateurs finaux ne peuvent pas tester un incrément partiel de l''ouvrage avant son achèvement.
+
+3. Plan possible : (a) rappeler que, historiquement, l''agilité s''est présentée comme une alternative, voire une critique frontale, du modèle séquentiel de planification ; (b) montrer que la recherche contemporaine, en particulier les travaux sur la contingence méthodologique, tend plutôt à montrer une complémentarité selon le contexte (incertitude, taille, secteur), avec des approches hybrides combinant éléments de planification et cycles itératifs ; (c) conclure que la question pertinente pour un chercheur n''est donc pas « laquelle des deux approches est la bonne », mais « dans quelles conditions chaque approche, ou quelle combinaison des deux, est-elle la plus adaptée ».
+
+4. Cette critique illustre une difficulté méthodologique générale en sciences de gestion : les organisations adoptent souvent le vocabulaire de nouvelles pratiques managériales (ici l''agilité) sans nécessairement transformer en profondeur leurs modes de gouvernance, leurs structures de pouvoir ou leurs routines effectives. Un chercheur sérieux doit donc interroger les pratiques réelles observées sur le terrain, et non se fier seulement au discours ou aux labels utilisés par les organisations qu''il étudie.
+
+5. L''approche rationnelle tend à définir le risque comme un événement identifiable et probabilisable, que l''on peut cartographier en amont et traiter par des plans de mitigation spécifiques (registre des risques, plans de contingence). L''approche comportementale et agile tend à voir l''incertitude comme plus fondamentale et moins réductible à une liste de risques identifiés à l''avance : elle mise davantage sur la capacité d''adaptation continue de l''équipe et sur des cycles courts qui permettent de détecter et de corriger les problèmes au fur et à mesure, plutôt que sur une anticipation exhaustive initiale.
+
+6. Exemple de synthèse : l''approche rationnelle et l''approche comportementale et agile ne s''opposent pas de façon binaire ; elles répondent à des contextes de projet différents et mettent l''accent sur des leviers de performance différents, la planification structurée d''un côté, l''adaptation humaine et itérative de l''autre. La recherche contemporaine s''intéresse moins à départager les deux courants qu''à comprendre dans quelles conditions de contexte chacun est pertinent, et comment les combiner dans des approches hybrides adaptées à la nature réelle de chaque projet.', 'texte', 45, false, 30
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Débat théorique n°2 : approches comportementales et agilité organisationnelle');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les méthodes de recherche en gestion de projets', 'Objectifs de la leçon
+
+Après avoir étudié deux grands courants théoriques de la gestion de projets, cette leçon se concentre sur les méthodes de recherche propres à ce champ. Vous allez découvrir trois grandes familles de méthodes (quantitatives, qualitatives, mixtes), leurs usages respectifs, et un exemple complet de protocole de recherche appliqué à un contexte sénégalais fictif, que vous pourrez adapter à votre propre projet de thèse.
+
+Pourquoi la méthodologie de recherche est un enjeu central en gestion de projets
+
+La gestion de projets étudie des phénomènes temporellement bornés, socialement complexes et souvent uniques dans leurs détails. Cette combinaison pose un défi méthodologique : comment produire des connaissances généralisables à partir de phénomènes aussi singuliers ? C''est pour répondre à ce défi que le champ a développé, ou emprunté à des disciplines voisines, un éventail de méthodes que tout doctorant doit savoir situer et discuter.
+
+Les méthodes quantitatives
+
+Les méthodes quantitatives reposent le plus souvent sur des enquêtes par questionnaire menées auprès de larges échantillons de chefs de projet, suivies d''analyses statistiques. Elles permettent de tester des hypothèses sur les relations entre variables : par exemple entre le style de leadership et la performance perçue du projet, ou entre la maturité organisationnelle (voir plus loin) et le taux de réussite des projets.
+
+L''atout principal des méthodes quantitatives est leur capacité à produire des résultats généralisables, à condition d''un échantillon représentatif et de taille adéquate. Leur limite est qu''elles peinent à restituer la richesse contextuelle et processuelle d''un projet réel : un questionnaire capture un instantané de perceptions déclarées, mais explique mal pourquoi et comment un projet a dérivé ou réussi.
+
+Les méthodes qualitatives : l''étude de cas longitudinale
+
+La méthode qualitative la plus caractéristique du champ est l''étude de cas longitudinale. Elle consiste à suivre un ou plusieurs projets réels sur la durée, souvent depuis leur lancement jusqu''à leur clôture, en combinant entretiens répétés, observation de réunions de pilotage et analyse de documents internes.
+
+L''intérêt de cette méthode est qu''elle permet de saisir la dynamique temporelle du projet : comment une décision prise à une étape affecte les étapes suivantes, comment un projet peut dériver progressivement sans qu''aucun événement isolé ne l''explique à lui seul. Elle est particulièrement adaptée pour étudier les phénomènes du courant comportemental et agile, mais aussi pour documenter les dérives de coûts et de délais étudiées par le courant rationnel.
+
+Sa principale limite est la difficulté de généraliser ses résultats au-delà du ou des cas étudiés. La rigueur méthodologique exige alors une explicitation précise des critères de sélection des cas, une triangulation systématique des sources, et une discussion honnête des limites de transférabilité.
+
+La recherche-action
+
+La recherche-action est une autre méthode qualitative très présente en gestion de projets, en particulier chez les chercheurs ayant une pratique professionnelle du champ. Elle se distingue de l''étude de cas par la posture du chercheur : plutôt que d''observer de l''extérieur, il intervient directement dans le projet étudié (comme consultant ou facilitateur), tout en documentant systématiquement cette intervention et ses effets.
+
+Cette posture permet d''étudier des phénomènes difficiles à observer de l''extérieur (résistances au changement, dynamiques de pouvoir), et de produire une connaissance directement utile aux praticiens. Sa difficulté centrale est de maintenir une distance critique suffisante malgré l''implication du chercheur, qui doit documenter ses propres interventions avec la même rigueur qu''un phénomène observé de l''extérieur.
+
+Les enquêtes de maturité organisationnelle en gestion de projet
+
+Une troisième famille de méthodes, à la frontière du quantitatif et du qualitatif, concerne les enquêtes sur la maturité organisationnelle en gestion de projet. L''idée repose sur un présupposé : les organisations ne sont pas toutes au même niveau de structuration de leurs pratiques, et ce niveau influencerait la performance globale de leur portefeuille de projets. Les chercheurs mobilisent des grilles d''évaluation (processus formalisés, outils communs, soutien de la direction), administrées auprès d''organisations et souvent complétées par des entretiens.
+
+Cette méthode permet de comparer des organisations entre elles, mais elle est critiquée pour son présupposé implicite qu''une maturité plus élevée serait toujours souhaitable, ce qui entre en tension avec les enseignements du courant agile sur l''intérêt de structures plus légères dans certains contextes.
+
+Les méthodes mixtes
+
+Face aux limites respectives des approches quantitatives et qualitatives, une part croissante de la recherche combine les deux dans des designs mixtes : une enquête quantitative à grande échelle pour identifier des régularités statistiques, suivie d''études de cas qualitatives approfondies sur un sous-ensemble de situations pour comprendre les mécanismes. Cette combinaison permet de bénéficier à la fois de la généralisabilité du quantitatif et de la richesse explicative du qualitatif, au prix d''une complexité accrue.
+
+Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
+
+Pour illustrer concrètement ces choix, prenons un protocole de recherche fictif, construit pour les besoins de cette leçon. Une doctorante souhaite étudier : « Comment les équipes de projet des petites et moyennes entreprises technologiques dakaroises s''approprient-elles des pratiques agiles importées, et quels facteurs organisationnels favorisent ou freinent cette appropriation ? »
+
+Un protocole mixte en trois temps. Premier temps, une enquête quantitative exploratoire auprès de chefs de projet d''entreprises technologiques de la région de Dakar, mesurant le degré déclaré d''adoption de pratiques agiles et ses corrélations avec la taille de l''entreprise, l''ancienneté de l''équipe ou la formation préalable. Deuxième temps, la sélection de trois à quatre études de cas longitudinales contrastées (adoption réussie, superficielle, abandonnée), suivies sur plusieurs mois par entretiens répétés, observation de réunions de pilotage et analyse de documents, pour comprendre les mécanismes d''appropriation ou de résistance. Troisième temps, une synthèse croisant résultats quantitatifs et qualitatifs, construisant une typologie des modes d''appropriation.
+
+Ce protocole fictif illustre des principes transférables à de nombreux sujets de thèse : l''articulation entre exploration à large échelle et explication en profondeur ; l''attention au contexte local, dont les contraintes diffèrent de celles des grandes entreprises occidentales étudiées dans la littérature fondatrice sur l''agilité ; et la nécessité de justifier explicitement pourquoi le protocole choisi convient à votre question précise, plutôt que de choisir une méthode par habitude.
+
+## Exercices pratiques
+
+1. Pour un sujet de thèse que vous envisagez (ou un sujet fictif proche de votre champ), identifiez si une approche quantitative, qualitative ou mixte serait la plus pertinente, et justifiez votre choix en trois arguments.
+
+2. Expliquez la différence méthodologique centrale entre l''étude de cas longitudinale et la recherche-action, en particulier sur la posture du chercheur vis-à-vis du terrain étudié.
+
+3. Un jury vous demande : « Quelle est la principale limite de l''étude de cas longitudinale, et comment peut-on l''atténuer sans y renoncer ? » Rédigez une réponse structurée.
+
+4. Discutez la critique adressée aux enquêtes de maturité organisationnelle, selon laquelle elles présupposeraient qu''une structuration plus poussée des processus de gestion de projet serait toujours préférable. Cette critique vous semble-t-elle fondée ?
+
+5. En reprenant l''exemple de protocole sénégalais fictif présenté dans cette leçon, proposez une variante : que changerait votre protocole si la question de recherche portait, non plus sur les petites et moyennes entreprises technologiques, mais sur de grands projets publics d''infrastructure au Sénégal ?
+
+6. Pourquoi la combinaison de méthodes quantitatives et qualitatives (méthodes mixtes) est-elle particulièrement adaptée à l''étude des phénomènes complexes et situés que sont les projets ?
+
+## Corrigé
+
+1. La réponse est nécessairement personnelle, mais une bonne argumentation doit mobiliser trois types de critères : la nature de la question de recherche (explicative/mécanistique, plutôt qualitative, ou relationnelle/généralisable, plutôt quantitative) ; l''accès au terrain (un accès limité à quelques organisations oriente vers l''étude de cas, un accès à un grand nombre de répondants rend l''enquête quantitative possible) ; l''état de la littérature existante (un champ encore peu documenté empiriquement justifie une approche exploratoire qualitative, un champ où des hypothèses sont déjà bien formulées justifie un test quantitatif).
+
+2. Dans l''étude de cas longitudinale, le chercheur observe et documente un projet de l''extérieur, sans intervenir sur son déroulement. Dans la recherche-action, le chercheur intervient directement dans le projet (comme consultant, facilitateur ou accompagnateur), et documente à la fois le déroulement du projet et les effets de sa propre intervention, ce qui pose un enjeu spécifique de distance critique et de réflexivité sur son propre rôle.
+
+3. La principale limite est la faible généralisabilité des résultats au-delà du ou des cas étudiés. On peut l''atténuer, sans y renoncer, par une sélection raisonnée des cas (contrastés, pour couvrir une diversité de situations), une triangulation rigoureuse des sources, et une discussion honnête des conditions de transférabilité.
+
+4. La critique est partiellement fondée : les grilles de maturité organisationnelle ont souvent été conçues dans une logique de standardisation des processus, proche de l''approche rationnelle de la gestion de projet, et peuvent sous-estimer la valeur de structures plus légères et adaptatives mises en avant par le courant agile. Une réponse nuancée consisterait à dire que la notion de maturité reste utile si elle est enrichie pour inclure, parmi les critères de maturité, la capacité d''une organisation à adapter son niveau de formalisation au contexte de chaque projet, plutôt que de viser uniformément « plus de processus ».
+
+5. Pour de grands projets publics d''infrastructure, l''enquête quantitative porterait sur un nombre plus restreint de projets, rendant une approche essentiellement qualitative plus adaptée dès le départ ; les études de cas devraient intégrer davantage d''acteurs institutionnels (autorités publiques, bailleurs), avec une attention accrue aux dynamiques de gouvernance publique, moins présentes dans l''exemple initial.
+
+6. Parce que les projets combinent des régularités observables à grande échelle (types de pratiques adoptées, facteurs de contexte associés statistiquement à la réussite) et des mécanismes fins, situés et souvent non linéaires (comment, concrètement, une équipe s''approprie ou résiste à une pratique nouvelle), que seule une approche qualitative approfondie permet de restituer. Les méthodes mixtes permettent de documenter les deux niveaux dans une même recherche, en articulant explicitement leurs résultats respectifs plutôt qu''en les juxtaposant.', 'texte', 45, false, 40
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en gestion de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Épreuve type d''examen de qualification : mesurer le succès d''un projet', 'Objectifs de la leçon
+
+Cette cinquième leçon propose un exercice complet de type « épreuve d''examen de qualification » : une question de synthèse typique, non officielle mais représentative du genre d''épreuve rencontrée dans les programmes doctoraux, suivie d''un plan de réponse détaillé et corrigé. Cette question mobilise volontairement les deux courants étudiés dans les leçons 2 et 3, ainsi qu''une méthode de recherche étudiée dans la leçon 4, pour vous montrer comment construire une réponse de niveau doctoral, structurée et critique.
+
+La question type
+
+Voici l''énoncé, construit à des fins pédagogiques pour ce cours, et représentatif du type de question qu''un jury pourrait poser à l''écrit comme à l''oral : « Dans quelle mesure le débat entre l''approche rationnelle et planificatrice de la gestion de projet et les approches comportementales et agiles reflète-t-il, plus largement, deux conceptions concurrentes de la mesure du succès d''un projet ? Vous illustrerez votre propos en indiquant comment une recherche empirique pourrait être conçue pour étudier cette question dans un contexte organisationnel précis. »
+
+Cette question est typique de l''examen de qualification car elle ne demande pas de restituer un cours, mais de construire un raisonnement original en reliant plusieurs éléments de littérature, et de montrer que vous savez traduire un débat théorique en question de recherche empirique.
+
+Méthode pour construire le plan de réponse
+
+Avant de rédiger un plan de réponse, il faut décortiquer la question elle-même. Trois opérations indispensables. Premièrement, repérer les concepts clés mobilisés : ici, « approche rationnelle », « approches comportementales et agiles », « mesure du succès ». Deuxièmement, repérer la relation logique demandée : la question demande de relier le débat théorique à un débat plus large sur le succès, ce qui suggère un plan en deux mouvements. Troisièmement, repérer ce que la question demande en plus de la théorie : ici, un protocole de recherche empirique, donc des connaissances méthodologiques.
+
+Un plan de niveau doctoral doit éviter deux écueils : le plan purement descriptif, qui résume les deux courants sans répondre à la question posée ; et le plan qui oublie la dimension méthodologique explicitement demandée.
+
+Plan de réponse détaillé
+
+Introduction. On rappelle que l''examen de qualification valorise une introduction qui pose clairement le problème, annonce le plan, et montre d''emblée que vous avez compris l''articulation entre les deux volets de la question (théorique et méthodologique). Par exemple : « Le débat entre l''approche rationnelle et les approches comportementales et agiles de la gestion de projet n''est pas qu''un débat sur les méthodes de pilotage : il reflète deux définitions concurrentes du succès d''un projet, l''une centrée sur le respect de contraintes contractuelles, l''autre sur la création de valeur pour l''ensemble des parties prenantes. Nous montrerons d''abord ce lien conceptuel, avant de proposer un protocole de recherche permettant de l''étudier empiriquement dans un contexte organisationnel donné. »
+
+Première partie : le lien entre les deux courants et deux conceptions du succès. L''approche rationnelle, en définissant le succès par le triangle coût-délai-qualité, privilégie une vision du projet comme engagement contractuel à honorer : le succès se mesure par la conformité du résultat livré aux contraintes initiales. À l''inverse, les approches comportementales et agiles, en insistant sur l''adaptation continue aux besoins réels des utilisateurs, tendent à définir le succès de façon plus large : non plus la conformité à un plan initial, mais la création effective de valeur perçue par les parties prenantes, même si le résultat diffère du plan de départ. On peut mobiliser ici la distinction, bien documentée dans la littérature du champ, entre le « succès de la gestion du projet » (sens étroit du triangle) et le « succès du projet » (sens large de la valeur et de la satisfaction des parties prenantes sur le moyen et long terme) : ces deux dimensions peuvent diverger, un projet pouvant être un succès de gestion tout en étant un échec de valeur, et inversement.
+
+Deuxième partie : traduire ce débat en protocole de recherche empirique, en reprenant les enseignements de la leçon 4. Par exemple une étude de cas longitudinale menée sur deux ou trois projets d''une même organisation, suivis depuis leur lancement jusqu''à un moment postérieur à leur clôture, afin de documenter à la fois les indicateurs classiques de succès de gestion (budget, délais, périmètre) et des indicateurs de succès de valeur recueillis plus tard (usage effectif, satisfaction des utilisateurs, effets non anticipés). L''étude de cas longitudinale est particulièrement adaptée car elle seule permet d''observer dans la durée l''éventuel écart entre un succès de gestion mesurable rapidement et un succès de valeur qui ne s''évalue que plus tard. On peut enrichir ce protocole d''un volet quantitatif complémentaire, illustrant la pertinence d''un design mixte.
+
+Conclusion. Ce débat sur la mesure du succès n''oppose pas simplement deux écoles théoriques, mais révèle un enjeu pratique majeur : les instances de gouvernance d''un projet évaluent souvent sa performance à la clôture, avec des indicateurs proches du triangle coût-délai-qualité, alors que la valeur réelle créée ou détruite ne se révèle parfois que bien plus tard. En guise d''ouverture, cette tension nourrit des travaux contemporains sur l''alignement, ou le désalignement, entre critères d''évaluation à court terme et effets de long terme sur les parties prenantes.
+
+Ce qu''un jury valoriserait dans cette réponse
+
+Un jury appréciant cette réponse noterait : la capacité à relier explicitement les deux courants à travers le prisme de la question posée ; la mobilisation précise de la distinction entre succès de gestion et succès de valeur, qui montre une connaissance fine du débat et non une opposition caricaturale ; la capacité à proposer un protocole concret et justifié ; et une conclusion qui ouvre vers un enjeu plus large sans digression.
+
+À l''inverse, un jury pénaliserait une réponse qui résumerait successivement les deux courants sans établir le lien demandé, ou qui développerait longuement la théorie en oubliant la demande explicite de protocole.
+
+## Exercices pratiques
+
+1. Reformulez, en une phrase, la thèse centrale que défend le plan de réponse proposé dans cette leçon.
+
+2. Identifiez, dans le plan détaillé, le moment précis où l''exigence méthodologique de la question (proposer un protocole de recherche) est traitée, et évaluez si cela vous semble suffisamment développé pour un oral de quinze minutes.
+
+3. Imaginez une question alternative, construite sur le même modèle, qui relierait cette fois le débat entre approche rationnelle et approche agile à la question de la gestion des risques en projet plutôt qu''à la mesure du succès. Esquissez un plan en trois points.
+
+4. Un membre du jury vous objecte : « Votre distinction entre succès de gestion et succès de valeur n''est-elle pas simplement une reformulation du triangle coût-délai-qualité ? » Préparez une réponse qui clarifie la différence.
+
+5. Rédigez vous-même une introduction alternative (cinq à sept lignes) pour la question type de cette leçon, différente de celle proposée, mais tout aussi recevable sur le plan de la méthode.
+
+6. En vous inspirant du plan de cette leçon, construisez l''ébauche d''un plan de réponse pour une question qui porterait sur votre propre sujet de thèse, en veillant à mobiliser à la fois un débat théorique et une proposition méthodologique.
+
+## Corrigé
+
+1. Thèse centrale : le débat entre approche rationnelle et approches comportementales et agiles de la gestion de projet n''est pas qu''une question d''outils ou de méthodes de pilotage, mais reflète deux conceptions différentes de ce qu''est le succès d''un projet, l''une centrée sur la conformité à des contraintes initiales, l''autre sur la création de valeur réelle et durable pour les parties prenantes.
+
+2. L''exigence méthodologique est traitée dans la deuxième partie du plan, où un protocole d''étude de cas longitudinale, éventuellement complété d''un volet quantitatif, est proposé et justifié. Pour un oral de quinze minutes, ce développement devrait être resserré à l''essentiel (le choix de la méthode et sa justification en deux ou trois phrases), le détail complet étant réservé aux réponses aux questions du jury si celui-ci demande des précisions.
+
+3. Plan possible : (a) montrer que l''approche rationnelle traite le risque comme un ensemble d''événements identifiables et probabilisables, gérés par anticipation (registres de risques, plans de mitigation) ; (b) montrer que l''approche agile traite l''incertitude comme plus fondamentale, gérée non par anticipation exhaustive mais par des cycles courts permettant de détecter et corriger rapidement les problèmes ; (c) proposer un protocole de recherche, par exemple une étude de cas comparant la gestion effective des aléas dans un projet piloté de façon classique et un projet piloté de façon agile, pour documenter empiriquement comment chaque approche traite réellement l''incertitude en pratique.
+
+4. Une bonne réponse distingue clairement les deux notions : le triangle coût-délai-qualité est un ensemble de critères mesurables à la clôture formelle du projet, par rapport à des engagements initiaux. La distinction entre succès de gestion et succès de valeur ajoute une dimension temporelle et relationnelle : le succès de valeur s''évalue après la clôture du projet, dans l''usage réel, et porte sur la satisfaction et les bénéfices perçus par l''ensemble des parties prenantes, y compris des bénéfices non anticipés dans les spécifications initiales. Le triangle coût-délai-qualité est donc un sous-ensemble, à court terme, d''une évaluation plus large du succès.
+
+5. Exemple d''introduction alternative recevable : « Si l''on résume souvent l''opposition entre gestion de projet classique et agilité à une question de méthode (planifier en amont ou s''adapter en continu), cette opposition recouvre en réalité un désaccord plus profond sur ce que signifie réussir un projet. Nous montrerons que ce désaccord théorique peut être étudié empiriquement, à condition de choisir une méthode de recherche capable de suivre un projet au-delà de sa seule clôture formelle. »
+
+6. L''ébauche doit, comme le modèle de cette leçon, comporter au moins trois éléments : un lien explicite entre un débat théorique du champ et la question posée (pas seulement une description séparée de chaque courant) ; une proposition méthodologique concrète et justifiée, cohérente avec la leçon 4 ; et une conclusion qui ouvre vers un enjeu pratique ou théorique plus large, en lien si possible avec votre propre projet doctoral.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification : mesurer le succès d''un projet');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : L''approche rationnelle et planificatrice de la gestion de projet', '## Fiche du cours vidéo
+
+Titre : L''approche rationnelle et planificatrice de la gestion de projet, fondements, jalons et critiques.
+Durée : 1h30.
+Objectifs : approfondir, en mode cours filmé, le premier grand courant théorique de la gestion de projets vu en leçon 2, savoir le présenter à l''oral devant un jury, et être capable de défendre ses apports tout en reconnaissant ses limites.
+Matériel conseillé : tableau ou diaporama avec le schéma du triangle coût-délai-qualité, un exemple de structure de découpage de projet (WBS), une frise chronologique des jalons historiques.
+Prérequis : avoir lu la leçon 2 de ce cours (texte).
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et mise en contexte
+
+Bonjour à toutes et à tous. Dans cette séance, nous allons approfondir le premier des deux grands courants théoriques que vous devez maîtriser pour votre examen de qualification en gestion de projets : l''approche rationnelle et planificatrice, que l''on appelle parfois l''approche classique du cycle de vie, ou encore l''approche des « hard skills » par opposition aux compétences comportementales que nous verrons dans la prochaine vidéo.
+
+L''objectif de cette heure trente n''est pas de vous refaire un cours magistral que vous avez déjà lu dans la leçon correspondante, mais de vous entraîner à en parler comme un chercheur le ferait devant un jury : avec précision, avec esprit critique, et en étant capable de répondre à des objections. Je vais donc alterner exposé, questions que je vous invite à vous poser à voix haute, et un quiz à mi-séance.
+
+## 05:00 – 20:00 · Les présupposés fondamentaux de l''approche rationnelle
+
+Commençons par le cœur théorique de cette approche. L''idée centrale est que le projet est un système d''actions complexe, mais fondamentalement maîtrisable par la planification. Regardez le schéma du triangle à l''écran : coût, délai, qualité ou périmètre. Ce triangle n''est pas qu''un outil pédagogique, c''est une proposition théorique forte : elle affirme que le succès d''un projet se définit par la conformité du résultat à des contraintes fixées en amont, et que ces trois contraintes s''équilibrent nécessairement entre elles.
+
+Pourquoi est-ce une proposition théorique, et pas seulement un outil pratique ? Parce qu''elle suppose implicitement trois choses : premièrement, que l''on peut connaître à l''avance, avec un niveau de détail suffisant, ce que le projet doit produire ; deuxièmement, que l''incertitude du projet se réduit principalement par un effort de planification ; troisièmement, que le succès se mesure par rapport à un référentiel fixé au départ, et non par rapport à un jugement porté après coup sur l''utilité réelle du résultat. Posez-vous la question suivante, et nous en discuterons dans quelques minutes : dans quel type de projet ces trois hypothèses vous semblent-elles les plus solides, et dans quel type de projet vous semblent-elles les plus fragiles ?
+
+Je vous propose maintenant de détailler les outils qui découlent de ces présupposés. La structure de découpage du projet, le WBS, décompose le projet en lots de travail de plus en plus fins, jusqu''à obtenir des tâches élémentaires que l''on peut planifier et contrôler individuellement. Les techniques de réseau, comme la méthode du chemin critique, permettent ensuite d''ordonner ces tâches dans le temps en tenant compte de leurs dépendances, et d''identifier la séquence de tâches qui déterminent la durée totale minimale du projet : c''est le chemin critique, celui sur lequel tout retard se répercute directement sur la date de fin du projet.
+
+## 20:00 – 35:00 · Jalons historiques et professionnalisation du champ
+
+Reprenons maintenant la généalogie historique de cette approche, qui est un point que les jurys aiment souvent vérifier : savez-vous situer les idées dans le temps, pas seulement les citer dans l''absolu ?
+
+Les racines de l''approche rationnelle se trouvent dans l''ingénierie industrielle et militaire du milieu du vingtième siècle. Les grands programmes de défense et les chantiers d''infrastructure de cette époque ont été les premiers terrains à grande échelle où il a fallu coordonner des milliers d''intervenants sur des délais contraints, avec des moyens de calcul encore limités. C''est dans ce contexte qu''ont émergé les techniques de réseau comme le chemin critique et les méthodes d''évaluation probabiliste de la durée des tâches.
+
+Dans les décennies suivantes, ces techniques se sont diffusées bien au-delà du secteur de la défense, portées par un mouvement de professionnalisation du métier de chef de projet : apparition d''associations professionnelles dédiées, élaboration de corpus de connaissances partagés, diffusion de certifications. Ce mouvement a eu un effet structurant majeur : il a transformé un ensemble de techniques d''ingénierie en un référentiel de gestion générique, applicable en théorie à tous les secteurs, de la construction à l''informatique en passant par les services.
+
+Retenez bien cette idée pour votre oral : quand un jury vous demande pourquoi l''approche rationnelle s''est imposée comme référentiel dominant pendant plusieurs décennies, la réponse ne tient pas seulement à la qualité intrinsèque des outils, mais aussi à ce travail d''institutionnalisation professionnelle qui en a fait un langage commun, enseigné, certifié et reconnu internationalement.
+
+## 35:00 – 45:00 · Quiz interactif à mi-séance
+
+Nous arrivons à la pause quiz. Prenez quelques instants pour répondre, sur une feuille ou mentalement, aux questions suivantes, avant que je ne donne les réponses commentées.
+
+Question 1 : L''approche rationnelle suppose-t-elle que l''incertitude d''un projet est principalement réduite par la planification, ou par l''adaptation continue en cours de projet ?
+Question 2 : Le chemin critique désigne-t-il la séquence de tâches la plus coûteuse du projet, ou la séquence de tâches dont tout retard retarde l''ensemble du projet ?
+Question 3 : Les techniques de réseau comme le chemin critique sont-elles nées d''abord dans le secteur des services, ou dans l''ingénierie et la défense ?
+Question 4 : La professionnalisation du métier de chef de projet (associations, certifications) a-t-elle plutôt renforcé, ou plutôt affaibli, la diffusion de l''approche rationnelle ?
+
+Réponses commentées : pour la question 1, c''est bien la planification qui est au cœur de l''approche rationnelle ; l''adaptation continue est au contraire la marque du courant comportemental et agile que nous verrons dans la vidéo suivante. Pour la question 2, le chemin critique désigne la séquence de tâches dont le retard se répercute directement sur la date de fin du projet, pas nécessairement la plus coûteuse. Pour la question 3, les techniques de réseau sont nées dans l''ingénierie et la défense, avant de se diffuser vers les autres secteurs. Pour la question 4, la professionnalisation a clairement renforcé la diffusion de cette approche, en la transformant en référentiel partagé, enseigné et certifié.
+
+## 45:00 – 60:00 · Les apports durables de l''approche rationnelle
+
+Reprenons maintenant l''exposé avec les apports durables de ce courant, un point sur lequel un jury vous interrogera souvent en vous demandant de ne pas caricaturer l''approche rationnelle comme simplement dépassée. Quatre apports méritent d''être défendus avec conviction si le jury vous pousse sur ce terrain.
+
+D''abord, la décomposition structurée du travail, qui force à clarifier le périmètre d''un projet avant de s''y engager : c''est un exercice de clarification intellectuelle précieux, indépendamment de la rigidité qu''on peut ensuite lui reprocher. Ensuite, les outils de planification et d''ordonnancement, indispensables dès qu''un projet mobilise de nombreuses tâches interdépendantes, quel que soit par ailleurs le degré d''agilité de l''organisation. Ensuite encore, la discipline budgétaire et le suivi des écarts, qui permettent de détecter tôt une dérive, y compris dans des projets pilotés de façon largement agile. Enfin, le vocabulaire commun qu''elle a imposé, qui facilite la communication entre des acteurs très divers d''un même projet, du maître d''ouvrage à l''exécutant.
+
+Un bon réflexe à l''oral : quand vous présentez les limites d''un courant, n''oubliez jamais de rappeler d''abord explicitement ce qu''il a durablement apporté. Cela montre au jury que votre critique est nuancée et argumentée, et non une simple récitation d''objections à la mode.
+
+## 60:00 – 75:00 · Les limites et critiques, et le lien avec le débat sur le succès
+
+Passons maintenant aux limites, que vous connaissez déjà par la leçon 2, mais que nous allons relier explicitement au grand débat sur la mesure du succès d''un projet, qui traverse tout ce cours.
+
+Première limite, l''hypothèse d''une planification exhaustive en amont se heurte à la réalité des projets à forte innovation, où les besoins évoluent en cours de route. Deuxième limite, l''approche rationnelle sous-estime la dimension humaine et politique du projet : les jeux de pouvoir entre parties prenantes influencent souvent davantage la trajectoire réelle du projet que la qualité du planning initial. Troisième limite, et c''est le point le plus important pour la suite de notre cours, le triangle coût-délai-qualité a été critiqué comme un indicateur de succès trop étroit : un projet peut parfaitement respecter son budget et son calendrier tout en étant, in fine, un échec si le produit livré ne répond pas aux besoins réels des utilisateurs.
+
+C''est précisément cette troisième limite qui ouvre la porte au débat sur le succès de gestion versus succès de valeur que nous retrouverons dans la vidéo 9, consacrée à l''épreuve type d''examen. Gardez ce fil en tête : les courants théoriques de ce cours ne sont pas des blocs isolés, ils se répondent les uns aux autres sur des questions précises, et le jury appréciera que vous montriez ces connexions plutôt que de présenter chaque courant comme une case étanche.
+
+Quatrième limite, plus empirique : la recherche a documenté des dépassements de coûts et de délais récurrents sur de grands projets, ce qui a nourri des travaux sur les biais cognitifs des décideurs (sous-estimation systématique des coûts et délais au moment de la décision) et sur les mécanismes politiques qui conduisent à lancer des projets dont le dépassement était prévisible.
+
+## 75:00 – 85:00 · Synthèse et préparation à l''oral de qualification
+
+Pour synthétiser cette heure trente, rappelons les trois messages clés à maîtriser pour votre oral. Premièrement, l''approche rationnelle n''est pas une simple boîte à outils : elle repose sur des présupposés théoriques explicites sur la nature du projet et sur la définition du succès. Deuxièmement, elle a été consolidée historiquement par un mouvement de professionnalisation qui en a fait un référentiel dominant, et cette histoire est elle-même un objet d''analyse pour un chercheur en gestion de projets. Troisièmement, ses limites ne sont pas univoques : elles touchent à la fois la faisabilité pratique de la planification exhaustive, la dimension humaine négligée, et la définition même du succès, ce qui ouvre directement sur le courant suivant.
+
+Entraînez-vous maintenant à l''exercice suivant, à voix haute, comme si un membre du jury vous interrompait : « Vous me dites que cette approche est datée, mais alors pourquoi continue-t-on à l''enseigner et à la certifier massivement aujourd''hui ? » Préparez une réponse en trente secondes avant de continuer la vidéo.
+
+Une bonne réponse pourrait être : parce qu''elle reste pertinente pour une large catégorie de projets à périmètre stable et à faible incertitude, parce qu''elle fournit un socle d''outils et de vocabulaire indispensable même dans des contextes plus agiles, et parce que le débat contemporain n''oppose pas « cette approche contre son abandon », mais cherche plutôt à identifier dans quelles conditions de contexte elle reste la plus pertinente, par contraste avec les approches comportementales et agiles.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Pour clore cette séance, voici cinq questions d''évaluation, avec leurs réponses.
+
+Question 1 : Quels sont les trois sommets du triangle classique utilisé pour définir le succès d''un projet dans l''approche rationnelle ? Réponse : le coût, le délai et la qualité ou le périmètre technique.
+
+Question 2 : Dans quel secteur d''origine les techniques de réseau comme le chemin critique se sont-elles développées avant de se diffuser plus largement ? Réponse : l''ingénierie et la défense, dans les grands programmes du milieu du vingtième siècle.
+
+Question 3 : Citez deux limites majeures adressées à l''approche rationnelle. Réponse : la difficulté à planifier exhaustivement des projets à forte incertitude, et la sous-estimation de la dimension humaine et politique du projet (on pouvait aussi citer la définition trop étroite du succès, ou les biais cognitifs des décideurs).
+
+Question 4 : Quel rôle a joué la professionnalisation du métier de chef de projet dans la diffusion de l''approche rationnelle ? Réponse : elle a transformé un ensemble de techniques d''ingénierie en référentiel partagé, enseigné et certifié à grande échelle, consolidant sa position dominante.
+
+Question 5 : En quoi la critique de la définition du succès par le seul triangle coût-délai-qualité annonce-t-elle le débat traité dans la vidéo 9 de ce cours ? Réponse : elle ouvre la distinction, développée dans l''épreuve type, entre un succès de gestion mesuré à la clôture du projet et un succès de valeur évalué dans la durée, du point de vue des parties prenantes.', 'video', 90, false, 60
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : L''approche rationnelle et planificatrice de la gestion de projet');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Approches comportementales et agilité organisationnelle', '## Fiche du cours vidéo
+
+Titre : Approches comportementales et agilité organisationnelle en gestion de projet.
+Durée : 1h30.
+Objectifs : approfondir le second grand courant théorique vu en leçon 3, savoir argumenter sur la tension entre planification et agilité devant un jury, et être capable de proposer des conditions de contingence entre les deux approches.
+Matériel conseillé : tableau ou diaporama avec le cycle itératif agile, un schéma comparatif des valeurs de l''agilité face aux présupposés de l''approche rationnelle.
+Prérequis : avoir lu les leçons 2 et 3 de ce cours, et visionné la vidéo précédente.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et lien avec la vidéo précédente
+
+Bonjour à toutes et à tous. Dans la vidéo précédente, nous avons vu l''approche rationnelle et planificatrice, et nous avons terminé sur ses limites, en particulier sa définition étroite du succès et sa sous-estimation de la dimension humaine du projet. Cette séance part précisément de ce point de bascule pour construire le second grand courant de votre examen de qualification : les approches comportementales et l''agilité organisationnelle.
+
+Je vous propose de garder, tout au long de cette heure trente, une question en tête : ce courant remplace-t-il le précédent, ou le complète-t-il ? C''est une question que les jurys adorent poser, et nous y répondrons de façon argumentée en fin de séance.
+
+## 05:00 – 20:00 · Le diagnostic de départ de l''agilité
+
+Commençons par le diagnostic qui fonde le mouvement agile. Dans de nombreux projets, en particulier ceux à forte composante d''innovation ou de développement logiciel, il est illusoire de vouloir figer un périmètre détaillé en début de projet, parce que les besoins réels ne sont découverts que progressivement, au contact des utilisateurs. Regardez le schéma à l''écran : plutôt que la séquence linéaire planification puis exécution, l''agilité propose un cycle court et répété : on construit un incrément, on le livre, on recueille un retour, on ajuste, on recommence.
+
+Posez-vous la question suivante avant que je poursuive : si la valeur n''est plus définie une fois pour toutes en amont mais coconstruite progressivement, qu''est-ce que cela implique pour la manière de contractualiser un projet avec un client ou un maître d''ouvrage ? Nous y reviendrons un peu plus tard dans la séance.
+
+Ce renversement méthodologique s''accompagne d''un renversement de valeurs : la collaboration plutôt que la négociation contractuelle rigide d''un périmètre figé ; l''adaptation au changement plutôt que le suivi strict d''un plan ; les individus et leurs interactions plutôt que les seuls processus et outils. Ces valeurs, nées initialement dans le développement logiciel à la fin des années 1990 et au début des années 2000, ont ensuite débordé largement ce secteur d''origine pour infuser de nombreux autres champs de la gestion de projets.
+
+## 20:00 – 35:00 · La complexité, les systèmes adaptatifs et les soft skills
+
+Allons maintenant un peu plus loin dans les fondements théoriques. Le mouvement agile s''appuie sur une lecture des organisations comme systèmes adaptatifs complexes : le projet n''y est plus vu comme une machine entièrement spécifiable à l''avance, mais comme un système vivant, où la solution émerge de l''interaction entre les acteurs plutôt que d''être imposée par un plan central. Cette lecture rejoint des travaux plus anciens en théorie des organisations sur l''improvisation organisée et la capacité des équipes à s''auto-organiser face à l''imprévu.
+
+Un deuxième pilier théorique de ce courant concerne les compétences dites non techniques, les fameuses soft skills : le style de leadership du chef de projet, la qualité de la communication, la gestion constructive des conflits, la confiance mutuelle entre membres de l''équipe. Plusieurs recherches empiriques ont montré que ces dimensions comportementales expliquent une part significative de la réussite perçue des projets, parfois davantage que la sophistication des outils de planification utilisés.
+
+Je vous invite à noter ce point précis, car il revient souvent en question de jury : pourquoi est-il plus difficile de mesurer rigoureusement la qualité du leadership que le respect d''un délai ? Réfléchissez-y, nous y reviendrons dans la partie sur les limites de ce courant.
+
+## 35:00 – 45:00 · Quiz interactif à mi-séance
+
+Pause quiz. Répondez mentalement ou par écrit avant d''entendre les réponses commentées.
+
+Question 1 : Le mouvement agile propose-t-il de planifier exhaustivement en amont, ou de travailler par cycles courts et itératifs avec retours fréquents ?
+Question 2 : La lecture des organisations comme systèmes adaptatifs complexes considère-t-elle que l''ordre du projet est imposé par un plan central, ou qu''il émerge de l''interaction entre les acteurs ?
+Question 3 : Citez deux exemples de « soft skills » étudiées par la recherche comme facteurs de performance des projets.
+Question 4 : L''agilité est-elle née d''abord dans le secteur du développement logiciel, ou dans celui de la construction d''infrastructures ?
+
+Réponses commentées : pour la question 1, le mouvement agile propose des cycles courts et itératifs, avec des retours fréquents des utilisateurs, plutôt qu''une planification exhaustive en amont. Pour la question 2, cette lecture considère que l''ordre émerge de l''interaction entre les acteurs, et non d''un plan central entièrement défini à l''avance. Pour la question 3, on peut citer le style de leadership, la qualité de la communication, la gestion constructive des conflits, ou la confiance mutuelle entre les membres de l''équipe. Pour la question 4, l''agilité est née dans le développement logiciel, avant de se diffuser vers d''autres secteurs de la gestion de projets.
+
+## 45:00 – 60:00 · Les conditions de contingence entre planification et agilité
+
+Reprenons maintenant la question posée en introduction : ce courant remplace-t-il l''approche rationnelle, ou la complète-t-il ? La recherche contemporaine répond plutôt par la contingence méthodologique : on cherche à identifier les facteurs de contexte qui rendent l''une ou l''autre approche plus pertinente, plutôt que d''opposer les deux de façon binaire.
+
+Quels sont ces facteurs ? D''abord la taille et la dispersion géographique de l''équipe : une petite équipe pouvant collaborer étroitement se prête mieux à l''agilité qu''une équipe vaste et dispersée sur plusieurs continents. Ensuite, le degré d''incertitude des besoins : plus les besoins sont susceptibles d''évoluer en cours de route, plus l''agilité apporte de valeur par rapport à une planification rigide. Ensuite encore, la possibilité de découper le produit en incréments livrables de façon autonome : on ne peut pas livrer un pont ou un barrage à moitié et ajuster ensuite, ce qui limite l''application littérale de l''agilité à certains grands projets d''infrastructure physique. Enfin, la disponibilité d''un client ou d''utilisateurs capables de donner des retours fréquents et informés, condition souvent sous-estimée mais pourtant déterminante pour que les cycles itératifs produisent réellement de la valeur.
+
+Reprenons votre question d''introduction sur la contractualisation. Si la valeur se coconstruit progressivement, les contrats classiques à périmètre et prix fixés deviennent mal adaptés : une partie de la littérature sur l''agilité propose donc des formes contractuelles alternatives, fondées sur la confiance et des engagements de collaboration continue plutôt que sur un cahier des charges figé dès le départ, bien que ces montages restent plus délicats à mettre en œuvre dans des environnements juridiques ou administratifs très formalisés, par exemple certains marchés publics.
+
+## 60:00 – 75:00 · Les limites et critiques du courant comportemental et agile
+
+Passons maintenant aux limites de ce courant, qu''un jury attend que vous présentiez avec la même rigueur que pour l''approche rationnelle, sans tomber dans un enthousiasme non critique pour l''agilité.
+
+Première limite, le risque de l''agilité de façade : certaines organisations adoptent le vocabulaire agile (réunions courtes, rôles renommés) sans transformer réellement leurs pratiques de gouvernance ou leurs structures de pouvoir, ce qui crée un écart entre le discours managérial affiché et les pratiques effectives sur le terrain. C''est un point que la recherche en sciences de gestion documente plus largement au-delà de la seule gestion de projets.
+
+Deuxième limite, directement liée à la question que je vous ai posée plus haut : la littérature sur les soft skills reste parfois faiblement opérationnalisée, car il est plus difficile de mesurer rigoureusement « la qualité du leadership » que « le respect d''un délai », ce qui complique la production de résultats de recherche solides, comparables et cumulatifs.
+
+Troisième limite, le transfert de l''agilité hors de son contexte d''origine, le développement logiciel, vers des contextes très différents (grands projets publics, projets d''infrastructure, environnements très réglementés) reste un sujet de débat ouvert : certains chercheurs estiment que l''agilité y est utile sous forme hybride, d''autres estiment que son transfert en dilue le sens initial.
+
+## 75:00 – 85:00 · Synthèse et articulation avec le reste du cours
+
+Synthétisons cette heure trente autour de trois messages clés. Premièrement, l''agilité et les approches comportementales ne sont pas une simple mode managériale : elles reposent sur des fondements théoriques précis, liés à la complexité organisationnelle et aux sciences du comportement humain au travail. Deuxièmement, le rapport entre ce courant et l''approche rationnelle n''est pas un rapport de remplacement mais de tension féconde, structuré par la recherche sur la contingence méthodologique. Troisièmement, ce courant a lui aussi ses limites, notamment la difficulté de mesurer rigoureusement ses variables clés et le risque d''adoption superficielle en pratique.
+
+Exercice oral à voix haute avant de continuer : un membre du jury vous dit « Finalement, votre thèse porte sur l''agilité, donc vous n''avez plus besoin de connaître l''approche rationnelle. » Préparez votre réponse en trente secondes.
+
+Une bonne réponse rappellerait qu''aucune thèse sérieuse en gestion de projets ne peut ignorer le référentiel dominant historiquement installé par l''approche rationnelle, ne serait-ce que parce que c''est précisément par contraste et par critique de ce référentiel que l''agilité se définit elle-même, et parce que la plupart des organisations réelles combinent aujourd''hui des éléments des deux approches plutôt que d''appliquer l''une à l''exclusion totale de l''autre.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Voici cinq questions d''évaluation, avec leurs réponses.
+
+Question 1 : Quelles sont les deux grandes familles de travaux regroupées sous l''étiquette « approches comportementales et agiles » dans ce cours ? Réponse : les recherches sur le leadership, la communication et les comportements d''équipe en projet, d''une part, et le mouvement agile né dans le développement logiciel, d''autre part.
+
+Question 2 : Citez deux conditions de contexte qui favorisent la pertinence d''une approche agile. Réponse : une équipe de taille réduite pouvant collaborer étroitement, et la possibilité de découper le produit en incréments livrables de façon autonome (on pouvait aussi citer la disponibilité d''utilisateurs donnant des retours fréquents, ou un fort degré d''incertitude des besoins).
+
+Question 3 : Pourquoi la mesure rigoureuse des soft skills pose-t-elle une difficulté méthodologique particulière ? Réponse : parce que des dimensions comme la qualité du leadership ou la confiance d''équipe sont plus difficiles à opérationnaliser et à mesurer de façon comparable que des indicateurs objectifs comme le respect d''un délai.
+
+Question 4 : Qu''entend-on par « agilité de façade » ? Réponse : l''adoption du vocabulaire et de certains rituels agiles par une organisation, sans transformation réelle de ses pratiques de gouvernance ou de ses structures de pouvoir.
+
+Question 5 : Le rapport entre l''approche rationnelle et les approches comportementales et agiles est-il, selon la recherche contemporaine, un rapport de remplacement ou de contingence ? Réponse : un rapport de contingence : la recherche cherche à identifier les facteurs de contexte qui rendent l''une ou l''autre approche, ou une combinaison hybride des deux, la plus pertinente, plutôt qu''à décréter la supériorité absolue d''un courant sur l''autre.', 'video', 90, false, 70
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Approches comportementales et agilité organisationnelle');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Les méthodes de recherche en gestion de projet', '## Fiche du cours vidéo
+
+Titre : Les méthodes de recherche en gestion de projet, de l''étude de cas longitudinale à la recherche-action.
+Durée : 1h30.
+Objectifs : approfondir les méthodes de recherche présentées en leçon 4, savoir justifier un choix méthodologique devant un jury, et construire un protocole de recherche crédible appliqué à un contexte africain ou sénégalais.
+Matériel conseillé : tableau comparatif des méthodes (quantitatif, qualitatif, mixte), schéma du protocole fictif présenté en leçon 4.
+Prérequis : avoir lu la leçon 4 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bonjour à toutes et à tous. Après avoir traité les deux grands courants théoriques de la gestion de projets, nous abordons maintenant la dimension méthodologique, qui est tout aussi scrutée par un jury doctoral que la maîtrise théorique. On ne vous demandera pas seulement « que savez-vous sur l''agilité », mais aussi « comment pourriez-vous étudier empiriquement cette question dans votre propre thèse ». Cette séance vous prépare précisément à cet exercice.
+
+## 05:00 – 20:00 · Pourquoi la méthodologie est un enjeu central en gestion de projets
+
+Avant de détailler les méthodes, posons le problème. La gestion de projets étudie des phénomènes temporellement bornés, socialement complexes, et souvent uniques dans leurs détails. Comment, dans ces conditions, produire des connaissances généralisables ? C''est tout l''enjeu de la méthodologie dans ce champ.
+
+Regardez le tableau comparatif à l''écran. Les méthodes quantitatives, le plus souvent des enquêtes par questionnaire suivies d''analyses statistiques, permettent de tester des relations entre variables sur de larges échantillons, par exemple entre le style de leadership et la performance perçue d''un projet. Leur force est la généralisabilité, leur limite est la difficulté à restituer la richesse contextuelle d''un projet réel : un questionnaire capture des perceptions déclarées à un instant donné, mais explique mal pourquoi et comment un projet a concrètement dérivé ou réussi.
+
+## 20:00 – 35:00 · L''étude de cas longitudinale et la recherche-action
+
+Entrons maintenant dans le détail de la méthode qualitative la plus caractéristique du champ : l''étude de cas longitudinale. Elle consiste à suivre un ou plusieurs projets réels sur la durée, souvent depuis leur lancement jusqu''à leur clôture, en combinant entretiens répétés, observation de réunions de pilotage et analyse de documents internes. Son intérêt majeur est de saisir la dynamique temporelle du projet : comment une décision prise à une étape affecte les étapes suivantes, comment un projet peut dériver progressivement sans qu''aucun événement isolé ne l''explique à lui seul.
+
+Posez-vous la question suivante avant que je poursuive : si vous suivez seulement deux ou trois projets en profondeur, quelle objection un jury pourrait-il vous opposer sur la portée de vos résultats ? Nous allons y répondre précisément dans quelques minutes.
+
+La recherche-action, elle, se distingue par la posture du chercheur : il intervient directement dans le projet étudié, par exemple comme consultant ou facilitateur, tout en documentant systématiquement cette intervention à des fins de production de connaissance. Son intérêt est de permettre l''étude de phénomènes difficiles à observer de l''extérieur, comme les résistances au changement ou les dynamiques de pouvoir, et de produire une connaissance directement utile aux praticiens. Sa difficulté centrale est de maintenir une distance critique suffisante malgré l''implication du chercheur.
+
+Répondons maintenant à la question posée plus haut : l''objection classique à l''étude de cas longitudinale est la faible généralisabilité des résultats au-delà des cas étudiés. On y répond, sans renoncer à la méthode, par une sélection raisonnée et explicitement justifiée des cas, par une triangulation rigoureuse des sources de données, et par une discussion honnête des limites de transférabilité dans la restitution de la recherche.
+
+## 35:00 – 45:00 · Quiz interactif à mi-séance
+
+Pause quiz. Répondez avant d''entendre les réponses commentées.
+
+Question 1 : Quelle méthode permet le mieux de saisir la dynamique temporelle d''un projet, c''est-à-dire la manière dont une décision à une étape affecte les étapes suivantes ?
+Question 2 : Dans la recherche-action, le chercheur observe-t-il le projet de l''extérieur, ou intervient-il directement dans son déroulement ?
+Question 3 : Quelle est la principale limite méthodologique de l''étude de cas longitudinale ?
+Question 4 : Les enquêtes de maturité organisationnelle en gestion de projet mesurent-elles plutôt le niveau de structuration des processus d''une organisation, ou la satisfaction individuelle des chefs de projet ?
+
+Réponses commentées : pour la question 1, c''est l''étude de cas longitudinale, grâce au suivi dans la durée et à la combinaison de plusieurs sources de données. Pour la question 2, le chercheur intervient directement dans le projet, ce qui le distingue de l''observation externe de l''étude de cas classique. Pour la question 3, c''est la faible généralisabilité des résultats au-delà du ou des cas étudiés. Pour la question 4, elles mesurent principalement le niveau de structuration des processus de gestion de projet d''une organisation (existence de processus formalisés, outils partagés, soutien de la direction).
+
+## 45:00 – 60:00 · Les enquêtes de maturité et les méthodes mixtes
+
+Reprenons l''exposé avec les enquêtes sur la maturité organisationnelle en gestion de projet. L''idée centrale est que les organisations ne sont pas toutes au même niveau de structuration de leurs pratiques de gestion de projet, et que ce niveau influencerait la performance globale de leur portefeuille de projets. Les chercheurs développent des grilles d''évaluation, administrées auprès d''organisations, souvent complétées par des entretiens pour contextualiser les scores obtenus.
+
+Cette méthode permet de comparer des organisations entre elles, mais elle est critiquée pour un présupposé parfois implicite : une maturité plus élevée, au sens de processus plus formalisés, serait toujours souhaitable. Or cela entre en tension avec les enseignements du courant agile, vu dans la vidéo précédente, sur l''intérêt de structures plus légères et adaptatives dans certains contextes. C''est un excellent exemple, à retenir pour votre oral, de la façon dont une méthode de recherche peut elle-même porter des présupposés théoriques hérités d''un courant particulier.
+
+Face aux limites respectives des méthodes quantitatives et qualitatives, une part croissante de la recherche combine les deux dans des designs mixtes : une enquête quantitative à grande échelle pour identifier des régularités statistiques, suivie d''études de cas qualitatives approfondies sur un sous-ensemble de situations pour comprendre les mécanismes qui expliquent ces régularités.
+
+## 60:00 – 75:00 · Construction pas à pas du protocole sénégalais fictif
+
+Reprenons maintenant, pas à pas, le protocole de recherche fictif présenté en leçon 4, pour vous montrer comment le présenter à l''oral de façon convaincante. Rappel de la question de recherche : comment les équipes de projet des petites et moyennes entreprises technologiques dakaroises s''approprient-elles des pratiques agiles importées, et quels facteurs organisationnels favorisent ou freinent cette appropriation ?
+
+Premier temps du protocole : une enquête quantitative exploratoire par questionnaire, auprès de chefs de projet d''entreprises technologiques de la région de Dakar, mesurant le degré déclaré d''adoption de pratiques agiles et ses corrélations avec la taille de l''entreprise, l''ancienneté de l''équipe ou la formation préalable. Deuxième temps, la sélection de trois à quatre études de cas longitudinales contrastées, suivies sur plusieurs mois, pour comprendre en profondeur les mécanismes d''appropriation ou de résistance. Troisième temps, une synthèse croisant résultats quantitatifs et qualitatifs, construisant une typologie des modes d''appropriation.
+
+Si un jury vous demande pourquoi ce protocole est pertinent, insistez sur trois points : l''articulation entre exploration à large échelle et explication en profondeur ; l''attention portée au contexte local, dont les contraintes de ressources et de culture organisationnelle diffèrent de celles des grandes entreprises occidentales souvent étudiées dans la littérature fondatrice sur l''agilité ; et la cohérence entre la question de recherche posée et la méthode choisie, plutôt qu''un choix méthodologique par habitude.
+
+## 75:00 – 85:00 · Synthèse et entraînement à la justification méthodologique
+
+Synthétisons cette heure trente. Vous devez savoir caractériser chaque méthode (quantitative, qualitative avec ses deux variantes principales que sont l''étude de cas longitudinale et la recherche-action, les enquêtes de maturité, et les méthodes mixtes), savoir en citer les forces et les limites, et surtout savoir justifier pourquoi une méthode donnée convient à une question de recherche donnée, plutôt que de la choisir par défaut.
+
+Exercice oral avant de continuer : un membre du jury vous demande « Pourquoi ne pas simplement faire une grande enquête quantitative sur tout le Sénégal plutôt que ces quelques études de cas limitées ? » Préparez votre réponse en trente secondes.
+
+Une bonne réponse rappellerait que la question de recherche posée (comprendre les mécanismes d''appropriation ou de résistance à l''agilité) appelle une explication fine et processuelle, que seule une approche qualitative en profondeur permet de documenter, alors qu''une enquête quantitative à grande échelle permettrait de mesurer des régularités statistiques mais ne révélerait pas pourquoi elles se produisent ; c''est précisément pour cette raison que le protocole proposé combine les deux approches, chacune répondant à une partie différente de la question.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Voici cinq questions d''évaluation, avec leurs réponses.
+
+Question 1 : Quelle est la force principale des méthodes quantitatives en gestion de projets, et quelle en est la limite principale ? Réponse : la force est la généralisabilité des résultats à une population plus large ; la limite est la difficulté à restituer la richesse contextuelle et processuelle d''un projet réel.
+
+Question 2 : Quelle différence sépare l''étude de cas longitudinale de la recherche-action ? Réponse : dans l''étude de cas, le chercheur observe le projet de l''extérieur sans intervenir ; dans la recherche-action, il intervient directement dans le projet tout en documentant son intervention et ses effets.
+
+Question 3 : Quelle critique est adressée aux enquêtes de maturité organisationnelle en gestion de projet ? Réponse : elles présupposent parfois implicitement qu''une structuration plus poussée des processus serait toujours souhaitable, ce qui entre en tension avec les enseignements du courant agile sur l''intérêt de structures plus légères dans certains contextes.
+
+Question 4 : Pourquoi combiner méthodes quantitatives et qualitatives dans un design mixte ? Réponse : pour bénéficier à la fois de la généralisabilité des méthodes quantitatives et de la richesse explicative des méthodes qualitatives, en articulant explicitement leurs résultats respectifs.
+
+Question 5 : Dans le protocole sénégalais fictif présenté, pourquoi la deuxième phase qualitative est-elle indispensable en complément de la première phase quantitative ? Réponse : parce que la phase quantitative identifie des régularités statistiques sur un échantillon large, mais ne permet pas de comprendre en profondeur les mécanismes concrets d''appropriation ou de résistance à l''agilité, que seules des études de cas longitudinales approfondies permettent de documenter.', 'video', 90, false, 80
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Les méthodes de recherche en gestion de projet');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Traiter une question de synthèse type d''examen de qualification', '## Fiche du cours vidéo
+
+Titre : Traiter une question de synthèse type d''examen de qualification, méthode et correction commentée.
+Durée : 1h30.
+Objectifs : s''entraîner en conditions proches de l''oral à construire un plan de réponse sur la question type vue en leçon 5, et savoir généraliser cette méthode à d''autres questions de synthèse.
+Matériel conseillé : tableau pour construire le plan en direct, chronomètre pour simuler les contraintes de temps d''un oral.
+Prérequis : avoir lu la leçon 5 et visionné les vidéos précédentes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bonjour à toutes et à tous. Cette séance est la plus proche de la situation réelle de votre oral de qualification : nous allons traiter ensemble, pas à pas, une question de synthèse typique, exactement comme vous devrez le faire devant un jury. L''objectif n''est pas seulement de connaître la réponse à cette question précise, mais de vous entraîner à la méthode de construction d''un plan, que vous pourrez réutiliser pour n''importe quelle autre question de synthèse sur votre champ.
+
+## 05:00 – 15:00 · Présentation de la question et décorticage méthodologique
+
+Voici la question, que nous avons déjà vue en leçon 5 : « Dans quelle mesure le débat entre l''approche rationnelle et planificatrice de la gestion de projet et les approches comportementales et agiles reflète-t-il, plus largement, deux conceptions concurrentes de la mesure du succès d''un projet ? Vous illustrerez votre propos en indiquant comment une recherche empirique pourrait être conçue pour étudier cette question dans un contexte organisationnel précis. »
+
+Avant de répondre, il faut décortiquer la question. Trois opérations systématiques : repérer les concepts clés (ici, les deux courants théoriques, et la notion de mesure du succès) ; repérer la relation logique demandée (relier le débat théorique à un débat plus large sur le succès, ce qui suggère un plan en deux mouvements) ; repérer ce que la question demande en plus de la théorie (ici, une proposition de protocole de recherche empirique). Notez bien ce triptyque, il fonctionne pour n''importe quelle question de synthèse, pas seulement celle-ci.
+
+## 15:00 – 30:00 · Construction en direct de la première partie du plan
+
+Construisons maintenant, en direct, la première partie du plan : le lien entre les deux courants et deux conceptions du succès. L''approche rationnelle, en définissant le succès par le triangle coût-délai-qualité, privilégie une vision du projet comme engagement contractuel à honorer : le succès se mesure par la conformité du résultat livré aux spécifications et contraintes initiales. À l''inverse, les approches comportementales et agiles, en insistant sur l''adaptation continue aux besoins réels des utilisateurs, tendent à définir le succès de façon plus large : la création effective de valeur perçue par l''ensemble des parties prenantes, même si le résultat final diffère du plan de départ.
+
+Un point à mobiliser ici, qui montre une connaissance fine du débat et non une opposition caricaturale : la distinction entre le succès de la gestion du projet, au sens étroit du triangle coût-délai-qualité, et le succès du projet, au sens large de la valeur et de la satisfaction des parties prenantes sur le moyen et long terme. Ces deux dimensions peuvent diverger : un projet peut être un succès de gestion tout en étant un échec de valeur, et inversement. Répétez cette distinction à voix haute, c''est l''articulation centrale de toute votre réponse.
+
+## 30:00 – 40:00 · Quiz interactif à mi-séance
+
+Pause quiz. Répondez avant les réponses commentées.
+
+Question 1 : Dans la distinction présentée, le succès de gestion se mesure-t-il à la clôture du projet, ou plusieurs mois après sa mise en usage ?
+Question 2 : Le succès de valeur est-il défini par la conformité à des spécifications initiales, ou par la satisfaction et les bénéfices perçus par les parties prenantes dans la durée ?
+Question 3 : Un projet livré à temps et dans le budget, mais finalement peu utilisé par ses destinataires, est-il un exemple de succès de gestion sans succès de valeur, ou l''inverse ?
+Question 4 : Quelle méthode de recherche, vue dans la vidéo précédente, est particulièrement adaptée pour étudier l''écart éventuel entre succès de gestion et succès de valeur, et pourquoi ?
+
+Réponses commentées : pour la question 1, le succès de gestion se mesure généralement à la clôture formelle du projet, par rapport aux contraintes initiales. Pour la question 2, le succès de valeur se définit par la satisfaction et les bénéfices perçus par les parties prenantes dans la durée, au-delà de la seule conformité initiale. Pour la question 3, c''est un exemple de succès de gestion sans succès de valeur. Pour la question 4, l''étude de cas longitudinale est particulièrement adaptée, car elle seule permet d''observer dans la durée l''éventuel écart entre un succès de gestion mesurable rapidement à la clôture, et un succès de valeur qui ne peut s''évaluer que plus tard, une fois le produit du projet réellement en usage.
+
+## 40:00 – 55:00 · Construction en direct de la seconde partie du plan
+
+Construisons maintenant la seconde partie, méthodologique, de notre plan. On propose une étude de cas longitudinale menée sur deux ou trois projets d''une même organisation, ou de quelques organisations comparables, suivis depuis leur lancement jusqu''à un moment postérieur à leur clôture formelle. On documente ainsi, à la fois, les indicateurs classiques de succès de gestion (budget, délais, périmètre technique) et des indicateurs de succès de valeur recueillis plus tard (utilisation effective, satisfaction des utilisateurs finaux, effets organisationnels non anticipés).
+
+On peut enrichir ce protocole d''un volet quantitatif complémentaire, par exemple une enquête de satisfaction standardisée administrée à plusieurs mois d''intervalle, illustrant la pertinence d''un design mixte pour cette question précise. Si le jury vous demande pourquoi vous ajoutez ce volet quantitatif, répondez que l''étude de cas qualitative permet de comprendre les mécanismes en profondeur sur un nombre limité de projets, tandis que le volet quantitatif permet de vérifier si les constats observés se retrouvent de façon plus généralisée.
+
+## 55:00 – 70:00 · Entraînement chronométré à l''oral de quinze minutes
+
+Prenez un chronomètre. Je vous propose de vous entraîner maintenant à présenter l''ensemble de ce plan en quinze minutes, comme si vous étiez devant le jury. Découpez votre temps ainsi : deux minutes pour l''introduction et l''annonce du plan, six minutes pour la première partie théorique, cinq minutes pour la seconde partie méthodologique, deux minutes pour la conclusion et l''ouverture. Entraînez-vous à voix haute, en respectant ce minutage, avant de reprendre la vidéo.
+
+Un conseil pratique pour l''oral réel : ne lisez jamais un texte rédigé mot à mot devant le jury. Préparez plutôt des mots-clés ou un plan détaillé que vous développez librement à l''oral ; cela donne une impression de maîtrise réelle du sujet, bien plus convaincante qu''une récitation.
+
+## 70:00 – 85:00 · Généraliser la méthode à d''autres questions, et synthèse
+
+Pour conclure cette séance, généralisons la méthode à d''autres questions possibles. Reprenons l''exemple vu en leçon 5 : une question qui relierait le même débat théorique, non plus à la mesure du succès, mais à la gestion des risques en projet. Le même triptyque méthodologique s''applique : repérer les concepts clés (approche rationnelle, approche agile, gestion du risque ou de l''incertitude), repérer la relation logique demandée, repérer la dimension méthodologique attendue. Vous pouvez ainsi vous entraîner, seul ou avec des collègues doctorants, à inventer vos propres questions de synthèse sur votre champ et à les traiter avec cette même méthode en quinze minutes chronométrées.
+
+Synthétisons les messages clés de cette séance. Premièrement, une question de synthèse de niveau doctoral ne demande jamais de réciter un cours, mais de construire un raisonnement original reliant plusieurs éléments de littérature à travers le prisme précis de la question posée. Deuxièmement, un bon plan doit toujours traiter explicitement toutes les dimensions de la question, y compris la dimension méthodologique si elle est demandée. Troisièmement, l''entraînement chronométré est indispensable : savoir quoi dire ne suffit pas, il faut aussi savoir le dire dans le temps imparti, de façon claire et structurée.
+
+## 85:00 – 90:00 · Évaluation finale
+
+Voici cinq questions d''évaluation, avec leurs réponses.
+
+Question 1 : Quelles sont les trois opérations à effectuer avant de construire un plan de réponse à une question de synthèse ? Réponse : repérer les concepts clés mobilisés, repérer la relation logique demandée entre ces concepts, et repérer les dimensions supplémentaires attendues par la question, par exemple une proposition méthodologique.
+
+Question 2 : Quelle distinction conceptuelle structure la première partie du plan de réponse étudié dans cette vidéo ? Réponse : la distinction entre le succès de la gestion du projet, mesuré par le triangle coût-délai-qualité à la clôture, et le succès du projet, mesuré par la valeur et la satisfaction des parties prenantes dans la durée.
+
+Question 3 : Pourquoi l''étude de cas longitudinale est-elle la méthode privilégiée pour étudier l''écart entre succès de gestion et succès de valeur ? Réponse : parce qu''elle permet de suivre un projet au-delà de sa clôture formelle, et donc d''observer dans la durée un éventuel écart entre un succès mesurable rapidement et un succès qui ne se révèle que plus tard, dans l''usage réel.
+
+Question 4 : Quel écueil fréquent faut-il éviter dans un plan de réponse à une question de synthèse de niveau doctoral ? Réponse : le plan purement descriptif qui résume séparément chaque élément de littérature sans jamais établir explicitement le lien demandé par la question, ou l''oubli d''une dimension explicitement demandée, comme la proposition méthodologique.
+
+Question 5 : Pourquoi est-il conseillé de ne pas lire un texte rédigé mot à mot lors d''un oral de qualification ? Réponse : parce que présenter son propos à partir d''un plan détaillé ou de mots-clés, développés librement, donne une impression de maîtrise réelle du sujet, plus convaincante pour un jury qu''une récitation littérale.', 'video', 90, false, 90
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Traiter une question de synthèse type d''examen de qualification');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
+
+Titre : Simulation complète d''une soutenance de qualification doctorale en gestion de projets.
+Durée : 1h30.
+Objectifs : vivre, en conditions proches du réel, une simulation complète de soutenance de qualification : quinze minutes de présentation du champ et d''un projet de thèse fictif, puis huit à dix questions de jury type, avec à chaque fois la structure d''une bonne réponse commentée.
+Matériel conseillé : chronomètre, de quoi prendre des notes pour vous auto-évaluer en fin de séance.
+Prérequis : avoir visionné l''ensemble des quatre vidéos précédentes de ce cours et relu les cinq leçons texte.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et mode d''emploi de la simulation
+
+Bonjour à toutes et à tous. Cette dernière vidéo de synthèse est le cœur de votre préparation : nous allons simuler, du début à la fin, une soutenance de qualification doctorale en gestion de projets. Je vais d''abord jouer le rôle du doctorant qui présente son champ et son projet de thèse fictif pendant quinze minutes, puis je vais jouer tour à tour le rôle du jury qui pose des questions, et du candidat qui y répond, en commentant à chaque fois la structure attendue d''une bonne réponse. Suivez cette simulation comme une répétition générale : notez ce que vous feriez différemment, et préparez-vous à vous auto-évaluer à la fin, à l''aide de la grille que nous utiliserons en conclusion.
+
+Le projet de thèse fictif que nous allons utiliser, construit uniquement à des fins pédagogiques pour ce cours, porte sur l''appropriation des pratiques agiles dans les petites et moyennes entreprises technologiques dakaroises, le même sujet que le protocole de recherche présenté dans la leçon 4 et la vidéo 8 de ce cours.
+
+## 05:00 – 20:00 · Présentation simulée de quinze minutes
+
+Voici, telle qu''elle pourrait être présentée devant un jury, la présentation de quinze minutes. « Mesdames et messieurs les membres du jury, mon champ de recherche est la gestion de projets, et plus précisément le débat entre l''approche rationnelle et planificatrice du projet et les approches comportementales et agiles. Je vais d''abord situer ce débat théorique, puis vous présenter mon projet de thèse et sa méthodologie.
+
+L''approche rationnelle définit le projet comme un système maîtrisable par la planification, et mesure son succès par le respect du triangle coût, délai, qualité. Elle s''est consolidée historiquement à partir de l''ingénierie et de la défense, puis diffusée par un mouvement de professionnalisation du métier de chef de projet. Les approches comportementales et agiles, à l''inverse, considèrent le projet comme une réalité sociale complexe, où la valeur se coconstruit progressivement avec les parties prenantes à travers des cycles courts et itératifs, et où le succès ne se réduit pas au respect de contraintes initiales mais inclut la valeur réellement créée pour les utilisateurs.
+
+Ces deux courants ne s''opposent pas de façon binaire : la recherche contemporaine s''intéresse à la contingence méthodologique, c''est-à-dire aux conditions de contexte qui rendent l''une ou l''autre approche plus pertinente. C''est précisément dans cet espace que se situe mon projet de thèse.
+
+Ma question de recherche est la suivante : comment les équipes de projet des petites et moyennes entreprises technologiques dakaroises s''approprient-elles des pratiques agiles importées, initialement conçues dans des contextes organisationnels très différents, et quels facteurs organisationnels favorisent ou freinent cette appropriation ? Cette question se situe au croisement des deux courants que je viens de présenter : elle interroge comment un référentiel agile, pensé contre les présupposés de l''approche rationnelle, se diffuse et se transforme au contact de contextes organisationnels africains encore marqués, dans de nombreux cas, par des pratiques plus formalisées de gestion de projet.
+
+Sur le plan méthodologique, je propose un protocole en deux temps. Une enquête quantitative exploratoire par questionnaire auprès de chefs de projet d''entreprises technologiques dakaroises, pour mesurer le degré déclaré d''adoption de pratiques agiles et ses corrélations avec des variables de contexte. Puis, à partir de ces résultats, la sélection de trois à quatre études de cas longitudinales contrastées, suivies sur plusieurs mois, pour comprendre en profondeur les mécanismes d''appropriation ou de résistance. Cette combinaison me permettra d''articuler des régularités statistiques généralisables et une compréhension fine des mécanismes à l''œuvre, ce que ni l''une ni l''autre méthode ne permettrait isolément. Je vous remercie de votre attention et reste à votre disposition pour vos questions. »
+
+## 20:00 – 35:00 · Questions de jury 1 à 3, avec structure de bonne réponse
+
+Question de jury 1 : « Vous présentez ces deux courants comme complémentaires, mais ne pensez-vous pas qu''ils reposent en réalité sur des conceptions incompatibles de ce qu''est un projet ? »
+
+Structure de bonne réponse : reconnaître la part de vérité de l''objection, sans s''effondrer : oui, les présupposés de base diffèrent sensiblement, l''un voyant le projet comme un système à spécifier à l''avance, l''autre comme une réalité émergente. Mais préciser que cette différence de présupposés n''empêche pas une complémentarité pratique, documentée par la recherche sur la contingence, où des organisations combinent des éléments des deux approches selon le sous-projet ou la phase concernée. Conclure en reliant à son propre objet de thèse : c''est précisément cette tension entre présupposés théoriques distincts et pratiques hybrides observées sur le terrain que la thèse se propose d''étudier empiriquement.
+
+Question de jury 2 : « Pourquoi choisir les petites et moyennes entreprises technologiques dakaroises plutôt qu''un échantillon plus large, par exemple à l''échelle de toute l''Afrique de l''Ouest ? »
+
+Structure de bonne réponse : justifier le choix par la faisabilité méthodologique (accès au terrain, connaissance du contexte local, limites de temps et de ressources d''une thèse), tout en reconnaissant explicitement la limite de généralisabilité qui en découle, et en indiquant que cette limite sera discutée de façon transparente dans la thèse, avec des pistes de recherche future pour élargir la portée géographique.
+
+Question de jury 3 : « Votre premier temps méthodologique est quantitatif. N''est-ce pas contradictoire avec votre question de recherche, qui semble appeler une compréhension fine, donc qualitative ? »
+
+Structure de bonne réponse : expliquer que la phase quantitative n''a pas pour but de répondre complètement à la question de recherche, mais de jouer un rôle exploratoire, permettant d''identifier des régularités et de sélectionner de façon informée les cas les plus contrastés pour la phase qualitative. Montrer ainsi que les deux phases sont complémentaires et non redondantes, chacune répondant à une partie différente de la question.
+
+## 35:00 – 50:00 · Questions de jury 4 à 6, avec structure de bonne réponse
+
+Question de jury 4 : « Comment allez-vous éviter que votre propre regard, en tant que chercheur, n''influence les résultats de vos études de cas ? »
+
+Structure de bonne réponse : rappeler les techniques classiques de rigueur en recherche qualitative : triangulation des sources de données (entretiens, observation, documents), explicitation de sa propre position de chercheur et de ses présupposés, et le cas échéant restitution des interprétations préliminaires aux acteurs étudiés pour vérifier leur validité. Ne pas prétendre à une objectivité totale impossible, mais montrer que des procédures rigoureuses permettent de limiter et de documenter les biais inévitables.
+
+Question de jury 5 : « Le triangle coût-délai-qualité n''est-il pas simplement un outil pratique, sans véritable portée théorique ? »
+
+Structure de bonne réponse : s''appuyer sur ce qui a été vu dans la vidéo 6 de ce cours : montrer que ce triangle repose sur des présupposés théoriques explicites (le projet est un système maîtrisable par la planification, le succès se définit par la conformité à des contraintes initiales), et que c''est précisément parce que ce sont des présupposés théoriques, et non de simples techniques neutres, qu''ils ont pu être questionnés et critiqués par d''autres courants, notamment sur la distinction entre succès de gestion et succès de valeur.
+
+Question de jury 6 : « Votre sujet est très actuel, mais en quoi contribue-t-il réellement à la littérature existante sur l''agilité, qui est déjà abondante ? »
+
+Structure de bonne réponse : préciser que la littérature fondatrice sur l''agilité s''est largement construite dans des contextes occidentaux et dans le secteur du développement logiciel, et que l''étude de son appropriation dans un contexte organisationnel africain spécifique, avec ses contraintes propres de ressources, de formation et de culture organisationnelle, constitue un apport empirique original, qui peut aussi contribuer théoriquement à affiner les conditions de contingence identifiées jusqu''ici principalement sur des terrains occidentaux.
+
+## 50:00 – 65:00 · Questions de jury 7 à 9, avec structure de bonne réponse
+
+Question de jury 7 : « Que ferez-vous si votre enquête quantitative ne révèle aucune corrélation significative ? »
+
+Structure de bonne réponse : montrer que l''absence de corrélation significative n''est pas un échec de la recherche, mais un résultat en soi, qui peut orienter différemment la phase qualitative (par exemple en explorant pourquoi les facteurs attendus ne jouent pas le rôle supposé), et rappeler qu''un protocole de recherche robuste doit prévoir, dès sa conception, comment réagir à des résultats inattendus plutôt que de supposer d''avance les résultats qu''on va trouver.
+
+Question de jury 8 : « Comment allez-vous définir et mesurer concrètement l''appropriation des pratiques agiles dans vos études de cas ? »
+
+Structure de bonne réponse : proposer des indicateurs concrets et observables, par exemple la fréquence et la régularité réelle des cycles de livraison, l''existence de retours effectifs des utilisateurs intégrés dans le travail de l''équipe, le degré d''autonomie réelle laissé à l''équipe dans l''organisation de son travail, plutôt que la seule déclaration des acteurs sur leur usage des pratiques agiles, afin de distinguer une appropriation réelle d''une adoption purement déclarative ou de façade.
+
+Question de jury 9 : « En quoi votre protocole méthodologique est-il cohérent avec le cadre théorique que vous avez présenté en introduction ? »
+
+Structure de bonne réponse : relier explicitement les deux éléments : le cadre théorique souligne que le succès et l''appropriation de pratiques se construisent dans la durée et dans l''interaction, ce qui justifie précisément le choix d''un design longitudinal permettant d''observer cette construction progressive, plutôt qu''une mesure ponctuelle qui capturerait un instantané déconnecté du processus réel d''appropriation.
+
+## 65:00 – 80:00 · Question de jury 10, débriefing global et conseils pratiques
+
+Question de jury 10, souvent posée en fin de soutenance : « Si vous deviez résumer, en une phrase, ce que votre thèse apporte de neuf par rapport à la littérature existante, que diriez-vous ? »
+
+Structure de bonne réponse : préparer à l''avance une phrase courte, claire et mémorable, par exemple : « Ma thèse documente empiriquement, à travers un protocole combinant enquête et études de cas longitudinales, comment des pratiques agiles conçues ailleurs se transforment concrètement au contact d''un contexte organisationnel ouest-africain spécifique, contribuant ainsi à affiner les conditions de contingence entre approche rationnelle et agilité identifiées par la littérature. » C''est le type de phrase que vous devez pouvoir prononcer sans hésiter, car elle synthétise à elle seule votre contribution.
+
+Débriefing global : chaque bonne réponse suit une structure similaire, reconnaître la part de légitimité de l''objection, apporter une nuance argumentée, puis relier explicitement la réponse à son propre projet de thèse. C''est ce retour systématique au projet qui distingue une réponse de niveau doctoral d''une réponse purement théorique.
+
+Quelques conseils pratiques : prenez le temps de réfléchir avant de répondre à une question difficile ; si vous ne comprenez pas une question, demandez une reformulation plutôt que de répondre à côté ; si vous ne connaissez pas la réponse, dites-le honnêtement en proposant une piste plutôt que d''improviser une réponse incohérente.
+
+## 80:00 – 90:00 · Grille d''auto-évaluation de la soutenance simulée
+
+Cette dernière vidéo ne se termine pas par un quiz noté, mais par une grille d''auto-évaluation que vous devez utiliser pour analyser votre propre performance, soit sur cette simulation que vous venez de suivre en spectateur, soit, mieux encore, sur un entraînement oral réel que vous aurez vous-même réalisé en répondant à voix haute aux dix questions de jury de cette séance.
+
+Grille d''auto-évaluation, en six dimensions, à noter chacune de 1 (à travailler) à 4 (maîtrisé) :
+
+Dimension 1, clarté de la présentation introductive de quinze minutes : ai-je annoncé clairement mon champ théorique, mon débat central, ma question de recherche et ma méthode, dans cet ordre logique ?
+
+Dimension 2, maîtrise cartographique du champ : ai-je su situer les courants théoriques les uns par rapport aux autres, avec leurs jalons historiques, sans les présenter comme des blocs isolés ?
+
+Dimension 3, esprit critique : ai-je su reconnaître les limites de chaque courant, y compris celui que je mobilise le plus dans mon propre projet de thèse, sans tomber dans un enthousiasme non critique ?
+
+Dimension 4, rigueur méthodologique : ai-je su justifier précisément pourquoi ma méthode choisie convient à ma question de recherche, et reconnaître honnêtement les limites de mon protocole plutôt que de les dissimuler ?
+
+Dimension 5, capacité de positionnement : ai-je su dire, en une phrase claire et mémorable, ce que mon projet de thèse apporte de neuf par rapport à la littérature existante ?
+
+Dimension 6, solidité face à la contradiction orale : ai-je su répondre aux objections du jury en reconnaissant leur part de légitimité, en apportant une nuance argumentée, puis en reliant explicitement ma réponse à mon propre projet, sans m''effondrer ni m''enfermer dans une position rigide ?
+
+Pour chaque dimension notée 1 ou 2, identifiez précisément ce qui a manqué (une connaissance, un exemple, une formulation plus claire) et retravaillez ce point avant votre oral réel, idéalement en vous enregistrant à nouveau pour mesurer votre progression. Cette grille peut être réutilisée autant de fois que nécessaire au cours de vos semaines de préparation, en particulier lors de la semaine 8 de votre plan de travail présenté dans la première leçon de ce cours.', 'video', 90, false, 100
+from public.courses c where c.slug = 'doc-projet'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Simulation complète d''une soutenance de qualification doctorale');
+
 -- Cours : Doctorat Informatique : préparer l'examen de qualification doctorale
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'doc-info', (select id from public.levels where name = 'Doctorat'), null, 'Informatique', 'Doctorat Informatique : préparer l''examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale (comprehensive exam) en Informatique : le débat entre l''ingénierie logicielle classique fondée sur la preuve et la vérification formelle, et l''apprentissage automatique fondé sur les données, la boîte noire et l''explicabilité ; les méthodes de recherche du champ (preuve formelle, expérimentation et benchmarking, étude empirique par fouille de dépôts logiciels) ; une épreuve type corrigée et une simulation complète de soutenance. Public : doctorants en informatique préparant leur examen de qualification. Prérequis : Master en informatique.', true, 803
@@ -2157,606 +2930,4 @@ Sixième critère : la justification méthodologique est-elle argumentée en fon
 
 Un score global de dix-huit sur vingt-quatre ou plus indique une préparation solide ; un score inférieur signale les critères sur lesquels concentrer vos dernières semaines de préparation avant l''épreuve réelle. Je vous souhaite une excellente soutenance.', 'video', 90, false, 100
 from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');
-
--- Cours : Doctorat Comptabilité : réussir l'examen de qualification doctorale
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'doc-compta', (select id from public.levels where name = 'Doctorat'), null, 'Comptabilité', 'Doctorat Comptabilité : réussir l''examen de qualification doctorale', 'Cours de préparation à l''examen de qualification doctorale en Comptabilité : maîtrise de la théorie positive de la comptabilité et des approches critiques et sociales, du débat entre harmonisation IFRS et référentiels régionaux OHADA/SYSCOHADA, et des méthodes de recherche du champ (études d''événements, recherche qualitative et institutionnelle, études de cas). Public : doctorants en comptabilité préparant leur soutenance de qualification. Prérequis : Master en comptabilité ou discipline proche, projet de thèse en cours de construction.', true, 805
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir son examen de qualification doctorale en Comptabilité', 'Objectifs de la leçon
-
-Cette première leçon pose le cadre de l''examen de qualification doctorale en Comptabilité : à quoi il sert, comment un jury doctoral l''évalue, et comment organiser un travail de préparation efficace sur huit semaines. Elle s''adresse au doctorant qui a validé son inscription en thèse et doit, avant de s''y consacrer pleinement, démontrer qu''il maîtrise l''état de l''art de son champ disciplinaire.
-
-Nature de l''épreuve
-
-L''examen de qualification doctorale (souvent appelé examen comprehensive dans les systèmes anglo-saxons, ou soutenance de projet de thèse dans les systèmes francophones) n''est pas un contrôle de connaissances au sens d''un examen de Master. Il vérifie trois choses distinctes.
-
-- La maîtrise de la littérature du champ : le doctorant doit savoir restituer les grands courants théoriques de la recherche comptable, leurs auteurs représentatifs (identifiés par leur apport, pas par citation exacte mémorisée), leurs débats et leurs limites.
-- La capacité de synthèse critique : il ne s''agit pas de réciter des théories côte à côte, mais de les mettre en tension, de montrer leurs présupposés respectifs et d''expliquer pourquoi des chercheurs les opposent ou les articulent.
-- La solidité du projet de thèse : le candidat doit situer sa propre problématique dans cette littérature, justifier le choix d''un cadre théorique et d''une méthode de recherche, et anticiper les critiques qu''un jury pourrait formuler.
-
-Concrètement, l''épreuve combine le plus souvent un document écrit (note de synthèse de la littérature et/ou projet de thèse détaillé) et une soutenance orale devant un jury de trois à cinq enseignants-chercheurs, dont le directeur de thèse n''est pas toujours partie prenante au vote. La durée de la soutenance varie selon les établissements, mais elle suit presque toujours la même logique : un exposé initial du candidat (15 à 30 minutes), puis une série de questions du jury portant sur la littérature, la méthode et la faisabilité du projet.
-
-Ce que le jury doctoral attend réellement
-
-Un jury de qualification ne cherche pas l''exhaustivité encyclopédique. Il évalue surtout la posture de chercheur du candidat, à travers quatre attentes récurrentes.
-
-- La clarté du positionnement théorique : le candidat sait dire explicitement dans quel courant il s''inscrit (ou comment il articule plusieurs courants) et pourquoi ce choix est cohérent avec sa question de recherche.
-- L''honnêteté intellectuelle face aux limites : un bon candidat reconnaît les faiblesses de son cadre théorique et de sa méthode plutôt que de les occulter. C''est souvent ce critère qui distingue un candidat qui maîtrise son sujet d''un candidat qui le récite.
-- La cohérence méthodologique : la méthode de recherche annoncée doit être adaptée à la question posée ; un jury sanctionne sévèrement une méthode choisie par habitude plutôt que par pertinence.
-- La capacité à dialoguer : contrairement à un examen écrit, la soutenance est un échange. Le jury observe comment le candidat réagit à une objection, s''il sait nuancer sans se contredire, et s''il distingue ce qu''il sait de ce qu''il ignore encore.
-
-En comptabilité, ces attentes prennent une coloration particulière : le champ est traversé par une tension ancienne entre une tradition de recherche proche des sciences de gestion quantitatives et des marchés financiers, et une tradition plus proche des sciences sociales, qui interroge la comptabilité comme construction sociale et politique. Un candidat qui ignore l''existence de cette tension, ou qui prétend qu''un seul courant détient la vérité, affaiblit sa position.
-
-Méthode de travail pour préparer l''épreuve
-
-Trois outils structurent efficacement la préparation.
-
-- La fiche de lecture : pour chaque texte ou chaque courant étudié, une fiche courte et standardisée (problématique, cadre théorique mobilisé, méthode, résultat principal, limite assumée par l''auteur ou relevée par la critique) évite de se noyer dans le détail et permet de réviser rapidement avant la soutenance.
-- La cartographie des courants : un schéma ou un tableau qui positionne les courants les uns par rapport aux autres (sur quoi ils s''opposent, sur quoi ils se recoupent, quels objets d''étude ils privilégient) aide à répondre aux questions transversales du jury, qui portent souvent sur les liens entre courants plutôt que sur un courant isolé.
-- La note de synthèse : un document de quelques pages qui résume l''état de l''art du champ et positionne le projet de thèse par rapport à lui. C''est souvent ce document, ou une version enrichie, qui sert de support écrit à la soutenance.
-
-Plan de travail sur huit semaines
-
-Un calendrier réaliste, à adapter selon le temps disponible, peut s''organiser ainsi.
-
-- Semaines 1 et 2 : recensement et lecture des textes fondateurs du courant de la théorie positive de la comptabilité (recherche en information financière, lien avec les marchés de capitaux) ; rédaction des fiches de lecture correspondantes.
-- Semaines 3 et 4 : recensement et lecture des textes représentatifs des approches critiques et sociales de la comptabilité (comptabilité comme construction sociale, théorie des parties prenantes, responsabilité sociétale) ; fiches de lecture ; premier essai de cartographie opposant les deux courants.
-- Semaine 5 : étude des méthodes de recherche propres au champ comptable (études d''événements sur les marchés financiers, recherche qualitative et institutionnelle, études de cas) et de leurs conditions d''application.
-- Semaine 6 : rédaction d''un premier jet de note de synthèse articulant les deux courants et une méthode, et esquisse du positionnement du projet de thèse personnel.
-- Semaine 7 : entraînement sur une question de synthèse type, rédaction d''un plan de réponse complet, puis simulation orale (seul ou avec un pair) chronométrée.
-- Semaine 8 : relecture critique, correction des points faibles identifiés lors de la simulation, préparation des réponses aux objections les plus probables, repos la veille de l''épreuve.
-
-Ce plan n''est pas une recette rigide : il s''ajuste au nombre de courants exigés et au temps disponible. Ce qui compte est la régularité du travail de fiche, plus efficace qu''une révision massive de dernière minute.
-
-## Exercices pratiques
-
-1. Rédigez en cinq lignes la différence entre un examen de Master et un examen de qualification doctorale, du point de vue de ce qui est évalué.
-2. Listez les quatre attentes d''un jury doctoral présentées dans cette leçon et donnez, pour chacune, un exemple concret de ce qu''un candidat pourrait dire ou faire pour y répondre.
-3. Construisez le squelette d''une fiche de lecture (rubriques uniquement, sans contenu) que vous utiliserez pour les leçons suivantes.
-4. Pourquoi la cohérence entre la question de recherche, le cadre théorique et la méthode est-elle un critère d''évaluation central, plus que la seule exactitude des connaissances ?
-5. Rédigez votre propre plan de travail sur huit semaines en l''adaptant à votre situation (temps disponible, nombre de courants exigés par votre programme).
-
-## Corrigé
-
-1. Un examen de Master évalue la capacité à résoudre un cas ou à appliquer une connaissance balisée dans un cadre fixé par l''enseignant. Un examen de qualification doctorale évalue la capacité à se positionner soi-même dans un champ de recherche existant, à comparer de façon critique des courants théoriques concurrents, et à défendre un projet de thèse original devant un jury qui peut remettre en cause chaque choix. Le niveau attendu est donc celui d''un chercheur en formation, pas celui d''un étudiant qui applique une méthode enseignée.
-
-2. Clarté du positionnement théorique : dire explicitement « je m''inscris dans la perspective critique et sociale de la comptabilité parce que ma question porte sur la légitimité des normes, pas sur leur utilité pour les marchés ». Honnêteté sur les limites : reconnaître par exemple qu''une étude de cas unique ne permet pas de généraliser, et expliquer pourquoi ce choix reste justifié pour une recherche exploratoire. Cohérence méthodologique : ne pas annoncer une étude d''événements sur les marchés financiers si la question de recherche porte sur la perception des normes par des acteurs non cotés en bourse. Capacité à dialoguer : répondre à une objection du jury en reformulant ce qui est accepté et ce qui est nuancé, sans se contredire ni se braquer.
-
-3. Une fiche de lecture utile comporte au minimum : référence et auteur(s) identifiés par leur apport ; problématique traitée ; cadre théorique mobilisé ; méthode de recherche employée ; principal résultat ou argument ; limite assumée ou critique reçue ; lien possible avec mon propre projet de thèse.
-
-4. Parce qu''un jury évalue la capacité à raisonner comme un chercheur, pas la mémoire. Un candidat qui connaît un courant théorique mais choisit une méthode inadaptée révèle qu''il n''a pas intégré la logique de la recherche : la question doit guider le cadre théorique, qui oriente à son tour la méthode. Cette incohérence est l''un des signaux les plus visibles d''un travail insuffisamment mûri.
-
-5. Il n''existe pas de corrigé unique : la bonne réponse est un plan réaliste, daté, qui couvre bien les étapes clés (lecture des courants, méthodes, entraînement à la question de synthèse, simulation orale) et qui tient compte du temps réellement disponible du candidat. L''essentiel à vérifier soi-même : chaque semaine doit avoir un livrable concret (une fiche, une cartographie, un brouillon de note de synthèse), pas seulement une intention de lecture.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en Comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique 1 : la théorie positive de la comptabilité', 'Objectifs de la leçon
-
-Cette leçon présente le premier grand courant théorique du champ comptable retenu pour votre examen de qualification : la théorie positive de la comptabilité (positive accounting theory). Vous devez être capable d''en exposer les fondements, d''en citer l''apport des auteurs fondateurs, de retracer son évolution, et d''en formuler les limites et les critiques les plus sérieuses.
-
-Définition et postulat central
-
-La théorie positive de la comptabilité désigne un courant de recherche qui cherche à expliquer et à prédire les pratiques comptables réellement observées, plutôt qu''à prescrire ce qu''elles devraient être. Son postulat central est que les choix comptables des dirigeants, des entreprises et des régulateurs s''expliquent par des motivations économiques rationnelles : minimiser les coûts contractuels, gérer les conflits d''intérêts entre actionnaires, dirigeants et créanciers, et répondre aux incitations créées par les contrats (rémunération indexée sur le résultat, clauses d''endettement, pression politique sur les grandes entreprises).
-
-Ce courant s''inscrit dans une démarche positiviste empruntée aux sciences économiques : il formule des hypothèses testables statistiquement, les confronte à des données de marché ou d''entreprise, et en tire des régularités. Il s''oppose explicitement à une comptabilité normative qui se contenterait de dire comment les comptes devraient être tenus, sans chercher à expliquer pourquoi les praticiens s''en écartent souvent.
-
-Auteurs fondateurs et apport
-
-Sans prétendre à une citation textuelle exacte de leurs travaux, on peut situer l''apport de plusieurs figures associées à ce courant.
-
-- Ross Watts et Jerold Zimmerman sont les auteurs dont l''apport est le plus directement associé à la formalisation de la théorie positive de la comptabilité dans les années 1970 et 1980. Leur contribution majeure est d''avoir proposé un cadre explicatif des choix comptables fondé sur trois hypothèses répandues dans la littérature qui leur est associée : l''hypothèse du plan de rémunération (les dirigeants choisissent des méthodes comptables qui augmentent leur rémunération quand celle-ci dépend du résultat comptable), l''hypothèse des clauses d''endettement (les entreprises proches de violer une clause contractuelle liée à leur niveau d''endettement ont intérêt à choisir des méthodes comptables qui améliorent leurs ratios), et l''hypothèse des coûts politiques (les grandes entreprises visibles ont intérêt à lisser ou minorer un résultat trop élevé pour éviter une attention réglementaire ou fiscale accrue).
-- William Beaver est associé à l''apport fondateur sur l''utilité de l''information comptable pour les marchés financiers, en étudiant comment la publication des résultats comptables modifie le comportement des investisseurs (volume des transactions, volatilité des cours) autour de la date d''annonce.
-- Ray Ball et Philip Brown sont associés à l''un des travaux fondateurs établissant empiriquement un lien entre le contenu informatif des résultats comptables publiés et les variations de cours de bourse, ce qui a durablement orienté la recherche comptable vers l''étude de la valeur informationnelle (value relevance) des chiffres comptables pour les marchés de capitaux.
-
-Évolution historique du courant
-
-Le courant trouve son origine dans le mouvement de recherche empirique en comptabilité financière des années 1960 et 1970, lui-même porté par le développement de l''hypothèse d''efficience des marchés financiers en finance. Si les marchés intègrent rapidement l''information disponible, alors on peut étudier statistiquement comment ils réagissent à la publication d''une information comptable, et en déduire si cette information est utile.
-
-Dans les années 1980, le courant s''élargit des études de marché aux études de choix comptables eux-mêmes : pourquoi une entreprise choisit-elle une méthode d''amortissement plutôt qu''une autre, pourquoi certains dirigeants pratiquent-ils la gestion du résultat (earnings management) à certaines périodes. La théorie de l''agence, qui analyse les conflits d''intérêts entre les différentes parties prenantes d''un contrat, devient le cadre explicatif dominant de cette deuxième vague.
-
-À partir des années 1990 et 2000, le courant se diversifie encore : il nourrit une abondante littérature sur la pertinence des normes comptables internationales (IFRS) pour les marchés financiers. L''argument central de cette littérature est que l''harmonisation comptable internationale réduit les coûts d''information pour les investisseurs, facilite la comparabilité des entreprises cotées entre pays, et peut ainsi abaisser le coût du capital des entreprises qui adoptent des normes de haute qualité perçue. C''est une extension logique du postulat de départ : si l''information comptable est utile aux marchés, alors sa qualité et sa comparabilité internationale doivent avoir une valeur économique mesurable, par exemple via des études d''événements autour des dates d''adoption des IFRS.
-
-Limites et critiques
-
-Ce courant a fait l''objet de critiques anciennes et récurrentes, qu''un candidat doit connaître pour nuancer sa présentation.
-
-- Un déterminisme économique excessif : en expliquant tout choix comptable par un calcul d''intérêt économique rationnel, la théorie positive tend à ignorer les dimensions institutionnelles, culturelles et politiques qui façonnent aussi les pratiques comptables, notamment dans des contextes où les marchés financiers jouent un rôle secondaire.
-- Une confusion possible entre corrélation et explication : montrer qu''un choix comptable est statistiquement associé à une incitation économique ne prouve pas que cette incitation en est la cause, ni qu''elle en est la seule cause.
-- Une focalisation sur les marchés financiers développés : une large part des travaux fondateurs du courant s''appuie sur des données de marchés nord-américains très liquides. Leur transposition à des contextes où les marchés boursiers sont étroits ou peu liquides, ce qui est le cas de nombreuses places africaines, pose la question de la validité externe des résultats, un point qu''un candidat doit savoir discuter sans pour autant rejeter l''ensemble du courant.
-- Une neutralité scientifique contestée : des chercheurs d''autres courants reprochent à la théorie positive de se présenter comme purement descriptive alors qu''elle véhicule, selon eux, une vision implicite de l''entreprise centrée sur l''efficience des marchés et les intérêts des actionnaires, ce qui n''est pas un choix neutre. Cette critique prépare directement la discussion du courant opposé ou complémentaire étudié dans la prochaine leçon.
-
-Ce que le candidat doit retenir pour l''épreuve
-
-Pour l''examen, il est attendu de savoir présenter ce courant de façon équilibrée : en rappeler le postulat et l''apport réel (avoir mis l''information comptable au centre d''une démarche empirique testable, avoir éclairé des mécanismes contractuels concrets), tout en étant capable d''articuler ses limites sans les présenter comme une réfutation totale. C''est cette capacité de nuance, plus que la restitution brute des trois hypothèses de Watts et Zimmerman, qui distingue une bonne réponse de jury d''une réponse mémorisée.
-
-## Exercices pratiques
-
-1. En trois phrases, formulez le postulat central de la théorie positive de la comptabilité sans utiliser le mot « positive ».
-2. Expliquez avec un exemple fictif comment l''hypothèse des clauses d''endettement pourrait motiver un choix comptable précis dans une entreprise sénégalaise fortement endettée.
-3. Pourquoi le développement de ce courant est-il historiquement lié à l''hypothèse d''efficience des marchés financiers ?
-4. Présentez un argument et une limite de l''application de ce courant à l''étude de la valeur informationnelle des normes IFRS dans un contexte de marché financier peu liquide.
-5. Un membre du jury vous objecte : « votre cadre théorique réduit les dirigeants à des calculateurs d''intérêt, n''est-ce pas réducteur ? ». Rédigez une réponse de deux phrases qui reconnaît la limite sans abandonner le cadre théorique.
-
-## Corrigé
-
-1. Les choix comptables observés dans les entreprises s''expliquent principalement par des motivations économiques rationnelles liées aux contrats qui lient les dirigeants aux actionnaires et aux créanciers. Ce courant chercher à expliquer les pratiques réelles plutôt qu''à prescrire des règles idéales. Il utilise des méthodes empiriques pour tester statistiquement ces explications sur des données réelles.
-
-2. Une entreprise sénégalaise proche de violer une clause contractuelle bancaire liée à un ratio d''endettement maximal (exemple fictif pour l''illustration) pourrait choisir une méthode de comptabilisation qui améliore son résultat ou réduit son passif apparent, afin d''éviter un défaut technique et ses conséquences (renégociation, exigibilité anticipée). Ce choix n''est pas nécessairement frauduleux : il reste souvent dans le cadre des options autorisées par le référentiel comptable applicable, ce qui est précisément ce que l''hypothèse des clauses d''endettement chercher à expliquer.
-
-3. Parce que l''étude empirique de l''utilité de l''information comptable pour les marchés suppose que ces marchés réagissent à cette information de façon suffisamment rapide et cohérente pour être mesurable statistiquement. Sans l''hypothèse d''efficience, qui postule que les prix intègrent rapidement l''information disponible, il serait difficile d''interpréter une variation de cours autour d''une annonce comptable comme la preuve que l''information a eu une valeur pour les investisseurs.
-
-4. Argument : l''adoption de normes IFRS, perçues comme de meilleure qualité et plus comparables, peut réduire l''incertitude des investisseurs sur la qualité des comptes et donc, en théorie, réduire le coût du capital des entreprises qui les adoptent. Limite : sur un marché financier peu liquide, où les volumes d''échange sont faibles et où peu d''investisseurs suivent activement l''information publiée, la réaction du marché à une annonce comptable peut être trop faible ou trop bruitée pour être mesurée de façon fiable, ce qui affaiblit la validité empirique de l''argument dans ce contexte.
-
-5. Réponse possible : « Je reconnais que ce cadre simplifie la motivation des dirigeants en la ramenant à des incitations contractuelles mesurables, et qu''il laisse de côté des dimensions institutionnelles ou culturelles plus difficiles à modéliser statistiquement. Je le mobilise néanmoins parce qu''il permet de formuler des hypothèses testables sur mon terrain, et je prévois de le compléter, si nécessaire, par une lecture plus institutionnelle pour les aspects qu''il laisse dans l''ombre. »', 'texte', 45, false, 20
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 1 : la théorie positive de la comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique 2 : les approches critiques et sociales de la comptabilité', 'Objectifs de la leçon
-
-Cette leçon présente le second grand courant théorique retenu pour votre examen : les approches critiques et sociales de la comptabilité. Ce courant se construit en partie en réaction au courant étudié dans la leçon précédente, et il est fréquent qu''un jury demande explicitement de mettre les deux en tension. Vous devez savoir en exposer les fondements, les apports, l''évolution, et les limites.
-
-Définition et postulat central
-
-Les approches critiques et sociales de la comptabilité regroupent un ensemble de courants hétérogènes qui partagent un postulat commun : la comptabilité n''est pas un simple outil technique neutre de mesure économique, mais une construction sociale qui façonne, et est façonnée par, des rapports de pouvoir, des représentations sociales et des choix politiques. Produire un chiffre comptable, c''est déjà faire un choix sur ce qui compte, pour qui, et selon quelles catégories.
-
-Ce courant déplace donc la question de recherche. Là où la théorie positive demande « quelle incitation économique explique ce choix comptable, et quel effet ce choix a-t-il sur les marchés », les approches critiques et sociales demandent « quels intérêts, quelles représentations du monde, quels rapports entre l''entreprise et la société ce choix comptable reflète-t-il ou contribue-t-il à construire ». Ce ne sont pas seulement des méthodes différentes, mais des questions différentes posées à partir de présupposés différents sur ce qu''est la comptabilité.
-
-Auteurs et apports représentatifs
-
-Plusieurs lignes de travail peuvent être situées dans ce courant, par leur apport plutôt que par citation exacte.
-
-- Anthony Hopwood est associé à l''apport fondateur consistant à étudier la comptabilité comme pratique sociale et organisationnelle, en s''intéressant à la façon dont les systèmes comptables influencent le comportement des acteurs dans l''organisation, au-delà de leur seule fonction de mesure.
-- Richard Laughlin et des chercheurs proches de la tradition dite de la comptabilité critique sont associés à l''apport d''une lecture inspirée des théories sociales critiques, qui interroge le rôle de la comptabilité dans la reproduction de rapports de pouvoir au sein des organisations et de la société.
-- Les travaux rattachés à la théorie des parties prenantes (stakeholder theory), popularisée notamment à partir des apports de R. Edward Freeman en management stratégique puis largement repris en comptabilité sociale et environnementale, sont associés à l''idée que l''entreprise doit rendre compte non seulement à ses actionnaires mais à l''ensemble des parties affectées par son activité (salariés, communautés locales, collectivités, environnement), ce qui a nourri le développement de la comptabilité sociale et environnementale et des rapports de responsabilité sociétale des entreprises.
-- La théorie de la légitimité, mobilisée par de nombreux chercheurs de ce courant, est associée à l''idée que les entreprises publient des informations sociales et environnementales en partie pour préserver leur légitimité auprès de la société, indépendamment de toute utilité directe pour les décisions des investisseurs financiers.
-
-Évolution historique du courant
-
-Ce courant émerge à partir des années 1970 et 1980, en partie comme réaction au tournant empirique et quantitatif de la recherche comptable dominante à cette période. Des chercheurs, souvent influencés par la sociologie des organisations, la philosophie sociale ou l''économie politique, estiment que réduire la comptabilité à son utilité pour des marchés financiers efficients laisse de côté l''essentiel : les effets de la comptabilité sur le travail, sur les communautés, sur l''environnement, et sur la répartition du pouvoir dans et autour des organisations.
-
-Dans les années 1990, le courant se structure davantage autour de la comptabilité sociale et environnementale, avec l''essor des rapports extra-financiers des grandes entreprises et l''apparition progressive de cadres de reporting sur la responsabilité sociétale. La recherche critique s''intéresse alors beaucoup à la question de savoir si ces rapports traduisent un changement réel de comportement des entreprises, ou s''ils servent surtout une fonction de légitimation symbolique, sans effet substantiel sur les pratiques.
-
-Depuis les années 2000, une partie de ce courant s''intéresse de près à la normalisation comptable internationale elle-même comme objet d''étude social et politique : qui participe à l''élaboration des normes comptables internationales, quels intérêts y sont représentés, et quelles conséquences la diffusion mondiale d''un même référentiel a-t-elle sur des économies très différentes. C''est ici que se noue un débat particulièrement pertinent pour un chercheur africain en comptabilité : celui de l''harmonisation comptable internationale portée par les normes IFRS, face à la pertinence de référentiels régionaux comme le droit comptable de l''Organisation pour l''Harmonisation du Droit des Affaires en Afrique, mis en œuvre à travers le Système Comptable Ouest-Africain (OHADA et SYSCOHADA).
-
-Les chercheurs proches des approches critiques et sociales invitent à ne pas considérer l''adoption des IFRS comme un simple progrès technique universel, mais à interroger les conditions sociales de sa production (élaborée principalement par des organismes des économies les plus industrialisées) et sa pertinence pour des économies où les marchés financiers sont étroits, où le tissu économique est dominé par des petites et moyennes entreprises non cotées, et où les besoins d''information des utilisateurs diffèrent de ceux des investisseurs boursiers visés en priorité par les IFRS. Le référentiel SYSCOHADA, construit pour un espace économique régional ouest et centrafricain, peut alors être lu non comme un simple retard par rapport à une norme internationale supérieure, mais comme une construction institutionnelle répondant à des besoins et à des rapports de pouvoir économiques propres à la zone, ce qui est précisément la question posée par les approches critiques et sociales.
-
-Limites et critiques
-
-Ce courant, à son tour, fait l''objet de critiques qu''un candidat doit connaître.
-
-- Un déficit de généralisation statistique : beaucoup de travaux s''appuient sur des études de cas ou des analyses qualitatives dont la portée reste difficile à généraliser, ce que les chercheurs du courant opposé soulignent régulièrement.
-- Un risque de glissement normatif : partant d''un engagement critique explicite, certains travaux sont accusés de mélanger analyse scientifique et prise de position militante.
-- Une difficulté à proposer des solutions opérationnelles immédiates : mettre en évidence des rapports de pouvoir est parfois jugé plus facile que formuler des recommandations applicables.
-
-Articulation avec le courant précédent
-
-Pour l''examen, il est attendu de ne pas présenter ces deux courants comme simplement incompatibles. Beaucoup de chercheurs contemporains considèrent qu''ils répondent à des questions différentes et peuvent être mobilisés de façon complémentaire selon l''objet étudié : un travail sur la valeur informationnelle d''une annonce comptable sur un marché boursier relève naturellement du premier courant, tandis qu''un travail sur l''adoption d''un référentiel comptable régional par des petites entreprises non cotées relève plus naturellement du second. Savoir expliquer ce critère de choix, plutôt que de déclarer un courant supérieur à l''autre, est souvent ce qui distingue une bonne prestation orale.
-
-## Exercices pratiques
-
-1. Formulez en trois phrases le postulat central des approches critiques et sociales de la comptabilité, en évitant toute formule mémorisée.
-2. Expliquez la différence entre la théorie des parties prenantes et la théorie de la légitimité, en une phrase chacune.
-3. Pourquoi le débat sur la pertinence d''un référentiel régional comme le SYSCOHADA face aux normes IFRS est-il un terrain naturel pour les approches critiques et sociales de la comptabilité ?
-4. Donnez un exemple fictif de rapport de responsabilité sociétale d''une entreprise sénégalaise qui pourrait être analysé sous l''angle de la théorie de la légitimité plutôt que sous l''angle de son utilité informationnelle pour les marchés.
-5. Un membre du jury vous objecte que vos travaux critiques « ne proposent pas de solution concrète ». Rédigez une réponse de deux phrases qui défend la valeur du travail descriptif et critique sans prétendre qu''il doit toujours produire une recommandation opérationnelle.
-
-## Corrigé
-
-1. La comptabilité n''est pas un outil technique neutre : elle reflète et façonne des rapports de pouvoir, des représentations sociales et des choix politiques, dans l''organisation comme dans la société. Produire un chiffre comptable implique toujours de choisir ce qui compte et selon quelles catégories. Ce courant étudie donc les effets sociaux et politiques des pratiques comptables, plutôt que leur seule utilité économique pour les marchés.
-
-2. La théorie des parties prenantes soutient que l''entreprise doit rendre compte à l''ensemble des acteurs affectés par son activité, pas seulement à ses actionnaires. La théorie de la légitimité explique, elle, pourquoi une entreprise publie certaines informations sociales ou environnementales : pour préserver son acceptabilité sociale, indépendamment de toute obligation envers des parties prenantes précises.
-
-3. Parce que ce débat ne porte pas seulement sur une question technique de qualité comptable, mais sur la question de savoir qui produit les normes, pour quels besoins, et avec quels intérêts économiques en jeu, ce qui est exactement l''objet d''étude privilégié des approches critiques et sociales : interroger les conditions sociales et institutionnelles de production d''un référentiel plutôt que supposer sa supériorité technique universelle.
-
-4. Une entreprise sénégalaise (exemple fictif) qui publie chaque année un rapport détaillé sur ses actions sociales dans les communautés où elle opère, sans que ce rapport soit directement utilisé par les investisseurs financiers pour évaluer son cours de bourse, illustre bien la théorie de la légitimité : la publication vise à maintenir une image socialement acceptable de l''entreprise, plutôt qu''à informer un marché financier sur sa valeur.
-
-5. Réponse possible : « La recherche critique a pour fonction première de révéler des mécanismes et des rapports de pouvoir qui restent invisibles dans une lecture purement technique de la comptabilité ; cette mise en lumière a une valeur scientifique propre. Je reconnais cependant que mon projet pourrait, en complément, discuter des implications pratiques de ces résultats pour les régulateurs ou les praticiens, sans pour autant transformer un travail descriptif en recommandation normative. »', 'texte', 45, false, 30
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 2 : les approches critiques et sociales de la comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Les méthodes de recherche en comptabilité', 'Objectifs de la leçon
-
-Cette leçon présente les grandes méthodes de recherche propres au champ comptable, en lien direct avec les deux courants théoriques étudiés précédemment. Elle se termine par un exemple de protocole de recherche appliqué à un contexte sénégalais fictif, construit pour vous entraîner à justifier une méthode devant un jury.
-
-Les études d''événements sur les marchés financiers
-
-L''étude d''événements (event study) est la méthode quantitative la plus associée à la théorie positive de la comptabilité et à l''étude de la valeur informationnelle des chiffres comptables. Son principe est de mesurer la réaction d''un marché financier à la publication d''une information comptable précise (résultat annuel, changement de méthode comptable, adoption d''un nouveau référentiel), en comparant le rendement réellement observé d''un titre autour de la date de l''événement à un rendement attendu en l''absence de cet événement.
-
-La démarche suit généralement quatre étapes. Premièrement, définir précisément l''événement et sa date (par exemple la date de publication officielle d''un résultat annuel). Deuxièmement, estimer un modèle de rendement attendu sur une période antérieure à l''événement, le plus souvent un modèle de marché qui relie le rendement du titre au rendement d''un indice de référence par une relation linéaire. Troisièmement, calculer le rendement anormal (abnormal return) à chaque date de la fenêtre d''événement, défini comme la différence entre le rendement observé et le rendement attendu par le modèle. Quatrièmement, cumuler ces rendements anormaux sur la fenêtre étudiée (cumulative abnormal return, CAR) et tester si ce cumul est statistiquement différent de zéro.
-
-Un exemple chiffré, entièrement fictif et vérifié par calcul, illustre la méthode. Sur une fenêtre de onze jours de bourse autour de la publication des comptes annuels d''une entreprise fictive cotée sur un marché régional (jour 0 = date de l''annonce), avec un modèle de marché fictif déjà estimé (alpha = 0,02 pourcent, bêta = 1,10), les rendements anormaux quotidiens calculés sont faibles les jours sans événement (de l''ordre de -0,08 à +0,07 pourcent) mais atteignent 1,67 pourcent le jour de l''annonce elle-même. Le cumul des rendements anormaux sur l''ensemble de la fenêtre (CAR) atteint environ 1,86 pourcent, très majoritairement porté par le seul jour de l''annonce. Un test de significativité simplifié, comparant l''écart du jour 0 à la moyenne et à l''écart-type des rendements anormaux des autres jours, donne une statistique très supérieure aux valeurs seuils usuelles, ce qui, dans cet exemple construit pour l''illustration, serait interprété comme une réaction de marché statistiquement significative à l''annonce comptable. Ces chiffres sont fictifs et construits pour la démonstration : dans une recherche réelle, la robustesse d''un tel résultat dépend de la qualité du modèle de rendement attendu, de la taille de l''échantillon d''entreprises étudiées, et du contrôle d''événements concurrents susceptibles d''affecter le cours à la même date.
-
-Cette méthode suppose un marché boursier suffisamment liquide et un échantillon suffisant d''entreprises cotées pour être statistiquement robuste, ce qui limite directement son application dans des contextes où le marché financier est étroit.
-
-La recherche qualitative et institutionnelle
-
-À l''opposé méthodologique, la recherche qualitative et institutionnelle est la méthode privilégiée des approches critiques et sociales de la comptabilité. Elle vise à comprendre en profondeur comment des acteurs donnent sens à des pratiques comptables, comment des institutions (organismes de normalisation, administrations, organisations professionnelles) façonnent ces pratiques, et comment des rapports de pouvoir s''y expriment.
-
-Les techniques les plus courantes sont l''entretien semi-directif avec des acteurs clés (dirigeants, comptables, régulateurs, auditeurs), l''analyse documentaire approfondie (rapports annuels, procès-verbaux d''organismes de normalisation, débats publics autour d''un projet de norme), et l''observation directe ou participante au sein d''une organisation. L''analyse qualitative recourt souvent à un codage thématique des données recueillies pour en dégager des catégories et des régularités interprétatives, sans viser une généralisation statistique.
-
-La recherche institutionnelle, plus spécifiquement, s''appuie fréquemment sur la théorie néo-institutionnelle pour expliquer pourquoi des organisations adoptent des pratiques comptables similaires non pas parce qu''elles sont techniquement supérieures, mais parce qu''elles répondent à des pressions de légitimité, d''imitation ou de normalisation professionnelle. Ce cadre est particulièrement utile pour étudier la diffusion d''un référentiel comme le SYSCOHADA dans un espace régional, ou l''adoption progressive de pratiques inspirées des IFRS par des entreprises non cotées.
-
-Les études de cas
-
-L''étude de cas occupe une place particulière : elle peut servir aussi bien une démarche positiviste (étudier en détail les mécanismes contractuels d''une entreprise précise pour illustrer ou affiner une hypothèse générale) qu''une démarche critique et sociale (comprendre en profondeur un contexte organisationnel singulier). Une étude de cas rigoureuse précise toujours son unité d''analyse (une entreprise, un service, un processus de décision), sa stratégie d''échantillonnage (cas unique en profondeur ou cas multiples comparés), et ses sources de données (entretiens, documents internes, observation), en veillant à trianguler plusieurs sources pour renforcer la validité des résultats. Sa principale limite, souvent soulevée par le jury, est la difficulté à généraliser les résultats obtenus sur un ou quelques cas à une population plus large, ce qui doit être anticipé et assumé dans la présentation de la méthode plutôt que nié.
-
-Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
-
-Imaginons un projet de thèse fictif portant sur la question suivante : « Comment les petites et moyennes entreprises sénégalaises non cotées perçoivent-elles la pertinence du référentiel SYSCOHADA révisé par rapport aux normes IFRS, et quels facteurs institutionnels expliquent leurs pratiques comptables effectives ? » Un protocole de recherche cohérent avec cette question, mobilisant la méthode qualitative et institutionnelle plutôt que l''étude d''événements (puisque ces entreprises ne sont pas cotées en bourse), pourrait s''organiser ainsi.
-
-- Choix du cadre théorique : approche néo-institutionnelle, issue du courant critique et social, pour expliquer l''adoption de pratiques comptables par des pressions de légitimité plutôt que par un seul calcul d''efficience.
-- Échantillon : étude de cas multiples, par exemple six à dix petites et moyennes entreprises sénégalaises de secteurs différents (commerce, industrie légère, services), sélectionnées pour contraster leur taille et leur exposition à des bailleurs de fonds exigeant des normes internationales.
-- Collecte de données : entretiens semi-directifs avec les dirigeants et les responsables comptables de chaque entreprise, complétés par l''analyse de leurs états financiers et, lorsque disponible, de leurs échanges avec des organismes de normalisation ou des cabinets d''audit.
-- Analyse : codage thématique des entretiens pour identifier les catégories de justification données par les acteurs (contrainte réglementaire, exigence d''un bailleur de fonds, habitude professionnelle, méconnaissance des alternatives), puis comparaison systématique entre les cas.
-- Limites anticipées à présenter au jury : un échantillon de cas multiples sénégalais ne permet pas de généraliser les résultats à l''ensemble des petites entreprises ouest-africaines ; le choix de s''appuyer sur les discours des dirigeants, plutôt que sur une observation prolongée des pratiques réelles, introduit un biais de déclaration qu''il convient de discuter.
-
-## Exercices pratiques
-
-1. Expliquez en trois phrases le principe d''une étude d''événements, sans recourir au vocabulaire anglais.
-2. Pourquoi l''étude d''événements est-elle difficilement applicable à une recherche portant sur des petites entreprises sénégalaises non cotées ?
-3. Donnez deux techniques de collecte de données propres à la recherche qualitative et institutionnelle, et expliquez à quel type de question de recherche chacune convient le mieux.
-4. Dans le protocole fictif présenté, pourquoi le choix d''une étude de cas multiples est-il préférable à un cas unique pour cette question de recherche précise ?
-5. Un membre du jury objecte que les résultats de votre étude de cas multiples « ne prouvent rien de généralisable ». Formulez une réponse de deux phrases qui assume cette limite sans abandonner la méthode.
-
-## Corrigé
-
-1. Une étude d''événements mesure la réaction d''un marché financier à la publication d''une information précise, par exemple un résultat comptable. Elle compare le rendement réellement observé d''un titre autour de cette publication à un rendement attendu calculé à partir d''un modèle estimé sur une période antérieure. L''écart entre ces deux rendements, appelé rendement anormal, est interprété comme la réaction du marché à l''information en question.
-
-2. Parce que cette méthode suppose un titre coté sur un marché boursier suffisamment liquide pour que ses variations de cours reflètent l''arrivée d''une information nouvelle. Des petites entreprises sénégalaises non cotées n''ont, par définition, aucun cours de bourse observable : il n''existe donc aucun rendement de marché à mesurer, ce qui rend la méthode inapplicable à cette population.
-
-3. L''entretien semi-directif convient aux questions portant sur le sens que les acteurs donnent à leurs pratiques (pourquoi un dirigeant choisit telle méthode comptable) ; l''analyse documentaire (rapports, procès-verbaux d''organismes de normalisation) convient aux questions portant sur l''évolution institutionnelle d''un référentiel ou sur les débats publics qui l''ont entouré.
-
-4. Parce que la question de recherche porte sur des facteurs institutionnels qui peuvent varier selon la taille, le secteur ou l''exposition à des bailleurs de fonds exigeants : un cas unique ne permettrait pas de voir si ces facteurs varient systématiquement selon ces dimensions, alors que des cas multiples contrastés permettent une comparaison qui enrichit l''interprétation, même sans viser une généralisation statistique.
-
-5. Réponse possible : « Je reconnais que mes résultats ne sont pas généralisables statistiquement à l''ensemble des petites entreprises ouest-africaines : ce n''est pas l''objectif de ma méthode. Mon objectif est de comprendre en profondeur les mécanismes institutionnels à l''œuvre dans les cas étudiés, une compréhension qui peut ensuite nourrir des hypothèses à tester sur un échantillon plus large par une autre méthode. »', 'texte', 45, false, 40
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Épreuve type d''examen de qualification doctorale', 'Objectifs de la leçon
-
-Cette leçon vous propose une question de synthèse typique d''un examen de qualification doctorale en comptabilité (question non officielle, construite pour l''entraînement), suivie d''un plan de réponse détaillé et corrigé. L''objectif est de vous entraîner à mobiliser ensemble les deux courants théoriques et une méthode de recherche étudiés dans les leçons précédentes, exactement comme un jury vous le demanderait.
-
-Énoncé de la question type
-
-« Dans quelle mesure la recherche comptable peut-elle à la fois évaluer l''utilité de l''information financière pour les marchés de capitaux et interroger la comptabilité comme construction sociale ? Vous discuterez cette tension à partir du débat entre harmonisation comptable internationale (IFRS) et pertinence des référentiels comptables régionaux, et vous proposerez une méthode de recherche adaptée à l''étude de cette question dans un contexte africain. »
-
-Analyse de la question avant de répondre
-
-Avant de se lancer dans la rédaction, un bon candidat prend quelques minutes pour décomposer la question en ses exigences implicites. Cette question en comporte au moins quatre : présenter le courant de la théorie positive de la comptabilité et son approche de l''utilité de l''information financière ; présenter le courant critique et social et sa lecture de la comptabilité comme construction sociale ; articuler ces deux courants autour du débat IFRS contre référentiels régionaux ; proposer et justifier une méthode de recherche cohérente avec un contexte africain. Un plan qui traiterait ces quatre éléments de façon séparée, sans les relier, répondrait partiellement à la question mais perdrait des points sur la capacité de synthèse attendue.
-
-Plan de réponse détaillé
-
-Introduction (environ 10 pourcent du temps de réponse) : rappeler que la recherche comptable est traversée par une tension entre une tradition qui étudie la comptabilité comme information utile aux décisions des marchés, et une tradition qui l''étudie comme construction sociale et politique ; annoncer que cette tension s''illustre particulièrement bien dans le débat sur l''harmonisation comptable internationale ; annoncer le plan en trois temps.
-
-Premier temps : la lecture de l''utilité de l''information financière (mobilise la leçon 2). Présenter le postulat de la théorie positive de la comptabilité : les choix et les normes comptables s''expliquent et se justifient par leur capacité à réduire l''incertitude des investisseurs et à faciliter l''allocation efficace du capital. Appliquer ce postulat au débat IFRS : l''argument principal en faveur de l''harmonisation internationale est que des normes communes et de qualité perçue élevée réduisent les coûts d''information et peuvent abaisser le coût du capital des entreprises qui les adoptent, ce qui est testable empiriquement par des études d''événements autour des dates d''adoption. Signaler la limite : cet argument suppose des marchés financiers suffisamment développés et liquides pour que l''effet soit mesurable, ce qui n''est pas la situation de la majorité des entreprises africaines.
-
-Deuxième temps : la lecture de la comptabilité comme construction sociale (mobilise la leçon 3). Présenter le postulat des approches critiques et sociales : la comptabilité reflète et façonne des rapports de pouvoir et des représentations sociales, et les normes comptables sont elles-mêmes le produit d''un processus institutionnel situé, pas une vérité technique universelle. Appliquer ce postulat au même débat : la normalisation IFRS est portée par des organismes et des intérêts principalement issus des économies les plus industrialisées, ce qui invite à interroger sa pertinence pour des économies où les marchés financiers sont étroits et où le tissu économique est dominé par des entreprises non cotées. Présenter alors le référentiel régional SYSCOHADA non comme un simple retard technique, mais comme une réponse institutionnelle à des besoins et à des rapports de pouvoir économiques spécifiques à l''espace ouest et centrafricain.
-
-Troisième temps : articulation des deux lectures et proposition méthodologique (mobilise la leçon 4). Montrer que les deux lectures ne sont pas forcément incompatibles : elles répondent à des questions différentes selon l''objet étudié. Pour une question portant sur la réaction des marchés financiers à l''adoption de nouvelles normes par de grandes entreprises cotées, une étude d''événements, cohérente avec la théorie positive, est pertinente. Pour une question portant sur la façon dont des petites entreprises non cotées perçoivent et appliquent effectivement un référentiel comptable régional, une démarche qualitative et institutionnelle, cohérente avec les approches critiques et sociales, est plus appropriée. Proposer, à titre d''illustration, un protocole combinant les deux regards : une étude d''événements limitée aux quelques grandes entreprises africaines cotées ayant adopté les IFRS, complétée par une étude de cas qualitative auprès de petites entreprises non cotées restées au référentiel régional, afin de confronter les deux logiques sur un même terrain.
-
-Conclusion (environ 10 pourcent du temps de réponse) : rappeler que la tension entre les deux courants n''est pas un obstacle à résoudre mais un objet d''étude en soi, particulièrement fécond pour un chercheur travaillant sur un contexte africain, où la coexistence de normes internationales et régionales offre un terrain naturel de comparaison.
-
-Corrigé commenté : ce qui ferait la différence devant un jury
-
-Un jury valoriserait particulièrement trois éléments dans cette réponse. Premièrement, la clarté de la distinction entre les deux courants dès l''introduction, sans les mélanger prématurément. Deuxièmement, le fait de ne pas présenter le référentiel régional comme simplement inférieur aux IFRS, ce qui serait une erreur de positionnement révélant une mauvaise compréhension du courant critique et social. Troisièmement, la capacité à proposer une méthode concrète et réalisable, plutôt qu''une méthode mentionnée sans justification de son adéquation au terrain étudié. À l''inverse, un jury pénaliserait une réponse qui se contenterait de réciter les deux courants sans jamais les articuler autour du débat proposé, ou qui proposerait une méthode sans expliquer pourquoi elle convient précisément à la question posée.
-
-## Exercices pratiques
-
-1. Rédigez seul, en quinze minutes chronométrées, une introduction de réponse à la question type de cette leçon, sans relire le plan proposé.
-2. Identifiez, dans le plan de réponse détaillé, la phrase qui articule explicitement les deux courants plutôt que de les juxtaposer, et expliquez pourquoi cette articulation est importante pour le jury.
-3. Proposez une variante de la question type qui porterait sur un autre couple de méthodes (par exemple étude de cas contre recherche institutionnelle) plutôt que sur le débat IFRS contre référentiels régionaux.
-4. Un jury vous demande : « votre protocole combinant étude d''événements et étude de cas n''est-il pas simplement un empilement de deux méthodes sans cohérence ? ». Rédigez une réponse de trois phrases qui justifie la cohérence du protocole.
-5. Entraînez-vous à l''oral : présentez le plan de réponse à voix haute en dix minutes maximum, puis identifiez les deux points que vous avez eu le plus de mal à articuler clairement.
-
-## Corrigé
-
-1. Il n''existe pas de corrigé unique pour cet exercice d''entraînement individuel : la bonne pratique est de comparer votre introduction à celle proposée dans la leçon et de vérifier qu''elle annonce bien les trois temps du plan (utilité pour les marchés, construction sociale, articulation méthodologique), sans entrer déjà dans le détail de chaque courant.
-
-2. La phrase clé est celle qui explique que les deux lectures « répondent à des questions différentes selon l''objet étudié » : elle montre au jury que le candidat ne choisit pas un courant par conviction personnelle mais sait identifier à quel type de question chaque courant, et chaque méthode associée, est le mieux adapté. C''est cette logique de choix raisonné, plus que la connaissance des courants eux-mêmes, qui démontre la maturité de chercheur attendue à ce niveau.
-
-3. Exemple de variante : « Dans quelle mesure l''étude de cas et la recherche institutionnelle permettent-elles d''éclairer des questions que l''étude d''événements sur les marchés financiers ne peut pas traiter, notamment dans des économies où les marchés boursiers sont peu développés ? » Cette question mobiliserait les mêmes courants théoriques mais déplacerait le débat appliqué sur un autre terrain.
-
-4. Réponse possible : « Le protocole n''empile pas deux méthodes au hasard : il applique chaque méthode à la population pour laquelle elle est pertinente, les grandes entreprises cotées pour l''étude d''événements et les petites entreprises non cotées pour l''étude de cas qualitative. La cohérence ne vient donc pas de l''unité de la méthode, mais de l''adéquation entre chaque méthode et le sous-objet de recherche auquel elle s''applique. Cette combinaison permet justement de couvrir toute la population étudiée, ce qu''aucune des deux méthodes prise isolément ne permettrait. »
-
-5. Cet exercice n''a pas de corrigé textuel : il vise à faire expérimenter la contrainte orale du temps et à identifier, par l''auto-évaluation, les transitions les moins maîtrisées, qui devront être retravaillées avant la soutenance réelle.', 'texte', 45, false, 50
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification doctorale');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : la théorie positive de la comptabilité', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : maîtriser la théorie positive de la comptabilité pour pouvoir l''exposer, la mettre en œuvre dans un exemple, et en discuter les limites devant un jury. Matériel : tableau ou diaporama avec les trois hypothèses de la théorie positive, un tableau de calcul d''étude d''événements projeté, de quoi prendre des notes. Prérequis : avoir lu la leçon texte sur la théorie positive de la comptabilité et tenté les exercices correspondants.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Ouverture et objectifs de la séance
-
-Bonjour à toutes et à tous. Cette séance vidéo reprend et approfondit la leçon sur la théorie positive de la comptabilité, premier grand courant théorique de votre examen de qualification. Mon objectif aujourd''hui n''est pas de vous refaire lire la leçon texte, mais de vous faire manipuler ce courant comme un chercheur le ferait réellement : en le mettant à l''épreuve d''un exemple chiffré, et en anticipant les objections qu''un jury pourrait vous opposer. Nous allons procéder en quatre temps : d''abord un rappel structuré du postulat et des hypothèses du courant, ensuite une démonstration complète d''une étude d''événements avec des chiffres fictifs mais calculés, puis une discussion critique des limites, et enfin un temps de questions-réponses simulé, comme à l''oral. Gardez un papier à portée de main : je vais vous demander de noter vos propres réponses avant de vous donner les miennes.
-
-## 05:00 – 20:00 · Rappel structuré : postulat et hypothèses de la théorie positive
-
-Commençons par le postulat central. La théorie positive de la comptabilité part d''une idée simple mais puissante : les choix comptables observés dans les entreprises ne sont pas arbitraires, ils s''expliquent par des motivations économiques rationnelles liées aux contrats qui lient les différents acteurs de l''entreprise. Ce courant ne cherche pas à dire comment on devrait comptabiliser, il cherche à expliquer pourquoi on comptabilise de telle ou telle façon dans la réalité.
-
-Trois hypothèses structurent la majorité des travaux de ce courant. La première, l''hypothèse du plan de rémunération, dit que lorsque la rémunération d''un dirigeant dépend du résultat comptable, ce dirigeant a intérêt à choisir des méthodes comptables qui augmentent ce résultat, ou à les choisir au moment où cela sert le mieux son intérêt. Prenez un exemple simple : un dirigeant dont le bonus est calculé sur le résultat net d''une année donnée pourrait avoir intérêt à retarder une charge exceptionnelle à l''année suivante, dans la mesure où le référentiel comptable applicable l''autorise.
-
-La deuxième, l''hypothèse des clauses d''endettement, dit qu''une entreprise proche de violer une clause contractuelle liée à son endettement (un ratio maximal imposé par un prêteur, par exemple) a intérêt à choisir des méthodes comptables qui améliorent ce ratio, pour éviter les conséquences d''un défaut technique : renégociation du prêt, exigibilité anticipée, perte de confiance des créanciers.
-
-La troisième, l''hypothèse des coûts politiques, dit que les grandes entreprises très visibles ont intérêt, au contraire, à minorer ou à lisser un résultat trop élevé, pour ne pas attirer une attention réglementaire, fiscale ou syndicale qui pourrait leur coûter cher. Vous voyez que ces trois hypothèses, loin de se contredire, décrivent des situations contractuelles différentes qui orientent le choix comptable dans des directions parfois opposées.
-
-Je vous propose un petit exercice mental, à faire en pause sur votre papier : pour chacune des trois hypothèses, trouvez un exemple fictif d''entreprise sénégalaise où cette hypothèse jouerait un rôle. Prenez trente secondes... Nous reviendrons sur vos réponses possibles à la fin de cette section.
-
-## 20:00 – 45:00 · Démonstration complète d''une étude d''événements
-
-Passons maintenant à la méthode de recherche la plus associée à ce courant : l''étude d''événements sur les marchés financiers. Je vais vous montrer, pas à pas, comment elle fonctionne, avec un exemple entièrement fictif mais dont tous les calculs ont été vérifiés.
-
-Imaginons une entreprise fictive cotée sur un marché régional, qui publie ses comptes annuels au jour que nous appelons jour zéro. Nous observons une fenêtre de onze jours de bourse, de cinq jours avant à cinq jours après l''annonce. Pour chaque jour, nous disposons du rendement réellement observé de l''action, et du rendement de l''indice de marché.
-
-La première étape consiste à estimer, sur une période antérieure à cette fenêtre, un modèle de marché qui relie le rendement de l''action au rendement de l''indice par une relation du type : rendement attendu égale alpha plus bêta multiplié par le rendement du marché. Dans notre exemple fictif, ce modèle a déjà été estimé et donne un alpha de 0,02 pourcent et un bêta de 1,10. Cela signifie que, toutes choses égales, le titre amplifie légèrement les mouvements du marché.
-
-La deuxième étape consiste à calculer, pour chaque jour de la fenêtre, le rendement attendu à partir de ce modèle, puis à le comparer au rendement réellement observé. L''écart entre les deux est le rendement anormal du jour. Sur les jours sans événement particulier, dans notre exemple, ces écarts restent faibles, de l''ordre de moins 0,08 pourcent à plus 0,07 pourcent : rien d''anormal. Mais le jour de l''annonce elle-même, le rendement observé de l''action est de 1,80 pourcent, alors que le rendement attendu par le modèle n''était que de 0,13 pourcent. Le rendement anormal de ce jour est donc de 1,67 pourcent, nettement supérieur à tous les autres jours de la fenêtre.
-
-La troisième étape consiste à cumuler ces rendements anormaux sur l''ensemble de la fenêtre pour obtenir ce qu''on appelle le rendement anormal cumulé. Dans notre exemple, ce cumul atteint environ 1,86 pourcent sur les onze jours, et vous remarquez qu''il est presque entièrement porté par le seul jour de l''annonce : cela confirme que l''essentiel de la réaction du marché se concentre bien sur l''événement étudié, et non sur un bruit diffus avant ou après.
-
-La quatrième étape, enfin, consiste à tester si ce rendement anormal du jour de l''annonce est statistiquement différent des rendements anormaux habituels. En comparant l''écart du jour zéro à la moyenne et à l''écart-type des rendements anormaux des autres jours de la fenêtre, on obtient dans notre exemple une statistique très largement supérieure aux seuils usuels de significativité, ce qui, pour cet exemple construit à des fins pédagogiques, serait interprété comme une réaction significative du marché à l''annonce comptable.
-
-Je veux insister sur un point de méthode important pour votre examen : dans une recherche réelle, on ne travaille jamais sur une seule entreprise. On construit un échantillon de plusieurs dizaines ou centaines d''événements similaires, et on teste si, en moyenne sur l''échantillon, le rendement anormal du jour de l''annonce est significativement différent de zéro. Travailler sur un seul cas, comme nous venons de le faire, sert à illustrer la mécanique du calcul, pas à produire un résultat scientifiquement valide.
-
-## 45:00 – 50:00 · Quiz interactif
-
-Prenons une pause active. Je vous pose cinq questions, répondez sur votre papier avant d''entendre la réponse. Première question : quelle hypothèse de la théorie positive explique qu''une entreprise proche de violer une clause bancaire choisisse une méthode comptable qui améliore son ratio d''endettement ? Réponse : l''hypothèse des clauses d''endettement. Deuxième question : dans une étude d''événements, que mesure le rendement anormal ? Réponse : l''écart entre le rendement réellement observé d''un titre et le rendement attendu par un modèle de marché estimé sur une période antérieure. Troisième question : pourquoi une étude d''événements fondée sur un seul cas n''est-elle pas scientifiquement concluante ? Réponse : parce qu''elle ne permet pas de distinguer un effet systématique d''un résultat dû au hasard sur ce cas particulier ; il faut un échantillon. Quatrième question : quelle condition de marché limite l''application de l''étude d''événements dans de nombreux contextes africains ? Réponse : la faible liquidité et le nombre réduit d''entreprises cotées sur certains marchés financiers régionaux. Cinquième question : citez une limite non méthodologique, mais théorique, de la théorie positive de la comptabilité. Réponse : son déterminisme économique, qui tend à expliquer tout choix comptable par un calcul d''intérêt rationnel, en laissant de côté des dimensions institutionnelles et sociales.
-
-## 50:00 – 1:10:00 · Discussion critique et mise en perspective
-
-Revenons maintenant sur les limites de ce courant, car un jury doctoral valorise toujours la capacité à nuancer. Première limite : le déterminisme économique. En expliquant les choix comptables uniquement par des incitations contractuelles, la théorie positive laisse de côté les dimensions culturelles, institutionnelles et politiques qui façonnent aussi les pratiques, ce qui prépare directement la discussion du courant critique et social que nous verrons dans la prochaine vidéo.
-
-Deuxième limite : la confusion possible entre corrélation et explication. Montrer qu''un choix comptable est statistiquement associé à une incitation économique ne prouve pas que cette incitation est la seule cause de ce choix. D''autres facteurs, non observés dans le modèle, peuvent jouer un rôle.
-
-Troisième limite, particulièrement importante pour vous : la focalisation historique sur des marchés financiers développés et liquides. Une large part des travaux fondateurs de ce courant s''appuie sur des données nord-américaines. Leur transposition à des contextes où les marchés boursiers sont étroits, comme c''est le cas de nombreuses places africaines, pose une vraie question de validité externe. Cela ne signifie pas que le courant est inapplicable en Afrique : cela signifie qu''il faut être prudent sur les méthodes mobilisées, et parfois préférer d''autres approches pour certaines questions, comme nous l''avons vu avec les méthodes qualitatives et institutionnelles.
-
-Je vous propose maintenant un temps de réflexion individuelle : pensez à votre propre projet de thèse. Si vous deviez mobiliser la théorie positive de la comptabilité, sur quel objet précis le feriez-vous, et quelle limite devriez-vous assumer explicitement devant un jury ? Prenez deux minutes pour l''écrire.
-
-## 1:10:00 – 1:25:00 · Simulation de questions de jury
-
-Passons à un exercice de simulation orale. Je vais vous poser trois questions comme le ferait un membre de jury, avec un temps de réflexion, puis je vous donnerai une structure de bonne réponse.
-
-Première question : « Votre cadre théorique réduit les dirigeants à des calculateurs d''intérêt économique, n''est-ce pas réducteur ? » Une bonne réponse reconnaît la limite sans abandonner le cadre : on peut dire que ce cadre simplifie effectivement la motivation des dirigeants pour la rendre testable statistiquement, qu''il laisse de côté des dimensions plus difficiles à modéliser, mais qu''on le mobilise précisément parce qu''il permet de formuler des hypothèses vérifiables sur le terrain étudié, et qu''on prévoit, si nécessaire, de le compléter par une lecture plus institutionnelle.
-
-Deuxième question : « Comment justifiez-vous l''usage d''une étude d''événements sur un marché financier aussi peu liquide que celui que vous étudiez ? » Une bonne réponse reconnaît la contrainte, propose une adaptation méthodologique (élargir la fenêtre d''observation, élargir l''échantillon à plusieurs marchés régionaux comparables, ou compléter par une méthode qualitative) et explique en quoi cette adaptation répond à la critique sans abandonner l''objectif de recherche.
-
-Troisième question : « En quoi votre travail apporte-t-il quelque chose de nouveau par rapport aux études fondatrices de Watts et Zimmerman ? » Une bonne réponse situe précisément la contribution : un contexte empirique différent, une population d''entreprises différente, ou une hypothèse complémentaire testée, en évitant la formule vague « mon contexte est différent » sans préciser en quoi cette différence change l''analyse.
-
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
-
-Nous arrivons au terme de cette séance. Retenez trois idées : la théorie positive explique les choix comptables par des incitations contractuelles rationnelles ; l''étude d''événements est sa méthode de recherche la plus emblématique et suppose un marché suffisamment liquide ; ses limites, notamment sa focalisation sur des marchés développés, préparent logiquement la discussion du courant critique et social que nous aborderons dans la prochaine vidéo.
-
-Évaluation finale, cinq questions. Un, quelles sont les trois hypothèses de la théorie positive de la comptabilité ? Réponse : l''hypothèse du plan de rémunération, l''hypothèse des clauses d''endettement, l''hypothèse des coûts politiques. Deux, que mesure un rendement anormal cumulé (CAR) dans une étude d''événements ? Réponse : la somme des rendements anormaux sur toute la fenêtre d''événement, qui indique l''ampleur totale de la réaction du marché. Trois, pourquoi une étude sur un seul cas ne suffit-elle pas à conclure scientifiquement ? Réponse : parce qu''elle ne permet pas de distinguer un effet systématique d''un hasard propre à ce cas, il faut un échantillon suffisant. Quatre, citez une limite théorique et une limite méthodologique de la théorie positive. Réponse : limite théorique, le déterminisme économique qui néglige les dimensions institutionnelles et culturelles ; limite méthodologique, la dépendance à des marchés suffisamment liquides pour produire des résultats robustes. Cinq, pourquoi la focalisation historique sur les marchés nord-américains pose-t-elle une question de validité externe pour un chercheur africain ? Réponse : parce que les mécanismes observés sur des marchés très liquides ne se transposent pas nécessairement à des marchés étroits, où la réaction des investisseurs à une information comptable peut être trop faible ou trop bruitée pour être mesurée de façon fiable, ce qui exige prudence et parfois des méthodes complémentaires.', 'video', 90, false, 60
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : la théorie positive de la comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : les approches critiques et sociales de la comptabilité', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : maîtriser les approches critiques et sociales de la comptabilité, savoir les mettre en tension avec la théorie positive vue dans la vidéo précédente, et discuter le débat IFRS contre référentiels régionaux. Matériel : tableau ou diaporama avec un schéma comparatif des deux courants, de quoi prendre des notes. Prérequis : avoir suivi la vidéo précédente sur la théorie positive et lu la leçon texte sur les approches critiques et sociales.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Ouverture et lien avec la séance précédente
-
-Bonjour à toutes et à tous. Dans la séance précédente, nous avons étudié la théorie positive de la comptabilité, qui explique les choix comptables par des incitations économiques rationnelles, et nous avons vu ses limites, notamment son déterminisme économique. Cette séance prend le relais en étudiant le courant qui, historiquement, s''est en partie construit en réaction à cette lecture : les approches critiques et sociales de la comptabilité. Mon objectif est de vous permettre de présenter ce courant de façon aussi rigoureuse que le précédent, et surtout de savoir les articuler l''un à l''autre, ce qui est très souvent demandé à l''oral. Nous verrons le postulat du courant, ses apports représentatifs, une discussion approfondie du débat entre harmonisation IFRS et référentiels régionaux comme OHADA et SYSCOHADA, puis un temps de simulation de jury.
-
-## 05:00 – 25:00 · Le postulat des approches critiques et sociales
-
-Le postulat de ce courant renverse la question posée par la théorie positive. Là où la théorie positive demande quelle incitation économique explique un choix comptable, les approches critiques et sociales demandent quels rapports de pouvoir, quelles représentations sociales, quels intérêts un choix comptable reflète-t-il ou contribue-t-il à construire. La comptabilité n''est plus un simple instrument de mesure neutre, elle devient un objet d''étude social et politique à part entière.
-
-Plusieurs lignes de travail structurent ce courant. La première s''intéresse à la comptabilité comme pratique organisationnelle, en étudiant comment les systèmes comptables influencent le comportement des acteurs dans l''organisation, au-delà de leur fonction de mesure. La deuxième, inspirée de théories sociales critiques, interroge le rôle de la comptabilité dans la reproduction de rapports de pouvoir, dans l''organisation comme dans la société plus large. La troisième s''appuie sur la théorie des parties prenantes, qui soutient que l''entreprise doit rendre compte non seulement à ses actionnaires mais à l''ensemble des acteurs affectés par son activité : salariés, communautés locales, environnement. La quatrième s''appuie sur la théorie de la légitimité, qui explique pourquoi les entreprises publient des informations sociales et environnementales en partie pour préserver leur acceptabilité sociale, indépendamment de toute utilité directe pour des investisseurs financiers.
-
-Je vous propose un exercice de clarification : prenez votre papier et notez, en une phrase chacune, la différence entre la théorie des parties prenantes et la théorie de la légitimité. Prenez une minute... La théorie des parties prenantes porte sur à qui l''entreprise doit rendre compte. La théorie de la légitimité porte sur pourquoi l''entreprise choisit de communiquer certaines informations. Ce sont deux questions complémentaires, pas rivales.
-
-## 25:00 – 50:00 · Le débat IFRS contre référentiels régionaux, lu par ce courant
-
-C''est ici que ce courant devient particulièrement pertinent pour votre propre recherche si vous travaillez sur un terrain africain. Les chercheurs proches des approches critiques et sociales invitent à ne jamais considérer l''adoption de normes comptables internationales comme un simple progrès technique universellement bénéfique. Ils posent plutôt la question suivante : qui a produit ces normes, avec quels intérêts représentés, et pour répondre à quels besoins d''information ?
-
-Les normes IFRS ont été élaborées principalement par des organismes et des experts issus des économies les plus industrialisées, avec pour préoccupation centrale l''information des investisseurs sur des marchés financiers développés et liquides. Cette préoccupation n''est pas universelle. Dans de nombreuses économies africaines, le tissu économique est dominé par des petites et moyennes entreprises non cotées, les marchés financiers sont étroits, et les utilisateurs principaux de l''information comptable ne sont pas des investisseurs boursiers mais des administrations fiscales, des bailleurs de fonds, ou des institutions régionales. Dans ce contexte, le référentiel SYSCOHADA, construit pour l''espace économique régional ouest et centrafricain par l''Organisation pour l''Harmonisation du Droit des Affaires en Afrique, peut se lire non comme un simple retard par rapport à une norme internationale supérieure, mais comme une construction institutionnelle répondant à des besoins d''information et à des rapports de pouvoir économiques spécifiques à la région.
-
-Cette lecture ne nie pas les avantages pratiques de la comparabilité internationale pour les entreprises qui lèvent des capitaux sur des marchés mondiaux. Elle invite seulement à ne pas transposer cet avantage comme une évidence universelle à toutes les entreprises, quelle que soit leur situation. C''est précisément la tension que vous devez savoir exposer : la théorie positive, vue dans la vidéo précédente, mettrait l''accent sur la valeur informationnelle mesurable de l''harmonisation pour les marchés ; les approches critiques et sociales mettraient l''accent sur les conditions de production du référentiel et sur sa pertinence différenciée selon les besoins réels des utilisateurs.
-
-Prenons un instant pour une réflexion personnelle : si votre projet de thèse touche, même indirectement, à la comparaison entre normes internationales et référentiels régionaux, quelle serait votre position de chercheur sur cette tension ? Il ne s''agit pas de trancher dans l''absolu, mais de savoir dire explicitement sur quel terrain et pour quelle question vous mobiliseriez chaque lecture.
-
-## 50:00 – 55:00 · Quiz interactif
-
-Pause active, cinq questions. Première question : quel est le postulat central des approches critiques et sociales de la comptabilité ? Réponse : la comptabilité n''est pas un instrument neutre, elle reflète et façonne des rapports de pouvoir et des représentations sociales. Deuxième question : quelle théorie explique pourquoi une entreprise publie un rapport social sans que ce rapport serve directement les investisseurs financiers ? Réponse : la théorie de la légitimité. Troisième question : pourquoi le référentiel SYSCOHADA n''est-il pas, pour ce courant, simplement un retard technique par rapport aux IFRS ? Réponse : parce qu''il répond à des besoins d''information et à des rapports de pouvoir économiques propres à la région, différents de ceux des marchés financiers développés visés par les IFRS. Quatrième question : citez une limite méthodologique souvent adressée à ce courant. Réponse : la difficulté à généraliser des résultats issus d''études de cas ou d''analyses qualitatives. Cinquième question : qu''est-ce qui distingue la question posée par la théorie positive de celle posée par les approches critiques et sociales face à un même choix comptable ? Réponse : la théorie positive demande quelle incitation économique explique ce choix, les approches critiques et sociales demandent quels rapports de pouvoir ou quelles représentations sociales ce choix reflète.
-
-## 55:00 – 1:15:00 · Discussion critique et articulation des deux courants
-
-Abordons maintenant les limites de ce courant, pour la même raison que précédemment : un jury valorise la nuance. Première limite, le déficit de généralisation statistique, déjà évoqué : beaucoup de travaux de ce courant s''appuient sur des cas ou des analyses qualitatives dont la portée reste difficile à généraliser à grande échelle. Deuxième limite, le risque de glissement normatif : en partant d''un engagement critique explicite, certains travaux sont accusés de mélanger analyse scientifique et prise de position militante, ce qui peut fragiliser leur neutralité perçue par certains pairs. Troisième limite, la difficulté à produire des recommandations opérationnelles immédiates : révéler des rapports de pouvoir est souvent jugé plus facile que de formuler des solutions concrètes applicables par des régulateurs ou des praticiens.
-
-Pour autant, je veux insister sur un point essentiel pour votre examen : ces deux courants, la théorie positive et les approches critiques et sociales, ne sont pas de simples rivaux dont il faudrait choisir le vainqueur. Ils répondent à des questions différentes. Une recherche sur la réaction d''un marché boursier à l''adoption d''une norme comptable relève naturellement de la théorie positive. Une recherche sur la façon dont des petites entreprises non cotées perçoivent et appliquent un référentiel régional relève naturellement des approches critiques et sociales. Savoir expliquer ce critère de choix, plutôt que de déclarer un courant supérieur à l''autre dans l''absolu, est très souvent ce qui distingue une bonne prestation orale d''une prestation moyenne.
-
-## 1:15:00 – 1:25:00 · Simulation de questions de jury
-
-Passons à la simulation. Première question de jury : « Votre approche critique ne risque-t-elle pas de n''être qu''un jugement moral déguisé en recherche ? » Une bonne réponse distingue clairement la description analytique (quels intérêts, quels rapports de pouvoir sont à l''œuvre) de la prescription normative (ce qui devrait changer), en assumant que le chercheur peut adopter une posture engagée tout en appliquant une méthode rigoureuse de collecte et d''analyse des données.
-
-Deuxième question : « Si le référentiel régional répond mieux aux besoins locaux, pourquoi tant d''entreprises cherchent-elles quand même à adopter les IFRS ? » Une bonne réponse reconnaît la réalité de cette tendance (accès à des financements internationaux, exigences de bailleurs de fonds) et explique qu''elle ne contredit pas la lecture critique mais l''enrichit : elle montre justement comment des pressions institutionnelles et des rapports de pouvoir économiques, plutôt qu''une seule supériorité technique, orientent le choix des entreprises.
-
-Troisième question : « Comment rendriez-vous votre étude de cas plus convaincante pour un jury qui valorise la généralisation ? » Une bonne réponse propose, par exemple, d''étendre l''échantillon à plusieurs cas contrastés, ou de préciser explicitement l''objectif de compréhension en profondeur visé par la méthode, sans prétendre à une généralisation qu''elle ne permet pas.
-
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour conclure, retenez trois idées : les approches critiques et sociales étudient la comptabilité comme construction sociale et politique, pas comme simple outil de mesure neutre ; le débat entre normes IFRS et référentiels régionaux comme le SYSCOHADA est un terrain d''application privilégié de ce courant ; et la théorie positive comme les approches critiques et sociales ne s''excluent pas, elles répondent à des questions différentes selon l''objet étudié.
-
-Évaluation finale, cinq questions. Un, quel est le postulat central des approches critiques et sociales ? Réponse : la comptabilité reflète et façonne des rapports de pouvoir et des représentations sociales, elle n''est pas un outil neutre. Deux, citez deux théories mobilisées par ce courant et leur apport respectif. Réponse : la théorie des parties prenantes, qui élargit la responsabilité de l''entreprise au-delà des actionnaires, et la théorie de la légitimité, qui explique la communication sociale des entreprises par le besoin de préserver leur acceptabilité sociale. Trois, pourquoi le référentiel SYSCOHADA peut-il être lu comme une construction institutionnelle plutôt qu''un simple retard technique ? Réponse : parce qu''il répond à des besoins d''information et à des rapports de pouvoir économiques propres à la région, différents de ceux visés en priorité par les IFRS. Quatre, citez une limite de ce courant. Réponse : la difficulté à généraliser statistiquement des résultats issus de méthodes qualitatives, ou le risque de glissement normatif. Cinq, comment choisir entre théorie positive et approches critiques et sociales pour un projet de recherche donné ? Réponse : en fonction de la question posée et de l''objet étudié, pas en fonction d''une préférence théorique a priori : les marchés financiers et la valeur informationnelle relèvent plutôt de la théorie positive, les rapports de pouvoir et les constructions institutionnelles relèvent plutôt des approches critiques et sociales.', 'video', 90, false, 70
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les approches critiques et sociales de la comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en comptabilité', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : savoir présenter et justifier les grandes méthodes de recherche du champ comptable, refaire pas à pas le calcul d''une étude d''événements, et construire un protocole de recherche adapté à un contexte africain. Matériel : tableau de calcul projeté, diaporama avec le schéma des quatre étapes d''une étude d''événements, de quoi prendre des notes. Prérequis : avoir suivi les deux vidéos précédentes et lu la leçon texte sur les méthodes de recherche.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Ouverture et objectifs de la séance
-
-Bonjour à toutes et à tous. Nous avons vu deux courants théoriques qui posent des questions différentes à la comptabilité : la théorie positive, qui s''intéresse à l''utilité de l''information pour les marchés, et les approches critiques et sociales, qui s''intéressent à la comptabilité comme construction sociale. Cette séance fait le pont entre théorie et pratique de recherche : nous allons détailler les méthodes qui permettent concrètement d''étudier ces questions, avec une attention particulière à leur adéquation au terrain africain. Nous verrons l''étude d''événements, la recherche qualitative et institutionnelle, l''étude de cas, puis nous construirons ensemble, pas à pas, un protocole de recherche appliqué à un contexte sénégalais fictif.
-
-## 05:00 – 30:00 · L''étude d''événements, méthode par méthode
-
-Reprenons la logique de l''étude d''événements, en insistant cette fois sur les choix méthodologiques qu''un chercheur doit justifier, pas seulement sur le calcul. Premier choix : la définition précise de l''événement et de sa date. Un événement mal défini, par exemple une date d''annonce approximative, introduit un bruit qui affaiblit toute l''analyse ultérieure. Deuxième choix : la longueur de la fenêtre d''événement. Une fenêtre trop courte risque de manquer une réaction retardée du marché ; une fenêtre trop longue risque de capter d''autres événements qui brouillent l''interprétation. Troisième choix : le modèle de rendement attendu. Le modèle de marché, que nous avons utilisé dans notre exemple avec un alpha et un bêta estimés sur une période antérieure, est le plus courant, mais d''autres modèles existent et le choix doit être justifié. Quatrième choix : la taille et la composition de l''échantillon d''entreprises étudiées, qui doit être assez large pour permettre un test statistique robuste, et assez homogène pour que l''événement étudié ait un sens comparable pour chaque entreprise de l''échantillon.
-
-Petit rappel chiffré de notre exemple fictif : avec un alpha de 0,02 pourcent et un bêta de 1,10, nous avions obtenu un rendement anormal du jour de l''annonce de 1,67 pourcent, et un rendement anormal cumulé sur la fenêtre d''environ 1,86 pourcent. Ce que je veux que vous reteniez ici, c''est que ces chiffres n''ont de valeur scientifique que rapportés à un échantillon, jamais à un cas isolé. Un jury qui vous demande « votre résultat est-il robuste » attend que vous sachiez immédiatement répondre en termes de taille d''échantillon et de test statistique, pas seulement en termes de calcul individuel.
-
-## 30:00 – 50:00 · La recherche qualitative et institutionnelle, et l''étude de cas
-
-Passons maintenant à l''autre grande famille de méthodes. La recherche qualitative vise à comprendre en profondeur comment des acteurs donnent sens à des pratiques comptables. Ses techniques principales sont l''entretien semi-directif, l''analyse documentaire et l''observation. La recherche institutionnelle, plus spécifiquement, s''appuie souvent sur la théorie néo-institutionnelle pour expliquer pourquoi des organisations adoptent des pratiques similaires non par supériorité technique, mais par pression de légitimité, d''imitation entre pairs, ou de normalisation professionnelle.
-
-L''étude de cas, de son côté, peut servir les deux grandes lectures théoriques que nous avons vues. Elle précise toujours trois éléments : l''unité d''analyse, qui peut être une entreprise, un service ou un processus de décision ; la stratégie d''échantillonnage, cas unique en profondeur ou cas multiples comparés ; les sources de données, en veillant à en trianguler plusieurs pour renforcer la validité du résultat. Sa limite principale, la difficulté à généraliser, doit être assumée explicitement devant un jury, pas dissimulée.
-
-Un point de méthode essentiel à retenir : le choix entre ces familles de méthodes ne dépend pas d''une préférence personnelle, mais de la nature de la question posée et de la population étudiée. Une question sur la réaction de marchés financiers appelle une méthode quantitative sur données boursières. Une question sur la perception d''acteurs non cotés appelle une méthode qualitative. Un jury sanctionne sévèrement un candidat qui choisit une méthode par habitude plutôt que par adéquation à sa question.
-
-## 50:00 – 55:00 · Quiz interactif
-
-Pause active, cinq questions. Première question : quelles sont les quatre étapes d''une étude d''événements ? Réponse : définir l''événement et sa date, estimer un modèle de rendement attendu, calculer les rendements anormaux, cumuler et tester leur significativité. Deuxième question : pourquoi la taille de l''échantillon est-elle déterminante dans une étude d''événements ? Réponse : parce qu''un résultat obtenu sur un seul cas ne permet pas de distinguer un effet systématique d''un hasard propre à ce cas, un échantillon suffisant est nécessaire pour un test statistique robuste. Troisième question : citez deux techniques de collecte de données propres à la recherche qualitative. Réponse : l''entretien semi-directif et l''analyse documentaire, auxquelles s''ajoute l''observation directe ou participante. Quatrième question : qu''apporte la théorie néo-institutionnelle à l''étude d''un référentiel comptable régional ? Réponse : elle explique l''adoption de pratiques comptables par des pressions de légitimité ou d''imitation plutôt que par un seul calcul d''efficience économique. Cinquième question : quelle est la principale limite d''une étude de cas, et comment la gérer devant un jury ? Réponse : la difficulté à généraliser les résultats, qu''il faut assumer explicitement plutôt que nier, en précisant l''objectif de compréhension en profondeur visé par la méthode.
-
-## 55:00 – 1:20:00 · Construction pas à pas d''un protocole de recherche en contexte sénégalais fictif
-
-Construisons maintenant ensemble un protocole complet, comme vous devrez le faire pour votre propre projet de thèse. Notre question fictive est la suivante : comment les petites et moyennes entreprises sénégalaises non cotées perçoivent-elles la pertinence du référentiel SYSCOHADA révisé par rapport aux normes IFRS, et quels facteurs institutionnels expliquent leurs pratiques comptables effectives ?
-
-Première étape, le choix du cadre théorique. Puisque la population étudiée est composée d''entreprises non cotées, l''étude d''événements est exclue d''emblée : il n''existe aucun cours de bourse à observer. Le cadre le plus pertinent est donc une approche néo-institutionnelle issue du courant critique et social, pour expliquer l''adoption de pratiques comptables par des pressions de légitimité plutôt que par un seul calcul d''efficience.
-
-Deuxième étape, le choix de l''échantillon. Une étude de cas multiples, par exemple six à dix entreprises de secteurs contrastés comme le commerce, l''industrie légère et les services, sélectionnées pour varier leur taille et leur exposition à des bailleurs de fonds exigeant des normes internationales, permet une comparaison enrichissante sans viser une généralisation statistique.
-
-Troisième étape, la collecte de données. Des entretiens semi-directifs avec les dirigeants et les responsables comptables de chaque entreprise, complétés par l''analyse de leurs états financiers et, lorsque disponible, de leurs échanges avec des cabinets d''audit ou des organismes de normalisation.
-
-Quatrième étape, l''analyse. Un codage thématique des entretiens pour identifier les catégories de justification données par les acteurs, par exemple contrainte réglementaire, exigence d''un bailleur de fonds, habitude professionnelle, ou méconnaissance des alternatives, suivi d''une comparaison systématique entre les cas étudiés.
-
-Cinquième étape, les limites à anticiper et présenter au jury sans attendre qu''il les découvre lui-même : un échantillon de cas sénégalais ne permet pas de généraliser à l''ensemble des petites entreprises ouest-africaines, et le choix de s''appuyer sur les discours des dirigeants plutôt que sur une observation prolongée des pratiques réelles introduit un biais de déclaration qu''il faut discuter ouvertement.
-
-Je vous invite à refaire cet exercice avec votre propre question de thèse : passez les cinq mêmes étapes, et vérifiez que chaque choix méthodologique découle logiquement de la question posée, pas d''une préférence personnelle pour une méthode plutôt qu''une autre.
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour conclure cette séance, retenez trois idées : l''étude d''événements est la méthode la plus associée à la théorie positive et suppose un marché suffisamment liquide ; la recherche qualitative et institutionnelle, dont l''étude de cas, est la méthode la plus associée aux approches critiques et sociales et vise une compréhension en profondeur plutôt qu''une généralisation statistique ; et le choix d''une méthode doit toujours découler de la question de recherche et de la population étudiée, jamais d''une habitude.
-
-Évaluation finale, cinq questions. Un, pourquoi l''étude d''événements est-elle inapplicable à une population d''entreprises non cotées ? Réponse : parce qu''elle suppose l''existence d''un cours de bourse observable, qui n''existe pas pour des entreprises non cotées. Deux, quelles sont les trois éléments qu''une étude de cas rigoureuse doit toujours préciser ? Réponse : l''unité d''analyse, la stratégie d''échantillonnage, et les sources de données triangulées. Trois, dans le protocole sénégalais fictif construit en séance, pourquoi le choix de cas multiples plutôt qu''un cas unique ? Réponse : parce que la question porte sur des facteurs institutionnels susceptibles de varier selon la taille, le secteur et l''exposition à des bailleurs de fonds, ce qu''un cas unique ne permettrait pas de comparer. Quatre, citez une limite à anticiper explicitement dans ce protocole. Réponse : l''absence de généralisation statistique au-delà de l''échantillon étudié, ou le biais de déclaration lié à l''usage principal d''entretiens. Cinq, quel principe général doit guider le choix d''une méthode de recherche en comptabilité ? Réponse : la cohérence entre la question de recherche, le cadre théorique mobilisé et la méthode choisie, la méthode devant toujours être justifiée par son adéquation à l''objet étudié et à la population concernée.', 'video', 90, false, 80
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en comptabilité');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : s''entraîner sur une question de synthèse type', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : s''entraîner en conditions réelles de temps à répondre à une question de synthèse type, mobilisant les deux courants théoriques et les méthodes de recherche étudiés. Matériel : chronomètre, papier pour prise de notes, diaporama avec le plan de réponse projeté progressivement. Prérequis : avoir suivi les trois vidéos précédentes.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Ouverture et consignes de l''entraînement
-
-Bonjour à toutes et à tous. Cette séance est différente des trois précédentes : il ne s''agit plus d''apprendre un contenu nouveau, mais de vous entraîner, en conditions proches de la réalité d''un oral, à répondre à une question de synthèse type. Je vais vous donner la question, vous laisser un temps de préparation chronométré comme à l''oral, puis nous construirons ensemble le plan de réponse complet, section par section, avec les mêmes exigences qu''un jury doctoral. Prenez votre papier et votre chronomètre, nous allons vraiment nous mettre en situation.
-
-## 05:00 – 10:00 · Énoncé et temps de préparation chronométré
-
-Voici la question type, non officielle, construite pour cet entraînement : « Dans quelle mesure la recherche comptable peut-elle à la fois évaluer l''utilité de l''information financière pour les marchés de capitaux et interroger la comptabilité comme construction sociale ? Vous discuterez cette tension à partir du débat entre harmonisation comptable internationale et pertinence des référentiels comptables régionaux, et vous proposerez une méthode de recherche adaptée à l''étude de cette question dans un contexte africain. » Je vous laisse maintenant cinq minutes, comme à l''oral, pour noter au brouillon les grandes lignes de votre réponse, sans consulter vos notes de cours. Mettez la vidéo en pause si besoin, et reprenez une fois vos cinq minutes écoulées.
-
-## 10:00 – 20:00 · Analyse de la question et construction du plan
-
-Reprenons. Avant de répondre, un bon candidat décompose toujours la question en ses exigences implicites. Celle-ci en comporte quatre : présenter la théorie positive et sa lecture de l''utilité de l''information financière ; présenter les approches critiques et sociales et leur lecture de la construction sociale ; articuler les deux autour du débat IFRS contre référentiels régionaux ; proposer une méthode de recherche justifiée pour un contexte africain. Comparez ces quatre exigences à ce que vous avez noté pendant votre préparation. Avez-vous bien identifié les quatre, ou en avez-vous oublié une ? C''est souvent la quatrième, la proposition méthodologique, qui est oubliée ou traitée trop rapidement, alors qu''elle compte autant que les deux premières aux yeux d''un jury.
-
-Construisons le plan en quatre temps : une introduction qui annonce la tension entre les deux lectures et le plan en trois parties ; un premier temps sur la lecture par l''utilité de l''information financière ; un deuxième temps sur la lecture par la construction sociale ; un troisième temps qui articule les deux et propose une méthode ; une conclusion qui ouvre sur la fécondité de cette tension pour un chercheur africain.
-
-## 20:00 – 45:00 · Développement complet du plan, partie par partie
-
-Développons maintenant chaque partie comme vous devriez le faire à l''oral, avec des phrases complètes, pas de simples mots-clés.
-
-Introduction : la recherche comptable est traversée par une tension entre une tradition qui étudie la comptabilité comme information utile aux décisions des marchés financiers, et une tradition qui l''étudie comme construction sociale et politique. Cette tension s''illustre particulièrement bien dans le débat sur l''harmonisation comptable internationale face aux référentiels régionaux. Nous traiterons cette question en trois temps : la lecture par l''utilité informationnelle, la lecture par la construction sociale, puis leur articulation méthodologique.
-
-Premier temps, la lecture par l''utilité de l''information financière. La théorie positive de la comptabilité postule que les choix et les normes comptables s''expliquent et se justifient par leur capacité à réduire l''incertitude des investisseurs et à faciliter l''allocation efficace du capital. Appliqué au débat qui nous occupe, l''argument en faveur de l''harmonisation internationale est que des normes communes et de qualité perçue élevée réduisent les coûts d''information et peuvent abaisser le coût du capital des entreprises qui les adoptent, ce qui est testable par des études d''événements autour des dates d''adoption. La limite de cet argument est qu''il suppose des marchés financiers suffisamment développés et liquides pour que l''effet soit mesurable, ce qui n''est pas la situation de la majorité des entreprises africaines.
-
-Deuxième temps, la lecture par la construction sociale. Les approches critiques et sociales soutiennent que la comptabilité reflète et façonne des rapports de pouvoir, et que les normes comptables sont elles-mêmes le produit d''un processus institutionnel situé, pas une vérité technique universelle. Appliqué au même débat, les normes IFRS sont portées par des organismes et des intérêts principalement issus des économies les plus industrialisées, ce qui invite à interroger leur pertinence pour des économies où les marchés financiers sont étroits et où le tissu économique est dominé par des entreprises non cotées. Le référentiel régional SYSCOHADA se lit alors comme une réponse institutionnelle à des besoins et à des rapports de pouvoir économiques spécifiques à la région, et non comme un simple retard technique.
-
-Troisième temps, articulation et proposition méthodologique. Ces deux lectures ne sont pas incompatibles : elles répondent à des questions différentes selon l''objet étudié. Pour une question sur la réaction des marchés financiers à l''adoption de nouvelles normes par de grandes entreprises cotées, une étude d''événements, cohérente avec la théorie positive, est pertinente. Pour une question sur la façon dont des petites entreprises non cotées perçoivent et appliquent un référentiel régional, une démarche qualitative et institutionnelle, cohérente avec les approches critiques et sociales, est plus appropriée. On peut même proposer un protocole combinant les deux regards : une étude d''événements limitée aux grandes entreprises africaines cotées ayant adopté les IFRS, complétée par une étude de cas qualitative auprès de petites entreprises restées au référentiel régional, afin de confronter les deux logiques sur un même terrain.
-
-Conclusion : la tension entre les deux courants n''est pas un obstacle à résoudre, mais un objet d''étude en soi, particulièrement fécond pour un chercheur travaillant sur un contexte africain, où la coexistence de normes internationales et régionales offre un terrain naturel de comparaison.
-
-## 45:00 – 50:00 · Quiz interactif
-
-Pause active, cinq questions sur la méthode de réponse elle-même. Première question : combien d''exigences implicites une bonne analyse de la question type a-t-elle identifiées ? Réponse : quatre. Deuxième question : quelle exigence est le plus souvent oubliée ou sous-traitée par les candidats ? Réponse : la proposition et la justification d''une méthode de recherche adaptée. Troisième question : pourquoi faut-il annoncer le plan dès l''introduction dans une réponse orale de ce type ? Réponse : pour que le jury puisse suivre la structure de la réponse et évaluer si chaque partie annoncée est bien traitée. Quatrième question : qu''est-ce qui distingue une bonne articulation des deux courants d''une simple juxtaposition ? Réponse : expliquer le critère qui permet de choisir quel courant mobiliser selon la question posée, plutôt que de présenter les deux courants l''un après l''autre sans les relier. Cinquième question : pourquoi la conclusion proposée ouvre-t-elle sur la fécondité de la tension plutôt que de chercher à la refermer ? Réponse : parce qu''un jury valorise la capacité à voir une tension théorique comme un objet de recherche productif, pas comme un problème qu''il faudrait nécessairement résoudre.
-
-## 50:00 – 1:20:00 · Simulation orale complète et retour sur erreurs fréquentes
-
-Passons maintenant à une simulation orale complète. Je vous invite à reprendre votre plan préparé en début de séance, et à le présenter à voix haute, chronomètre en main, en visant quinze minutes maximum, comme le temps généralement imparti à un exposé de ce type devant un jury. Mettez la vidéo en pause et faites cet exercice maintenant, avant de continuer.
-
-Une fois cet exercice réalisé, voici les erreurs les plus fréquentes que l''on observe chez des candidats qui s''entraînent sur ce type de question, et que vous devez vérifier n''avoir pas commises. Première erreur fréquente : présenter les deux courants théoriques sans jamais les relier explicitement au débat IFRS contre référentiels régionaux, en les traitant comme deux parties séparées sans lien apparent. Deuxième erreur : présenter le référentiel régional comme simplement inférieur aux IFRS, ce qui révèle une mauvaise compréhension du courant critique et social et de sa capacité à relativiser une hiérarchie supposée entre normes. Troisième erreur : proposer une méthode de recherche sans justifier son adéquation à la question posée, en se contentant de nommer une méthode à la fin de l''exposé sans expliquer pourquoi elle convient précisément à cet objet. Quatrième erreur : dépasser largement le temps imparti par excès de détail sur un seul courant, au détriment de l''articulation finale, qui est pourtant la partie la plus valorisée par le jury.
-
-Comparez votre propre prestation à ces quatre erreurs fréquentes. Lesquelles avez-vous évitées, lesquelles devez-vous encore travailler avant votre soutenance réelle ?
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour conclure cette séance d''entraînement, retenez trois idées : une bonne réponse à une question de synthèse décompose toujours la question en exigences implicites avant de répondre ; l''articulation explicite entre les courants théoriques, plutôt que leur simple juxtaposition, est ce qui distingue le plus une bonne prestation ; et la proposition méthodologique finale doit toujours être justifiée par son adéquation à la question posée, pas simplement mentionnée.
-
-Évaluation finale, cinq questions. Un, combien de temps un exposé oral de ce type dure-t-il généralement devant un jury ? Réponse : de l''ordre de quinze à trente minutes selon les établissements, suivi d''une phase de questions du jury. Deux, quelle est la première étape avant de répondre à une question de synthèse ? Réponse : décomposer la question en ses exigences implicites, pour s''assurer de n''en oublier aucune. Trois, pourquoi présenter un référentiel régional comme simplement inférieur à un référentiel international est-il une erreur de positionnement ? Réponse : parce que cela ignore la lecture critique et sociale, qui explique la pertinence différenciée des référentiels selon les besoins et les rapports de pouvoir propres à chaque contexte, plutôt que de supposer une hiérarchie technique universelle. Quatre, quelle est l''erreur la plus fréquente concernant la proposition méthodologique en fin de réponse ? Réponse : la mentionner sans la justifier par son adéquation à la question et à la population étudiée. Cinq, que doit viser la conclusion d''une réponse à ce type de question ? Réponse : montrer que la tension entre les courants théoriques est un objet de recherche fécond, pas un problème à trancher définitivement, en particulier pour un chercheur travaillant sur un contexte africain où coexistent normes internationales et régionales.', 'video', 90, false, 90
-from public.courses c where c.slug = 'doc-compta'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : s''entraîner sur une question de synthèse type');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité, en fin de préparation. Objectifs : vivre une simulation complète d''une soutenance de qualification doctorale, de la présentation initiale aux questions de jury, et s''auto-évaluer à l''aide d''une grille structurée. Matériel : chronomètre, grille d''auto-évaluation imprimée ou notée sur papier. Prérequis : avoir suivi les quatre vidéos précédentes et les cinq leçons texte du cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Ouverture : le principe de cette séance finale
-
-Bonjour à toutes et à tous. Cette dernière séance est différente de toutes les précédentes : il n''y aura pas de nouveau contenu théorique. Nous allons simuler, du début à la fin, une soutenance de qualification doctorale en comptabilité, avec un candidat fictif, un projet de thèse fictif, et un jury qui pose des questions types. Mon objectif est double : vous montrer concrètement le déroulement complet d''une telle épreuve, et vous donner, à la fin, une grille d''auto-évaluation que vous pourrez réutiliser pour préparer votre propre soutenance réelle.
-
-## 05:00 – 20:00 · Présentation du champ et du projet de thèse fictif (15 minutes)
-
-Voici la présentation que ferait notre candidat fictif en ouverture de soutenance, pendant les quinze minutes qui lui sont généralement accordées.
-
-« Mesdames et messieurs les membres du jury, mon travail de thèse porte sur la pertinence perçue des référentiels comptables par les petites et moyennes entreprises ouest-africaines, dans un contexte où coexistent les normes IFRS, destinées en priorité aux grandes entreprises cotées, et le référentiel régional SYSCOHADA, applicable à l''ensemble des entreprises de l''espace OHADA. Le champ de la recherche comptable, dans lequel je m''inscris, est traversé par une tension ancienne entre deux grandes lectures. La première, portée par la théorie positive de la comptabilité, explique les choix et les normes comptables par leur utilité pour réduire l''incertitude des investisseurs sur les marchés de capitaux, et les étudie notamment par des méthodes quantitatives comme l''étude d''événements sur les marchés financiers. La seconde, portée par les approches critiques et sociales de la comptabilité, lit les normes comptables comme des constructions institutionnelles situées, reflétant des rapports de pouvoir et des besoins d''information différenciés selon les contextes économiques, et les étudie plutôt par des méthodes qualitatives et institutionnelles.
-
-Mon projet de thèse se positionne principalement dans la seconde lecture, pour une raison précise : mon objet d''étude, les petites et moyennes entreprises non cotées, est par définition hors du champ d''application des méthodes fondées sur les marchés financiers. Je mobiliserai donc un cadre néo-institutionnel pour comprendre pourquoi des entreprises non cotées adoptent, ou non, des pratiques inspirées des IFRS alors qu''elles relèvent légalement du référentiel SYSCOHADA, et quels facteurs institutionnels, au-delà de la seule obligation légale, expliquent leurs pratiques effectives.
-
-Ma méthode de recherche envisagée est une étude de cas multiples, portant sur six à dix entreprises sénégalaises de secteurs contrastés, combinant entretiens semi-directifs avec les dirigeants et responsables comptables, et analyse documentaire de leurs états financiers. J''assume dès à présent deux limites de ce choix : l''absence de généralisation statistique à l''ensemble des petites entreprises ouest-africaines, et le risque de biais de déclaration lié à l''usage principal d''entretiens plutôt que d''une observation prolongée des pratiques réelles. Je vous remercie de votre attention et je reste à votre disposition pour vos questions. »
-
-Voilà pour la présentation initiale. Remarquez sa structure : situer le champ et sa tension théorique, positionner son propre projet dans cette tension en justifiant ce choix, présenter la méthode envisagée, et assumer explicitement ses limites avant même que le jury ne les soulève. C''est exactement cette structure que vous devez reproduire pour votre propre présentation.
-
-## 20:00 – 25:00 · Quiz interactif avant les questions de jury
-
-Avant d''entendre les questions du jury fictif, testez-vous. Première question : pourquoi le candidat fictif choisit-il de se positionner principalement dans les approches critiques et sociales plutôt que dans la théorie positive ? Réponse : parce que son objet d''étude, des entreprises non cotées, est hors du champ d''application des méthodes fondées sur les marchés financiers, qui supposent un cours de bourse observable. Deuxième question : quelle méthode de recherche le candidat envisage-t-il, et pourquoi ? Réponse : une étude de cas multiples combinant entretiens et analyse documentaire, cohérente avec un cadre néo-institutionnel appliqué à des entreprises non cotées. Troisième question : quelles limites le candidat assume-t-il dès sa présentation initiale ? Réponse : l''absence de généralisation statistique et le risque de biais de déclaration lié aux entretiens. Quatrième question : pourquoi est-il stratégiquement utile d''assumer ses limites avant que le jury ne les soulève ? Réponse : cela démontre une maîtrise critique du projet et évite que le jury n''ait l''impression de révéler une faiblesse que le candidat aurait ignorée ou dissimulée. Cinquième question : quel élément de la présentation initiale rappelle explicitement la tension théorique du champ ? Réponse : la phrase qui oppose la théorie positive, centrée sur l''utilité pour les marchés, et les approches critiques et sociales, centrées sur les constructions institutionnelles et les rapports de pouvoir.
-
-## 25:00 – 1:15:00 · Simulation des questions de jury (huit à dix questions)
-
-Passons maintenant aux questions du jury fictif. Pour chacune, je vous laisse un court temps de réflexion, puis je donne la structure d''une bonne réponse, comme la donnerait notre candidat.
-
-Première question du jury : « Pourquoi n''avoir pas envisagé une étude d''événements, qui est pourtant une méthode reconnue en recherche comptable ? » Structure de bonne réponse : rappeler que cette méthode suppose un cours de bourse observable, inexistant pour la population étudiée, et affirmer que le choix méthodologique découle de la question de recherche et de la population, pas d''un rejet de la méthode en général.
-
-Deuxième question : « Votre échantillon de six à dix entreprises n''est-il pas trop restreint pour conclure quoi que ce soit ? » Structure de bonne réponse : assumer que l''objectif n''est pas une généralisation statistique mais une compréhension en profondeur de mécanismes institutionnels, qui pourront ensuite nourrir des hypothèses testables sur un échantillon plus large par une autre méthode.
-
-Troisième question : « En quoi votre travail n''est-il pas qu''une simple description de ce que disent des dirigeants interrogés ? » Structure de bonne réponse : préciser que l''analyse ne se limite pas à rapporter les discours mais à les coder thématiquement, à les comparer systématiquement entre les cas, et à les interpréter à la lumière du cadre néo-institutionnel mobilisé.
-
-Quatrième question : « Pensez-vous que le référentiel SYSCOHADA est moins pertinent que les IFRS pour ces entreprises ? » Structure de bonne réponse : refuser l''opposition binaire, et répondre que la pertinence d''un référentiel dépend des besoins d''information des utilisateurs concernés, le SYSCOHADA répondant à des besoins propres à la région, sans que cela implique une infériorité technique.
-
-Cinquième question : « Comment gérerez-vous le biais de déclaration que vous évoquez vous-même ? » Structure de bonne réponse : proposer une triangulation avec les documents comptables disponibles, et reconnaître que ce biais ne peut pas être totalement éliminé mais seulement atténué, ce qu''il faut assumer plutôt que promettre une solution parfaite.
-
-Sixième question : « Votre cadre néo-institutionnel ne risque-t-il pas de négliger les motivations économiques réelles des dirigeants ? » Structure de bonne réponse : reconnaître que le cadre institutionnel met l''accent sur la légitimité et l''imitation plutôt que sur le seul calcul économique, mais préciser que les entretiens permettront justement de recueillir aussi les justifications économiques exprimées par les dirigeants, sans présupposer leur absence.
-
-Septième question : « Quelle serait la contribution originale de votre thèse par rapport à la littérature existante sur ce sujet ? » Structure de bonne réponse : situer précisément l''apport, par exemple l''étude d''un contexte sénégalais spécifique encore peu documenté, ou la comparaison entre secteurs contrastés, en évitant une réponse vague comme « mon contexte est différent » sans préciser en quoi cette différence change l''analyse.
-
-Huitième question : « Si vos résultats montrent que les entreprises adoptent des pratiques IFRS malgré l''absence d''obligation légale, comment l''interpréterez-vous ? » Structure de bonne réponse : proposer une interprétation cohérente avec le cadre mobilisé, par exemple une pression de légitimité liée à des bailleurs de fonds ou à des partenaires commerciaux internationaux, plutôt qu''une conclusion hâtive sur la supériorité technique des IFRS.
-
-Neuvième question : « Votre calendrier de thèse vous semble-t-il réaliste au regard de la méthode choisie ? » Structure de bonne réponse : présenter un calendrier indicatif découpé en phases (revue de littérature, collecte de données, analyse, rédaction), en reconnaissant les risques de retard les plus probables, par exemple la disponibilité des dirigeants pour les entretiens.
-
-Dixième question : « Quel usage pratique un régulateur ou une organisation professionnelle pourrait-il faire de vos résultats ? » Structure de bonne réponse : proposer un usage raisonnable et modeste, par exemple mieux comprendre les freins à l''adoption de certaines pratiques comptables pour adapter l''accompagnement des petites entreprises, sans promettre une recommandation normative que l''étude ne permettrait pas de fonder seule.
-
-## 1:15:00 – 1:30:00 · Grille d''auto-évaluation de la soutenance simulée
-
-Cette séance, et ce cours, se concluent non par une évaluation à cinq questions mais par une grille d''auto-évaluation que vous devez remplir vous-même après avoir simulé votre propre soutenance, seul ou avec des pairs. Pour chacun des critères suivants, notez-vous honnêtement de un à quatre : un, insuffisant ; deux, à améliorer ; trois, satisfaisant ; quatre, maîtrisé.
-
-Critère un : clarté du positionnement théorique dès la présentation initiale, sans attendre une question du jury pour le préciser.
-Critère deux : justification explicite du choix méthodologique par son adéquation à la question de recherche et à la population étudiée, plutôt que par habitude.
-Critère trois : capacité à assumer les limites de son projet avant que le jury ne les soulève, sans les dissimuler ni les minimiser.
-Critère quatre : capacité à articuler les courants théoriques du champ plutôt que de les juxtaposer ou d''en rejeter un en bloc.
-Critère cinq : qualité du dialogue avec le jury, c''est-à-dire la capacité à reformuler une objection, à distinguer ce qui est accepté de ce qui est nuancé, sans se contredire ni se braquer.
-Critère six : respect du temps imparti à la présentation initiale, sans sacrifier les parties les plus importantes par excès de détail sur les parties moins centrales.
-Critère sept : précision des réponses aux questions sur la contribution originale du projet, en évitant les formules vagues non étayées.
-Critère huit : réalisme et honnêteté du calendrier de thèse présenté, avec reconnaissance des risques probables.
-
-Additionnez vos points sur ces huit critères. Un score élevé indique une préparation solide ; un score faible sur un critère précis indique exactement où concentrer votre travail dans les jours qui précèdent votre soutenance réelle. Ce cours se termine ici : vous disposez maintenant des deux courants théoriques du champ, des méthodes de recherche propres à la comptabilité, d''un exemple complet d''épreuve type, et d''une simulation entière de soutenance. La suite du travail vous appartient : répétez, faites-vous challenger par des pairs ou par votre directeur de thèse, et présentez-vous à l''épreuve avec la même honnêteté critique que celle démontrée par le candidat fictif de cette séance.', 'video', 90, false, 100
-from public.courses c where c.slug = 'doc-compta'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');

@@ -5450,6 +5450,78 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "doc-projet",
+  "level": "Doctorat",
+  "subject": "Gestion de projets",
+  "module": null,
+  "title": "Doctorat Gestion de projets : préparer l'examen de qualification doctorale",
+  "description": "Cours de préparation à l'examen de qualification doctorale (comprehensive exam) en gestion de projets : les grands courants théoriques du champ (approche rationnelle et planificatrice versus approches comportementales et agilité), les méthodes de recherche propres à la discipline (étude de cas longitudinale, recherche-action, enquêtes de maturité organisationnelle), et un entraînement complet à l'oral de soutenance devant un jury doctoral. Public : doctorants en gestion de projets préparant leur examen de qualification.",
+  "sort": 802,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en gestion de projets",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Objectifs de la leçon\n\nCette première leçon pose le cadre de votre préparation à l'examen de qualification doctorale en gestion de projets. Vous allez comprendre la nature exacte de cette épreuve, ce qu'un jury doctoral attend réellement de vous, et comment organiser un plan de travail réaliste sur huit semaines. L'objectif n'est pas d'empiler des lectures, mais de construire une vision structurée et critique du champ de la gestion de projets, capable de résister aux questions d'un jury exigeant.\n\nLa nature de l'épreuve\n\nL'examen de qualification doctorale (souvent appelé « comprehensive exam » dans la tradition anglo-saxonne, ou « examen de synthèse » dans certains programmes francophones) n'est pas un examen de connaissances factuelles. C'est une épreuve de maturité scientifique. Elle vise à vérifier trois choses : que vous maîtrisez l'état de l'art de votre discipline (les grands courants théoriques, leurs auteurs, leurs débats, leurs limites) ; que vous êtes capable de positionner un projet de recherche doctoral dans cette littérature, c'est-à-dire de dire précisément ce que votre thèse apporte de neuf ; et que vous savez argumenter à l'oral, sous la contradiction, devant un jury qui va chercher les failles de votre raisonnement.\n\nConcrètement, l'épreuve se déroule en général en deux temps. D'abord une production écrite : une note de synthèse ou un état de l'art sur un sous-champ de la gestion de projets (par exemple l'agilité, la gouvernance de projet, le risque), parfois accompagnée d'une note de positionnement de votre propre projet de thèse. Ensuite une soutenance orale devant un jury de deux à cinq enseignants-chercheurs, où vous présentez votre champ et votre projet pendant une quinzaine de minutes, puis répondez à des questions pendant quarante-cinq minutes à une heure. Les formats varient selon les établissements, mais cette structure (écrit de synthèse puis oral de défense) est très répandue dans les programmes doctoraux africains et francophones qui s'inspirent des standards internationaux.\n\nCe que le jury évalue réellement\n\nUn jury doctoral ne cherche pas à vous piéger sur une date ou un nom d'auteur. Il évalue votre capacité à raisonner en chercheur. Cinq critères reviennent systématiquement, quel que soit le champ disciplinaire.\n\nPremièrement, la maîtrise cartographique du champ : savez-vous situer les grands courants les uns par rapport aux autres, qui pense quoi, pourquoi et depuis quand ? Deuxièmement, l'esprit critique : savez-vous montrer les limites et les critiques d'un courant, et pas seulement le résumer ? Troisièmement, la rigueur méthodologique : savez-vous expliquer comment la recherche se mène dans votre champ ? Quatrièmement, la capacité de positionnement : savez-vous dire précisément ce que votre thèse interroge et apporte ? Cinquièmement, la solidité face à la contradiction : savez-vous nuancer votre propos sans vous effondrer au premier désaccord ?\n\nUne erreur fréquente est de préparer l'épreuve comme un cours magistral à réciter. Le jury attend un dialogue de chercheur à chercheur, même si vous êtes encore doctorant. Mieux vaut connaître moins de courants mais les maîtriser en profondeur que de survoler dix courants sans pouvoir en discuter sérieusement aucun.\n\nMéthode de travail : fiches de lecture, cartographie, note de synthèse\n\nLa préparation méthodique repose sur trois outils complémentaires que vous allez utiliser tout au long de ce cours.\n\nLa fiche de lecture. Pour chaque texte ou auteur important, rédigez une fiche courte et standardisée : la question posée, la thèse défendue, les concepts clés, la méthode utilisée, les limites critiquées, et un lien possible avec votre projet de thèse. Une fiche utile tient sur une demi-page et doit vous permettre, six mois plus tard, de vous souvenir de l'essentiel sans relire le texte entier.\n\nLa cartographie des courants. Un tableau qui place les grands courants théoriques les uns par rapport aux autres : présupposés, questions posées, oppositions ou complémentarités, auteurs fondateurs, critiques adressées. C'est l'outil que nous allons construire ensemble dans les leçons 2 et 3, pour deux grands débats structurants du champ.\n\nLa note de synthèse. Un document de quelques pages qui résume, pour un sous-thème donné, l'état des connaissances : ce qu'on sait, ce qui fait débat, ce qui reste à explorer. C'est l'exercice le plus proche de ce que le jury attendra à l'écrit. Nous en verrons un exemple corrigé dans la cinquième leçon.\n\nPlan de travail sur huit semaines\n\nUne préparation sérieuse à l'examen de qualification s'étale idéalement sur deux mois, à raison de plusieurs heures par semaine. Voici une trame indicative, à adapter à votre calendrier et à l'avancement de votre propre projet de thèse.\n\nSemaines 1 et 2 : cartographie générale du champ. Vous repérez au moins quatre à cinq grands courants théoriques, leurs auteurs fondateurs et leurs idées principales, et vous commencez vos fiches de lecture.\n\nSemaines 3 et 4 : approfondissement des débats que vous jugez les plus pertinents pour votre thèse. C'est le moment de comparer les positions et de repérer les critiques croisées entre courants.\n\nSemaines 5 et 6 : les méthodes de recherche du champ (études de cas, enquêtes, recherche-action), et l'ébauche du protocole méthodologique de votre propre thèse.\n\nSemaine 7 : rédaction de votre note de synthèse écrite et de votre note de positionnement de thèse.\n\nSemaine 8 : simulation de soutenance, présentation orale de quinze minutes, anticipation des questions probables du jury, et si possible un oral d'entraînement devant des collègues. La cinquième vidéo de ce cours propose une simulation complète que vous pourrez utiliser comme répétition générale.\n\nPourquoi la gestion de projets est un champ particulièrement riche pour cet exercice\n\nLa gestion de projets est un champ de recherche relativement jeune en tant que discipline académique autonome, mais extrêmement actif. Elle emprunte à l'ingénierie, à la théorie des organisations, à la sociologie du travail et à la psychologie. Cette hybridité en fait un terrain fertile pour les débats théoriques : faut-il penser le projet comme un processus à planifier et contrôler, ou comme une réalité sociale complexe et émergente ? Comment mesurer son « succès » : par le respect du budget et des délais, ou par la valeur créée pour les parties prenantes ? Ces questions, creusées dans les leçons suivantes, sont directement mobilisables dans votre examen, quel que soit le sujet précis de votre thèse.\n\n## Exercices pratiques\n\n1. Renseignez-vous sur le format exact de l'examen de qualification doctorale dans votre propre établissement (durée de l'écrit, durée de l'oral, composition du jury) et comparez-le à la structure générale présentée dans cette leçon. Identifiez les points communs et les particularités locales.\n\n2. Dressez une première liste, même provisoire, de quatre à cinq grands courants théoriques de la gestion de projets que vous pensez devoir maîtriser. Justifiez en une phrase pourquoi chacun vous semble pertinent pour votre projet de thèse.\n\n3. Rédigez une fiche de lecture type (le gabarit, pas encore remplie) que vous utiliserez pour chaque texte important de votre préparation. Listez les six à huit rubriques qu'elle devra comporter.\n\n4. Construisez votre propre plan de travail sur huit semaines, en tenant compte de vos contraintes réelles (enseignement, terrain de thèse, vie personnelle). Identifiez la semaine la plus à risque de report et prévoyez une marge de sécurité.\n\n5. Expliquez en cinq à huit lignes, comme si vous répondiez à un membre du jury, pourquoi la gestion de projets constitue selon vous un champ de recherche à part entière, et non une simple boîte à outils managériale.\n\n## Corrigé\n\n1. Il n'existe pas de corrigé unique : chaque établissement a ses propres règles (certains organisent un seul oral sans écrit préalable, d'autres exigent un mémoire de synthèse de trente à soixante pages). L'essentiel est que vous ayez formellement vérifié, auprès de votre école doctorale ou de votre directeur de thèse, la durée exacte de chaque épreuve, les modalités de notation et la composition du jury, plutôt que de vous fier à des rumeurs entre doctorants.\n\n2. Une liste plausible, qui sera précisément développée dans les leçons 2 et 3 : (a) l'approche rationnelle et séquentielle de la planification de projet, héritée du génie industriel ; (b) les approches comportementales et l'agilité organisationnelle, centrées sur les personnes et la complexité ; (c) la gouvernance de projet et la question des parties prenantes ; (d) la gestion des risques et de l'incertitude en projet ; (e) la maturité organisationnelle en gestion de projet. Le choix final dépend de votre sujet de thèse : un projet sur les équipes agiles mettra l'accent sur (a) et (b), un projet sur la gouvernance publique de grands projets mettra l'accent sur (c).\n\n3. Un gabarit robuste comporte : référence complète du texte ; question de recherche posée ; thèse ou résultat principal ; concepts clés mobilisés (avec leur définition en une phrase) ; méthode de recherche utilisée le cas échéant ; limites reconnues par l'auteur ou relevées par la critique ultérieure ; courant théorique de rattachement ; lien possible avec votre propre projet de thèse.\n\n4. La correction ici est personnelle : vérifiez que votre plan respecte l'ordre logique (cartographie générale avant approfondissement, approfondissement avant rédaction, rédaction avant simulation orale) et qu'il prévoit au moins une semaine tampon avant l'oral réel.\n\n5. Une bonne réponse insiste sur trois points : la gestion de projets a développé un corpus théorique propre (cycle de vie, parties prenantes, gouvernance, agilité) qui dépasse la simple application d'outils ; elle fait l'objet de revues académiques dédiées et de débats théoriques vifs (par exemple sur la définition même du succès d'un projet) ; elle mobilise des méthodes de recherche spécifiques, en particulier l'étude de cas longitudinale et la recherche-action, adaptées à l'étude de phénomènes organisationnels complexes et temporellement bornés que sont les projets."
+   },
+   {
+    "title": "Débat théorique n°1 : l'approche rationnelle et planificatrice du projet",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Débat théorique n°2 : approches comportementales et agilité organisationnelle",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Les méthodes de recherche en gestion de projets",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Épreuve type d'examen de qualification : mesurer le succès d'un projet",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : L'approche rationnelle et planificatrice de la gestion de projet",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Approches comportementales et agilité organisationnelle",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Les méthodes de recherche en gestion de projet",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Traiter une question de synthèse type d'examen de qualification",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Simulation complète d'une soutenance de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "doc-info",
   "level": "Doctorat",
   "subject": "Informatique",

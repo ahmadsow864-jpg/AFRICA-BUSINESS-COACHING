@@ -1,6 +1,608 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 20/21). À exécuter après seed.sql.
 
+-- Cours : Doctorat Comptabilité : réussir l'examen de qualification doctorale
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'doc-compta', (select id from public.levels where name = 'Doctorat'), null, 'Comptabilité', 'Doctorat Comptabilité : réussir l''examen de qualification doctorale', 'Cours de préparation à l''examen de qualification doctorale en Comptabilité : maîtrise de la théorie positive de la comptabilité et des approches critiques et sociales, du débat entre harmonisation IFRS et référentiels régionaux OHADA/SYSCOHADA, et des méthodes de recherche du champ (études d''événements, recherche qualitative et institutionnelle, études de cas). Public : doctorants en comptabilité préparant leur soutenance de qualification. Prérequis : Master en comptabilité ou discipline proche, projet de thèse en cours de construction.', true, 805
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir son examen de qualification doctorale en Comptabilité', 'Objectifs de la leçon
+
+Cette première leçon pose le cadre de l''examen de qualification doctorale en Comptabilité : à quoi il sert, comment un jury doctoral l''évalue, et comment organiser un travail de préparation efficace sur huit semaines. Elle s''adresse au doctorant qui a validé son inscription en thèse et doit, avant de s''y consacrer pleinement, démontrer qu''il maîtrise l''état de l''art de son champ disciplinaire.
+
+Nature de l''épreuve
+
+L''examen de qualification doctorale (souvent appelé examen comprehensive dans les systèmes anglo-saxons, ou soutenance de projet de thèse dans les systèmes francophones) n''est pas un contrôle de connaissances au sens d''un examen de Master. Il vérifie trois choses distinctes.
+
+- La maîtrise de la littérature du champ : le doctorant doit savoir restituer les grands courants théoriques de la recherche comptable, leurs auteurs représentatifs (identifiés par leur apport, pas par citation exacte mémorisée), leurs débats et leurs limites.
+- La capacité de synthèse critique : il ne s''agit pas de réciter des théories côte à côte, mais de les mettre en tension, de montrer leurs présupposés respectifs et d''expliquer pourquoi des chercheurs les opposent ou les articulent.
+- La solidité du projet de thèse : le candidat doit situer sa propre problématique dans cette littérature, justifier le choix d''un cadre théorique et d''une méthode de recherche, et anticiper les critiques qu''un jury pourrait formuler.
+
+Concrètement, l''épreuve combine le plus souvent un document écrit (note de synthèse de la littérature et/ou projet de thèse détaillé) et une soutenance orale devant un jury de trois à cinq enseignants-chercheurs, dont le directeur de thèse n''est pas toujours partie prenante au vote. La durée de la soutenance varie selon les établissements, mais elle suit presque toujours la même logique : un exposé initial du candidat (15 à 30 minutes), puis une série de questions du jury portant sur la littérature, la méthode et la faisabilité du projet.
+
+Ce que le jury doctoral attend réellement
+
+Un jury de qualification ne cherche pas l''exhaustivité encyclopédique. Il évalue surtout la posture de chercheur du candidat, à travers quatre attentes récurrentes.
+
+- La clarté du positionnement théorique : le candidat sait dire explicitement dans quel courant il s''inscrit (ou comment il articule plusieurs courants) et pourquoi ce choix est cohérent avec sa question de recherche.
+- L''honnêteté intellectuelle face aux limites : un bon candidat reconnaît les faiblesses de son cadre théorique et de sa méthode plutôt que de les occulter. C''est souvent ce critère qui distingue un candidat qui maîtrise son sujet d''un candidat qui le récite.
+- La cohérence méthodologique : la méthode de recherche annoncée doit être adaptée à la question posée ; un jury sanctionne sévèrement une méthode choisie par habitude plutôt que par pertinence.
+- La capacité à dialoguer : contrairement à un examen écrit, la soutenance est un échange. Le jury observe comment le candidat réagit à une objection, s''il sait nuancer sans se contredire, et s''il distingue ce qu''il sait de ce qu''il ignore encore.
+
+En comptabilité, ces attentes prennent une coloration particulière : le champ est traversé par une tension ancienne entre une tradition de recherche proche des sciences de gestion quantitatives et des marchés financiers, et une tradition plus proche des sciences sociales, qui interroge la comptabilité comme construction sociale et politique. Un candidat qui ignore l''existence de cette tension, ou qui prétend qu''un seul courant détient la vérité, affaiblit sa position.
+
+Méthode de travail pour préparer l''épreuve
+
+Trois outils structurent efficacement la préparation.
+
+- La fiche de lecture : pour chaque texte ou chaque courant étudié, une fiche courte et standardisée (problématique, cadre théorique mobilisé, méthode, résultat principal, limite assumée par l''auteur ou relevée par la critique) évite de se noyer dans le détail et permet de réviser rapidement avant la soutenance.
+- La cartographie des courants : un schéma ou un tableau qui positionne les courants les uns par rapport aux autres (sur quoi ils s''opposent, sur quoi ils se recoupent, quels objets d''étude ils privilégient) aide à répondre aux questions transversales du jury, qui portent souvent sur les liens entre courants plutôt que sur un courant isolé.
+- La note de synthèse : un document de quelques pages qui résume l''état de l''art du champ et positionne le projet de thèse par rapport à lui. C''est souvent ce document, ou une version enrichie, qui sert de support écrit à la soutenance.
+
+Plan de travail sur huit semaines
+
+Un calendrier réaliste, à adapter selon le temps disponible, peut s''organiser ainsi.
+
+- Semaines 1 et 2 : recensement et lecture des textes fondateurs du courant de la théorie positive de la comptabilité (recherche en information financière, lien avec les marchés de capitaux) ; rédaction des fiches de lecture correspondantes.
+- Semaines 3 et 4 : recensement et lecture des textes représentatifs des approches critiques et sociales de la comptabilité (comptabilité comme construction sociale, théorie des parties prenantes, responsabilité sociétale) ; fiches de lecture ; premier essai de cartographie opposant les deux courants.
+- Semaine 5 : étude des méthodes de recherche propres au champ comptable (études d''événements sur les marchés financiers, recherche qualitative et institutionnelle, études de cas) et de leurs conditions d''application.
+- Semaine 6 : rédaction d''un premier jet de note de synthèse articulant les deux courants et une méthode, et esquisse du positionnement du projet de thèse personnel.
+- Semaine 7 : entraînement sur une question de synthèse type, rédaction d''un plan de réponse complet, puis simulation orale (seul ou avec un pair) chronométrée.
+- Semaine 8 : relecture critique, correction des points faibles identifiés lors de la simulation, préparation des réponses aux objections les plus probables, repos la veille de l''épreuve.
+
+Ce plan n''est pas une recette rigide : il s''ajuste au nombre de courants exigés et au temps disponible. Ce qui compte est la régularité du travail de fiche, plus efficace qu''une révision massive de dernière minute.
+
+## Exercices pratiques
+
+1. Rédigez en cinq lignes la différence entre un examen de Master et un examen de qualification doctorale, du point de vue de ce qui est évalué.
+2. Listez les quatre attentes d''un jury doctoral présentées dans cette leçon et donnez, pour chacune, un exemple concret de ce qu''un candidat pourrait dire ou faire pour y répondre.
+3. Construisez le squelette d''une fiche de lecture (rubriques uniquement, sans contenu) que vous utiliserez pour les leçons suivantes.
+4. Pourquoi la cohérence entre la question de recherche, le cadre théorique et la méthode est-elle un critère d''évaluation central, plus que la seule exactitude des connaissances ?
+5. Rédigez votre propre plan de travail sur huit semaines en l''adaptant à votre situation (temps disponible, nombre de courants exigés par votre programme).
+
+## Corrigé
+
+1. Un examen de Master évalue la capacité à résoudre un cas ou à appliquer une connaissance balisée dans un cadre fixé par l''enseignant. Un examen de qualification doctorale évalue la capacité à se positionner soi-même dans un champ de recherche existant, à comparer de façon critique des courants théoriques concurrents, et à défendre un projet de thèse original devant un jury qui peut remettre en cause chaque choix. Le niveau attendu est donc celui d''un chercheur en formation, pas celui d''un étudiant qui applique une méthode enseignée.
+
+2. Clarté du positionnement théorique : dire explicitement « je m''inscris dans la perspective critique et sociale de la comptabilité parce que ma question porte sur la légitimité des normes, pas sur leur utilité pour les marchés ». Honnêteté sur les limites : reconnaître par exemple qu''une étude de cas unique ne permet pas de généraliser, et expliquer pourquoi ce choix reste justifié pour une recherche exploratoire. Cohérence méthodologique : ne pas annoncer une étude d''événements sur les marchés financiers si la question de recherche porte sur la perception des normes par des acteurs non cotés en bourse. Capacité à dialoguer : répondre à une objection du jury en reformulant ce qui est accepté et ce qui est nuancé, sans se contredire ni se braquer.
+
+3. Une fiche de lecture utile comporte au minimum : référence et auteur(s) identifiés par leur apport ; problématique traitée ; cadre théorique mobilisé ; méthode de recherche employée ; principal résultat ou argument ; limite assumée ou critique reçue ; lien possible avec mon propre projet de thèse.
+
+4. Parce qu''un jury évalue la capacité à raisonner comme un chercheur, pas la mémoire. Un candidat qui connaît un courant théorique mais choisit une méthode inadaptée révèle qu''il n''a pas intégré la logique de la recherche : la question doit guider le cadre théorique, qui oriente à son tour la méthode. Cette incohérence est l''un des signaux les plus visibles d''un travail insuffisamment mûri.
+
+5. Il n''existe pas de corrigé unique : la bonne réponse est un plan réaliste, daté, qui couvre bien les étapes clés (lecture des courants, méthodes, entraînement à la question de synthèse, simulation orale) et qui tient compte du temps réellement disponible du candidat. L''essentiel à vérifier soi-même : chaque semaine doit avoir un livrable concret (une fiche, une cartographie, un brouillon de note de synthèse), pas seulement une intention de lecture.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en Comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Courant théorique 1 : la théorie positive de la comptabilité', 'Objectifs de la leçon
+
+Cette leçon présente le premier grand courant théorique du champ comptable retenu pour votre examen de qualification : la théorie positive de la comptabilité (positive accounting theory). Vous devez être capable d''en exposer les fondements, d''en citer l''apport des auteurs fondateurs, de retracer son évolution, et d''en formuler les limites et les critiques les plus sérieuses.
+
+Définition et postulat central
+
+La théorie positive de la comptabilité désigne un courant de recherche qui cherche à expliquer et à prédire les pratiques comptables réellement observées, plutôt qu''à prescrire ce qu''elles devraient être. Son postulat central est que les choix comptables des dirigeants, des entreprises et des régulateurs s''expliquent par des motivations économiques rationnelles : minimiser les coûts contractuels, gérer les conflits d''intérêts entre actionnaires, dirigeants et créanciers, et répondre aux incitations créées par les contrats (rémunération indexée sur le résultat, clauses d''endettement, pression politique sur les grandes entreprises).
+
+Ce courant s''inscrit dans une démarche positiviste empruntée aux sciences économiques : il formule des hypothèses testables statistiquement, les confronte à des données de marché ou d''entreprise, et en tire des régularités. Il s''oppose explicitement à une comptabilité normative qui se contenterait de dire comment les comptes devraient être tenus, sans chercher à expliquer pourquoi les praticiens s''en écartent souvent.
+
+Auteurs fondateurs et apport
+
+Sans prétendre à une citation textuelle exacte de leurs travaux, on peut situer l''apport de plusieurs figures associées à ce courant.
+
+- Ross Watts et Jerold Zimmerman sont les auteurs dont l''apport est le plus directement associé à la formalisation de la théorie positive de la comptabilité dans les années 1970 et 1980. Leur contribution majeure est d''avoir proposé un cadre explicatif des choix comptables fondé sur trois hypothèses répandues dans la littérature qui leur est associée : l''hypothèse du plan de rémunération (les dirigeants choisissent des méthodes comptables qui augmentent leur rémunération quand celle-ci dépend du résultat comptable), l''hypothèse des clauses d''endettement (les entreprises proches de violer une clause contractuelle liée à leur niveau d''endettement ont intérêt à choisir des méthodes comptables qui améliorent leurs ratios), et l''hypothèse des coûts politiques (les grandes entreprises visibles ont intérêt à lisser ou minorer un résultat trop élevé pour éviter une attention réglementaire ou fiscale accrue).
+- William Beaver est associé à l''apport fondateur sur l''utilité de l''information comptable pour les marchés financiers, en étudiant comment la publication des résultats comptables modifie le comportement des investisseurs (volume des transactions, volatilité des cours) autour de la date d''annonce.
+- Ray Ball et Philip Brown sont associés à l''un des travaux fondateurs établissant empiriquement un lien entre le contenu informatif des résultats comptables publiés et les variations de cours de bourse, ce qui a durablement orienté la recherche comptable vers l''étude de la valeur informationnelle (value relevance) des chiffres comptables pour les marchés de capitaux.
+
+Évolution historique du courant
+
+Le courant trouve son origine dans le mouvement de recherche empirique en comptabilité financière des années 1960 et 1970, lui-même porté par le développement de l''hypothèse d''efficience des marchés financiers en finance. Si les marchés intègrent rapidement l''information disponible, alors on peut étudier statistiquement comment ils réagissent à la publication d''une information comptable, et en déduire si cette information est utile.
+
+Dans les années 1980, le courant s''élargit des études de marché aux études de choix comptables eux-mêmes : pourquoi une entreprise choisit-elle une méthode d''amortissement plutôt qu''une autre, pourquoi certains dirigeants pratiquent-ils la gestion du résultat (earnings management) à certaines périodes. La théorie de l''agence, qui analyse les conflits d''intérêts entre les différentes parties prenantes d''un contrat, devient le cadre explicatif dominant de cette deuxième vague.
+
+À partir des années 1990 et 2000, le courant se diversifie encore : il nourrit une abondante littérature sur la pertinence des normes comptables internationales (IFRS) pour les marchés financiers. L''argument central de cette littérature est que l''harmonisation comptable internationale réduit les coûts d''information pour les investisseurs, facilite la comparabilité des entreprises cotées entre pays, et peut ainsi abaisser le coût du capital des entreprises qui adoptent des normes de haute qualité perçue. C''est une extension logique du postulat de départ : si l''information comptable est utile aux marchés, alors sa qualité et sa comparabilité internationale doivent avoir une valeur économique mesurable, par exemple via des études d''événements autour des dates d''adoption des IFRS.
+
+Limites et critiques
+
+Ce courant a fait l''objet de critiques anciennes et récurrentes, qu''un candidat doit connaître pour nuancer sa présentation.
+
+- Un déterminisme économique excessif : en expliquant tout choix comptable par un calcul d''intérêt économique rationnel, la théorie positive tend à ignorer les dimensions institutionnelles, culturelles et politiques qui façonnent aussi les pratiques comptables, notamment dans des contextes où les marchés financiers jouent un rôle secondaire.
+- Une confusion possible entre corrélation et explication : montrer qu''un choix comptable est statistiquement associé à une incitation économique ne prouve pas que cette incitation en est la cause, ni qu''elle en est la seule cause.
+- Une focalisation sur les marchés financiers développés : une large part des travaux fondateurs du courant s''appuie sur des données de marchés nord-américains très liquides. Leur transposition à des contextes où les marchés boursiers sont étroits ou peu liquides, ce qui est le cas de nombreuses places africaines, pose la question de la validité externe des résultats, un point qu''un candidat doit savoir discuter sans pour autant rejeter l''ensemble du courant.
+- Une neutralité scientifique contestée : des chercheurs d''autres courants reprochent à la théorie positive de se présenter comme purement descriptive alors qu''elle véhicule, selon eux, une vision implicite de l''entreprise centrée sur l''efficience des marchés et les intérêts des actionnaires, ce qui n''est pas un choix neutre. Cette critique prépare directement la discussion du courant opposé ou complémentaire étudié dans la prochaine leçon.
+
+Ce que le candidat doit retenir pour l''épreuve
+
+Pour l''examen, il est attendu de savoir présenter ce courant de façon équilibrée : en rappeler le postulat et l''apport réel (avoir mis l''information comptable au centre d''une démarche empirique testable, avoir éclairé des mécanismes contractuels concrets), tout en étant capable d''articuler ses limites sans les présenter comme une réfutation totale. C''est cette capacité de nuance, plus que la restitution brute des trois hypothèses de Watts et Zimmerman, qui distingue une bonne réponse de jury d''une réponse mémorisée.
+
+## Exercices pratiques
+
+1. En trois phrases, formulez le postulat central de la théorie positive de la comptabilité sans utiliser le mot « positive ».
+2. Expliquez avec un exemple fictif comment l''hypothèse des clauses d''endettement pourrait motiver un choix comptable précis dans une entreprise sénégalaise fortement endettée.
+3. Pourquoi le développement de ce courant est-il historiquement lié à l''hypothèse d''efficience des marchés financiers ?
+4. Présentez un argument et une limite de l''application de ce courant à l''étude de la valeur informationnelle des normes IFRS dans un contexte de marché financier peu liquide.
+5. Un membre du jury vous objecte : « votre cadre théorique réduit les dirigeants à des calculateurs d''intérêt, n''est-ce pas réducteur ? ». Rédigez une réponse de deux phrases qui reconnaît la limite sans abandonner le cadre théorique.
+
+## Corrigé
+
+1. Les choix comptables observés dans les entreprises s''expliquent principalement par des motivations économiques rationnelles liées aux contrats qui lient les dirigeants aux actionnaires et aux créanciers. Ce courant chercher à expliquer les pratiques réelles plutôt qu''à prescrire des règles idéales. Il utilise des méthodes empiriques pour tester statistiquement ces explications sur des données réelles.
+
+2. Une entreprise sénégalaise proche de violer une clause contractuelle bancaire liée à un ratio d''endettement maximal (exemple fictif pour l''illustration) pourrait choisir une méthode de comptabilisation qui améliore son résultat ou réduit son passif apparent, afin d''éviter un défaut technique et ses conséquences (renégociation, exigibilité anticipée). Ce choix n''est pas nécessairement frauduleux : il reste souvent dans le cadre des options autorisées par le référentiel comptable applicable, ce qui est précisément ce que l''hypothèse des clauses d''endettement chercher à expliquer.
+
+3. Parce que l''étude empirique de l''utilité de l''information comptable pour les marchés suppose que ces marchés réagissent à cette information de façon suffisamment rapide et cohérente pour être mesurable statistiquement. Sans l''hypothèse d''efficience, qui postule que les prix intègrent rapidement l''information disponible, il serait difficile d''interpréter une variation de cours autour d''une annonce comptable comme la preuve que l''information a eu une valeur pour les investisseurs.
+
+4. Argument : l''adoption de normes IFRS, perçues comme de meilleure qualité et plus comparables, peut réduire l''incertitude des investisseurs sur la qualité des comptes et donc, en théorie, réduire le coût du capital des entreprises qui les adoptent. Limite : sur un marché financier peu liquide, où les volumes d''échange sont faibles et où peu d''investisseurs suivent activement l''information publiée, la réaction du marché à une annonce comptable peut être trop faible ou trop bruitée pour être mesurée de façon fiable, ce qui affaiblit la validité empirique de l''argument dans ce contexte.
+
+5. Réponse possible : « Je reconnais que ce cadre simplifie la motivation des dirigeants en la ramenant à des incitations contractuelles mesurables, et qu''il laisse de côté des dimensions institutionnelles ou culturelles plus difficiles à modéliser statistiquement. Je le mobilise néanmoins parce qu''il permet de formuler des hypothèses testables sur mon terrain, et je prévois de le compléter, si nécessaire, par une lecture plus institutionnelle pour les aspects qu''il laisse dans l''ombre. »', 'texte', 45, false, 20
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 1 : la théorie positive de la comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Courant théorique 2 : les approches critiques et sociales de la comptabilité', 'Objectifs de la leçon
+
+Cette leçon présente le second grand courant théorique retenu pour votre examen : les approches critiques et sociales de la comptabilité. Ce courant se construit en partie en réaction au courant étudié dans la leçon précédente, et il est fréquent qu''un jury demande explicitement de mettre les deux en tension. Vous devez savoir en exposer les fondements, les apports, l''évolution, et les limites.
+
+Définition et postulat central
+
+Les approches critiques et sociales de la comptabilité regroupent un ensemble de courants hétérogènes qui partagent un postulat commun : la comptabilité n''est pas un simple outil technique neutre de mesure économique, mais une construction sociale qui façonne, et est façonnée par, des rapports de pouvoir, des représentations sociales et des choix politiques. Produire un chiffre comptable, c''est déjà faire un choix sur ce qui compte, pour qui, et selon quelles catégories.
+
+Ce courant déplace donc la question de recherche. Là où la théorie positive demande « quelle incitation économique explique ce choix comptable, et quel effet ce choix a-t-il sur les marchés », les approches critiques et sociales demandent « quels intérêts, quelles représentations du monde, quels rapports entre l''entreprise et la société ce choix comptable reflète-t-il ou contribue-t-il à construire ». Ce ne sont pas seulement des méthodes différentes, mais des questions différentes posées à partir de présupposés différents sur ce qu''est la comptabilité.
+
+Auteurs et apports représentatifs
+
+Plusieurs lignes de travail peuvent être situées dans ce courant, par leur apport plutôt que par citation exacte.
+
+- Anthony Hopwood est associé à l''apport fondateur consistant à étudier la comptabilité comme pratique sociale et organisationnelle, en s''intéressant à la façon dont les systèmes comptables influencent le comportement des acteurs dans l''organisation, au-delà de leur seule fonction de mesure.
+- Richard Laughlin et des chercheurs proches de la tradition dite de la comptabilité critique sont associés à l''apport d''une lecture inspirée des théories sociales critiques, qui interroge le rôle de la comptabilité dans la reproduction de rapports de pouvoir au sein des organisations et de la société.
+- Les travaux rattachés à la théorie des parties prenantes (stakeholder theory), popularisée notamment à partir des apports de R. Edward Freeman en management stratégique puis largement repris en comptabilité sociale et environnementale, sont associés à l''idée que l''entreprise doit rendre compte non seulement à ses actionnaires mais à l''ensemble des parties affectées par son activité (salariés, communautés locales, collectivités, environnement), ce qui a nourri le développement de la comptabilité sociale et environnementale et des rapports de responsabilité sociétale des entreprises.
+- La théorie de la légitimité, mobilisée par de nombreux chercheurs de ce courant, est associée à l''idée que les entreprises publient des informations sociales et environnementales en partie pour préserver leur légitimité auprès de la société, indépendamment de toute utilité directe pour les décisions des investisseurs financiers.
+
+Évolution historique du courant
+
+Ce courant émerge à partir des années 1970 et 1980, en partie comme réaction au tournant empirique et quantitatif de la recherche comptable dominante à cette période. Des chercheurs, souvent influencés par la sociologie des organisations, la philosophie sociale ou l''économie politique, estiment que réduire la comptabilité à son utilité pour des marchés financiers efficients laisse de côté l''essentiel : les effets de la comptabilité sur le travail, sur les communautés, sur l''environnement, et sur la répartition du pouvoir dans et autour des organisations.
+
+Dans les années 1990, le courant se structure davantage autour de la comptabilité sociale et environnementale, avec l''essor des rapports extra-financiers des grandes entreprises et l''apparition progressive de cadres de reporting sur la responsabilité sociétale. La recherche critique s''intéresse alors beaucoup à la question de savoir si ces rapports traduisent un changement réel de comportement des entreprises, ou s''ils servent surtout une fonction de légitimation symbolique, sans effet substantiel sur les pratiques.
+
+Depuis les années 2000, une partie de ce courant s''intéresse de près à la normalisation comptable internationale elle-même comme objet d''étude social et politique : qui participe à l''élaboration des normes comptables internationales, quels intérêts y sont représentés, et quelles conséquences la diffusion mondiale d''un même référentiel a-t-elle sur des économies très différentes. C''est ici que se noue un débat particulièrement pertinent pour un chercheur africain en comptabilité : celui de l''harmonisation comptable internationale portée par les normes IFRS, face à la pertinence de référentiels régionaux comme le droit comptable de l''Organisation pour l''Harmonisation du Droit des Affaires en Afrique, mis en œuvre à travers le Système Comptable Ouest-Africain (OHADA et SYSCOHADA).
+
+Les chercheurs proches des approches critiques et sociales invitent à ne pas considérer l''adoption des IFRS comme un simple progrès technique universel, mais à interroger les conditions sociales de sa production (élaborée principalement par des organismes des économies les plus industrialisées) et sa pertinence pour des économies où les marchés financiers sont étroits, où le tissu économique est dominé par des petites et moyennes entreprises non cotées, et où les besoins d''information des utilisateurs diffèrent de ceux des investisseurs boursiers visés en priorité par les IFRS. Le référentiel SYSCOHADA, construit pour un espace économique régional ouest et centrafricain, peut alors être lu non comme un simple retard par rapport à une norme internationale supérieure, mais comme une construction institutionnelle répondant à des besoins et à des rapports de pouvoir économiques propres à la zone, ce qui est précisément la question posée par les approches critiques et sociales.
+
+Limites et critiques
+
+Ce courant, à son tour, fait l''objet de critiques qu''un candidat doit connaître.
+
+- Un déficit de généralisation statistique : beaucoup de travaux s''appuient sur des études de cas ou des analyses qualitatives dont la portée reste difficile à généraliser, ce que les chercheurs du courant opposé soulignent régulièrement.
+- Un risque de glissement normatif : partant d''un engagement critique explicite, certains travaux sont accusés de mélanger analyse scientifique et prise de position militante.
+- Une difficulté à proposer des solutions opérationnelles immédiates : mettre en évidence des rapports de pouvoir est parfois jugé plus facile que formuler des recommandations applicables.
+
+Articulation avec le courant précédent
+
+Pour l''examen, il est attendu de ne pas présenter ces deux courants comme simplement incompatibles. Beaucoup de chercheurs contemporains considèrent qu''ils répondent à des questions différentes et peuvent être mobilisés de façon complémentaire selon l''objet étudié : un travail sur la valeur informationnelle d''une annonce comptable sur un marché boursier relève naturellement du premier courant, tandis qu''un travail sur l''adoption d''un référentiel comptable régional par des petites entreprises non cotées relève plus naturellement du second. Savoir expliquer ce critère de choix, plutôt que de déclarer un courant supérieur à l''autre, est souvent ce qui distingue une bonne prestation orale.
+
+## Exercices pratiques
+
+1. Formulez en trois phrases le postulat central des approches critiques et sociales de la comptabilité, en évitant toute formule mémorisée.
+2. Expliquez la différence entre la théorie des parties prenantes et la théorie de la légitimité, en une phrase chacune.
+3. Pourquoi le débat sur la pertinence d''un référentiel régional comme le SYSCOHADA face aux normes IFRS est-il un terrain naturel pour les approches critiques et sociales de la comptabilité ?
+4. Donnez un exemple fictif de rapport de responsabilité sociétale d''une entreprise sénégalaise qui pourrait être analysé sous l''angle de la théorie de la légitimité plutôt que sous l''angle de son utilité informationnelle pour les marchés.
+5. Un membre du jury vous objecte que vos travaux critiques « ne proposent pas de solution concrète ». Rédigez une réponse de deux phrases qui défend la valeur du travail descriptif et critique sans prétendre qu''il doit toujours produire une recommandation opérationnelle.
+
+## Corrigé
+
+1. La comptabilité n''est pas un outil technique neutre : elle reflète et façonne des rapports de pouvoir, des représentations sociales et des choix politiques, dans l''organisation comme dans la société. Produire un chiffre comptable implique toujours de choisir ce qui compte et selon quelles catégories. Ce courant étudie donc les effets sociaux et politiques des pratiques comptables, plutôt que leur seule utilité économique pour les marchés.
+
+2. La théorie des parties prenantes soutient que l''entreprise doit rendre compte à l''ensemble des acteurs affectés par son activité, pas seulement à ses actionnaires. La théorie de la légitimité explique, elle, pourquoi une entreprise publie certaines informations sociales ou environnementales : pour préserver son acceptabilité sociale, indépendamment de toute obligation envers des parties prenantes précises.
+
+3. Parce que ce débat ne porte pas seulement sur une question technique de qualité comptable, mais sur la question de savoir qui produit les normes, pour quels besoins, et avec quels intérêts économiques en jeu, ce qui est exactement l''objet d''étude privilégié des approches critiques et sociales : interroger les conditions sociales et institutionnelles de production d''un référentiel plutôt que supposer sa supériorité technique universelle.
+
+4. Une entreprise sénégalaise (exemple fictif) qui publie chaque année un rapport détaillé sur ses actions sociales dans les communautés où elle opère, sans que ce rapport soit directement utilisé par les investisseurs financiers pour évaluer son cours de bourse, illustre bien la théorie de la légitimité : la publication vise à maintenir une image socialement acceptable de l''entreprise, plutôt qu''à informer un marché financier sur sa valeur.
+
+5. Réponse possible : « La recherche critique a pour fonction première de révéler des mécanismes et des rapports de pouvoir qui restent invisibles dans une lecture purement technique de la comptabilité ; cette mise en lumière a une valeur scientifique propre. Je reconnais cependant que mon projet pourrait, en complément, discuter des implications pratiques de ces résultats pour les régulateurs ou les praticiens, sans pour autant transformer un travail descriptif en recommandation normative. »', 'texte', 45, false, 30
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 2 : les approches critiques et sociales de la comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les méthodes de recherche en comptabilité', 'Objectifs de la leçon
+
+Cette leçon présente les grandes méthodes de recherche propres au champ comptable, en lien direct avec les deux courants théoriques étudiés précédemment. Elle se termine par un exemple de protocole de recherche appliqué à un contexte sénégalais fictif, construit pour vous entraîner à justifier une méthode devant un jury.
+
+Les études d''événements sur les marchés financiers
+
+L''étude d''événements (event study) est la méthode quantitative la plus associée à la théorie positive de la comptabilité et à l''étude de la valeur informationnelle des chiffres comptables. Son principe est de mesurer la réaction d''un marché financier à la publication d''une information comptable précise (résultat annuel, changement de méthode comptable, adoption d''un nouveau référentiel), en comparant le rendement réellement observé d''un titre autour de la date de l''événement à un rendement attendu en l''absence de cet événement.
+
+La démarche suit généralement quatre étapes. Premièrement, définir précisément l''événement et sa date (par exemple la date de publication officielle d''un résultat annuel). Deuxièmement, estimer un modèle de rendement attendu sur une période antérieure à l''événement, le plus souvent un modèle de marché qui relie le rendement du titre au rendement d''un indice de référence par une relation linéaire. Troisièmement, calculer le rendement anormal (abnormal return) à chaque date de la fenêtre d''événement, défini comme la différence entre le rendement observé et le rendement attendu par le modèle. Quatrièmement, cumuler ces rendements anormaux sur la fenêtre étudiée (cumulative abnormal return, CAR) et tester si ce cumul est statistiquement différent de zéro.
+
+Un exemple chiffré, entièrement fictif et vérifié par calcul, illustre la méthode. Sur une fenêtre de onze jours de bourse autour de la publication des comptes annuels d''une entreprise fictive cotée sur un marché régional (jour 0 = date de l''annonce), avec un modèle de marché fictif déjà estimé (alpha = 0,02 pourcent, bêta = 1,10), les rendements anormaux quotidiens calculés sont faibles les jours sans événement (de l''ordre de -0,08 à +0,07 pourcent) mais atteignent 1,67 pourcent le jour de l''annonce elle-même. Le cumul des rendements anormaux sur l''ensemble de la fenêtre (CAR) atteint environ 1,86 pourcent, très majoritairement porté par le seul jour de l''annonce. Un test de significativité simplifié, comparant l''écart du jour 0 à la moyenne et à l''écart-type des rendements anormaux des autres jours, donne une statistique très supérieure aux valeurs seuils usuelles, ce qui, dans cet exemple construit pour l''illustration, serait interprété comme une réaction de marché statistiquement significative à l''annonce comptable. Ces chiffres sont fictifs et construits pour la démonstration : dans une recherche réelle, la robustesse d''un tel résultat dépend de la qualité du modèle de rendement attendu, de la taille de l''échantillon d''entreprises étudiées, et du contrôle d''événements concurrents susceptibles d''affecter le cours à la même date.
+
+Cette méthode suppose un marché boursier suffisamment liquide et un échantillon suffisant d''entreprises cotées pour être statistiquement robuste, ce qui limite directement son application dans des contextes où le marché financier est étroit.
+
+La recherche qualitative et institutionnelle
+
+À l''opposé méthodologique, la recherche qualitative et institutionnelle est la méthode privilégiée des approches critiques et sociales de la comptabilité. Elle vise à comprendre en profondeur comment des acteurs donnent sens à des pratiques comptables, comment des institutions (organismes de normalisation, administrations, organisations professionnelles) façonnent ces pratiques, et comment des rapports de pouvoir s''y expriment.
+
+Les techniques les plus courantes sont l''entretien semi-directif avec des acteurs clés (dirigeants, comptables, régulateurs, auditeurs), l''analyse documentaire approfondie (rapports annuels, procès-verbaux d''organismes de normalisation, débats publics autour d''un projet de norme), et l''observation directe ou participante au sein d''une organisation. L''analyse qualitative recourt souvent à un codage thématique des données recueillies pour en dégager des catégories et des régularités interprétatives, sans viser une généralisation statistique.
+
+La recherche institutionnelle, plus spécifiquement, s''appuie fréquemment sur la théorie néo-institutionnelle pour expliquer pourquoi des organisations adoptent des pratiques comptables similaires non pas parce qu''elles sont techniquement supérieures, mais parce qu''elles répondent à des pressions de légitimité, d''imitation ou de normalisation professionnelle. Ce cadre est particulièrement utile pour étudier la diffusion d''un référentiel comme le SYSCOHADA dans un espace régional, ou l''adoption progressive de pratiques inspirées des IFRS par des entreprises non cotées.
+
+Les études de cas
+
+L''étude de cas occupe une place particulière : elle peut servir aussi bien une démarche positiviste (étudier en détail les mécanismes contractuels d''une entreprise précise pour illustrer ou affiner une hypothèse générale) qu''une démarche critique et sociale (comprendre en profondeur un contexte organisationnel singulier). Une étude de cas rigoureuse précise toujours son unité d''analyse (une entreprise, un service, un processus de décision), sa stratégie d''échantillonnage (cas unique en profondeur ou cas multiples comparés), et ses sources de données (entretiens, documents internes, observation), en veillant à trianguler plusieurs sources pour renforcer la validité des résultats. Sa principale limite, souvent soulevée par le jury, est la difficulté à généraliser les résultats obtenus sur un ou quelques cas à une population plus large, ce qui doit être anticipé et assumé dans la présentation de la méthode plutôt que nié.
+
+Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
+
+Imaginons un projet de thèse fictif portant sur la question suivante : « Comment les petites et moyennes entreprises sénégalaises non cotées perçoivent-elles la pertinence du référentiel SYSCOHADA révisé par rapport aux normes IFRS, et quels facteurs institutionnels expliquent leurs pratiques comptables effectives ? » Un protocole de recherche cohérent avec cette question, mobilisant la méthode qualitative et institutionnelle plutôt que l''étude d''événements (puisque ces entreprises ne sont pas cotées en bourse), pourrait s''organiser ainsi.
+
+- Choix du cadre théorique : approche néo-institutionnelle, issue du courant critique et social, pour expliquer l''adoption de pratiques comptables par des pressions de légitimité plutôt que par un seul calcul d''efficience.
+- Échantillon : étude de cas multiples, par exemple six à dix petites et moyennes entreprises sénégalaises de secteurs différents (commerce, industrie légère, services), sélectionnées pour contraster leur taille et leur exposition à des bailleurs de fonds exigeant des normes internationales.
+- Collecte de données : entretiens semi-directifs avec les dirigeants et les responsables comptables de chaque entreprise, complétés par l''analyse de leurs états financiers et, lorsque disponible, de leurs échanges avec des organismes de normalisation ou des cabinets d''audit.
+- Analyse : codage thématique des entretiens pour identifier les catégories de justification données par les acteurs (contrainte réglementaire, exigence d''un bailleur de fonds, habitude professionnelle, méconnaissance des alternatives), puis comparaison systématique entre les cas.
+- Limites anticipées à présenter au jury : un échantillon de cas multiples sénégalais ne permet pas de généraliser les résultats à l''ensemble des petites entreprises ouest-africaines ; le choix de s''appuyer sur les discours des dirigeants, plutôt que sur une observation prolongée des pratiques réelles, introduit un biais de déclaration qu''il convient de discuter.
+
+## Exercices pratiques
+
+1. Expliquez en trois phrases le principe d''une étude d''événements, sans recourir au vocabulaire anglais.
+2. Pourquoi l''étude d''événements est-elle difficilement applicable à une recherche portant sur des petites entreprises sénégalaises non cotées ?
+3. Donnez deux techniques de collecte de données propres à la recherche qualitative et institutionnelle, et expliquez à quel type de question de recherche chacune convient le mieux.
+4. Dans le protocole fictif présenté, pourquoi le choix d''une étude de cas multiples est-il préférable à un cas unique pour cette question de recherche précise ?
+5. Un membre du jury objecte que les résultats de votre étude de cas multiples « ne prouvent rien de généralisable ». Formulez une réponse de deux phrases qui assume cette limite sans abandonner la méthode.
+
+## Corrigé
+
+1. Une étude d''événements mesure la réaction d''un marché financier à la publication d''une information précise, par exemple un résultat comptable. Elle compare le rendement réellement observé d''un titre autour de cette publication à un rendement attendu calculé à partir d''un modèle estimé sur une période antérieure. L''écart entre ces deux rendements, appelé rendement anormal, est interprété comme la réaction du marché à l''information en question.
+
+2. Parce que cette méthode suppose un titre coté sur un marché boursier suffisamment liquide pour que ses variations de cours reflètent l''arrivée d''une information nouvelle. Des petites entreprises sénégalaises non cotées n''ont, par définition, aucun cours de bourse observable : il n''existe donc aucun rendement de marché à mesurer, ce qui rend la méthode inapplicable à cette population.
+
+3. L''entretien semi-directif convient aux questions portant sur le sens que les acteurs donnent à leurs pratiques (pourquoi un dirigeant choisit telle méthode comptable) ; l''analyse documentaire (rapports, procès-verbaux d''organismes de normalisation) convient aux questions portant sur l''évolution institutionnelle d''un référentiel ou sur les débats publics qui l''ont entouré.
+
+4. Parce que la question de recherche porte sur des facteurs institutionnels qui peuvent varier selon la taille, le secteur ou l''exposition à des bailleurs de fonds exigeants : un cas unique ne permettrait pas de voir si ces facteurs varient systématiquement selon ces dimensions, alors que des cas multiples contrastés permettent une comparaison qui enrichit l''interprétation, même sans viser une généralisation statistique.
+
+5. Réponse possible : « Je reconnais que mes résultats ne sont pas généralisables statistiquement à l''ensemble des petites entreprises ouest-africaines : ce n''est pas l''objectif de ma méthode. Mon objectif est de comprendre en profondeur les mécanismes institutionnels à l''œuvre dans les cas étudiés, une compréhension qui peut ensuite nourrir des hypothèses à tester sur un échantillon plus large par une autre méthode. »', 'texte', 45, false, 40
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Épreuve type d''examen de qualification doctorale', 'Objectifs de la leçon
+
+Cette leçon vous propose une question de synthèse typique d''un examen de qualification doctorale en comptabilité (question non officielle, construite pour l''entraînement), suivie d''un plan de réponse détaillé et corrigé. L''objectif est de vous entraîner à mobiliser ensemble les deux courants théoriques et une méthode de recherche étudiés dans les leçons précédentes, exactement comme un jury vous le demanderait.
+
+Énoncé de la question type
+
+« Dans quelle mesure la recherche comptable peut-elle à la fois évaluer l''utilité de l''information financière pour les marchés de capitaux et interroger la comptabilité comme construction sociale ? Vous discuterez cette tension à partir du débat entre harmonisation comptable internationale (IFRS) et pertinence des référentiels comptables régionaux, et vous proposerez une méthode de recherche adaptée à l''étude de cette question dans un contexte africain. »
+
+Analyse de la question avant de répondre
+
+Avant de se lancer dans la rédaction, un bon candidat prend quelques minutes pour décomposer la question en ses exigences implicites. Cette question en comporte au moins quatre : présenter le courant de la théorie positive de la comptabilité et son approche de l''utilité de l''information financière ; présenter le courant critique et social et sa lecture de la comptabilité comme construction sociale ; articuler ces deux courants autour du débat IFRS contre référentiels régionaux ; proposer et justifier une méthode de recherche cohérente avec un contexte africain. Un plan qui traiterait ces quatre éléments de façon séparée, sans les relier, répondrait partiellement à la question mais perdrait des points sur la capacité de synthèse attendue.
+
+Plan de réponse détaillé
+
+Introduction (environ 10 pourcent du temps de réponse) : rappeler que la recherche comptable est traversée par une tension entre une tradition qui étudie la comptabilité comme information utile aux décisions des marchés, et une tradition qui l''étudie comme construction sociale et politique ; annoncer que cette tension s''illustre particulièrement bien dans le débat sur l''harmonisation comptable internationale ; annoncer le plan en trois temps.
+
+Premier temps : la lecture de l''utilité de l''information financière (mobilise la leçon 2). Présenter le postulat de la théorie positive de la comptabilité : les choix et les normes comptables s''expliquent et se justifient par leur capacité à réduire l''incertitude des investisseurs et à faciliter l''allocation efficace du capital. Appliquer ce postulat au débat IFRS : l''argument principal en faveur de l''harmonisation internationale est que des normes communes et de qualité perçue élevée réduisent les coûts d''information et peuvent abaisser le coût du capital des entreprises qui les adoptent, ce qui est testable empiriquement par des études d''événements autour des dates d''adoption. Signaler la limite : cet argument suppose des marchés financiers suffisamment développés et liquides pour que l''effet soit mesurable, ce qui n''est pas la situation de la majorité des entreprises africaines.
+
+Deuxième temps : la lecture de la comptabilité comme construction sociale (mobilise la leçon 3). Présenter le postulat des approches critiques et sociales : la comptabilité reflète et façonne des rapports de pouvoir et des représentations sociales, et les normes comptables sont elles-mêmes le produit d''un processus institutionnel situé, pas une vérité technique universelle. Appliquer ce postulat au même débat : la normalisation IFRS est portée par des organismes et des intérêts principalement issus des économies les plus industrialisées, ce qui invite à interroger sa pertinence pour des économies où les marchés financiers sont étroits et où le tissu économique est dominé par des entreprises non cotées. Présenter alors le référentiel régional SYSCOHADA non comme un simple retard technique, mais comme une réponse institutionnelle à des besoins et à des rapports de pouvoir économiques spécifiques à l''espace ouest et centrafricain.
+
+Troisième temps : articulation des deux lectures et proposition méthodologique (mobilise la leçon 4). Montrer que les deux lectures ne sont pas forcément incompatibles : elles répondent à des questions différentes selon l''objet étudié. Pour une question portant sur la réaction des marchés financiers à l''adoption de nouvelles normes par de grandes entreprises cotées, une étude d''événements, cohérente avec la théorie positive, est pertinente. Pour une question portant sur la façon dont des petites entreprises non cotées perçoivent et appliquent effectivement un référentiel comptable régional, une démarche qualitative et institutionnelle, cohérente avec les approches critiques et sociales, est plus appropriée. Proposer, à titre d''illustration, un protocole combinant les deux regards : une étude d''événements limitée aux quelques grandes entreprises africaines cotées ayant adopté les IFRS, complétée par une étude de cas qualitative auprès de petites entreprises non cotées restées au référentiel régional, afin de confronter les deux logiques sur un même terrain.
+
+Conclusion (environ 10 pourcent du temps de réponse) : rappeler que la tension entre les deux courants n''est pas un obstacle à résoudre mais un objet d''étude en soi, particulièrement fécond pour un chercheur travaillant sur un contexte africain, où la coexistence de normes internationales et régionales offre un terrain naturel de comparaison.
+
+Corrigé commenté : ce qui ferait la différence devant un jury
+
+Un jury valoriserait particulièrement trois éléments dans cette réponse. Premièrement, la clarté de la distinction entre les deux courants dès l''introduction, sans les mélanger prématurément. Deuxièmement, le fait de ne pas présenter le référentiel régional comme simplement inférieur aux IFRS, ce qui serait une erreur de positionnement révélant une mauvaise compréhension du courant critique et social. Troisièmement, la capacité à proposer une méthode concrète et réalisable, plutôt qu''une méthode mentionnée sans justification de son adéquation au terrain étudié. À l''inverse, un jury pénaliserait une réponse qui se contenterait de réciter les deux courants sans jamais les articuler autour du débat proposé, ou qui proposerait une méthode sans expliquer pourquoi elle convient précisément à la question posée.
+
+## Exercices pratiques
+
+1. Rédigez seul, en quinze minutes chronométrées, une introduction de réponse à la question type de cette leçon, sans relire le plan proposé.
+2. Identifiez, dans le plan de réponse détaillé, la phrase qui articule explicitement les deux courants plutôt que de les juxtaposer, et expliquez pourquoi cette articulation est importante pour le jury.
+3. Proposez une variante de la question type qui porterait sur un autre couple de méthodes (par exemple étude de cas contre recherche institutionnelle) plutôt que sur le débat IFRS contre référentiels régionaux.
+4. Un jury vous demande : « votre protocole combinant étude d''événements et étude de cas n''est-il pas simplement un empilement de deux méthodes sans cohérence ? ». Rédigez une réponse de trois phrases qui justifie la cohérence du protocole.
+5. Entraînez-vous à l''oral : présentez le plan de réponse à voix haute en dix minutes maximum, puis identifiez les deux points que vous avez eu le plus de mal à articuler clairement.
+
+## Corrigé
+
+1. Il n''existe pas de corrigé unique pour cet exercice d''entraînement individuel : la bonne pratique est de comparer votre introduction à celle proposée dans la leçon et de vérifier qu''elle annonce bien les trois temps du plan (utilité pour les marchés, construction sociale, articulation méthodologique), sans entrer déjà dans le détail de chaque courant.
+
+2. La phrase clé est celle qui explique que les deux lectures « répondent à des questions différentes selon l''objet étudié » : elle montre au jury que le candidat ne choisit pas un courant par conviction personnelle mais sait identifier à quel type de question chaque courant, et chaque méthode associée, est le mieux adapté. C''est cette logique de choix raisonné, plus que la connaissance des courants eux-mêmes, qui démontre la maturité de chercheur attendue à ce niveau.
+
+3. Exemple de variante : « Dans quelle mesure l''étude de cas et la recherche institutionnelle permettent-elles d''éclairer des questions que l''étude d''événements sur les marchés financiers ne peut pas traiter, notamment dans des économies où les marchés boursiers sont peu développés ? » Cette question mobiliserait les mêmes courants théoriques mais déplacerait le débat appliqué sur un autre terrain.
+
+4. Réponse possible : « Le protocole n''empile pas deux méthodes au hasard : il applique chaque méthode à la population pour laquelle elle est pertinente, les grandes entreprises cotées pour l''étude d''événements et les petites entreprises non cotées pour l''étude de cas qualitative. La cohérence ne vient donc pas de l''unité de la méthode, mais de l''adéquation entre chaque méthode et le sous-objet de recherche auquel elle s''applique. Cette combinaison permet justement de couvrir toute la population étudiée, ce qu''aucune des deux méthodes prise isolément ne permettrait. »
+
+5. Cet exercice n''a pas de corrigé textuel : il vise à faire expérimenter la contrainte orale du temps et à identifier, par l''auto-évaluation, les transitions les moins maîtrisées, qui devront être retravaillées avant la soutenance réelle.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification doctorale');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : la théorie positive de la comptabilité', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : maîtriser la théorie positive de la comptabilité pour pouvoir l''exposer, la mettre en œuvre dans un exemple, et en discuter les limites devant un jury. Matériel : tableau ou diaporama avec les trois hypothèses de la théorie positive, un tableau de calcul d''étude d''événements projeté, de quoi prendre des notes. Prérequis : avoir lu la leçon texte sur la théorie positive de la comptabilité et tenté les exercices correspondants.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et objectifs de la séance
+
+Bonjour à toutes et à tous. Cette séance vidéo reprend et approfondit la leçon sur la théorie positive de la comptabilité, premier grand courant théorique de votre examen de qualification. Mon objectif aujourd''hui n''est pas de vous refaire lire la leçon texte, mais de vous faire manipuler ce courant comme un chercheur le ferait réellement : en le mettant à l''épreuve d''un exemple chiffré, et en anticipant les objections qu''un jury pourrait vous opposer. Nous allons procéder en quatre temps : d''abord un rappel structuré du postulat et des hypothèses du courant, ensuite une démonstration complète d''une étude d''événements avec des chiffres fictifs mais calculés, puis une discussion critique des limites, et enfin un temps de questions-réponses simulé, comme à l''oral. Gardez un papier à portée de main : je vais vous demander de noter vos propres réponses avant de vous donner les miennes.
+
+## 05:00 – 20:00 · Rappel structuré : postulat et hypothèses de la théorie positive
+
+Commençons par le postulat central. La théorie positive de la comptabilité part d''une idée simple mais puissante : les choix comptables observés dans les entreprises ne sont pas arbitraires, ils s''expliquent par des motivations économiques rationnelles liées aux contrats qui lient les différents acteurs de l''entreprise. Ce courant ne cherche pas à dire comment on devrait comptabiliser, il cherche à expliquer pourquoi on comptabilise de telle ou telle façon dans la réalité.
+
+Trois hypothèses structurent la majorité des travaux de ce courant. La première, l''hypothèse du plan de rémunération, dit que lorsque la rémunération d''un dirigeant dépend du résultat comptable, ce dirigeant a intérêt à choisir des méthodes comptables qui augmentent ce résultat, ou à les choisir au moment où cela sert le mieux son intérêt. Prenez un exemple simple : un dirigeant dont le bonus est calculé sur le résultat net d''une année donnée pourrait avoir intérêt à retarder une charge exceptionnelle à l''année suivante, dans la mesure où le référentiel comptable applicable l''autorise.
+
+La deuxième, l''hypothèse des clauses d''endettement, dit qu''une entreprise proche de violer une clause contractuelle liée à son endettement (un ratio maximal imposé par un prêteur, par exemple) a intérêt à choisir des méthodes comptables qui améliorent ce ratio, pour éviter les conséquences d''un défaut technique : renégociation du prêt, exigibilité anticipée, perte de confiance des créanciers.
+
+La troisième, l''hypothèse des coûts politiques, dit que les grandes entreprises très visibles ont intérêt, au contraire, à minorer ou à lisser un résultat trop élevé, pour ne pas attirer une attention réglementaire, fiscale ou syndicale qui pourrait leur coûter cher. Vous voyez que ces trois hypothèses, loin de se contredire, décrivent des situations contractuelles différentes qui orientent le choix comptable dans des directions parfois opposées.
+
+Je vous propose un petit exercice mental, à faire en pause sur votre papier : pour chacune des trois hypothèses, trouvez un exemple fictif d''entreprise sénégalaise où cette hypothèse jouerait un rôle. Prenez trente secondes... Nous reviendrons sur vos réponses possibles à la fin de cette section.
+
+## 20:00 – 45:00 · Démonstration complète d''une étude d''événements
+
+Passons maintenant à la méthode de recherche la plus associée à ce courant : l''étude d''événements sur les marchés financiers. Je vais vous montrer, pas à pas, comment elle fonctionne, avec un exemple entièrement fictif mais dont tous les calculs ont été vérifiés.
+
+Imaginons une entreprise fictive cotée sur un marché régional, qui publie ses comptes annuels au jour que nous appelons jour zéro. Nous observons une fenêtre de onze jours de bourse, de cinq jours avant à cinq jours après l''annonce. Pour chaque jour, nous disposons du rendement réellement observé de l''action, et du rendement de l''indice de marché.
+
+La première étape consiste à estimer, sur une période antérieure à cette fenêtre, un modèle de marché qui relie le rendement de l''action au rendement de l''indice par une relation du type : rendement attendu égale alpha plus bêta multiplié par le rendement du marché. Dans notre exemple fictif, ce modèle a déjà été estimé et donne un alpha de 0,02 pourcent et un bêta de 1,10. Cela signifie que, toutes choses égales, le titre amplifie légèrement les mouvements du marché.
+
+La deuxième étape consiste à calculer, pour chaque jour de la fenêtre, le rendement attendu à partir de ce modèle, puis à le comparer au rendement réellement observé. L''écart entre les deux est le rendement anormal du jour. Sur les jours sans événement particulier, dans notre exemple, ces écarts restent faibles, de l''ordre de moins 0,08 pourcent à plus 0,07 pourcent : rien d''anormal. Mais le jour de l''annonce elle-même, le rendement observé de l''action est de 1,80 pourcent, alors que le rendement attendu par le modèle n''était que de 0,13 pourcent. Le rendement anormal de ce jour est donc de 1,67 pourcent, nettement supérieur à tous les autres jours de la fenêtre.
+
+La troisième étape consiste à cumuler ces rendements anormaux sur l''ensemble de la fenêtre pour obtenir ce qu''on appelle le rendement anormal cumulé. Dans notre exemple, ce cumul atteint environ 1,86 pourcent sur les onze jours, et vous remarquez qu''il est presque entièrement porté par le seul jour de l''annonce : cela confirme que l''essentiel de la réaction du marché se concentre bien sur l''événement étudié, et non sur un bruit diffus avant ou après.
+
+La quatrième étape, enfin, consiste à tester si ce rendement anormal du jour de l''annonce est statistiquement différent des rendements anormaux habituels. En comparant l''écart du jour zéro à la moyenne et à l''écart-type des rendements anormaux des autres jours de la fenêtre, on obtient dans notre exemple une statistique très largement supérieure aux seuils usuels de significativité, ce qui, pour cet exemple construit à des fins pédagogiques, serait interprété comme une réaction significative du marché à l''annonce comptable.
+
+Je veux insister sur un point de méthode important pour votre examen : dans une recherche réelle, on ne travaille jamais sur une seule entreprise. On construit un échantillon de plusieurs dizaines ou centaines d''événements similaires, et on teste si, en moyenne sur l''échantillon, le rendement anormal du jour de l''annonce est significativement différent de zéro. Travailler sur un seul cas, comme nous venons de le faire, sert à illustrer la mécanique du calcul, pas à produire un résultat scientifiquement valide.
+
+## 45:00 – 50:00 · Quiz interactif
+
+Prenons une pause active. Je vous pose cinq questions, répondez sur votre papier avant d''entendre la réponse. Première question : quelle hypothèse de la théorie positive explique qu''une entreprise proche de violer une clause bancaire choisisse une méthode comptable qui améliore son ratio d''endettement ? Réponse : l''hypothèse des clauses d''endettement. Deuxième question : dans une étude d''événements, que mesure le rendement anormal ? Réponse : l''écart entre le rendement réellement observé d''un titre et le rendement attendu par un modèle de marché estimé sur une période antérieure. Troisième question : pourquoi une étude d''événements fondée sur un seul cas n''est-elle pas scientifiquement concluante ? Réponse : parce qu''elle ne permet pas de distinguer un effet systématique d''un résultat dû au hasard sur ce cas particulier ; il faut un échantillon. Quatrième question : quelle condition de marché limite l''application de l''étude d''événements dans de nombreux contextes africains ? Réponse : la faible liquidité et le nombre réduit d''entreprises cotées sur certains marchés financiers régionaux. Cinquième question : citez une limite non méthodologique, mais théorique, de la théorie positive de la comptabilité. Réponse : son déterminisme économique, qui tend à expliquer tout choix comptable par un calcul d''intérêt rationnel, en laissant de côté des dimensions institutionnelles et sociales.
+
+## 50:00 – 1:10:00 · Discussion critique et mise en perspective
+
+Revenons maintenant sur les limites de ce courant, car un jury doctoral valorise toujours la capacité à nuancer. Première limite : le déterminisme économique. En expliquant les choix comptables uniquement par des incitations contractuelles, la théorie positive laisse de côté les dimensions culturelles, institutionnelles et politiques qui façonnent aussi les pratiques, ce qui prépare directement la discussion du courant critique et social que nous verrons dans la prochaine vidéo.
+
+Deuxième limite : la confusion possible entre corrélation et explication. Montrer qu''un choix comptable est statistiquement associé à une incitation économique ne prouve pas que cette incitation est la seule cause de ce choix. D''autres facteurs, non observés dans le modèle, peuvent jouer un rôle.
+
+Troisième limite, particulièrement importante pour vous : la focalisation historique sur des marchés financiers développés et liquides. Une large part des travaux fondateurs de ce courant s''appuie sur des données nord-américaines. Leur transposition à des contextes où les marchés boursiers sont étroits, comme c''est le cas de nombreuses places africaines, pose une vraie question de validité externe. Cela ne signifie pas que le courant est inapplicable en Afrique : cela signifie qu''il faut être prudent sur les méthodes mobilisées, et parfois préférer d''autres approches pour certaines questions, comme nous l''avons vu avec les méthodes qualitatives et institutionnelles.
+
+Je vous propose maintenant un temps de réflexion individuelle : pensez à votre propre projet de thèse. Si vous deviez mobiliser la théorie positive de la comptabilité, sur quel objet précis le feriez-vous, et quelle limite devriez-vous assumer explicitement devant un jury ? Prenez deux minutes pour l''écrire.
+
+## 1:10:00 – 1:25:00 · Simulation de questions de jury
+
+Passons à un exercice de simulation orale. Je vais vous poser trois questions comme le ferait un membre de jury, avec un temps de réflexion, puis je vous donnerai une structure de bonne réponse.
+
+Première question : « Votre cadre théorique réduit les dirigeants à des calculateurs d''intérêt économique, n''est-ce pas réducteur ? » Une bonne réponse reconnaît la limite sans abandonner le cadre : on peut dire que ce cadre simplifie effectivement la motivation des dirigeants pour la rendre testable statistiquement, qu''il laisse de côté des dimensions plus difficiles à modéliser, mais qu''on le mobilise précisément parce qu''il permet de formuler des hypothèses vérifiables sur le terrain étudié, et qu''on prévoit, si nécessaire, de le compléter par une lecture plus institutionnelle.
+
+Deuxième question : « Comment justifiez-vous l''usage d''une étude d''événements sur un marché financier aussi peu liquide que celui que vous étudiez ? » Une bonne réponse reconnaît la contrainte, propose une adaptation méthodologique (élargir la fenêtre d''observation, élargir l''échantillon à plusieurs marchés régionaux comparables, ou compléter par une méthode qualitative) et explique en quoi cette adaptation répond à la critique sans abandonner l''objectif de recherche.
+
+Troisième question : « En quoi votre travail apporte-t-il quelque chose de nouveau par rapport aux études fondatrices de Watts et Zimmerman ? » Une bonne réponse situe précisément la contribution : un contexte empirique différent, une population d''entreprises différente, ou une hypothèse complémentaire testée, en évitant la formule vague « mon contexte est différent » sans préciser en quoi cette différence change l''analyse.
+
+## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
+
+Nous arrivons au terme de cette séance. Retenez trois idées : la théorie positive explique les choix comptables par des incitations contractuelles rationnelles ; l''étude d''événements est sa méthode de recherche la plus emblématique et suppose un marché suffisamment liquide ; ses limites, notamment sa focalisation sur des marchés développés, préparent logiquement la discussion du courant critique et social que nous aborderons dans la prochaine vidéo.
+
+Évaluation finale, cinq questions. Un, quelles sont les trois hypothèses de la théorie positive de la comptabilité ? Réponse : l''hypothèse du plan de rémunération, l''hypothèse des clauses d''endettement, l''hypothèse des coûts politiques. Deux, que mesure un rendement anormal cumulé (CAR) dans une étude d''événements ? Réponse : la somme des rendements anormaux sur toute la fenêtre d''événement, qui indique l''ampleur totale de la réaction du marché. Trois, pourquoi une étude sur un seul cas ne suffit-elle pas à conclure scientifiquement ? Réponse : parce qu''elle ne permet pas de distinguer un effet systématique d''un hasard propre à ce cas, il faut un échantillon suffisant. Quatre, citez une limite théorique et une limite méthodologique de la théorie positive. Réponse : limite théorique, le déterminisme économique qui néglige les dimensions institutionnelles et culturelles ; limite méthodologique, la dépendance à des marchés suffisamment liquides pour produire des résultats robustes. Cinq, pourquoi la focalisation historique sur les marchés nord-américains pose-t-elle une question de validité externe pour un chercheur africain ? Réponse : parce que les mécanismes observés sur des marchés très liquides ne se transposent pas nécessairement à des marchés étroits, où la réaction des investisseurs à une information comptable peut être trop faible ou trop bruitée pour être mesurée de façon fiable, ce qui exige prudence et parfois des méthodes complémentaires.', 'video', 90, false, 60
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : la théorie positive de la comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : les approches critiques et sociales de la comptabilité', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : maîtriser les approches critiques et sociales de la comptabilité, savoir les mettre en tension avec la théorie positive vue dans la vidéo précédente, et discuter le débat IFRS contre référentiels régionaux. Matériel : tableau ou diaporama avec un schéma comparatif des deux courants, de quoi prendre des notes. Prérequis : avoir suivi la vidéo précédente sur la théorie positive et lu la leçon texte sur les approches critiques et sociales.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et lien avec la séance précédente
+
+Bonjour à toutes et à tous. Dans la séance précédente, nous avons étudié la théorie positive de la comptabilité, qui explique les choix comptables par des incitations économiques rationnelles, et nous avons vu ses limites, notamment son déterminisme économique. Cette séance prend le relais en étudiant le courant qui, historiquement, s''est en partie construit en réaction à cette lecture : les approches critiques et sociales de la comptabilité. Mon objectif est de vous permettre de présenter ce courant de façon aussi rigoureuse que le précédent, et surtout de savoir les articuler l''un à l''autre, ce qui est très souvent demandé à l''oral. Nous verrons le postulat du courant, ses apports représentatifs, une discussion approfondie du débat entre harmonisation IFRS et référentiels régionaux comme OHADA et SYSCOHADA, puis un temps de simulation de jury.
+
+## 05:00 – 25:00 · Le postulat des approches critiques et sociales
+
+Le postulat de ce courant renverse la question posée par la théorie positive. Là où la théorie positive demande quelle incitation économique explique un choix comptable, les approches critiques et sociales demandent quels rapports de pouvoir, quelles représentations sociales, quels intérêts un choix comptable reflète-t-il ou contribue-t-il à construire. La comptabilité n''est plus un simple instrument de mesure neutre, elle devient un objet d''étude social et politique à part entière.
+
+Plusieurs lignes de travail structurent ce courant. La première s''intéresse à la comptabilité comme pratique organisationnelle, en étudiant comment les systèmes comptables influencent le comportement des acteurs dans l''organisation, au-delà de leur fonction de mesure. La deuxième, inspirée de théories sociales critiques, interroge le rôle de la comptabilité dans la reproduction de rapports de pouvoir, dans l''organisation comme dans la société plus large. La troisième s''appuie sur la théorie des parties prenantes, qui soutient que l''entreprise doit rendre compte non seulement à ses actionnaires mais à l''ensemble des acteurs affectés par son activité : salariés, communautés locales, environnement. La quatrième s''appuie sur la théorie de la légitimité, qui explique pourquoi les entreprises publient des informations sociales et environnementales en partie pour préserver leur acceptabilité sociale, indépendamment de toute utilité directe pour des investisseurs financiers.
+
+Je vous propose un exercice de clarification : prenez votre papier et notez, en une phrase chacune, la différence entre la théorie des parties prenantes et la théorie de la légitimité. Prenez une minute... La théorie des parties prenantes porte sur à qui l''entreprise doit rendre compte. La théorie de la légitimité porte sur pourquoi l''entreprise choisit de communiquer certaines informations. Ce sont deux questions complémentaires, pas rivales.
+
+## 25:00 – 50:00 · Le débat IFRS contre référentiels régionaux, lu par ce courant
+
+C''est ici que ce courant devient particulièrement pertinent pour votre propre recherche si vous travaillez sur un terrain africain. Les chercheurs proches des approches critiques et sociales invitent à ne jamais considérer l''adoption de normes comptables internationales comme un simple progrès technique universellement bénéfique. Ils posent plutôt la question suivante : qui a produit ces normes, avec quels intérêts représentés, et pour répondre à quels besoins d''information ?
+
+Les normes IFRS ont été élaborées principalement par des organismes et des experts issus des économies les plus industrialisées, avec pour préoccupation centrale l''information des investisseurs sur des marchés financiers développés et liquides. Cette préoccupation n''est pas universelle. Dans de nombreuses économies africaines, le tissu économique est dominé par des petites et moyennes entreprises non cotées, les marchés financiers sont étroits, et les utilisateurs principaux de l''information comptable ne sont pas des investisseurs boursiers mais des administrations fiscales, des bailleurs de fonds, ou des institutions régionales. Dans ce contexte, le référentiel SYSCOHADA, construit pour l''espace économique régional ouest et centrafricain par l''Organisation pour l''Harmonisation du Droit des Affaires en Afrique, peut se lire non comme un simple retard par rapport à une norme internationale supérieure, mais comme une construction institutionnelle répondant à des besoins d''information et à des rapports de pouvoir économiques spécifiques à la région.
+
+Cette lecture ne nie pas les avantages pratiques de la comparabilité internationale pour les entreprises qui lèvent des capitaux sur des marchés mondiaux. Elle invite seulement à ne pas transposer cet avantage comme une évidence universelle à toutes les entreprises, quelle que soit leur situation. C''est précisément la tension que vous devez savoir exposer : la théorie positive, vue dans la vidéo précédente, mettrait l''accent sur la valeur informationnelle mesurable de l''harmonisation pour les marchés ; les approches critiques et sociales mettraient l''accent sur les conditions de production du référentiel et sur sa pertinence différenciée selon les besoins réels des utilisateurs.
+
+Prenons un instant pour une réflexion personnelle : si votre projet de thèse touche, même indirectement, à la comparaison entre normes internationales et référentiels régionaux, quelle serait votre position de chercheur sur cette tension ? Il ne s''agit pas de trancher dans l''absolu, mais de savoir dire explicitement sur quel terrain et pour quelle question vous mobiliseriez chaque lecture.
+
+## 50:00 – 55:00 · Quiz interactif
+
+Pause active, cinq questions. Première question : quel est le postulat central des approches critiques et sociales de la comptabilité ? Réponse : la comptabilité n''est pas un instrument neutre, elle reflète et façonne des rapports de pouvoir et des représentations sociales. Deuxième question : quelle théorie explique pourquoi une entreprise publie un rapport social sans que ce rapport serve directement les investisseurs financiers ? Réponse : la théorie de la légitimité. Troisième question : pourquoi le référentiel SYSCOHADA n''est-il pas, pour ce courant, simplement un retard technique par rapport aux IFRS ? Réponse : parce qu''il répond à des besoins d''information et à des rapports de pouvoir économiques propres à la région, différents de ceux des marchés financiers développés visés par les IFRS. Quatrième question : citez une limite méthodologique souvent adressée à ce courant. Réponse : la difficulté à généraliser des résultats issus d''études de cas ou d''analyses qualitatives. Cinquième question : qu''est-ce qui distingue la question posée par la théorie positive de celle posée par les approches critiques et sociales face à un même choix comptable ? Réponse : la théorie positive demande quelle incitation économique explique ce choix, les approches critiques et sociales demandent quels rapports de pouvoir ou quelles représentations sociales ce choix reflète.
+
+## 55:00 – 1:15:00 · Discussion critique et articulation des deux courants
+
+Abordons maintenant les limites de ce courant, pour la même raison que précédemment : un jury valorise la nuance. Première limite, le déficit de généralisation statistique, déjà évoqué : beaucoup de travaux de ce courant s''appuient sur des cas ou des analyses qualitatives dont la portée reste difficile à généraliser à grande échelle. Deuxième limite, le risque de glissement normatif : en partant d''un engagement critique explicite, certains travaux sont accusés de mélanger analyse scientifique et prise de position militante, ce qui peut fragiliser leur neutralité perçue par certains pairs. Troisième limite, la difficulté à produire des recommandations opérationnelles immédiates : révéler des rapports de pouvoir est souvent jugé plus facile que de formuler des solutions concrètes applicables par des régulateurs ou des praticiens.
+
+Pour autant, je veux insister sur un point essentiel pour votre examen : ces deux courants, la théorie positive et les approches critiques et sociales, ne sont pas de simples rivaux dont il faudrait choisir le vainqueur. Ils répondent à des questions différentes. Une recherche sur la réaction d''un marché boursier à l''adoption d''une norme comptable relève naturellement de la théorie positive. Une recherche sur la façon dont des petites entreprises non cotées perçoivent et appliquent un référentiel régional relève naturellement des approches critiques et sociales. Savoir expliquer ce critère de choix, plutôt que de déclarer un courant supérieur à l''autre dans l''absolu, est très souvent ce qui distingue une bonne prestation orale d''une prestation moyenne.
+
+## 1:15:00 – 1:25:00 · Simulation de questions de jury
+
+Passons à la simulation. Première question de jury : « Votre approche critique ne risque-t-elle pas de n''être qu''un jugement moral déguisé en recherche ? » Une bonne réponse distingue clairement la description analytique (quels intérêts, quels rapports de pouvoir sont à l''œuvre) de la prescription normative (ce qui devrait changer), en assumant que le chercheur peut adopter une posture engagée tout en appliquant une méthode rigoureuse de collecte et d''analyse des données.
+
+Deuxième question : « Si le référentiel régional répond mieux aux besoins locaux, pourquoi tant d''entreprises cherchent-elles quand même à adopter les IFRS ? » Une bonne réponse reconnaît la réalité de cette tendance (accès à des financements internationaux, exigences de bailleurs de fonds) et explique qu''elle ne contredit pas la lecture critique mais l''enrichit : elle montre justement comment des pressions institutionnelles et des rapports de pouvoir économiques, plutôt qu''une seule supériorité technique, orientent le choix des entreprises.
+
+Troisième question : « Comment rendriez-vous votre étude de cas plus convaincante pour un jury qui valorise la généralisation ? » Une bonne réponse propose, par exemple, d''étendre l''échantillon à plusieurs cas contrastés, ou de préciser explicitement l''objectif de compréhension en profondeur visé par la méthode, sans prétendre à une généralisation qu''elle ne permet pas.
+
+## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
+
+Pour conclure, retenez trois idées : les approches critiques et sociales étudient la comptabilité comme construction sociale et politique, pas comme simple outil de mesure neutre ; le débat entre normes IFRS et référentiels régionaux comme le SYSCOHADA est un terrain d''application privilégié de ce courant ; et la théorie positive comme les approches critiques et sociales ne s''excluent pas, elles répondent à des questions différentes selon l''objet étudié.
+
+Évaluation finale, cinq questions. Un, quel est le postulat central des approches critiques et sociales ? Réponse : la comptabilité reflète et façonne des rapports de pouvoir et des représentations sociales, elle n''est pas un outil neutre. Deux, citez deux théories mobilisées par ce courant et leur apport respectif. Réponse : la théorie des parties prenantes, qui élargit la responsabilité de l''entreprise au-delà des actionnaires, et la théorie de la légitimité, qui explique la communication sociale des entreprises par le besoin de préserver leur acceptabilité sociale. Trois, pourquoi le référentiel SYSCOHADA peut-il être lu comme une construction institutionnelle plutôt qu''un simple retard technique ? Réponse : parce qu''il répond à des besoins d''information et à des rapports de pouvoir économiques propres à la région, différents de ceux visés en priorité par les IFRS. Quatre, citez une limite de ce courant. Réponse : la difficulté à généraliser statistiquement des résultats issus de méthodes qualitatives, ou le risque de glissement normatif. Cinq, comment choisir entre théorie positive et approches critiques et sociales pour un projet de recherche donné ? Réponse : en fonction de la question posée et de l''objet étudié, pas en fonction d''une préférence théorique a priori : les marchés financiers et la valeur informationnelle relèvent plutôt de la théorie positive, les rapports de pouvoir et les constructions institutionnelles relèvent plutôt des approches critiques et sociales.', 'video', 90, false, 70
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les approches critiques et sociales de la comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en comptabilité', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : savoir présenter et justifier les grandes méthodes de recherche du champ comptable, refaire pas à pas le calcul d''une étude d''événements, et construire un protocole de recherche adapté à un contexte africain. Matériel : tableau de calcul projeté, diaporama avec le schéma des quatre étapes d''une étude d''événements, de quoi prendre des notes. Prérequis : avoir suivi les deux vidéos précédentes et lu la leçon texte sur les méthodes de recherche.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et objectifs de la séance
+
+Bonjour à toutes et à tous. Nous avons vu deux courants théoriques qui posent des questions différentes à la comptabilité : la théorie positive, qui s''intéresse à l''utilité de l''information pour les marchés, et les approches critiques et sociales, qui s''intéressent à la comptabilité comme construction sociale. Cette séance fait le pont entre théorie et pratique de recherche : nous allons détailler les méthodes qui permettent concrètement d''étudier ces questions, avec une attention particulière à leur adéquation au terrain africain. Nous verrons l''étude d''événements, la recherche qualitative et institutionnelle, l''étude de cas, puis nous construirons ensemble, pas à pas, un protocole de recherche appliqué à un contexte sénégalais fictif.
+
+## 05:00 – 30:00 · L''étude d''événements, méthode par méthode
+
+Reprenons la logique de l''étude d''événements, en insistant cette fois sur les choix méthodologiques qu''un chercheur doit justifier, pas seulement sur le calcul. Premier choix : la définition précise de l''événement et de sa date. Un événement mal défini, par exemple une date d''annonce approximative, introduit un bruit qui affaiblit toute l''analyse ultérieure. Deuxième choix : la longueur de la fenêtre d''événement. Une fenêtre trop courte risque de manquer une réaction retardée du marché ; une fenêtre trop longue risque de capter d''autres événements qui brouillent l''interprétation. Troisième choix : le modèle de rendement attendu. Le modèle de marché, que nous avons utilisé dans notre exemple avec un alpha et un bêta estimés sur une période antérieure, est le plus courant, mais d''autres modèles existent et le choix doit être justifié. Quatrième choix : la taille et la composition de l''échantillon d''entreprises étudiées, qui doit être assez large pour permettre un test statistique robuste, et assez homogène pour que l''événement étudié ait un sens comparable pour chaque entreprise de l''échantillon.
+
+Petit rappel chiffré de notre exemple fictif : avec un alpha de 0,02 pourcent et un bêta de 1,10, nous avions obtenu un rendement anormal du jour de l''annonce de 1,67 pourcent, et un rendement anormal cumulé sur la fenêtre d''environ 1,86 pourcent. Ce que je veux que vous reteniez ici, c''est que ces chiffres n''ont de valeur scientifique que rapportés à un échantillon, jamais à un cas isolé. Un jury qui vous demande « votre résultat est-il robuste » attend que vous sachiez immédiatement répondre en termes de taille d''échantillon et de test statistique, pas seulement en termes de calcul individuel.
+
+## 30:00 – 50:00 · La recherche qualitative et institutionnelle, et l''étude de cas
+
+Passons maintenant à l''autre grande famille de méthodes. La recherche qualitative vise à comprendre en profondeur comment des acteurs donnent sens à des pratiques comptables. Ses techniques principales sont l''entretien semi-directif, l''analyse documentaire et l''observation. La recherche institutionnelle, plus spécifiquement, s''appuie souvent sur la théorie néo-institutionnelle pour expliquer pourquoi des organisations adoptent des pratiques similaires non par supériorité technique, mais par pression de légitimité, d''imitation entre pairs, ou de normalisation professionnelle.
+
+L''étude de cas, de son côté, peut servir les deux grandes lectures théoriques que nous avons vues. Elle précise toujours trois éléments : l''unité d''analyse, qui peut être une entreprise, un service ou un processus de décision ; la stratégie d''échantillonnage, cas unique en profondeur ou cas multiples comparés ; les sources de données, en veillant à en trianguler plusieurs pour renforcer la validité du résultat. Sa limite principale, la difficulté à généraliser, doit être assumée explicitement devant un jury, pas dissimulée.
+
+Un point de méthode essentiel à retenir : le choix entre ces familles de méthodes ne dépend pas d''une préférence personnelle, mais de la nature de la question posée et de la population étudiée. Une question sur la réaction de marchés financiers appelle une méthode quantitative sur données boursières. Une question sur la perception d''acteurs non cotés appelle une méthode qualitative. Un jury sanctionne sévèrement un candidat qui choisit une méthode par habitude plutôt que par adéquation à sa question.
+
+## 50:00 – 55:00 · Quiz interactif
+
+Pause active, cinq questions. Première question : quelles sont les quatre étapes d''une étude d''événements ? Réponse : définir l''événement et sa date, estimer un modèle de rendement attendu, calculer les rendements anormaux, cumuler et tester leur significativité. Deuxième question : pourquoi la taille de l''échantillon est-elle déterminante dans une étude d''événements ? Réponse : parce qu''un résultat obtenu sur un seul cas ne permet pas de distinguer un effet systématique d''un hasard propre à ce cas, un échantillon suffisant est nécessaire pour un test statistique robuste. Troisième question : citez deux techniques de collecte de données propres à la recherche qualitative. Réponse : l''entretien semi-directif et l''analyse documentaire, auxquelles s''ajoute l''observation directe ou participante. Quatrième question : qu''apporte la théorie néo-institutionnelle à l''étude d''un référentiel comptable régional ? Réponse : elle explique l''adoption de pratiques comptables par des pressions de légitimité ou d''imitation plutôt que par un seul calcul d''efficience économique. Cinquième question : quelle est la principale limite d''une étude de cas, et comment la gérer devant un jury ? Réponse : la difficulté à généraliser les résultats, qu''il faut assumer explicitement plutôt que nier, en précisant l''objectif de compréhension en profondeur visé par la méthode.
+
+## 55:00 – 1:20:00 · Construction pas à pas d''un protocole de recherche en contexte sénégalais fictif
+
+Construisons maintenant ensemble un protocole complet, comme vous devrez le faire pour votre propre projet de thèse. Notre question fictive est la suivante : comment les petites et moyennes entreprises sénégalaises non cotées perçoivent-elles la pertinence du référentiel SYSCOHADA révisé par rapport aux normes IFRS, et quels facteurs institutionnels expliquent leurs pratiques comptables effectives ?
+
+Première étape, le choix du cadre théorique. Puisque la population étudiée est composée d''entreprises non cotées, l''étude d''événements est exclue d''emblée : il n''existe aucun cours de bourse à observer. Le cadre le plus pertinent est donc une approche néo-institutionnelle issue du courant critique et social, pour expliquer l''adoption de pratiques comptables par des pressions de légitimité plutôt que par un seul calcul d''efficience.
+
+Deuxième étape, le choix de l''échantillon. Une étude de cas multiples, par exemple six à dix entreprises de secteurs contrastés comme le commerce, l''industrie légère et les services, sélectionnées pour varier leur taille et leur exposition à des bailleurs de fonds exigeant des normes internationales, permet une comparaison enrichissante sans viser une généralisation statistique.
+
+Troisième étape, la collecte de données. Des entretiens semi-directifs avec les dirigeants et les responsables comptables de chaque entreprise, complétés par l''analyse de leurs états financiers et, lorsque disponible, de leurs échanges avec des cabinets d''audit ou des organismes de normalisation.
+
+Quatrième étape, l''analyse. Un codage thématique des entretiens pour identifier les catégories de justification données par les acteurs, par exemple contrainte réglementaire, exigence d''un bailleur de fonds, habitude professionnelle, ou méconnaissance des alternatives, suivi d''une comparaison systématique entre les cas étudiés.
+
+Cinquième étape, les limites à anticiper et présenter au jury sans attendre qu''il les découvre lui-même : un échantillon de cas sénégalais ne permet pas de généraliser à l''ensemble des petites entreprises ouest-africaines, et le choix de s''appuyer sur les discours des dirigeants plutôt que sur une observation prolongée des pratiques réelles introduit un biais de déclaration qu''il faut discuter ouvertement.
+
+Je vous invite à refaire cet exercice avec votre propre question de thèse : passez les cinq mêmes étapes, et vérifiez que chaque choix méthodologique découle logiquement de la question posée, pas d''une préférence personnelle pour une méthode plutôt qu''une autre.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Pour conclure cette séance, retenez trois idées : l''étude d''événements est la méthode la plus associée à la théorie positive et suppose un marché suffisamment liquide ; la recherche qualitative et institutionnelle, dont l''étude de cas, est la méthode la plus associée aux approches critiques et sociales et vise une compréhension en profondeur plutôt qu''une généralisation statistique ; et le choix d''une méthode doit toujours découler de la question de recherche et de la population étudiée, jamais d''une habitude.
+
+Évaluation finale, cinq questions. Un, pourquoi l''étude d''événements est-elle inapplicable à une population d''entreprises non cotées ? Réponse : parce qu''elle suppose l''existence d''un cours de bourse observable, qui n''existe pas pour des entreprises non cotées. Deux, quelles sont les trois éléments qu''une étude de cas rigoureuse doit toujours préciser ? Réponse : l''unité d''analyse, la stratégie d''échantillonnage, et les sources de données triangulées. Trois, dans le protocole sénégalais fictif construit en séance, pourquoi le choix de cas multiples plutôt qu''un cas unique ? Réponse : parce que la question porte sur des facteurs institutionnels susceptibles de varier selon la taille, le secteur et l''exposition à des bailleurs de fonds, ce qu''un cas unique ne permettrait pas de comparer. Quatre, citez une limite à anticiper explicitement dans ce protocole. Réponse : l''absence de généralisation statistique au-delà de l''échantillon étudié, ou le biais de déclaration lié à l''usage principal d''entretiens. Cinq, quel principe général doit guider le choix d''une méthode de recherche en comptabilité ? Réponse : la cohérence entre la question de recherche, le cadre théorique mobilisé et la méthode choisie, la méthode devant toujours être justifiée par son adéquation à l''objet étudié et à la population concernée.', 'video', 90, false, 80
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en comptabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : s''entraîner sur une question de synthèse type', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité. Objectifs : s''entraîner en conditions réelles de temps à répondre à une question de synthèse type, mobilisant les deux courants théoriques et les méthodes de recherche étudiés. Matériel : chronomètre, papier pour prise de notes, diaporama avec le plan de réponse projeté progressivement. Prérequis : avoir suivi les trois vidéos précédentes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et consignes de l''entraînement
+
+Bonjour à toutes et à tous. Cette séance est différente des trois précédentes : il ne s''agit plus d''apprendre un contenu nouveau, mais de vous entraîner, en conditions proches de la réalité d''un oral, à répondre à une question de synthèse type. Je vais vous donner la question, vous laisser un temps de préparation chronométré comme à l''oral, puis nous construirons ensemble le plan de réponse complet, section par section, avec les mêmes exigences qu''un jury doctoral. Prenez votre papier et votre chronomètre, nous allons vraiment nous mettre en situation.
+
+## 05:00 – 10:00 · Énoncé et temps de préparation chronométré
+
+Voici la question type, non officielle, construite pour cet entraînement : « Dans quelle mesure la recherche comptable peut-elle à la fois évaluer l''utilité de l''information financière pour les marchés de capitaux et interroger la comptabilité comme construction sociale ? Vous discuterez cette tension à partir du débat entre harmonisation comptable internationale et pertinence des référentiels comptables régionaux, et vous proposerez une méthode de recherche adaptée à l''étude de cette question dans un contexte africain. » Je vous laisse maintenant cinq minutes, comme à l''oral, pour noter au brouillon les grandes lignes de votre réponse, sans consulter vos notes de cours. Mettez la vidéo en pause si besoin, et reprenez une fois vos cinq minutes écoulées.
+
+## 10:00 – 20:00 · Analyse de la question et construction du plan
+
+Reprenons. Avant de répondre, un bon candidat décompose toujours la question en ses exigences implicites. Celle-ci en comporte quatre : présenter la théorie positive et sa lecture de l''utilité de l''information financière ; présenter les approches critiques et sociales et leur lecture de la construction sociale ; articuler les deux autour du débat IFRS contre référentiels régionaux ; proposer une méthode de recherche justifiée pour un contexte africain. Comparez ces quatre exigences à ce que vous avez noté pendant votre préparation. Avez-vous bien identifié les quatre, ou en avez-vous oublié une ? C''est souvent la quatrième, la proposition méthodologique, qui est oubliée ou traitée trop rapidement, alors qu''elle compte autant que les deux premières aux yeux d''un jury.
+
+Construisons le plan en quatre temps : une introduction qui annonce la tension entre les deux lectures et le plan en trois parties ; un premier temps sur la lecture par l''utilité de l''information financière ; un deuxième temps sur la lecture par la construction sociale ; un troisième temps qui articule les deux et propose une méthode ; une conclusion qui ouvre sur la fécondité de cette tension pour un chercheur africain.
+
+## 20:00 – 45:00 · Développement complet du plan, partie par partie
+
+Développons maintenant chaque partie comme vous devriez le faire à l''oral, avec des phrases complètes, pas de simples mots-clés.
+
+Introduction : la recherche comptable est traversée par une tension entre une tradition qui étudie la comptabilité comme information utile aux décisions des marchés financiers, et une tradition qui l''étudie comme construction sociale et politique. Cette tension s''illustre particulièrement bien dans le débat sur l''harmonisation comptable internationale face aux référentiels régionaux. Nous traiterons cette question en trois temps : la lecture par l''utilité informationnelle, la lecture par la construction sociale, puis leur articulation méthodologique.
+
+Premier temps, la lecture par l''utilité de l''information financière. La théorie positive de la comptabilité postule que les choix et les normes comptables s''expliquent et se justifient par leur capacité à réduire l''incertitude des investisseurs et à faciliter l''allocation efficace du capital. Appliqué au débat qui nous occupe, l''argument en faveur de l''harmonisation internationale est que des normes communes et de qualité perçue élevée réduisent les coûts d''information et peuvent abaisser le coût du capital des entreprises qui les adoptent, ce qui est testable par des études d''événements autour des dates d''adoption. La limite de cet argument est qu''il suppose des marchés financiers suffisamment développés et liquides pour que l''effet soit mesurable, ce qui n''est pas la situation de la majorité des entreprises africaines.
+
+Deuxième temps, la lecture par la construction sociale. Les approches critiques et sociales soutiennent que la comptabilité reflète et façonne des rapports de pouvoir, et que les normes comptables sont elles-mêmes le produit d''un processus institutionnel situé, pas une vérité technique universelle. Appliqué au même débat, les normes IFRS sont portées par des organismes et des intérêts principalement issus des économies les plus industrialisées, ce qui invite à interroger leur pertinence pour des économies où les marchés financiers sont étroits et où le tissu économique est dominé par des entreprises non cotées. Le référentiel régional SYSCOHADA se lit alors comme une réponse institutionnelle à des besoins et à des rapports de pouvoir économiques spécifiques à la région, et non comme un simple retard technique.
+
+Troisième temps, articulation et proposition méthodologique. Ces deux lectures ne sont pas incompatibles : elles répondent à des questions différentes selon l''objet étudié. Pour une question sur la réaction des marchés financiers à l''adoption de nouvelles normes par de grandes entreprises cotées, une étude d''événements, cohérente avec la théorie positive, est pertinente. Pour une question sur la façon dont des petites entreprises non cotées perçoivent et appliquent un référentiel régional, une démarche qualitative et institutionnelle, cohérente avec les approches critiques et sociales, est plus appropriée. On peut même proposer un protocole combinant les deux regards : une étude d''événements limitée aux grandes entreprises africaines cotées ayant adopté les IFRS, complétée par une étude de cas qualitative auprès de petites entreprises restées au référentiel régional, afin de confronter les deux logiques sur un même terrain.
+
+Conclusion : la tension entre les deux courants n''est pas un obstacle à résoudre, mais un objet d''étude en soi, particulièrement fécond pour un chercheur travaillant sur un contexte africain, où la coexistence de normes internationales et régionales offre un terrain naturel de comparaison.
+
+## 45:00 – 50:00 · Quiz interactif
+
+Pause active, cinq questions sur la méthode de réponse elle-même. Première question : combien d''exigences implicites une bonne analyse de la question type a-t-elle identifiées ? Réponse : quatre. Deuxième question : quelle exigence est le plus souvent oubliée ou sous-traitée par les candidats ? Réponse : la proposition et la justification d''une méthode de recherche adaptée. Troisième question : pourquoi faut-il annoncer le plan dès l''introduction dans une réponse orale de ce type ? Réponse : pour que le jury puisse suivre la structure de la réponse et évaluer si chaque partie annoncée est bien traitée. Quatrième question : qu''est-ce qui distingue une bonne articulation des deux courants d''une simple juxtaposition ? Réponse : expliquer le critère qui permet de choisir quel courant mobiliser selon la question posée, plutôt que de présenter les deux courants l''un après l''autre sans les relier. Cinquième question : pourquoi la conclusion proposée ouvre-t-elle sur la fécondité de la tension plutôt que de chercher à la refermer ? Réponse : parce qu''un jury valorise la capacité à voir une tension théorique comme un objet de recherche productif, pas comme un problème qu''il faudrait nécessairement résoudre.
+
+## 50:00 – 1:20:00 · Simulation orale complète et retour sur erreurs fréquentes
+
+Passons maintenant à une simulation orale complète. Je vous invite à reprendre votre plan préparé en début de séance, et à le présenter à voix haute, chronomètre en main, en visant quinze minutes maximum, comme le temps généralement imparti à un exposé de ce type devant un jury. Mettez la vidéo en pause et faites cet exercice maintenant, avant de continuer.
+
+Une fois cet exercice réalisé, voici les erreurs les plus fréquentes que l''on observe chez des candidats qui s''entraînent sur ce type de question, et que vous devez vérifier n''avoir pas commises. Première erreur fréquente : présenter les deux courants théoriques sans jamais les relier explicitement au débat IFRS contre référentiels régionaux, en les traitant comme deux parties séparées sans lien apparent. Deuxième erreur : présenter le référentiel régional comme simplement inférieur aux IFRS, ce qui révèle une mauvaise compréhension du courant critique et social et de sa capacité à relativiser une hiérarchie supposée entre normes. Troisième erreur : proposer une méthode de recherche sans justifier son adéquation à la question posée, en se contentant de nommer une méthode à la fin de l''exposé sans expliquer pourquoi elle convient précisément à cet objet. Quatrième erreur : dépasser largement le temps imparti par excès de détail sur un seul courant, au détriment de l''articulation finale, qui est pourtant la partie la plus valorisée par le jury.
+
+Comparez votre propre prestation à ces quatre erreurs fréquentes. Lesquelles avez-vous évitées, lesquelles devez-vous encore travailler avant votre soutenance réelle ?
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Pour conclure cette séance d''entraînement, retenez trois idées : une bonne réponse à une question de synthèse décompose toujours la question en exigences implicites avant de répondre ; l''articulation explicite entre les courants théoriques, plutôt que leur simple juxtaposition, est ce qui distingue le plus une bonne prestation ; et la proposition méthodologique finale doit toujours être justifiée par son adéquation à la question posée, pas simplement mentionnée.
+
+Évaluation finale, cinq questions. Un, combien de temps un exposé oral de ce type dure-t-il généralement devant un jury ? Réponse : de l''ordre de quinze à trente minutes selon les établissements, suivi d''une phase de questions du jury. Deux, quelle est la première étape avant de répondre à une question de synthèse ? Réponse : décomposer la question en ses exigences implicites, pour s''assurer de n''en oublier aucune. Trois, pourquoi présenter un référentiel régional comme simplement inférieur à un référentiel international est-il une erreur de positionnement ? Réponse : parce que cela ignore la lecture critique et sociale, qui explique la pertinence différenciée des référentiels selon les besoins et les rapports de pouvoir propres à chaque contexte, plutôt que de supposer une hiérarchie technique universelle. Quatre, quelle est l''erreur la plus fréquente concernant la proposition méthodologique en fin de réponse ? Réponse : la mentionner sans la justifier par son adéquation à la question et à la population étudiée. Cinq, que doit viser la conclusion d''une réponse à ce type de question ? Réponse : montrer que la tension entre les courants théoriques est un objet de recherche fécond, pas un problème à trancher définitivement, en particulier pour un chercheur travaillant sur un contexte africain où coexistent normes internationales et régionales.', 'video', 90, false, 90
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : s''entraîner sur une question de synthèse type');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant un examen de qualification en comptabilité, en fin de préparation. Objectifs : vivre une simulation complète d''une soutenance de qualification doctorale, de la présentation initiale aux questions de jury, et s''auto-évaluer à l''aide d''une grille structurée. Matériel : chronomètre, grille d''auto-évaluation imprimée ou notée sur papier. Prérequis : avoir suivi les quatre vidéos précédentes et les cinq leçons texte du cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : le principe de cette séance finale
+
+Bonjour à toutes et à tous. Cette dernière séance est différente de toutes les précédentes : il n''y aura pas de nouveau contenu théorique. Nous allons simuler, du début à la fin, une soutenance de qualification doctorale en comptabilité, avec un candidat fictif, un projet de thèse fictif, et un jury qui pose des questions types. Mon objectif est double : vous montrer concrètement le déroulement complet d''une telle épreuve, et vous donner, à la fin, une grille d''auto-évaluation que vous pourrez réutiliser pour préparer votre propre soutenance réelle.
+
+## 05:00 – 20:00 · Présentation du champ et du projet de thèse fictif (15 minutes)
+
+Voici la présentation que ferait notre candidat fictif en ouverture de soutenance, pendant les quinze minutes qui lui sont généralement accordées.
+
+« Mesdames et messieurs les membres du jury, mon travail de thèse porte sur la pertinence perçue des référentiels comptables par les petites et moyennes entreprises ouest-africaines, dans un contexte où coexistent les normes IFRS, destinées en priorité aux grandes entreprises cotées, et le référentiel régional SYSCOHADA, applicable à l''ensemble des entreprises de l''espace OHADA. Le champ de la recherche comptable, dans lequel je m''inscris, est traversé par une tension ancienne entre deux grandes lectures. La première, portée par la théorie positive de la comptabilité, explique les choix et les normes comptables par leur utilité pour réduire l''incertitude des investisseurs sur les marchés de capitaux, et les étudie notamment par des méthodes quantitatives comme l''étude d''événements sur les marchés financiers. La seconde, portée par les approches critiques et sociales de la comptabilité, lit les normes comptables comme des constructions institutionnelles situées, reflétant des rapports de pouvoir et des besoins d''information différenciés selon les contextes économiques, et les étudie plutôt par des méthodes qualitatives et institutionnelles.
+
+Mon projet de thèse se positionne principalement dans la seconde lecture, pour une raison précise : mon objet d''étude, les petites et moyennes entreprises non cotées, est par définition hors du champ d''application des méthodes fondées sur les marchés financiers. Je mobiliserai donc un cadre néo-institutionnel pour comprendre pourquoi des entreprises non cotées adoptent, ou non, des pratiques inspirées des IFRS alors qu''elles relèvent légalement du référentiel SYSCOHADA, et quels facteurs institutionnels, au-delà de la seule obligation légale, expliquent leurs pratiques effectives.
+
+Ma méthode de recherche envisagée est une étude de cas multiples, portant sur six à dix entreprises sénégalaises de secteurs contrastés, combinant entretiens semi-directifs avec les dirigeants et responsables comptables, et analyse documentaire de leurs états financiers. J''assume dès à présent deux limites de ce choix : l''absence de généralisation statistique à l''ensemble des petites entreprises ouest-africaines, et le risque de biais de déclaration lié à l''usage principal d''entretiens plutôt que d''une observation prolongée des pratiques réelles. Je vous remercie de votre attention et je reste à votre disposition pour vos questions. »
+
+Voilà pour la présentation initiale. Remarquez sa structure : situer le champ et sa tension théorique, positionner son propre projet dans cette tension en justifiant ce choix, présenter la méthode envisagée, et assumer explicitement ses limites avant même que le jury ne les soulève. C''est exactement cette structure que vous devez reproduire pour votre propre présentation.
+
+## 20:00 – 25:00 · Quiz interactif avant les questions de jury
+
+Avant d''entendre les questions du jury fictif, testez-vous. Première question : pourquoi le candidat fictif choisit-il de se positionner principalement dans les approches critiques et sociales plutôt que dans la théorie positive ? Réponse : parce que son objet d''étude, des entreprises non cotées, est hors du champ d''application des méthodes fondées sur les marchés financiers, qui supposent un cours de bourse observable. Deuxième question : quelle méthode de recherche le candidat envisage-t-il, et pourquoi ? Réponse : une étude de cas multiples combinant entretiens et analyse documentaire, cohérente avec un cadre néo-institutionnel appliqué à des entreprises non cotées. Troisième question : quelles limites le candidat assume-t-il dès sa présentation initiale ? Réponse : l''absence de généralisation statistique et le risque de biais de déclaration lié aux entretiens. Quatrième question : pourquoi est-il stratégiquement utile d''assumer ses limites avant que le jury ne les soulève ? Réponse : cela démontre une maîtrise critique du projet et évite que le jury n''ait l''impression de révéler une faiblesse que le candidat aurait ignorée ou dissimulée. Cinquième question : quel élément de la présentation initiale rappelle explicitement la tension théorique du champ ? Réponse : la phrase qui oppose la théorie positive, centrée sur l''utilité pour les marchés, et les approches critiques et sociales, centrées sur les constructions institutionnelles et les rapports de pouvoir.
+
+## 25:00 – 1:15:00 · Simulation des questions de jury (huit à dix questions)
+
+Passons maintenant aux questions du jury fictif. Pour chacune, je vous laisse un court temps de réflexion, puis je donne la structure d''une bonne réponse, comme la donnerait notre candidat.
+
+Première question du jury : « Pourquoi n''avoir pas envisagé une étude d''événements, qui est pourtant une méthode reconnue en recherche comptable ? » Structure de bonne réponse : rappeler que cette méthode suppose un cours de bourse observable, inexistant pour la population étudiée, et affirmer que le choix méthodologique découle de la question de recherche et de la population, pas d''un rejet de la méthode en général.
+
+Deuxième question : « Votre échantillon de six à dix entreprises n''est-il pas trop restreint pour conclure quoi que ce soit ? » Structure de bonne réponse : assumer que l''objectif n''est pas une généralisation statistique mais une compréhension en profondeur de mécanismes institutionnels, qui pourront ensuite nourrir des hypothèses testables sur un échantillon plus large par une autre méthode.
+
+Troisième question : « En quoi votre travail n''est-il pas qu''une simple description de ce que disent des dirigeants interrogés ? » Structure de bonne réponse : préciser que l''analyse ne se limite pas à rapporter les discours mais à les coder thématiquement, à les comparer systématiquement entre les cas, et à les interpréter à la lumière du cadre néo-institutionnel mobilisé.
+
+Quatrième question : « Pensez-vous que le référentiel SYSCOHADA est moins pertinent que les IFRS pour ces entreprises ? » Structure de bonne réponse : refuser l''opposition binaire, et répondre que la pertinence d''un référentiel dépend des besoins d''information des utilisateurs concernés, le SYSCOHADA répondant à des besoins propres à la région, sans que cela implique une infériorité technique.
+
+Cinquième question : « Comment gérerez-vous le biais de déclaration que vous évoquez vous-même ? » Structure de bonne réponse : proposer une triangulation avec les documents comptables disponibles, et reconnaître que ce biais ne peut pas être totalement éliminé mais seulement atténué, ce qu''il faut assumer plutôt que promettre une solution parfaite.
+
+Sixième question : « Votre cadre néo-institutionnel ne risque-t-il pas de négliger les motivations économiques réelles des dirigeants ? » Structure de bonne réponse : reconnaître que le cadre institutionnel met l''accent sur la légitimité et l''imitation plutôt que sur le seul calcul économique, mais préciser que les entretiens permettront justement de recueillir aussi les justifications économiques exprimées par les dirigeants, sans présupposer leur absence.
+
+Septième question : « Quelle serait la contribution originale de votre thèse par rapport à la littérature existante sur ce sujet ? » Structure de bonne réponse : situer précisément l''apport, par exemple l''étude d''un contexte sénégalais spécifique encore peu documenté, ou la comparaison entre secteurs contrastés, en évitant une réponse vague comme « mon contexte est différent » sans préciser en quoi cette différence change l''analyse.
+
+Huitième question : « Si vos résultats montrent que les entreprises adoptent des pratiques IFRS malgré l''absence d''obligation légale, comment l''interpréterez-vous ? » Structure de bonne réponse : proposer une interprétation cohérente avec le cadre mobilisé, par exemple une pression de légitimité liée à des bailleurs de fonds ou à des partenaires commerciaux internationaux, plutôt qu''une conclusion hâtive sur la supériorité technique des IFRS.
+
+Neuvième question : « Votre calendrier de thèse vous semble-t-il réaliste au regard de la méthode choisie ? » Structure de bonne réponse : présenter un calendrier indicatif découpé en phases (revue de littérature, collecte de données, analyse, rédaction), en reconnaissant les risques de retard les plus probables, par exemple la disponibilité des dirigeants pour les entretiens.
+
+Dixième question : « Quel usage pratique un régulateur ou une organisation professionnelle pourrait-il faire de vos résultats ? » Structure de bonne réponse : proposer un usage raisonnable et modeste, par exemple mieux comprendre les freins à l''adoption de certaines pratiques comptables pour adapter l''accompagnement des petites entreprises, sans promettre une recommandation normative que l''étude ne permettrait pas de fonder seule.
+
+## 1:15:00 – 1:30:00 · Grille d''auto-évaluation de la soutenance simulée
+
+Cette séance, et ce cours, se concluent non par une évaluation à cinq questions mais par une grille d''auto-évaluation que vous devez remplir vous-même après avoir simulé votre propre soutenance, seul ou avec des pairs. Pour chacun des critères suivants, notez-vous honnêtement de un à quatre : un, insuffisant ; deux, à améliorer ; trois, satisfaisant ; quatre, maîtrisé.
+
+Critère un : clarté du positionnement théorique dès la présentation initiale, sans attendre une question du jury pour le préciser.
+Critère deux : justification explicite du choix méthodologique par son adéquation à la question de recherche et à la population étudiée, plutôt que par habitude.
+Critère trois : capacité à assumer les limites de son projet avant que le jury ne les soulève, sans les dissimuler ni les minimiser.
+Critère quatre : capacité à articuler les courants théoriques du champ plutôt que de les juxtaposer ou d''en rejeter un en bloc.
+Critère cinq : qualité du dialogue avec le jury, c''est-à-dire la capacité à reformuler une objection, à distinguer ce qui est accepté de ce qui est nuancé, sans se contredire ni se braquer.
+Critère six : respect du temps imparti à la présentation initiale, sans sacrifier les parties les plus importantes par excès de détail sur les parties moins centrales.
+Critère sept : précision des réponses aux questions sur la contribution originale du projet, en évitant les formules vagues non étayées.
+Critère huit : réalisme et honnêteté du calendrier de thèse présenté, avec reconnaissance des risques probables.
+
+Additionnez vos points sur ces huit critères. Un score élevé indique une préparation solide ; un score faible sur un critère précis indique exactement où concentrer votre travail dans les jours qui précèdent votre soutenance réelle. Ce cours se termine ici : vous disposez maintenant des deux courants théoriques du champ, des méthodes de recherche propres à la comptabilité, d''un exemple complet d''épreuve type, et d''une simulation entière de soutenance. La suite du travail vous appartient : répétez, faites-vous challenger par des pairs ou par votre directeur de thèse, et présentez-vous à l''épreuve avec la même honnêteté critique que celle démontrée par le candidat fictif de cette séance.', 'video', 90, false, 100
+from public.courses c where c.slug = 'doc-compta'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');
+
 -- Cours : Doctorat Finance : préparer l'examen de qualification doctorale
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'doc-fin', (select id from public.levels where name = 'Doctorat'), null, 'Finance', 'Doctorat Finance : préparer l''examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale en Finance : hypothèse d''efficience des marchés face à la finance comportementale, théorème de Modigliani-Miller et ses extensions sur la structure de financement, méthodes de recherche du champ (études d''événements, économétrie financière, enquêtes de dirigeants) et application critique aux marchés financiers en développement d''Afrique de l''Ouest. Public : doctorants en finance préparant leur soutenance de qualification. Prérequis : Master en finance ou en gestion financière.', true, 806
@@ -1055,622 +1657,4 @@ Cette structure en deux temps (reconnaître puis justifier) est la plus efficace
 
 Plutôt qu''une évaluation à cinq questions, évaluez-vous vous-même sur la grille suivante, en vous attribuant une note de 1 à 4 pour chaque critère (1 : insuffisant, 2 : à améliorer, 3 : satisfaisant, 4 : excellent). Premier critère : clarté de l''articulation entre le champ théorique et la question de recherche. Deuxième critère : précision de la méthode proposée et de ses conditions de validité. Troisième critère : capacité à reconnaître sans détour les limites de son propre travail. Quatrième critère : nuance dans la mobilisation des courants théoriques, sans caricature d''aucun d''entre eux. Cinquième critère : clarté et fluidité de l''expression orale, sans recours excessif à des notes écrites. Un score global inférieur à 14 sur 20 indique qu''il faut reprendre les vidéos précédentes de ce cours avant l''épreuve réelle, en particulier les sections consacrées aux critères sur lesquels votre score personnel est le plus faible ; un score supérieur ou égal à 16 sur 20 indique une préparation solide, qu''il convient néanmoins de consolider par plusieurs simulations supplémentaires devant un collègue ou un directeur de thèse avant le jour de l''épreuve réelle. Bon courage pour votre examen de qualification doctorale.', 'video', 90, false, 100
 from public.courses c where c.slug = 'doc-eco'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');
-
--- Cours : Doctorat Droit des affaires : examen de qualification doctorale
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'doc-droit', (select id from public.levels where name = 'Doctorat'), null, 'Droit des affaires', 'Doctorat Droit des affaires : examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale en droit des affaires : maîtrise des grands courants théoriques (positivisme juridique, analyse économique du droit, réalisme juridique), du débat sur l''harmonisation régionale du droit des affaires face à la diversité des traditions juridiques et au droit international des investissements, et des méthodes de recherche du champ (dogmatique, droit comparé, méthode empirique). Public : doctorants en droit des affaires préparant leur soutenance de qualification. Prérequis : Master en droit des affaires.', true, 808
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir son examen de qualification doctorale en droit des affaires', 'L''examen de qualification doctorale en droit des affaires n''est pas un contrôle de connaissances comme un autre. Il marque le moment où un doctorant doit prouver à un jury qu''il maîtrise suffisamment l''état de l''art de sa discipline pour être autorisé à se consacrer, presque sans filet, à la rédaction de sa thèse. Cette leçon pose le cadre de l''épreuve, les attentes du jury et une méthode de travail pour s''y préparer sur plusieurs semaines.
-
-## La nature de l''épreuve
-
-Selon les établissements, l''examen de qualification doctorale en droit des affaires combine presque toujours trois dimensions. D''abord, une synthèse de la littérature : le candidat montre qu''il connaît les grands courants théoriques qui structurent le champ, qu''il sait les situer historiquement et qu''il perçoit leurs tensions internes. Ensuite, une soutenance orale devant un jury de professeurs, organisée comme un mini-colloque où chaque question appelle une réponse structurée et argumentée, non une récitation. Enfin, une défense de projet de thèse : relier ce que l''on sait de la littérature à l''objet précis que l''on compte étudier, et justifier pourquoi ce sujet est pertinent, original et faisable.
-
-Cet examen n''est pas un remake du mémoire de master. Au master, on apprend à résoudre un cas, à appliquer une règle à une situation. Au doctorat, on est évalué sur la capacité à prendre du recul sur les règles elles-mêmes, à les interroger comme objets de connaissance, à comparer les écoles de pensée qui expliquent pourquoi le droit des affaires est fait comme il est fait, et à proposer une contribution nouvelle. Le jury ne demande pas « que dit le texte ? » mais « quelles explications concurrentes existent pour comprendre ce que fait le droit des affaires, et laquelle vous semble la plus féconde pour votre objet de thèse ? ».
-
-## Ce qu''un jury doctoral évalue réellement
-
-Un jury de qualification doctorale vérifie plusieurs qualités. La première est la maîtrise cartographique du champ : savoir nommer les grands courants (positivisme juridique, approches économiques du droit, réalisme juridique, débats sur l''harmonisation régionale) et les situer les uns par rapport aux autres, sans les confondre. La deuxième est l''esprit critique : ne jamais présenter un courant comme une vérité acquise, mais rappeler ses apports et ses limites, et montrer qu''on sait pourquoi d''autres chercheurs l''ont contesté. La troisième est la rigueur méthodologique : distinguer une analyse dogmatique (qui commente et systématise les textes), une analyse comparative (qui met en regard plusieurs systèmes juridiques) et une analyse empirique (qui observe comment le droit est réellement appliqué, notamment à travers la jurisprudence). La quatrième est la capacité à argumenter à l''oral, en structurant sa pensée plutôt qu''en l''énumérant.
-
-Un bon candidat ne cherche pas à « tout savoir », ce qui est impossible, mais à construire une grille de lecture claire du champ, mobilisable pour répondre à des questions variées. C''est cette grille qui doit être travaillée pendant la préparation.
-
-## Méthode de travail recommandée
-
-La préparation repose sur trois outils complémentaires. Le premier est la fiche de lecture : pour chaque courant ou débat, une fiche courte résume l''idée centrale, les auteurs ou traditions associés (par leur apport général, sans citation textuelle précise non vérifiée), le contexte d''émergence, les critiques majeures, et un exemple d''application au droit des affaires africain. Le deuxième est la cartographie des courants : un tableau qui place les écoles de pensée les unes par rapport aux autres, en indiquant ce qui les oppose (par exemple une lecture qui privilégie la cohérence formelle des textes face à une lecture qui privilégie l''efficacité économique des règles) et ce qui peut les rendre complémentaires. Le troisième est la note de synthèse : un exercice limité à deux ou trois pages, qui répond à une question transversale en mobilisant plusieurs courants et méthodes. C''est le format que l''on retrouvera dans l''épreuve type présentée en fin de cours.
-
-Il est également recommandé de préparer, en parallèle, un bref exposé de son propre projet de thèse, capable de tenir en quinze minutes, et de l''articuler explicitement avec les débats théoriques du champ : pourquoi ce sujet, quel courant mobiliser pour l''éclairer, quelle méthode pour l''étudier.
-
-## Un plan de travail sur huit semaines
-
-Un calendrier réaliste peut s''organiser ainsi. Les deux premières semaines : cartographie générale du champ, identification des grands courants et débats, construction du tableau comparatif. Les semaines trois et quatre : approfondissement du premier grand débat théorique, avec ses auteurs, son histoire et ses critiques. Les semaines cinq et six : même travail pour le second grand débat, en identifiant systématiquement les points de tension et de complémentarité avec le premier. La semaine sept : méthodes de recherche propres au champ, avec la construction d''un protocole d''étude appliqué à un cas africain fictif. La semaine huit : entraînement actif, rédaction de notes de synthèse chronométrées, simulation de questions de jury, répétition de l''exposé du projet de thèse, relecture des fiches.
-
-Ce rythme laisse volontairement du temps pour revenir sur les points faibles identifiés en cours de route. Il vaut mieux consolider trois courants théoriques bien compris et bien articulés que de survoler dix courants sans pouvoir les comparer sérieusement à l''oral.
-
-## Points clés à retenir
-
-- L''examen de qualification doctorale évalue la maîtrise des courants théoriques, la capacité de comparaison critique et la connaissance des méthodes de recherche du champ, pas la résolution d''un cas pratique.
-- Le jury attend une pensée structurée et nuancée, jamais une récitation ni une vérité présentée sans contradicteur.
-- Trois outils de préparation sont essentiels : fiches de lecture, cartographie des courants, notes de synthèse chronométrées.
-- Le projet de thèse doit être relié explicitement aux débats théoriques et aux méthodes du champ.
-- Un plan de travail sur huit semaines permet de couvrir le champ sans le survoler.
-
-## Exercices pratiques
-
-1. Rédigez en dix lignes la différence entre ce qu''évalue un mémoire de master en droit des affaires et ce qu''évalue un examen de qualification doctorale dans la même discipline.
-2. Dressez la liste des trois à quatre grands courants ou débats théoriques que vous pensez devoir maîtriser pour votre propre spécialité, même si vous ne les connaissez encore que de nom.
-3. Construisez le squelette d''une fiche de lecture type (rubriques, sans contenu) que vous utiliserez pour chaque courant étudié dans ce cours.
-4. Proposez un calendrier de révision sur huit semaines adapté à votre emploi du temps réel, en identifiant les deux semaines où vous serez le moins disponible et comment vous les compenserez.
-5. Formulez, en trois phrases, une présentation provisoire de votre projet de thèse telle que vous pourriez la donner aujourd''hui à un jury, en identifiant ce qui vous semble le plus fragile dans cette présentation.
-
-## Corrigé
-
-1. Le mémoire de master demande d''appliquer une règle de droit des affaires à une situation donnée (un cas d''entreprise, un contrat, un litige) pour produire une solution opérationnelle. L''examen de qualification doctorale demande de prendre du recul sur les règles elles-mêmes : comprendre pourquoi elles existent, quelles théories expliquent leur fonction et leur évolution, comment les chercheurs les étudient, et comment ces débats éclairent un projet de recherche original. Le premier exercice est tourné vers la solution d''un problème concret ; le second est tourné vers la connaissance du champ comme objet d''étude.
-
-2. Une liste plausible pour le droit des affaires comprend : le débat positivisme juridique / analyse économique du droit et réalisme juridique ; le débat sur l''harmonisation régionale du droit des affaires (droit OHADA) face à la diversité des traditions juridiques nationales et à l''articulation avec le droit international des investissements ; éventuellement un troisième débat plus spécifique (par exemple sur le rôle du droit souple ou sur l''effectivité du droit). L''essentiel est de ne pas se contenter d''un seul courant et de pouvoir nommer au moins une tension entre deux approches.
-
-3. Une fiche de lecture type peut comporter les rubriques suivantes : nom du courant ou du débat ; idée centrale en une phrase ; contexte d''émergence (sans date précise si elle n''est pas certaine) ; auteurs ou traditions associés et nature de leur apport (jamais de citation textuelle exacte non vérifiée) ; principales critiques adressées au courant ; un exemple d''application possible au contexte africain ou sénégalais ; une phrase reliant le courant à votre propre projet de thèse.
-
-4. Un calendrier correct respecte la logique proposée : cartographie générale (semaines 1-2), premier débat (semaines 3-4), second débat (semaines 5-6), méthodes de recherche et protocole appliqué (semaine 7), entraînement actif et simulation (semaine 8). La qualité de la réponse se juge sur la capacité à anticiper les semaines creuses et à prévoir une marge de rattrapage, plutôt que sur le respect mécanique du découpage.
-
-5. Il n''existe pas de bonne réponse unique : l''évaluation porte sur la clarté de l''articulation entre le sujet de thèse et au moins un courant théorique du champ, et sur l''honnêteté de l''auto-critique (un point réellement fragile, comme un manque de précision sur la méthode ou sur la portée du terrain d''étude, plutôt qu''une fausse modestie générale).', 'texte', 45, true, 10
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en droit des affaires');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Le positivisme juridique face à l''analyse économique du droit et au réalisme juridique', 'Le droit des affaires peut être lu de deux manières très différentes. On peut le lire comme un système de normes cohérent, qu''il faut comprendre de l''intérieur à partir de ses propres textes et de sa propre logique : c''est l''approche du positivisme juridique. On peut aussi le lire comme un ensemble de règles dont il faut évaluer les effets réels sur les comportements économiques et sociaux : c''est l''approche de l''analyse économique du droit et du réalisme juridique. Cette leçon présente ces deux grands courants, leur histoire, leurs apports et leurs limites.
-
-## Le positivisme juridique : le droit comme système de textes
-
-Le positivisme juridique part d''une idée simple : le droit est un ensemble de normes posées par une autorité compétente (le législateur, le pouvoir réglementaire, les organisations régionales d''harmonisation), et la tâche du juriste est de décrire ce système tel qu''il est, pas de juger s''il est économiquement efficace ou moralement souhaitable. Cette approche, souvent appelée dogmatique, insiste sur la cohérence interne du droit : chaque règle doit pouvoir se rattacher à une source valide, s''articuler sans contradiction avec les autres règles, et être interprétée selon des méthodes propres au raisonnement juridique (interprétation littérale, systématique, téléologique).
-
-Appliqué au droit des affaires, le positivisme juridique conduit à étudier en priorité les textes qui organisent les sociétés commerciales, les contrats, les procédures collectives ou les sûretés, à en dégager la logique interne, à classer les règles par catégories, et à résoudre les contradictions apparentes par les techniques classiques d''interprétation. Le travail du chercheur positiviste ressemble à celui d''un architecte qui décrit la structure d''un bâtiment : il cherche à comprendre comment les pièces du système s''articulent, sans nécessairement se demander si le bâtiment est confortable à habiter.
-
-Les auteurs associés à cette tradition insistent, de façon générale, sur la séparation entre le droit tel qu''il est (ce que décrit le juriste) et le droit tel qu''il devrait être (une question qui relève, pour eux, de la politique ou de la morale, non de la science juridique). Cette séparation a donné au droit des affaires une grande partie de sa rigueur technique : sécurité juridique, prévisibilité des solutions, cohérence des concepts.
-
-## Les limites du positivisme et l''émergence des approches économiques
-
-Le positivisme juridique a cependant été critiqué pour son relatif désintérêt envers les effets réels des règles. Une règle peut être parfaitement cohérente sur le plan logique et pourtant produire des effets économiques indésirables : freiner l''investissement, favoriser certains acteurs au détriment d''autres, ou rester lettre morte parce que personne ne l''applique en pratique. C''est pour répondre à cette limite que s''est développée l''analyse économique du droit, souvent désignée par l''expression anglaise « law and economics ».
-
-Cette approche part d''un postulat différent : les règles de droit des affaires doivent être évaluées à l''aune de leur efficacité économique, c''est-à-dire de leur capacité à orienter les comportements des acteurs (entreprises, investisseurs, créanciers) vers des résultats globalement bénéfiques, en tenant compte des incitations qu''elles créent. Par exemple, une règle sur les sûretés n''est pas seulement analysée pour sa cohérence avec le reste du droit des contrats, mais aussi pour son effet sur le coût du crédit, la prise de risque des prêteurs, ou l''accès des petites entreprises au financement. L''analyse économique du droit mobilise des outils issus de la microéconomie (incitations, coûts de transaction, asymétries d''information) pour expliquer pourquoi certaines règles se diffusent plus que d''autres et pour proposer des réformes jugées plus efficaces.
-
-## Le réalisme juridique : regarder le droit en action
-
-Proche de l''analyse économique sur un point essentiel — le refus de s''arrêter au texte — le réalisme juridique porte une critique complémentaire, mais distincte. Pour les réalistes, le droit « sur le papier » (les textes, les traités, les actes uniformes) ne suffit pas à comprendre le droit « en action » : ce qui compte réellement, c''est la manière dont les juges, les administrations, les praticiens et les entreprises appliquent effectivement les règles. Deux textes identiques peuvent produire des résultats très différents selon les pratiques locales, les moyens des juridictions, les habitudes des acteurs économiques ou l''accès réel à la justice.
-
-Le réalisme juridique invite donc le chercheur à étudier l''effectivité du droit : les règles sont-elles connues des acteurs auxquels elles s''adressent, sont-elles invoquées devant les tribunaux, les décisions sont-elles exécutées, existe-t-il un écart significatif entre la règle affichée et la pratique observée ? Cette préoccupation rejoint, pour le droit des affaires africain, une question centrale : l''harmonisation des textes (par exemple à travers des actes uniformes régionaux) ne garantit pas, par elle-même, une application uniforme, si les pratiques judiciaires et administratives demeurent très différentes d''un pays à l''autre.
-
-## Comparer les deux courants plutôt que les opposer radicalement
-
-Il serait réducteur de présenter le positivisme juridique et les approches économiques ou réalistes comme totalement incompatibles. Le positivisme garantit la rigueur conceptuelle et la sécurité juridique, indispensables à toute analyse scientifique du droit des affaires : on ne peut pas étudier l''effet économique d''une règle que l''on n''a pas correctement identifiée et interprétée. Les approches économiques et réalistes, de leur côté, rappellent que le droit n''est pas un système clos : il est fait pour produire des effets sur l''économie et la société, et ces effets peuvent diverger fortement de l''intention initiale du législateur.
-
-Un chercheur avisé mobilise donc les deux perspectives de façon complémentaire : une analyse dogmatique précise pour établir ce que dit effectivement le droit, suivie d''une analyse économique ou empirique pour évaluer ce que ce droit produit réellement. C''est exactement cette articulation qui sera mobilisée, dans la leçon suivante, pour aborder le débat sur l''harmonisation régionale du droit des affaires.
-
-## Points clés à retenir
-
-- Le positivisme juridique étudie le droit comme un système de normes cohérent, à partir de ses propres textes et méthodes d''interprétation.
-- L''analyse économique du droit évalue les règles à l''aune de leur efficacité économique et des incitations qu''elles créent.
-- Le réalisme juridique insiste sur l''écart possible entre le droit affiché dans les textes et le droit réellement appliqué.
-- Ces courants ne s''excluent pas : la rigueur dogmatique et l''analyse des effets réels se complètent dans une recherche doctorale solide.
-- Pour le droit des affaires africain, la question de l''effectivité (le texte est-il réellement appliqué de façon homogène ?) est particulièrement centrale.
-
-## Exercices pratiques
-
-1. En trois phrases, distinguez l''objet d''étude du positivisme juridique de celui de l''analyse économique du droit.
-2. Donnez un exemple fictif de règle de droit des affaires qui serait jugée cohérente par une analyse positiviste mais critiquée comme inefficace par une analyse économique, en expliquant pourquoi.
-3. Expliquez, en vos propres termes, ce que signifie l''expression « droit sur le papier » versus « droit en action » et pourquoi cette distinction intéresse particulièrement le réalisme juridique.
-4. Pour un projet de thèse portant sur le financement des petites entreprises, indiquez comment un chercheur pourrait combiner une analyse dogmatique et une analyse économique du droit.
-5. Discutez la limite suivante : l''analyse économique du droit risque de réduire le droit des affaires à un simple instrument d''efficacité, en oubliant d''autres fonctions du droit (protection des parties faibles, stabilité sociale). Développez un contre-argument.
-
-## Corrigé
-
-1. Le positivisme juridique étudie le droit comme un système de normes posées par une autorité compétente, en se concentrant sur sa cohérence interne et son interprétation correcte. L''analyse économique du droit étudie les effets réels de ces normes sur les comportements économiques des acteurs, en se demandant si elles créent des incitations efficaces ou contre-productives.
-
-2. Exemple fictif : une règle imposant un formalisme très lourd pour la constitution d''une sûreté peut être jugée parfaitement cohérente par une analyse positiviste, car elle s''articule sans contradiction avec le reste du droit des garanties. Une analyse économique pourrait pourtant la critiquer si ce formalisme décourage les petits prêteurs d''accorder du crédit, faute de pouvoir en supporter le coût, réduisant ainsi l''accès au financement pour les petites entreprises.
-
-3. Le « droit sur le papier » désigne les règles telles qu''elles figurent dans les textes officiels. Le « droit en action » désigne la manière dont ces règles sont effectivement appliquées par les juges, les administrations et les acteurs économiques. Le réalisme juridique s''intéresse en priorité à ce second niveau, car un texte peut rester largement inappliqué ou être appliqué de façon très différente selon les contextes, ce qui rend l''étude du seul texte insuffisante.
-
-4. Un chercheur pourrait d''abord mener une analyse dogmatique précise des règles existantes sur les sûretés, les procédures collectives ou l''accès au crédit, pour établir un état exact du droit applicable. Il pourrait ensuite mobiliser l''analyse économique du droit pour évaluer si ces règles créent des incitations favorables ou défavorables à l''octroi de crédit aux petites entreprises, par exemple en comparant le coût de constitution des garanties à leur effet protecteur pour le prêteur.
-
-5. Le contre-argument consiste à rappeler que l''analyse économique du droit n''est qu''un outil d''évaluation parmi d''autres, et que la plupart des chercheurs qui la mobilisent ne prétendent pas réduire le droit à la seule efficacité : ils l''utilisent pour éclairer un aspect du fonctionnement des règles, à côté d''autres critères (équité, protection des parties faibles, stabilité institutionnelle) qui restent légitimes et peuvent être traités par d''autres approches, notamment le positivisme pour la cohérence des protections légales elles-mêmes.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Le positivisme juridique face à l''analyse économique du droit et au réalisme juridique');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Harmonisation régionale du droit des affaires (droit OHADA), diversité des traditions juridiques et droit international des investissements', 'Le droit des affaires en Afrique francophone est marqué, depuis plusieurs décennies, par un projet d''harmonisation régionale porté notamment par l''Organisation pour l''harmonisation en Afrique du droit des affaires, souvent désignée par son acronyme OHADA. Ce projet suscite un débat théorique important, qui oppose les partisans d''une unification poussée du droit des affaires à ceux qui insistent sur la diversité persistante des traditions juridiques nationales et sur la nécessité d''articuler ce droit régional avec le droit international des investissements. Cette leçon présente ce débat sans entrer dans le détail d''articles précis, qui doivent toujours être vérifiés dans les textes officiels en vigueur.
-
-## Le projet d''harmonisation régionale : logique et promesses
-
-L''idée d''harmoniser le droit des affaires entre plusieurs États d''Afrique répond à un constat partagé par de nombreux chercheurs : la diversité des législations nationales en matière de droit commercial, de droit des sociétés ou de droit des sûretés peut constituer un frein à l''investissement et aux échanges économiques régionaux, en multipliant les coûts d''adaptation pour les entreprises qui opèrent dans plusieurs pays. L''harmonisation vise donc à substituer, dans certains domaines du droit des affaires, un corpus commun de règles aux législations nationales disparates, afin de réduire l''incertitude juridique, de faciliter la circulation des investissements et de donner aux opérateurs économiques un cadre prévisible, quel que soit le pays concerné.
-
-Sur le plan théorique, ce projet s''appuie sur une intuition proche de l''analyse économique du droit présentée dans la leçon précédente : des règles uniformes réduisent les coûts de transaction liés à la diversité normative, et une jurisprudence commune (lorsqu''elle existe au niveau régional) peut homogénéiser l''interprétation des textes. L''harmonisation régionale est ainsi souvent présentée comme un facteur d''attractivité pour les investisseurs, qui préfèrent un cadre juridique stable et lisible à une mosaïque de règles nationales changeantes.
-
-## La critique de la diversité des traditions juridiques nationales
-
-Ce projet rencontre cependant une critique récurrente dans la littérature : l''harmonisation des textes ne supprime pas, par elle-même, la diversité des traditions juridiques, des pratiques judiciaires et des contextes socio-économiques des États concernés. Un même texte harmonisé peut être interprété et appliqué différemment selon les habitudes des juridictions nationales, la formation des magistrats, les moyens matériels des tribunaux, ou les pratiques des administrations locales. Cette critique rejoint directement le réalisme juridique étudié dans la leçon précédente : le droit harmonisé « sur le papier » ne garantit pas une application harmonisée « en action ».
-
-Certains chercheurs insistent également sur le risque d''un décalage entre des règles conçues pour répondre à des standards internationaux (souvent inspirés de systèmes juridiques extérieurs à la région) et les réalités économiques locales, notamment le poids de l''économie informelle, les pratiques contractuelles coutumières, ou les capacités institutionnelles variables d''un État à l''autre. L''harmonisation, pour être réellement efficace, suppose donc un accompagnement institutionnel (formation des praticiens, renforcement des juridictions, diffusion de l''information juridique) qui ne se décrète pas par le seul vote d''un texte commun.
-
-## L''articulation avec le droit international des investissements
-
-Un second axe du débat porte sur l''articulation entre le droit régional harmonisé et le droit international des investissements, c''est-à-dire l''ensemble des règles, le plus souvent issues de traités bilatéraux ou multilatéraux de protection des investissements, qui organisent les relations entre les États hôtes et les investisseurs étrangers. Cette articulation pose plusieurs questions théoriques. D''abord, une question de cohérence des normes : les garanties offertes aux investisseurs étrangers par les traités internationaux (protection contre l''expropriation, traitement juste et équitable, recours à l''arbitrage international) coexistent avec les règles régionales harmonisées de droit des sociétés ou de droit des sûretés, et il faut comprendre comment ces deux corpus s''articulent lorsqu''un même litige implique potentiellement les deux.
-
-Ensuite, une question plus politique et doctrinale : certains chercheurs soulignent une tension entre la logique protectrice du droit international des investissements, pensée historiquement pour sécuriser le capital étranger, et les objectifs de développement économique régional que poursuit l''harmonisation du droit des affaires, censée bénéficier d''abord aux économies locales et à leurs opérateurs, grandes entreprises comme petites et moyennes entreprises. Le débat porte alors sur l''équilibre à trouver entre attractivité pour les capitaux extérieurs et appropriation du cadre juridique par les acteurs économiques locaux.
-
-## Un débat à situer, non à trancher définitivement
-
-Pour un doctorant, l''enjeu n''est pas de prendre parti de façon tranchée entre « l''harmonisation est bonne » ou « l''harmonisation est insuffisante », mais de montrer qu''il comprend les termes précis du débat et qu''il peut le mobiliser pour éclairer son propre sujet de thèse. Un chercheur travaillant sur le droit des sociétés commerciales pourra, par exemple, interroger dans quelle mesure l''harmonisation régionale a effectivement réduit les coûts de transaction pour les entreprises opérant dans plusieurs pays, tout en examinant si les pratiques judiciaires nationales restent divergentes malgré l''uniformité du texte. Un chercheur travaillant sur le financement des investissements pourra, de son côté, interroger la cohérence entre les garanties offertes par le droit régional et celles issues des traités internationaux de protection des investissements, sans prétendre inventer des chiffres ou des taux précis qui relèveraient de données qu''il faudrait vérifier au cas par cas.
-
-Ce débat illustre bien, enfin, la complémentarité des courants vus en leçon 2 : une analyse positiviste rigoureuse est nécessaire pour établir précisément le contenu des textes harmonisés, tandis qu''une analyse réaliste et économique est nécessaire pour évaluer leurs effets réels sur l''investissement, les coûts de transaction et le développement économique régional.
-
-## Points clés à retenir
-
-- L''harmonisation régionale du droit des affaires vise à réduire l''incertitude juridique et les coûts de transaction liés à la diversité des législations nationales.
-- Cette harmonisation ne supprime pas la diversité des traditions juridiques et des pratiques judiciaires, ce qui peut créer un écart entre le droit harmonisé affiché et son application réelle.
-- Le droit international des investissements pose des questions d''articulation avec le droit régional harmonisé, tant sur le plan de la cohérence des normes que sur le plan des objectifs poursuivis.
-- Un chercheur doctoral doit situer son sujet dans ce débat sans le trancher de façon simpliste, et sans jamais inventer de données chiffrées précises.
-- Ce débat mobilise directement les outils vus en leçon 2 : analyse dogmatique des textes et analyse réaliste ou économique de leurs effets.
-
-## Exercices pratiques
-
-1. Expliquez, en vos propres termes, pourquoi l''harmonisation régionale du droit des affaires est souvent présentée comme un facteur d''attractivité pour les investisseurs.
-2. Formulez un argument qui illustre la critique selon laquelle « le droit harmonisé sur le papier » peut diverger du « droit harmonisé en action », en l''appliquant à un exemple fictif de droit des sociétés.
-3. Identifiez deux questions théoriques distinctes que pose l''articulation entre droit régional harmonisé et droit international des investissements.
-4. Pour un sujet de thèse fictif portant sur l''accès des petites et moyennes entreprises au crédit dans un contexte régional harmonisé, formulez une problématique qui mobilise à la fois le débat sur l''harmonisation et celui vu en leçon 2 sur le positivisme et le réalisme juridique.
-5. Discutez la proposition suivante : « l''harmonisation du droit des affaires profite d''abord aux grandes entreprises et aux investisseurs étrangers, pas aux économies locales ». Présentez un argument et un contre-argument, sans trancher de façon définitive.
-
-## Corrigé
-
-1. L''harmonisation réduit la diversité des législations nationales dans certains domaines du droit des affaires, ce qui diminue les coûts d''adaptation pour une entreprise ou un investisseur opérant dans plusieurs pays de la région et rend le cadre juridique plus prévisible, un facteur généralement considéré comme favorable à la décision d''investir.
-
-2. Exemple fictif : un même texte harmonisé sur la constitution d''une société commerciale peut être appliqué rapidement et de façon souple dans un pays dont les juridictions sont bien dotées en moyens, et de façon beaucoup plus lente et formaliste dans un autre pays où les tribunaux sont moins équipés, créant ainsi une différence pratique malgré l''identité du texte applicable.
-
-3. Une première question porte sur la cohérence des normes : comment les garanties du droit international des investissements (protection contre l''expropriation, recours à l''arbitrage) s''articulent avec les règles régionales de droit des sociétés ou des sûretés lorsqu''un même litige mobilise les deux corpus. Une seconde question porte sur l''équilibre des objectifs poursuivis : protéger le capital étranger d''un côté, favoriser le développement économique local et l''appropriation du droit par les acteurs locaux de l''autre.
-
-4. Une problématique possible : « Dans quelle mesure l''harmonisation régionale du droit des sûretés a-t-elle effectivement réduit le coût du crédit pour les petites et moyennes entreprises, compte tenu des écarts persistants dans les pratiques judiciaires nationales d''application de ce droit harmonisé ? » Cette formulation mobilise le débat sur l''harmonisation (leçon 3) et l''opposition entre droit affiché et droit appliqué issue du réalisme juridique (leçon 2).
-
-5. Argument en faveur de la proposition : les traités de protection des investissements et certaines règles harmonisées sont historiquement conçus pour sécuriser le capital étranger, et les grandes entreprises disposent de plus de moyens pour mobiliser ces protections (conseils juridiques, recours à l''arbitrage international) que les petites entreprises locales. Contre-argument : l''harmonisation régionale vise aussi, dans son principe, à créer un marché régional plus intégré dont les entreprises locales peuvent bénéficier en accédant plus facilement à des partenaires ou à des financements dans les pays voisins, et la question de savoir qui en bénéficie réellement reste, précisément, un objet d''étude empirique plutôt qu''une évidence à affirmer sans vérification.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Harmonisation régionale du droit des affaires (droit OHADA), diversité des traditions juridiques et droit international des investissements');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Les méthodes de recherche en droit des affaires : dogmatique, droit comparé, méthode empirique', 'La recherche en droit des affaires mobilise plusieurs méthodes, qui ne s''opposent pas mais se complètent selon la question posée. Cette leçon présente trois grandes méthodes : l''analyse dogmatique ou doctrinale, le droit comparé, et la méthode empirique en droit, centrée notamment sur l''analyse de la jurisprudence. Elle propose ensuite un exemple de protocole de recherche appliqué à un contexte sénégalais fictif.
-
-## L''analyse dogmatique ou doctrinale
-
-L''analyse dogmatique, parfois appelée analyse doctrinale, consiste à étudier le droit à partir de ses propres sources : textes législatifs et réglementaires, actes régionaux harmonisés, décisions de justice, et travaux des auteurs qui commentent ces sources. Le chercheur dogmatique cherche à systématiser le droit applicable à une question précise : quelles sont les règles en vigueur, comment s''articulent-elles entre elles, quelles interprétations ont été proposées, quelles contradictions ou lacunes subsistent.
-
-Cette méthode suppose une grande rigueur dans l''identification des sources : il faut distinguer un texte en vigueur d''un texte abrogé ou d''un projet de réforme, distinguer une règle générale d''une exception, et toujours vérifier l''état actuel du droit plutôt que de se fier à une version ancienne ou à une citation de seconde main. C''est la méthode de base de toute recherche en droit des affaires, y compris lorsque l''on mobilise ensuite d''autres approches : on ne peut pas comparer des systèmes juridiques, ni étudier l''effectivité d''une règle, si l''on n''a pas d''abord correctement établi ce que dit le droit.
-
-## Le droit comparé
-
-Le droit comparé consiste à mettre en regard plusieurs systèmes juridiques pour en dégager les ressemblances, les différences et les logiques propres à chacun. Appliqué au droit des affaires, le droit comparé peut porter, par exemple, sur la comparaison entre un système régional harmonisé et un système juridique national resté hors de ce cadre, ou entre deux traditions juridiques différentes (par exemple une tradition de droit civil et une tradition de common law) sur un même sujet, comme le traitement des sûretés ou la responsabilité des dirigeants de société.
-
-Le droit comparé exige de la prudence méthodologique : il ne suffit pas de juxtaposer deux textes qui portent le même nom pour conclure qu''ils règlent la même chose de la même façon, car un même concept juridique peut avoir une portée très différente selon le contexte institutionnel, économique et judiciaire dans lequel il s''insère. Un bon travail de droit comparé explique toujours pourquoi deux systèmes diffèrent ou convergent, en resituant chaque règle dans son contexte, plutôt que de se limiter à une liste de différences textuelles.
-
-## La méthode empirique en droit : l''analyse de la jurisprudence
-
-La méthode empirique en droit cherche à observer comment le droit fonctionne réellement, au-delà du texte. En droit des affaires, cette méthode repose le plus souvent sur l''analyse de la jurisprudence : on étudie un ensemble de décisions de justice portant sur une même question, pour en dégager des tendances (comment les juges interprètent-ils une règle en pratique, quelles solutions reviennent le plus souvent, existe-t-il des divergences entre juridictions), plutôt que de se contenter d''étudier le texte de loi de façon abstraite.
-
-Cette méthode suppose, en principe, de rassembler un corpus de décisions suffisamment représentatif, de les classer selon des critères pertinents (nature du litige, juridiction, période, solution retenue), puis d''en tirer des observations prudentes sur les pratiques réelles d''application du droit. Il est essentiel de ne jamais inventer ou citer de façon approximative une décision de justice précise que l''on n''a pas vérifiée : lorsqu''on évoque la jurisprudence dans un travail doctoral, on le fait soit en citant des décisions réellement identifiées et vérifiées, soit en parlant, de façon prudente et générale, des « tendances observées dans la jurisprudence en la matière », sans attribuer une solution précise à une décision inventée. La méthode empirique peut aussi s''appuyer sur d''autres données que la jurisprudence : entretiens avec des praticiens, enquêtes auprès d''entreprises, étude de la pratique contractuelle, lorsque ces données sont effectivement disponibles et correctement recueillies.
-
-## Articuler les trois méthodes dans un même projet de thèse
-
-Un projet de recherche doctorale en droit des affaires mobilise rarement une seule méthode. Le point de départ est presque toujours dogmatique : établir précisément l''état du droit applicable à la question étudiée. Vient ensuite, selon le sujet, soit une comparaison avec un ou plusieurs autres systèmes juridiques pour éclairer les choix possibles, soit une étude empirique de la jurisprudence ou de la pratique pour vérifier comment le droit identifié est réellement appliqué, soit les deux.
-
-## Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
-
-Prenons un sujet fictif : l''effectivité des garanties accordées aux créanciers dans le financement des petites entreprises d''un secteur donné, dans un contexte sénégalais imaginaire. Un protocole de recherche pourrait s''organiser en quatre étapes. Première étape, dogmatique : identifier précisément, à partir des textes en vigueur, les règles applicables à la constitution et à la mise en œuvre des garanties concernées, en vérifiant leur version actuelle. Deuxième étape, comparative : situer ces règles par rapport à celles d''un ou deux autres pays de la région, pour identifier si des choix alternatifs existent et quelles logiques les sous-tendent. Troisième étape, empirique : constituer, dans la mesure du possible, un corpus de décisions de justice portant sur la mise en œuvre de ces garanties, et compléter éventuellement ce corpus par des entretiens avec des praticiens (notaires, banquiers, avocats) pour documenter les pratiques réelles, sans jamais présenter des données non vérifiées comme établies. Quatrième étape, analytique : confronter ce que disent les textes, ce que montre la comparaison et ce que révèle l''observation empirique, pour formuler une appréciation argumentée de l''effectivité réelle des garanties étudiées et, le cas échéant, des pistes de réflexion.
-
-Ce protocole illustre bien la logique générale attendue au doctorat : partir du droit tel qu''il est écrit, le comparer pour en éclairer les choix, puis vérifier, autant que les données le permettent, comment il fonctionne réellement en pratique.
-
-## Points clés à retenir
-
-- L''analyse dogmatique établit avec rigueur l''état du droit applicable à partir des sources officielles ; c''est le point de départ de toute recherche.
-- Le droit comparé met en regard plusieurs systèmes juridiques, en resituant toujours chaque règle dans son contexte institutionnel et économique.
-- La méthode empirique, notamment l''analyse de la jurisprudence, observe comment le droit fonctionne réellement, sans jamais inventer ni citer de façon approximative une décision précise.
-- Un bon protocole de recherche doctorale articule ces trois méthodes selon une progression logique : établir le droit, le comparer, vérifier son application réelle.
-- Toute donnée chiffrée ou toute décision de justice évoquée doit être réellement vérifiée ; à défaut, on reste au niveau de tendances générales prudemment formulées.
-
-## Exercices pratiques
-
-1. Expliquez pourquoi l''analyse dogmatique est presque toujours la première étape d''un travail de recherche en droit des affaires, même lorsque l''objectif final est une étude empirique.
-2. Donnez un exemple de question de recherche fictive pour laquelle le droit comparé serait particulièrement utile, en expliquant pourquoi.
-3. Expliquez la différence entre « citer une décision de justice précise et vérifiée » et « évoquer une tendance jurisprudentielle générale », et pourquoi cette distinction est importante pour l''intégrité d''un travail doctoral.
-4. En reprenant le protocole en quatre étapes présenté dans la leçon, adaptez-le à un sujet fictif de votre choix portant sur un autre aspect du droit des affaires.
-5. Discutez les limites pratiques que peut rencontrer un doctorant souhaitant constituer un corpus de décisions de justice dans un contexte où l''accès à la jurisprudence est inégal ou incomplet, et proposez une ou deux solutions méthodologiques raisonnables.
-
-## Corrigé
-
-1. L''analyse dogmatique est première parce qu''elle établit ce que dit effectivement le droit applicable. Sans cette étape, toute comparaison ou toute observation empirique risquerait de porter sur une mauvaise compréhension du cadre juridique réel, ce qui invaliderait les conclusions tirées ensuite.
-
-2. Exemple fictif : une question portant sur les différentes manières d''organiser la responsabilité des dirigeants de société en cas de difficulté financière de l''entreprise se prête bien au droit comparé, car elle permet de mettre en regard plusieurs choix institutionnels possibles (plus ou moins protecteurs des dirigeants ou des créanciers) et d''en comprendre les logiques respectives.
-
-3. Citer une décision de justice précise et vérifiée signifie s''appuyer sur une référence réelle, que l''on a identifiée et dont on peut rendre compte fidèlement. Évoquer une tendance jurisprudentielle générale signifie parler, de façon prudente, d''une orientation observée sur un ensemble de décisions, sans attribuer cette orientation à une décision inventée ou non vérifiée. Cette distinction est essentielle car un travail doctoral qui citerait une jurisprudence fictive comme si elle était réelle commettrait une erreur grave d''intégrité scientifique.
-
-4. Il n''existe pas de réponse unique : l''évaluation porte sur la cohérence de l''adaptation, qui doit conserver la progression dogmatique puis comparative puis empirique puis analytique, appliquée de façon pertinente au nouveau sujet choisi (par exemple la protection des associés minoritaires, ou les délais de paiement entre entreprises).
-
-5. Parmi les limites possibles : bases de données de jurisprudence incomplètes, accès restreint à certaines décisions, absence de publication systématique. Des solutions raisonnables incluent la limitation explicite du corpus étudié à ce qui est effectivement accessible, en le précisant clairement dans la thèse, le recours complémentaire à des entretiens avec des praticiens pour documenter les pratiques non reflétées dans les décisions publiées, ou encore la comparaison avec un pays où l''accès à la jurisprudence est meilleur, pour éclairer par contraste le contexte étudié.', 'texte', 45, false, 40
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en droit des affaires : dogmatique, droit comparé, méthode empirique');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Épreuve type d''examen de qualification : question de synthèse et corrigé détaillé', 'Cette leçon propose une épreuve type d''examen de qualification doctorale en droit des affaires, construite sur le modèle d''une question de synthèse. Cette question n''est pas une question officielle d''un établissement précis : elle illustre le format attendu et mobilise les deux grands débats théoriques et la méthode de recherche étudiés dans les leçons précédentes.
-
-## Énoncé de la question type
-
-« Dans quelle mesure l''harmonisation régionale du droit des affaires permet-elle réellement de sécuriser les investissements et de réduire les coûts de transaction pour les entreprises, compte tenu de la diversité persistante des pratiques judiciaires nationales ? Vous répondrez en mobilisant les apports et les limites du positivisme juridique, de l''analyse économique du droit et du réalisme juridique, et en proposant une démarche méthodologique pour instruire cette question. »
-
-Cette question appelle une réponse structurée, d''une durée orale équivalente à quinze ou vingt minutes, suivie de questions du jury. Elle ne demande pas de réciter le contenu des leçons précédentes, mais de les articuler pour construire une argumentation originale.
-
-## Plan de réponse détaillé
-
-Une introduction efficace commence par reformuler la question en termes précis, en distinguant deux sous-questions implicites : d''une part, l''harmonisation régionale atteint-elle ses objectifs affichés (sécurisation des investissements, réduction des coûts de transaction) ; d''autre part, quels outils théoriques et méthodologiques permettent d''instruire sérieusement cette question sans se contenter d''affirmations non vérifiées. L''introduction annonce ensuite un plan en deux ou trois parties.
-
-Une première partie peut être consacrée à l''apport du positivisme juridique pour établir, de façon rigoureuse, ce que l''harmonisation régionale change effectivement sur le plan des textes : substitution de règles nationales disparates par un corpus commun dans certains domaines, cohérence accrue des concepts utilisés, prévisibilité renforcée pour les opérateurs économiques qui connaissent ce corpus. Cette partie doit aussi mentionner les limites propres au positivisme : il décrit la cohérence du système normatif, mais ne permet pas, à lui seul, de savoir si cette cohérence se traduit par une sécurisation réelle des investissements.
-
-Une deuxième partie peut mobiliser l''analyse économique du droit et le réalisme juridique pour interroger les effets réels de l''harmonisation. L''analyse économique du droit permet de formuler l''hypothèse que des règles harmonisées réduisent les coûts de transaction liés à la diversité normative, en facilitant la circulation des investissements entre pays de la région. Le réalisme juridique vient nuancer cette hypothèse en rappelant que l''harmonisation des textes ne garantit pas une application harmonisée : les pratiques judiciaires, les moyens des juridictions et les habitudes administratives peuvent continuer à diverger fortement d''un pays à l''autre, ce qui peut maintenir, en pratique, une partie des coûts de transaction que l''harmonisation visait à réduire.
-
-Une troisième partie, méthodologique, peut proposer une démarche concrète pour instruire sérieusement cette question : une analyse dogmatique précise des textes harmonisés pertinents, une comparaison avec le droit antérieur à l''harmonisation ou avec un pays resté hors du cadre régional, et une étude empirique s''appuyant, dans la mesure du possible, sur l''observation de la jurisprudence et sur des entretiens avec des praticiens, pour vérifier si les promesses de sécurisation et de réduction des coûts se vérifient réellement dans un secteur ou un contexte donné.
-
-La conclusion doit éviter toute réponse tranchée et non nuancée. Elle peut rappeler que l''harmonisation régionale constitue une avancée réelle sur le plan de la cohérence normative, mais que son effet réel sur la sécurisation des investissements et la réduction des coûts de transaction reste une question empirique, qui dépend fortement des capacités institutionnelles locales et qui mérite d''être étudiée au cas par cas plutôt que tranchée par principe.
-
-## Ce que le jury valorise dans cette réponse
-
-Un jury valoriserait, dans une telle réponse, plusieurs éléments : la capacité à distinguer clairement les trois courants théoriques mobilisés sans les confondre ; la capacité à montrer leur articulation plutôt que de les opposer artificiellement ; la prudence dans l''affirmation des effets réels de l''harmonisation, qui sont présentés comme des hypothèses à vérifier plutôt que comme des certitudes ; et la proposition d''une démarche méthodologique concrète et réaliste, plutôt qu''une méthode vague ou disproportionnée par rapport au sujet.
-
-Un jury sanctionnerait, à l''inverse, une réponse qui se contenterait de décrire l''harmonisation régionale sans la relier aux débats théoriques, une réponse qui présenterait un seul courant comme la seule grille de lecture valable, ou une réponse qui inventerait des chiffres précis, des taux ou des décisions de justice non vérifiées pour « étoffer » l''argumentation.
-
-## Points clés à retenir
-
-- Une bonne réponse de synthèse articule plusieurs courants théoriques plutôt que de les juxtaposer ou de n''en retenir qu''un seul.
-- La prudence dans l''affirmation des effets réels d''une réforme ou d''une politique juridique est une qualité attendue, pas un signe de faiblesse.
-- Une proposition méthodologique concrète (quelles sources, quelle comparaison, quelles données empiriques) renforce considérablement une réponse de synthèse.
-- Il ne faut jamais inventer de données chiffrées, de taux ou de jurisprudence précise pour appuyer une argumentation à l''oral comme à l''écrit.
-- Le plan en trois temps (établir le droit, interroger ses effets, proposer une méthode pour vérifier) est transposable à de nombreuses questions de synthèse en droit des affaires.
-
-## Exercices pratiques
-
-1. Reformulez, en une phrase, la question type de cette leçon en identifiant ses deux sous-questions implicites.
-2. Rédigez l''introduction (cinq à huit lignes) que vous donneriez à l''oral pour cette question type.
-3. Développez, en un paragraphe, la partie consacrée à l''apport et aux limites du positivisme juridique pour cette question.
-4. Proposez une question de relance que pourrait poser un jury après cette réponse, et esquissez les grandes lignes de la réponse que vous y donneriez.
-5. Rédigez une variante de cette question type appliquée à un autre sujet du droit des affaires de votre choix (par exemple la protection des associés minoritaires ou le droit des procédures collectives), en respectant la même logique de construction.
-
-## Corrigé
-
-1. La question type pose, d''une part, si l''harmonisation régionale atteint réellement ses objectifs affichés de sécurisation des investissements et de réduction des coûts de transaction, et, d''autre part, quels outils théoriques et méthodologiques permettent d''instruire sérieusement cette question sans se contenter d''affirmations non vérifiées.
-
-2. Une introduction possible : « La question posée invite à examiner si l''harmonisation régionale du droit des affaires atteint réellement les objectifs qui lui sont généralement attribués, à savoir la sécurisation des investissements et la réduction des coûts de transaction, au-delà de la seule cohérence des textes. Je montrerai, dans un premier temps, ce que le positivisme juridique permet d''établir sur ce point, puis, dans un second temps, comment l''analyse économique du droit et le réalisme juridique viennent nuancer cette première approche, avant de proposer, enfin, une démarche méthodologique pour instruire empiriquement cette question. »
-
-3. Le positivisme juridique permet d''établir avec rigueur ce que l''harmonisation change sur le plan des textes : remplacement de règles nationales disparates par un corpus commun, cohérence conceptuelle accrue, prévisibilité renforcée pour les opérateurs qui connaissent ce corpus harmonisé. Sa limite est qu''il décrit la cohérence formelle du système sans pouvoir, à lui seul, établir si cette cohérence se traduit par une sécurisation réelle des investissements ou par une réduction effective des coûts de transaction, questions qui relèvent d''une analyse des effets réels plutôt que de la seule structure normative.
-
-4. Une question de relance possible : « Vous avez mentionné que les pratiques judiciaires nationales peuvent diverger malgré l''harmonisation des textes ; comment procéderiez-vous concrètement pour vérifier cette divergence dans votre futur travail de thèse ? » Une réponse esquissée pourrait proposer de constituer, dans la mesure du possible, un corpus de décisions portant sur l''application des règles harmonisées dans deux ou trois pays de la région, de les comparer, et de compléter cette observation par des entretiens avec des praticiens locaux pour documenter les pratiques non reflétées dans les décisions publiées.
-
-5. Une variante possible pour le droit des procédures collectives : « Dans quelle mesure l''harmonisation régionale des procédures collectives permet-elle réellement de mieux concilier le sauvetage des entreprises en difficulté et la protection des créanciers, compte tenu de la diversité persistante des pratiques judiciaires nationales en la matière ? » L''évaluation porte sur la cohérence de la transposition : la nouvelle question doit conserver la même structure (constat affiché, débat théorique à mobiliser, démarche méthodologique à proposer) appliquée à un objet différent.', 'texte', 45, false, 50
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification : question de synthèse et corrigé détaillé');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : positivisme juridique, analyse économique du droit et réalisme juridique', '## Fiche du cours vidéo
-
-Durée : 1h30. Niveau : Doctorat, examen de qualification en droit des affaires.
-Objectifs : maîtriser le débat entre le positivisme juridique et les approches économiques et réalistes du droit, savoir les comparer de façon critique, et pouvoir les mobiliser à l''oral face à un jury.
-Matériel : diaporama avec le tableau comparatif des courants, tableau blanc pour les schémas.
-Prérequis : avoir lu la leçon texte correspondante et préparé une fiche de lecture pour chacun des deux courants.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux de la séance
-
-Bonjour à toutes et à tous. Dans cette séance d''une heure trente, nous allons reprendre en profondeur l''un des débats les plus structurants pour quiconque se présente à un examen de qualification doctorale en droit des affaires : l''opposition, et surtout l''articulation, entre le positivisme juridique d''un côté, et l''analyse économique du droit ainsi que le réalisme juridique de l''autre. Ce débat n''est pas un simple exercice académique : il conditionne la manière dont vous allez, toute votre carrière de chercheur, poser vos questions de recherche. Je vous propose de procéder en plusieurs temps : d''abord bien poser le positivisme juridique, ensuite montrer ses limites et introduire l''analyse économique du droit, puis le réalisme juridique, avant de les mettre en regard et de nous entraîner sur un cas appliqué au contexte africain. Gardez vos fiches de lecture sous les yeux, nous allons les enrichir au fil de la séance.
-
-## 05:00 – 20:00 · Le positivisme juridique en détail
-
-Commençons par le positivisme juridique. L''idée centrale, rappelons-la clairement : le droit est un système de normes posées par une autorité compétente, et la tâche du juriste est de décrire ce système tel qu''il est, pas de porter un jugement sur son efficacité ou sa justice. Cette approche a une force considérable : elle garantit la rigueur conceptuelle. Quand vous étudiez, par exemple, les règles qui organisent une société commerciale, vous devez d''abord savoir exactement ce que dit le texte applicable, comment il s''articule avec les autres règles, et comment l''interpréter selon les méthodes classiques — interprétation littérale, systématique, téléologique.
-
-Je vous invite à visualiser le positivisme comme le travail d''un architecte qui dessine les plans d''un bâtiment déjà construit : il décrit précisément l''agencement des pièces, les flux de circulation, la cohérence structurelle. Il ne se demande pas, à ce stade, si les habitants seront heureux d''y vivre. C''est tout l''intérêt de cette approche pour la sécurité juridique : elle offre une base solide, prévisible, sur laquelle les acteurs économiques peuvent s''appuyer.
-
-Mais cette force est aussi, potentiellement, une limite. Si je m''arrête au positivisme, je peux décrire une règle parfaitement cohérente sur le plan logique, et pourtant totalement contre-productive sur le plan économique. Prenons un exemple fictif : une règle qui impose un formalisme très lourd pour constituer une garantie bancaire. Du point de vue positiviste, cette règle peut être irréprochable : elle s''articule sans contradiction avec le reste du droit des garanties, elle respecte la hiérarchie des normes. Mais est-elle efficace ? Est-ce qu''elle facilite ou qu''elle freine l''accès au crédit des petites entreprises ? Le positivisme, par construction, ne pose pas cette question. C''est précisément la porte d''entrée vers notre second courant.
-
-## 20:00 – 35:00 · Les limites du positivisme et l''émergence des approches économiques
-
-Reprenons l''exemple de la garantie bancaire trop formaliste. L''analyse économique du droit, souvent appelée « law and economics », va directement interroger les effets de cette règle sur les comportements des acteurs. Elle part du postulat que le droit crée des incitations : une règle qui augmente le coût de constitution d''une garantie va, mécaniquement, renchérir le crédit ou réduire le nombre de prêteurs disposés à prêter à des conditions raisonnables. L''analyse économique du droit mobilise des concepts empruntés à la microéconomie : les coûts de transaction, les asymétries d''information, les incitations.
-
-Ce qui est important pour vous, candidats à l''examen de qualification, c''est de comprendre que cette approche ne dit pas que le positivisme a tort. Elle dit que la cohérence formelle d''une règle ne garantit pas son efficacité économique, et qu''il faut un outil d''analyse supplémentaire pour évaluer cette efficacité. Vous pouvez illustrer cela à l''oral avec une formule simple : le positivisme répond à la question « est-ce cohérent ? », l''analyse économique répond à la question « est-ce efficace ? ». Deux questions différentes, deux réponses potentiellement différentes pour la même règle.
-
-Je vous propose un exercice mental : pensez à une règle de droit des affaires de votre choix, et demandez-vous successivement si elle est cohérente avec le reste du système (question positiviste), puis si elle crée de bonnes incitations économiques (question de l''analyse économique du droit). Notez vos réponses, nous y reviendrons après la pause.
-
-## 35:00 – 50:00 · Le réalisme juridique
-
-Le réalisme juridique porte une critique complémentaire, mais distincte de celle de l''analyse économique. Pour les réalistes, ce qui compte, c''est le droit « en action », c''est-à-dire la manière dont les juges, les administrations et les praticiens appliquent effectivement les règles, par opposition au droit « sur le papier », c''est-à-dire le texte officiel. Deux textes identiques peuvent produire des résultats très différents selon les pratiques locales, les moyens des juridictions, ou l''accès réel des acteurs à la justice.
-
-Pour le droit des affaires africain en particulier, cette distinction est centrale. Vous pouvez avoir un texte harmonisé au niveau régional, parfaitement rédigé, et pourtant observer des pratiques judiciaires très différentes d''un pays à l''autre, en fonction des moyens des tribunaux, de la formation des magistrats, ou des habitudes des praticiens. Le réaliste vous dira : n''étudiez pas seulement le texte, étudiez son application réelle, par exemple à travers l''analyse de la jurisprudence ou des entretiens avec des praticiens.
-
-Attention à un point de méthode très important, que je veux souligner avec insistance : quand vous parlez de jurisprudence à l''oral devant un jury, vous ne devez jamais citer une décision précise que vous n''avez pas vérifiée. Si vous voulez illustrer une tendance jurisprudentielle, parlez de façon prudente et générale de « tendances observées », sans inventer un numéro de décision ou une date précise. C''est une question d''intégrité scientifique, et un jury y sera très attentif.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Prenons une pause de quelques minutes pour un quiz rapide. Première question : le positivisme juridique répond principalement à la question de la cohérence ou à la question de l''efficacité économique d''une règle ? Réponse : la cohérence. Deuxième question : quel courant insiste sur l''écart entre le droit sur le papier et le droit en action ? Réponse : le réalisme juridique. Troisième question : quels concepts économiques mobilise l''analyse économique du droit ? Réponse : les coûts de transaction, les incitations, les asymétries d''information. Prenez un instant pour vérifier vos réponses à l''exercice mental proposé plus tôt, et notez si votre règle choisie vous semble à la fois cohérente et efficace, ou si un écart apparaît entre les deux critères.
-
-## 55:00 – 1:10:00 · Comparer les courants plutôt que les opposer
-
-Reprenons maintenant du recul. Il serait réducteur de présenter ces courants comme irréconciliables. En réalité, un chercheur compétent les articule. L''analyse dogmatique, positiviste, est indispensable pour établir précisément ce que dit le droit : on ne peut pas évaluer l''effet économique d''une règle que l''on n''a pas correctement identifiée et interprétée. L''analyse économique et le réalisme juridique viennent ensuite enrichir cette base en interrogeant les effets réels et l''application concrète de la règle.
-
-Je vous conseille, pour l''examen, de toujours présenter ces courants dans cet ordre logique : d''abord établir le droit (positivisme), puis interroger ses effets économiques (analyse économique), puis vérifier son application réelle (réalisme juridique). Cette structure en trois temps est un squelette de réponse que vous pourrez réutiliser pour de très nombreuses questions de synthèse, quel que soit le sujet précis posé par le jury.
-
-## 1:10:00 – 1:20:00 · Application à un cas africain fictif
-
-Prenons un cas fictif complet pour nous entraîner. Imaginons une règle régionale harmonisée qui impose des conditions précises pour la constitution d''une sûreté mobilière destinée à garantir un crédit accordé à une petite entreprise. Premièrement, analyse positiviste : la règle est-elle cohérente avec le reste du droit des sûretés et du droit des contrats ? Deuxièmement, analyse économique : cette règle facilite-t-elle ou complique-t-elle l''accès au crédit, en pesant sur le coût de constitution de la garantie et sur le risque perçu par le prêteur ? Troisièmement, analyse réaliste : comment cette règle est-elle effectivement appliquée en pratique — les tribunaux locaux la mettent-ils en œuvre rapidement, les praticiens la connaissent-ils bien, existe-t-il un écart entre les pays de la région qui appliquent pourtant le même texte harmonisé ?
-
-Vous voyez que cette grille de lecture en trois temps permet de construire une réponse complète et nuancée, sans jamais avoir besoin d''inventer un chiffre ou une décision de justice précise : on reste au niveau des mécanismes et des questions à instruire, ce qui est exactement ce qu''un jury doctoral attend.
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour synthétiser cette séance : retenez la distinction entre les trois questions — cohérence, efficacité économique, application réelle — et la nécessité de les articuler plutôt que de n''en retenir qu''une. Voici l''évaluation finale, cinq questions.
-
-Question 1 : quelle question centrale pose le positivisme juridique ? Réponse : il pose la question de la cohérence du système normatif, pas celle de son efficacité ou de son effectivité.
-
-Question 2 : quels outils conceptuels mobilise l''analyse économique du droit ? Réponse : les incitations, les coûts de transaction, les asymétries d''information, pour évaluer les effets réels des règles sur les comportements économiques.
-
-Question 3 : que signifie l''opposition entre « droit sur le papier » et « droit en action » ? Réponse : le droit sur le papier désigne les textes officiels, le droit en action désigne la manière dont ces textes sont réellement appliqués par les juges, les administrations et les praticiens ; le réalisme juridique insiste sur l''écart possible entre les deux.
-
-Question 4 : pourquoi est-il risqué de ne mobiliser qu''un seul de ces trois courants dans une réponse d''examen ? Réponse : parce que chaque courant éclaire une dimension différente et incomplète du droit ; une réponse complète articule la cohérence, l''efficacité économique et l''application réelle.
-
-Question 5 : quelle règle de prudence s''impose lorsqu''on évoque la jurisprudence à l''oral ? Réponse : ne jamais citer une décision précise non vérifiée ; parler, si besoin, de tendances générales observées, formulées avec prudence. Merci pour votre attention, je vous retrouve dans la prochaine séance pour le second grand débat théorique du champ.', 'video', 90, false, 60
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : positivisme juridique, analyse économique du droit et réalisme juridique');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : harmonisation régionale (droit OHADA), diversité des traditions juridiques et droit international des investissements', '## Fiche du cours vidéo
-
-Durée : 1h30. Niveau : Doctorat, examen de qualification en droit des affaires.
-Objectifs : maîtriser le débat sur l''harmonisation régionale du droit des affaires face à la diversité des traditions juridiques nationales, et comprendre son articulation avec le droit international des investissements.
-Matériel : diaporama, carte mentale des acteurs et des niveaux de normes (national, régional, international).
-Prérequis : leçon texte correspondante lue, séance vidéo précédente assimilée.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette nouvelle séance. Nous allons aborder un débat qui est, pour beaucoup de doctorants en droit des affaires africain, le cœur même de leur problématique de thèse : celui de l''harmonisation régionale du droit des affaires, souvent associée au droit OHADA, face à la diversité persistante des traditions juridiques nationales, et son articulation avec le droit international des investissements. Je vous rappelle d''emblée la règle de prudence : nous ne citerons aucun article précis de texte, aucune disposition chiffrée, et nous resterons au niveau des mécanismes et des débats, qu''il appartient toujours à chacun de vérifier dans les textes officiels en vigueur au moment de sa recherche.
-
-## 05:00 – 20:00 · Le projet d''harmonisation régionale : logique et promesses
-
-Replaçons d''abord le projet dans sa logique. L''idée de départ est économique et juridique à la fois : la diversité des législations nationales en droit des affaires peut constituer un frein pour les entreprises qui opèrent dans plusieurs pays d''une même région, en multipliant les coûts d''adaptation à des règles différentes. L''harmonisation vise à substituer, dans certains domaines, un corpus commun de règles aux législations nationales disparates. L''objectif affiché est triple : réduire l''incertitude juridique, faciliter la circulation des investissements, et offrir un cadre prévisible aux opérateurs économiques, quel que soit le pays de la région dans lequel ils opèrent.
-
-Sur le plan théorique, remarquez le lien direct avec ce que nous avons vu dans la séance précédente : cette logique s''appuie sur une intuition proche de l''analyse économique du droit. Des règles uniformes réduisent les coûts de transaction liés à la diversité normative. C''est un argument puissant, souvent mis en avant pour justifier la poursuite et l''approfondissement du projet d''harmonisation régionale.
-
-## 20:00 – 35:00 · La critique de la diversité des traditions juridiques
-
-Mais ce projet rencontre une critique récurrente, qui mobilise directement le réalisme juridique étudié précédemment. L''harmonisation des textes ne supprime pas, par elle-même, la diversité des pratiques judiciaires, des traditions juridiques et des contextes socio-économiques des États concernés. Un même texte harmonisé peut être interprété et appliqué très différemment selon les habitudes des juridictions nationales, la formation des magistrats, ou les moyens matériels des tribunaux.
-
-Je vous propose de visualiser cela avec une image simple : l''harmonisation régionale construit une seule carte routière pour plusieurs pays, mais chaque pays continue de conduire avec ses propres habitudes, ses propres véhicules, et des routes en meilleur ou moins bon état. La carte est identique, le trajet réel peut rester très différent. C''est exactement la critique du décalage entre le droit harmonisé affiché et son application réelle. Certains chercheurs ajoutent une nuance supplémentaire : le risque d''un décalage entre des standards conçus en partie à partir de modèles extérieurs à la région et les réalités économiques locales, notamment le poids de l''économie informelle ou les pratiques contractuelles coutumières.
-
-## 35:00 – 50:00 · L''articulation avec le droit international des investissements
-
-Passons maintenant au deuxième grand axe : l''articulation entre ce droit régional harmonisé et le droit international des investissements, c''est-à-dire l''ensemble des règles, souvent issues de traités, qui organisent les relations entre États hôtes et investisseurs étrangers. Deux questions théoriques se posent ici.
-
-La première est une question de cohérence des normes. Les garanties offertes aux investisseurs étrangers par les traités internationaux — protection contre l''expropriation, traitement juste et équitable, recours à l''arbitrage international — coexistent avec les règles régionales harmonisées de droit des sociétés ou de droit des sûretés. Il faut comprendre comment ces deux corpus de normes s''articulent lorsqu''un même litige implique potentiellement les deux : par exemple un investisseur étranger qui invoquerait à la fois une protection issue d''un traité et des règles de droit des sociétés harmonisées au niveau régional.
-
-La seconde question est plus politique et doctrinale. Certains chercheurs soulignent une tension entre la logique protectrice du droit international des investissements, pensée historiquement pour sécuriser le capital étranger, et les objectifs de développement économique régional que poursuit l''harmonisation du droit des affaires, censée bénéficier d''abord aux économies locales. Le débat porte alors sur l''équilibre à trouver entre attractivité pour les capitaux extérieurs et appropriation du cadre juridique par les acteurs économiques locaux, grandes entreprises comme petites et moyennes entreprises.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Petit quiz de vérification. Première question : quel est l''objectif économique affiché de l''harmonisation régionale du droit des affaires ? Réponse : réduire les coûts de transaction liés à la diversité des législations nationales et sécuriser les investissements régionaux. Deuxième question : quelle critique le réalisme juridique adresse-t-il à ce projet ? Réponse : l''harmonisation des textes ne garantit pas une application harmonisée, du fait de la diversité des pratiques judiciaires nationales. Troisième question : quels sont les deux grands axes du débat sur l''articulation avec le droit international des investissements ? Réponse : la cohérence des normes entre les deux corpus, et l''équilibre entre protection du capital étranger et développement économique local.
-
-## 55:00 – 1:10:00 · Ne pas trancher, mais situer son sujet
-
-Pour un doctorant, l''enjeu n''est pas de prendre parti de façon tranchée entre « l''harmonisation est bonne » ou « l''harmonisation est insuffisante ». L''enjeu est de montrer que vous comprenez précisément les termes du débat et que vous pouvez le mobiliser pour éclairer votre propre sujet de thèse. Prenons un exemple : si votre sujet porte sur le droit des sociétés commerciales, vous pourrez interroger dans quelle mesure l''harmonisation a effectivement réduit les coûts de transaction pour les entreprises opérant dans plusieurs pays, tout en examinant si les pratiques judiciaires nationales restent divergentes malgré l''uniformité du texte. Si votre sujet porte sur le financement des investissements, vous pourrez interroger la cohérence entre les garanties du droit régional et celles des traités internationaux, sans jamais inventer de chiffres ou de taux précis.
-
-Cette démarche illustre, une fois encore, la complémentarité des courants vus en séance précédente : une analyse positiviste rigoureuse pour établir le contenu exact des textes harmonisés, une analyse réaliste et économique pour évaluer leurs effets réels.
-
-## 1:10:00 – 1:20:00 · Application à un cas africain fictif
-
-Imaginons un sujet de thèse fictif : l''accès des petites et moyennes entreprises au crédit dans un contexte régional harmonisé. Premier temps : établir précisément, par une analyse dogmatique, les règles harmonisées applicables à la constitution des garanties de crédit. Deuxième temps : interroger, à l''aide de l''analyse économique du droit, si ces règles réduisent effectivement le coût du crédit pour les petites entreprises par rapport à la situation antérieure à l''harmonisation. Troisième temps : vérifier, à l''aide du réalisme juridique et d''une démarche empirique, si l''application de ces règles varie significativement entre plusieurs pays de la région malgré l''identité du texte. Quatrième temps : relier cette observation au débat sur l''articulation avec le droit international des investissements si le financement étudié implique des investisseurs étrangers.
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Retenez de cette séance trois idées fortes : l''harmonisation répond à une logique économique de réduction des coûts de transaction ; elle ne garantit pas, par elle-même, une application uniforme en raison de la diversité des pratiques judiciaires ; et son articulation avec le droit international des investissements pose des questions de cohérence des normes et d''équilibre des objectifs poursuivis. Voici l''évaluation finale, cinq questions.
-
-Question 1 : quel est l''objectif économique principal de l''harmonisation régionale du droit des affaires ? Réponse : réduire les coûts de transaction liés à la diversité des législations nationales et offrir un cadre prévisible aux investisseurs et aux entreprises.
-
-Question 2 : pourquoi l''harmonisation des textes ne garantit-elle pas une application uniforme du droit ? Réponse : parce que les pratiques judiciaires, la formation des magistrats et les moyens des juridictions restent très différents d''un pays à l''autre, créant un écart possible entre le droit harmonisé affiché et son application réelle.
-
-Question 3 : quelles sont les deux questions théoriques posées par l''articulation entre droit régional harmonisé et droit international des investissements ? Réponse : la cohérence des normes lorsqu''un même litige mobilise les deux corpus, et l''équilibre entre la protection du capital étranger et les objectifs de développement économique local.
-
-Question 4 : comment un doctorant doit-il se positionner face à ce débat dans une réponse d''examen ? Réponse : il doit situer son sujet de thèse dans ce débat, en montrant sa compréhension des tensions en jeu, sans trancher de façon simpliste ni inventer de données chiffrées précises.
-
-Question 5 : quelle démarche méthodologique permet d''instruire sérieusement une question liée à ce débat ? Réponse : une analyse dogmatique des textes harmonisés, suivie d''une analyse économique et réaliste de leurs effets réels, éventuellement complétée par une comparaison avec d''autres pays ou périodes. Rendez-vous à la prochaine séance pour les méthodes de recherche propres au champ.', 'video', 90, false, 70
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : harmonisation régionale (droit OHADA), diversité des traditions juridiques et droit international des investissements');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : méthodes de recherche en droit des affaires et protocole appliqué', '## Fiche du cours vidéo
-
-Durée : 1h30. Niveau : Doctorat, examen de qualification en droit des affaires.
-Objectifs : maîtriser les trois grandes méthodes de recherche du champ (dogmatique, droit comparé, méthode empirique), savoir les articuler, et savoir construire un protocole de recherche appliqué.
-Matériel : diaporama, tableau pour construire en direct un protocole de recherche.
-Prérequis : leçon texte correspondante lue, séances vidéo précédentes assimilées.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette troisième séance vidéo. Après avoir vu deux grands débats théoriques du droit des affaires, nous allons maintenant nous concentrer sur la boîte à outils méthodologique du chercheur : comment, concrètement, mène-t-on une recherche sérieuse en droit des affaires. Nous verrons trois méthodes — l''analyse dogmatique, le droit comparé et la méthode empirique centrée sur la jurisprudence — puis nous construirons ensemble, en direct, un protocole de recherche appliqué à un contexte sénégalais fictif.
-
-## 05:00 – 20:00 · L''analyse dogmatique ou doctrinale
-
-Commençons par la méthode la plus fondamentale, celle sans laquelle aucune des deux autres n''est possible : l''analyse dogmatique, aussi appelée analyse doctrinale. Elle consiste à étudier le droit à partir de ses propres sources : textes législatifs et réglementaires, actes régionaux harmonisés, décisions de justice, travaux des auteurs qui commentent ces sources. L''objectif est de systématiser le droit applicable à une question précise : quelles règles sont en vigueur, comment s''articulent-elles, quelles interprétations ont été proposées, quelles lacunes subsistent.
-
-Je veux insister sur un point de rigueur essentiel : il faut toujours vérifier l''état actuel du droit, distinguer un texte en vigueur d''un texte abrogé ou d''un projet de réforme, et ne jamais se fier à une citation de seconde main sans l''avoir vérifiée vous-même. C''est la méthode de base : vous ne pouvez pas comparer des systèmes juridiques, ni étudier l''effectivité d''une règle, si vous n''avez pas d''abord établi correctement ce que dit le droit. Pensez à cette méthode comme aux fondations d''une maison : invisibles une fois la construction terminée, mais sans lesquelles rien ne tient.
-
-## 20:00 – 35:00 · Le droit comparé
-
-Deuxième méthode : le droit comparé. Elle consiste à mettre en regard plusieurs systèmes juridiques pour en dégager les ressemblances, les différences, et les logiques propres à chacun. En droit des affaires, cela peut porter sur la comparaison entre un système régional harmonisé et un système resté hors de ce cadre, ou entre deux traditions juridiques différentes sur un même sujet, comme le traitement des sûretés ou la responsabilité des dirigeants de société.
-
-Attention à un piège méthodologique fréquent : il ne suffit pas de juxtaposer deux textes qui portent le même nom pour conclure qu''ils règlent la même chose de la même façon. Un même concept juridique peut avoir une portée très différente selon le contexte institutionnel, économique et judiciaire dans lequel il s''insère. Un bon travail de droit comparé explique toujours pourquoi deux systèmes diffèrent ou convergent, en resituant chaque règle dans son contexte, plutôt que de se limiter à une liste de différences textuelles. C''est un exercice d''explication, pas seulement de description.
-
-## 35:00 – 50:00 · La méthode empirique et l''analyse de la jurisprudence
-
-Troisième méthode : la méthode empirique, qui cherche à observer comment le droit fonctionne réellement, au-delà du texte. En droit des affaires, elle repose le plus souvent sur l''analyse de la jurisprudence : on étudie un ensemble de décisions de justice portant sur une même question, pour en dégager des tendances — comment les juges interprètent-ils une règle en pratique, quelles solutions reviennent le plus souvent, existe-t-il des divergences entre juridictions.
-
-Cette méthode suppose, en principe, de rassembler un corpus de décisions suffisamment représentatif, de les classer selon des critères pertinents, puis d''en tirer des observations prudentes. Je répète ici un point de méthode déjà souligné dans les séances précédentes, car il est capital pour votre intégrité scientifique : ne jamais inventer ou citer de façon approximative une décision de justice précise que vous n''avez pas vérifiée. Si vous voulez évoquer la jurisprudence sans disposer de références vérifiées, parlez de « tendances générales observées dans la jurisprudence en la matière », formulées avec prudence. La méthode empirique peut aussi mobiliser d''autres données, lorsqu''elles sont réellement disponibles : entretiens avec des praticiens, enquêtes auprès d''entreprises, étude de la pratique contractuelle.
-
-Un point pratique mérite d''être développé : la constitution d''un corpus de jurisprudence pertinent n''est jamais un exercice mécanique. Il faut d''abord délimiter précisément la question juridique étudiée, pour éviter de rassembler des décisions trop hétérogènes qui ne permettraient aucune comparaison sérieuse. Il faut ensuite choisir une période d''observation cohérente avec le sujet, en étant transparent, dans le travail final, sur les limites de ce corpus : s''il est restreint par manque d''accès à certaines bases de données, cela doit être explicitement reconnu plutôt que dissimulé. Enfin, l''analyse du corpus ne se limite pas à compter les décisions qui vont dans un sens ou dans l''autre : elle doit chercher à comprendre pourquoi les juridictions retiennent telle ou telle solution, en resituant chaque décision dans son contexte factuel et procédural.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Petit quiz de vérification des acquis. Première question : quelle méthode est presque toujours le point de départ d''une recherche en droit des affaires, et pourquoi ? Réponse : l''analyse dogmatique, car elle établit ce que dit effectivement le droit, base indispensable à toute comparaison ou étude empirique. Deuxième question : quel piège méthodologique faut-il éviter en droit comparé ? Réponse : juxtaposer deux textes qui portent le même nom sans expliquer pourquoi ils diffèrent ou convergent dans leur contexte respectif. Troisième question : que faire si l''on souhaite évoquer la jurisprudence sans disposer de décisions vérifiées ? Réponse : parler prudemment de tendances générales, sans jamais inventer une décision précise.
-
-## 55:00 – 1:10:00 · Articuler les trois méthodes dans un même projet
-
-Un projet de recherche doctorale mobilise rarement une seule méthode. Le point de départ est presque toujours dogmatique : établir l''état du droit applicable. Vient ensuite, selon le sujet, une comparaison avec un ou plusieurs autres systèmes juridiques pour éclairer les choix possibles, ou une étude empirique pour vérifier comment le droit identifié est réellement appliqué, ou les deux à la fois. Cette progression en plusieurs temps — établir, comparer, vérifier — est exactement la structure que nous avons mobilisée dans les deux séances précédentes pour répondre aux questions sur les grands débats théoriques du champ. Vous voyez donc que théorie et méthode s''articulent naturellement.
-
-## 1:10:00 – 1:20:00 · Construction en direct d''un protocole appliqué
-
-Construisons ensemble un protocole pour un sujet fictif : l''effectivité des garanties accordées aux créanciers dans le financement des petites entreprises d''un secteur donné, dans un contexte sénégalais imaginaire. Étape un, dogmatique : identifier précisément, à partir des textes en vigueur vérifiés, les règles applicables à la constitution et à la mise en œuvre de ces garanties. Étape deux, comparative : situer ces règles par rapport à celles d''un ou deux autres pays de la région, pour comprendre les choix alternatifs possibles. Étape trois, empirique : constituer, dans la mesure du possible, un corpus de décisions portant sur la mise en œuvre de ces garanties, complété par des entretiens avec des praticiens — notaires, banquiers, avocats — sans jamais présenter des données non vérifiées comme établies. Étape quatre, analytique : confronter ce que disent les textes, ce que montre la comparaison, et ce que révèle l''observation empirique, pour formuler une appréciation argumentée.
-
-Imaginons que l''observation empirique révèle, dans notre scénario fictif, que les tribunaux d''une partie de la zone étudiée mettent en œuvre ces garanties avec une lenteur qui décourage certains prêteurs, alors que dans une autre partie de la zone, les mêmes textes sont appliqués plus rapidement. Le chercheur ne doit pas se contenter de constater cet écart : il doit chercher à l''expliquer, par exemple en le reliant à des différences de moyens matériels des juridictions, à des pratiques de formation des magistrats, ou à des habitudes professionnelles des praticiens locaux. C''est cette capacité à expliquer, et non seulement à décrire, qui distingue une recherche doctorale solide d''un simple constat journalistique.
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Retenez de cette séance la logique en trois méthodes complémentaires et la progression en quatre étapes du protocole appliqué. Voici l''évaluation finale, cinq questions.
-
-Question 1 : pourquoi l''analyse dogmatique est-elle la première étape de toute recherche en droit des affaires ? Réponse : parce qu''elle établit avec rigueur ce que dit le droit applicable, base nécessaire pour toute comparaison ou analyse empirique ultérieure.
-
-Question 2 : quelle erreur méthodologique faut-il éviter en droit comparé ? Réponse : comparer des textes sans resituer chaque règle dans son contexte institutionnel et économique propre, ce qui conduirait à des conclusions trompeuses.
-
-Question 3 : sur quoi repose le plus souvent la méthode empirique en droit des affaires ? Réponse : sur l''analyse de la jurisprudence, complétée éventuellement par des entretiens avec des praticiens ou des enquêtes, lorsque ces données sont réellement disponibles.
-
-Question 4 : quelle règle de prudence s''impose pour toute évocation de jurisprudence dans un travail doctoral ? Réponse : ne jamais citer une décision précise non vérifiée ; se limiter, à défaut, à des tendances générales prudemment formulées.
-
-Question 5 : quelles sont les quatre étapes d''un protocole de recherche type appliqué à un cas africain fictif ? Réponse : établir le droit applicable par une analyse dogmatique, le comparer à d''autres systèmes, vérifier son application réelle par une méthode empirique, puis confronter ces trois niveaux d''analyse pour formuler une conclusion argumentée. La prochaine séance sera consacrée à une simulation complète de soutenance de qualification doctorale.', 'video', 90, false, 80
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : méthodes de recherche en droit des affaires et protocole appliqué');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : s''entraîner en direct sur une question de synthèse type', '## Fiche du cours vidéo
-
-Durée : 1h30. Niveau : Doctorat, examen de qualification en droit des affaires.
-Objectifs : s''entraîner en conditions réelles à répondre à une question de synthèse type, en mobilisant les deux débats théoriques et la méthode de recherche vus dans les séances précédentes.
-Matériel : diaporama, chronomètre pour simuler le temps de parole d''une soutenance.
-Prérequis : les trois séances vidéo précédentes et les leçons texte correspondantes.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette quatrième séance vidéo, consacrée à l''entraînement actif. Je vais vous présenter une question de synthèse type, construite sur le modèle d''un examen de qualification doctorale, puis nous allons construire ensemble, pas à pas, un plan de réponse complet, comme si nous étions face à un jury. Rappelez-vous : cette question n''est pas une question officielle d''un établissement précis, elle illustre le format attendu.
-
-## 05:00 – 15:00 · Présentation de la question type
-
-Voici l''énoncé : « Dans quelle mesure l''harmonisation régionale du droit des affaires permet-elle réellement de sécuriser les investissements et de réduire les coûts de transaction pour les entreprises, compte tenu de la diversité persistante des pratiques judiciaires nationales ? Vous répondrez en mobilisant les apports et les limites du positivisme juridique, de l''analyse économique du droit et du réalisme juridique, et en proposant une démarche méthodologique pour instruire cette question. »
-
-Prenez quelques instants, comme vous le feriez à l''oral, pour repérer les mots clés de l''énoncé : « dans quelle mesure », qui invite à une réponse nuancée plutôt que tranchée ; « réellement », qui invite à interroger les effets concrets au-delà des textes ; et la consigne explicite de mobiliser plusieurs courants théoriques et une démarche méthodologique. C''est un énoncé qui, à lui seul, vous dit presque tout le plan attendu, si vous savez le lire correctement.
-
-## 15:00 – 30:00 · Construction de l''introduction et du plan
-
-Une bonne introduction reformule la question en distinguant deux sous-questions implicites : l''harmonisation régionale atteint-elle ses objectifs affichés, et quels outils permettent d''instruire sérieusement cette question sans affirmation non vérifiée. Elle annonce ensuite un plan en trois parties : d''abord l''apport et les limites du positivisme juridique pour établir ce que l''harmonisation change sur le plan des textes ; ensuite l''apport de l''analyse économique du droit et du réalisme juridique pour interroger les effets réels ; enfin une proposition méthodologique pour vérifier empiriquement ces effets.
-
-Entraînez-vous maintenant, à voix haute si possible, à prononcer cette introduction en moins de deux minutes, en respectant un rythme calme et structuré. C''est un exercice que vous devez répéter plusieurs fois avant l''examen réel, car la gestion du temps de parole est une compétence à part entière.
-
-Un conseil pratique : annoncez toujours votre plan de façon explicite, en nommant les trois parties par leur fonction plutôt que par un simple numéro. Dire « je montrerai d''abord ce que l''harmonisation change sur le plan des textes, puis j''interrogerai ses effets économiques et pratiques réels, avant de proposer une démarche pour les vérifier » est beaucoup plus clair pour un jury que de dire simplement « je ferai trois parties ». Cette annonce explicite rassure le jury sur votre maîtrise de la structure et facilite sa propre écoute, ce qui joue en votre faveur dans l''évaluation globale de la prestation orale.
-
-## 30:00 – 50:00 · Développement de la première et de la deuxième partie
-
-Développons la première partie : le positivisme juridique permet d''établir que l''harmonisation substitue des règles nationales disparates par un corpus commun dans certains domaines, ce qui accroît la cohérence conceptuelle et la prévisibilité pour les opérateurs économiques qui connaissent ce corpus. Sa limite : il décrit la cohérence formelle du système sans pouvoir, à lui seul, établir si cette cohérence se traduit par une sécurisation réelle des investissements.
-
-Développons la deuxième partie : l''analyse économique du droit permet de formuler l''hypothèse que des règles harmonisées réduisent les coûts de transaction liés à la diversité normative, en facilitant la circulation des investissements. Le réalisme juridique vient nuancer cette hypothèse en rappelant que l''harmonisation des textes ne garantit pas une application harmonisée, du fait de la diversité des pratiques judiciaires et des moyens des juridictions, ce qui peut maintenir, en pratique, une partie des coûts de transaction que l''harmonisation visait à réduire.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Petit quiz avant de poursuivre. Première question : pourquoi faut-il éviter de ne mobiliser qu''un seul courant théorique dans une réponse de synthèse ? Réponse : parce que chaque courant éclaire une dimension différente et incomplète de la question, et qu''une réponse complète doit articuler cohérence des textes, effets économiques et application réelle. Deuxième question : quelle expression de l''énoncé invite à une réponse nuancée plutôt que tranchée ? Réponse : « dans quelle mesure ». Troisième question : quelle est la première chose à faire en lisant un énoncé de question de synthèse ? Réponse : repérer les mots clés qui indiquent la structure et le degré de nuance attendus dans la réponse.
-
-## 55:00 – 1:10:00 · Développement de la troisième partie et de la conclusion
-
-Développons maintenant la troisième partie, méthodologique : proposer une analyse dogmatique précise des textes harmonisés pertinents, une comparaison avec le droit antérieur à l''harmonisation ou avec un pays resté hors du cadre régional, et une étude empirique s''appuyant, dans la mesure du possible, sur l''observation de la jurisprudence et sur des entretiens avec des praticiens, pour vérifier si les promesses de sécurisation et de réduction des coûts se vérifient réellement dans un secteur donné.
-
-La conclusion, enfin, doit éviter toute réponse tranchée. Elle peut rappeler que l''harmonisation régionale constitue une avancée réelle sur le plan de la cohérence normative, mais que son effet réel sur la sécurisation des investissements reste une question empirique, qui dépend fortement des capacités institutionnelles locales et qui mérite d''être étudiée au cas par cas plutôt que tranchée par principe. Entraînez-vous à prononcer cette conclusion en moins d''une minute trente, en gardant un ton assuré mais nuancé.
-
-## 1:10:00 – 1:20:00 · Anticiper les questions du jury
-
-Un jury pose presque toujours des questions de relance après une réponse de synthèse. Entraînons-nous sur deux exemples. Premier exemple de question : « Vous avez mentionné que les pratiques judiciaires nationales peuvent diverger malgré l''harmonisation des textes ; comment procéderiez-vous concrètement pour vérifier cette divergence dans votre futur travail de thèse ? » Une bonne réponse esquisse un protocole empirique concret : corpus de décisions dans deux ou trois pays, entretiens avec des praticiens, comparaison prudente des résultats. Deuxième exemple : « Pensez-vous que l''analyse économique du droit suffit à elle seule à évaluer une politique d''harmonisation ? » Une bonne réponse rappelle que l''analyse économique est un outil parmi d''autres, complémentaire du positivisme et du réalisme juridique, et qu''elle ne doit pas être présentée comme la seule grille de lecture valable.
-
-Troisième exemple, plus déstabilisant : « Si vous deviez résumer votre position en une seule phrase, l''harmonisation régionale est-elle, selon vous, globalement positive ou globalement insuffisante ? » C''est une question piège classique, qui invite à une réponse binaire alors que toute la séance nous a appris l''inverse. La bonne stratégie n''est pas d''esquiver la question, mais de répondre en assumant la nuance comme une position à part entière : par exemple, affirmer que l''harmonisation constitue une avancée nette sur le plan de la cohérence et de la prévisibilité juridique, mais que son effet réel sur la sécurisation économique dépend de facteurs institutionnels qui restent, eux, très inégaux d''un pays à l''autre, et que c''est précisément cette variabilité qui mérite d''être étudiée plutôt que présupposée dans un sens ou dans l''autre.
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Retenez de cette séance la méthode de lecture d''un énoncé, la structure en trois parties, et l''entraînement à l''anticipation des questions de relance. Voici l''évaluation finale, cinq questions.
-
-Question 1 : quelles sont les trois parties attendues dans une réponse à une question de synthèse de ce type ? Réponse : l''apport et les limites du positivisme juridique, l''apport de l''analyse économique et du réalisme juridique, et une proposition méthodologique pour vérifier empiriquement les effets réels.
-
-Question 2 : que signale l''expression « dans quelle mesure » dans un énoncé de question de synthèse ? Réponse : qu''une réponse nuancée est attendue, plutôt qu''une réponse tranchée par l''affirmative ou la négative.
-
-Question 3 : que doit valoriser une bonne conclusion à ce type de question ? Réponse : la reconnaissance d''une avancée réelle sur la cohérence normative, tout en rappelant que l''effet réel sur les objectifs économiques affichés reste une question empirique à vérifier au cas par cas.
-
-Question 4 : comment anticiper une question de relance portant sur la vérification empirique d''un argument avancé ? Réponse : esquisser un protocole concret, par exemple un corpus de jurisprudence comparé entre plusieurs pays, complété par des entretiens avec des praticiens.
-
-Question 5 : pourquoi ne faut-il jamais présenter un seul courant théorique comme la seule grille de lecture valable face à une question de synthèse ? Réponse : parce qu''un jury valorise l''articulation de plusieurs approches complémentaires, et sanctionne une réponse unilatérale ou dogmatique dans un sens appauvri du terme. La dernière séance vidéo sera consacrée à la simulation complète d''une soutenance de qualification doctorale.', 'video', 90, false, 90
-from public.courses c where c.slug = 'doc-droit'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : s''entraîner en direct sur une question de synthèse type');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
-
-Durée : 1h30. Niveau : Doctorat, examen de qualification en droit des affaires.
-Objectifs : vivre une simulation complète de soutenance de qualification doctorale, de la présentation du champ et du projet de thèse jusqu''aux questions de jury, et s''auto-évaluer à l''aide d''une grille finale.
-Matériel : diaporama, chronomètre, grille d''auto-évaluation distribuée en fin de séance.
-Prérequis : l''ensemble des leçons et séances vidéo précédentes de ce cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction à la simulation
-
-Bienvenue dans cette dernière séance, la plus importante pour votre préparation : une simulation complète de soutenance de qualification doctorale en droit des affaires. Je vais jouer, tour à tour, le rôle du candidat qui présente son champ et son projet de thèse, puis celui des membres du jury qui posent leurs questions. Suivez cette simulation comme si vous étiez vous-même dans la salle, en notant les formulations qui vous semblent efficaces et celles que vous auriez envie d''améliorer.
-
-## 05:00 – 20:00 · Présentation du champ (quinze minutes, partie 1)
-
-« Mesdames et Messieurs les membres du jury, je vous remercie de votre attention. Mon champ de recherche est le droit des affaires, et plus précisément la question de l''articulation entre les instruments juridiques régionaux d''harmonisation et l''effectivité réelle de la protection des créanciers et des investisseurs dans un contexte de diversité institutionnelle persistante entre les pays d''une même région.
-
-Ce champ est structuré par deux grands débats théoriques. Le premier oppose le positivisme juridique, qui étudie le droit comme système cohérent de normes, aux approches économiques et réalistes, qui interrogent les effets réels des règles et leur application concrète par les juridictions et les praticiens. Le second porte sur l''harmonisation régionale du droit des affaires, souvent associée au droit OHADA, face à la diversité des traditions juridiques nationales et à son articulation avec le droit international des investissements. Ces deux débats ne sont pas indépendants : le premier fournit la grille théorique qui permet d''instruire le second de façon rigoureuse. »
-
-## 20:00 – 35:00 · Présentation du projet de thèse fictif (partie 2)
-
-« Mon projet de thèse, encore à ce stade exploratoire, s''intitulerait provisoirement : "L''effectivité des garanties de crédit dans le financement des petites entreprises, dans un contexte régional harmonisé : une étude comparée et empirique." La problématique centrale serait la suivante : dans quelle mesure l''harmonisation régionale des règles relatives aux garanties de crédit a-t-elle effectivement amélioré l''accès au financement des petites entreprises, compte tenu des pratiques judiciaires qui demeurent très différentes d''un pays à l''autre de la région étudiée ?
-
-Ma démarche méthodologique combinerait une analyse dogmatique rigoureuse des textes harmonisés applicables, une comparaison avec la situation antérieure à l''harmonisation dans deux pays de la région, et une étude empirique s''appuyant sur un corpus de décisions de justice portant sur la mise en œuvre de ces garanties, complétée par des entretiens avec des praticiens du crédit et du droit des sûretés. J''ai conscience que l''accès aux données jurisprudentielles pourra être inégal selon les pays, ce qui m''amènera à documenter explicitement les limites de mon corpus plutôt qu''à généraliser au-delà de ce que les données permettront réellement d''établir. »
-
-## 35:00 – 40:00 · Pause et quiz interactif
-
-Avant d''entrer dans les questions du jury, un court quiz. Première question : quels sont les deux grands débats théoriques structurant ce champ fictif présenté ? Réponse : le débat positivisme contre analyse économique et réalisme juridique, et le débat sur l''harmonisation régionale face à la diversité des traditions nationales et au droit international des investissements. Deuxième question : quelle précaution méthodologique le candidat a-t-il prise concernant les données jurisprudentielles ? Réponse : il a reconnu par avance que l''accès pourrait être inégal selon les pays, et s''est engagé à documenter les limites de son corpus plutôt qu''à généraliser indûment.
-
-## 40:00 – 1:05:00 · Questions du jury et structure de bonne réponse
-
-Question du jury 1 : « Pourquoi avoir choisi d''articuler deux débats théoriques plutôt que de vous concentrer sur un seul ? » Structure de bonne réponse : rappeler que le premier débat fournit les outils d''analyse (cohérence, efficacité, effectivité) nécessaires pour instruire sérieusement le second, qui est l''objet empirique précis de la thèse ; montrer que cette articulation évite de se limiter à une lecture uniquement textuelle ou uniquement économique du phénomène étudié.
-
-Question du jury 2 : « Comment allez-vous éviter de généraliser abusivement à partir d''un corpus de jurisprudence potentiellement incomplet ? » Structure de bonne réponse : expliquer la méthode de délimitation du corpus, la transparence sur ses limites, et le recours complémentaire à des entretiens pour ne pas dépendre uniquement des décisions publiées.
-
-Question du jury 3 : « En quoi votre sujet se distingue-t-il d''une étude purement descriptive du droit harmonisé des sûretés ? » Structure de bonne réponse : insister sur la dimension comparative et empirique du projet, qui ne se limite pas à décrire le texte mais interroge ses effets réels sur l''accès au crédit, en s''appuyant sur une problématique originale.
-
-Question du jury 4 : « Le droit international des investissements est-il réellement pertinent pour votre sujet, qui porte sur de petites entreprises locales ? » Structure de bonne réponse : reconnaître que le lien est indirect si le financement étudié est purement local, mais expliquer qu''il pourrait devenir pertinent si certains prêteurs ou partenaires financiers sont des acteurs étrangers, et préciser que cette dimension sera explorée ou explicitement écartée selon les données disponibles, sans l''affirmer par principe.
-
-Question du jury 5 : « Quelle est la principale limite de votre projet à ce stade ? » Structure de bonne réponse : assumer une limite réelle et précise, par exemple l''incertitude sur l''ampleur du corpus jurisprudentiel réellement accessible, plutôt que de minimiser artificiellement les difficultés du projet.
-
-Question du jury 6 : « Si vous deviez résumer l''apport attendu de votre thèse en une phrase, que diriez-vous ? » Structure de bonne réponse : une phrase courte, qui relie la problématique à sa contribution attendue, par exemple : documenter empiriquement, dans un cas précis, l''écart éventuel entre l''harmonisation affichée et son application réelle, pour nourrir la réflexion sur l''accompagnement institutionnel nécessaire à l''effectivité du droit harmonisé.
-
-Question du jury 7 : « Comment comptez-vous garantir l''objectivité de vos entretiens avec les praticiens ? » Structure de bonne réponse : expliquer le choix d''un échantillon diversifié de praticiens, la formulation de questions ouvertes plutôt que suggestives, et la confrontation systématique des témoignages recueillis avec les données dogmatiques et jurisprudentielles disponibles, plutôt que de s''appuyer sur un seul témoignage isolé.
-
-Question du jury 8 : « Que répondriez-vous à quelqu''un qui dirait que l''harmonisation ne peut, par construction, jamais être pleinement effective tant que les capacités judiciaires nationales ne sont pas elles-mêmes renforcées ? » Structure de bonne réponse : reconnaître la pertinence de cet argument tout en le nuançant : l''effectivité n''est pas nécessairement binaire, elle peut être partielle et variable selon les domaines, ce qui justifie précisément une étude empirique plutôt qu''un jugement global tranché a priori.
-
-## 1:05:00 – 1:20:00 · Débriefing de la simulation
-
-Reprenons maintenant, à froid, ce qui a bien fonctionné dans ces réponses simulées. D''abord, chaque réponse commence par reformuler brièvement l''enjeu de la question, ce qui montre au jury que le candidat l''a bien comprise. Ensuite, chaque réponse assume une position claire, sans fuite, mais toujours nuancée et justifiée méthodologiquement. Enfin, aucune réponse n''invente de données chiffrées ou de décisions précises : le candidat reste toujours au niveau des mécanismes et des engagements méthodologiques qu''il prend pour son travail futur, ce qui est exactement ce qu''un jury doctoral attend à ce stade du projet.
-
-## 1:20:00 – 1:30:00 · Grille d''auto-évaluation de la soutenance simulée
-
-Pour conclure ce cours, voici une grille d''auto-évaluation que vous pouvez utiliser après chacun de vos propres entraînements à la soutenance.
-
-- Clarté de la présentation du champ : ai-je nommé explicitement les grands débats théoriques qui structurent ma spécialité, sans les confondre ni les réduire à une seule idée ?
-- Qualité de la problématique de thèse : ma problématique relie-t-elle clairement mon sujet précis aux débats théoriques et aux méthodes de mon champ ?
-- Rigueur méthodologique annoncée : ai-je précisé quelles méthodes (dogmatique, comparative, empirique) je mobiliserai, et dans quel ordre logique ?
-- Honnêteté sur les limites : ai-je reconnu au moins une limite réelle de mon projet, sans la minimiser artificiellement ni la dramatiser excessivement ?
-- Gestion du temps de parole : ma présentation tient-elle dans le temps imparti, avec un débit clair et une structure annoncée explicitement ?
-- Qualité des réponses aux questions : mes réponses reformulent-elles la question, assument-elles une position nuancée, et évitent-elles toute donnée inventée ou non vérifiée ?
-- Cohérence d''ensemble : mes réponses aux questions de jury restent-elles cohérentes avec la présentation initiale de mon champ et de mon projet, sans contradiction interne ?
-
-Notez-vous honnêtement sur chacun de ces sept points, identifiez les deux ou trois points les plus faibles, et consacrez vos prochaines séances d''entraînement en priorité à ces points. C''est avec cette méthode d''amélioration continue, bien plus que par la mémorisation de réponses toutes faites, que vous arriverez le jour de votre examen de qualification doctorale avec la solidité nécessaire pour convaincre votre jury. Je vous souhaite une excellente réussite dans cette étape décisive de votre parcours doctoral.', 'video', 90, false, 100
-from public.courses c where c.slug = 'doc-droit'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');
