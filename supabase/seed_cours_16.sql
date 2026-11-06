@@ -1,5 +1,712 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 16/17). À exécuter après seed.sql.
+-- Cours (partie 16/18). À exécuter après seed.sql.
+
+-- Cours : Finance Master 1 : évaluation, ingénierie financière et gestion de portefeuille
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-fin-m1', (select id from public.levels where name = 'Master 1'), null, 'Finance', 'Finance Master 1 : évaluation, ingénierie financière et gestion de portefeuille', 'Cours de préparation aux examens de Master 1 Finance : évaluation d''entreprise approfondie (DCF, multiples, approche patrimoniale), ingénierie financière et fusions-acquisitions, gestion de portefeuille et marchés financiers avancés. Pour étudiants de Master 1 ayant déjà validé les bases de la Licence Finance (analyse financière, VAN/TRI, CMPC). Cas d''entreprise sénégalais fictifs chiffrés et vérifiés.', true, 751
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 1 en Finance', '## Objectifs de la leçon
+
+- Comprendre ce que le Master 1 Finance exige de plus que la Licence : analyse critique, autonomie, rigueur méthodologique.
+- Identifier les trois matières avancées de l''année et leur articulation avec le mémoire ou le stage.
+- Construire un plan de révision réaliste sur six semaines avant les examens.
+
+## Le Master 1 Finance : ce qui change par rapport à la Licence
+
+En Licence, vous avez appris à calculer : VAN, TRI, coût moyen pondéré du capital, ratios d''analyse financière, bases des marchés financiers. Le Master 1 part du principe que ces outils sont maîtrisés et vous demande autre chose : les mobiliser dans des situations ambiguës, où plusieurs méthodes donnent des réponses différentes et où il faut argumenter un choix.
+
+Trois évolutions marquent le passage en M1.
+
+- Le raisonnement en incertitude plutôt qu''en certitude : on ne vous donne plus un taux d''actualisation unique à appliquer, on vous demande de le justifier, de tester sa sensibilité, de discuter une fourchette de valeurs.
+- La convergence des méthodes : en évaluation d''entreprise par exemple, on attend que vous croisiez approche par les flux (DCF), approche par les comparables (multiples) et approche patrimoniale, puis que vous expliquiez les écarts plutôt que de choisir un seul chiffre.
+- L''ouverture vers la décision d''entreprise réelle : fusion-acquisition, montage financier, gestion de portefeuille ne sont plus des exercices isolés mais des cas où une banque, un fonds ou une direction financière doit trancher avec des informations incomplètes.
+
+Le Master 1 Finance prépare aussi, selon les établissements, à un mémoire de recherche appliquée ou professionnel et, souvent, à un stage en banque, en cabinet d''audit, en direction financière d''entreprise ou en société de gestion. Même quand le mémoire est soutenu en fin de M2, le M1 est le moment où l''on choisit son thème et où l''on commence la revue de littérature : un diagnostic financier approfondi, une opération de croissance externe observée en stage, ou une problématique de gestion de portefeuille sont des pistes classiques.
+
+## Les trois matières avancées de l''année
+
+Ce cours d''examen couvre les trois matières clés du M1 Finance, sans répéter ce qui a déjà été vu en Licence.
+
+- Évaluation d''entreprise approfondie : la méthode des flux de trésorerie actualisés (DCF), les multiples de comparables boursiers et transactionnels, et l''approche patrimoniale avec goodwill. Vous saurez produire une fourchette de valeur argumentée pour une entreprise, pas un chiffre isolé.
+- Ingénierie financière et fusions-acquisitions : comment structurer une opération de rachat, calculer une parité d''échange, mesurer l''effet dilutif ou relutif sur le bénéfice par action, et comprendre la mécanique d''un rachat par effet de levier (LBO).
+- Gestion de portefeuille et marchés financiers avancés : diversification, construction d''un portefeuille de deux actifs, frontière efficiente simplifiée, et modèle d''évaluation des actifs financiers (CAPM) appliqué au calcul du rendement exigé d''une action.
+
+Ces trois blocs ne sont pas cloisonnés : un même cas d''entreprise peut mobiliser l''évaluation pour fixer un prix de rachat, l''ingénierie financière pour structurer l''opération, et la gestion de portefeuille pour analyser l''impact sur un investisseur minoritaire. Les examens de M1 testent justement cette capacité à faire dialoguer les matières.
+
+## Mémoire, stage et études de cas : la méthode de travail avancée
+
+La méthode de travail change de nature en Master. Trois outils reviennent sans cesse, aussi bien dans les examens que dans le mémoire.
+
+- Le cas d''entreprise complexe : un énoncé long, avec des informations parfois redondantes ou à trier, qui imite un dossier réel (états financiers, rapport annuel, communiqué de presse d''une opération). Le travail consiste à extraire les données utiles avant de calculer.
+- La revue de littérature courte : avant de résoudre un cas, un bon candidat rappelle en deux ou trois phrases le cadre théorique mobilisé (par exemple, pourquoi le CAPM suppose des marchés efficients et ce que cela implique pour l''interprétation du bêta) ; cela montre la maîtrise conceptuelle, pas seulement le calcul.
+- Le business case argumenté : conclure un exercice non par un chiffre seul, mais par une recommandation structurée (acheter, vendre, refuser l''offre, renégocier la parité), avec les limites de l''analyse clairement énoncées.
+
+Pour le mémoire professionnel, cette méthode se prolonge sur plusieurs mois : poser une problématique précise, construire une méthodologie (étude de cas unique, comparaison d''entreprises, entretiens), collecter des données vérifiables, puis rédiger en citant ses sources. Un mémoire sur « l''évaluation des PME non cotées en zone UEMOA » par exemple devra justifier pourquoi le DCF est privilégié sur le marché par rapport aux multiples de marchés boursiers peu profonds.
+
+## Plan de révision sur six semaines
+
+Un plan de révision pour l''examen de M1 Finance doit équilibrer calcul, compréhension conceptuelle et entraînement sur cas complexes.
+
+- Semaines 1 et 2 : reprise active de l''évaluation d''entreprise. Refaites un DCF complet à la main, un multiple de comparables, une approche patrimoniale avec goodwill, sur un même cas, et comparez les résultats.
+- Semaines 3 et 4 : ingénierie financière et fusions-acquisitions. Entraînez-vous sur des parités d''échange, des calculs de dilution ou relution du bénéfice par action, et un montage LBO simple avec plan de remboursement de dette.
+- Semaine 5 : gestion de portefeuille. Reprenez les formules de variance et de covariance d''un portefeuille à deux actifs, le calcul du bêta et du rendement attendu par le CAPM, et le ratio de Sharpe.
+- Semaine 6 : entraînement croisé sur des sujets type combinant les trois matières, dans les conditions de l''examen (temps limité, calculatrice simple, pas de formulaire fourni dans la plupart des cas).
+
+Chaque semaine, terminez par un exercice chronométré et un corrigé détaillé, en notant systématiquement les erreurs récurrentes : oubli de l''impôt sur une économie fiscale, confusion entre valeur d''entreprise et valeur des capitaux propres, erreur de signe dans un flux de trésorerie.
+
+## Points clés
+
+- Le Master 1 exige de croiser plusieurs méthodes et d''argumenter les écarts, pas de produire un chiffre unique.
+- Trois matières structurent l''année : évaluation d''entreprise, ingénierie financière et fusions-acquisitions, gestion de portefeuille et marchés financiers avancés.
+- Le mémoire démarre souvent en M1 par le choix du thème et une première revue de littérature.
+- La révision doit combiner calcul rigoureux, rappel conceptuel et entraînement chronométré sur cas complexes.
+
+## Exercices
+
+1. Expliquez en trois phrases pourquoi un évaluateur sérieux calcule la valeur d''une entreprise par plusieurs méthodes plutôt qu''une seule.
+2. Citez les trois matières avancées du programme de M1 Finance présentées dans cette leçon.
+3. Pourquoi la distinction entre valeur d''entreprise et valeur des capitaux propres est-elle centrale en évaluation ?
+4. Proposez un découpage de six semaines de révision adapté à votre propre emploi du temps, en gardant la logique de cette leçon.
+5. Donnez un exemple de thème de mémoire professionnel en finance qui mobiliserait à la fois l''évaluation d''entreprise et la gestion de portefeuille.
+
+## Corrigé
+
+1. Chaque méthode repose sur des hypothèses différentes (flux futurs actualisés pour le DCF, comparaison de marché pour les multiples, patrimoine comptable corrigé pour l''approche patrimoniale) ; elles peuvent diverger fortement, et comparer les résultats permet de détecter une hypothèse trop optimiste ou un comparable mal choisi, puis de proposer une fourchette de valeur argumentée plutôt qu''un chiffre fragile.
+2. Évaluation d''entreprise approfondie ; ingénierie financière et fusions-acquisitions ; gestion de portefeuille et marchés financiers avancés.
+3. La valeur d''entreprise rémunère l''ensemble des financeurs (actionnaires et créanciers), alors que la valeur des capitaux propres ne rémunère que les actionnaires ; confondre les deux conduit à surestimer ou sous-estimer le prix réellement payé pour acquérir le contrôle d''une société, car il faut toujours retrancher la dette financière nette de la valeur d''entreprise pour obtenir la valeur des capitaux propres.
+4. Réponse libre ; un bon plan conserve la progression proposée (évaluation, puis ingénierie financière, puis portefeuille, puis entraînement croisé) et prévoit un exercice chronométré chaque semaine.
+5. Exemple possible : « L''évaluation des cibles de croissance externe par les fonds d''investissement actifs en zone UEMOA et son impact sur la composition des portefeuilles institutionnels », qui combine évaluation (comment chiffrer la cible), ingénierie financière (comment structurer le rachat) et gestion de portefeuille (comment le fonds pilote son risque global).', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en Finance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Évaluation d''entreprise approfondie : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Construire une évaluation par les flux de trésorerie actualisés (DCF) et en interpréter les résultats.
+- Appliquer la méthode des multiples et comprendre ses limites.
+- Mettre en œuvre l''approche patrimoniale avec goodwill.
+- Croiser les trois méthodes pour une fourchette de valeur argumentée.
+
+Tous les taux (actualisation, croissance, multiples, rémunération des capitaux) sont fictifs pour l''exemple.
+
+## Fiche 1 : la méthode DCF (discounted cash flows)
+
+Le DCF évalue une entreprise par la valeur actuelle des flux de trésorerie disponibles qu''elle générera, augmentée d''une valeur terminale qui capture ce qui se passe après l''horizon explicite de prévision.
+
+- FCF = résultat d''exploitation après impôt + dotations aux amortissements − variation du BFR − investissements.
+- On actualise chaque flux au coût moyen pondéré du capital (CMPC), taux reflétant le risque de l''activité.
+- Valeur terminale par le modèle de Gordon-Shapiro : VT = FCF de la dernière année × (1 + g) / (CMPC − g), avec g strictement inférieur au CMPC.
+- La valeur d''entreprise (VE) est la somme des flux actualisés et de la VT actualisée ; la valeur des capitaux propres s''obtient en retranchant la dette financière nette.
+
+Cas : Teranga Agro-Transformation SA, entreprise fictive de Thiès transformant des céréales locales, est évaluée pour une prise de participation minoritaire. FCF prévisionnels sur 5 ans (millions de FCFA) : 420, 462, 498, 530, 556. CMPC retenu : 12 %. Croissance à long terme : 2,5 %.
+
+- Flux actualisés : année 1 : 420 / 1,12 = 375,0 ; année 2 : 462 / 1,12² = 368,3 ; année 3 : 498 / 1,12³ = 354,5 ; année 4 : 530 / 1,12⁴ = 336,8 ; année 5 : 556 / 1,12⁵ = 315,5. Somme des flux actualisés : 1 750,1.
+- Valeur terminale en fin d''année 5 : 556 × 1,025 / (0,12 − 0,025) = 5 998,9. Actualisée sur 5 ans : 5 998,9 / 1,12⁵ = 3 404,0.
+- Valeur d''entreprise : 1 750,1 + 3 404,0 = 5 154,0 millions de FCFA.
+- Dette financière nette au bilan : 650 millions. Valeur des capitaux propres : 5 154,0 − 650 = 4 504,0 millions de FCFA.
+- Avec 2 000 000 d''actions en circulation, la valeur par action est de 4 504,0 × 1 000 000 / 2 000 000 = 2 252 FCFA.
+
+Le DCF est sensible au CMPC et à la croissance à l''infini : un bon candidat teste toujours une fourchette de ces deux paramètres plutôt qu''un seul résultat.
+
+## Fiche 2 : la méthode des multiples de comparables
+
+Cette méthode évalue l''entreprise par comparaison avec des sociétés cotées ou des transactions récentes du même secteur, en appliquant un multiple de marché à un agrégat de l''entreprise à évaluer.
+
+- Multiple d''EV/EBITDA : valeur d''entreprise rapportée à l''excédent brut d''exploitation, peu sensible aux politiques d''amortissement et à la structure financière.
+- Multiple de PER : capitalisation rapportée au résultat net ; donne directement une valeur des capitaux propres.
+- Choix des comparables : entreprises de secteur, taille et rentabilité proches ; en Afrique de l''Ouest, peu de sociétés cotées sont comparables, ce qui justifie de croiser cette méthode avec le DCF.
+
+Cas (suite) : l''EBITDA de Teranga Agro-Transformation est de 650 millions de FCFA et le résultat net de 310 millions. Un échantillon de comparables agroalimentaires affiche un multiple moyen EV/EBITDA de 7,4 et un PER moyen de 15,2 (multiples fictifs pour l''exemple).
+
+- Valeur d''entreprise par le multiple d''EBITDA : 650 × 7,4 = 4 810,0 millions. Valeur des capitaux propres : 4 810,0 − 650 = 4 160,0 millions.
+- Valeur des capitaux propres par le PER : 310 × 15,2 = 4 712,0 millions.
+
+Les deux approches par multiples donnent 4 160 et 4 712 millions, à comparer aux 4 504 millions du DCF : l''écart reste raisonnable (moins de 10 % autour du DCF), ce qui renforce la crédibilité de la fourchette.
+
+## Fiche 3 : l''approche patrimoniale et le goodwill
+
+L''approche patrimoniale part de l''actif net comptable corrigé (ANC corrigé), c''est-à-dire les capitaux propres comptables retraités des plus ou moins-values latentes sur les actifs et des éléments hors bilan significatifs.
+
+Cette méthode valorise le patrimoine existant mais ignore la capacité de l''entreprise à créer de la valeur future ; on lui ajoute donc un goodwill (survaleur), estimé par la méthode des rentes abrégées.
+
+- Rente annuelle du goodwill = résultat courant prévisionnel − (taux de rémunération normatif des capitaux × ANC corrigé). Ce taux représente ce qu''un investisseur exigerait pour un placement comparable sans l''avantage concurrentiel de l''entreprise.
+- On actualise cette rente sur un horizon limité (3 à 8 ans), avec la formule de l''annuité : goodwill = rente × [1 − (1 + i)⁻ⁿ] / i.
+
+Cas (suite) : l''ANC comptable de Teranga Agro-Transformation est de 2 800 millions de FCFA ; une plus-value latente nette de 380 millions est identifiée sur un terrain sous-évalué au bilan. ANC corrigé : 2 800 + 380 = 3 180 millions. Résultat courant prévisionnel : 400 millions, taux normatif retenu de 9 %, horizon d''actualisation de 5 ans à 12 %.
+
+- Rente du goodwill : 400 − (0,09 × 3 180) = 400 − 286,2 = 113,8 millions par an.
+- Facteur d''annuité sur 5 ans à 12 % : [1 − 1,12⁻⁵] / 0,12 = 3,6048.
+- Goodwill : 113,8 × 3,6048 = 410,2 millions.
+- Valeur globale de l''entreprise (patrimoniale + goodwill) : 3 180 + 410,2 = 3 590,2 millions de FCFA.
+
+## Fiche 4 : synthèse et fourchette de valeur
+
+Pour Teranga Agro-Transformation : DCF 4 504,0 ; multiple d''EBITDA 4 160,0 ; PER 4 712,0 ; patrimoniale avec goodwill 3 590,2 millions de FCFA. L''approche patrimoniale donne une valeur plus prudente car elle valorise peu la croissance future ; elle sert de plancher de négociation. La fourchette raisonnable, en excluant le cas le plus prudent, se situe entre 4 160 et 4 712 millions de FCFA, avec le DCF comme estimation centrale.
+
+- Toujours indiquer les hypothèses retenues : une valeur sans hypothèses explicites n''a pas de valeur probante à l''examen.
+- Expliquer les écarts entre méthodes plutôt que les ignorer : c''est ce qui distingue une copie de M1 d''une copie de Licence.
+
+## Exercices pratiques
+
+1. Flux disponibles de 300, 330 et 360 millions de FCFA sur 3 ans, CMPC de 10 %, croissance à l''infini de 3 %. Calculez la valeur d''entreprise.
+2. Pourquoi l''EV/EBITDA est-il préféré au PER pour comparer des entreprises à structures financières différentes ?
+3. ANC comptable de 1 500 millions, moins-value latente nette de 60 millions, résultat courant prévisionnel de 180 millions, taux normatif de 8 %, horizon de 4 ans à 10 %. Calculez l''ANC corrigé, la rente et le goodwill.
+4. Pourquoi la valeur terminale pèse-t-elle souvent plus de 60 % d''un DCF, et quel risque cela pose-t-il ?
+5. Cas pratique : Baobab Distribution SA, entreprise fictive dakaroise, prévoit des flux de 500, 540, 580, 610, 630 millions sur 5 ans, CMPC 13 %, croissance 2 %, dette nette 900 millions, 1 500 000 actions. Calculez la valeur d''entreprise, des capitaux propres, par action. Son EBITDA est de 720 millions, multiple sectoriel 6,8 : comparez au DCF.
+
+## Corrigé
+
+1. Flux actualisés : 272,7 + 272,7 + 270,5 = 815,9. Valeur terminale : 360×1,03/(0,07) = 5 297,1, actualisée : 3 979,4. Valeur d''entreprise : 4 795,3 millions.
+2. L''EV/EBITDA compare la valeur d''entreprise, indépendante du financement, à un agrégat avant frais financiers et impôt ; il reste comparable entre entreprises diversement endettées, contrairement au PER qui dépend de la charge d''intérêts.
+3. ANC corrigé : 1 440 millions. Rente : 180 − 115,2 = 64,8 millions. Goodwill : 64,8 × 3,1699 = 205,4 millions ; valeur globale : 1 645,4 millions.
+4. Les flux explicites ne portent que sur quelques années alors que l''entreprise dure indéfiniment ; une petite variation du couple CMPC/croissance change radicalement le résultat, d''où l''importance d''une analyse de sensibilité.
+5. Flux actualisés à 13 % : 1 983,5. Valeur terminale actualisée : 3 171,2. Valeur d''entreprise : 5 154,7 millions. Capitaux propres : 4 254,7 millions. Par action : environ 2 836,5 FCFA. Par comparables : 4 896,0 millions, proche du DCF (écart inférieur à 5 %).', 'texte', 50, false, 20
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Évaluation d''entreprise approfondie : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Ingénierie financière et fusions-acquisitions : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Calculer une parité d''échange et mesurer l''effet dilutif ou relutif d''une fusion sur le bénéfice par action.
+- Comprendre la logique d''un rachat par effet de levier (LBO) et calculer le taux de rendement interne du fonds.
+- Identifier les grandes étapes et les risques d''une opération de fusion-acquisition.
+
+Tous les cours, primes et taux de cette leçon sont fictifs pour l''exemple.
+
+## Fiche 1 : la parité d''échange et l''effet sur le bénéfice par action
+
+Dans une fusion par échange d''actions, l''acquéreur rémunère les actionnaires de la cible en nouvelles actions plutôt qu''en numéraire. La parité d''échange fixe combien d''actions de l''acquéreur sont remises pour une action de la cible.
+
+- Prix offert par action de la cible = cours de la cible × (1 + prime de contrôle). La prime rémunère la perte de l''autonomie et l''anticipation de synergies.
+- Parité d''échange = prix offert par action de la cible / cours de l''acquéreur.
+- Nouvelles actions émises = nombre d''actions de la cible × parité. Elles s''ajoutent aux actions existantes de l''acquéreur pour former le nouveau capital.
+- Bénéfice par action (BPA) post-fusion = résultat net consolidé (résultats cumulés + synergies nettes d''impôt) / nombre d''actions total post-fusion. On parle de relution si ce BPA dépasse le BPA de l''acquéreur avant l''opération, de dilution dans le cas contraire.
+
+Cas : Sahel Industries SA (acquéreur) souhaite racheter Delta Emballages SA (cible), deux entreprises fictives. Sahel Industries vaut 9 000 millions de FCFA de capitaux propres pour 3 000 000 d''actions, soit un cours de 3 000 FCFA. Delta Emballages vaut 2 400 millions pour 1 000 000 d''actions, soit un cours de 2 400 FCFA. Une prime de contrôle de 20 % est négociée.
+
+- Prix offert par action de Delta Emballages : 2 400 × 1,20 = 2 880 FCFA.
+- Parité d''échange : 2 880 / 3 000 = 0,96 action Sahel Industries pour 1 action Delta Emballages.
+- Nouvelles actions émises : 1 000 000 × 0,96 = 960 000. Capital post-fusion : 3 000 000 + 960 000 = 3 960 000 actions.
+- Résultat net consolidé : résultat de Sahel (620) + résultat de Delta (180) + synergies nettes d''impôt (45, fictives) = 845 millions de FCFA.
+- BPA de Sahel avant l''opération : 620 × 1 000 000 / 3 000 000 = 206,7 FCFA. BPA post-fusion : 845 × 1 000 000 / 3 960 000 = 213,4 FCFA.
+- Variation : (213,4 / 206,7 − 1) × 100 = +3,25 %. L''opération est relutive pour les actionnaires de Sahel Industries.
+
+Une opération peut être relutive à court terme sans être créatrice de valeur réelle : si la prime payée est trop élevée ou les synergies surestimées, la relution comptable masque une destruction de valeur. L''examen attend que vous signaliez cette limite.
+
+## Fiche 2 : le rachat par effet de levier (LBO)
+
+Un LBO (leveraged buy-out) consiste à racheter une entreprise principalement par de la dette logée dans une société holding créée pour l''occasion, remboursée ensuite par les flux de trésorerie de la cible. L''effet de levier amplifie le rendement des fonds propres investis par le fonds acquéreur, à condition que la rentabilité économique de la cible dépasse le coût de la dette.
+
+- Montage : le fonds apporte des fonds propres, la banque apporte une dette senior ; la holding achète les actions de la cible, puis la dette est remboursée par les dividendes remontés de la cible, alimentés par son flux de trésorerie disponible.
+- Le risque principal est le risque de remboursement : si l''activité se dégrade, le service de la dette (intérêts + capital) peut dépasser le flux disponible.
+- Le rendement du fonds se mesure par le taux de rendement interne (TRI) sur la durée de détention et par le multiple de l''investissement (valeur de sortie des fonds propres / apport initial).
+
+Cas : un fonds rachète Logis-Services, PME fictive, pour une valeur d''entreprise de 1 000 millions de FCFA, financée par 650 millions de dette senior (taux fictif de 9 %) et 350 millions de fonds propres du fonds. L''EBITDA initial est de 220 millions, avec une croissance annuelle de 5 %, et le flux disponible avant service de la dette est approché à 80 % de l''EBITDA.
+
+- Chaque année, le flux disponible rembourse en priorité les intérêts puis le capital restant dû. Sur 5 ans, la dette de 650 millions est intégralement remboursée (calcul détaillé en vidéo) grâce à la croissance de l''EBITDA.
+- Sortie en année 5 : EBITDA de 267,4 millions × multiple de sortie de 6,0 = valeur d''entreprise de 1 604,5 millions. Dette résiduelle nulle, donc valeur des fonds propres à la sortie = 1 604,5 millions.
+- Multiple de l''investissement : 1 604,5 / 350 = 4,58 fois l''apport initial.
+- TRI sur 5 ans : (4,58)^(1/5) − 1 ≈ 35,6 % par an.
+
+Ce rendement élevé illustre l''effet de levier : la valeur d''entreprise n''a progressé que de 1 000 à 1 604,5 millions (+60 %), mais grâce au remboursement intégral de la dette, les fonds propres du fonds sont passés de 350 à 1 604,5 millions. Ce résultat suppose une exécution sans accroc du plan de remboursement : toute dégradation de l''EBITDA réduit fortement le rendement.
+
+## Fiche 3 : les grandes étapes d''une opération de fusion-acquisition
+
+- Phase préparatoire : identification de la cible, lettre d''intention, audit d''acquisition (due diligence) financier, juridique, fiscal et social.
+- Négociation : valorisation (voir la leçon précédente), structuration de l''offre (numéraire, échange d''actions, ou mixte), garanties d''actif et de passif protégeant l''acquéreur contre des passifs cachés.
+- Financement : choix entre autofinancement, dette, augmentation de capital ou combinaison, en tenant compte de l''impact sur la structure financière et la notation de l''acquéreur.
+- Intégration post-acquisition : réalisation effective des synergies annoncées, qui échoue fréquemment par sous-estimation des coûts d''intégration (systèmes d''information, culture d''entreprise, doublons).
+
+## Exercices pratiques
+
+1. Un acquéreur cote 4 000 FCFA, une cible cote 1 800 FCFA. Une prime de 25 % est offerte. Calculez le prix offert par action et la parité d''échange.
+2. Expliquez pourquoi une opération relutive sur le BPA n''est pas automatiquement créatrice de valeur.
+3. Dans un LBO, pourquoi la dette d''acquisition est-elle logée dans une holding plutôt que directement dans la cible ?
+4. Un fonds investit 400 millions de fonds propres dans un LBO et revend sa participation 900 millions 4 ans plus tard. Calculez le multiple d''investissement et le TRI annuel.
+5. Cas pratique : Fatick Energie SA (acquéreur, cours 5 000 FCFA, 2 000 000 actions, résultat net 900 millions) rachète Rufisque Solaire SA (cible, cours 3 200 FCFA, 600 000 actions, résultat net 210 millions) avec une prime de 15 % et des synergies nettes d''impôt de 30 millions. Calculez la parité d''échange, le nombre d''actions post-fusion, le BPA avant et après l''opération, et concluez sur la dilution ou la relution.
+
+## Corrigé
+
+1. Prix offert : 1 800 × 1,25 = 2 250 FCFA. Parité : 2 250 / 4 000 = 0,5625 action de l''acquéreur pour 1 action de la cible.
+2. Le BPA post-fusion dépend du résultat comptable consolidé et du nombre d''actions, mais pas directement du prix payé ni du risque réellement transféré ; une prime excessive ou des synergies surestimées peuvent produire une relution comptable immédiate tout en détruisant de la valeur économique à moyen terme, notamment si le goodwill comptabilisé doit être déprécié plus tard.
+3. Loger la dette dans la holding protège la cible elle-même de la faillite en cas de défaut de la holding, isole le risque financier de l''opération dans une structure dédiée, et permet de rembourser la dette grâce aux dividendes remontés de la cible sans fusionner juridiquement les deux entités.
+4. Multiple : 900 / 400 = 2,25. TRI : 2,25^(1/4) − 1 ≈ 22,5 % par an.
+5. Prix offert : 3 200 × 1,15 = 3 680 FCFA. Parité : 3 680 / 5 000 = 0,736. Nouvelles actions : 600 000 × 0,736 = 441 600. Actions post-fusion : 2 000 000 + 441 600 = 2 441 600. Résultat consolidé : 900 + 210 + 30 = 1 140 millions. BPA avant : 900 × 1 000 000 / 2 000 000 = 450 FCFA. BPA après : 1 140 × 1 000 000 / 2 441 600 ≈ 466,8 FCFA. L''opération est relutive (+3,7 %).', 'texte', 50, false, 30
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Ingénierie financière et fusions-acquisitions : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Gestion de portefeuille et marchés financiers avancés : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Calculer le rendement attendu et le risque (variance, écart-type) d''un portefeuille à deux actifs.
+- Déterminer le portefeuille de variance minimale et comprendre la logique de la frontière efficiente.
+- Appliquer le modèle d''évaluation des actifs financiers (CAPM) pour calculer un rendement exigé et un bêta.
+- Calculer et interpréter le ratio de Sharpe.
+
+Tous les rendements, volatilités et corrélations de cette leçon sont fictifs pour l''exemple.
+
+## Fiche 1 : rendement et risque d''un portefeuille à deux actifs
+
+La diversification repose sur un principe simple : combiner des actifs qui ne varient pas parfaitement ensemble réduit le risque total sans réduire proportionnellement le rendement attendu.
+
+- Rendement attendu du portefeuille : E(rp) = wA × E(rA) + wB × E(rB), où wA et wB sont les poids investis dans chaque actif (wA + wB = 1).
+- Variance du portefeuille : σp² = wA² × σA² + wB² × σB² + 2 × wA × wB × Cov(A,B), avec Cov(A,B) = corrélation(A,B) × σA × σB.
+- Plus la corrélation entre les deux actifs est faible, plus le terme de covariance réduit la variance totale : une corrélation inférieure à 1 crée toujours un gain de diversification.
+
+Cas : un portefeuille combine l''action fictive Sahel Ciments (rendement attendu 14 %, écart-type 22 %) et l''action fictive Teranga Telecom (rendement attendu 9 %, écart-type 12 %), avec une corrélation de 0,30. La covariance est Cov = 0,30 × 0,22 × 0,12 = 0,00792.
+
+- Avec 60 % investis dans Sahel Ciments et 40 % dans Teranga Telecom : E(rp) = 0,6 × 14 % + 0,4 × 9 % = 12,0 %. Variance : 0,6² × 0,22² + 0,4² × 0,12² + 2 × 0,6 × 0,4 × 0,00792 = 0,02354, soit un écart-type de 15,3 %.
+- À titre de comparaison, investir 100 % dans Sahel Ciments seul donne un rendement de 14 % pour un écart-type de 22 % : le portefeuille mixte réduit fortement le risque pour une baisse de rendement plus modérée.
+
+## Fiche 2 : le portefeuille de variance minimale et la frontière efficiente
+
+Pour deux actifs, il existe une pondération qui minimise la variance du portefeuille, obtenue en annulant la dérivée de σp² par rapport à wA :
+
+- wA (variance minimale) = (σB² − Cov(A,B)) / (σA² + σB² − 2 × Cov(A,B)).
+- En faisant varier wA de 0 % à 100 %, l''ensemble des couples (risque, rendement) obtenus dessine la frontière efficiente simplifiée à deux actifs : chaque point est le meilleur rendement possible pour un niveau de risque donné.
+
+Cas (suite) : avec les données de Sahel Ciments et Teranga Telecom, wA (minimale) = (0,12² − 0,00792) / (0,22² + 0,12² − 2 × 0,00792) = 0,138, donc wB = 0,862. L''écart-type minimal atteint est de 11,6 %, pour un rendement attendu de 9,69 % : ce portefeuille est moins risqué que Teranga Telecom seul (12,0 %) tout en offrant un rendement légèrement supérieur (9,69 % contre 9,0 %), ce qui illustre concrètement le bénéfice de la diversification.
+
+- Tout portefeuille situé sous le point de variance minimale sur la frontière n''est pas efficient : on peut obtenir le même risque ou moins pour un rendement supérieur ailleurs sur la courbe.
+- Un investisseur rationnel ne choisit jamais un point inefficient ; son choix final dépend ensuite de son aversion au risque, parmi les portefeuilles efficients.
+
+## Fiche 3 : le CAPM approfondi
+
+Le modèle d''évaluation des actifs financiers relie le rendement exigé d''un actif à son risque non diversifiable, mesuré par le bêta.
+
+- Bêta d''un actif = Cov(rActif, rMarché) / Var(rMarché). Il mesure la sensibilité du rendement de l''actif aux mouvements du marché ; un bêta de 1 signifie un risque de marché identique à la moyenne.
+- Rendement exigé par le CAPM : E(r) = rf + β × (E(rm) − rf), où rf est le taux sans risque et E(rm) le rendement attendu du marché. Le terme (E(rm) − rf) est la prime de risque du marché.
+- La droite de marché des titres (Security Market Line) représente cette relation linéaire entre bêta et rendement exigé ; un actif situé au-dessus de la droite (rendement attendu réel supérieur au rendement exigé par le CAPM) est jugé sous-évalué.
+
+Cas (suite) : avec un taux sans risque fictif de 5,5 %, un rendement attendu du marché de 12 % et un écart-type du marché de 16 %, le bêta de Sahel Ciments, calculé à partir d''une covariance avec le marché de 0,028, est de 0,028 / 0,16² = 1,094. Le rendement exigé par le CAPM est donc 5,5 % + 1,094 × (12 % − 5,5 %) = 12,61 %. Le rendement attendu réellement estimé pour Sahel Ciments étant de 14 %, l''action apparaît sous-évaluée par rapport à son risque systématique (alpha positif de 1,39 point). Pour Teranga Telecom, avec un bêta de 0,55, le rendement exigé est de 5,5 % + 0,55 × 6,5 % = 9,07 %, très proche du rendement attendu de 9 % : l''action est jugée correctement valorisée.
+
+## Fiche 4 : le ratio de Sharpe
+
+Le ratio de Sharpe mesure le rendement excédentaire obtenu par unité de risque total supporté : Sharpe = (E(r) − rf) / σ. Il permet de comparer des actifs ou des portefeuilles de volatilités différentes.
+
+- Sahel Ciments : (14 % − 5,5 %) / 22 % = 0,386.
+- Teranga Telecom : (9 % − 5,5 %) / 12 % = 0,292.
+- Sahel Ciments rémunère mieux le risque total malgré sa volatilité plus élevée ; le CAPM, qui ne regarde que le bêta, ignore le risque spécifique diversifiable, d''où l''intérêt de croiser les deux indicateurs.
+
+## Exercices pratiques
+
+1. Deux actifs ont des rendements attendus de 10 % et 6 %, des écart-types de 18 % et 9 %, et une corrélation de 0,2. Pour un portefeuille à 70 % dans le premier actif, calculez le rendement attendu et l''écart-type.
+2. Expliquez pourquoi une corrélation négative entre deux actifs est particulièrement recherchée en diversification.
+3. Un actif a un bêta de 1,3, le taux sans risque est de 5 % et le rendement attendu du marché de 11 %. Calculez le rendement exigé par le CAPM.
+4. Pourquoi un point situé sous le portefeuille de variance minimale sur la frontière efficiente n''est-il jamais un choix rationnel ?
+5. Un actif a un rendement attendu de 11 %, un écart-type de 20 % et un taux sans risque de 5 %. Calculez son ratio de Sharpe et comparez-le à celui de Sahel Ciments (0,386) de cette leçon.
+6. Cas pratique : les actions fictives Kaolack Transport (rendement 12 %, écart-type 19 %) et Ziguinchor Agro (rendement 7 %, écart-type 10 %) ont une corrélation de 0,15. Calculez la covariance, le rendement et l''écart-type d''un portefeuille à 50/50, puis le poids du portefeuille de variance minimale.
+
+## Corrigé
+
+1. E(rp) = 0,7 × 10 % + 0,3 × 6 % = 8,8 %. Covariance = 0,2 × 0,18 × 0,09 = 0,00324. Variance = 0,7² × 0,18² + 0,3² × 0,09² + 2 × 0,7 × 0,3 × 0,00324 = 0,01797, soit un écart-type de 13,4 %.
+2. Une corrélation négative signifie que lorsque le rendement d''un actif baisse, l''autre tend à monter ; la variance du portefeuille peut alors chuter très fortement, parfois en dessous de la variance de l''actif le moins risqué pris isolément, ce qui est le cas le plus favorable pour réduire le risque global.
+3. E(r) = 5 % + 1,3 × (11 % − 5 %) = 12,8 %.
+4. Parce que pour ce même niveau de risque, il existe toujours, plus haut sur la frontière efficiente, une combinaison des deux actifs offrant un rendement attendu supérieur ; choisir un point inefficient revient à accepter un rendement plus faible sans réduire le risque.
+5. Sharpe = (11 % − 5 %) / 20 % = 0,300, inférieur à celui de Sahel Ciments (0,386) : Sahel Ciments rémunère mieux chaque unité de risque total supporté.
+6. Covariance = 0,15 × 0,19 × 0,10 = 0,00285. À 50/50 : E(rp) = 9,5 %, variance = 0,5² × 0,19² + 0,5² × 0,10² + 2 × 0,5 × 0,5 × 0,00285 = 0,01295, écart-type ≈ 11,4 %. Poids de variance minimale pour Kaolack Transport : (0,10² − 0,00285) / (0,19² + 0,10² − 2 × 0,00285) ≈ 0,177.', 'texte', 50, false, 40
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion de portefeuille et marchés financiers avancés : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 1 Finance (entraînement corrigé)', '## Avertissement
+
+Ce sujet est un entraînement non officiel construit pour ce cours, avec un barème indicatif. Il ne remplace pas les annales de votre établissement mais mobilise les trois matières avancées du programme de Master 1 Finance.
+
+## Sujet type d''examen de Master 1 Finance (3 heures, barème indicatif sur 20)
+
+Cas d''entreprise : Casamance Agro-Industries SA (CAI), entreprise fictive de transformation de fruits implantée à Ziguinchor, envisage de racheter sa concurrente Niayes Fruits SA et d''ouvrir son capital à un fonds d''investissement régional.
+
+Données de CAI (acquéreur) : cours de l''action 2 500 FCFA, 4 000 000 d''actions, résultat net 980 millions de FCFA, CMPC retenu 11 %.
+Données de Niayes Fruits (cible) : cours de l''action 1 600 FCFA, 1 200 000 actions, résultat net 240 millions de FCFA, EBITDA 420 millions, flux de trésorerie disponibles prévisionnels sur 5 ans de 160, 175, 188, 198, 206 millions de FCFA, croissance à l''infini de 2 %, dette financière nette 280 millions.
+
+## Partie 1 : évaluation de la cible (8 points)
+
+1. Calculez la valeur d''entreprise et la valeur des capitaux propres de Niayes Fruits par la méthode DCF.
+2. Un échantillon de comparables affiche un multiple moyen EV/EBITDA de 6,5 (fictif). Calculez la valeur des capitaux propres par cette méthode et comparez au résultat du DCF.
+3. Proposez une fourchette de valeur argumentée pour Niayes Fruits.
+
+## Partie 2 : montage de l''opération (7 points)
+
+4. CAI propose une prime de contrôle de 20 % sur le cours de Niayes Fruits et un paiement en actions. Calculez le prix offert par action et la parité d''échange.
+5. Calculez le nombre d''actions émises et le BPA de CAI avant et après l''opération, en supposant des synergies nettes d''impôt de 20 millions de FCFA et en retenant le résultat net comptable de la cible (sans retraitement de l''évaluation).
+6. L''opération est-elle relutive ou dilutive pour les actionnaires actuels de CAI ? Commentez la limite de cet indicateur.
+
+## Partie 3 : impact pour un investisseur minoritaire (5 points)
+
+7. Un fonds régional envisage d''investir dans l''action CAI après l''opération. Le bêta estimé de CAI est de 1,15, le taux sans risque fictif de 6 % et le rendement attendu du marché régional de 13 %. Calculez le rendement exigé par le CAPM.
+8. Si le rendement attendu réellement anticipé pour CAI est de 15 %, commentez la position de l''action par rapport à la droite de marché des titres.
+
+## Exercices pratiques (entraînement complémentaire)
+
+1. Pourquoi est-il recommandé de présenter une fourchette de valeur plutôt qu''un chiffre unique dans un rapport d''évaluation destiné à une négociation ?
+2. Dans quel cas une prime de contrôle élevée peut-elle rendre une opération relutive à court terme mais risquée à moyen terme ?
+3. Expliquez la différence entre le risque mesuré par le bêta (CAPM) et le risque total mesuré par l''écart-type (ratio de Sharpe).
+
+## Corrigé
+
+1. Flux actualisés à 11 % : 160/1,11=144,1 ; 175/1,11²=142,0 ; 188/1,11³=137,5 ; 198/1,11⁴=130,5 ; 206/1,11⁵=122,2 ; somme=676,3. Valeur terminale : 206×1,02/(0,11−0,02)=2 334,2, actualisée : 2 334,2/1,11⁵=1 385,6. Valeur d''entreprise : 676,3+1 385,6=2 061,9 millions. Capitaux propres : 2 061,9−280=1 781,9 millions.
+2. Valeur d''entreprise par multiple : 420×6,5=2 730,0 millions. Capitaux propres : 2 730,0−280=2 450,0 millions, nettement supérieure au DCF (1 781,9 millions) : l''écart (environ 37 %) doit être questionné (prévisions de flux prudentes, ou multiple de comparables trop généreux).
+3. Fourchette raisonnable entre 1 781,9 et 2 450,0 millions de FCFA, avec le DCF comme référence prudente si les prévisions sont jugées fiables, sachant que l''écart important appelle à vérifier les deux évaluations avant de conclure.
+4. Prix offert : 1 600×1,20=1 920 FCFA. Parité : 1 920/2 500=0,768 action CAI pour 1 action Niayes Fruits.
+5. Actions émises : 1 200 000×0,768=921 600. Actions post-fusion : 4 000 000+921 600=4 921 600. Résultat consolidé : 980+240+20=1 240 millions. BPA avant : 980×1 000 000/4 000 000=245 FCFA. BPA après : 1 240×1 000 000/4 921 600≈251,9 FCFA.
+6. Variation : (251,9/245−1)×100≈+2,8 % : l''opération est relutive. Limite : cette relution comptable ne garantit pas la création de valeur si la prime de 20 % excède les synergies réellement réalisables, ou si l''intégration de Niayes Fruits échoue partiellement.
+7. Rendement exigé CAPM : 6 %+1,15×(13 %−6 %)=14,05 %.
+8. Le rendement attendu de 15 % est supérieur au rendement exigé de 14,05 % : l''action CAI se situe au-dessus de la droite de marché des titres, elle apparaît sous-évaluée par rapport à son risque systématique et constitue a priori une opportunité d''investissement pour le fonds, sous réserve que l''estimation de 15 % soit fiable et que le risque spécifique de l''opération de fusion soit correctement intégré par ailleurs.
+Exercices complémentaires : 1. Une fourchette reflète l''incertitude réelle sur les hypothèses (taux, croissance, comparables) et laisse une marge de négociation entre acheteur et vendeur plutôt que d''ancrer la discussion sur un chiffre fragile. 2. Quand la prime dépasse la valeur actualisée des synergies réellement atteignables, ou quand elle est financée par une dette qui fragilise la structure financière de l''acquéreur après l''opération. 3. Le bêta ne capture que le risque non diversifiable, celui qui reste après diversification du portefeuille ; l''écart-type capture tout le risque, diversifiable et non diversifiable, ce qui explique qu''un actif très volatil mais peu corrélé au marché puisse avoir un bêta faible et pourtant un ratio de Sharpe informatif sur son risque propre.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 Finance (entraînement corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Évaluation d''entreprise approfondie (DCF, multiples, approche patrimoniale)', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 1 Finance.
+Objectifs : construire une évaluation d''entreprise complète en croisant DCF, multiples et approche patrimoniale, et savoir argumenter une fourchette de valeur devant un jury ou un client.
+Matériel : tableau ou diaporama, calculatrice financière ou tableur, le cas Teranga Agro-Transformation de la leçon écrite.
+Prérequis : actualisation, notion de CMPC, lecture d''un bilan et d''un compte de résultat.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour à toutes et à tous. Dans cette séance, nous allons évaluer ensemble une entreprise fictive, Teranga Agro-Transformation, en utilisant les trois grandes familles de méthodes que vous devez maîtriser en Master 1 : les flux de trésorerie actualisés, les multiples de comparables et l''approche patrimoniale. L''objectif n''est pas seulement de savoir calculer, mais de comprendre pourquoi un bon évaluateur ne se contente jamais d''un seul chiffre. En entreprise, en banque d''affaires ou en cabinet d''audit, une évaluation sert toujours une décision : fixer un prix de négociation, justifier une parité d''échange, ou documenter un dossier de financement. Si votre chiffre n''est pas défendable, la négociation s''effondre. Gardez votre support de la leçon écrite sous les yeux, nous allons reprendre le même cas en l''approfondissant.
+
+Visuel : diapositive de titre avec les trois méthodes et une flèche vers « fourchette de valeur argumentée ».
+
+## 05:00 – 20:00 · Partie 1 : le DCF pas à pas
+
+Reprenons la logique du DCF. Une entreprise vaut la somme actualisée des flux de trésorerie disponibles qu''elle est capable de générer pour ses financeurs, plus une valeur terminale qui représente tout ce qui se passe après l''horizon de prévision explicite. Pourquoi actualiser ? Parce qu''un flux reçu dans cinq ans vaut moins qu''un flux reçu aujourd''hui, pour deux raisons : la valeur temps de l''argent, et le risque de ne jamais le recevoir.
+
+Pour Teranga Agro-Transformation, nous avons des flux de 420, 462, 498, 530 et 556 millions de FCFA sur cinq ans, un CMPC de 12 % et une croissance à l''infini de 2,5 %. Calculons ensemble, année par année : 420 divisé par 1,12 à la puissance 1 donne 375,0. Je vous invite à mettre le calcul en pause et à refaire ce calcul vous-même avant de continuer. 462 divisé par 1,12 au carré donne 368,3. 498 divisé par 1,12 au cube donne 354,5. 530 divisé par 1,12 à la puissance 4 donne 336,8. Et 556 divisé par 1,12 à la puissance 5 donne 315,5. La somme de ces cinq flux actualisés est de 1 750,1 millions de FCFA.
+
+Maintenant la valeur terminale, souvent le point le plus mal compris des étudiants. On prend le dernier flux, 556, on le fait croître une dernière fois au taux de croissance à l''infini de 2,5 %, puis on divise par l''écart entre le CMPC et cette croissance : 556 fois 1,025 divisé par (0,12 moins 0,025), soit 5 998,9 millions. C''est la valeur, en fin d''année 5, de tous les flux futurs au-delà de l''horizon explicite. Il faut encore l''actualiser sur cinq ans : 5 998,9 divisé par 1,12 à la puissance 5, soit 3 404,0 millions. La valeur d''entreprise totale est donc 1 750,1 plus 3 404,0, soit 5 154,0 millions de FCFA. En retranchant la dette financière nette de 650 millions, nous obtenons une valeur des capitaux propres de 4 504,0 millions, soit 2 252 FCFA par action sur 2 000 000 d''actions.
+
+Visuel : tableau d''actualisation année par année projeté au tableau, avec la ligne de la valeur terminale isolée en couleur.
+
+Point d''attention : notez que la valeur terminale représente 3 404,0 sur 5 154,0 millions, soit presque les deux tiers de la valeur totale. C''est pour cela que le couple CMPC et croissance à l''infini doit toujours être testé en sensibilité : une erreur d''un demi-point sur l''un ou l''autre change fortement le résultat final.
+
+## 20:00 – 35:00 · Partie 2 : les multiples de comparables
+
+Passons à la deuxième méthode. L''idée est différente : au lieu de projeter l''avenir de l''entreprise, on regarde combien le marché paie pour des entreprises comparables aujourd''hui, et on applique ce ratio à notre cible.
+
+Le multiple le plus robuste est l''EV sur EBITDA, la valeur d''entreprise rapportée à l''excédent brut d''exploitation. Pourquoi ce multiple plutôt que le PER ? Parce que l''EBITDA est calculé avant charges financières, avant amortissements et avant impôt : il n''est donc pas déformé par le niveau d''endettement de chaque entreprise ni par ses choix comptables d''amortissement. Le PER, lui, part du résultat net, qui dépend directement de la structure financière de l''entreprise.
+
+Pour Teranga Agro-Transformation, l''EBITDA est de 650 millions, et un échantillon de comparables du secteur agroalimentaire affiche un multiple moyen de 7,4, que je vous rappelle fictif pour l''exercice. La valeur d''entreprise obtenue est 650 fois 7,4, soit 4 810,0 millions. On retranche la même dette nette de 650 millions pour obtenir une valeur des capitaux propres de 4 160,0 millions. Avec le PER moyen de 15,2 appliqué au résultat net de 310 millions, nous obtenons directement une valeur des capitaux propres de 4 712,0 millions.
+
+Visuel : tableau comparatif des trois résultats obtenus jusqu''ici : DCF 4 504,0, multiple EBITDA 4 160,0, PER 4 712,0.
+
+Discussion importante : en Afrique de l''Ouest, trouvez-vous facilement dix entreprises cotées comparables dans un même secteur ? Non, la profondeur de marché est souvent limitée. C''est une vraie limite méthodologique à mentionner systématiquement dans vos copies : les multiples sont utiles comme méthode de recoupement, rarement comme méthode principale isolée.
+
+## 35:00 – 50:00 · Partie 3 : l''approche patrimoniale et le goodwill
+
+Troisième méthode, la plus ancienne historiquement : l''approche patrimoniale. On part des capitaux propres comptables, on les corrige des plus ou moins-values latentes, et on obtient l''actif net comptable corrigé, l''ANC corrigé.
+
+Pour Teranga Agro-Transformation, l''ANC comptable est de 2 800 millions, avec une plus-value latente nette de 380 millions identifiée sur un terrain et des installations sous-évalués au bilan. L''ANC corrigé est donc de 3 180 millions. Mais cette valeur ignore la capacité de l''entreprise à créer de la valeur future au-delà de la rémunération normale de son patrimoine. On ajoute donc un goodwill, calculé ici par la méthode des rentes abrégées.
+
+La rente annuelle du goodwill est égale au résultat courant prévisionnel, 400 millions, moins le taux de rémunération normatif des capitaux, 9 %, multiplié par l''ANC corrigé de 3 180 millions. Cela donne 400 moins 286,2, soit 113,8 millions par an. On actualise cette rente sur un horizon limité, ici cinq ans à 12 %, avec le facteur d''annuité de 3,6048. Le goodwill est donc 113,8 fois 3,6048, soit 410,2 millions. La valeur globale par l''approche patrimoniale est 3 180 plus 410,2, soit 3 590,2 millions de FCFA.
+
+Visuel : schéma en deux blocs, ANC corrigé en bas, goodwill ajouté au-dessus, avec le total encadré.
+
+Remarquez que ce résultat, 3 590,2 millions, est nettement plus prudent que les trois précédents. C''est normal et attendu : l''approche patrimoniale valorise peu la croissance future, elle sert souvent de plancher dans une négociation, pas de référence centrale pour une entreprise en croissance comme Teranga Agro-Transformation.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Prenons cinq minutes de pause active. Répondez à ces trois questions avant de reprendre.
+
+- Question 1 : quelle méthode donne généralement la valeur la plus prudente pour une entreprise en croissance ? Réponse : l''approche patrimoniale, car elle ignore la croissance future non encore matérialisée dans le patrimoine.
+- Question 2 : pourquoi l''EV/EBITDA est-il préféré au PER pour comparer deux entreprises diversement endettées ? Réponse : parce qu''il est calculé avant charges financières, donc indépendant de la structure de financement.
+- Question 3 : que représente la valeur terminale dans un DCF ? Réponse : la valeur actualisée de tous les flux au-delà de l''horizon de prévision explicite.
+
+## 55:00 – 70:00 · Partie 4 : synthétiser et argumenter la fourchette de valeur
+
+Nous avons maintenant quatre résultats : 4 504,0 par DCF, 4 160,0 par le multiple d''EBITDA, 4 712,0 par le PER, et 3 590,2 par l''approche patrimoniale. Comment conclure devant un jury d''examen ou un client ?
+
+Première étape : vérifier la cohérence. Les trois premières méthodes (DCF, EBITDA, PER) convergent dans un intervalle resserré, entre 4 160 et 4 712 millions, soit un écart inférieur à 15 % autour de la moyenne. C''est un bon signe de robustesse. La quatrième méthode, l''approche patrimoniale, s''écarte nettement vers le bas : c''est attendu et s''explique par sa nature conservatrice.
+
+Deuxième étape : choisir une fourchette de restitution. Je recommande de présenter 4 160 à 4 712 millions comme fourchette principale, avec le DCF comme estimation centrale si vous jugez les prévisions de flux fiables, et de mentionner l''approche patrimoniale séparément comme un plancher de négociation utile, par exemple en cas de rachat où l''acheteur voudrait limiter le risque de surpayer.
+
+Troisième étape : toujours expliciter vos hypothèses. Un correcteur de Master 1 pénalise sévèrement une valeur donnée sans rappel du CMPC, du taux de croissance, des multiples retenus et du taux normatif du goodwill. La valeur sans les hypothèses n''a aucune valeur probante.
+
+Visuel : graphique en barres horizontales montrant les quatre résultats sur une même échelle, avec la fourchette retenue encadrée.
+
+## 70:00 – 80:00 · Cas pratique approfondi : sensibilité et discussion
+
+Testons maintenant la sensibilité du DCF. Si le CMPC passe de 12 % à 13 %, que se passe-t-il ? La valeur terminale, 556 fois 1,025 divisé par (0,13 moins 0,025), donne 5 129,5 millions, actualisée sur cinq ans à 13 % : 2 785,2 millions, contre 3 404,0 millions précédemment. La valeur d''entreprise chute mécaniquement. C''est exactement ce type de test que vous devez montrer à l''examen pour prouver votre maîtrise, pas seulement produire un chiffre figé.
+
+Discutons aussi d''un biais fréquent chez les étudiants : vouloir faire converger artificiellement les méthodes en ajustant un paramètre après coup pour obtenir « le bon résultat ». C''est une erreur méthodologique grave. Les écarts entre méthodes sont des informations en soi : ils révèlent où se situe le désaccord entre la vision du marché (multiples), la vision patrimoniale (actif net) et la vision prospective (DCF).
+
+## 80:00 – 85:00 · Synthèse générale
+
+Pour résumer cette séance : le DCF valorise la capacité future à générer des flux, les multiples valorisent par comparaison de marché, l''approche patrimoniale valorise le patrimoine existant corrigé d''un goodwill. Aucune méthode n''est à elle seule suffisante en Master 1 : c''est la capacité à les croiser, à expliquer les écarts, et à conclure par une fourchette argumentée qui distingue une bonne copie.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Dans un DCF, que représente le CMPC ? Réponse : le taux d''actualisation qui reflète le risque de l''activité et la structure de financement visée, utilisé pour ramener les flux futurs à leur valeur actuelle.
+2. Pourquoi la valeur terminale doit-elle toujours être testée en sensibilité ? Réponse : parce qu''elle représente souvent plus de la moitié de la valeur totale et qu''elle est très sensible à de faibles variations du CMPC et de la croissance à l''infini.
+3. Quel est l''avantage principal du multiple EV/EBITDA par rapport au PER ? Réponse : il est indépendant de la structure financière et des politiques d''amortissement, ce qui le rend plus comparable entre entreprises.
+4. Comment calcule-t-on la rente annuelle du goodwill dans la méthode des rentes abrégées ? Réponse : résultat courant prévisionnel moins le produit du taux de rémunération normatif des capitaux et de l''actif net comptable corrigé.
+5. Pourquoi un évaluateur sérieux présente-t-il une fourchette de valeur plutôt qu''un chiffre unique ? Réponse : parce que chaque méthode repose sur des hypothèses différentes et parfois fragiles, et qu''une fourchette reflète honnêtement l''incertitude tout en laissant une marge de négociation.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Évaluation d''entreprise approfondie (DCF, multiples, approche patrimoniale)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Ingénierie financière et fusions-acquisitions', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 1 Finance.
+Objectifs : calculer une parité d''échange et son effet sur le bénéfice par action, construire et interpréter un montage LBO, identifier les étapes et risques d''une fusion-acquisition.
+Matériel : tableau ou diaporama, calculatrice financière ou tableur.
+Prérequis : lecture d''un bilan, notion de résultat net, actualisation.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Aujourd''hui, nous entrons dans l''ingénierie financière : comment structurer une opération de rachat d''entreprise, comment mesurer son impact sur les actionnaires existants, et comment fonctionne un montage par effet de levier, le fameux LBO. Ce sont des sujets qui apparaissent très régulièrement aux examens de Master 1 et qui sont au cœur du métier de banquier d''affaires, de directeur financier ou d''analyste en fonds d''investissement. Nous allons suivre deux cas fictifs tout au long de la séance : une fusion par échange d''actions entre Sahel Industries et Delta Emballages, puis un rachat par effet de levier de la PME Logis-Services.
+
+Visuel : diapositive de titre avec les deux cas annoncés.
+
+## 05:00 – 20:00 · Partie 1 : la parité d''échange
+
+Quand un acquéreur paie une cible en actions plutôt qu''en numéraire, il faut déterminer combien de ses propres actions il remet pour une action de la cible : c''est la parité d''échange.
+
+Première étape : fixer le prix offert par action de la cible. On part du cours de bourse ou de la valeur estimée de la cible, et on ajoute une prime de contrôle, qui rémunère la perte d''autonomie de la cible et anticipe les synergies de l''opération. Dans notre cas, Sahel Industries cote 3 000 FCFA avec 3 000 000 d''actions, soit une valeur de 9 000 millions. Delta Emballages cote 2 400 FCFA avec 1 000 000 d''actions, soit 2 400 millions. Une prime de 20 % est négociée.
+
+Le prix offert par action de Delta Emballages est donc 2 400 fois 1,20, soit 2 880 FCFA. La parité d''échange est le prix offert divisé par le cours de l''acquéreur : 2 880 divisé par 3 000, soit 0,96. Cela signifie que pour chaque action Delta Emballages apportée, l''actionnaire reçoit 0,96 action Sahel Industries.
+
+Visuel : schéma de l''échange, une action Delta Emballages transformée en 0,96 action Sahel Industries.
+
+Mettez le calcul en pause et vérifiez vous-même : 1 000 000 actions Delta Emballages multipliées par 0,96 donnent 960 000 nouvelles actions Sahel Industries à émettre. Le capital de Sahel Industries passe donc de 3 000 000 à 3 960 000 actions.
+
+## 20:00 – 35:00 · Partie 2 : l''effet sur le bénéfice par action
+
+Maintenant, mesurons l''effet de cette opération sur le bénéfice par action, le BPA, de l''acquéreur. C''est l''indicateur que les analystes financiers regardent en premier après l''annonce d''une fusion.
+
+Le résultat net consolidé additionne le résultat de l''acquéreur, celui de la cible, et les synergies nettes d''impôt attendues. Ici : 620 millions pour Sahel Industries, 180 millions pour Delta Emballages, et 45 millions de synergies fictives, soit un total de 845 millions.
+
+Le BPA de Sahel Industries avant l''opération est 620 millions divisé par 3 000 000 actions, soit 206,7 FCFA. Le BPA après l''opération est 845 millions divisé par 3 960 000 actions, soit 213,4 FCFA. La variation est de plus 3,25 %. L''opération est donc relutive : elle augmente le bénéfice par action des actionnaires de Sahel Industries.
+
+Visuel : graphique en barres comparant le BPA avant et après l''opération.
+
+Attention, point crucial pour l''examen : une opération relutive comptablement n''est pas automatiquement créatrice de valeur économique. Si la prime de 20 % est trop généreuse par rapport aux synergies réellement atteignables, ou si le goodwill comptabilisé doit être déprécié plus tard parce que l''intégration échoue, la relution immédiate du BPA peut masquer une destruction de valeur à moyen terme. Un bon candidat signale toujours cette limite après avoir fait le calcul.
+
+## 35:00 – 50:00 · Partie 3 : comprendre le montage LBO
+
+Changeons de cas. Un LBO, rachat par effet de levier, consiste à racheter une entreprise principalement avec de la dette, logée dans une société holding créée pour l''opération. Pourquoi une holding et pas directement la cible ? Parce que cela isole le risque financier : si le remboursement de la dette se complique, c''est la holding qui est en difficulté, pas juridiquement la cible elle-même, même si en pratique les flux de la cible servent à rembourser la dette via les dividendes remontés.
+
+Prenons Logis-Services, une PME fictive valorisée 1 000 millions de FCFA, financée par 650 millions de dette senior à un taux fictif de 9 % et 350 millions de fonds propres apportés par un fonds d''investissement. L''EBITDA initial est de 220 millions, avec une croissance annuelle de 5 %, et nous approchons le flux disponible avant service de la dette à 80 % de l''EBITDA, après un impôt simplifié.
+
+Année après année, ce flux rembourse d''abord les intérêts sur le capital restant dû, puis le capital lui-même. En année 1 : EBITDA de 220, intérêts de 650 fois 9 % soit 58,5, flux disponible de 220 fois 0,8 moins 58,5 soit 117,5, qui rembourse intégralement ce montant de dette, ramenant le capital restant à 532,5 millions. Le mécanisme se répète chaque année avec un EBITDA croissant et des intérêts qui diminuent à mesure que la dette se réduit. Sur cinq ans, dans notre scénario, la dette de 650 millions est intégralement remboursée.
+
+Visuel : tableau année par année avec quatre colonnes : EBITDA, intérêts, flux disponible, dette restante.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions pour vérifier votre compréhension avant de continuer.
+
+- Question 1 : pourquoi la dette d''acquisition est-elle logée dans une holding plutôt que dans la cible directement ? Réponse : pour isoler le risque financier de l''opération dans une structure dédiée.
+- Question 2 : qu''est-ce qu''une opération relutive sur le BPA ? Réponse : une opération où le bénéfice par action après l''opération est supérieur au bénéfice par action de l''acquéreur avant l''opération.
+- Question 3 : d''où vient l''argent qui rembourse la dette d''un LBO ? Réponse : des flux de trésorerie disponibles de la cible, remontés à la holding sous forme de dividendes.
+
+## 55:00 – 70:00 · Partie 4 : mesurer le rendement du fonds dans un LBO
+
+Calculons maintenant le rendement obtenu par le fonds d''investissement. En année 5, l''EBITDA de Logis-Services atteint 267,4 millions grâce à la croissance de 5 % par an. Avec un multiple de sortie de 6,0, la valeur d''entreprise à la sortie est 267,4 fois 6,0, soit 1 604,5 millions. Comme la dette a été intégralement remboursée, la valeur des fonds propres à la sortie est également de 1 604,5 millions.
+
+Le multiple de l''investissement pour le fonds est 1 604,5 divisé par l''apport initial de 350 millions, soit 4,58 fois. Le taux de rendement interne sur cinq ans est 4,58 élevé à la puissance un cinquième, moins un, soit environ 35,6 % par an.
+
+Remarquez l''ampleur de l''effet de levier : la valeur d''entreprise n''a progressé que de 60 % en cinq ans, de 1 000 à 1 604,5 millions, mais les fonds propres du fonds, eux, ont été multipliés par 4,58 parce que la dette a servi de levier et a été intégralement remboursée par les flux de la cible elle-même. C''est tout le principe du LBO : faire payer la dette par l''entreprise rachetée, pas par l''investisseur.
+
+Visuel : schéma en deux colonnes, évolution de la valeur d''entreprise à gauche, évolution des fonds propres du fonds à droite, avec les multiples associés.
+
+Point d''attention pour l''examen : ce rendement élevé suppose une exécution sans accroc. Si l''EBITDA stagne ou recule, le flux disponible peut devenir insuffisant pour couvrir le service de la dette : c''est le risque principal d''un LBO, qu''il faut toujours mentionner en discussion.
+
+## 70:00 – 80:00 · Cas pratique approfondi : les étapes d''une fusion-acquisition
+
+Reprenons maintenant les grandes étapes d''une opération de fusion-acquisition dans l''ordre chronologique. D''abord la phase préparatoire : identification de la cible, signature d''une lettre d''intention, puis audit d''acquisition, qu''on appelle due diligence, portant sur les aspects financiers, juridiques, fiscaux et sociaux de la cible. Cet audit sert à vérifier que les chiffres annoncés sont fiables et à détecter des passifs cachés.
+
+Ensuite la négociation : on fixe la valorisation avec les méthodes vues dans la leçon précédente, on structure l''offre, en numéraire, en actions ou en mixte, et on négocie des garanties d''actif et de passif qui protègent l''acquéreur si des passifs non révélés apparaissent après la signature.
+
+Puis le financement de l''opération : autofinancement, dette, augmentation de capital, ou combinaison, en tenant compte de l''impact sur la structure financière et sur la notation de crédit de l''acquéreur si celui-ci est noté.
+
+Enfin, l''intégration post-acquisition, souvent négligée dans les copies d''examen mais essentielle en pratique : c''est le moment où les synergies annoncées doivent se matérialiser réellement. C''est aussi la phase où le plus grand nombre d''opérations échouent, par sous-estimation des coûts d''intégration des systèmes d''information, des équipes et des cultures d''entreprise.
+
+## 80:00 – 85:00 · Synthèse générale
+
+Pour résumer : la parité d''échange traduit la prime de contrôle en nombre d''actions, et l''effet sur le BPA mesure l''impact comptable immédiat, mais ne garantit jamais la création de valeur réelle. Le LBO amplifie le rendement des fonds propres par un effet de levier, à condition que la rentabilité de la cible permette de rembourser la dette. Une opération de fusion-acquisition se joue autant dans la préparation et l''intégration que dans le calcul du prix.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Comment calcule-t-on le prix offert par action dans une fusion par échange d''actions ? Réponse : cours de la cible multiplié par (1 plus la prime de contrôle).
+2. Qu''est-ce que la parité d''échange ? Réponse : le nombre d''actions de l''acquéreur remises pour une action de la cible, égal au prix offert par action de la cible divisé par le cours de l''acquéreur.
+3. Pourquoi une opération relutive sur le BPA n''est-elle pas automatiquement créatrice de valeur ? Réponse : parce que la relution comptable ne tient pas compte du risque réel transféré ni d''une prime ou de synergies potentiellement surestimées, qui peuvent conduire à une dépréciation future du goodwill.
+4. Dans un LBO, pourquoi le rendement des fonds propres du fonds peut-il dépasser largement la progression de la valeur d''entreprise ? Réponse : parce que l''effet de levier de la dette, remboursée par les flux de la cible, amplifie le gain réalisé sur le capital réellement investi par le fonds.
+5. Quelle est la phase la plus souvent sous-estimée dans une fusion-acquisition et pourquoi est-elle risquée ? Réponse : l''intégration post-acquisition, parce que les coûts d''intégration des systèmes, des équipes et des cultures d''entreprise sont fréquemment sous-estimés, ce qui peut empêcher la réalisation effective des synergies annoncées.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Ingénierie financière et fusions-acquisitions');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Gestion de portefeuille et marchés financiers avancés', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 1 Finance.
+Objectifs : calculer le rendement et le risque d''un portefeuille à deux actifs, construire la frontière efficiente simplifiée, appliquer le CAPM et le ratio de Sharpe.
+Matériel : tableau ou diaporama, calculatrice.
+Prérequis : espérance et variance statistique, notion de corrélation.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Cette séance porte sur la gestion de portefeuille et les marchés financiers avancés : comment un investisseur combine plusieurs actifs pour réduire son risque sans sacrifier excessivement son rendement, et comment le CAPM permet de juger si un actif est correctement valorisé par rapport à son risque. Nous allons travailler avec deux actions fictives, Sahel Ciments et Teranga Telecom, tout au long de la séance.
+
+Visuel : diapositive de titre avec les deux actions et leurs caractéristiques.
+
+## 05:00 – 20:00 · Partie 1 : rendement et risque d''un portefeuille à deux actifs
+
+Le principe de la diversification est simple à énoncer mais puissant dans ses conséquences : combiner des actifs qui ne bougent pas parfaitement ensemble réduit le risque total du portefeuille sans réduire le rendement attendu dans la même proportion.
+
+Le rendement attendu d''un portefeuille est simplement la moyenne pondérée des rendements attendus de chaque actif : E(rp) égale wA fois E(rA) plus wB fois E(rB). C''est intuitif, c''est additif.
+
+La variance, en revanche, n''est pas simplement la moyenne pondérée des variances. Elle intègre un troisième terme, la covariance entre les deux actifs : sigma au carré du portefeuille égale wA au carré fois sigma A au carré, plus wB au carré fois sigma B au carré, plus deux fois wA fois wB fois la covariance entre A et B. Et la covariance elle-même s''obtient en multipliant la corrélation par les deux écart-types.
+
+Prenons nos données : Sahel Ciments a un rendement attendu de 14 % et un écart-type de 22 %. Teranga Telecom a un rendement attendu de 9 % et un écart-type de 12 %. La corrélation entre les deux est de 0,30. La covariance est donc 0,30 fois 0,22 fois 0,12, soit 0,00792.
+
+Testons un portefeuille à 60 % dans Sahel Ciments et 40 % dans Teranga Telecom. Le rendement attendu est 0,6 fois 14 % plus 0,4 fois 9 %, soit 12,0 %. La variance est 0,6 au carré fois 0,22 au carré, plus 0,4 au carré fois 0,12 au carré, plus deux fois 0,6 fois 0,4 fois 0,00792, soit 0,02354, ce qui donne un écart-type de 15,3 %. Comparez : investir seulement dans Sahel Ciments donnait 14 % de rendement pour 22 % de risque. Ici, on ne perd que 2 points de rendement mais on réduit le risque de près de 7 points. C''est le bénéfice concret de la diversification.
+
+Visuel : graphique risque-rendement avec les deux actifs purs et le portefeuille 60-40 positionné entre eux, visiblement décalé vers la gauche.
+
+## 20:00 – 35:00 · Partie 2 : la frontière efficiente et le portefeuille de variance minimale
+
+Si on fait varier la pondération entre les deux actifs de 0 à 100 %, on obtient toute une courbe de combinaisons possibles de risque et de rendement : c''est la frontière efficiente, simplifiée ici au cas de deux actifs.
+
+Il existe une pondération précise qui minimise la variance du portefeuille. On l''obtient par la formule : wA de variance minimale égale sigma B au carré moins la covariance, divisé par sigma A au carré plus sigma B au carré moins deux fois la covariance.
+
+Pour nos deux actions : wA minimale égale 0,12 au carré moins 0,00792, divisé par 0,22 au carré plus 0,12 au carré moins deux fois 0,00792, ce qui donne 0,138. Donc wB égale 0,862. Mettez en pause et vérifiez ce calcul avec votre propre calculatrice.
+
+Avec cette pondération, le rendement attendu est 9,69 % et l''écart-type tombe à 11,6 %, le minimum possible pour ce couple d''actifs. Comparons avec Teranga Telecom seul : 9,0 % de rendement pour 12,0 % de risque. Le portefeuille de variance minimale fait mieux sur les deux dimensions à la fois : plus de rendement, 9,69 % contre 9,0 %, et moins de risque, 11,6 % contre 12,0 %. C''est la démonstration la plus parlante de l''intérêt de la diversification.
+
+Visuel : la frontière efficiente tracée point par point, avec le point de variance minimale repéré, et la zone sous ce point marquée comme inefficiente.
+
+Un point essentiel pour l''examen : tout portefeuille situé sous le point de variance minimale sur cette courbe n''est jamais un choix rationnel, car on peut toujours obtenir, pour le même risque, un rendement supérieur ailleurs sur la frontière.
+
+## 35:00 – 50:00 · Partie 3 : le CAPM approfondi
+
+Changeons de perspective. Le CAPM ne cherche pas à construire un portefeuille optimal, il cherche à déterminer quel rendement un actif devrait offrir compte tenu de son risque non diversifiable, celui qui reste même après une diversification complète.
+
+Ce risque non diversifiable se mesure par le bêta : bêta égale la covariance entre le rendement de l''actif et le rendement du marché, divisée par la variance du rendement du marché. Un bêta de 1 signifie un risque de marché moyen ; un bêta supérieur à 1 signifie un actif plus sensible que le marché, un bêta inférieur à 1 signifie un actif moins sensible.
+
+Le rendement exigé par le CAPM est alors : E(r) égale le taux sans risque, plus bêta, fois la prime de risque du marché, c''est-à-dire la différence entre le rendement attendu du marché et le taux sans risque.
+
+Pour Sahel Ciments, avec une covariance avec le marché de 0,028 et une variance du marché de 0,16 au carré soit 0,0256, le bêta est 0,028 divisé par 0,0256, soit 1,094. Avec un taux sans risque fictif de 5,5 % et un rendement de marché attendu de 12 %, le rendement exigé par le CAPM est 5,5 % plus 1,094 fois 6,5 %, soit 12,61 %.
+
+Or le rendement attendu réellement estimé pour Sahel Ciments est de 14 %, supérieur au 12,61 % exigé par le CAPM. Cet écart positif, qu''on appelle alpha, suggère que l''action est sous-évaluée par rapport à son risque systématique : elle offre plus de rendement que ce que son bêta justifierait. Pour Teranga Telecom, avec un bêta de 0,55, le rendement exigé est 5,5 % plus 0,55 fois 6,5 %, soit 9,07 %, très proche du rendement attendu de 9 % : cette action est jugée correctement valorisée par le marché.
+
+Visuel : droite de marché des titres tracée, avec Sahel Ciments positionnée au-dessus de la droite et Teranga Telecom pile sur la droite.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions de vérification.
+
+- Question 1 : pourquoi une corrélation inférieure à 1 entre deux actifs crée-t-elle toujours un gain de diversification ? Réponse : parce que le terme de covariance dans la formule de la variance du portefeuille devient alors inférieur à ce qu''il serait avec une corrélation parfaite, réduisant la variance totale.
+- Question 2 : que mesure le bêta dans le CAPM ? Réponse : la sensibilité du rendement d''un actif aux mouvements du marché, c''est-à-dire son risque non diversifiable.
+- Question 3 : qu''est-ce qu''un alpha positif ? Réponse : un rendement attendu réel supérieur au rendement exigé par le CAPM, suggérant que l''actif est sous-évalué par rapport à son risque systématique.
+
+## 55:00 – 70:00 · Partie 4 : le ratio de Sharpe et ses limites
+
+Le ratio de Sharpe complète le CAPM en mesurant le rendement excédentaire par unité de risque total, pas seulement de risque systématique : Sharpe égale le rendement attendu moins le taux sans risque, divisé par l''écart-type total de l''actif.
+
+Pour Sahel Ciments : 14 % moins 5,5 %, divisé par 22 %, soit 0,386. Pour Teranga Telecom : 9 % moins 5,5 %, divisé par 12 %, soit 0,292. Sahel Ciments rémunère donc mieux chaque unité de risque total supporté, malgré sa volatilité plus élevée en valeur absolue.
+
+Pourquoi deux indicateurs différents, le bêta du CAPM et le ratio de Sharpe ? Parce qu''ils répondent à deux questions différentes. Le bêta et le CAPM s''adressent à un investisseur déjà diversifié, qui ne se préoccupe que du risque de marché résiduel. Le ratio de Sharpe s''adresse à un investisseur qui détient l''actif seul, ou qui veut comparer l''efficacité globale de gestionnaires de portefeuille, en tenant compte de tout le risque, diversifiable et non diversifiable.
+
+Visuel : tableau récapitulatif des deux indicateurs pour les deux actions.
+
+## 70:00 – 80:00 · Cas pratique approfondi : construire une recommandation
+
+Imaginons qu''un conseiller en gestion de patrimoine doive recommander une allocation entre Sahel Ciments et Teranga Telecom à un client qui souhaite limiter son risque sans trop sacrifier le rendement. Avec les données vues, trois options raisonnables : le portefeuille de variance minimale, 13,8 % et 86,2 %, pour un client très averse au risque ; le portefeuille 60-40 pour un client qui accepte un peu plus de risque contre un peu plus de rendement ; ou une pondération encore plus orientée vers Sahel Ciments si le client a identifié, comme nous l''avons fait avec le CAPM, que cette action est sous-évaluée et offre un alpha positif.
+
+La recommandation doit toujours combiner l''analyse de diversification, qui dépend de la corrélation et des écart-types, et l''analyse de valorisation individuelle, qui dépend du CAPM et de l''alpha. Un bon candidat de Master 1 sait mobiliser les deux dans une même conclusion argumentée, en rappelant que ce sont des estimations fondées sur des paramètres fictifs dans cet exercice, qui devraient être actualisées avec des données de marché réelles dans un contexte professionnel.
+
+## 80:00 – 85:00 · Synthèse générale
+
+Pour conclure : la diversification réduit le risque grâce à une corrélation imparfaite entre actifs, la frontière efficiente identifie les meilleures combinaisons possibles, le CAPM évalue si le rendement d''un actif est cohérent avec son risque systématique, et le ratio de Sharpe mesure l''efficacité globale du couple rendement-risque. Ces quatre outils se complètent plutôt qu''ils ne se substituent les uns aux autres.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Comment calcule-t-on la covariance entre deux actifs à partir de leur corrélation ? Réponse : covariance égale corrélation multipliée par l''écart-type du premier actif et par l''écart-type du second actif.
+2. Qu''obtient-on en annulant la dérivée de la variance du portefeuille par rapport à la pondération d''un actif ? Réponse : la pondération du portefeuille de variance minimale.
+3. Quelle est la formule du rendement exigé par le CAPM ? Réponse : taux sans risque plus bêta multiplié par la prime de risque du marché, c''est-à-dire la différence entre le rendement attendu du marché et le taux sans risque.
+4. Un actif se situe au-dessus de la droite de marché des titres : que peut-on en conclure ? Réponse : son rendement attendu réel dépasse le rendement exigé par son risque systématique, il est jugé sous-évalué, avec un alpha positif.
+5. Pourquoi le ratio de Sharpe peut-il classer deux actifs différemment du bêta du CAPM ? Réponse : parce que le ratio de Sharpe tient compte du risque total, diversifiable et non diversifiable, alors que le bêta ne capture que le risque systématique non diversifiable.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gestion de portefeuille et marchés financiers avancés');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier cas pratique transversal - évaluation et montage d''une opération de croissance externe', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 1 Finance.
+Objectifs : résoudre un cas d''entreprise transversal mobilisant successivement l''évaluation, l''ingénierie financière et la gestion de portefeuille, comme dans un dossier réel de banque d''affaires.
+Matériel : tableau ou diaporama, calculatrice financière ou tableur.
+Prérequis : les trois leçons et vidéos précédentes de ce cours.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Cette dernière séance vidéo est un atelier de synthèse : nous allons suivre un seul dossier fictif de bout en bout, de l''évaluation d''une cible jusqu''à l''impact de l''opération pour un investisseur minoritaire, en mobilisant tout ce que vous avez appris dans ce cours de Master 1. C''est exactement le type d''exercice filé que vous pouvez rencontrer en examen final ou en entretien de stage. Prenez une feuille, nous allons construire le dossier ensemble.
+
+Visuel : diapositive de titre présentant le dossier « Casamance Agro-Industries rachète Niayes Fruits ».
+
+## 05:00 – 20:00 · Partie 1 : poser le dossier et évaluer la cible
+
+Casamance Agro-Industries, CAI, entreprise fictive de Ziguinchor, veut racheter sa concurrente Niayes Fruits. CAI cote 2 500 FCFA pour 4 000 000 d''actions, avec un résultat net de 980 millions. Niayes Fruits cote 1 600 FCFA pour 1 200 000 actions, avec un résultat net de 240 millions, un EBITDA de 420 millions, une dette nette de 280 millions, et des flux de trésorerie disponibles prévisionnels sur cinq ans de 160, 175, 188, 198 et 206 millions de FCFA, avec une croissance à l''infini de 2 % et un CMPC de 11 %.
+
+Commençons par le DCF de Niayes Fruits. Actualisons chaque flux à 11 % : 160 divisé par 1,11 donne 144,1 ; 175 divisé par 1,11 au carré donne 142,0 ; 188 divisé par 1,11 au cube donne 137,5 ; 198 divisé par 1,11 à la puissance 4 donne 130,5 ; 206 divisé par 1,11 à la puissance 5 donne 122,2. La somme est 676,3 millions. La valeur terminale : 206 fois 1,02 divisé par (0,11 moins 0,02), soit 2 334,2 millions, actualisée sur cinq ans à 11 %, soit 1 385,6 millions. La valeur d''entreprise totale est 676,3 plus 1 385,6, soit 2 061,9 millions. En retranchant la dette nette de 280 millions, la valeur des capitaux propres est 1 781,9 millions de FCFA.
+
+Comparons avec un multiple de comparables : EBITDA de 420 millions fois un multiple sectoriel fictif de 6,5, soit une valeur d''entreprise de 2 730,0 millions, et une valeur des capitaux propres de 2 450,0 millions après déduction de la dette. L''écart avec le DCF est important, environ 37 %. Mettez en pause et réfléchissez : que feriez-vous de cet écart dans un vrai rapport d''évaluation ?
+
+Visuel : les deux résultats, 1 781,9 et 2 450,0 millions, affichés côte à côte avec l''écart en pourcentage.
+
+Réponse attendue : on ne choisit pas arbitrairement l''un ou l''autre, on documente les deux, on vérifie les hypothèses de chaque méthode, par exemple en demandant si les flux prévisionnels sont trop prudents ou si le multiple sectoriel retenu est trop généreux, et on propose une fourchette, ici entre 1 781,9 et 2 450,0 millions de FCFA, en expliquant que l''écart important appelle une vérification approfondie avant de fixer un prix final.
+
+## 20:00 – 35:00 · Partie 2 : structurer l''offre et mesurer l''effet sur le BPA
+
+CAI propose une prime de contrôle de 20 % sur le cours de Niayes Fruits et un paiement intégral en actions. Le prix offert par action est 1 600 fois 1,20, soit 1 920 FCFA. La parité d''échange est 1 920 divisé par 2 500, soit 0,768 action CAI pour une action Niayes Fruits.
+
+Le nombre de nouvelles actions émises est 1 200 000 fois 0,768, soit 921 600. Le capital de CAI passe de 4 000 000 à 4 921 600 actions. Pour mesurer l''effet sur le BPA, on utilise ici le résultat net comptable de la cible, pas sa valeur d''évaluation : résultat consolidé égale 980 plus 240 plus 20 millions de synergies nettes d''impôt, soit 1 240 millions.
+
+Le BPA de CAI avant l''opération est 980 divisé par 4 000 000, soit 245 FCFA. Le BPA après l''opération est 1 240 divisé par 4 921 600, soit environ 251,9 FCFA. La variation est d''environ plus 2,8 %, l''opération est relutive.
+
+Visuel : tableau de synthèse du montage, parité, nouvelles actions, BPA avant et après.
+
+Discussion essentielle : cette relution de 2,8 % repose sur des synergies de seulement 20 millions. Si ces synergies ne se matérialisent pas, par exemple parce que l''intégration des deux réseaux de distribution échoue partiellement, le résultat consolidé retombe à 1 220 millions, et le BPA après l''opération devient 1 220 divisé par 4 921 600, soit environ 247,9 FCFA : l''opération resterait légèrement relutive mais avec une marge de sécurité beaucoup plus faible. C''est ce type d''analyse de sensibilité qui distingue une copie de Master 1 d''une simple application de formule.
+
+## 35:00 – 50:00 · Partie 3 : l''impact pour un investisseur minoritaire
+
+Un fonds d''investissement régional envisage de prendre une participation minoritaire dans CAI après l''opération. Il doit juger si le rendement attendu de l''action CAI est cohérent avec son risque. Le bêta estimé de CAI est de 1,15, le taux sans risque fictif de 6 %, et le rendement attendu du marché régional de 13 %.
+
+Le rendement exigé par le CAPM est 6 % plus 1,15 fois (13 % moins 6 %), soit 6 % plus 1,15 fois 7 %, soit 14,05 %. Si le rendement attendu réellement anticipé pour l''action CAI après l''opération est de 15 %, alors CAI se situe au-dessus de la droite de marché des titres : le rendement attendu dépasse le rendement exigé par le risque systématique, d''environ 0,95 point. L''action apparaît donc, sur cette base, légèrement sous-évaluée.
+
+Visuel : droite de marché des titres avec CAI positionnée juste au-dessus.
+
+Mais attention, c''est le moment de faire preuve d''esprit critique devant un jury : ce bêta de 1,15 a-t-il été estimé avant ou après l''annonce de l''opération ? Une fusion-acquisition change souvent le profil de risque de l''acquéreur, notamment si elle est financée par de la dette supplémentaire, ce qui peut augmenter le bêta réel après l''opération par rapport au bêta historique utilisé ici. Un bon candidat signale cette limite plutôt que d''appliquer la formule sans recul.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions pour faire le point avant la conclusion du dossier.
+
+- Question 1 : pourquoi documenter deux méthodes d''évaluation même quand elles divergent fortement ? Réponse : parce que chaque écart révèle une information sur les hypothèses en désaccord, et qu''une fourchette argumentée est plus honnête et plus utile en négociation qu''un chiffre unique non questionné.
+- Question 2 : qu''est-ce qui pourrait transformer une opération relutive en opération dilutive si les hypothèses se dégradent ? Réponse : des synergies qui ne se matérialisent pas, ou une prime de contrôle qui s''avère excessive par rapport à la valeur réellement créée.
+- Question 3 : pourquoi le bêta utilisé par un investisseur minoritaire doit-il être examiné avec prudence après une fusion-acquisition ? Réponse : parce que l''opération peut changer le profil de risque réel de l''acquéreur, notamment via un endettement supplémentaire, rendant le bêta historique moins représentatif.
+
+## 55:00 – 70:00 · Partie 4 : rédiger la recommandation finale du dossier
+
+Nous arrivons à la dernière étape : rédiger une recommandation complète, comme le ferait un analyste senior pour son comité d''investissement. La structure attendue comporte quatre blocs. D''abord, la valeur de la cible, avec la fourchette obtenue et les hypothèses retenues. Ensuite, les conditions de l''opération, la parité d''échange et son effet sur le BPA, avec un test de sensibilité sur les synergies. Puis, l''impact pour un investisseur minoritaire, avec le positionnement par rapport au CAPM et ses limites. Enfin, une conclusion qui tranche : faut-il recommander l''opération, la recommander sous conditions, ou la déconseiller, et pourquoi.
+
+Pour notre dossier, une conclusion possible serait la suivante : l''opération est raisonnable au prix proposé, dans la mesure où la prime de 20 % reste dans la fourchette de valeur obtenue par DCF et par multiple, où l''effet relutif sur le BPA reste positif même en cas de sous-réalisation partielle des synergies, mais où il convient de surveiller l''évolution du bêta et de la structure financière de CAI après l''opération avant d''investir en tant que minoritaire.
+
+Visuel : schéma final en quatre blocs résumant la structure de la recommandation.
+
+## 70:00 – 80:00 · Entraînement : variante chiffrée
+
+Variante pour vous entraîner seul après la séance : si la prime de contrôle négociée passe de 20 % à 30 %, recalculez le prix offert par action, la parité d''échange, le nombre d''actions émises et le nouveau BPA de CAI après l''opération, toutes choses égales par ailleurs. Vous devez retrouver un prix offert de 2 080 FCFA, une parité de 0,832, 998 400 nouvelles actions, un capital total de 4 998 400 actions, et un BPA après l''opération d''environ 248,1 FCFA, soit une relution plus faible qu''avec la prime de 20 %. Cet exercice illustre qu''une prime plus élevée dilue davantage l''effet relutif, même sans changer les synergies attendues.
+
+## 80:00 – 85:00 · Synthèse générale du cours
+
+Ce cours de Master 1 vous a donné trois blocs d''outils qui se combinent dans la pratique : évaluer une entreprise par plusieurs méthodes convergentes, structurer et chiffrer une opération de fusion-acquisition ou un montage par effet de levier, et situer le risque et le rendement d''un investissement dans la logique du portefeuille et du CAPM. La compétence la plus recherchée par les recruteurs et les jurys n''est pas de savoir appliquer une formule isolée, mais de savoir enchaîner ces blocs dans un même dossier et d''en tirer une recommandation argumentée, avec ses limites explicitement posées.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Pourquoi documenter une fourchette de valeur plutôt qu''un chiffre unique dans un dossier de fusion-acquisition ? Réponse : parce que les méthodes d''évaluation reposent sur des hypothèses différentes qui peuvent diverger fortement, et qu''une fourchette reflète honnêtement l''incertitude tout en facilitant la négociation.
+2. Dans le dossier CAI-Niayes Fruits, l''opération est-elle relutive ou dilutive sur le BPA, et de combien ? Réponse : relutive, d''environ plus 2,8 %.
+3. Pourquoi une prime de contrôle plus élevée réduit-elle, toutes choses égales, l''effet relutif d''une fusion payée en actions ? Réponse : parce qu''elle augmente le nombre d''actions nouvelles émises pour une même cible, ce qui dilue davantage le résultat consolidé entre un plus grand nombre d''actions.
+4. Pourquoi faut-il être prudent en appliquant un bêta historique à une action juste après une fusion-acquisition ? Réponse : parce que l''opération peut modifier le profil de risque réel de l''entreprise, notamment par un endettement supplémentaire, rendant le bêta historique moins représentatif du risque futur.
+5. Quels sont les quatre blocs attendus dans une recommandation finale de dossier de fusion-acquisition ? Réponse : la valeur de la cible avec ses hypothèses, les conditions de l''opération et leur effet sur le BPA, l''impact pour un investisseur minoritaire via le CAPM, et une conclusion argumentée qui tranche sur l''opportunité de l''opération.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-fin-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier cas pratique transversal - évaluation et montage d''une opération de croissance externe');
 
 -- Cours : Finance Master 2 : risques avancés, finance internationale et mémoire professionnel
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1899,540 +2606,3 @@ Réponse : pourquoi cette méthode plutôt qu''une autre approche d''évaluation
 Merci à toutes et à tous pour votre travail ce semestre, et bon courage pour la construction et la soutenance de votre propre mémoire de Master 2.', 'video', 90, false, 90
 from public.courses c where c.slug = 'mas-eco-m2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie — construire son mémoire pas à pas');
-
--- Cours : Droit des affaires Master 1 : réussir ses examens
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-droit-m1', (select id from public.levels where name = 'Master 1'), null, 'Droit des affaires', 'Droit des affaires Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en droit des affaires : gouvernance et groupes de sociétés, contrats d''affaires et concurrence, arbitrage et modes alternatifs de résolution des litiges. Public : étudiants de Master 1 ayant validé une Licence en droit des affaires (introduction au droit, obligations, sociétés OHADA, droit du travail de base).', true, 771
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 1 en droit des affaires', '## Objectifs de la leçon
-
-Le Master 1 en droit des affaires marque un changement de registre par rapport à la Licence. Vous ne vous contentez plus de restituer des mécanismes juridiques : on attend de vous une analyse critique, la capacité à qualifier des montages complexes (groupes de sociétés, contrats d''affaires sophistiqués, clauses de résolution des litiges) et à argumenter en incertitude, c''est-à-dire lorsque plusieurs qualifications juridiques sont défendables. Cette leçon pose le cadre de l''année : les attentes des examinateurs, les matières au programme, la méthode de travail adaptée au Master, et un plan de révision réaliste sur six semaines.
-
-## Ce qui change par rapport à la Licence
-
-En Licence 3, vous avez étudié le droit des sociétés commerciales OHADA dans sa dimension statutaire (constitution, organes, dissolution) et le droit des sûretés et des procédures collectives. En Master 1, l''approche se déplace vers la gouvernance et les groupes de sociétés : comment une société mère pilote ses filiales, comment se contrôlent les conventions passées entre une société et ses dirigeants ou actionnaires significatifs (les conventions dites réglementées), et comment les contrats d''affaires organisent des relations économiques durables plutôt que de simples échanges ponctuels. On y ajoute les modes alternatifs de résolution des litiges, en particulier l''arbitrage, essentiel dans les relations d''affaires internationales et régionales.
-
-L''examinateur de Master ne demande plus seulement « quelle est la règle ? » mais « quelle qualification retenir face à des faits ambigus, et avec quelles conséquences pratiques pour l''entreprise ? ». Un cas pratique de Master mêle souvent plusieurs branches du droit (sociétés, contrats, concurrence, arbitrage) dans une même situation d''entreprise, et exige une hiérarchisation des arguments plutôt qu''une récitation.
-
-## Les matières de l''année
-
-Le programme de Master 1 en droit des affaires, tel que couvert par ce cours, s''organise autour de trois axes :
-
-- Droit des sociétés approfondi et gouvernance : groupes de sociétés, notion de contrôle, conventions réglementées, responsabilité des dirigeants dans les montages complexes.
-- Droit des contrats d''affaires et de la concurrence : clauses complexes (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité) et principes du droit de la concurrence applicables aux pratiques anticoncurrentielles.
-- Arbitrage et modes alternatifs de résolution des litiges : logique de la clause compromissoire, déroulement d''un arbitrage, rôle de la Cour commune de justice et d''arbitrage (CCJA) de l''OHADA dans le paysage régional, médiation et conciliation.
-
-Ces trois matières ne sont pas étanches : un contrat d''affaires entre deux sociétés d''un même groupe peut relever à la fois du droit des conventions réglementées, du droit de la concurrence s''il restreint l''accès au marché, et contenir une clause d''arbitrage. C''est précisément cette transversalité que les examens de Master évaluent.
-
-## Méthode de travail avancée
-
-Trois outils structurent le travail en Master :
-
-- L''étude de cas complexe : partir d''un scénario d''entreprise (souvent sénégalais ou ouest-africain, fictif) comportant plusieurs acteurs, plusieurs contrats et un ou plusieurs litiges potentiels. La méthode consiste à cartographier les parties, les actes juridiques en cause, puis à qualifier chaque élément avant de répondre à la question posée.
-- Le business case : analyse d''une décision d''entreprise (restructuration de groupe, négociation d''un contrat-cadre, choix d''un mode de résolution des litiges) en croisant l''angle juridique et l''angle économique. Il ne s''agit pas seulement de dire ce qui est licite, mais ce qui est opportun pour l''entreprise, compte tenu des risques.
-- La revue de littérature ciblée : savoir situer une question dans les débats doctrinaux (sans inventer de référence précise), reconnaître les tendances d''évolution du droit des affaires OHADA, et construire un raisonnement nuancé plutôt qu''une réponse binaire.
-
-Pour chaque matière, construisez une fiche de synthèse avec : définitions clés, conditions d''application, effets juridiques, et un exemple d''entreprise type. Complétez-la par une liste de points de vigilance (erreurs fréquentes de qualification).
-
-## Plan de révision sur six semaines
-
-- Semaines 1 et 2 : droit des sociétés approfondi et gouvernance. Reprendre les bases de Licence 3 (sociétés commerciales OHADA) puis construire les fiches sur les groupes et les conventions réglementées.
-- Semaines 3 et 4 : droit des contrats d''affaires et de la concurrence. Travailler les clauses complexes à partir de modèles de contrats commentés, puis les principes de la concurrence.
-- Semaine 5 : arbitrage et modes alternatifs de résolution des litiges. Comprendre la logique de la clause compromissoire et le rôle de la CCJA en général, sans entrer dans le détail procédural précis qui relève d''un cours spécialisé.
-- Semaine 6 : entraînement sur sujets types, cas transversaux, et relecture des fiches. Prévoir au moins deux simulations d''examen en temps limité (3 heures), avec autocorrection stricte.
-
-Chaque semaine doit se terminer par un exercice écrit complet (pas seulement une lecture), car la compétence évaluée en Master est la rédaction argumentée, pas la seule connaissance.
-
-## Points clés à retenir
-
-- Le Master exige une analyse transversale et critique, pas une récitation de règles.
-- Les trois matières de l''année (sociétés/gouvernance, contrats d''affaires/concurrence, arbitrage/MARL) s''articulent souvent dans un même cas pratique d''examen.
-- La méthode de l''étude de cas complexe et du business case doit être pratiquée dès le début de la révision, pas seulement la veille de l''examen.
-- Aucune donnée chiffrée officielle (taux, seuils, numéros d''articles) ne doit être mémorisée comme certaine sans vérification du texte en vigueur : utilisez les valeurs de ce cours comme illustrations pédagogiques.
-
-## Exercices pratiques
-
-1. Listez les trois matières avancées du programme de M1 en droit des affaires et, pour chacune, indiquez une notion de Licence 3 sur laquelle elle s''appuie directement.
-2. Expliquez en cinq lignes la différence entre une approche « récitation de la règle » et une approche « qualification en incertitude », à partir d''un exemple au choix.
-3. Construisez le squelette d''une fiche de synthèse (rubriques, sans contenu) que vous utiliserez pour la matière « gouvernance et groupes de sociétés ».
-4. Proposez un planning hebdomadaire personnel sur six semaines, en adaptant celui proposé ci-dessus à vos contraintes (travail, stage, autres matières).
-5. Citez deux raisons pour lesquelles un même cas pratique d''examen de Master peut mobiliser à la fois le droit des sociétés, le droit des contrats et l''arbitrage.
-
-## Corrigé
-
-1. Gouvernance et groupes de sociétés s''appuie sur le droit des sociétés commerciales OHADA (L3) ; contrats d''affaires et concurrence s''appuie sur le droit des obligations (contrat, L1/L2) et le droit commercial général OHADA (L2) ; arbitrage et MARL s''appuie sur les institutions et les bases de la procédure vues en introduction au droit (L1) ainsi que sur le droit commercial.
-2. La récitation de la règle consiste à énoncer une condition ou une définition sans la rattacher aux faits (« l''article prévoit que... »). La qualification en incertitude consiste à confronter des faits ambigus à plusieurs qualifications possibles et à argumenter le choix retenu, par exemple déterminer si un accord entre deux filiales constitue une convention réglementée ou un contrat de droit commun selon la qualité des parties signataires.
-3. Exemple de squelette : définition de la notion, conditions d''application, procédure ou formalisme associé, sanctions en cas de non-respect, exemple d''entreprise type, points de vigilance.
-4. Le planning doit respecter la logique progressive (sociétés d''abord, puis contrats/concurrence, puis arbitrage, puis entraînement) mais peut être compressé ou étendu selon le temps disponible ; l''essentiel est de conserver une semaine complète d''entraînement en fin de parcours.
-5. D''une part, les opérations d''affaires réelles combinent rarement une seule branche du droit : un contrat entre sociétés d''un même groupe touche à la fois à la gouvernance et au droit des contrats. D''autre part, les examens de Master visent à vérifier la capacité à transférer des connaissances d''une matière à l''autre, ce qui est précisément ce que travaille l''étude de cas transversale.', 'texte', 40, true, 10
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en droit des affaires');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Droit des sociétés approfondi et gouvernance : groupes de sociétés et conventions réglementées', '## Objectifs de la leçon
-
-Cette leçon approfondit le droit des sociétés au-delà du cadre statutaire vu en Licence : elle traite des groupes de sociétés et de la gouvernance, c''est-à-dire des règles qui encadrent le pouvoir au sein d''une société et entre sociétés liées. Deux notions structurent la matière : le contrôle (qui permet de qualifier un ensemble de sociétés comme un groupe) et les conventions réglementées (les contrats passés entre une société et des personnes qui y exercent une influence, qui font l''objet d''un contrôle renforcé pour éviter les conflits d''intérêts).
-
-## La notion de groupe de sociétés
-
-Un groupe de sociétés n''est pas, en droit OHADA, une personne morale unique : chaque société conserve sa personnalité juridique propre, son patrimoine et sa responsabilité. Le groupe est une réalité économique organisée autour d''un lien de contrôle, que le droit encadre plutôt que de créer un sujet de droit nouveau.
-
-Le contrôle est le pouvoir de déterminer en fait les décisions en assemblée générale, que ce pouvoir résulte d''une détention majoritaire du capital, d''un accord entre associés, ou de la capacité à nommer ou révoquer la majorité des dirigeants. On distingue :
-
-- Le contrôle de droit, qui résulte de la détention d''une majorité des droits de vote.
-- Le contrôle de fait, qui résulte d''une influence déterminante sans détention majoritaire, par exemple lorsqu''un actionnaire minoritaire dispose en pratique de la majorité dans les assemblées en raison de la dispersion du capital des autres actionnaires.
-- Le contrôle conjoint, lorsque plusieurs associés exercent ensemble le pouvoir de décision en vertu d''un accord.
-
-Illustration (cas fictif pour l''exemple) : la société Teranga Industries SA détient 55 % du capital de sa filiale Sahel Logistique SARL. Elle exerce un contrôle de droit. Si elle ne détenait que 30 % du capital, mais que les 70 % restants étaient répartis entre douze actionnaires dispersés n''agissant jamais ensemble, elle pourrait néanmoins exercer un contrôle de fait si elle obtient systématiquement la majorité en assemblée.
-
-## Les conséquences juridiques du contrôle
-
-Le contrôle emporte plusieurs conséquences pratiques qu''il faut savoir repérer dans un cas pratique :
-
-- Comptes consolidés : une société mère qui contrôle des filiales peut devoir établir des comptes consolidés présentant le groupe comme une seule entité économique, sans remettre en cause l''autonomie juridique de chaque société.
-- Obligations d''information renforcées entre sociétés liées, notamment lors d''opérations significatives (cessions d''actifs importants, garanties données par une filiale au profit de sa mère).
-- Vigilance accrue sur les conventions entre sociétés liées, qui peuvent dissimuler un transfert de valeur au détriment d''une filiale minoritaire (prix de transfert non justifiés économiquement).
-
-## Les conventions réglementées
-
-Une convention réglementée est un contrat conclu entre une société et une personne qui exerce une influence sur elle : un dirigeant, un actionnaire significatif, ou une société avec laquelle ces personnes ont elles-mêmes des liens. L''idée directrice est simple : lorsque la même personne se trouve de part et d''autre d''un contrat, le risque de conflit d''intérêts justifie un contrôle procédural renforcé, sans pour autant interdire la convention, qui peut être parfaitement légitime économiquement.
-
-La logique procédurale, de façon générale, repose sur trois temps :
-
-- L''information préalable des organes compétents (conseil d''administration ou organe équivalent) avant ou dès la conclusion de la convention, lorsque la personne intéressée ne peut prendre seule la décision.
-- L''autorisation ou, selon les cas, la ratification par l''organe compétent, la personne intéressée ne participant pas au vote sur sa propre convention.
-- L''information de l''assemblée générale des associés, qui peut statuer sur les conventions et, le cas échéant, en tirer les conséquences si elles se révèlent défavorables à la société.
-
-Les conventions dites « courantes », conclues à des conditions normales (c''est-à-dire comparables à celles pratiquées avec des tiers indépendants), échappent en principe à ce formalisme renforcé, car le risque de conflit d''intérêts y est réputé faible. La qualification « courante et à conditions normales » est souvent au cœur des cas pratiques : il s''agit de comparer les conditions du contrat litigieux à celles du marché.
-
-Illustration chiffrée (fictive pour l''exemple) : le directeur général de Sahel Logistique SARL est également propriétaire à titre personnel d''un entrepôt qu''il loue à la société pour 3 000 000 FCFA par mois. Si le prix de marché pour un entrepôt comparable dans la même zone est de 1 800 000 FCFA par mois, l''écart de 1 200 000 FCFA par mois (soit 14 400 000 FCFA sur l''année) constitue un indice fort que la convention n''est pas conclue à des conditions normales, ce qui justifie son traitement comme convention réglementée, avec les conséquences en cas d''absence d''autorisation (responsabilité éventuelle du dirigeant, voire nullité dans certains cas).
-
-## Sanctions en cas de non-respect du formalisme
-
-Les conséquences générales à envisager, selon les circonstances et sans préjudice du texte applicable qu''il faut toujours vérifier, sont les suivantes :
-
-- La responsabilité civile du dirigeant qui a conclu la convention sans l''autorisation requise, s''il en résulte un préjudice pour la société.
-- La possibilité, selon la gravité, que la convention soit annulée si elle a causé un préjudice imputable à l''absence d''autorisation.
-- Un risque réputationnel et de gouvernance, notamment vis-à-vis des partenaires financiers.
-
-## Cas d''entreprise : groupe Baobab Négoce
-
-La société Baobab Négoce SA, basée à Dakar, contrôle à 70 % sa filiale Baobab Transit SARL, spécialisée dans le transport de marchandises. Le président de Baobab Négoce SA, M. Ndiaye, est également actionnaire à 40 % d''une société tierce, Rapid Fret SARL, qui fournit des prestations de transport sous-traité à Baobab Transit SARL pour un montant annuel de 45 000 000 FCFA. Les tarifs pratiqués par Rapid Fret SARL sont supérieurs de 20 % à ceux du marché constatés chez deux autres sous-traitants comparables.
-
-Analyse : le contrat constitue potentiellement une convention réglementée, car M. Ndiaye, dirigeant de la société mère, a un intérêt personnel significatif (40 %) dans le cocontractant. Le prix de marché théorique est de 45 000 000 ÷ 1,20 = 37 500 000 FCFA, soit un surcoût de 7 500 000 FCFA, ce qui écarte la qualification de convention courante. L''autorisation préalable de l''organe compétent aurait dû être respectée ; à défaut, la responsabilité de M. Ndiaye pourrait être recherchée pour ce préjudice.
-
-## Points clés à retenir
-
-- Le groupe n''a pas de personnalité juridique propre ; chaque société reste autonome, mais le contrôle emporte des obligations spécifiques.
-- Le contrôle peut être de droit, de fait, ou conjoint ; il se caractérise en fait, pas seulement en pourcentage de capital.
-- Une convention réglementée se définit par la qualité des parties (lien d''influence), pas par son objet.
-- Les conventions courantes à conditions normales échappent au formalisme renforcé ; la comparaison au prix de marché est l''outil clé.
-- Vérifiez toujours le texte en vigueur pour les règles précises de majorité, de délai et de sanction : les mécanismes exposés ici sont généraux et pédagogiques.
-
-## Exercices pratiques
-
-1. Définissez le contrôle de droit et le contrôle de fait, et donnez un exemple distinct pour chacun.
-2. Pourquoi une convention « courante et à conditions normales » échappe-t-elle en principe au formalisme renforcé des conventions réglementées ?
-3. Un administrateur d''une société vend à celle-ci un véhicule professionnel à un prix identique à celui pratiqué par un concessionnaire pour un véhicule comparable. Cette convention doit-elle être qualifiée de réglementée ? Justifiez.
-4. Cas pratique : la société Fouta Agro SA contrôle à 60 % sa filiale Fouta Semences SARL. Le directeur général de Fouta Agro SA, actionnaire à 25 % d''une société de transport Express Nord SARL, fait conclure par Fouta Semences SARL un contrat de transport annuel de 30 000 000 FCFA avec Express Nord SARL, alors que le prix de marché pour une prestation comparable serait de 24 000 000 FCFA. Qualifiez la situation et chiffrez l''écart par rapport au marché.
-5. Quelles sont, de façon générale, les trois étapes procédurales associées au contrôle d''une convention réglementée ?
-6. En reprenant le cas Baobab Négoce ci-dessus, indiquez quel organe aurait dû autoriser préalablement le contrat avec Rapid Fret SARL.
-
-## Corrigé
-
-1. Le contrôle de droit résulte de la majorité des droits de vote (ex. 55 % du capital). Le contrôle de fait résulte d''une influence déterminante sans majorité, par exemple un actionnaire à 30 % obtenant systématiquement la majorité en assemblée du fait de la dispersion du capital restant.
-2. Parce que le risque de conflit d''intérêts est réputé faible lorsque les conditions sont identiques à celles négociées avec un tiers indépendant : l''intérêt personnel ne se traduit alors par aucun avantage anormal.
-3. Non, en principe : si le prix est identique au marché, la convention est courante et à conditions normales, même si l''administrateur a un intérêt personnel dans l''opération.
-4. L''écart de prix est de 30 000 000 − 24 000 000 = 6 000 000 FCFA, soit 25 % au-dessus du marché. Le lien (directeur général actionnaire à 25 %) et cet écart écartent la qualification de convention courante : autorisation préalable requise.
-5. Information préalable de l''organe compétent, autorisation sans participation au vote de l''intéressé, puis information de l''assemblée générale.
-6. Le conseil d''administration de Baobab Transit SARL aurait dû autoriser le contrat. À défaut, et si le préjudice (7 500 000 FCFA) est démontré, la responsabilité de M. Ndiaye pourrait être engagée.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des sociétés approfondi et gouvernance : groupes de sociétés et conventions réglementées');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Droit des contrats d''affaires et de la concurrence : clauses complexes et pratiques anticoncurrentielles', '## Objectifs de la leçon
-
-Cette leçon traite des contrats d''affaires sophistiqués, c''est-à-dire des contrats qui organisent une relation économique durable entre entreprises (distribution, approvisionnement, partenariat industriel, cession de participations) et qui comportent des clauses complexes dont la rédaction et l''interprétation exigent une maîtrise fine. Elle introduit ensuite les principes généraux du droit de la concurrence applicables aux pratiques anticoncurrentielles, sans entrer dans le détail procédural d''une autorité de concurrence précise.
-
-## Les clauses complexes des contrats d''affaires
-
-### La clause d''exclusivité
-
-La clause d''exclusivité engage une partie (souvent un fournisseur ou un distributeur) à ne pas contracter avec des concurrents de son partenaire, en contrepartie d''avantages (garantie de débouchés, investissement commercial). Elle doit être distinguée selon qu''elle est unilatérale (seule une partie est liée) ou réciproque. Sa validité dépend généralement de sa durée, de son champ géographique et de la proportionnalité entre la contrainte imposée et la contrepartie obtenue : une exclusivité trop large, trop longue, ou sans contrepartie réelle, peut être requalifiée ou jugée abusive, en particulier si elle a pour effet de restreindre significativement la concurrence sur un marché.
-
-### La clause de non-concurrence
-
-Elle interdit à une partie (souvent le cédant d''un fonds de commerce ou d''actions, ou un ancien partenaire) d''exercer une activité concurrente pendant une durée et sur un territoire déterminés après la fin du contrat. Pour être valable, elle doit généralement être limitée dans le temps, dans l''espace, et proportionnée à l''intérêt légitime qu''elle protège (éviter que le cédant ne récupère immédiatement la clientèle qu''il vient de céder, par exemple). Une clause de non-concurrence de dix ans sur l''ensemble du territoire national, sans lien avec l''activité réellement cédée, serait un exemple d''excès susceptible d''être sanctionné.
-
-### La clause d''earn-out
-
-Fréquente dans les cessions d''entreprises, la clause d''earn-out prévoit qu''une partie du prix de cession n''est payée qu''après la réalisation d''objectifs futurs (chiffre d''affaires, résultat) sur une période définie après la cession. Elle permet de concilier les attentes d''un cédant optimiste sur l''avenir de son entreprise et la prudence d''un acquéreur qui veut limiter son risque.
-
-Illustration chiffrée (fictive pour l''exemple) : la cession des actions de Teranga Agro-Transformation SARL est fixée à un prix de base de 200 000 000 FCFA, complété par un earn-out égal à 10 % du chiffre d''affaires additionnel réalisé au-delà de 150 000 000 FCFA sur les deux exercices suivant la cession, plafonné à 40 000 000 FCFA. Si le chiffre d''affaires cumulé des deux exercices atteint 230 000 000 FCFA, l''earn-out théorique serait de 10 % × (230 000 000 − 150 000 000) = 10 % × 80 000 000 = 8 000 000 FCFA, bien en-deçà du plafond ; le prix total payé serait donc de 208 000 000 FCFA.
-
-### La clause de hardship (imprévision)
-
-Elle permet à une partie de demander une renégociation du contrat lorsque survient un changement de circonstances imprévisible lors de la conclusion, qui rend l''exécution excessivement onéreuse, sans pour autant rendre l''exécution impossible (ce qui relèverait de la force majeure). La clause de hardship organise par avance la procédure de renégociation (délai, méthode, recours à un tiers en cas d''échec), évitant que les parties ne restent bloquées sur l''alternative brutale entre exécuter à perte ou rompre le contrat.
-
-Illustration : un contrat d''approvisionnement agricole fixe un prix pour trois ans. Une sécheresse exceptionnelle double le coût d''achat pour le fournisseur. Avec une clause de hardship, il peut demander une renégociation ; sans elle, il doit en principe exécuter aux conditions initiales, sauf à démontrer une impossibilité (force majeure), plus difficile à établir qu''une simple aggravation du coût.
-
-### La clause limitative de responsabilité
-
-Elle plafonne, par avance, le montant des dommages-intérêts dus en cas de manquement contractuel, souvent en pourcentage du prix du contrat. Valable entre professionnels, elle perd son effet en cas de faute particulièrement grave, et ne peut vider l''obligation essentielle de toute portée réelle.
-
-## Principes généraux du droit de la concurrence
-
-Le droit de la concurrence vise à protéger le fonctionnement concurrentiel des marchés, dans l''intérêt des entreprises et des consommateurs. En Master 1, il convient de connaître les grandes catégories de pratiques anticoncurrentielles, sans entrer dans le détail procédural d''une autorité déterminée (national ou communautaire), qui relève d''un enseignement spécialisé.
-
-- Les ententes anticoncurrentielles : accords ou pratiques concertées entre entreprises concurrentes qui ont pour objet ou pour effet de restreindre la concurrence, par exemple une fixation concertée des prix, une répartition des marchés ou des clients, ou une limitation concertée de la production.
-- L''abus de position dominante : le fait, pour une entreprise qui détient une position dominante sur un marché (c''est-à-dire la capacité de s''y comporter indépendamment de ses concurrents et de ses clients dans une mesure appréciable), d''exploiter cette position de façon abusive, par exemple en imposant des prix excessifs, en pratiquant des prix d''éviction destinés à exclure un concurrent, ou en imposant des conditions commerciales discriminatoires sans justification objective.
-- Les pratiques restrictives dans les relations contractuelles verticales (entre un fournisseur et un distributeur, par exemple), qui peuvent être anticoncurrentielles lorsqu''elles ont pour effet de cloisonner les marchés de façon excessive, au-delà de ce qui est nécessaire pour organiser légitimement un réseau de distribution.
-
-Le lien avec les clauses complexes étudiées plus haut est direct : une clause d''exclusivité très large entre un fournisseur dominant et l''ensemble de ses distributeurs peut, selon son ampleur et ses effets, être analysée comme une pratique restrictive de concurrence, alors que la même clause entre deux acteurs de taille modeste, sur un marché très concurrentiel, pose beaucoup moins de difficulté.
-
-## Cas d''entreprise : réseau de distribution Sahel Boissons
-
-Sahel Boissons SA, producteur de boissons basé à Thiès, conclut avec quinze distributeurs régionaux des contrats comportant une clause d''exclusivité réciproque de dix ans, interdisant à chaque distributeur de vendre des boissons concurrentes et à Sahel Boissons SA de vendre à d''autres distributeurs dans la même zone. Sahel Boissons SA détient 65 % du marché national des boissons gazeuses.
-
-Analyse : la durée de dix ans et la position de Sahel Boissons SA sur le marché (65 %, ce qui peut constituer une position dominante selon les critères du marché pertinent) sont des facteurs de risque. Une clause d''exclusivité de cette ampleur, appliquée à l''ensemble d''un réseau de distribution par une entreprise en position dominante, peut avoir pour effet de verrouiller durablement l''accès au marché pour des concurrents potentiels, ce qui est caractéristique d''une pratique susceptible d''être qualifiée d''abus si elle ne répond à aucune justification objective suffisante (investissements spécifiques des distributeurs à amortir, par exemple). Une analyse rigoureuse comparerait la durée et l''ampleur de l''exclusivité aux standards du secteur et à la justification économique avancée par Sahel Boissons SA.
-
-## Points clés à retenir
-
-- Chaque clause complexe (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité) répond à une logique économique propre qu''il faut identifier avant de juger de sa validité.
-- La validité des clauses restrictives de liberté (exclusivité, non-concurrence) dépend généralement de leur proportionnalité : durée, champ géographique, contrepartie.
-- Les pratiques anticoncurrentielles se répartissent en ententes, abus de position dominante, et pratiques restrictives verticales ; une même clause contractuelle peut, selon son contexte et son ampleur, basculer d''une clause licite à une pratique anticoncurrentielle.
-- Aucun seuil précis de part de marché ou de durée maximale ne doit être mémorisé comme règle absolue sans vérification du texte en vigueur ; ce cours donne la méthode d''analyse, pas des seuils officiels.
-
-## Exercices pratiques
-
-1. Distinguez la clause d''exclusivité et la clause de non-concurrence par leur objet et par leur moment d''application dans la vie du contrat.
-2. Expliquez l''intérêt économique d''une clause d''earn-out pour un acquéreur et pour un cédant, respectivement.
-3. Un contrat d''approvisionnement de cinq ans à prix fixe ne comporte aucune clause de hardship. Un choc exogène fait tripler le coût de la matière première pour le fournisseur. Quelles sont ses options juridiques, en principe ?
-4. Cas pratique chiffré : la cession des parts de Casamance Pêche SARL est fixée à 90 000 000 FCFA, avec un earn-out de 15 % du chiffre d''affaires additionnel au-delà de 60 000 000 FCFA sur l''exercice suivant, plafonné à 20 000 000 FCFA. Le chiffre d''affaires de l''exercice suivant atteint 95 000 000 FCFA. Calculez le prix total payé.
-5. Qu''est-ce qui distingue une entente anticoncurrentielle d''un abus de position dominante quant au nombre d''entreprises impliquées ?
-6. Pourquoi une clause d''exclusivité identique peut-elle être licite entre deux petites entreprises et poser un problème de concurrence lorsqu''elle est imposée par une entreprise en position dominante ?
-
-## Corrigé
-
-1. La clause d''exclusivité organise l''exécution du contrat (interdiction de contracter avec des concurrents pendant la durée du contrat), alors que la clause de non-concurrence s''applique en principe après la fin du contrat, pour protéger un intérêt légitime (clientèle cédée, savoir-faire) une fois la relation terminée.
-2. Pour l''acquéreur, l''earn-out limite le risque : il ne paie la part variable que si les performances futures confirment la valeur de l''entreprise. Pour le cédant, elle permet de capter une partie de la valeur future qu''il estime probable, sans l''imposer intégralement à l''acquéreur dès la cession.
-3. En principe, sans clause de hardship, le fournisseur reste tenu d''exécuter le contrat aux conditions initiales fixées, l''aggravation du coût n''étant pas, en elle-même, un cas de force majeure (qui suppose une impossibilité d''exécuter, pas seulement une difficulté économique). Il pourrait tenter une négociation amiable, mais n''a pas de droit automatique à une révision du prix en l''absence de clause ou de disposition légale spécifique applicable.
-4. L''earn-out théorique est de 15 % × (95 000 000 − 60 000 000) = 15 % × 35 000 000 = 5 250 000 FCFA, inférieur au plafond de 20 000 000 FCFA. Le prix total payé est donc de 90 000 000 + 5 250 000 = 95 250 000 FCFA.
-5. Une entente suppose un accord ou une pratique concertée entre au moins deux entreprises (généralement concurrentes) ; un abus de position dominante est le fait d''une seule entreprise qui détient individuellement (ou parfois collectivement) une position dominante sur un marché.
-6. Parce que l''analyse concurrentielle s''intéresse à l''effet réel sur le marché : une exclusivité entre deux petits acteurs a un effet négligeable, alors que la même clause imposée par un acteur dominant à l''ensemble de son réseau peut verrouiller l''accès au marché pour des concurrents.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des contrats d''affaires et de la concurrence : clauses complexes et pratiques anticoncurrentielles');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Arbitrage et modes alternatifs de résolution des litiges : clause compromissoire et rôle de la CCJA', '## Objectifs de la leçon
-
-Cette leçon présente l''arbitrage et les modes alternatifs de résolution des litiges (MARL) dans les relations d''affaires, avec une attention particulière à la logique de la clause compromissoire et au rôle de la Cour commune de justice et d''arbitrage (CCJA) de l''OHADA dans le paysage régional. L''objectif du Master 1 est de comprendre la logique d''ensemble et les avantages comparés de ces modes de résolution des litiges, non de maîtriser le détail procédural fin, qui relève d''un enseignement spécialisé d''arbitrage.
-
-## Pourquoi recourir à l''arbitrage et aux MARL dans les affaires
-
-Les entreprises qui contractent, en particulier dans un cadre régional ou international, préfèrent souvent éviter la juridiction étatique de l''une ou l''autre des parties, pour plusieurs raisons :
-
-- La neutralité : aucune des parties ne souhaite être jugée devant les tribunaux du pays de son cocontractant.
-- La confidentialité : l''arbitrage se déroule, en principe, de façon confidentielle, contrairement à une procédure judiciaire généralement publique.
-- La spécialisation : les parties choisissent des arbitres ayant une expertise technique ou sectorielle précise.
-- La rapidité relative et la flexibilité procédurale.
-- L''exécution transfrontalière généralement facilitée des sentences arbitrales, grâce à des conventions internationales de reconnaissance et d''exécution.
-
-Les modes alternatifs de résolution des litiges comprennent, au-delà de l''arbitrage proprement dit :
-
-- La médiation : un tiers neutre (le médiateur) aide les parties à trouver elles-mêmes une solution amiable, sans trancher le litige à leur place.
-- La conciliation : proche de la médiation, le conciliateur peut être plus actif dans la proposition de solutions, selon les traditions et les textes applicables.
-- L''arbitrage : à la différence de la médiation et de la conciliation, l''arbitre tranche le litige par une décision (la sentence arbitrale), qui a, en principe, une force obligatoire comparable à un jugement, mais rendue par un tribunal privé choisi par les parties plutôt que par une juridiction étatique.
-
-## La clause compromissoire
-
-La clause compromissoire est la clause, insérée dans un contrat avant la survenance d''un litige, par laquelle les parties conviennent de soumettre à l''arbitrage les différends qui pourraient naître de ce contrat. Elle se distingue du compromis d''arbitrage, qui est l''accord conclu après la naissance du litige pour le soumettre à l''arbitrage.
-
-Une clause compromissoire bien rédigée précise généralement :
-
-- Le siège de l''arbitrage (le lieu juridique de référence pour la procédure, qui n''est pas nécessairement le lieu où se tiennent les audiences).
-- Le règlement d''arbitrage applicable (celui d''une institution d''arbitrage déterminée, ou un arbitrage ad hoc sans institution).
-- La langue de la procédure.
-- Le nombre d''arbitres (souvent un ou trois) et la méthode de leur désignation.
-- Le droit applicable au fond du litige, qui peut être distinct de la loi du siège de l''arbitrage.
-
-L''absence de précision sur ces points n''empêche pas nécessairement l''arbitrage, les règlements institutionnels prévoyant des mécanismes de désignation par défaut, mais elle crée un risque de contestation et de retard.
-
-L''effet essentiel de la clause compromissoire est de dessaisir, en principe, les juridictions étatiques du litige : si une partie saisit malgré tout un tribunal étatique en violation de la clause, l''autre partie peut en principe soulever l''incompétence de ce tribunal au profit de l''arbitrage convenu. On parle de l''effet négatif de la clause (elle écarte la compétence étatique) et de son effet positif (elle fonde la compétence du tribunal arbitral).
-
-## La CCJA de l''OHADA : rôle en général
-
-La Cour commune de justice et d''arbitrage (CCJA) est l''organe juridictionnel commun aux États membres de l''OHADA. Elle exerce, en matière d''arbitrage, un double rôle qu''il convient de connaître en général, sans entrer dans le détail procédural fin :
-
-- Un rôle d''appui à l''arbitrage institutionnel : la CCJA peut administrer des arbitrages selon son propre règlement, en particulier pour les litiges relatifs aux contrats exécutés ou à exécuter dans l''espace OHADA, lorsque les parties ont choisi ce cadre.
-- Un rôle juridictionnel vis-à-vis des sentences arbitrales rendues sous son égide, notamment pour leur reconnaissance et leur exécution dans l''espace OHADA, ainsi qu''un contrôle limité de leur régularité, sans réexaminer le fond du litige déjà tranché par les arbitres.
-
-Au-delà de l''arbitrage, la CCJA joue également un rôle de juridiction de cassation commune pour l''interprétation et l''application des actes uniformes OHADA (droit des sociétés, droit commercial général, sûretés, etc.), ce qui favorise une interprétation harmonisée du droit des affaires dans l''ensemble de la zone, limitant les divergences entre juridictions nationales.
-
-Pour un cas pratique de Master 1, il suffit en général de savoir identifier qu''un litige entrant dans le champ de l''OHADA, assorti d''une clause d''arbitrage faisant référence à la CCJA ou à son règlement, peut être porté devant cette institution, sans qu''il soit demandé de détailler précisément les délais ou les voies de recours internes à la procédure, qui relèvent d''un enseignement spécialisé.
-
-## Choisir entre arbitrage, médiation et juridiction étatique
-
-Le choix du mode de résolution des litiges dépend de plusieurs facteurs que l''on doit savoir mettre en balance dans un cas pratique :
-
-- La nature de la relation : une relation d''affaires que les parties souhaitent préserver à long terme s''oriente plutôt vers la médiation, plus propice à une solution négociée que l''arbitrage, procédure contradictoire qui tranche en faveur d''une partie.
-- Le montant et la complexité du litige : un litige technique de montant élevé justifie souvent le coût et la durée d''un arbitrage avec des arbitres spécialisés, alors qu''un litige de faible montant peut être disproportionné par rapport au coût d''un arbitrage.
-- Le besoin d''exécution transfrontalière : lorsque les parties ou leurs actifs sont situés dans des pays différents, l''arbitrage offre souvent de meilleures perspectives d''exécution qu''un jugement étatique.
-- Le besoin de confidentialité : particulièrement important lorsque le litige touche à des secrets d''affaires ou pourrait nuire à la réputation d''une partie si rendu public.
-
-## Cas d''entreprise : litige Delta Cacao
-
-La société Delta Cacao SA, basée en Côte d''Ivoire, a conclu avec Sahel Négoce SA, basée au Sénégal, un contrat de fourniture de fèves de cacao sur trois ans, comportant une clause compromissoire désignant un arbitrage à trois arbitres, sous un règlement d''arbitrage faisant référence à la CCJA, siège à Abidjan, droit applicable au fond : droit ivoirien. Un désaccord survient sur la qualité des livraisons de la deuxième année, Sahel Négoce SA estimant avoir subi un préjudice de 60 000 000 FCFA du fait de fèves non conformes.
-
-Analyse : la clause compromissoire dessaisit en principe les juridictions étatiques sénégalaises et ivoiriennes du litige ; Sahel Négoce SA ne pourrait donc pas saisir directement un tribunal sénégalais sans que Delta Cacao SA ne puisse soulever l''incompétence de ce tribunal au profit de l''arbitrage convenu. Le litige relève du champ de l''OHADA (contrat de fourniture entre entreprises ayant une activité dans l''espace OHADA) et peut être porté devant un arbitrage administré selon le règlement visé, le siège fixé à Abidjan déterminant le cadre juridique de référence pour la procédure, sans préjudice du droit ivoirien choisi pour trancher le fond du différend sur la conformité des livraisons.
-
-## Points clés à retenir
-
-- L''arbitrage tranche le litige par une sentence obligatoire ; la médiation et la conciliation aident les parties à trouver elles-mêmes une solution, sans l''imposer.
-- La clause compromissoire, insérée avant le litige, a pour effet d''écarter la compétence des juridictions étatiques au profit de l''arbitrage convenu.
-- Une clause compromissoire bien rédigée précise le siège, le règlement applicable, la langue, le nombre d''arbitres et le droit applicable au fond.
-- La CCJA de l''OHADA joue un rôle d''appui à l''arbitrage institutionnel et un rôle juridictionnel de reconnaissance et d''exécution des sentences, ainsi qu''un rôle de cassation commune pour le droit uniforme OHADA ; les détails procéduraux fins ne sont pas exigés en Master 1 et relèvent d''un enseignement spécialisé.
-- Le choix entre arbitrage, médiation et juridiction étatique dépend de la nature de la relation, du montant du litige, du besoin d''exécution transfrontalière et du besoin de confidentialité.
-
-## Exercices pratiques
-
-1. Distinguez la clause compromissoire du compromis d''arbitrage par leur moment de conclusion.
-2. Citez trois éléments qu''une clause compromissoire bien rédigée devrait préciser.
-3. Expliquez la différence entre l''effet négatif et l''effet positif de la clause compromissoire.
-4. Pourquoi une entreprise souhaitant préserver une relation commerciale durable avec son partenaire pourrait-elle préférer la médiation à l''arbitrage en cas de différend ?
-5. Dans le cas Delta Cacao ci-dessus, le tribunal de commerce de Dakar peut-il, en principe, trancher directement le litige si Sahel Négoce SA le saisit malgré la clause compromissoire ? Justifiez.
-6. Citez deux rôles généraux de la CCJA de l''OHADA en matière d''arbitrage.
-
-## Corrigé
-
-1. La clause compromissoire est conclue avant la naissance du litige, au sein du contrat initial, pour les différends futurs et éventuels ; le compromis d''arbitrage est conclu après la naissance du litige, pour ce litige précisément identifié.
-2. Par exemple : le siège de l''arbitrage, le règlement d''arbitrage applicable, et le nombre d''arbitres (on pouvait aussi citer la langue de la procédure ou le droit applicable au fond).
-3. L''effet négatif écarte la compétence des juridictions étatiques pour le litige couvert par la clause ; l''effet positif fonde, à l''inverse, la compétence du tribunal arbitral pour statuer sur ce même litige.
-4. Parce que la médiation vise une solution négociée et consensuelle qui préserve la relation entre les parties, alors que l''arbitrage, comme une procédure judiciaire, tranche en faveur d''une partie contre l''autre, ce qui peut davantage détériorer la relation commerciale future.
-5. En principe non, ou plus précisément le tribunal de commerce de Dakar devrait se déclarer incompétent si Delta Cacao SA soulève l''exception d''incompétence fondée sur la clause compromissoire, puisque celle-ci a dessaisi les juridictions étatiques du litige au profit de l''arbitrage convenu.
-6. Un rôle d''appui à l''arbitrage institutionnel (administration d''arbitrages selon son propre règlement) et un rôle juridictionnel de reconnaissance et d''exécution des sentences arbitrales rendues sous son égide (on pouvait aussi citer son rôle de cassation commune pour le droit uniforme OHADA).', 'texte', 45, false, 40
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Arbitrage et modes alternatifs de résolution des litiges : clause compromissoire et rôle de la CCJA');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 1 en droit des affaires (entraînement, corrigé détaillé)', '## Sujet type d''examen de Master 1 en droit des affaires (entraînement non officiel, barème indicatif)
-
-Durée indicative : 3 heures. Ce sujet est un entraînement pédagogique, non un sujet officiel ; le barème proposé est indicatif et peut être adapté par votre enseignant.
-
-### Énoncé
-
-La société Jolof Industries SA, basée à Dakar, est la société mère d''un groupe comprenant deux filiales : Jolof Emballages SARL (détenue à 80 %) et Jolof Distribution SARL (détenue à 45 %, les 55 % restants étant détenus par neuf actionnaires minoritaires n''agissant jamais ensemble, ce qui permet en pratique à Jolof Industries SA d''obtenir systématiquement la majorité en assemblée générale).
-
-Premier fait : le directeur général de Jolof Industries SA, M. Faye, est également actionnaire majoritaire (70 %) d''une société de transport, Rapid Cargo SARL, qui fournit à Jolof Distribution SARL l''intégralité de ses prestations de transport pour un montant annuel de 54 000 000 FCFA. Le prix de marché pour des prestations comparables, selon deux devis obtenus auprès de transporteurs concurrents, serait de 42 000 000 FCFA par an. Le contrat a été conclu par le directeur général de Jolof Distribution SARL sans consultation préalable du conseil d''administration.
-
-Deuxième fait : Jolof Emballages SARL, qui détient 58 % du marché régional de l''emballage plastique alimentaire, impose à l''ensemble de ses douze distributeurs un contrat d''exclusivité réciproque de huit ans, leur interdisant de distribuer des emballages concurrents, sans contrepartie financière spécifique autre que les conditions commerciales habituelles.
-
-Troisième fait : le contrat entre Jolof Emballages SARL et l''un de ses distributeurs, Teranga Pack SARL, comporte une clause compromissoire désignant un arbitrage à arbitre unique, siège à Dakar, règlement de la CCJA, droit sénégalais applicable au fond. Un litige survient sur une rupture anticipée du contrat par Jolof Emballages SARL, Teranga Pack SARL réclamant 15 000 000 FCFA de dommages-intérêts. Jolof Emballages SARL saisit directement le tribunal de commerce de Dakar sans mentionner la clause compromissoire, espérant une procédure plus rapide.
-
-### Questions
-
-1. (6 points) Qualifiez le lien de contrôle entre Jolof Industries SA et chacune de ses deux filiales, en précisant le type de contrôle en cause pour Jolof Distribution SARL.
-2. (8 points) Analysez le premier fait : le contrat entre Jolof Distribution SARL et Rapid Cargo SARL constitue-t-il une convention réglementée ? Chiffrez l''écart par rapport au prix de marché et indiquez les conséquences possibles de l''absence de consultation du conseil d''administration.
-3. (8 points) Analysez le deuxième fait au regard des principes généraux du droit de la concurrence : la clause d''exclusivité réciproque de huit ans imposée par Jolof Emballages SARL pose-t-elle un risque de qualification comme pratique anticoncurrentielle ? Justifiez en identifiant les éléments pertinents.
-4. (8 points) Analysez le troisième fait : la saisine du tribunal de commerce de Dakar par Jolof Emballages SARL est-elle conforme à la clause compromissoire ? Quelle réaction procédurale Teranga Pack SARL pourrait-elle opposer, et quel rôle la CCJA pourrait-elle jouer dans la suite du dossier ?
-
-### Corrigé détaillé
-
-1. Jolof Industries SA exerce un contrôle de droit sur Jolof Emballages SARL (détention de 80 % du capital, majorité évidente des droits de vote). Sur Jolof Distribution SARL, elle détient seulement 45 % du capital, ce qui est minoritaire en droit, mais la dispersion des 55 % restants entre neuf actionnaires n''agissant jamais ensemble lui permet d''obtenir systématiquement la majorité en assemblée : il s''agit donc d''un contrôle de fait, et non d''un contrôle de droit, bien que les conséquences pratiques du contrôle (vigilance sur les conventions, information renforcée) soient similaires.
-
-2. Le contrat entre Jolof Distribution SARL et Rapid Cargo SARL présente les caractéristiques d''une convention réglementée : M. Faye, directeur général de la société mère Jolof Industries SA, est également actionnaire majoritaire (70 %) du cocontractant Rapid Cargo SARL, ce qui crée un lien d''influence pertinent même s''il n''est pas formellement dirigeant de Jolof Distribution SARL (une analyse complète devrait vérifier s''il exerce également une fonction ou une influence directe sur cette filiale, ce qui est cohérent avec son rôle de dirigeant du groupe). L''écart de prix est de 54 000 000 − 42 000 000 = 12 000 000 FCFA par an, soit environ 28,6 % au-dessus du marché (12 000 000 / 42 000 000 ≈ 0,286), ce qui écarte la qualification de convention courante à conditions normales. L''absence de consultation préalable du conseil d''administration de Jolof Distribution SARL constitue un manquement au formalisme applicable aux conventions réglementées ; les conséquences possibles sont, selon les circonstances, la responsabilité civile du dirigeant ayant conclu le contrat pour le préjudice correspondant au surcoût (12 000 000 FCFA par an), et un risque de contestation de la convention par les actionnaires minoritaires de Jolof Distribution SARL.
-
-3. La clause d''exclusivité réciproque de huit ans, imposée par Jolof Emballages SARL à l''ensemble de son réseau de douze distributeurs, pose un risque réel de qualification anticoncurrentielle pour plusieurs raisons convergentes : premièrement, Jolof Emballages SARL détient 58 % du marché régional de l''emballage plastique alimentaire, ce qui peut constituer une position dominante selon la définition du marché pertinent ; deuxièmement, la durée de huit ans est longue et l''exclusivité est appliquée systématiquement à l''ensemble du réseau, ce qui peut avoir un effet cumulatif de verrouillage du marché pour les concurrents de Jolof Emballages SARL qui chercheraient à accéder aux mêmes distributeurs ; troisièmement, l''absence de contrepartie financière spécifique (au-delà des conditions commerciales habituelles) affaiblit la justification économique de cette contrainte. L''ensemble de ces éléments (position dominante probable, durée longue, absence de contrepartie spécifique, effet cumulatif sur l''ensemble du réseau) est caractéristique d''une pratique susceptible d''être analysée comme un abus de position dominante, sous réserve d''une analyse plus fine du marché pertinent et des justifications économiques que pourrait avancer Jolof Emballages SARL (investissements spécifiques à amortir, par exemple).
-
-4. La saisine directe du tribunal de commerce de Dakar par Jolof Emballages SARL n''est pas conforme à la clause compromissoire, qui a pour effet de dessaisir en principe les juridictions étatiques du litige couvert par le contrat. Teranga Pack SARL peut soulever l''exception d''incompétence du tribunal de commerce de Dakar en se fondant sur la clause compromissoire, ce qui devrait conduire le tribunal à se déclarer incompétent au profit de l''arbitrage convenu (arbitre unique, règlement CCJA, siège Dakar, droit sénégalais au fond). Le litige, relatif à un contrat de distribution exécuté dans l''espace OHADA, pourrait ensuite être porté devant un arbitrage administré selon le règlement de la CCJA, qui jouerait son rôle d''appui institutionnel à la procédure arbitrale, puis, le cas échéant, un rôle de reconnaissance et d''exécution de la sentence arbitrale qui serait rendue sur la demande de dommages-intérêts de 15 000 000 FCFA formulée par Teranga Pack SARL.
-
-## Exercices pratiques (questions complémentaires)
-
-1. Dans le sujet ci-dessus, si Jolof Industries SA ne détenait que 20 % de Jolof Distribution SARL, sans lien particulier avec les autres actionnaires, la qualification de contrôle de fait serait-elle encore pertinente ? Justifiez.
-2. Proposez une contrepartie financière spécifique que Jolof Emballages SARL pourrait négocier avec ses distributeurs pour renforcer la justification économique de la clause d''exclusivité, tout en réduisant le risque concurrentiel.
-3. Si le conseil d''administration de Jolof Distribution SARL avait autorisé préalablement le contrat avec Rapid Cargo SARL, en toute connaissance de l''écart de prix constaté, la qualification de convention réglementée changerait-elle les conséquences juridiques ? Expliquez.
-4. Si la clause compromissoire du troisième fait avait désigné un arbitrage ad hoc (sans institution), quel aurait été l''impact sur l''intervention éventuelle de la CCJA ?
-5. Résumez, en cinq lignes, le fil conducteur transversal reliant les trois faits du sujet (gouvernance de groupe, concurrence, résolution des litiges) dans la gestion des risques juridiques d''un groupe de sociétés.
-
-## Corrigé
-
-1. La qualification de contrôle de fait dépendrait de la réalité du pouvoir de décision en assemblée, pas seulement du pourcentage détenu : à 20 % sans lien particulier avec les autres actionnaires (qui pourraient, par exemple, agir de façon coordonnée ou être eux-mêmes majoritaires de fait), il serait plus difficile de démontrer que Jolof Industries SA obtient systématiquement la majorité ; une analyse des résultats effectifs des assemblées précédentes serait nécessaire pour trancher, et en l''absence d''une telle démonstration, la qualification de contrôle ne serait pas retenue.
-2. Par exemple, un financement ou une subvention des investissements commerciaux spécifiques des distributeurs (présentoirs, formation, garantie de volumes minimums d''achat par Jolof Emballages SARL), qui constituerait une contrepartie réelle et proportionnée à la contrainte d''exclusivité, renforçant sa justification économique et réduisant le risque de qualification abusive.
-3. L''autorisation préalable par le conseil d''administration ne change pas la qualification de convention réglementée (qui dépend de la qualité des parties, pas du respect de la procédure), mais elle change les conséquences pratiques : le respect du formalisme réduit significativement le risque de responsabilité du dirigeant ayant conclu le contrat, car la décision a été prise collectivement, en connaissance de l''écart de prix, par l''organe compétent, même si les actionnaires minoritaires pourraient encore contester l''opportunité économique de la décision par d''autres voies.
-4. Un arbitrage ad hoc, sans institution, ne ferait en principe pas intervenir la CCJA dans l''administration de la procédure elle-même (désignation des arbitres selon le règlement institutionnel, par exemple) ; toutefois, la CCJA pourrait encore intervenir en aval pour la reconnaissance et l''exécution de la sentence arbitrale dans l''espace OHADA, ce rôle juridictionnel n''étant pas conditionné au caractère institutionnel ou ad hoc de l''arbitrage initial.
-5. Les trois faits illustrent qu''un groupe de sociétés doit gérer simultanément plusieurs familles de risques juridiques liés à ses choix d''organisation : les conflits d''intérêts internes entre dirigeants et sociétés liées (gouvernance), les effets externes de sa puissance économique sur le marché (concurrence), et la sécurisation contractuelle du règlement des différends avec ses partenaires (arbitrage). Une gestion rigoureuse de ces trois dimensions, en amont de la signature des contrats plutôt qu''au moment du litige, réduit fortement l''exposition juridique et financière du groupe.', 'texte', 50, false, 50
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 en droit des affaires (entraînement, corrigé détaillé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Droit des sociétés approfondi et gouvernance', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : permettre à l''étudiant de maîtriser la notion de contrôle entre sociétés et le régime des conventions réglementées, en étant capable de qualifier une situation d''entreprise complexe et d''en tirer les conséquences pratiques. Matériel recommandé : tableau ou diaporama avec un organigramme de groupe vierge à compléter, calculatrice pour les exemples chiffrés. Prérequis : droit des sociétés commerciales OHADA (notions de capital, d''organes sociaux, d''assemblée générale) vu en Licence 3.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux
-
-Bonjour à toutes et à tous. Dans cette séance, nous allons travailler une notion centrale du droit des sociétés approfondi : la gouvernance des groupes, à travers deux piliers, le contrôle et les conventions réglementées. Pourquoi cette matière est-elle si importante en pratique ? Parce qu''une très grande partie des grandes entreprises africaines fonctionnent aujourd''hui sous forme de groupes : une société holding qui détient des participations dans plusieurs filiales, parfois dans des secteurs différents. Cette organisation présente des avantages économiques réels — mutualisation des ressources, diversification des risques, optimisation de la gestion — mais elle crée aussi des risques juridiques spécifiques, en particulier le risque que les dirigeants ou les actionnaires significatifs utilisent leur position pour favoriser une société du groupe au détriment d''une autre, ou au détriment des actionnaires minoritaires. C''est ce risque que le droit des conventions réglementées cherche à encadrer. Gardez cette idée directrice en tête tout au long de la séance : le droit ne cherche pas à empêcher les relations entre sociétés liées, qui sont souvent légitimes et nécessaires, mais à s''assurer qu''elles ne dissimulent pas un transfert de valeur injustifié.
-
-## 05:00 – 15:00 · La notion de contrôle
-
-Commençons par la notion de contrôle, qui est le fondement même de la notion de groupe. Je vous rappelle qu''en droit OHADA, le groupe n''est pas un sujet de droit : chaque société du groupe garde sa personnalité juridique propre. Ce qui unit les sociétés du groupe, c''est un lien de fait et de droit : le contrôle. On distingue trois formes de contrôle qu''il faut absolument savoir reconnaître dans un cas pratique. D''abord, le contrôle de droit : une société détient la majorité des droits de vote d''une autre, et peut donc, mathématiquement, imposer ses décisions en assemblée. Ensuite, le contrôle de fait : une société ne détient pas la majorité du capital, mais obtient, en pratique, la majorité des voix exprimées en assemblée, parce que les autres actionnaires sont dispersés et n''agissent jamais ensemble. Prenons un exemple au tableau : une société détient 35 % du capital d''une autre société, le reste étant détenu par vingt actionnaires individuels qui ne se coordonnent jamais. Si, lors des trois dernières assemblées générales, cette société a systématiquement obtenu plus de 50 % des voix exprimées parce que les petits actionnaires ne se déplacent pas tous, on est en présence d''un contrôle de fait. Enfin, le contrôle conjoint : plusieurs associés exercent ensemble le pouvoir de décision en vertu d''un accord explicite, par exemple un pacte d''actionnaires qui prévoit un vote commun. Cette distinction n''est pas un exercice théorique : elle détermine le périmètre du groupe, l''obligation éventuelle de comptes consolidés, et surtout la vigilance à exercer sur les conventions entre sociétés liées, que nous allons étudier maintenant.
-
-## 15:00 – 30:00 · Les conventions réglementées : logique et procédure
-
-Passons au cœur de la séance : les conventions réglementées. Je vous propose la définition suivante, que vous devez pouvoir reformuler avec vos propres mots à l''examen : une convention réglementée est un contrat conclu entre une société et une personne qui exerce une influence sur elle — un dirigeant, un actionnaire significatif, ou une société liée à ces personnes. L''idée est simple : quand la même personne négocie des deux côtés de la table, implicitement ou explicitement, le risque de conflit d''intérêts justifie un contrôle procédural renforcé. Attention : ce contrôle renforcé ne signifie pas interdiction. Beaucoup de conventions réglementées sont parfaitement légitimes et bonnes pour l''entreprise — par exemple, un dirigeant qui met à disposition de sa société un bien personnel à un prix juste. Le droit organise une procédure en trois temps que vous devez connaître par cœur : premièrement, l''information préalable de l''organe compétent, généralement le conseil d''administration ; deuxièmement, l''autorisation ou la ratification par cet organe, la personne intéressée ne participant pas au vote sur sa propre convention — c''est un point très souvent oublié par les étudiants et qui vaut des points à l''examen ; troisièmement, l''information de l''assemblée générale des associés. Il existe une exception importante : les conventions dites courantes, conclues à des conditions normales, c''est-à-dire comparables à ce qu''un tiers indépendant aurait négocié. Ces conventions échappent au formalisme renforcé. C''est là que se trouve la vraie difficulté pratique des cas d''examen : comment déterminer si une convention est courante et à conditions normales ? La méthode est la comparaison avec le prix de marché. Prenons un exemple chiffré au tableau : un directeur général loue à sa société un entrepôt qu''il possède personnellement, pour 3 000 000 FCFA par mois. Le prix de marché pour un bien comparable est de 1 800 000 FCFA par mois. L''écart est de 1 200 000 FCFA par mois, soit 14 400 000 FCFA par an. Cet écart très significatif écarte la qualification de convention courante : c''est une convention réglementée qui devait suivre la procédure en trois temps.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Je vous propose une courte pause active de cinq minutes. Avant de reprendre, réfléchissez individuellement à cette question, que nous corrigerons ensemble à l''oral : si le même directeur général avait loué l''entrepôt au prix exact de 1 800 000 FCFA par mois, identique au marché, la convention devrait-elle encore suivre la procédure en trois temps ? Notez votre réponse et votre justification, nous en discuterons au retour de la pause. (Réponse attendue : non, en principe, car il s''agirait alors d''une convention courante conclue à des conditions normales, échappant au formalisme renforcé, même si le dirigeant a un intérêt personnel dans l''opération — l''important est l''absence d''avantage anormal, pas l''existence du lien d''intérêt en lui-même.)
-
-## 35:00 – 50:00 · Cas d''entreprise filé : groupe Baobab Négoce
-
-Reprenons avec un cas d''entreprise complet, que nous allons résoudre ensemble étape par étape, exactement selon la méthode que vous devrez appliquer à l''examen. Baobab Négoce SA, basée à Dakar, contrôle à 70 % sa filiale Baobab Transit SARL. Le président de Baobab Négoce SA, M. Ndiaye, est actionnaire à 40 % d''une société tierce, Rapid Fret SARL, qui fournit des prestations de transport sous-traité à Baobab Transit SARL pour 45 000 000 FCFA par an. Les tarifs de Rapid Fret SARL sont supérieurs de 20 % aux tarifs du marché constatés chez deux concurrents comparables. Première étape de la méthode : identifier le lien de contrôle. Baobab Négoce SA détient 70 % de Baobab Transit SARL : c''est un contrôle de droit, sans ambiguïté. Deuxième étape : identifier les parties au contrat litigieux et leurs liens d''intérêt. Le contrat est conclu entre Baobab Transit SARL (la filiale) et Rapid Fret SARL. M. Ndiaye, qui est président de la société mère Baobab Négoce SA, détient 40 % de Rapid Fret SARL : c''est un lien d''intérêt significatif qui justifie d''examiner la qualification de convention réglementée, même s''il n''est pas formellement dirigeant de la filiale elle-même — en pratique, son influence sur le groupe rend cette vigilance pertinente. Troisième étape : chiffrer l''écart par rapport au marché. Le prix de marché théorique, si le tarif pratiqué (45 000 000 FCFA) représente 120 % du prix de marché (c''est-à-dire 100 % plus 20 % de majoration), se calcule ainsi : prix de marché = 45 000 000 ÷ 1,20 = 37 500 000 FCFA. Le surcoût est donc de 45 000 000 − 37 500 000 = 7 500 000 FCFA. Quatrième étape : conclure sur la qualification et les conséquences. L''écart significatif écarte la qualification de convention courante. La procédure d''autorisation préalable aurait dû être respectée. À défaut, la responsabilité de M. Ndiaye pourrait être recherchée par les actionnaires minoritaires de Baobab Transit SARL pour le préjudice correspondant au surcoût de 7 500 000 FCFA.
-
-## 50:00 – 65:00 · Approfondissement : sanctions et vigilance pratique
-
-Allons plus loin sur les conséquences du non-respect du formalisme, question fréquente à l''examen, en gardant à l''esprit qu''il faut toujours vérifier le texte précis en vigueur : je vous donne ici la logique générale, pédagogique, pas des références d''articles. Premièrement, la responsabilité civile du dirigeant qui a conclu la convention sans l''autorisation requise, s''il en résulte un préjudice — c''est la conséquence la plus fréquemment retenue à l''examen, celle que nous avons appliquée dans le cas Baobab Négoce. Deuxièmement, selon la gravité, la possibilité que la convention soit remise en cause si elle a causé un préjudice imputable à l''absence d''autorisation. Troisièmement, un risque réputationnel et de gouvernance vis-à-vis des partenaires financiers. Pour une entreprise, la vigilance se traduit par une cartographie des conventions intra-groupe et une vérification systématique du prix de marché avant tout contrat avec une personne liée.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Je vous propose maintenant un quiz de cinq questions, à choix de réponse courte, pour vérifier votre compréhension avant la synthèse finale. Première question : le contrôle de fait suppose-t-il la détention de la majorité du capital ? Réponse : non, il suppose une influence déterminante en pratique sans détention majoritaire. Deuxième question : une convention courante à conditions normales doit-elle suivre la procédure d''autorisation préalable renforcée ? Réponse : non, en principe, elle en est dispensée. Troisième question : qui ne doit pas participer au vote d''autorisation d''une convention réglementée au sein de l''organe compétent ? Réponse : la personne intéressée elle-même. Quatrième question : le groupe de sociétés a-t-il, en droit OHADA, une personnalité juridique propre distincte de ses sociétés membres ? Réponse : non, chaque société du groupe garde sa personnalité juridique propre. Cinquième question : dans le cas Baobab Négoce, quel est le montant du surcoût annuel identifié ? Réponse : 7 500 000 FCFA. Si vous avez eu des difficultés sur l''une de ces questions, reprenez la section correspondante de vos fiches avant l''examen.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Pour conclure cette séance, reprenons les points essentiels. Premièrement, le contrôle se définit par le pouvoir de fait sur les décisions en assemblée, pas seulement par un pourcentage de capital : il peut être de droit, de fait, ou conjoint. Deuxièmement, une convention réglementée se caractérise par la qualité des parties — l''existence d''un lien d''influence — et non par son objet : n''importe quel type de contrat peut être une convention réglementée s''il est conclu avec une personne liée. Troisièmement, la procédure en trois temps (information, autorisation sans le vote de l''intéressé, information de l''assemblée) est la colonne vertébrale du régime, et son non-respect ouvre la voie à la responsabilité du dirigeant. Quatrièmement, la comparaison avec le prix de marché est l''outil méthodologique central pour qualifier ou écarter le caractère « courant et à conditions normales » d''une convention — c''est la compétence la plus directement transférable à vos examens et à votre future pratique professionnelle. Pensez toujours, face à un cas pratique, à appliquer la méthode en quatre étapes que nous avons utilisée : identifier le contrôle, identifier les parties et leurs liens d''intérêt, chiffrer l''écart par rapport au marché, conclure sur la qualification et les conséquences.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Pour terminer, voici cinq questions d''évaluation finale avec leurs réponses, que je vous invite à retravailler par écrit avant la prochaine séance. Question 1 : qu''est-ce qui distingue le contrôle de droit du contrôle de fait ? Réponse : le contrôle de droit résulte de la détention de la majorité des droits de vote ; le contrôle de fait résulte d''une influence déterminante en pratique, en l''absence de majorité, du fait de la dispersion des autres actionnaires. Question 2 : citez les trois étapes de la procédure applicable aux conventions réglementées. Réponse : information préalable de l''organe compétent, autorisation ou ratification sans participation au vote de la personne intéressée, information de l''assemblée générale des associés. Question 3 : quelle est la conséquence générale en cas d''absence d''autorisation d''une convention réglementée qui cause un préjudice à la société ? Réponse : la responsabilité civile du dirigeant qui a conclu la convention peut être engagée pour ce préjudice. Question 4 : comment qualifier une convention dont le prix est identique au prix de marché pour un bien ou un service comparable ? Réponse : convention courante conclue à des conditions normales, échappant en principe au formalisme renforcé. Question 5 : dans un groupe où la société mère détient 30 % du capital d''une filiale, le reste étant détenu par quinze actionnaires dispersés n''agissant jamais ensemble, et où la société mère obtient systématiquement la majorité en assemblée, quel type de contrôle est caractérisé ? Réponse : un contrôle de fait. Merci à toutes et à tous pour votre attention ; la prochaine séance portera sur les contrats d''affaires et la concurrence.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des sociétés approfondi et gouvernance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Droit des contrats d''affaires et de la concurrence', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : savoir identifier, rédiger et apprécier la validité des clauses complexes des contrats d''affaires (exclusivité, non-concurrence, earn-out, hardship, limitation de responsabilité), et reconnaître les principes généraux du droit de la concurrence applicables aux pratiques anticoncurrentielles. Matériel recommandé : tableau ou diaporama, extraits de modèles de clauses contractuelles, calculatrice. Prérequis : droit des obligations (le contrat) et droit commercial général OHADA vus en Licence.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Après avoir travaillé la gouvernance des groupes dans la séance précédente, nous abordons aujourd''hui les contrats d''affaires sophistiqués et le droit de la concurrence. Ces deux thèmes sont liés par un fil conducteur que je veux que vous ayez en tête dès le départ : une clause contractuelle qui est parfaitement licite entre deux petites entreprises peut devenir problématique, au regard du droit de la concurrence, lorsqu''elle est imposée par une entreprise puissante sur un marché. C''est cette bascule, de la liberté contractuelle à la régulation concurrentielle, que nous allons apprendre à repérer.
-
-## 05:00 – 20:00 · Les clauses complexes : exclusivité et non-concurrence
-
-Commençons par la clause d''exclusivité. Elle engage une partie à ne pas contracter avec des concurrents de son partenaire. Elle peut être unilatérale ou réciproque. Sa validité dépend de trois critères que vous devez systématiquement examiner dans un cas pratique : la durée, le champ géographique, et la proportionnalité par rapport à la contrepartie obtenue. Une exclusivité de deux ans sur une zone limitée, en contrepartie d''un investissement commercial réel du bénéficiaire, est généralement acceptable. Une exclusivité de quinze ans sur tout le territoire national, sans contrepartie spécifique, est un signal d''alerte. Passons à la clause de non-concurrence, qui s''applique en principe après la fin du contrat, souvent lors de la cession d''un fonds de commerce ou de titres sociaux. Elle doit être limitée dans le temps, dans l''espace, et proportionnée à l''intérêt légitime qu''elle protège — typiquement, empêcher le cédant de récupérer immédiatement la clientèle qu''il vient de céder. Exemple au tableau : une clause de non-concurrence de dix ans sur l''ensemble du territoire national, pour la cession d''un commerce de quartier qui ne rayonnait que sur sa ville, serait manifestement disproportionnée par rapport à l''intérêt légitime à protéger, qui se limite à la zone de chalandise réelle du commerce cédé.
-
-## 20:00 – 35:00 · Earn-out et hardship : deux outils de gestion du risque dans le temps
-
-Abordons maintenant deux clauses qui organisent la relation entre les parties dans la durée, face à l''incertitude de l''avenir. La clause d''earn-out, d''abord : elle est utilisée dans les cessions d''entreprises pour concilier les attentes du cédant, souvent optimiste sur l''avenir de son entreprise, et la prudence de l''acquéreur, qui veut limiter son risque. Une partie du prix n''est payée qu''après la réalisation d''objectifs futurs. Travaillons un exemple chiffré ensemble : la cession des actions d''une société de transformation agroalimentaire est fixée à un prix de base de 200 000 000 FCFA, complété par un earn-out égal à 10 % du chiffre d''affaires additionnel réalisé au-delà de 150 000 000 FCFA sur les deux exercices suivant la cession, plafonné à 40 000 000 FCFA. Si le chiffre d''affaires cumulé des deux exercices atteint 230 000 000 FCFA, calculons : l''earn-out théorique est de 10 % multiplié par (230 000 000 moins 150 000 000), soit 10 % multiplié par 80 000 000, soit 8 000 000 FCFA. Ce montant est bien en-deçà du plafond de 40 000 000 FCFA, donc l''earn-out effectivement dû est de 8 000 000 FCFA, et le prix total payé par l''acquéreur est de 200 000 000 plus 8 000 000, soit 208 000 000 FCFA. Retenez bien cette méthode de calcul en deux temps : calculer l''earn-out théorique selon la formule contractuelle, puis le comparer au plafond pour déterminer le montant effectivement dû. Passons à la clause de hardship, ou clause d''imprévision : elle permet à une partie de demander une renégociation du contrat lorsque survient un changement de circonstances imprévisible qui rend l''exécution excessivement onéreuse, sans la rendre impossible — ce qui la distingue nettement de la force majeure. Exemple : un contrat d''approvisionnement en matières premières agricoles à prix fixe sur trois ans ; une sécheresse exceptionnelle double le coût d''achat pour le fournisseur. Avec une clause de hardship, le fournisseur peut demander une renégociation organisée du prix ; sans elle, il reste en principe tenu d''exécuter aux conditions initiales, sauf à démontrer une impossibilité, ce qui est beaucoup plus difficile à établir qu''une simple aggravation du coût.
-
-## 35:00 – 40:00 · Pause active et question au groupe
-
-Prenons cinq minutes de pause active. Question à préparer pour notre retour : pourquoi une clause de hardship est-elle particulièrement utile dans un contrat de longue durée portant sur des matières premières agricoles, plutôt que dans un contrat ponctuel de courte durée ? Réfléchissez-y et nous en discuterons au retour. (Réponse attendue : parce que les contrats de longue durée sont davantage exposés à des changements de circonstances imprévisibles sur leur durée d''exécution — climatiques, économiques — et que, sans mécanisme de renégociation organisée, les parties seraient contraintes à l''alternative brutale entre exécuter à perte ou chercher une rupture, souvent plus coûteuse et conflictuelle qu''une renégociation encadrée.)
-
-## 40:00 – 50:00 · La clause limitative de responsabilité
-
-Terminons les clauses complexes avec la clause limitative de responsabilité, qui plafonne par avance le montant des dommages-intérêts qu''une partie pourra devoir à l''autre en cas de manquement contractuel, souvent exprimé en pourcentage du prix du contrat ou en multiple d''un montant annuel. Ces clauses sont généralement valables entre professionnels, mais deux limites doivent être retenues : d''une part, elles perdent leur effet en cas de faute particulièrement grave de la partie qui chercherait à s''en prévaloir ; d''autre part, un plafond fixé à un niveau si bas qu''il viderait l''obligation essentielle du contrat de toute portée réelle peut être remis en cause, car une partie ne peut pas s''engager tout en se protégeant d''avance contre toute conséquence réelle de son inexécution.
-
-## 50:00 – 65:00 · Principes généraux du droit de la concurrence
-
-Passons maintenant au droit de la concurrence, dont la logique est différente : il ne s''agit plus seulement de protéger l''équilibre entre deux contractants, mais de protéger le fonctionnement concurrentiel du marché dans son ensemble, dans l''intérêt de toutes les entreprises et des consommateurs. Trois catégories de pratiques sont à connaître. Premièrement, les ententes anticoncurrentielles : des accords entre entreprises concurrentes qui restreignent la concurrence — fixation concertée des prix, répartition des marchés ou des clients, limitation concertée de la production. Deuxièmement, l''abus de position dominante : une entreprise qui détient une position dominante — c''est-à-dire la capacité de se comporter indépendamment de ses concurrents et de ses clients dans une mesure appréciable — exploite cette position de façon abusive, par exemple par des prix d''éviction destinés à exclure un concurrent, ou des conditions discriminatoires sans justification. Troisièmement, les pratiques restrictives verticales, entre un fournisseur et un distributeur, qui peuvent devenir anticoncurrentielles lorsqu''elles cloisonnent excessivement les marchés. Travaillons maintenant le cas d''entreprise filé : Sahel Boissons SA, producteur basé à Thiès, conclut avec quinze distributeurs régionaux des contrats d''exclusivité réciproque de dix ans, et détient 65 % du marché national des boissons gazeuses. Analysons ensemble, selon la méthode à appliquer dans un cas pratique : d''abord, la position de marché — 65 % est un indice fort de position dominante, à confirmer par la définition précise du marché pertinent ; ensuite, l''ampleur de la pratique — une exclusivité systématique sur l''ensemble du réseau de quinze distributeurs a un effet cumulatif bien plus fort qu''une exclusivité isolée avec un seul distributeur ; enfin, la durée — dix ans est une durée longue qui prolonge l''effet de verrouillage du marché pour les concurrents potentiels. La combinaison de ces trois éléments (position dominante probable, ampleur systématique, durée longue) est caractéristique d''un risque de qualification d''abus de position dominante, sous réserve de l''analyse du marché pertinent et des justifications économiques avancées par l''entreprise.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Voici cinq questions pour vérifier votre compréhension. Première question : qu''est-ce qui distingue la force majeure de la situation visée par une clause de hardship ? Réponse : la force majeure rend l''exécution impossible, alors que la clause de hardship vise une exécution devenue seulement excessivement onéreuse, sans impossibilité. Deuxième question : dans l''exemple d''earn-out travaillé, pourquoi le montant effectivement dû est-il de 8 000 000 FCFA et non de 40 000 000 FCFA ? Réponse : parce que le plafond de 40 000 000 FCFA n''est qu''un maximum ; le montant effectivement dû résulte du calcul selon la formule contractuelle (10 % du chiffre d''affaires additionnel), qui donne ici 8 000 000 FCFA, inférieur au plafond. Troisième question : une entente anticoncurrentielle suppose-t-elle qu''une entreprise détienne une position dominante ? Réponse : non, l''entente suppose un accord entre plusieurs entreprises, indépendamment de leur taille respective, alors que l''abus suppose qu''une entreprise détienne individuellement une position dominante. Quatrième question : une clause limitative de responsabilité produit-elle son effet en cas de faute particulièrement grave ? Réponse : non, en principe, une faute particulièrement grave prive la clause de son effet. Cinquième question : dans le cas Sahel Boissons, quels sont les trois éléments qui convergent pour caractériser un risque de qualification anticoncurrentielle ? Réponse : la position dominante probable (65 % du marché), l''ampleur systématique de l''exclusivité sur l''ensemble du réseau, et la durée longue de dix ans.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Pour synthétiser cette séance : chaque clause complexe répond à une logique économique précise qu''il faut identifier avant d''en juger la validité — l''exclusivité et la non-concurrence restreignent la liberté d''une partie et doivent être proportionnées ; l''earn-out et le hardship organisent la gestion du risque dans le temps ; la limitation de responsabilité plafonne les conséquences financières d''un manquement, sous réserve des fautes graves. Sur le droit de la concurrence, retenez la méthode d''analyse en trois temps que nous avons appliquée au cas Sahel Boissons : évaluer la position de marché de l''entreprise, évaluer l''ampleur et la systématicité de la pratique contractuelle en cause, évaluer sa durée et sa justification économique. C''est la combinaison de ces facteurs, et non un seul critère isolé, qui permet de qualifier un risque de pratique anticoncurrentielle. Cette méthode de pondération multi-critères est exactement ce qu''un examinateur de Master attend de vous : pas une réponse binaire, mais une analyse nuancée des facteurs en présence.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit. Question 1 : citez les trois critères de validité d''une clause d''exclusivité ou de non-concurrence. Réponse : la durée, le champ géographique, et la proportionnalité par rapport à la contrepartie ou à l''intérêt légitime protégé. Question 2 : dans une cession à 90 000 000 FCFA avec un earn-out de 15 % du chiffre d''affaires additionnel au-delà de 60 000 000 FCFA, plafonné à 20 000 000 FCFA, quel est le prix total si le chiffre d''affaires de l''exercice suivant atteint 95 000 000 FCFA ? Réponse : earn-out théorique = 15 % × (95 000 000 − 60 000 000) = 15 % × 35 000 000 = 5 250 000 FCFA, inférieur au plafond ; prix total = 90 000 000 + 5 250 000 = 95 250 000 FCFA. Question 3 : quelle est la différence essentielle entre une entente et un abus de position dominante quant au nombre d''acteurs impliqués ? Réponse : l''entente implique au moins deux entreprises en accord ; l''abus implique une seule entreprise qui détient individuellement une position dominante. Question 4 : une clause de hardship permet-elle d''obtenir automatiquement une révision du prix ? Réponse : non, elle organise seulement une procédure de renégociation ; elle ne garantit pas un résultat déterminé à l''avance. Question 5 : pourquoi la même clause d''exclusivité peut-elle être licite entre deux petites entreprises et poser un problème de concurrence entre un acteur dominant et son réseau ? Réponse : parce que l''analyse concurrentielle s''intéresse à l''effet réel sur la structure du marché, qui dépend du pouvoir de marché de l''entreprise qui impose la clause, pas seulement du contenu littéral de la clause. Merci pour votre attention ; la prochaine séance portera sur l''arbitrage et les modes alternatifs de résolution des litiges.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des contrats d''affaires et de la concurrence');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Arbitrage et modes alternatifs de résolution des litiges', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : comprendre la logique de la clause compromissoire, les avantages comparés des modes alternatifs de résolution des litiges, et le rôle général de la CCJA de l''OHADA en matière d''arbitrage. Matériel recommandé : tableau ou diaporama, exemple de clause compromissoire type à annoter. Prérequis : institutions et bases de la procédure vues en Licence 1, droit commercial général OHADA vu en Licence 2.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Nous terminons aujourd''hui le cycle des trois matières de Master 1 avec l''arbitrage et les modes alternatifs de résolution des litiges. C''est une matière différente des deux précédentes : il ne s''agit plus de qualifier une opération d''affaires, mais de comprendre comment les entreprises choisissent, par avance, la façon dont elles régleront leurs désaccords futurs. Gardez à l''esprit, pendant toute la séance, que l''objectif du Master 1 est de comprendre la logique d''ensemble et les grands mécanismes, pas de maîtriser le détail procédural fin d''un arbitrage, qui relève d''un enseignement spécialisé que certains d''entre vous approfondiront peut-être en Master 2 ou en formation professionnelle.
-
-## 05:00 – 15:00 · Pourquoi choisir l''arbitrage et les MARL dans les affaires
-
-Pourquoi des entreprises, en particulier dans un cadre régional, préfèrent-elles souvent éviter la juridiction étatique de leur cocontractant ? Cinq raisons structurent la réponse. La neutralité, d''abord : aucune partie ne souhaite être jugée devant les tribunaux du pays de l''autre, par crainte d''un traitement moins favorable, même si cette crainte n''est pas toujours justifiée en pratique. La confidentialité, ensuite : l''arbitrage se déroule en principe de façon confidentielle, contrairement à une procédure judiciaire généralement publique, ce qui protège les secrets d''affaires des parties. La spécialisation : les parties choisissent des arbitres ayant une expertise sectorielle précise, alors qu''un juge étatique traite des litiges de toute nature. La flexibilité procédurale et la rapidité relative, les parties pouvant organiser elles-mêmes certains aspects de la procédure. Enfin, l''exécution transfrontalière généralement facilitée des sentences arbitrales, grâce à des conventions internationales de reconnaissance et d''exécution, ce qui est essentiel lorsque les parties ou leurs actifs sont situés dans des pays différents. Au-delà de l''arbitrage, rappelons les autres modes alternatifs : la médiation, où un tiers neutre aide les parties à trouver elles-mêmes une solution sans trancher le litige, et la conciliation, proche de la médiation mais où le conciliateur peut être plus actif dans la proposition de solutions.
-
-## 15:00 – 30:00 · La clause compromissoire : rédaction et effets
-
-Entrons maintenant dans le détail de la clause compromissoire, qui est l''outil juridique central de cette matière. Définition à retenir : c''est la clause insérée dans un contrat avant la survenance d''un litige, par laquelle les parties conviennent de soumettre à l''arbitrage les différends qui pourraient naître de ce contrat. Distinguez-la bien du compromis d''arbitrage, conclu après la naissance du litige pour ce litige précisément identifié — cette distinction de vocabulaire est souvent demandée à l''examen. Une clause compromissoire bien rédigée doit préciser cinq éléments que je vous demande de mémoriser : le siège de l''arbitrage, qui est le lieu juridique de référence pour la procédure, et qui n''est pas nécessairement le lieu où se tiennent physiquement les audiences ; le règlement d''arbitrage applicable, celui d''une institution déterminée, ou un arbitrage ad hoc sans institution ; la langue de la procédure ; le nombre d''arbitres, souvent un ou trois, et la méthode de leur désignation ; et le droit applicable au fond du litige, qui peut être différent de la loi du siège. L''absence de précision sur ces points n''empêche pas nécessairement l''arbitrage, car les règlements institutionnels prévoient des mécanismes de désignation par défaut, mais elle crée un risque de contestation et de retard. Venons-en maintenant à l''effet essentiel de la clause : elle dessaisit, en principe, les juridictions étatiques du litige couvert. On parle d''effet négatif (elle écarte la compétence étatique) et d''effet positif (elle fonde la compétence du tribunal arbitral). Si une partie saisit malgré tout un tribunal étatique en violation de la clause, l''autre partie peut soulever l''exception d''incompétence au profit de l''arbitrage convenu — retenez bien ce mécanisme, car il est systématiquement testé dans les cas pratiques de ce chapitre.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Prenons cinq minutes de pause active. Question à préparer : une entreprise qui a signé une clause compromissoire peut-elle, si elle le souhaite au moment du litige, décider unilatéralement de saisir plutôt un tribunal étatique parce qu''elle estime que ce sera plus rapide ? Réfléchissez à la réponse et à sa justification. (Réponse attendue : non, en principe, elle ne peut pas décider unilatéralement d''écarter la clause compromissoire qu''elle a signée ; si elle saisit malgré tout un tribunal étatique, l''autre partie peut soulever l''exception d''incompétence fondée sur la clause, ce qui devrait conduire le tribunal à se déclarer incompétent au profit de l''arbitrage convenu.)
-
-## 35:00 – 50:00 · Le rôle de la CCJA de l''OHADA en matière d''arbitrage
-
-Abordons maintenant la Cour commune de justice et d''arbitrage, la CCJA, organe juridictionnel commun aux États membres de l''OHADA. Son rôle en matière d''arbitrage se décompose en deux fonctions que vous devez pouvoir citer et distinguer. Premièrement, un rôle d''appui à l''arbitrage institutionnel : la CCJA peut administrer des arbitrages selon son propre règlement, en particulier pour des litiges relatifs à des contrats exécutés ou à exécuter dans l''espace OHADA, lorsque les parties ont choisi ce cadre dans leur clause compromissoire. Deuxièmement, un rôle juridictionnel vis-à-vis des sentences rendues sous son égide : reconnaissance et exécution de ces sentences dans l''espace OHADA, avec un contrôle limité de leur régularité, sans réexamen du fond du litige déjà tranché par les arbitres — ce point est important, la CCJA ne rejuge pas l''affaire, elle vérifie la régularité de la sentence. Au-delà de l''arbitrage, j''ajoute, pour la culture générale du droit des affaires OHADA, que la CCJA joue également un rôle de juridiction de cassation commune pour l''interprétation des actes uniformes — droit des sociétés, droit commercial général, sûretés — ce qui favorise une interprétation harmonisée du droit dans toute la zone et limite les divergences entre juridictions nationales. Pour un cas pratique de Master 1, il vous suffit de savoir identifier qu''un litige entrant dans le champ de l''OHADA, assorti d''une clause de référence à la CCJA, peut être porté devant cette institution, sans qu''on vous demande de détailler les délais précis ou les voies de recours internes à la procédure, qui relèvent d''un enseignement spécialisé d''arbitrage. Travaillons maintenant le cas filé : Delta Cacao SA, basée en Côte d''Ivoire, et Sahel Négoce SA, basée au Sénégal, ont un contrat de fourniture de fèves de cacao sur trois ans avec une clause compromissoire : arbitrage à trois arbitres, règlement CCJA, siège à Abidjan, droit ivoirien au fond. Un désaccord survient sur la qualité des livraisons, Sahel Négoce SA réclamant 60 000 000 FCFA. Analysons : la clause dessaisit en principe les juridictions étatiques sénégalaises et ivoiriennes ; le litige relève du champ OHADA et peut être porté devant un arbitrage administré selon le règlement visé ; le siège à Abidjan fixe le cadre juridique de référence pour la procédure, sans préjudice du droit ivoirien choisi pour trancher le fond sur la conformité des livraisons.
-
-## 50:00 – 65:00 · Choisir entre arbitrage, médiation et juridiction étatique
-
-Terminons la partie théorique par les critères de choix entre ces différents modes, qui est une question fréquente de business case. Quatre facteurs à mettre en balance systématiquement. La nature de la relation : une relation d''affaires que les parties veulent préserver à long terme s''oriente plutôt vers la médiation, plus propice à une solution négociée que l''arbitrage, qui tranche en faveur d''une partie. Le montant et la complexité du litige : un litige technique et élevé justifie souvent le coût d''un arbitrage spécialisé, alors qu''un litige de faible montant rendrait ce coût disproportionné — nous avons vu un exemple de ce type dans le cours précédent, avec un contrat de 2 000 000 FCFA assorti d''une clause d''arbitrage à trois arbitres sous règlement complexe, manifestement disproportionnée. Le besoin d''exécution transfrontalière : lorsque les parties ou leurs actifs sont dans des pays différents, l''arbitrage offre souvent de meilleures perspectives d''exécution. Le besoin de confidentialité : important lorsque le litige touche à des secrets d''affaires. Un bon candidat au Master doit, face à un cas pratique, mettre en balance ces quatre facteurs plutôt que de recommander systématiquement l''arbitrage, qui n''est pas toujours la meilleure option.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Cinq questions pour vérifier votre compréhension. Première question : la clause compromissoire est-elle conclue avant ou après la naissance du litige ? Réponse : avant, ce qui la distingue du compromis d''arbitrage, conclu après. Deuxième question : que se passe-t-il, en principe, si une partie saisit un tribunal étatique en violation d''une clause compromissoire ? Réponse : l''autre partie peut soulever l''exception d''incompétence, et le tribunal devrait se déclarer incompétent au profit de l''arbitrage convenu. Troisième question : citez deux rôles généraux de la CCJA en matière d''arbitrage. Réponse : un rôle d''appui à l''arbitrage institutionnel et un rôle juridictionnel de reconnaissance et d''exécution des sentences. Quatrième question : pourquoi la médiation peut-elle être préférable à l''arbitrage pour préserver une relation commerciale durable ? Réponse : parce qu''elle vise une solution négociée et consensuelle, alors que l''arbitrage tranche en faveur d''une partie contre l''autre. Cinquième question : dans le cas Delta Cacao, quel est le droit applicable au fond du litige, distinct du siège de l''arbitrage ? Réponse : le droit ivoirien, alors que le siège de l''arbitrage est fixé à Abidjan — ces deux éléments coïncident ici, mais auraient pu être différents.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Synthétisons cette séance, qui clôt le cycle des trois matières de Master 1. L''arbitrage se distingue de la médiation et de la conciliation par son caractère tranchant : une sentence obligatoire, alors que les autres modes aident seulement les parties à trouver elles-mêmes une solution. La clause compromissoire, insérée avant le litige, a pour effet d''écarter la compétence étatique au profit de l''arbitrage convenu, et doit être rédigée avec soin sur cinq points : siège, règlement, langue, nombre d''arbitres, droit applicable au fond. La CCJA de l''OHADA joue un double rôle en matière d''arbitrage, d''appui institutionnel et de reconnaissance-exécution des sentences, en plus de son rôle de cassation commune pour le droit uniforme — rôle qu''il faut savoir situer sans en détailler la procédure fine. Enfin, le choix entre les modes de résolution des litiges doit toujours résulter d''une mise en balance de plusieurs facteurs (nature de la relation, montant, exécution transfrontalière, confidentialité), jamais d''un réflexe automatique. Cette approche en facteurs multiples, que nous avons retrouvée dans les trois matières de l''année, est exactement la compétence d''analyse que le Master 1 cherche à développer chez vous.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit avant la synthèse générale de fin d''année. Question 1 : définissez la clause compromissoire et distinguez-la du compromis d''arbitrage. Réponse : la clause compromissoire est conclue avant le litige, dans le contrat initial, pour les différends futurs ; le compromis d''arbitrage est conclu après la naissance du litige, pour ce litige précisément identifié. Question 2 : citez les cinq éléments qu''une clause compromissoire bien rédigée doit préciser. Réponse : le siège, le règlement applicable, la langue, le nombre d''arbitres et leur méthode de désignation, et le droit applicable au fond. Question 3 : quels sont les deux rôles généraux de la CCJA en matière d''arbitrage ? Réponse : appui à l''arbitrage institutionnel et rôle juridictionnel de reconnaissance et d''exécution des sentences rendues sous son égide. Question 4 : citez trois des cinq raisons pour lesquelles les entreprises préfèrent souvent l''arbitrage à la juridiction étatique dans les relations d''affaires internationales. Réponse : par exemple la neutralité, la confidentialité, et l''exécution transfrontalière facilitée (on pouvait aussi citer la spécialisation des arbitres ou la flexibilité procédurale). Question 5 : pourquoi un litige de faible montant assorti d''une clause d''arbitrage institutionnel complexe à trois arbitres pose-t-il un problème d''opportunité économique ? Réponse : parce que le coût et la durée de cette procédure risquent de dépasser, ou d''être disproportionnés par rapport à, l''enjeu financier réel du litige, ce qui rend ce choix économiquement inadapté pour des montants modestes. Merci à toutes et à tous : nous nous retrouvons pour la séance de synthèse transversale qui clôturera l''année de Master 1.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Arbitrage et modes alternatifs de résolution des litiges');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Synthèse transversale et atelier cas pratique (groupe Sine Agro)', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : synthèse transversale de l''année de Master 1 à travers un cas pratique d''entreprise filé mêlant gouvernance de groupe, contrats d''affaires et concurrence, arbitrage ; entraînement à la méthode de résolution d''un cas pratique complexe en temps limité. Matériel recommandé : tableau ou diaporama avec l''organigramme du groupe étudié, chronomètre pour simuler les conditions d''examen. Prérequis : les trois séances vidéo précédentes de Master 1.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction à l''atelier de synthèse
-
-Bonjour à toutes et à tous. Cette séance clôt le cycle de Master 1 : ce n''est pas un cours nouveau, mais un atelier de synthèse transversale, construit autour d''un cas pratique d''entreprise unique qui va mobiliser, successivement, les trois matières que nous avons étudiées — gouvernance et groupes de sociétés, contrats d''affaires et concurrence, arbitrage et modes alternatifs de résolution des litiges. L''objectif est double : consolider vos connaissances en les reliant entre elles, et vous entraîner à la méthode de résolution d''un cas complexe en conditions proches de l''examen, avec gestion du temps.
-
-## 05:00 – 15:00 · Présentation du cas d''entreprise filé : groupe Sine Agro
-
-Voici le cas que nous allons résoudre ensemble pendant toute la séance. Le groupe Sine Agro, basé à Kaolack, est structuré autour d''une société holding, Sine Agro Holding SA, qui détient 75 % de Sine Agro Production SARL (activité de transformation de céréales) et 40 % de Sine Agro Export SARL (activité d''exportation), les 60 % restants de cette dernière étant détenus par onze actionnaires individuels qui, historiquement, n''ont jamais voté ensemble contre les propositions de la holding lors des cinq dernières assemblées générales. Premier fait à traiter : le directeur général de Sine Agro Holding SA, Mme Diallo, est actionnaire à 50 % d''une société d''emballage, Pack Sine SARL, qui fournit à Sine Agro Production SARL l''intégralité de ses emballages pour 36 000 000 FCFA par an, alors que deux devis concurrents indépendants situent le prix de marché à 27 000 000 FCFA par an pour une prestation comparable. Le contrat a été signé par le directeur général de Sine Agro Production SARL sans consultation préalable de son conseil d''administration. Deuxième fait : Sine Agro Export SARL, qui détient 52 % du marché régional de l''exportation de céréales transformées vers les pays voisins, impose à ses neuf partenaires logistiques locaux une clause d''exclusivité réciproque de sept ans, sans contrepartie financière spécifique. Troisième fait : le contrat entre Sine Agro Export SARL et l''un de ses partenaires logistiques, Express Sine SARL, comporte une clause compromissoire (arbitre unique, règlement CCJA, siège Dakar, droit sénégalais au fond). Un litige survient sur une rupture anticipée, Express Sine SARL réclamant 18 000 000 FCFA ; Sine Agro Export SARL saisit directement le tribunal de commerce de Kaolack sans mentionner la clause.
-
-## 15:00 – 30:00 · Résolution guidée : la gouvernance du groupe
-
-Prenons le premier bloc de questions, exactement comme à l''examen, chronomètre en main — comptez-vous quinze minutes pour cette partie si vous étiez en conditions réelles. Première sous-question : qualifiez le lien de contrôle entre la holding et chacune de ses deux filiales. Pour Sine Agro Production SARL, 75 % du capital : contrôle de droit, sans ambiguïté. Pour Sine Agro Export SARL, 40 % du capital, mais majorité systématique obtenue en assemblée depuis cinq ans face à des actionnaires dispersés n''ayant jamais voté ensemble : c''est un contrôle de fait. Deuxième sous-question : le contrat entre Sine Agro Production SARL et Pack Sine SARL constitue-t-il une convention réglementée ? Mme Diallo, directrice générale de la holding, détient 50 % de Pack Sine SARL : lien d''intérêt significatif. Calculons l''écart : 36 000 000 moins 27 000 000 égale 9 000 000 FCFA, soit un taux de majoration de 9 000 000 divisé par 27 000 000, soit environ 33,3 % au-dessus du marché. Cet écart très significatif écarte la qualification de convention courante : c''est une convention réglementée, et l''absence de consultation préalable du conseil d''administration de Sine Agro Production SARL constitue un manquement procédural, ouvrant la voie à la responsabilité civile de la personne ayant engagé la société sans autorisation, pour un préjudice correspondant au surcoût de 9 000 000 FCFA par an.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Cinq minutes de pause active. Question à préparer : si Mme Diallo n''était que directrice générale de Sine Agro Holding SA, sans aucune participation au capital de Pack Sine SARL, le contrat entre Sine Agro Production SARL et Pack Sine SARL poserait-il encore un risque de qualification de convention réglementée du simple fait de l''appartenance au même groupe ? Réfléchissez-y. (Réponse attendue : pas automatiquement du seul fait de l''appartenance au groupe ; la qualification de convention réglementée dépend de l''existence d''un lien d''influence identifié entre une personne physique ou morale liée et l''une des sociétés concernées, pas de la seule structure de groupe en elle-même ; en l''absence de tout lien d''intérêt personnel de Mme Diallo dans Pack Sine SARL, l''opération resterait une relation commerciale ordinaire entre deux sociétés, à apprécier sous l''angle du droit commun des contrats plutôt que sous celui des conventions réglementées.)
-
-## 35:00 – 55:00 · Résolution guidée : concurrence et arbitrage
-
-Continuons avec le deuxième bloc. Troisième sous-question : la clause d''exclusivité réciproque de sept ans imposée par Sine Agro Export SARL à ses neuf partenaires logistiques pose-t-elle un risque de qualification anticoncurrentielle ? Reprenons la méthode en trois facteurs étudiée précédemment. Position de marché : 52 % du marché régional de l''exportation, indice fort de position dominante possible, sous réserve de la définition précise du marché pertinent. Ampleur : l''exclusivité est appliquée systématiquement à l''ensemble des neuf partenaires, ce qui crée un effet cumulatif de verrouillage pour des concurrents qui chercheraient à accéder aux mêmes partenaires logistiques. Durée et justification : sept ans est une durée longue, et l''absence de contrepartie financière spécifique affaiblit la justification économique de la contrainte. La combinaison de ces trois facteurs constitue un risque réel de qualification d''abus de position dominante, sous réserve d''une analyse plus fine du marché pertinent. Quatrième sous-question : la saisine directe du tribunal de commerce de Kaolack par Sine Agro Export SARL est-elle conforme à la clause compromissoire ? Non : la clause dessaisit en principe les juridictions étatiques du litige couvert ; Express Sine SARL peut soulever l''exception d''incompétence fondée sur la clause, ce qui devrait conduire le tribunal à se déclarer incompétent au profit de l''arbitrage convenu — arbitre unique, règlement CCJA, siège Dakar, droit sénégalais au fond — pour la demande de 18 000 000 FCFA. La CCJA jouerait alors son rôle d''appui institutionnel à la procédure arbitrale, puis, le cas échéant, un rôle de reconnaissance et d''exécution de la sentence qui serait rendue.
-
-## 55:00 – 65:00 · Quiz interactif transversal
-
-Cinq questions qui mobilisent les trois matières ensemble. Première question : dans le cas Sine Agro, quel est le montant du surcoût annuel identifié dans le contrat d''emballage ? Réponse : 9 000 000 FCFA. Deuxième question : quel type de contrôle caractérise le lien entre la holding et Sine Agro Export SARL ? Réponse : un contrôle de fait. Troisième question : quels sont les trois facteurs qui convergent pour caractériser un risque d''abus de position dominante dans le cas de l''exclusivité logistique ? Réponse : la position de marché (52 %), l''ampleur systématique sur les neuf partenaires, et la durée longue (sept ans) sans contrepartie spécifique. Quatrième question : la saisine du tribunal de commerce de Kaolack est-elle valable malgré la clause compromissoire ? Réponse : non, en principe, sous réserve que l''autre partie soulève l''exception d''incompétence. Cinquième question : quel est le point commun méthodologique entre l''analyse de la convention réglementée et l''analyse de la clause d''exclusivité anticoncurrentielle ? Réponse : dans les deux cas, la méthode consiste à comparer la situation litigieuse à une référence objective (le prix de marché pour la convention réglementée, les standards de proportionnalité et de justification économique pour l''exclusivité) plutôt qu''à juger sur la seule base du lien d''intérêt ou de la puissance économique en eux-mêmes.
-
-## 65:00 – 80:00 · Rédaction guidée en temps limité
-
-Je vous propose maintenant un exercice de rédaction en temps limité, pour vous entraîner aux conditions réelles d''examen. Vous avez quinze minutes, chronomètre en main, pour rédiger une réponse structurée à la question suivante : « En reprenant le cas Sine Agro, rédigez une recommandation destinée au conseil d''administration de Sine Agro Holding SA, identifiant les trois principaux risques juridiques du groupe et une mesure corrective pour chacun. » Pendant que vous rédigez, je vous rappelle la structure attendue : une phrase d''introduction qui annonce les trois risques, puis, pour chacun, un paragraphe qui qualifie juridiquement le risque, chiffre son impact lorsque c''est possible, et propose une mesure corrective concrète. À la fin des quinze minutes, voici une proposition de corrigé que vous pourrez comparer à votre rédaction : premier risque, la convention réglementée non autorisée avec Pack Sine SARL, exposant Mme Diallo et la société à un risque de responsabilité civile pour le surcoût de 9 000 000 FCFA par an ; mesure corrective : soumettre rétroactivement la convention à l''autorisation du conseil d''administration de Sine Agro Production SARL et renégocier le tarif au niveau du marché. Deuxième risque, l''exposition à une qualification d''abus de position dominante pour la clause d''exclusivité logistique ; mesure corrective : réduire la durée de l''exclusivité et introduire une contrepartie financière spécifique (par exemple un financement des investissements logistiques des partenaires) pour renforcer sa justification économique. Troisième risque, le non-respect de la clause compromissoire dans le litige avec Express Sine SARL, qui expose le groupe à une perte de temps procédurale si le tribunal de commerce se déclare incompétent ; mesure corrective : retirer la saisine du tribunal de commerce et engager directement la procédure d''arbitrage convenue, pour éviter un double contentieux.
-
-## 80:00 – 85:00 · Synthèse générale de l''année de Master 1
-
-Pour conclure cette année de Master 1 en droit des affaires, retenez la méthode transversale que nous avons appliquée tout au long de ce cas filé : face à un ensemble de faits d''entreprise, il faut systématiquement cartographier les structures de contrôle, identifier les parties liées et leurs intérêts, comparer les éléments chiffrés à une référence objective de marché, puis vérifier la cohérence des choix contractuels de résolution des litiges avec le comportement effectif des parties. Cette méthode, applicable à la gouvernance, à la concurrence et à l''arbitrage, est exactement ce qui distingue une copie de Master d''une copie de Licence : la capacité à faire dialoguer plusieurs branches du droit sur un même ensemble de faits, plutôt qu''à traiter chaque question de façon isolée.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation finale pour clore l''année. Question 1 : quelle est la différence entre un contrôle de droit et un contrôle de fait, illustrée par le cas Sine Agro ? Réponse : le contrôle de droit (75 % sur Sine Agro Production SARL) résulte de la majorité du capital ; le contrôle de fait (40 % sur Sine Agro Export SARL avec majorité systématique en assemblée) résulte d''une influence déterminante sans majorité formelle. Question 2 : quel est le taux de majoration du contrat d''emballage par rapport au prix de marché dans le cas Sine Agro ? Réponse : environ 33,3 %, calculé comme 9 000 000 divisé par 27 000 000. Question 3 : citez les trois facteurs d''analyse d''un risque anticoncurrentiel appliqués au cas de l''exclusivité logistique. Réponse : la position de marché, l''ampleur et la systématicité de la pratique, et la durée associée à la justification économique. Question 4 : quelle est la conséquence procédurale générale d''une saisine d''un tribunal étatique en violation d''une clause compromissoire, si l''autre partie soulève l''exception d''incompétence ? Réponse : le tribunal étatique devrait se déclarer incompétent au profit de l''arbitrage convenu. Question 5 : quelle est la compétence transversale centrale que ce cycle de Master 1 a cherché à développer ? Réponse : la capacité à analyser un ensemble de faits d''entreprise en mobilisant simultanément plusieurs branches du droit des affaires (gouvernance, contrats et concurrence, résolution des litiges), avec une méthode fondée sur la comparaison à des références objectives plutôt que sur des réponses automatiques. Merci à toutes et à tous pour votre travail cette année ; bon courage pour vos examens de Master 1.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-droit-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Synthèse transversale et atelier cas pratique (groupe Sine Agro)');

@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 15/17). À exécuter après seed.sql.
+-- Cours (partie 15/18). À exécuter après seed.sql.
 
 -- Cours : Contrôle de gestion Master 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1860,709 +1860,645 @@ Merci à toutes et à tous pour votre travail cette année. Relisez vos trois fi
 from public.courses c where c.slug = 'mas-compta-m1'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier de synthèse transversal (groupe Teranga Agro-Industries)');
 
--- Cours : Finance Master 1 : évaluation, ingénierie financière et gestion de portefeuille
+-- Cours : Master 2 Comptabilité : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-fin-m1', (select id from public.levels where name = 'Master 1'), null, 'Finance', 'Finance Master 1 : évaluation, ingénierie financière et gestion de portefeuille', 'Cours de préparation aux examens de Master 1 Finance : évaluation d''entreprise approfondie (DCF, multiples, approche patrimoniale), ingénierie financière et fusions-acquisitions, gestion de portefeuille et marchés financiers avancés. Pour étudiants de Master 1 ayant déjà validé les bases de la Licence Finance (analyse financière, VAN/TRI, CMPC). Cas d''entreprise sénégalais fictifs chiffrés et vérifiés.', true, 751
+select 'mas-compta-m2', (select id from public.levels where name = 'Master 2'), null, 'Comptabilité', 'Master 2 Comptabilité : réussir ses examens', 'Préparation aux examens de Master 2 en Comptabilité : audit financier approfondi, ingénierie financière et opérations de restructuration, méthodologie du mémoire professionnel et de la soutenance. Études de cas d''entreprises sénégalaises fictives, exercices corrigés, sujet type d''examen et atelier pratique de préparation à la soutenance. Public : étudiants de Master 2 ayant validé le Master 1 en Comptabilité.', true, 742
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 1 en Finance', '## Objectifs de la leçon
+select c.id, 'Réussir ses examens de Master 2 en Comptabilité', '## Objectifs de la leçon
 
-- Comprendre ce que le Master 1 Finance exige de plus que la Licence : analyse critique, autonomie, rigueur méthodologique.
-- Identifier les trois matières avancées de l''année et leur articulation avec le mémoire ou le stage.
+- Comprendre les spécificités de l''année de Master 2 en Comptabilité : mémoire professionnel, stage long, soutenance.
+- Identifier les trois matières avancées de l''année et leur lien avec le mémoire.
+- Mettre en place une méthode de travail combinant révisions d''examen et avancement du mémoire.
 - Construire un plan de révision réaliste sur six semaines avant les examens.
 
-## Le Master 1 Finance : ce qui change par rapport à la Licence
+Ce cours de Master 2 prolonge le Master 1 (consolidation approfondie, normes IFRS en comparaison avec le SYSCOHADA, fiscalité internationale et prix de transfert) sans reprendre ces bases. Il suppose qu''elles sont acquises et introduit trois nouveaux domaines mobilisés dans l''année qui conduit normalement à la fin du cursus de Master : l''audit financier approfondi, l''ingénierie financière et les opérations de restructuration, et la méthodologie du mémoire professionnel.
 
-En Licence, vous avez appris à calculer : VAN, TRI, coût moyen pondéré du capital, ratios d''analyse financière, bases des marchés financiers. Le Master 1 part du principe que ces outils sont maîtrisés et vous demande autre chose : les mobiliser dans des situations ambiguës, où plusieurs méthodes donnent des réponses différentes et où il faut argumenter un choix.
+## 1. Une année tournée vers la sortie du cursus
 
-Trois évolutions marquent le passage en M1.
+Le Master 2 est souvent l''année où l''étudiant combine un stage long ou une activité professionnelle, la rédaction d''un mémoire (professionnel ou de recherche selon les établissements) et une soutenance orale devant un jury. Cette organisation change la façon de travailler : vous n''avez plus seulement des examens à préparer, vous devez aussi avancer, en parallèle, sur un travail personnel de plusieurs mois qui sera évalué différemment (écrit long, soutenance orale, capacité à défendre un point de vue).
 
-- Le raisonnement en incertitude plutôt qu''en certitude : on ne vous donne plus un taux d''actualisation unique à appliquer, on vous demande de le justifier, de tester sa sensibilité, de discuter une fourchette de valeurs.
-- La convergence des méthodes : en évaluation d''entreprise par exemple, on attend que vous croisiez approche par les flux (DCF), approche par les comparables (multiples) et approche patrimoniale, puis que vous expliquiez les écarts plutôt que de choisir un seul chiffre.
-- L''ouverture vers la décision d''entreprise réelle : fusion-acquisition, montage financier, gestion de portefeuille ne sont plus des exercices isolés mais des cas où une banque, un fonds ou une direction financière doit trancher avec des informations incomplètes.
+Les trois matières avancées de l''année ne sont pas choisies au hasard : elles correspondent à des compétences que vous mobiliserez directement dans votre futur métier, et souvent dans votre mémoire lui-même.
 
-Le Master 1 Finance prépare aussi, selon les établissements, à un mémoire de recherche appliquée ou professionnel et, souvent, à un stage en banque, en cabinet d''audit, en direction financière d''entreprise ou en société de gestion. Même quand le mémoire est soutenu en fin de M2, le M1 est le moment où l''on choisit son thème et où l''on commence la revue de littérature : un diagnostic financier approfondi, une opération de croissance externe observée en stage, ou une problématique de gestion de portefeuille sont des pistes classiques.
+## 2. Les trois matières avancées de l''année
 
-## Les trois matières avancées de l''année
+- L''audit financier approfondi : démarche d''audit, évaluation des risques, seuil de signification, méthodes d''échantillonnage, types d''opinion.
+- L''ingénierie financière et les opérations de restructuration : évaluation d''entreprise (actualisation des flux, multiples comparables), fusion-acquisition, notions générales de financement par effet de levier.
+- La méthodologie du mémoire professionnel et de la soutenance : construction d''une problématique, revue de littérature, méthodologie de terrain, structuration du plan, préparation de la soutenance orale.
 
-Ce cours d''examen couvre les trois matières clés du M1 Finance, sans répéter ce qui a déjà été vu en Licence.
+Un étudiant qui prépare un mémoire sur, par exemple, l''évaluation d''une PME sénégalaise avant une opération de reprise mobilisera directement l''ingénierie financière ; un étudiant qui travaille sur la qualité du contrôle interne dans une entreprise mobilisera l''audit financier approfondi. La méthodologie du mémoire n''est donc pas une matière isolée : elle structure la façon dont vous allez présenter ce que les deux autres matières vous auront appris à faire.
 
-- Évaluation d''entreprise approfondie : la méthode des flux de trésorerie actualisés (DCF), les multiples de comparables boursiers et transactionnels, et l''approche patrimoniale avec goodwill. Vous saurez produire une fourchette de valeur argumentée pour une entreprise, pas un chiffre isolé.
-- Ingénierie financière et fusions-acquisitions : comment structurer une opération de rachat, calculer une parité d''échange, mesurer l''effet dilutif ou relutif sur le bénéfice par action, et comprendre la mécanique d''un rachat par effet de levier (LBO).
-- Gestion de portefeuille et marchés financiers avancés : diversification, construction d''un portefeuille de deux actifs, frontière efficiente simplifiée, et modèle d''évaluation des actifs financiers (CAPM) appliqué au calcul du rendement exigé d''une action.
+## 3. Le mémoire : ce qu''il faut savoir dès le début de l''année
 
-Ces trois blocs ne sont pas cloisonnés : un même cas d''entreprise peut mobiliser l''évaluation pour fixer un prix de rachat, l''ingénierie financière pour structurer l''opération, et la gestion de portefeuille pour analyser l''impact sur un investisseur minoritaire. Les examens de M1 testent justement cette capacité à faire dialoguer les matières.
+Sans entrer dans le détail (voir la leçon dédiée de ce cours), retenez trois principes dès maintenant. Premièrement, un bon mémoire part d''une problématique précise et délimitée, pas d''un thème vague : « la consolidation en Afrique » n''est pas une problématique, « comment les PME sénégalaises exportatrices documentent-elles leurs prix de transfert avec leurs filiales ouest-africaines » commence à en être une. Deuxièmement, un mémoire professionnel s''appuie sur un terrain réel ou réaliste, pas seulement sur des lectures : une étude de cas, des entretiens, une analyse de données d''entreprise. Troisièmement, la soutenance n''est pas une répétition du mémoire : c''est une défense argumentée, qui suppose d''anticiper les questions du jury et de savoir reconnaître les limites de son propre travail sans se dévaloriser.
 
-## Mémoire, stage et études de cas : la méthode de travail avancée
+## 4. Une méthode de travail combinant examens et mémoire
 
-La méthode de travail change de nature en Master. Trois outils reviennent sans cesse, aussi bien dans les examens que dans le mémoire.
+- Réservez des plages horaires distinctes pour les révisions d''examen et pour le mémoire : les mélanger dilue l''attention sur les deux.
+- Utilisez vos études de cas de cours (audit, ingénierie financière) comme matériau de réflexion pour votre mémoire, sans jamais copier un cas fictif de cours dans un travail censé être original.
+- Tenez un journal de bord du mémoire, même sommaire : ce que vous avez lu, ce que vous avez décidé, ce qui reste à faire. Il vous servira directement à rédiger la partie méthodologique.
+- Anticipez la soutenance dès la rédaction : en écrivant chaque partie, demandez-vous quelle question un membre du jury pourrait poser, et préparez mentalement une réponse.
 
-- Le cas d''entreprise complexe : un énoncé long, avec des informations parfois redondantes ou à trier, qui imite un dossier réel (états financiers, rapport annuel, communiqué de presse d''une opération). Le travail consiste à extraire les données utiles avant de calculer.
-- La revue de littérature courte : avant de résoudre un cas, un bon candidat rappelle en deux ou trois phrases le cadre théorique mobilisé (par exemple, pourquoi le CAPM suppose des marchés efficients et ce que cela implique pour l''interprétation du bêta) ; cela montre la maîtrise conceptuelle, pas seulement le calcul.
-- Le business case argumenté : conclure un exercice non par un chiffre seul, mais par une recommandation structurée (acheter, vendre, refuser l''offre, renégocier la parité), avec les limites de l''analyse clairement énoncées.
+## 5. Plan de révision sur six semaines
 
-Pour le mémoire professionnel, cette méthode se prolonge sur plusieurs mois : poser une problématique précise, construire une méthodologie (étude de cas unique, comparaison d''entreprises, entretiens), collecter des données vérifiables, puis rédiger en citant ses sources. Un mémoire sur « l''évaluation des PME non cotées en zone UEMOA » par exemple devra justifier pourquoi le DCF est privilégié sur le marché par rapport aux multiples de marchés boursiers peu profonds.
+- Semaine 1 : relire les bases de Master 1 indispensables (consolidation approfondie, test de dépréciation, principe de pleine concurrence) ; faire un point d''avancement honnête sur le mémoire.
+- Semaine 2 : travailler l''audit financier approfondi, démarche complète, du seuil de signification à l''opinion d''audit, avec des cas chiffrés.
+- Semaine 3 : travailler l''ingénierie financière, évaluation d''entreprise par plusieurs méthodes, opérations de fusion avec calcul de parité.
+- Semaine 4 : consolider la méthodologie du mémoire (plan détaillé, bibliographie, préparation de la soutenance) en l''appliquant directement à votre propre sujet.
+- Semaine 5 : traiter un sujet type complet dans les conditions de l''examen, puis corriger soi-même avant de regarder le corrigé ; faire relire une partie de votre mémoire par un pair.
+- Semaine 6 : reprendre uniquement ses points faibles identifiés en semaine 5, relire les fiches de synthèse, répéter oralement sa future soutenance devant un miroir ou un camarade.
 
-## Plan de révision sur six semaines
+## Points clés à retenir
 
-Un plan de révision pour l''examen de M1 Finance doit équilibrer calcul, compréhension conceptuelle et entraînement sur cas complexes.
-
-- Semaines 1 et 2 : reprise active de l''évaluation d''entreprise. Refaites un DCF complet à la main, un multiple de comparables, une approche patrimoniale avec goodwill, sur un même cas, et comparez les résultats.
-- Semaines 3 et 4 : ingénierie financière et fusions-acquisitions. Entraînez-vous sur des parités d''échange, des calculs de dilution ou relution du bénéfice par action, et un montage LBO simple avec plan de remboursement de dette.
-- Semaine 5 : gestion de portefeuille. Reprenez les formules de variance et de covariance d''un portefeuille à deux actifs, le calcul du bêta et du rendement attendu par le CAPM, et le ratio de Sharpe.
-- Semaine 6 : entraînement croisé sur des sujets type combinant les trois matières, dans les conditions de l''examen (temps limité, calculatrice simple, pas de formulaire fourni dans la plupart des cas).
-
-Chaque semaine, terminez par un exercice chronométré et un corrigé détaillé, en notant systématiquement les erreurs récurrentes : oubli de l''impôt sur une économie fiscale, confusion entre valeur d''entreprise et valeur des capitaux propres, erreur de signe dans un flux de trésorerie.
-
-## Points clés
-
-- Le Master 1 exige de croiser plusieurs méthodes et d''argumenter les écarts, pas de produire un chiffre unique.
-- Trois matières structurent l''année : évaluation d''entreprise, ingénierie financière et fusions-acquisitions, gestion de portefeuille et marchés financiers avancés.
-- Le mémoire démarre souvent en M1 par le choix du thème et une première revue de littérature.
-- La révision doit combiner calcul rigoureux, rappel conceptuel et entraînement chronométré sur cas complexes.
-
-## Exercices
-
-1. Expliquez en trois phrases pourquoi un évaluateur sérieux calcule la valeur d''une entreprise par plusieurs méthodes plutôt qu''une seule.
-2. Citez les trois matières avancées du programme de M1 Finance présentées dans cette leçon.
-3. Pourquoi la distinction entre valeur d''entreprise et valeur des capitaux propres est-elle centrale en évaluation ?
-4. Proposez un découpage de six semaines de révision adapté à votre propre emploi du temps, en gardant la logique de cette leçon.
-5. Donnez un exemple de thème de mémoire professionnel en finance qui mobiliserait à la fois l''évaluation d''entreprise et la gestion de portefeuille.
-
-## Corrigé
-
-1. Chaque méthode repose sur des hypothèses différentes (flux futurs actualisés pour le DCF, comparaison de marché pour les multiples, patrimoine comptable corrigé pour l''approche patrimoniale) ; elles peuvent diverger fortement, et comparer les résultats permet de détecter une hypothèse trop optimiste ou un comparable mal choisi, puis de proposer une fourchette de valeur argumentée plutôt qu''un chiffre fragile.
-2. Évaluation d''entreprise approfondie ; ingénierie financière et fusions-acquisitions ; gestion de portefeuille et marchés financiers avancés.
-3. La valeur d''entreprise rémunère l''ensemble des financeurs (actionnaires et créanciers), alors que la valeur des capitaux propres ne rémunère que les actionnaires ; confondre les deux conduit à surestimer ou sous-estimer le prix réellement payé pour acquérir le contrôle d''une société, car il faut toujours retrancher la dette financière nette de la valeur d''entreprise pour obtenir la valeur des capitaux propres.
-4. Réponse libre ; un bon plan conserve la progression proposée (évaluation, puis ingénierie financière, puis portefeuille, puis entraînement croisé) et prévoit un exercice chronométré chaque semaine.
-5. Exemple possible : « L''évaluation des cibles de croissance externe par les fonds d''investissement actifs en zone UEMOA et son impact sur la composition des portefeuilles institutionnels », qui combine évaluation (comment chiffrer la cible), ingénierie financière (comment structurer le rachat) et gestion de portefeuille (comment le fonds pilote son risque global).', 'texte', 45, true, 10
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en Finance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Évaluation d''entreprise approfondie : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Construire une évaluation par les flux de trésorerie actualisés (DCF) et en interpréter les résultats.
-- Appliquer la méthode des multiples et comprendre ses limites.
-- Mettre en œuvre l''approche patrimoniale avec goodwill.
-- Croiser les trois méthodes pour une fourchette de valeur argumentée.
-
-Tous les taux (actualisation, croissance, multiples, rémunération des capitaux) sont fictifs pour l''exemple.
-
-## Fiche 1 : la méthode DCF (discounted cash flows)
-
-Le DCF évalue une entreprise par la valeur actuelle des flux de trésorerie disponibles qu''elle générera, augmentée d''une valeur terminale qui capture ce qui se passe après l''horizon explicite de prévision.
-
-- FCF = résultat d''exploitation après impôt + dotations aux amortissements − variation du BFR − investissements.
-- On actualise chaque flux au coût moyen pondéré du capital (CMPC), taux reflétant le risque de l''activité.
-- Valeur terminale par le modèle de Gordon-Shapiro : VT = FCF de la dernière année × (1 + g) / (CMPC − g), avec g strictement inférieur au CMPC.
-- La valeur d''entreprise (VE) est la somme des flux actualisés et de la VT actualisée ; la valeur des capitaux propres s''obtient en retranchant la dette financière nette.
-
-Cas : Teranga Agro-Transformation SA, entreprise fictive de Thiès transformant des céréales locales, est évaluée pour une prise de participation minoritaire. FCF prévisionnels sur 5 ans (millions de FCFA) : 420, 462, 498, 530, 556. CMPC retenu : 12 %. Croissance à long terme : 2,5 %.
-
-- Flux actualisés : année 1 : 420 / 1,12 = 375,0 ; année 2 : 462 / 1,12² = 368,3 ; année 3 : 498 / 1,12³ = 354,5 ; année 4 : 530 / 1,12⁴ = 336,8 ; année 5 : 556 / 1,12⁵ = 315,5. Somme des flux actualisés : 1 750,1.
-- Valeur terminale en fin d''année 5 : 556 × 1,025 / (0,12 − 0,025) = 5 998,9. Actualisée sur 5 ans : 5 998,9 / 1,12⁵ = 3 404,0.
-- Valeur d''entreprise : 1 750,1 + 3 404,0 = 5 154,0 millions de FCFA.
-- Dette financière nette au bilan : 650 millions. Valeur des capitaux propres : 5 154,0 − 650 = 4 504,0 millions de FCFA.
-- Avec 2 000 000 d''actions en circulation, la valeur par action est de 4 504,0 × 1 000 000 / 2 000 000 = 2 252 FCFA.
-
-Le DCF est sensible au CMPC et à la croissance à l''infini : un bon candidat teste toujours une fourchette de ces deux paramètres plutôt qu''un seul résultat.
-
-## Fiche 2 : la méthode des multiples de comparables
-
-Cette méthode évalue l''entreprise par comparaison avec des sociétés cotées ou des transactions récentes du même secteur, en appliquant un multiple de marché à un agrégat de l''entreprise à évaluer.
-
-- Multiple d''EV/EBITDA : valeur d''entreprise rapportée à l''excédent brut d''exploitation, peu sensible aux politiques d''amortissement et à la structure financière.
-- Multiple de PER : capitalisation rapportée au résultat net ; donne directement une valeur des capitaux propres.
-- Choix des comparables : entreprises de secteur, taille et rentabilité proches ; en Afrique de l''Ouest, peu de sociétés cotées sont comparables, ce qui justifie de croiser cette méthode avec le DCF.
-
-Cas (suite) : l''EBITDA de Teranga Agro-Transformation est de 650 millions de FCFA et le résultat net de 310 millions. Un échantillon de comparables agroalimentaires affiche un multiple moyen EV/EBITDA de 7,4 et un PER moyen de 15,2 (multiples fictifs pour l''exemple).
-
-- Valeur d''entreprise par le multiple d''EBITDA : 650 × 7,4 = 4 810,0 millions. Valeur des capitaux propres : 4 810,0 − 650 = 4 160,0 millions.
-- Valeur des capitaux propres par le PER : 310 × 15,2 = 4 712,0 millions.
-
-Les deux approches par multiples donnent 4 160 et 4 712 millions, à comparer aux 4 504 millions du DCF : l''écart reste raisonnable (moins de 10 % autour du DCF), ce qui renforce la crédibilité de la fourchette.
-
-## Fiche 3 : l''approche patrimoniale et le goodwill
-
-L''approche patrimoniale part de l''actif net comptable corrigé (ANC corrigé), c''est-à-dire les capitaux propres comptables retraités des plus ou moins-values latentes sur les actifs et des éléments hors bilan significatifs.
-
-Cette méthode valorise le patrimoine existant mais ignore la capacité de l''entreprise à créer de la valeur future ; on lui ajoute donc un goodwill (survaleur), estimé par la méthode des rentes abrégées.
-
-- Rente annuelle du goodwill = résultat courant prévisionnel − (taux de rémunération normatif des capitaux × ANC corrigé). Ce taux représente ce qu''un investisseur exigerait pour un placement comparable sans l''avantage concurrentiel de l''entreprise.
-- On actualise cette rente sur un horizon limité (3 à 8 ans), avec la formule de l''annuité : goodwill = rente × [1 − (1 + i)⁻ⁿ] / i.
-
-Cas (suite) : l''ANC comptable de Teranga Agro-Transformation est de 2 800 millions de FCFA ; une plus-value latente nette de 380 millions est identifiée sur un terrain sous-évalué au bilan. ANC corrigé : 2 800 + 380 = 3 180 millions. Résultat courant prévisionnel : 400 millions, taux normatif retenu de 9 %, horizon d''actualisation de 5 ans à 12 %.
-
-- Rente du goodwill : 400 − (0,09 × 3 180) = 400 − 286,2 = 113,8 millions par an.
-- Facteur d''annuité sur 5 ans à 12 % : [1 − 1,12⁻⁵] / 0,12 = 3,6048.
-- Goodwill : 113,8 × 3,6048 = 410,2 millions.
-- Valeur globale de l''entreprise (patrimoniale + goodwill) : 3 180 + 410,2 = 3 590,2 millions de FCFA.
-
-## Fiche 4 : synthèse et fourchette de valeur
-
-Pour Teranga Agro-Transformation : DCF 4 504,0 ; multiple d''EBITDA 4 160,0 ; PER 4 712,0 ; patrimoniale avec goodwill 3 590,2 millions de FCFA. L''approche patrimoniale donne une valeur plus prudente car elle valorise peu la croissance future ; elle sert de plancher de négociation. La fourchette raisonnable, en excluant le cas le plus prudent, se situe entre 4 160 et 4 712 millions de FCFA, avec le DCF comme estimation centrale.
-
-- Toujours indiquer les hypothèses retenues : une valeur sans hypothèses explicites n''a pas de valeur probante à l''examen.
-- Expliquer les écarts entre méthodes plutôt que les ignorer : c''est ce qui distingue une copie de M1 d''une copie de Licence.
+- Le Master 2 combine examens et mémoire ; il faut organiser son temps pour ne négliger aucun des deux.
+- Les trois matières avancées de l''année nourrissent souvent directement le contenu du mémoire.
+- Une problématique précise et délimitée vaut mieux qu''un thème vague, dès le départ de la rédaction.
+- La préparation de la soutenance commence pendant la rédaction, pas après.
 
 ## Exercices pratiques
 
-1. Flux disponibles de 300, 330 et 360 millions de FCFA sur 3 ans, CMPC de 10 %, croissance à l''infini de 3 %. Calculez la valeur d''entreprise.
-2. Pourquoi l''EV/EBITDA est-il préféré au PER pour comparer des entreprises à structures financières différentes ?
-3. ANC comptable de 1 500 millions, moins-value latente nette de 60 millions, résultat courant prévisionnel de 180 millions, taux normatif de 8 %, horizon de 4 ans à 10 %. Calculez l''ANC corrigé, la rente et le goodwill.
-4. Pourquoi la valeur terminale pèse-t-elle souvent plus de 60 % d''un DCF, et quel risque cela pose-t-il ?
-5. Cas pratique : Baobab Distribution SA, entreprise fictive dakaroise, prévoit des flux de 500, 540, 580, 610, 630 millions sur 5 ans, CMPC 13 %, croissance 2 %, dette nette 900 millions, 1 500 000 actions. Calculez la valeur d''entreprise, des capitaux propres, par action. Son EBITDA est de 720 millions, multiple sectoriel 6,8 : comparez au DCF.
+1. Formulez, en une phrase, une problématique de mémoire précise qui pourrait s''appuyer sur l''une des trois matières avancées de l''année.
+2. Expliquez la différence entre un thème de mémoire et une problématique de mémoire.
+3. Construisez votre propre calendrier de révision sur six semaines, en indiquant pour chaque semaine une matière, un objectif et un temps dédié au mémoire.
+4. Citez deux raisons pour lesquelles il est utile de tenir un journal de bord pendant la rédaction du mémoire.
+5. Donnez un exemple de question qu''un jury pourrait poser sur un mémoire consacré à l''évaluation d''une PME avant une opération de reprise, et esquissez une réponse possible.
 
 ## Corrigé
 
-1. Flux actualisés : 272,7 + 272,7 + 270,5 = 815,9. Valeur terminale : 360×1,03/(0,07) = 5 297,1, actualisée : 3 979,4. Valeur d''entreprise : 4 795,3 millions.
-2. L''EV/EBITDA compare la valeur d''entreprise, indépendante du financement, à un agrégat avant frais financiers et impôt ; il reste comparable entre entreprises diversement endettées, contrairement au PER qui dépend de la charge d''intérêts.
-3. ANC corrigé : 1 440 millions. Rente : 180 − 115,2 = 64,8 millions. Goodwill : 64,8 × 3,1699 = 205,4 millions ; valeur globale : 1 645,4 millions.
-4. Les flux explicites ne portent que sur quelques années alors que l''entreprise dure indéfiniment ; une petite variation du couple CMPC/croissance change radicalement le résultat, d''où l''importance d''une analyse de sensibilité.
-5. Flux actualisés à 13 % : 1 983,5. Valeur terminale actualisée : 3 171,2. Valeur d''entreprise : 5 154,7 millions. Capitaux propres : 4 254,7 millions. Par action : environ 2 836,5 FCFA. Par comparables : 4 896,0 millions, proche du DCF (écart inférieur à 5 %).', 'texte', 50, false, 20
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Évaluation d''entreprise approfondie : l''essentiel pour l''examen');
+1. Exemple : « Comment une PME agroalimentaire sénégalaise peut-elle documenter ses prix de transfert avec une filiale installée dans un pays voisin de l''UEMOA ? » Toute problématique précise, délimitée et vérifiable à partir d''un cas réel ou réaliste est acceptée.
+2. Un thème est un sujet large (« l''audit en Afrique », « les fusions d''entreprises ») qui ne précise ni l''angle d''étude ni le terrain. Une problématique est une question précise, délimitée dans le temps, l''espace ou le secteur, à laquelle le mémoire doit répondre à partir d''une analyse argumentée et d''un terrain identifié.
+3. Réponse libre ; le calendrier doit comporter six lignes datées, chacune avec une matière, un objectif mesurable et un temps réservé au mémoire, la sixième semaine étant consacrée aux points faibles et à la répétition de la soutenance.
+4. Il permet de retrouver facilement, au moment de rédiger la partie méthodologique, les choix effectués et leurs justifications ; il aide aussi à mesurer objectivement son avancement et à repérer tôt un retard ou un blocage.
+5. Exemple de question : « Pourquoi avez-vous choisi la méthode d''actualisation des flux plutôt que les seuls multiples comparables pour évaluer cette PME ? » Réponse possible : expliquer que les multiples comparables manquaient de données fiables pour une entreprise de cette taille et que l''actualisation des flux permettait de mieux intégrer les spécificités de son activité, tout en reconnaissant que le choix du taux d''actualisation reste une source d''incertitude à discuter.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en Comptabilité');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Ingénierie financière et fusions-acquisitions : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Audit financier approfondi : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Calculer une parité d''échange et mesurer l''effet dilutif ou relutif d''une fusion sur le bénéfice par action.
-- Comprendre la logique d''un rachat par effet de levier (LBO) et calculer le taux de rendement interne du fonds.
-- Identifier les grandes étapes et les risques d''une opération de fusion-acquisition.
+- Dérouler la démarche d''audit depuis l''évaluation des risques jusqu''à l''opinion exprimée.
+- Calculer un seuil de signification (matérialité) et ses déclinaisons (seuil de planification, seuil de report).
+- Comprendre le principe de l''échantillonnage en audit et appliquer une méthode simplifiée.
+- Distinguer les grands types d''opinion d''audit.
 
-Tous les cours, primes et taux de cette leçon sont fictifs pour l''exemple.
+Cette leçon prolonge le module d''audit et de contrôle interne de Licence 3 : elle approfondit la démarche, sans revenir sur les notions de base (indépendance du commissaire aux comptes, cycles d''audit élémentaires). Les normes internationales d''audit sont évoquées en termes généraux ; tout numéro précis de norme ou seuil réglementaire doit être vérifié dans les textes en vigueur.
 
-## Fiche 1 : la parité d''échange et l''effet sur le bénéfice par action
+## 1. La démarche d''audit en quatre temps
 
-Dans une fusion par échange d''actions, l''acquéreur rémunère les actionnaires de la cible en nouvelles actions plutôt qu''en numéraire. La parité d''échange fixe combien d''actions de l''acquéreur sont remises pour une action de la cible.
+Un audit financier approfondi suit une démarche structurée : prise de connaissance de l''entité et de son environnement, évaluation du risque d''anomalies significatives, détermination d''une stratégie d''audit (tests de procédures sur les contrôles internes, contrôles substantifs sur les comptes), puis formation de l''opinion. Cette démarche repose sur un principe central : l''auditeur ne vérifie pas tout, il concentre ses efforts là où le risque d''erreur ou de fraude est le plus élevé et le plus susceptible d''influencer les décisions des utilisateurs des comptes.
 
-- Prix offert par action de la cible = cours de la cible × (1 + prime de contrôle). La prime rémunère la perte de l''autonomie et l''anticipation de synergies.
-- Parité d''échange = prix offert par action de la cible / cours de l''acquéreur.
-- Nouvelles actions émises = nombre d''actions de la cible × parité. Elles s''ajoutent aux actions existantes de l''acquéreur pour former le nouveau capital.
-- Bénéfice par action (BPA) post-fusion = résultat net consolidé (résultats cumulés + synergies nettes d''impôt) / nombre d''actions total post-fusion. On parle de relution si ce BPA dépasse le BPA de l''acquéreur avant l''opération, de dilution dans le cas contraire.
+Le risque d''audit combine classiquement trois composantes : le risque inhérent (propre à la nature de l''activité ou du compte, par exemple un stock de produits périssables plus risqué qu''une trésorerie bancaire), le risque de contrôle (le contrôle interne de l''entreprise ne détecte ou ne corrige pas une anomalie) et le risque de non-détection (les travaux de l''auditeur eux-mêmes ne détectent pas une anomalie existante). L''auditeur ajuste l''étendue de ses travaux pour ramener le risque de non-détection à un niveau acceptable, compte tenu des deux premiers risques.
 
-Cas : Sahel Industries SA (acquéreur) souhaite racheter Delta Emballages SA (cible), deux entreprises fictives. Sahel Industries vaut 9 000 millions de FCFA de capitaux propres pour 3 000 000 d''actions, soit un cours de 3 000 FCFA. Delta Emballages vaut 2 400 millions pour 1 000 000 d''actions, soit un cours de 2 400 FCFA. Une prime de contrôle de 20 % est négociée.
+## 2. Le seuil de signification (matérialité)
 
-- Prix offert par action de Delta Emballages : 2 400 × 1,20 = 2 880 FCFA.
-- Parité d''échange : 2 880 / 3 000 = 0,96 action Sahel Industries pour 1 action Delta Emballages.
-- Nouvelles actions émises : 1 000 000 × 0,96 = 960 000. Capital post-fusion : 3 000 000 + 960 000 = 3 960 000 actions.
-- Résultat net consolidé : résultat de Sahel (620) + résultat de Delta (180) + synergies nettes d''impôt (45, fictives) = 845 millions de FCFA.
-- BPA de Sahel avant l''opération : 620 × 1 000 000 / 3 000 000 = 206,7 FCFA. BPA post-fusion : 845 × 1 000 000 / 3 960 000 = 213,4 FCFA.
-- Variation : (213,4 / 206,7 − 1) × 100 = +3,25 %. L''opération est relutive pour les actionnaires de Sahel Industries.
+Le seuil de signification est le montant au-delà duquel une anomalie, ou le cumul de plusieurs anomalies, est susceptible d''influencer les décisions économiques des utilisateurs des comptes. Il sert de référence pour déterminer l''étendue des travaux et pour juger, en fin de mission, si les anomalies relevées doivent être corrigées ou peuvent être tolérées.
 
-Une opération peut être relutive à court terme sans être créatrice de valeur réelle : si la prime payée est trop élevée ou les synergies surestimées, la relution comptable masque une destruction de valeur. L''examen attend que vous signaliez cette limite.
+Cas d''entreprise : l''auditeur de Casamance Négoce, société fictive, retient un taux de matérialité, fictif pour l''exemple, de 1 % du chiffre d''affaires. Le chiffre d''affaires de l''exercice est de 2 400 000 000 FCFA.
 
-## Fiche 2 : le rachat par effet de levier (LBO)
+- Seuil de signification global : 1 % × 2 400 000 000 = 24 000 000 FCFA.
+- Seuil de planification, retenu de façon prudente à 75 % du seuil global pour piloter les travaux en cours de mission : 75 % × 24 000 000 = 18 000 000 FCFA.
+- Seuil de report des anomalies triviales, fixé ici à 5 % du seuil global, en dessous duquel une anomalie individuelle n''est pas suivie séparément : 5 % × 24 000 000 = 1 200 000 FCFA.
 
-Un LBO (leveraged buy-out) consiste à racheter une entreprise principalement par de la dette logée dans une société holding créée pour l''occasion, remboursée ensuite par les flux de trésorerie de la cible. L''effet de levier amplifie le rendement des fonds propres investis par le fonds acquéreur, à condition que la rentabilité économique de la cible dépasse le coût de la dette.
+Ces trois seuils ne sont pas de simples formalités : ils structurent concrètement le travail. Une anomalie de 500 000 FCFA, inférieure au seuil de report, ne mobilise pas de ressources d''investigation supplémentaires isolément. Une anomalie de 20 000 000 FCFA, proche du seuil de signification global, déclenche une analyse approfondie et peut remettre en cause l''opinion si elle n''est pas corrigée.
 
-- Montage : le fonds apporte des fonds propres, la banque apporte une dette senior ; la holding achète les actions de la cible, puis la dette est remboursée par les dividendes remontés de la cible, alimentés par son flux de trésorerie disponible.
-- Le risque principal est le risque de remboursement : si l''activité se dégrade, le service de la dette (intérêts + capital) peut dépasser le flux disponible.
-- Le rendement du fonds se mesure par le taux de rendement interne (TRI) sur la durée de détention et par le multiple de l''investissement (valeur de sortie des fonds propres / apport initial).
+## 3. L''échantillonnage en audit
 
-Cas : un fonds rachète Logis-Services, PME fictive, pour une valeur d''entreprise de 1 000 millions de FCFA, financée par 650 millions de dette senior (taux fictif de 9 %) et 350 millions de fonds propres du fonds. L''EBITDA initial est de 220 millions, avec une croissance annuelle de 5 %, et le flux disponible avant service de la dette est approché à 80 % de l''EBITDA.
+Face à une population nombreuse d''opérations (factures de ventes, écritures de paie), l''auditeur ne peut généralement pas tout contrôler : il sélectionne un échantillon représentatif. La méthode de l''échantillonnage en unités monétaires (MUS, monetary unit sampling) donne plus de chances d''être sélectionnées aux opérations de montant élevé, cohérent avec l''objectif de détecter des anomalies significatives en valeur plutôt qu''en nombre d''opérations.
 
-- Chaque année, le flux disponible rembourse en priorité les intérêts puis le capital restant dû. Sur 5 ans, la dette de 650 millions est intégralement remboursée (calcul détaillé en vidéo) grâce à la croissance de l''EBITDA.
-- Sortie en année 5 : EBITDA de 267,4 millions × multiple de sortie de 6,0 = valeur d''entreprise de 1 604,5 millions. Dette résiduelle nulle, donc valeur des fonds propres à la sortie = 1 604,5 millions.
-- Multiple de l''investissement : 1 604,5 / 350 = 4,58 fois l''apport initial.
-- TRI sur 5 ans : (4,58)^(1/5) − 1 ≈ 35,6 % par an.
+Illustration pédagogique simplifiée, à ne pas confondre avec une formule statistique officielle : pour une population de comptes clients d''une valeur comptable totale de 1 800 000 000 FCFA, et un seuil de signification de 24 000 000 FCFA calculé plus haut, une approche simplifiée consiste à diviser la valeur de la population par le seuil de signification pour obtenir un ordre de grandeur de la taille d''échantillon : 1 800 000 000 divisé par 24 000 000, soit environ 75 éléments. Les méthodes statistiques réellement employées en pratique ajustent ce chiffre selon le niveau de confiance recherché, le risque de contrôle évalué et la stratification éventuelle de la population ; retenez le principe, pas une formule figée.
 
-Ce rendement élevé illustre l''effet de levier : la valeur d''entreprise n''a progressé que de 1 000 à 1 604,5 millions (+60 %), mais grâce au remboursement intégral de la dette, les fonds propres du fonds sont passés de 350 à 1 604,5 millions. Ce résultat suppose une exécution sans accroc du plan de remboursement : toute dégradation de l''EBITDA réduit fortement le rendement.
+## 4. Les types d''opinion d''audit
 
-## Fiche 3 : les grandes étapes d''une opération de fusion-acquisition
+Au terme de ses travaux, l''auditeur exprime une opinion sur les comptes. En termes généraux, on distingue : l''opinion sans réserve (les comptes donnent, dans tous leurs aspects significatifs, une image fidèle) ; l''opinion avec réserve (les comptes sont globalement fiables, mais un ou plusieurs points précis, limités, appellent une réserve) ; l''opinion défavorable (les anomalies sont si importantes et répandues que les comptes ne donnent pas une image fidèle) ; et l''impossibilité d''exprimer une opinion (l''auditeur n''a pas pu réunir des éléments suffisants et appropriés pour fonder une opinion, par exemple en cas de limitation imposée à ses travaux).
 
-- Phase préparatoire : identification de la cible, lettre d''intention, audit d''acquisition (due diligence) financier, juridique, fiscal et social.
-- Négociation : valorisation (voir la leçon précédente), structuration de l''offre (numéraire, échange d''actions, ou mixte), garanties d''actif et de passif protégeant l''acquéreur contre des passifs cachés.
-- Financement : choix entre autofinancement, dette, augmentation de capital ou combinaison, en tenant compte de l''impact sur la structure financière et la notation de l''acquéreur.
-- Intégration post-acquisition : réalisation effective des synergies annoncées, qui échoue fréquemment par sous-estimation des coûts d''intégration (systèmes d''information, culture d''entreprise, doublons).
+Le choix entre ces opinions dépend à la fois de l''ampleur des anomalies ou limitations constatées (significatives ou non) et de leur caractère diffus ou circonscrit (généralisées à l''ensemble des comptes, ou limitées à un poste précis).
+
+## Points clés à retenir
+
+- Le risque d''audit combine risque inhérent, risque de contrôle et risque de non-détection ; l''auditeur concentre ses travaux sur les zones les plus risquées.
+- Le seuil de signification global se décline en seuil de planification (plus prudent) et seuil de report des anomalies triviales.
+- L''échantillonnage en unités monétaires privilégie les montants élevés ; toute formule chiffrée dans ce cours est pédagogique et simplifiée, pas une norme officielle.
+- Le type d''opinion dépend de l''ampleur et du caractère diffus ou circonscrit des anomalies ou limitations constatées.
 
 ## Exercices pratiques
 
-1. Un acquéreur cote 4 000 FCFA, une cible cote 1 800 FCFA. Une prime de 25 % est offerte. Calculez le prix offert par action et la parité d''échange.
-2. Expliquez pourquoi une opération relutive sur le BPA n''est pas automatiquement créatrice de valeur.
-3. Dans un LBO, pourquoi la dette d''acquisition est-elle logée dans une holding plutôt que directement dans la cible ?
-4. Un fonds investit 400 millions de fonds propres dans un LBO et revend sa participation 900 millions 4 ans plus tard. Calculez le multiple d''investissement et le TRI annuel.
-5. Cas pratique : Fatick Energie SA (acquéreur, cours 5 000 FCFA, 2 000 000 actions, résultat net 900 millions) rachète Rufisque Solaire SA (cible, cours 3 200 FCFA, 600 000 actions, résultat net 210 millions) avec une prime de 15 % et des synergies nettes d''impôt de 30 millions. Calculez la parité d''échange, le nombre d''actions post-fusion, le BPA avant et après l''opération, et concluez sur la dilution ou la relution.
+1. Expliquez la différence entre risque inhérent, risque de contrôle et risque de non-détection, avec un exemple pour chacun.
+2. Le chiffre d''affaires de l''entreprise fictive Sahel Distribution est de 1 500 000 000 FCFA. L''auditeur retient un taux de matérialité fictif de 1,2 %. Calculez le seuil de signification global, puis le seuil de planification à 70 % de ce seuil.
+3. Pourquoi l''échantillonnage en unités monétaires donne-t-il plus de chances d''être sélectionnées aux opérations de montant élevé ?
+4. Une population de stocks a une valeur comptable de 900 000 000 FCFA ; le seuil de signification retenu est de 15 000 000 FCFA. En appliquant la méthode pédagogique simplifiée du cours, estimez un ordre de grandeur de la taille d''échantillon.
+5. Donnez un exemple de situation qui justifierait une opinion avec réserve plutôt qu''une opinion défavorable.
+6. Expliquez en quoi une impossibilité d''exprimer une opinion diffère d''une opinion défavorable.
 
 ## Corrigé
 
-1. Prix offert : 1 800 × 1,25 = 2 250 FCFA. Parité : 2 250 / 4 000 = 0,5625 action de l''acquéreur pour 1 action de la cible.
-2. Le BPA post-fusion dépend du résultat comptable consolidé et du nombre d''actions, mais pas directement du prix payé ni du risque réellement transféré ; une prime excessive ou des synergies surestimées peuvent produire une relution comptable immédiate tout en détruisant de la valeur économique à moyen terme, notamment si le goodwill comptabilisé doit être déprécié plus tard.
-3. Loger la dette dans la holding protège la cible elle-même de la faillite en cas de défaut de la holding, isole le risque financier de l''opération dans une structure dédiée, et permet de rembourser la dette grâce aux dividendes remontés de la cible sans fusionner juridiquement les deux entités.
-4. Multiple : 900 / 400 = 2,25. TRI : 2,25^(1/4) − 1 ≈ 22,5 % par an.
-5. Prix offert : 3 200 × 1,15 = 3 680 FCFA. Parité : 3 680 / 5 000 = 0,736. Nouvelles actions : 600 000 × 0,736 = 441 600. Actions post-fusion : 2 000 000 + 441 600 = 2 441 600. Résultat consolidé : 900 + 210 + 30 = 1 140 millions. BPA avant : 900 × 1 000 000 / 2 000 000 = 450 FCFA. BPA après : 1 140 × 1 000 000 / 2 441 600 ≈ 466,8 FCFA. L''opération est relutive (+3,7 %).', 'texte', 50, false, 30
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Ingénierie financière et fusions-acquisitions : l''essentiel pour l''examen');
+1. Risque inhérent : un stock de produits périssables est intrinsèquement plus exposé à une perte de valeur non constatée qu''une trésorerie bancaire. Risque de contrôle : une entreprise sans séparation des tâches entre la personne qui encaisse et celle qui enregistre les ventes présente un risque que les contrôles internes ne détectent pas une anomalie. Risque de non-détection : un échantillon trop petit ou mal ciblé par l''auditeur peut ne pas repérer une anomalie réellement présente dans les comptes.
+2. Seuil de signification global : 1,2 % × 1 500 000 000 = 18 000 000 FCFA. Seuil de planification : 70 % × 18 000 000 = 12 600 000 FCFA.
+3. Parce que la sélection s''effectue proportionnellement à la valeur monétaire de chaque opération : une opération de montant élevé représente une plus grande part de la valeur totale de la population, donc une plus grande probabilité d''être incluse dans l''échantillon, ce qui est cohérent avec l''objectif de détecter prioritairement les anomalies significatives en valeur.
+4. 900 000 000 divisé par 15 000 000, soit environ 60 éléments, selon la méthode pédagogique simplifiée du cours.
+5. Par exemple, une provision pour dépréciation de stock jugée insuffisante sur un seul site parmi plusieurs, pour un montant proche mais inférieur au seuil de signification : l''anomalie est significative sur ce point précis mais reste circonscrite, sans remettre en cause l''image fidèle de l''ensemble des comptes.
+6. Une opinion défavorable signifie que l''auditeur a pu réunir des éléments suffisants et conclut que les comptes, pris dans leur ensemble, ne donnent pas une image fidèle en raison d''anomalies généralisées. Une impossibilité d''exprimer une opinion signifie que l''auditeur n''a pas pu réunir des éléments suffisants et appropriés pour se prononcer du tout, par exemple à cause d''une limitation imposée à ses travaux ou d''une documentation manquante.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Audit financier approfondi : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Gestion de portefeuille et marchés financiers avancés : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Ingénierie financière et opérations de restructuration : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Calculer le rendement attendu et le risque (variance, écart-type) d''un portefeuille à deux actifs.
-- Déterminer le portefeuille de variance minimale et comprendre la logique de la frontière efficiente.
-- Appliquer le modèle d''évaluation des actifs financiers (CAPM) pour calculer un rendement exigé et un bêta.
-- Calculer et interpréter le ratio de Sharpe.
+- Évaluer une entreprise par la méthode de l''actualisation des flux de trésorerie disponibles (DCF) et par les multiples comparables.
+- Comprendre, en termes généraux, le principe de l''effet de levier dans un financement par endettement (LBO).
+- Calculer une parité d''échange et une prime de fusion dans une opération de fusion-acquisition.
+- Situer les opérations de restructuration (apport partiel d''actif, scission) par rapport à la fusion.
 
-Tous les rendements, volatilités et corrélations de cette leçon sont fictifs pour l''exemple.
+Cette leçon prolonge la comptabilité des sociétés de Licence 2 et les opérations de fusion déjà abordées en Licence 3 : elle approfondit l''évaluation d''entreprise et les montages de restructuration, du point de vue de la décision financière plus que de la seule écriture comptable. Tous les taux (WACC, croissance, multiples) sont explicitement fictifs pour l''exemple.
 
-## Fiche 1 : rendement et risque d''un portefeuille à deux actifs
+## 1. Évaluer une entreprise : la méthode DCF
 
-La diversification repose sur un principe simple : combiner des actifs qui ne varient pas parfaitement ensemble réduit le risque total sans réduire proportionnellement le rendement attendu.
+La méthode DCF (discounted cash flows) valorise une entreprise par la somme actualisée des flux de trésorerie qu''elle devrait générer dans le futur, plus une valeur terminale représentant les flux au-delà de l''horizon explicite de prévision.
 
-- Rendement attendu du portefeuille : E(rp) = wA × E(rA) + wB × E(rB), où wA et wB sont les poids investis dans chaque actif (wA + wB = 1).
-- Variance du portefeuille : σp² = wA² × σA² + wB² × σB² + 2 × wA × wB × Cov(A,B), avec Cov(A,B) = corrélation(A,B) × σA × σB.
-- Plus la corrélation entre les deux actifs est faible, plus le terme de covariance réduit la variance totale : une corrélation inférieure à 1 crée toujours un gain de diversification.
+Cas d''entreprise : la société cible fictive Rufisque Agro-Business présente les flux de trésorerie disponibles prévisionnels suivants pour les cinq prochaines années : 50 000 000, 55 000 000, 60 000 000, 66 000 000 et 70 000 000 FCFA. Le taux d''actualisation retenu (coût moyen pondéré du capital, ou WACC) est de 12 %, fictif pour l''exemple ; le taux de croissance à l''infini retenu pour la valeur terminale est de 2 %, également fictif.
 
-Cas : un portefeuille combine l''action fictive Sahel Ciments (rendement attendu 14 %, écart-type 22 %) et l''action fictive Teranga Telecom (rendement attendu 9 %, écart-type 12 %), avec une corrélation de 0,30. La covariance est Cov = 0,30 × 0,22 × 0,12 = 0,00792.
+- Valeur actualisée des flux explicites (années 1 à 5) : environ 212 900 000 FCFA.
+- Valeur terminale (flux de l''année 5 majoré du taux de croissance, divisé par la différence entre le WACC et le taux de croissance) : environ 714 000 000 FCFA, actualisée sur cinq ans à environ 405 100 000 FCFA.
+- Valeur d''entreprise par la méthode DCF : environ 212 900 000 + 405 100 000 = 618 000 000 FCFA.
 
-- Avec 60 % investis dans Sahel Ciments et 40 % dans Teranga Telecom : E(rp) = 0,6 × 14 % + 0,4 × 9 % = 12,0 %. Variance : 0,6² × 0,22² + 0,4² × 0,12² + 2 × 0,6 × 0,4 × 0,00792 = 0,02354, soit un écart-type de 15,3 %.
-- À titre de comparaison, investir 100 % dans Sahel Ciments seul donne un rendement de 14 % pour un écart-type de 22 % : le portefeuille mixte réduit fortement le risque pour une baisse de rendement plus modérée.
+## 2. Évaluer une entreprise : les multiples comparables
 
-## Fiche 2 : le portefeuille de variance minimale et la frontière efficiente
+La méthode des multiples applique à un agrégat financier de la cible (chiffre d''affaires, EBITDA, résultat net) un multiple observé sur des entreprises comparables cotées ou récemment cédées. Pour Rufisque Agro-Business, l''EBITDA de l''exercice est de 80 000 000 FCFA ; le multiple comparable observé dans le secteur, fictif pour l''exemple, est de 6 fois l''EBITDA.
 
-Pour deux actifs, il existe une pondération qui minimise la variance du portefeuille, obtenue en annulant la dérivée de σp² par rapport à wA :
+- Valeur d''entreprise par les multiples : 80 000 000 × 6 = 480 000 000 FCFA.
 
-- wA (variance minimale) = (σB² − Cov(A,B)) / (σA² + σB² − 2 × Cov(A,B)).
-- En faisant varier wA de 0 % à 100 %, l''ensemble des couples (risque, rendement) obtenus dessine la frontière efficiente simplifiée à deux actifs : chaque point est le meilleur rendement possible pour un niveau de risque donné.
+Les deux méthodes donnent des résultats différents (618 000 000 FCFA par le DCF, 480 000 000 FCFA par les multiples), ce qui est normal : elles reposent sur des hypothèses et sources distinctes. Une pratique courante retient une valeur médiane ou moyenne, plutôt qu''un chiffre unique présenté comme certain. Une moyenne simple donnerait ici environ 549 000 000 FCFA de valeur d''entreprise. Pour passer à la valeur des capitaux propres (equity value), il faut déduire la dette financière nette, par exemple 90 000 000 FCFA, soit environ 459 000 000 FCFA.
 
-Cas (suite) : avec les données de Sahel Ciments et Teranga Telecom, wA (minimale) = (0,12² − 0,00792) / (0,22² + 0,12² − 2 × 0,00792) = 0,138, donc wB = 0,862. L''écart-type minimal atteint est de 11,6 %, pour un rendement attendu de 9,69 % : ce portefeuille est moins risqué que Teranga Telecom seul (12,0 %) tout en offrant un rendement légèrement supérieur (9,69 % contre 9,0 %), ce qui illustre concrètement le bénéfice de la diversification.
+## 3. L''effet de levier, en termes généraux
 
-- Tout portefeuille situé sous le point de variance minimale sur la frontière n''est pas efficient : on peut obtenir le même risque ou moins pour un rendement supérieur ailleurs sur la courbe.
-- Un investisseur rationnel ne choisit jamais un point inefficient ; son choix final dépend ensuite de son aversion au risque, parmi les portefeuilles efficients.
+Une opération à effet de levier (leveraged buy-out, LBO) consiste à financer l''acquisition d''une cible majoritairement par de la dette, remboursée grâce aux flux de trésorerie générés par la cible elle-même. L''intérêt pour l''acquéreur est d''amplifier la rentabilité de ses fonds propres investis, si la rentabilité économique de la cible dépasse le coût de la dette ; le risque est symétrique : en cas de difficulté, l''endettement amplifie aussi les pertes et la pression sur la trésorerie, qui doit servir la dette en plus de l''activité normale. Ce mécanisme se développe aussi progressivement en Afrique pour la transmission de PME, avec des structures à adapter au contexte local : toute donnée chiffrée doit être vérifiée au cas par cas.
 
-## Fiche 3 : le CAPM approfondi
+## 4. La fusion-acquisition : parité d''échange et prime de fusion
 
-Le modèle d''évaluation des actifs financiers relie le rendement exigé d''un actif à son risque non diversifiable, mesuré par le bêta.
+Dans une fusion-absorption, la société absorbante évalue la société absorbée et détermine une parité d''échange, c''est-à-dire le nombre d''actions nouvelles de l''absorbante à remettre aux actionnaires de l''absorbée.
 
-- Bêta d''un actif = Cov(rActif, rMarché) / Var(rMarché). Il mesure la sensibilité du rendement de l''actif aux mouvements du marché ; un bêta de 1 signifie un risque de marché identique à la moyenne.
-- Rendement exigé par le CAPM : E(r) = rf + β × (E(rm) − rf), où rf est le taux sans risque et E(rm) le rendement attendu du marché. Le terme (E(rm) − rf) est la prime de risque du marché.
-- La droite de marché des titres (Security Market Line) représente cette relation linéaire entre bêta et rendement exigé ; un actif situé au-dessus de la droite (rendement attendu réel supérieur au rendement exigé par le CAPM) est jugé sous-évalué.
+Cas d''entreprise : la société absorbante Teranga Capital évalue son action à 10 000 FCFA, et l''action de la société absorbée Sine Agro-Export à 6 000 FCFA. La parité d''échange est le rapport entre ces deux valeurs : 6 000 divisé par 10 000, soit 0,6, ce qui s''exprime aussi comme 3 actions Teranga Capital pour 5 actions Sine Agro-Export.
 
-Cas (suite) : avec un taux sans risque fictif de 5,5 %, un rendement attendu du marché de 12 % et un écart-type du marché de 16 %, le bêta de Sahel Ciments, calculé à partir d''une covariance avec le marché de 0,028, est de 0,028 / 0,16² = 1,094. Le rendement exigé par le CAPM est donc 5,5 % + 1,094 × (12 % − 5,5 %) = 12,61 %. Le rendement attendu réellement estimé pour Sahel Ciments étant de 14 %, l''action apparaît sous-évaluée par rapport à son risque systématique (alpha positif de 1,39 point). Pour Teranga Telecom, avec un bêta de 0,55, le rendement exigé est de 5,5 % + 0,55 × 6,5 % = 9,07 %, très proche du rendement attendu de 9 % : l''action est jugée correctement valorisée.
+- Sine Agro-Export compte 10 000 actions en circulation. Le nombre d''actions Teranga Capital à créer est de 10 000 × 0,6, soit 6 000 actions nouvelles.
+- Si la valeur nominale de l''action Teranga Capital est de 5 000 FCFA, l''augmentation de capital nominale s''élève à 6 000 × 5 000, soit 30 000 000 FCFA.
+- La valeur réelle des apports de Sine Agro-Export, évaluée à 10 000 × 6 000, soit 60 000 000 FCFA, est supérieure à cette augmentation de capital nominale. La différence constitue la prime de fusion : 60 000 000 − 30 000 000, soit 30 000 000 FCFA, inscrite en capitaux propres de l''absorbante.
 
-## Fiche 4 : le ratio de Sharpe
+## 5. Autres opérations de restructuration
 
-Le ratio de Sharpe mesure le rendement excédentaire obtenu par unité de risque total supporté : Sharpe = (E(r) − rf) / σ. Il permet de comparer des actifs ou des portefeuilles de volatilités différentes.
+Au-delà de la fusion, deux opérations méritent d''être distinguées. L''apport partiel d''actif consiste, pour une société, à apporter une partie seulement de son patrimoine (une branche d''activité) à une autre société, en échange de titres, sans dissolution de la société apporteuse. La scission répartit l''ensemble du patrimoine d''une société entre plusieurs sociétés, avec dissolution de la société scindée. Ces opérations suivent une logique comptable proche de la fusion mais se distinguent par leur effet sur l''existence juridique de la société d''origine.
 
-- Sahel Ciments : (14 % − 5,5 %) / 22 % = 0,386.
-- Teranga Telecom : (9 % − 5,5 %) / 12 % = 0,292.
-- Sahel Ciments rémunère mieux le risque total malgré sa volatilité plus élevée ; le CAPM, qui ne regarde que le bêta, ignore le risque spécifique diversifiable, d''où l''intérêt de croiser les deux indicateurs.
+## Points clés à retenir
+
+- Le DCF et les multiples comparables donnent rarement la même valeur ; une fourchette ou une moyenne reflète mieux l''incertitude qu''un chiffre unique.
+- L''effet de levier amplifie symétriquement la rentabilité et le risque d''une acquisition financée principalement par dette.
+- La parité d''échange se calcule comme le rapport entre la valeur de l''action absorbée et celle de l''action absorbante ; la prime de fusion est la différence entre la valeur réelle des apports et l''augmentation de capital nominale correspondante.
+- L''apport partiel d''actif n''entraîne pas la dissolution de la société apporteuse, contrairement à la fusion et à la scission.
 
 ## Exercices pratiques
 
-1. Deux actifs ont des rendements attendus de 10 % et 6 %, des écart-types de 18 % et 9 %, et une corrélation de 0,2. Pour un portefeuille à 70 % dans le premier actif, calculez le rendement attendu et l''écart-type.
-2. Expliquez pourquoi une corrélation négative entre deux actifs est particulièrement recherchée en diversification.
-3. Un actif a un bêta de 1,3, le taux sans risque est de 5 % et le rendement attendu du marché de 11 %. Calculez le rendement exigé par le CAPM.
-4. Pourquoi un point situé sous le portefeuille de variance minimale sur la frontière efficiente n''est-il jamais un choix rationnel ?
-5. Un actif a un rendement attendu de 11 %, un écart-type de 20 % et un taux sans risque de 5 %. Calculez son ratio de Sharpe et comparez-le à celui de Sahel Ciments (0,386) de cette leçon.
-6. Cas pratique : les actions fictives Kaolack Transport (rendement 12 %, écart-type 19 %) et Ziguinchor Agro (rendement 7 %, écart-type 10 %) ont une corrélation de 0,15. Calculez la covariance, le rendement et l''écart-type d''un portefeuille à 50/50, puis le poids du portefeuille de variance minimale.
+1. Expliquez pourquoi le DCF et les multiples comparables peuvent donner des valorisations différentes pour la même entreprise.
+2. Une cible présente un EBITDA de 60 000 000 FCFA ; le multiple comparable retenu est de 5 fois, fictif pour l''exemple. Calculez la valeur d''entreprise par les multiples.
+3. Expliquez en deux phrases le principe de l''effet de levier dans une opération de LBO, et son risque symétrique.
+4. L''action de la société absorbante vaut 8 000 FCFA, celle de la société absorbée 5 000 FCFA. Calculez la parité d''échange.
+5. La société absorbée compte 4 000 actions ; la valeur nominale de l''action absorbante est de 4 000 FCFA. Avec la parité calculée à la question précédente, calculez le nombre d''actions à créer, l''augmentation de capital nominale et la prime de fusion.
+6. Quelle est la différence essentielle entre un apport partiel d''actif et une scission ?
+7. Cas pratique complet : reprenez le cas Rufisque Agro-Business et présentez en tableau la valeur d''entreprise par DCF, par multiples, la valeur moyenne retenue, puis la valeur des capitaux propres après déduction d''une dette nette de 90 000 000 FCFA.
 
 ## Corrigé
 
-1. E(rp) = 0,7 × 10 % + 0,3 × 6 % = 8,8 %. Covariance = 0,2 × 0,18 × 0,09 = 0,00324. Variance = 0,7² × 0,18² + 0,3² × 0,09² + 2 × 0,7 × 0,3 × 0,00324 = 0,01797, soit un écart-type de 13,4 %.
-2. Une corrélation négative signifie que lorsque le rendement d''un actif baisse, l''autre tend à monter ; la variance du portefeuille peut alors chuter très fortement, parfois en dessous de la variance de l''actif le moins risqué pris isolément, ce qui est le cas le plus favorable pour réduire le risque global.
-3. E(r) = 5 % + 1,3 × (11 % − 5 %) = 12,8 %.
-4. Parce que pour ce même niveau de risque, il existe toujours, plus haut sur la frontière efficiente, une combinaison des deux actifs offrant un rendement attendu supérieur ; choisir un point inefficient revient à accepter un rendement plus faible sans réduire le risque.
-5. Sharpe = (11 % − 5 %) / 20 % = 0,300, inférieur à celui de Sahel Ciments (0,386) : Sahel Ciments rémunère mieux chaque unité de risque total supporté.
-6. Covariance = 0,15 × 0,19 × 0,10 = 0,00285. À 50/50 : E(rp) = 9,5 %, variance = 0,5² × 0,19² + 0,5² × 0,10² + 2 × 0,5 × 0,5 × 0,00285 = 0,01295, écart-type ≈ 11,4 %. Poids de variance minimale pour Kaolack Transport : (0,10² − 0,00285) / (0,19² + 0,10² − 2 × 0,00285) ≈ 0,177.', 'texte', 50, false, 40
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion de portefeuille et marchés financiers avancés : l''essentiel pour l''examen');
+1. Le DCF repose sur des prévisions de flux futurs et des hypothèses de taux propres à l''entreprise ; les multiples comparables s''appuient sur des transactions ou cotations d''entreprises similaires observées sur le marché. Deux sources d''information différentes, d''où des résultats qui convergent rarement exactement.
+2. Valeur d''entreprise : 60 000 000 × 5 = 300 000 000 FCFA.
+3. Financer une acquisition majoritairement par dette amplifie la rentabilité des fonds propres investis si la rentabilité économique de la cible dépasse le coût de la dette ; symétriquement, en cas de difficulté, l''endettement amplifie les pertes et la pression sur la trésorerie de la cible, qui doit rembourser la dette en plus de financer son activité.
+4. Parité : 5 000 divisé par 8 000, soit 0,625.
+5. Nombre d''actions à créer : 4 000 × 0,625 = 2 500 actions. Augmentation de capital nominale : 2 500 × 4 000 = 10 000 000 FCFA. Valeur réelle des apports : 4 000 × 5 000 = 20 000 000 FCFA. Prime de fusion : 20 000 000 − 10 000 000 = 10 000 000 FCFA.
+6. L''apport partiel d''actif ne porte que sur une partie du patrimoine et n''entraîne pas la dissolution de la société apporteuse, qui continue d''exister avec le reste de son activité. La scission porte sur l''ensemble du patrimoine, réparti entre plusieurs sociétés, et entraîne la dissolution de la société scindée.
+7. Tableau attendu : valeur d''entreprise DCF environ 618 000 000 FCFA ; valeur d''entreprise par les multiples 480 000 000 FCFA ; valeur moyenne retenue environ 549 000 000 FCFA ; valeur des capitaux propres après déduction de la dette nette de 90 000 000 FCFA, environ 459 000 000 FCFA.', 'texte', 45, false, 30
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Ingénierie financière et opérations de restructuration : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 1 Finance (entraînement corrigé)', '## Avertissement
+select c.id, 'Méthodologie du mémoire professionnel et soutenance : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-Ce sujet est un entraînement non officiel construit pour ce cours, avec un barème indicatif. Il ne remplace pas les annales de votre établissement mais mobilise les trois matières avancées du programme de Master 1 Finance.
+- Construire une problématique de mémoire précise et un plan détaillé cohérent.
+- Mener une revue de littérature courte et une méthodologie de terrain adaptées à un mémoire professionnel.
+- Rédiger dans les règles (citations, bibliographie, éthique de la recherche) sans invention de sources.
+- Préparer une soutenance orale : structure de la présentation, anticipation des questions du jury.
 
-## Sujet type d''examen de Master 1 Finance (3 heures, barème indicatif sur 20)
+Cette leçon ne traite pas d''une matière comptable au sens strict, mais d''une compétence professionnelle transversale indispensable à la fin du cursus de Master. Les exemples de plan et de questions sont génériques ; adaptez-les toujours à votre sujet réel et à votre établissement, dont les exigences précises (longueur, format de citation, durée de soutenance) doivent être vérifiées dans le règlement de votre formation.
 
-Cas d''entreprise : Casamance Agro-Industries SA (CAI), entreprise fictive de transformation de fruits implantée à Ziguinchor, envisage de racheter sa concurrente Niayes Fruits SA et d''ouvrir son capital à un fonds d''investissement régional.
+## 1. De la problématique au plan détaillé
 
-Données de CAI (acquéreur) : cours de l''action 2 500 FCFA, 4 000 000 d''actions, résultat net 980 millions de FCFA, CMPC retenu 11 %.
-Données de Niayes Fruits (cible) : cours de l''action 1 600 FCFA, 1 200 000 actions, résultat net 240 millions de FCFA, EBITDA 420 millions, flux de trésorerie disponibles prévisionnels sur 5 ans de 160, 175, 188, 198, 206 millions de FCFA, croissance à l''infini de 2 %, dette financière nette 280 millions.
+Un mémoire professionnel ne part pas d''un thème mais d''une problématique : une question précise, délimitée, à laquelle le mémoire répond par une analyse argumentée. Une bonne problématique combine trois qualités : elle est spécifique (pas « la fiscalité internationale », mais « comment une PME exportatrice documente ses prix de transfert ») ; elle est vérifiable sur un terrain accessible (une entreprise réelle ou réaliste, des données que vous pouvez effectivement obtenir) ; elle laisse place à une véritable analyse, pas seulement à une description.
 
-## Partie 1 : évaluation de la cible (8 points)
+Une fois la problématique fixée, le plan détaillé découpe la réponse en parties cohérentes. Un plan type pour un mémoire professionnel en comptabilité ou finance comporte généralement : une introduction qui pose la problématique et son intérêt ; une revue de littérature qui synthétise ce que les textes normatifs et les travaux existants disent du sujet ; une partie méthodologique qui explique comment vous avez étudié votre terrain (étude de cas, entretiens, analyse de données) ; une partie résultats et analyse qui présente ce que vous avez observé et ce que cela signifie ; des recommandations si le mémoire est à visée professionnelle ; une conclusion qui répond explicitement à la problématique et en reconnaît les limites.
 
-1. Calculez la valeur d''entreprise et la valeur des capitaux propres de Niayes Fruits par la méthode DCF.
-2. Un échantillon de comparables affiche un multiple moyen EV/EBITDA de 6,5 (fictif). Calculez la valeur des capitaux propres par cette méthode et comparez au résultat du DCF.
-3. Proposez une fourchette de valeur argumentée pour Niayes Fruits.
+## 2. La revue de littérature courte
 
-## Partie 2 : montage de l''opération (7 points)
+Dans un mémoire professionnel, la revue de littérature n''a pas besoin d''être exhaustive comme dans un mémoire de recherche académique : elle doit situer votre sujet par rapport à ce que disent les textes normatifs applicables (SYSCOHADA, IFRS le cas échéant, textes fiscaux, normes d''audit en termes généraux) et les travaux ou guides professionnels existants sur la question. Règle absolue : chaque source citée doit être réelle et vérifiable. N''inventez jamais un auteur, un titre d''ouvrage ou un article pour étoffer une bibliographie ; une source inventée, si elle est détectée, discrédite l''ensemble du travail et constitue une faute grave d''intégrité académique. Si vous ne disposez pas d''une source précise sur un point, dites-le explicitement plutôt que de fabriquer une référence.
 
-4. CAI propose une prime de contrôle de 20 % sur le cours de Niayes Fruits et un paiement en actions. Calculez le prix offert par action et la parité d''échange.
-5. Calculez le nombre d''actions émises et le BPA de CAI avant et après l''opération, en supposant des synergies nettes d''impôt de 20 millions de FCFA et en retenant le résultat net comptable de la cible (sans retraitement de l''évaluation).
-6. L''opération est-elle relutive ou dilutive pour les actionnaires actuels de CAI ? Commentez la limite de cet indicateur.
+## 3. La méthodologie de terrain
 
-## Partie 3 : impact pour un investisseur minoritaire (5 points)
+La partie méthodologique explique, de façon transparente, comment vous avez recueilli et traité vos données : étude de cas d''une entreprise (réelle, ou fictive si l''entreprise réelle ne peut être nommée pour des raisons de confidentialité, ce qui doit alors être dit explicitement), entretiens avec des professionnels, analyse de documents comptables. Elle justifie aussi les choix effectués : pourquoi cette entreprise plutôt qu''une autre, pourquoi cette méthode d''évaluation plutôt qu''une autre, quelles limites ces choix impliquent. Un jury valorise une méthodologie qui reconnaît honnêtement ses limites plutôt qu''une méthodologie qui prétend à une rigueur qu''elle n''a pas.
 
-7. Un fonds régional envisage d''investir dans l''action CAI après l''opération. Le bêta estimé de CAI est de 1,15, le taux sans risque fictif de 6 % et le rendement attendu du marché régional de 13 %. Calculez le rendement exigé par le CAPM.
-8. Si le rendement attendu réellement anticipé pour CAI est de 15 %, commentez la position de l''action par rapport à la droite de marché des titres.
+## 4. Citer et référencer sans inventer
 
-## Exercices pratiques (entraînement complémentaire)
+Toute idée reprise d''un texte normatif, d''un ouvrage ou d''un article doit être attribuée à sa source, selon le format demandé par votre établissement (souvent une variante du style APA ou d''un style propre à l''école). Le plagiat, défini comme la reprise de mots ou d''idées d''autrui sans attribution, est une faute grave qui peut entraîner l''invalidation du mémoire. À l''inverse, citer abondamment sans jamais apporter d''analyse personnelle appauvrit le travail : l''objectif est de construire votre propre raisonnement en vous appuyant sur des sources identifiées, pas de juxtaposer des citations.
 
-1. Pourquoi est-il recommandé de présenter une fourchette de valeur plutôt qu''un chiffre unique dans un rapport d''évaluation destiné à une négociation ?
-2. Dans quel cas une prime de contrôle élevée peut-elle rendre une opération relutive à court terme mais risquée à moyen terme ?
-3. Expliquez la différence entre le risque mesuré par le bêta (CAPM) et le risque total mesuré par l''écart-type (ratio de Sharpe).
+## 5. Préparer la soutenance
+
+La soutenance est un exercice oral distinct de la lecture du mémoire. Une présentation efficace, généralement structurée en une dizaine de minutes suivies de questions (la durée précise dépend de votre établissement), résume la problématique, la méthodologie, les résultats principaux et les recommandations, sans chercher à tout redire. Préparez-vous à trois types de questions fréquentes : des questions de clarification (« pouvez-vous préciser comment vous avez obtenu telle donnée ? »), des questions de fond (« pourquoi avoir choisi cette méthode plutôt qu''une autre ? »), et des questions qui testent vos limites (« quelle est la principale limite de votre travail ? »). Répondre honnêtement à une question sur les limites de son travail est mieux perçu qu''une défense rigide qui refuse toute critique.
+
+## Points clés à retenir
+
+- Une problématique précise, délimitée et vérifiable vaut mieux qu''un thème vague.
+- La revue de littérature situe le sujet par rapport aux textes et travaux existants, sans jamais inventer de source.
+- La méthodologie doit être transparente sur ses choix et honnête sur ses limites.
+- La soutenance est un exercice oral distinct : elle valorise la clarté, la capacité à argumenter et l''honnêteté sur les limites du travail.
+
+## Exercices pratiques
+
+1. Transformez le thème vague « l''audit en Afrique » en une problématique précise, délimitée et vérifiable.
+2. Citez les six grandes parties d''un plan type de mémoire professionnel évoqué dans ce cours.
+3. Expliquez pourquoi inventer une source bibliographique est une faute grave, même si l''idée rapportée semble plausible.
+4. Donnez un exemple de question de fond qu''un jury pourrait poser sur un mémoire consacré à l''évaluation d''une PME par la méthode DCF, et une réponse possible.
+5. Pourquoi une revue de littérature qui ne fait que juxtaposer des citations, sans analyse personnelle, est-elle jugée insuffisante ?
+6. Expliquez la différence entre une étude de cas réelle et une étude de cas fictive dans un mémoire, et dans quelle situation la seconde se justifie.
 
 ## Corrigé
 
-1. Flux actualisés à 11 % : 160/1,11=144,1 ; 175/1,11²=142,0 ; 188/1,11³=137,5 ; 198/1,11⁴=130,5 ; 206/1,11⁵=122,2 ; somme=676,3. Valeur terminale : 206×1,02/(0,11−0,02)=2 334,2, actualisée : 2 334,2/1,11⁵=1 385,6. Valeur d''entreprise : 676,3+1 385,6=2 061,9 millions. Capitaux propres : 2 061,9−280=1 781,9 millions.
-2. Valeur d''entreprise par multiple : 420×6,5=2 730,0 millions. Capitaux propres : 2 730,0−280=2 450,0 millions, nettement supérieure au DCF (1 781,9 millions) : l''écart (environ 37 %) doit être questionné (prévisions de flux prudentes, ou multiple de comparables trop généreux).
-3. Fourchette raisonnable entre 1 781,9 et 2 450,0 millions de FCFA, avec le DCF comme référence prudente si les prévisions sont jugées fiables, sachant que l''écart important appelle à vérifier les deux évaluations avant de conclure.
-4. Prix offert : 1 600×1,20=1 920 FCFA. Parité : 1 920/2 500=0,768 action CAI pour 1 action Niayes Fruits.
-5. Actions émises : 1 200 000×0,768=921 600. Actions post-fusion : 4 000 000+921 600=4 921 600. Résultat consolidé : 980+240+20=1 240 millions. BPA avant : 980×1 000 000/4 000 000=245 FCFA. BPA après : 1 240×1 000 000/4 921 600≈251,9 FCFA.
-6. Variation : (251,9/245−1)×100≈+2,8 % : l''opération est relutive. Limite : cette relution comptable ne garantit pas la création de valeur si la prime de 20 % excède les synergies réellement réalisables, ou si l''intégration de Niayes Fruits échoue partiellement.
-7. Rendement exigé CAPM : 6 %+1,15×(13 %−6 %)=14,05 %.
-8. Le rendement attendu de 15 % est supérieur au rendement exigé de 14,05 % : l''action CAI se situe au-dessus de la droite de marché des titres, elle apparaît sous-évaluée par rapport à son risque systématique et constitue a priori une opportunité d''investissement pour le fonds, sous réserve que l''estimation de 15 % soit fiable et que le risque spécifique de l''opération de fusion soit correctement intégré par ailleurs.
-Exercices complémentaires : 1. Une fourchette reflète l''incertitude réelle sur les hypothèses (taux, croissance, comparables) et laisse une marge de négociation entre acheteur et vendeur plutôt que d''ancrer la discussion sur un chiffre fragile. 2. Quand la prime dépasse la valeur actualisée des synergies réellement atteignables, ou quand elle est financée par une dette qui fragilise la structure financière de l''acquéreur après l''opération. 3. Le bêta ne capture que le risque non diversifiable, celui qui reste après diversification du portefeuille ; l''écart-type capture tout le risque, diversifiable et non diversifiable, ce qui explique qu''un actif très volatil mais peu corrélé au marché puisse avoir un bêta faible et pourtant un ratio de Sharpe informatif sur son risque propre.', 'texte', 55, false, 50
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 Finance (entraînement corrigé)');
+1. Exemple : « Comment les cabinets d''audit sénégalais adaptent-ils leur évaluation du risque de contrôle interne lorsqu''ils interviennent auprès de PME familiales sans service comptable structuré ? » Toute problématique spécifique, vérifiable sur un terrain accessible et ouverte à l''analyse est acceptée.
+2. Introduction, revue de littérature, méthodologie, résultats et analyse, recommandations, conclusion.
+3. Parce que la crédibilité d''un mémoire repose sur la vérifiabilité de ses sources ; une source inventée, même si l''idée semble plausible, trompe le lecteur sur l''origine réelle de l''information et constitue une fraude intellectuelle, détectable et sanctionnée lorsqu''elle est découverte.
+4. Exemple de question : « Pourquoi avez-vous retenu un taux d''actualisation de 12 % plutôt qu''un autre taux pour cette PME ? » Réponse possible : expliquer la construction du taux à partir d''un coût des fonds propres et d''un coût de la dette pondérés par leur part dans le financement, tout en reconnaissant que l''absence de données boursières pour une PME non cotée introduit une marge d''incertitude sur ce taux.
+5. Parce que l''objectif du mémoire est de construire un raisonnement personnel argumenté à partir des sources, pas de prouver seulement qu''on les a lues ; une juxtaposition de citations ne montre pas que l''étudiant a compris, confronté et dépassé ces sources pour répondre à sa propre problématique.
+6. Une étude de cas réelle s''appuie sur une entreprise identifiée et des données vérifiées auprès d''elle. Une étude de cas fictive, construite pour l''exercice ou pour préserver la confidentialité d''une entreprise réelle qui ne peut être nommée, se justifie si elle est explicitement présentée comme telle au lecteur et au jury, sans jamais être présentée comme une donnée réelle qu''elle ne serait pas.', 'texte', 45, false, 40
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire professionnel et soutenance : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Évaluation d''entreprise approfondie (DCF, multiples, approche patrimoniale)', '## Fiche du cours vidéo
+select c.id, 'Sujet type d''examen de Master 2 (entraînement)', '## Présentation du sujet
 
-Durée : 1h30. Niveau : Master 1 Finance.
-Objectifs : construire une évaluation d''entreprise complète en croisant DCF, multiples et approche patrimoniale, et savoir argumenter une fourchette de valeur devant un jury ou un client.
-Matériel : tableau ou diaporama, calculatrice financière ou tableur, le cas Teranga Agro-Transformation de la leçon écrite.
-Prérequis : actualisation, notion de CMPC, lecture d''un bilan et d''un compte de résultat.
+Sujet type non officiel, à titre d''entraînement, barème indicatif sur 20 points. Durée conseillée : 3 heures. Il mobilise les trois matières avancées du Master 2 : audit financier approfondi, ingénierie financière et opérations de restructuration, méthodologie du mémoire professionnel, à partir d''un même dossier.
 
-## 00:00 – 05:00 · Introduction et enjeux
+L''entreprise fictive Kaolack Industries envisage de céder sa filiale de transformation agroalimentaire Gandiol Process à un repreneur. Le cabinet d''audit Teranga Audit intervient en amont pour certifier les derniers comptes de Gandiol Process, et le repreneur mandate un conseil pour évaluer la cible.
 
-Bonjour à toutes et à tous. Dans cette séance, nous allons évaluer ensemble une entreprise fictive, Teranga Agro-Transformation, en utilisant les trois grandes familles de méthodes que vous devez maîtriser en Master 1 : les flux de trésorerie actualisés, les multiples de comparables et l''approche patrimoniale. L''objectif n''est pas seulement de savoir calculer, mais de comprendre pourquoi un bon évaluateur ne se contente jamais d''un seul chiffre. En entreprise, en banque d''affaires ou en cabinet d''audit, une évaluation sert toujours une décision : fixer un prix de négociation, justifier une parité d''échange, ou documenter un dossier de financement. Si votre chiffre n''est pas défendable, la négociation s''effondre. Gardez votre support de la leçon écrite sous les yeux, nous allons reprendre le même cas en l''approfondissant.
+## Partie 1 — Audit financier approfondi (7 points)
 
-Visuel : diapositive de titre avec les trois méthodes et une flèche vers « fourchette de valeur argumentée ».
+Le chiffre d''affaires de Gandiol Process est de 1 800 000 000 FCFA. Teranga Audit retient un taux de matérialité fictif de 1 % du chiffre d''affaires, et un seuil de planification à 70 % du seuil global.
 
-## 05:00 – 20:00 · Partie 1 : le DCF pas à pas
+1. (2 points) Calculez le seuil de signification global et le seuil de planification.
+2. (3 points) La population des comptes clients de Gandiol Process a une valeur comptable de 1 200 000 000 FCFA. En appliquant la méthode pédagogique simplifiée du cours (valeur de la population divisée par le seuil de signification global), estimez un ordre de grandeur de la taille d''échantillon.
+3. (2 points) Teranga Audit constate une anomalie de 3 000 000 FCFA sur une provision, nettement inférieure au seuil de signification global. Expliquez, en deux ou trois phrases, l''effet probable de cette anomalie isolée sur l''opinion d''audit.
 
-Reprenons la logique du DCF. Une entreprise vaut la somme actualisée des flux de trésorerie disponibles qu''elle est capable de générer pour ses financeurs, plus une valeur terminale qui représente tout ce qui se passe après l''horizon de prévision explicite. Pourquoi actualiser ? Parce qu''un flux reçu dans cinq ans vaut moins qu''un flux reçu aujourd''hui, pour deux raisons : la valeur temps de l''argent, et le risque de ne jamais le recevoir.
+## Partie 2 — Ingénierie financière et restructuration (9 points)
 
-Pour Teranga Agro-Transformation, nous avons des flux de 420, 462, 498, 530 et 556 millions de FCFA sur cinq ans, un CMPC de 12 % et une croissance à l''infini de 2,5 %. Calculons ensemble, année par année : 420 divisé par 1,12 à la puissance 1 donne 375,0. Je vous invite à mettre le calcul en pause et à refaire ce calcul vous-même avant de continuer. 462 divisé par 1,12 au carré donne 368,3. 498 divisé par 1,12 au cube donne 354,5. 530 divisé par 1,12 à la puissance 4 donne 336,8. Et 556 divisé par 1,12 à la puissance 5 donne 315,5. La somme de ces cinq flux actualisés est de 1 750,1 millions de FCFA.
+Gandiol Process présente des flux de trésorerie disponibles prévisionnels de 40 000 000, 44 000 000, 48 000 000, 52 000 000 et 56 000 000 FCFA sur cinq ans. Le WACC retenu est de 14 %, fictif pour l''exemple, et le taux de croissance à l''infini de 2 %, également fictif. Son EBITDA de l''exercice est de 65 000 000 FCFA, et le multiple comparable observé dans le secteur, fictif, est de 5,5 fois l''EBITDA.
 
-Maintenant la valeur terminale, souvent le point le plus mal compris des étudiants. On prend le dernier flux, 556, on le fait croître une dernière fois au taux de croissance à l''infini de 2,5 %, puis on divise par l''écart entre le CMPC et cette croissance : 556 fois 1,025 divisé par (0,12 moins 0,025), soit 5 998,9 millions. C''est la valeur, en fin d''année 5, de tous les flux futurs au-delà de l''horizon explicite. Il faut encore l''actualiser sur cinq ans : 5 998,9 divisé par 1,12 à la puissance 5, soit 3 404,0 millions. La valeur d''entreprise totale est donc 1 750,1 plus 3 404,0, soit 5 154,0 millions de FCFA. En retranchant la dette financière nette de 650 millions, nous obtenons une valeur des capitaux propres de 4 504,0 millions, soit 2 252 FCFA par action sur 2 000 000 d''actions.
+4. (3 points) Calculez la valeur d''entreprise par la méthode des multiples comparables.
+5. (2 points) Expliquez en quelques lignes pourquoi la valeur obtenue par DCF (non calculée ici en détail, mais dont le principe doit être rappelé) peut différer sensiblement de la valeur obtenue par les multiples.
+6. (4 points) Si l''acquéreur finance 70 % du prix d''acquisition par de la dette, expliquez le principe de l''effet de levier dans ce montage et son risque principal.
 
-Visuel : tableau d''actualisation année par année projeté au tableau, avec la ligne de la valeur terminale isolée en couleur.
+## Partie 3 — Méthodologie du mémoire professionnel (4 points)
 
-Point d''attention : notez que la valeur terminale représente 3 404,0 sur 5 154,0 millions, soit presque les deux tiers de la valeur totale. C''est pour cela que le couple CMPC et croissance à l''infini doit toujours être testé en sensibilité : une erreur d''un demi-point sur l''un ou l''autre change fortement le résultat final.
+Un étudiant souhaite consacrer son mémoire à cette opération (de façon anonymisée et fictive pour l''exercice).
 
-## 20:00 – 35:00 · Partie 2 : les multiples de comparables
+7. (2 points) Proposez une problématique de mémoire précise à partir de ce cas.
+8. (2 points) Citez deux précautions méthodologiques que l''étudiant doit respecter en utilisant ce cas comme terrain de mémoire.
 
-Passons à la deuxième méthode. L''idée est différente : au lieu de projeter l''avenir de l''entreprise, on regarde combien le marché paie pour des entreprises comparables aujourd''hui, et on applique ce ratio à notre cible.
+## Corrigé détaillé
 
-Le multiple le plus robuste est l''EV sur EBITDA, la valeur d''entreprise rapportée à l''excédent brut d''exploitation. Pourquoi ce multiple plutôt que le PER ? Parce que l''EBITDA est calculé avant charges financières, avant amortissements et avant impôt : il n''est donc pas déformé par le niveau d''endettement de chaque entreprise ni par ses choix comptables d''amortissement. Le PER, lui, part du résultat net, qui dépend directement de la structure financière de l''entreprise.
+1. Seuil de signification global : 1 % × 1 800 000 000 = 18 000 000 FCFA. Seuil de planification : 70 % × 18 000 000 = 12 600 000 FCFA.
+2. 1 200 000 000 divisé par 18 000 000, soit environ 67 éléments, selon la méthode pédagogique simplifiée du cours.
+3. Une anomalie de 3 000 000 FCFA, nettement inférieure au seuil de signification global de 18 000 000 FCFA, n''est en principe pas de nature, à elle seule, à remettre en cause une opinion sans réserve ; elle doit néanmoins être suivie et cumulée avec d''éventuelles autres anomalies, car le cumul de plusieurs anomalies individuellement non significatives peut, lui, devenir significatif.
+4. Valeur d''entreprise par les multiples : 65 000 000 × 5,5 = 357 500 000 FCFA.
+5. Le DCF repose sur des prévisions de flux futurs propres à l''entreprise et sur des hypothèses de taux d''actualisation et de croissance ; les multiples comparables reposent sur des transactions ou cotations d''entreprises similaires observées sur le marché à un moment donné. Ces deux sources d''information étant différentes, les deux méthodes convergent rarement exactement, ce qui justifie de présenter une fourchette plutôt qu''un chiffre unique.
+6. Financer 70 % du prix par de la dette amplifie la rentabilité des fonds propres de l''acquéreur si la rentabilité économique de Gandiol Process dépasse le coût de cette dette, puisque l''acquéreur mobilise moins de fonds propres pour un même contrôle de la cible. Le risque principal est symétrique : si l''activité de Gandiol Process se dégrade, la dette doit malgré tout être remboursée, ce qui peut mettre en péril la trésorerie de la société et, en dernier ressort, la capacité de l''acquéreur à honorer ses engagements financiers.
+7. Exemple : « Comment un repreneur évalue-t-il une PME agroalimentaire sénégalaise avant une opération de reprise, et quelles limites méthodologiques pèsent sur cette évaluation ? » Toute problématique précise et vérifiable est acceptée.
+8. Par exemple : anonymiser ou rendre fictives les données réellement sensibles de l''entreprise (noms, montants exacts) si la confidentialité l''exige, et le dire explicitement au lecteur ; ne jamais présenter des hypothèses de taux ou de multiples fictives pour l''exercice comme des données officielles ou certaines.
 
-Pour Teranga Agro-Transformation, l''EBITDA est de 650 millions, et un échantillon de comparables du secteur agroalimentaire affiche un multiple moyen de 7,4, que je vous rappelle fictif pour l''exercice. La valeur d''entreprise obtenue est 650 fois 7,4, soit 4 810,0 millions. On retranche la même dette nette de 650 millions pour obtenir une valeur des capitaux propres de 4 160,0 millions. Avec le PER moyen de 15,2 appliqué au résultat net de 310 millions, nous obtenons directement une valeur des capitaux propres de 4 712,0 millions.
+## Exercices pratiques
 
-Visuel : tableau comparatif des trois résultats obtenus jusqu''ici : DCF 4 504,0, multiple EBITDA 4 160,0, PER 4 712,0.
+1. Reprenez la partie 1 du sujet avec un chiffre d''affaires de 2 200 000 000 FCFA et un taux de matérialité fictif de 0,8 %. Calculez le seuil de signification global.
+2. Une population de stocks a une valeur comptable de 600 000 000 FCFA ; le seuil de signification retenu est de 12 000 000 FCFA. Estimez un ordre de grandeur de la taille d''échantillon avec la méthode pédagogique simplifiée.
+3. Un EBITDA de 90 000 000 FCFA est valorisé avec un multiple fictif de 7 fois. Calculez la valeur d''entreprise par les multiples.
+4. Expliquez pourquoi un acquéreur qui finance une acquisition entièrement par fonds propres, sans aucune dette, ne bénéficie d''aucun effet de levier.
+5. Proposez une problématique de mémoire différente de celle du corrigé, à partir du même cas Kaolack Industries / Gandiol Process.
 
-Discussion importante : en Afrique de l''Ouest, trouvez-vous facilement dix entreprises cotées comparables dans un même secteur ? Non, la profondeur de marché est souvent limitée. C''est une vraie limite méthodologique à mentionner systématiquement dans vos copies : les multiples sont utiles comme méthode de recoupement, rarement comme méthode principale isolée.
+## Corrigé (exercices complémentaires)
 
-## 35:00 – 50:00 · Partie 3 : l''approche patrimoniale et le goodwill
-
-Troisième méthode, la plus ancienne historiquement : l''approche patrimoniale. On part des capitaux propres comptables, on les corrige des plus ou moins-values latentes, et on obtient l''actif net comptable corrigé, l''ANC corrigé.
-
-Pour Teranga Agro-Transformation, l''ANC comptable est de 2 800 millions, avec une plus-value latente nette de 380 millions identifiée sur un terrain et des installations sous-évalués au bilan. L''ANC corrigé est donc de 3 180 millions. Mais cette valeur ignore la capacité de l''entreprise à créer de la valeur future au-delà de la rémunération normale de son patrimoine. On ajoute donc un goodwill, calculé ici par la méthode des rentes abrégées.
-
-La rente annuelle du goodwill est égale au résultat courant prévisionnel, 400 millions, moins le taux de rémunération normatif des capitaux, 9 %, multiplié par l''ANC corrigé de 3 180 millions. Cela donne 400 moins 286,2, soit 113,8 millions par an. On actualise cette rente sur un horizon limité, ici cinq ans à 12 %, avec le facteur d''annuité de 3,6048. Le goodwill est donc 113,8 fois 3,6048, soit 410,2 millions. La valeur globale par l''approche patrimoniale est 3 180 plus 410,2, soit 3 590,2 millions de FCFA.
-
-Visuel : schéma en deux blocs, ANC corrigé en bas, goodwill ajouté au-dessus, avec le total encadré.
-
-Remarquez que ce résultat, 3 590,2 millions, est nettement plus prudent que les trois précédents. C''est normal et attendu : l''approche patrimoniale valorise peu la croissance future, elle sert souvent de plancher dans une négociation, pas de référence centrale pour une entreprise en croissance comme Teranga Agro-Transformation.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Prenons cinq minutes de pause active. Répondez à ces trois questions avant de reprendre.
-
-- Question 1 : quelle méthode donne généralement la valeur la plus prudente pour une entreprise en croissance ? Réponse : l''approche patrimoniale, car elle ignore la croissance future non encore matérialisée dans le patrimoine.
-- Question 2 : pourquoi l''EV/EBITDA est-il préféré au PER pour comparer deux entreprises diversement endettées ? Réponse : parce qu''il est calculé avant charges financières, donc indépendant de la structure de financement.
-- Question 3 : que représente la valeur terminale dans un DCF ? Réponse : la valeur actualisée de tous les flux au-delà de l''horizon de prévision explicite.
-
-## 55:00 – 70:00 · Partie 4 : synthétiser et argumenter la fourchette de valeur
-
-Nous avons maintenant quatre résultats : 4 504,0 par DCF, 4 160,0 par le multiple d''EBITDA, 4 712,0 par le PER, et 3 590,2 par l''approche patrimoniale. Comment conclure devant un jury d''examen ou un client ?
-
-Première étape : vérifier la cohérence. Les trois premières méthodes (DCF, EBITDA, PER) convergent dans un intervalle resserré, entre 4 160 et 4 712 millions, soit un écart inférieur à 15 % autour de la moyenne. C''est un bon signe de robustesse. La quatrième méthode, l''approche patrimoniale, s''écarte nettement vers le bas : c''est attendu et s''explique par sa nature conservatrice.
-
-Deuxième étape : choisir une fourchette de restitution. Je recommande de présenter 4 160 à 4 712 millions comme fourchette principale, avec le DCF comme estimation centrale si vous jugez les prévisions de flux fiables, et de mentionner l''approche patrimoniale séparément comme un plancher de négociation utile, par exemple en cas de rachat où l''acheteur voudrait limiter le risque de surpayer.
-
-Troisième étape : toujours expliciter vos hypothèses. Un correcteur de Master 1 pénalise sévèrement une valeur donnée sans rappel du CMPC, du taux de croissance, des multiples retenus et du taux normatif du goodwill. La valeur sans les hypothèses n''a aucune valeur probante.
-
-Visuel : graphique en barres horizontales montrant les quatre résultats sur une même échelle, avec la fourchette retenue encadrée.
-
-## 70:00 – 80:00 · Cas pratique approfondi : sensibilité et discussion
-
-Testons maintenant la sensibilité du DCF. Si le CMPC passe de 12 % à 13 %, que se passe-t-il ? La valeur terminale, 556 fois 1,025 divisé par (0,13 moins 0,025), donne 5 129,5 millions, actualisée sur cinq ans à 13 % : 2 785,2 millions, contre 3 404,0 millions précédemment. La valeur d''entreprise chute mécaniquement. C''est exactement ce type de test que vous devez montrer à l''examen pour prouver votre maîtrise, pas seulement produire un chiffre figé.
-
-Discutons aussi d''un biais fréquent chez les étudiants : vouloir faire converger artificiellement les méthodes en ajustant un paramètre après coup pour obtenir « le bon résultat ». C''est une erreur méthodologique grave. Les écarts entre méthodes sont des informations en soi : ils révèlent où se situe le désaccord entre la vision du marché (multiples), la vision patrimoniale (actif net) et la vision prospective (DCF).
-
-## 80:00 – 85:00 · Synthèse générale
-
-Pour résumer cette séance : le DCF valorise la capacité future à générer des flux, les multiples valorisent par comparaison de marché, l''approche patrimoniale valorise le patrimoine existant corrigé d''un goodwill. Aucune méthode n''est à elle seule suffisante en Master 1 : c''est la capacité à les croiser, à expliquer les écarts, et à conclure par une fourchette argumentée qui distingue une bonne copie.
-
-## 85:00 – 90:00 · Évaluation finale
-
-1. Dans un DCF, que représente le CMPC ? Réponse : le taux d''actualisation qui reflète le risque de l''activité et la structure de financement visée, utilisé pour ramener les flux futurs à leur valeur actuelle.
-2. Pourquoi la valeur terminale doit-elle toujours être testée en sensibilité ? Réponse : parce qu''elle représente souvent plus de la moitié de la valeur totale et qu''elle est très sensible à de faibles variations du CMPC et de la croissance à l''infini.
-3. Quel est l''avantage principal du multiple EV/EBITDA par rapport au PER ? Réponse : il est indépendant de la structure financière et des politiques d''amortissement, ce qui le rend plus comparable entre entreprises.
-4. Comment calcule-t-on la rente annuelle du goodwill dans la méthode des rentes abrégées ? Réponse : résultat courant prévisionnel moins le produit du taux de rémunération normatif des capitaux et de l''actif net comptable corrigé.
-5. Pourquoi un évaluateur sérieux présente-t-il une fourchette de valeur plutôt qu''un chiffre unique ? Réponse : parce que chaque méthode repose sur des hypothèses différentes et parfois fragiles, et qu''une fourchette reflète honnêtement l''incertitude tout en laissant une marge de négociation.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Évaluation d''entreprise approfondie (DCF, multiples, approche patrimoniale)');
+1. Seuil de signification global : 0,8 % × 2 200 000 000 = 17 600 000 FCFA.
+2. 600 000 000 divisé par 12 000 000, soit environ 50 éléments.
+3. Valeur d''entreprise : 90 000 000 × 7 = 630 000 000 FCFA.
+4. Sans dette, la rentabilité des fonds propres de l''acquéreur est simplement égale à la rentabilité économique de la cible : aucun effet multiplicateur ne joue, puisque l''effet de levier résulte précisément de l''écart entre la rentabilité économique de la cible et le coût de la dette utilisée pour financer une partie du prix, écart qui n''existe pas en l''absence de dette.
+5. Exemple : « Quel rôle joue l''audit des derniers comptes dans la négociation du prix d''une opération de reprise de PME au Sénégal ? » Toute problématique précise, vérifiable et distincte de celle déjà proposée est acceptée.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 (entraînement)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Ingénierie financière et fusions-acquisitions', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Audit financier approfondi', '## Fiche du cours vidéo
 
-Durée : 1h30. Niveau : Master 1 Finance.
-Objectifs : calculer une parité d''échange et son effet sur le bénéfice par action, construire et interpréter un montage LBO, identifier les étapes et risques d''une fusion-acquisition.
-Matériel : tableau ou diaporama, calculatrice financière ou tableur.
-Prérequis : lecture d''un bilan, notion de résultat net, actualisation.
+- Durée : 1h30.
+- Public : étudiants de Master 2 en Comptabilité.
+- Objectifs : calculer un seuil de signification et ses déclinaisons ; comprendre le principe de l''échantillonnage en audit ; distinguer les types d''opinion.
+- Matériel : diaporama, calculatrice.
+- Prérequis : audit et contrôle interne de Licence 3 ; leçon « Audit financier approfondi » de ce cours.
+- Précaution : toute formule d''échantillonnage présentée est pédagogique et simplifiée, pas une norme statistique officielle.
 
-## 00:00 – 05:00 · Introduction et enjeux
+## Déroulé minuté
 
-Bonjour. Aujourd''hui, nous entrons dans l''ingénierie financière : comment structurer une opération de rachat d''entreprise, comment mesurer son impact sur les actionnaires existants, et comment fonctionne un montage par effet de levier, le fameux LBO. Ce sont des sujets qui apparaissent très régulièrement aux examens de Master 1 et qui sont au cœur du métier de banquier d''affaires, de directeur financier ou d''analyste en fonds d''investissement. Nous allons suivre deux cas fictifs tout au long de la séance : une fusion par échange d''actions entre Sahel Industries et Delta Emballages, puis un rachat par effet de levier de la PME Logis-Services.
+## 00:00 – 05:00 · Ouverture
 
-Visuel : diapositive de titre avec les deux cas annoncés.
+Bonjour. Vous avez vu, en Licence, les grands principes du contrôle interne et de l''audit. Aujourd''hui, nous allons dérouler une démarche d''audit complète, du calcul du seuil de signification jusqu''au choix du type d''opinion, à partir du cas fictif de l''entreprise Casamance Négoce.
 
-## 05:00 – 20:00 · Partie 1 : la parité d''échange
+## 05:00 – 15:00 · Le risque d''audit en trois composantes
 
-Quand un acquéreur paie une cible en actions plutôt qu''en numéraire, il faut déterminer combien de ses propres actions il remet pour une action de la cible : c''est la parité d''échange.
+Rappel essentiel : l''auditeur ne vérifie pas tout, il concentre ses efforts là où le risque d''anomalie significative est le plus élevé. Le risque d''audit combine le risque inhérent, propre à la nature de l''activité ou du compte, le risque de contrôle, qui tient à l''efficacité du contrôle interne de l''entreprise, et le risque de non-détection, qui tient à l''efficacité des travaux de l''auditeur lui-même. Plus les deux premiers risques sont élevés, plus l''auditeur doit réduire le risque de non-détection en étendant ses travaux, par exemple en augmentant la taille de son échantillon ou en resserrant la période couverte par ses contrôles.
 
-Première étape : fixer le prix offert par action de la cible. On part du cours de bourse ou de la valeur estimée de la cible, et on ajoute une prime de contrôle, qui rémunère la perte d''autonomie de la cible et anticipe les synergies de l''opération. Dans notre cas, Sahel Industries cote 3 000 FCFA avec 3 000 000 d''actions, soit une valeur de 9 000 millions. Delta Emballages cote 2 400 FCFA avec 1 000 000 d''actions, soit 2 400 millions. Une prime de 20 % est négociée.
+Question à la salle : un stock de produits électroniques à forte obsolescence technologique présente-t-il un risque inhérent élevé ou faible ? Réponse attendue : élevé, car la valeur de ce stock peut se dégrader rapidement et de façon difficile à anticiper, ce qui justifie une attention particulière de l''auditeur sur ce poste.
 
-Le prix offert par action de Delta Emballages est donc 2 400 fois 1,20, soit 2 880 FCFA. La parité d''échange est le prix offert divisé par le cours de l''acquéreur : 2 880 divisé par 3 000, soit 0,96. Cela signifie que pour chaque action Delta Emballages apportée, l''actionnaire reçoit 0,96 action Sahel Industries.
+## 15:00 – 30:00 · Calcul du seuil de signification
 
-Visuel : schéma de l''échange, une action Delta Emballages transformée en 0,96 action Sahel Industries.
+Prenons le cas de Casamance Négoce, dont le chiffre d''affaires de l''exercice est de 2 400 000 000 FCFA. L''auditeur retient un taux de matérialité, fictif pour l''exemple, de 1 % du chiffre d''affaires.
 
-Mettez le calcul en pause et vérifiez vous-même : 1 000 000 actions Delta Emballages multipliées par 0,96 donnent 960 000 nouvelles actions Sahel Industries à émettre. Le capital de Sahel Industries passe donc de 3 000 000 à 3 960 000 actions.
+Premier calcul : le seuil de signification global, 1 % de 2 400 000 000, soit 24 000 000 FCFA. Deuxième calcul : le seuil de planification, retenu de façon prudente à 75 % du seuil global pour piloter les travaux en cours de mission, soit 75 % de 24 000 000, soit 18 000 000 FCFA. Troisième calcul : le seuil de report des anomalies triviales, fixé ici à 5 % du seuil global, soit 5 % de 24 000 000, soit 1 200 000 FCFA.
 
-## 20:00 – 35:00 · Partie 2 : l''effet sur le bénéfice par action
+Ces trois chiffres structurent concrètement la mission. Une anomalie de 500 000 FCFA, inférieure au seuil de report, ne mobilise pas de ressources d''investigation isolément. Une anomalie de 20 000 000 FCFA, proche du seuil global, déclenche au contraire une analyse approfondie.
 
-Maintenant, mesurons l''effet de cette opération sur le bénéfice par action, le BPA, de l''acquéreur. C''est l''indicateur que les analystes financiers regardent en premier après l''annonce d''une fusion.
+## 30:00 – 35:00 · Pause active
 
-Le résultat net consolidé additionne le résultat de l''acquéreur, celui de la cible, et les synergies nettes d''impôt attendues. Ici : 620 millions pour Sahel Industries, 180 millions pour Delta Emballages, et 45 millions de synergies fictives, soit un total de 845 millions.
+À vous : le chiffre d''affaires de l''entreprise fictive Sahel Distribution est de 1 500 000 000 FCFA, avec un taux de matérialité fictif de 1,2 %. Calculez le seuil de signification global, puis le seuil de planification à 70 % de ce seuil. Deux minutes, puis correction.
 
-Le BPA de Sahel Industries avant l''opération est 620 millions divisé par 3 000 000 actions, soit 206,7 FCFA. Le BPA après l''opération est 845 millions divisé par 3 960 000 actions, soit 213,4 FCFA. La variation est de plus 3,25 %. L''opération est donc relutive : elle augmente le bénéfice par action des actionnaires de Sahel Industries.
+Correction : seuil de signification global, 1,2 % de 1 500 000 000, soit 18 000 000 FCFA. Seuil de planification, 70 % de 18 000 000, soit 12 600 000 FCFA.
 
-Visuel : graphique en barres comparant le BPA avant et après l''opération.
+## 35:00 – 50:00 · Quiz interactif à mi-parcours
 
-Attention, point crucial pour l''examen : une opération relutive comptablement n''est pas automatiquement créatrice de valeur économique. Si la prime de 20 % est trop généreuse par rapport aux synergies réellement atteignables, ou si le goodwill comptabilisé doit être déprécié plus tard parce que l''intégration échoue, la relution immédiate du BPA peut masquer une destruction de valeur à moyen terme. Un bon candidat signale toujours cette limite après avoir fait le calcul.
+Question 1. Quelles sont les trois composantes du risque d''audit ? Réponse : le risque inhérent, le risque de contrôle et le risque de non-détection.
 
-## 35:00 – 50:00 · Partie 3 : comprendre le montage LBO
+Question 2. Que mesure le seuil de signification ? Réponse : le montant au-delà duquel une anomalie, ou un cumul d''anomalies, est susceptible d''influencer les décisions économiques des utilisateurs des comptes.
 
-Changeons de cas. Un LBO, rachat par effet de levier, consiste à racheter une entreprise principalement avec de la dette, logée dans une société holding créée pour l''opération. Pourquoi une holding et pas directement la cible ? Parce que cela isole le risque financier : si le remboursement de la dette se complique, c''est la holding qui est en difficulté, pas juridiquement la cible elle-même, même si en pratique les flux de la cible servent à rembourser la dette via les dividendes remontés.
+Question 3. Le seuil de planification est-il généralement plus élevé ou plus prudent que le seuil de signification global ? Réponse : plus prudent, donc généralement inférieur, pour anticiper un risque de cumul d''anomalies en cours de mission.
 
-Prenons Logis-Services, une PME fictive valorisée 1 000 millions de FCFA, financée par 650 millions de dette senior à un taux fictif de 9 % et 350 millions de fonds propres apportés par un fonds d''investissement. L''EBITDA initial est de 220 millions, avec une croissance annuelle de 5 %, et nous approchons le flux disponible avant service de la dette à 80 % de l''EBITDA, après un impôt simplifié.
+Question 4. Pourquoi l''échantillonnage en unités monétaires privilégie-t-il les montants élevés ? Réponse : parce que la sélection s''effectue proportionnellement à la valeur monétaire de chaque opération, cohérent avec l''objectif de détecter prioritairement les anomalies significatives en valeur.
 
-Année après année, ce flux rembourse d''abord les intérêts sur le capital restant dû, puis le capital lui-même. En année 1 : EBITDA de 220, intérêts de 650 fois 9 % soit 58,5, flux disponible de 220 fois 0,8 moins 58,5 soit 117,5, qui rembourse intégralement ce montant de dette, ramenant le capital restant à 532,5 millions. Le mécanisme se répète chaque année avec un EBITDA croissant et des intérêts qui diminuent à mesure que la dette se réduit. Sur cinq ans, dans notre scénario, la dette de 650 millions est intégralement remboursée.
+Question 5. Qu''exprime une opinion avec réserve ? Réponse : que les comptes sont globalement fiables, mais qu''un ou plusieurs points précis et limités appellent une réserve.
 
-Visuel : tableau année par année avec quatre colonnes : EBITDA, intérêts, flux disponible, dette restante.
+## 50:00 – 1:05:00 · Échantillonnage et application complète
 
-## 50:00 – 55:00 · Pause et quiz interactif
+Pour une population de comptes clients d''une valeur comptable de 1 800 000 000 FCFA, et un seuil de signification de 24 000 000 FCFA, l''approche pédagogique simplifiée de ce cours consiste à diviser la valeur de la population par le seuil de signification : 1 800 000 000 divisé par 24 000 000, soit environ 75 éléments. Je le répète car c''est important : cette formule est une illustration pédagogique, pas une méthode statistique officielle ; en pratique, le niveau de confiance recherché et le risque de contrôle évalué ajustent ce chiffre.
 
-Trois questions pour vérifier votre compréhension avant de continuer.
+Exercice d''application : une population de stocks a une valeur comptable de 900 000 000 FCFA, pour un seuil de signification de 15 000 000 FCFA. Calculez l''ordre de grandeur de la taille d''échantillon.
 
-- Question 1 : pourquoi la dette d''acquisition est-elle logée dans une holding plutôt que dans la cible directement ? Réponse : pour isoler le risque financier de l''opération dans une structure dédiée.
-- Question 2 : qu''est-ce qu''une opération relutive sur le BPA ? Réponse : une opération où le bénéfice par action après l''opération est supérieur au bénéfice par action de l''acquéreur avant l''opération.
-- Question 3 : d''où vient l''argent qui rembourse la dette d''un LBO ? Réponse : des flux de trésorerie disponibles de la cible, remontés à la holding sous forme de dividendes.
+Correction : 900 000 000 divisé par 15 000 000, soit environ 60 éléments.
 
-## 55:00 – 70:00 · Partie 4 : mesurer le rendement du fonds dans un LBO
+## 1:05:00 – 1:20:00 · Les types d''opinion et discussion
 
-Calculons maintenant le rendement obtenu par le fonds d''investissement. En année 5, l''EBITDA de Logis-Services atteint 267,4 millions grâce à la croissance de 5 % par an. Avec un multiple de sortie de 6,0, la valeur d''entreprise à la sortie est 267,4 fois 6,0, soit 1 604,5 millions. Comme la dette a été intégralement remboursée, la valeur des fonds propres à la sortie est également de 1 604,5 millions.
+Au terme des travaux, quatre types d''opinion possibles : l''opinion sans réserve, l''opinion avec réserve, l''opinion défavorable, et l''impossibilité d''exprimer une opinion. Le choix dépend de l''ampleur des anomalies constatées et de leur caractère diffus ou circonscrit.
 
-Le multiple de l''investissement pour le fonds est 1 604,5 divisé par l''apport initial de 350 millions, soit 4,58 fois. Le taux de rendement interne sur cinq ans est 4,58 élevé à la puissance un cinquième, moins un, soit environ 35,6 % par an.
+Discussion de cas : Teranga Audit constate, chez Casamance Négoce, une anomalie de 3 000 000 FCFA sur une provision, nettement inférieure au seuil de signification global de 24 000 000 FCFA. Quel type d''opinion est le plus probable, toutes choses égales par ailleurs ? Réponse attendue : une opinion sans réserve reste probable, l''anomalie étant nettement inférieure au seuil de signification et apparemment circonscrite à un seul poste ; il faut néanmoins vérifier qu''elle ne se cumule pas avec d''autres anomalies identifiées ailleurs dans la mission, qui, additionnées, pourraient dépasser le seuil.
 
-Remarquez l''ampleur de l''effet de levier : la valeur d''entreprise n''a progressé que de 60 % en cinq ans, de 1 000 à 1 604,5 millions, mais les fonds propres du fonds, eux, ont été multipliés par 4,58 parce que la dette a servi de levier et a été intégralement remboursée par les flux de la cible elle-même. C''est tout le principe du LBO : faire payer la dette par l''entreprise rachetée, pas par l''investisseur.
+Variante de discussion : imaginons maintenant que l''équipe d''audit découvre, en fin de mission, trois anomalies distinctes de 8 000 000, 9 000 000 et 10 000 000 FCFA, réparties sur trois cycles différents (achats, ventes, stocks). Prises isolément, chacune reste inférieure au seuil de signification global de 24 000 000 FCFA. Mais leur cumul atteint 27 000 000 FCFA, qui dépasse ce seuil. C''est précisément la raison pour laquelle un auditeur tient un registre centralisé de toutes les anomalies relevées, même non corrigées individuellement par l''entreprise : c''est le cumul, et non chaque anomalie prise isolément, qui peut faire basculer l''opinion d''une opinion sans réserve vers une opinion avec réserve. Retenez bien cette logique de cumul, régulièrement testée dans les sujets d''examen de Master.
 
-Visuel : schéma en deux colonnes, évolution de la valeur d''entreprise à gauche, évolution des fonds propres du fonds à droite, avec les multiples associés.
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
 
-Point d''attention pour l''examen : ce rendement élevé suppose une exécution sans accroc. Si l''EBITDA stagne ou recule, le flux disponible peut devenir insuffisant pour couvrir le service de la dette : c''est le risque principal d''un LBO, qu''il faut toujours mentionner en discussion.
+Synthèse : la démarche d''audit part de l''évaluation du risque, se structure autour du seuil de signification et de ses déclinaisons, s''appuie sur un échantillonnage ciblé, et se conclut par une opinion dont le type dépend de l''ampleur et de la diffusion des anomalies constatées, jamais d''une impression générale non chiffrée.
 
-## 70:00 – 80:00 · Cas pratique approfondi : les étapes d''une fusion-acquisition
+Évaluation finale, cinq questions.
 
-Reprenons maintenant les grandes étapes d''une opération de fusion-acquisition dans l''ordre chronologique. D''abord la phase préparatoire : identification de la cible, signature d''une lettre d''intention, puis audit d''acquisition, qu''on appelle due diligence, portant sur les aspects financiers, juridiques, fiscaux et sociaux de la cible. Cet audit sert à vérifier que les chiffres annoncés sont fiables et à détecter des passifs cachés.
+Question 1. Le chiffre d''affaires d''une entreprise est de 3 000 000 000 FCFA, avec un taux de matérialité fictif de 1 %. Quel est le seuil de signification global ? Réponse : 30 000 000 FCFA.
 
-Ensuite la négociation : on fixe la valorisation avec les méthodes vues dans la leçon précédente, on structure l''offre, en numéraire, en actions ou en mixte, et on négocie des garanties d''actif et de passif qui protègent l''acquéreur si des passifs non révélés apparaissent après la signature.
+Question 2. Pourquoi l''auditeur ne vérifie-t-il pas l''intégralité des opérations d''une entreprise ? Réponse : parce que cela serait généralement disproportionné en temps et en coût ; il concentre ses travaux sur les zones où le risque d''anomalie significative est le plus élevé, via l''évaluation des risques et l''échantillonnage.
 
-Puis le financement de l''opération : autofinancement, dette, augmentation de capital, ou combinaison, en tenant compte de l''impact sur la structure financière et sur la notation de crédit de l''acquéreur si celui-ci est noté.
+Question 3. Une anomalie généralisée à l''ensemble des comptes, d''un montant très supérieur au seuil de signification, oriente vers quel type d''opinion ? Réponse : une opinion défavorable.
 
-Enfin, l''intégration post-acquisition, souvent négligée dans les copies d''examen mais essentielle en pratique : c''est le moment où les synergies annoncées doivent se matérialiser réellement. C''est aussi la phase où le plus grand nombre d''opérations échouent, par sous-estimation des coûts d''intégration des systèmes d''information, des équipes et des cultures d''entreprise.
+Question 4. Quelle est la différence entre une opinion défavorable et une impossibilité d''exprimer une opinion ? Réponse : l''opinion défavorable suppose que l''auditeur a réuni suffisamment d''éléments et conclut que les comptes ne donnent pas une image fidèle ; l''impossibilité d''exprimer une opinion signifie qu''il n''a pas pu réunir des éléments suffisants pour se prononcer du tout.
 
-## 80:00 – 85:00 · Synthèse générale
+Question 5. Pourquoi le seuil de report des anomalies triviales est-il nécessaire, en plus du seuil de signification global ? Réponse : pour éviter de consacrer des ressources d''investigation à des anomalies individuellement négligeables, tout en gardant la possibilité de les cumuler si leur somme devient significative.
 
-Pour résumer : la parité d''échange traduit la prime de contrôle en nombre d''actions, et l''effet sur le BPA mesure l''impact comptable immédiat, mais ne garantit jamais la création de valeur réelle. Le LBO amplifie le rendement des fonds propres par un effet de levier, à condition que la rentabilité de la cible permette de rembourser la dette. Une opération de fusion-acquisition se joue autant dans la préparation et l''intégration que dans le calcul du prix.
-
-## 85:00 – 90:00 · Évaluation finale
-
-1. Comment calcule-t-on le prix offert par action dans une fusion par échange d''actions ? Réponse : cours de la cible multiplié par (1 plus la prime de contrôle).
-2. Qu''est-ce que la parité d''échange ? Réponse : le nombre d''actions de l''acquéreur remises pour une action de la cible, égal au prix offert par action de la cible divisé par le cours de l''acquéreur.
-3. Pourquoi une opération relutive sur le BPA n''est-elle pas automatiquement créatrice de valeur ? Réponse : parce que la relution comptable ne tient pas compte du risque réel transféré ni d''une prime ou de synergies potentiellement surestimées, qui peuvent conduire à une dépréciation future du goodwill.
-4. Dans un LBO, pourquoi le rendement des fonds propres du fonds peut-il dépasser largement la progression de la valeur d''entreprise ? Réponse : parce que l''effet de levier de la dette, remboursée par les flux de la cible, amplifie le gain réalisé sur le capital réellement investi par le fonds.
-5. Quelle est la phase la plus souvent sous-estimée dans une fusion-acquisition et pourquoi est-elle risquée ? Réponse : l''intégration post-acquisition, parce que les coûts d''intégration des systèmes, des équipes et des cultures d''entreprise sont fréquemment sous-estimés, ce qui peut empêcher la réalisation effective des synergies annoncées.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Ingénierie financière et fusions-acquisitions');
+Merci de votre attention. Avant de nous quitter, un dernier conseil méthodologique pour vos révisions : face à un sujet d''examen d''audit, commencez toujours par calculer les seuils demandés avant de vous prononcer sur une opinion, car un correcteur attend que votre conclusion découle explicitement de ces chiffres, et non d''une impression générale sur le dossier. La prochaine séance portera sur l''ingénierie financière et les opérations de restructuration.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Audit financier approfondi');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Gestion de portefeuille et marchés financiers avancés', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Ingénierie financière et opérations de restructuration', '## Fiche du cours vidéo
 
-Durée : 1h30. Niveau : Master 1 Finance.
-Objectifs : calculer le rendement et le risque d''un portefeuille à deux actifs, construire la frontière efficiente simplifiée, appliquer le CAPM et le ratio de Sharpe.
-Matériel : tableau ou diaporama, calculatrice.
-Prérequis : espérance et variance statistique, notion de corrélation.
+- Durée : 1h30.
+- Public : étudiants de Master 2 en Comptabilité.
+- Objectifs : évaluer une entreprise par DCF et par multiples ; comprendre l''effet de levier ; calculer une parité d''échange et une prime de fusion.
+- Matériel : diaporama, calculatrice.
+- Prérequis : comptabilité des sociétés de Licence 2, fusion simple de Licence 3 ; leçon « Ingénierie financière et opérations de restructuration » de ce cours.
+- Précaution : tous les taux (WACC, croissance, multiples) utilisés dans les exemples sont fictifs pour l''exemple.
 
-## 00:00 – 05:00 · Introduction et enjeux
+## Déroulé minuté
 
-Bonjour. Cette séance porte sur la gestion de portefeuille et les marchés financiers avancés : comment un investisseur combine plusieurs actifs pour réduire son risque sans sacrifier excessivement son rendement, et comment le CAPM permet de juger si un actif est correctement valorisé par rapport à son risque. Nous allons travailler avec deux actions fictives, Sahel Ciments et Teranga Telecom, tout au long de la séance.
+## 00:00 – 05:00 · Ouverture
 
-Visuel : diapositive de titre avec les deux actions et leurs caractéristiques.
+Bonjour. Cette séance porte sur l''évaluation d''entreprise et les opérations de restructuration, deux compétences centrales pour quiconque travaille en finance d''entreprise, en conseil ou en direction financière de groupe. Fil rouge : la société cible fictive Rufisque Agro-Business, qu''un groupe envisage de racheter.
 
-## 05:00 – 20:00 · Partie 1 : rendement et risque d''un portefeuille à deux actifs
+## 05:00 – 20:00 · La méthode DCF
 
-Le principe de la diversification est simple à énoncer mais puissant dans ses conséquences : combiner des actifs qui ne bougent pas parfaitement ensemble réduit le risque total du portefeuille sans réduire le rendement attendu dans la même proportion.
+Rufisque Agro-Business présente des flux de trésorerie disponibles prévisionnels de 50 000 000, 55 000 000, 60 000 000, 66 000 000 et 70 000 000 FCFA sur cinq ans. Le WACC retenu est de 12 %, fictif pour l''exemple, et le taux de croissance à l''infini de 2 %, également fictif.
 
-Le rendement attendu d''un portefeuille est simplement la moyenne pondérée des rendements attendus de chaque actif : E(rp) égale wA fois E(rA) plus wB fois E(rB). C''est intuitif, c''est additif.
+Nous actualisons chaque flux à son année respective avec le WACC, ce qui donne une valeur actualisée des flux explicites d''environ 212 900 000 FCFA. Nous calculons ensuite la valeur terminale, qui représente les flux au-delà de l''horizon explicite : le flux de la cinquième année, majoré du taux de croissance, divisé par la différence entre le WACC et le taux de croissance, soit environ 714 000 000 FCFA, que nous actualisons sur cinq ans pour obtenir environ 405 100 000 FCFA. La valeur d''entreprise par la méthode DCF est la somme de ces deux éléments : environ 212 900 000 plus 405 100 000, soit 618 000 000 FCFA.
 
-La variance, en revanche, n''est pas simplement la moyenne pondérée des variances. Elle intègre un troisième terme, la covariance entre les deux actifs : sigma au carré du portefeuille égale wA au carré fois sigma A au carré, plus wB au carré fois sigma B au carré, plus deux fois wA fois wB fois la covariance entre A et B. Et la covariance elle-même s''obtient en multipliant la corrélation par les deux écart-types.
+## 20:00 – 30:00 · La méthode des multiples comparables
 
-Prenons nos données : Sahel Ciments a un rendement attendu de 14 % et un écart-type de 22 %. Teranga Telecom a un rendement attendu de 9 % et un écart-type de 12 %. La corrélation entre les deux est de 0,30. La covariance est donc 0,30 fois 0,22 fois 0,12, soit 0,00792.
+Rufisque Agro-Business a réalisé un EBITDA de 80 000 000 FCFA sur l''exercice. Le multiple comparable observé dans le secteur, fictif pour l''exemple, est de 6 fois l''EBITDA. La valeur d''entreprise par les multiples est donc de 80 000 000 multiplié par 6, soit 480 000 000 FCFA.
 
-Testons un portefeuille à 60 % dans Sahel Ciments et 40 % dans Teranga Telecom. Le rendement attendu est 0,6 fois 14 % plus 0,4 fois 9 %, soit 12,0 %. La variance est 0,6 au carré fois 0,22 au carré, plus 0,4 au carré fois 0,12 au carré, plus deux fois 0,6 fois 0,4 fois 0,00792, soit 0,02354, ce qui donne un écart-type de 15,3 %. Comparez : investir seulement dans Sahel Ciments donnait 14 % de rendement pour 22 % de risque. Ici, on ne perd que 2 points de rendement mais on réduit le risque de près de 7 points. C''est le bénéfice concret de la diversification.
+Nous obtenons deux valeurs différentes : 618 000 000 FCFA par le DCF, 480 000 000 FCFA par les multiples. Ce n''est pas une erreur : ces méthodes reposent sur des informations distinctes. Une pratique courante retient une moyenne ou une fourchette : ici, une moyenne simple donnerait environ 549 000 000 FCFA de valeur d''entreprise. Pour obtenir la valeur des capitaux propres, nous déduisons la dette financière nette, par exemple 90 000 000 FCFA, ce qui donne environ 459 000 000 FCFA.
 
-Visuel : graphique risque-rendement avec les deux actifs purs et le portefeuille 60-40 positionné entre eux, visiblement décalé vers la gauche.
+## 30:00 – 35:00 · Pause active
 
-## 20:00 – 35:00 · Partie 2 : la frontière efficiente et le portefeuille de variance minimale
+À vous : une cible présente un EBITDA de 60 000 000 FCFA ; le multiple comparable retenu est de 5 fois, fictif. Calculez la valeur d''entreprise par les multiples. Deux minutes, puis correction : 60 000 000 multiplié par 5, soit 300 000 000 FCFA.
 
-Si on fait varier la pondération entre les deux actifs de 0 à 100 %, on obtient toute une courbe de combinaisons possibles de risque et de rendement : c''est la frontière efficiente, simplifiée ici au cas de deux actifs.
+## 35:00 – 50:00 · Quiz interactif à mi-parcours
 
-Il existe une pondération précise qui minimise la variance du portefeuille. On l''obtient par la formule : wA de variance minimale égale sigma B au carré moins la covariance, divisé par sigma A au carré plus sigma B au carré moins deux fois la covariance.
+Question 1. Que représente la valeur terminale dans un DCF ? Réponse : la valeur des flux de trésorerie au-delà de l''horizon explicite de prévision.
 
-Pour nos deux actions : wA minimale égale 0,12 au carré moins 0,00792, divisé par 0,22 au carré plus 0,12 au carré moins deux fois 0,00792, ce qui donne 0,138. Donc wB égale 0,862. Mettez en pause et vérifiez ce calcul avec votre propre calculatrice.
+Question 2. Pourquoi le DCF et les multiples comparables donnent-ils rarement la même valeur ? Réponse : parce qu''ils s''appuient sur des informations et des hypothèses différentes, prévisions internes pour le premier, transactions ou cotations de marché pour le second.
 
-Avec cette pondération, le rendement attendu est 9,69 % et l''écart-type tombe à 11,6 %, le minimum possible pour ce couple d''actifs. Comparons avec Teranga Telecom seul : 9,0 % de rendement pour 12,0 % de risque. Le portefeuille de variance minimale fait mieux sur les deux dimensions à la fois : plus de rendement, 9,69 % contre 9,0 %, et moins de risque, 11,6 % contre 12,0 %. C''est la démonstration la plus parlante de l''intérêt de la diversification.
+Question 3. Qu''est-ce que l''effet de levier dans une opération de LBO ? Réponse : le fait de financer majoritairement une acquisition par de la dette pour amplifier la rentabilité des fonds propres investis, si la rentabilité économique de la cible dépasse le coût de la dette.
 
-Visuel : la frontière efficiente tracée point par point, avec le point de variance minimale repéré, et la zone sous ce point marquée comme inefficiente.
+Question 4. Comment calcule-t-on une parité d''échange dans une fusion ? Réponse : comme le rapport entre la valeur de l''action de la société absorbée et celle de l''action de la société absorbante.
 
-Un point essentiel pour l''examen : tout portefeuille situé sous le point de variance minimale sur cette courbe n''est jamais un choix rationnel, car on peut toujours obtenir, pour le même risque, un rendement supérieur ailleurs sur la frontière.
+Question 5. Qu''est-ce que la prime de fusion ? Réponse : la différence entre la valeur réelle des apports de la société absorbée et l''augmentation de capital nominale correspondante chez l''absorbante.
 
-## 35:00 – 50:00 · Partie 3 : le CAPM approfondi
+## 50:00 – 1:10:00 · Fusion : parité d''échange et prime de fusion
 
-Changeons de perspective. Le CAPM ne cherche pas à construire un portefeuille optimal, il cherche à déterminer quel rendement un actif devrait offrir compte tenu de son risque non diversifiable, celui qui reste même après une diversification complète.
+Prenons un cas de fusion. La société absorbante Teranga Capital évalue son action à 10 000 FCFA, et l''action de la société absorbée Sine Agro-Export à 6 000 FCFA. La parité d''échange est le rapport entre ces deux valeurs : 6 000 divisé par 10 000, soit 0,6, c''est-à-dire 3 actions Teranga Capital pour 5 actions Sine Agro-Export.
 
-Ce risque non diversifiable se mesure par le bêta : bêta égale la covariance entre le rendement de l''actif et le rendement du marché, divisée par la variance du rendement du marché. Un bêta de 1 signifie un risque de marché moyen ; un bêta supérieur à 1 signifie un actif plus sensible que le marché, un bêta inférieur à 1 signifie un actif moins sensible.
+Sine Agro-Export compte 10 000 actions en circulation. Le nombre d''actions Teranga Capital à créer est de 10 000 multiplié par 0,6, soit 6 000 actions nouvelles. Avec une valeur nominale de 5 000 FCFA par action, l''augmentation de capital nominale s''élève à 6 000 multiplié par 5 000, soit 30 000 000 FCFA. La valeur réelle des apports de Sine Agro-Export est de 10 000 multiplié par 6 000, soit 60 000 000 FCFA. La prime de fusion est la différence : 60 000 000 moins 30 000 000, soit 30 000 000 FCFA, inscrite en capitaux propres de l''absorbante.
 
-Le rendement exigé par le CAPM est alors : E(r) égale le taux sans risque, plus bêta, fois la prime de risque du marché, c''est-à-dire la différence entre le rendement attendu du marché et le taux sans risque.
+Exercice à vous : l''action absorbante vaut 8 000 FCFA, l''action absorbée 5 000 FCFA, qui compte 4 000 actions, avec une valeur nominale absorbante de 4 000 FCFA. Calculez la parité, le nombre d''actions à créer, l''augmentation de capital et la prime de fusion.
 
-Pour Sahel Ciments, avec une covariance avec le marché de 0,028 et une variance du marché de 0,16 au carré soit 0,0256, le bêta est 0,028 divisé par 0,0256, soit 1,094. Avec un taux sans risque fictif de 5,5 % et un rendement de marché attendu de 12 %, le rendement exigé par le CAPM est 5,5 % plus 1,094 fois 6,5 %, soit 12,61 %.
+Correction : parité, 5 000 divisé par 8 000, soit 0,625. Actions à créer : 4 000 multiplié par 0,625, soit 2 500 actions. Augmentation de capital : 2 500 multiplié par 4 000, soit 10 000 000 FCFA. Valeur réelle des apports : 4 000 multiplié par 5 000, soit 20 000 000 FCFA. Prime de fusion : 20 000 000 moins 10 000 000, soit 10 000 000 FCFA.
 
-Or le rendement attendu réellement estimé pour Sahel Ciments est de 14 %, supérieur au 12,61 % exigé par le CAPM. Cet écart positif, qu''on appelle alpha, suggère que l''action est sous-évaluée par rapport à son risque systématique : elle offre plus de rendement que ce que son bêta justifierait. Pour Teranga Telecom, avec un bêta de 0,55, le rendement exigé est 5,5 % plus 0,55 fois 6,5 %, soit 9,07 %, très proche du rendement attendu de 9 % : cette action est jugée correctement valorisée par le marché.
+## 1:10:00 – 1:20:00 · Apport partiel d''actif et scission
 
-Visuel : droite de marché des titres tracée, avec Sahel Ciments positionnée au-dessus de la droite et Teranga Telecom pile sur la droite.
+Au-delà de la fusion, rappelons deux opérations voisines. L''apport partiel d''actif consiste à apporter une partie seulement du patrimoine d''une société, une branche d''activité, à une autre société en échange de titres, sans dissolution de la société apporteuse. La scission répartit l''ensemble du patrimoine entre plusieurs sociétés, avec dissolution de la société scindée. Discussion : pourquoi un groupe choisirait-il un apport partiel d''actif plutôt qu''une fusion complète pour céder une branche d''activité ? Réponse attendue : parce qu''il souhaite continuer à exercer le reste de son activité sous la même structure juridique, sans dissoudre l''ensemble de la société pour céder une seule branche. Autre question possible à l''examen : si une entreprise souhaite au contraire se séparer entièrement de deux activités distinctes pour les loger dans deux sociétés différentes, sans rien conserver pour elle-même, quelle opération est la plus adaptée ? Réponse : la scission, puisqu''elle répartit l''ensemble du patrimoine entre les sociétés bénéficiaires et entraîne la disparition de la société d''origine, alors qu''un simple apport partiel d''actif laisserait subsister une société mère sans activité résiduelle clairement définie.
 
-## 50:00 – 55:00 · Pause et quiz interactif
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
 
-Trois questions de vérification.
+Synthèse : le DCF et les multiples comparables sont deux approches complémentaires de l''évaluation d''entreprise, à présenter en fourchette plutôt qu''en chiffre unique ; l''effet de levier amplifie symétriquement la rentabilité et le risque d''une acquisition financée par dette ; la parité d''échange et la prime de fusion structurent comptablement une opération de fusion-acquisition.
 
-- Question 1 : pourquoi une corrélation inférieure à 1 entre deux actifs crée-t-elle toujours un gain de diversification ? Réponse : parce que le terme de covariance dans la formule de la variance du portefeuille devient alors inférieur à ce qu''il serait avec une corrélation parfaite, réduisant la variance totale.
-- Question 2 : que mesure le bêta dans le CAPM ? Réponse : la sensibilité du rendement d''un actif aux mouvements du marché, c''est-à-dire son risque non diversifiable.
-- Question 3 : qu''est-ce qu''un alpha positif ? Réponse : un rendement attendu réel supérieur au rendement exigé par le CAPM, suggérant que l''actif est sous-évalué par rapport à son risque systématique.
+Évaluation finale, cinq questions.
 
-## 55:00 – 70:00 · Partie 4 : le ratio de Sharpe et ses limites
+Question 1. Une cible a un EBITDA de 100 000 000 FCFA, valorisé avec un multiple fictif de 6,5 fois. Quelle est la valeur d''entreprise ? Réponse : 650 000 000 FCFA.
 
-Le ratio de Sharpe complète le CAPM en mesurant le rendement excédentaire par unité de risque total, pas seulement de risque systématique : Sharpe égale le rendement attendu moins le taux sans risque, divisé par l''écart-type total de l''actif.
+Question 2. Qu''est-ce que le WACC dans une évaluation par DCF ? Réponse : le coût moyen pondéré du capital, utilisé comme taux d''actualisation des flux de trésorerie futurs.
 
-Pour Sahel Ciments : 14 % moins 5,5 %, divisé par 22 %, soit 0,386. Pour Teranga Telecom : 9 % moins 5,5 %, divisé par 12 %, soit 0,292. Sahel Ciments rémunère donc mieux chaque unité de risque total supporté, malgré sa volatilité plus élevée en valeur absolue.
+Question 3. L''action absorbante vaut 12 000 FCFA, l''action absorbée 9 000 FCFA. Quelle est la parité d''échange ? Réponse : 9 000 divisé par 12 000, soit 0,75.
 
-Pourquoi deux indicateurs différents, le bêta du CAPM et le ratio de Sharpe ? Parce qu''ils répondent à deux questions différentes. Le bêta et le CAPM s''adressent à un investisseur déjà diversifié, qui ne se préoccupe que du risque de marché résiduel. Le ratio de Sharpe s''adresse à un investisseur qui détient l''actif seul, ou qui veut comparer l''efficacité globale de gestionnaires de portefeuille, en tenant compte de tout le risque, diversifiable et non diversifiable.
+Question 4. Quel est le risque principal d''un financement par effet de levier pour l''acquéreur ? Réponse : si la rentabilité économique de la cible se dégrade sous le coût de la dette, l''endettement amplifie les pertes et met en péril la trésorerie de la cible et de l''acquéreur.
 
-Visuel : tableau récapitulatif des deux indicateurs pour les deux actions.
+Question 5. Quelle est la différence essentielle entre un apport partiel d''actif et une scission ? Réponse : l''apport partiel d''actif ne porte que sur une partie du patrimoine et n''entraîne pas la dissolution de la société apporteuse, contrairement à la scission qui porte sur l''ensemble du patrimoine et entraîne la dissolution de la société scindée.
 
-## 70:00 – 80:00 · Cas pratique approfondi : construire une recommandation
-
-Imaginons qu''un conseiller en gestion de patrimoine doive recommander une allocation entre Sahel Ciments et Teranga Telecom à un client qui souhaite limiter son risque sans trop sacrifier le rendement. Avec les données vues, trois options raisonnables : le portefeuille de variance minimale, 13,8 % et 86,2 %, pour un client très averse au risque ; le portefeuille 60-40 pour un client qui accepte un peu plus de risque contre un peu plus de rendement ; ou une pondération encore plus orientée vers Sahel Ciments si le client a identifié, comme nous l''avons fait avec le CAPM, que cette action est sous-évaluée et offre un alpha positif.
-
-La recommandation doit toujours combiner l''analyse de diversification, qui dépend de la corrélation et des écart-types, et l''analyse de valorisation individuelle, qui dépend du CAPM et de l''alpha. Un bon candidat de Master 1 sait mobiliser les deux dans une même conclusion argumentée, en rappelant que ce sont des estimations fondées sur des paramètres fictifs dans cet exercice, qui devraient être actualisées avec des données de marché réelles dans un contexte professionnel.
-
-## 80:00 – 85:00 · Synthèse générale
-
-Pour conclure : la diversification réduit le risque grâce à une corrélation imparfaite entre actifs, la frontière efficiente identifie les meilleures combinaisons possibles, le CAPM évalue si le rendement d''un actif est cohérent avec son risque systématique, et le ratio de Sharpe mesure l''efficacité globale du couple rendement-risque. Ces quatre outils se complètent plutôt qu''ils ne se substituent les uns aux autres.
-
-## 85:00 – 90:00 · Évaluation finale
-
-1. Comment calcule-t-on la covariance entre deux actifs à partir de leur corrélation ? Réponse : covariance égale corrélation multipliée par l''écart-type du premier actif et par l''écart-type du second actif.
-2. Qu''obtient-on en annulant la dérivée de la variance du portefeuille par rapport à la pondération d''un actif ? Réponse : la pondération du portefeuille de variance minimale.
-3. Quelle est la formule du rendement exigé par le CAPM ? Réponse : taux sans risque plus bêta multiplié par la prime de risque du marché, c''est-à-dire la différence entre le rendement attendu du marché et le taux sans risque.
-4. Un actif se situe au-dessus de la droite de marché des titres : que peut-on en conclure ? Réponse : son rendement attendu réel dépasse le rendement exigé par son risque systématique, il est jugé sous-évalué, avec un alpha positif.
-5. Pourquoi le ratio de Sharpe peut-il classer deux actifs différemment du bêta du CAPM ? Réponse : parce que le ratio de Sharpe tient compte du risque total, diversifiable et non diversifiable, alors que le bêta ne capture que le risque systématique non diversifiable.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gestion de portefeuille et marchés financiers avancés');
+Merci de votre attention. Gardez toujours à l''esprit, en révisant ces calculs, qu''un sujet d''examen n''attend jamais un chiffre isolé : il attend que vous expliquiez ce que ce chiffre signifie pour la décision d''investir, de racheter ou de restructurer. La prochaine séance portera sur la méthodologie du mémoire professionnel et de la soutenance.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Ingénierie financière et opérations de restructuration');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Atelier cas pratique transversal - évaluation et montage d''une opération de croissance externe', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et soutenance', '## Fiche du cours vidéo
 
-Durée : 1h30. Niveau : Master 1 Finance.
-Objectifs : résoudre un cas d''entreprise transversal mobilisant successivement l''évaluation, l''ingénierie financière et la gestion de portefeuille, comme dans un dossier réel de banque d''affaires.
-Matériel : tableau ou diaporama, calculatrice financière ou tableur.
-Prérequis : les trois leçons et vidéos précédentes de ce cours.
+- Durée : 1h30.
+- Public : étudiants de Master 2 en Comptabilité, en phase de rédaction du mémoire.
+- Objectifs : construire une problématique et un plan détaillé ; mener une revue de littérature et une méthodologie honnêtes ; préparer une soutenance orale.
+- Matériel : diaporama, exemples de plans et de questions de jury.
+- Prérequis : leçon « Méthodologie du mémoire professionnel et soutenance » de ce cours.
+- Précaution : les exemples de problématiques et de questions sont génériques ; adaptez-les à votre sujet et vérifiez le règlement de votre établissement.
 
-## 00:00 – 05:00 · Introduction et enjeux
+## Déroulé minuté
 
-Bonjour. Cette dernière séance vidéo est un atelier de synthèse : nous allons suivre un seul dossier fictif de bout en bout, de l''évaluation d''une cible jusqu''à l''impact de l''opération pour un investisseur minoritaire, en mobilisant tout ce que vous avez appris dans ce cours de Master 1. C''est exactement le type d''exercice filé que vous pouvez rencontrer en examen final ou en entretien de stage. Prenez une feuille, nous allons construire le dossier ensemble.
+## 00:00 – 05:00 · Ouverture
 
-Visuel : diapositive de titre présentant le dossier « Casamance Agro-Industries rachète Niayes Fruits ».
+Bonjour. Cette séance ne porte pas sur une technique comptable mais sur une compétence transversale décisive pour terminer votre Master : transformer un sujet d''intérêt en un mémoire structuré, honnête et défendable à l''oral. Nous suivrons l''exemple fil rouge d''un mémoire consacré à l''évaluation d''une PME sénégalaise avant une opération de reprise.
 
-## 05:00 – 20:00 · Partie 1 : poser le dossier et évaluer la cible
+## 05:00 – 15:00 · De la problématique au plan détaillé
 
-Casamance Agro-Industries, CAI, entreprise fictive de Ziguinchor, veut racheter sa concurrente Niayes Fruits. CAI cote 2 500 FCFA pour 4 000 000 d''actions, avec un résultat net de 980 millions. Niayes Fruits cote 1 600 FCFA pour 1 200 000 actions, avec un résultat net de 240 millions, un EBITDA de 420 millions, une dette nette de 280 millions, et des flux de trésorerie disponibles prévisionnels sur cinq ans de 160, 175, 188, 198 et 206 millions de FCFA, avec une croissance à l''infini de 2 % et un CMPC de 11 %.
+Un thème n''est pas une problématique. « L''évaluation d''entreprise » est un thème ; « comment un repreneur évalue-t-il une PME agroalimentaire sénégalaise non cotée, et quelles limites méthodologiques pèsent sur cette évaluation » commence à être une problématique, car elle est spécifique, vérifiable sur un terrain accessible, et ouverte à une véritable analyse.
 
-Commençons par le DCF de Niayes Fruits. Actualisons chaque flux à 11 % : 160 divisé par 1,11 donne 144,1 ; 175 divisé par 1,11 au carré donne 142,0 ; 188 divisé par 1,11 au cube donne 137,5 ; 198 divisé par 1,11 à la puissance 4 donne 130,5 ; 206 divisé par 1,11 à la puissance 5 donne 122,2. La somme est 676,3 millions. La valeur terminale : 206 fois 1,02 divisé par (0,11 moins 0,02), soit 2 334,2 millions, actualisée sur cinq ans à 11 %, soit 1 385,6 millions. La valeur d''entreprise totale est 676,3 plus 1 385,6, soit 2 061,9 millions. En retranchant la dette nette de 280 millions, la valeur des capitaux propres est 1 781,9 millions de FCFA.
+Une fois la problématique fixée, le plan détaillé organise la réponse : introduction qui pose la problématique et son intérêt, revue de littérature qui situe le sujet par rapport aux textes et travaux existants, méthodologie qui explique comment le terrain a été étudié, résultats et analyse qui présentent ce qui a été observé, recommandations à visée professionnelle, et conclusion qui répond explicitement à la problématique en reconnaissant ses limites.
 
-Comparons avec un multiple de comparables : EBITDA de 420 millions fois un multiple sectoriel fictif de 6,5, soit une valeur d''entreprise de 2 730,0 millions, et une valeur des capitaux propres de 2 450,0 millions après déduction de la dette. L''écart avec le DCF est important, environ 37 %. Mettez en pause et réfléchissez : que feriez-vous de cet écart dans un vrai rapport d''évaluation ?
+Question à la salle : pourquoi la conclusion doit-elle reconnaître des limites, et pas seulement résumer les résultats ? Réponse attendue : parce qu''un mémoire honnête montre que l''étudiant comprend la portée réelle de son travail, ce qui renforce sa crédibilité auprès du jury, plutôt que de prétendre à une certitude que le travail ne permet pas d''atteindre.
 
-Visuel : les deux résultats, 1 781,9 et 2 450,0 millions, affichés côte à côte avec l''écart en pourcentage.
+## 15:00 – 30:00 · Revue de littérature et méthodologie, sans jamais inventer
 
-Réponse attendue : on ne choisit pas arbitrairement l''un ou l''autre, on documente les deux, on vérifie les hypothèses de chaque méthode, par exemple en demandant si les flux prévisionnels sont trop prudents ou si le multiple sectoriel retenu est trop généreux, et on propose une fourchette, ici entre 1 781,9 et 2 450,0 millions de FCFA, en expliquant que l''écart important appelle une vérification approfondie avant de fixer un prix final.
+La revue de littérature d''un mémoire professionnel situe le sujet par rapport aux textes normatifs applicables et aux travaux ou guides existants, sans viser l''exhaustivité d''un mémoire académique. Règle absolue, à répéter sans relâche : chaque source citée doit être réelle et vérifiable. Inventer un auteur, un titre, un article pour étoffer une bibliographie est une faute grave qui, si elle est détectée, discrédite l''ensemble du travail. Si une source précise manque sur un point, il faut le dire explicitement plutôt que de fabriquer une référence.
 
-## 20:00 – 35:00 · Partie 2 : structurer l''offre et mesurer l''effet sur le BPA
+La méthodologie explique, de façon transparente, comment les données ont été recueillies : étude de cas, entretiens, analyse de documents. Elle justifie les choix effectués et leurs limites. Un jury valorise une méthodologie qui reconnaît honnêtement ses limites plutôt qu''une méthodologie qui prétend à une rigueur qu''elle n''a pas.
 
-CAI propose une prime de contrôle de 20 % sur le cours de Niayes Fruits et un paiement intégral en actions. Le prix offert par action est 1 600 fois 1,20, soit 1 920 FCFA. La parité d''échange est 1 920 divisé par 2 500, soit 0,768 action CAI pour une action Niayes Fruits.
+## 30:00 – 35:00 · Pause active
 
-Le nombre de nouvelles actions émises est 1 200 000 fois 0,768, soit 921 600. Le capital de CAI passe de 4 000 000 à 4 921 600 actions. Pour mesurer l''effet sur le BPA, on utilise ici le résultat net comptable de la cible, pas sa valeur d''évaluation : résultat consolidé égale 980 plus 240 plus 20 millions de synergies nettes d''impôt, soit 1 240 millions.
+Exercice : reformulez le thème vague « la fiscalité internationale » en une problématique précise, délimitée et vérifiable, sur le modèle vu en introduction. Deux minutes, puis nous écoutons quelques propositions à l''oral.
 
-Le BPA de CAI avant l''opération est 980 divisé par 4 000 000, soit 245 FCFA. Le BPA après l''opération est 1 240 divisé par 4 921 600, soit environ 251,9 FCFA. La variation est d''environ plus 2,8 %, l''opération est relutive.
+Exemple de correction possible : « Comment une PME exportatrice sénégalaise documente-t-elle ses prix de transfert avec une filiale installée dans un pays voisin de l''UEMOA ? »
 
-Visuel : tableau de synthèse du montage, parité, nouvelles actions, BPA avant et après.
+## 35:00 – 50:00 · Quiz interactif à mi-parcours
 
-Discussion essentielle : cette relution de 2,8 % repose sur des synergies de seulement 20 millions. Si ces synergies ne se matérialisent pas, par exemple parce que l''intégration des deux réseaux de distribution échoue partiellement, le résultat consolidé retombe à 1 220 millions, et le BPA après l''opération devient 1 220 divisé par 4 921 600, soit environ 247,9 FCFA : l''opération resterait légèrement relutive mais avec une marge de sécurité beaucoup plus faible. C''est ce type d''analyse de sensibilité qui distingue une copie de Master 1 d''une simple application de formule.
+Question 1. Qu''est-ce qui distingue un thème d''une problématique ? Réponse : un thème est large et descriptif ; une problématique est une question précise, délimitée et ouverte à l''analyse.
 
-## 35:00 – 50:00 · Partie 3 : l''impact pour un investisseur minoritaire
+Question 2. Pourquoi ne faut-il jamais inventer une source bibliographique ? Réponse : parce que cela trompe le lecteur sur l''origine réelle de l''information et constitue une fraude intellectuelle détectable et sanctionnée.
 
-Un fonds d''investissement régional envisage de prendre une participation minoritaire dans CAI après l''opération. Il doit juger si le rendement attendu de l''action CAI est cohérent avec son risque. Le bêta estimé de CAI est de 1,15, le taux sans risque fictif de 6 %, et le rendement attendu du marché régional de 13 %.
+Question 3. Que doit faire un étudiant qui ne dispose pas d''une source précise sur un point ? Réponse : le dire explicitement plutôt que de fabriquer une référence.
 
-Le rendement exigé par le CAPM est 6 % plus 1,15 fois (13 % moins 6 %), soit 6 % plus 1,15 fois 7 %, soit 14,05 %. Si le rendement attendu réellement anticipé pour l''action CAI après l''opération est de 15 %, alors CAI se situe au-dessus de la droite de marché des titres : le rendement attendu dépasse le rendement exigé par le risque systématique, d''environ 0,95 point. L''action apparaît donc, sur cette base, légèrement sous-évaluée.
+Question 4. Qu''évalue, en priorité, un jury dans la partie méthodologique d''un mémoire professionnel ? Réponse : la transparence sur les choix effectués et l''honnêteté sur leurs limites.
 
-Visuel : droite de marché des titres avec CAI positionnée juste au-dessus.
+Question 5. Combien de grandes parties comporte le plan type de mémoire professionnel présenté dans ce cours ? Réponse : six : introduction, revue de littérature, méthodologie, résultats et analyse, recommandations, conclusion.
 
-Mais attention, c''est le moment de faire preuve d''esprit critique devant un jury : ce bêta de 1,15 a-t-il été estimé avant ou après l''annonce de l''opération ? Une fusion-acquisition change souvent le profil de risque de l''acquéreur, notamment si elle est financée par de la dette supplémentaire, ce qui peut augmenter le bêta réel après l''opération par rapport au bêta historique utilisé ici. Un bon candidat signale cette limite plutôt que d''appliquer la formule sans recul.
+## 50:00 – 1:10:00 · Préparer la soutenance
 
-## 50:00 – 55:00 · Pause et quiz interactif
+La soutenance est un exercice oral distinct de la lecture du mémoire. Une présentation efficace résume, en quelques minutes, la problématique, la méthodologie, les résultats principaux et les recommandations, sans chercher à tout redire : le jury a déjà lu le mémoire, il attend une mise en perspective, pas une récitation.
 
-Trois questions pour faire le point avant la conclusion du dossier.
+Préparez-vous à trois types de questions. Les questions de clarification demandent de préciser un point technique, par exemple « comment avez-vous obtenu les données financières de cette entreprise ? ». Les questions de fond interrogent vos choix, par exemple « pourquoi avoir retenu la méthode DCF plutôt que les seuls multiples comparables ? ». Les questions qui testent vos limites demandent d''identifier honnêtement les faiblesses de votre travail, par exemple « quelle est la principale limite de votre évaluation ? ».
 
-- Question 1 : pourquoi documenter deux méthodes d''évaluation même quand elles divergent fortement ? Réponse : parce que chaque écart révèle une information sur les hypothèses en désaccord, et qu''une fourchette argumentée est plus honnête et plus utile en négociation qu''un chiffre unique non questionné.
-- Question 2 : qu''est-ce qui pourrait transformer une opération relutive en opération dilutive si les hypothèses se dégradent ? Réponse : des synergies qui ne se matérialisent pas, ou une prime de contrôle qui s''avère excessive par rapport à la valeur réellement créée.
-- Question 3 : pourquoi le bêta utilisé par un investisseur minoritaire doit-il être examiné avec prudence après une fusion-acquisition ? Réponse : parce que l''opération peut changer le profil de risque réel de l''acquéreur, notamment via un endettement supplémentaire, rendant le bêta historique moins représentatif.
+Exercice de simulation : je vous pose la question suivante, préparez une réponse en deux minutes. « Si vous deviez refaire ce mémoire avec plus de temps, que changeriez-vous ? » Il n''y a pas de bonne réponse unique, mais une mauvaise réponse consiste à dire qu''on ne changerait rien : cela suggère, à tort, une confiance excessive. Une bonne réponse identifie un point précis et explique pourquoi on l''améliorerait, par exemple interroger davantage de professionnels pour renforcer la partie terrain.
 
-## 55:00 – 70:00 · Partie 4 : rédiger la recommandation finale du dossier
+Deuxième simulation, plus technique : « Votre évaluation DCF repose sur un taux d''actualisation de 12 %. Comment avez-vous construit ce taux, et que se passerait-il avec un taux de 14 % ? » Préparez votre réponse. Une bonne réponse explique la logique du coût moyen pondéré du capital, reconnaît que ce taux reste une estimation sujette à discussion pour une entreprise non cotée, et peut même esquisser le sens de la variation attendue : un taux d''actualisation plus élevé réduirait la valeur actualisée des flux futurs et de la valeur terminale, donc la valeur d''entreprise globale. Savoir expliquer le sens d''une variation, même sans recalculer précisément à l''oral, démontre une compréhension solide du mécanisme, ce qui compte souvent davantage pour le jury qu''un chiffre exact.
 
-Nous arrivons à la dernière étape : rédiger une recommandation complète, comme le ferait un analyste senior pour son comité d''investissement. La structure attendue comporte quatre blocs. D''abord, la valeur de la cible, avec la fourchette obtenue et les hypothèses retenues. Ensuite, les conditions de l''opération, la parité d''échange et son effet sur le BPA, avec un test de sensibilité sur les synergies. Puis, l''impact pour un investisseur minoritaire, avec le positionnement par rapport au CAPM et ses limites. Enfin, une conclusion qui tranche : faut-il recommander l''opération, la recommander sous conditions, ou la déconseiller, et pourquoi.
+## 1:10:00 – 1:20:00 · Discussion sur l''intégrité académique
 
-Pour notre dossier, une conclusion possible serait la suivante : l''opération est raisonnable au prix proposé, dans la mesure où la prime de 20 % reste dans la fourchette de valeur obtenue par DCF et par multiple, où l''effet relutif sur le BPA reste positif même en cas de sous-réalisation partielle des synergies, mais où il convient de surveiller l''évolution du bêta et de la structure financière de CAI après l''opération avant d''investir en tant que minoritaire.
+Discutons ensemble d''un cas limite : un étudiant, pressé par le temps, reformule un paragraphe trouvé sur internet sans le citer, en pensant que « reformuler » suffit à éviter le plagiat. Qu''en pensez-vous ? Réponse attendue : non, reformuler une idée sans citer sa source reste du plagiat, car ce qui doit être attribué, c''est l''idée elle-même et non seulement sa formulation exacte ; la bonne pratique consiste à citer la source chaque fois qu''une idée n''est pas la sienne, même reformulée.
 
-Visuel : schéma final en quatre blocs résumant la structure de la recommandation.
+Deuxième cas limite, pour aller plus loin : un étudiant, faute de temps pour mener de vrais entretiens, invente les propos d''un « responsable financier interrogé » pour étoffer sa partie résultats, en se disant que ces propos restent plausibles et ne trompent personne sur le fond. Qu''en pensez-vous ? Réponse attendue : c''est une fraude grave, de même nature qu''une source bibliographique inventée, car elle présente comme réelle une donnée de terrain qui ne l''est pas ; si l''étudiant n''a pas pu mener l''entretien prévu, la bonne pratique consiste à le dire explicitement dans la méthodologie, à expliquer cette limite et, si nécessaire, à adapter la problématique à ce qui a réellement pu être observé, plutôt que de fabriquer une preuve de terrain qui n''existe pas.
 
-## 70:00 – 80:00 · Entraînement : variante chiffrée
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
 
-Variante pour vous entraîner seul après la séance : si la prime de contrôle négociée passe de 20 % à 30 %, recalculez le prix offert par action, la parité d''échange, le nombre d''actions émises et le nouveau BPA de CAI après l''opération, toutes choses égales par ailleurs. Vous devez retrouver un prix offert de 2 080 FCFA, une parité de 0,832, 998 400 nouvelles actions, un capital total de 4 998 400 actions, et un BPA après l''opération d''environ 248,1 FCFA, soit une relution plus faible qu''avec la prime de 20 %. Cet exercice illustre qu''une prime plus élevée dilue davantage l''effet relutif, même sans changer les synergies attendues.
+Synthèse : une problématique précise et vérifiable, un plan cohérent, une revue de littérature honnête sans aucune source inventée, une méthodologie transparente sur ses limites, et une soutenance qui valorise la clarté et l''honnêteté plutôt que la défense rigide.
 
-## 80:00 – 85:00 · Synthèse générale du cours
+Évaluation finale, cinq questions.
 
-Ce cours de Master 1 vous a donné trois blocs d''outils qui se combinent dans la pratique : évaluer une entreprise par plusieurs méthodes convergentes, structurer et chiffrer une opération de fusion-acquisition ou un montage par effet de levier, et situer le risque et le rendement d''un investissement dans la logique du portefeuille et du CAPM. La compétence la plus recherchée par les recruteurs et les jurys n''est pas de savoir appliquer une formule isolée, mais de savoir enchaîner ces blocs dans un même dossier et d''en tirer une recommandation argumentée, avec ses limites explicitement posées.
+Question 1. Qu''est-ce qu''une problématique de mémoire, par opposition à un thème ? Réponse : une question précise, délimitée et vérifiable sur un terrain accessible, à laquelle le mémoire répond par une analyse argumentée.
 
-## 85:00 – 90:00 · Évaluation finale
+Question 2. Citez les six grandes parties d''un plan type de mémoire professionnel. Réponse : introduction, revue de littérature, méthodologie, résultats et analyse, recommandations, conclusion.
 
-1. Pourquoi documenter une fourchette de valeur plutôt qu''un chiffre unique dans un dossier de fusion-acquisition ? Réponse : parce que les méthodes d''évaluation reposent sur des hypothèses différentes qui peuvent diverger fortement, et qu''une fourchette reflète honnêtement l''incertitude tout en facilitant la négociation.
-2. Dans le dossier CAI-Niayes Fruits, l''opération est-elle relutive ou dilutive sur le BPA, et de combien ? Réponse : relutive, d''environ plus 2,8 %.
-3. Pourquoi une prime de contrôle plus élevée réduit-elle, toutes choses égales, l''effet relutif d''une fusion payée en actions ? Réponse : parce qu''elle augmente le nombre d''actions nouvelles émises pour une même cible, ce qui dilue davantage le résultat consolidé entre un plus grand nombre d''actions.
-4. Pourquoi faut-il être prudent en appliquant un bêta historique à une action juste après une fusion-acquisition ? Réponse : parce que l''opération peut modifier le profil de risque réel de l''entreprise, notamment par un endettement supplémentaire, rendant le bêta historique moins représentatif du risque futur.
-5. Quels sont les quatre blocs attendus dans une recommandation finale de dossier de fusion-acquisition ? Réponse : la valeur de la cible avec ses hypothèses, les conditions de l''opération et leur effet sur le BPA, l''impact pour un investisseur minoritaire via le CAPM, et une conclusion argumentée qui tranche sur l''opportunité de l''opération.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-fin-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier cas pratique transversal - évaluation et montage d''une opération de croissance externe');
+Question 3. Que faire si l''on ne trouve aucune source précise sur un point du mémoire ? Réponse : le dire explicitement, jamais inventer une référence.
+
+Question 4. La reformulation d''une idée trouvée ailleurs, sans citer la source, est-elle acceptable ? Réponse : non, c''est toujours du plagiat si la source n''est pas citée, même reformulée.
+
+Question 5. Quelle attitude un jury valorise-t-il face à une question sur les limites du travail ? Réponse : une reconnaissance honnête et précise des limites, plutôt qu''une défense rigide qui refuse toute critique.
+
+Merci de votre attention. La prochaine séance sera un atelier pratique de préparation à la soutenance.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et soutenance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier méthodologie - préparer son mémoire et sa soutenance', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Master 2 en Comptabilité, en fin de rédaction du mémoire.
+- Objectifs : construire, en atelier pratique, une problématique et un plan détaillés à partir d''un cas ; simuler une soutenance avec questions de jury.
+- Matériel : diaporama, grille d''auto-évaluation d''un plan de mémoire.
+- Prérequis : les trois cours vidéo précédents de ce cours, en particulier celui sur la méthodologie du mémoire.
+- Précaution : le cas Kaolack Industries / Gandiol Process est entièrement fictif, construit pour l''entraînement.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : un atelier, pas un cours
+
+Bonjour. Cette dernière séance de l''année change de format : au lieu de vous présenter une notion nouvelle, je vous propose de construire ensemble, étape par étape, un mémoire fictif complet à partir du cas Kaolack Industries / Gandiol Process déjà rencontré dans le sujet type de ce cours, puis de simuler la soutenance correspondante. L''objectif est de vous entraîner à faire, pas seulement à savoir.
+
+## 05:00 – 10:00 · Rappel du cas
+
+Kaolack Industries envisage de céder sa filiale Gandiol Process à un repreneur. Le cabinet Teranga Audit certifie les derniers comptes de Gandiol Process ; le repreneur mandate un conseil pour évaluer la cible par DCF et par multiples comparables, avec un financement partiellement assuré par de la dette.
+
+## 10:00 – 25:00 · Construire la problématique, ensemble
+
+Premier travail d''atelier : à partir de ce cas, proposez une problématique de mémoire. Je vous laisse trois minutes en petits groupes, puis nous recueillons plusieurs propositions à l''oral et nous les évaluons ensemble selon les trois critères déjà vus : spécifique, vérifiable sur un terrain accessible, ouverte à l''analyse.
+
+Exemple de proposition insuffisante : « L''évaluation d''entreprise dans les opérations de reprise. » Trop large, pas de terrain précis, pas de question ouverte à une analyse distincte d''un simple exposé de méthodes. Exemple de proposition intermédiaire, encore incomplète : « Comment évalue-t-on une PME sénégalaise ? » Un peu plus précis, mais encore trop général : il manque un contexte concret (quel secteur, quelle opération) et une tension à explorer, qui donnerait matière à une véritable discussion plutôt qu''à un simple catalogue de méthodes. Exemple de proposition satisfaisante : « Comment un conseil financier combine-t-il DCF et multiples comparables pour évaluer une PME agroalimentaire sénégalaise non cotée avant une opération de reprise, et quelles limites pèsent sur cette combinaison ? » Cette version est spécifique (secteur, taille d''entreprise, contexte), vérifiable (un cas réel ou réaliste de reprise), et ouverte à l''analyse (la question des limites appelle une vraie réflexion critique, pas une simple description de méthode).
+
+## 25:00 – 35:00 · Construire le plan détaillé
+
+Deuxième travail d''atelier : à partir de cette problématique retenue, esquissez un plan détaillé en six parties. Trois minutes, puis restitution. Exemple de plan attendu : introduction qui présente le contexte des reprises de PME en Afrique de l''Ouest et la problématique ; revue de littérature sur les méthodes d''évaluation d''entreprise et leurs limites documentées pour les PME non cotées ; méthodologie qui explique le choix du cas Gandiol Process (fictif pour l''exercice) et la façon dont les données ont été recueillies ; résultats et analyse qui présentent les valorisations obtenues par DCF et par multiples et discutent leur écart ; recommandations à l''intention du conseil financier ou du repreneur ; conclusion qui répond à la problématique en reconnaissant les limites de l''exercice, notamment l''absence de données boursières comparables pour une PME non cotée.
+
+## 35:00 – 50:00 · Quiz interactif à mi-parcours
+
+Question 1. Quels sont les trois critères d''une bonne problématique ? Réponse : spécifique, vérifiable sur un terrain accessible, ouverte à l''analyse.
+
+Question 2. Pourquoi « l''évaluation d''entreprise dans les opérations de reprise » n''est-elle pas une problématique satisfaisante ? Réponse : parce qu''elle reste trop large, sans terrain précis ni question ouverte à une analyse distincte d''un simple exposé de méthode.
+
+Question 3. Dans quelle partie du plan explique-t-on comment les données ont été recueillies ? Réponse : dans la partie méthodologie.
+
+Question 4. Dans quelle partie du plan reconnaît-on les limites du travail ? Réponse : principalement dans la conclusion, même si certaines limites méthodologiques peuvent déjà être annoncées dans la partie méthodologie.
+
+Question 5. Pourquoi est-il important d''annoncer, dans le plan, le choix d''un cas fictif pour l''exercice ? Réponse : pour rester honnête sur la nature des données utilisées, sans jamais laisser croire qu''il s''agit d''une entreprise réelle non anonymisée.
+
+## 50:00 – 1:15:00 · Simulation de soutenance
+
+Maintenant, mettons-nous en situation. Un volontaire présente, en trois minutes, une synthèse orale du mémoire fictif que nous venons de construire : problématique, méthode, résultat principal (l''écart entre valorisation DCF et valorisation par multiples), recommandation. Le reste du groupe joue le rôle du jury et prépare des questions.
+
+Nous recueillons ensuite quatre questions types de jury, avec leurs réponses possibles. Première question : « Pourquoi avoir choisi ce cas précis plutôt qu''une autre PME ? » Réponse possible : expliquer que le secteur agroalimentaire et la taille de l''entreprise permettaient d''illustrer clairement l''écart entre DCF et multiples, tout en reconnaissant que le choix reste en partie contraint par l''accès aux données. Deuxième question : « Que recommanderiez-vous concrètement au repreneur ? » Réponse possible : recommander de négocier un prix situé dans la fourchette entre les deux valorisations plutôt que sur l''une d''elles seule, et de documenter cette fourchette auprès des parties pour en expliquer la logique. Troisième question, qui teste les limites : « Si vous aviez eu accès à de vraies données de marché, qu''auriez-vous fait différemment ? » Réponse possible : affiner le choix du multiple comparable et du WACC à partir de données réellement observées, plutôt que des hypothèses fictives retenues pour l''exercice. Quatrième question, plus inattendue : « En quoi le rapport de Teranga Audit sur les derniers comptes de Gandiol Process influence-t-il, selon vous, la négociation du prix entre les deux parties ? » Réponse possible : expliquer que le type d''opinion exprimé par l''auditeur, sans réserve ou avec réserve sur un point précis, conditionne la confiance du repreneur dans les chiffres servant de base à l''évaluation, et peut justifier une clause de garantie de passif dans le contrat de cession si certaines réserves subsistent, ce qui relie directement la matière audit, vue en début d''année, à la matière ingénierie financière.
+
+## 1:15:00 – 1:25:00 · Grille d''auto-évaluation
+
+Avant de nous quitter, voici une grille simple que vous pouvez appliquer à votre propre mémoire : la problématique est-elle spécifique et vérifiable ? Chaque source citée est-elle réelle et vérifiable, sans aucune invention ? La méthodologie explique-t-elle honnêtement ses choix et ses limites ? Le plan répond-il effectivement à la problématique annoncée en introduction, du début à la fin ? La présentation de soutenance tient-elle dans le temps imparti sans réciter le mémoire mot à mot ? Si vous répondez oui aux cinq questions, votre mémoire est sur de bonnes bases méthodologiques, indépendamment de la qualité technique de son contenu comptable ou financier, qui reste évidemment essentielle.
+
+Un dernier conseil pratique : imprimez cette grille, ou recopiez-la dans votre journal de bord, et relisez-la une dernière fois quelques jours avant de déposer votre mémoire, puis à nouveau juste avant la soutenance. L''expérience montre que la plupart des faiblesses relevées par un jury ne portent pas sur un calcul isolé, mais sur l''un de ces cinq points de méthode : une problématique restée trop vague, une source douteuse, une limite non reconnue, un plan qui s''écarte progressivement de sa question initiale, ou une présentation orale trop longue et trop fidèle au texte écrit.
+
+## 1:25:00 – 1:30:00 · Évaluation finale
+
+Évaluation finale, cinq questions.
+
+Question 1. Quels sont les trois critères d''une bonne problématique de mémoire ? Réponse : spécifique, vérifiable sur un terrain accessible, ouverte à l''analyse.
+
+Question 2. Face à une question de jury qui teste les limites du travail, quelle attitude est la plus appréciée ? Réponse : une reconnaissance honnête et précise des limites, plutôt qu''une défense rigide.
+
+Question 3. Pourquoi faut-il annoncer explicitement qu''un cas d''étude est fictif, s''il l''est ? Réponse : pour rester honnête sur la nature des données, sans laisser croire à une entreprise réelle non anonymisée.
+
+Question 4. Que doit faire une recommandation finale face à deux valorisations différentes obtenues par deux méthodes ? Réponse : s''appuyer sur une fourchette documentée plutôt que de choisir arbitrairement l''une des deux valeurs comme seule référence.
+
+Question 5. Quelle est la différence entre présenter une synthèse orale et réciter le mémoire en soutenance ? Réponse : la synthèse orale met en perspective les points essentiels pour un jury qui a déjà lu le mémoire ; la récitation répète le texte écrit sans valeur ajoutée et donne une impression de manque de maîtrise du sujet.
+
+Merci à toutes et à tous pour votre travail cette année, de la consolidation approfondie jusqu''à cet atelier final. Bon courage pour vos examens, la rédaction de votre mémoire et votre soutenance.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-compta-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie - préparer son mémoire et sa soutenance');

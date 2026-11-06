@@ -4652,6 +4652,72 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "mas-compta-m2",
+  "level": "Master 2",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Master 2 Comptabilité : réussir ses examens",
+  "description": "Préparation aux examens de Master 2 en Comptabilité : audit financier approfondi, ingénierie financière et opérations de restructuration, méthodologie du mémoire professionnel et de la soutenance. Études de cas d'entreprises sénégalaises fictives, exercices corrigés, sujet type d'examen et atelier pratique de préparation à la soutenance. Public : étudiants de Master 2 ayant validé le Master 1 en Comptabilité.",
+  "sort": 742,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les spécificités de l'année de Master 2 en Comptabilité : mémoire professionnel, stage long, soutenance.\n- Identifier les trois matières avancées de l'année et leur lien avec le mémoire.\n- Mettre en place une méthode de travail combinant révisions d'examen et avancement du mémoire.\n- Construire un plan de révision réaliste sur six semaines avant les examens.\n\nCe cours de Master 2 prolonge le Master 1 (consolidation approfondie, normes IFRS en comparaison avec le SYSCOHADA, fiscalité internationale et prix de transfert) sans reprendre ces bases. Il suppose qu'elles sont acquises et introduit trois nouveaux domaines mobilisés dans l'année qui conduit normalement à la fin du cursus de Master : l'audit financier approfondi, l'ingénierie financière et les opérations de restructuration, et la méthodologie du mémoire professionnel.\n\n## 1. Une année tournée vers la sortie du cursus\n\nLe Master 2 est souvent l'année où l'étudiant combine un stage long ou une activité professionnelle, la rédaction d'un mémoire (professionnel ou de recherche selon les établissements) et une soutenance orale devant un jury. Cette organisation change la façon de travailler : vous n'avez plus seulement des examens à préparer, vous devez aussi avancer, en parallèle, sur un travail personnel de plusieurs mois qui sera évalué différemment (écrit long, soutenance orale, capacité à défendre un point de vue).\n\nLes trois matières avancées de l'année ne sont pas choisies au hasard : elles correspondent à des compétences que vous mobiliserez directement dans votre futur métier, et souvent dans votre mémoire lui-même.\n\n## 2. Les trois matières avancées de l'année\n\n- L'audit financier approfondi : démarche d'audit, évaluation des risques, seuil de signification, méthodes d'échantillonnage, types d'opinion.\n- L'ingénierie financière et les opérations de restructuration : évaluation d'entreprise (actualisation des flux, multiples comparables), fusion-acquisition, notions générales de financement par effet de levier.\n- La méthodologie du mémoire professionnel et de la soutenance : construction d'une problématique, revue de littérature, méthodologie de terrain, structuration du plan, préparation de la soutenance orale.\n\nUn étudiant qui prépare un mémoire sur, par exemple, l'évaluation d'une PME sénégalaise avant une opération de reprise mobilisera directement l'ingénierie financière ; un étudiant qui travaille sur la qualité du contrôle interne dans une entreprise mobilisera l'audit financier approfondi. La méthodologie du mémoire n'est donc pas une matière isolée : elle structure la façon dont vous allez présenter ce que les deux autres matières vous auront appris à faire.\n\n## 3. Le mémoire : ce qu'il faut savoir dès le début de l'année\n\nSans entrer dans le détail (voir la leçon dédiée de ce cours), retenez trois principes dès maintenant. Premièrement, un bon mémoire part d'une problématique précise et délimitée, pas d'un thème vague : « la consolidation en Afrique » n'est pas une problématique, « comment les PME sénégalaises exportatrices documentent-elles leurs prix de transfert avec leurs filiales ouest-africaines » commence à en être une. Deuxièmement, un mémoire professionnel s'appuie sur un terrain réel ou réaliste, pas seulement sur des lectures : une étude de cas, des entretiens, une analyse de données d'entreprise. Troisièmement, la soutenance n'est pas une répétition du mémoire : c'est une défense argumentée, qui suppose d'anticiper les questions du jury et de savoir reconnaître les limites de son propre travail sans se dévaloriser.\n\n## 4. Une méthode de travail combinant examens et mémoire\n\n- Réservez des plages horaires distinctes pour les révisions d'examen et pour le mémoire : les mélanger dilue l'attention sur les deux.\n- Utilisez vos études de cas de cours (audit, ingénierie financière) comme matériau de réflexion pour votre mémoire, sans jamais copier un cas fictif de cours dans un travail censé être original.\n- Tenez un journal de bord du mémoire, même sommaire : ce que vous avez lu, ce que vous avez décidé, ce qui reste à faire. Il vous servira directement à rédiger la partie méthodologique.\n- Anticipez la soutenance dès la rédaction : en écrivant chaque partie, demandez-vous quelle question un membre du jury pourrait poser, et préparez mentalement une réponse.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : relire les bases de Master 1 indispensables (consolidation approfondie, test de dépréciation, principe de pleine concurrence) ; faire un point d'avancement honnête sur le mémoire.\n- Semaine 2 : travailler l'audit financier approfondi, démarche complète, du seuil de signification à l'opinion d'audit, avec des cas chiffrés.\n- Semaine 3 : travailler l'ingénierie financière, évaluation d'entreprise par plusieurs méthodes, opérations de fusion avec calcul de parité.\n- Semaine 4 : consolider la méthodologie du mémoire (plan détaillé, bibliographie, préparation de la soutenance) en l'appliquant directement à votre propre sujet.\n- Semaine 5 : traiter un sujet type complet dans les conditions de l'examen, puis corriger soi-même avant de regarder le corrigé ; faire relire une partie de votre mémoire par un pair.\n- Semaine 6 : reprendre uniquement ses points faibles identifiés en semaine 5, relire les fiches de synthèse, répéter oralement sa future soutenance devant un miroir ou un camarade.\n\n## Points clés à retenir\n\n- Le Master 2 combine examens et mémoire ; il faut organiser son temps pour ne négliger aucun des deux.\n- Les trois matières avancées de l'année nourrissent souvent directement le contenu du mémoire.\n- Une problématique précise et délimitée vaut mieux qu'un thème vague, dès le départ de la rédaction.\n- La préparation de la soutenance commence pendant la rédaction, pas après.\n\n## Exercices pratiques\n\n1. Formulez, en une phrase, une problématique de mémoire précise qui pourrait s'appuyer sur l'une des trois matières avancées de l'année.\n2. Expliquez la différence entre un thème de mémoire et une problématique de mémoire.\n3. Construisez votre propre calendrier de révision sur six semaines, en indiquant pour chaque semaine une matière, un objectif et un temps dédié au mémoire.\n4. Citez deux raisons pour lesquelles il est utile de tenir un journal de bord pendant la rédaction du mémoire.\n5. Donnez un exemple de question qu'un jury pourrait poser sur un mémoire consacré à l'évaluation d'une PME avant une opération de reprise, et esquissez une réponse possible.\n\n## Corrigé\n\n1. Exemple : « Comment une PME agroalimentaire sénégalaise peut-elle documenter ses prix de transfert avec une filiale installée dans un pays voisin de l'UEMOA ? » Toute problématique précise, délimitée et vérifiable à partir d'un cas réel ou réaliste est acceptée.\n2. Un thème est un sujet large (« l'audit en Afrique », « les fusions d'entreprises ») qui ne précise ni l'angle d'étude ni le terrain. Une problématique est une question précise, délimitée dans le temps, l'espace ou le secteur, à laquelle le mémoire doit répondre à partir d'une analyse argumentée et d'un terrain identifié.\n3. Réponse libre ; le calendrier doit comporter six lignes datées, chacune avec une matière, un objectif mesurable et un temps réservé au mémoire, la sixième semaine étant consacrée aux points faibles et à la répétition de la soutenance.\n4. Il permet de retrouver facilement, au moment de rédiger la partie méthodologique, les choix effectués et leurs justifications ; il aide aussi à mesurer objectivement son avancement et à repérer tôt un retard ou un blocage.\n5. Exemple de question : « Pourquoi avez-vous choisi la méthode d'actualisation des flux plutôt que les seuls multiples comparables pour évaluer cette PME ? » Réponse possible : expliquer que les multiples comparables manquaient de données fiables pour une entreprise de cette taille et que l'actualisation des flux permettait de mieux intégrer les spécificités de son activité, tout en reconnaissant que le choix du taux d'actualisation reste une source d'incertitude à discuter."
+   },
+   {
+    "title": "Audit financier approfondi : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Ingénierie financière et opérations de restructuration : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Méthodologie du mémoire professionnel et soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : Audit financier approfondi",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Ingénierie financière et opérations de restructuration",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire professionnel et soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie - préparer son mémoire et sa soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "mas-fin-m1",
   "level": "Master 1",
   "subject": "Finance",
