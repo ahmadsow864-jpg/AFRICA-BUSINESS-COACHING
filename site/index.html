@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Africa Business Coaching — Logiciels pour les entreprises africaines</title>
+  <meta name="description" content="Logiciels de gestion pour les entreprises africaines : Paie & RH Sénégal, Paie & RH UEMOA/CEDEAO, transport et logistique, carburant, parkings, stations-service, flottes, vente de véhicules et GPS.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="logo">
+        <span class="logo__mark">ABC</span>
+        <span class="logo__text">Africa Business Coaching</span>
+      </a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#paie-rh">Paie &amp; RH</a>
+        <a href="#transport">Transport</a>
+        <a href="#vehicules">Véhicules</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#contact" class="btn btn--small">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ACCUEIL ===== -->
+    <section id="accueil" class="hero">
+      <div class="container hero__inner">
+        <p class="hero__tag">🇸🇳 Conçu au Sénégal pour l'Afrique</p>
+        <h1>Des logiciels de gestion pour les entreprises africaines</h1>
+        <p class="hero__lead">
+          Paie &amp; Ressources Humaines, transport et logistique, carburant, parkings,
+          stations-service, flottes, vente de véhicules et GPS : une plateforme de
+          services adaptée aux réalités du Sénégal, de l'UEMOA et de la CEDEAO.
+        </p>
+        <div class="hero__actions">
+          <a href="#services" class="btn">Découvrir nos services</a>
+          <a href="#contact" class="btn btn--outline">Demander une démonstration</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VUE D'ENSEMBLE ===== -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section__title">Nos services</h2>
+        <p class="section__subtitle">11 solutions regroupées en 3 pôles.</p>
+
+        <div class="filters" role="tablist" aria-label="Filtrer les services">
+          <button class="filter is-active" data-filter="all">Tous</button>
+          <button class="filter" data-filter="rh">Paie &amp; RH</button>
+          <button class="filter" data-filter="transport">Transport &amp; Logistique</button>
+          <button class="filter" data-filter="vehicules">Véhicules &amp; GPS</button>
+        </div>
+
+        <div class="grid">
+          <a href="#svc-paie-sn" class="card" data-cat="rh">
+            <span class="card__icon">🇸🇳</span>
+            <h3>Paie &amp; RH Sénégal</h3>
+            <p>Gestion de la paie et des RH selon le droit du travail sénégalais.</p>
+          </a>
+          <a href="#svc-paie-uemoa" class="card" data-cat="rh">
+            <span class="card__icon">🌍</span>
+            <h3>Paie &amp; RH UEMOA / CEDEAO</h3>
+            <p>Un noyau commun, des référentiels juridiques par pays.</p>
+          </a>
+          <a href="#svc-transport-logistique" class="card" data-cat="transport">
+            <span class="card__icon">📦</span>
+            <h3>Transport &amp; Logistique</h3>
+            <p>Expéditions, entrepôts, livraisons et suivi des marchandises.</p>
+          </a>
+          <a href="#svc-carburant" class="card" data-cat="transport">
+            <span class="card__icon">⛽</span>
+            <h3>Gestion Carburant</h3>
+            <p>Approvisionnement, consommation et contrôle des dépenses.</p>
+          </a>
+          <a href="#svc-transport" class="card" data-cat="transport">
+            <span class="card__icon">🚌</span>
+            <h3>Gestion Transport</h3>
+            <p>Lignes, trajets, chauffeurs, voyageurs et recettes.</p>
+          </a>
+          <a href="#svc-parking-interne" class="card" data-cat="transport">
+            <span class="card__icon">🅿️</span>
+            <h3>Parking en entreprise</h3>
+            <p>Places, badges et accès pour le personnel et les visiteurs.</p>
+          </a>
+          <a href="#svc-parking-externe" class="card" data-cat="transport">
+            <span class="card__icon">🏙️</span>
+            <h3>Parkings hors entreprise</h3>
+            <p>Parkings publics et privés : tickets, abonnements, caisse.</p>
+          </a>
+          <a href="#svc-station" class="card" data-cat="transport">
+            <span class="card__icon">🛢️</span>
+            <h3>Station-service avancée</h3>
+            <p>Pompes, cuves, boutique, lavage et caisse de la station.</p>
+          </a>
+          <a href="#svc-flotte" class="card" data-cat="vehicules">
+            <span class="card__icon">🚚</span>
+            <h3>Gestion des Flottes</h3>
+            <p>Véhicules, entretien, assurances, conducteurs et coûts.</p>
+          </a>
+          <a href="#svc-vente" class="card" data-cat="vehicules">
+            <span class="card__icon">🚗</span>
+            <h3>Vente de Véhicules</h3>
+            <p>Stock, clients, devis, ventes et suivi après-vente.</p>
+          </a>
+          <a href="#svc-gps" class="card" data-cat="vehicules">
+            <span class="card__icon">🛰️</span>
+            <h3>GPS avancé</h3>
+            <p>Géolocalisation en temps réel, itinéraires et alertes.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PÔLE 1 : PAIE & RH ===== -->
+    <section id="paie-rh" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Pôle Paie &amp; Ressources Humaines</h2>
+
+        <article id="svc-paie-sn" class="service">
+          <div class="service__head">
+            <span class="service__icon">🇸🇳</span>
+            <div>
+              <h3>Paie &amp; RH Sénégal</h3>
+              <p class="service__brand">SoftwarePaie-Sénégal</p>
+            </div>
+          </div>
+          <p>
+            Logiciel de gestion de la paie et des ressources humaines construit sur le
+            droit du travail et de la sécurité sociale sénégalais, avec un moteur
+            juridique versionné : chaque règle est datée et sourcée (texte, article).
+          </p>
+          <ul class="features">
+            <li>Entreprise, établissements, services et postes</li>
+            <li>Dossier salarié, contrats, avenants et carrière</li>
+            <li>Temps, présences et heures supplémentaires</li>
+            <li>Congés et absences (annuel, maladie, maternité…)</li>
+            <li>Variables : primes, indemnités, avantages</li>
+            <li>Calcul brut → net, cotisations et fiscalité</li>
+            <li>Bulletins de paie et déclarations</li>
+            <li>Avances, prêts et soldes de tout compte</li>
+            <li>Rôles et permissions, journal d'audit</li>
+          </ul>
+          <p class="service__editions"><strong>Éditions :</strong> Windows · Web · Cloud</p>
+        </article>
+
+        <article id="svc-paie-uemoa" class="service">
+          <div class="service__head">
+            <span class="service__icon">🌍</span>
+            <div>
+              <h3>Paie &amp; RH UEMOA / CEDEAO</h3>
+              <p class="service__brand">Version multi-pays</p>
+            </div>
+          </div>
+          <p>
+            Un noyau de paie et RH réutilisable, complété par un référentiel juridique,
+            social et fiscal propre à chaque pays. Les entreprises présentes dans
+            plusieurs pays gèrent leurs salariés sur une seule plateforme.
+          </p>
+          <ul class="features">
+            <li>Référentiels de règles par pays</li>
+            <li>Gestion multi-sociétés et multi-sites</li>
+            <li>Paramétrage des devises et calendriers</li>
+            <li>Bulletins et déclarations par pays</li>
+            <li>Consolidation des effectifs et de la masse salariale</li>
+            <li>Historique des règles et traçabilité</li>
+          </ul>
+        </article>
+
+        <p class="notice">
+          ⚖️ Les taux, barèmes et règles juridiques sont paramétrés à partir des textes
+          officiels applicables et doivent être validés par un professionnel du droit
+          social et de la paie avant mise en production.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== PÔLE 2 : TRANSPORT & LOGISTIQUE ===== -->
+    <section id="transport" class="section">
+      <div class="container">
+        <h2 class="section__title">Pôle Transport, Logistique, Carburant &amp; Parkings</h2>
+
+        <div class="services-grid">
+          <article id="svc-transport-logistique" class="service">
+            <div class="service__head">
+              <span class="service__icon">📦</span>
+              <h3>Transport &amp; Logistique</h3>
+            </div>
+            <ul class="features">
+              <li>Commandes et ordres de transport</li>
+              <li>Gestion des entrepôts et des stocks</li>
+              <li>Planification des livraisons</li>
+              <li>Suivi des colis et des marchandises</li>
+              <li>Bons de livraison et preuves de livraison</li>
+              <li>Facturation des prestations</li>
+            </ul>
+          </article>
+
+          <article id="svc-carburant" class="service">
+            <div class="service__head">
+              <span class="service__icon">⛽</span>
+              <h3>Gestion Carburant</h3>
+            </div>
+            <ul class="features">
+              <li>Achats et approvisionnements</li>
+              <li>Bons et cartes carburant</li>
+              <li>Consommation par véhicule et par conducteur</li>
+              <li>Détection des anomalies de consommation</li>
+              <li>Budgets et rapports de dépenses</li>
+            </ul>
+          </article>
+
+          <article id="svc-transport" class="service">
+            <div class="service__head">
+              <span class="service__icon">🚌</span>
+              <h3>Gestion Transport</h3>
+            </div>
+            <ul class="features">
+              <li>Lignes, trajets et horaires</li>
+              <li>Affectation des chauffeurs et véhicules</li>
+              <li>Billetterie et réservations</li>
+              <li>Transport du personnel</li>
+              <li>Recettes et rapports d'activité</li>
+            </ul>
+          </article>
+
+          <article id="svc-parking-interne" class="service">
+            <div class="service__head">
+              <span class="service__icon">🅿️</span>
+              <h3>Parking dans les entreprises</h3>
+            </div>
+            <ul class="features">
+              <li>Plan et attribution des places</li>
+              <li>Badges et autorisations d'accès</li>
+              <li>Accueil et enregistrement des visiteurs</li>
+              <li>Historique des entrées et sorties</li>
+              <li>Taux d'occupation en temps réel</li>
+            </ul>
+          </article>
+
+          <article id="svc-parking-externe" class="service">
+            <div class="service__head">
+              <span class="service__icon">🏙️</span>
+              <h3>Parkings hors entreprise</h3>
+            </div>
+            <ul class="features">
+              <li>Parkings publics et privés, multi-sites</li>
+              <li>Tickets horaires et abonnements</li>
+              <li>Tarification paramétrable</li>
+              <li>Caisse et paiements</li>
+              <li>Rapports de recettes et d'occupation</li>
+            </ul>
+          </article>
+
+          <article id="svc-station" class="service">
+            <div class="service__head">
+              <span class="service__icon">🛢️</span>
+              <h3>Station-service avancée</h3>
+            </div>
+            <ul class="features">
+              <li>Pompes, index et volumes distribués</li>
+              <li>Cuves, jaugeage et livraisons</li>
+              <li>Boutique, lubrifiants et lavage</li>
+              <li>Caisse, pompistes et relèves d'équipe</li>
+              <li>Clients professionnels et crédits</li>
+              <li>Rapprochement et contrôle des écarts</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PÔLE 3 : VÉHICULES & GPS ===== -->
+    <section id="vehicules" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Pôle Véhicules, Flottes &amp; GPS</h2>
+
+        <div class="services-grid">
+          <article id="svc-flotte" class="service">
+            <div class="service__head">
+              <span class="service__icon">🚚</span>
+              <h3>Gestion des Flottes</h3>
+            </div>
+            <ul class="features">
+              <li>Parc de véhicules et documents</li>
+              <li>Entretien, réparations et pneumatiques</li>
+              <li>Assurances, visites techniques et échéances</li>
+              <li>Conducteurs et affectations</li>
+              <li>Coût total par véhicule</li>
+            </ul>
+          </article>
+
+          <article id="svc-vente" class="service">
+            <div class="service__head">
+              <span class="service__icon">🚗</span>
+              <h3>Vente de Véhicules</h3>
+            </div>
+            <ul class="features">
+              <li>Stock de véhicules neufs et d'occasion</li>
+              <li>Fiches clients et prospects</li>
+              <li>Devis, commandes et factures</li>
+              <li>Paiements et échéanciers</li>
+              <li>Suivi après-vente et garanties</li>
+            </ul>
+          </article>
+
+          <article id="svc-gps" class="service">
+            <div class="service__head">
+              <span class="service__icon">🛰️</span>
+              <h3>GPS avancé</h3>
+            </div>
+            <ul class="features">
+              <li>Localisation des véhicules en temps réel</li>
+              <li>Historique des trajets</li>
+              <li>Zones géographiques et alertes</li>
+              <li>Excès de vitesse et arrêts</li>
+              <li>Rapports kilométriques</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="a-propos" class="section">
+      <div class="container about">
+        <div>
+          <h2 class="section__title section__title--left">À propos</h2>
+          <p>
+            <strong>Africa Business Coaching</strong> conçoit des logiciels de gestion
+            pour les entreprises africaines, en commençant par le Sénégal puis
+            l'espace UEMOA / CEDEAO.
+          </p>
+          <p>
+            Nos principes : un moteur métier fiable et explicable, des règles
+            juridiques datées et sourcées, la sécurité des données, la traçabilité
+            et des sauvegardes testées.
+          </p>
+        </div>
+        <div class="founder">
+          <div class="founder__avatar">AS</div>
+          <h3>Amadou Sow</h3>
+          <p>Fondateur</p>
+          <p class="founder__meta">MBA-MGRH — ISM Thiès, Sénégal</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section--dark">
+      <div class="container contact">
+        <div>
+          <h2 class="section__title section__title--left">Contact</h2>
+          <p>Une question, un projet ou une démonstration ? Écrivez-nous.</p>
+          <ul class="contact__list">
+            <li>📧 <a href="mailto:sowsenfoods2026@outlook.fr">sowsenfoods2026@outlook.fr</a></li>
+            <li>📞 <a href="tel:+221709128496">+221 70 912 84 96</a></li>
+            <li>📍 Thiès, Sénégal</li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form" novalidate>
+          <label>Nom complet
+            <input type="text" name="nom" required>
+          </label>
+          <label>Entreprise
+            <input type="text" name="entreprise">
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Service souhaité
+            <select name="service" required>
+              <option value="">— Choisir —</option>
+              <option>Paie &amp; RH Sénégal</option>
+              <option>Paie &amp; RH UEMOA / CEDEAO</option>
+              <option>Transport &amp; Logistique</option>
+              <option>Gestion Carburant</option>
+              <option>Gestion Transport</option>
+              <option>Parking dans les entreprises</option>
+              <option>Parkings hors entreprise</option>
+              <option>Station-service avancée</option>
+              <option>Gestion des Flottes</option>
+              <option>Vente de Véhicules</option>
+              <option>GPS avancé</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <p class="form__error" id="form-error" role="alert"></p>
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Africa Business Coaching — Amadou Sow · Thiès, Sénégal 🇸🇳</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
