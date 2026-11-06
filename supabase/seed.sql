@@ -7210,6 +7210,1032 @@ Texte du formateur : « Votre mission : choisissez une ligne ou un circuit que v
 from public.courses c where c.slug = 'formation-gestion-transport'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : organiser et rentabiliser un service de transport de voyageurs');
 
+-- Cours : Gestion des ressources humaines M1 : stratégie, compétences et dialogue social en contexte africain
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'grh-master1', (select id from public.levels where name = 'Master 1'), null, 'Gestion des ressources humaines', 'Gestion des ressources humaines M1 : stratégie, compétences et dialogue social en contexte africain', 'Ce cours aborde la GRH stratégique en Afrique francophone : GPEC, recrutement et intégration, formation, évaluation et rémunération, relations sociales et SIRH. Il s''appuie sur des cas d''entreprises de la sous-région et rappelle le contexte de réforme du droit du travail au Sénégal. Il s''adresse aux étudiants de Master 1 et aux cadres en reprise d''études ; une connaissance de base du management est souhaitée.', true, 50
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La GRH stratégique et le contexte africain', '## Objectifs de la leçon
+
+- Situer la GRH comme fonction stratégique de l''organisation.
+- Identifier les spécificités du contexte africain francophone : informalité, cadre juridique, dimension sociale et culturelle.
+- Connaître les grands domaines et indicateurs de la fonction RH.
+
+## 1. De la gestion du personnel à la GRH stratégique
+
+La gestion du personnel s''est longtemps limitée à l''administration : contrats, paie, congés, discipline. La gestion des ressources humaines (GRH) considère au contraire les personnes comme une ressource stratégique, dont les compétences, l''engagement et la capacité d''innovation conditionnent la performance. La GRH stratégique cherche l''alignement entre la stratégie de l''organisation et les politiques RH : une banque qui se digitalise doit recruter des profils numériques, former ses agents et revoir son organisation du travail.
+
+Le modèle des « quatre rôles » de Dave Ulrich est souvent cité : le DRH est partenaire stratégique, expert administratif, champion des salariés et agent du changement. Dans beaucoup d''entreprises africaines, la fonction RH est encore surtout administrative ; l''enjeu des prochaines années est de la professionnaliser.
+
+## 2. Les domaines de la GRH
+
+- Planification et GPEC : anticiper les besoins en effectifs et en compétences.
+- Recrutement et intégration.
+- Formation et développement des compétences.
+- Évaluation de la performance et gestion des carrières.
+- Rémunération et avantages sociaux.
+- Relations sociales, dialogue avec les représentants du personnel.
+- Santé, sécurité et qualité de vie au travail.
+- Administration du personnel et systèmes d''information RH.
+
+## 3. Les spécificités du contexte africain
+
+Le gestionnaire RH en Afrique de l''Ouest travaille dans un environnement particulier :
+
+- Le poids de l''économie informelle : une grande partie de l''emploi se situe hors du salariat formel. Les entreprises formelles côtoient des sous-traitants, des journaliers et des travailleurs non déclarés, ce qui pose des questions de conformité et de responsabilité sociale.
+- La démographie : une population jeune et nombreuse arrive chaque année sur le marché du travail ; le défi est autant la création d''emplois que l''adéquation formation-emploi.
+- La pénurie de certaines compétences (ingénieurs spécialisés, data, maintenance industrielle, audit) coexistant avec un sous-emploi des diplômés dans d''autres filières.
+- La dimension communautaire et culturelle : solidarité familiale, rôle des aînés, importance de la relation personnelle, attentes envers l''employeur en cas d''événements familiaux. Ces éléments peuvent renforcer la cohésion mais aussi créer des pressions (recrutements par affinité, demandes d''avances sur salaire).
+- La diversité des statuts : entreprises publiques, multinationales, PME familiales, ONG, administrations, chacune avec ses pratiques.
+
+## 4. Le cadre juridique
+
+La relation de travail est encadrée par le Code du travail national, ses décrets d''application, les conventions collectives (interprofessionnelle et sectorielles) et le contrat de travail. La protection sociale relève d''organismes nationaux ; au Sénégal, par exemple, la Caisse de sécurité sociale et l''Institution de prévoyance retraite. L''inspection du travail contrôle l''application des règles et intervient dans les conflits.
+
+Le Sénégal est engagé dans une transition vers un nouveau Code du travail, avec un projet de loi (n°15/2026) en cours de procédure. Tant que le nouveau texte et ses décrets ne sont pas définitivement adoptés et publiés, le gestionnaire RH doit appliquer les textes en vigueur et suivre attentivement l''évolution de la réforme, notamment pour les contrats, la durée du travail et le dialogue social. Ce cours présente des mécanismes et des méthodes ; pour tout taux, seuil ou délai légal, il faut se référer aux textes officiels.
+
+## 5. Mesurer : les indicateurs RH de base
+
+- Effectif à une date et effectif moyen sur la période.
+- Taux de rotation (turnover) = nombre de départs sur la période / effectif moyen × 100.
+- Taux d''absentéisme = heures d''absence / heures théoriques de travail × 100.
+- Pyramide des âges et des anciennetés.
+- Masse salariale et ratio masse salariale / chiffre d''affaires.
+- Nombre moyen d''heures de formation par salarié.
+
+## Exemple : une agro-industrie de la vallée du fleuve
+
+Une entreprise de transformation de tomates compte 120 salariés permanents au 1er janvier et 130 au 31 décembre ; 15 salariés sont partis dans l''année. Elle emploie aussi environ 300 saisonniers pendant la campagne. Effectif moyen des permanents ≈ (120 + 130)/2 = 125 ; turnover = 15/125 = 12 %. Les heures d''absence s''élèvent à 9 750 pour 250 000 heures théoriques : absentéisme = 3,9 %.
+
+Analyse : le turnover est concentré chez les techniciens de maintenance, attirés par les sociétés minières. La GRH stratégique doit traiter ce problème (rémunération, carrière, formation interne) car un arrêt de ligne pendant la campagne coûte très cher. La gestion des saisonniers pose par ailleurs des questions de contrats, de sécurité et de fidélisation d''une campagne à l''autre.
+
+## Points clés
+
+- La GRH est une fonction stratégique, à aligner sur la stratégie de l''organisation.
+- Le contexte africain combine informalité, jeunesse démographique, pénuries de compétences ciblées et forte dimension sociale.
+- Le droit du travail sénégalais est en transition : appliquer les textes en vigueur et suivre la réforme.
+- Quelques indicateurs simples (turnover, absentéisme, pyramide des âges) éclairent les décisions.
+
+## Exercices
+
+- Exercice 1 : Citez les quatre rôles du DRH selon Ulrich et illustrez-en deux.
+- Exercice 2 : Une PME compte 40 salariés au 1er janvier, 50 au 31 décembre et a enregistré 9 départs. Calculez son taux de rotation.
+- Exercice 3 : Donnez deux avantages et deux risques de la dimension communautaire dans la gestion du personnel.
+- Exercice 4 : Pourquoi un DRH doit-il éviter de citer de mémoire un délai de préavis ou un taux de cotisation dans une note interne en période de réforme ?
+
+## Corrigé
+
+- Exercice 1 : Partenaire stratégique (participer au plan de développement et traduire ses besoins en compétences), expert administratif (fiabiliser la paie et les contrats), champion des salariés (écoute, qualité de vie au travail), agent du changement (accompagner une digitalisation ou une réorganisation).
+- Exercice 2 : Effectif moyen = (40 + 50)/2 = 45 ; turnover = 9/45 = 20 %.
+- Exercice 3 : Avantages : forte solidarité et entraide, fidélité et sentiment d''appartenance. Risques : recrutements par affinité au détriment des compétences, conflits entre obligations familiales et exigences professionnelles (absences, demandes d''avances).
+- Exercice 4 : Parce qu''une erreur expose l''entreprise à des contentieux et que les règles peuvent changer avec l''adoption du nouveau Code du travail et de ses décrets ; il faut citer le texte en vigueur, vérifié à la date de la note.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'grh-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La GRH stratégique et le contexte africain');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La gestion prévisionnelle des emplois et des compétences (GPEC)', '## Objectifs de la leçon
+
+- Comprendre la finalité et les étapes de la gestion prévisionnelle des emplois et des compétences (GPEC).
+- Construire un référentiel emplois-compétences.
+- Analyser les écarts entre besoins et ressources et définir un plan d''action.
+
+## 1. Définition et enjeux
+
+La GPEC est une démarche d''anticipation qui vise à adapter, à court et moyen terme, les emplois, les effectifs et les compétences aux exigences de la stratégie et aux évolutions de l''environnement (technologiques, économiques, réglementaires, démographiques). Elle permet d''éviter les ruptures (départs massifs à la retraite, compétences devenues obsolètes) et de sécuriser les parcours des salariés.
+
+Exemples de situations qui la rendent indispensable : une banque qui ferme des guichets au profit des services numériques ; une entreprise du secteur pétrolier et gazier qui démarre une production ; une administration dont une grande partie des cadres partira en retraite dans cinq ans.
+
+## 2. Les notions clés
+
+- Poste : situation de travail individuelle, définie dans une fiche de poste.
+- Emploi (ou emploi-type) : regroupement de postes proches (par exemple « chargé de clientèle »).
+- Métier : famille d''emplois partageant une technique commune.
+- Compétence : combinaison de savoirs (connaissances), savoir-faire (pratiques) et savoir-être (comportements) mobilisée dans une situation professionnelle.
+- Référentiel de compétences : liste structurée des compétences requises par emploi, avec des niveaux de maîtrise (par exemple de 1, notions, à 4, expertise).
+
+## 3. La démarche en quatre étapes
+
+- Étape 1 : analyser l''existant (ressources actuelles) : effectifs par emploi, âge, ancienneté, qualification, compétences évaluées, pyramides des âges.
+- Étape 2 : déterminer les besoins futurs à l''horizon choisi (3 à 5 ans) à partir de la stratégie : volumes d''activité, nouveaux métiers, métiers en déclin.
+- Étape 3 : projeter les ressources futures en l''absence d''action (départs à la retraite, turnover prévisible, promotions) et mesurer les écarts quantitatifs (nombre) et qualitatifs (compétences).
+- Étape 4 : définir les plans d''action pour réduire les écarts : recrutement, formation, mobilité interne, reconversion, recours à la sous-traitance, gestion des fins de carrière, et dans les cas de sureffectif, mesures d''accompagnement conformes au droit du travail.
+
+## 4. Les outils
+
+- Pyramide des âges : une pyramide « en champignon » (beaucoup de salariés âgés) annonce des départs massifs et un risque de perte de savoir-faire ; une pyramide « en poire » (beaucoup de jeunes) annonce des besoins de carrière et de rémunération.
+- Matrice de polyvalence : tableau croisant salariés et compétences, utile en production.
+- Entretiens professionnels et bilans de compétences.
+- Cartographie des emplois sensibles : emplois stratégiques, rares, ou en forte évolution.
+
+## Exemple chiffré : une société de distribution d''eau
+
+L''entreprise compte 80 techniciens de réseau. D''après l''analyse de la pyramide des âges, 18 partiront en retraite dans les cinq ans ; le turnover hors retraite est estimé à 2 départs par an. La stratégie prévoit une extension du réseau nécessitant 95 techniciens dans cinq ans, dont 30 capables d''exploiter des capteurs et des outils de télégestion. Aujourd''hui, 6 techniciens maîtrisent ces outils.
+
+- Ressources projetées sans action : 80 − 18 − 2 × 5 = 52 techniciens.
+- Écart quantitatif : 95 − 52 = 43 techniciens à recruter ou à former en interne.
+- Écart qualitatif : 30 compétences en télégestion requises ; 6 existantes, dont il faut retirer les départs éventuels. Si 2 des 6 partent en retraite, il en reste 4 : écart de 26.
+- Plan d''action possible : recrutement progressif de 43 techniciens (dont une partie en alternance avec un lycée technique ou un centre de formation professionnelle), programme de formation à la télégestion pour 26 personnes (recrues et anciens), tutorat des futurs retraités pour transmettre la connaissance du réseau.
+
+## 5. Conditions de réussite
+
+- Un lien explicite avec la stratégie et l''implication de la direction générale.
+- Des données RH fiables (d''où l''importance du SIRH).
+- L''association des managers et le dialogue avec les représentants du personnel.
+- Une démarche réaliste : dans une PME, une GPEC légère (cartographie des postes clés, plan de relève) vaut mieux qu''un dispositif lourd jamais mis à jour.
+
+## Points clés
+
+- La GPEC anticipe les écarts entre besoins et ressources en emplois et en compétences.
+- Démarche : existant, besoins futurs, projection et écarts, plans d''action.
+- Les outils clés sont la pyramide des âges, le référentiel de compétences et la matrice de polyvalence.
+- Sans lien avec la stratégie ni données fiables, la GPEC reste théorique.
+
+## Exercices
+
+- Exercice 1 : Distinguez poste, emploi et métier avec un exemple pris dans une banque.
+- Exercice 2 : Une entreprise a 50 commerciaux. Dans trois ans, 6 partiront à la retraite et le turnover sera de 4 départs par an. Le besoin est de 60 commerciaux. Calculez l''écart quantitatif.
+- Exercice 3 : Une pyramide des âges montre que 45 % des ingénieurs ont plus de 55 ans. Quels risques et quelles actions ?
+- Exercice 4 : Proposez trois actions possibles autres que le recrutement externe pour combler un écart de compétences.
+
+## Corrigé
+
+- Exercice 1 : Poste : chargé de clientèle particuliers à l''agence de Mbour ; emploi : chargé de clientèle (ensemble des postes similaires dans le réseau) ; métier : métiers de la relation commerciale bancaire.
+- Exercice 2 : Ressources projetées : 50 − 6 − 4 × 3 = 32. Écart : 60 − 32 = 28 commerciaux à recruter ou à mobiliser.
+- Exercice 3 : Risques : départs massifs, perte de savoir-faire, difficultés de recrutement sur un marché tendu. Actions : plan de relève, tutorat et binômes seniors-juniors, documentation des savoirs, recrutement anticipé de jeunes ingénieurs, éventuels aménagements de fin de carrière dans le respect des textes.
+- Exercice 4 : Formation interne ou externe, mobilité et promotion internes, tutorat, alternance, recours ponctuel à l''expertise externe ou à la sous-traitance.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'grh-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La gestion prévisionnelle des emplois et des compétences (GPEC)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Recrutement, intégration et formation', '## Objectifs de la leçon
+
+- Conduire un processus de recrutement rigoureux, équitable et efficace.
+- Réussir l''intégration des nouveaux salariés.
+- Concevoir un plan de formation et en évaluer les effets.
+
+## 1. Le processus de recrutement
+
+Recruter, c''est engager l''entreprise sur le long terme : une erreur coûte cher (salaire versé, coût de remplacement, désorganisation). Le processus comprend sept étapes :
+
+- Identification du besoin : remplacement, création de poste, ou alternative (réorganisation, promotion interne).
+- Définition du poste et du profil : fiche de poste, compétences indispensables et souhaitables, conditions (lieu, statut, fourchette de rémunération).
+- Sourcing : recrutement interne (mobilité, promotion), annonces, sites d''emploi, réseaux professionnels, écoles et universités, cabinets, cooptation encadrée.
+- Présélection : tri des candidatures selon des critères définis à l''avance et appliqués à tous.
+- Évaluation : entretiens structurés, tests techniques, mises en situation, vérification des références.
+- Décision et proposition : offre écrite, négociation, contrat conforme au droit en vigueur.
+- Intégration (onboarding).
+
+## 2. Équité et lutte contre les biais
+
+Dans un contexte où le recrutement par relation est fréquent, l''entreprise a intérêt à formaliser son processus. Les décisions doivent reposer sur les compétences, et non sur l''origine, la religion, le sexe, l''appartenance ethnique ou les liens familiaux. Outils : grille d''évaluation commune, entretiens structurés (mêmes questions pour tous), jury de plusieurs personnes, traçabilité des décisions. La cooptation peut être utile si elle reste soumise aux mêmes épreuves que les autres candidatures.
+
+L''entretien comportemental est une technique efficace : on demande au candidat de décrire une situation réelle passée (contexte, action, résultat), par exemple « racontez une situation où vous avez dû récupérer une créance difficile ». Le passé est le meilleur prédicteur du comportement futur.
+
+## 3. L''intégration
+
+Un nouveau salarié mal accueilli risque de partir rapidement. Un parcours d''intégration comprend : la préparation du poste (matériel, accès), une journée d''accueil, la présentation de l''entreprise et des règles (sécurité, éthique), la désignation d''un tuteur, des points d''étape à un mois et à trois mois, et le bilan de fin de période d''essai, dans le respect des durées prévues par les textes applicables.
+
+## 4. Mesurer l''efficacité du recrutement
+
+- Délai de recrutement (de l''ouverture du poste à la prise de fonction).
+- Coût par recrutement = (coûts externes + temps interne valorisé) / nombre de recrutements.
+- Taux de départ ou de rupture pendant la période d''essai.
+- Satisfaction des managers à 6 mois.
+
+Exemple : une banque régionale réalise 20 recrutements dans l''année. Coûts externes (annonces, cabinet, tests) : 9 000 000 FCFA ; temps interne valorisé : 5 000 000 FCFA. Coût par recrutement = 14 000 000 / 20 = 700 000 FCFA. Trois recrues sont parties pendant la période d''essai : taux d''échec de 15 %, à analyser (profil mal défini ? intégration insuffisante ?).
+
+## 5. La formation : ingénierie et plan
+
+La formation développe les compétences nécessaires à la stratégie et à l''employabilité des salariés. L''ingénierie de formation suit un cycle :
+
+- Analyse des besoins : issue de la GPEC, des entretiens annuels, des projets et des incidents.
+- Conception : objectifs pédagogiques mesurables, contenus, modalités (présentiel, e-learning, formation en situation de travail, tutorat).
+- Réalisation : en interne ou avec un organisme de formation.
+- Évaluation.
+
+Le plan de formation regroupe les actions retenues pour l''année, avec un budget et des priorités. Des dispositifs publics de financement de la formation professionnelle existent dans plusieurs pays (au Sénégal, par exemple, un fonds dédié au financement de la formation professionnelle et technique) ; leurs conditions d''accès doivent être vérifiées auprès des organismes concernés.
+
+## 6. Évaluer la formation : le modèle de Kirkpatrick
+
+- Niveau 1, réaction : satisfaction des participants.
+- Niveau 2, apprentissage : connaissances acquises (test avant et après).
+- Niveau 3, comportement : application sur le poste de travail quelques semaines plus tard.
+- Niveau 4, résultats : effet sur les indicateurs de l''entreprise.
+
+On peut compléter par un retour sur investissement : ROI = (gains − coût) / coût.
+
+Exemple : une formation à la maintenance préventive coûte 6 000 000 FCFA pour 15 techniciens. Dans l''année qui suit, les arrêts de production diminuent ; la perte évitée est estimée à 15 000 000 FCFA. ROI = (15 − 6)/6 = 1,5, soit 150 %. Il faut rester prudent : d''autres facteurs (nouvelles pièces, nouvelle équipe) ont pu contribuer à la baisse des pannes.
+
+## Points clés
+
+- Un recrutement réussi commence par une définition précise du besoin et du profil.
+- Des critères communs et des entretiens structurés limitent les biais.
+- L''intégration conditionne la fidélisation.
+- La formation suit un cycle analyse-conception-réalisation-évaluation ; Kirkpatrick structure l''évaluation.
+
+## Exercices
+
+- Exercice 1 : Rédigez trois questions d''entretien comportemental pour un poste de chef d''agence de microfinance.
+- Exercice 2 : Coûts externes de recrutement : 4 500 000 FCFA ; temps interne valorisé : 1 500 000 FCFA ; 12 recrutements. Calculez le coût par recrutement.
+- Exercice 3 : Une formation coûte 3 000 000 FCFA et génère des gains estimés à 4 200 000 FCFA. Calculez le ROI. Quelles précautions d''interprétation ?
+- Exercice 4 : À quel niveau de Kirkpatrick se situe chacune des mesures : a) questionnaire de fin de stage ; b) observation des pratiques un mois après ; c) baisse du taux d''impayés ?
+
+## Corrigé
+
+- Exercice 1 : « Décrivez une situation où un client important était en retard de remboursement : qu''avez-vous fait et quel a été le résultat ? » ; « Racontez un conflit au sein de votre équipe et la façon dont vous l''avez géré » ; « Donnez un exemple d''objectif commercial difficile que vous avez atteint et les actions menées ».
+- Exercice 2 : (4 500 000 + 1 500 000)/12 = 500 000 FCFA par recrutement.
+- Exercice 3 : ROI = (4,2 − 3)/3 = 0,4, soit 40 %. Précautions : les gains sont des estimations, d''autres facteurs peuvent intervenir, et certains bénéfices (motivation, fidélisation) sont difficiles à chiffrer.
+- Exercice 4 : a) niveau 1 (réaction) ; b) niveau 3 (comportement) ; c) niveau 4 (résultats).', 'texte', 55, false, 30
+from public.courses c where c.slug = 'grh-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Recrutement, intégration et formation');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Évaluation de la performance et rémunération', '## Objectifs de la leçon
+
+- Mettre en place un système d''évaluation de la performance juste et utile.
+- Comprendre les composantes d''une politique de rémunération.
+- Utiliser les outils de base : classification des emplois, grilles, compa-ratio, pilotage de la masse salariale.
+
+## 1. L''évaluation de la performance
+
+L''entretien annuel d''évaluation est le moment où le manager et le collaborateur font le bilan de l''année et fixent les objectifs de la suivante. Il sert à reconnaître les contributions, à identifier les besoins de formation, à préparer les décisions de carrière et de rémunération.
+
+Un bon système d''évaluation repose sur :
+
+- Des objectifs SMART : spécifiques, mesurables, atteignables, réalistes et temporellement définis. Exemple : « porter le portefeuille de crédit de l''agence de 450 à 520 millions de FCFA d''ici décembre, avec un taux de portefeuille à risque inférieur au seuil fixé par la direction ».
+- Des critères de comportement (travail en équipe, relation client, respect des procédures) décrits par des exemples observables.
+- Une échelle de notation claire et partagée.
+- Une formation des évaluateurs pour limiter les biais : effet de halo (une qualité influence tout le jugement), indulgence ou sévérité systématique, tendance centrale (tout le monde « moyen »), effet de récence (seuls les derniers mois comptent).
+
+Dans certaines cultures d''entreprise, la critique directe d''un supérieur à un collaborateur plus âgé peut être délicate ; le manager doit adapter la forme sans renoncer au fond : faits précis, écoute, plan de progrès.
+
+## 2. La rémunération globale
+
+La rémunération globale comprend :
+
+- Le salaire de base, lié à l''emploi et au niveau de qualification (classification de la convention collective et grille interne).
+- Les compléments individuels : primes d''ancienneté, de rendement, de responsabilité, primes liées aux conditions de travail.
+- La rémunération variable : bonus individuel ou collectif lié aux objectifs.
+- Les avantages en nature et sociaux : logement, véhicule, assurance maladie complémentaire, prêts au personnel, transport.
+- Les cotisations sociales obligatoires, dont les taux et plafonds sont fixés par la loi et doivent être vérifiés dans les textes en vigueur.
+
+Une politique de rémunération cherche trois équilibres : l''équité interne (des emplois de même valeur sont payés de façon comparable), la compétitivité externe (attirer et retenir par rapport au marché) et la maîtrise des coûts. Elle doit aussi respecter les minima légaux et conventionnels.
+
+## 3. Les outils
+
+- Classification et pesée des postes : on évalue chaque emploi selon des critères (connaissances requises, complexité, responsabilité, autonomie) et on le classe dans une catégorie.
+- Grille salariale : pour chaque catégorie, une bande avec un minimum, un point médian et un maximum.
+- Enquêtes de rémunération : comparer ses salaires à ceux du marché, en utilisant des sources fiables et des emplois comparables.
+- Compa-ratio = salaire du salarié / point médian de sa bande. Un compa-ratio de 1 signifie un positionnement au milieu de la bande ; inférieur à 0,9, le salarié est plutôt bas dans la bande ; supérieur à 1,1, plutôt haut.
+
+## Exemple chiffré
+
+Un analyste crédit est classé dans une bande dont le point médian est de 800 000 FCFA brut mensuel (montants fictifs). Il perçoit 680 000 FCFA. Compa-ratio = 680 000 / 800 000 = 0,85. Si sa performance est bonne, il est prioritaire pour une augmentation : un risque de départ existe s''il est sous-payé par rapport au marché.
+
+Pilotage de la masse salariale : une entreprise a une masse salariale annuelle de 600 millions de FCFA. La direction étudie, à titre d''hypothèse de négociation, une augmentation générale de 3 % au 1er janvier et un budget d''augmentations individuelles de 1,5 % de la masse au 1er juillet. Coût sur l''année : augmentation générale 600 × 3 % = 18 millions ; augmentations individuelles en année pleine 600 × 1,5 % = 9 millions, mais seulement 6 mois cette année, soit 4,5 millions. Hausse de la masse salariale due à ces mesures : 22,5 millions, soit 3,75 %. L''année suivante, les augmentations de juillet pèseront en année pleine : c''est l''effet report. Les charges sociales patronales s''ajoutent à ces montants.
+
+## 4. Rémunération et motivation
+
+La théorie de l''équité (Adams) montre que les salariés comparent le rapport entre leur contribution et leur rétribution à celui de leurs collègues : un sentiment d''injustice démotive plus qu''un salaire modéré mais perçu comme juste. La théorie des deux facteurs (Herzberg) distingue les facteurs d''hygiène (salaire, conditions de travail), dont l''insuffisance crée l''insatisfaction, et les facteurs de motivation (reconnaissance, responsabilité, développement). La transparence des règles et la reconnaissance non financière sont donc essentielles.
+
+## Points clés
+
+- L''évaluation repose sur des objectifs SMART, des critères observables et des évaluateurs formés.
+- La rémunération globale combine fixe, variable, avantages et protection sociale.
+- Équité interne, compétitivité externe et maîtrise des coûts sont à concilier.
+- Compa-ratio et pilotage de la masse salariale (effet report) sont des outils de base.
+
+## Exercices
+
+- Exercice 1 : Transformez l''objectif « améliorer les ventes » en objectif SMART pour un commercial d''une entreprise de matériaux de construction.
+- Exercice 2 : Point médian 1 200 000 FCFA ; salaire 1 380 000 FCFA. Calculez et interprétez le compa-ratio.
+- Exercice 3 : Masse salariale 400 millions ; hypothèse d''augmentation générale de 2 % au 1er avril. Calculez le coût sur l''année en cours et l''effet report sur l''année suivante.
+- Exercice 4 : Citez trois biais d''évaluation et un moyen de les limiter.
+
+## Corrigé
+
+- Exercice 1 : « Augmenter le chiffre d''affaires réalisé auprès des quincailleries de la région de Thiès de 15 % par rapport à l''an dernier, d''ici le 31 décembre, en ouvrant au moins 10 nouveaux points de vente. »
+- Exercice 2 : 1 380 000 / 1 200 000 = 1,15 : le salarié est dans le haut de sa bande ; ses augmentations futures devront être modérées sauf évolution de poste.
+- Exercice 3 : Coût annuel plein : 400 × 2 % = 8 millions. Cette année, 9 mois : 8 × 9/12 = 6 millions. Effet report sur l''année suivante : 8 − 6 = 2 millions (les 3 mois non payés cette année).
+- Exercice 4 : Effet de halo, effet de récence, tendance centrale. Moyens : formation des évaluateurs, prise de notes régulière tout au long de l''année, critères précis avec exemples, double regard (manager et N+2).', 'texte', 55, false, 40
+from public.courses c where c.slug = 'grh-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Évaluation de la performance et rémunération');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Relations sociales et système d''information RH', '## Objectifs de la leçon
+
+- Comprendre les acteurs et les mécanismes des relations sociales dans l''entreprise.
+- Prévenir et gérer les conflits collectifs.
+- Concevoir et conduire un projet de système d''information RH (SIRH).
+
+## 1. Les acteurs des relations sociales
+
+Les relations sociales désignent l''ensemble des échanges entre la direction, les salariés et leurs représentants. On y trouve :
+
+- La direction et la fonction RH.
+- Les délégués du personnel, élus par les salariés, qui portent les réclamations individuelles et collectives.
+- Les organisations syndicales, présentes dans l''entreprise et au niveau des branches et du pays.
+- Les instances liées à la santé et à la sécurité au travail.
+- L''inspection du travail, qui contrôle et concilie.
+- Au niveau national, les organisations patronales et syndicales qui négocient les conventions collectives et participent aux concertations tripartites avec l''État.
+
+Les seuils d''effectif, les modalités d''élection et les attributions précises des représentants sont fixés par la législation. Au Sénégal, la réforme du Code du travail en cours (projet de loi n°15/2026) peut faire évoluer ces règles : il faut se référer aux textes en vigueur à la date considérée.
+
+## 2. Le dialogue social et la négociation
+
+Le dialogue social prend plusieurs formes : information, consultation, concertation, négociation. Une négociation réussie se prépare :
+
+- Diagnostic partagé : données économiques et sociales transmises aux représentants.
+- Clarification des objectifs de chaque partie et des marges de manœuvre.
+- Calendrier et méthode (nombre de réunions, compte rendu).
+- Recherche d''options créatives : par exemple, compenser une augmentation salariale limitée par une amélioration du transport du personnel ou de la couverture santé.
+- Formalisation de l''accord et suivi de son application.
+
+La négociation dite « raisonnée » (Fisher et Ury) recommande de se concentrer sur les intérêts plutôt que sur les positions, de séparer les personnes du problème, d''imaginer plusieurs options et d''utiliser des critères objectifs.
+
+## 3. Prévenir et gérer les conflits
+
+Signaux d''alerte : hausse de l''absentéisme et du turnover, multiplication des réclamations, rumeurs, baisse de la qualité. Les causes fréquentes sont les salaires et primes, les conditions de travail, la précarité des contrats, le management jugé injuste, les restructurations mal expliquées.
+
+Méthode de gestion d''un conflit collectif :
+
+- Écouter et objectiver les revendications.
+- Ouvrir rapidement un canal de discussion avec les représentants.
+- Faire appel, si nécessaire, à la conciliation de l''inspection du travail ou à la médiation prévue par les textes.
+- Respecter strictement les procédures légales relatives à la grève et aux sanctions.
+- Après le conflit, analyser les causes et mettre en œuvre les engagements pris.
+
+## Exemple : une entreprise de BTP à Diamniadio
+
+Sur un chantier, des ouvriers cessent le travail pour protester contre des retards de paiement des primes de rendement et l''insuffisance des équipements de protection. La direction reçoit les délégués le jour même, reconnaît les retards (dus à un changement de logiciel de paie), fixe une date de régularisation, commande des équipements et organise une réunion sécurité hebdomadaire. Le travail reprend le lendemain. Leçon : un conflit révèle souvent un dysfonctionnement de gestion ; la rapidité et la transparence évitent l''escalade.
+
+## 4. Le système d''information RH (SIRH)
+
+Le SIRH est l''ensemble des outils informatiques qui gèrent les données et les processus RH. Modules courants :
+
+- Administration du personnel : dossiers, contrats, absences, congés.
+- Paie et déclarations sociales et fiscales.
+- Gestion des temps et des plannings.
+- Recrutement (gestion des candidatures).
+- Formation, compétences, entretiens annuels.
+- Tableaux de bord et reporting.
+- Portail libre-service pour salariés et managers (demandes de congé, bulletins de paie).
+
+Bénéfices : fiabilité des données, gain de temps, traçabilité, pilotage par indicateurs. Risques : coût, résistance des utilisateurs, mauvaise qualité des données importées, dépendance à un éditeur, sécurité.
+
+## 5. Conduire un projet SIRH
+
+- Expression des besoins : processus actuels, irritants, priorités.
+- Choix de la solution : logiciel local, solution internationale, solution en ligne ; vérifier l''adaptation à la législation sociale et fiscale nationale et la capacité à suivre les réformes (par exemple la mise à jour des paramètres de paie après l''adoption de nouveaux textes).
+- Paramétrage, reprise des données, tests (une paie parallèle sur deux ou trois mois est prudente).
+- Formation des utilisateurs et accompagnement du changement.
+- Suivi après démarrage.
+
+Protection des données : les données RH sont personnelles et parfois sensibles (santé, sanctions). Il faut respecter la législation sur la protection des données personnelles et les obligations envers l''autorité de contrôle compétente (au Sénégal, la Commission de protection des données personnelles), limiter les accès selon les rôles et sécuriser les sauvegardes.
+
+## Points clés
+
+- Les relations sociales impliquent direction, représentants élus, syndicats et inspection du travail.
+- La négociation raisonnée se concentre sur les intérêts et les critères objectifs.
+- Un conflit se traite vite, dans le respect des procédures, et s''analyse ensuite.
+- Un projet SIRH réussi repose sur les besoins, la qualité des données, la conformité et l''accompagnement.
+
+## Exercices
+
+- Exercice 1 : Citez quatre signaux d''alerte d''un climat social dégradé.
+- Exercice 2 : Expliquez la différence entre une position et un intérêt avec un exemple de négociation salariale.
+- Exercice 3 : Une PME traite 600 bulletins de paie par an en 30 minutes chacun ; un logiciel réduirait ce temps à 8 minutes. Calculez le gain annuel en heures.
+- Exercice 4 : Quelles précautions prendre lors de la reprise des données dans un nouveau SIRH ?
+
+## Corrigé
+
+- Exercice 1 : Hausse de l''absentéisme, hausse du turnover, multiplication des réclamations, rumeurs et tensions, baisse de la qualité ou de la productivité.
+- Exercice 2 : Position : « nous voulons 10 % d''augmentation ». Intérêt : faire face à la hausse du coût du transport et du logement. Connaître l''intérêt ouvre d''autres options (prime de transport, navette d''entreprise).
+- Exercice 3 : Avant : 600 × 30 = 18 000 minutes = 300 heures. Après : 600 × 8 = 4 800 minutes = 80 heures. Gain : 220 heures.
+- Exercice 4 : Nettoyer les données (doublons, erreurs), contrôler un échantillon, faire valider par les responsables, réaliser une paie parallèle, sécuriser les accès et conserver une sauvegarde des données d''origine.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'grh-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Relations sociales et système d''information RH');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : construire la réponse RH à une stratégie d''entreprise', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Master 1 en GRH, management, administration publique ; cadres en reprise d''études.
+- Objectifs : relier les outils de la GRH (GPEC, recrutement, formation, évaluation, rémunération, relations sociales, SIRH) dans un cas intégré en contexte africain.
+- Matériel : diaporama, études de cas imprimées, tableur pour les calculs.
+- Prérequis : leçons écrites 1 à 5.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et cas intégrateur
+
+Bonjour à toutes et à tous. Nous allons travailler aujourd''hui sur un cas unique : « Agro Sahel », une entreprise fictive de transformation de produits céréaliers installée près de Kaolack, 220 salariés permanents et des saisonniers. La direction vient d''adopter un plan stratégique : doubler la production en quatre ans, lancer une gamme de farines enrichies et digitaliser la distribution. Vous êtes la nouvelle équipe RH. Votre mission : construire la réponse RH à cette stratégie.
+
+Visuel : fiche d''identité d''Agro Sahel et les trois axes stratégiques.
+
+## 05:00 – 15:00 · Le diagnostic RH de départ
+
+Commençons par les indicateurs. Effectif au 1er janvier : 210 ; au 31 décembre : 230 ; départs : 22. Effectif moyen : 220. Turnover : 22 divisé par 220, soit 10 %. Mais regardez la répartition : 9 départs sur 14 techniciens de maintenance. Le turnover y est de plus de 60 % : c''est un signal rouge.
+
+La pyramide des âges montre par ailleurs que 35 % des agents de maîtrise ont plus de 55 ans. Question à la classe : quel est le risque principal ? Réponse attendue : une perte de savoir-faire à court terme sur l''encadrement de production.
+
+J''insiste sur le contexte : Agro Sahel recrute dans une zone où beaucoup de jeunes travaillent dans l''informel ; les attentes communautaires sont fortes ; et le cadre juridique est en transition au Sénégal avec le projet de nouveau Code du travail. Toute décision sur les contrats doit donc s''appuyer sur les textes en vigueur, vérifiés.
+
+Autre constat du diagnostic : l''absentéisme est de 4,5 % en moyenne, mais il monte fortement pendant la saison des pluies chez les salariés qui viennent des villages environnants, faute de transport fiable. Question à la classe : est-ce un problème de discipline ou d''organisation ? Réponse attendue : avant de sanctionner, il faut comprendre ; un service de navette ou des horaires adaptés peuvent régler une partie du problème à moindre coût. Enfin, la fonction RH d''Agro Sahel se résume aujourd''hui à deux personnes qui gèrent la paie sur tableur et les dossiers papier : elle est purement administrative. Le premier chantier est donc de la repositionner comme partenaire stratégique de la direction, au sens d''Ulrich.
+
+## 15:00 – 28:00 · La GPEC d''Agro Sahel
+
+Appliquons la démarche en quatre étapes. Existant : 14 techniciens de maintenance, dont 2 seulement maîtrisent les automates. Besoins à quatre ans, avec la nouvelle ligne : 24 techniciens, dont 12 formés aux automates. Projection sans action : même en supposant que le turnover retombe à 3 départs par an, il resterait 14 − 12 = 2 techniciens si aucun n''était remplacé. Écart quantitatif : 22.
+
+Je vous laisse deux minutes pour proposer un plan d''action. Réponses possibles : réduire d''abord le turnover, car recruter dans un tonneau percé ne sert à rien ; créer un partenariat avec un centre de formation professionnelle pour des apprentis ; former 10 techniciens aux automates ; mettre en place un tutorat avec les anciens.
+
+Visuel : tableau besoins, ressources, écarts, actions.
+
+Pour les agents de maîtrise proches de la retraite, la priorité est la transmission : identifier les savoirs critiques (réglages des machines, relations avec les fournisseurs de céréales), organiser des binômes avec des successeurs désignés et documenter les procédures. Question : comment repérer les successeurs ? Réponse : par les entretiens annuels, l''évaluation des compétences et une discussion en comité de direction, avec des critères transparents.
+
+## 28:00 – 40:00 · Recruter et intégrer
+
+Agro Sahel doit recruter un responsable maintenance. Je présente la fiche de poste et le profil. Discutons du sourcing : réseau des écoles d''ingénieurs, annonces en ligne, cabinet spécialisé, et pourquoi pas une promotion interne.
+
+Puis l''évaluation : je vous propose trois questions d''entretien comportemental. « Décrivez une panne majeure que vous avez gérée : quelle était la situation, qu''avez-vous fait, quel a été le résultat ? » ; « Racontez comment vous avez formé un technicien débutant » ; « Donnez un exemple de conflit avec la production et sa résolution ».
+
+Point d''éthique : le directeur général reçoit la candidature d''un neveu d''un partenaire important. Que faites-vous ? Réponse : la candidature suit le même processus, avec la même grille et le même jury ; la décision est motivée par les compétences.
+
+Enfin, l''intégration : préparation du poste, tuteur, points d''étape à un mois et à trois mois.
+
+## 40:00 – 48:00 · Pause interactive et quiz
+
+Pause active. Répondez rapidement.
+
+- Question 1 : 15 départs pour un effectif moyen de 150. Turnover ? Réponse : 10 %.
+- Question 2 : Une formation coûte 2 millions de FCFA et génère 5 millions de gains estimés. ROI ? Réponse : (5 − 2)/2 = 150 %.
+- Question 3 : Quel niveau de Kirkpatrick mesure l''application sur le poste ? Réponse : le niveau 3, comportement.
+
+## 48:00 – 58:00 · Former et développer
+
+Le plan de formation d''Agro Sahel découle de la GPEC : automates, hygiène et sécurité alimentaire pour la gamme enrichie, vente digitale pour les commerciaux. Je montre le cycle de l''ingénierie de formation : besoins, conception, réalisation, évaluation.
+
+Pour la formation aux automates, on fixe des objectifs mesurables : « à l''issue de la formation, le technicien diagnostique une panne d''automate en moins de 30 minutes ». Évaluation à quatre niveaux, et calcul de ROI à partir de la réduction des heures d''arrêt de ligne. Rappel de prudence : isoler l''effet de la formation est difficile.
+
+## 58:00 – 1:10:00 · Évaluer et rémunérer
+
+Les techniciens partent : pourquoi ? L''enquête de rémunération montre que les sociétés minières paient nettement plus. Calculons le compa-ratio d''un technicien payé 450 000 FCFA quand le point médian de sa bande est 500 000 (montants fictifs) : 0,9. Il est en bas de bande.
+
+Proposition : une hypothèse d''augmentation ciblée de 8 % pour les techniciens au 1er juillet. Masse salariale des techniciens : 90 millions par an. Coût annuel plein : 7,2 millions ; coût cette année pour six mois : 3,6 millions ; effet report l''année suivante : 3,6 millions. À comparer au coût d''une journée d''arrêt de ligne.
+
+Ajoutons des leviers non financiers, en vous appuyant sur Herzberg : parcours de carrière vers chef d''équipe, reconnaissance, formation certifiante. Et l''évaluation annuelle sur objectifs SMART, par exemple : « réduire de 20 % les heures d''arrêt non planifiées d''ici décembre ».
+
+Question à la classe : quel risque crée une augmentation ciblée sur un seul métier ? Réponse : un sentiment d''iniquité chez les autres catégories ; il faut l''expliquer par des données de marché et des critères transparents.
+
+## 1:10:00 – 1:20:00 · Relations sociales et SIRH
+
+L''annonce de l''augmentation ciblée crée des tensions chez les opérateurs de production. Les délégués du personnel demandent une réunion. Je vous propose un jeu de rôle rapide : un étudiant joue le DRH, un autre le délégué. Consigne : appliquer la négociation raisonnée, en cherchant les intérêts derrière les positions. Les opérateurs veulent surtout une prime de production plus lisible et un meilleur transport. Une option : une prime collective liée à la production, avec des critères objectifs.
+
+Puis le SIRH : Agro Sahel gère encore la paie sur tableur. Les retards de paiement des primes ont déjà provoqué un arrêt de travail. Un projet SIRH s''impose : expression des besoins, choix d''une solution capable de suivre l''évolution de la législation, reprise des données, paie parallèle, formation. Sans oublier la protection des données personnelles et les obligations envers l''autorité de contrôle.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Ce que montre le cas : la GRH n''est pas une suite d''outils isolés. Le diagnostic alimente la GPEC, qui oriente recrutement et formation ; la rémunération et l''évaluation fidélisent ; les relations sociales et le SIRH sécurisent l''ensemble. Et tout cela s''inscrit dans un cadre juridique à vérifier en permanence.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : Citez les quatre étapes de la GPEC. Réponse : analyse de l''existant, besoins futurs, projection et écarts, plans d''action.
+- Question 2 : Effectif 60, départs à la retraite 5 en trois ans, turnover 3 par an, besoin 70. Écart ? Réponse : 60 − 5 − 9 = 46 ; écart 24.
+- Question 3 : Salaire 900 000, point médian 750 000. Compa-ratio ? Réponse : 1,2, haut de bande.
+- Question 4 : Différence entre position et intérêt ? Réponse : la position est la demande affichée ; l''intérêt est le besoin qui la motive.
+- Question 5 : Deux précautions d''un projet SIRH ? Réponse : paie parallèle avant bascule et protection des données personnelles (accès par rôles, sauvegardes).
+
+Merci pour votre participation. Pour la prochaine séance, rédigez une note de deux pages au directeur général d''Agro Sahel présentant votre plan RH sur quatre ans.', 'video', 90, false, 60
+from public.courses c where c.slug = 'grh-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : construire la réponse RH à une stratégie d''entreprise');
+
+-- Cours : Mathématiques Terminale : analyse, suites et probabilités pour le Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'maths-terminale', (select id from public.levels where name = 'Terminale'), null, 'Mathématiques', 'Mathématiques Terminale : analyse, suites et probabilités pour le Bac', 'Ce cours couvre les chapitres essentiels du programme de Terminale scientifique : limites et continuité, dérivation, fonctions exponentielle et logarithme, suites numériques, probabilités. Il prépare au Bac avec des méthodes de rédaction et un sujet type commenté. Prérequis : programme de Première (dérivation, second degré, suites, probabilités de base).', true, 50
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Limites et continuité', '## Objectifs de la leçon
+
+- Calculer des limites de fonctions aux bornes de leur ensemble de définition.
+- Lever les formes indéterminées classiques et interpréter graphiquement une limite (asymptotes).
+- Utiliser la continuité et le théorème des valeurs intermédiaires.
+
+## Limites : rappels et opérations
+
+Dire que f(x) tend vers L quand x tend vers +∞ signifie que f(x) devient aussi proche de L que l''on veut pour x assez grand. On note lim f(x) = L (x → +∞).
+
+Limites de référence :
+- x², x³, √x tendent vers +∞ quand x → +∞ ;
+- 1/x, 1/x², 1/√x tendent vers 0 quand x → +∞ ;
+- 1/x tend vers +∞ quand x → 0⁺ et vers −∞ quand x → 0⁻.
+
+Les règles d''opération (somme, produit, quotient) permettent de conclure dans la plupart des cas. Il reste quatre formes indéterminées : « ∞ − ∞ », « 0 × ∞ », « ∞/∞ » et « 0/0 ». Dans ces cas, il faut transformer l''écriture.
+
+## Lever une indétermination
+
+Polynômes et fractions rationnelles en l''infini : on factorise par le terme de plus haut degré.
+- lim (2x³ − 5x + 1) quand x → +∞ : 2x³(1 − 5/(2x²) + 1/(2x³)) → +∞. Un polynôme a la même limite en l''infini que son terme de plus haut degré.
+- lim (3x² + 1)/(x² − 4) quand x → +∞ = lim 3x²/x² = 3.
+
+Expressions avec racines carrées : on multiplie par la quantité conjuguée.
+- √(x + 1) − √x = [(x + 1) − x] / [√(x + 1) + √x] = 1 / [√(x + 1) + √x], qui tend vers 0 quand x → +∞.
+
+Forme « 0/0 » en un point : on factorise. lim (x² − 9)/(x − 3) quand x → 3 = lim (x + 3) = 6.
+
+## Théorèmes de comparaison
+
+- Si f(x) ≥ g(x) pour x assez grand et lim g = +∞, alors lim f = +∞.
+- Théorème des gendarmes : si g(x) ≤ f(x) ≤ h(x) et si g et h ont la même limite L, alors lim f = L.
+
+Exemple : pour x > 0, −1/x ≤ sin(x)/x ≤ 1/x ; les deux encadrements tendent vers 0, donc sin(x)/x tend vers 0 quand x → +∞.
+
+## Asymptotes
+
+- Si lim f(x) = L quand x → ±∞, la droite y = L est asymptote horizontale à la courbe.
+- Si lim f(x) = ±∞ quand x → a, la droite x = a est asymptote verticale.
+- Si lim [f(x) − (ax + b)] = 0 quand x → ±∞, la droite y = ax + b est asymptote oblique.
+
+Exemple : f(x) = (3x² + 1)/(x² − 4). Quand x → 2⁺, le numérateur tend vers 13 et le dénominateur vers 0 par valeurs positives : f(x) → +∞. La droite x = 2 est asymptote verticale, et y = 3 est asymptote horizontale.
+
+## Continuité
+
+Une fonction est continue sur un intervalle si l''on peut tracer sa courbe « sans lever le crayon ». Les fonctions polynômes, rationnelles (sur leur ensemble de définition), racine carrée, exponentielle et logarithme sont continues sur les intervalles où elles sont définies.
+
+## Théorème des valeurs intermédiaires (TVI)
+
+Si f est continue sur [a ; b], alors pour tout réel k compris entre f(a) et f(b), l''équation f(x) = k admet au moins une solution dans [a ; b].
+
+Corollaire (théorème de la bijection) : si f est continue et strictement monotone sur [a ; b], et si k est compris entre f(a) et f(b), alors l''équation f(x) = k admet une unique solution dans [a ; b].
+
+Méthode de rédaction au Bac : citer la continuité, la stricte monotonie, calculer les images aux bornes, constater que k est entre elles, conclure. Puis encadrer la solution par balayage à la calculatrice.
+
+## Points clés
+
+- Quatre formes indéterminées : ∞ − ∞, 0 × ∞, ∞/∞, 0/0.
+- En l''infini, un polynôme se comporte comme son terme de plus haut degré.
+- Limite finie en l''infini → asymptote horizontale ; limite infinie en a → asymptote verticale.
+- Continuité + stricte monotonie → solution unique (corollaire du TVI).
+
+## Exercices
+
+Exercice 1 : Calculer lim (2x³ − 5x + 1) quand x → +∞, puis quand x → −∞.
+
+Exercice 2 : Soit f(x) = (3x² + 1)/(x² − 4). Calculer la limite de f en +∞ et interpréter graphiquement.
+
+Exercice 3 : Pour la même fonction, calculer la limite de f quand x → 2⁺ et interpréter.
+
+Exercice 4 : Calculer lim (√(x + 1) − √x) quand x → +∞.
+
+Exercice 5 : Soit f(x) = x³ + x − 1. Montrer que l''équation f(x) = 0 admet une unique solution α dans [0 ; 1], puis donner un encadrement de α d''amplitude 0,1.
+
+## Corrigé
+
+Exercice 1 : La limite est celle du terme de plus haut degré 2x³ : +∞ quand x → +∞ et −∞ quand x → −∞.
+
+Exercice 2 : En +∞, f(x) a la même limite que 3x²/x² = 3. La droite d''équation y = 3 est asymptote horizontale à la courbe en +∞.
+
+Exercice 3 : Le numérateur tend vers 3 × 4 + 1 = 13. Pour x > 2, x² − 4 > 0 et tend vers 0. Donc f(x) → +∞. La droite d''équation x = 2 est asymptote verticale.
+
+Exercice 4 : Forme « ∞ − ∞ ». Avec la quantité conjuguée : √(x + 1) − √x = 1/(√(x + 1) + √x). Le dénominateur tend vers +∞, donc la limite est 0.
+
+Exercice 5 : f est continue sur [0 ; 1] (polynôme). f''(x) = 3x² + 1 > 0, donc f est strictement croissante. f(0) = −1 < 0 et f(1) = 1 > 0. D''après le corollaire du TVI, l''équation f(x) = 0 admet une unique solution α dans [0 ; 1]. f(0,6) = 0,216 + 0,6 − 1 = −0,184 < 0 et f(0,7) = 0,343 + 0,7 − 1 = 0,043 > 0, donc 0,6 < α < 0,7.', 'texte', 55, true, 10
+from public.courses c where c.slug = 'maths-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Limites et continuité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Dérivation et étude de fonctions', '## Objectifs de la leçon
+
+- Calculer des dérivées à l''aide des formules usuelles.
+- Déterminer l''équation d''une tangente.
+- Étudier les variations d''une fonction et ses extremums.
+- Résoudre un problème d''optimisation.
+
+## Nombre dérivé et tangente
+
+Le nombre dérivé de f en a est f''(a) = lim [f(a + h) − f(a)] / h quand h → 0, lorsque cette limite existe et est finie. Géométriquement, c''est le coefficient directeur de la tangente à la courbe au point d''abscisse a.
+
+Équation de la tangente au point d''abscisse a : y = f''(a)(x − a) + f(a).
+
+## Formules de dérivation
+
+Fonctions usuelles :
+- (k)'' = 0 ; (x)'' = 1 ; (xⁿ)'' = n xⁿ⁻¹ ;
+- (1/x)'' = −1/x² ; (√x)'' = 1/(2√x) pour x > 0 ;
+- (eˣ)'' = eˣ ; (ln x)'' = 1/x pour x > 0.
+
+Opérations (u et v dérivables) :
+- (u + v)'' = u'' + v'' ; (ku)'' = k u'' ;
+- (uv)'' = u''v + uv'' ;
+- (u/v)'' = (u''v − uv'')/v² ;
+- (uⁿ)'' = n u'' uⁿ⁻¹ ;
+- (√u)'' = u''/(2√u) ;
+- (eᵘ)'' = u'' eᵘ ; (ln u)'' = u''/u.
+
+Exemple : f(x) = (2x + 1)/(x − 3). u = 2x + 1, u'' = 2 ; v = x − 3, v'' = 1. f''(x) = [2(x − 3) − (2x + 1)]/(x − 3)² = −7/(x − 3)².
+
+## Dérivée et sens de variation
+
+Sur un intervalle I :
+- si f''(x) > 0 (sauf en des points isolés), f est strictement croissante ;
+- si f''(x) < 0, f est strictement décroissante ;
+- si f'' s''annule en changeant de signe en a, f admet un extremum local en a.
+
+Méthode :
+- déterminer l''ensemble de définition ;
+- calculer f''(x) et la factoriser ;
+- étudier le signe de f''(x) (tableau de signes) ;
+- dresser le tableau de variations avec les limites et les extremums.
+
+## Exemple complet
+
+f(x) = x³ − 3x + 1 sur ℝ. f''(x) = 3x² − 3 = 3(x − 1)(x + 1). f''(x) > 0 pour x < −1 et x > 1 ; f''(x) < 0 pour −1 < x < 1.
+- f est croissante sur ]−∞ ; −1], décroissante sur [−1 ; 1], croissante sur [1 ; +∞[.
+- Maximum local : f(−1) = −1 + 3 + 1 = 3. Minimum local : f(1) = 1 − 3 + 1 = −1.
+- Tangente en 0 : f(0) = 1, f''(0) = −3, donc y = −3x + 1.
+
+## Application économique
+
+Une coopérative de transformation de fruits à Ziguinchor estime son bénéfice mensuel, en milliers de FCFA, par B(q) = −2q² + 120q − 1 000, où q est le nombre de tonnes produites (0 ≤ q ≤ 50). B''(q) = −4q + 120, qui s''annule pour q = 30, est positif avant et négatif après. Le bénéfice est maximal pour 30 tonnes : B(30) = −1 800 + 3 600 − 1 000 = 800, soit 800 000 FCFA.
+
+## Points clés
+
+- Tangente : y = f''(a)(x − a) + f(a).
+- Retenir (uv)'', (u/v)'', (uⁿ)'', (eᵘ)'', (ln u)''.
+- Signe de f'' → variations de f → extremums.
+- Toujours factoriser f''(x) avant d''étudier son signe.
+
+## Exercices
+
+Exercice 1 : Calculer les dérivées : a) f(x) = 4x³ − 2x² + 7 ; b) g(x) = (2x + 1)/(x − 3) ; c) h(x) = (3x − 1)⁴ ; d) k(x) = √(x² + 1).
+
+Exercice 2 : Déterminer l''équation de la tangente à la courbe de f(x) = x² au point d''abscisse 3.
+
+Exercice 3 : Étudier les variations de f(x) = x³ − 6x² + 9x + 2 sur ℝ et préciser ses extremums locaux.
+
+Exercice 4 : Un artisan bijoutier estime son bénéfice hebdomadaire, en milliers de FCFA, par B(x) = −x² + 40x − 300, pour x objets fabriqués (0 ≤ x ≤ 40). Combien d''objets doit-il fabriquer pour un bénéfice maximal ? Quel est ce bénéfice ?
+
+Exercice 5 : Calculer la dérivée de f(x) = (x² + 1)(x − 2) avec la formule du produit, puis vérifier en développant.
+
+## Corrigé
+
+Exercice 1 : a) f''(x) = 12x² − 4x. b) g''(x) = −7/(x − 3)² (voir l''exemple de la leçon). c) h''(x) = 4 × 3 × (3x − 1)³ = 12(3x − 1)³. d) k''(x) = 2x/(2√(x² + 1)) = x/√(x² + 1).
+
+Exercice 2 : f(3) = 9, f''(x) = 2x donc f''(3) = 6. Tangente : y = 6(x − 3) + 9 = 6x − 9.
+
+Exercice 3 : f''(x) = 3x² − 12x + 9 = 3(x² − 4x + 3) = 3(x − 1)(x − 3). f est croissante sur ]−∞ ; 1], décroissante sur [1 ; 3], croissante sur [3 ; +∞[. Maximum local f(1) = 1 − 6 + 9 + 2 = 6 ; minimum local f(3) = 27 − 54 + 27 + 2 = 2.
+
+Exercice 4 : B''(x) = −2x + 40, nul pour x = 20, positif avant et négatif après. Bénéfice maximal pour 20 objets : B(20) = −400 + 800 − 300 = 100, soit 100 000 FCFA.
+
+Exercice 5 : f''(x) = 2x(x − 2) + (x² + 1) × 1 = 2x² − 4x + x² + 1 = 3x² − 4x + 1. Vérification : f(x) = x³ − 2x² + x − 2, donc f''(x) = 3x² − 4x + 1.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'maths-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Dérivation et étude de fonctions');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Fonctions exponentielle et logarithme népérien', '## Objectifs de la leçon
+
+- Connaître les propriétés algébriques et analytiques de l''exponentielle et du logarithme népérien.
+- Résoudre des équations et inéquations avec exp et ln.
+- Utiliser les croissances comparées pour calculer des limites.
+- Modéliser une évolution (épargne, population).
+
+## La fonction exponentielle
+
+La fonction exponentielle est l''unique fonction f dérivable sur ℝ telle que f'' = f et f(0) = 1. On la note exp(x) = eˣ, avec e ≈ 2,718.
+
+Propriétés algébriques :
+- e⁰ = 1 ; eᵃ⁺ᵇ = eᵃ × eᵇ ; e⁻ᵃ = 1/eᵃ ; eᵃ⁻ᵇ = eᵃ/eᵇ ; (eᵃ)ⁿ = eⁿᵃ.
+
+Propriétés analytiques :
+- pour tout x, eˣ > 0 ; la fonction est strictement croissante sur ℝ ;
+- lim eˣ = +∞ quand x → +∞ ; lim eˣ = 0 quand x → −∞ (asymptote y = 0) ;
+- eᵃ = eᵇ ⇔ a = b ; eᵃ < eᵇ ⇔ a < b.
+
+## La fonction logarithme népérien
+
+La fonction ln est définie sur ]0 ; +∞[ : pour x > 0, ln x est l''unique réel y tel que eʸ = x. Ainsi e^(ln x) = x pour x > 0, et ln(eˣ) = x pour tout réel x.
+
+Propriétés algébriques (a > 0, b > 0) :
+- ln 1 = 0 ; ln e = 1 ;
+- ln(ab) = ln a + ln b ; ln(a/b) = ln a − ln b ; ln(1/a) = −ln a ; ln(aⁿ) = n ln a ; ln √a = (1/2) ln a.
+
+Propriétés analytiques :
+- ln est strictement croissante sur ]0 ; +∞[, (ln x)'' = 1/x ;
+- ln x < 0 sur ]0 ; 1[, ln x > 0 sur ]1 ; +∞[ ;
+- lim ln x = +∞ quand x → +∞ ; lim ln x = −∞ quand x → 0⁺ (asymptote x = 0).
+
+## Croissances comparées
+
+- eˣ/x → +∞ et plus généralement eˣ/xⁿ → +∞ quand x → +∞ ;
+- x eˣ → 0 quand x → −∞ ;
+- (ln x)/x → 0 quand x → +∞ ;
+- x ln x → 0 quand x → 0⁺.
+
+À retenir : en l''infini, l''exponentielle l''emporte sur les puissances de x, qui l''emportent sur le logarithme.
+
+## Résoudre des équations et inéquations
+
+Méthode : déterminer d''abord le domaine de validité (ce qui est dans un ln doit être strictement positif), puis appliquer exp ou ln aux deux membres.
+
+- e^(2x − 1) = 3 ⇔ 2x − 1 = ln 3 ⇔ x = (1 + ln 3)/2.
+- ln(2x − 1) ≤ 0 : domaine 2x − 1 > 0, soit x > 1/2. ln(2x − 1) ≤ ln 1 ⇔ 2x − 1 ≤ 1 ⇔ x ≤ 1. Solutions : ]1/2 ; 1].
+- Équation du second degré déguisée : e²ˣ − 3eˣ + 2 = 0. On pose X = eˣ > 0 : X² − 3X + 2 = 0, donc X = 1 ou X = 2, d''où x = 0 ou x = ln 2.
+
+## Modélisation : doublement d''une épargne
+
+Une commerçante place 1 000 000 FCFA sur un compte rémunéré à 5 % par an, intérêts composés (taux fictif pour l''exemple ; les taux réels dépendent des banques et des produits). Après n années, le capital vaut 1 000 000 × 1,05ⁿ. Il a doublé lorsque 1,05ⁿ ≥ 2, soit n ln 1,05 ≥ ln 2 (ln est croissante), donc n ≥ ln 2 / ln 1,05 ≈ 14,2. Le capital double au bout de 15 ans.
+
+## Points clés
+
+- eˣ > 0, (eᵘ)'' = u''eᵘ ; ln défini sur ]0 ; +∞[, (ln u)'' = u''/u.
+- ln transforme les produits en sommes.
+- Toujours chercher le domaine avant de résoudre une équation avec ln.
+- Croissances comparées : exp > puissances > ln.
+
+## Exercices
+
+Exercice 1 : Simplifier : a) ln 8 − ln 2 ; b) e^(ln 5) ; c) ln(e³) ; d) e^(2 ln 3).
+
+Exercice 2 : Résoudre dans ℝ : e²ˣ − 3eˣ + 2 = 0.
+
+Exercice 3 : Résoudre : ln(x + 2) = ln(3x − 4).
+
+Exercice 4 : Calculer les dérivées : a) f(x) = x eˣ ; b) g(x) = ln(x² + 1) ; c) h(x) = (ln x)/x.
+
+Exercice 5 : Soit f(x) = x − ln x sur ]0 ; +∞[. Étudier ses variations et en déduire que x > ln x pour tout x > 0.
+
+## Corrigé
+
+Exercice 1 : a) ln(8/2) = ln 4 = 2 ln 2. b) 5. c) 3. d) e^(ln 9) = 9.
+
+Exercice 2 : Avec X = eˣ : X² − 3X + 2 = 0, discriminant 9 − 8 = 1, X = 1 ou X = 2. eˣ = 1 donne x = 0 ; eˣ = 2 donne x = ln 2. Solutions : {0 ; ln 2}.
+
+Exercice 3 : Domaine : x + 2 > 0 et 3x − 4 > 0, donc x > 4/3. ln étant strictement croissante, x + 2 = 3x − 4, soit x = 3, qui appartient au domaine. Solution : x = 3.
+
+Exercice 4 : a) f''(x) = eˣ + x eˣ = (x + 1)eˣ. b) g''(x) = 2x/(x² + 1). c) h''(x) = [(1/x) × x − ln x × 1]/x² = (1 − ln x)/x².
+
+Exercice 5 : f''(x) = 1 − 1/x = (x − 1)/x. Sur ]0 ; +∞[, x > 0, donc f''(x) a le signe de x − 1 : f est décroissante sur ]0 ; 1] et croissante sur [1 ; +∞[. Son minimum est f(1) = 1 − 0 = 1 > 0. Donc pour tout x > 0, f(x) ≥ 1 > 0, c''est-à-dire x > ln x.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'maths-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fonctions exponentielle et logarithme népérien');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les suites numériques', '## Objectifs de la leçon
+
+- Reconnaître et utiliser les suites arithmétiques et géométriques.
+- Étudier le sens de variation et la convergence d''une suite.
+- Raisonner par récurrence.
+- Étudier une suite du type u(n+1) = a u(n) + b à l''aide d''une suite auxiliaire.
+
+## Généralités
+
+Une suite (uₙ) associe à chaque entier naturel n un réel uₙ. Elle peut être définie de façon explicite (uₙ = 2n + 1) ou par récurrence (u₀ = 3 et uₙ₊₁ = 2uₙ − 1).
+
+Sens de variation : on étudie le signe de uₙ₊₁ − uₙ. Si cette différence est positive pour tout n, la suite est croissante ; si elle est négative, décroissante.
+
+## Suites arithmétiques
+
+(uₙ) est arithmétique de raison r si uₙ₊₁ = uₙ + r pour tout n.
+- Terme général : uₙ = u₀ + n r = u_p + (n − p) r.
+- Somme de termes consécutifs : S = (nombre de termes) × (premier terme + dernier terme)/2.
+- Cas particulier : 1 + 2 + … + n = n(n + 1)/2.
+
+## Suites géométriques
+
+(vₙ) est géométrique de raison q si vₙ₊₁ = q vₙ pour tout n.
+- Terme général : vₙ = v₀ × qⁿ.
+- Somme : v₀ + v₁ + … + vₙ = v₀ × (1 − qⁿ⁺¹)/(1 − q) pour q ≠ 1.
+- Limite de qⁿ : si −1 < q < 1, qⁿ → 0 ; si q > 1, qⁿ → +∞ ; si q ≤ −1, pas de limite.
+
+Exemple : un salaire de 150 000 FCFA augmente de 3 % par an (taux fictif pour l''exemple). Après n années : Sₙ = 150 000 × 1,03ⁿ. Après 10 ans : 150 000 × 1,03¹⁰ ≈ 201 587 FCFA.
+
+## Le raisonnement par récurrence
+
+Pour démontrer qu''une propriété P(n) est vraie pour tout n ≥ n₀ :
+- Initialisation : on vérifie P(n₀).
+- Hérédité : on suppose P(n) vraie pour un n quelconque (hypothèse de récurrence) et on démontre P(n + 1).
+- Conclusion : P(n) est vraie pour tout n ≥ n₀.
+
+## Convergence
+
+Une suite converge si elle admet une limite finie. Théorèmes utiles :
+- toute suite croissante et majorée converge ; toute suite décroissante et minorée converge ;
+- si uₙ₊₁ = f(uₙ), avec f continue, et si (uₙ) converge vers L, alors L = f(L).
+
+## La suite arithmético-géométrique
+
+Situation : une coopérative de femmes transformatrices de céréales à Kaolack compte 1 000 membres. Chaque année, 20 % des membres quittent la coopérative et 400 nouveaux membres adhèrent. On note uₙ le nombre de membres après n années : u₀ = 1 000 et uₙ₊₁ = 0,8 uₙ + 400.
+
+Méthode :
+- Chercher le point fixe : L = 0,8L + 400, donc 0,2L = 400 et L = 2 000.
+- Poser vₙ = uₙ − 2 000. Alors vₙ₊₁ = uₙ₊₁ − 2 000 = 0,8uₙ − 1 600 = 0,8(uₙ − 2 000) = 0,8 vₙ. La suite (vₙ) est géométrique de raison 0,8 et de premier terme v₀ = −1 000.
+- Donc vₙ = −1 000 × 0,8ⁿ et uₙ = 2 000 − 1 000 × 0,8ⁿ.
+- Comme 0 < 0,8 < 1, 0,8ⁿ → 0, donc uₙ → 2 000. À long terme, la coopérative se stabilise autour de 2 000 membres.
+
+## Points clés
+
+- Arithmétique : uₙ = u₀ + nr ; géométrique : vₙ = v₀qⁿ.
+- Récurrence : initialisation, hérédité, conclusion.
+- Monotone et bornée ⇒ convergente.
+- uₙ₊₁ = a uₙ + b : point fixe puis suite auxiliaire géométrique.
+
+## Exercices
+
+Exercice 1 : (uₙ) est arithmétique, u₀ = 5 et r = 3. Calculer u₁₀ et la somme u₀ + u₁ + … + u₁₀.
+
+Exercice 2 : (vₙ) est géométrique, v₀ = 2 et q = 3. Calculer v₅ et la somme v₀ + … + v₅.
+
+Exercice 3 : On reprend l''exemple de la coopérative. Calculer u₁, u₂, u₃ avec la relation de récurrence, puis vérifier u₃ avec la formule explicite.
+
+Exercice 4 : Soit u₀ = 0 et uₙ₊₁ = (uₙ + 4)/2. a) Démontrer par récurrence que uₙ ≤ 4 pour tout n. b) Montrer que (uₙ) est croissante. c) En déduire qu''elle converge et déterminer sa limite.
+
+Exercice 5 : Déterminer la limite de wₙ = 3 × 0,5ⁿ + 7, puis celle de tₙ = 2 × 1,2ⁿ.
+
+## Corrigé
+
+Exercice 1 : u₁₀ = 5 + 10 × 3 = 35. La somme comporte 11 termes : S = 11 × (5 + 35)/2 = 11 × 20 = 220.
+
+Exercice 2 : v₅ = 2 × 3⁵ = 2 × 243 = 486. Somme : 2 × (1 − 3⁶)/(1 − 3) = 2 × (−728)/(−2) = 728. Vérification : 2 + 6 + 18 + 54 + 162 + 486 = 728.
+
+Exercice 3 : u₁ = 0,8 × 1 000 + 400 = 1 200 ; u₂ = 0,8 × 1 200 + 400 = 1 360 ; u₃ = 0,8 × 1 360 + 400 = 1 488. Formule : 2 000 − 1 000 × 0,8³ = 2 000 − 512 = 1 488.
+
+Exercice 4 : a) Initialisation : u₀ = 0 ≤ 4. Hérédité : si uₙ ≤ 4, alors uₙ + 4 ≤ 8 et uₙ₊₁ = (uₙ + 4)/2 ≤ 4. Conclusion : uₙ ≤ 4 pour tout n. b) uₙ₊₁ − uₙ = (uₙ + 4)/2 − uₙ = (4 − uₙ)/2 ≥ 0 d''après a), donc la suite est croissante. c) Croissante et majorée par 4, elle converge vers L qui vérifie L = (L + 4)/2, soit 2L = L + 4, donc L = 4.
+
+Exercice 5 : 0 < 0,5 < 1 donc 0,5ⁿ → 0 et wₙ → 7. 1,2 > 1 donc 1,2ⁿ → +∞ et tₙ → +∞.', 'texte', 55, false, 40
+from public.courses c where c.slug = 'maths-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les suites numériques');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Probabilités conditionnelles et loi binomiale', '## Objectifs de la leçon
+
+- Calculer des probabilités, y compris conditionnelles, à l''aide d''un arbre.
+- Utiliser la formule des probabilités totales et reconnaître l''indépendance.
+- Déterminer la loi d''une variable aléatoire, son espérance et sa variance.
+- Utiliser la loi binomiale.
+
+## Vocabulaire
+
+Une expérience aléatoire a plusieurs issues possibles ; l''ensemble des issues est l''univers Ω. Un événement est une partie de Ω. En situation d''équiprobabilité, P(A) = nombre d''issues favorables / nombre total d''issues.
+
+- P(Ā) = 1 − P(A) (événement contraire) ;
+- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).
+
+## Probabilités conditionnelles
+
+La probabilité de B sachant A (avec P(A) ≠ 0) est P_A(B) = P(A ∩ B)/P(A). Donc P(A ∩ B) = P(A) × P_A(B).
+
+Arbre pondéré : la somme des probabilités issues d''un même nœud vaut 1 ; la probabilité d''un chemin est le produit des probabilités le long de ce chemin.
+
+Formule des probabilités totales : si A et Ā partagent l''univers, P(B) = P(A ∩ B) + P(Ā ∩ B).
+
+Exemple : une usine de conditionnement de jus à Dakar utilise deux machines. La machine A produit 60 % des bouteilles, la machine B 40 %. 3 % des bouteilles de A et 5 % de celles de B sont défectueuses. On choisit une bouteille au hasard (D : « défectueuse »).
+- P(D) = 0,6 × 0,03 + 0,4 × 0,05 = 0,018 + 0,020 = 0,038.
+- Sachant qu''elle est défectueuse, la probabilité qu''elle vienne de A : P_D(A) = 0,018/0,038 = 9/19 ≈ 0,474.
+
+## Indépendance
+
+A et B sont indépendants si P(A ∩ B) = P(A) × P(B), ce qui équivaut (si P(A) ≠ 0) à P_A(B) = P(B) : savoir que A est réalisé ne change pas la probabilité de B.
+
+## Variables aléatoires
+
+Une variable aléatoire X associe un nombre à chaque issue. Sa loi de probabilité donne les valeurs xᵢ et les probabilités pᵢ = P(X = xᵢ).
+- Espérance : E(X) = somme des xᵢ pᵢ (valeur moyenne sur un grand nombre de répétitions).
+- Variance : V(X) = somme des pᵢ (xᵢ − E(X))² = E(X²) − [E(X)]² ; écart-type σ = √V(X).
+
+Un jeu est équitable si l''espérance du gain net est nulle.
+
+## Loi binomiale
+
+Une épreuve de Bernoulli a deux issues : succès (probabilité p) et échec (1 − p). Si on répète n fois cette épreuve de façon identique et indépendante, le nombre X de succès suit la loi binomiale B(n ; p) :
+
+P(X = k) = C(n, k) × pᵏ × (1 − p)ⁿ⁻ᵏ, où C(n, k) est le nombre de façons de choisir k éléments parmi n.
+
+E(X) = np et V(X) = np(1 − p).
+
+Exemple : la probabilité qu''un client d''une boutique paie par transfert d''argent mobile est 0,2. On observe 5 clients indépendants. X suit B(5 ; 0,2). P(X = 2) = C(5, 2) × 0,2² × 0,8³ = 10 × 0,04 × 0,512 = 0,2048. E(X) = 5 × 0,2 = 1.
+
+## Points clés
+
+- P_A(B) = P(A ∩ B)/P(A) ; arbre : on multiplie le long des branches, on additionne les chemins.
+- Indépendance : P(A ∩ B) = P(A)P(B).
+- E(X) = Σ xᵢpᵢ ; jeu équitable si E(gain) = 0.
+- Binomiale : P(X = k) = C(n, k) pᵏ(1 − p)ⁿ⁻ᵏ, E = np.
+
+## Exercices
+
+Exercice 1 : Une urne contient 4 boules rouges et 6 boules blanches. On tire une boule, on la remet, puis on en tire une seconde. Calculer la probabilité d''obtenir deux boules rouges, puis au moins une boule rouge.
+
+Exercice 2 : Dans un lycée, 70 % des élèves de Terminale révisent régulièrement. Parmi eux, 90 % obtiennent le Bac ; parmi les autres, 40 %. Calculer la probabilité qu''un élève obtienne le Bac, puis la probabilité qu''il ait révisé régulièrement sachant qu''il a obtenu le Bac.
+
+Exercice 3 : À une kermesse, on paie 500 FCFA pour lancer un dé équilibré. Si on obtient 6, on reçoit 2 000 FCFA ; si on obtient 5, on récupère sa mise de 500 FCFA ; sinon on ne reçoit rien. Soit G le gain net. Donner la loi de G et son espérance. Le jeu est-il favorable au joueur ?
+
+Exercice 4 : Un agriculteur sème 4 graines de mil. Chacune germe avec une probabilité de 0,8, indépendamment des autres. Soit X le nombre de graines qui germent. Calculer P(X = 4), P(X ≥ 3) et E(X).
+
+Exercice 5 : P(A) = 0,5, P(B) = 0,4 et P(A ∩ B) = 0,2. A et B sont-ils indépendants ? Calculer P(A ∪ B).
+
+## Corrigé
+
+Exercice 1 : P(R) = 4/10 = 0,4. Deux rouges : 0,4 × 0,4 = 0,16. Aucune rouge : 0,6 × 0,6 = 0,36, donc au moins une rouge : 1 − 0,36 = 0,64.
+
+Exercice 2 : P(Bac) = 0,7 × 0,9 + 0,3 × 0,4 = 0,63 + 0,12 = 0,75. P_Bac(R) = 0,63/0,75 = 0,84.
+
+Exercice 3 : G = 1 500 avec probabilité 1/6 ; G = 0 avec probabilité 1/6 ; G = −500 avec probabilité 4/6. E(G) = 1 500/6 + 0 − 2 000/6 = −500/6 ≈ −83,33 FCFA. L''espérance est négative : le jeu est défavorable au joueur (en moyenne il perd environ 83 FCFA par partie).
+
+Exercice 4 : X suit B(4 ; 0,8). P(X = 4) = 0,8⁴ = 0,4096. P(X = 3) = C(4, 3) × 0,8³ × 0,2 = 4 × 0,512 × 0,2 = 0,4096. P(X ≥ 3) = 0,4096 + 0,4096 = 0,8192. E(X) = 4 × 0,8 = 3,2.
+
+Exercice 5 : P(A) × P(B) = 0,5 × 0,4 = 0,2 = P(A ∩ B) : A et B sont indépendants. P(A ∪ B) = 0,5 + 0,4 − 0,2 = 0,7.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'maths-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Probabilités conditionnelles et loi binomiale');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : sujet type de Bac commenté', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : sujet type de Bac commenté (problème d''analyse, suites, probabilités).
+- Objectifs : mobiliser limites, dérivation, exponentielle, suites et probabilités dans un sujet complet ; maîtriser la rédaction attendue au Bac.
+- Matériel : tableau ou diaporama, calculatrice graphique ou scientifique, brouillon, papier millimétré pour la courbe.
+- Prérequis : leçons 1 à 5. Le sujet est un sujet d''entraînement conçu pour ce cours, non un sujet officiel.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et stratégie
+
+« Bonjour à toutes et à tous. Aujourd''hui, nous traitons ensemble un sujet complet de type Bac. Il comporte un exercice de probabilités, un exercice sur les suites et un problème d''analyse avec la fonction exponentielle. Je vous rappelle la règle d''or : lisez tout le sujet, repérez les questions indépendantes, et ne restez jamais bloqués. Une question non résolue peut être admise pour continuer. »
+
+Visuel : le sujet en trois parties avec un barème indicatif de travail (le barème officiel est fixé par les correcteurs de l''examen).
+
+## 05:00 – 20:00 · Exercice 1 : probabilités
+
+Énoncé : « Une entreprise de transport interurbain observe que 30 % de ses voyageurs réservent par téléphone mobile et 70 % au guichet. Parmi les voyageurs ayant réservé par mobile, 10 % annulent ; parmi ceux du guichet, 20 % annulent. 1) Construire un arbre. 2) Calculer la probabilité qu''un voyageur annule. 3) Sachant qu''un voyageur a annulé, quelle est la probabilité qu''il ait réservé par mobile ? 4) On choisit 10 voyageurs au hasard, de façon indépendante. Probabilité qu''exactement 2 annulent ? »
+
+« Mettez en pause et cherchez. »
+
+Visuel : l''arbre pondéré. Du nœud de départ partent deux branches, M (0,3) et M̄ (0,7). De M partent A (0,1) et Ā (0,9) ; de M̄ partent A (0,2) et Ā (0,8). « Vérifiez toujours que les probabilités issues d''un même nœud ont une somme égale à 1 : 0,3 + 0,7 = 1, 0,1 + 0,9 = 1, 0,2 + 0,8 = 1. Sur les branches du second niveau, ce sont des probabilités conditionnelles : 0,1 est P_M(A), pas P(A). »
+
+Correction : « Notons M : “réservation mobile” et A : “annulation”. P(A) = 0,3 × 0,1 + 0,7 × 0,2 = 0,03 + 0,14 = 0,17. P_A(M) = 0,03/0,17 = 3/17 ≈ 0,176. Pour la question 4, le nombre X d''annulations suit la loi binomiale B(10 ; 0,17). P(X = 2) = C(10, 2) × 0,17² × 0,83⁸ = 45 × 0,0289 × 0,83⁸. À la calculatrice, 0,83⁸ ≈ 0,2252, donc P(X = 2) ≈ 0,293. »
+
+« Notez la rédaction : je justifie la loi binomiale par trois éléments : répétition de 10 épreuves identiques, indépendantes, à deux issues. »
+
+## 20:00 – 35:00 · Exercice 2 : suites
+
+Énoncé : « Soit u₀ = 10 et uₙ₊₁ = 0,5 uₙ + 3. 1) Calculer u₁ et u₂. 2) Soit vₙ = uₙ − 6 ; montrer que (vₙ) est géométrique. 3) Exprimer uₙ en fonction de n et déterminer sa limite. 4) Montrer par récurrence que uₙ ≥ 6 pour tout n. »
+
+Correction :
+- u₁ = 5 + 3 = 8 ; u₂ = 4 + 3 = 7.
+- vₙ₊₁ = uₙ₊₁ − 6 = 0,5uₙ − 3 = 0,5(uₙ − 6) = 0,5 vₙ. Suite géométrique de raison 0,5, v₀ = 4.
+- vₙ = 4 × 0,5ⁿ, donc uₙ = 6 + 4 × 0,5ⁿ. Comme 0 < 0,5 < 1, 0,5ⁿ → 0 et uₙ → 6.
+- Initialisation : u₀ = 10 ≥ 6. Hérédité : si uₙ ≥ 6, alors 0,5uₙ ≥ 3 et uₙ₊₁ ≥ 6. Conclusion : uₙ ≥ 6 pour tout n.
+
+Question à poser : « La suite (uₙ) est-elle croissante ou décroissante ? » Réponse : uₙ₊₁ − uₙ = 6 + 2 × 0,5ⁿ − 6 − 4 × 0,5ⁿ = −2 × 0,5ⁿ < 0, donc (uₙ) est décroissante. Elle est décroissante et minorée par 6, ce qui confirme sa convergence.
+
+« Remarquez qu''on pouvait aussi conclure directement de la formule : 4 × 0,5ⁿ > 0. Au Bac, faites ce qu''on vous demande : si l''énoncé exige une récurrence, rédigez la récurrence. »
+
+## 35:00 – 43:00 · Pause et quiz interactif
+
+« Pause de deux minutes, puis cinq questions rapides. »
+
+- Question 1 : lim x eˣ quand x → −∞ ? Réponse : 0.
+- Question 2 : Dérivée de e^(−x) ? Réponse : −e^(−x).
+- Question 3 : ln(e⁵) ? Réponse : 5.
+- Question 4 : Limite de 0,9ⁿ ? Réponse : 0.
+- Question 5 : Espérance de B(20 ; 0,3) ? Réponse : 6.
+
+## 43:00 – 55:00 · Problème, partie A : limites et dérivée
+
+Énoncé : « Soit f définie sur ℝ par f(x) = (x + 1)e^(−x). 1) Calculer les limites de f en −∞ et en +∞. 2) Calculer f''(x) et dresser le tableau de variations. »
+
+« En −∞ : x + 1 → −∞ et e^(−x) → +∞, donc par produit f(x) → −∞. En +∞ : on a une forme “∞ × 0”. J''écris f(x) = x e^(−x) + e^(−x) = x/eˣ + e^(−x). Par croissances comparées, x/eˣ → 0, et e^(−x) → 0. Donc f(x) → 0 : la droite y = 0 est asymptote horizontale en +∞. »
+
+« Dérivée : produit u = x + 1, v = e^(−x), u'' = 1, v'' = −e^(−x). f''(x) = e^(−x) − (x + 1)e^(−x) = −x e^(−x). Comme e^(−x) > 0, f''(x) a le signe de −x : positif pour x < 0, négatif pour x > 0. f est croissante sur ]−∞ ; 0], décroissante sur [0 ; +∞[, avec un maximum f(0) = 1. »
+
+« Au tableau, je dresse le tableau de variations complet : première ligne les valeurs de x (−∞, 0, +∞) ; deuxième ligne le signe de f''(x) (+ puis −, avec 0 en x = 0) ; troisième ligne les flèches de f, de −∞ jusqu''à 1 puis de 1 jusqu''à 0. Les limites doivent figurer aux extrémités des flèches : c''est un point souvent oublié et qui coûte des points. »
+
+## 55:00 – 1:07:00 · Problème, partie B : tangente et équation
+
+Énoncé : « 3) Déterminer l''équation de la tangente T au point d''abscisse −1. 4) Montrer que l''équation f(x) = 1/2 admet une unique solution α dans [0 ; +∞[ et en donner un encadrement d''amplitude 0,01. »
+
+« f(−1) = 0 et f''(−1) = −(−1)e¹ = e. Donc T : y = e(x + 1). »
+
+« Sur [0 ; +∞[, f est continue et strictement décroissante, f(0) = 1 et lim f = 0 en +∞. Or 1/2 est compris entre 0 et 1. D''après le corollaire du théorème des valeurs intermédiaires, l''équation f(x) = 1/2 a une unique solution α sur cet intervalle. Balayage à la calculatrice : f(1,67) ≈ 0,5026 et f(1,68) ≈ 0,4995. Donc 1,67 < α < 1,68. »
+
+Question à poser : « Combien de solutions a l''équation f(x) = 1/2 sur ℝ tout entier ? » Réponse : deux, car sur ]−∞ ; 0], f croît de −∞ à 1 et prend aussi une fois la valeur 1/2 (solution comprise entre −0,8 et −0,7).
+
+## 1:07:00 – 1:17:00 · Problème, partie C : tracé de la courbe
+
+« Pour tracer la courbe, je place d''abord les éléments sûrs : l''asymptote y = 0 en +∞, le maximum au point (0 ; 1), le point (−1 ; 0) où la courbe coupe l''axe des abscisses avec sa tangente de coefficient directeur e ≈ 2,72, et le point d''abscisse α. Je complète avec quelques valeurs : f(1) = 2/e ≈ 0,74 ; f(2) = 3/e² ≈ 0,41 ; f(−2) = −e² ≈ −7,39. »
+
+Visuel : la courbe tracée progressivement, avec la tangente et l''asymptote en couleur.
+
+« Une courbe soignée et cohérente avec le tableau de variations rapporte des points. Vérifiez toujours que le dessin respecte vos résultats : là où f est croissante, la courbe monte. »
+
+## 1:17:00 – 1:23:00 · Synthèse : la rédaction au Bac
+
+- Toujours justifier une limite (opération, croissances comparées, factorisation).
+- Pour le TVI : continuité, stricte monotonie, images aux bornes, conclusion.
+- Pour une suite auxiliaire : calculer vₙ₊₁ en fonction de vₙ, pas seulement quelques termes.
+- Pour la loi binomiale : justifier les trois conditions.
+- Arrondir uniquement à la fin et préciser la précision demandée.
+
+## 1:23:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : lim (ln x)/x quand x → +∞ ? Réponse : 0.
+- Question 2 : Dérivée de ln(2x + 1) ? Réponse : 2/(2x + 1).
+- Question 3 : (uₙ) géométrique, u₀ = 5, q = 2 : u₄ ? Réponse : 5 × 16 = 80.
+- Question 4 : P(A) = 0,4 et P_A(B) = 0,5 : P(A ∩ B) ? Réponse : 0,2.
+- Question 5 : Résoudre eˣ = 7. Réponse : x = ln 7.
+
+« Félicitations pour ce travail. Refaites ce sujet seuls, en temps limité, dans une semaine. La régularité de l''entraînement fait la différence au Bac. Bon courage ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'maths-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : sujet type de Bac commenté');
+
 -- Cours : Gérer les parkings d'une entreprise
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-parking-entreprise', (select id from public.levels where name = 'Formation professionnelle'), 'parking-entreprise', 'Gestion des parkings', 'Gérer les parkings d''une entreprise', 'Cette formation apprend à organiser et piloter le parking d''une entreprise, d''une administration ou d''un site industriel : plan et attribution des places, politique d''accès et badges, accueil des visiteurs, sécurité et optimisation du taux d''occupation. Elle s''adresse aux responsables des services généraux, gestionnaires de sites, agents de sécurité encadrants et assistants de direction. Aucun prérequis technique n''est demandé ; savoir utiliser un tableur est un plus.', true, 60
@@ -9915,6 +10941,528 @@ Question 5 : 100 VO vendus, 10 % d''interventions sous garantie à 250 000 FCFA 
 Merci à toutes et à tous. Votre exercice : coter un véhicule d''occasion réel de votre entourage avec la fiche d''inspection et la méthode à rebours.', 'video', 90, false, 60
 from public.courses c where c.slug = 'formation-vente-vehicules'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : du stock à l''après-vente, vendre un véhicule pas à pas');
+
+-- Cours : Géolocalisation et télématique des véhicules
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'formation-gps-avance', (select id from public.levels where name = 'Formation professionnelle'), 'gps', 'Géolocalisation et télématique', 'Géolocalisation et télématique des véhicules', 'Cette formation explique le fonctionnement du GPS (satellites, temps, trilatération), les traceurs et la télématique embarquée, le géofencing et les alertes, l''analyse des trajets et du comportement de conduite, ainsi que la protection des données personnelles des conducteurs. Elle s''adresse aux gestionnaires de flotte, responsables sécurité, exploitants de transport et techniciens qui déploient ou exploitent une solution de géolocalisation. Prérequis : calculs de base, notion de vitesse (distance / temps) et racine carrée.', true, 110
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comment fonctionne le GPS : satellites, temps et trilatération', '## Objectifs de la leçon
+
+- Expliquer comment un récepteur GPS calcule sa position.
+- Comprendre le rôle du temps et de la vitesse de la lumière.
+- Résoudre un exemple simple de trilatération et connaître les sources d''erreur.
+
+## Le système GPS
+
+Le GPS (Global Positioning System) est le système de positionnement par satellites des États-Unis. Il appartient à la famille des GNSS (systèmes mondiaux de navigation par satellites), avec GLONASS (Russie), Galileo (Union européenne) et BeiDou (Chine). Les récepteurs modernes utilisent souvent plusieurs constellations à la fois, ce qui améliore la précision.
+
+Le GPS comprend trois segments :
+
+- Le segment spatial : une constellation d''au moins 24 satellites opérationnels (en pratique davantage), répartis sur six plans orbitaux, à environ 20 200 km d''altitude. Chacun fait le tour de la Terre en un peu moins de 12 heures.
+- Le segment de contrôle : des stations au sol qui suivent les satellites, corrigent leurs orbites et synchronisent leurs horloges.
+- Le segment utilisateur : tous les récepteurs, qui ne font qu''écouter. Un récepteur GPS n''émet rien vers les satellites.
+
+## Le principe : mesurer des distances avec le temps
+
+Chaque satellite porte des horloges atomiques très précises. Il diffuse en permanence un signal contenant l''heure exacte d''émission et sa position sur son orbite (les éphémérides). Le récepteur note l''heure de réception. La différence entre les deux est le temps de trajet du signal. Comme le signal voyage à la vitesse de la lumière, environ 300 000 km/s, on obtient la distance :
+
+distance = vitesse de la lumière × temps de trajet.
+
+Exemple : un satellite situé à 20 200 km à la verticale du récepteur envoie un signal qui met 20 200 / 300 000 ≈ 0,0673 s, soit environ 67 millisecondes, pour arriver.
+
+Cette méthode exige une précision extrême sur le temps : une erreur d''une microseconde (un millionième de seconde) produit une erreur de 300 000 km/s × 0,000001 s = 0,3 km, soit 300 m.
+
+## La trilatération
+
+Connaître sa distance à un satellite place le récepteur quelque part sur une sphère centrée sur ce satellite. Avec deux satellites, on est sur l''intersection de deux sphères (un cercle). Avec trois, on obtient deux points, dont un seul est plausible (l''autre est loin dans l''espace). C''est la trilatération : déterminer une position à partir de distances, sans mesurer d''angles.
+
+Mais l''horloge du récepteur est une simple horloge à quartz, beaucoup moins précise que celles des satellites. Son décalage est une inconnue de plus. On a donc quatre inconnues : les trois coordonnées de position et le décalage d''horloge. Il faut au moins quatre satellites pour résoudre le problème. Les distances mesurées avant correction de l''horloge s''appellent des pseudo-distances.
+
+## Exemple en deux dimensions
+
+Pour comprendre le calcul, simplifions en plan. Trois balises sont placées en A(0 ; 0), B(10 ; 0) et C(0 ; 10), en kilomètres. Un récepteur mesure : distance à A = 5 km, à B = √65 km, à C = √45 km. Où est-il ?
+
+Les équations des cercles sont :
+
+- x² + y² = 25
+- (x - 10)² + y² = 65
+- x² + (y - 10)² = 45
+
+En soustrayant la première de la deuxième : (x - 10)² - x² = 40, soit -20x + 100 = 40, donc x = 3.
+
+En soustrayant la première de la troisième : (y - 10)² - y² = 20, soit -20y + 100 = 20, donc y = 4.
+
+Vérification : 3² + 4² = 9 + 16 = 25. Le récepteur est en (3 ; 4). Le GPS fait le même type de calcul en trois dimensions, avec le décalage d''horloge en plus.
+
+## Les coordonnées
+
+Le GPS donne une position en latitude, longitude et altitude, dans le système de référence WGS 84. La latitude va de 0° à l''équateur à 90° aux pôles (positive au nord) ; la longitude va de 0° au méridien de Greenwich à 180° (négative à l''ouest). Dakar se trouve vers 14,7° de latitude nord et 17,4° de longitude ouest, soit environ (14,7 ; -17,4) en degrés décimaux.
+
+Un degré de latitude correspond à environ 111 km. Un degré de longitude vaut environ 111 × cos(latitude) km : à la latitude de Dakar, cos(14,7°) ≈ 0,967, donc environ 107 km.
+
+## Les sources d''erreur
+
+- La traversée de l''ionosphère et de la troposphère ralentit le signal.
+- Les trajets multiples : le signal rebondit sur les immeubles avant d''arriver, ce qui allonge la distance mesurée.
+- Les masques : tunnels, parkings souterrains, rues étroites entre immeubles, végétation dense.
+- La géométrie des satellites : des satellites regroupés dans une même région du ciel donnent une position moins précise que des satellites bien répartis.
+
+En ciel dégagé, un récepteur civil courant atteint une précision de quelques mètres.
+
+## Points clés
+
+- Le GPS calcule des distances à partir du temps de trajet des signaux.
+- Il faut au moins quatre satellites : trois coordonnées et le décalage d''horloge.
+- Une microseconde d''erreur représente 300 m.
+- Bâtiments, tunnels et atmosphère dégradent la précision.
+
+## Exercices
+
+- Exercice 1 : quelle distance correspond à un temps de trajet de 0,07 s ?
+- Exercice 2 : quelle erreur de position produit une erreur d''horloge de 10 nanosecondes (0,00000001 s) ?
+- Exercice 3 : pourquoi faut-il quatre satellites et non trois ?
+- Exercice 4 : balises A(0 ; 0) et B(8 ; 0) ; distances mesurées 5 km à A et 5 km à B. Trouvez les deux positions possibles.
+- Exercice 5 : deux points ont la même longitude et des latitudes de 14,70° et 14,75°. Quelle distance les sépare ?
+
+## Corrigé
+
+Exercice 1 : 300 000 × 0,07 = 21 000 km.
+
+Exercice 2 : 300 000 000 m/s × 0,00000001 s = 3 m.
+
+Exercice 3 : parce que l''horloge du récepteur n''est pas synchronisée avec celles des satellites : son décalage est une quatrième inconnue qui s''ajoute aux trois coordonnées.
+
+Exercice 4 : x² + y² = 25 et (x - 8)² + y² = 25. En soustrayant : -16x + 64 = 0, donc x = 4. Puis y² = 25 - 16 = 9, donc y = 3 ou y = -3. Positions possibles : (4 ; 3) et (4 ; -3). Une troisième balise permettrait de trancher.
+
+Exercice 5 : écart de 0,05° de latitude ; 0,05 × 111 = 5,55 km.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'formation-gps-avance'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comment fonctionne le GPS : satellites, temps et trilatération');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Traceurs et télématique embarquée', '## Objectifs de la leçon
+
+- Décrire les composants d''une solution de télématique embarquée.
+- Choisir un traceur et une offre adaptés aux besoins.
+- Estimer les volumes de données et le retour sur investissement.
+
+## De la géolocalisation à la télématique
+
+Un récepteur GPS seul calcule une position mais ne la transmet à personne. Un traceur ajoute un moyen de communication (généralement un modem mobile avec une carte SIM) pour envoyer cette position à un serveur. La télématique combine la géolocalisation avec d''autres données du véhicule (contact moteur, régime, consommation, température, portes) sur une plateforme de suivi.
+
+## Les composants d''une solution
+
+- Le boîtier embarqué : récepteur GNSS, modem cellulaire, carte SIM, mémoire, accéléromètre, batterie de secours.
+- Les antennes : GNSS et cellulaire, intégrées ou déportées.
+- Les entrées et sorties : fil de contact (détection moteur allumé), boutons d''alerte, capteurs de porte, sortie pour couper le démarreur à l''arrêt en cas de vol, selon les règles de sécurité.
+- Les capteurs optionnels : sonde de niveau de carburant, sonde de température pour le transport frigorifique, lecteur d''identification du conducteur.
+- La connexion au réseau du véhicule : prise de diagnostic OBD ou bus CAN, qui donnent accès au kilométrage réel, au régime moteur, à la consommation ou aux codes défaut, selon les véhicules.
+- La plateforme : serveur et application web ou mobile qui affichent les cartes, les historiques, les alertes et les rapports.
+
+## Le fonctionnement
+
+Le boîtier calcule régulièrement sa position et l''enregistre avec l''heure, la vitesse, le cap et l''état des entrées. Il envoie ces données selon des règles paramétrables : par exemple toutes les 30 secondes en roulant, toutes les 30 minutes à l''arrêt, et immédiatement en cas d''événement (allumage, coupure d''alimentation, choc). Quand le réseau mobile est absent, en zone rurale par exemple, le boîtier stocke les positions et les envoie dès que la couverture revient.
+
+## Estimer les volumes de données
+
+Exemple : un véhicule roule 10 heures par jour avec une position toutes les 30 secondes. Nombre de positions : 10 × 3 600 / 30 = 1 200 par jour. Si chaque message pèse environ 100 octets (valeur d''ordre de grandeur, elle varie selon le protocole), le volume quotidien est 1 200 × 100 = 120 000 octets, soit environ 120 ko par jour, et environ 3,6 Mo pour 30 jours. Ce calcul aide à choisir le forfait de données de la carte SIM.
+
+Plus la fréquence est élevée, plus le tracé est précis et plus le volume de données augmente. Une fréquence trop faible rend l''analyse des trajets et des vitesses peu fiable.
+
+## Choisir un traceur et un prestataire
+
+Avant de choisir, on écrit les besoins : sécurité contre le vol, suivi des tournées, contrôle du carburant, preuve de passage chez les clients, suivi de la température, analyse de conduite. Puis on compare les offres sur des critères écrits :
+
+- Précision et fiabilité du boîtier, résistance à la chaleur, à la poussière et aux vibrations.
+- Fonctionnement en cas de coupure (batterie de secours) et alerte en cas d''arrachement.
+- Couverture des réseaux mobiles sur les itinéraires réels.
+- Qualité de la plateforme : cartes à jour, rapports, alertes, application mobile, export des données.
+- Installation par des techniciens qualifiés, sans perturber l''électricité du véhicule ni la garantie.
+- Service après-vente, délais d''intervention, présence locale.
+- Coût total : boîtiers, installation, abonnement mensuel, cartes SIM.
+- Hébergement, sécurité et confidentialité des données.
+
+## Calculer le retour sur investissement
+
+Exemple pour une flotte de 30 véhicules. Les prix sont des montants d''exemple, à remplacer par des devis réels.
+
+- Boîtiers et installation : 30 × 120 000 = 3 600 000 FCFA, payés la première année.
+- Abonnements : 30 × 8 000 × 12 = 2 880 000 FCFA par an.
+- Coût de la première année : 6 480 000 FCFA ; années suivantes : 2 880 000 FCFA.
+
+Gains attendus, estimés à partir d''un projet pilote : réduction de 8 % d''une dépense carburant de 60 000 000 FCFA par an, soit 4 800 000 FCFA, grâce à la fin des trajets non autorisés et à la réduction du ralenti ; baisse des sinistres et de la maintenance estimée à 1 500 000 FCFA. Total : 6 300 000 FCFA par an.
+
+La première année est presque à l''équilibre (6 300 000 - 6 480 000 = -180 000 FCFA) ; les années suivantes, le gain net est 6 300 000 - 2 880 000 = 3 420 000 FCFA par an. Ces gains supposent que quelqu''un exploite les données et agisse.
+
+## Exemple : un transporteur frigorifique à Dakar
+
+Un transporteur de produits de la mer équipe ses 12 camions frigorifiques de traceurs avec sondes de température. Le client exige la preuve que la chaîne du froid est respectée. La plateforme envoie une alerte si la température dépasse le seuil fixé pendant plus de 10 minutes, et produit un rapport de température par livraison. Le transporteur gagne un contrat avec un exportateur grâce à cette traçabilité.
+
+## Points clés
+
+- Traceur = récepteur GNSS + modem de communication + plateforme.
+- La télématique ajoute les données du véhicule et des capteurs.
+- La fréquence d''envoi fixe la précision et le volume de données.
+- Le retour sur investissement dépend de l''exploitation réelle des données.
+
+## Exercices
+
+- Exercice 1 : citez cinq composants d''une solution de télématique.
+- Exercice 2 : un véhicule roule 8 heures par jour avec une position toutes les 20 secondes. Combien de positions par jour ?
+- Exercice 3 : avec 120 octets par message, quel volume mensuel (30 jours) pour l''exercice 2 ?
+- Exercice 4 : 20 véhicules, boîtier et installation 150 000 FCFA, abonnement 7 500 FCFA par mois. Calculez le coût de la première année et des années suivantes.
+
+## Corrigé
+
+Exercice 1 : récepteur GNSS, modem et carte SIM, antennes, accéléromètre, batterie de secours, capteurs (carburant, température), plateforme de suivi.
+
+Exercice 2 : 8 × 3 600 / 20 = 1 440 positions.
+
+Exercice 3 : 1 440 × 120 = 172 800 octets par jour ; × 30 = 5 184 000 octets, soit environ 5,2 Mo par mois.
+
+Exercice 4 : équipement 20 × 150 000 = 3 000 000 FCFA ; abonnements 20 × 7 500 × 12 = 1 800 000 FCFA par an ; première année 4 800 000 FCFA ; années suivantes 1 800 000 FCFA.', 'texte', 50, false, 20
+from public.courses c where c.slug = 'formation-gps-avance'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Traceurs et télématique embarquée');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Géofencing, zones et alertes', '## Objectifs de la leçon
+
+- Définir le géofencing et ses usages.
+- Paramétrer des zones et des règles d''alerte pertinentes.
+- Calculer si un véhicule est dans une zone et limiter les fausses alertes.
+
+## Qu''est-ce que le géofencing ?
+
+Le géofencing (ou barrière virtuelle, géorepérage) consiste à dessiner sur la carte des zones géographiques et à associer des règles aux mouvements des véhicules par rapport à ces zones. Quand un véhicule entre dans une zone, en sort, y reste trop longtemps ou y dépasse une vitesse, la plateforme déclenche une alerte ou enregistre un événement.
+
+## Les types de zones
+
+- Le cercle : défini par un centre (latitude, longitude) et un rayon. Simple, adapté à un dépôt, un client, une station-service.
+- Le polygone : défini par une liste de sommets. Adapté à une zone de forme irrégulière : un quartier, un port, une zone industrielle.
+- Le corridor : une bande de largeur fixée autour d''un itinéraire, par exemple la route nationale entre Dakar et Kaolack.
+
+## Les usages courants
+
+- Sécurité : alerte si un véhicule quitte le dépôt la nuit ou le week-end.
+- Exploitation : enregistrement automatique des heures d''arrivée et de départ chez les clients, preuve de passage.
+- Conformité : alerte si un camion sort de son corridor autorisé ou entre dans une zone interdite (centre-ville aux heures de pointe, zone à risque).
+- Vitesse : limite plus basse dans une zone scolaire ou un site industriel.
+- Carburant : rapprochement entre les pleins déclarés et la présence effective du véhicule à la station.
+- Facturation : temps passé sur un chantier pour refacturer un client.
+
+## Paramétrer une règle
+
+Une règle se décrit en cinq éléments :
+
+- La zone concernée.
+- L''événement : entrée, sortie, présence prolongée, vitesse dépassée.
+- Les conditions : jours, heures, véhicules ou groupes concernés.
+- Les destinataires : qui reçoit l''alerte, par quel canal (application, SMS, courriel).
+- L''action attendue : appeler le chauffeur, prévenir la sécurité, simple enregistrement.
+
+Exemple : "Si un véhicule du groupe Livraisons sort de la zone Dépôt Rufisque entre 21 h et 5 h, envoyer une notification au chef de poste de sécurité, qui appelle le chauffeur et, sans réponse, la gendarmerie selon la procédure."
+
+## Calculer la position par rapport à un cercle
+
+Pour de petites distances, on peut assimiler la surface terrestre à un plan. On convertit les écarts de coordonnées en mètres :
+
+- écart nord-sud (m) ≈ écart de latitude (degrés) × 111 000
+- écart est-ouest (m) ≈ écart de longitude (degrés) × 111 000 × cos(latitude)
+
+puis on applique le théorème de Pythagore : distance = √(écart nord-sud² + écart est-ouest²).
+
+Exemple : la zone Dépôt a pour centre (14,7000 ; -17,4500) et un rayon de 500 m. Un véhicule est signalé en (14,7030 ; -17,4470). Écart de latitude 0,0030°, soit 0,0030 × 111 000 = 333 m. Écart de longitude 0,0030°, soit 0,0030 × 111 000 × 0,967 ≈ 322 m. Distance = √(333² + 322²) = √(110 889 + 103 684) = √214 573 ≈ 463 m. Le véhicule est à l''intérieur du cercle, près du bord.
+
+## Éviter les fausses alertes
+
+Une position GPS n''est jamais parfaite : à l''arrêt, elle "dérive" de quelques mètres, et davantage entre des immeubles. Un véhicule garé au bord de la zone peut sembler entrer et sortir plusieurs fois. Trop d''alertes inutiles produisent la lassitude : les opérateurs finissent par ne plus les lire, et la vraie alerte passe inaperçue. Les bonnes pratiques :
+
+- Prévoir une marge : rayon un peu plus grand que la zone réelle.
+- Ajouter une temporisation : alerter seulement si la sortie dure plus de 2 ou 3 minutes.
+- Combiner les conditions : sortie de zone et moteur allumé et vitesse supérieure à 10 km/h.
+- Limiter les destinataires et hiérarchiser : alerte critique immédiate, alerte mineure dans un rapport quotidien.
+- Revoir chaque mois les règles qui génèrent le plus d''alertes sans suite.
+
+## La procédure de traitement
+
+Chaque alerte critique doit avoir une procédure écrite : qui la reçoit, en combien de temps on réagit, qui on appelle, comment on clôture l''alerte en notant la cause (fausse alerte, sortie autorisée, incident réel). Ce registre permet de mesurer le temps de réaction et d''améliorer les règles.
+
+## Points clés
+
+- Le géofencing associe des zones (cercle, polygone, corridor) à des règles.
+- Une règle comprend zone, événement, conditions, destinataires et action.
+- La distance à un centre se calcule avec la conversion en mètres et Pythagore.
+- Marges, temporisations et conditions combinées limitent les fausses alertes.
+
+## Exercices
+
+- Exercice 1 : citez quatre usages du géofencing dans une entreprise de livraison.
+- Exercice 2 : zone de centre (14,7000 ; -17,4500) et rayon 600 m. Un véhicule est en (14,7060 ; -17,4520). Est-il dans la zone ? (cos 14,7° ≈ 0,967)
+- Exercice 3 : rédigez une règle complète pour surveiller l''arrivée d''un camion chez un client.
+- Exercice 4 : une règle génère 40 alertes par jour, dont 38 fausses. Proposez trois corrections.
+
+## Corrigé
+
+Exercice 1 : alerte de sortie du dépôt la nuit, preuve d''arrivée chez les clients, respect d''un corridor, limitation de vitesse sur site, contrôle des pleins à la station.
+
+Exercice 2 : écart nord-sud 0,0060 × 111 000 = 666 m ; écart est-ouest 0,0020 × 111 000 × 0,967 ≈ 215 m. Distance = √(666² + 215²) = √(443 556 + 46 225) = √489 781 ≈ 700 m. 700 m est supérieur à 600 m : le véhicule est hors de la zone.
+
+Exercice 3 : zone : cercle de 200 m autour de l''entrepôt du client ; événement : entrée puis sortie ; conditions : véhicules du groupe Livraisons, jours ouvrés ; destinataires : service clients, par rapport et notification ; action : enregistrer l''heure d''arrivée et de départ et informer le client de la livraison.
+
+Exercice 4 : ajouter une temporisation de quelques minutes ; agrandir légèrement la zone ; combiner avec moteur allumé et vitesse minimale ; restreindre les horaires ou les véhicules concernés.', 'texte', 50, false, 30
+from public.courses c where c.slug = 'formation-gps-avance'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Géofencing, zones et alertes');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Analyser les trajets et le comportement de conduite', '## Objectifs de la leçon
+
+- Exploiter les historiques de trajets pour mieux organiser l''activité.
+- Mesurer le comportement de conduite avec des indicateurs objectifs.
+- Construire un score de conduite et un plan d''accompagnement.
+
+## Ce que racontent les données
+
+Chaque position enregistrée comporte une heure, des coordonnées, une vitesse et souvent l''état du moteur. Mises bout à bout, ces données reconstituent les trajets : départ, itinéraire, arrêts, durée, kilomètres. L''accéléromètre du boîtier ajoute des événements de conduite : freinages brusques, accélérations brusques, virages serrés, chocs.
+
+## Les indicateurs de trajet
+
+- Kilomètres parcourus par véhicule et par jour.
+- Temps de conduite et temps d''arrêt.
+- Temps de ralenti : moteur allumé, véhicule à l''arrêt.
+- Nombre d''arrêts et durée moyenne chez les clients.
+- Trajets hors horaires de service.
+- Écart entre l''itinéraire prévu et l''itinéraire réel.
+
+Exemple de calcul de vitesse moyenne entre deux positions : un camion est relevé à 10 h 00 puis à 10 h 04 et a parcouru 5 km entre les deux. Vitesse moyenne = 5 km / (4/60) h = 5 × 15 = 75 km/h.
+
+## Optimiser l''organisation
+
+L''analyse des trajets permet de réorganiser les tournées : regrouper les clients proches, éviter les axes saturés aux heures de pointe à Dakar, réduire les kilomètres à vide. Elle permet aussi de vérifier les temps passés chez les clients et de mieux les facturer, ou de détecter un véhicule sous-utilisé qui pourrait être réaffecté.
+
+## Le coût du ralenti
+
+Un moteur qui tourne à l''arrêt consomme du carburant sans produire de déplacement, par exemple pour garder la climatisation pendant une attente. Cette consommation dépend du moteur ; on la mesure sur ses propres véhicules. Prenons une hypothèse de 1 litre par heure et un prix fictif de 800 FCFA le litre. Pour 30 véhicules avec 1 heure de ralenti par jour sur 22 jours : 30 × 1 × 22 × 1 = 660 litres par mois, soit 660 × 800 = 528 000 FCFA par mois, plus de 6 300 000 FCFA par an. Diviser le ralenti par deux économise donc plus de 3 000 000 FCFA par an dans cet exemple.
+
+## Les indicateurs de comportement
+
+- Excès de vitesse : nombre, durée et ampleur des dépassements de la limite fixée (limite légale de la route ou limite interne de l''entreprise).
+- Freinages brusques : décélération supérieure à un seuil paramétré.
+- Accélérations brusques.
+- Virages serrés.
+- Conduite de nuit ou durée de conduite sans pause.
+
+Pour comparer des conducteurs qui ne roulent pas autant, on rapporte les événements à la distance : nombre d''événements pour 100 km.
+
+Exemple : le conducteur A a 12 freinages brusques sur 800 km, soit 12 / 800 × 100 = 1,5 pour 100 km. Le conducteur B en a 30 sur 1 200 km, soit 2,5 pour 100 km. Malgré plus de kilomètres, B a une conduite plus brusque.
+
+## Construire un score de conduite
+
+Un score simple part de 100 points et retire des points par événement pour 100 km, avec des poids choisis par l''entreprise. Exemple de barème interne : moins 4 points par freinage brusque pour 100 km, moins 3 par accélération brusque pour 100 km, moins 6 par excès de vitesse pour 100 km.
+
+Conducteur B : 2,5 freinages, 1,0 accélération et 0,5 excès pour 100 km. Score = 100 - 4 × 2,5 - 3 × 1,0 - 6 × 0,5 = 100 - 10 - 3 - 3 = 84.
+
+Les seuils et poids doivent être expliqués aux conducteurs et stables dans le temps, sinon le score perd sa crédibilité. Il faut aussi tenir compte du contexte : un chauffeur de pistes rurales aura plus d''événements qu''un chauffeur sur autoroute.
+
+## Accompagner plutôt que punir
+
+L''objectif est de réduire les accidents et les coûts, pas de sanctionner à tout prix. Une démarche efficace :
+
+- Présenter le dispositif et le barème aux conducteurs avant le démarrage.
+- Partager chaque mois le score individuel avec le conducteur, en entretien.
+- Identifier avec lui les situations à risque (itinéraire, horaires, fatigue).
+- Proposer une formation à la conduite défensive et économique.
+- Reconnaître les progrès et les meilleurs conducteurs.
+- Réserver les sanctions aux manquements graves et répétés, dans le respect du règlement intérieur et du droit du travail.
+
+## Exemple : une société de transport de personnel à Thiès
+
+Une société qui transporte des ouvriers vers des chantiers équipe ses 15 minibus. Le premier mois, la moyenne est de 3,2 freinages brusques pour 100 km et 20 % des trajets comportent un excès de vitesse. Après trois mois d''entretiens mensuels, d''une formation et d''une prime collective liée au score, la moyenne descend à 1,4 freinage pour 100 km et la consommation baisse de 7 %.
+
+## Points clés
+
+- Les données de trajet reconstituent l''activité : kilomètres, arrêts, ralenti, horaires.
+- Les événements de conduite se comparent pour 100 km.
+- Un score repose sur un barème connu, stable et adapté au contexte.
+- L''accompagnement des conducteurs produit plus de résultats que la sanction seule.
+
+## Exercices
+
+- Exercice 1 : un véhicule parcourt 3 km en 6 minutes. Quelle est sa vitesse moyenne ?
+- Exercice 2 : un conducteur a 18 freinages brusques sur 1 500 km. Combien pour 100 km ?
+- Exercice 3 : avec le barème de la leçon, calculez le score d''un conducteur ayant 1,2 freinage, 0,8 accélération et 1,5 excès pour 100 km.
+- Exercice 4 : 20 véhicules, 1,5 heure de ralenti par jour, 22 jours, 1 L/h, 800 FCFA le litre (prix fictif). Calculez le coût mensuel du ralenti.
+
+## Corrigé
+
+Exercice 1 : 6 minutes = 0,1 h ; vitesse = 3 / 0,1 = 30 km/h.
+
+Exercice 2 : 18 / 1 500 × 100 = 1,2 freinage pour 100 km.
+
+Exercice 3 : 100 - 4 × 1,2 - 3 × 0,8 - 6 × 1,5 = 100 - 4,8 - 2,4 - 9 = 83,8.
+
+Exercice 4 : 20 × 1,5 × 22 × 1 = 660 litres ; 660 × 800 = 528 000 FCFA par mois.', 'texte', 50, false, 40
+from public.courses c where c.slug = 'formation-gps-avance'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Analyser les trajets et le comportement de conduite');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Protéger les données personnelles des conducteurs', '## Objectifs de la leçon
+
+- Comprendre pourquoi les données de géolocalisation sont des données personnelles.
+- Appliquer les grands principes de protection des données à un projet de géolocalisation.
+- Rédiger les règles d''information et d''usage pour les conducteurs.
+
+## La géolocalisation touche à la vie privée
+
+Une position GPS associée à un véhicule conduit par une personne identifiable est une donnée à caractère personnel. Elle révèle beaucoup : lieux fréquentés, horaires, habitudes, domicile, et parfois des informations sensibles (lieu de culte, établissement de santé). L''employeur a des raisons légitimes de géolocaliser ses véhicules, mais il ne peut pas en faire un outil de surveillance permanente et sans limite de ses salariés.
+
+## Le cadre juridique
+
+Au Sénégal, la protection des données personnelles est encadrée par la loi de 2008 sur la protection des données à caractère personnel, dont l''application est contrôlée par la Commission de protection des données personnelles (CDP). Selon les traitements, des formalités préalables (déclaration ou demande d''autorisation) doivent être accomplies auprès de la CDP avant la mise en œuvre. Au niveau régional et continental, la CEDEAO et l''Union africaine ont également adopté des textes sur la protection des données personnelles. Le cadre juridique évolue : avant tout projet, il faut vérifier les textes en vigueur et les recommandations de la CDP, et faire valider le dispositif par un juriste.
+
+Ce cours présente les principes généraux communs à ces textes, sans remplacer la lecture des règles officielles.
+
+## Les grands principes appliqués à la géolocalisation
+
+La finalité : on définit à l''avance et par écrit pourquoi on géolocalise. Exemples de finalités légitimes : sécurité des véhicules et des personnes, organisation des tournées, suivi du temps de transport pour la facturation, preuve de livraison, maîtrise des coûts. Les données ne doivent pas être détournées vers une autre finalité.
+
+La proportionnalité : on ne collecte que ce qui est nécessaire à la finalité. Si le but est la sécurité contre le vol, il n''est pas utile d''analyser chaque minute de la pause déjeuner. La fréquence de relevé, les données collectées et les personnes qui y accèdent doivent être adaptées.
+
+La transparence et l''information : les conducteurs sont informés avant la mise en service, par écrit : finalités, données collectées, durée de conservation, destinataires, droits et contact. Les représentants du personnel sont consultés selon le droit applicable. Un dispositif caché est à proscrire.
+
+La durée de conservation limitée : les données sont conservées le temps nécessaire à la finalité, puis supprimées ou anonymisées. Cette durée est fixée par écrit et justifiée ; il faut vérifier les recommandations de la CDP.
+
+La sécurité : accès réservé à des personnes habilitées, mots de passe individuels, traçabilité des consultations, contrat avec le prestataire qui précise ses obligations de sécurité et le lieu d''hébergement.
+
+Les droits des personnes : le conducteur peut demander à accéder aux données qui le concernent, à les faire rectifier si elles sont inexactes, et s''opposer dans les cas prévus par la loi.
+
+## Les bonnes pratiques spécifiques
+
+- Vie privée : si l''usage privé du véhicule est autorisé (soirs, week-ends), prévoir la possibilité de désactiver la géolocalisation pendant ces périodes, ou de ne pas exploiter ces données.
+- Pas de surveillance continue des personnes : on suit l''activité des véhicules pour les finalités prévues, pas les faits et gestes des conducteurs.
+- Pas de géolocalisation pour contrôler en permanence la vitesse dans le but unique de sanctionner, sans cadre défini ; le suivi de la conduite doit être prévu, expliqué et proportionné.
+- Profils d''accès : le chef d''exploitation voit les positions en temps réel ; la direction voit des rapports agrégés ; les ressources humaines n''accèdent aux données individuelles que dans les cas prévus.
+- Registre : documenter le traitement (finalités, données, durées, accès, mesures de sécurité).
+
+## Exemple : la charte de géolocalisation d''une entreprise de distribution
+
+Une entreprise de distribution de Ziguinchor déploie des traceurs sur 25 véhicules. Elle rédige une charte annexée à la politique conducteurs : finalités (sécurité contre le vol, optimisation des tournées, preuve de livraison) ; données collectées (position, vitesse, contact moteur, événements de conduite) ; pas de collecte en dehors des heures de service grâce à un bouton vie privée pour les cinq véhicules à usage mixte ; durée de conservation définie et justifiée ; accès limité au responsable de flotte et au chef d''exploitation ; droits des conducteurs et contact. Elle accomplit les formalités auprès de la CDP, présente la charte aux délégués du personnel et la fait signer par chaque conducteur pour attester qu''il en a pris connaissance.
+
+## Points clés
+
+- Les positions d''un véhicule conduit par une personne identifiable sont des données personnelles.
+- Au Sénégal, la loi de 2008 et la CDP encadrent ces traitements ; vérifier les textes en vigueur.
+- Finalité, proportionnalité, information, durée limitée, sécurité et droits des personnes sont les principes clés.
+- Une charte écrite, des accès limités et le respect de la vie privée hors service rendent le dispositif acceptable.
+
+## Exercices
+
+- Exercice 1 : pourquoi une position GPS de véhicule est-elle une donnée personnelle ?
+- Exercice 2 : citez trois finalités légitimes de la géolocalisation d''une flotte.
+- Exercice 3 : un directeur veut consulter chaque soir où se trouvent les véhicules de fonction à usage privé, "pour voir". Qu''en pensez-vous ?
+- Exercice 4 : citez six informations à donner aux conducteurs avant la mise en service.
+- Exercice 5 : proposez trois mesures de sécurité pour protéger les données de géolocalisation.
+
+## Corrigé
+
+Exercice 1 : parce qu''elle est associée à un véhicule conduit par une personne identifiable (registre d''affectation, badge) et révèle ses déplacements, ses horaires et ses habitudes.
+
+Exercice 2 : sécurité contre le vol, organisation et optimisation des tournées, preuve de livraison ou facturation du temps de transport, maîtrise des coûts de carburant.
+
+Exercice 3 : cette consultation n''a pas de finalité légitime définie et porte sur la vie privée en dehors des heures de service : elle est disproportionnée. Il faut prévoir la désactivation ou la non-exploitation des données pendant l''usage privé.
+
+Exercice 4 : finalités, données collectées, durée de conservation, destinataires, droits d''accès et de rectification, personne à contacter, existence des périodes de désactivation.
+
+Exercice 5 : comptes individuels avec mots de passe solides, profils d''accès limités selon les fonctions, traçabilité des consultations, contrat de sécurité avec le prestataire, suppression des données à l''expiration de la durée de conservation.', 'texte', 50, false, 50
+from public.courses c where c.slug = 'formation-gps-avance'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Protéger les données personnelles des conducteurs');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : déployer et exploiter la géolocalisation d''une flotte', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : gestionnaires de flotte, responsables sécurité, exploitants de transport, techniciens télématiques.
+- Objectifs : expliquer le fonctionnement du GPS, choisir et paramétrer une solution de télématique, créer des zones et des alertes efficaces, analyser trajets et conduite, respecter la protection des données des conducteurs.
+- Matériel : diaporama, carte projetée d''une plateforme de suivi (démonstration), tableau blanc, calculatrice.
+- Prérequis : notions de vitesse, racine carrée ; lecture des leçons du module conseillée.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et cas fil rouge
+
+Bonjour à toutes et à tous. Pendant cette séance, nous accompagnons la société fictive Baobab Express, qui livre des colis et des produits frais entre Dakar, Thiès, Mbour et Kaolack avec 30 véhicules. Elle a subi deux vols de véhicules l''an dernier, ses dépenses de carburant augmentent et ses clients demandent des preuves de livraison. La direction a décidé d''installer une solution de géolocalisation. Notre rôle : la concevoir de bout en bout, de la compréhension du GPS jusqu''à la charte de protection des données.
+
+Question d''ouverture : selon vous, un traceur GPS envoie-t-il des signaux vers les satellites ? Gardez votre réponse, nous la vérifions tout de suite.
+
+## 05:00 – 20:00 · Comment fonctionne le GPS
+
+La réponse est non : le récepteur GPS ne fait qu''écouter. Visuel : la constellation, avec des satellites à environ 20 200 km d''altitude répartis sur six plans orbitaux. Chaque satellite porte des horloges atomiques et diffuse l''heure exacte d''émission et sa position. Le récepteur mesure le temps de trajet et le multiplie par la vitesse de la lumière, environ 300 000 km par seconde.
+
+Calcul au tableau : un temps de trajet de 0,0673 seconde donne 300 000 fois 0,0673, soit environ 20 190 km. Et si l''horloge se trompe d''une seule microseconde ? 300 000 km/s fois un millionième de seconde, soit 300 mètres d''erreur. Voilà pourquoi le temps est au cœur du GPS.
+
+Visuel : trois sphères qui se coupent. Avec une distance, on est sur une sphère ; avec deux, sur un cercle ; avec trois, sur deux points. Mais l''horloge du récepteur n''est pas parfaite : son décalage est une quatrième inconnue. Il faut donc au moins quatre satellites.
+
+Exemple en plan : balises A(0 ; 0), B(10 ; 0), C(0 ; 10) et distances 5, √65 et √45 kilomètres. En soustrayant les équations des cercles, on trouve x = 3, puis y = 4. Nous vérifions : 9 plus 16 égale 25. Enfin, je vous rappelle les sources d''erreur : atmosphère, rebonds sur les immeubles, tunnels et parkings souterrains, mauvaise répartition des satellites dans le ciel. En ciel dégagé, un récepteur civil courant est précis à quelques mètres.
+
+## 20:00 – 33:00 · Traceurs et télématique pour Baobab Express
+
+Passons à la solution. Visuel : schéma du boîtier avec récepteur GNSS multi-constellations, modem et carte SIM, accéléromètre, batterie de secours, entrée contact moteur, sonde de température pour les véhicules frigorifiques, connexion au réseau du véhicule.
+
+Paramétrage : une position toutes les 30 secondes en roulant, toutes les 30 minutes à l''arrêt, envoi immédiat en cas d''allumage, de choc ou de coupure d''alimentation. Calculons le volume : 10 heures de route font 36 000 secondes, divisées par 30, soit 1 200 positions par jour. À environ 100 octets par message, cela fait 120 ko par jour et environ 3,6 Mo par mois. Un petit forfait de données suffit.
+
+Le budget, avec des montants d''exemple à confirmer par devis : 30 boîtiers installés à 120 000 FCFA, soit 3 600 000 FCFA, et un abonnement de 8 000 FCFA par mois et par véhicule, soit 2 880 000 FCFA par an. Les gains attendus, estimés sur un pilote de 5 véhicules : 8 % de carburant sur une dépense de 60 000 000 FCFA, soit 4 800 000 FCFA, et 1 500 000 FCFA de baisse des sinistres et de la maintenance. Question à la salle : à quelle condition ces gains seront-ils réels ? Réponse attendue : si quelqu''un est chargé d''exploiter les rapports et d''agir.
+
+## 33:00 – 45:00 · Géofencing et alertes
+
+Créons maintenant les zones de Baobab Express. Visuel : la carte de la plateforme avec le dépôt de Rufisque, les entrepôts des grands clients et le corridor de la route nationale vers Kaolack.
+
+Première règle, la sécurité : si un véhicule sort de la zone Dépôt entre 21 h et 5 h, alerte immédiate au poste de sécurité, qui appelle le chauffeur puis suit la procédure. Deuxième règle, l''exploitation : entrée et sortie des zones clients enregistrées automatiquement pour la preuve de livraison. Troisième règle, la conformité : alerte si un camion sort du corridor autorisé de plus de 2 km.
+
+Calculons une position. Centre du dépôt (14,7000 ; -17,4500), rayon 500 mètres. Le véhicule est signalé en (14,7030 ; -17,4470). Écart nord-sud : 0,003 fois 111 000, soit 333 mètres. Écart est-ouest : 0,003 fois 111 000 fois 0,967, soit environ 322 mètres. Distance : racine de 333 au carré plus 322 au carré, environ 463 mètres. Il est dans la zone, mais près du bord : attention aux fausses alertes. Nous ajoutons une temporisation de 3 minutes et la condition moteur allumé.
+
+## 45:00 – 50:00 · Pause et quiz interactif
+
+Pause active. Répondez dans le chat.
+
+Question 1 : combien de satellites faut-il au minimum pour une position GPS en trois dimensions ? Réponse : quatre.
+
+Question 2 : quelle erreur produit une erreur d''horloge de 2 microsecondes ? Réponse : 600 mètres.
+
+Question 3 : quel type de zone choisir pour un itinéraire routier ? Réponse : un corridor.
+
+Question 4 : 8 heures de route, une position toutes les 60 secondes : combien de positions ? Réponse : 480.
+
+Question 5 : vrai ou faux, plus il y a d''alertes, mieux la flotte est protégée ? Réponse : faux, trop d''alertes inutiles créent la lassitude et la vraie alerte passe inaperçue.
+
+## 50:00 – 1:04:00 · Analyser les trajets et la conduite
+
+Trois mois ont passé. Visuel : le rapport mensuel de Baobab Express. Premier constat : le ralenti. Les véhicules tournent moteur allumé à l''arrêt en moyenne 1 heure par jour. Avec une hypothèse de 1 litre par heure et un prix fictif de 800 FCFA, pour 30 véhicules et 22 jours : 660 litres et 528 000 FCFA par mois.
+
+Deuxième constat : la conduite. Calculons pour deux chauffeurs. Moussa : 12 freinages brusques sur 800 km, soit 1,5 pour 100 km. Awa : 9 sur 1 000 km, soit 0,9 pour 100 km. Appliquons le barème interne : moins 4 points par freinage, moins 3 par accélération et moins 6 par excès de vitesse, le tout pour 100 km. Moussa a aussi 1,0 accélération et 0,5 excès : score 100 moins 6 moins 3 moins 3, soit 88. Awa a 0,5 accélération et 0 excès : score 100 moins 3,6 moins 1,5, soit 94,9.
+
+Troisième constat : un véhicule fait régulièrement un détour de 15 km sur la tournée de Mbour. L''analyse montre que l''itinéraire prévu passe par une route en travaux : il faut corriger le plan de tournée, pas sanctionner le chauffeur. Question : comment présenter ces résultats aux chauffeurs ? Réponse attendue : en entretien individuel, avec le barème connu, en cherchant les causes et en proposant une formation.
+
+## 1:04:00 – 1:18:00 · Protéger les données des conducteurs
+
+Nous arrivons à un point essentiel. Les positions des véhicules de Baobab Express, associées aux chauffeurs, sont des données personnelles. Au Sénégal, la loi de 2008 sur la protection des données à caractère personnel s''applique et la CDP contrôle sa mise en œuvre. Avant le déploiement, l''entreprise accomplit les formalités prévues auprès de la CDP et vérifie les textes en vigueur, car le cadre évolue.
+
+Visuel : les six principes. Finalité : sécurité, tournées, preuve de livraison, maîtrise des coûts. Proportionnalité : pas plus de données que nécessaire. Information : chaque chauffeur reçoit une note écrite avant la mise en service, et les représentants du personnel sont consultés. Durée de conservation limitée et justifiée. Sécurité : comptes individuels, profils d''accès, traçabilité. Droits des personnes : accès et rectification.
+
+Cas pratique : cinq véhicules de Baobab Express sont à usage mixte et les cadres les gardent le week-end. Que faire ? Installer un bouton vie privée ou ne pas exploiter les données hors service. Autre cas : le directeur commercial demande l''accès en temps réel à toutes les positions pour vérifier ses commerciaux. Question à la salle : est-ce proportionné ? Discutons-en : un accès aux rapports de visites clients répond à son besoin, sans suivi minute par minute.
+
+## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
+
+Résumons. Le GPS mesure des temps de trajet pour en déduire des distances, et il faut quatre satellites. Le traceur ajoute la communication, la télématique ajoute les données du véhicule. Le géofencing transforme des zones en règles et en alertes, à condition de limiter les fausses alertes. L''analyse des trajets et de la conduite réduit les coûts et les risques, surtout si l''on accompagne les chauffeurs. Enfin, tout repose sur le respect des données personnelles : finalité, proportionnalité, information, durée limitée, sécurité, droits.
+
+Évaluation finale.
+
+Question 1 : pourquoi le GPS a-t-il besoin d''horloges atomiques ? Réponse : parce que la position se déduit du temps de trajet ; une microseconde d''erreur fait 300 mètres.
+
+Question 2 : un véhicule parcourt 6 km en 5 minutes : vitesse moyenne ? Réponse : 6 divisé par 5/60, soit 72 km/h.
+
+Question 3 : un point est à 400 mètres au nord et 300 mètres à l''est du centre d''une zone de rayon 450 mètres : est-il dedans ? Réponse : distance racine de 160 000 plus 90 000, soit 500 mètres : il est dehors.
+
+Question 4 : 15 freinages brusques sur 1 000 km : combien pour 100 km ? Réponse : 1,5.
+
+Question 5 : citez quatre principes de protection des données appliqués à la géolocalisation. Réponse : finalité, proportionnalité, information des conducteurs, durée de conservation limitée, sécurité, droits d''accès et de rectification.
+
+Merci pour votre participation. Votre travail : rédiger les trois règles de géofencing et la note d''information aux conducteurs pour votre propre flotte.', 'video', 90, false, 60
+from public.courses c where c.slug = 'formation-gps-avance'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : déployer et exploiter la géolocalisation d''une flotte');
 
 -- Cours : Apprendre et enseigner en ligne efficacement
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

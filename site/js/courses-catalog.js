@@ -626,6 +626,102 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "grh-master1",
+  "level": "Master 1",
+  "subject": "Gestion des ressources humaines",
+  "module": null,
+  "title": "Gestion des ressources humaines M1 : stratégie, compétences et dialogue social en contexte africain",
+  "description": "Ce cours aborde la GRH stratégique en Afrique francophone : GPEC, recrutement et intégration, formation, évaluation et rémunération, relations sociales et SIRH. Il s'appuie sur des cas d'entreprises de la sous-région et rappelle le contexte de réforme du droit du travail au Sénégal. Il s'adresse aux étudiants de Master 1 et aux cadres en reprise d'études ; une connaissance de base du management est souhaitée.",
+  "sort": 50,
+  "lessons": [
+   {
+    "title": "La GRH stratégique et le contexte africain",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Situer la GRH comme fonction stratégique de l'organisation.\n- Identifier les spécificités du contexte africain francophone : informalité, cadre juridique, dimension sociale et culturelle.\n- Connaître les grands domaines et indicateurs de la fonction RH.\n\n## 1. De la gestion du personnel à la GRH stratégique\n\nLa gestion du personnel s'est longtemps limitée à l'administration : contrats, paie, congés, discipline. La gestion des ressources humaines (GRH) considère au contraire les personnes comme une ressource stratégique, dont les compétences, l'engagement et la capacité d'innovation conditionnent la performance. La GRH stratégique cherche l'alignement entre la stratégie de l'organisation et les politiques RH : une banque qui se digitalise doit recruter des profils numériques, former ses agents et revoir son organisation du travail.\n\nLe modèle des « quatre rôles » de Dave Ulrich est souvent cité : le DRH est partenaire stratégique, expert administratif, champion des salariés et agent du changement. Dans beaucoup d'entreprises africaines, la fonction RH est encore surtout administrative ; l'enjeu des prochaines années est de la professionnaliser.\n\n## 2. Les domaines de la GRH\n\n- Planification et GPEC : anticiper les besoins en effectifs et en compétences.\n- Recrutement et intégration.\n- Formation et développement des compétences.\n- Évaluation de la performance et gestion des carrières.\n- Rémunération et avantages sociaux.\n- Relations sociales, dialogue avec les représentants du personnel.\n- Santé, sécurité et qualité de vie au travail.\n- Administration du personnel et systèmes d'information RH.\n\n## 3. Les spécificités du contexte africain\n\nLe gestionnaire RH en Afrique de l'Ouest travaille dans un environnement particulier :\n\n- Le poids de l'économie informelle : une grande partie de l'emploi se situe hors du salariat formel. Les entreprises formelles côtoient des sous-traitants, des journaliers et des travailleurs non déclarés, ce qui pose des questions de conformité et de responsabilité sociale.\n- La démographie : une population jeune et nombreuse arrive chaque année sur le marché du travail ; le défi est autant la création d'emplois que l'adéquation formation-emploi.\n- La pénurie de certaines compétences (ingénieurs spécialisés, data, maintenance industrielle, audit) coexistant avec un sous-emploi des diplômés dans d'autres filières.\n- La dimension communautaire et culturelle : solidarité familiale, rôle des aînés, importance de la relation personnelle, attentes envers l'employeur en cas d'événements familiaux. Ces éléments peuvent renforcer la cohésion mais aussi créer des pressions (recrutements par affinité, demandes d'avances sur salaire).\n- La diversité des statuts : entreprises publiques, multinationales, PME familiales, ONG, administrations, chacune avec ses pratiques.\n\n## 4. Le cadre juridique\n\nLa relation de travail est encadrée par le Code du travail national, ses décrets d'application, les conventions collectives (interprofessionnelle et sectorielles) et le contrat de travail. La protection sociale relève d'organismes nationaux ; au Sénégal, par exemple, la Caisse de sécurité sociale et l'Institution de prévoyance retraite. L'inspection du travail contrôle l'application des règles et intervient dans les conflits.\n\nLe Sénégal est engagé dans une transition vers un nouveau Code du travail, avec un projet de loi (n°15/2026) en cours de procédure. Tant que le nouveau texte et ses décrets ne sont pas définitivement adoptés et publiés, le gestionnaire RH doit appliquer les textes en vigueur et suivre attentivement l'évolution de la réforme, notamment pour les contrats, la durée du travail et le dialogue social. Ce cours présente des mécanismes et des méthodes ; pour tout taux, seuil ou délai légal, il faut se référer aux textes officiels.\n\n## 5. Mesurer : les indicateurs RH de base\n\n- Effectif à une date et effectif moyen sur la période.\n- Taux de rotation (turnover) = nombre de départs sur la période / effectif moyen × 100.\n- Taux d'absentéisme = heures d'absence / heures théoriques de travail × 100.\n- Pyramide des âges et des anciennetés.\n- Masse salariale et ratio masse salariale / chiffre d'affaires.\n- Nombre moyen d'heures de formation par salarié.\n\n## Exemple : une agro-industrie de la vallée du fleuve\n\nUne entreprise de transformation de tomates compte 120 salariés permanents au 1er janvier et 130 au 31 décembre ; 15 salariés sont partis dans l'année. Elle emploie aussi environ 300 saisonniers pendant la campagne. Effectif moyen des permanents ≈ (120 + 130)/2 = 125 ; turnover = 15/125 = 12 %. Les heures d'absence s'élèvent à 9 750 pour 250 000 heures théoriques : absentéisme = 3,9 %.\n\nAnalyse : le turnover est concentré chez les techniciens de maintenance, attirés par les sociétés minières. La GRH stratégique doit traiter ce problème (rémunération, carrière, formation interne) car un arrêt de ligne pendant la campagne coûte très cher. La gestion des saisonniers pose par ailleurs des questions de contrats, de sécurité et de fidélisation d'une campagne à l'autre.\n\n## Points clés\n\n- La GRH est une fonction stratégique, à aligner sur la stratégie de l'organisation.\n- Le contexte africain combine informalité, jeunesse démographique, pénuries de compétences ciblées et forte dimension sociale.\n- Le droit du travail sénégalais est en transition : appliquer les textes en vigueur et suivre la réforme.\n- Quelques indicateurs simples (turnover, absentéisme, pyramide des âges) éclairent les décisions.\n\n## Exercices\n\n- Exercice 1 : Citez les quatre rôles du DRH selon Ulrich et illustrez-en deux.\n- Exercice 2 : Une PME compte 40 salariés au 1er janvier, 50 au 31 décembre et a enregistré 9 départs. Calculez son taux de rotation.\n- Exercice 3 : Donnez deux avantages et deux risques de la dimension communautaire dans la gestion du personnel.\n- Exercice 4 : Pourquoi un DRH doit-il éviter de citer de mémoire un délai de préavis ou un taux de cotisation dans une note interne en période de réforme ?\n\n## Corrigé\n\n- Exercice 1 : Partenaire stratégique (participer au plan de développement et traduire ses besoins en compétences), expert administratif (fiabiliser la paie et les contrats), champion des salariés (écoute, qualité de vie au travail), agent du changement (accompagner une digitalisation ou une réorganisation).\n- Exercice 2 : Effectif moyen = (40 + 50)/2 = 45 ; turnover = 9/45 = 20 %.\n- Exercice 3 : Avantages : forte solidarité et entraide, fidélité et sentiment d'appartenance. Risques : recrutements par affinité au détriment des compétences, conflits entre obligations familiales et exigences professionnelles (absences, demandes d'avances).\n- Exercice 4 : Parce qu'une erreur expose l'entreprise à des contentieux et que les règles peuvent changer avec l'adoption du nouveau Code du travail et de ses décrets ; il faut citer le texte en vigueur, vérifié à la date de la note."
+   },
+   {
+    "title": "La gestion prévisionnelle des emplois et des compétences (GPEC)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Recrutement, intégration et formation",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Évaluation de la performance et rémunération",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Relations sociales et système d'information RH",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : construire la réponse RH à une stratégie d'entreprise",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "maths-terminale",
+  "level": "Terminale",
+  "subject": "Mathématiques",
+  "module": null,
+  "title": "Mathématiques Terminale : analyse, suites et probabilités pour le Bac",
+  "description": "Ce cours couvre les chapitres essentiels du programme de Terminale scientifique : limites et continuité, dérivation, fonctions exponentielle et logarithme, suites numériques, probabilités. Il prépare au Bac avec des méthodes de rédaction et un sujet type commenté. Prérequis : programme de Première (dérivation, second degré, suites, probabilités de base).",
+  "sort": 50,
+  "lessons": [
+   {
+    "title": "Limites et continuité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\n- Calculer des limites de fonctions aux bornes de leur ensemble de définition.\n- Lever les formes indéterminées classiques et interpréter graphiquement une limite (asymptotes).\n- Utiliser la continuité et le théorème des valeurs intermédiaires.\n\n## Limites : rappels et opérations\n\nDire que f(x) tend vers L quand x tend vers +∞ signifie que f(x) devient aussi proche de L que l'on veut pour x assez grand. On note lim f(x) = L (x → +∞).\n\nLimites de référence :\n- x², x³, √x tendent vers +∞ quand x → +∞ ;\n- 1/x, 1/x², 1/√x tendent vers 0 quand x → +∞ ;\n- 1/x tend vers +∞ quand x → 0⁺ et vers −∞ quand x → 0⁻.\n\nLes règles d'opération (somme, produit, quotient) permettent de conclure dans la plupart des cas. Il reste quatre formes indéterminées : « ∞ − ∞ », « 0 × ∞ », « ∞/∞ » et « 0/0 ». Dans ces cas, il faut transformer l'écriture.\n\n## Lever une indétermination\n\nPolynômes et fractions rationnelles en l'infini : on factorise par le terme de plus haut degré.\n- lim (2x³ − 5x + 1) quand x → +∞ : 2x³(1 − 5/(2x²) + 1/(2x³)) → +∞. Un polynôme a la même limite en l'infini que son terme de plus haut degré.\n- lim (3x² + 1)/(x² − 4) quand x → +∞ = lim 3x²/x² = 3.\n\nExpressions avec racines carrées : on multiplie par la quantité conjuguée.\n- √(x + 1) − √x = [(x + 1) − x] / [√(x + 1) + √x] = 1 / [√(x + 1) + √x], qui tend vers 0 quand x → +∞.\n\nForme « 0/0 » en un point : on factorise. lim (x² − 9)/(x − 3) quand x → 3 = lim (x + 3) = 6.\n\n## Théorèmes de comparaison\n\n- Si f(x) ≥ g(x) pour x assez grand et lim g = +∞, alors lim f = +∞.\n- Théorème des gendarmes : si g(x) ≤ f(x) ≤ h(x) et si g et h ont la même limite L, alors lim f = L.\n\nExemple : pour x > 0, −1/x ≤ sin(x)/x ≤ 1/x ; les deux encadrements tendent vers 0, donc sin(x)/x tend vers 0 quand x → +∞.\n\n## Asymptotes\n\n- Si lim f(x) = L quand x → ±∞, la droite y = L est asymptote horizontale à la courbe.\n- Si lim f(x) = ±∞ quand x → a, la droite x = a est asymptote verticale.\n- Si lim [f(x) − (ax + b)] = 0 quand x → ±∞, la droite y = ax + b est asymptote oblique.\n\nExemple : f(x) = (3x² + 1)/(x² − 4). Quand x → 2⁺, le numérateur tend vers 13 et le dénominateur vers 0 par valeurs positives : f(x) → +∞. La droite x = 2 est asymptote verticale, et y = 3 est asymptote horizontale.\n\n## Continuité\n\nUne fonction est continue sur un intervalle si l'on peut tracer sa courbe « sans lever le crayon ». Les fonctions polynômes, rationnelles (sur leur ensemble de définition), racine carrée, exponentielle et logarithme sont continues sur les intervalles où elles sont définies.\n\n## Théorème des valeurs intermédiaires (TVI)\n\nSi f est continue sur [a ; b], alors pour tout réel k compris entre f(a) et f(b), l'équation f(x) = k admet au moins une solution dans [a ; b].\n\nCorollaire (théorème de la bijection) : si f est continue et strictement monotone sur [a ; b], et si k est compris entre f(a) et f(b), alors l'équation f(x) = k admet une unique solution dans [a ; b].\n\nMéthode de rédaction au Bac : citer la continuité, la stricte monotonie, calculer les images aux bornes, constater que k est entre elles, conclure. Puis encadrer la solution par balayage à la calculatrice.\n\n## Points clés\n\n- Quatre formes indéterminées : ∞ − ∞, 0 × ∞, ∞/∞, 0/0.\n- En l'infini, un polynôme se comporte comme son terme de plus haut degré.\n- Limite finie en l'infini → asymptote horizontale ; limite infinie en a → asymptote verticale.\n- Continuité + stricte monotonie → solution unique (corollaire du TVI).\n\n## Exercices\n\nExercice 1 : Calculer lim (2x³ − 5x + 1) quand x → +∞, puis quand x → −∞.\n\nExercice 2 : Soit f(x) = (3x² + 1)/(x² − 4). Calculer la limite de f en +∞ et interpréter graphiquement.\n\nExercice 3 : Pour la même fonction, calculer la limite de f quand x → 2⁺ et interpréter.\n\nExercice 4 : Calculer lim (√(x + 1) − √x) quand x → +∞.\n\nExercice 5 : Soit f(x) = x³ + x − 1. Montrer que l'équation f(x) = 0 admet une unique solution α dans [0 ; 1], puis donner un encadrement de α d'amplitude 0,1.\n\n## Corrigé\n\nExercice 1 : La limite est celle du terme de plus haut degré 2x³ : +∞ quand x → +∞ et −∞ quand x → −∞.\n\nExercice 2 : En +∞, f(x) a la même limite que 3x²/x² = 3. La droite d'équation y = 3 est asymptote horizontale à la courbe en +∞.\n\nExercice 3 : Le numérateur tend vers 3 × 4 + 1 = 13. Pour x > 2, x² − 4 > 0 et tend vers 0. Donc f(x) → +∞. La droite d'équation x = 2 est asymptote verticale.\n\nExercice 4 : Forme « ∞ − ∞ ». Avec la quantité conjuguée : √(x + 1) − √x = 1/(√(x + 1) + √x). Le dénominateur tend vers +∞, donc la limite est 0.\n\nExercice 5 : f est continue sur [0 ; 1] (polynôme). f'(x) = 3x² + 1 > 0, donc f est strictement croissante. f(0) = −1 < 0 et f(1) = 1 > 0. D'après le corollaire du TVI, l'équation f(x) = 0 admet une unique solution α dans [0 ; 1]. f(0,6) = 0,216 + 0,6 − 1 = −0,184 < 0 et f(0,7) = 0,343 + 0,7 − 1 = 0,043 > 0, donc 0,6 < α < 0,7."
+   },
+   {
+    "title": "Dérivation et étude de fonctions",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Fonctions exponentielle et logarithme népérien",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Les suites numériques",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Probabilités conditionnelles et loi binomiale",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : sujet type de Bac commenté",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-parking-entreprise",
   "level": "Formation professionnelle",
   "subject": "Gestion des parkings",
@@ -859,6 +955,54 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : du stock à l'après-vente, vendre un véhicule pas à pas",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-gps-avance",
+  "level": "Formation professionnelle",
+  "subject": "Géolocalisation et télématique",
+  "module": "gps",
+  "title": "Géolocalisation et télématique des véhicules",
+  "description": "Cette formation explique le fonctionnement du GPS (satellites, temps, trilatération), les traceurs et la télématique embarquée, le géofencing et les alertes, l'analyse des trajets et du comportement de conduite, ainsi que la protection des données personnelles des conducteurs. Elle s'adresse aux gestionnaires de flotte, responsables sécurité, exploitants de transport et techniciens qui déploient ou exploitent une solution de géolocalisation. Prérequis : calculs de base, notion de vitesse (distance / temps) et racine carrée.",
+  "sort": 110,
+  "lessons": [
+   {
+    "title": "Comment fonctionne le GPS : satellites, temps et trilatération",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Expliquer comment un récepteur GPS calcule sa position.\n- Comprendre le rôle du temps et de la vitesse de la lumière.\n- Résoudre un exemple simple de trilatération et connaître les sources d'erreur.\n\n## Le système GPS\n\nLe GPS (Global Positioning System) est le système de positionnement par satellites des États-Unis. Il appartient à la famille des GNSS (systèmes mondiaux de navigation par satellites), avec GLONASS (Russie), Galileo (Union européenne) et BeiDou (Chine). Les récepteurs modernes utilisent souvent plusieurs constellations à la fois, ce qui améliore la précision.\n\nLe GPS comprend trois segments :\n\n- Le segment spatial : une constellation d'au moins 24 satellites opérationnels (en pratique davantage), répartis sur six plans orbitaux, à environ 20 200 km d'altitude. Chacun fait le tour de la Terre en un peu moins de 12 heures.\n- Le segment de contrôle : des stations au sol qui suivent les satellites, corrigent leurs orbites et synchronisent leurs horloges.\n- Le segment utilisateur : tous les récepteurs, qui ne font qu'écouter. Un récepteur GPS n'émet rien vers les satellites.\n\n## Le principe : mesurer des distances avec le temps\n\nChaque satellite porte des horloges atomiques très précises. Il diffuse en permanence un signal contenant l'heure exacte d'émission et sa position sur son orbite (les éphémérides). Le récepteur note l'heure de réception. La différence entre les deux est le temps de trajet du signal. Comme le signal voyage à la vitesse de la lumière, environ 300 000 km/s, on obtient la distance :\n\ndistance = vitesse de la lumière × temps de trajet.\n\nExemple : un satellite situé à 20 200 km à la verticale du récepteur envoie un signal qui met 20 200 / 300 000 ≈ 0,0673 s, soit environ 67 millisecondes, pour arriver.\n\nCette méthode exige une précision extrême sur le temps : une erreur d'une microseconde (un millionième de seconde) produit une erreur de 300 000 km/s × 0,000001 s = 0,3 km, soit 300 m.\n\n## La trilatération\n\nConnaître sa distance à un satellite place le récepteur quelque part sur une sphère centrée sur ce satellite. Avec deux satellites, on est sur l'intersection de deux sphères (un cercle). Avec trois, on obtient deux points, dont un seul est plausible (l'autre est loin dans l'espace). C'est la trilatération : déterminer une position à partir de distances, sans mesurer d'angles.\n\nMais l'horloge du récepteur est une simple horloge à quartz, beaucoup moins précise que celles des satellites. Son décalage est une inconnue de plus. On a donc quatre inconnues : les trois coordonnées de position et le décalage d'horloge. Il faut au moins quatre satellites pour résoudre le problème. Les distances mesurées avant correction de l'horloge s'appellent des pseudo-distances.\n\n## Exemple en deux dimensions\n\nPour comprendre le calcul, simplifions en plan. Trois balises sont placées en A(0 ; 0), B(10 ; 0) et C(0 ; 10), en kilomètres. Un récepteur mesure : distance à A = 5 km, à B = √65 km, à C = √45 km. Où est-il ?\n\nLes équations des cercles sont :\n\n- x² + y² = 25\n- (x - 10)² + y² = 65\n- x² + (y - 10)² = 45\n\nEn soustrayant la première de la deuxième : (x - 10)² - x² = 40, soit -20x + 100 = 40, donc x = 3.\n\nEn soustrayant la première de la troisième : (y - 10)² - y² = 20, soit -20y + 100 = 20, donc y = 4.\n\nVérification : 3² + 4² = 9 + 16 = 25. Le récepteur est en (3 ; 4). Le GPS fait le même type de calcul en trois dimensions, avec le décalage d'horloge en plus.\n\n## Les coordonnées\n\nLe GPS donne une position en latitude, longitude et altitude, dans le système de référence WGS 84. La latitude va de 0° à l'équateur à 90° aux pôles (positive au nord) ; la longitude va de 0° au méridien de Greenwich à 180° (négative à l'ouest). Dakar se trouve vers 14,7° de latitude nord et 17,4° de longitude ouest, soit environ (14,7 ; -17,4) en degrés décimaux.\n\nUn degré de latitude correspond à environ 111 km. Un degré de longitude vaut environ 111 × cos(latitude) km : à la latitude de Dakar, cos(14,7°) ≈ 0,967, donc environ 107 km.\n\n## Les sources d'erreur\n\n- La traversée de l'ionosphère et de la troposphère ralentit le signal.\n- Les trajets multiples : le signal rebondit sur les immeubles avant d'arriver, ce qui allonge la distance mesurée.\n- Les masques : tunnels, parkings souterrains, rues étroites entre immeubles, végétation dense.\n- La géométrie des satellites : des satellites regroupés dans une même région du ciel donnent une position moins précise que des satellites bien répartis.\n\nEn ciel dégagé, un récepteur civil courant atteint une précision de quelques mètres.\n\n## Points clés\n\n- Le GPS calcule des distances à partir du temps de trajet des signaux.\n- Il faut au moins quatre satellites : trois coordonnées et le décalage d'horloge.\n- Une microseconde d'erreur représente 300 m.\n- Bâtiments, tunnels et atmosphère dégradent la précision.\n\n## Exercices\n\n- Exercice 1 : quelle distance correspond à un temps de trajet de 0,07 s ?\n- Exercice 2 : quelle erreur de position produit une erreur d'horloge de 10 nanosecondes (0,00000001 s) ?\n- Exercice 3 : pourquoi faut-il quatre satellites et non trois ?\n- Exercice 4 : balises A(0 ; 0) et B(8 ; 0) ; distances mesurées 5 km à A et 5 km à B. Trouvez les deux positions possibles.\n- Exercice 5 : deux points ont la même longitude et des latitudes de 14,70° et 14,75°. Quelle distance les sépare ?\n\n## Corrigé\n\nExercice 1 : 300 000 × 0,07 = 21 000 km.\n\nExercice 2 : 300 000 000 m/s × 0,00000001 s = 3 m.\n\nExercice 3 : parce que l'horloge du récepteur n'est pas synchronisée avec celles des satellites : son décalage est une quatrième inconnue qui s'ajoute aux trois coordonnées.\n\nExercice 4 : x² + y² = 25 et (x - 8)² + y² = 25. En soustrayant : -16x + 64 = 0, donc x = 4. Puis y² = 25 - 16 = 9, donc y = 3 ou y = -3. Positions possibles : (4 ; 3) et (4 ; -3). Une troisième balise permettrait de trancher.\n\nExercice 5 : écart de 0,05° de latitude ; 0,05 × 111 = 5,55 km."
+   },
+   {
+    "title": "Traceurs et télématique embarquée",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Géofencing, zones et alertes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Analyser les trajets et le comportement de conduite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Protéger les données personnelles des conducteurs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : déployer et exploiter la géolocalisation d'une flotte",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
