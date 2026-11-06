@@ -1151,7 +1151,7 @@ Méthode des moindres carrés : a = cov(x, y) / V(x) et b = ȳ − a x̄.
 
 Fonction de coût : y = 1 990 x + 905 000. Prévision pour 650 heures : 1 990 × 650 + 905 000 = 2 198 500 FCFA.
 
-Méthode des points extrêmes (plus rapide, moins précise) : a = (2 300 000 − 1 510 000) / (700 − 300) = 1 975,0 FCFA ; b = 2 300 000 − 1 975,0 × 700 = 917 500 FCFA. Elle n''utilise que deux points et peut être faussée par un mois atypique.
+Méthode des points extrêmes (plus rapide, moins précise) : a = (2 300 000 − 1 510 000) / (700 − 300) = 1 975 FCFA ; b = 2 300 000 − 1 975 × 700 = 917 500 FCFA. Elle n''utilise que deux points et peut être faussée par un mois atypique.
 
 ## Points clés
 
@@ -1509,7 +1509,7 @@ Correction commentée. Moyennes : x̄ = 500 heures, ȳ = 1 900 000 FCFA. Varianc
 
 Interprétation : chaque heure machine coûte environ 1 990 FCFA d''entretien, et l''atelier supporte 905 000 FCFA de charges fixes par mois. Le coefficient de corrélation, environ 0,999, confirme l''ajustement. Pour 650 heures, on budgète 2 198 500 FCFA.
 
-Comparaison avec la méthode des points extrêmes : on prend 300 et 700 heures ; pente 1 975,0 FCFA ; partie fixe 917 500 FCFA. Plus rapide, mais dépendante de deux seuls points.
+Comparaison avec la méthode des points extrêmes : on prend 300 et 700 heures ; pente 1 975 FCFA ; partie fixe 917 500 FCFA. Plus rapide, mais dépendante de deux seuls points.
 
 Trois mises en garde à formuler dans une copie. D''abord, corrélation n''est pas causalité : ici le lien technique entre heures machine et entretien est logique, mais il faut toujours le justifier. Ensuite, la droite n''est valable que dans la plage observée, de 300 à 700 heures. Enfin, la partie fixe estimée n''est pas une donnée comptable : c''est une estimation statistique, à confronter avec les contrats réels de l''atelier, par exemple un contrat d''entretien forfaitaire.
 
@@ -1637,7 +1637,7 @@ Le seuil de rentabilité (SR) est le chiffre d''affaires pour lequel le résulta
 
 Schéma décrit : CA en abscisse ; la droite de MCV (y = 0,4 x) coupe la droite horizontale des charges fixes au point d''abscisse 150 000 000 ; à droite, zone de bénéfice.
 
-Activité saisonnière : on repère le mois où le CA cumulé atteint le SR.
+Activité saisonnière : on repère quand le CA cumulé atteint le SR.
 
 ## 4. Le levier opérationnel
 
