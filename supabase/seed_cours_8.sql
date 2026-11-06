@@ -1,6 +1,667 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 8/9). À exécuter après seed.sql.
 
+-- Cours : Gestion de projets Licence 1 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-projet-l1', (select id from public.levels where name = 'Licence 1'), null, 'Gestion de projets', 'Gestion de projets Licence 1 : réussir ses examens', 'Ce cours prépare les partiels et examens semestriels de première année de Licence en gestion de projets : fondamentaux du management de projet (cycle de vie, acteurs, cadrage, cahier des charges), outils de planification (WBS, Gantt, PERT et chemin critique) et communication en équipe projet. Il propose des fiches de révision, des exercices corrigés, un sujet type et trois cours vidéo de 1h30. Aucun prérequis autre que le niveau baccalauréat.', true, 311
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 1 en Gestion de projets', '## Objectifs de la leçon
+
+À la fin de cette leçon, vous saurez comment est organisée votre première année de Licence en gestion de projets dans le système LMD, quelles matières vous attendent aux partiels et aux examens semestriels, quels types d''épreuves vous devrez affronter et comment bâtir un plan de révision efficace sur six semaines.
+
+## Le système LMD en quelques mots
+
+Le système LMD (Licence, Master, Doctorat) est appliqué dans les universités publiques et la plupart des écoles privées du Sénégal et de l''espace UEMOA. La Licence se prépare en trois ans, soit six semestres. Chaque semestre regroupe plusieurs unités d''enseignement (UE). Une UE rassemble des matières proches, appelées éléments constitutifs (EC), par exemple une UE « Fondamentaux du management de projet » qui contient un cours magistral et des travaux dirigés.
+
+Chaque UE donne des crédits. Les crédits mesurent la charge de travail de l''étudiant (cours, TD, travail personnel), pas seulement les heures passées en amphithéâtre. Le nombre exact de crédits par UE, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : consultez toujours le règlement des études et le guide de l''étudiant de votre université ou de votre école. Retenez le principe général : une UE validée est acquise définitivement, et une note faible dans une matière peut parfois être compensée par une bonne note dans une autre matière de la même UE ou du même semestre, selon les règles locales.
+
+## Les matières clés de la Licence 1 en gestion de projets
+
+En première année, l''objectif est de poser les bases. Ce cours se concentre sur trois matières centrales, que vous retrouverez sous des intitulés proches dans la plupart des maquettes :
+
+- Fondamentaux du management de projet : définition d''un projet, cycle de vie, acteurs (maître d''ouvrage, maître d''œuvre, chef de projet, parties prenantes), cadrage, note de cadrage et cahier des charges.
+- Outils de planification : structure de découpage du projet (WBS ou organigramme des tâches), diagramme de Gantt, réseau PERT et calcul du chemin critique avec les marges.
+- Communication et travail en équipe projet : plan de communication, réunions, comptes rendus, rôles dans l''équipe, gestion des conflits, matrice des responsabilités.
+
+Ces matières s''accompagnent souvent de cours transversaux (économie générale, comptabilité, mathématiques appliquées, informatique bureautique, expression écrite) qui ne sont pas traités ici mais qui comptent dans votre moyenne. Les notions de coûts, de risques et de méthodes agiles seront approfondies en Licence 2, et l''évaluation financière de projets en Licence 3.
+
+## Les types d''épreuves
+
+Aux partiels comme aux examens semestriels, vous rencontrerez principalement cinq formats.
+
+- Le cas pratique : un texte décrit une organisation fictive (une ONG à Kaolack, une PME de transformation de fruits à Ziguinchor) et vous demande de cadrer le projet, d''identifier les acteurs ou de proposer un plan de communication. On attend une réponse appliquée au cas, pas une récitation du cours.
+- L''exercice chiffré : calcul des dates au plus tôt et au plus tard, des marges et du chemin critique d''un réseau PERT, construction d''un Gantt, calcul d''une durée moyenne avec trois estimations.
+- Le QCM ou les questions courtes : définitions précises (qu''est-ce qu''un livrable ? un jalon ? la marge libre ?).
+- La dissertation ou question de réflexion : par exemple « Le chef de projet doit-il être avant tout un technicien ou un communicant ? ». On attend une introduction, un plan en deux ou trois parties et une conclusion.
+- Le projet tutoré ou dossier de groupe : rédaction d''une note de cadrage, présentation orale, travail collectif évalué.
+
+## Méthode de révision
+
+Révisez en trois temps. D''abord, comprenez : relisez le cours en reformulant chaque notion avec vos propres mots et un exemple sénégalais. Ensuite, mémorisez : fabriquez des fiches courtes (une notion, une définition, un exemple, un piège). Enfin, entraînez-vous : refaites les exercices de TD sans regarder la correction, chronométrez-vous et comparez ensuite.
+
+Pour les exercices de planification, la régularité compte plus que la quantité. Un réseau PERT par jour pendant deux semaines vaut mieux que dix réseaux la veille de l''examen. Écrivez toujours vos calculs dans un tableau propre : tâche, durée, antériorités, début au plus tôt, fin au plus tôt, début au plus tard, fin au plus tard, marge totale, marge libre. Le correcteur suit votre raisonnement ligne par ligne et peut vous accorder des points même si une erreur s''est glissée au début.
+
+Travaillez aussi en groupe. La gestion de projets est un métier collectif : expliquer le chemin critique à un camarade est le meilleur moyen de vérifier que vous l''avez compris.
+
+## Plan de révision sur six semaines
+
+- Semaine 1 : relecture des fondamentaux (définitions, cycle de vie, acteurs). Fiches de vocabulaire. Une question de cours par jour.
+- Semaine 2 : cadrage et cahier des charges. Rédiger une note de cadrage complète sur un projet fictif (par exemple l''ouverture d''une cantine scolaire à Saint-Louis).
+- Semaine 3 : WBS et Gantt. Construire deux WBS et deux Gantt à la main, puis sur tableur.
+- Semaine 4 : PERT et chemin critique. Un réseau par jour, avec calcul des marges totales et libres.
+- Semaine 5 : communication et équipe. Plan de communication, matrice RACI, gestion de conflits. Entraînement à la rédaction de comptes rendus.
+- Semaine 6 : sujets types en conditions réelles (3 heures), correction, reprise des points faibles, repos la veille.
+
+## Points clés à retenir
+
+- Lisez le règlement des études de votre établissement pour connaître les crédits et les règles de compensation.
+- Trois matières clés en L1 : fondamentaux, planification, communication et équipe.
+- Les exercices chiffrés rapportent des points sûrs si la méthode est rigoureuse et présentée en tableau.
+- Révisez tôt, régulièrement et en vous entraînant sur des sujets complets.
+
+## Exercices pratiques
+
+1. Citez trois matières clés de la Licence 1 en gestion de projets et donnez pour chacune une notion importante.
+2. Quelle est la différence entre une UE et un EC ?
+3. Expliquez pourquoi un crédit ne correspond pas seulement à des heures de cours.
+4. Classez les épreuves suivantes par type : « Calculez le chemin critique », « Le chef de projet est-il un manager ? », « Rédigez la note de cadrage du projet de l''association Jappo ».
+5. Cas pratique : Aminata dispose de six semaines avant ses examens, mais elle travaille le samedi dans une boutique à Pikine. Proposez-lui un plan de révision réaliste en indiquant le contenu de chaque semaine et le nombre d''heures par jour.
+
+## Corrigé
+
+1. Fondamentaux du management de projet (cycle de vie) ; outils de planification (chemin critique) ; communication et travail en équipe projet (plan de communication). D''autres notions sont acceptées si elles relèvent bien de la matière.
+
+2. L''UE (unité d''enseignement) est un ensemble cohérent de matières qui donne des crédits. L''EC (élément constitutif) est l''une des matières qui composent l''UE. Une UE peut contenir un ou plusieurs EC.
+
+3. Le crédit mesure la charge de travail totale de l''étudiant : cours, TD, TP, travail personnel, préparation des examens. Deux matières ayant le même volume horaire en salle peuvent donc représenter des charges différentes.
+
+4. « Calculez le chemin critique » : exercice chiffré. « Le chef de projet est-il un manager ? » : dissertation ou question de réflexion. « Rédigez la note de cadrage » : cas pratique.
+
+5. Proposition : du lundi au vendredi, 3 heures par jour ; le dimanche, 4 heures ; le samedi, révision légère de fiches dans les transports (30 minutes). Semaine 1 : fondamentaux ; semaine 2 : cadrage et cahier des charges ; semaine 3 : WBS et Gantt ; semaine 4 : PERT ; semaine 5 : communication et équipe ; semaine 6 : sujets complets en 3 heures le dimanche et le mercredi, reprise des erreurs les autres jours. L''essentiel est que le plan soit réaliste, régulier et qu''il comporte des entraînements en conditions d''examen.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Gestion de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Fondamentaux du management de projet : l''essentiel pour l''examen', '## Objectifs
+
+Maîtriser les définitions de base (projet, livrable, jalon), décrire le cycle de vie d''un projet, identifier les acteurs et leurs rôles, réaliser le cadrage et connaître le contenu d''un cahier des charges.
+
+## Fiche 1 : qu''est-ce qu''un projet ?
+
+Un projet est un effort temporaire, unique, entrepris pour atteindre un objectif précis, dans des contraintes de délai, de coût et de qualité. Trois caractéristiques le distinguent des opérations courantes : il a un début et une fin ; il produit un résultat nouveau ; il mobilise des ressources limitées.
+
+Exemple : la gestion quotidienne d''une boulangerie à Dakar est une opération. L''ouverture d''une deuxième boulangerie à Mbour est un projet.
+
+Le triangle des contraintes (ou triangle « coût – délai – qualité/périmètre ») rappelle que ces trois dimensions sont liées : si l''on réduit le délai sans changer le périmètre, le coût augmente souvent ; si l''on réduit le budget, il faut parfois réduire le périmètre.
+
+Vocabulaire indispensable :
+
+- Livrable : résultat tangible et vérifiable produit par le projet (un rapport d''étude, un bâtiment, un logiciel).
+- Jalon : événement clé de durée nulle qui marque une étape (validation du cahier des charges, réception des travaux).
+- Tâche (ou activité) : travail élémentaire qui consomme du temps et des ressources.
+- Périmètre : ensemble de ce que le projet doit produire, et de ce qu''il ne produira pas.
+
+Les référentiels internationaux de management de projet, comme le guide PMBOK ou la méthode PRINCE2, proposent chacun leur vocabulaire et leurs processus ; vous en verrez les grands principes, mais l''examen porte avant tout sur les notions générales.
+
+## Fiche 2 : le cycle de vie du projet
+
+Le cycle de vie décrit les grandes phases qu''un projet traverse. Un découpage classique comprend cinq phases :
+
+- Initialisation (ou avant-projet) : identifier le besoin, étudier l''opportunité, désigner le chef de projet.
+- Cadrage et planification : définir les objectifs, le périmètre, les livrables, le planning, le budget et l''organisation.
+- Exécution : réaliser les travaux, coordonner les équipes.
+- Suivi et maîtrise : mesurer l''avancement, comparer au prévu, corriger les écarts (cette phase se déroule en parallèle de l''exécution).
+- Clôture : réceptionner les livrables, faire le bilan, capitaliser les leçons apprises, libérer les ressources.
+
+À chaque fin de phase correspond souvent un jalon de décision (« go / no go ») : le commanditaire décide de continuer, d''ajuster ou d''arrêter.
+
+Schéma décrit en texte : imaginez une flèche horizontale découpée en cinq blocs successifs, avec sous les blocs « exécution » une bande parallèle « suivi et maîtrise », et un losange de décision entre chaque bloc.
+
+## Fiche 3 : les acteurs du projet
+
+- Maître d''ouvrage (MOA) : celui pour qui le projet est réalisé ; il exprime le besoin, finance et réceptionne. Exemple : la mairie de Thiès qui veut un marché couvert.
+- Maître d''œuvre (MOE) : celui qui conçoit et/ou réalise la solution technique. Exemple : le bureau d''études et l''entreprise de BTP.
+- Commanditaire (ou sponsor) : personne de haut niveau qui soutient le projet et arbitre.
+- Chef de projet : il planifie, coordonne, suit et rend compte. Il est responsable de l''atteinte des objectifs.
+- Comité de pilotage : instance de décision qui valide les grandes étapes.
+- Parties prenantes : toutes les personnes ou organisations concernées par le projet ou qui peuvent l''influencer (riverains, commerçants, services techniques, bailleurs).
+
+Méthode d''analyse des parties prenantes : classez chaque acteur selon son pouvoir (influence) et son intérêt pour le projet. Pouvoir fort et intérêt fort : gérer de près. Pouvoir fort et intérêt faible : satisfaire. Pouvoir faible et intérêt fort : informer. Pouvoir faible et intérêt faible : surveiller.
+
+## Fiche 4 : le cadrage et la note de cadrage
+
+Le cadrage répond à six questions : pourquoi (contexte, enjeux), quoi (objectifs, périmètre, livrables), qui (acteurs, organisation), quand (jalons principaux), combien (budget estimatif), comment (démarche, risques majeurs).
+
+Un bon objectif est SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini. « Améliorer la cantine » n''est pas SMART. « Servir 300 repas par jour aux élèves de l''école de Médina Gounass d''ici le 1er mars, pour un coût unitaire inférieur à 400 FCFA » l''est.
+
+La note de cadrage tient en quelques pages et est validée par le commanditaire. Elle précise aussi ce qui est hors périmètre, ce qui évite les malentendus.
+
+## Fiche 5 : le cahier des charges
+
+Le cahier des charges fonctionnel exprime le besoin en termes de fonctions attendues, sans imposer de solution technique. Il comprend généralement : présentation du contexte et de l''organisation ; objectifs ; description des fonctions attendues, avec critères d''appréciation et niveaux ; contraintes (budget, délais, normes, environnement) ; modalités de réception ; annexes.
+
+Exemple : pour un logiciel de gestion des stocks d''une pharmacie à Kaolack, la fonction « alerter en cas de rupture » a pour critère « délai d''alerte » et pour niveau « dès que le stock passe sous le seuil défini ».
+
+## Exemple chiffré : estimation du budget de cadrage
+
+La coopérative fictive Ndiambour Lait veut installer un point de collecte. Le cadrage retient : équipement de réfrigération 4 500 000 FCFA ; aménagement du local 2 800 000 FCFA ; formation des collecteurs 700 000 FCFA. Sous-total : 8 000 000 FCFA. Avec une provision pour imprévus de 10 % (choix de gestion du projet), le budget de cadrage est de 8 800 000 FCFA.
+
+## Exercices pratiques
+
+1. Définissez : projet, livrable, jalon.
+2. Pour chacune des situations suivantes, dites s''il s''agit d''un projet ou d''une opération : (a) la paie mensuelle d''une PME ; (b) la construction d''un forage à Linguère ; (c) la migration du système informatique d''une banque.
+3. Reformulez l''objectif « Améliorer l''accès à l''eau » en objectif SMART.
+4. Dans le projet de construction d''un marché par la commune de Thiès, identifiez le MOA, le MOE et trois parties prenantes, puis classez-les dans la matrice pouvoir/intérêt.
+5. Calculez le budget de cadrage d''un projet comprenant 3 200 000 FCFA d''équipements, 1 500 000 FCFA de travaux, 300 000 FCFA de formation, avec une provision pour imprévus de 8 %.
+6. Cas pratique : l''association fictive Jappo veut créer un centre de soutien scolaire à Pikine. Rédigez les six rubriques d''une note de cadrage.
+
+## Corrigé
+
+1. Projet : effort temporaire et unique pour atteindre un objectif dans des contraintes de coût, de délai et de qualité. Livrable : résultat tangible et vérifiable produit par le projet. Jalon : événement de durée nulle marquant une étape importante.
+
+2. (a) Opération (répétitive). (b) Projet (unique, temporaire). (c) Projet.
+
+3. Exemple : « Mettre en service, d''ici le 30 juin, un forage alimentant 2 bornes-fontaines pour 1 500 habitants du village de Keur Samba, avec un débit d''au moins 10 m³ par heure. »
+
+4. MOA : la commune de Thiès. MOE : le bureau d''études et l''entreprise de construction. Parties prenantes : commerçants (pouvoir moyen, intérêt fort : informer et associer), services techniques de l''État (pouvoir fort, intérêt moyen : satisfaire), riverains (pouvoir faible, intérêt fort : informer). Le classement peut varier si la justification est cohérente.
+
+5. Sous-total : 3 200 000 + 1 500 000 + 300 000 = 5 000 000 FCFA. Provision : 5 000 000 × 8 % = 400 000 FCFA. Budget : 5 400 000 FCFA.
+
+6. Pourquoi : taux d''échec scolaire élevé dans le quartier, demande des parents. Quoi : ouvrir un centre accueillant 80 élèves de CM2 et de 3e, deux salles équipées, un programme de soutien ; hors périmètre : la cantine. Qui : MOA l''association Jappo, chef de projet bénévole désigné, enseignants vacataires, mairie, parents. Quand : local trouvé en septembre, ouverture en novembre. Combien : budget estimatif détaillé par poste avec provision. Comment : démarche par étapes, principaux risques (local indisponible, manque d''enseignants) et parades.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fondamentaux du management de projet : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Outils de planification (WBS, Gantt, PERT) : l''essentiel pour l''examen', '## Objectifs
+
+Savoir découper un projet avec une WBS, construire un diagramme de Gantt, tracer un réseau PERT, calculer les dates au plus tôt et au plus tard, les marges totale et libre, et identifier le chemin critique.
+
+## Fiche 1 : la WBS (organigramme des tâches)
+
+La WBS (Work Breakdown Structure), ou structure de découpage du projet, décompose le projet en livrables puis en lots de travail, de façon hiérarchique. Le niveau le plus fin s''appelle le lot de travail : il doit pouvoir être estimé, attribué à un responsable et suivi.
+
+Règle des 100 % : les éléments d''un niveau représentent exactement tout le travail du niveau supérieur.
+
+Exemple décrit en texte, projet « Centre de formation à Thiès » :
+
+- 1 Études : 1.1 Étude des besoins ; 1.2 Conception des plans.
+- 2 Financement : 2.1 Recherche de financement.
+- 3 Construction : 3.1 Appel d''offres travaux ; 3.2 Travaux.
+- 4 Équipement : 4.1 Achat des équipements ; 4.2 Installation.
+- 5 Démarrage : 5.1 Recrutement des formateurs ; 5.2 Lancement.
+
+## Fiche 2 : le diagramme de Gantt
+
+Le Gantt représente les tâches en lignes et le temps en colonnes ; chaque tâche est une barre horizontale dont la longueur est proportionnelle à sa durée. Les jalons sont des losanges. Le Gantt est lisible par tous, idéal pour communiquer, mais il montre mal les dépendances complexes : on le combine donc avec le PERT.
+
+Quatre types de liens : fin-début (le plus courant), début-début, fin-fin, début-fin (rare).
+
+## Fiche 3 : le réseau PERT et le chemin critique
+
+Le réseau représente les tâches et leurs antériorités, soit sur les flèches (PERT classique), soit dans des nœuds (méthode des potentiels). Restez cohérent avec la convention de votre cours.
+
+Méthode de calcul (en tableau) :
+
+- Passe avant : début au plus tôt (DTO) d''une tâche = maximum des fins au plus tôt de ses prédécesseurs (0 pour une tâche sans prédécesseur). Fin au plus tôt (FTO) = DTO + durée. La durée du projet = la plus grande FTO.
+- Passe arrière : fin au plus tard (FTA) d''une tâche = minimum des débuts au plus tard de ses successeurs (durée du projet pour une tâche finale). Début au plus tard (DTA) = FTA − durée.
+- Marge totale (MT) = DTA − DTO : retard maximal possible sans retarder le projet.
+- Marge libre (ML) = minimum des DTO des successeurs − FTO : retard possible sans retarder aucun successeur.
+- Chemin critique : suite des tâches de marge totale nulle. Tout retard sur une tâche critique retarde le projet entier.
+
+## Exemple complet chiffré (durées en semaines)
+
+Projet « Centre de formation à Thiès » :
+
+- A Étude des besoins : 4 ; aucun prédécesseur.
+- B Conception des plans : 6 ; après A.
+- C Recherche de financement : 8 ; après A.
+- D Appel d''offres travaux : 5 ; après B.
+- E Travaux : 12 ; après C et D.
+- F Achat des équipements : 6 ; après C.
+- G Installation des équipements : 3 ; après E et F.
+- H Recrutement des formateurs : 5 ; après C.
+- I Lancement : 2 ; après G et H.
+
+Passe avant : A : 0 → 4. B : 4 → 10. C : 4 → 12. D : 10 → 15. E : max(12 ; 15) = 15 → 27. F : 12 → 18. H : 12 → 17. G : max(27 ; 18) = 27 → 30. I : max(30 ; 17) = 30 → 32. Durée du projet : 32 semaines.
+
+Passe arrière : I : 30 → 32. G : 27 → 30. H : FTA 30, DTA 25. E : FTA 27, DTA 15. F : FTA 27, DTA 21. D : FTA 15, DTA 10. C : FTA = min(15 ; 21 ; 25) = 15, DTA 7. B : FTA 10, DTA 4. A : FTA = min(4 ; 7) = 4, DTA 0.
+
+Marges :
+
+- A : MT 0, ML 0.
+- B : MT 0, ML 0.
+- C : MT 7 − 4 = 3 ; ML = min(15 ; 12 ; 12) − 12 = 0.
+- D : MT 0, ML 0.
+- E : MT 0, ML 0.
+- F : MT 21 − 12 = 9 ; ML = 27 − 18 = 9.
+- G : MT 0, ML 0.
+- H : MT 25 − 12 = 13 ; ML = 30 − 17 = 13.
+- I : MT 0, ML 0.
+
+Chemin critique : A – B – D – E – G – I (4 + 6 + 5 + 12 + 3 + 2 = 32 semaines). Remarquez que C a une marge totale de 3 mais une marge libre nulle : si C prend 2 semaines de retard, F et H démarrent plus tard, mais le projet n''est pas retardé.
+
+## Fiche 4 : les durées probabilistes (PERT à trois estimations)
+
+Quand la durée est incertaine, on demande trois estimations : optimiste (o), la plus probable (m), pessimiste (p). Durée moyenne te = (o + 4m + p) / 6. Écart-type σ = (p − o) / 6. Exemple : o = 2, m = 5, p = 14 semaines. te = (2 + 20 + 14) / 6 = 36 / 6 = 6 semaines ; σ = (14 − 2) / 6 = 2 semaines.
+
+## Points clés
+
+- Passe avant avec le maximum, passe arrière avec le minimum.
+- Marge totale nulle = tâche critique ; marge libre ≤ marge totale.
+
+## Exercices pratiques
+
+1. Énoncez la règle des 100 % de la WBS.
+2. Citez les quatre types de liens entre tâches.
+3. Une tâche a pour estimations o = 4, m = 6, p = 8 jours. Calculez te et σ.
+4. Réseau (durées en jours) : A 3 (aucun) ; B 5 (après A) ; C 2 (après A) ; D 4 (après C) ; E 6 (après B et D) ; F 3 (après B). Calculez les dates, les marges et le chemin critique.
+5. Dans l''exercice 4, que se passe-t-il si B prend 2 jours de retard ?
+6. Cas pratique : l''entreprise fictive Sahel Agro Services organise un salon agricole à Kaolack. Proposez une WBS à deux niveaux comprenant au moins quatre livrables.
+
+## Corrigé
+
+1. La somme du travail des éléments enfants doit représenter exactement 100 % du travail de l''élément parent : rien ne manque, rien n''est en trop.
+
+2. Fin-début, début-début, fin-fin, début-fin.
+
+3. te = (4 + 24 + 8) / 6 = 36 / 6 = 6 jours ; σ = (8 − 4) / 6 ≈ 0,67 jour.
+
+4. Passe avant : A 0 → 3 ; B 3 → 8 ; C 3 → 5 ; D 5 → 9 ; E max(8 ; 9) = 9 → 15 ; F 8 → 11. Durée : 15 jours. Passe arrière : E 9 → 15 ; F DTA 12, FTA 15 ; D DTA 5, FTA 9 ; B FTA = min(9 ; 12) = 9, DTA 4 ; C DTA 3, FTA 5 ; A FTA = min(4 ; 3) = 3, DTA 0. Marges : A 0/0 ; B MT 1, ML = min(9 ; 8) − 8 = 0 ; C 0/0 ; D 0/0 ; E 0/0 ; F MT 4, ML 4. Chemin critique : A – C – D – E (3 + 2 + 4 + 6 = 15 jours).
+
+5. B a une marge totale de 1 jour. Un retard de 2 jours dépasse la marge de 1 jour : le projet est retardé de 1 jour (B finit à 10, E démarre à 10 et finit à 16). Le chemin critique devient A – B – E.
+
+6. Exemple : 1 Organisation (1.1 réservation du site ; 1.2 autorisations) ; 2 Exposants (2.1 prospection ; 2.2 contrats) ; 3 Communication (3.1 affiches et radios locales ; 3.2 réseaux sociaux) ; 4 Logistique (4.1 stands ; 4.2 sécurité ; 4.3 sonorisation) ; 5 Bilan (5.1 enquête de satisfaction ; 5.2 rapport final).', 'texte', 75, false, 30
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Outils de planification (WBS, Gantt, PERT) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Communication et travail en équipe projet : l''essentiel pour l''examen', '## Objectifs
+
+Construire un plan de communication de projet, organiser des réunions efficaces, rédiger un compte rendu, répartir les responsabilités avec une matrice RACI, comprendre la dynamique d''une équipe et gérer les conflits.
+
+## Fiche 1 : pourquoi la communication est vitale
+
+Une grande partie du temps d''un chef de projet est consacrée à communiquer : informer le commanditaire, coordonner l''équipe, rassurer les bénéficiaires, négocier avec les fournisseurs. Les échecs de projets s''expliquent souvent moins par des problèmes techniques que par des malentendus : objectifs mal compris, décisions non transmises, parties prenantes oubliées.
+
+Le schéma classique de la communication comprend un émetteur, un message, un canal, un récepteur et un retour (feedback). Des « bruits » perturbent la transmission : langue (français, wolof, pulaar…), jargon technique, distance, réseau téléphonique instable.
+
+Nombre de canaux de communication dans une équipe de n personnes : n(n − 1) / 2. Avec 5 personnes : 5 × 4 / 2 = 10 canaux ; avec 10 personnes : 10 × 9 / 2 = 45 canaux. Ce calcul montre pourquoi la communication devient plus difficile quand l''équipe grandit.
+
+## Fiche 2 : le plan de communication
+
+Le plan de communication est un tableau qui précise, pour chaque public : quoi communiquer, pourquoi, par quel canal, à quelle fréquence, qui est responsable.
+
+Exemple, projet fictif d''électrification solaire de cinq villages dans la région de Tambacounda :
+
+- Comité de pilotage : avancement, budget, risques ; réunion et rapport ; mensuel ; chef de projet.
+- Équipe technique : planning de la semaine, consignes de sécurité ; réunion de chantier ; hebdomadaire ; chef de chantier.
+- Populations bénéficiaires : dates des travaux, coupures, formation à l''usage ; assemblée villageoise et radio communautaire ; à chaque étape ; animateur social.
+- Bailleur : rapport d''activité et financier ; document écrit ; trimestriel ; chef de projet.
+
+Distinguez communication formelle (rapports, comptes rendus, courriers) et informelle (échanges de couloir, messagerie instantanée). La seconde est utile mais ne remplace pas la trace écrite des décisions.
+
+## Fiche 3 : réunions et comptes rendus
+
+Une réunion efficace a un objectif clair, un ordre du jour envoyé à l''avance, un animateur, un secrétaire et une durée maîtrisée. Les principaux types : réunion de lancement (kick-off), réunion d''avancement, comité de pilotage, revue de fin de phase, réunion de clôture.
+
+Le compte rendu comporte : date, lieu, participants et absents, ordre du jour, points discutés, décisions prises, actions à mener (quoi, qui, pour quand), date de la prochaine réunion. Il est diffusé rapidement, idéalement dans les 48 heures.
+
+## Fiche 4 : la matrice RACI
+
+La matrice RACI attribue à chaque tâche quatre rôles :
+
+- R (Responsible, réalise) : celui qui fait le travail.
+- A (Accountable, approuve) : celui qui rend des comptes et valide ; un seul A par tâche.
+- C (Consulted, consulté) : celui dont on demande l''avis avant.
+- I (Informed, informé) : celui qu''on tient au courant après.
+
+Exemple pour la tâche « Choisir le fournisseur de panneaux » : R = responsable achats, A = chef de projet, C = ingénieur électricien, I = comité de pilotage.
+
+Erreurs fréquentes : plusieurs A sur une tâche, tâche sans R, personne avec trop de R (surcharge).
+
+## Fiche 5 : l''équipe projet et la gestion des conflits
+
+Le modèle de Tuckman décrit cinq étapes de développement d''une équipe : formation (on se découvre), tension (on s''affronte sur les rôles), normalisation (on fixe les règles), performance (on travaille efficacement), dissolution (fin du projet). Le chef de projet adapte son style : directif au début, plus participatif ensuite.
+
+Les sources de conflit dans un projet : priorités, ressources partagées, plannings, choix techniques, personnalités. Cinq attitudes face au conflit : évitement, accommodation (céder), compétition (imposer), compromis (chacun cède une partie), collaboration (chercher ensemble une solution qui satisfait les deux). La collaboration est souvent la meilleure pour les problèmes importants, mais elle prend du temps ; le compromis est utile quand le temps presse.
+
+Le contexte culturel compte : le respect de la hiérarchie et des aînés, l''importance de la palabre et du consensus, le rôle des chefs de village ou des imams dans un projet communautaire. Un chef de projet efficace s''appuie sur ces relais plutôt que de les ignorer.
+
+## Points clés
+
+- Un plan de communication répond à : qui, quoi, pourquoi, comment, quand, par qui.
+- Toute décision doit être écrite dans un compte rendu avec un responsable et une échéance.
+- RACI : un seul A par tâche.
+- Les conflits se gèrent ; ils ne disparaissent pas seuls.
+
+## Exercices pratiques
+
+1. Combien de canaux de communication existe-t-il dans une équipe de 8 personnes ? Et si l''on passe à 12 personnes ?
+2. Citez les rubriques obligatoires d''un compte rendu de réunion.
+3. Qu''est-ce qui ne va pas dans une matrice RACI où la tâche « valider le budget » a deux A ?
+4. Une équipe projet vient de se former ; deux membres se disputent la responsabilité des achats. À quelle étape de Tuckman se trouve l''équipe ? Que doit faire le chef de projet ?
+5. Cas pratique : la mutuelle de santé fictive Kër Wér Gi lance une campagne d''adhésion dans trois quartiers de Rufisque. Proposez un plan de communication pour quatre publics.
+
+## Corrigé
+
+1. 8 × 7 / 2 = 28 canaux. 12 × 11 / 2 = 66 canaux, soit 38 canaux de plus.
+
+2. Date, lieu, participants et absents, ordre du jour, points discutés, décisions, actions (quoi, qui, quand), prochaine réunion.
+
+3. Il ne doit y avoir qu''un seul A, c''est-à-dire une seule personne qui rend des comptes ; sinon chacun pense que l''autre décide et la validation risque de ne jamais se faire. Il faut désigner un A unique et passer l''autre en C ou I.
+
+4. Étape de tension. Le chef de projet clarifie les rôles (matrice RACI), écoute les deux personnes, rappelle l''objectif commun et tranche si nécessaire, puis formalise la répartition.
+
+5. Exemple : conseil d''administration de la mutuelle (objectifs, résultats d''adhésion ; réunion ; mensuel ; coordonnateur) ; relais communautaires et délégués de quartier (argumentaire, calendrier ; réunion de formation ; au lancement puis tous les quinze jours ; animateur) ; populations (avantages, cotisation, démarches ; radio communautaire, causeries, porte-à-porte ; pendant toute la campagne ; relais) ; partenaires (structures de santé : conventions, circuit de prise en charge ; courrier et rencontre ; au lancement ; coordonnateur).', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Communication et travail en équipe projet : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 1 en Gestion de projets', '## Présentation
+
+Ce sujet d''entraînement multi-matières n''est pas un sujet officiel. Il reproduit le format d''un examen semestriel de 3 heures. Le barème est indicatif, non officiel. Faites-le d''abord seul, chronomètre en main, puis comparez avec le corrigé.
+
+## Énoncé
+
+Contexte. Le groupement d''intérêt économique fictif Saloum Céréales, basé à Kaolack, veut construire une petite unité de transformation de mil (farine et couscous) pour ses 120 membres. Le GIE a obtenu une promesse de financement d''une ONG partenaire. Vous êtes recruté comme chef de projet.
+
+Partie 1 – Fondamentaux (6 points)
+
+1. Expliquez pourquoi cette initiative est un projet et non une opération. (1 point)
+2. Identifiez le maître d''ouvrage, le maître d''œuvre probable et trois parties prenantes. (2 points)
+3. Formulez l''objectif principal de façon SMART. (1 point)
+4. Citez les phases du cycle de vie et dites dans quelle phase on rédige le cahier des charges. (2 points)
+
+Partie 2 – Planification (9 points)
+
+Les tâches du projet (durées en semaines) :
+
+- A Étude de faisabilité : 2 ; aucune.
+- B Choix et commande des machines : 4 ; après A.
+- C Aménagement du bâtiment : 3 ; après A.
+- D Livraison et installation des machines : 5 ; après B.
+- E Formation des opératrices : 2 ; après C.
+- F Essais et démarrage : 4 ; après D et E.
+
+5. Calculez les dates au plus tôt et au plus tard, les marges totales et libres. (5 points)
+6. Donnez le chemin critique et la durée du projet. (2 points)
+7. La durée de D est incertaine : o = 3, m = 5, p = 7. Calculez la durée moyenne et l''écart-type. (2 points)
+
+Partie 3 – Communication et équipe (5 points)
+
+8. Proposez une matrice RACI pour les tâches B, E et F, avec les acteurs : chef de projet, présidente du GIE, technicien fournisseur, formatrice. (3 points)
+9. Les membres du GIE se plaignent de ne pas être informés de l''avancement. Proposez deux actions concrètes. (2 points)
+
+## Corrigé détaillé
+
+1. Il s''agit d''un effort temporaire (début : décision du GIE ; fin : démarrage de l''unité), unique (une unité nouvelle) et soumis à des contraintes de coût, de délai et de qualité. La production quotidienne de farine qui suivra sera, elle, une opération.
+
+2. Maître d''ouvrage : le GIE Saloum Céréales (il exprime le besoin et réceptionnera l''unité). Maître d''œuvre : le fournisseur-installateur des machines et l''artisan ou l''entreprise chargés du bâtiment. Parties prenantes : l''ONG partenaire (financeur), les membres du GIE, les services techniques compétents (hygiène, agriculture), les clients commerçants, la commune.
+
+3. Exemple : « Mettre en service, dans un délai de 15 semaines, une unité capable de transformer au moins 500 kg de mil par jour en farine et couscous conformes aux règles d''hygiène, pour un budget ne dépassant pas l''enveloppe accordée. »
+
+4. Initialisation, cadrage et planification, exécution, suivi et maîtrise, clôture. Le cahier des charges est rédigé lors du cadrage et de la planification, avant l''exécution.
+
+5. Passe avant : A 0 → 2 ; B 2 → 6 ; C 2 → 5 ; D 6 → 11 ; E 5 → 7 ; F max(11 ; 7) = 11 → 15. Durée : 15 semaines.
+
+Passe arrière : F : DTA 11, FTA 15. D : FTA 11, DTA 6. E : FTA 11, DTA 9. B : FTA 6, DTA 2. C : FTA 9, DTA 6. A : FTA = min(2 ; 6) = 2, DTA 0.
+
+Marges : A MT 0, ML 0 ; B MT 0, ML 0 ; C MT 6 − 2 = 4, ML = 5 − 5 = 0 ; D MT 0, ML 0 ; E MT 9 − 5 = 4, ML = 11 − 7 = 4 ; F MT 0, ML 0.
+
+6. Chemin critique : A – B – D – F, soit 2 + 4 + 5 + 4 = 15 semaines.
+
+7. te = (3 + 4 × 5 + 7) / 6 = 30 / 6 = 5 semaines ; σ = (7 − 3) / 6 ≈ 0,67 semaine. La durée moyenne est inchangée : le planning reste à 15 semaines, mais D étant critique, son incertitude est un risque pour la date de fin.
+
+8. Exemple :
+
+- B Choix et commande des machines : R chef de projet ; A présidente du GIE ; C technicien fournisseur ; I formatrice.
+- E Formation des opératrices : R formatrice ; A chef de projet ; C technicien fournisseur ; I présidente.
+- F Essais et démarrage : R technicien fournisseur ; A chef de projet ; C formatrice ; I présidente.
+
+Toute répartition cohérente avec un seul A par tâche est acceptée.
+
+9. Une assemblée d''information mensuelle avec un point d''avancement simple (photos, planning affiché en wolof et en français) ; un groupe de messagerie animé par une déléguée, avec un message hebdomadaire validé par le chef de projet.
+
+## Barème indicatif, non officiel
+
+Partie 1 : 6 points ; partie 2 : 9 points (dont 5 pour le tableau complet et juste) ; partie 3 : 5 points. Une présentation claire, en tableau, est valorisée.
+
+## Exercices pratiques
+
+1. Dans le sujet, si C prend 3 semaines de retard, le projet est-il retardé ?
+2. Et si E prend 5 semaines de retard ?
+3. Combien de canaux de communication y a-t-il entre les 4 acteurs de la question 8 ?
+4. Quelle est la différence entre marge totale et marge libre, en une phrase ?
+
+## Corrigé
+
+1. Non : la marge totale de C est 4 semaines. En revanche, sa marge libre est nulle, donc E sera décalée de 3 semaines (E finira à 10 au lieu de 7), toujours sans retarder F qui démarre à 11.
+
+2. E a une marge totale de 4 semaines : un retard de 5 semaines retarde le projet de 1 semaine (fin à 16 semaines).
+
+3. 4 × 3 / 2 = 6 canaux.
+
+4. La marge totale est le retard admissible sans retarder la fin du projet ; la marge libre est le retard admissible sans retarder le début au plus tôt d''aucun successeur.', 'texte', 90, false, 50
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en Gestion de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Fondamentaux du management de projet', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Licence 1 en gestion de projets. Objectifs : définir un projet et ses composantes, décrire le cycle de vie, identifier les acteurs, analyser les parties prenantes, rédiger une note de cadrage et connaître le contenu d''un cahier des charges. Matériel : tableau blanc, diaporama, feuilles pour le quiz. Prérequis : aucun, sinon la lecture de la leçon « Fondamentaux du management de projet ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+Bonjour à toutes et à tous. Pendant une heure et demie, nous allons poser les fondations de tout ce que vous ferez en gestion de projets. Si ces bases sont solides, la planification, les coûts et les risques des années suivantes seront beaucoup plus faciles. Notre fil rouge sera un projet fictif : la construction d''un marché couvert par la commune de Thiès. À l''écran, je vous montre le plan de la séance : définitions, cycle de vie, acteurs, parties prenantes, cadrage, cahier des charges, puis quiz et évaluation finale.
+
+## 05:00 – 15:00 · Qu''est-ce qu''un projet ?
+
+Commençons par une question : la vente quotidienne de pain dans une boulangerie de la Médina, est-ce un projet ? Réfléchissez dix secondes. Non : c''est une activité répétitive, une opération. En revanche, ouvrir une deuxième boulangerie à Mbour est un projet. Pourquoi ? Parce que c''est temporaire, il y a un début et une fin ; c''est unique, on n''ouvre pas cette boutique tous les jours ; et c''est contraint, on a un budget, un délai, une qualité à atteindre.
+
+Retenez la définition : un projet est un effort temporaire et unique entrepris pour atteindre un objectif précis dans des contraintes de coût, de délai et de qualité. Je dessine maintenant le triangle : un sommet coût, un sommet délai, un sommet qualité ou périmètre. Si la mairie de Thiès veut le marché trois mois plus tôt, que se passe-t-il ? Il faudra plus d''ouvriers ou des heures supplémentaires : le coût augmente. Tout est lié.
+
+Vocabulaire : un livrable est un résultat vérifiable, par exemple le plan d''architecte ou le bâtiment. Un jalon est un événement sans durée, par exemple « signature du contrat ». Une tâche consomme du temps et des ressources.
+
+## 15:00 – 27:00 · Le cycle de vie
+
+Je trace une flèche découpée en cinq blocs. Premier bloc : l''initialisation. La commune constate que les commerçants vendent au bord de la route, dans de mauvaises conditions. Elle étudie l''opportunité et désigne un chef de projet. Deuxième bloc : le cadrage et la planification, où l''on fixe objectifs, périmètre, budget, planning. Troisième bloc : l''exécution, les travaux. Quatrième : le suivi et la maîtrise, qui court en parallèle de l''exécution ; on mesure, on compare, on corrige. Cinquième : la clôture, avec la réception, le bilan et les leçons apprises.
+
+Entre chaque bloc, je dessine un losange : c''est un point de décision. Le commanditaire peut dire « on continue », « on ajuste » ou « on arrête ». Arrêter un mauvais projet tôt n''est pas un échec, c''est une bonne gestion de l''argent public. Les grands référentiels internationaux, comme le guide PMBOK ou PRINCE2, insistent tous sur ces points de contrôle, même si leurs découpages diffèrent.
+
+## 27:00 – 40:00 · Les acteurs
+
+Qui fait quoi dans le marché de Thiès ? Le maître d''ouvrage, c''est la commune : elle exprime le besoin, elle paie, elle réceptionne. Le maître d''œuvre, c''est le bureau d''études qui conçoit et l''entreprise de BTP qui construit. Le chef de projet coordonne. Le comité de pilotage, présidé par exemple par le maire ou son adjoint, valide les grandes étapes.
+
+Piège classique à l''examen : confondre maître d''ouvrage et maître d''œuvre. Moyen mnémotechnique : l''ouvrage, c''est ce qu''on veut avoir ; l''œuvre, c''est le travail pour le faire. Celui qui veut l''ouvrage est le maître d''ouvrage ; celui qui fait l''œuvre est le maître d''œuvre.
+
+## 40:00 – 50:00 · Analyse des parties prenantes
+
+Les parties prenantes sont toutes les personnes ou organisations concernées. Pour le marché : commerçants, clients, riverains, transporteurs, services d''hygiène, sapeurs-pompiers, bailleur éventuel. Je dessine une matrice : en abscisse l''intérêt, en ordonnée le pouvoir. En haut à droite, pouvoir fort et intérêt fort : on gère de près, par exemple le bailleur. En bas à droite, pouvoir faible et intérêt fort : on informe, par exemple les commerçants… mais attention, des commerçants organisés en association peuvent bloquer le projet ; leur pouvoir n''est donc pas si faible. L''analyse doit être honnête et mise à jour.
+
+## 50:00 – 58:00 · Pause et quiz interactif
+
+Faisons une pause active. Prenez une feuille et répondez en trois minutes.
+
+Question 1 : la paie mensuelle d''une entreprise est-elle un projet ? Question 2 : qui est le maître d''ouvrage dans la construction d''un forage financé et commandé par une communauté rurale ? Question 3 : un jalon a-t-il une durée ? Question 4 : citez les trois sommets du triangle des contraintes.
+
+Corrigeons. 1 : non, c''est une opération répétitive. 2 : la communauté rurale. 3 : non, un jalon a une durée nulle. 4 : coût, délai, qualité ou périmètre. Si vous avez quatre bonnes réponses, bravo ; sinon, notez la notion à revoir.
+
+## 58:00 – 1:10:00 · Le cadrage et la note de cadrage
+
+Le cadrage répond à six questions : pourquoi, quoi, qui, quand, combien, comment. Appliquons au marché. Pourquoi : améliorer l''hygiène et la sécurité des commerçants, augmenter les recettes communales. Quoi : un marché de 200 cantines avec toilettes, point d''eau et éclairage ; hors périmètre : la voirie autour. Qui : commune, bureau d''études, entreprise, association des commerçants. Quand : études en six mois, travaux en douze mois. Combien : un budget estimatif par poste avec une provision pour imprévus. Comment : démarche, principaux risques et parades.
+
+L''objectif doit être SMART. Je vous propose de corriger ensemble cet objectif : « Construire un beau marché ». Ce n''est ni mesurable ni daté. Version SMART : « Livrer un marché couvert de 200 cantines conformes au cahier des charges, au plus tard le 31 décembre, dans la limite du budget voté. »
+
+Exercice commenté : la coopérative fictive Ndiambour Lait prévoit 4 500 000 FCFA d''équipements, 2 800 000 FCFA d''aménagement et 700 000 FCFA de formation. Sous-total : 8 000 000 FCFA. Avec 10 % d''imprévus : 800 000 FCFA, soit un budget de 8 800 000 FCFA. Les erreurs typiques : oublier la provision, ou l''appliquer à un seul poste.
+
+## 1:10:00 – 1:20:00 · Le cahier des charges
+
+Le cahier des charges fonctionnel exprime ce que le produit doit faire, pas comment le faire. Pour le marché, une fonction : « permettre aux commerçants de stocker leurs marchandises en sécurité la nuit ». Critère : fermeture des cantines. Niveau : porte métallique avec cadenas pour chaque cantine. On ajoute les contraintes, comme le budget, les délais, les normes d''accessibilité, et les modalités de réception.
+
+Un bon cahier des charges évite le célèbre problème du « ce n''est pas ce que nous voulions » à la livraison. Il sert aussi de base à l''appel d''offres.
+
+Correction commentée d''un exercice de TD. Énoncé : pour un logiciel de gestion des stocks d''une pharmacie de Kaolack, formulez deux fonctions avec critère et niveau. Une copie a écrit : « Le logiciel doit être rapide et utiliser une base de données moderne. » Deux erreurs : « rapide » n''a ni critère ni niveau, et « base de données moderne » impose une solution technique au lieu d''exprimer un besoin. Correction proposée. Fonction 1 : alerter le pharmacien en cas de rupture ; critère : délai d''alerte ; niveau : dès que le stock passe sous le seuil défini pour chaque produit. Fonction 2 : suivre les dates de péremption ; critère : anticipation ; niveau : liste des produits périmant dans les 60 jours, éditable chaque semaine. Voyez la différence : on dit ce que l''outil doit permettre, et comment on vérifiera à la réception que c''est bien le cas.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Résumons. Un projet est temporaire, unique et contraint. Il suit un cycle de vie en cinq phases avec des points de décision. Le maître d''ouvrage veut l''ouvrage, le maître d''œuvre le réalise. Les parties prenantes s''analysent selon le pouvoir et l''intérêt. Le cadrage répond à six questions et fixe un objectif SMART. Le cahier des charges exprime le besoin en fonctions.
+
+Évaluation finale, cinq questions.
+
+1. Donnez la définition d''un projet. Réponse : un effort temporaire et unique pour atteindre un objectif dans des contraintes de coût, de délai et de qualité.
+2. Quelle phase se déroule en parallèle de l''exécution ? Réponse : le suivi et la maîtrise.
+3. Où classer, dans la matrice pouvoir/intérêt, un bailleur qui finance 80 % du projet ? Réponse : pouvoir fort, intérêt fort, à gérer de près.
+4. Que contient la rubrique « hors périmètre » d''une note de cadrage ? Réponse : ce que le projet ne réalisera pas, pour éviter les malentendus.
+5. Un budget de 6 000 000 FCFA avec 5 % d''imprévus donne quel total ? Réponse : 6 000 000 + 300 000 = 6 300 000 FCFA.
+
+Merci pour votre attention. Pour la prochaine séance, rédigez la note de cadrage d''un projet de votre quartier.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Fondamentaux du management de projet');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : Licence 1 gestion de projets. Objectifs : construire une WBS, un Gantt et un réseau PERT, calculer les dates, les marges et le chemin critique, utiliser les durées probabilistes. Matériel : tableau, diaporama, papier quadrillé, calculatrice, tableur facultatif. Prérequis : notions de projet, tâche, livrable et jalon.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bonjour. Aujourd''hui, nous faisons la séance qui rapporte le plus de points à l''examen : la planification. Un exercice de PERT bien présenté, c''est souvent un tiers de la note. Notre fil rouge : l''entreprise fictive Teranga Events organise un festival culturel à Saint-Louis. Plan de la séance : WBS, Gantt, réseau, calcul des dates, marges, chemin critique, quiz, exercices et évaluation.
+
+## 05:00 – 15:00 · La WBS
+
+Avant de planifier, il faut savoir quoi planifier. La WBS découpe le projet en livrables puis en lots de travail. Je l''écris au tableau sous forme d''arbre. Niveau 0 : Festival. Niveau 1 : programmation artistique, site et logistique, communication, billetterie, bilan. Niveau 2 pour la logistique : scène, sonorisation, sécurité, restauration.
+
+Règle des 100 % : si j''additionne les lots de niveau 2 d''une branche, je dois retrouver toute la branche, pas plus. Si j''oublie la sécurité, ma WBS est incomplète et le jour J sera dangereux. Un lot de travail doit pouvoir être estimé et confié à un responsable : « organiser le festival » est trop large ; « louer la sonorisation » est un bon lot.
+
+## 15:00 – 25:00 · Le diagramme de Gantt
+
+Je trace un tableau : les tâches en lignes, les semaines en colonnes. Chaque tâche est une barre. Les jalons, comme « contrat avec les artistes signé », sont des losanges. Le Gantt est parfait pour communiquer avec le comité ou les partenaires, car tout le monde le comprend. Mais regardez : quand j''ai vingt tâches, je ne vois plus quelles tâches dépendent de quelles autres. C''est pourquoi on calcule d''abord avec le réseau PERT, puis on dessine le Gantt.
+
+Conseil pratique : sur le Gantt, coloriez en rouge les barres des tâches critiques, que nous allons apprendre à identifier, et laissez apparaître les marges sous forme de barre en pointillés après les tâches non critiques. Le Gantt devient alors un véritable outil de pilotage : chaque lundi, vous tracez une ligne verticale à la date du jour et vous voyez immédiatement quelles tâches sont en retard. Sur tableur, une simple mise en forme conditionnelle suffit pour produire ce graphique.
+
+Les liens : fin-début, le plus courant ; début-début, par exemple la communication commence en même temps que la billetterie ; fin-fin, par exemple la décoration doit finir quand la scène finit.
+
+## 25:00 – 42:00 · Calcul du réseau : passe avant et passe arrière
+
+Passons au calcul avec l''exemple du centre de formation de Thiès, que vous avez dans votre leçon. Tâches en semaines : A 4 ; B 6 après A ; C 8 après A ; D 5 après B ; E 12 après C et D ; F 6 après C ; G 3 après E et F ; H 5 après C ; I 2 après G et H.
+
+Passe avant, je remplis la colonne début au plus tôt. A commence à 0, finit à 4. B commence à 4, finit à 10. C commence à 4, finit à 12. D commence à 10, finit à 15. E attend C et D : je prends le maximum entre 12 et 15, donc 15, et E finit à 27. F : 12 à 18. H : 12 à 17. G attend E et F : maximum de 27 et 18, donc 27, fin à 30. I attend G et H : maximum de 30 et 17, donc 30, fin à 32. Le projet dure 32 semaines.
+
+Passe arrière, je pars de la fin avec le minimum. I doit finir à 32, donc commencer au plus tard à 30. G finit au plus tard à 30, commence à 27. H finit au plus tard à 30, commence à 25. E finit à 27, commence à 15. F finit à 27, commence à 21. D finit à 15, commence à 10. C a trois successeurs, E, F et H, qui commencent au plus tard à 15, 21 et 25 : je prends le minimum, 15 ; C commence au plus tard à 7. B finit à 10, commence à 4. A a deux successeurs, B et C, qui commencent au plus tard à 4 et 7 : minimum 4, donc A commence à 0. Tout est cohérent : on retombe sur 0.
+
+## 42:00 – 50:00 · Marges et chemin critique
+
+La marge totale est la différence entre début au plus tard et début au plus tôt. A, B, D, E, G et I ont une marge nulle : c''est le chemin critique, 4 + 6 + 5 + 12 + 3 + 2 = 32. C a une marge totale de 3, F de 9, H de 13.
+
+La marge libre se calcule avec les successeurs : plus petit début au plus tôt des successeurs moins fin au plus tôt de la tâche. Pour C : successeurs E, F, H avec débuts au plus tôt 15, 12 et 12 ; minimum 12 ; 12 − 12 = 0. C a donc une marge totale de 3 mais une marge libre nulle. Si C glisse d''une semaine, la fin du projet ne bouge pas, mais F et H sont décalés. Pour F : 27 − 18 = 9. Pour H : 30 − 17 = 13.
+
+## 50:00 – 57:00 · Pause et quiz interactif
+
+Trois questions, deux minutes. Un : dans la passe avant, maximum ou minimum ? Deux : peut-on avoir une marge libre plus grande que la marge totale ? Trois : si une tâche critique prend deux semaines de retard, combien de retard pour le projet ?
+
+Réponses : un, le maximum ; deux, non, la marge libre est toujours inférieure ou égale à la marge totale ; trois, deux semaines, si rien n''est fait pour rattraper.
+
+## 57:00 – 1:07:00 · Durées probabilistes
+
+Dans un pays où la saison des pluies peut bloquer un chantier, une durée unique est souvent illusoire. Le PERT probabiliste demande trois estimations. Exemple : o = 2, m = 5, p = 14 semaines. La moyenne pondérée vaut (2 + 4 × 5 + 14) / 6 = 36 / 6 = 6 semaines, et l''écart-type (14 − 2) / 6 = 2 semaines. Remarquez que la moyenne, 6, est supérieure à la valeur la plus probable, 5, parce que le pessimiste tire vers le haut. Dans la vie réelle, les retards sont plus fréquents que les avances.
+
+## 1:07:00 – 1:20:00 · Correction commentée d''exercice
+
+Prenons l''exercice 4 de votre leçon : A 3 ; B 5 après A ; C 2 après A ; D 4 après C ; E 6 après B et D ; F 3 après B. Faites-le seuls cinq minutes, puis corrigeons.
+
+Passe avant : A 0 à 3 ; B 3 à 8 ; C 3 à 5 ; D 5 à 9 ; E maximum de 8 et 9, soit 9 à 15 ; F 8 à 11. Durée 15 jours. Passe arrière : E 9 à 15 ; F 12 à 15 ; D 5 à 9 ; B : successeurs E et F débutant au plus tard à 9 et 12, minimum 9, donc B de 4 à 9 ; C de 3 à 5 ; A : minimum de 4 et 3, soit 3, donc A de 0 à 3. Chemin critique : A, C, D, E. B a une marge totale de 1 jour et une marge libre de 0. F a 4 et 4.
+
+L''erreur que je vois le plus souvent dans les copies : prendre le maximum dans la passe arrière. Si vous trouvez un début au plus tard négatif pour la première tâche, c''est le signal d''une erreur.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Résumé : WBS pour découper, réseau pour calculer, Gantt pour communiquer. Passe avant avec le maximum, passe arrière avec le minimum. Marge totale nulle signifie tâche critique.
+
+Évaluation finale :
+
+1. Que dit la règle des 100 % ? Réponse : les éléments enfants représentent exactement tout le travail du parent.
+2. Une tâche a un début au plus tôt de 6 et un début au plus tard de 9. Quelle est sa marge totale ? Réponse : 3.
+3. Tâche avec o = 4, m = 6, p = 14. Durée moyenne ? Réponse : (4 + 24 + 14) / 6 = 7.
+4. Pourquoi combiner Gantt et PERT ? Réponse : le PERT calcule les dépendances et le chemin critique, le Gantt communique visuellement le planning.
+5. Une tâche de marge totale 5 prend 7 jours de retard. Effet sur le projet ? Réponse : 2 jours de retard, toutes choses égales par ailleurs.
+
+Bon travail, et faites un réseau par jour jusqu''à l''examen.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Communication et travail en équipe projet', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : Licence 1 gestion de projets. Objectifs : expliquer le rôle de la communication dans le projet, bâtir un plan de communication, conduire une réunion et rédiger un compte rendu, construire une matrice RACI, comprendre la dynamique d''équipe et gérer un conflit. Matériel : tableau, diaporama, fiches de jeu de rôle. Prérequis : notions d''acteurs et de parties prenantes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à tous. On pense souvent que la gestion de projets, ce sont des plannings et des budgets. Mais demandez à un chef de projet expérimenté de Dakar ou d''Abidjan comment il passe ses journées : il vous dira qu''il parle, écoute, écrit, négocie. Aujourd''hui, notre fil rouge est un projet fictif d''électrification solaire de cinq villages de la région de Tambacounda, porté par une ONG avec une équipe de huit personnes.
+
+## 05:00 – 15:00 · Les bases de la communication
+
+Je dessine le schéma : émetteur, message, canal, récepteur, retour. Entre l''émetteur et le récepteur, je dessine des éclairs : ce sont les bruits. Dans notre projet, quels bruits ? La langue, car beaucoup de villageois parlent pulaar ou mandinka ; le jargon technique, « onduleur », « kilowatt-crête » ; le réseau téléphonique faible ; la distance avec le siège à Dakar. Le retour est essentiel : si vous ne vérifiez pas que le message a été compris, vous ne savez pas s''il a été reçu.
+
+Calcul utile : le nombre de canaux dans une équipe de n personnes vaut n(n − 1)/2. Notre équipe de 8 personnes : 8 × 7 / 2 = 28 canaux. Si l''on recrute 4 personnes de plus, 12 × 11 / 2 = 66. Plus de deux fois plus de canaux pour 50 % de personnes en plus. D''où l''intérêt de structurer la communication.
+
+## 15:00 – 30:00 · Le plan de communication
+
+Le plan de communication est un tableau avec six colonnes : public, contenu, objectif, canal, fréquence, responsable. Construisons-le ensemble pour le projet solaire.
+
+Le comité de pilotage : avancement, budget, risques ; pour décider ; réunion plus rapport écrit ; mensuel ; chef de projet. L''équipe technique : planning de la semaine et sécurité ; pour coordonner ; réunion de chantier ; hebdomadaire ; chef de chantier. Les populations : dates des travaux, formation à l''usage, tarifs ; pour obtenir l''adhésion ; assemblée villageoise, radio communautaire, en langue locale ; à chaque étape ; animateur social. Le bailleur : rapport d''activité et financier ; pour rendre compte ; rapport écrit ; trimestriel ; chef de projet.
+
+Notez l''importance des relais traditionnels : chef de village, notables, imams, associations de femmes. Une assemblée sous l''arbre à palabres avec le chef de village peut être plus efficace qu''une affiche.
+
+Deuxième point : adaptez le message au public. Le comité de pilotage veut des chiffres et des décisions à prendre : trois pages maximum, avec un résumé en tête. Les villageois veulent savoir ce qui va changer pour eux : quand l''électricité arrivera, combien ils paieront, qui contacter en cas de panne. Le bailleur veut des preuves : indicateurs, photos, justificatifs. Un même fait, « le chantier a deux semaines de retard », se dira différemment à chacun : au comité, avec la cause et le plan de rattrapage ; aux villageois, avec la nouvelle date et des excuses ; au bailleur, avec l''impact sur le calendrier des décaissements.
+
+## 30:00 – 42:00 · Réunions et comptes rendus
+
+Une réunion coûte cher. Huit personnes pendant deux heures, c''est seize heures de travail. Elle doit donc être préparée : objectif, ordre du jour envoyé à l''avance, animateur, secrétaire, heure de fin respectée.
+
+Le compte rendu fixe les décisions. Rubriques : date, lieu, présents et absents, ordre du jour, points discutés, décisions, actions avec responsable et échéance, prochaine réunion. Je vous montre à l''écran un mauvais compte rendu : « On a parlé des panneaux. Il faut avancer. » Qui fait quoi ? Pour quand ? Personne ne sait. Version correcte : « Décision : commande de 40 panneaux auprès du fournisseur retenu. Action : Moussa envoie le bon de commande avant vendredi 12. »
+
+Quelques règles d''animation que je vous conseille. Commencez à l''heure, même si tout le monde n''est pas là : sinon vous récompensez les retardataires. Rappelez l''objectif en une phrase. Donnez la parole à chacun, y compris aux plus jeunes ou aux plus timides, qui hésitent parfois à contredire un aîné. Notez les sujets hors ordre du jour dans un « parking » pour une prochaine réunion. Terminez en relisant à voix haute les décisions et les actions : c''est le moment où l''on découvre les malentendus. Pour les réunions à distance, avec des collègues sur le terrain, vérifiez la connexion avant et envoyez les documents à l''avance, car beaucoup suivront depuis un téléphone.
+
+## 42:00 – 50:00 · Pause et quiz interactif
+
+Cinq minutes de quiz à main levée. Question 1 : combien de canaux pour 6 personnes ? Question 2 : un compte rendu doit-il mentionner les absents ? Question 3 : le canal le plus adapté pour informer des villageois non alphabétisés ? Question 4 : quelle différence entre communication formelle et informelle ?
+
+Réponses : 1, 6 × 5 / 2 = 15 ; 2, oui ; 3, l''oral, assemblée villageoise ou radio communautaire en langue locale ; 4, la formelle est organisée et laisse une trace écrite, l''informelle est spontanée.
+
+## 50:00 – 1:02:00 · La matrice RACI
+
+Prenons trois tâches : choisir le fournisseur de panneaux ; installer les kits ; former les comités de gestion villageois. Quatre acteurs : chef de projet, responsable achats, ingénieur électricien, animateur social.
+
+Choisir le fournisseur : R responsable achats, A chef de projet, C ingénieur, I animateur. Installer les kits : R ingénieur, A chef de projet, C responsable achats, I animateur. Former les comités : R animateur, A chef de projet, C ingénieur, I responsable achats.
+
+Contrôles : chaque tâche a un R et un seul A. Lisez aussi la matrice en colonne : si une personne a des R partout, elle est surchargée. Ici, le chef de projet est A partout : c''est normal dans une petite équipe, mais il pourrait déléguer l''approbation de la formation à un responsable social expérimenté.
+
+## 1:02:00 – 1:15:00 · Dynamique d''équipe et conflits
+
+Le modèle de Tuckman : formation, tension, normalisation, performance, dissolution. Au début, chacun est poli ; puis vient la tension, les désaccords sur les rôles ; ensuite on fixe des règles ; puis l''équipe devient performante ; enfin elle se dissout à la clôture. Le chef de projet est plutôt directif au début et devient plus délégatif.
+
+Jeu de rôle commenté. Situation : l''ingénieur veut installer d''abord dans le plus gros village ; l''animateur social veut commencer par le village le plus enclavé, qui a été promis en premier. Cinq attitudes possibles. L''évitement : on reporte, le chantier prend du retard. L''accommodation : l''un cède, mais garde de la rancœur. La compétition : le chef de projet impose. Le compromis : on coupe l''équipe en deux. La collaboration : on cherche ensemble ; par exemple, on commence par le village enclavé pour tenir la promesse, mais avec une équipe renforcée pour ne pas perdre de temps, et l''on explique la décision au grand village. Discutez en binôme : quelle solution choisiriez-vous et pourquoi ? Retenez que la collaboration demande du temps et de la confiance ; elle est réservée aux enjeux importants. Pour un désaccord mineur, sur la couleur des tee-shirts du projet par exemple, le compromis ou même l''accommodation suffisent.
+
+## 1:15:00 – 1:23:00 · Correction commentée d''un exercice
+
+Exercice : la mutuelle de santé fictive Kër Wér Gi lance une campagne d''adhésion à Rufisque. Proposez un plan de communication pour quatre publics. Correction : conseil d''administration, réunion mensuelle avec les chiffres d''adhésion ; relais de quartier, formation au lancement puis réunion tous les quinze jours ; populations, radio communautaire, causeries et porte-à-porte pendant toute la campagne ; structures de santé partenaires, courrier et rencontre pour expliquer le circuit de prise en charge. Les copies qui obtiennent tous les points précisent toujours le responsable et la fréquence.
+
+## 1:23:00 – 1:30:00 · Synthèse et évaluation finale
+
+À retenir : communiquer, c''est vérifier que le message est compris ; le plan de communication organise qui informe qui, de quoi, comment et quand ; toute décision s''écrit ; RACI avec un seul A ; les conflits se gèrent, de préférence par la collaboration quand l''enjeu est important.
+
+Évaluation finale :
+
+1. Combien de canaux dans une équipe de 10 personnes ? Réponse : 10 × 9 / 2 = 45.
+2. Citez les six colonnes d''un plan de communication. Réponse : public, contenu, objectif, canal, fréquence, responsable.
+3. Que signifie le A de RACI ? Réponse : celui qui approuve et rend des comptes ; un seul par tâche.
+4. Quelle est la deuxième étape du modèle de Tuckman ? Réponse : la tension.
+5. Quand le compromis est-il préférable à la collaboration ? Réponse : quand le temps presse et que l''enjeu est modéré.
+
+Merci et à bientôt.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Communication et travail en équipe projet');
+
 -- Cours : Gestion de projets Licence 2 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'lic-projet-l2', (select id from public.levels where name = 'Licence 2'), null, 'Gestion de projets', 'Gestion de projets Licence 2 : réussir ses examens', 'Ce cours prépare les examens de deuxième année de Licence en gestion de projets : gestion des coûts et du budget (estimation, suivi, valeur acquise), gestion des risques et de la qualité, méthodes agiles (Scrum, Kanban). Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30 accompagnent la révision. Prérequis : les bases de la Licence 1 (cycle de vie, WBS, PERT).', true, 312
@@ -3078,705 +3739,3 @@ Synthèse : « Couches : savoir placer chaque notion. Calcul : masque, octet int
 Mot de fin : « Faites un calcul de sous-réseau par jour jusqu''à l''examen, et vérifiez-le avec Python. En deux semaines, ce sera un réflexe. »', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-info-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Réseaux informatiques et adressage IPv4');
-
--- Cours : Contrôle de gestion Licence 1 : réussir ses examens
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'lic-cg-l1', (select id from public.levels where name = 'Licence 1'), null, 'Contrôle de gestion', 'Contrôle de gestion Licence 1 : réussir ses examens', 'Préparation aux partiels et examens semestriels de première année de Licence en contrôle de gestion : introduction au contrôle de gestion et à l''organisation, comptabilité analytique en coûts complets, mathématiques et statistiques de gestion. Fiches de cours, cas d''entreprises fictives d''Afrique de l''Ouest, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : bases de la comptabilité générale (SYSCOHADA révisé) et aisance avec les pourcentages.', true, 331
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Licence 1 en Contrôle de gestion', '## Objectifs de la leçon
-
-- Comprendre l''organisation de la première année de Licence en contrôle de gestion dans le système LMD.
-- Identifier les matières clés de l''année et les compétences attendues à l''examen.
-- Connaître les types d''épreuves et adopter une méthode de révision efficace.
-- Construire un plan de révision réaliste sur six semaines.
-
-## 1. La Licence 1 dans le système LMD
-
-Dans les universités et écoles de gestion du Sénégal et de l''espace UEMOA, la Licence suit le système LMD (Licence, Master, Doctorat). L''année est découpée en deux semestres. Chaque semestre regroupe des unités d''enseignement (UE) qui rassemblent plusieurs matières (éléments constitutifs). Chaque UE est affectée d''un nombre de crédits qui reflète la charge de travail de l''étudiant, cours magistraux, travaux dirigés et travail personnel compris.
-
-Les modalités précises (nombre de crédits par UE, poids du contrôle continu, règles de compensation entre matières, sessions de rattrapage) varient d''un établissement à l''autre. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité. Ne vous fiez pas aux rumeurs de couloir : une seule note éliminatoire mal anticipée peut coûter un semestre.
-
-## 2. Les matières clés de l''année
-
-En première année, la filière contrôle de gestion pose les fondations. Trois matières concentrent l''essentiel des exercices d''examen et sont traitées dans ce cours :
-
-- Introduction au contrôle de gestion et à l''organisation : missions du contrôleur, notions de performance (efficacité, efficience, économie), structures d''organisation, centres de responsabilité, cycle de pilotage.
-- Comptabilité analytique 1 : distinction entre charges directes et indirectes, incorporation des charges, tableau de répartition des centres d''analyse, unités d''œuvre, calcul des coûts complets (achat, production, revient) et du résultat analytique.
-- Mathématiques et statistiques de gestion : pourcentages et indices, intérêts simples et composés, actualisation, emprunts indivis, statistique descriptive et ajustement linéaire, utilisé pour séparer charges fixes et charges variables.
-
-Ces matières s''appuient sur d''autres enseignements de l''année : comptabilité générale (SYSCOHADA révisé), microéconomie, droit des affaires (OHADA), informatique de gestion (tableur). La comptabilité générale est indispensable : la comptabilité analytique part des charges enregistrées en classe 6.
-
-## 3. Les types d''épreuves
-
-- L''exercice chiffré : le plus fréquent. Exemple : compléter un tableau de répartition puis calculer un coût de revient. Les points se gagnent sur la démarche et la présentation autant que sur le résultat final.
-- Le cas pratique : une entreprise fictive, plusieurs annexes, une série de questions enchaînées. Une erreur au début se propage ; le correcteur applique en général la règle de la « cohérence » si vous montrez votre méthode.
-- Les questions de cours et le QCM : définitions précises (charge supplétive, unité d''œuvre, centre de profit), avec parfois justification demandée.
-- La dissertation ou la question de réflexion : par exemple « Le contrôle de gestion est-il un outil de surveillance ou d''aide à la décision ? ». Il faut une introduction, un plan en deux ou trois parties et des exemples.
-- Le projet ou dossier : en contrôle continu, construire un petit modèle de coûts sur tableur pour une entreprise réelle ou fictive.
-
-## 4. Méthode de révision
-
-La méthode la plus efficace combine trois gestes. D''abord, la fiche : une page par chapitre, avec les définitions, les formules et un schéma décrit en mots (par exemple : charges de la comptabilité générale → tri direct/indirect → centres d''analyse → unités d''œuvre → coûts). Ensuite, l''entraînement : refaire les exercices de TD sans regarder le corrigé, chronomètre en main. Enfin, l''auto-correction : comparer ligne par ligne et noter dans un carnet d''erreurs les fautes récurrentes (oubli des charges supplétives, mauvais choix de l''unité d''œuvre, confusion entre quantités produites et vendues).
-
-Pour les exercices chiffrés, adoptez une présentation systématique : tableau clair, unités indiquées (FCFA, heures, kg), résultats intermédiaires encadrés par une phrase. Vérifiez toujours une égalité de contrôle : total de la répartition primaire égal aux charges incorporées, stock initial plus entrées égal à sorties plus stock final, résultat analytique concordant avec le résultat de la comptabilité générale.
-
-## 5. Plan de révision sur 6 semaines
-
-- Semaine 1 : relecture des cours d''introduction au contrôle de gestion ; fiches de définitions ; 2 dissertations rédigées en plan détaillé.
-- Semaine 2 : comptabilité analytique, incorporation des charges et tableau de répartition ; 4 exercices de répartition, dont un avec prestations réciproques.
-- Semaine 3 : coûts d''achat, inventaire permanent (CUMP), coûts de production et de revient ; 2 cas complets avec concordance des résultats.
-- Semaine 4 : mathématiques financières (intérêts, actualisation, tableaux d''emprunt) ; statistiques (moyenne, écart-type, ajustement par les moindres carrés).
-- Semaine 5 : sujets d''annales ou sujets types en conditions réelles (3 heures, sans document) ; correction et carnet d''erreurs.
-- Semaine 6 : révision ciblée des points faibles, relecture des fiches, sommeil régulier. La veille de l''épreuve, pas de nouveau chapitre.
-
-Travailler en groupe de trois ou quatre étudiants est très rentable pour les cas pratiques : chacun corrige la copie d''un autre, ce qui oblige à expliquer la méthode.
-
-## 6. Le jour de l''épreuve
-
-Lisez tout le sujet pendant les dix premières minutes et repérez les questions indépendantes. Répartissez votre temps selon le barème. Commencez par les questions que vous maîtrisez. Soignez la présentation des tableaux. Si vous êtes bloqué, posez une hypothèse explicite (« à défaut, je retiens un coût d''unité d''œuvre de 400 FCFA ») et poursuivez : vous sauverez les points de la suite. Gardez dix minutes à la fin pour relire les calculs et les unités.
-
-## Points clés
-
-- Lire le règlement des études : crédits, compensation et rattrapage dépendent de votre établissement.
-- Trois matières clés : introduction au contrôle de gestion, comptabilité analytique 1, mathématiques et statistiques de gestion.
-- Une méthode : fiche, entraînement chronométré, carnet d''erreurs.
-- Toujours une égalité de contrôle dans les calculs.
-
-## Exercices
-
-- Exercice 1 : citez trois types d''épreuves et, pour chacun, une erreur fréquente à éviter.
-- Exercice 2 : construisez votre propre plan de révision sur 6 semaines en tenant compte de vos points faibles.
-- Exercice 3 : rédigez la fiche « schéma des coûts complets » en cinq étapes.
-
-## Corrigé
-
-- Exercice 1 : exercice chiffré, oublier les unités et les résultats intermédiaires ; cas pratique, ne pas exploiter toutes les annexes ; dissertation, réciter le cours sans problématique ni exemples.
-- Exercice 2 : réponse personnelle ; un bon plan affecte plus de temps aux matières faibles, prévoit au moins deux sujets complets en conditions réelles et une dernière semaine allégée.
-- Exercice 3 : 1) partir des charges de la comptabilité générale ; 2) retirer les charges non incorporables et ajouter les charges supplétives ; 3) affecter les charges directes aux coûts et répartir les charges indirectes dans les centres (répartition primaire puis secondaire) ; 4) calculer le coût des unités d''œuvre et imputer les centres aux coûts ; 5) calculer coûts d''achat, de production, de revient et résultat analytique, puis vérifier la concordance avec la comptabilité générale.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Contrôle de gestion');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Introduction au contrôle de gestion et à l''organisation : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Définir le contrôle de gestion, ses missions et sa place dans l''organisation.
-- Mesurer la performance avec les notions d''efficacité, d''efficience et d''économie.
-- Distinguer les structures d''organisation et les centres de responsabilité.
-- Situer la comptabilité analytique par rapport à la comptabilité générale.
-
-## 1. Définitions
-
-Le contrôle de gestion est l''ensemble des dispositifs qui aident les responsables à piloter l''organisation vers ses objectifs en utilisant les ressources de façon efficace et efficiente. Dans les années 1960, Robert N. Anthony en a proposé une définition devenue classique : un processus par lequel les dirigeants s''assurent que les ressources sont obtenues et utilisées avec efficacité et efficience pour atteindre les objectifs de l''organisation. Les auteurs plus récents insistent sur la dimension d''aide à la décision et d''apprentissage, au-delà de la simple surveillance.
-
-Contrôler ne veut pas dire inspecter ou sanctionner. Le contrôle de gestion se distingue de l''audit interne (qui vérifie la conformité et la maîtrise des risques) et du contrôle fiscal (externe). Il regarde vers l''avenir : prévoir, suivre, corriger.
-
-## 2. Le cycle du contrôle de gestion
-
-Le contrôle de gestion fonctionne en boucle :
-
-- Planifier : traduire la stratégie en objectifs chiffrés (plan opérationnel, budgets).
-- Agir : les opérationnels mettent en œuvre les actions.
-- Mesurer : comparer le réalisé au prévu (écarts, indicateurs, tableaux de bord).
-- Corriger : analyser les causes des écarts et décider des actions correctives, ou réviser les objectifs.
-
-Schéma décrit : un cercle à quatre flèches « prévoir → agir → mesurer → corriger », avec au centre les objectifs stratégiques. On parle aussi de contrôle a priori (avant l''action : budgets), concomitant (pendant : tableaux de bord) et a posteriori (après : analyse des écarts, coûts).
-
-## 3. Les trois dimensions de la performance
-
-- Efficacité : degré d''atteinte des objectifs. Efficacité = résultat obtenu / objectif.
-- Efficience : rapport entre résultats et ressources consommées. On la mesure souvent par un coût unitaire ou une productivité.
-- Économie : obtention des ressources au meilleur coût (prix d''achat, conditions de financement).
-
-Exemple chiffré. La société fictive Sahel Jus SARL, installée à Thiès, fabrique des jus de bissap et de bouye. Pour le trimestre, l''objectif était de 120 000 bouteilles pour un coût prévu de 450 FCFA par bouteille, soit un budget de 54 000 000 FCFA. Elle a produit 108 000 bouteilles pour un coût total réel de 49 680 000 FCFA.
-
-- Efficacité = 108 000 / 120 000 = 90,0 % : l''objectif de volume n''est pas atteint.
-- Coût unitaire réel = 49 680 000 / 108 000 = 460 FCFA, contre 450 FCFA prévus, soit 2,2 % de plus : l''efficience s''est dégradée.
-- Piège classique : comparer le coût total réel (49 680 000) au budget initial (54 000 000) laisse croire à une économie de 4 320 000 FCFA. Or il faut comparer au budget ajusté au volume réel : 108 000 × 450 = 48 600 000 FCFA. Le dépassement réel est de 1 080 000 FCFA.
-
-Cette idée de « budget flexible » sera approfondie en Licence 2.
-
-## 4. Le contrôle de gestion dans l''organisation
-
-Le contrôleur de gestion peut être rattaché à la direction générale (position de conseil, indépendance vis-à-vis des opérationnels) ou à la direction administrative et financière (proximité des données comptables, mais risque d''une vision trop financière). Dans les PME, la fonction est souvent assurée par le directeur financier, voire par le dirigeant lui-même.
-
-Ses missions : construire et suivre les budgets, calculer les coûts, produire les tableaux de bord, analyser les écarts, conseiller les responsables, participer aux études de rentabilité, animer le dialogue de gestion.
-
-Les structures d''organisation influencent le contrôle :
-
-- Structure fonctionnelle : découpage par fonctions (production, commercial, finance). Simple, mais la rentabilité n''est visible qu''au niveau global.
-- Structure divisionnelle : découpage par produits, marchés ou zones (par exemple une division Dakar et une division Ziguinchor). Chaque division peut être évaluée sur sa rentabilité.
-- Structure matricielle : croisement fonctions × projets. Riche, mais la responsabilité est partagée et plus difficile à mesurer.
-
-## 5. Les centres de responsabilité
-
-Un centre de responsabilité est une unité dont le responsable dispose d''une délégation et rend compte de sa performance sur des indicateurs qu''il maîtrise.
-
-- Centre de coût : le responsable maîtrise des coûts (atelier de production, service comptable). Indicateur : coût par unité, écart sur budget.
-- Centre de recettes (ou de chiffre d''affaires) : service commercial ; indicateur : chiffre d''affaires, volume, part de marché.
-- Centre de profit : le responsable maîtrise coûts et recettes (une agence, une boutique) ; indicateur : marge, résultat.
-- Centre d''investissement : il décide aussi de ses investissements (une filiale) ; indicateur : rentabilité des capitaux investis.
-
-Principe de contrôlabilité : on n''évalue un responsable que sur ce qu''il peut influencer.
-
-## 6. Comptabilité générale et comptabilité analytique
-
-La comptabilité générale (SYSCOHADA révisé) est obligatoire, normalisée, tournée vers les tiers ; elle classe les charges par nature (achats, transports, services extérieurs, charges de personnel) et calcule un résultat global. La comptabilité analytique (ou de gestion) est facultative, libre dans ses méthodes, tournée vers les décideurs internes ; elle reclasse les charges par destination (produit, activité, centre) pour calculer des coûts et des résultats partiels.
-
-## Points clés
-
-- Contrôle de gestion = piloter, pas sanctionner.
-- Efficacité (objectifs), efficience (ressources), économie (prix des ressources).
-- Toujours comparer le réel à un budget ajusté au volume réel.
-- Centres de coût, de recettes, de profit, d''investissement ; principe de contrôlabilité.
-
-## Exercices pratiques
-
-- Exercice 1 : définissez en une phrase efficacité, efficience et économie.
-- Exercice 2 : classez en centres de responsabilité : l''atelier d''emballage d''une huilerie ; l''agence de Kaolack d''une banque ; la filiale ivoirienne d''un groupe sénégalais ; le service des ventes export.
-- Exercice 3 : une clinique fictive de Saint-Louis visait 9 000 consultations pour un coût de 13 500 000 FCFA. Elle en a réalisé 8 100 pour 12 960 000 FCFA. Calculez l''efficacité, les coûts unitaires prévu et réel, et le budget ajusté.
-- Exercice 4 : citez deux avantages et deux limites du rattachement du contrôleur de gestion à la DAF.
-- Exercice 5 : donnez trois différences entre comptabilité générale et comptabilité analytique.
-- Exercice 6 (cas pratique) : le directeur de Sahel Jus affirme : « Nous avons dépensé moins que prévu, la gestion est excellente. » Rédigez une réponse argumentée de dix lignes.
-
-## Corrigé
-
-- Exercice 1 : efficacité = atteinte des objectifs ; efficience = résultats obtenus rapportés aux ressources consommées ; économie = acquisition des ressources au moindre coût à qualité égale.
-- Exercice 2 : centre de coût ; centre de profit ; centre d''investissement ; centre de recettes.
-- Exercice 3 : efficacité = 8 100 / 9 000 = 90,0 % ; coût unitaire prévu = 1 500 FCFA ; coût unitaire réel = 1 600 FCFA ; budget ajusté = 8 100 × 1 500 = 12 150 000 FCFA ; dépassement = 810 000 FCFA, malgré une dépense totale inférieure au budget initial.
-- Exercice 4 : avantages, accès direct aux données comptables, cohérence budget-comptabilité ; limites, vision trop financière, moindre indépendance vis-à-vis du directeur financier.
-- Exercice 5 : obligation légale contre caractère facultatif ; classement par nature contre classement par destination ; destinataires externes contre internes (on peut ajouter : normalisation SYSCOHADA contre liberté des méthodes ; périodicité annuelle contre mensuelle ou plus fine).
-- Exercice 6 : la dépense totale (49 680 000 FCFA) est inférieure au budget initial uniquement parce que le volume a baissé (90,0 % de l''objectif). Ramené au volume réel, le budget était de 48 600 000 FCFA : il y a un dépassement de 1 080 000 FCFA et le coût unitaire passe de 450 à 460 FCFA. La gestion n''est donc ni efficace (volume manqué) ni efficiente (coût unitaire en hausse). Il faut analyser les causes : prix des intrants, rendement de la main-d''œuvre, pannes, et proposer des actions correctives.', 'texte', 55, false, 20
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Introduction au contrôle de gestion et à l''organisation : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Comptabilité analytique 1 (coûts complets) : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Distinguer charges directes et indirectes, incorporables, non incorporables et supplétives.
-- Construire un tableau de répartition et calculer le coût des unités d''œuvre.
-- Calculer les coûts complets et le résultat analytique, puis vérifier la concordance.
-
-## 1. Les charges incorporées
-
-On part des charges de la classe 6 du SYSCOHADA révisé. On retire les charges non incorporables (sans lien avec l''exploitation normale : pénalités, charges hors activités ordinaires). On ajoute les charges supplétives, absentes de la comptabilité générale mais économiquement réelles : rémunération des capitaux propres, travail non rémunéré de l''exploitant.
-
-Charges incorporées = charges de la comptabilité générale − charges non incorporables + charges supplétives.
-
-## 2. Charges directes, charges indirectes et centres d''analyse
-
-Une charge directe s''affecte sans calcul intermédiaire à un coût : le bois d''une table, la main-d''œuvre directe (MOD). Une charge indirecte concerne plusieurs coûts (loyer, électricité, chef d''atelier) et passe par des centres d''analyse :
-
-- Centres auxiliaires (administration, entretien) : ils travaillent pour les autres centres et sont vidés lors de la répartition secondaire.
-- Centres principaux : leur coût est imputé aux produits par une unité d''œuvre (heure machine, heure de MOD) ou une assiette de frais (100 FCFA de chiffre d''affaires).
-
-Schéma décrit : répartition primaire → répartition secondaire → total du centre principal ÷ nombre d''unités d''œuvre = coût de l''UO → imputation aux coûts.
-
-## 4. Cas complet : Teranga Bois (entreprise fictive, Thiès)
-
-Teranga Bois fabrique des tables et des chaises en bois. Données du mois de mars (montants hors taxes) :
-
-- Charges indirectes de la comptabilité générale : 6 500 000 FCFA, dont 300 000 FCFA de pénalités non incorporables. Charges supplétives (rémunération des capitaux propres) : 200 000 FCFA.
-- Stock initial de planches : 500 planches pour 1 450 000 FCFA. Achats : 2 000 planches à 3 000 FCFA.
-- Production : 200 tables (6 planches, 2 heures machine, 4 heures de MOD chacune) et 600 chaises (1,5 planche, 0,5 heure machine, 1 heure de MOD chacune). MOD à 2 500 FCFA l''heure, charges sociales comprises.
-- Ventes : 180 tables à 60 000 FCFA et 550 chaises à 16 000 FCFA. Pas de stock initial de produits finis. Sorties de stock valorisées au CUMP.
-
-Étape 1, charges incorporées : 6 500 000 − 300 000 + 200 000 = 6 400 000 FCFA.
-
-Étape 2, répartition primaire : Administration 1 000 000, Entretien 500 000, Approvisionnement 540 000, Coupe 1 500 000, Montage 2 140 000, Distribution 720 000. Contrôle : le total est bien égal à 6 400 000 FCFA.
-
-Étape 3, répartition secondaire en cascade. L''administration se répartit : 10 % Entretien, 20 % Approvisionnement, 30 % Coupe, 20 % Montage, 20 % Distribution. L''entretien, qui reçoit 100 000 FCFA de l''administration, totalise 600 000 FCFA et se répartit : 10 % Approvisionnement, 50 % Coupe, 30 % Montage, 10 % Distribution.
-
-- Approvisionnement : primaire 540 000 ; reçu de l''administration 200 000 ; reçu de l''entretien 60 000 ; total 800 000 FCFA.
-- Coupe : primaire 1 500 000 ; reçu de l''administration 300 000 ; reçu de l''entretien 300 000 ; total 2 100 000 FCFA.
-- Montage : primaire 2 140 000 ; reçu de l''administration 200 000 ; reçu de l''entretien 180 000 ; total 2 520 000 FCFA.
-- Distribution : primaire 720 000 ; reçu de l''administration 200 000 ; reçu de l''entretien 60 000 ; total 980 000 FCFA.
-
-Étape 4, unités d''œuvre :
-
-- Approvisionnement : planche achetée, 2 000 UO, coût 400 FCFA.
-- Coupe : heure machine, 200 × 2 + 600 × 0,5 = 700 UO, coût 3 000 FCFA.
-- Montage : heure de MOD, 200 × 4 + 600 × 1 = 1 400 UO, coût 1 800 FCFA.
-- Distribution : 100 FCFA de chiffre d''affaires ; CA = 10 800 000 + 8 800 000 = 19 600 000 FCFA, soit 196 000 UO, coût 5 FCFA.
-
-Étape 5, coût d''achat et stock. Coût d''achat = 6 000 000 + 800 000 = 6 800 000 FCFA, soit 3 400 FCFA la planche. CUMP = (1 450 000 + 6 800 000) / (500 + 2 000) = 3 300 FCFA. Sorties : 1 200 + 900 = 2 100 planches ; stock final 400 planches valant 1 320 000 FCFA.
-
-Étape 6, coûts de production :
-
-- Tables : bois 3 960 000 ; MOD 2 000 000 ; Coupe 1 200 000 ; Montage 1 440 000 ; total 8 600 000 FCFA, soit 43 000 FCFA la table.
-- Chaises : bois 2 970 000 ; MOD 1 500 000 ; Coupe 900 000 ; Montage 1 080 000 ; total 6 450 000 FCFA, soit 10 750 FCFA la chaise.
-
-Étape 7, coûts de revient et résultats :
-
-- Tables : 180 × 43 000 + distribution 540 000 = 8 280 000 FCFA ; résultat = 10 800 000 − 8 280 000 = 2 520 000 FCFA.
-- Chaises : 550 × 10 750 + distribution 440 000 = 6 352 500 FCFA ; résultat = 8 800 000 − 6 352 500 = 2 447 500 FCFA.
-- Résultat analytique global : 4 967 500 FCFA.
-
-Étape 8, concordance : résultat de la comptabilité générale = résultat analytique + charges supplétives − charges non incorporables = 4 967 500 + 200 000 − 300 000 = 4 867 500 FCFA. Vérification directe : ventes 19 600 000 + production stockée 1 397 500 − achats 6 000 000 − variation de stock de bois 130 000 − MOD 3 500 000 − autres charges 6 500 000 = 4 867 500 FCFA.
-
-## Points clés
-
-- Charges incorporées = charges CG − non incorporables + supplétives.
-- Répartition primaire, puis secondaire, puis coût de l''unité d''œuvre.
-- Coût d''achat → stock (CUMP) → coût de production → coût de revient → résultat → concordance.
-
-## Exercices pratiques
-
-- Exercice 1 : charges CG 9 400 000 FCFA, dont 250 000 de charges non incorporables ; l''exploitant, non salarié, estime son travail à 400 000 FCFA par mois. Calculez les charges incorporées.
-- Exercice 2 : stock initial 1 000 kg pour 2 150 000 FCFA ; entrées 3 000 kg pour un coût d''achat de 6 450 000 FCFA. Calculez le CUMP.
-- Exercice 3 : coût de production de 400 sacs : matière 1 840 000 FCFA, 320 h de MOD à 2 000 FCFA, atelier 160 UO à 4 500 FCFA. Coût unitaire ?
-- Exercice 4 : deux centres auxiliaires se rendent des prestations réciproques. Gestion du personnel (GP) : primaire 600 000, reçoit 20 % de l''Entretien. Entretien : primaire 400 000, reçoit 10 % de GP. Calculez les totaux après répartition secondaire.
-- Exercice 5 (cas pratique) : pour Teranga Bois, le prix des chaises passe à 15 000 FCFA (mêmes quantités, distribution toujours à 5 FCFA par 100 FCFA de CA). Calculez le nouveau résultat sur chaises et commentez.
-
-## Corrigé
-
-- Exercice 1 : 9 400 000 − 250 000 + 400 000 = 9 550 000 FCFA.
-- Exercice 2 : (2 150 000 + 6 450 000) / (1 000 + 3 000) = 8 600 000 / 4 000 = 2 150 FCFA le kg.
-- Exercice 3 : 1 840 000 + 320 × 2 000 + 160 × 4 500 = 1 840 000 + 640 000 + 720 000 = 3 200 000 FCFA ; coût unitaire 8 000 FCFA.
-- Exercice 4 : GP = 600 000 + 0,2 E et E = 400 000 + 0,1 GP. En substituant : GP = 600 000 + 80 000 + 0,02 GP, d''où GP = 680 000 / 0,98 = 693 878 FCFA ; E = 400 000 + 0,1 × GP = 469 388 FCFA (arrondis).
-- Exercice 5 : CA chaises = 550 × 15 000 = 8 250 000 FCFA ; distribution = 412 500 ; coût de revient = 5 912 500 + 412 500 = 6 325 000 ; résultat = 1 925 000 FCFA, contre 2 447 500 FCFA auparavant, soit une baisse de 21,3 %. Le produit reste bénéficiaire (coût de l''UO de distribution supposé inchangé).', 'texte', 60, false, 30
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comptabilité analytique 1 (coûts complets) : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Mathématiques et statistiques de gestion : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Maîtriser pourcentages, indices et taux de croissance moyens.
-- Calculer intérêts simples, intérêts composés, valeurs actuelles et annuités d''emprunt.
-- Décrire une série statistique (moyenne, écart-type) et réaliser un ajustement linéaire par les moindres carrés.
-- Utiliser l''ajustement pour séparer la partie fixe et la partie variable d''un coût.
-
-## 1. Pourcentages, indices et taux moyens
-
-Taux de variation = (valeur finale − valeur initiale) / valeur initiale. Une PME de Mbour réalise un chiffre d''affaires de 80 000 000 FCFA en N−1 et 92 000 000 FCFA en N : variation = 15,0 %. Indice N base 100 en N−1 = 100 × 92 000 000 / 80 000 000 = 115.
-
-Attention : des variations successives se multiplient, elles ne s''additionnent pas. Une hausse de 10 % suivie d''une baisse de 10 % donne 1,10 × 0,90 = 0,99, soit −1 %.
-
-Taux moyen annuel sur n années : t = (Vn / V0)^(1/n) − 1. Si le chiffre d''affaires passe de 50 000 000 à 72 000 000 FCFA en 4 ans : t = (72 000 000 / 50 000 000)^(1/4) − 1 = 1,44^(0,25) − 1 ≈ 9,54 %.
-
-## 2. Intérêts simples
-
-Utilisés pour les opérations à court terme (moins d''un an). I = C × t × n, avec n en années ; en jours, on utilise l''année commerciale de 360 jours : I = C × t × j / 360.
-
-Exemple : un découvert de 2 000 000 FCFA pendant 90 jours au taux annuel de 9 % (taux fictif pour l''exemple) coûte 2 000 000 × 0,09 × 90 / 360 = 45 000 FCFA.
-
-## 3. Intérêts composés et actualisation
-
-À intérêts composés, les intérêts s''ajoutent au capital et produisent eux-mêmes des intérêts. Valeur acquise : Cn = C0 × (1 + t)^n. Un placement de 5 000 000 FCFA à 8 % par an pendant 3 ans (taux fictif) devient 5 000 000 × 1,08³ = 6 298 560 FCFA.
-
-L''actualisation fait le chemin inverse : C0 = Cn × (1 + t)^(−n). Une somme de 10 000 000 FCFA reçue dans 2 ans, actualisée à 10 %, vaut aujourd''hui 10 000 000 / 1,1² ≈ 8 264 463 FCFA. C''est la base du choix d''investissement.
-
-## 4. Emprunt indivis remboursé par annuités constantes
-
-Annuité constante : a = C × t / (1 − (1 + t)^(−n)). Chaque annuité = intérêt de l''année (capital restant dû × t) + amortissement du capital.
-
-Exemple : Teranga Bois emprunte 12 000 000 FCFA sur 4 ans à 10 % (taux fictif). a = 12 000 000 × 0,10 / (1 − 1,1^(−4)) ≈ 3 785 650 FCFA. Tableau d''amortissement (arrondi au franc, la dernière annuité étant ajustée de quelques francs pour solder exactement le capital) :
-
-- Année 1 : capital début 12 000 000 ; intérêt 1 200 000 ; amortissement 2 585 650 ; annuité 3 785 650 ; capital fin 9 414 350.
-- Année 2 : capital début 9 414 350 ; intérêt 941 435 ; amortissement 2 844 215 ; annuité 3 785 650 ; capital fin 6 570 135.
-- Année 3 : capital début 6 570 135 ; intérêt 657 014 ; amortissement 3 128 636 ; annuité 3 785 650 ; capital fin 3 441 499.
-- Année 4 : capital début 3 441 499 ; intérêt 344 150 ; amortissement 3 441 499 ; annuité 3 785 649 ; capital fin 0.
-
-Contrôles : la somme des amortissements est égale au capital emprunté ; chaque amortissement est égal, à l''arrondi près, au précédent multiplié par (1 + t).
-
-## 5. Statistique descriptive
-
-Pour une série x1, …, xn : moyenne x̄ = (somme des xi) / n ; variance V = (somme des (xi − x̄)²) / n ; écart-type σ = √V. La médiane partage la série ordonnée en deux moitiés. Le coefficient de variation σ / x̄ permet de comparer la dispersion de séries d''ordres de grandeur différents.
-
-## 6. Ajustement linéaire et séparation fixe/variable
-
-Les charges d''entretien de l''atelier Coupe de Teranga Bois dépendent en partie de l''activité. Relevé sur six mois :
-
-- janvier : 300 heures machine, 1 510 000 FCFA
-- février : 400 heures machine, 1 690 000 FCFA
-- mars : 500 heures machine, 1 920 000 FCFA
-- avril : 600 heures machine, 2 100 000 FCFA
-- mai : 700 heures machine, 2 300 000 FCFA
-- juin : 500 heures machine, 1 880 000 FCFA
-
-On cherche y = a x + b, où a est le coût variable par heure machine et b la partie fixe mensuelle.
-
-Méthode des moindres carrés : a = cov(x, y) / V(x) et b = ȳ − a x̄.
-
-- x̄ = 500 h ; ȳ = 1 900 000 FCFA.
-- V(x) = 16 666,67 ; σ(x) ≈ 129,1 h.
-- cov(x, y) = (somme des (xi − x̄)(yi − ȳ)) / n = 33 166 666,67.
-- a = 33 166 666,67 / 16 666,67 = 1 990 FCFA par heure ; b = 1 900 000 − 1 990 × 500 = 905 000 FCFA.
-- Coefficient de corrélation r = cov / (σx σy) ≈ 0,9988 : la liaison linéaire est très forte.
-
-Fonction de coût : y = 1 990 x + 905 000. Prévision pour 650 heures : 1 990 × 650 + 905 000 = 2 198 500 FCFA.
-
-Méthode des points extrêmes (plus rapide, moins précise) : a = (2 300 000 − 1 510 000) / (700 − 300) = 1 975,0 FCFA ; b = 2 300 000 − 1 975,0 × 700 = 917 500 FCFA. Elle n''utilise que deux points et peut être faussée par un mois atypique.
-
-## Points clés
-
-- Variations successives : on multiplie les coefficients.
-- Intérêts simples : C t j / 360 ; composés : C (1 + t)^n ; actualisation : C (1 + t)^(−n).
-- Annuité constante : C t / (1 − (1 + t)^(−n)).
-- Moindres carrés : a = cov / V(x), b = ȳ − a x̄ ; r proche de 1 ou de −1 = bon ajustement.
-
-## Exercices pratiques
-
-- Exercice 1 : un prix passe de 2 500 à 2 800 FCFA puis baisse de 5 %. Calculez le prix final et la variation globale.
-- Exercice 2 : un effet de commerce de 3 600 000 FCFA est escompté 60 jours avant l''échéance au taux de 12 % (fictif). Calculez l''escompte (intérêt simple).
-- Exercice 3 : quelle est la valeur acquise de 8 000 000 FCFA placés 5 ans à 7 % composés (taux fictif) ?
-- Exercice 4 : quelle est la valeur actuelle à 9 % de 15 000 000 FCFA à recevoir dans 3 ans ?
-- Exercice 5 : ventes mensuelles (en millions de FCFA) de cinq agences : 12, 15, 9, 20, 14. Calculez la moyenne, la variance et l''écart-type.
-- Exercice 6 (cas pratique) : avec la fonction de coût de l''atelier Coupe, quel budget d''entretien prévoir pour un mois de 480 heures machine ? Pourquoi faut-il être prudent pour une prévision à 1 200 heures ?
-
-## Corrigé
-
-- Exercice 1 : 2 800 × 0,95 = 2 660 FCFA ; variation globale = 2 660 / 2 500 − 1 = 6,4 %.
-- Exercice 2 : 3 600 000 × 0,12 × 60 / 360 = 72 000 FCFA.
-- Exercice 3 : 8 000 000 × 1,07⁵ ≈ 11 220 414 FCFA.
-- Exercice 4 : 15 000 000 / 1,09³ ≈ 11 582 752 FCFA.
-- Exercice 5 : moyenne 14 ; variance = (4 + 1 + 25 + 36 + 0) / 5 = 13,2 ; écart-type ≈ 3,63 millions de FCFA.
-- Exercice 6 : 1 990 × 480 + 905 000 = 1 860 200 FCFA. À 1 200 heures, on sort largement de la plage observée (300 à 700 h) : de nouvelles charges fixes (deuxième équipe, nouvelle machine) peuvent apparaître et la relation linéaire n''est plus garantie.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mathématiques et statistiques de gestion : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Licence 1 en Contrôle de gestion (corrigé)', '## Présentation du sujet
-
-Sujet d''entraînement de Licence 1, contrôle de gestion. Durée : 3 heures. Calculatrice autorisée, documents interdits. Ce sujet n''est pas un sujet officiel : il reproduit le format habituel des examens semestriels. Barème indicatif, non officiel, sur 20 points. Toutes les entreprises sont fictives.
-
-## Dossier 1 · Introduction au contrôle de gestion (5 points)
-
-- 1.1 (1,5 pt) Définissez le contrôle de gestion et présentez son cycle.
-- 1.2 (1,5 pt) Distinguez efficacité, efficience et économie, avec un exemple pour chacune.
-- 1.3 (2 pts) Une banque régionale décide d''évaluer ses agences sur leur résultat net, frais de siège compris. Que pensez-vous de ce choix au regard du principe de contrôlabilité ?
-
-## Dossier 2 · Comptabilité analytique (9 points)
-
-Baobab Textile, à Kaolack, confectionne des boubous. Pour le mois d''avril :
-
-- Tissu consommé : 2 400 mètres, valorisés au CUMP de 1 250 FCFA le mètre.
-- MOD : 1 200 heures à 2 200 FCFA.
-- Centre Coupe : 600 heures machine à 2 500 FCFA l''unité d''œuvre.
-- Centre Confection : unité d''œuvre heure de MOD, coût 1 100 FCFA.
-- Production : 1 200 boubous ; ventes : 1 100 boubous à 9 500 FCFA.
-- Distribution : 2 FCFA par 100 FCFA de chiffre d''affaires.
-
-Questions :
-
-- 2.1 (1 pt) Expliquez la différence entre centre principal et centre auxiliaire.
-- 2.2 (4 pts) Calculez le coût de production total et unitaire.
-- 2.3 (2 pts) Calculez le coût de revient des boubous vendus et le résultat analytique.
-- 2.4 (2 pts) Les charges supplétives s''élèvent à 150 000 FCFA et les charges non incorporables à 90 000 FCFA. Quel est le résultat de la comptabilité générale, en supposant qu''il n''y a pas d''autre différence ?
-
-## Dossier 3 · Mathématiques et statistiques de gestion (6 points)
-
-- 3.1 (3 pts) Baobab Textile emprunte 6 000 000 FCFA sur 3 ans à 12 % (taux fictif), par annuités constantes. Calculez l''annuité et présentez le tableau d''amortissement.
-- 3.2 (3 pts) Coûts d''électricité de l''atelier selon les heures machine : 800 h, 2 640 000 FCFA ; 1 000 h, 3 000 000 ; 1 200 h, 3 420 000 ; 1 400 h, 3 740 000. Déterminez par les moindres carrés la fonction de coût et prévoyez le coût pour 1 300 h.
-
-## Corrigé détaillé
-
-Dossier 1.
-
-- 1.1 : processus qui aide les responsables à atteindre les objectifs en utilisant les ressources avec efficacité et efficience ; cycle prévoir, agir, mesurer, corriger.
-- 1.2 : efficacité, atteindre 95 % des ventes visées ; efficience, baisser le coût par boubou ; économie, négocier le prix du tissu.
-- 1.3 : les frais de siège ne sont pas maîtrisés par le chef d''agence ; il faut l''évaluer sur une marge contributive (produits et charges propres à l''agence) et suivre à part le résultat après frais de siège, pour la décision de maintenir ou non l''agence.
-
-Dossier 2.
-
-- 2.1 : le centre principal impute directement ses charges aux coûts des produits par une unité d''œuvre ; le centre auxiliaire travaille pour les autres centres et se vide dans la répartition secondaire.
-- 2.2 : tissu 3 000 000 ; MOD 2 640 000 ; Coupe 1 500 000 ; Confection 1 200 × 1 100 = 1 320 000 ; total 8 460 000 FCFA ; coût unitaire 7 050 FCFA.
-- 2.3 : CA = 1 100 × 9 500 = 10 450 000 FCFA ; distribution = 104 500 UO × 2 = 209 000 FCFA ; coût de revient = 1 100 × 7 050 + 209 000 = 7 964 000 FCFA ; résultat analytique = 2 486 000 FCFA.
-- 2.4 : résultat CG = 2 486 000 + 150 000 − 90 000 = 2 546 000 FCFA.
-
-Dossier 3.
-
-- 3.1 : a = 6 000 000 × 0,12 / (1 − 1,12^(−3)) ≈ 2 498 094 FCFA.
-
-- Année 1 : capital début 6 000 000 ; intérêt 720 000 ; amortissement 1 778 094 ; annuité 2 498 094 ; capital fin 4 221 906.
-- Année 2 : capital début 4 221 906 ; intérêt 506 629 ; amortissement 1 991 465 ; annuité 2 498 094 ; capital fin 2 230 441.
-- Année 3 : capital début 2 230 441 ; intérêt 267 653 ; amortissement 2 230 441 ; annuité 2 498 094 ; capital fin 0.
-
-- 3.2 : x̄ = 1 100 ; ȳ = 3 200 000 ; V(x) = 50 000 ; cov = 93 000 000 ; a = 1 860 FCFA par heure ; b = 1 154 000 FCFA ; y = 1 860 x + 1 154 000 ; pour 1 300 h : 3 572 000 FCFA.
-
-## Conseils de méthode
-
-Dans le dossier 2, indiquez toujours le détail du calcul : un résultat faux mais bien posé rapporte une partie des points. Dans le dossier 3, vérifiez que la somme des amortissements redonne le capital emprunté. Pour la question 1.3, une réponse argumentée en deux temps (constat puis proposition) est attendue.
-
-## Exercices pratiques
-
-- Exercice 1 : quel serait le coût de production unitaire de Baobab Textile si le CUMP du tissu passait à 1 300 FCFA ?
-- Exercice 2 : quelle est la part des intérêts dans le coût total de l''emprunt du dossier 3 ?
-- Exercice 3 : citez deux charges supplétives possibles dans une entreprise individuelle.
-
-## Corrigé
-
-- Exercice 1 : le coût augmente de 2 400 × 50 = 120 000 FCFA, soit 8 580 000 FCFA au total et 7 150 FCFA par boubou.
-- Exercice 2 : total des annuités 7 494 282 FCFA ; intérêts 1 494 282 FCFA, soit 19,9 % des sommes versées.
-- Exercice 3 : rémunération du travail de l''exploitant ; rémunération des capitaux propres apportés.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en Contrôle de gestion (corrigé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Introduction au contrôle de gestion et à l''organisation', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 1 en contrôle de gestion, gestion, comptabilité.
-- Objectifs : expliquer le rôle du contrôle de gestion, mesurer la performance (efficacité, efficience, économie), raisonner avec un budget ajusté, identifier les centres de responsabilité et les structures d''organisation.
-- Matériel : tableau ou diaporama, schéma du cycle de pilotage, organigrammes types, calculatrice.
-- Prérequis : leçon « Introduction au contrôle de gestion et à l''organisation : l''essentiel pour l''examen ».
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Accueil et objectifs
-
-Bonjour à toutes et à tous. Bienvenue dans ce cours vidéo consacré à l''introduction au contrôle de gestion. Dans une heure et demie, vous saurez expliquer à un jury ce que fait un contrôleur de gestion, calculer et interpréter des indicateurs d''efficacité et d''efficience, et classer les unités d''une organisation en centres de responsabilité. Notre fil rouge sera Sahel Jus SARL, une entreprise fictive de Thiès qui fabrique des jus locaux.
-
-Visuel : diapositive titre, logo fictif de Sahel Jus, plan de la séance en cinq parties.
-
-## 05:00 – 15:00 · Qu''est-ce que contrôler ?
-
-Commençons par un mot piège : « contrôle ». En français courant, contrôler, c''est vérifier ou sanctionner. En gestion, le mot vient de l''anglais « control », qui signifie maîtriser, piloter. Le contrôleur de gestion n''est pas un policier : c''est un copilote. Son rôle est de fournir au dirigeant et aux responsables les informations pour décider à temps.
-
-Dans les années 1960, Robert N. Anthony a défini le contrôle de gestion comme le processus par lequel les dirigeants s''assurent que les ressources sont obtenues et utilisées avec efficacité et efficience pour atteindre les objectifs. Retenez trois mots de cette définition : processus, ressources, objectifs. Les auteurs plus récents ajoutent la cohérence entre stratégie et actions quotidiennes, et l''apprentissage organisationnel.
-
-Question à poser aux étudiants : « Quelle différence entre un contrôleur de gestion et un auditeur interne ? » Réponse attendue : l''auditeur vérifie la conformité et la maîtrise des risques ; le contrôleur aide à piloter la performance, en regardant surtout vers l''avenir.
-
-## 15:00 – 25:00 · Le cycle de pilotage
-
-Visuel : un cercle avec quatre flèches. Prévoir, agir, mesurer, corriger.
-
-Tout commence par la stratégie : Sahel Jus veut devenir la marque de référence des jus locaux dans la région de Thiès. Le contrôle de gestion traduit cette ambition en objectifs chiffrés : produire 120 000 bouteilles au trimestre pour un coût de 450 FCFA la bouteille. Ce sont les budgets. Ensuite, les équipes agissent. Le contrôleur mesure le réalisé, compare au prévu, calcule des écarts. Enfin, avec les responsables, il analyse les causes et propose des actions correctives. Puis le cycle recommence.
-
-On distingue trois moments du contrôle : a priori, avec les budgets ; pendant l''action, avec les tableaux de bord ; a posteriori, avec l''analyse des écarts et le calcul des coûts. Retenez ce triptyque, il revient souvent en question de cours.
-
-## 25:00 – 40:00 · Efficacité, efficience, économie : correction commentée
-
-Passons au chiffré. Je vous donne l''énoncé : objectif 120 000 bouteilles, coût prévu 450 FCFA l''unité, budget 54 000 000 FCFA. Réalisé : 108 000 bouteilles, coût total 49 680 000 FCFA. Prenez trois minutes pour calculer l''efficacité et le coût unitaire réel.
-
-Correction. Efficacité : 108 000 divisé par 120 000, soit 90,0 %. Coût unitaire réel : 49 680 000 divisé par 108 000, soit 460 FCFA. Le coût unitaire a augmenté de 2,2 %.
-
-Maintenant, l''erreur classique. Beaucoup d''étudiants écrivent : « le coût total réel est inférieur au budget, donc la gestion est bonne ». Regardez : 49 680 000 contre 54 000 000, il y a bien 4 320 000 FCFA de moins. Mais on a produit moins ! Il faut comparer à ce qu''on aurait dû dépenser pour 108 000 bouteilles : 108 000 fois 450, soit 48 600 000 FCFA. Le vrai dépassement est de 1 080 000 FCFA. Écrivez au tableau : on compare toujours le réel à un budget ajusté à l''activité réelle.
-
-Et l''économie ? Elle porte sur le prix des ressources. Si Sahel Jus a payé son sucre plus cher que prévu, l''économie est mauvaise, même si le rendement des machines est excellent.
-
-## 40:00 – 50:00 · Pause et quiz interactif
-
-Faisons une pause active. Répondez par vrai ou faux, je vous laisse trente secondes par question.
-
-- Question 1 : un centre de coût est évalué sur son résultat. Faux, il est évalué sur ses coûts.
-- Question 2 : l''efficacité se mesure par rapport aux objectifs. Vrai.
-- Question 3 : un coût total inférieur au budget initial prouve une bonne efficience. Faux, il faut ajuster le budget au volume réel.
-- Question 4 : la comptabilité analytique est obligatoire pour toutes les entreprises. Faux, elle est facultative, contrairement à la comptabilité générale.
-
-Comptez vos points. Trois ou quatre bonnes réponses : vous êtes sur la bonne voie.
-
-## 50:00 – 60:00 · Place du contrôleur et structures d''organisation
-
-Visuel : trois organigrammes, fonctionnel, divisionnel, matriciel.
-
-Où placer le contrôleur ? Rattaché à la direction générale, il gagne en indépendance et en vision transversale. Rattaché à la direction financière, il est proche des données comptables mais risque d''être perçu comme le « gendarme des chiffres ». Dans une PME sénégalaise de vingt salariés, il n''y a souvent pas de contrôleur : c''est le gérant ou le comptable qui assure la fonction, avec un tableur.
-
-La structure compte aussi. Dans une structure fonctionnelle, on mesure bien les coûts par fonction mais la rentabilité par produit est difficile à voir. Dans une structure divisionnelle, par exemple une division Dakar et une division Saint-Louis, chaque division peut être évaluée sur sa marge. Dans une structure matricielle, deux responsables se partagent les mêmes ressources : il faut des règles claires de répartition.
-
-## 60:00 – 75:00 · Centres de responsabilité : exercice corrigé
-
-Exercice : classez les unités suivantes d''un groupe agroalimentaire fictif. L''atelier de conditionnement ; la direction commerciale export ; le magasin de vente directe de Thiès ; la filiale de Bamako qui décide de ses investissements.
-
-Correction. L''atelier de conditionnement maîtrise ses consommations et ses heures : centre de coût, évalué sur un coût par unité conditionnée. La direction export maîtrise ses volumes et ses prix dans une certaine limite : centre de recettes. Le magasin maîtrise ses ventes et ses charges propres : centre de profit. La filiale de Bamako décide de ses investissements : centre d''investissement, évalué sur la rentabilité des capitaux qu''elle engage.
-
-Point de méthode : justifiez toujours par ce que le responsable maîtrise. C''est le principe de contrôlabilité. Un chef d''atelier ne doit pas être jugé sur le prix de vente fixé par le directeur commercial.
-
-## 75:00 – 82:00 · Comptabilité générale et comptabilité analytique
-
-La comptabilité générale, tenue selon le SYSCOHADA révisé, classe les charges par nature : achats, services extérieurs, personnel. Elle s''adresse aux tiers : administration fiscale, banques, associés. La comptabilité analytique reclasse ces mêmes charges par destination : produit, atelier, client. Elle est libre dans ses méthodes et sert les décisions internes. C''est l''objet du cours vidéo suivant.
-
-## 82:00 – 86:00 · Méthode : la question de réflexion
-
-À l''examen, une question comme « Le contrôle de gestion est-il un outil de surveillance ? » appelle une réponse construite. Introduction : définissez les termes, posez la tension entre surveillance et aide à la décision, annoncez le plan. Première partie : le contrôle de gestion comporte bien une dimension de surveillance, avec les budgets, les écarts et l''évaluation des responsables. Deuxième partie : sa finalité principale est l''aide au pilotage et l''apprentissage, avec les tableaux de bord, le dialogue de gestion et les actions correctives. Conclusion : l''équilibre dépend du style de management. Illustrez chaque partie par un exemple, Sahel Jus ou une banque régionale. Évitez la récitation : le correcteur cherche un raisonnement.
-
-## 86:00 – 90:00 · Synthèse et évaluation finale
-
-Synthèse : le contrôle de gestion est un pilotage ; il s''appuie sur un cycle prévoir, agir, mesurer, corriger ; il mesure la performance en efficacité, efficience et économie ; il responsabilise par les centres de responsabilité.
-
-Évaluation finale, cinq questions :
-
-- Question 1 : citez les quatre étapes du cycle de pilotage. Réponse : prévoir, agir, mesurer, corriger.
-- Question 2 : une usine visait 50 000 unités et en a produit 46 000. Efficacité ? Réponse : 46 000 / 50 000 = 92 %.
-- Question 3 : coût prévu 200 FCFA l''unité ; coût réel total 9 430 000 FCFA pour 46 000 unités. Budget ajusté et écart ? Réponse : budget ajusté 46 000 × 200 = 9 200 000 FCFA ; dépassement de 230 000 FCFA ; coût unitaire réel 205 FCFA.
-- Question 4 : quel type de centre pour une agence bancaire évaluée sur sa marge ? Réponse : centre de profit.
-- Question 5 : citez deux différences entre comptabilité générale et analytique. Réponse : obligatoire contre facultative ; classement par nature contre par destination.
-
-Merci de votre attention. Pour la prochaine séance, refaites l''exercice Sahel Jus sans vos notes.', 'video', 90, false, 60
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Introduction au contrôle de gestion et à l''organisation');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Comptabilité analytique 1 (coûts complets)', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 1 en contrôle de gestion et comptabilité.
-- Objectifs : passer des charges de la comptabilité générale aux charges incorporées, construire un tableau de répartition, calculer coûts d''achat, de production et de revient, puis vérifier la concordance des résultats.
-- Matériel : tableau ou diaporama, modèle vierge de tableau de répartition, fiche de stock, calculatrice.
-- Prérequis : comptabilité générale de base (classe 6 du SYSCOHADA révisé) et leçon « Comptabilité analytique 1 : l''essentiel pour l''examen ».
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Ouverture
-
-Bonjour à tous. Aujourd''hui, nous allons calculer, pas à pas, le coût d''une table et d''une chaise. Notre cas fil rouge est Teranga Bois, une menuiserie fictive de Thiès. À la fin de la séance, vous saurez dérouler un cas complet de coûts complets, c''est-à-dire l''exercice le plus fréquent des partiels de Licence 1.
-
-Visuel : le schéma des coûts complets, de gauche à droite : charges de la comptabilité générale, tri, centres d''analyse, coûts, résultat.
-
-## 05:00 – 15:00 · Charges incorporées
-
-Premier réflexe : on ne reprend pas les charges de la comptabilité générale telles quelles. On retire les charges non incorporables : ce sont des charges qui ne relèvent pas de l''exploitation normale, par exemple des pénalités de retard. On ajoute les charges supplétives : elles ont un coût économique sans être comptabilisées, comme la rémunération des capitaux propres.
-
-Chez Teranga Bois : 6 500 000 moins 300 000 plus 200 000, cela donne 6 400 000 FCFA de charges indirectes incorporées. Notez que les charges directes, bois et main-d''œuvre directe, sont traitées à part : elles vont directement dans les coûts.
-
-## 15:00 – 30:00 · Le tableau de répartition
-
-Visuel : tableau de répartition avec six colonnes : Administration, Entretien, Approvisionnement, Coupe, Montage, Distribution.
-
-La répartition primaire distribue les charges indirectes entre les centres avec des clés : surface pour le loyer, puissance installée pour l''électricité, effectif pour la cantine. Le service comptable nous la donne : Administration 1 000 000, Entretien 500 000, Approvisionnement 540 000, Coupe 1 500 000, Montage 2 140 000, Distribution 720 000. Premier contrôle : la somme fait 6 400 000 FCFA. Toujours vérifier.
-
-Répartition secondaire, en cascade. On vide d''abord l''Administration : 10 % à l''Entretien, soit 100 000 ; 20 % à l''Approvisionnement, soit 200 000 ; 30 % à la Coupe, 300 000 ; 20 % au Montage et 20 % à la Distribution. L''Entretien a maintenant 500 000 plus 100 000, soit 600 000 FCFA, qu''on répartit 10 %, 50 %, 30 %, 10 %.
-
-Totaux des centres principaux : Approvisionnement 800 000, Coupe 2 100 000, Montage 2 520 000, Distribution 980 000. Deuxième contrôle : leur somme redonne 6 400 000 FCFA, puisque les centres auxiliaires sont vidés.
-
-## 30:00 – 40:00 · Unités d''œuvre
-
-Le coût de l''unité d''œuvre est le total du centre divisé par le nombre d''unités. Approvisionnement : 800 000 sur 2 000 planches achetées, 400 FCFA. Coupe : les tables demandent 200 fois 2 heures machine, les chaises 600 fois 0,5 ; total 700 heures, coût 3 000 FCFA. Montage : 1 400 heures de MOD, coût 1 800 FCFA. Distribution : assiette de 100 FCFA de chiffre d''affaires ; CA 19 600 000 FCFA, donc 196 000 unités, coût 5 FCFA.
-
-Question au public : pourquoi une assiette de frais pour la distribution ? Parce que l''activité de ce centre est liée aux ventes, et qu''on n''a pas d''unité physique simple.
-
-## 40:00 – 45:00 · Pause et quiz
-
-Quiz de mi-parcours, répondez sur votre feuille :
-
-- Question 1 : une pénalité fiscale est-elle incorporable ? Non, c''est une charge non incorporable.
-- Question 2 : que devient le total d''un centre auxiliaire après répartition secondaire ? Il est nul.
-- Question 3 : si le total du centre Coupe était de 2 450 000 FCFA pour 700 heures, quel serait le coût de l''UO ? 3 500 FCFA.
-
-## 45:00 – 55:00 · Prestations réciproques : correction commentée
-
-Dans certains sujets, deux centres auxiliaires travaillent l''un pour l''autre. Exemple : la Gestion du personnel a 600 000 FCFA de charges primaires et reçoit 20 % de l''Entretien ; l''Entretien a 400 000 FCFA et reçoit 10 % de la Gestion du personnel. On ne peut pas vider l''un avant l''autre : il faut poser un système.
-
-Écrivez au tableau : GP = 600 000 + 0,2 E et E = 400 000 + 0,1 GP. On remplace E dans la première équation : GP = 600 000 + 0,2 × (400 000 + 0,1 GP) = 680 000 + 0,02 GP. Donc 0,98 GP = 680 000, et GP ≈ 693 878 FCFA. Puis E = 400 000 + 0,1 × 693 878 ≈ 469 388 FCFA.
-
-Ce sont ces totaux, et non les montants primaires, que l''on répartit ensuite selon les pourcentages. Contrôle : ce qui part vers les centres principaux doit égaler 600 000 + 400 000 = 1 000 000 FCFA. La Gestion du personnel envoie 90 % de son total aux centres principaux et l''Entretien 80 % du sien : 0,9 × 693 878 + 0,8 × 469 388 ≈ 1 000 000 FCFA. Le compte est bon.
-
-## 55:00 – 65:00 · Coût d''achat et stock
-
-Coût d''achat des planches : prix d''achat 6 000 000 plus charges du centre Approvisionnement 800 000, soit 6 800 000 FCFA, 3 400 FCFA la planche.
-
-Visuel : fiche de stock. Stock initial 500 planches pour 1 450 000 ; entrées 2 000 pour 6 800 000. CUMP : 8 250 000 divisé par 2 500, soit 3 300 FCFA. Sorties : 2 100 planches, 6 930 000 FCFA. Stock final : 400 planches, 1 320 000 FCFA. Contrôle : stock initial plus entrées égale sorties plus stock final.
-
-## 65:00 – 74:00 · Coûts de production : correction commentée
-
-Pour les tables : bois 1 200 planches à 3 300, 3 960 000 ; MOD 800 heures à 2 500, 2 000 000 ; Coupe 400 UO à 3 000, 1 200 000 ; Montage 800 UO à 1 800, 1 440 000. Total 8 600 000 FCFA, soit 43 000 FCFA la table.
-
-Pour les chaises : 2 970 000 + 1 500 000 + 900 000 + 1 080 000 = 6 450 000 FCFA, soit 10 750 FCFA la chaise.
-
-Erreur fréquente : imputer les centres Coupe ou Montage sur les quantités vendues. Non : le coût de production porte sur les quantités produites. Autre erreur : oublier la main-d''œuvre directe parce que le centre Montage utilise déjà l''heure de MOD comme unité d''œuvre. Les deux coexistent : la MOD est une charge directe payée aux ouvriers, le centre Montage regroupe les charges indirectes de l''atelier.
-
-## 74:00 – 82:00 · Coût de revient, résultat, concordance
-
-Tables vendues : 180 fois 43 000, plus distribution 540 000, coût de revient 8 280 000 ; résultat 2 520 000 FCFA. Chaises : coût de revient 6 352 500 ; résultat 2 447 500 FCFA. Résultat analytique : 4 967 500 FCFA.
-
-Concordance : résultat de la comptabilité générale égale résultat analytique plus charges supplétives moins charges non incorporables : 4 867 500 FCFA. Pourquoi plus les supplétives ? Parce qu''elles ont diminué le résultat analytique sans exister en comptabilité générale. Et pourquoi moins les non incorporables ? Parce qu''elles ont diminué le résultat de la comptabilité générale sans être prises en compte dans les coûts. Vérification directe en comptabilité générale : ventes 19 600 000, plus production stockée 1 397 500, moins achats 6 000 000, moins variation du stock de bois 130 000, moins MOD 3 500 000, moins les autres charges 6 500 000 : on retrouve 4 867 500 FCFA.
-
-Commentaire de gestion : les deux produits sont rentables. Le résultat représente 23,3 % du chiffre d''affaires pour les tables et 27,8 % pour les chaises. Mais attention : en coûts complets, la rentabilité dépend des clés de répartition choisies. En Licence 2, nous verrons les coûts partiels, plus adaptés aux décisions à court terme.
-
-## 82:00 – 90:00 · Synthèse et évaluation finale
-
-Synthèse : trier, répartir, imputer, valoriser les stocks, calculer les coûts, vérifier la concordance.
-
-Évaluation finale :
-
-- Question 1 : formule des charges incorporées ? Réponse : charges CG − non incorporables + supplétives.
-- Question 2 : centre de 1 800 000 FCFA, 600 UO : coût de l''UO ? Réponse : 3 000 FCFA.
-- Question 3 : stock initial 100 kg à 500 FCFA, entrée 300 kg à 540 FCFA : CUMP ? Réponse : (50 000 + 162 000) / 400 = 530 FCFA.
-- Question 4 : sur quelles quantités impute-t-on le centre Distribution ? Réponse : sur les quantités vendues (ou le chiffre d''affaires).
-- Question 5 : résultat analytique 2 000 000, supplétives 100 000, non incorporables 40 000 : résultat CG ? Réponse : 2 060 000 FCFA.
-
-Bon travail, et refaites le cas Teranga Bois seul, en moins de 45 minutes.', 'video', 90, false, 70
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Comptabilité analytique 1 (coûts complets)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Mathématiques et statistiques de gestion', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 1 en contrôle de gestion, gestion, économie.
-- Objectifs : manipuler taux et indices, calculer intérêts simples et composés, actualiser, construire un tableau d''emprunt, calculer moyenne et écart-type, réaliser un ajustement linéaire pour séparer charges fixes et variables.
-- Matériel : tableau, diaporama, calculatrice scientifique, tableur facultatif.
-- Prérequis : calcul algébrique et puissances ; leçon « Mathématiques et statistiques de gestion : l''essentiel pour l''examen ».
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Pourquoi des maths en contrôle de gestion ?
-
-Bonjour à toutes et à tous. On me demande souvent : « Pourquoi des mathématiques en contrôle de gestion ? » Parce que le contrôleur passe ses journées à comparer, prévoir et actualiser. Comparer, ce sont des taux et des indices. Prévoir, ce sont des ajustements statistiques. Actualiser, c''est raisonner sur la valeur de l''argent dans le temps. Aujourd''hui, nous traitons ces trois familles avec des exemples tirés d''entreprises fictives sénégalaises.
-
-## 05:00 – 15:00 · Taux, indices, taux moyen
-
-Un chiffre d''affaires passe de 80 000 000 à 92 000 000 FCFA : la variation est de 12 000 000 divisé par 80 000 000, soit 15,0 %. L''indice base 100 vaut 115.
-
-Piège : une hausse de 20 % puis une baisse de 20 % ne ramènent pas au point de départ. 1,2 fois 0,8 égale 0,96 : on a perdu 4 %. Les coefficients multiplicateurs se multiplient.
-
-Taux moyen : un CA passe de 50 000 000 à 72 000 000 FCFA en quatre ans. Le taux moyen n''est pas 44 % divisé par 4, soit 11 %. C''est 1,44 puissance un quart moins 1, environ 9,54 %. Vérifiez : 1,0954 puissance 4 redonne bien 1,44.
-
-## 15:00 – 30:00 · Intérêts simples et composés
-
-Intérêts simples : I égale C fois t fois j sur 360. Un découvert de 2 000 000 FCFA pendant 90 jours à 9 %, taux fictif, coûte 45 000 FCFA.
-
-Intérêts composés : les intérêts produisent des intérêts. 5 000 000 FCFA placés 3 ans à 8 %, taux fictif, deviennent 5 000 000 fois 1,08 au cube, soit 6 298 560 FCFA. Comparez avec les intérêts simples : 5 000 000 fois 0,08 fois 3 donne 1 200 000 FCFA d''intérêts, donc 6 200 000 FCFA. La différence de 98 560 FCFA vient des intérêts sur intérêts.
-
-Actualisation : combien vaut aujourd''hui 10 000 000 FCFA reçus dans 2 ans, au taux de 10 % ? On divise par 1,1 au carré : environ 8 264 463 FCFA. Retenez l''idée : un franc aujourd''hui vaut plus qu''un franc demain.
-
-## 30:00 – 45:00 · Tableau d''emprunt : correction commentée
-
-Exercice : Teranga Bois emprunte 12 000 000 FCFA sur 4 ans à 10 %, taux fictif, remboursables par annuités constantes. Prenez cinq minutes.
-
-Correction. L''annuité vaut 12 000 000 fois 0,10, divisé par 1 moins 1,1 puissance moins 4. Le dénominateur vaut environ 0,3170. L''annuité est d''environ 3 785 650 FCFA.
-
-Première ligne : capital 12 000 000, intérêt 1 200 000, amortissement 3 785 650 moins 1 200 000, soit 2 585 650. Deuxième ligne : capital 9 414 350, intérêt 941 435, amortissement 2 844 215. Et ainsi de suite jusqu''à un capital restant nul. Deux contrôles : les amortissements additionnés redonnent 12 000 000 FCFA ; chaque amortissement est le précédent multiplié par 1,1, par exemple 2 585 650 fois 1,1 donne 2 844 215.
-
-## 45:00 – 50:00 · Pause et quiz
-
-- Question 1 : +10 % puis +10 % font-ils +20 % ? Non, +21 %.
-- Question 2 : intérêt simple sur 1 000 000 FCFA à 6 % pendant 30 jours ? 5 000 FCFA.
-- Question 3 : dans un emprunt à annuités constantes, la part d''intérêts augmente-t-elle avec le temps ? Non, elle diminue, car le capital restant dû diminue.
-
-## 50:00 – 58:00 · Escompte et valeur actuelle : correction commentée
-
-Deux exercices de la leçon. Premier : un effet de 3 600 000 FCFA escompté 60 jours avant l''échéance à 12 %, taux fictif. L''escompte est un intérêt simple : 3 600 000 fois 0,12 fois 60 sur 360, soit 72 000 FCFA. L''entreprise reçoit donc 3 528 000 FCFA, avant commissions éventuelles de la banque.
-
-Second : la valeur actuelle de 15 000 000 FCFA reçus dans 3 ans à 9 %. On divise par 1,09 au cube, c''est-à-dire environ 1,2950. Résultat : environ 11 582 752 FCFA. Erreur fréquente : multiplier au lieu de diviser. Ayez le réflexe de bon sens : une somme future actualisée est toujours plus petite que la somme future.
-
-## 58:00 – 64:00 · Statistique descriptive
-
-Les ventes mensuelles de cinq agences, en millions de FCFA, sont 12, 15, 9, 20 et 14. Moyenne : 70 divisé par 5, soit 14. Écarts à la moyenne : −2, 1, −5, 6, 0. Carrés : 4, 1, 25, 36, 0, somme 66. Variance : 66 sur 5, soit 13,2. Écart-type : racine de 13,2, environ 3,63. Le coefficient de variation, 3,63 sur 14, environ 26,0 %, montre une dispersion notable entre agences.
-
-Et la médiane ? On range la série : 9, 12, 14, 15, 20. La valeur centrale est 14 : la moitié des agences vend moins de 14 millions, l''autre moitié plus. Ici médiane et moyenne coïncident. Imaginez maintenant qu''une sixième agence, au centre de Dakar, vende 60 millions. La moyenne monte à 130 divisé par 6, environ 21,7 millions, alors que la médiane, entre 14 et 15, vaut 14,5. La médiane résiste aux valeurs extrêmes ; la moyenne, non. Dans un rapport de gestion, présentez les deux quand la série est très dissymétrique, et signalez la valeur atypique au lieu de la cacher.
-
-Question au public : quelle mesure choisir pour présenter le salaire « typique » d''une entreprise où le directeur gagne vingt fois plus que les ouvriers ? Réponse : la médiane.
-
-## 64:00 – 82:00 · Ajustement linéaire : séparer fixe et variable
-
-Visuel : nuage de points, heures machine en abscisse, coût d''entretien en ordonnée, six points presque alignés.
-
-Données de l''atelier Coupe : 300 h pour 1 510 000 FCFA, 400 h pour 1 690 000, 500 h pour 1 920 000, 600 h pour 2 100 000, 700 h pour 2 300 000, 500 h pour 1 880 000.
-
-Correction commentée. Moyennes : x̄ = 500 heures, ȳ = 1 900 000 FCFA. Variance de x : les écarts sont −200, −100, 0, 100, 200, 0 ; carrés 40 000, 10 000, 0, 10 000, 40 000, 0 ; somme 100 000 ; variance 16 666,67. Covariance : somme des produits des écarts divisée par 6, soit 33 166 666,67. Pente a : covariance sur variance, 1 990 FCFA par heure. Ordonnée b : 1 900 000 moins 1 990 fois 500, soit 905 000 FCFA.
-
-Interprétation : chaque heure machine coûte environ 1 990 FCFA d''entretien, et l''atelier supporte 905 000 FCFA de charges fixes par mois. Le coefficient de corrélation, environ 0,999, confirme l''ajustement. Pour 650 heures, on budgète 2 198 500 FCFA.
-
-Comparaison avec la méthode des points extrêmes : on prend 300 et 700 heures ; pente 1 975,0 FCFA ; partie fixe 917 500 FCFA. Plus rapide, mais dépendante de deux seuls points.
-
-Trois mises en garde à formuler dans une copie. D''abord, corrélation n''est pas causalité : ici le lien technique entre heures machine et entretien est logique, mais il faut toujours le justifier. Ensuite, la droite n''est valable que dans la plage observée, de 300 à 700 heures. Enfin, la partie fixe estimée n''est pas une donnée comptable : c''est une estimation statistique, à confronter avec les contrats réels de l''atelier, par exemple un contrat d''entretien forfaitaire.
-
-## 82:00 – 90:00 · Synthèse et évaluation finale
-
-Synthèse : multiplier les coefficients, actualiser avec (1 + t) puissance moins n, construire un tableau d''emprunt avec deux contrôles, ajuster par les moindres carrés et interpréter a et b. Pour réviser, refaites le tableau d''emprunt sans regarder la correction, puis reprenez l''ajustement de l''atelier Coupe avec un tableur et comparez vos résultats : vous devez retrouver exactement la même pente et la même ordonnée à l''origine.
-
-Évaluation finale :
-
-- Question 1 : un prix passe de 1 000 à 1 210 FCFA en 2 ans ; taux moyen annuel ? Réponse : 10 %.
-- Question 2 : valeur acquise de 2 000 000 FCFA à 5 % composés sur 2 ans ? Réponse : 2 205 000 FCFA.
-- Question 3 : valeur actuelle de 1 100 000 FCFA dans un an à 10 % ? Réponse : 1 000 000 FCFA.
-- Question 4 : cov(x, y) = 5 000 et V(x) = 2 500 ; pente ? Réponse : 2.
-- Question 5 : avec x̄ = 100, ȳ = 450 et a = 2, que vaut b ? Réponse : 250.
-
-Merci et bon entraînement.', 'video', 90, false, 80
-from public.courses c where c.slug = 'lic-cg-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Mathématiques et statistiques de gestion');

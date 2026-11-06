@@ -2378,6 +2378,66 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "lic-rh-l3",
+  "level": "Licence 3",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Ressources humaines Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre la GPEC et le pilotage RH (tableaux de bord, indicateurs), les relations sociales et le dialogue social, la rémunération globale et le système d'information RH (SIRH). Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : les acquis des Licences 1 et 2 RH (droit du travail, recrutement, paie, formation).",
+  "sort": 303,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les enjeux de la Licence 3, année de diplôme et d'orientation.\n- Identifier les trois matières clés de l'année et le niveau d'analyse attendu.\n- Adopter une méthode de révision orientée vers l'analyse, le chiffrage et la recommandation.\n- Planifier six semaines de révision et maîtriser les épreuves de synthèse.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle du LMD. Sa validation, avec l'ensemble des crédits de la Licence, permet d'obtenir le diplôme et de candidater en Master ou d'entrer dans la vie professionnelle. Les UE de L3 sont plus intégratrices : elles demandent de mobiliser les acquis de L1 (droit du travail, comportement organisationnel) et de L2 (recrutement, paie, formation) pour traiter des problèmes de pilotage. Beaucoup d'établissements y ajoutent un stage avec rapport et soutenance, ou un mémoire de fin de cycle. Crédits, coefficients, compensations et conditions de délivrance du diplôme sont fixés par le règlement des études de votre établissement : lisez-le attentivement.\n\n## 2. Les matières clés de la Licence 3 RH\n\n- GPEC et pilotage RH : démarche de gestion prévisionnelle des emplois et des compétences, pyramide des âges, projection des effectifs, analyse des écarts, plans d'action ; tableaux de bord sociaux et indicateurs (rotation, absentéisme, structure des effectifs, masse salariale).\n- Relations sociales et dialogue social : acteurs (représentants du personnel, syndicats, organisations d'employeurs, État), négociation collective, information et consultation, prévention et règlement des conflits collectifs, dans un contexte sénégalais marqué par la réforme du Code du travail (projet de loi n°15/2026), à aborder avec prudence.\n- Rémunération globale et SIRH : composantes de la rémunération, équité interne et externe, politique salariale, pilotage de la masse salariale (effets niveau, masse et report) ; système d'information RH : modules, projet, protection des données.\n\n## 3. Ce qui change dans les attentes des correcteurs\n\nEn L1, on vérifie que vous connaissez les notions. En L2, que vous savez appliquer des techniques. En L3, on attend que vous sachiez diagnostiquer, chiffrer et recommander. Une bonne copie de L3 :\n\n- Part des données du cas et calcule les bons indicateurs.\n- Interprète les chiffres (« le taux de rotation de 18 % est élevé pour des emplois qualifiés »), au lieu de les laisser sans commentaire.\n- Propose des actions hiérarchisées, chiffrées si possible, avec leurs limites et risques.\n- Montre une conscience du contexte : PME ou grande entreprise, secteur, climat social, cadre juridique en évolution.\n\n## 4. Méthode de révision\n\nConstruisez trois outils.\n\nLe formulaire d'indicateurs : sur une page, toutes les formules (taux de rotation, absentéisme, âge moyen, effet niveau, effet masse, effet report, compa-ratio, coût d'une hausse de salaire), avec un exemple chiffré pour chacune.\n\nLes schémas de démarche : la GPEC en cinq étapes, la procédure de négociation, la conduite d'un projet SIRH. Vous devez pouvoir les redessiner de mémoire.\n\nLa banque d'arguments : pour chaque grand thème, trois arguments pour, trois arguments contre, un exemple africain fictif mais réaliste. Ils nourrissent les questions de réflexion et les recommandations.\n\n## 5. Les types d'épreuves en L3\n\n- L'étude de cas de synthèse : un dossier d'entreprise de plusieurs pages (annexes chiffrées, organigramme, extraits de procès-verbaux) et des questions qui croisent les matières. Lisez d'abord les questions, puis les annexes en notant les données utiles.\n- L'exercice chiffré : projection d'effectifs, tableau de bord, coût d'une politique salariale.\n- La note de synthèse ou la note de recommandation à la direction : en-tête, objet, contexte, analyse, recommandations, conclusion ; style clair et neutre.\n- La dissertation : par exemple « Le dialogue social est-il un frein ou un levier de performance ? ».\n- La soutenance de stage ou de projet : structurer, respecter le temps, préparer les questions.\n\n## 6. Plan de révision sur 6 semaines\n\n- Semaine 1 : GPEC. Démarche, pyramide des âges, projection des ressources, écarts, plans d'action. Deux cas chiffrés.\n- Semaine 2 : Pilotage RH. Tableau de bord social, indicateurs, interprétation, alertes. Construction d'un tableau de bord complet.\n- Semaine 3 : Relations sociales. Acteurs, instances, négociation, conflits collectifs. Une note de recommandation.\n- Semaine 4 : Rémunération globale. Composantes, équité, masse salariale (effets niveau, masse, report), coût des mesures salariales. Quatre exercices.\n- Semaine 5 : SIRH. Modules, projet, protection des données, indicateurs. Une dissertation. Révision des formulaires.\n- Semaine 6 : Sujet type complet (leçon 5) en 4 heures, correction, reprise des points faibles.\n\n## Points clés\n\n- En L3 : diagnostiquer, chiffrer, recommander.\n- Trois matières : GPEC et pilotage, relations sociales, rémunération globale et SIRH.\n- Un formulaire d'indicateurs et des schémas de démarche sont vos meilleurs outils.\n- Les recommandations doivent être hiérarchisées et réalistes.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez en quoi les attentes d'un correcteur de L3 diffèrent de celles de L1.\n- Exercice 2. Une entreprise compte 200 salariés en moyenne sur l'année ; elle a enregistré 30 départs et 34 arrivées. Calculez le taux de rotation selon la formule (départs + arrivées) / 2 / effectif moyen × 100.\n- Exercice 3. Rédigez l'en-tête et le plan d'une note à la directrice générale sur la hausse de l'absentéisme.\n- Exercice 4. Une hausse générale de 3 % est appliquée à une masse salariale annuelle de 600 000 000 FCFA dès le 1er janvier. Quel est son coût annuel, hors charges patronales ?\n- Exercice 5 (cas pratique). Khadija prépare sa L3 et doit rendre son rapport de stage en semaine 4. Adaptez le plan de 6 semaines.\n\n## Corrigé\n\nExercice 1. En L1, on évalue la connaissance des notions et des règles de base ; en L3, on évalue la capacité à analyser un dossier complexe, à calculer et interpréter des indicateurs, et à formuler des recommandations argumentées et hiérarchisées, en mobilisant plusieurs matières.\n\nExercice 2. Taux de rotation = ((30 + 34) / 2) / 200 × 100 = 32 / 200 × 100 = 16 %.\n\nExercice 3. En-tête : de (service RH), à (directrice générale), date, objet : « Hausse de l'absentéisme : analyse et propositions ». Plan : 1. Constat chiffré (évolution du taux, services et motifs concernés) ; 2. Causes probables ; 3. Coûts estimés ; 4. Recommandations hiérarchisées ; 5. Indicateurs de suivi.\n\nExercice 4. Coût = 600 000 000 × 3 % = 18 000 000 FCFA par an, hors charges patronales.\n\nExercice 5. Semaines 1 à 3 : une heure par jour sur le programme (GPEC, pilotage, relations sociales) et le reste sur le rapport. Semaine 4 : priorité au rapport, avec seulement une relecture quotidienne du formulaire d'indicateurs. Semaine 5 : rémunération globale et SIRH en intensif. Semaine 6 : sujet type et révisions. Le stage peut nourrir les révisions : un tableau de bord ou un accord observé pendant le stage, anonymisé, fournit des exemples précieux."
+   },
+   {
+    "title": "GPEC et pilotage RH : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Relations sociales et dialogue social : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Rémunération globale et SIRH : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 RH (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : GPEC et pilotage RH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Relations sociales et dialogue social",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Rémunération globale et SIRH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "lic-projet-l1",
   "level": "Licence 1",
   "subject": "Gestion de projets",

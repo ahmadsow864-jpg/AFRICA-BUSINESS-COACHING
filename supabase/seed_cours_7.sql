@@ -2717,663 +2717,687 @@ Réponses : 1) la capacité à mobiliser savoirs, savoir-faire et savoir-être e
 from public.courses c where c.slug = 'lic-rh-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Formation et gestion des compétences');
 
--- Cours : Gestion de projets Licence 1 : réussir ses examens
+-- Cours : Ressources humaines Licence 3 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'lic-projet-l1', (select id from public.levels where name = 'Licence 1'), null, 'Gestion de projets', 'Gestion de projets Licence 1 : réussir ses examens', 'Ce cours prépare les partiels et examens semestriels de première année de Licence en gestion de projets : fondamentaux du management de projet (cycle de vie, acteurs, cadrage, cahier des charges), outils de planification (WBS, Gantt, PERT et chemin critique) et communication en équipe projet. Il propose des fiches de révision, des exercices corrigés, un sujet type et trois cours vidéo de 1h30. Aucun prérequis autre que le niveau baccalauréat.', true, 311
+select 'lic-rh-l3', (select id from public.levels where name = 'Licence 3'), null, 'Ressources humaines', 'Ressources humaines Licence 3 : réussir ses examens', 'Préparation aux partiels et examens semestriels de la Licence 3 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre la GPEC et le pilotage RH (tableaux de bord, indicateurs), les relations sociales et le dialogue social, la rémunération globale et le système d''information RH (SIRH). Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : les acquis des Licences 1 et 2 RH (droit du travail, recrutement, paie, formation).', true, 303
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Licence 1 en Gestion de projets', '## Objectifs de la leçon
+select c.id, 'Réussir ses examens de Licence 3 en ressources humaines', '## Objectifs de la leçon
 
-À la fin de cette leçon, vous saurez comment est organisée votre première année de Licence en gestion de projets dans le système LMD, quelles matières vous attendent aux partiels et aux examens semestriels, quels types d''épreuves vous devrez affronter et comment bâtir un plan de révision efficace sur six semaines.
+- Comprendre les enjeux de la Licence 3, année de diplôme et d''orientation.
+- Identifier les trois matières clés de l''année et le niveau d''analyse attendu.
+- Adopter une méthode de révision orientée vers l''analyse, le chiffrage et la recommandation.
+- Planifier six semaines de révision et maîtriser les épreuves de synthèse.
 
-## Le système LMD en quelques mots
+## 1. La Licence 3 dans le système LMD
 
-Le système LMD (Licence, Master, Doctorat) est appliqué dans les universités publiques et la plupart des écoles privées du Sénégal et de l''espace UEMOA. La Licence se prépare en trois ans, soit six semestres. Chaque semestre regroupe plusieurs unités d''enseignement (UE). Une UE rassemble des matières proches, appelées éléments constitutifs (EC), par exemple une UE « Fondamentaux du management de projet » qui contient un cours magistral et des travaux dirigés.
+La Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle du LMD. Sa validation, avec l''ensemble des crédits de la Licence, permet d''obtenir le diplôme et de candidater en Master ou d''entrer dans la vie professionnelle. Les UE de L3 sont plus intégratrices : elles demandent de mobiliser les acquis de L1 (droit du travail, comportement organisationnel) et de L2 (recrutement, paie, formation) pour traiter des problèmes de pilotage. Beaucoup d''établissements y ajoutent un stage avec rapport et soutenance, ou un mémoire de fin de cycle. Crédits, coefficients, compensations et conditions de délivrance du diplôme sont fixés par le règlement des études de votre établissement : lisez-le attentivement.
 
-Chaque UE donne des crédits. Les crédits mesurent la charge de travail de l''étudiant (cours, TD, travail personnel), pas seulement les heures passées en amphithéâtre. Le nombre exact de crédits par UE, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : consultez toujours le règlement des études et le guide de l''étudiant de votre université ou de votre école. Retenez le principe général : une UE validée est acquise définitivement, et une note faible dans une matière peut parfois être compensée par une bonne note dans une autre matière de la même UE ou du même semestre, selon les règles locales.
+## 2. Les matières clés de la Licence 3 RH
 
-## Les matières clés de la Licence 1 en gestion de projets
+- GPEC et pilotage RH : démarche de gestion prévisionnelle des emplois et des compétences, pyramide des âges, projection des effectifs, analyse des écarts, plans d''action ; tableaux de bord sociaux et indicateurs (rotation, absentéisme, structure des effectifs, masse salariale).
+- Relations sociales et dialogue social : acteurs (représentants du personnel, syndicats, organisations d''employeurs, État), négociation collective, information et consultation, prévention et règlement des conflits collectifs, dans un contexte sénégalais marqué par la réforme du Code du travail (projet de loi n°15/2026), à aborder avec prudence.
+- Rémunération globale et SIRH : composantes de la rémunération, équité interne et externe, politique salariale, pilotage de la masse salariale (effets niveau, masse et report) ; système d''information RH : modules, projet, protection des données.
 
-En première année, l''objectif est de poser les bases. Ce cours se concentre sur trois matières centrales, que vous retrouverez sous des intitulés proches dans la plupart des maquettes :
+## 3. Ce qui change dans les attentes des correcteurs
 
-- Fondamentaux du management de projet : définition d''un projet, cycle de vie, acteurs (maître d''ouvrage, maître d''œuvre, chef de projet, parties prenantes), cadrage, note de cadrage et cahier des charges.
-- Outils de planification : structure de découpage du projet (WBS ou organigramme des tâches), diagramme de Gantt, réseau PERT et calcul du chemin critique avec les marges.
-- Communication et travail en équipe projet : plan de communication, réunions, comptes rendus, rôles dans l''équipe, gestion des conflits, matrice des responsabilités.
+En L1, on vérifie que vous connaissez les notions. En L2, que vous savez appliquer des techniques. En L3, on attend que vous sachiez diagnostiquer, chiffrer et recommander. Une bonne copie de L3 :
 
-Ces matières s''accompagnent souvent de cours transversaux (économie générale, comptabilité, mathématiques appliquées, informatique bureautique, expression écrite) qui ne sont pas traités ici mais qui comptent dans votre moyenne. Les notions de coûts, de risques et de méthodes agiles seront approfondies en Licence 2, et l''évaluation financière de projets en Licence 3.
+- Part des données du cas et calcule les bons indicateurs.
+- Interprète les chiffres (« le taux de rotation de 18 % est élevé pour des emplois qualifiés »), au lieu de les laisser sans commentaire.
+- Propose des actions hiérarchisées, chiffrées si possible, avec leurs limites et risques.
+- Montre une conscience du contexte : PME ou grande entreprise, secteur, climat social, cadre juridique en évolution.
 
-## Les types d''épreuves
+## 4. Méthode de révision
 
-Aux partiels comme aux examens semestriels, vous rencontrerez principalement cinq formats.
+Construisez trois outils.
 
-- Le cas pratique : un texte décrit une organisation fictive (une ONG à Kaolack, une PME de transformation de fruits à Ziguinchor) et vous demande de cadrer le projet, d''identifier les acteurs ou de proposer un plan de communication. On attend une réponse appliquée au cas, pas une récitation du cours.
-- L''exercice chiffré : calcul des dates au plus tôt et au plus tard, des marges et du chemin critique d''un réseau PERT, construction d''un Gantt, calcul d''une durée moyenne avec trois estimations.
-- Le QCM ou les questions courtes : définitions précises (qu''est-ce qu''un livrable ? un jalon ? la marge libre ?).
-- La dissertation ou question de réflexion : par exemple « Le chef de projet doit-il être avant tout un technicien ou un communicant ? ». On attend une introduction, un plan en deux ou trois parties et une conclusion.
-- Le projet tutoré ou dossier de groupe : rédaction d''une note de cadrage, présentation orale, travail collectif évalué.
+Le formulaire d''indicateurs : sur une page, toutes les formules (taux de rotation, absentéisme, âge moyen, effet niveau, effet masse, effet report, compa-ratio, coût d''une hausse de salaire), avec un exemple chiffré pour chacune.
 
-## Méthode de révision
+Les schémas de démarche : la GPEC en cinq étapes, la procédure de négociation, la conduite d''un projet SIRH. Vous devez pouvoir les redessiner de mémoire.
 
-Révisez en trois temps. D''abord, comprenez : relisez le cours en reformulant chaque notion avec vos propres mots et un exemple sénégalais. Ensuite, mémorisez : fabriquez des fiches courtes (une notion, une définition, un exemple, un piège). Enfin, entraînez-vous : refaites les exercices de TD sans regarder la correction, chronométrez-vous et comparez ensuite.
+La banque d''arguments : pour chaque grand thème, trois arguments pour, trois arguments contre, un exemple africain fictif mais réaliste. Ils nourrissent les questions de réflexion et les recommandations.
 
-Pour les exercices de planification, la régularité compte plus que la quantité. Un réseau PERT par jour pendant deux semaines vaut mieux que dix réseaux la veille de l''examen. Écrivez toujours vos calculs dans un tableau propre : tâche, durée, antériorités, début au plus tôt, fin au plus tôt, début au plus tard, fin au plus tard, marge totale, marge libre. Le correcteur suit votre raisonnement ligne par ligne et peut vous accorder des points même si une erreur s''est glissée au début.
+## 5. Les types d''épreuves en L3
 
-Travaillez aussi en groupe. La gestion de projets est un métier collectif : expliquer le chemin critique à un camarade est le meilleur moyen de vérifier que vous l''avez compris.
+- L''étude de cas de synthèse : un dossier d''entreprise de plusieurs pages (annexes chiffrées, organigramme, extraits de procès-verbaux) et des questions qui croisent les matières. Lisez d''abord les questions, puis les annexes en notant les données utiles.
+- L''exercice chiffré : projection d''effectifs, tableau de bord, coût d''une politique salariale.
+- La note de synthèse ou la note de recommandation à la direction : en-tête, objet, contexte, analyse, recommandations, conclusion ; style clair et neutre.
+- La dissertation : par exemple « Le dialogue social est-il un frein ou un levier de performance ? ».
+- La soutenance de stage ou de projet : structurer, respecter le temps, préparer les questions.
 
-## Plan de révision sur six semaines
+## 6. Plan de révision sur 6 semaines
 
-- Semaine 1 : relecture des fondamentaux (définitions, cycle de vie, acteurs). Fiches de vocabulaire. Une question de cours par jour.
-- Semaine 2 : cadrage et cahier des charges. Rédiger une note de cadrage complète sur un projet fictif (par exemple l''ouverture d''une cantine scolaire à Saint-Louis).
-- Semaine 3 : WBS et Gantt. Construire deux WBS et deux Gantt à la main, puis sur tableur.
-- Semaine 4 : PERT et chemin critique. Un réseau par jour, avec calcul des marges totales et libres.
-- Semaine 5 : communication et équipe. Plan de communication, matrice RACI, gestion de conflits. Entraînement à la rédaction de comptes rendus.
-- Semaine 6 : sujets types en conditions réelles (3 heures), correction, reprise des points faibles, repos la veille.
-
-## Points clés à retenir
-
-- Lisez le règlement des études de votre établissement pour connaître les crédits et les règles de compensation.
-- Trois matières clés en L1 : fondamentaux, planification, communication et équipe.
-- Les exercices chiffrés rapportent des points sûrs si la méthode est rigoureuse et présentée en tableau.
-- Révisez tôt, régulièrement et en vous entraînant sur des sujets complets.
-
-## Exercices pratiques
-
-1. Citez trois matières clés de la Licence 1 en gestion de projets et donnez pour chacune une notion importante.
-2. Quelle est la différence entre une UE et un EC ?
-3. Expliquez pourquoi un crédit ne correspond pas seulement à des heures de cours.
-4. Classez les épreuves suivantes par type : « Calculez le chemin critique », « Le chef de projet est-il un manager ? », « Rédigez la note de cadrage du projet de l''association Jappo ».
-5. Cas pratique : Aminata dispose de six semaines avant ses examens, mais elle travaille le samedi dans une boutique à Pikine. Proposez-lui un plan de révision réaliste en indiquant le contenu de chaque semaine et le nombre d''heures par jour.
-
-## Corrigé
-
-1. Fondamentaux du management de projet (cycle de vie) ; outils de planification (chemin critique) ; communication et travail en équipe projet (plan de communication). D''autres notions sont acceptées si elles relèvent bien de la matière.
-
-2. L''UE (unité d''enseignement) est un ensemble cohérent de matières qui donne des crédits. L''EC (élément constitutif) est l''une des matières qui composent l''UE. Une UE peut contenir un ou plusieurs EC.
-
-3. Le crédit mesure la charge de travail totale de l''étudiant : cours, TD, TP, travail personnel, préparation des examens. Deux matières ayant le même volume horaire en salle peuvent donc représenter des charges différentes.
-
-4. « Calculez le chemin critique » : exercice chiffré. « Le chef de projet est-il un manager ? » : dissertation ou question de réflexion. « Rédigez la note de cadrage » : cas pratique.
-
-5. Proposition : du lundi au vendredi, 3 heures par jour ; le dimanche, 4 heures ; le samedi, révision légère de fiches dans les transports (30 minutes). Semaine 1 : fondamentaux ; semaine 2 : cadrage et cahier des charges ; semaine 3 : WBS et Gantt ; semaine 4 : PERT ; semaine 5 : communication et équipe ; semaine 6 : sujets complets en 3 heures le dimanche et le mercredi, reprise des erreurs les autres jours. L''essentiel est que le plan soit réaliste, régulier et qu''il comporte des entraînements en conditions d''examen.', 'texte', 50, true, 10
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Gestion de projets');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Fondamentaux du management de projet : l''essentiel pour l''examen', '## Objectifs
-
-Maîtriser les définitions de base (projet, livrable, jalon), décrire le cycle de vie d''un projet, identifier les acteurs et leurs rôles, réaliser le cadrage et connaître le contenu d''un cahier des charges.
-
-## Fiche 1 : qu''est-ce qu''un projet ?
-
-Un projet est un effort temporaire, unique, entrepris pour atteindre un objectif précis, dans des contraintes de délai, de coût et de qualité. Trois caractéristiques le distinguent des opérations courantes : il a un début et une fin ; il produit un résultat nouveau ; il mobilise des ressources limitées.
-
-Exemple : la gestion quotidienne d''une boulangerie à Dakar est une opération. L''ouverture d''une deuxième boulangerie à Mbour est un projet.
-
-Le triangle des contraintes (ou triangle « coût – délai – qualité/périmètre ») rappelle que ces trois dimensions sont liées : si l''on réduit le délai sans changer le périmètre, le coût augmente souvent ; si l''on réduit le budget, il faut parfois réduire le périmètre.
-
-Vocabulaire indispensable :
-
-- Livrable : résultat tangible et vérifiable produit par le projet (un rapport d''étude, un bâtiment, un logiciel).
-- Jalon : événement clé de durée nulle qui marque une étape (validation du cahier des charges, réception des travaux).
-- Tâche (ou activité) : travail élémentaire qui consomme du temps et des ressources.
-- Périmètre : ensemble de ce que le projet doit produire, et de ce qu''il ne produira pas.
-
-Les référentiels internationaux de management de projet, comme le guide PMBOK ou la méthode PRINCE2, proposent chacun leur vocabulaire et leurs processus ; vous en verrez les grands principes, mais l''examen porte avant tout sur les notions générales.
-
-## Fiche 2 : le cycle de vie du projet
-
-Le cycle de vie décrit les grandes phases qu''un projet traverse. Un découpage classique comprend cinq phases :
-
-- Initialisation (ou avant-projet) : identifier le besoin, étudier l''opportunité, désigner le chef de projet.
-- Cadrage et planification : définir les objectifs, le périmètre, les livrables, le planning, le budget et l''organisation.
-- Exécution : réaliser les travaux, coordonner les équipes.
-- Suivi et maîtrise : mesurer l''avancement, comparer au prévu, corriger les écarts (cette phase se déroule en parallèle de l''exécution).
-- Clôture : réceptionner les livrables, faire le bilan, capitaliser les leçons apprises, libérer les ressources.
-
-À chaque fin de phase correspond souvent un jalon de décision (« go / no go ») : le commanditaire décide de continuer, d''ajuster ou d''arrêter.
-
-Schéma décrit en texte : imaginez une flèche horizontale découpée en cinq blocs successifs, avec sous les blocs « exécution » une bande parallèle « suivi et maîtrise », et un losange de décision entre chaque bloc.
-
-## Fiche 3 : les acteurs du projet
-
-- Maître d''ouvrage (MOA) : celui pour qui le projet est réalisé ; il exprime le besoin, finance et réceptionne. Exemple : la mairie de Thiès qui veut un marché couvert.
-- Maître d''œuvre (MOE) : celui qui conçoit et/ou réalise la solution technique. Exemple : le bureau d''études et l''entreprise de BTP.
-- Commanditaire (ou sponsor) : personne de haut niveau qui soutient le projet et arbitre.
-- Chef de projet : il planifie, coordonne, suit et rend compte. Il est responsable de l''atteinte des objectifs.
-- Comité de pilotage : instance de décision qui valide les grandes étapes.
-- Parties prenantes : toutes les personnes ou organisations concernées par le projet ou qui peuvent l''influencer (riverains, commerçants, services techniques, bailleurs).
-
-Méthode d''analyse des parties prenantes : classez chaque acteur selon son pouvoir (influence) et son intérêt pour le projet. Pouvoir fort et intérêt fort : gérer de près. Pouvoir fort et intérêt faible : satisfaire. Pouvoir faible et intérêt fort : informer. Pouvoir faible et intérêt faible : surveiller.
-
-## Fiche 4 : le cadrage et la note de cadrage
-
-Le cadrage répond à six questions : pourquoi (contexte, enjeux), quoi (objectifs, périmètre, livrables), qui (acteurs, organisation), quand (jalons principaux), combien (budget estimatif), comment (démarche, risques majeurs).
-
-Un bon objectif est SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini. « Améliorer la cantine » n''est pas SMART. « Servir 300 repas par jour aux élèves de l''école de Médina Gounass d''ici le 1er mars, pour un coût unitaire inférieur à 400 FCFA » l''est.
-
-La note de cadrage tient en quelques pages et est validée par le commanditaire. Elle précise aussi ce qui est hors périmètre, ce qui évite les malentendus.
-
-## Fiche 5 : le cahier des charges
-
-Le cahier des charges fonctionnel exprime le besoin en termes de fonctions attendues, sans imposer de solution technique. Il comprend généralement : présentation du contexte et de l''organisation ; objectifs ; description des fonctions attendues, avec critères d''appréciation et niveaux ; contraintes (budget, délais, normes, environnement) ; modalités de réception ; annexes.
-
-Exemple : pour un logiciel de gestion des stocks d''une pharmacie à Kaolack, la fonction « alerter en cas de rupture » a pour critère « délai d''alerte » et pour niveau « dès que le stock passe sous le seuil défini ».
-
-## Exemple chiffré : estimation du budget de cadrage
-
-La coopérative fictive Ndiambour Lait veut installer un point de collecte. Le cadrage retient : équipement de réfrigération 4 500 000 FCFA ; aménagement du local 2 800 000 FCFA ; formation des collecteurs 700 000 FCFA. Sous-total : 8 000 000 FCFA. Avec une provision pour imprévus de 10 % (choix de gestion du projet), le budget de cadrage est de 8 800 000 FCFA.
-
-## Exercices pratiques
-
-1. Définissez : projet, livrable, jalon.
-2. Pour chacune des situations suivantes, dites s''il s''agit d''un projet ou d''une opération : (a) la paie mensuelle d''une PME ; (b) la construction d''un forage à Linguère ; (c) la migration du système informatique d''une banque.
-3. Reformulez l''objectif « Améliorer l''accès à l''eau » en objectif SMART.
-4. Dans le projet de construction d''un marché par la commune de Thiès, identifiez le MOA, le MOE et trois parties prenantes, puis classez-les dans la matrice pouvoir/intérêt.
-5. Calculez le budget de cadrage d''un projet comprenant 3 200 000 FCFA d''équipements, 1 500 000 FCFA de travaux, 300 000 FCFA de formation, avec une provision pour imprévus de 8 %.
-6. Cas pratique : l''association fictive Jappo veut créer un centre de soutien scolaire à Pikine. Rédigez les six rubriques d''une note de cadrage.
-
-## Corrigé
-
-1. Projet : effort temporaire et unique pour atteindre un objectif dans des contraintes de coût, de délai et de qualité. Livrable : résultat tangible et vérifiable produit par le projet. Jalon : événement de durée nulle marquant une étape importante.
-
-2. (a) Opération (répétitive). (b) Projet (unique, temporaire). (c) Projet.
-
-3. Exemple : « Mettre en service, d''ici le 30 juin, un forage alimentant 2 bornes-fontaines pour 1 500 habitants du village de Keur Samba, avec un débit d''au moins 10 m³ par heure. »
-
-4. MOA : la commune de Thiès. MOE : le bureau d''études et l''entreprise de construction. Parties prenantes : commerçants (pouvoir moyen, intérêt fort : informer et associer), services techniques de l''État (pouvoir fort, intérêt moyen : satisfaire), riverains (pouvoir faible, intérêt fort : informer). Le classement peut varier si la justification est cohérente.
-
-5. Sous-total : 3 200 000 + 1 500 000 + 300 000 = 5 000 000 FCFA. Provision : 5 000 000 × 8 % = 400 000 FCFA. Budget : 5 400 000 FCFA.
-
-6. Pourquoi : taux d''échec scolaire élevé dans le quartier, demande des parents. Quoi : ouvrir un centre accueillant 80 élèves de CM2 et de 3e, deux salles équipées, un programme de soutien ; hors périmètre : la cantine. Qui : MOA l''association Jappo, chef de projet bénévole désigné, enseignants vacataires, mairie, parents. Quand : local trouvé en septembre, ouverture en novembre. Combien : budget estimatif détaillé par poste avec provision. Comment : démarche par étapes, principaux risques (local indisponible, manque d''enseignants) et parades.', 'texte', 60, false, 20
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fondamentaux du management de projet : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Outils de planification (WBS, Gantt, PERT) : l''essentiel pour l''examen', '## Objectifs
-
-Savoir découper un projet avec une WBS, construire un diagramme de Gantt, tracer un réseau PERT, calculer les dates au plus tôt et au plus tard, les marges totale et libre, et identifier le chemin critique.
-
-## Fiche 1 : la WBS (organigramme des tâches)
-
-La WBS (Work Breakdown Structure), ou structure de découpage du projet, décompose le projet en livrables puis en lots de travail, de façon hiérarchique. Le niveau le plus fin s''appelle le lot de travail : il doit pouvoir être estimé, attribué à un responsable et suivi.
-
-Règle des 100 % : les éléments d''un niveau représentent exactement tout le travail du niveau supérieur.
-
-Exemple décrit en texte, projet « Centre de formation à Thiès » :
-
-- 1 Études : 1.1 Étude des besoins ; 1.2 Conception des plans.
-- 2 Financement : 2.1 Recherche de financement.
-- 3 Construction : 3.1 Appel d''offres travaux ; 3.2 Travaux.
-- 4 Équipement : 4.1 Achat des équipements ; 4.2 Installation.
-- 5 Démarrage : 5.1 Recrutement des formateurs ; 5.2 Lancement.
-
-## Fiche 2 : le diagramme de Gantt
-
-Le Gantt représente les tâches en lignes et le temps en colonnes ; chaque tâche est une barre horizontale dont la longueur est proportionnelle à sa durée. Les jalons sont des losanges. Le Gantt est lisible par tous, idéal pour communiquer, mais il montre mal les dépendances complexes : on le combine donc avec le PERT.
-
-Quatre types de liens : fin-début (le plus courant), début-début, fin-fin, début-fin (rare).
-
-## Fiche 3 : le réseau PERT et le chemin critique
-
-Le réseau représente les tâches et leurs antériorités, soit sur les flèches (PERT classique), soit dans des nœuds (méthode des potentiels). Restez cohérent avec la convention de votre cours.
-
-Méthode de calcul (en tableau) :
-
-- Passe avant : début au plus tôt (DTO) d''une tâche = maximum des fins au plus tôt de ses prédécesseurs (0 pour une tâche sans prédécesseur). Fin au plus tôt (FTO) = DTO + durée. La durée du projet = la plus grande FTO.
-- Passe arrière : fin au plus tard (FTA) d''une tâche = minimum des débuts au plus tard de ses successeurs (durée du projet pour une tâche finale). Début au plus tard (DTA) = FTA − durée.
-- Marge totale (MT) = DTA − DTO : retard maximal possible sans retarder le projet.
-- Marge libre (ML) = minimum des DTO des successeurs − FTO : retard possible sans retarder aucun successeur.
-- Chemin critique : suite des tâches de marge totale nulle. Tout retard sur une tâche critique retarde le projet entier.
-
-## Exemple complet chiffré (durées en semaines)
-
-Projet « Centre de formation à Thiès » :
-
-- A Étude des besoins : 4 ; aucun prédécesseur.
-- B Conception des plans : 6 ; après A.
-- C Recherche de financement : 8 ; après A.
-- D Appel d''offres travaux : 5 ; après B.
-- E Travaux : 12 ; après C et D.
-- F Achat des équipements : 6 ; après C.
-- G Installation des équipements : 3 ; après E et F.
-- H Recrutement des formateurs : 5 ; après C.
-- I Lancement : 2 ; après G et H.
-
-Passe avant : A : 0 → 4. B : 4 → 10. C : 4 → 12. D : 10 → 15. E : max(12 ; 15) = 15 → 27. F : 12 → 18. H : 12 → 17. G : max(27 ; 18) = 27 → 30. I : max(30 ; 17) = 30 → 32. Durée du projet : 32 semaines.
-
-Passe arrière : I : 30 → 32. G : 27 → 30. H : FTA 30, DTA 25. E : FTA 27, DTA 15. F : FTA 27, DTA 21. D : FTA 15, DTA 10. C : FTA = min(15 ; 21 ; 25) = 15, DTA 7. B : FTA 10, DTA 4. A : FTA = min(4 ; 7) = 4, DTA 0.
-
-Marges :
-
-- A : MT 0, ML 0.
-- B : MT 0, ML 0.
-- C : MT 7 − 4 = 3 ; ML = min(15 ; 12 ; 12) − 12 = 0.
-- D : MT 0, ML 0.
-- E : MT 0, ML 0.
-- F : MT 21 − 12 = 9 ; ML = 27 − 18 = 9.
-- G : MT 0, ML 0.
-- H : MT 25 − 12 = 13 ; ML = 30 − 17 = 13.
-- I : MT 0, ML 0.
-
-Chemin critique : A – B – D – E – G – I (4 + 6 + 5 + 12 + 3 + 2 = 32 semaines). Remarquez que C a une marge totale de 3 mais une marge libre nulle : si C prend 2 semaines de retard, F et H démarrent plus tard, mais le projet n''est pas retardé.
-
-## Fiche 4 : les durées probabilistes (PERT à trois estimations)
-
-Quand la durée est incertaine, on demande trois estimations : optimiste (o), la plus probable (m), pessimiste (p). Durée moyenne te = (o + 4m + p) / 6. Écart-type σ = (p − o) / 6. Exemple : o = 2, m = 5, p = 14 semaines. te = (2 + 20 + 14) / 6 = 36 / 6 = 6 semaines ; σ = (14 − 2) / 6 = 2 semaines.
+- Semaine 1 : GPEC. Démarche, pyramide des âges, projection des ressources, écarts, plans d''action. Deux cas chiffrés.
+- Semaine 2 : Pilotage RH. Tableau de bord social, indicateurs, interprétation, alertes. Construction d''un tableau de bord complet.
+- Semaine 3 : Relations sociales. Acteurs, instances, négociation, conflits collectifs. Une note de recommandation.
+- Semaine 4 : Rémunération globale. Composantes, équité, masse salariale (effets niveau, masse, report), coût des mesures salariales. Quatre exercices.
+- Semaine 5 : SIRH. Modules, projet, protection des données, indicateurs. Une dissertation. Révision des formulaires.
+- Semaine 6 : Sujet type complet (leçon 5) en 4 heures, correction, reprise des points faibles.
 
 ## Points clés
 
-- Passe avant avec le maximum, passe arrière avec le minimum.
-- Marge totale nulle = tâche critique ; marge libre ≤ marge totale.
+- En L3 : diagnostiquer, chiffrer, recommander.
+- Trois matières : GPEC et pilotage, relations sociales, rémunération globale et SIRH.
+- Un formulaire d''indicateurs et des schémas de démarche sont vos meilleurs outils.
+- Les recommandations doivent être hiérarchisées et réalistes.
 
 ## Exercices pratiques
 
-1. Énoncez la règle des 100 % de la WBS.
-2. Citez les quatre types de liens entre tâches.
-3. Une tâche a pour estimations o = 4, m = 6, p = 8 jours. Calculez te et σ.
-4. Réseau (durées en jours) : A 3 (aucun) ; B 5 (après A) ; C 2 (après A) ; D 4 (après C) ; E 6 (après B et D) ; F 3 (après B). Calculez les dates, les marges et le chemin critique.
-5. Dans l''exercice 4, que se passe-t-il si B prend 2 jours de retard ?
-6. Cas pratique : l''entreprise fictive Sahel Agro Services organise un salon agricole à Kaolack. Proposez une WBS à deux niveaux comprenant au moins quatre livrables.
+- Exercice 1. Expliquez en quoi les attentes d''un correcteur de L3 diffèrent de celles de L1.
+- Exercice 2. Une entreprise compte 200 salariés en moyenne sur l''année ; elle a enregistré 30 départs et 34 arrivées. Calculez le taux de rotation selon la formule (départs + arrivées) / 2 / effectif moyen × 100.
+- Exercice 3. Rédigez l''en-tête et le plan d''une note à la directrice générale sur la hausse de l''absentéisme.
+- Exercice 4. Une hausse générale de 3 % est appliquée à une masse salariale annuelle de 600 000 000 FCFA dès le 1er janvier. Quel est son coût annuel, hors charges patronales ?
+- Exercice 5 (cas pratique). Khadija prépare sa L3 et doit rendre son rapport de stage en semaine 4. Adaptez le plan de 6 semaines.
 
 ## Corrigé
 
-1. La somme du travail des éléments enfants doit représenter exactement 100 % du travail de l''élément parent : rien ne manque, rien n''est en trop.
+Exercice 1. En L1, on évalue la connaissance des notions et des règles de base ; en L3, on évalue la capacité à analyser un dossier complexe, à calculer et interpréter des indicateurs, et à formuler des recommandations argumentées et hiérarchisées, en mobilisant plusieurs matières.
 
-2. Fin-début, début-début, fin-fin, début-fin.
+Exercice 2. Taux de rotation = ((30 + 34) / 2) / 200 × 100 = 32 / 200 × 100 = 16 %.
 
-3. te = (4 + 24 + 8) / 6 = 36 / 6 = 6 jours ; σ = (8 − 4) / 6 ≈ 0,67 jour.
+Exercice 3. En-tête : de (service RH), à (directrice générale), date, objet : « Hausse de l''absentéisme : analyse et propositions ». Plan : 1. Constat chiffré (évolution du taux, services et motifs concernés) ; 2. Causes probables ; 3. Coûts estimés ; 4. Recommandations hiérarchisées ; 5. Indicateurs de suivi.
 
-4. Passe avant : A 0 → 3 ; B 3 → 8 ; C 3 → 5 ; D 5 → 9 ; E max(8 ; 9) = 9 → 15 ; F 8 → 11. Durée : 15 jours. Passe arrière : E 9 → 15 ; F DTA 12, FTA 15 ; D DTA 5, FTA 9 ; B FTA = min(9 ; 12) = 9, DTA 4 ; C DTA 3, FTA 5 ; A FTA = min(4 ; 3) = 3, DTA 0. Marges : A 0/0 ; B MT 1, ML = min(9 ; 8) − 8 = 0 ; C 0/0 ; D 0/0 ; E 0/0 ; F MT 4, ML 4. Chemin critique : A – C – D – E (3 + 2 + 4 + 6 = 15 jours).
+Exercice 4. Coût = 600 000 000 × 3 % = 18 000 000 FCFA par an, hors charges patronales.
 
-5. B a une marge totale de 1 jour. Un retard de 2 jours dépasse la marge de 1 jour : le projet est retardé de 1 jour (B finit à 10, E démarre à 10 et finit à 16). Le chemin critique devient A – B – E.
-
-6. Exemple : 1 Organisation (1.1 réservation du site ; 1.2 autorisations) ; 2 Exposants (2.1 prospection ; 2.2 contrats) ; 3 Communication (3.1 affiches et radios locales ; 3.2 réseaux sociaux) ; 4 Logistique (4.1 stands ; 4.2 sécurité ; 4.3 sonorisation) ; 5 Bilan (5.1 enquête de satisfaction ; 5.2 rapport final).', 'texte', 75, false, 30
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Outils de planification (WBS, Gantt, PERT) : l''essentiel pour l''examen');
+Exercice 5. Semaines 1 à 3 : une heure par jour sur le programme (GPEC, pilotage, relations sociales) et le reste sur le rapport. Semaine 4 : priorité au rapport, avec seulement une relecture quotidienne du formulaire d''indicateurs. Semaine 5 : rémunération globale et SIRH en intensif. Semaine 6 : sujet type et révisions. Le stage peut nourrir les révisions : un tableau de bord ou un accord observé pendant le stage, anonymisé, fournit des exemples précieux.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 3 en ressources humaines');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Communication et travail en équipe projet : l''essentiel pour l''examen', '## Objectifs
+select c.id, 'GPEC et pilotage RH : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-Construire un plan de communication de projet, organiser des réunions efficaces, rédiger un compte rendu, répartir les responsabilités avec une matrice RACI, comprendre la dynamique d''une équipe et gérer les conflits.
+- Maîtriser la démarche de GPEC en cinq étapes.
+- Analyser une pyramide des âges et projeter les ressources d''un emploi.
+- Mesurer les écarts quantitatifs et qualitatifs et construire un plan d''action.
+- Concevoir un tableau de bord social et calculer ses principaux indicateurs.
 
-## Fiche 1 : pourquoi la communication est vitale
+## Fiche 1 : définition et enjeux de la GPEC
 
-Une grande partie du temps d''un chef de projet est consacrée à communiquer : informer le commanditaire, coordonner l''équipe, rassurer les bénéficiaires, négocier avec les fournisseurs. Les échecs de projets s''expliquent souvent moins par des problèmes techniques que par des malentendus : objectifs mal compris, décisions non transmises, parties prenantes oubliées.
+La gestion prévisionnelle des emplois et des compétences (GPEC) est une démarche d''anticipation qui vise à adapter, à moyen terme (souvent trois à cinq ans), les effectifs et les compétences de l''organisation aux besoins découlant de sa stratégie et de son environnement, en associant les salariés à l''évolution de leur parcours.
 
-Le schéma classique de la communication comprend un émetteur, un message, un canal, un récepteur et un retour (feedback). Des « bruits » perturbent la transmission : langue (français, wolof, pulaar…), jargon technique, distance, réseau téléphonique instable.
+Elle répond à des situations concrètes (départs massifs à la retraite, nouvelle technologie, réorganisation) et a une double dimension : quantitative et qualitative.
 
-Nombre de canaux de communication dans une équipe de n personnes : n(n − 1) / 2. Avec 5 personnes : 5 × 4 / 2 = 10 canaux ; avec 10 personnes : 10 × 9 / 2 = 45 canaux. Ce calcul montre pourquoi la communication devient plus difficile quand l''équipe grandit.
+## Fiche 2 : la démarche en cinq étapes
 
-## Fiche 2 : le plan de communication
+Schéma décrit en texte : deux colonnes qui convergent vers une zone d''écart, puis une flèche vers les plans d''action.
 
-Le plan de communication est un tableau qui précise, pour chaque public : quoi communiquer, pourquoi, par quel canal, à quelle fréquence, qui est responsable.
+- Étape 1 : analyser l''existant, c''est-à-dire les ressources actuelles (effectifs par emploi, âge, ancienneté, compétences).
+- Étape 2 : projeter les ressources à l''horizon choisi, en tenant compte des départs prévisibles (retraites, départs volontaires, promotions) sans action nouvelle.
+- Étape 3 : estimer les besoins futurs à partir de la stratégie (nouvelles activités, gains de productivité, nouveaux métiers).
+- Étape 4 : mesurer les écarts quantitatifs (sureffectif ou sous-effectif) et qualitatifs (compétences manquantes ou obsolètes).
+- Étape 5 : définir les plans d''action : recrutement, formation, mobilité interne, reconversion, alternance, sous-traitance, gestion des fins de carrière.
 
-Exemple, projet fictif d''électrification solaire de cinq villages dans la région de Tambacounda :
+## Fiche 3 : la pyramide des âges
 
-- Comité de pilotage : avancement, budget, risques ; réunion et rapport ; mensuel ; chef de projet.
-- Équipe technique : planning de la semaine, consignes de sécurité ; réunion de chantier ; hebdomadaire ; chef de chantier.
-- Populations bénéficiaires : dates des travaux, coupures, formation à l''usage ; assemblée villageoise et radio communautaire ; à chaque étape ; animateur social.
-- Bailleur : rapport d''activité et financier ; document écrit ; trimestriel ; chef de projet.
+La pyramide des âges représente les effectifs par tranche d''âge, souvent en séparant hommes et femmes. Sa forme est un signal : une base large et un sommet étroit indiquent une population jeune ; une forme en champignon (sommet large) annonce des départs massifs à la retraite et un risque de perte de savoir-faire ; une forme en losange traduit un ventre central important et un risque de blocage des carrières.
 
-Distinguez communication formelle (rapports, comptes rendus, courriers) et informelle (échanges de couloir, messagerie instantanée). La seconde est utile mais ne remplace pas la trace écrite des décisions.
+Exemple chiffré : Sahel Énergie Solaire, entreprise fictive de 250 salariés à Dakar. Tranches : 20 à 29 ans : 50 ; 30 à 39 ans : 90 ; 40 à 49 ans : 70 ; 50 à 59 ans : 40.
 
-## Fiche 3 : réunions et comptes rendus
+- Âge moyen approché (avec les centres de classe 25, 35, 45, 55) = (50 × 25 + 90 × 35 + 70 × 45 + 40 × 55) / 250 = 9 750 / 250 = 39 ans.
+- Part des 50 ans et plus = 40 / 250 × 100 = 16 %.
 
-Une réunion efficace a un objectif clair, un ordre du jour envoyé à l''avance, un animateur, un secrétaire et une durée maîtrisée. Les principaux types : réunion de lancement (kick-off), réunion d''avancement, comité de pilotage, revue de fin de phase, réunion de clôture.
+## Fiche 4 : projection des ressources et écarts
 
-Le compte rendu comporte : date, lieu, participants et absents, ordre du jour, points discutés, décisions prises, actions à mener (quoi, qui, pour quand), date de la prochaine réunion. Il est diffusé rapidement, idéalement dans les 48 heures.
+Emploi « technicien photovoltaïque » chez Sahel Énergie Solaire : 40 techniciens aujourd''hui. À trois ans : 8 départs à la retraite prévus, environ 2 départs volontaires par an soit 6, et 2 promotions prévues vers des postes de chef d''équipe.
 
-## Fiche 4 : la matrice RACI
+- Ressources projetées = 40 − 8 − 6 − 2 = 24 techniciens.
+- Besoins à trois ans (deux nouvelles centrales) = 50 techniciens.
+- Écart quantitatif = 24 − 50 = −26 : déficit de 26 techniciens.
 
-La matrice RACI attribue à chaque tâche quatre rôles :
+Écart qualitatif : la nouvelle technologie de stockage par batteries exige que 30 techniciens maîtrisent cette compétence ; seuls 10 la maîtrisent aujourd''hui, et 2 d''entre eux partent à la retraite. Parmi les 24 restants, 8 la maîtrisent ; il faut donc former au moins 30 − 8 = 22 personnes, recrues comprises.
 
-- R (Responsible, réalise) : celui qui fait le travail.
-- A (Accountable, approuve) : celui qui rend des comptes et valide ; un seul A par tâche.
-- C (Consulted, consulté) : celui dont on demande l''avis avant.
-- I (Informed, informé) : celui qu''on tient au courant après.
+Plan d''action possible : recruter 16 techniciens (dont des jeunes diplômés de lycées techniques et d''instituts), reconvertir 10 électriciens internes par une formation qualifiante, organiser le tutorat des futurs retraités pour transmettre leur savoir-faire, et former au stockage par batteries les techniciens existants et les recrues.
 
-Exemple pour la tâche « Choisir le fournisseur de panneaux » : R = responsable achats, A = chef de projet, C = ingénieur électricien, I = comité de pilotage.
+## Fiche 5 : le tableau de bord social
 
-Erreurs fréquentes : plusieurs A sur une tâche, tâche sans R, personne avec trop de R (surcharge).
+Un tableau de bord social est un outil de pilotage synthétique, souvent mensuel, qui présente peu d''indicateurs RH, comparés à des objectifs et assortis de seuils d''alerte (à distinguer du bilan social, annuel et exhaustif).
 
-## Fiche 5 : l''équipe projet et la gestion des conflits
+Présentation conseillée : une ligne par indicateur, avec les colonnes valeur du mois, objectif, écart, tendance (flèche) et alerte (vert, orange, rouge).
 
-Le modèle de Tuckman décrit cinq étapes de développement d''une équipe : formation (on se découvre), tension (on s''affronte sur les rôles), normalisation (on fixe les règles), performance (on travaille efficacement), dissolution (fin du projet). Le chef de projet adapte son style : directif au début, plus participatif ensuite.
+Principaux indicateurs et formules :
 
-Les sources de conflit dans un projet : priorités, ressources partagées, plannings, choix techniques, personnalités. Cinq attitudes face au conflit : évitement, accommodation (céder), compétition (imposer), compromis (chacun cède une partie), collaboration (chercher ensemble une solution qui satisfait les deux). La collaboration est souvent la meilleure pour les problèmes importants, mais elle prend du temps ; le compromis est utile quand le temps presse.
+- Taux d''absentéisme = heures d''absence / heures théoriques de travail × 100.
+- Taux de rotation = ((départs + arrivées) / 2) / effectif moyen × 100.
+- Taux de départ = départs / effectif moyen × 100.
+- Taux de féminisation = effectif féminin / effectif total × 100.
+- Taux de fréquence des accidents du travail = nombre d''accidents avec arrêt × 1 000 000 / heures travaillées.
+- Taux de gravité = journées perdues × 1 000 / heures travaillées.
 
-Le contexte culturel compte : le respect de la hiérarchie et des aînés, l''importance de la palabre et du consensus, le rôle des chefs de village ou des imams dans un projet communautaire. Un chef de projet efficace s''appuie sur ces relais plutôt que de les ignorer.
+Exemple chiffré, mois de mars chez Sahel Énergie Solaire : 250 salariés × 170 heures théoriques = 42 500 heures ; 2 125 heures d''absence. Taux d''absentéisme = 2 125 / 42 500 × 100 = 5 %. Sur l''année précédente : 6 accidents avec arrêt, 90 journées perdues, 420 000 heures travaillées. Taux de fréquence = 6 × 1 000 000 / 420 000 ≈ 14,29. Taux de gravité = 90 × 1 000 / 420 000 ≈ 0,21.
+
+Un absentéisme de 5 % contre un objectif de 3,5 % déclenche une alerte et une analyse par service et par motif.
 
 ## Points clés
 
-- Un plan de communication répond à : qui, quoi, pourquoi, comment, quand, par qui.
-- Toute décision doit être écrite dans un compte rendu avec un responsable et une échéance.
-- RACI : un seul A par tâche.
-- Les conflits se gèrent ; ils ne disparaissent pas seuls.
+- GPEC = existant, projection, besoins, écarts, plans d''action.
+- Ressources projetées = effectif actuel − départs prévisibles (retraites, départs volontaires, promotions).
+- Écarts quantitatifs et qualitatifs.
+- Tableau de bord : peu d''indicateurs, objectifs, seuils d''alerte, interprétation.
 
 ## Exercices pratiques
 
-1. Combien de canaux de communication existe-t-il dans une équipe de 8 personnes ? Et si l''on passe à 12 personnes ?
-2. Citez les rubriques obligatoires d''un compte rendu de réunion.
-3. Qu''est-ce qui ne va pas dans une matrice RACI où la tâche « valider le budget » a deux A ?
-4. Une équipe projet vient de se former ; deux membres se disputent la responsabilité des achats. À quelle étape de Tuckman se trouve l''équipe ? Que doit faire le chef de projet ?
-5. Cas pratique : la mutuelle de santé fictive Kër Wér Gi lance une campagne d''adhésion dans trois quartiers de Rufisque. Proposez un plan de communication pour quatre publics.
+- Exercice 1. Que révèle une pyramide des âges en forme de champignon ? Quelles actions de GPEC proposer ?
+- Exercice 2. Tranches 20 à 29 ans : 30 ; 30 à 39 : 40 ; 40 à 49 : 20 ; 50 à 59 : 10. Calculez l''âge moyen approché et la part des 50 ans et plus.
+- Exercice 3. Emploi « comptable » : 15 personnes ; à trois ans, 3 retraites, 4 départs volontaires, 1 promotion. Besoins : 12. Calculez l''écart et commentez.
+- Exercice 4. Effectif moyen 320, 48 départs et 40 arrivées dans l''année. Calculez le taux de rotation et le taux de départ.
+- Exercice 5. 4 accidents avec arrêt, 60 journées perdues, 500 000 heures travaillées. Calculez les taux de fréquence et de gravité.
+- Exercice 6 (cas pratique). Une banque fictive de Dakar ferme 10 agences sur 40 en trois ans au profit du numérique ; 60 guichetiers sont concernés et le service clientèle à distance a besoin de 35 conseillers. Proposez une démarche de GPEC.
 
 ## Corrigé
 
-1. 8 × 7 / 2 = 28 canaux. 12 × 11 / 2 = 66 canaux, soit 38 canaux de plus.
+Exercice 1. Une forme en champignon révèle une population vieillissante : départs massifs à venir et risque de perte de savoir-faire. Actions : recrutements anticipés, tutorat et transmission des savoirs, documentation des procédures, aménagement des fins de carrière.
 
-2. Date, lieu, participants et absents, ordre du jour, points discutés, décisions, actions (quoi, qui, quand), prochaine réunion.
+Exercice 2. Âge moyen = (30 × 25 + 40 × 35 + 20 × 45 + 10 × 55) / 100 = (750 + 1 400 + 900 + 550) / 100 = 36 ans. Part des 50 ans et plus = 10 %.
 
-3. Il ne doit y avoir qu''un seul A, c''est-à-dire une seule personne qui rend des comptes ; sinon chacun pense que l''autre décide et la validation risque de ne jamais se faire. Il faut désigner un A unique et passer l''autre en C ou I.
+Exercice 3. Ressources = 15 − 3 − 4 − 1 = 7. Écart = 7 − 12 = −5 : déficit de 5 comptables. Mais 4 départs volontaires sur 15 en trois ans traduisent une fidélisation insuffisante : agir sur la rétention peut réduire le besoin de recrutement.
 
-4. Étape de tension. Le chef de projet clarifie les rôles (matrice RACI), écoute les deux personnes, rappelle l''objectif commun et tranche si nécessaire, puis formalise la répartition.
+Exercice 4. Rotation = ((48 + 40) / 2) / 320 × 100 = 44 / 320 × 100 = 13,75 %. Taux de départ = 48 / 320 × 100 = 15 %.
 
-5. Exemple : conseil d''administration de la mutuelle (objectifs, résultats d''adhésion ; réunion ; mensuel ; coordonnateur) ; relais communautaires et délégués de quartier (argumentaire, calendrier ; réunion de formation ; au lancement puis tous les quinze jours ; animateur) ; populations (avantages, cotisation, démarches ; radio communautaire, causeries, porte-à-porte ; pendant toute la campagne ; relais) ; partenaires (structures de santé : conventions, circuit de prise en charge ; courrier et rencontre ; au lancement ; coordonnateur).', 'texte', 60, false, 40
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Communication et travail en équipe projet : l''essentiel pour l''examen');
+Exercice 5. Taux de fréquence = 4 × 1 000 000 / 500 000 = 8. Taux de gravité = 60 × 1 000 / 500 000 = 0,12.
+
+Exercice 6. 1) Existant : profils des 60 guichetiers (âge, compétences, mobilité). 2) Projection : retraites et départs naturels sur trois ans. 3) Besoins : 35 conseillers à distance, compétences en relation client à distance, outils numériques, conseil. 4) Écarts : sureffectif de guichetiers, compétences numériques à développer. 5) Actions : reconversion prioritaire des guichetiers volontaires vers les 35 postes de conseillers par une formation qualifiante, mobilité vers les agences maintenues, gestion des fins de carrière, et en dernier recours mesures d''accompagnement des départs, dans le respect des procédures légales et en concertation avec les représentants du personnel.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'GPEC et pilotage RH : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Licence 1 en Gestion de projets', '## Présentation
+select c.id, 'Relations sociales et dialogue social : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-Ce sujet d''entraînement multi-matières n''est pas un sujet officiel. Il reproduit le format d''un examen semestriel de 3 heures. Le barème est indicatif, non officiel. Faites-le d''abord seul, chronomètre en main, puis comparez avec le corrigé.
+- Identifier les acteurs et les niveaux du dialogue social au Sénégal et dans l''espace UEMOA.
+- Distinguer information, consultation et négociation collective.
+- Préparer et conduire une négociation, chiffrer des scénarios.
+- Analyser un conflit collectif et les modes de règlement.
 
-## Énoncé
+## Avertissement
 
-Contexte. Le groupement d''intérêt économique fictif Saloum Céréales, basé à Kaolack, veut construire une petite unité de transformation de mil (farine et couscous) pour ses 120 membres. Le GIE a obtenu une promesse de financement d''une ONG partenaire. Vous êtes recruté comme chef de projet.
+Le droit des relations collectives sénégalais repose sur le Code du travail de 1997, aujourd''hui en cours de réforme (projet de loi n°15/2026). Les règles précises (conditions d''élection des délégués, représentativité, préavis de grève, procédures de règlement) doivent être vérifiées dans les textes en vigueur. Cette leçon expose les mécanismes ; les montants des exemples sont fictifs.
 
-Partie 1 – Fondamentaux (6 points)
+## Fiche 1 : définitions
 
-1. Expliquez pourquoi cette initiative est un projet et non une opération. (1 point)
-2. Identifiez le maître d''ouvrage, le maître d''œuvre probable et trois parties prenantes. (2 points)
-3. Formulez l''objectif principal de façon SMART. (1 point)
-4. Citez les phases du cycle de vie et dites dans quelle phase on rédige le cahier des charges. (2 points)
+Les relations sociales désignent l''ensemble des rapports, individuels et collectifs, entre employeurs, salariés et leurs représentants. Le dialogue social, au sens de l''Organisation internationale du travail, comprend toutes les formes de négociation, de consultation et d''échange d''informations entre représentants des gouvernements, des employeurs et des travailleurs sur des questions d''intérêt commun.
 
-Partie 2 – Planification (9 points)
+Trois intensités à distinguer :
 
-Les tâches du projet (durées en semaines) :
+- L''information : l''employeur communique des données aux représentants (situation économique, projets).
+- La consultation : l''employeur recueille l''avis des représentants avant de décider ; il reste maître de la décision.
+- La négociation : les parties recherchent un accord qui les engage, par exemple une convention ou un accord collectif.
 
-- A Étude de faisabilité : 2 ; aucune.
-- B Choix et commande des machines : 4 ; après A.
-- C Aménagement du bâtiment : 3 ; après A.
-- D Livraison et installation des machines : 5 ; après B.
-- E Formation des opératrices : 2 ; après C.
-- F Essais et démarrage : 4 ; après D et E.
+## Fiche 2 : les acteurs et les niveaux
 
-5. Calculez les dates au plus tôt et au plus tard, les marges totales et libres. (5 points)
-6. Donnez le chemin critique et la durée du projet. (2 points)
-7. La durée de D est incertaine : o = 3, m = 5, p = 7. Calculez la durée moyenne et l''écart-type. (2 points)
+- Dans l''entreprise : l''employeur et la direction des ressources humaines ; les délégués du personnel, élus par les salariés, qui présentent les réclamations individuelles et collectives et sont informés et consultés sur certaines questions ; les sections ou délégués syndicaux ; le comité d''hygiène et de sécurité lorsqu''il existe.
+- Au niveau de la branche et au niveau national : les syndicats de travailleurs et leurs centrales, les organisations d''employeurs, qui négocient les conventions collectives (convention interprofessionnelle, conventions de branche).
+- L''État : il fixe le cadre légal, intervient par l''inspection du travail (contrôle, conciliation), et anime le dialogue tripartite. Le Sénégal s''est doté d''institutions et d''instruments dédiés, comme le Haut Conseil du dialogue social et une Charte nationale sur le dialogue social.
+- Au niveau régional, l''UEMOA et la CEDEAO promeuvent l''harmonisation des politiques sociales, en termes généraux.
 
-Partie 3 – Communication et équipe (5 points)
+## Fiche 3 : la négociation collective
 
-8. Proposez une matrice RACI pour les tâches B, E et F, avec les acteurs : chef de projet, présidente du GIE, technicien fournisseur, formatrice. (3 points)
-9. Les membres du GIE se plaignent de ne pas être informés de l''avancement. Proposez deux actions concrètes. (2 points)
+Une négociation se prépare en quatre temps :
+
+- 1. Diagnostic : demandes des représentants, situation économique, comparaisons externes, coûts.
+- 2. Mandat : objectifs de la direction, marge de manœuvre, point de rupture.
+- 3. Conduite : calendrier, ordre du jour, échanges de propositions, recherche de contreparties, comptes rendus.
+- 4. Conclusion et suivi : signature d''un accord écrit, dépôt et publicité selon les règles, communication aux salariés, comité de suivi.
+
+Deux logiques de négociation : distributive (partager un montant fixe, gagnant-perdant) et intégrative (élargir les options, gagnant-gagnant, par exemple échanger une hausse de salaire contre un engagement sur la productivité ou la formation).
+
+## Fiche 4 : chiffrer les scénarios salariaux
+
+Les syndicats de Thiès Ciment Préfa, entreprise fictive de 300 salariés, demandent une revalorisation. Masse salariale brute annuelle : 1 080 000 000 FCFA, soit un salaire moyen mensuel de 300 000 FCFA. Taux de charges patronales fictif : 22 %.
+
+- Scénario A, hausse générale de 4 % au 1er janvier : coût brut annuel = 1 080 000 000 × 4 % = 43 200 000 FCFA ; coût chargé = 43 200 000 × 1,22 = 52 704 000 FCFA.
+- Scénario B, hausse uniforme de 12 000 FCFA par mois et par salarié : coût brut annuel = 12 000 × 12 × 300 = 43 200 000 FCFA, même coût, mais effet redistributif : +6 % pour un salaire de 200 000 FCFA, +2 % pour un salaire de 600 000 FCFA.
+- Scénario C, hausse de 4 % au 1er juillet seulement : coût brut sur l''année = 43 200 000 × 6 / 12 = 21 600 000 FCFA ; mais l''année suivante, la hausse pèse en année pleine.
+
+Ces calculs permettent de construire des propositions équivalentes en coût mais différentes en effets, ce qui facilite un accord.
+
+## Fiche 5 : les conflits collectifs
+
+Un conflit collectif oppose un groupe de salariés à l''employeur sur un intérêt collectif. La grève est la cessation concertée et collective du travail en vue d''appuyer des revendications professionnelles ; elle est garantie par la Constitution mais encadrée par la loi (conditions de déclenchement, notamment un préavis, service minimum dans certains secteurs). La grève licite suspend le contrat de travail : en principe, le salaire n''est pas dû pour les heures non travaillées. Les formes illicites (occupation violente, entrave à la liberté du travail) peuvent entraîner des sanctions.
+
+Modes de règlement : conciliation (souvent devant l''inspection du travail), médiation (un tiers propose une solution), arbitrage (un tiers tranche). La prévention reste le meilleur outil : réunions régulières avec les délégués, traitement rapide des réclamations, transparence sur la situation de l''entreprise.
+
+Indicateurs de climat social : nombre de réclamations, journées perdues pour grève, taux d''absentéisme, taux de départ, résultats d''enquêtes internes. Exemple : 120 salariés grévistes pendant 2 jours, soit 240 journées perdues ; ramené à l''effectif de 300 salariés, cela fait 0,8 journée par salarié.
+
+## Points clés
+
+- Information, consultation, négociation : trois intensités différentes.
+- Acteurs à trois niveaux : entreprise, branche ou national, État.
+- Négocier, c''est préparer, chiffrer, chercher des contreparties.
+- Prévenir les conflits coûte moins cher que les régler.
+
+## Exercices pratiques
+
+- Exercice 1. Distinguez consultation et négociation.
+- Exercice 2. Masse salariale annuelle de 720 000 000 FCFA pour 200 salariés. Calculez le coût brut d''une hausse générale de 5 % et celui d''une hausse uniforme de 15 000 FCFA par mois.
+- Exercice 3. Avec un taux de charges patronales fictif de 22 %, calculez le coût chargé de la hausse de 5 %.
+- Exercice 4. Pour un salarié à 150 000 FCFA et un autre à 450 000 FCFA, quelle hausse en pourcentage représente une hausse uniforme de 15 000 FCFA ?
+- Exercice 5. Distinguez conciliation, médiation et arbitrage.
+- Exercice 6 (cas pratique). Chez Thiès Ciment Préfa, les délégués menacent d''une grève : ils dénoncent des heures supplémentaires non payées et des équipements de protection usés. La direction veut « attendre que ça se calme ». Rédigez une recommandation.
+
+## Corrigé
+
+Exercice 1. La consultation consiste à recueillir l''avis des représentants avant une décision que l''employeur prend seul ; la négociation vise un accord qui engage les deux parties.
+
+Exercice 2. Hausse de 5 % : 720 000 000 × 5 % = 36 000 000 FCFA. Hausse uniforme : 15 000 × 12 × 200 = 36 000 000 FCFA. Les deux coûtent autant (le salaire moyen est de 300 000 FCFA).
+
+Exercice 3. 36 000 000 × 1,22 = 43 920 000 FCFA.
+
+Exercice 4. 15 000 / 150 000 = 10 % ; 15 000 / 450 000 ≈ 3,3 %. La hausse uniforme favorise les bas salaires.
+
+Exercice 5. Conciliation : les parties sont aidées à trouver elles-mêmes un accord. Médiation : un médiateur formule une recommandation que les parties acceptent ou non. Arbitrage : un arbitre rend une décision qui s''impose aux parties, selon les règles applicables.
+
+Exercice 6. Attendre est risqué : les revendications portent sur des obligations légales (paiement des heures supplémentaires, sécurité). Recommandations : 1) recevoir les délégués sans délai et acter les points par un compte rendu ; 2) vérifier les heures supplémentaires et régulariser les sommes dues ; 3) remplacer les équipements de protection en priorité et associer le comité d''hygiène et de sécurité s''il existe ; 4) instaurer une réunion mensuelle avec les délégués et un suivi des réclamations ; 5) communiquer aux salariés les mesures prises. Le coût de ces mesures est sans commune mesure avec celui d''une grève et d''un éventuel contentieux.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Relations sociales et dialogue social : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Rémunération globale et SIRH : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Décrire les composantes de la rémunération globale et les principes d''une politique de rémunération.
+- Utiliser les outils de l''équité interne et externe (classification, fourchettes, compa-ratio).
+- Calculer les effets niveau, masse et report d''une mesure salariale.
+- Présenter un SIRH, conduire son projet et en évaluer la rentabilité, dans le respect de la protection des données.
+
+## Fiche 1 : la rémunération globale
+
+La rémunération globale est l''ensemble des contreparties, monétaires ou non, que le salarié reçoit en échange de son travail. Elle se représente souvent en cercles concentriques, décrits ici en texte :
+
+- Au centre, le salaire fixe : salaire de base et compléments liés au poste ou à l''ancienneté.
+- Deuxième cercle, le variable individuel : primes de rendement, commissions, bonus sur objectifs.
+- Troisième cercle, le variable collectif : primes d''équipe, participation aux résultats ou intéressement selon les dispositifs de l''entreprise.
+- Quatrième cercle, les périphériques : avantages en nature (logement, véhicule, téléphone), avantages sociaux (couverture santé complémentaire, prévoyance, transport, restauration), gratifications prévues par l''entreprise.
+
+Exemple chiffré : un ingénieur de Baobab Telecom, entreprise fictive de Dakar, perçoit 350 000 FCFA de salaire fixe mensuel, une prime annuelle sur objectifs de 300 000 FCFA, une gratification de fin d''année de 350 000 FCFA prévue par l''entreprise, une couverture santé dont la part employeur vaut 15 000 FCFA par mois et un transport d''entreprise valorisé à 10 000 FCFA par mois.
+
+- Fixe annuel = 350 000 × 12 = 4 200 000 FCFA.
+- Rémunération globale annuelle = 4 200 000 + 300 000 + 350 000 + 15 000 × 12 + 10 000 × 12 = 5 150 000 FCFA.
+- Part du fixe = 4 200 000 / 5 150 000 × 100 ≈ 81,6 %.
+
+## Fiche 2 : les principes d''une politique de rémunération
+
+Une politique de rémunération recherche trois équilibres :
+
+- L''équité interne : des postes de même valeur sont rémunérés de manière cohérente. Outils : classification conventionnelle (catégories), pesée ou évaluation des postes, fourchettes de salaire par niveau.
+- L''équité externe (compétitivité) : les salaires sont comparés au marché grâce à des enquêtes de rémunération, pour attirer et retenir les talents.
+- L''équité individuelle : la rémunération reconnaît la performance et la progression des compétences.
+
+S''ajoutent le respect du droit (salaire minimum, minima conventionnels, égalité de rémunération femmes-hommes) et la maîtrise de la masse salariale.
+
+Le compa-ratio situe un salaire dans sa fourchette : compa-ratio = salaire réel / milieu de fourchette × 100. Exemple : fourchette du niveau « ingénieur confirmé » de 400 000 à 600 000 FCFA, milieu 500 000 FCFA. Un salaire de 450 000 FCFA donne un compa-ratio de 90 % : le salarié est en dessous du point de référence, ce qui peut justifier une augmentation individuelle s''il est performant.
+
+## Fiche 3 : les effets niveau, masse et report
+
+Ces trois effets mesurent l''impact d''une augmentation dans le temps (à effectif constant).
+
+- Effet niveau : variation du salaire entre le début et la fin de l''année (de décembre N−1 à décembre N).
+- Effet masse : variation de la masse salariale de l''année N par rapport à l''année N−1.
+- Effet report : part de l''augmentation de l''année N qui pèsera sur l''année N+1 du seul fait de la date d''application.
+
+Exemple : base 100 en N−1 (salaires stables toute l''année) ; hausse de 4 % au 1er juillet N.
+
+- Effet niveau = 104 / 100 − 1 = 4 %.
+- Masse N = (6 × 100 + 6 × 104) / 12 = 102 ; effet masse = 102 / 100 − 1 = 2 %.
+- Effet report sur N+1 = 104 / 102 − 1 ≈ 1,96 %.
+
+Vérification : 1,02 × 1,0196 ≈ 1,04. Une hausse tardive coûte peu en N mais engage fortement N+1.
+
+## Fiche 4 : le SIRH
+
+Le système d''information des ressources humaines (SIRH) est l''ensemble des outils, données et procédures qui collectent, traitent, stockent et diffusent l''information RH.
+
+Modules usuels :
+
+- Administration du personnel (dossiers, contrats, registre).
+- Paie et déclarations sociales.
+- Gestion des temps et des absences.
+- Gestion des talents : recrutement, formation, entretiens, compétences, carrières.
+- Libre-service salariés et managers (bulletins dématérialisés, congés).
+- Tableaux de bord.
+
+Conduite du projet : cahier des charges, choix de la solution et du prestataire, paramétrage et reprise des données, tests (paie en double sur plusieurs mois), formation, déploiement. Risques classiques : données de mauvaise qualité, résistance au changement, connexion internet insuffisante.
+
+Protection des données : un SIRH traite des données personnelles, parfois sensibles (santé, situation familiale). Au Sénégal, ces traitements relèvent de la loi de 2008 sur la protection des données à caractère personnel et du contrôle de la Commission de protection des données personnelles (CDP) ; vérifiez les formalités applicables. Principes : finalité déterminée, données limitées au nécessaire, sécurité, droits d''accès restreints, information des salariés.
+
+Rentabilité, exemple chiffré : Baobab Telecom paie 9 000 000 FCFA d''implantation et 3 000 000 FCFA d''abonnement annuel. Gains annuels attendus : 60 heures de travail administratif économisées par mois, valorisées à 6 000 FCFA l''heure, soit 4 320 000 FCFA ; erreurs de paie évitées : 2 400 000 FCFA ; impression et archivage : 780 000 FCFA. Gains = 7 500 000 FCFA. Gain net annuel = 7 500 000 − 3 000 000 = 4 500 000 FCFA. Délai de récupération = 9 000 000 / 4 500 000 = 2 ans.
+
+## Points clés
+
+- Rémunération globale = fixe + variable individuel + variable collectif + périphériques.
+- Trois équités : interne, externe, individuelle ; compa-ratio = salaire / milieu de fourchette.
+- Hausse en cours d''année : effet masse réduit, effet report important.
+- SIRH : un projet à piloter, des données à protéger.
+
+## Exercices pratiques
+
+- Exercice 1. Classez dans les cercles de la rémunération globale : commission sur ventes, logement de fonction, salaire de base, prime d''équipe.
+- Exercice 2. Fourchette de 300 000 à 500 000 FCFA. Calculez le compa-ratio d''un salaire de 440 000 FCFA et interprétez.
+- Exercice 3. Hausse de 3 % au 1er avril N, salaires stables en N−1. Calculez les effets niveau, masse et report.
+- Exercice 4. Une commerciale perçoit 280 000 FCFA de fixe mensuel, 960 000 FCFA de commissions annuelles et une couverture santé valorisée à 12 000 FCFA par mois. Calculez sa rémunération globale annuelle et la part du variable.
+- Exercice 5. Un SIRH coûte 6 000 000 FCFA d''implantation et 2 000 000 FCFA par an ; il génère 5 000 000 FCFA de gains annuels. Délai de récupération ?
+- Exercice 6 (cas pratique). Une PME fictive de Saint-Louis, 80 salariés, gère sa paie sur tableur et ses congés sur papier. Les erreurs se multiplient. Le gérant hésite à investir dans un SIRH. Conseillez-le.
+
+## Corrigé
+
+Exercice 1. Salaire de base : fixe. Commission : variable individuel. Prime d''équipe : variable collectif. Logement de fonction : périphérique (avantage en nature).
+
+Exercice 2. Milieu = 400 000. Compa-ratio = 440 000 / 400 000 × 100 = 110 % : salaire au-dessus du point de référence, justifié pour un salarié très performant ; sinon, modérer les hausses futures.
+
+Exercice 3. Effet niveau = 3 %. Masse N = (3 × 100 + 9 × 103) / 12 = 102,25 ; effet masse = 2,25 %. Effet report = 103 / 102,25 − 1 ≈ 0,73 %.
+
+Exercice 4. Fixe = 280 000 × 12 = 3 360 000 ; santé = 144 000 ; total = 3 360 000 + 960 000 + 144 000 = 4 464 000 FCFA. Part du variable = 960 000 / 4 464 000 × 100 ≈ 21,5 %.
+
+Exercice 5. Gain net annuel = 5 000 000 − 2 000 000 = 3 000 000 FCFA. Délai = 6 000 000 / 3 000 000 = 2 ans.
+
+Exercice 6. Diagnostic : volume et coût des erreurs, temps passé, risques juridiques. Solution proportionnée : un logiciel de paie et de temps en service en ligne plutôt qu''un SIRH complet. Démarche : cahier des charges simple, comparaison d''offres, nettoyage des données, paie en double pendant deux mois, formation, information des salariés et vérification des formalités auprès de la CDP. Chiffrer les gains pour décider.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Rémunération globale et SIRH : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 3 RH (entraînement, corrigé détaillé)', '## Présentation du sujet
+
+Étude de cas de synthèse de Licence 3 RH. Sujet d''entraînement, non officiel. Durée conseillée : 4 heures. Barème indicatif, non officiel : 20 points. Calculatrice autorisée. Les montants et le taux de charges patronales sont fictifs pour l''exemple.
+
+Contexte : Huilerie Moderne du Saloum, entreprise fictive de Kaolack, transforme l''arachide en huile et en tourteaux. L''effectif est passé de 380 salariés au 1er janvier N à 420 au 31 décembre N, avec 52 départs et 92 arrivées. La masse salariale brute annuelle est de 1 440 000 000 FCFA. L''entreprise prévoit une nouvelle ligne de pressage dans trois ans. Les délégués du personnel réclament une hausse générale de 6 % et dénoncent une surcharge de travail. La direction envisage aussi de remplacer ses tableurs par un SIRH.
+
+## Dossier 1 : GPEC et pilotage RH (7 points)
+
+Annexe 1. Heures théoriques de l''année : 800 000 ; heures d''absence : 36 000. Accidents du travail avec arrêt : 10 ; journées perdues : 150 ; heures travaillées : 764 000.
+
+Annexe 2. Emploi « conducteur de presse » : 30 salariés aujourd''hui. À trois ans : 9 départs à la retraite, environ 1 départ volontaire par an, 2 promotions prévues. Besoin avec la nouvelle ligne : 36 conducteurs.
+
+- 1.1 Calculez l''effectif moyen, le taux de rotation, le taux de départ, le taux d''absentéisme, les taux de fréquence et de gravité. (3 points)
+- 1.2 Projetez les ressources de l''emploi « conducteur de presse », calculez l''écart et proposez un plan d''action. (3 points)
+- 1.3 Proposez la structure d''un tableau de bord social mensuel (cinq indicateurs). (1 point)
+
+## Dossier 2 : Relations sociales et dialogue social (7 points)
+
+Taux de charges patronales fictif : 22 %. Trois scénarios sont étudiés : A, hausse générale de 6 % au 1er janvier N+1 ; B, hausse générale de 4 % au 1er juillet N+1 ; C, hausse uniforme de 10 000 FCFA par mois et par salarié au 1er janvier N+1 (sur la base de 400 salariés en moyenne).
+
+- 2.1 Calculez le coût brut et le coût chargé de chaque scénario sur l''année N+1. (3 points)
+- 2.2 Rédigez une note de recommandation à la direction pour préparer la négociation. (4 points)
+
+## Dossier 3 : Rémunération globale et SIRH (6 points)
+
+- 3.1 Pour le scénario B, calculez les effets niveau, masse et report (salaires stables en N). (2 points)
+- 3.2 Un technicien gagne 270 000 FCFA ; la fourchette de son niveau va de 250 000 à 350 000 FCFA. Calculez et interprétez son compa-ratio. (1 point)
+- 3.3 Quels modules du SIRH déployer en priorité et quelles précautions prendre pour les données personnelles ? (3 points)
 
 ## Corrigé détaillé
 
-1. Il s''agit d''un effort temporaire (début : décision du GIE ; fin : démarrage de l''unité), unique (une unité nouvelle) et soumis à des contraintes de coût, de délai et de qualité. La production quotidienne de farine qui suivra sera, elle, une opération.
+1.1 Effectif moyen = (380 + 420) / 2 = 400. Rotation = ((52 + 92) / 2) / 400 × 100 = 72 / 400 × 100 = 18 %. Taux de départ = 52 / 400 × 100 = 13 %. Absentéisme = 36 000 / 800 000 × 100 = 4,5 %. Taux de fréquence = 10 × 1 000 000 / 764 000 ≈ 13,09. Taux de gravité = 150 × 1 000 / 764 000 ≈ 0,20. Interprétation : rotation élevée, liée surtout aux nombreuses arrivées (croissance) mais aussi à 13 % de départs, à analyser ; absentéisme et accidents à rapprocher de la surcharge dénoncée par les délégués.
 
-2. Maître d''ouvrage : le GIE Saloum Céréales (il exprime le besoin et réceptionnera l''unité). Maître d''œuvre : le fournisseur-installateur des machines et l''artisan ou l''entreprise chargés du bâtiment. Parties prenantes : l''ONG partenaire (financeur), les membres du GIE, les services techniques compétents (hygiène, agriculture), les clients commerçants, la commune.
+1.2 Ressources à trois ans = 30 − 9 − 3 − 2 = 16. Écart = 16 − 36 = −20 conducteurs. Plan : recruter des jeunes issus de formations techniques et organiser leur montée en compétences par le tutorat des conducteurs proches de la retraite (transmission du savoir-faire) ; promouvoir ou reconvertir des opérateurs internes motivés ; former tous les conducteurs à la nouvelle ligne avec le fournisseur ; échelonner les recrutements sur trois ans ; analyser les départs volontaires pour améliorer la fidélisation. Barème : 1 point calcul, 2 points plan argumenté.
 
-3. Exemple : « Mettre en service, dans un délai de 15 semaines, une unité capable de transformer au moins 500 kg de mil par jour en farine et couscous conformes aux règles d''hygiène, pour un budget ne dépassant pas l''enveloppe accordée. »
+1.3 Tableau de bord : effectif fin de mois, taux d''absentéisme, départs du mois, heures supplémentaires, accidents avec arrêt, avec pour chacun la valeur du mois, l''objectif, l''écart, la tendance et un code couleur d''alerte. On accepte aussi la masse salariale comparée au budget.
 
-4. Initialisation, cadrage et planification, exécution, suivi et maîtrise, clôture. Le cahier des charges est rédigé lors du cadrage et de la planification, avant l''exécution.
+2.1 Scénario A : 1 440 000 000 × 6 % = 86 400 000 FCFA brut ; chargé = 86 400 000 × 1,22 = 105 408 000 FCFA. Scénario B : coût en année pleine 1 440 000 000 × 4 % = 57 600 000, sur six mois = 28 800 000 FCFA brut ; chargé = 35 136 000 FCFA. Scénario C : 10 000 × 12 × 400 = 48 000 000 FCFA brut ; chargé = 58 560 000 FCFA. Rappel : le scénario B coûtera 57 600 000 FCFA brut en année pleine dès N+2.
 
-5. Passe avant : A 0 → 2 ; B 2 → 6 ; C 2 → 5 ; D 6 → 11 ; E 5 → 7 ; F max(11 ; 7) = 11 → 15. Durée : 15 semaines.
+2.2 Note. En-tête : de la direction des ressources humaines à la direction générale ; objet : préparation de la négociation salariale. Contexte : croissance de l''effectif, revendication de 6 %, plainte de surcharge, absentéisme de 4,5 % et accidents à surveiller. Analyse : le scénario A répond pleinement à la demande mais coûte plus de 105 millions FCFA chargés ; le C coûte nettement moins et favorise les bas salaires (+5 % à 200 000 FCFA, +2 % à 500 000 FCFA) ; le B est le moins coûteux en N+1 mais reporte la charge. Recommandations : 1) ouvrir la négociation rapidement avec un calendrier ; 2) proposer une combinaison, par exemple une hausse uniforme proche du scénario C, complétée par des mesures sur la charge de travail (recrutements prévus par la GPEC, encadrement des heures supplémentaires) ; 3) se fixer un mandat et un point de rupture chiffrés ; 4) prévoir un accord écrit et un comité de suivi. Barème : forme 1 point, analyse 1,5 point, recommandations 1,5 point.
 
-Passe arrière : F : DTA 11, FTA 15. D : FTA 11, DTA 6. E : FTA 11, DTA 9. B : FTA 6, DTA 2. C : FTA 9, DTA 6. A : FTA = min(2 ; 6) = 2, DTA 0.
+3.1 Effet niveau = 4 %. Masse N+1 = (6 × 100 + 6 × 104) / 12 = 102, effet masse = 2 %. Effet report sur N+2 = 104 / 102 − 1 ≈ 1,96 %.
 
-Marges : A MT 0, ML 0 ; B MT 0, ML 0 ; C MT 6 − 2 = 4, ML = 5 − 5 = 0 ; D MT 0, ML 0 ; E MT 9 − 5 = 4, ML = 11 − 7 = 4 ; F MT 0, ML 0.
+3.2 Milieu = 300 000. Compa-ratio = 270 000 / 300 000 × 100 = 90 % : salaire sous le point de référence ; une augmentation individuelle est justifiée si ses performances sont bonnes.
 
-6. Chemin critique : A – B – D – F, soit 2 + 4 + 5 + 4 = 15 semaines.
-
-7. te = (3 + 4 × 5 + 7) / 6 = 30 / 6 = 5 semaines ; σ = (7 − 3) / 6 ≈ 0,67 semaine. La durée moyenne est inchangée : le planning reste à 15 semaines, mais D étant critique, son incertitude est un risque pour la date de fin.
-
-8. Exemple :
-
-- B Choix et commande des machines : R chef de projet ; A présidente du GIE ; C technicien fournisseur ; I formatrice.
-- E Formation des opératrices : R formatrice ; A chef de projet ; C technicien fournisseur ; I présidente.
-- F Essais et démarrage : R technicien fournisseur ; A chef de projet ; C formatrice ; I présidente.
-
-Toute répartition cohérente avec un seul A par tâche est acceptée.
-
-9. Une assemblée d''information mensuelle avec un point d''avancement simple (photos, planning affiché en wolof et en français) ; un groupe de messagerie animé par une déléguée, avec un message hebdomadaire validé par le chef de projet.
-
-## Barème indicatif, non officiel
-
-Partie 1 : 6 points ; partie 2 : 9 points (dont 5 pour le tableau complet et juste) ; partie 3 : 5 points. Une présentation claire, en tableau, est valorisée.
+3.3 Priorités : paie et administration du personnel (fiabilité, obligations légales), gestion des temps et absences (suivi de l''absentéisme et des heures supplémentaires, en lien avec la surcharge), puis tableaux de bord. La gestion des talents pourra suivre. Précautions : finalités définies, données limitées au nécessaire, droits d''accès par profil, sauvegardes et sécurité, information des salariés, vérification des formalités auprès de la Commission de protection des données personnelles, clauses de confidentialité avec le prestataire.
 
 ## Exercices pratiques
 
-1. Dans le sujet, si C prend 3 semaines de retard, le projet est-il retardé ?
-2. Et si E prend 5 semaines de retard ?
-3. Combien de canaux de communication y a-t-il entre les 4 acteurs de la question 8 ?
-4. Quelle est la différence entre marge totale et marge libre, en une phrase ?
+- Exercice 1. Effectif moyen 250, 20 départs, 30 arrivées : taux de rotation ?
+- Exercice 2. Hausse de 2 % au 1er octobre, salaires stables auparavant : effet masse de l''année ?
+- Exercice 3. Différence entre information et consultation ?
+- Exercice 4. Fourchette 200 000 à 300 000 FCFA, salaire 275 000 FCFA : compa-ratio ?
+- Exercice 5. Citez deux risques d''un projet SIRH.
 
 ## Corrigé
 
-1. Non : la marge totale de C est 4 semaines. En revanche, sa marge libre est nulle, donc E sera décalée de 3 semaines (E finira à 10 au lieu de 7), toujours sans retarder F qui démarre à 11.
+Exercice 1. ((20 + 30) / 2) / 250 × 100 = 25 / 250 × 100 = 10 %.
 
-2. E a une marge totale de 4 semaines : un retard de 5 semaines retarde le projet de 1 semaine (fin à 16 semaines).
+Exercice 2. Masse = (9 × 100 + 3 × 102) / 12 = 100,5 : effet masse = 0,5 %.
 
-3. 4 × 3 / 2 = 6 canaux.
+Exercice 3. L''information transmet des données aux représentants ; la consultation recueille leur avis avant la décision, que l''employeur prend ensuite.
 
-4. La marge totale est le retard admissible sans retarder la fin du projet ; la marge libre est le retard admissible sans retarder le début au plus tôt d''aucun successeur.', 'texte', 90, false, 50
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en Gestion de projets');
+Exercice 4. Milieu = 250 000 ; 275 000 / 250 000 × 100 = 110 %.
+
+Exercice 5. Données reprises de mauvaise qualité et résistance des utilisateurs au changement (ou connexion insuffisante, dépassement du budget).', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 3 RH (entraînement, corrigé détaillé)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Fondamentaux du management de projet', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : GPEC et pilotage RH', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : étudiants de Licence 1 en gestion de projets. Objectifs : définir un projet et ses composantes, décrire le cycle de vie, identifier les acteurs, analyser les parties prenantes, rédiger une note de cadrage et connaître le contenu d''un cahier des charges. Matériel : tableau blanc, diaporama, feuilles pour le quiz. Prérequis : aucun, sinon la lecture de la leçon « Fondamentaux du management de projet ».
+- Durée : 1h30.
+- Public : étudiants de Licence 3 en ressources humaines et en management.
+- Objectifs : conduire une démarche de GPEC en cinq étapes, lire une pyramide des âges, projeter les ressources d''un emploi et mesurer les écarts, construire un tableau de bord social et interpréter ses indicateurs.
+- Matériel : diaporama (schéma de la démarche, trois formes de pyramides, tableau de projection, maquette de tableau de bord avec feux tricolores), tableau blanc, calculatrice, tableur facultatif.
+- Prérequis : leçon « GPEC et pilotage RH : l''essentiel pour l''examen » ; indicateurs de base vus en L1 et L2.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et objectifs
+## 00:00 – 05:00 · Ouverture : gouverner, c''est prévoir
 
-Bonjour à toutes et à tous. Pendant une heure et demie, nous allons poser les fondations de tout ce que vous ferez en gestion de projets. Si ces bases sont solides, la planification, les coûts et les risques des années suivantes seront beaucoup plus faciles. Notre fil rouge sera un projet fictif : la construction d''un marché couvert par la commune de Thiès. À l''écran, je vous montre le plan de la séance : définitions, cycle de vie, acteurs, parties prenantes, cadrage, cahier des charges, puis quiz et évaluation finale.
+Bonjour à toutes et à tous. Imaginez une entreprise d''énergie solaire qui gagne deux contrats de centrales et découvre, six mois avant leur mise en service, qu''il lui manque vingt techniciens qualifiés et que ses meilleurs experts partent à la retraite. Ce scénario n''a rien d''imaginaire. La GPEC sert précisément à l''éviter. Aujourd''hui, nous allons dérouler la démarche complète, calculs compris, puis apprendre à piloter avec un tableau de bord. Toutes les entreprises citées sont fictives.
 
-## 05:00 – 15:00 · Qu''est-ce qu''un projet ?
+## 05:00 – 15:00 · Définition et démarche en cinq étapes
 
-Commençons par une question : la vente quotidienne de pain dans une boulangerie de la Médina, est-ce un projet ? Réfléchissez dix secondes. Non : c''est une activité répétitive, une opération. En revanche, ouvrir une deuxième boulangerie à Mbour est un projet. Pourquoi ? Parce que c''est temporaire, il y a un début et une fin ; c''est unique, on n''ouvre pas cette boutique tous les jours ; et c''est contraint, on a un budget, un délai, une qualité à atteindre.
+La GPEC est une démarche d''anticipation qui adapte, à moyen terme, effectifs et compétences aux besoins issus de la stratégie, en associant les salariés à l''évolution de leur parcours. Je projette le schéma : à gauche, les ressources, actuelles puis projetées ; à droite, les besoins futurs ; au centre, les écarts ; en bas, les plans d''action.
 
-Retenez la définition : un projet est un effort temporaire et unique entrepris pour atteindre un objectif précis dans des contraintes de coût, de délai et de qualité. Je dessine maintenant le triangle : un sommet coût, un sommet délai, un sommet qualité ou périmètre. Si la mairie de Thiès veut le marché trois mois plus tôt, que se passe-t-il ? Il faudra plus d''ouvriers ou des heures supplémentaires : le coût augmente. Tout est lié.
+Les cinq étapes : analyser l''existant ; projeter les ressources sans action nouvelle ; estimer les besoins ; mesurer les écarts quantitatifs et qualitatifs ; définir les plans d''action. Retenez la phrase clé de l''étape 2 : « sans action nouvelle ». On projette ce que deviendra l''effectif si l''on ne fait rien, pour mesurer ce qu''il faudra faire.
 
-Vocabulaire : un livrable est un résultat vérifiable, par exemple le plan d''architecte ou le bâtiment. Un jalon est un événement sans durée, par exemple « signature du contrat ». Une tâche consomme du temps et des ressources.
+## 15:00 – 27:00 · Lire une pyramide des âges
 
-## 15:00 – 27:00 · Le cycle de vie
+Trois formes à reconnaître. La pyramide classique, base large : population jeune, enjeu de fidélisation et de développement des carrières. Le champignon, sommet large : vieillissement, départs massifs à venir, risque de perte de savoir-faire. Le losange, ventre important : risque d''embouteillage des promotions et de démotivation.
 
-Je trace une flèche découpée en cinq blocs. Premier bloc : l''initialisation. La commune constate que les commerçants vendent au bord de la route, dans de mauvaises conditions. Elle étudie l''opportunité et désigne un chef de projet. Deuxième bloc : le cadrage et la planification, où l''on fixe objectifs, périmètre, budget, planning. Troisième bloc : l''exécution, les travaux. Quatrième : le suivi et la maîtrise, qui court en parallèle de l''exécution ; on mesure, on compare, on corrige. Cinquième : la clôture, avec la réception, le bilan et les leçons apprises.
+Exercice projeté. Sahel Énergie Solaire : 20 à 29 ans, 50 ; 30 à 39 ans, 90 ; 40 à 49 ans, 70 ; 50 à 59 ans, 40. Calculez l''âge moyen avec les centres de classe et la part des 50 ans et plus. Correction : (50 × 25 + 90 × 35 + 70 × 45 + 40 × 55) / 250 = 9 750 / 250 = 39 ans ; part des 50 ans et plus : 16 %. Interprétation : une forme plutôt en losange, avec un ventre de trentenaires ; risque de frustration si les postes de chef d''équipe sont peu nombreux. Action possible : carrières horizontales, expertise reconnue, mobilité vers les nouveaux sites.
 
-Entre chaque bloc, je dessine un losange : c''est un point de décision. Le commanditaire peut dire « on continue », « on ajuste » ou « on arrête ». Arrêter un mauvais projet tôt n''est pas un échec, c''est une bonne gestion de l''argent public. Les grands référentiels internationaux, comme le guide PMBOK ou PRINCE2, insistent tous sur ces points de contrôle, même si leurs découpages diffèrent.
+## 27:00 – 42:00 · Projeter les ressources et mesurer les écarts
 
-## 27:00 – 40:00 · Les acteurs
+Emploi « technicien photovoltaïque » : 40 aujourd''hui. Horizon trois ans : 8 retraites, environ 2 départs volontaires par an, 2 promotions. Ressources projetées : 40 − 8 − 6 − 2 = 24. Besoins : 50. Écart : −26.
 
-Qui fait quoi dans le marché de Thiès ? Le maître d''ouvrage, c''est la commune : elle exprime le besoin, elle paie, elle réceptionne. Le maître d''œuvre, c''est le bureau d''études qui conçoit et l''entreprise de BTP qui construit. Le chef de projet coordonne. Le comité de pilotage, présidé par exemple par le maire ou son adjoint, valide les grandes étapes.
+Attention aux pièges. Premier piège : oublier les promotions, qui font sortir des personnes de l''emploi même si elles restent dans l''entreprise. Deuxième piège : oublier que les recrutements de remplacement ne sont pas comptés dans la projection, puisqu''on projette sans action nouvelle. Troisième piège : s''arrêter au quantitatif.
 
-Piège classique à l''examen : confondre maître d''ouvrage et maître d''œuvre. Moyen mnémotechnique : l''ouvrage, c''est ce qu''on veut avoir ; l''œuvre, c''est le travail pour le faire. Celui qui veut l''ouvrage est le maître d''ouvrage ; celui qui fait l''œuvre est le maître d''œuvre.
+Passons au qualitatif. La nouvelle technologie de stockage exige 30 techniciens qualifiés. Dix la maîtrisent, dont deux partent à la retraite : il en reste huit. Il faut donc qualifier au moins 22 personnes, en comptant les recrues. Le plan d''action combine : recruter 16 techniciens, reconvertir 10 électriciens internes, organiser le tutorat des futurs retraités, former au stockage. Vérifiez la cohérence : 24 + 16 + 10 = 50, le besoin est couvert.
 
-## 40:00 – 50:00 · Analyse des parties prenantes
+## 42:00 – 47:00 · Quiz de mi-parcours
 
-Les parties prenantes sont toutes les personnes ou organisations concernées. Pour le marché : commerçants, clients, riverains, transporteurs, services d''hygiène, sapeurs-pompiers, bailleur éventuel. Je dessine une matrice : en abscisse l''intérêt, en ordonnée le pouvoir. En haut à droite, pouvoir fort et intérêt fort : on gère de près, par exemple le bailleur. En bas à droite, pouvoir faible et intérêt fort : on informe, par exemple les commerçants… mais attention, des commerçants organisés en association peuvent bloquer le projet ; leur pouvoir n''est donc pas si faible. L''analyse doit être honnête et mise à jour.
+- Question 1 : que signifie « projeter sans action nouvelle » ?
+- Question 2 : quelle forme de pyramide annonce des départs massifs à la retraite ?
+- Question 3 : 20 salariés, 4 retraites, 3 départs volontaires, 1 promotion à trois ans ; ressources projetées ?
+- Question 4 : citez deux types de plans d''action.
 
-## 50:00 – 58:00 · Pause et quiz interactif
+Réponses : 1) estimer l''effectif futur en ne tenant compte que des sorties prévisibles, sans recrutement ni formation ; 2) le champignon ; 3) 20 − 4 − 3 − 1 = 12 ; 4) recrutement et formation, ou mobilité interne, reconversion, tutorat.
 
-Faisons une pause active. Prenez une feuille et répondez en trois minutes.
+## 47:00 – 1:00:00 · Étude de cas : la banque qui se numérise
 
-Question 1 : la paie mensuelle d''une entreprise est-elle un projet ? Question 2 : qui est le maître d''ouvrage dans la construction d''un forage financé et commandé par une communauté rurale ? Question 3 : un jalon a-t-il une durée ? Question 4 : citez les trois sommets du triangle des contraintes.
+Une banque fictive de Dakar ferme 10 agences sur 40 en trois ans. 60 guichetiers sont concernés ; le service clientèle à distance a besoin de 35 conseillers. Déroulons la démarche avec vous. Existant : âge, compétences, souhaits de mobilité des 60 guichetiers. Projection : supposons 8 départs à la retraite et 5 départs volontaires sur trois ans ; il reste 47 guichetiers concernés. Besoins : 35 conseillers à distance, et quelques postes dans les agences maintenues, disons 7. Écart : 47 − 42 = 5 personnes en sureffectif. Plans d''action : reconversion des volontaires vers la relation client à distance par une formation qualifiante, mobilité vers les agences maintenues, gestion des fins de carrière, et pour le solde, des mesures d''accompagnement négociées, dans le respect des procédures légales et en concertation avec les représentants du personnel.
 
-Corrigeons. 1 : non, c''est une opération répétitive. 2 : la communauté rurale. 3 : non, un jalon a une durée nulle. 4 : coût, délai, qualité ou périmètre. Si vous avez quatre bonnes réponses, bravo ; sinon, notez la notion à revoir.
+Ce cas montre la dimension sociale de la GPEC : bien menée, elle transforme un plan de suppressions d''emplois en plan de reconversion.
 
-## 58:00 – 1:10:00 · Le cadrage et la note de cadrage
+Un mot sur la mise en œuvre. La GPEC ne se décrète pas depuis le bureau du DRH. Elle suppose d''impliquer la direction générale, qui fournit les hypothèses stratégiques, les managers, qui connaissent les compétences réelles de leurs équipes, et les représentants du personnel, qui doivent être informés et, selon les règles applicables, consultés. Elle suppose aussi des outils : référentiel des emplois, entretiens professionnels, matrice de compétences. Dans une copie, mentionner ces conditions de réussite montre que vous ne réduisez pas la GPEC à un calcul. Enfin, la GPEC est un exercice révisé chaque année : les hypothèses changent, les projections aussi.
 
-Le cadrage répond à six questions : pourquoi, quoi, qui, quand, combien, comment. Appliquons au marché. Pourquoi : améliorer l''hygiène et la sécurité des commerçants, augmenter les recettes communales. Quoi : un marché de 200 cantines avec toilettes, point d''eau et éclairage ; hors périmètre : la voirie autour. Qui : commune, bureau d''études, entreprise, association des commerçants. Quand : études en six mois, travaux en douze mois. Combien : un budget estimatif par poste avec une provision pour imprévus. Comment : démarche, principaux risques et parades.
+## 1:00:00 – 1:15:00 · Le tableau de bord social
 
-L''objectif doit être SMART. Je vous propose de corriger ensemble cet objectif : « Construire un beau marché ». Ce n''est ni mesurable ni daté. Version SMART : « Livrer un marché couvert de 200 cantines conformes au cahier des charges, au plus tard le 31 décembre, dans la limite du budget voté. »
+Je projette une maquette. Une ligne par indicateur ; colonnes : valeur du mois, objectif, écart, tendance, alerte en vert, orange ou rouge. Règle d''or : peu d''indicateurs, six à dix, choisis en fonction des priorités.
 
-Exercice commenté : la coopérative fictive Ndiambour Lait prévoit 4 500 000 FCFA d''équipements, 2 800 000 FCFA d''aménagement et 700 000 FCFA de formation. Sous-total : 8 000 000 FCFA. Avec 10 % d''imprévus : 800 000 FCFA, soit un budget de 8 800 000 FCFA. Les erreurs typiques : oublier la provision, ou l''appliquer à un seul poste.
+Les formules. Absentéisme : heures d''absence sur heures théoriques. Rotation : moyenne des départs et des arrivées sur l''effectif moyen. Taux de départ. Taux de féminisation. Taux de fréquence des accidents : accidents avec arrêt × 1 000 000 / heures travaillées. Taux de gravité : journées perdues × 1 000 / heures travaillées.
 
-## 1:10:00 – 1:20:00 · Le cahier des charges
+Exercice. Mars : 250 salariés × 170 heures = 42 500 heures théoriques, 2 125 heures d''absence. Taux : 5 %. Objectif : 3,5 %. Alerte rouge. Année précédente : 6 accidents, 90 journées perdues, 420 000 heures. Taux de fréquence : environ 14,29. Taux de gravité : environ 0,21.
 
-Le cahier des charges fonctionnel exprime ce que le produit doit faire, pas comment le faire. Pour le marché, une fonction : « permettre aux commerçants de stocker leurs marchandises en sécurité la nuit ». Critère : fermeture des cantines. Niveau : porte métallique avec cadenas pour chaque cantine. On ajoute les contraintes, comme le budget, les délais, les normes d''accessibilité, et les modalités de réception.
+Deuxième exercice : effectif moyen 320, 48 départs, 40 arrivées. Rotation : 44 / 320, soit 13,75 % ; taux de départ : 15 %. Interprétation : il y a plus de départs que d''arrivées, l''effectif diminue ; il faut savoir si c''est voulu.
 
-Un bon cahier des charges évite le célèbre problème du « ce n''est pas ce que nous voulions » à la livraison. Il sert aussi de base à l''appel d''offres.
+## 1:15:00 – 1:23:00 · Interpréter et agir
 
-Correction commentée d''un exercice de TD. Énoncé : pour un logiciel de gestion des stocks d''une pharmacie de Kaolack, formulez deux fonctions avec critère et niveau. Une copie a écrit : « Le logiciel doit être rapide et utiliser une base de données moderne. » Deux erreurs : « rapide » n''a ni critère ni niveau, et « base de données moderne » impose une solution technique au lieu d''exprimer un besoin. Correction proposée. Fonction 1 : alerter le pharmacien en cas de rupture ; critère : délai d''alerte ; niveau : dès que le stock passe sous le seuil défini pour chaque produit. Fonction 2 : suivre les dates de péremption ; critère : anticipation ; niveau : liste des produits périmant dans les 60 jours, éditable chaque semaine. Voyez la différence : on dit ce que l''outil doit permettre, et comment on vérifiera à la réception que c''est bien le cas.
+Un indicateur sans interprétation ne vaut rien. Devant un absentéisme de 5 %, la démarche est : ventiler par service, par motif, par tranche d''âge ; comparer avec les mois précédents ; formuler des hypothèses, par exemple une surcharge de travail dans un service ou un management difficile ; vérifier par des entretiens ; agir ; suivre l''effet. Dans votre copie, écrivez toujours une phrase d''interprétation après chaque calcul. C''est ce qui distingue une copie de L3.
 
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+## 1:23:00 – 1:27:00 · Synthèse
 
-Résumons. Un projet est temporaire, unique et contraint. Il suit un cycle de vie en cinq phases avec des points de décision. Le maître d''ouvrage veut l''ouvrage, le maître d''œuvre le réalise. Les parties prenantes s''analysent selon le pouvoir et l''intérêt. Le cadrage répond à six questions et fixe un objectif SMART. Le cahier des charges exprime le besoin en fonctions.
+La GPEC part de la stratégie, projette les ressources sans action nouvelle, mesure les écarts quantitatifs et qualitatifs, et y répond par une combinaison d''actions. Le tableau de bord rend ce pilotage visible chaque mois. Les deux outils se nourrissent : le tableau de bord signale les dérives, la GPEC les anticipe.
 
-Évaluation finale, cinq questions.
+## 1:27:00 – 1:30:00 · Évaluation finale
 
-1. Donnez la définition d''un projet. Réponse : un effort temporaire et unique pour atteindre un objectif dans des contraintes de coût, de délai et de qualité.
-2. Quelle phase se déroule en parallèle de l''exécution ? Réponse : le suivi et la maîtrise.
-3. Où classer, dans la matrice pouvoir/intérêt, un bailleur qui finance 80 % du projet ? Réponse : pouvoir fort, intérêt fort, à gérer de près.
-4. Que contient la rubrique « hors périmètre » d''une note de cadrage ? Réponse : ce que le projet ne réalisera pas, pour éviter les malentendus.
-5. Un budget de 6 000 000 FCFA avec 5 % d''imprévus donne quel total ? Réponse : 6 000 000 + 300 000 = 6 300 000 FCFA.
+- Question 1 : citez les cinq étapes de la GPEC.
+- Question 2 : 15 comptables, 3 retraites, 4 départs volontaires, 1 promotion ; besoin de 12. Écart ?
+- Question 3 : 4 accidents avec arrêt, 500 000 heures travaillées. Taux de fréquence ?
+- Question 4 : 60 journées perdues pour ces mêmes heures. Taux de gravité ?
+- Question 5 : quelle différence entre tableau de bord social et bilan social ?
 
-Merci pour votre attention. Pour la prochaine séance, rédigez la note de cadrage d''un projet de votre quartier.', 'video', 90, false, 60
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Fondamentaux du management de projet');
+Réponses : 1) existant, projection, besoins, écarts, plans d''action ; 2) ressources 7, écart −5 ; 3) 8 ; 4) 0,12 ; 5) le tableau de bord est un outil de pilotage fréquent et resserré, le bilan social un document annuel et plus exhaustif. Merci, et entraînez-vous avec le sujet type.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : GPEC et pilotage RH');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Relations sociales et dialogue social', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : Licence 1 gestion de projets. Objectifs : construire une WBS, un Gantt et un réseau PERT, calculer les dates, les marges et le chemin critique, utiliser les durées probabilistes. Matériel : tableau, diaporama, papier quadrillé, calculatrice, tableur facultatif. Prérequis : notions de projet, tâche, livrable et jalon.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour. Aujourd''hui, nous faisons la séance qui rapporte le plus de points à l''examen : la planification. Un exercice de PERT bien présenté, c''est souvent un tiers de la note. Notre fil rouge : l''entreprise fictive Teranga Events organise un festival culturel à Saint-Louis. Plan de la séance : WBS, Gantt, réseau, calcul des dates, marges, chemin critique, quiz, exercices et évaluation.
-
-## 05:00 – 15:00 · La WBS
-
-Avant de planifier, il faut savoir quoi planifier. La WBS découpe le projet en livrables puis en lots de travail. Je l''écris au tableau sous forme d''arbre. Niveau 0 : Festival. Niveau 1 : programmation artistique, site et logistique, communication, billetterie, bilan. Niveau 2 pour la logistique : scène, sonorisation, sécurité, restauration.
-
-Règle des 100 % : si j''additionne les lots de niveau 2 d''une branche, je dois retrouver toute la branche, pas plus. Si j''oublie la sécurité, ma WBS est incomplète et le jour J sera dangereux. Un lot de travail doit pouvoir être estimé et confié à un responsable : « organiser le festival » est trop large ; « louer la sonorisation » est un bon lot.
-
-## 15:00 – 25:00 · Le diagramme de Gantt
-
-Je trace un tableau : les tâches en lignes, les semaines en colonnes. Chaque tâche est une barre. Les jalons, comme « contrat avec les artistes signé », sont des losanges. Le Gantt est parfait pour communiquer avec le comité ou les partenaires, car tout le monde le comprend. Mais regardez : quand j''ai vingt tâches, je ne vois plus quelles tâches dépendent de quelles autres. C''est pourquoi on calcule d''abord avec le réseau PERT, puis on dessine le Gantt.
-
-Conseil pratique : sur le Gantt, coloriez en rouge les barres des tâches critiques, que nous allons apprendre à identifier, et laissez apparaître les marges sous forme de barre en pointillés après les tâches non critiques. Le Gantt devient alors un véritable outil de pilotage : chaque lundi, vous tracez une ligne verticale à la date du jour et vous voyez immédiatement quelles tâches sont en retard. Sur tableur, une simple mise en forme conditionnelle suffit pour produire ce graphique.
-
-Les liens : fin-début, le plus courant ; début-début, par exemple la communication commence en même temps que la billetterie ; fin-fin, par exemple la décoration doit finir quand la scène finit.
-
-## 25:00 – 42:00 · Calcul du réseau : passe avant et passe arrière
-
-Passons au calcul avec l''exemple du centre de formation de Thiès, que vous avez dans votre leçon. Tâches en semaines : A 4 ; B 6 après A ; C 8 après A ; D 5 après B ; E 12 après C et D ; F 6 après C ; G 3 après E et F ; H 5 après C ; I 2 après G et H.
-
-Passe avant, je remplis la colonne début au plus tôt. A commence à 0, finit à 4. B commence à 4, finit à 10. C commence à 4, finit à 12. D commence à 10, finit à 15. E attend C et D : je prends le maximum entre 12 et 15, donc 15, et E finit à 27. F : 12 à 18. H : 12 à 17. G attend E et F : maximum de 27 et 18, donc 27, fin à 30. I attend G et H : maximum de 30 et 17, donc 30, fin à 32. Le projet dure 32 semaines.
-
-Passe arrière, je pars de la fin avec le minimum. I doit finir à 32, donc commencer au plus tard à 30. G finit au plus tard à 30, commence à 27. H finit au plus tard à 30, commence à 25. E finit à 27, commence à 15. F finit à 27, commence à 21. D finit à 15, commence à 10. C a trois successeurs, E, F et H, qui commencent au plus tard à 15, 21 et 25 : je prends le minimum, 15 ; C commence au plus tard à 7. B finit à 10, commence à 4. A a deux successeurs, B et C, qui commencent au plus tard à 4 et 7 : minimum 4, donc A commence à 0. Tout est cohérent : on retombe sur 0.
-
-## 42:00 – 50:00 · Marges et chemin critique
-
-La marge totale est la différence entre début au plus tard et début au plus tôt. A, B, D, E, G et I ont une marge nulle : c''est le chemin critique, 4 + 6 + 5 + 12 + 3 + 2 = 32. C a une marge totale de 3, F de 9, H de 13.
-
-La marge libre se calcule avec les successeurs : plus petit début au plus tôt des successeurs moins fin au plus tôt de la tâche. Pour C : successeurs E, F, H avec débuts au plus tôt 15, 12 et 12 ; minimum 12 ; 12 − 12 = 0. C a donc une marge totale de 3 mais une marge libre nulle. Si C glisse d''une semaine, la fin du projet ne bouge pas, mais F et H sont décalés. Pour F : 27 − 18 = 9. Pour H : 30 − 17 = 13.
-
-## 50:00 – 57:00 · Pause et quiz interactif
-
-Trois questions, deux minutes. Un : dans la passe avant, maximum ou minimum ? Deux : peut-on avoir une marge libre plus grande que la marge totale ? Trois : si une tâche critique prend deux semaines de retard, combien de retard pour le projet ?
-
-Réponses : un, le maximum ; deux, non, la marge libre est toujours inférieure ou égale à la marge totale ; trois, deux semaines, si rien n''est fait pour rattraper.
-
-## 57:00 – 1:07:00 · Durées probabilistes
-
-Dans un pays où la saison des pluies peut bloquer un chantier, une durée unique est souvent illusoire. Le PERT probabiliste demande trois estimations. Exemple : o = 2, m = 5, p = 14 semaines. La moyenne pondérée vaut (2 + 4 × 5 + 14) / 6 = 36 / 6 = 6 semaines, et l''écart-type (14 − 2) / 6 = 2 semaines. Remarquez que la moyenne, 6, est supérieure à la valeur la plus probable, 5, parce que le pessimiste tire vers le haut. Dans la vie réelle, les retards sont plus fréquents que les avances.
-
-## 1:07:00 – 1:20:00 · Correction commentée d''exercice
-
-Prenons l''exercice 4 de votre leçon : A 3 ; B 5 après A ; C 2 après A ; D 4 après C ; E 6 après B et D ; F 3 après B. Faites-le seuls cinq minutes, puis corrigeons.
-
-Passe avant : A 0 à 3 ; B 3 à 8 ; C 3 à 5 ; D 5 à 9 ; E maximum de 8 et 9, soit 9 à 15 ; F 8 à 11. Durée 15 jours. Passe arrière : E 9 à 15 ; F 12 à 15 ; D 5 à 9 ; B : successeurs E et F débutant au plus tard à 9 et 12, minimum 9, donc B de 4 à 9 ; C de 3 à 5 ; A : minimum de 4 et 3, soit 3, donc A de 0 à 3. Chemin critique : A, C, D, E. B a une marge totale de 1 jour et une marge libre de 0. F a 4 et 4.
-
-L''erreur que je vois le plus souvent dans les copies : prendre le maximum dans la passe arrière. Si vous trouvez un début au plus tard négatif pour la première tâche, c''est le signal d''une erreur.
-
-## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
-
-Résumé : WBS pour découper, réseau pour calculer, Gantt pour communiquer. Passe avant avec le maximum, passe arrière avec le minimum. Marge totale nulle signifie tâche critique.
-
-Évaluation finale :
-
-1. Que dit la règle des 100 % ? Réponse : les éléments enfants représentent exactement tout le travail du parent.
-2. Une tâche a un début au plus tôt de 6 et un début au plus tard de 9. Quelle est sa marge totale ? Réponse : 3.
-3. Tâche avec o = 4, m = 6, p = 14. Durée moyenne ? Réponse : (4 + 24 + 14) / 6 = 7.
-4. Pourquoi combiner Gantt et PERT ? Réponse : le PERT calcule les dépendances et le chemin critique, le Gantt communique visuellement le planning.
-5. Une tâche de marge totale 5 prend 7 jours de retard. Effet sur le projet ? Réponse : 2 jours de retard, toutes choses égales par ailleurs.
-
-Bon travail, et faites un réseau par jour jusqu''à l''examen.', 'video', 90, false, 70
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Communication et travail en équipe projet', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : Licence 1 gestion de projets. Objectifs : expliquer le rôle de la communication dans le projet, bâtir un plan de communication, conduire une réunion et rédiger un compte rendu, construire une matrice RACI, comprendre la dynamique d''équipe et gérer un conflit. Matériel : tableau, diaporama, fiches de jeu de rôle. Prérequis : notions d''acteurs et de parties prenantes.
+- Durée : 1h30.
+- Public : étudiants de Licence 3 en ressources humaines, droit social et management.
+- Objectifs : distinguer information, consultation et négociation ; identifier les acteurs du dialogue social ; préparer une négociation et chiffrer des scénarios salariaux ; analyser un conflit collectif et ses modes de règlement ; rédiger une note de recommandation.
+- Matériel : diaporama (carte des acteurs à trois niveaux, échelle d''intensité du dialogue, grille de préparation de négociation, tableau des scénarios), tableau blanc, calculatrice.
+- Prérequis : leçon « Relations sociales et dialogue social : l''essentiel pour l''examen » ; bases du droit du travail de L1.
+- Avertissement : le Code du travail sénégalais est en cours de réforme (projet de loi n°15/2026). Les règles précises se vérifient dans les textes en vigueur ; le taux de charges utilisé est fictif.
 
 ## Déroulé minuté
 
 ## 00:00 – 05:00 · Ouverture
 
-Bonjour à tous. On pense souvent que la gestion de projets, ce sont des plannings et des budgets. Mais demandez à un chef de projet expérimenté de Dakar ou d''Abidjan comment il passe ses journées : il vous dira qu''il parle, écoute, écrit, négocie. Aujourd''hui, notre fil rouge est un projet fictif d''électrification solaire de cinq villages de la région de Tambacounda, porté par une ONG avec une équipe de huit personnes.
+Bonjour. On présente souvent les relations sociales comme un champ de bataille entre direction et syndicats. C''est une vision pauvre. Les entreprises qui réussissent sont souvent celles où les désaccords se traitent tôt, autour d''une table, avec des chiffres partagés. Aujourd''hui, nous allons apprendre à préparer ce dialogue comme un professionnel des RH : connaître les acteurs, chiffrer, négocier, prévenir les conflits.
 
-## 05:00 – 15:00 · Les bases de la communication
+## 05:00 – 15:00 · Trois intensités du dialogue
 
-Je dessine le schéma : émetteur, message, canal, récepteur, retour. Entre l''émetteur et le récepteur, je dessine des éclairs : ce sont les bruits. Dans notre projet, quels bruits ? La langue, car beaucoup de villageois parlent pulaar ou mandinka ; le jargon technique, « onduleur », « kilowatt-crête » ; le réseau téléphonique faible ; la distance avec le siège à Dakar. Le retour est essentiel : si vous ne vérifiez pas que le message a été compris, vous ne savez pas s''il a été reçu.
+Je projette une échelle à trois marches. Première marche, l''information : l''employeur communique des données, par exemple la situation économique ou un projet de réorganisation. Deuxième marche, la consultation : l''employeur demande l''avis des représentants avant de décider, mais décide seul. Troisième marche, la négociation : les deux parties cherchent un accord qui les engage.
 
-Calcul utile : le nombre de canaux dans une équipe de n personnes vaut n(n − 1)/2. Notre équipe de 8 personnes : 8 × 7 / 2 = 28 canaux. Si l''on recrute 4 personnes de plus, 12 × 11 / 2 = 66. Plus de deux fois plus de canaux pour 50 % de personnes en plus. D''où l''intérêt de structurer la communication.
+Question au public : la direction présente aux délégués le planning des congés et recueille leurs remarques avant de l''arrêter. Quelle marche ? La consultation. Et si elle signe avec les syndicats un accord sur les primes ? La négociation.
 
-## 15:00 – 30:00 · Le plan de communication
+Au sens de l''Organisation internationale du travail, le dialogue social englobe toutes ces formes d''échange entre gouvernements, employeurs et travailleurs.
 
-Le plan de communication est un tableau avec six colonnes : public, contenu, objectif, canal, fréquence, responsable. Construisons-le ensemble pour le projet solaire.
+## 15:00 – 27:00 · La carte des acteurs
 
-Le comité de pilotage : avancement, budget, risques ; pour décider ; réunion plus rapport écrit ; mensuel ; chef de projet. L''équipe technique : planning de la semaine et sécurité ; pour coordonner ; réunion de chantier ; hebdomadaire ; chef de chantier. Les populations : dates des travaux, formation à l''usage, tarifs ; pour obtenir l''adhésion ; assemblée villageoise, radio communautaire, en langue locale ; à chaque étape ; animateur social. Le bailleur : rapport d''activité et financier ; pour rendre compte ; rapport écrit ; trimestriel ; chef de projet.
+Trois niveaux. Dans l''entreprise : la direction et la DRH ; les délégués du personnel, élus, qui portent les réclamations et sont informés et consultés ; les syndicats ; le comité d''hygiène et de sécurité lorsqu''il existe. Au niveau de la branche et au niveau national : syndicats et centrales syndicales, organisations d''employeurs, qui négocient les conventions collectives, interprofessionnelle et de branche. L''État : il fixe les règles, contrôle et concilie par l''inspection du travail, anime le dialogue tripartite. Le Sénégal dispose notamment d''un Haut Conseil du dialogue social et d''une Charte nationale sur le dialogue social. Au niveau régional, l''UEMOA et la CEDEAO encouragent l''harmonisation des politiques sociales.
 
-Notez l''importance des relais traditionnels : chef de village, notables, imams, associations de femmes. Une assemblée sous l''arbre à palabres avec le chef de village peut être plus efficace qu''une affiche.
+Conseil d''examen : dans une copie, ne vous contentez pas de lister les acteurs ; dites qui fait quoi dans la situation du cas.
 
-Deuxième point : adaptez le message au public. Le comité de pilotage veut des chiffres et des décisions à prendre : trois pages maximum, avec un résumé en tête. Les villageois veulent savoir ce qui va changer pour eux : quand l''électricité arrivera, combien ils paieront, qui contacter en cas de panne. Le bailleur veut des preuves : indicateurs, photos, justificatifs. Un même fait, « le chantier a deux semaines de retard », se dira différemment à chacun : au comité, avec la cause et le plan de rattrapage ; aux villageois, avec la nouvelle date et des excuses ; au bailleur, avec l''impact sur le calendrier des décaissements.
+## 27:00 – 40:00 · Préparer et conduire une négociation
 
-## 30:00 – 42:00 · Réunions et comptes rendus
+Grille de préparation en quatre temps. Diagnostic : que demandent les représentants ? Quelle est la situation économique ? Que pratiquent les concurrents ? Combien coûte chaque option ? Mandat : quel est l''objectif de la direction, sa marge de manœuvre, son point de rupture ? Conduite : calendrier, ordre du jour, propositions et contre-propositions, comptes rendus validés. Conclusion : accord écrit, formalités de dépôt et de publicité selon les règles applicables, communication aux salariés, comité de suivi.
 
-Une réunion coûte cher. Huit personnes pendant deux heures, c''est seize heures de travail. Elle doit donc être préparée : objectif, ordre du jour envoyé à l''avance, animateur, secrétaire, heure de fin respectée.
+Deux logiques. Distributive : on partage un gâteau de taille fixe, chacun cherche la plus grosse part. Intégrative : on agrandit le gâteau en ajoutant des sujets, par exemple une hausse de salaire contre un engagement sur la formation, la polyvalence ou la réduction des accidents. La logique intégrative produit des accords plus durables.
 
-Le compte rendu fixe les décisions. Rubriques : date, lieu, présents et absents, ordre du jour, points discutés, décisions, actions avec responsable et échéance, prochaine réunion. Je vous montre à l''écran un mauvais compte rendu : « On a parlé des panneaux. Il faut avancer. » Qui fait quoi ? Pour quand ? Personne ne sait. Version correcte : « Décision : commande de 40 panneaux auprès du fournisseur retenu. Action : Moussa envoie le bon de commande avant vendredi 12. »
+## 40:00 – 45:00 · Quiz de mi-parcours
 
-Quelques règles d''animation que je vous conseille. Commencez à l''heure, même si tout le monde n''est pas là : sinon vous récompensez les retardataires. Rappelez l''objectif en une phrase. Donnez la parole à chacun, y compris aux plus jeunes ou aux plus timides, qui hésitent parfois à contredire un aîné. Notez les sujets hors ordre du jour dans un « parking » pour une prochaine réunion. Terminez en relisant à voix haute les décisions et les actions : c''est le moment où l''on découvre les malentendus. Pour les réunions à distance, avec des collègues sur le terrain, vérifiez la connexion avant et envoyez les documents à l''avance, car beaucoup suivront depuis un téléphone.
+- Question 1 : quelle différence entre consultation et négociation ?
+- Question 2 : qui négocie une convention collective de branche ?
+- Question 3 : qu''est-ce que le point de rupture dans un mandat ?
+- Question 4 : citez un exemple de négociation intégrative.
 
-## 42:00 – 50:00 · Pause et quiz interactif
+Réponses : 1) la consultation recueille un avis, la négociation vise un accord qui engage ; 2) les syndicats de travailleurs et les organisations d''employeurs de la branche ; 3) la limite au-delà de laquelle la direction préfère ne pas conclure ; 4) une hausse de salaire échangée contre un plan de formation et un engagement de polyvalence.
 
-Cinq minutes de quiz à main levée. Question 1 : combien de canaux pour 6 personnes ? Question 2 : un compte rendu doit-il mentionner les absents ? Question 3 : le canal le plus adapté pour informer des villageois non alphabétisés ? Question 4 : quelle différence entre communication formelle et informelle ?
+## 45:00 – 1:02:00 · Chiffrer les scénarios : exercices corrigés
 
-Réponses : 1, 6 × 5 / 2 = 15 ; 2, oui ; 3, l''oral, assemblée villageoise ou radio communautaire en langue locale ; 4, la formelle est organisée et laisse une trace écrite, l''informelle est spontanée.
+Thiès Ciment Préfa, entreprise fictive : 300 salariés, masse salariale annuelle de 1 080 000 000 FCFA, salaire moyen mensuel de 300 000 FCFA, charges patronales fictives de 22 %.
 
-## 50:00 – 1:02:00 · La matrice RACI
+Scénario A, 4 % au 1er janvier : 43 200 000 FCFA brut, 52 704 000 FCFA chargé. Scénario B, 12 000 FCFA uniformes par mois : 12 000 × 12 × 300 = 43 200 000 FCFA, même coût. Mais effet différent : +6 % pour un salaire de 200 000 FCFA, +2 % pour un salaire de 600 000 FCFA. Scénario C, 4 % au 1er juillet : 21 600 000 FCFA brut sur l''année, mais coût d''année pleine l''année suivante.
 
-Prenons trois tâches : choisir le fournisseur de panneaux ; installer les kits ; former les comités de gestion villageois. Quatre acteurs : chef de projet, responsable achats, ingénieur électricien, animateur social.
+À vous : masse salariale de 720 000 000 FCFA, 200 salariés. Hausse de 5 % et hausse uniforme de 15 000 FCFA. Correction : 36 000 000 FCFA dans les deux cas ; coût chargé 43 920 000 FCFA. La hausse uniforme donne 10 % à un salaire de 150 000 FCFA et environ 3,3 % à un salaire de 450 000 FCFA.
 
-Choisir le fournisseur : R responsable achats, A chef de projet, C ingénieur, I animateur. Installer les kits : R ingénieur, A chef de projet, C responsable achats, I animateur. Former les comités : R animateur, A chef de projet, C ingénieur, I responsable achats.
+Pourquoi ces calculs sont-ils décisifs ? Parce qu''ils permettent de proposer plusieurs options de coût égal mais d''effets différents. Une hausse uniforme peut satisfaire les bas salaires, une hausse en pourcentage préserve la hiérarchie des salaires. Le négociateur qui arrive avec ce tableau garde la main.
 
-Contrôles : chaque tâche a un R et un seul A. Lisez aussi la matrice en colonne : si une personne a des R partout, elle est surchargée. Ici, le chef de projet est A partout : c''est normal dans une petite équipe, mais il pourrait déléguer l''approbation de la formation à un responsable social expérimenté.
+## 1:02:00 – 1:15:00 · Les conflits collectifs
 
-## 1:02:00 – 1:15:00 · Dynamique d''équipe et conflits
+La grève est la cessation concertée et collective du travail pour appuyer des revendications professionnelles. Garantie par la Constitution, elle est encadrée par la loi : conditions de déclenchement, notamment un préavis, service minimum dans certains secteurs. Vérifiez toujours les règles dans les textes en vigueur, surtout dans le contexte de la réforme. La grève licite suspend le contrat : le salaire n''est en principe pas dû pour les heures non travaillées. Les comportements illicites, violences ou entrave à la liberté du travail, peuvent être sanctionnés.
 
-Le modèle de Tuckman : formation, tension, normalisation, performance, dissolution. Au début, chacun est poli ; puis vient la tension, les désaccords sur les rôles ; ensuite on fixe des règles ; puis l''équipe devient performante ; enfin elle se dissout à la clôture. Le chef de projet est plutôt directif au début et devient plus délégatif.
+Trois modes de règlement : la conciliation, où les parties sont aidées à trouver elles-mêmes un accord, souvent devant l''inspection du travail ; la médiation, où un tiers propose une solution ; l''arbitrage, où un tiers tranche.
 
-Jeu de rôle commenté. Situation : l''ingénieur veut installer d''abord dans le plus gros village ; l''animateur social veut commencer par le village le plus enclavé, qui a été promis en premier. Cinq attitudes possibles. L''évitement : on reporte, le chantier prend du retard. L''accommodation : l''un cède, mais garde de la rancœur. La compétition : le chef de projet impose. Le compromis : on coupe l''équipe en deux. La collaboration : on cherche ensemble ; par exemple, on commence par le village enclavé pour tenir la promesse, mais avec une équipe renforcée pour ne pas perdre de temps, et l''on explique la décision au grand village. Discutez en binôme : quelle solution choisiriez-vous et pourquoi ? Retenez que la collaboration demande du temps et de la confiance ; elle est réservée aux enjeux importants. Pour un désaccord mineur, sur la couleur des tee-shirts du projet par exemple, le compromis ou même l''accommodation suffisent.
+Indicateurs du climat social : réclamations, journées perdues pour grève, absentéisme, départs, enquêtes internes. Exemple : 120 grévistes pendant 2 jours, soit 240 journées perdues, 0,8 journée par salarié pour un effectif de 300.
 
-## 1:15:00 – 1:23:00 · Correction commentée d''un exercice
+## 1:15:00 – 1:24:00 · Corrigé commenté : la note de recommandation
 
-Exercice : la mutuelle de santé fictive Kër Wér Gi lance une campagne d''adhésion à Rufisque. Proposez un plan de communication pour quatre publics. Correction : conseil d''administration, réunion mensuelle avec les chiffres d''adhésion ; relais de quartier, formation au lancement puis réunion tous les quinze jours ; populations, radio communautaire, causeries et porte-à-porte pendant toute la campagne ; structures de santé partenaires, courrier et rencontre pour expliquer le circuit de prise en charge. Les copies qui obtiennent tous les points précisent toujours le responsable et la fréquence.
+Cas : les délégués de Thiès Ciment Préfa menacent d''une grève pour des heures supplémentaires impayées et des équipements de protection usés. La direction veut attendre. Rédigeons la note ensemble. En-tête : de la DRH à la direction générale, date, objet. Constat : revendications fondées sur des obligations légales, risque de grève et de contentieux. Analyse : attendre aggrave le risque et dégrade la confiance. Recommandations hiérarchisées : recevoir les délégués sans délai ; vérifier et régulariser les heures supplémentaires dues ; remplacer les équipements de protection ; instaurer une réunion mensuelle et un suivi des réclamations ; communiquer aux salariés. Conclusion : le coût de ces mesures est faible comparé à celui d''un conflit.
 
-## 1:23:00 – 1:30:00 · Synthèse et évaluation finale
+Remarquez le style : phrases courtes, neutres, chiffrées quand c''est possible, et des recommandations qui commencent par un verbe d''action.
 
-À retenir : communiquer, c''est vérifier que le message est compris ; le plan de communication organise qui informe qui, de quoi, comment et quand ; toute décision s''écrit ; RACI avec un seul A ; les conflits se gèrent, de préférence par la collaboration quand l''enjeu est important.
+Dernier conseil de forme : une note ne dépasse pas, en principe, deux pages. Le décideur doit pouvoir lire la conclusion en trente secondes. Commencez donc, si l''énoncé le permet, par un court résumé de deux lignes qui annonce la recommandation principale, puis développez. Évitez les jugements sur les personnes, du type « les délégués sont de mauvaise foi » : ils affaiblissent la crédibilité de la note et peuvent envenimer le conflit si elle circule. Restez sur les faits, les règles et les coûts.
 
-Évaluation finale :
+## 1:24:00 – 1:30:00 · Synthèse et évaluation finale
 
-1. Combien de canaux dans une équipe de 10 personnes ? Réponse : 10 × 9 / 2 = 45.
-2. Citez les six colonnes d''un plan de communication. Réponse : public, contenu, objectif, canal, fréquence, responsable.
-3. Que signifie le A de RACI ? Réponse : celui qui approuve et rend des comptes ; un seul par tâche.
-4. Quelle est la deuxième étape du modèle de Tuckman ? Réponse : la tension.
-5. Quand le compromis est-il préférable à la collaboration ? Réponse : quand le temps presse et que l''enjeu est modéré.
+Retenez : trois intensités, trois niveaux d''acteurs, une préparation en quatre temps, des scénarios chiffrés, la prévention avant le conflit.
 
-Merci et à bientôt.', 'video', 90, false, 80
-from public.courses c where c.slug = 'lic-projet-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Communication et travail en équipe projet');
+- Question 1 : masse salariale de 900 000 000 FCFA, hausse de 3 %. Coût brut ?
+- Question 2 : avec 22 % de charges fictives, coût chargé ?
+- Question 3 : 250 salariés, hausse uniforme de 10 000 FCFA par mois. Coût brut annuel ?
+- Question 4 : quel mode de règlement aboutit à une décision qui s''impose aux parties ?
+- Question 5 : citez deux indicateurs de climat social.
+
+Réponses : 1) 27 000 000 FCFA ; 2) 32 940 000 FCFA ; 3) 10 000 × 12 × 250 = 30 000 000 FCFA ; 4) l''arbitrage, selon les règles applicables ; 5) l''absentéisme et les journées perdues pour grève. Merci à tous.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Relations sociales et dialogue social');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Rémunération globale et SIRH', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 en ressources humaines, gestion et systèmes d''information.
+- Objectifs : décrire la rémunération globale et la chiffrer, appliquer les principes d''équité interne et externe, calculer le compa-ratio, les effets niveau, masse et report, présenter un SIRH, conduire son projet et évaluer sa rentabilité dans le respect de la protection des données.
+- Matériel : diaporama (cercles de la rémunération globale, fourchette salariale, chronologie des effets, carte des modules du SIRH, étapes du projet), tableau blanc, calculatrice.
+- Prérequis : leçon « Rémunération globale et SIRH : l''essentiel pour l''examen » ; paie de L2.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour. Demandez à un salarié combien il gagne : il vous donnera son net mensuel. Demandez à son employeur combien il lui coûte : vous obtiendrez un chiffre bien plus élevé. Entre les deux, il y a la rémunération globale, les charges, les avantages. Aujourd''hui, nous allons apprendre à raisonner comme un responsable de la rémunération : chiffrer, comparer, anticiper. Puis nous verrons comment un SIRH aide à piloter tout cela. Entreprises fictives, montants fictifs.
+
+## 05:00 – 17:00 · Les cercles de la rémunération globale
+
+Je projette quatre cercles. Au centre, le fixe : salaire de base et compléments liés au poste ou à l''ancienneté. Ensuite, le variable individuel : primes sur objectifs, commissions. Puis le variable collectif : primes d''équipe, participation aux résultats selon les dispositifs de l''entreprise. Enfin, les périphériques : avantages en nature comme le logement ou le véhicule, avantages sociaux comme la couverture santé ou le transport, gratifications prévues par l''entreprise.
+
+Exercice : ingénieur de Baobab Telecom, fixe 350 000 FCFA par mois, prime sur objectifs 300 000 FCFA par an, gratification de fin d''année 350 000 FCFA, couverture santé 15 000 FCFA par mois, transport 10 000 FCFA par mois. Calculez. Correction : 4 200 000 + 300 000 + 350 000 + 180 000 + 120 000 = 5 150 000 FCFA ; part du fixe environ 81,6 %. Message : présenter ce total au salarié, par exemple dans un bilan individuel, renforce la perception de ce que l''entreprise lui consacre.
+
+## 17:00 – 30:00 · Les trois équités et le compa-ratio
+
+Équité interne : à poste de même valeur, salaire cohérent. Outils : classification conventionnelle, évaluation des postes, fourchettes par niveau. Équité externe : être compétitif face au marché, grâce aux enquêtes de rémunération. Équité individuelle : reconnaître la performance. Sans oublier le droit : salaire minimum, minima conventionnels, égalité de rémunération entre femmes et hommes pour un travail de valeur égale.
+
+Le compa-ratio, maintenant. Formule : salaire réel divisé par le milieu de la fourchette, fois 100. Fourchette de 400 000 à 600 000 FCFA, milieu 500 000. Salaire de 450 000 : 90 %. Salaire de 550 000 : 110 %. Comment l''utiliser ? Une politique classique accorde des augmentations plus fortes aux bons performeurs situés sous 100 %, et plus modérées à ceux qui sont déjà au-dessus. On rapproche ainsi progressivement chacun de sa juste place.
+
+Question au public : un salarié moyen performant a un compa-ratio de 120 %. Que faire ? Réponse : ne pas le baisser, ce serait illégal et démotivant, mais modérer ses augmentations futures, ou lui proposer une évolution vers un poste de niveau supérieur.
+
+## 30:00 – 44:00 · Effets niveau, masse et report
+
+Chronologie projetée. Base 100 en N−1, stable. Hausse de 4 % au 1er juillet N. Effet niveau : de décembre à décembre, 4 %. Effet masse : la masse de N vaut (6 × 100 + 6 × 104) / 12 = 102, soit 2 %. Effet report : l''année N+1 démarre au niveau 104 alors que la masse de N était à 102, donc 104 / 102 − 1, environ 1,96 %, d''augmentation acquise pour N+1 avant toute nouvelle mesure.
+
+À vous : 3 % au 1er avril. Correction : effet niveau 3 % ; masse (3 × 100 + 9 × 103) / 12 = 102,25, effet masse 2,25 % ; effet report 103 / 102,25 − 1, environ 0,73 %. Plus la hausse est précoce, plus l''effet masse est fort et l''effet report faible.
+
+Pourquoi c''est stratégique ? Un directeur financier qui retarde les hausses au 1er octobre semble économiser, mais il charge l''année suivante. En négociation, ces effets permettent de construire des propositions intelligentes : une hausse en deux temps, par exemple, étale le coût.
+
+## 44:00 – 49:00 · Quiz de mi-parcours
+
+- Question 1 : citez les quatre cercles de la rémunération globale.
+- Question 2 : fourchette de 300 000 à 500 000, salaire de 440 000. Compa-ratio ?
+- Question 3 : hausse de 2 % au 1er octobre, salaires stables auparavant. Effet masse ?
+- Question 4 : qu''est-ce que l''équité externe ?
+
+Réponses : 1) fixe, variable individuel, variable collectif, périphériques ; 2) 110 % ; 3) (9 × 100 + 3 × 102) / 12 = 100,5, soit 0,5 % ; 4) la compétitivité des salaires par rapport au marché.
+
+## 49:00 – 1:02:00 · Le SIRH : modules et architecture
+
+Un SIRH, c''est l''ensemble des outils, des données et des procédures qui collectent, traitent, stockent et diffusent l''information RH. Je projette la carte des modules : administration du personnel ; paie et déclarations ; temps et absences ; gestion des talents, avec recrutement, formation, entretiens, compétences ; libre-service pour salariés et managers ; tableaux de bord. Au centre, une base de données unique : c''est le principal intérêt, une information saisie une fois et utilisée partout.
+
+Deux options techniques : un logiciel installé sur les serveurs de l''entreprise, ou un service en ligne par abonnement. Le second limite l''investissement initial mais dépend de la qualité de la connexion, point à vérifier sur tous les sites, notamment hors des grandes villes.
+
+## 1:02:00 – 1:15:00 · Conduire le projet et mesurer sa rentabilité
+
+Les étapes : cahier des charges ; choix de la solution et du prestataire ; paramétrage et reprise des données ; tests, notamment une paie en double pendant plusieurs mois ; formation ; déploiement ; amélioration continue. Les risques : données reprises de mauvaise qualité, résistance au changement, connexion insuffisante, dépassement du budget.
+
+Rentabilité, exercice corrigé. Baobab Telecom : implantation 9 000 000 FCFA, abonnement 3 000 000 FCFA par an. Gains : 60 heures par mois économisées à 6 000 FCFA, soit 4 320 000 FCFA par an ; erreurs de paie évitées 2 400 000 FCFA ; impression et archivage 780 000 FCFA. Total des gains : 7 500 000 FCFA. Gain net annuel : 4 500 000 FCFA. Délai de récupération : 2 ans.
+
+Exercice rapide : implantation 6 000 000, abonnement 2 000 000, gains 5 000 000. Délai : 6 000 000 / 3 000 000 = 2 ans. Prudence : les gains de temps ne sont réels que si le temps libéré est réaffecté à des tâches utiles.
+
+Protection des données : un SIRH contient des données personnelles, parfois sensibles. Au Sénégal, la loi de 2008 sur la protection des données à caractère personnel et la Commission de protection des données personnelles encadrent ces traitements ; vérifiez les formalités applicables. Principes : finalité définie, données limitées au nécessaire, sécurité, accès par profil, information des salariés, confidentialité imposée au prestataire.
+
+## 1:15:00 – 1:24:00 · Cas de synthèse commenté
+
+Une PME fictive de Saint-Louis, 80 salariés, paie sur tableur, congés sur papier, erreurs fréquentes. Recommandation : une solution proportionnée, paie et temps en service en ligne, plutôt qu''un SIRH complet ; cahier des charges simple ; comparaison de deux ou trois offres ; nettoyage des données ; paie en double deux mois ; formation ; information des salariés et formalités auprès de la Commission. Ensuite seulement, enrichir avec la gestion des talents. Montrez au correcteur que vous savez adapter l''ambition aux moyens.
+
+Ajoutez un volet conduite du changement : désigner un référent interne, présenter le projet aux salariés en expliquant ce qui change pour eux (bulletins dématérialisés, demandes de congés en ligne), prévoir une assistance pendant les premières semaines et recueillir les difficultés. Un SIRH techniquement parfait mais mal accepté par les utilisateurs échoue. Proposez enfin deux ou trois indicateurs de réussite : nombre d''erreurs de paie, délai de traitement d''une demande de congé, taux d''utilisation du libre-service.
+
+## 1:24:00 – 1:30:00 · Synthèse et évaluation finale
+
+- Question 1 : fixe 280 000 FCFA par mois, commissions 960 000 FCFA par an, santé 12 000 FCFA par mois. Rémunération globale annuelle ?
+- Question 2 : quelle est la part du variable ?
+- Question 3 : hausse de 4 % au 1er juillet ; effet report ?
+- Question 4 : citez trois modules d''un SIRH.
+- Question 5 : citez deux principes de protection des données.
+
+Réponses : 1) 3 360 000 + 960 000 + 144 000 = 4 464 000 FCFA ; 2) environ 21,5 % ; 3) environ 1,96 % ; 4) paie, temps et absences, gestion des talents ; 5) finalité déterminée et accès restreints. Merci et bonne préparation de vos examens.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-rh-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Rémunération globale et SIRH');

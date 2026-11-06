@@ -1,6 +1,708 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 9/9). À exécuter après seed.sql.
 
+-- Cours : Contrôle de gestion Licence 1 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-cg-l1', (select id from public.levels where name = 'Licence 1'), null, 'Contrôle de gestion', 'Contrôle de gestion Licence 1 : réussir ses examens', 'Préparation aux partiels et examens semestriels de première année de Licence en contrôle de gestion : introduction au contrôle de gestion et à l''organisation, comptabilité analytique en coûts complets, mathématiques et statistiques de gestion. Fiches de cours, cas d''entreprises fictives d''Afrique de l''Ouest, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : bases de la comptabilité générale (SYSCOHADA révisé) et aisance avec les pourcentages.', true, 331
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 1 en Contrôle de gestion', '## Objectifs de la leçon
+
+- Comprendre l''organisation de la première année de Licence en contrôle de gestion dans le système LMD.
+- Identifier les matières clés de l''année et les compétences attendues à l''examen.
+- Connaître les types d''épreuves et adopter une méthode de révision efficace.
+- Construire un plan de révision réaliste sur six semaines.
+
+## 1. La Licence 1 dans le système LMD
+
+Dans les universités et écoles de gestion du Sénégal et de l''espace UEMOA, la Licence suit le système LMD (Licence, Master, Doctorat). L''année est découpée en deux semestres. Chaque semestre regroupe des unités d''enseignement (UE) qui rassemblent plusieurs matières (éléments constitutifs). Chaque UE est affectée d''un nombre de crédits qui reflète la charge de travail de l''étudiant, cours magistraux, travaux dirigés et travail personnel compris.
+
+Les modalités précises (nombre de crédits par UE, poids du contrôle continu, règles de compensation entre matières, sessions de rattrapage) varient d''un établissement à l''autre. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité. Ne vous fiez pas aux rumeurs de couloir : une seule note éliminatoire mal anticipée peut coûter un semestre.
+
+## 2. Les matières clés de l''année
+
+En première année, la filière contrôle de gestion pose les fondations. Trois matières concentrent l''essentiel des exercices d''examen et sont traitées dans ce cours :
+
+- Introduction au contrôle de gestion et à l''organisation : missions du contrôleur, notions de performance (efficacité, efficience, économie), structures d''organisation, centres de responsabilité, cycle de pilotage.
+- Comptabilité analytique 1 : distinction entre charges directes et indirectes, incorporation des charges, tableau de répartition des centres d''analyse, unités d''œuvre, calcul des coûts complets (achat, production, revient) et du résultat analytique.
+- Mathématiques et statistiques de gestion : pourcentages et indices, intérêts simples et composés, actualisation, emprunts indivis, statistique descriptive et ajustement linéaire, utilisé pour séparer charges fixes et charges variables.
+
+Ces matières s''appuient sur d''autres enseignements de l''année : comptabilité générale (SYSCOHADA révisé), microéconomie, droit des affaires (OHADA), informatique de gestion (tableur). La comptabilité générale est indispensable : la comptabilité analytique part des charges enregistrées en classe 6.
+
+## 3. Les types d''épreuves
+
+- L''exercice chiffré : le plus fréquent. Exemple : compléter un tableau de répartition puis calculer un coût de revient. Les points se gagnent sur la démarche et la présentation autant que sur le résultat final.
+- Le cas pratique : une entreprise fictive, plusieurs annexes, une série de questions enchaînées. Une erreur au début se propage ; le correcteur applique en général la règle de la « cohérence » si vous montrez votre méthode.
+- Les questions de cours et le QCM : définitions précises (charge supplétive, unité d''œuvre, centre de profit), avec parfois justification demandée.
+- La dissertation ou la question de réflexion : par exemple « Le contrôle de gestion est-il un outil de surveillance ou d''aide à la décision ? ». Il faut une introduction, un plan en deux ou trois parties et des exemples.
+- Le projet ou dossier : en contrôle continu, construire un petit modèle de coûts sur tableur pour une entreprise réelle ou fictive.
+
+## 4. Méthode de révision
+
+La méthode la plus efficace combine trois gestes. D''abord, la fiche : une page par chapitre, avec les définitions, les formules et un schéma décrit en mots (par exemple : charges de la comptabilité générale → tri direct/indirect → centres d''analyse → unités d''œuvre → coûts). Ensuite, l''entraînement : refaire les exercices de TD sans regarder le corrigé, chronomètre en main. Enfin, l''auto-correction : comparer ligne par ligne et noter dans un carnet d''erreurs les fautes récurrentes (oubli des charges supplétives, mauvais choix de l''unité d''œuvre, confusion entre quantités produites et vendues).
+
+Pour les exercices chiffrés, adoptez une présentation systématique : tableau clair, unités indiquées (FCFA, heures, kg), résultats intermédiaires encadrés par une phrase. Vérifiez toujours une égalité de contrôle : total de la répartition primaire égal aux charges incorporées, stock initial plus entrées égal à sorties plus stock final, résultat analytique concordant avec le résultat de la comptabilité générale.
+
+## 5. Plan de révision sur 6 semaines
+
+- Semaine 1 : relecture des cours d''introduction au contrôle de gestion ; fiches de définitions ; 2 dissertations rédigées en plan détaillé.
+- Semaine 2 : comptabilité analytique, incorporation des charges et tableau de répartition ; 4 exercices de répartition, dont un avec prestations réciproques.
+- Semaine 3 : coûts d''achat, inventaire permanent (CUMP), coûts de production et de revient ; 2 cas complets avec concordance des résultats.
+- Semaine 4 : mathématiques financières (intérêts, actualisation, tableaux d''emprunt) ; statistiques (moyenne, écart-type, ajustement par les moindres carrés).
+- Semaine 5 : sujets d''annales ou sujets types en conditions réelles (3 heures, sans document) ; correction et carnet d''erreurs.
+- Semaine 6 : révision ciblée des points faibles, relecture des fiches, sommeil régulier. La veille de l''épreuve, pas de nouveau chapitre.
+
+Travailler en groupe de trois ou quatre étudiants est très rentable pour les cas pratiques : chacun corrige la copie d''un autre, ce qui oblige à expliquer la méthode.
+
+## 6. Le jour de l''épreuve
+
+Lisez tout le sujet pendant les dix premières minutes et repérez les questions indépendantes. Répartissez votre temps selon le barème. Commencez par les questions que vous maîtrisez. Soignez la présentation des tableaux. Si vous êtes bloqué, posez une hypothèse explicite (« à défaut, je retiens un coût d''unité d''œuvre de 400 FCFA ») et poursuivez : vous sauverez les points de la suite. Gardez dix minutes à la fin pour relire les calculs et les unités.
+
+## Points clés
+
+- Lire le règlement des études : crédits, compensation et rattrapage dépendent de votre établissement.
+- Trois matières clés : introduction au contrôle de gestion, comptabilité analytique 1, mathématiques et statistiques de gestion.
+- Une méthode : fiche, entraînement chronométré, carnet d''erreurs.
+- Toujours une égalité de contrôle dans les calculs.
+
+## Exercices
+
+- Exercice 1 : citez trois types d''épreuves et, pour chacun, une erreur fréquente à éviter.
+- Exercice 2 : construisez votre propre plan de révision sur 6 semaines en tenant compte de vos points faibles.
+- Exercice 3 : rédigez la fiche « schéma des coûts complets » en cinq étapes.
+
+## Corrigé
+
+- Exercice 1 : exercice chiffré, oublier les unités et les résultats intermédiaires ; cas pratique, ne pas exploiter toutes les annexes ; dissertation, réciter le cours sans problématique ni exemples.
+- Exercice 2 : réponse personnelle ; un bon plan affecte plus de temps aux matières faibles, prévoit au moins deux sujets complets en conditions réelles et une dernière semaine allégée.
+- Exercice 3 : 1) partir des charges de la comptabilité générale ; 2) retirer les charges non incorporables et ajouter les charges supplétives ; 3) affecter les charges directes aux coûts et répartir les charges indirectes dans les centres (répartition primaire puis secondaire) ; 4) calculer le coût des unités d''œuvre et imputer les centres aux coûts ; 5) calculer coûts d''achat, de production, de revient et résultat analytique, puis vérifier la concordance avec la comptabilité générale.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Introduction au contrôle de gestion et à l''organisation : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Définir le contrôle de gestion, ses missions et sa place dans l''organisation.
+- Mesurer la performance avec les notions d''efficacité, d''efficience et d''économie.
+- Distinguer les structures d''organisation et les centres de responsabilité.
+- Situer la comptabilité analytique par rapport à la comptabilité générale.
+
+## 1. Définitions
+
+Le contrôle de gestion est l''ensemble des dispositifs qui aident les responsables à piloter l''organisation vers ses objectifs en utilisant les ressources de façon efficace et efficiente. Dans les années 1960, Robert N. Anthony en a proposé une définition devenue classique : un processus par lequel les dirigeants s''assurent que les ressources sont obtenues et utilisées avec efficacité et efficience pour atteindre les objectifs de l''organisation. Les auteurs plus récents insistent sur la dimension d''aide à la décision et d''apprentissage, au-delà de la simple surveillance.
+
+Contrôler ne veut pas dire inspecter ou sanctionner. Le contrôle de gestion se distingue de l''audit interne (qui vérifie la conformité et la maîtrise des risques) et du contrôle fiscal (externe). Il regarde vers l''avenir : prévoir, suivre, corriger.
+
+## 2. Le cycle du contrôle de gestion
+
+Le contrôle de gestion fonctionne en boucle :
+
+- Planifier : traduire la stratégie en objectifs chiffrés (plan opérationnel, budgets).
+- Agir : les opérationnels mettent en œuvre les actions.
+- Mesurer : comparer le réalisé au prévu (écarts, indicateurs, tableaux de bord).
+- Corriger : analyser les causes des écarts et décider des actions correctives, ou réviser les objectifs.
+
+Schéma décrit : un cercle à quatre flèches « prévoir → agir → mesurer → corriger », avec au centre les objectifs stratégiques. On parle aussi de contrôle a priori (avant l''action : budgets), concomitant (pendant : tableaux de bord) et a posteriori (après : analyse des écarts, coûts).
+
+## 3. Les trois dimensions de la performance
+
+- Efficacité : degré d''atteinte des objectifs. Efficacité = résultat obtenu / objectif.
+- Efficience : rapport entre résultats et ressources consommées. On la mesure souvent par un coût unitaire ou une productivité.
+- Économie : obtention des ressources au meilleur coût (prix d''achat, conditions de financement).
+
+Exemple chiffré. La société fictive Sahel Jus SARL, installée à Thiès, fabrique des jus de bissap et de bouye. Pour le trimestre, l''objectif était de 120 000 bouteilles pour un coût prévu de 450 FCFA par bouteille, soit un budget de 54 000 000 FCFA. Elle a produit 108 000 bouteilles pour un coût total réel de 49 680 000 FCFA.
+
+- Efficacité = 108 000 / 120 000 = 90,0 % : l''objectif de volume n''est pas atteint.
+- Coût unitaire réel = 49 680 000 / 108 000 = 460 FCFA, contre 450 FCFA prévus, soit 2,2 % de plus : l''efficience s''est dégradée.
+- Piège classique : comparer le coût total réel (49 680 000) au budget initial (54 000 000) laisse croire à une économie de 4 320 000 FCFA. Or il faut comparer au budget ajusté au volume réel : 108 000 × 450 = 48 600 000 FCFA. Le dépassement réel est de 1 080 000 FCFA.
+
+Cette idée de « budget flexible » sera approfondie en Licence 2.
+
+## 4. Le contrôle de gestion dans l''organisation
+
+Le contrôleur de gestion peut être rattaché à la direction générale (position de conseil, indépendance vis-à-vis des opérationnels) ou à la direction administrative et financière (proximité des données comptables, mais risque d''une vision trop financière). Dans les PME, la fonction est souvent assurée par le directeur financier, voire par le dirigeant lui-même.
+
+Ses missions : construire et suivre les budgets, calculer les coûts, produire les tableaux de bord, analyser les écarts, conseiller les responsables, participer aux études de rentabilité, animer le dialogue de gestion.
+
+Les structures d''organisation influencent le contrôle :
+
+- Structure fonctionnelle : découpage par fonctions (production, commercial, finance). Simple, mais la rentabilité n''est visible qu''au niveau global.
+- Structure divisionnelle : découpage par produits, marchés ou zones (par exemple une division Dakar et une division Ziguinchor). Chaque division peut être évaluée sur sa rentabilité.
+- Structure matricielle : croisement fonctions × projets. Riche, mais la responsabilité est partagée et plus difficile à mesurer.
+
+## 5. Les centres de responsabilité
+
+Un centre de responsabilité est une unité dont le responsable dispose d''une délégation et rend compte de sa performance sur des indicateurs qu''il maîtrise.
+
+- Centre de coût : le responsable maîtrise des coûts (atelier de production, service comptable). Indicateur : coût par unité, écart sur budget.
+- Centre de recettes (ou de chiffre d''affaires) : service commercial ; indicateur : chiffre d''affaires, volume, part de marché.
+- Centre de profit : le responsable maîtrise coûts et recettes (une agence, une boutique) ; indicateur : marge, résultat.
+- Centre d''investissement : il décide aussi de ses investissements (une filiale) ; indicateur : rentabilité des capitaux investis.
+
+Principe de contrôlabilité : on n''évalue un responsable que sur ce qu''il peut influencer.
+
+## 6. Comptabilité générale et comptabilité analytique
+
+La comptabilité générale (SYSCOHADA révisé) est obligatoire, normalisée, tournée vers les tiers ; elle classe les charges par nature (achats, transports, services extérieurs, charges de personnel) et calcule un résultat global. La comptabilité analytique (ou de gestion) est facultative, libre dans ses méthodes, tournée vers les décideurs internes ; elle reclasse les charges par destination (produit, activité, centre) pour calculer des coûts et des résultats partiels.
+
+## Points clés
+
+- Contrôle de gestion = piloter, pas sanctionner.
+- Efficacité (objectifs), efficience (ressources), économie (prix des ressources).
+- Toujours comparer le réel à un budget ajusté au volume réel.
+- Centres de coût, de recettes, de profit, d''investissement ; principe de contrôlabilité.
+
+## Exercices pratiques
+
+- Exercice 1 : définissez en une phrase efficacité, efficience et économie.
+- Exercice 2 : classez en centres de responsabilité : l''atelier d''emballage d''une huilerie ; l''agence de Kaolack d''une banque ; la filiale ivoirienne d''un groupe sénégalais ; le service des ventes export.
+- Exercice 3 : une clinique fictive de Saint-Louis visait 9 000 consultations pour un coût de 13 500 000 FCFA. Elle en a réalisé 8 100 pour 12 960 000 FCFA. Calculez l''efficacité, les coûts unitaires prévu et réel, et le budget ajusté.
+- Exercice 4 : citez deux avantages et deux limites du rattachement du contrôleur de gestion à la DAF.
+- Exercice 5 : donnez trois différences entre comptabilité générale et comptabilité analytique.
+- Exercice 6 (cas pratique) : le directeur de Sahel Jus affirme : « Nous avons dépensé moins que prévu, la gestion est excellente. » Rédigez une réponse argumentée de dix lignes.
+
+## Corrigé
+
+- Exercice 1 : efficacité = atteinte des objectifs ; efficience = résultats obtenus rapportés aux ressources consommées ; économie = acquisition des ressources au moindre coût à qualité égale.
+- Exercice 2 : centre de coût ; centre de profit ; centre d''investissement ; centre de recettes.
+- Exercice 3 : efficacité = 8 100 / 9 000 = 90,0 % ; coût unitaire prévu = 1 500 FCFA ; coût unitaire réel = 1 600 FCFA ; budget ajusté = 8 100 × 1 500 = 12 150 000 FCFA ; dépassement = 810 000 FCFA, malgré une dépense totale inférieure au budget initial.
+- Exercice 4 : avantages, accès direct aux données comptables, cohérence budget-comptabilité ; limites, vision trop financière, moindre indépendance vis-à-vis du directeur financier.
+- Exercice 5 : obligation légale contre caractère facultatif ; classement par nature contre classement par destination ; destinataires externes contre internes (on peut ajouter : normalisation SYSCOHADA contre liberté des méthodes ; périodicité annuelle contre mensuelle ou plus fine).
+- Exercice 6 : la dépense totale (49 680 000 FCFA) est inférieure au budget initial uniquement parce que le volume a baissé (90,0 % de l''objectif). Ramené au volume réel, le budget était de 48 600 000 FCFA : il y a un dépassement de 1 080 000 FCFA et le coût unitaire passe de 450 à 460 FCFA. La gestion n''est donc ni efficace (volume manqué) ni efficiente (coût unitaire en hausse). Il faut analyser les causes : prix des intrants, rendement de la main-d''œuvre, pannes, et proposer des actions correctives.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Introduction au contrôle de gestion et à l''organisation : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comptabilité analytique 1 (coûts complets) : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Distinguer charges directes et indirectes, incorporables, non incorporables et supplétives.
+- Construire un tableau de répartition et calculer le coût des unités d''œuvre.
+- Calculer les coûts complets et le résultat analytique, puis vérifier la concordance.
+
+## 1. Les charges incorporées
+
+On part des charges de la classe 6 du SYSCOHADA révisé. On retire les charges non incorporables (sans lien avec l''exploitation normale : pénalités, charges hors activités ordinaires). On ajoute les charges supplétives, absentes de la comptabilité générale mais économiquement réelles : rémunération des capitaux propres, travail non rémunéré de l''exploitant.
+
+Charges incorporées = charges de la comptabilité générale − charges non incorporables + charges supplétives.
+
+## 2. Charges directes, charges indirectes et centres d''analyse
+
+Une charge directe s''affecte sans calcul intermédiaire à un coût : le bois d''une table, la main-d''œuvre directe (MOD). Une charge indirecte concerne plusieurs coûts (loyer, électricité, chef d''atelier) et passe par des centres d''analyse :
+
+- Centres auxiliaires (administration, entretien) : ils travaillent pour les autres centres et sont vidés lors de la répartition secondaire.
+- Centres principaux : leur coût est imputé aux produits par une unité d''œuvre (heure machine, heure de MOD) ou une assiette de frais (100 FCFA de chiffre d''affaires).
+
+Schéma décrit : répartition primaire → répartition secondaire → total du centre principal ÷ nombre d''unités d''œuvre = coût de l''UO → imputation aux coûts.
+
+## 4. Cas complet : Teranga Bois (entreprise fictive, Thiès)
+
+Teranga Bois fabrique des tables et des chaises en bois. Données du mois de mars (montants hors taxes) :
+
+- Charges indirectes de la comptabilité générale : 6 500 000 FCFA, dont 300 000 FCFA de pénalités non incorporables. Charges supplétives (rémunération des capitaux propres) : 200 000 FCFA.
+- Stock initial de planches : 500 planches pour 1 450 000 FCFA. Achats : 2 000 planches à 3 000 FCFA.
+- Production : 200 tables (6 planches, 2 heures machine, 4 heures de MOD chacune) et 600 chaises (1,5 planche, 0,5 heure machine, 1 heure de MOD chacune). MOD à 2 500 FCFA l''heure, charges sociales comprises.
+- Ventes : 180 tables à 60 000 FCFA et 550 chaises à 16 000 FCFA. Pas de stock initial de produits finis. Sorties de stock valorisées au CUMP.
+
+Étape 1, charges incorporées : 6 500 000 − 300 000 + 200 000 = 6 400 000 FCFA.
+
+Étape 2, répartition primaire : Administration 1 000 000, Entretien 500 000, Approvisionnement 540 000, Coupe 1 500 000, Montage 2 140 000, Distribution 720 000. Contrôle : le total est bien égal à 6 400 000 FCFA.
+
+Étape 3, répartition secondaire en cascade. L''administration se répartit : 10 % Entretien, 20 % Approvisionnement, 30 % Coupe, 20 % Montage, 20 % Distribution. L''entretien, qui reçoit 100 000 FCFA de l''administration, totalise 600 000 FCFA et se répartit : 10 % Approvisionnement, 50 % Coupe, 30 % Montage, 10 % Distribution.
+
+- Approvisionnement : primaire 540 000 ; reçu de l''administration 200 000 ; reçu de l''entretien 60 000 ; total 800 000 FCFA.
+- Coupe : primaire 1 500 000 ; reçu de l''administration 300 000 ; reçu de l''entretien 300 000 ; total 2 100 000 FCFA.
+- Montage : primaire 2 140 000 ; reçu de l''administration 200 000 ; reçu de l''entretien 180 000 ; total 2 520 000 FCFA.
+- Distribution : primaire 720 000 ; reçu de l''administration 200 000 ; reçu de l''entretien 60 000 ; total 980 000 FCFA.
+
+Étape 4, unités d''œuvre :
+
+- Approvisionnement : planche achetée, 2 000 UO, coût 400 FCFA.
+- Coupe : heure machine, 200 × 2 + 600 × 0,5 = 700 UO, coût 3 000 FCFA.
+- Montage : heure de MOD, 200 × 4 + 600 × 1 = 1 400 UO, coût 1 800 FCFA.
+- Distribution : 100 FCFA de chiffre d''affaires ; CA = 10 800 000 + 8 800 000 = 19 600 000 FCFA, soit 196 000 UO, coût 5 FCFA.
+
+Étape 5, coût d''achat et stock. Coût d''achat = 6 000 000 + 800 000 = 6 800 000 FCFA, soit 3 400 FCFA la planche. CUMP = (1 450 000 + 6 800 000) / (500 + 2 000) = 3 300 FCFA. Sorties : 1 200 + 900 = 2 100 planches ; stock final 400 planches valant 1 320 000 FCFA.
+
+Étape 6, coûts de production :
+
+- Tables : bois 3 960 000 ; MOD 2 000 000 ; Coupe 1 200 000 ; Montage 1 440 000 ; total 8 600 000 FCFA, soit 43 000 FCFA la table.
+- Chaises : bois 2 970 000 ; MOD 1 500 000 ; Coupe 900 000 ; Montage 1 080 000 ; total 6 450 000 FCFA, soit 10 750 FCFA la chaise.
+
+Étape 7, coûts de revient et résultats :
+
+- Tables : 180 × 43 000 + distribution 540 000 = 8 280 000 FCFA ; résultat = 10 800 000 − 8 280 000 = 2 520 000 FCFA.
+- Chaises : 550 × 10 750 + distribution 440 000 = 6 352 500 FCFA ; résultat = 8 800 000 − 6 352 500 = 2 447 500 FCFA.
+- Résultat analytique global : 4 967 500 FCFA.
+
+Étape 8, concordance : résultat de la comptabilité générale = résultat analytique + charges supplétives − charges non incorporables = 4 967 500 + 200 000 − 300 000 = 4 867 500 FCFA. Vérification directe : ventes 19 600 000 + production stockée 1 397 500 − achats 6 000 000 − variation de stock de bois 130 000 − MOD 3 500 000 − autres charges 6 500 000 = 4 867 500 FCFA.
+
+## Points clés
+
+- Charges incorporées = charges CG − non incorporables + supplétives.
+- Répartition primaire, puis secondaire, puis coût de l''unité d''œuvre.
+- Coût d''achat → stock (CUMP) → coût de production → coût de revient → résultat → concordance.
+
+## Exercices pratiques
+
+- Exercice 1 : charges CG 9 400 000 FCFA, dont 250 000 de charges non incorporables ; l''exploitant, non salarié, estime son travail à 400 000 FCFA par mois. Calculez les charges incorporées.
+- Exercice 2 : stock initial 1 000 kg pour 2 150 000 FCFA ; entrées 3 000 kg pour un coût d''achat de 6 450 000 FCFA. Calculez le CUMP.
+- Exercice 3 : coût de production de 400 sacs : matière 1 840 000 FCFA, 320 h de MOD à 2 000 FCFA, atelier 160 UO à 4 500 FCFA. Coût unitaire ?
+- Exercice 4 : deux centres auxiliaires se rendent des prestations réciproques. Gestion du personnel (GP) : primaire 600 000, reçoit 20 % de l''Entretien. Entretien : primaire 400 000, reçoit 10 % de GP. Calculez les totaux après répartition secondaire.
+- Exercice 5 (cas pratique) : pour Teranga Bois, le prix des chaises passe à 15 000 FCFA (mêmes quantités, distribution toujours à 5 FCFA par 100 FCFA de CA). Calculez le nouveau résultat sur chaises et commentez.
+
+## Corrigé
+
+- Exercice 1 : 9 400 000 − 250 000 + 400 000 = 9 550 000 FCFA.
+- Exercice 2 : (2 150 000 + 6 450 000) / (1 000 + 3 000) = 8 600 000 / 4 000 = 2 150 FCFA le kg.
+- Exercice 3 : 1 840 000 + 320 × 2 000 + 160 × 4 500 = 1 840 000 + 640 000 + 720 000 = 3 200 000 FCFA ; coût unitaire 8 000 FCFA.
+- Exercice 4 : GP = 600 000 + 0,2 E et E = 400 000 + 0,1 GP. En substituant : GP = 600 000 + 80 000 + 0,02 GP, d''où GP = 680 000 / 0,98 = 693 878 FCFA ; E = 400 000 + 0,1 × GP = 469 388 FCFA (arrondis).
+- Exercice 5 : CA chaises = 550 × 15 000 = 8 250 000 FCFA ; distribution = 412 500 ; coût de revient = 5 912 500 + 412 500 = 6 325 000 ; résultat = 1 925 000 FCFA, contre 2 447 500 FCFA auparavant, soit une baisse de 21,3 %. Le produit reste bénéficiaire (coût de l''UO de distribution supposé inchangé).', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comptabilité analytique 1 (coûts complets) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Mathématiques et statistiques de gestion : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Maîtriser pourcentages, indices et taux de croissance moyens.
+- Calculer intérêts simples, intérêts composés, valeurs actuelles et annuités d''emprunt.
+- Décrire une série statistique (moyenne, écart-type) et réaliser un ajustement linéaire par les moindres carrés.
+- Utiliser l''ajustement pour séparer la partie fixe et la partie variable d''un coût.
+
+## 1. Pourcentages, indices et taux moyens
+
+Taux de variation = (valeur finale − valeur initiale) / valeur initiale. Une PME de Mbour réalise un chiffre d''affaires de 80 000 000 FCFA en N−1 et 92 000 000 FCFA en N : variation = 15,0 %. Indice N base 100 en N−1 = 100 × 92 000 000 / 80 000 000 = 115.
+
+Attention : des variations successives se multiplient, elles ne s''additionnent pas. Une hausse de 10 % suivie d''une baisse de 10 % donne 1,10 × 0,90 = 0,99, soit −1 %.
+
+Taux moyen annuel sur n années : t = (Vn / V0)^(1/n) − 1. Si le chiffre d''affaires passe de 50 000 000 à 72 000 000 FCFA en 4 ans : t = (72 000 000 / 50 000 000)^(1/4) − 1 = 1,44^(0,25) − 1 ≈ 9,54 %.
+
+## 2. Intérêts simples
+
+Utilisés pour les opérations à court terme (moins d''un an). I = C × t × n, avec n en années ; en jours, on utilise l''année commerciale de 360 jours : I = C × t × j / 360.
+
+Exemple : un découvert de 2 000 000 FCFA pendant 90 jours au taux annuel de 9 % (taux fictif pour l''exemple) coûte 2 000 000 × 0,09 × 90 / 360 = 45 000 FCFA.
+
+## 3. Intérêts composés et actualisation
+
+À intérêts composés, les intérêts s''ajoutent au capital et produisent eux-mêmes des intérêts. Valeur acquise : Cn = C0 × (1 + t)^n. Un placement de 5 000 000 FCFA à 8 % par an pendant 3 ans (taux fictif) devient 5 000 000 × 1,08³ = 6 298 560 FCFA.
+
+L''actualisation fait le chemin inverse : C0 = Cn × (1 + t)^(−n). Une somme de 10 000 000 FCFA reçue dans 2 ans, actualisée à 10 %, vaut aujourd''hui 10 000 000 / 1,1² ≈ 8 264 463 FCFA. C''est la base du choix d''investissement.
+
+## 4. Emprunt indivis remboursé par annuités constantes
+
+Annuité constante : a = C × t / (1 − (1 + t)^(−n)). Chaque annuité = intérêt de l''année (capital restant dû × t) + amortissement du capital.
+
+Exemple : Teranga Bois emprunte 12 000 000 FCFA sur 4 ans à 10 % (taux fictif). a = 12 000 000 × 0,10 / (1 − 1,1^(−4)) ≈ 3 785 650 FCFA. Tableau d''amortissement (arrondi au franc, la dernière annuité étant ajustée de quelques francs pour solder exactement le capital) :
+
+- Année 1 : capital début 12 000 000 ; intérêt 1 200 000 ; amortissement 2 585 650 ; annuité 3 785 650 ; capital fin 9 414 350.
+- Année 2 : capital début 9 414 350 ; intérêt 941 435 ; amortissement 2 844 215 ; annuité 3 785 650 ; capital fin 6 570 135.
+- Année 3 : capital début 6 570 135 ; intérêt 657 014 ; amortissement 3 128 636 ; annuité 3 785 650 ; capital fin 3 441 499.
+- Année 4 : capital début 3 441 499 ; intérêt 344 150 ; amortissement 3 441 499 ; annuité 3 785 649 ; capital fin 0.
+
+Contrôles : la somme des amortissements est égale au capital emprunté ; chaque amortissement est égal, à l''arrondi près, au précédent multiplié par (1 + t).
+
+## 5. Statistique descriptive
+
+Pour une série x1, …, xn : moyenne x̄ = (somme des xi) / n ; variance V = (somme des (xi − x̄)²) / n ; écart-type σ = √V. La médiane partage la série ordonnée en deux moitiés. Le coefficient de variation σ / x̄ permet de comparer la dispersion de séries d''ordres de grandeur différents.
+
+## 6. Ajustement linéaire et séparation fixe/variable
+
+Les charges d''entretien de l''atelier Coupe de Teranga Bois dépendent en partie de l''activité. Relevé sur six mois :
+
+- janvier : 300 heures machine, 1 510 000 FCFA
+- février : 400 heures machine, 1 690 000 FCFA
+- mars : 500 heures machine, 1 920 000 FCFA
+- avril : 600 heures machine, 2 100 000 FCFA
+- mai : 700 heures machine, 2 300 000 FCFA
+- juin : 500 heures machine, 1 880 000 FCFA
+
+On cherche y = a x + b, où a est le coût variable par heure machine et b la partie fixe mensuelle.
+
+Méthode des moindres carrés : a = cov(x, y) / V(x) et b = ȳ − a x̄.
+
+- x̄ = 500 h ; ȳ = 1 900 000 FCFA.
+- V(x) = 16 666,67 ; σ(x) ≈ 129,1 h.
+- cov(x, y) = (somme des (xi − x̄)(yi − ȳ)) / n = 33 166 666,67.
+- a = 33 166 666,67 / 16 666,67 = 1 990 FCFA par heure ; b = 1 900 000 − 1 990 × 500 = 905 000 FCFA.
+- Coefficient de corrélation r = cov / (σx σy) ≈ 0,9988 : la liaison linéaire est très forte.
+
+Fonction de coût : y = 1 990 x + 905 000. Prévision pour 650 heures : 1 990 × 650 + 905 000 = 2 198 500 FCFA.
+
+Méthode des points extrêmes (plus rapide, moins précise) : a = (2 300 000 − 1 510 000) / (700 − 300) = 1 975,0 FCFA ; b = 2 300 000 − 1 975,0 × 700 = 917 500 FCFA. Elle n''utilise que deux points et peut être faussée par un mois atypique.
+
+## Points clés
+
+- Variations successives : on multiplie les coefficients.
+- Intérêts simples : C t j / 360 ; composés : C (1 + t)^n ; actualisation : C (1 + t)^(−n).
+- Annuité constante : C t / (1 − (1 + t)^(−n)).
+- Moindres carrés : a = cov / V(x), b = ȳ − a x̄ ; r proche de 1 ou de −1 = bon ajustement.
+
+## Exercices pratiques
+
+- Exercice 1 : un prix passe de 2 500 à 2 800 FCFA puis baisse de 5 %. Calculez le prix final et la variation globale.
+- Exercice 2 : un effet de commerce de 3 600 000 FCFA est escompté 60 jours avant l''échéance au taux de 12 % (fictif). Calculez l''escompte (intérêt simple).
+- Exercice 3 : quelle est la valeur acquise de 8 000 000 FCFA placés 5 ans à 7 % composés (taux fictif) ?
+- Exercice 4 : quelle est la valeur actuelle à 9 % de 15 000 000 FCFA à recevoir dans 3 ans ?
+- Exercice 5 : ventes mensuelles (en millions de FCFA) de cinq agences : 12, 15, 9, 20, 14. Calculez la moyenne, la variance et l''écart-type.
+- Exercice 6 (cas pratique) : avec la fonction de coût de l''atelier Coupe, quel budget d''entretien prévoir pour un mois de 480 heures machine ? Pourquoi faut-il être prudent pour une prévision à 1 200 heures ?
+
+## Corrigé
+
+- Exercice 1 : 2 800 × 0,95 = 2 660 FCFA ; variation globale = 2 660 / 2 500 − 1 = 6,4 %.
+- Exercice 2 : 3 600 000 × 0,12 × 60 / 360 = 72 000 FCFA.
+- Exercice 3 : 8 000 000 × 1,07⁵ ≈ 11 220 414 FCFA.
+- Exercice 4 : 15 000 000 / 1,09³ ≈ 11 582 752 FCFA.
+- Exercice 5 : moyenne 14 ; variance = (4 + 1 + 25 + 36 + 0) / 5 = 13,2 ; écart-type ≈ 3,63 millions de FCFA.
+- Exercice 6 : 1 990 × 480 + 905 000 = 1 860 200 FCFA. À 1 200 heures, on sort largement de la plage observée (300 à 700 h) : de nouvelles charges fixes (deuxième équipe, nouvelle machine) peuvent apparaître et la relation linéaire n''est plus garantie.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mathématiques et statistiques de gestion : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 1 en Contrôle de gestion (corrigé)', '## Présentation du sujet
+
+Sujet d''entraînement de Licence 1, contrôle de gestion. Durée : 3 heures. Calculatrice autorisée, documents interdits. Ce sujet n''est pas un sujet officiel : il reproduit le format habituel des examens semestriels. Barème indicatif, non officiel, sur 20 points. Toutes les entreprises sont fictives.
+
+## Dossier 1 · Introduction au contrôle de gestion (5 points)
+
+- 1.1 (1,5 pt) Définissez le contrôle de gestion et présentez son cycle.
+- 1.2 (1,5 pt) Distinguez efficacité, efficience et économie, avec un exemple pour chacune.
+- 1.3 (2 pts) Une banque régionale décide d''évaluer ses agences sur leur résultat net, frais de siège compris. Que pensez-vous de ce choix au regard du principe de contrôlabilité ?
+
+## Dossier 2 · Comptabilité analytique (9 points)
+
+Baobab Textile, à Kaolack, confectionne des boubous. Pour le mois d''avril :
+
+- Tissu consommé : 2 400 mètres, valorisés au CUMP de 1 250 FCFA le mètre.
+- MOD : 1 200 heures à 2 200 FCFA.
+- Centre Coupe : 600 heures machine à 2 500 FCFA l''unité d''œuvre.
+- Centre Confection : unité d''œuvre heure de MOD, coût 1 100 FCFA.
+- Production : 1 200 boubous ; ventes : 1 100 boubous à 9 500 FCFA.
+- Distribution : 2 FCFA par 100 FCFA de chiffre d''affaires.
+
+Questions :
+
+- 2.1 (1 pt) Expliquez la différence entre centre principal et centre auxiliaire.
+- 2.2 (4 pts) Calculez le coût de production total et unitaire.
+- 2.3 (2 pts) Calculez le coût de revient des boubous vendus et le résultat analytique.
+- 2.4 (2 pts) Les charges supplétives s''élèvent à 150 000 FCFA et les charges non incorporables à 90 000 FCFA. Quel est le résultat de la comptabilité générale, en supposant qu''il n''y a pas d''autre différence ?
+
+## Dossier 3 · Mathématiques et statistiques de gestion (6 points)
+
+- 3.1 (3 pts) Baobab Textile emprunte 6 000 000 FCFA sur 3 ans à 12 % (taux fictif), par annuités constantes. Calculez l''annuité et présentez le tableau d''amortissement.
+- 3.2 (3 pts) Coûts d''électricité de l''atelier selon les heures machine : 800 h, 2 640 000 FCFA ; 1 000 h, 3 000 000 ; 1 200 h, 3 420 000 ; 1 400 h, 3 740 000. Déterminez par les moindres carrés la fonction de coût et prévoyez le coût pour 1 300 h.
+
+## Corrigé détaillé
+
+Dossier 1.
+
+- 1.1 : processus qui aide les responsables à atteindre les objectifs en utilisant les ressources avec efficacité et efficience ; cycle prévoir, agir, mesurer, corriger.
+- 1.2 : efficacité, atteindre 95 % des ventes visées ; efficience, baisser le coût par boubou ; économie, négocier le prix du tissu.
+- 1.3 : les frais de siège ne sont pas maîtrisés par le chef d''agence ; il faut l''évaluer sur une marge contributive (produits et charges propres à l''agence) et suivre à part le résultat après frais de siège, pour la décision de maintenir ou non l''agence.
+
+Dossier 2.
+
+- 2.1 : le centre principal impute directement ses charges aux coûts des produits par une unité d''œuvre ; le centre auxiliaire travaille pour les autres centres et se vide dans la répartition secondaire.
+- 2.2 : tissu 3 000 000 ; MOD 2 640 000 ; Coupe 1 500 000 ; Confection 1 200 × 1 100 = 1 320 000 ; total 8 460 000 FCFA ; coût unitaire 7 050 FCFA.
+- 2.3 : CA = 1 100 × 9 500 = 10 450 000 FCFA ; distribution = 104 500 UO × 2 = 209 000 FCFA ; coût de revient = 1 100 × 7 050 + 209 000 = 7 964 000 FCFA ; résultat analytique = 2 486 000 FCFA.
+- 2.4 : résultat CG = 2 486 000 + 150 000 − 90 000 = 2 546 000 FCFA.
+
+Dossier 3.
+
+- 3.1 : a = 6 000 000 × 0,12 / (1 − 1,12^(−3)) ≈ 2 498 094 FCFA.
+
+- Année 1 : capital début 6 000 000 ; intérêt 720 000 ; amortissement 1 778 094 ; annuité 2 498 094 ; capital fin 4 221 906.
+- Année 2 : capital début 4 221 906 ; intérêt 506 629 ; amortissement 1 991 465 ; annuité 2 498 094 ; capital fin 2 230 441.
+- Année 3 : capital début 2 230 441 ; intérêt 267 653 ; amortissement 2 230 441 ; annuité 2 498 094 ; capital fin 0.
+
+- 3.2 : x̄ = 1 100 ; ȳ = 3 200 000 ; V(x) = 50 000 ; cov = 93 000 000 ; a = 1 860 FCFA par heure ; b = 1 154 000 FCFA ; y = 1 860 x + 1 154 000 ; pour 1 300 h : 3 572 000 FCFA.
+
+## Conseils de méthode
+
+Dans le dossier 2, indiquez toujours le détail du calcul : un résultat faux mais bien posé rapporte une partie des points. Dans le dossier 3, vérifiez que la somme des amortissements redonne le capital emprunté. Pour la question 1.3, une réponse argumentée en deux temps (constat puis proposition) est attendue.
+
+## Exercices pratiques
+
+- Exercice 1 : quel serait le coût de production unitaire de Baobab Textile si le CUMP du tissu passait à 1 300 FCFA ?
+- Exercice 2 : quelle est la part des intérêts dans le coût total de l''emprunt du dossier 3 ?
+- Exercice 3 : citez deux charges supplétives possibles dans une entreprise individuelle.
+
+## Corrigé
+
+- Exercice 1 : le coût augmente de 2 400 × 50 = 120 000 FCFA, soit 8 580 000 FCFA au total et 7 150 FCFA par boubou.
+- Exercice 2 : total des annuités 7 494 282 FCFA ; intérêts 1 494 282 FCFA, soit 19,9 % des sommes versées.
+- Exercice 3 : rémunération du travail de l''exploitant ; rémunération des capitaux propres apportés.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en Contrôle de gestion (corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Introduction au contrôle de gestion et à l''organisation', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 en contrôle de gestion, gestion, comptabilité.
+- Objectifs : expliquer le rôle du contrôle de gestion, mesurer la performance (efficacité, efficience, économie), raisonner avec un budget ajusté, identifier les centres de responsabilité et les structures d''organisation.
+- Matériel : tableau ou diaporama, schéma du cycle de pilotage, organigrammes types, calculatrice.
+- Prérequis : leçon « Introduction au contrôle de gestion et à l''organisation : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+Bonjour à toutes et à tous. Bienvenue dans ce cours vidéo consacré à l''introduction au contrôle de gestion. Dans une heure et demie, vous saurez expliquer à un jury ce que fait un contrôleur de gestion, calculer et interpréter des indicateurs d''efficacité et d''efficience, et classer les unités d''une organisation en centres de responsabilité. Notre fil rouge sera Sahel Jus SARL, une entreprise fictive de Thiès qui fabrique des jus locaux.
+
+Visuel : diapositive titre, logo fictif de Sahel Jus, plan de la séance en cinq parties.
+
+## 05:00 – 15:00 · Qu''est-ce que contrôler ?
+
+Commençons par un mot piège : « contrôle ». En français courant, contrôler, c''est vérifier ou sanctionner. En gestion, le mot vient de l''anglais « control », qui signifie maîtriser, piloter. Le contrôleur de gestion n''est pas un policier : c''est un copilote. Son rôle est de fournir au dirigeant et aux responsables les informations pour décider à temps.
+
+Dans les années 1960, Robert N. Anthony a défini le contrôle de gestion comme le processus par lequel les dirigeants s''assurent que les ressources sont obtenues et utilisées avec efficacité et efficience pour atteindre les objectifs. Retenez trois mots de cette définition : processus, ressources, objectifs. Les auteurs plus récents ajoutent la cohérence entre stratégie et actions quotidiennes, et l''apprentissage organisationnel.
+
+Question à poser aux étudiants : « Quelle différence entre un contrôleur de gestion et un auditeur interne ? » Réponse attendue : l''auditeur vérifie la conformité et la maîtrise des risques ; le contrôleur aide à piloter la performance, en regardant surtout vers l''avenir.
+
+## 15:00 – 25:00 · Le cycle de pilotage
+
+Visuel : un cercle avec quatre flèches. Prévoir, agir, mesurer, corriger.
+
+Tout commence par la stratégie : Sahel Jus veut devenir la marque de référence des jus locaux dans la région de Thiès. Le contrôle de gestion traduit cette ambition en objectifs chiffrés : produire 120 000 bouteilles au trimestre pour un coût de 450 FCFA la bouteille. Ce sont les budgets. Ensuite, les équipes agissent. Le contrôleur mesure le réalisé, compare au prévu, calcule des écarts. Enfin, avec les responsables, il analyse les causes et propose des actions correctives. Puis le cycle recommence.
+
+On distingue trois moments du contrôle : a priori, avec les budgets ; pendant l''action, avec les tableaux de bord ; a posteriori, avec l''analyse des écarts et le calcul des coûts. Retenez ce triptyque, il revient souvent en question de cours.
+
+## 25:00 – 40:00 · Efficacité, efficience, économie : correction commentée
+
+Passons au chiffré. Je vous donne l''énoncé : objectif 120 000 bouteilles, coût prévu 450 FCFA l''unité, budget 54 000 000 FCFA. Réalisé : 108 000 bouteilles, coût total 49 680 000 FCFA. Prenez trois minutes pour calculer l''efficacité et le coût unitaire réel.
+
+Correction. Efficacité : 108 000 divisé par 120 000, soit 90,0 %. Coût unitaire réel : 49 680 000 divisé par 108 000, soit 460 FCFA. Le coût unitaire a augmenté de 2,2 %.
+
+Maintenant, l''erreur classique. Beaucoup d''étudiants écrivent : « le coût total réel est inférieur au budget, donc la gestion est bonne ». Regardez : 49 680 000 contre 54 000 000, il y a bien 4 320 000 FCFA de moins. Mais on a produit moins ! Il faut comparer à ce qu''on aurait dû dépenser pour 108 000 bouteilles : 108 000 fois 450, soit 48 600 000 FCFA. Le vrai dépassement est de 1 080 000 FCFA. Écrivez au tableau : on compare toujours le réel à un budget ajusté à l''activité réelle.
+
+Et l''économie ? Elle porte sur le prix des ressources. Si Sahel Jus a payé son sucre plus cher que prévu, l''économie est mauvaise, même si le rendement des machines est excellent.
+
+## 40:00 – 50:00 · Pause et quiz interactif
+
+Faisons une pause active. Répondez par vrai ou faux, je vous laisse trente secondes par question.
+
+- Question 1 : un centre de coût est évalué sur son résultat. Faux, il est évalué sur ses coûts.
+- Question 2 : l''efficacité se mesure par rapport aux objectifs. Vrai.
+- Question 3 : un coût total inférieur au budget initial prouve une bonne efficience. Faux, il faut ajuster le budget au volume réel.
+- Question 4 : la comptabilité analytique est obligatoire pour toutes les entreprises. Faux, elle est facultative, contrairement à la comptabilité générale.
+
+Comptez vos points. Trois ou quatre bonnes réponses : vous êtes sur la bonne voie.
+
+## 50:00 – 60:00 · Place du contrôleur et structures d''organisation
+
+Visuel : trois organigrammes, fonctionnel, divisionnel, matriciel.
+
+Où placer le contrôleur ? Rattaché à la direction générale, il gagne en indépendance et en vision transversale. Rattaché à la direction financière, il est proche des données comptables mais risque d''être perçu comme le « gendarme des chiffres ». Dans une PME sénégalaise de vingt salariés, il n''y a souvent pas de contrôleur : c''est le gérant ou le comptable qui assure la fonction, avec un tableur.
+
+La structure compte aussi. Dans une structure fonctionnelle, on mesure bien les coûts par fonction mais la rentabilité par produit est difficile à voir. Dans une structure divisionnelle, par exemple une division Dakar et une division Saint-Louis, chaque division peut être évaluée sur sa marge. Dans une structure matricielle, deux responsables se partagent les mêmes ressources : il faut des règles claires de répartition.
+
+## 60:00 – 75:00 · Centres de responsabilité : exercice corrigé
+
+Exercice : classez les unités suivantes d''un groupe agroalimentaire fictif. L''atelier de conditionnement ; la direction commerciale export ; le magasin de vente directe de Thiès ; la filiale de Bamako qui décide de ses investissements.
+
+Correction. L''atelier de conditionnement maîtrise ses consommations et ses heures : centre de coût, évalué sur un coût par unité conditionnée. La direction export maîtrise ses volumes et ses prix dans une certaine limite : centre de recettes. Le magasin maîtrise ses ventes et ses charges propres : centre de profit. La filiale de Bamako décide de ses investissements : centre d''investissement, évalué sur la rentabilité des capitaux qu''elle engage.
+
+Point de méthode : justifiez toujours par ce que le responsable maîtrise. C''est le principe de contrôlabilité. Un chef d''atelier ne doit pas être jugé sur le prix de vente fixé par le directeur commercial.
+
+## 75:00 – 82:00 · Comptabilité générale et comptabilité analytique
+
+La comptabilité générale, tenue selon le SYSCOHADA révisé, classe les charges par nature : achats, services extérieurs, personnel. Elle s''adresse aux tiers : administration fiscale, banques, associés. La comptabilité analytique reclasse ces mêmes charges par destination : produit, atelier, client. Elle est libre dans ses méthodes et sert les décisions internes. C''est l''objet du cours vidéo suivant.
+
+## 82:00 – 86:00 · Méthode : la question de réflexion
+
+À l''examen, une question comme « Le contrôle de gestion est-il un outil de surveillance ? » appelle une réponse construite. Introduction : définissez les termes, posez la tension entre surveillance et aide à la décision, annoncez le plan. Première partie : le contrôle de gestion comporte bien une dimension de surveillance, avec les budgets, les écarts et l''évaluation des responsables. Deuxième partie : sa finalité principale est l''aide au pilotage et l''apprentissage, avec les tableaux de bord, le dialogue de gestion et les actions correctives. Conclusion : l''équilibre dépend du style de management. Illustrez chaque partie par un exemple, Sahel Jus ou une banque régionale. Évitez la récitation : le correcteur cherche un raisonnement.
+
+## 86:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : le contrôle de gestion est un pilotage ; il s''appuie sur un cycle prévoir, agir, mesurer, corriger ; il mesure la performance en efficacité, efficience et économie ; il responsabilise par les centres de responsabilité.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : citez les quatre étapes du cycle de pilotage. Réponse : prévoir, agir, mesurer, corriger.
+- Question 2 : une usine visait 50 000 unités et en a produit 46 000. Efficacité ? Réponse : 46 000 / 50 000 = 92 %.
+- Question 3 : coût prévu 200 FCFA l''unité ; coût réel total 9 430 000 FCFA pour 46 000 unités. Budget ajusté et écart ? Réponse : budget ajusté 46 000 × 200 = 9 200 000 FCFA ; dépassement de 230 000 FCFA ; coût unitaire réel 205 FCFA.
+- Question 4 : quel type de centre pour une agence bancaire évaluée sur sa marge ? Réponse : centre de profit.
+- Question 5 : citez deux différences entre comptabilité générale et analytique. Réponse : obligatoire contre facultative ; classement par nature contre par destination.
+
+Merci de votre attention. Pour la prochaine séance, refaites l''exercice Sahel Jus sans vos notes.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Introduction au contrôle de gestion et à l''organisation');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Comptabilité analytique 1 (coûts complets)', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 en contrôle de gestion et comptabilité.
+- Objectifs : passer des charges de la comptabilité générale aux charges incorporées, construire un tableau de répartition, calculer coûts d''achat, de production et de revient, puis vérifier la concordance des résultats.
+- Matériel : tableau ou diaporama, modèle vierge de tableau de répartition, fiche de stock, calculatrice.
+- Prérequis : comptabilité générale de base (classe 6 du SYSCOHADA révisé) et leçon « Comptabilité analytique 1 : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à tous. Aujourd''hui, nous allons calculer, pas à pas, le coût d''une table et d''une chaise. Notre cas fil rouge est Teranga Bois, une menuiserie fictive de Thiès. À la fin de la séance, vous saurez dérouler un cas complet de coûts complets, c''est-à-dire l''exercice le plus fréquent des partiels de Licence 1.
+
+Visuel : le schéma des coûts complets, de gauche à droite : charges de la comptabilité générale, tri, centres d''analyse, coûts, résultat.
+
+## 05:00 – 15:00 · Charges incorporées
+
+Premier réflexe : on ne reprend pas les charges de la comptabilité générale telles quelles. On retire les charges non incorporables : ce sont des charges qui ne relèvent pas de l''exploitation normale, par exemple des pénalités de retard. On ajoute les charges supplétives : elles ont un coût économique sans être comptabilisées, comme la rémunération des capitaux propres.
+
+Chez Teranga Bois : 6 500 000 moins 300 000 plus 200 000, cela donne 6 400 000 FCFA de charges indirectes incorporées. Notez que les charges directes, bois et main-d''œuvre directe, sont traitées à part : elles vont directement dans les coûts.
+
+## 15:00 – 30:00 · Le tableau de répartition
+
+Visuel : tableau de répartition avec six colonnes : Administration, Entretien, Approvisionnement, Coupe, Montage, Distribution.
+
+La répartition primaire distribue les charges indirectes entre les centres avec des clés : surface pour le loyer, puissance installée pour l''électricité, effectif pour la cantine. Le service comptable nous la donne : Administration 1 000 000, Entretien 500 000, Approvisionnement 540 000, Coupe 1 500 000, Montage 2 140 000, Distribution 720 000. Premier contrôle : la somme fait 6 400 000 FCFA. Toujours vérifier.
+
+Répartition secondaire, en cascade. On vide d''abord l''Administration : 10 % à l''Entretien, soit 100 000 ; 20 % à l''Approvisionnement, soit 200 000 ; 30 % à la Coupe, 300 000 ; 20 % au Montage et 20 % à la Distribution. L''Entretien a maintenant 500 000 plus 100 000, soit 600 000 FCFA, qu''on répartit 10 %, 50 %, 30 %, 10 %.
+
+Totaux des centres principaux : Approvisionnement 800 000, Coupe 2 100 000, Montage 2 520 000, Distribution 980 000. Deuxième contrôle : leur somme redonne 6 400 000 FCFA, puisque les centres auxiliaires sont vidés.
+
+## 30:00 – 40:00 · Unités d''œuvre
+
+Le coût de l''unité d''œuvre est le total du centre divisé par le nombre d''unités. Approvisionnement : 800 000 sur 2 000 planches achetées, 400 FCFA. Coupe : les tables demandent 200 fois 2 heures machine, les chaises 600 fois 0,5 ; total 700 heures, coût 3 000 FCFA. Montage : 1 400 heures de MOD, coût 1 800 FCFA. Distribution : assiette de 100 FCFA de chiffre d''affaires ; CA 19 600 000 FCFA, donc 196 000 unités, coût 5 FCFA.
+
+Question au public : pourquoi une assiette de frais pour la distribution ? Parce que l''activité de ce centre est liée aux ventes, et qu''on n''a pas d''unité physique simple.
+
+## 40:00 – 45:00 · Pause et quiz
+
+Quiz de mi-parcours, répondez sur votre feuille :
+
+- Question 1 : une pénalité fiscale est-elle incorporable ? Non, c''est une charge non incorporable.
+- Question 2 : que devient le total d''un centre auxiliaire après répartition secondaire ? Il est nul.
+- Question 3 : si le total du centre Coupe était de 2 450 000 FCFA pour 700 heures, quel serait le coût de l''UO ? 3 500 FCFA.
+
+## 45:00 – 55:00 · Prestations réciproques : correction commentée
+
+Dans certains sujets, deux centres auxiliaires travaillent l''un pour l''autre. Exemple : la Gestion du personnel a 600 000 FCFA de charges primaires et reçoit 20 % de l''Entretien ; l''Entretien a 400 000 FCFA et reçoit 10 % de la Gestion du personnel. On ne peut pas vider l''un avant l''autre : il faut poser un système.
+
+Écrivez au tableau : GP = 600 000 + 0,2 E et E = 400 000 + 0,1 GP. On remplace E dans la première équation : GP = 600 000 + 0,2 × (400 000 + 0,1 GP) = 680 000 + 0,02 GP. Donc 0,98 GP = 680 000, et GP ≈ 693 878 FCFA. Puis E = 400 000 + 0,1 × 693 878 ≈ 469 388 FCFA.
+
+Ce sont ces totaux, et non les montants primaires, que l''on répartit ensuite selon les pourcentages. Contrôle : ce qui part vers les centres principaux doit égaler 600 000 + 400 000 = 1 000 000 FCFA. La Gestion du personnel envoie 90 % de son total aux centres principaux et l''Entretien 80 % du sien : 0,9 × 693 878 + 0,8 × 469 388 ≈ 1 000 000 FCFA. Le compte est bon.
+
+## 55:00 – 65:00 · Coût d''achat et stock
+
+Coût d''achat des planches : prix d''achat 6 000 000 plus charges du centre Approvisionnement 800 000, soit 6 800 000 FCFA, 3 400 FCFA la planche.
+
+Visuel : fiche de stock. Stock initial 500 planches pour 1 450 000 ; entrées 2 000 pour 6 800 000. CUMP : 8 250 000 divisé par 2 500, soit 3 300 FCFA. Sorties : 2 100 planches, 6 930 000 FCFA. Stock final : 400 planches, 1 320 000 FCFA. Contrôle : stock initial plus entrées égale sorties plus stock final.
+
+## 65:00 – 74:00 · Coûts de production : correction commentée
+
+Pour les tables : bois 1 200 planches à 3 300, 3 960 000 ; MOD 800 heures à 2 500, 2 000 000 ; Coupe 400 UO à 3 000, 1 200 000 ; Montage 800 UO à 1 800, 1 440 000. Total 8 600 000 FCFA, soit 43 000 FCFA la table.
+
+Pour les chaises : 2 970 000 + 1 500 000 + 900 000 + 1 080 000 = 6 450 000 FCFA, soit 10 750 FCFA la chaise.
+
+Erreur fréquente : imputer les centres Coupe ou Montage sur les quantités vendues. Non : le coût de production porte sur les quantités produites. Autre erreur : oublier la main-d''œuvre directe parce que le centre Montage utilise déjà l''heure de MOD comme unité d''œuvre. Les deux coexistent : la MOD est une charge directe payée aux ouvriers, le centre Montage regroupe les charges indirectes de l''atelier.
+
+## 74:00 – 82:00 · Coût de revient, résultat, concordance
+
+Tables vendues : 180 fois 43 000, plus distribution 540 000, coût de revient 8 280 000 ; résultat 2 520 000 FCFA. Chaises : coût de revient 6 352 500 ; résultat 2 447 500 FCFA. Résultat analytique : 4 967 500 FCFA.
+
+Concordance : résultat de la comptabilité générale égale résultat analytique plus charges supplétives moins charges non incorporables : 4 867 500 FCFA. Pourquoi plus les supplétives ? Parce qu''elles ont diminué le résultat analytique sans exister en comptabilité générale. Et pourquoi moins les non incorporables ? Parce qu''elles ont diminué le résultat de la comptabilité générale sans être prises en compte dans les coûts. Vérification directe en comptabilité générale : ventes 19 600 000, plus production stockée 1 397 500, moins achats 6 000 000, moins variation du stock de bois 130 000, moins MOD 3 500 000, moins les autres charges 6 500 000 : on retrouve 4 867 500 FCFA.
+
+Commentaire de gestion : les deux produits sont rentables. Le résultat représente 23,3 % du chiffre d''affaires pour les tables et 27,8 % pour les chaises. Mais attention : en coûts complets, la rentabilité dépend des clés de répartition choisies. En Licence 2, nous verrons les coûts partiels, plus adaptés aux décisions à court terme.
+
+## 82:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : trier, répartir, imputer, valoriser les stocks, calculer les coûts, vérifier la concordance.
+
+Évaluation finale :
+
+- Question 1 : formule des charges incorporées ? Réponse : charges CG − non incorporables + supplétives.
+- Question 2 : centre de 1 800 000 FCFA, 600 UO : coût de l''UO ? Réponse : 3 000 FCFA.
+- Question 3 : stock initial 100 kg à 500 FCFA, entrée 300 kg à 540 FCFA : CUMP ? Réponse : (50 000 + 162 000) / 400 = 530 FCFA.
+- Question 4 : sur quelles quantités impute-t-on le centre Distribution ? Réponse : sur les quantités vendues (ou le chiffre d''affaires).
+- Question 5 : résultat analytique 2 000 000, supplétives 100 000, non incorporables 40 000 : résultat CG ? Réponse : 2 060 000 FCFA.
+
+Bon travail, et refaites le cas Teranga Bois seul, en moins de 45 minutes.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Comptabilité analytique 1 (coûts complets)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Mathématiques et statistiques de gestion', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 en contrôle de gestion, gestion, économie.
+- Objectifs : manipuler taux et indices, calculer intérêts simples et composés, actualiser, construire un tableau d''emprunt, calculer moyenne et écart-type, réaliser un ajustement linéaire pour séparer charges fixes et variables.
+- Matériel : tableau, diaporama, calculatrice scientifique, tableur facultatif.
+- Prérequis : calcul algébrique et puissances ; leçon « Mathématiques et statistiques de gestion : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Pourquoi des maths en contrôle de gestion ?
+
+Bonjour à toutes et à tous. On me demande souvent : « Pourquoi des mathématiques en contrôle de gestion ? » Parce que le contrôleur passe ses journées à comparer, prévoir et actualiser. Comparer, ce sont des taux et des indices. Prévoir, ce sont des ajustements statistiques. Actualiser, c''est raisonner sur la valeur de l''argent dans le temps. Aujourd''hui, nous traitons ces trois familles avec des exemples tirés d''entreprises fictives sénégalaises.
+
+## 05:00 – 15:00 · Taux, indices, taux moyen
+
+Un chiffre d''affaires passe de 80 000 000 à 92 000 000 FCFA : la variation est de 12 000 000 divisé par 80 000 000, soit 15,0 %. L''indice base 100 vaut 115.
+
+Piège : une hausse de 20 % puis une baisse de 20 % ne ramènent pas au point de départ. 1,2 fois 0,8 égale 0,96 : on a perdu 4 %. Les coefficients multiplicateurs se multiplient.
+
+Taux moyen : un CA passe de 50 000 000 à 72 000 000 FCFA en quatre ans. Le taux moyen n''est pas 44 % divisé par 4, soit 11 %. C''est 1,44 puissance un quart moins 1, environ 9,54 %. Vérifiez : 1,0954 puissance 4 redonne bien 1,44.
+
+## 15:00 – 30:00 · Intérêts simples et composés
+
+Intérêts simples : I égale C fois t fois j sur 360. Un découvert de 2 000 000 FCFA pendant 90 jours à 9 %, taux fictif, coûte 45 000 FCFA.
+
+Intérêts composés : les intérêts produisent des intérêts. 5 000 000 FCFA placés 3 ans à 8 %, taux fictif, deviennent 5 000 000 fois 1,08 au cube, soit 6 298 560 FCFA. Comparez avec les intérêts simples : 5 000 000 fois 0,08 fois 3 donne 1 200 000 FCFA d''intérêts, donc 6 200 000 FCFA. La différence de 98 560 FCFA vient des intérêts sur intérêts.
+
+Actualisation : combien vaut aujourd''hui 10 000 000 FCFA reçus dans 2 ans, au taux de 10 % ? On divise par 1,1 au carré : environ 8 264 463 FCFA. Retenez l''idée : un franc aujourd''hui vaut plus qu''un franc demain.
+
+## 30:00 – 45:00 · Tableau d''emprunt : correction commentée
+
+Exercice : Teranga Bois emprunte 12 000 000 FCFA sur 4 ans à 10 %, taux fictif, remboursables par annuités constantes. Prenez cinq minutes.
+
+Correction. L''annuité vaut 12 000 000 fois 0,10, divisé par 1 moins 1,1 puissance moins 4. Le dénominateur vaut environ 0,3170. L''annuité est d''environ 3 785 650 FCFA.
+
+Première ligne : capital 12 000 000, intérêt 1 200 000, amortissement 3 785 650 moins 1 200 000, soit 2 585 650. Deuxième ligne : capital 9 414 350, intérêt 941 435, amortissement 2 844 215. Et ainsi de suite jusqu''à un capital restant nul. Deux contrôles : les amortissements additionnés redonnent 12 000 000 FCFA ; chaque amortissement est le précédent multiplié par 1,1, par exemple 2 585 650 fois 1,1 donne 2 844 215.
+
+## 45:00 – 50:00 · Pause et quiz
+
+- Question 1 : +10 % puis +10 % font-ils +20 % ? Non, +21 %.
+- Question 2 : intérêt simple sur 1 000 000 FCFA à 6 % pendant 30 jours ? 5 000 FCFA.
+- Question 3 : dans un emprunt à annuités constantes, la part d''intérêts augmente-t-elle avec le temps ? Non, elle diminue, car le capital restant dû diminue.
+
+## 50:00 – 58:00 · Escompte et valeur actuelle : correction commentée
+
+Deux exercices de la leçon. Premier : un effet de 3 600 000 FCFA escompté 60 jours avant l''échéance à 12 %, taux fictif. L''escompte est un intérêt simple : 3 600 000 fois 0,12 fois 60 sur 360, soit 72 000 FCFA. L''entreprise reçoit donc 3 528 000 FCFA, avant commissions éventuelles de la banque.
+
+Second : la valeur actuelle de 15 000 000 FCFA reçus dans 3 ans à 9 %. On divise par 1,09 au cube, c''est-à-dire environ 1,2950. Résultat : environ 11 582 752 FCFA. Erreur fréquente : multiplier au lieu de diviser. Ayez le réflexe de bon sens : une somme future actualisée est toujours plus petite que la somme future.
+
+## 58:00 – 64:00 · Statistique descriptive
+
+Les ventes mensuelles de cinq agences, en millions de FCFA, sont 12, 15, 9, 20 et 14. Moyenne : 70 divisé par 5, soit 14. Écarts à la moyenne : −2, 1, −5, 6, 0. Carrés : 4, 1, 25, 36, 0, somme 66. Variance : 66 sur 5, soit 13,2. Écart-type : racine de 13,2, environ 3,63. Le coefficient de variation, 3,63 sur 14, environ 26,0 %, montre une dispersion notable entre agences.
+
+Et la médiane ? On range la série : 9, 12, 14, 15, 20. La valeur centrale est 14 : la moitié des agences vend moins de 14 millions, l''autre moitié plus. Ici médiane et moyenne coïncident. Imaginez maintenant qu''une sixième agence, au centre de Dakar, vende 60 millions. La moyenne monte à 130 divisé par 6, environ 21,7 millions, alors que la médiane, entre 14 et 15, vaut 14,5. La médiane résiste aux valeurs extrêmes ; la moyenne, non. Dans un rapport de gestion, présentez les deux quand la série est très dissymétrique, et signalez la valeur atypique au lieu de la cacher.
+
+Question au public : quelle mesure choisir pour présenter le salaire « typique » d''une entreprise où le directeur gagne vingt fois plus que les ouvriers ? Réponse : la médiane.
+
+## 64:00 – 82:00 · Ajustement linéaire : séparer fixe et variable
+
+Visuel : nuage de points, heures machine en abscisse, coût d''entretien en ordonnée, six points presque alignés.
+
+Données de l''atelier Coupe : 300 h pour 1 510 000 FCFA, 400 h pour 1 690 000, 500 h pour 1 920 000, 600 h pour 2 100 000, 700 h pour 2 300 000, 500 h pour 1 880 000.
+
+Correction commentée. Moyennes : x̄ = 500 heures, ȳ = 1 900 000 FCFA. Variance de x : les écarts sont −200, −100, 0, 100, 200, 0 ; carrés 40 000, 10 000, 0, 10 000, 40 000, 0 ; somme 100 000 ; variance 16 666,67. Covariance : somme des produits des écarts divisée par 6, soit 33 166 666,67. Pente a : covariance sur variance, 1 990 FCFA par heure. Ordonnée b : 1 900 000 moins 1 990 fois 500, soit 905 000 FCFA.
+
+Interprétation : chaque heure machine coûte environ 1 990 FCFA d''entretien, et l''atelier supporte 905 000 FCFA de charges fixes par mois. Le coefficient de corrélation, environ 0,999, confirme l''ajustement. Pour 650 heures, on budgète 2 198 500 FCFA.
+
+Comparaison avec la méthode des points extrêmes : on prend 300 et 700 heures ; pente 1 975,0 FCFA ; partie fixe 917 500 FCFA. Plus rapide, mais dépendante de deux seuls points.
+
+Trois mises en garde à formuler dans une copie. D''abord, corrélation n''est pas causalité : ici le lien technique entre heures machine et entretien est logique, mais il faut toujours le justifier. Ensuite, la droite n''est valable que dans la plage observée, de 300 à 700 heures. Enfin, la partie fixe estimée n''est pas une donnée comptable : c''est une estimation statistique, à confronter avec les contrats réels de l''atelier, par exemple un contrat d''entretien forfaitaire.
+
+## 82:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : multiplier les coefficients, actualiser avec (1 + t) puissance moins n, construire un tableau d''emprunt avec deux contrôles, ajuster par les moindres carrés et interpréter a et b. Pour réviser, refaites le tableau d''emprunt sans regarder la correction, puis reprenez l''ajustement de l''atelier Coupe avec un tableur et comparez vos résultats : vous devez retrouver exactement la même pente et la même ordonnée à l''origine.
+
+Évaluation finale :
+
+- Question 1 : un prix passe de 1 000 à 1 210 FCFA en 2 ans ; taux moyen annuel ? Réponse : 10 %.
+- Question 2 : valeur acquise de 2 000 000 FCFA à 5 % composés sur 2 ans ? Réponse : 2 205 000 FCFA.
+- Question 3 : valeur actuelle de 1 100 000 FCFA dans un an à 10 % ? Réponse : 1 000 000 FCFA.
+- Question 4 : cov(x, y) = 5 000 et V(x) = 2 500 ; pente ? Réponse : 2.
+- Question 5 : avec x̄ = 100, ȳ = 450 et a = 2, que vaut b ? Réponse : 250.
+
+Merci et bon entraînement.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-cg-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Mathématiques et statistiques de gestion');
+
 -- Cours : Contrôle de gestion Licence 2 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'lic-cg-l2', (select id from public.levels where name = 'Licence 2'), null, 'Contrôle de gestion', 'Contrôle de gestion Licence 2 : réussir ses examens', 'Préparation aux partiels et examens semestriels de deuxième année de Licence en contrôle de gestion : comptabilité analytique en coûts partiels (seuil de rentabilité, levier opérationnel, imputation rationnelle), gestion budgétaire (ventes, production, trésorerie) et analyse des écarts sur coûts et sur marge. Fiches, cas d''entreprises fictives sénégalaises, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : coûts complets et statistiques de Licence 1.', true, 332
