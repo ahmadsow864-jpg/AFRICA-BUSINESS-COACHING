@@ -1080,8 +1080,6 @@ Exercice 5. Ajoute les accents et les signes manquants : « Donde esta el? Que a
 
 Exercice 6. Ton épreuve dure, par hypothèse, 3 heures. Calcule le temps à consacrer à chaque partie selon la répartition indicative de la leçon.
 
-Exercice 7. Rédige ton propre emploi du temps pour la semaine 4 du plan de révision (5 jours, 20 minutes minimum par jour).
-
 ## Corrigé
 
 Exercice 1. Compréhension écrite : « ¿Por qué decide el protagonista salir de su país? ». Compétence linguistique : « Pon el verbo entre paréntesis en subjuntivo ». Expression écrite : « Escribe una carta a un amigo para contarle tus proyectos ».
@@ -1094,9 +1092,7 @@ Exercice 4. « Awa vive en Saint-Louis. » On reprend le verbe de la question et
 
 Exercice 5. « ¿Dónde está él? ¡Qué alegría! »
 
-Exercice 6. 3 heures = 180 minutes. Lecture : 15 % de 180 = 27 min. Compréhension : 35 % = 63 min. Grammaire : 20 % = 36 min. Expression : 25 % = 45 min. Relecture : 5 % = 9 min. Total : 27 + 63 + 36 + 45 + 9 = 180 min.
-
-Exercice 7. Exemple : lundi, subjonctif présent des verbes réguliers ; mardi, verbes irréguliers (tener, hacer, ser, ir) ; mercredi, emplois après les verbes de volonté ; jeudi, emplois après « cuando », « para que », « aunque » ; vendredi, exercice de synthèse corrigé. Toute réponse est acceptable si elle respecte le thème de la semaine et la durée minimale.', 'texte', 50, true, 10
+Exercice 6. 3 heures = 180 minutes. Lecture : 15 % de 180 = 27 min. Compréhension : 35 % = 63 min. Grammaire : 20 % = 36 min. Expression : 25 % = 45 min. Relecture : 5 % = 9 min. Total : 27 + 63 + 36 + 45 + 9 = 180 min.', 'texte', 50, true, 10
 from public.courses c where c.slug = 'bac-espagnol'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
@@ -1541,7 +1537,9 @@ Visuel : le plan de la séance en six étapes.
 
 « Première règle d''or : le subjonctif présent se forme sur le "yo" du présent. Tengo donne tenga, hago donne haga, conozco donne conozca. Les verbes en -ar prennent un e, les verbes en -er et -ir prennent un a. N''oubliez pas les six irréguliers : sea, vaya, esté, dé, sepa, haya.
 
-Le subjonctif imparfait se forme sur la troisième personne du pluriel du passé simple : tuvieron donne tuviera, hicieron donne hiciera, fueron donne fuera, dijeron donne dijera. Si vous connaissez votre passé simple, vous connaissez votre subjonctif imparfait. »
+Le subjonctif imparfait se forme sur la troisième personne du pluriel du passé simple : tuvieron donne tuviera, hicieron donne hiciera, fueron donne fuera, dijeron donne dijera. Si vous connaissez votre passé simple, vous connaissez votre subjonctif imparfait.
+
+Écrivez avec moi au tableau quelques phrases complètes : "Es necesario que todos los niños vayan a la escuela." "Mis padres quieren que yo sea médico." "Ojalá haga buen tiempo mañana." Dans chaque phrase, entourez le déclencheur du subjonctif : une expression impersonnelle, un verbe de volonté, ojalá. Si vous savez repérer le déclencheur, vous ne vous tromperez pas de mode. »
 
 Visuel : deux colonnes, présent du « yo » et subjonctif présent ; passé simple « ellos » et subjonctif imparfait. Question à poser : « Quel est le subjonctif imparfait de "poder" ? » Réponse attendue : pudiera.
 
@@ -1552,6 +1550,8 @@ Visuel : deux colonnes, présent du « yo » et subjonctif présent ; passé sim
 Pour l''hypothèse, retenez trois formules. Si tengo tiempo, iré. Si tuviera tiempo, iría. Si hubiera tenido tiempo, habría ido. Et jamais, jamais de conditionnel juste après "si". Écrivez-le en gros sur votre fiche : "si tendría" est interdit. »
 
 Visuel : le tableau des trois hypothèses avec une flèche « interdit » sur « si + conditionnel ».
+
+Question à poser : « Comment dit-on : si nous protégions la forêt de Casamance, il y aurait plus de pluie ? » Laisser une minute, puis corriger : « Si protegiéramos el bosque de Casamance, habría más lluvia. » Faire remarquer l''accent écrit sur « protegiéramos » et le conditionnel de « haber », qui est « habría ». Autre piège à signaler : après « como si », on emploie toujours le subjonctif imparfait : « Habla como si fuera el jefe. »
 
 ## 25:00 – 35:00 · Rappel 3 : ser et estar, por et para, discours indirect
 
@@ -1585,13 +1585,21 @@ Visuel : un tableau de transformation du discours direct au discours indirect.
 
 Texte projeté : « Aminata trabaja en un mercado de Ziguinchor. Antes vendía pescado, pero desde hace dos años tiene un pequeño restaurante. Cada día cocina para los estudiantes de la universidad. "Me gustaría que mis hijas estudiaran y no tuvieran que levantarse a las cinco como yo", dice. »
 
-« Question 1 : ¿Dónde trabaja Aminata? Réponse complète : Aminata trabaja en un mercado de Ziguinchor. Question 2 : vrai ou faux, Aminata siempre ha tenido un restaurante. Faux, et je justifie : "Antes vendía pescado". Question 3 : explique le souhait d''Aminata. Elle veut que ses filles fassent des études et aient une vie moins dure. Remarquez la structure "me gustaría que estudiaran" : conditionnel, donc subjonctif imparfait. Le texte vous donne lui-même un exemple de concordance : profitez-en dans vos réponses. »
+« Question 1 : ¿Dónde trabaja Aminata? Réponse complète : Aminata trabaja en un mercado de Ziguinchor. Question 2 : vrai ou faux, Aminata siempre ha tenido un restaurante. Faux, et je justifie : "Antes vendía pescado". Question 3 : explique le souhait d''Aminata. Elle veut que ses filles fassent des études et aient une vie moins dure. Remarquez la structure "me gustaría que estudiaran" : conditionnel, donc subjonctif imparfait. Le texte vous donne lui-même un exemple de concordance : profitez-en dans vos réponses.
+
+Question 4 : trouvez dans le texte un contraire de « después ». Réponse : « antes ». Question 5 : mettez au discours indirect la phrase d''Aminata en commençant par « Aminata dijo que... ». Réponse : « Aminata dijo que le gustaría que sus hijas estudiaran y no tuvieran que levantarse a las cinco como ella. » Observez bien trois changements : "dice" devient "dijo", "mis hijas" devient "sus hijas", "yo" devient "ella". Le conditionnel et le subjonctif imparfait, eux, ne bougent pas : ils sont déjà au bon temps.
+
+Erreur fréquente à signaler : beaucoup de candidats répondent "Aminata trabaja a Ziguinchor". En espagnol, la situation dans une ville se dit avec "en" : trabaja en Ziguinchor, vive en Dakar. "A" indique le mouvement : va a Ziguinchor. »
 
 Visuel : le texte avec les mots-clés surlignés et les numéros de ligne.
 
 ## 1:05:00 – 1:15:00 · Méthode express de l''expression écrite
 
 « Pour l''essai : introduction avec la question posée, deux parties avec un argument et un exemple chacune, conclusion qui répond. Utilisez vos connecteurs : en primer lugar, además, sin embargo, por eso, en conclusión. Pour la lettre : lieu et date, "Querido" ou "Estimado señor" suivi de deux points, formule finale adaptée. Placez au moins un subjonctif et une hypothèse bien construits : c''est là que vous montrez votre niveau de Terminale. Et choisissez des exemples africains précis : la migration vers les Canaries, la Guinée équatoriale, l''héritage africain à Cuba ou en Colombie. »
+
+Lecture à voix haute d''une introduction modèle sur le sujet « ¿Debe Senegal proteger sus lenguas nacionales? » : « Senegal es un país donde se hablan muchas lenguas: el wolof, el pulaar, el serer, el diola y otras. Sin embargo, el francés sigue siendo la lengua de la administración. ¿Es necesario proteger las lenguas nacionales? En primer lugar, veremos que son la base de nuestra identidad; luego, mostraremos que también pueden ser útiles para la educación. »
+
+« Remarquez : une phrase de contexte, une problématique sous forme de question avec les deux points d''interrogation, et l''annonce du plan avec "en primer lugar" et "luego". C''est simple, clair, et le correcteur sait immédiatement où vous allez. »
 
 Visuel : une grille de relecture en cinq points (plan, connecteurs, subjonctif, accents, longueur).
 
@@ -2187,6 +2195,8 @@ Visuel : le plan de la séance en six étapes.
 
 Visuel : tableau de déclinaison à trois colonnes. Question : « Quel est le cas après فِي ? » Réponse attendue : le cas indirect, avec kasra.
 
+Exercice flash à faire au tableau avec les élèves : analyser les deux mots de بَابُ الْمَدْرَسَةِ (bābu l-madrasati : la porte de l''école). بَابُ est le premier terme de l''annexion : pas d''article, pas de tanwīn, et son cas dépend de sa fonction dans la phrase. الْمَدْرَسَةِ est le complément de nom : toujours au cas indirect. Puis ajouter un adjectif : فِي الْمَدْرَسَةِ الْجَدِيدَةِ (fī l-madrasati l-jadīdati : dans la nouvelle école). L''adjectif copie tout : le cas indirect, le féminin, le singulier et l''article. Rappeler enfin le piège des pluriels de choses : الْأَشْجَارُ الْكَبِيرَةُ (al-ashjāru l-kabīratu : les grands arbres), avec un adjectif au féminin singulier.
+
 ## 15:00 – 25:00 · Rappel 2 : phrase nominale, كَانَ et إِنَّ, phrase verbale
 
 « Dans la phrase nominale, tout est au cas sujet : الْعِلْمُ نُورٌ (al-ʿilmu nūrun). Avec كَانَ, le prédicat passe au cas direct : كَانَ الْجَوُّ حَارًّا (kāna l-jawwu ḥārran). Avec إِنَّ, c''est le sujet qui passe au cas direct : إِنَّ الْعِلْمَ نَافِعٌ (inna l-ʿilma nāfiʿun). Retenez : كَانَ agit sur le prédicat, إِنَّ agit sur le sujet.
@@ -2202,6 +2212,10 @@ Visuel : deux flèches, l''une de كَانَ vers le prédicat, l''autre de إِ
 Les nombres : de 3 à 10, genre inverse et pluriel au cas indirect, ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin) ; de 11 à 99, singulier au cas direct, عِشْرُونَ طَالِبًا (ʿishrūna ṭāliban) ; 100 et 1000, singulier au cas indirect, مِائَةُ شَجَرَةٍ (miʾatu shajaratin).
 
 Les relatifs seulement après un nom déterminé : الْكِتَابُ الَّذِي قَرَأْتُهُ (al-kitābu lladhī qaraʾtuhu). Le conditionnel : إِذَا + accompli, إِنْ + deux apocopés, لَوْ pour l''irréel avec لَـ. »
+
+Questions à poser à la classe, avec un temps de réflexion de trente secondes : « Quel est l''inaccompli de أَرْسَلَ ? » Réponse : يُرْسِلُ (yursilu), avec un préfixe en u car c''est la forme IV. « Comment écrire quinze élèves garçons ? » Réponse : خَمْسَةَ عَشَرَ تِلْمِيذًا (khamsata ʿashara tilmīdhan) : le nom est au singulier et au cas direct. « Quel relatif après الطُّلَّابُ ? » Réponse : الَّذِينَ (alladhīna), car ce sont des êtres humains au masculin pluriel.
+
+Visuel : un tableau récapitulatif des nombres, avec trois lignes (3 à 10, 11 à 99, 100 et 1000) et un exemple par ligne.
 
 ## 35:00 – 45:00 · Correction commentée : exercice de langue type Bac
 
@@ -2225,13 +2239,22 @@ Les relatifs seulement après un nom déterminé : الْكِتَابُ الَّ
 
 Texte projeté : تَعْمَلُ عَائِشَةُ مُعَلِّمَةً فِي مَدْرَسَةٍ بِمَدِينَةِ كَوْلَخ. تُعَلِّمُ الْأَطْفَالَ الْقِرَاءَةَ وَالْكِتَابَةَ، وَتُشَجِّعُهُمْ عَلَى حِمَايَةِ الْبِيئَةِ. (taʿmalu ʿĀʾishatu muʿallimatan fī madrasatin bi-madīnati Kawlakh. tuʿallimu l-aṭfāla l-qirāʾata wa-l-kitābata, wa-tushajjiʿuhum ʿalā ḥimāyati l-bīʾati : Aïcha travaille comme enseignante dans une école de la ville de Kaolack. Elle enseigne aux enfants la lecture et l''écriture, et les encourage à protéger l''environnement.)
 
-« Question 1 : مَاذَا تَعْمَلُ عَائِشَةُ؟ Réponse : تَعْمَلُ عَائِشَةُ مُعَلِّمَةً (taʿmalu ʿĀʾishatu muʿallimatan). Question 2 : relevez un verbe dérivé. تُعَلِّمُ, forme II, ou تُشَجِّعُ, forme II aussi. Question 3 : analysez الْأَطْفَالَ : complément d''objet, cas direct. Remarquez que عَائِشَةُ n''a pas de tanwīn : c''est un nom propre féminin, donc diptote. »
+« Question 1 : مَاذَا تَعْمَلُ عَائِشَةُ؟ Réponse : تَعْمَلُ عَائِشَةُ مُعَلِّمَةً (taʿmalu ʿĀʾishatu muʿallimatan). Question 2 : relevez un verbe dérivé. تُعَلِّمُ, forme II, ou تُشَجِّعُ, forme II aussi. Question 3 : analysez الْأَطْفَالَ : complément d''objet, cas direct. Remarquez que عَائِشَةُ n''a pas de tanwīn : c''est un nom propre féminin, donc diptote.
+
+Question 4 : ajoutez كَانَ à la phrase عَائِشَةُ مُعَلِّمَةٌ. Réponse : كَانَتْ عَائِشَةُ مُعَلِّمَةً (kānat ʿĀʾishatu muʿallimatan : Aïcha était enseignante). Le verbe se met au féminin, et le prédicat passe au cas direct. Question 5 : donnez le pluriel de مُعَلِّمَةٌ. Réponse : مُعَلِّمَاتٌ (muʿallimātun), pluriel féminin régulier. Question 6 : proposez un titre. Par exemple : الْمُعَلِّمَةُ وَالْبِيئَةُ (al-muʿallimatu wa-l-bīʾatu : l''enseignante et l''environnement). Un bon titre est court et reprend l''idée principale. »
 
 Visuel : le texte vocalisé avec les mots clés surlignés.
 
 ## 1:05:00 – 1:15:00 · Méthode express de l''expression écrite
 
 « Pour l''essai : une phrase d''introduction, deux idées avec أَوَّلًا et ثَانِيًا, un exemple, une conclusion avec وَفِي الْخِتَامِ. Pour la lettre : lieu et date, عَزِيزِي pour un ami ou حَضْرَةَ السَّيِّدِ pour un responsable, l''objet de la lettre, la formule finale. Phrases courtes, vocabulaire du texte, accords vérifiés. Placez une phrase avec كَانَ ou إِنَّ bien vocalisée, et une phrase conditionnelle correcte : c''est votre signature de Terminale. »
+
+Lecture d''un début et d''une fin d''essai modèles sur le chômage des jeunes :
+
+- Introduction : الْبَطَالَةُ مُشْكِلَةٌ كَبِيرَةٌ فِي مُجْتَمَعِنَا. فَمَا أَسْبَابُهَا؟ وَمَا الْحُلُولُ؟ (al-baṭālatu mushkilatun kabīratun fī mujtamaʿinā. fa-mā asbābuhā? wa-mā l-ḥulūlu? : le chômage est un grand problème dans notre société. Quelles en sont les causes ? Et quelles sont les solutions ?)
+- Conclusion : وَفِي الْخِتَامِ، إِذَا تَعَاوَنَتِ الدَّوْلَةُ وَالشَّبَابُ قَلَّتِ الْبَطَالَةُ. (wa-fī l-khitāmi, idhā taʿāwanati d-dawlatu wa-sh-shabābu qallati l-baṭālatu : en conclusion, si l''État et les jeunes coopèrent, le chômage diminuera.)
+
+« Regardez la conclusion : en une seule phrase, elle contient un verbe dérivé de forme VI, تَعَاوَنَ, et une phrase conditionnelle avec إِذَا. Voilà comment montrer votre niveau sans prendre de risque. »
 
 Visuel : grille de relecture en cinq points (plan, connecteurs, accords, voyelles finales, orthographe de ة et ى).
 
