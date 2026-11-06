@@ -1690,7 +1690,7 @@ Une chaîne logistique fait circuler trois types de flux qui doivent rester sync
 - Les flux d''information : bons de commande, bons de livraison, factures, états de stock, messages entre le client, le commercial, le magasinier et le chauffeur.
 - Les flux financiers : paiements des clients, règlements aux fournisseurs et aux transporteurs, frais de douane et de manutention.
 
-Un problème classique dans les PME est le décalage entre flux physique et flux d''information : la marchandise sort de l''entrepôt mais le stock n''est pas mis à jour, ou la livraison est faite mais la facture part avec plusieurs jours de retard. Ces décalages créent des ruptures de stock « surprises » et dégradent la trésorerie.
+Problème classique dans les PME : la marchandise sort mais le stock n''est pas mis à jour, ou la facture part avec des jours de retard. Résultat : ruptures « surprises » et trésorerie dégradée.
 
 ## Les acteurs
 
@@ -1731,7 +1731,7 @@ Coût logistique total par tonne : 12 000 + 3 000 + 2 500 + 9 500 + 1 000 = 28 0
 
 Coût logistique mensuel : 28 000 × 500 = 14 000 000 FCFA.
 
-Ce calcul permet de raisonner. Si le gérant obtient une baisse de 1 000 FCFA par tonne sur la distribution en regroupant mieux ses livraisons, il économise 500 000 FCFA par mois, soit 6 000 000 FCFA par an. On voit aussi que la distribution représente 9 500 / 28 000, soit environ 33,9 % du coût logistique : c''est un poste prioritaire à surveiller.
+Une baisse de 1 000 FCFA par tonne sur la distribution ferait économiser 500 000 FCFA par mois, soit 6 000 000 FCFA par an. On voit aussi que la distribution représente 9 500 / 28 000, soit environ 33,9 % du coût logistique : c''est un poste prioritaire à surveiller.
 
 ## Méthode : cartographier sa chaîne
 
@@ -1779,7 +1779,7 @@ Règles de base : chaque emplacement a une adresse (allée, rayonnage, niveau), 
 
 ## La méthode ABC
 
-Un entrepôt contient souvent des centaines d''articles. On ne peut pas les surveiller tous avec la même intensité. La méthode ABC (inspirée de la loi de Pareto) classe les articles selon leur valeur de consommation annuelle (quantité consommée × coût unitaire).
+On ne peut pas surveiller tous les articles avec la même intensité. La méthode ABC (inspirée de la loi de Pareto) classe les articles selon leur valeur de consommation annuelle (quantité consommée × coût unitaire).
 
 Méthode :
 
@@ -1799,7 +1799,7 @@ Exemple : un grossiste de Kaolack a 8 articles, pour une valeur totale de 100 00
 - Allumettes : 1 000 000 FCFA, cumul 99,3 %.
 - Bougies : 700 000 FCFA, cumul 100 %.
 
-Classe A : riz et huile (2 articles sur 8, soit 25 % des articles mais 78 % de la valeur). Classe B : sucre et lait. Classe C : savon, pâtes, allumettes, bougies. Conséquence pratique : les articles A sont comptés souvent (par exemple chaque semaine), commandés avec précision et bien protégés ; les articles C sont gérés plus simplement.
+Classe A : riz et huile (25 % des articles, 78 % de la valeur). Classe B : sucre et lait. Classe C : les quatre autres. Les articles A sont comptés souvent (par exemple chaque semaine) et commandés avec précision ; les C sont gérés plus simplement.
 
 ## La méthode FIFO
 
@@ -1814,7 +1814,7 @@ Exemple : stock initial 100 sacs à 15 000 FCFA ; entrée de 200 sacs à 16 000 
 
 ## Stock de sécurité et point de commande
 
-Le stock de sécurité protège contre les imprévus (retard du fournisseur, pic de demande). Le point de commande est le niveau de stock auquel il faut passer commande :
+Le stock de sécurité protège contre les imprévus. Le point de commande est le niveau de stock auquel il faut passer commande :
 
 Point de commande = consommation journalière × délai de livraison (en jours) + stock de sécurité.
 
@@ -1832,7 +1832,7 @@ Bonnes pratiques : compter en binôme, bloquer les mouvements pendant le comptag
 
 Écart d''inventaire = stock physique − stock théorique. Taux d''écart = écart / stock théorique.
 
-Exemple : stock théorique 1 250 cartons, stock compté 1 232 cartons. Écart = −18 cartons. Taux = 18 / 1 250 = 1,44 %. Il faut ensuite rechercher les causes : erreurs de saisie, casse non déclarée, livraisons non enregistrées, vols.
+Exemple : stock théorique 1 250 cartons, stock compté 1 232 cartons. Écart = −18 cartons. Taux = 18 / 1 250 = 1,44 %. Causes à rechercher : erreurs de saisie, casse, livraisons non enregistrées, vols.
 
 ## Points clés
 
@@ -1856,7 +1856,7 @@ Exercice 4. Stock théorique : 800 bidons. Stock physique : 776 bidons. Calculez
 
 Exercice 1. Total : 10 000 000 FCFA. Cumuls : P1 60 % ; P2 80 % ; P3 92 % ; P4 97 % ; P5 100 %. Classe A : P1 et P2 (80 %). Classe B : P3. Classe C : P4 et P5.
 
-Exercice 2. Sortie : 40 × 10 000 + 30 × 11 000 = 400 000 + 330 000 = 730 000 FCFA. Stock final : 30 cartons à 11 000 FCFA = 330 000 FCFA. Vérification : valeur totale disponible 400 000 + 660 000 = 1 060 000 = 730 000 + 330 000.
+Exercice 2. Sortie : 40 × 10 000 + 30 × 11 000 = 400 000 + 330 000 = 730 000 FCFA. Stock final : 30 cartons à 11 000 FCFA = 330 000 FCFA.
 
 Exercice 3. Point de commande = 25 × 8 + 50 = 250 cartons.
 
@@ -1974,7 +1974,7 @@ Les documents prouvent ce qui a été remis et reçu, transfèrent la responsabi
 - Le certificat d''origine : il atteste du pays d''origine, ce qui peut avoir un effet sur les droits applicables.
 - La déclaration en douane : établie en général par un commissionnaire en douane agréé, elle permet de dédouaner la marchandise.
 
-Règle pratique : à la réception, toujours vérifier la concordance entre la commande, le bon de livraison, la facture et la marchandise réellement reçue, et noter les réserves précises sur le document du transporteur avant de signer.
+Règle pratique : à la réception, vérifier la concordance commande – bon de livraison – facture – marchandise, et noter des réserves précises avant de signer.
 
 ## Les incoterms : à quoi servent-ils ?
 
@@ -1994,11 +1994,11 @@ Règles réservées au transport maritime et fluvial : FAS, FOB, CFR, CIF.
 
 Quelques règles très utilisées, en principe :
 
-- EXW (à l''usine) : le vendeur met la marchandise à disposition dans ses locaux ; l''acheteur fait presque tout et supporte presque tous les risques.
-- FOB (franco à bord) : le vendeur livre la marchandise à bord du navire au port de chargement ; à partir de ce moment, frais et risques passent à l''acheteur, qui paie le fret maritime.
+- EXW (à l''usine) : marchandise mise à disposition chez le vendeur ; l''acheteur fait presque tout.
+- FOB (franco à bord) : le vendeur livre à bord du navire au port de chargement ; ensuite frais et risques passent à l''acheteur, qui paie le fret.
 - CFR (coût et fret) : le vendeur paie le fret jusqu''au port de destination, mais le risque passe à l''acheteur dès le chargement à bord au départ.
 - CIF (coût, assurance et fret) : comme CFR, avec en plus une assurance souscrite par le vendeur au profit de l''acheteur. Le risque passe aussi au chargement à bord.
-- DAP (rendu au lieu de destination) : le vendeur supporte frais et risques jusqu''au lieu convenu, marchandise prête à être déchargée ; l''acheteur s''occupe du dédouanement import.
+- DAP (rendu au lieu de destination) : frais et risques au vendeur jusqu''au lieu convenu ; dédouanement import à l''acheteur.
 - DDP (rendu droits acquittés) : le vendeur assume tout, y compris le dédouanement import et les droits.
 
 Point souvent mal compris : en CFR et CIF, si la marchandise est endommagée en mer, c''est l''acheteur qui supporte le risque.
@@ -2018,7 +2018,7 @@ Valeur CIF (valeur rendue au port de destination) : 10 000 000 + 1 500 000 + 100
 
 Coût de revient rendu entrepôt : 11 600 000 + 2 000 000 + 400 000 + 250 000 = 14 250 000 FCFA.
 
-Ce calcul montre que le prix d''achat FOB ne représente qu''une partie du coût réel : ici 10 000 000 / 14 250 000, soit environ 70 %. Comparer deux fournisseurs sur leur seul prix FOB peut conduire à une mauvaise décision.
+Le prix FOB ne représente ici qu''environ 70 % du coût réel (10 000 000 / 14 250 000) : comparer des fournisseurs sur ce seul prix est trompeur.
 
 ## Points clés
 
