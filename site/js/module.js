@@ -30,7 +30,7 @@
 
     var img = A.imgUrl(s.image_url);
     var vis = document.getElementById("m-visual");
-    if (img) vis.appendChild(h("img", { src: img, alt: "Illustration " + s.title, width: "800", height: "500" }));
+    if (img) vis.appendChild(A.moduleImg(s, { alt: s.title, width: "800", height: "500" }));
     else vis.appendChild(h("span", { class: "card__icon card__icon--big", text: s.icon || "" }));
 
     var course = (window.ABC_CATALOG || []).filter(function (c) { return c.module === s.id; })[0];
@@ -50,7 +50,7 @@
     list.filter(function (x) { return x.id !== s.id; }).forEach(function (o) {
       var oi = A.imgUrl(o.image_url);
       others.appendChild(h("a", { class: "card card--mini", href: "module.html?m=" + encodeURIComponent(o.id) },
-        oi ? h("img", { src: oi, alt: "", loading: "lazy", width: "800", height: "500" }) : null,
+        oi ? A.moduleImg(o, { alt: "", loading: "lazy", width: "800", height: "500" }) : null,
         h("span", { text: o.title })
       ));
     });

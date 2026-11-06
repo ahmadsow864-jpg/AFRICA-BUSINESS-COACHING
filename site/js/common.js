@@ -59,6 +59,22 @@
     return "";
   }
 
+  // Image d'un module : 1) photo envoyée depuis l'admin (https), sinon 2) photo déposée dans
+  // img/photos/<id>.jpg, sinon 3) illustration d'origine. Bascule automatique si la photo manque.
+  function moduleImg(s, attrs) {
+    var fallback = imgUrl(s.image_url);
+    var first = /^https:\/\//.test(s.image_url || "") ? s.image_url : base + "img/photos/" + s.id + ".jpg";
+    var img = h("img", Object.assign({ src: first }, attrs || {}));
+    if (first !== fallback && fallback) {
+      img.addEventListener("error", function onErr() {
+        img.removeEventListener("error", onErr);
+        img.setAttribute("src", fallback);
+        img.classList.add("is-illustration");
+      });
+    }
+    return img;
+  }
+
   function byOrder(a, b) { return (a.sort || 0) - (b.sort || 0); }
 
   async function loadServices() {
@@ -110,7 +126,7 @@
 
   window.ABC = {
     sb: sb, configured: configured, data: data, base: base,
-    h: h, clear: clear, imgUrl: imgUrl, safeUrl: safeUrl, flag: flag, notice: notice,
+    h: h, clear: clear, imgUrl: imgUrl, moduleImg: moduleImg, safeUrl: safeUrl, flag: flag, notice: notice,
     loadServices: loadServices, loadSettings: loadSettings
   };
 })();

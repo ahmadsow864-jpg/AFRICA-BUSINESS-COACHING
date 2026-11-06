@@ -13,7 +13,7 @@
       grid.appendChild(
         h("a", { class: "card card--module", href: "module.html?m=" + encodeURIComponent(s.id), "data-cat": s.pole },
           h("div", { class: "card__media" },
-            img ? h("img", { src: img, alt: "Illustration " + s.title, loading: "lazy", width: "800", height: "500" })
+            img ? A.moduleImg(s, { alt: s.title, loading: "lazy", width: "800", height: "500" })
                 : h("span", { class: "card__icon", text: s.icon || "•" }),
             h("span", { class: "card__pole", text: A.data.poles[s.pole] || "" })
           ),

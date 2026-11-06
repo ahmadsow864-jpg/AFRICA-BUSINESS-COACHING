@@ -3,8 +3,9 @@
 Ce guide explique comment rendre le site **Africa Business Development Consulting** opérationnel :
 site public, espace administrateur sécurisé et plateforme Éducation en ligne.
 
-Durée estimée : 30 à 45 minutes. Aucun serveur à louer : GitHub Pages (gratuit) héberge
-le site, Supabase (offre gratuite pour démarrer) héberge la base de données et les comptes.
+Durée estimée : 30 à 45 minutes. Le site (dossier `site/`) est hébergé chez **l'hébergeur de
+votre choix** — il n'est **pas** publié sur GitHub. Supabase (offre gratuite pour démarrer)
+héberge la base de données et les comptes.
 
 ---
 
@@ -45,9 +46,8 @@ Dans **Authentication** :
 1. **Sign In / Providers → Email** : activé, avec **Confirm email** activé.
 2. **Multi-Factor (MFA)** : vérifiez que **TOTP** est activé (obligatoire pour l'admin).
 3. **URL Configuration** :
-   - *Site URL* : `https://ahmadsow864-jpg.github.io/AFRICA-BUSINESS-COACHING/`
-   - *Redirect URLs* : ajoutez
-     `https://ahmadsow864-jpg.github.io/AFRICA-BUSINESS-COACHING/education/espace.html`
+   - *Site URL* : l'adresse de votre site, ex. `https://www.mon-domaine.sn/`
+   - *Redirect URLs* : ajoutez `https://www.mon-domaine.sn/education/espace.html`
 4. **Policies / Passwords** : longueur minimale 8 caractères (ou plus).
 5. Recommandé : **Attack Protection → CAPTCHA** et les limites de débit par défaut.
 
@@ -82,17 +82,26 @@ Collez-les dans `site/js/config.js`.
 
 La clé *anon* peut être publique : ce sont les règles RLS de la base qui protègent les données.
 
-## Étape 5 — Publier avec GitHub Pages
+## Étape 5 — Héberger le site (sans GitHub)
 
-1. Fusionnez la pull request dans `main`.
-2. Sur GitHub : **Settings → Pages → Build and deployment → Source : GitHub Actions**.
-3. Le fichier `.github/workflows/pages.yml` publie automatiquement le dossier `site/`
-   à chaque modification de `main`.
-4. Adresse du site : `https://ahmadsow864-jpg.github.io/AFRICA-BUSINESS-COACHING/`
+**Recommandé : Google Firebase Hosting** — suivez le guide [HEBERGEMENT-GOOGLE.md](HEBERGEMENT-GOOGLE.md)
+(configuration déjà prête dans `firebase.json`). Textes pour Facebook et LinkedIn :
+[RESEAUX-SOCIAUX.md](RESEAUX-SOCIAUX.md).
 
-Nom de domaine personnalisé (ex. `africabusinesscoaching.com`) : **Settings → Pages →
-Custom domain**, puis mettez à jour l'adresse dans `site/index.html` (balises `canonical`
-et `og:`), `site/robots.txt`, `site/sitemap.xml` et l'étape 2.
+Autre possibilité, n'importe quel hébergeur web :
+
+Le site n'est **jamais** publié sur GitHub : GitHub sert uniquement à conserver le code.
+
+1. Choisissez un hébergeur web avec certificat HTTPS (hébergeur au Sénégal ou international)
+   et réservez votre nom de domaine (ex. `www.mon-domaine.sn`).
+2. Indiquez votre domaine dans les fichiers de référencement :
+   `node tools/set-domain.mjs https://www.mon-domaine.sn`
+3. Envoyez **le contenu du dossier `site/`** à la racine de votre hébergement
+   (gestionnaire de fichiers de l'hébergeur ou FTP sécurisé SFTP).
+4. Vérifiez que l'adresse s'ouvre bien en `https://`.
+
+Le site peut aussi être utilisé sur votre ordinateur sans hébergement : double-cliquez sur
+`Ouvrir-Site-Edge.bat` (voir plus bas).
 
 ## Étape 6 — Être visible sur Google dans les pays francophones
 
