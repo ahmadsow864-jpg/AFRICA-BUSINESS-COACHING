@@ -1043,11 +1043,10 @@ Le croquis est une représentation simplifiée d''un espace pour répondre à un
 - Une légende organisée en deux ou trois parties titrées, qui correspondent au plan d''une petite dissertation.
 - Des figurés adaptés : surfaces (couleurs, hachures) pour les zones, points ou symboles pour les villes et ports, lignes et flèches pour les flux et les axes.
 - Une nomenclature écrite à l''horizontale, lisible, en majuscules pour les États et océans.
-- Une orientation et une échelle si le fond de carte ne les donne pas.
 
 ## Gérer le temps le jour de l''épreuve
 
-Quelle que soit la durée officielle, répartissez votre temps ainsi : environ un quart pour l''analyse du sujet et le brouillon, deux tiers pour la rédaction, et le reste pour la relecture. Ne rédigez pas tout le devoir au brouillon : vous n''aurez pas le temps de le recopier.
+Quelle que soit la durée officielle, répartissez votre temps ainsi : environ un quart pour l''analyse du sujet et le brouillon, deux tiers pour la rédaction, et le reste pour la relecture.
 
 ## Les erreurs les plus fréquentes
 
@@ -1056,7 +1055,6 @@ Quelle que soit la durée officielle, répartissez votre temps ainsi : environ u
 - Plan déséquilibré : une partie de deux pages et une autre de cinq lignes.
 - Absence d''exemples africains alors que le programme les met au cœur des questions.
 - Croquis sans légende organisée ou sans titre.
-- Copie illisible, sans paragraphes ni alinéas.
 
 ## Plan de révision sur dix semaines
 
@@ -1078,15 +1076,19 @@ Pour chaque chapitre, fabriquez une fiche d''une page : dix dates, dix notions d
 - Répondre au sujet, rien qu''au sujet.
 - Une problématique claire et un plan équilibré.
 - Des connaissances exactes et des exemples africains et sénégalais.
-- Un croquis se lit d''abord par sa légende.
 
 ## Exercices pratiques
 
 1. Définissez en une phrase chacun des termes suivants : problématique, paraphrase, nomenclature.
+
 2. Repérez les bornes chronologiques et l''espace du sujet : « Le non-alignement de 1955 à 1961 ».
+
 3. Proposez une problématique pour le sujet : « Les relations Est-Ouest de 1962 à 1975 ».
+
 4. Classez ces figurés selon leur type (surface, point, ligne) : un port, une zone agricole, une route maritime, une capitale, un désert.
+
 5. Une population passe de 12 à 18 millions d''habitants. Calculez l''augmentation absolue et le taux de croissance.
+
 6. Construisez un plan détaillé en deux parties pour le sujet : « Le Sénégal de 1944 à 1960 : de la colonie à l''État indépendant ».
 
 ## Corrigé
@@ -1119,7 +1121,6 @@ select c.id, 'Histoire (1) : la guerre froide et le monde depuis 1945', '## Obje
 - Endiguement (containment) : politique américaine visant à empêcher l''extension du communisme.
 - Équilibre de la terreur : dissuasion fondée sur la possession par chaque camp d''armes nucléaires capables de détruire l''autre.
 - Détente : période d''apaisement relatif des tensions (environ 1962-1975).
-- Coexistence pacifique : formule de Khrouchtchev, après 1956, admettant la rivalité sans guerre directe.
 
 ## Fiche 2 : les origines et la formation des blocs (1945-1949)
 
@@ -1135,7 +1136,7 @@ En 1945, les Alliés ont vaincu l''Allemagne et le Japon. La conférence de Yalt
 
 ## Fiche 3 : les crises et les phases de l''affrontement
 
-Première phase, la confrontation (1947-1962). La guerre de Corée (1950-1953) oppose le Nord communiste, soutenu par la Chine et l''URSS, au Sud soutenu par les États-Unis et une force de l''ONU ; elle s''achève par l''armistice de Panmunjom (1953) sur une frontière proche du 38e parallèle. En 1956, l''URSS écrase l''insurrection de Budapest. Le 13 août 1961, la RDA construit le mur de Berlin. En octobre 1962, la crise de Cuba éclate : les Américains découvrent des rampes de missiles soviétiques sur l''île ; Kennedy décide un blocus naval ; Khrouchtchev accepte de retirer les missiles.
+Première phase, la confrontation (1947-1962). La guerre de Corée (1950-1953) oppose le Nord communiste, soutenu par la Chine et l''URSS, au Sud soutenu par les États-Unis et une force de l''ONU ; elle s''achève par l''armistice de Panmunjom (1953) sur une frontière proche du 38e parallèle. Le 13 août 1961, la RDA construit le mur de Berlin. En octobre 1962, la crise de Cuba éclate : les Américains découvrent des rampes de missiles soviétiques sur l''île ; Kennedy décide un blocus naval ; Khrouchtchev accepte de retirer les missiles.
 
 Deuxième phase, la détente (1962-1975). Un « téléphone rouge » relie Washington et Moscou en 1963. Les accords SALT I (1972) limitent certains armements stratégiques. L''Acte final d''Helsinki (1975) reconnaît les frontières européennes. Mais les conflits périphériques continuent : la guerre du Vietnam se termine par la chute de Saïgon le 30 avril 1975.
 
@@ -1149,7 +1150,7 @@ L''Afrique n''est pas un simple spectateur. Les deux Grands y recherchent des al
 
 ## Fiche 5 : le monde après la guerre froide
 
-La fin de l''URSS laisse les États-Unis seule superpuissance. La guerre du Golfe (1991), menée avec l''accord de l''ONU, semble annoncer un « nouvel ordre mondial ». Mais les attentats du 11 septembre 2001 ouvrent une période de lutte contre le terrorisme (Afghanistan en 2001, Irak en 2003). Depuis les années 2000, le monde devient multipolaire : affirmation de la Chine, retour de la Russie, émergence de puissances comme l''Inde, le Brésil ou l''Afrique du Sud, regroupées avec la Chine et la Russie dans les BRICS.
+La fin de l''URSS laisse les États-Unis seule superpuissance. La guerre du Golfe (1991), menée avec l''accord de l''ONU, semble annoncer un « nouvel ordre mondial ». Mais les attentats du 11 septembre 2001 ouvrent une période de lutte contre le terrorisme. Depuis les années 2000, le monde devient multipolaire : affirmation de la Chine, retour de la Russie, émergence de puissances comme l''Inde, le Brésil ou l''Afrique du Sud, regroupées avec la Chine et la Russie dans les BRICS.
 
 ## Méthode : un plan type de dissertation
 
@@ -1168,11 +1169,17 @@ Sujet : « La guerre froide de 1947 à 1991 ». Problématique : comment l''affr
 ## Exercices pratiques
 
 1. Définissez : endiguement, équilibre de la terreur, détente.
+
 2. Classez dans l''ordre chronologique : pacte de Varsovie, plan Marshall, construction du mur de Berlin, création de l''OTAN, crise de Cuba.
+
 3. Pourquoi la crise de Cuba est-elle considérée comme le moment le plus dangereux de la guerre froide ?
+
 4. Expliquez en quoi la crise du Congo est liée à la guerre froide.
+
 5. Combien d''années séparent la doctrine Truman de la disparition de l''URSS ? Combien la construction du mur de sa chute ?
+
 6. Rédigez l''introduction complète du sujet : « La guerre froide de 1947 à 1991 ».
+
 7. Proposez une problématique et un plan en deux parties pour : « Le monde depuis 1991 : un monde unipolaire ? ».
 
 ## Corrigé
@@ -1240,8 +1247,6 @@ Du 18 au 24 avril 1955, la conférence de Bandung (Indonésie) réunit 29 pays d
 
 En septembre 1961, la conférence de Belgrade (Yougoslavie), à l''initiative notamment de Tito, Nasser et Nehru, fonde le mouvement des non-alignés : refus d''appartenir à l''un des deux blocs, soutien aux luttes de libération, coexistence pacifique. Les pays du Tiers-Monde revendiquent aussi un nouvel ordre économique international (CNUCED, créée en 1964).
 
-Limites : beaucoup de non-alignés restaient proches d''un des deux Grands, et le mouvement était divisé.
-
 ## Fiche 6 : la construction de l''unité africaine
 
 Au lendemain des indépendances, deux courants s''opposent. Le groupe de Casablanca (1961, autour de Nkrumah) veut une union politique rapide, des « États-Unis d''Afrique ». Le groupe de Monrovia (1961), majoritaire, dont le Sénégal de Senghor, préfère une coopération progressive entre États souverains.
@@ -1264,11 +1269,17 @@ L''intégration se fait aussi par régions : la CEDEAO (traité de Lagos, 28 mai
 ## Exercices pratiques
 
 1. Citez trois causes de la décolonisation et classez-les (internes, liées à la guerre, internationales).
+
 2. Associez chaque pays à sa date d''indépendance : Ghana, Guinée, Algérie, Inde, Angola. Dates : 1947, 1957, 1958, 1962, 1975.
+
 3. Pourquoi la Guinée devient-elle indépendante dès 1958 ?
+
 4. Expliquez la différence entre le groupe de Casablanca et le groupe de Monrovia.
+
 5. Combien d''années séparent la création de l''OUA du lancement de l''UA ?
+
 6. Montrez que le non-alignement est à la fois un succès et une ambition limitée.
+
 7. Construisez le plan détaillé du sujet : « De l''OUA à l''UA : l''Afrique à la recherche de son unité ».
 
 ## Corrigé
@@ -1285,7 +1296,7 @@ L''intégration se fait aussi par régions : la CEDEAO (traité de Lagos, 28 mai
 
 6. Succès : il donne une voix collective aux pays nouvellement indépendants, condamne le colonialisme, soutient les luttes de libération et défend un nouvel ordre économique. Limites : des membres restent proches d''un bloc, le mouvement est divisé et pèse peu face aux deux Grands sur le plan économique et militaire.
 
-7. Introduction : création de l''OUA le 25 mai 1963. Problématique : comment l''Afrique a-t-elle tenté de s''unir, et avec quels résultats ? I. L''OUA (1963-2002) : naissance, principes, succès dans la décolonisation, limites face aux conflits et au sous-développement. II. L''UA depuis 2002 : institutions nouvelles, paix et sécurité, NEPAD, Agenda 2063, ZLECAf, appui sur les organisations régionales (CEDEAO, UEMOA). Conclusion : une unité en progrès mais encore incomplète, freinée par les crises et la faiblesse des échanges entre pays africains.', 'texte', 60, false, 30
+7. Introduction : création de l''OUA le 25 mai 1963. Problématique : comment l''Afrique a-t-elle tenté de s''unir, et avec quels résultats ? I. L''OUA (1963-2002) : naissance, principes, succès dans la décolonisation, limites face aux conflits et au sous-développement. II. L''UA depuis 2002 : institutions nouvelles, paix et sécurité, NEPAD, Agenda 2063, ZLECAf, appui sur les organisations régionales (CEDEAO, UEMOA).', 'texte', 60, false, 30
 from public.courses c where c.slug = 'bac-histoire-geographie'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Histoire (2) : décolonisation, non-alignement et unité africaine');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
@@ -1350,11 +1361,17 @@ Formules utiles : taux de natalité = naissances / population × 1000 ; taux de 
 ## Exercices pratiques
 
 1. Définissez : FTN, Triade, IDH.
+
 2. Classez du moins intégré au plus intégré : marché commun, zone de libre-échange, union économique et monétaire, union douanière.
+
 3. Un pays compte 20 millions d''habitants, 700 000 naissances et 120 000 décès dans l''année. Calculez les taux de natalité, de mortalité et d''accroissement naturel.
+
 4. Donnez deux atouts et deux limites de la Chine.
+
 5. Pourquoi dit-on que l''Afrique reste faiblement intégrée à la mondialisation ? Nuancez.
+
 6. Expliquez pourquoi croissance et développement ne sont pas synonymes.
+
 7. Rédigez la problématique et le plan du sujet : « L''Afrique dans la mondialisation : marginalisation ou intégration ? ».
 
 ## Corrigé
@@ -1450,9 +1467,13 @@ Titre : « Le Sénégal dans la mondialisation ». Légende possible :
 ## Exercices pratiques
 
 1. Rédigez la conclusion du sujet 3 en cinq lignes, avec une ouverture.
+
 2. Donnez deux limites du document de Bandung comme source historique.
+
 3. Proposez une accroche différente pour le sujet 1.
+
 4. Quels figurés utiliseriez-vous pour représenter l''axe Dakar-Touba et les envois de fonds de la diaspora ?
+
 5. Refaites le sujet 2 en temps limité, puis comparez avec le corrigé.
 
 ## Corrigé
@@ -1658,10 +1679,15 @@ Exemple de l''erreur sur les taux successifs : +10 % puis +10 % ne font pas +20 
 ## Exercices pratiques
 
 1. Définissez en une phrase : agrégat, inflation, chômage.
+
 2. Le prix d''un sac de riz passe de 15 000 à 16 500 FCFA. Calculez le taux de variation et l''indice base 100.
+
 3. Un taux d''intérêt passe de 4 % à 5 %. Exprimez cette hausse en points puis en pourcentage.
+
 4. Les ventes d''une entreprise augmentent de 20 % une année puis baissent de 20 % l''année suivante. Reviennent-elles à leur niveau initial ? Justifiez.
+
 5. Un salaire nominal augmente de 6 % pendant que les prix augmentent de 4 %. Calculez l''évolution du salaire réel (méthode exacte).
+
 6. Proposez une problématique et un plan pour le sujet : « L''inflation est-elle toujours un mal pour l''économie ? ».
 
 ## Corrigé
@@ -1721,8 +1747,6 @@ Le PIB par habitant rapporte le PIB à la population. Si le PIB augmente de 3 % 
 
 Le développement est l''ensemble des transformations économiques, sociales et culturelles qui améliorent durablement le bien-être de la population. Il est mesuré notamment par l''indice de développement humain (IDH) du PNUD, compris entre 0 et 1, qui combine santé (espérance de vie), éducation (durée de scolarisation) et niveau de vie (revenu par habitant).
 
-Il peut y avoir croissance sans développement : richesse concentrée, rente pétrolière ou minière mal redistribuée.
-
 ## Fiche 4 : l''inflation
 
 L''inflation est une hausse générale et durable du niveau des prix. Elle se mesure par l''indice des prix à la consommation (IPC), calculé sur un panier de biens et services représentatif. Taux d''inflation = (IPC de l''année − IPC de l''année précédente) / IPC de l''année précédente × 100.
@@ -1749,17 +1773,22 @@ Types de chômage : frictionnel (temps de passage d''un emploi à l''autre), con
 
 - VA = production − consommations intermédiaires ; PIB = somme des VA (+ impôts nets sur les produits).
 - Réel = nominal / prix : on divise les coefficients, on ne soustrait pas les taux.
-- Croissance (quantité) et développement (qualité de vie) ne se confondent pas.
 - Taux de chômage = chômeurs / population active.
 
 ## Exercices pratiques
 
 1. Une boulangerie de Thiès réalise un chiffre d''affaires de 18 000 000 FCFA ; elle achète pour 7 500 000 FCFA de farine, 1 200 000 FCFA d''énergie et 800 000 FCFA d''emballages. Calculez sa valeur ajoutée.
+
 2. Avec les données suivantes (milliards de FCFA) : consommation finale 5 200, FBCF 1 600, variation des stocks −50, exportations 1 100, importations 1 850, calculez le PIB.
+
 3. L''IPC passe de 125 à 130. Calculez le taux d''inflation.
+
 4. Le PIB nominal augmente de 7 % et les prix de 2,5 %. Calculez la croissance réelle.
+
 5. Un pays compte 6 000 000 de personnes en âge de travailler, dont 3 900 000 actifs occupés et 600 000 chômeurs. Calculez la population active, le taux d''activité et le taux de chômage.
+
 6. Le PIB réel augmente de 4 % et la population de 2,7 %. Calculez l''évolution du PIB réel par habitant.
+
 7. Expliquez pourquoi un pays importateur de riz et de carburant est exposé à l''inflation importée, et proposez une réponse de politique économique.
 
 ## Corrigé
@@ -1822,7 +1851,7 @@ Adam Smith (1776) : la théorie des avantages absolus. Chaque pays se spécialis
 
 David Ricardo (1817) : la théorie des avantages comparatifs. Même un pays moins efficace en tout gagne à se spécialiser dans la production où son désavantage est le plus faible. Exemple classique de Ricardo : pour produire une même quantité de drap, l''Angleterre a besoin de 100 heures de travail et le Portugal de 90 ; pour le vin, l''Angleterre a besoin de 120 heures et le Portugal de 80. Le Portugal a un avantage absolu dans les deux productions. Mais, en Angleterre, une unité de drap coûte 100 / 120 ≈ 0,83 unité de vin, contre 90 / 80 = 1,125 au Portugal : l''Angleterre a un avantage comparatif dans le drap, le Portugal dans le vin.
 
-Théorie HOS (Heckscher, Ohlin, Samuelson) : chaque pays se spécialise dans les productions qui utilisent intensément le facteur dont il est abondamment doté (travail, terre, capital). Limite pour l''Afrique : une spécialisation dans les matières premières expose aux variations des cours mondiaux et à la dégradation des termes de l''échange.
+Théorie HOS (Heckscher, Ohlin, Samuelson) : chaque pays se spécialise dans les productions qui utilisent intensément le facteur dont il est abondamment doté (travail, terre, capital).
 
 ## Fiche 5 : mesurer les échanges
 
@@ -1834,7 +1863,7 @@ La balance des paiements enregistre toutes les opérations entre résidents et n
 
 ## Fiche 6 : libre-échange ou protectionnisme ?
 
-Le libre-échange élargit les marchés, fait baisser les prix pour les consommateurs et stimule la concurrence. Le protectionnisme (droits de douane, quotas, normes, subventions) protège les industries naissantes : c''est le « protectionnisme éducateur » défendu par Friedrich List au XIXe siècle. En Afrique de l''Ouest, la CEDEAO applique un tarif extérieur commun et l''Afrique construit la ZLECAf pour développer les échanges entre pays africains.
+Le libre-échange élargit les marchés, fait baisser les prix pour les consommateurs et stimule la concurrence. Le protectionnisme protège les industries naissantes : c''est le « protectionnisme éducateur » défendu par Friedrich List au XIXe siècle. En Afrique de l''Ouest, la CEDEAO applique un tarif extérieur commun et l''Afrique construit la ZLECAf pour développer les échanges entre pays africains.
 
 ## Points clés
 
@@ -1846,10 +1875,15 @@ Le libre-échange élargit les marchés, fait baisser les prix pour les consomma
 ## Exercices pratiques
 
 1. Citez les trois fonctions de la monnaie et illustrez chacune par un exemple sénégalais.
+
 2. Une banque accorde un crédit de 3 000 000 FCFA à une couturière de Thiès. Expliquez ce qui se passe sur la masse monétaire au moment du crédit et au moment du remboursement.
+
 3. Un exportateur de mangues reçoit 45 000 euros. Combien de FCFA obtient-il ?
+
 4. Exportations : 2 400 milliards de FCFA ; importations : 3 600 milliards. Calculez le solde commercial et le taux de couverture.
+
 5. L''indice des prix à l''exportation passe à 96 et celui des prix à l''importation à 120 (base 100). Calculez les termes de l''échange et interprétez.
+
 6. Pays X : 1 tonne de produit A demande 20 heures, 1 tonne de produit B 40 heures. Pays Y : 30 heures pour A, 45 heures pour B. Identifiez les avantages absolus et comparatifs.
 
 ## Corrigé
@@ -1896,7 +1930,7 @@ La TVA est collectée à chaque étape mais ne pèse que sur le consommateur fin
 
 La politique budgétaire utilise les recettes et les dépenses publiques pour agir sur l''activité. Une politique de relance augmente les dépenses ou baisse les impôts pour soutenir la demande ; une politique de rigueur réduit le déficit.
 
-Selon Keynes, une dépense publique supplémentaire provoque une augmentation plus que proportionnelle du revenu national : c''est l''effet multiplicateur. Dans le modèle simple, k = 1 / (1 − c), où c est la propension marginale à consommer. Si c = 0,8, k = 1 / 0,2 = 5 : une dépense supplémentaire de 100 milliards peut accroître le revenu de 500 milliards au maximum. Limites : une partie du revenu sert à acheter des produits importés (fuites), le déficit alourdit la dette, et la hausse de la demande peut provoquer de l''inflation.
+Selon Keynes, une dépense publique supplémentaire provoque une augmentation plus que proportionnelle du revenu national : c''est l''effet multiplicateur. Dans le modèle simple, k = 1 / (1 − c), où c est la propension marginale à consommer. Si c = 0,8, k = 1 / 0,2 = 5 : une dépense supplémentaire de 100 milliards peut accroître le revenu de 500 milliards au maximum.
 
 ## Fiche 4 : l''entreprise et ses coûts
 
@@ -1931,16 +1965,20 @@ Quand l''État fixe un prix plafond en dessous du prix d''équilibre, la demande
 
 - Solde budgétaire = recettes − dépenses ; dette = accumulation des déficits.
 - La TVA porte sur la valeur ajoutée et pèse sur le consommateur final.
-- k = 1 / (1 − c).
 - Seuil de rentabilité = CF / taux de MCV.
 
 ## Exercices pratiques
 
 1. Distinguez impôt direct et impôt indirect, avec un exemple de chacun.
+
 2. Recettes de l''État : 3 800 milliards de FCFA ; dépenses : 4 300 milliards ; PIB : 12 500 milliards. Calculez le solde budgétaire et son poids dans le PIB.
+
 3. Taux de TVA de 18 % utilisé pour l''exercice : un grossiste achète des marchandises 500 000 FCFA HT et les revend 650 000 FCFA HT. Calculez la TVA collectée, la TVA déductible et la TVA à reverser.
+
 4. La propension marginale à consommer est de 0,75. Calculez le multiplicateur et l''effet maximal d''une dépense publique supplémentaire de 40 milliards de FCFA.
+
 5. Une entreprise de jus de bissap a des coûts fixes de 4 500 000 FCFA, vend 30 000 bouteilles à 500 FCFA, avec un coût variable unitaire de 200 FCFA. Calculez le résultat et le seuil de rentabilité en valeur et en quantité.
+
 6. Demande : Qd = 800 − 4P ; offre : Qo = 2P − 100. Déterminez l''équilibre.
 
 ## Corrigé
@@ -2043,9 +2081,13 @@ Conclusion : la croissance est nécessaire mais insuffisante ; tout dépend de s
 ## Exercices pratiques
 
 1. Reprenez la question 1 si l''indice des prix était de 106 en N+1.
+
 2. Calculez le taux d''activité du pays B si la population en âge de travailler est de 10 millions en N+1.
+
 3. Si les importations du pays B augmentaient de 10 % en N+2, quel niveau d''exportations faudrait-il atteindre pour obtenir un taux de couverture de 80 % ?
+
 4. Rédigez l''introduction complète de la troisième partie.
+
 5. Proposez un argument supplémentaire pour la partie II, avec un exemple.
 
 ## Corrigé
@@ -2249,10 +2291,15 @@ Conseil : tenez un carnet de vocabulaire par thème, avec dix mots par semaine e
 Text: "Dakar is growing fast. Every year, thousands of young people leave rural areas to look for jobs in the capital. However, many of them end up working in the informal sector, where wages are low and jobs are not secure. The government has launched training programmes to help them."
 
 1. Give a title to the text.
+
 2. True or false? Justify. a) Dakar''s population is decreasing. b) Jobs in the informal sector are well paid.
+
 3. Find in the text words that mean: a) countryside; b) salaries; c) started.
+
 4. What does "them" refer to in "to help them"?
+
 5. Correct the mistakes: a) "He go to school every day." b) "They are livings in Thiès since five years."
+
 6. Answer the question with a full sentence: Why do young people move to Dakar?
 
 ## Corrigé
@@ -2355,11 +2402,17 @@ Say ou tell ? "say something", "tell somebody something" : He said that…, He t
 ## Exercices pratiques
 
 1. Put the verbs in brackets in the correct tense: a) Awa (live) in Thiès since 2015. b) Yesterday, we (visit) Gorée Island. c) Listen! The children (sing). d) When I arrived, the film (already / start).
+
 2. Choose since or for: a) I have known him … primary school. b) She has been waiting … two hours.
+
 3. Turn into the passive: a) The students clean the classroom every Friday. b) A storm destroyed many houses. c) They will build a new university.
+
 4. Turn into the passive: a) Someone has stolen my phone. b) The workers are painting the school.
+
 5. Turn into reported speech: a) Moussa said, "I am preparing for the Bac." b) The teacher said, "You must work harder."
+
 6. Turn into reported speech: a) She asked me, "Did you see the match yesterday?" b) My mother told me, "Don''t go out tonight."
+
 7. Correct the mistakes: a) "I have seen him last week." b) "I will call you when I will arrive." c) "He said me that he was sick."
 
 ## Corrigé
@@ -2454,11 +2507,17 @@ Exemple de consigne : "Give the noun of: educate, poor, grow." Réponses : educa
 ## Exercices pratiques
 
 1. Put the verbs in brackets in the correct form: a) If you (study) hard, you will pass. b) If I (be) rich, I would help my village. c) If she had taken the bus, she (not / miss) the meeting.
+
 2. Rewrite using "if": a) I don''t speak Chinese, so I can''t work in Beijing. b) He didn''t wear a helmet, so he was badly injured.
+
 3. Rewrite using "unless": "If you don''t drink clean water, you will get sick."
+
 4. Join the sentences with a relative pronoun: a) This is the hospital. My mother works there. b) I have a friend. His sister is an engineer. c) The man is my uncle. He is talking to the teacher.
+
 5. Fill in with the right linking word (although, because of, however, in order to, therefore): a) … the traffic, I arrived late. b) She works hard … succeed. c) … he is poor, he is generous. d) The roads are bad. …, trade is difficult. e) Prices have risen. …, salaries have not changed.
+
 6. Give the word asked for: a) noun of "pollute"; b) adjective of "danger"; c) opposite of "employed"; d) adverb of "careful"; e) noun of "poor".
+
 7. Correct the mistakes: a) "If I would have money, I would travel." b) "Despite of the rain, we played." c) "Dakar, that is the capital, is crowded."
 
 ## Corrigé
@@ -2554,10 +2613,15 @@ Le résumé (summary) consiste à réduire un texte à ses idées essentielles, 
 ## Exercices pratiques
 
 1. Translate into English: a) la sécheresse ; b) les énergies renouvelables ; c) l''analphabétisme ; d) un vaccin ; e) les envois de fonds des migrants.
+
 2. Complete with a word from Fiche 1: a) Many trees are cut down: this is called … . b) Students who leave school early are called … . c) Sleeping under a … protects you against mosquitoes.
+
 3. Write the first paragraph of a formal letter to the mayor of your town about the lack of street lights.
+
 4. Write three arguments for and three arguments against this statement: "Every student should study online."
+
 5. Summarize this text in about 30 words: "Plastic bags are cheap and practical, so people use them every day. But after use, many of them are thrown away in streets, fields and the sea. They take hundreds of years to break down. Animals eat them and die. Several African countries have decided to ban or limit them, and people are encouraged to use cloth or paper bags instead."
+
 6. Write an essay of about 150 words: "Girls'' education is the key to development. Discuss."
 
 ## Corrigé
@@ -2655,9 +2719,13 @@ Topic 2 (essay): plan conseillé. Introduction : présenter le débat. Paragraph
 ## Exercices pratiques
 
 1. Find in the text a word that means "coastal forests of trees that grow in salty water".
+
 2. Turn into the passive: "Human activities destroy mangroves."
+
 3. Turn into reported speech: The expert said, "We must stop illegal sand extraction."
+
 4. Rewrite as a type 3 conditional: "They didn''t protect the mangroves, so the coast was destroyed."
+
 5. Write a summary of the text in about 40 words.
 
 ## Corrigé
