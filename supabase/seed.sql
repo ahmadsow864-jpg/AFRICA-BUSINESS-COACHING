@@ -5606,6 +5606,523 @@ Texte du formateur : « Votre mission : dès demain, créez votre fichier de rav
 from public.courses c where c.slug = 'formation-carburant'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : reprendre le contrôle des dépenses de carburant');
 
+-- Cours : Statistiques L2 : de la statistique descriptive aux tests d'hypothèses
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'statistiques-l2', (select id from public.levels where name = 'Licence 2'), null, 'Statistiques', 'Statistiques L2 : de la statistique descriptive aux tests d''hypothèses', 'Ce cours couvre la statistique descriptive, les probabilités, les lois binomiale et normale, l''échantillonnage, les intervalles de confiance et le principe des tests d''hypothèses, avec des cas tirés d''entreprises et d''institutions de microfinance d''Afrique de l''Ouest. Il s''adresse aux étudiants de deuxième année en économie, gestion et sciences sociales. Prérequis : statistique et probabilités du lycée, aisance avec le calcul algébrique.', true, 40
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Statistique descriptive : résumer une série de données', '## Objectifs de la leçon
+
+- Maîtriser le vocabulaire de la statistique : population, individu, variable, modalité.
+- Calculer et interpréter les indicateurs de tendance centrale : moyenne, médiane, mode.
+- Calculer et interpréter les indicateurs de dispersion : étendue, quartiles, variance, écart-type, coefficient de variation.
+
+## 1. Vocabulaire de base
+
+La statistique descriptive a pour objet de résumer et de présenter des données observées. On étudie une population (ensemble d''individus ou unités statistiques : ménages, entreprises, étudiants) à travers une ou plusieurs variables (caractères).
+
+- Variable qualitative : ses modalités ne sont pas des nombres (région, secteur d''activité, sexe). Elle peut être nominale ou ordinale (niveau d''études).
+- Variable quantitative discrète : elle prend des valeurs isolées (nombre d''enfants, nombre de pièces du logement).
+- Variable quantitative continue : elle peut prendre toute valeur d''un intervalle (revenu, taille, durée de trajet) ; on regroupe souvent ses valeurs en classes.
+
+Pour chaque modalité ou classe, l''effectif ni est le nombre d''individus concernés et la fréquence fi = ni / n la proportion correspondante. Les effectifs et fréquences cumulés permettent de répondre à des questions du type « quelle part des ménages dépense moins de 50 000 FCFA ? ».
+
+## 2. Indicateurs de tendance centrale
+
+- Moyenne arithmétique : x̄ = (somme des xi) / n, ou x̄ = (somme des ni × xi) / n pour des données groupées. Pour des classes, on utilise le centre de chaque classe.
+- Médiane : valeur qui partage la série ordonnée en deux parties de même effectif. Si n est impair, c''est la valeur de rang (n + 1)/2 ; si n est pair, on prend en général la moyenne des valeurs de rangs n/2 et n/2 + 1.
+- Mode : valeur (ou classe) la plus fréquente.
+
+La moyenne est sensible aux valeurs extrêmes, la médiane ne l''est pas. Pour les revenus, souvent très inégalement répartis, la médiane est généralement plus représentative : quelques très hauts revenus suffisent à tirer la moyenne vers le haut.
+
+## 3. Indicateurs de dispersion
+
+- Étendue : maximum − minimum.
+- Quartiles : Q1 est la plus petite valeur telle qu''au moins 25 % des observations lui sont inférieures ou égales ; Q3 la même chose avec 75 %. Avec la convention usuelle dans l''enseignement francophone, Q1 est la valeur de rang égal au plus petit entier supérieur ou égal à n/4, et Q3 celle de rang supérieur ou égal à 3n/4. L''écart interquartile Q3 − Q1 contient la moitié centrale des observations.
+- Variance : V = (1/n) × somme des (xi − x̄)², ou, formule de calcul pratique, V = (1/n) × somme des xi² − x̄².
+- Écart-type : σ = √V, exprimé dans la même unité que les données.
+- Coefficient de variation : CV = σ / x̄, utile pour comparer la dispersion de séries d''unités ou de niveaux différents.
+
+Remarque : en statistique inférentielle, pour estimer la variance d''une population à partir d''un échantillon, on divise par n − 1 au lieu de n (variance corrigée, notée s²). Nous y reviendrons à la leçon 4.
+
+## 4. Méthode
+
+- Ordonner la série.
+- Calculer la moyenne, puis repérer médiane, quartiles et mode.
+- Calculer la variance par la formule la plus pratique, puis l''écart-type.
+- Interpréter : niveau, dispersion, symétrie (comparer moyenne et médiane), valeurs atypiques.
+
+## Exemple chiffré : dépenses de transport
+
+On interroge 10 étudiants de l''université de Saint-Louis sur leurs dépenses mensuelles de transport (en milliers de FCFA) : 8, 10, 12, 12, 15, 15, 15, 18, 20, 25.
+
+- Moyenne : somme = 150, donc x̄ = 150/10 = 15.
+- Médiane : n = 10 est pair ; valeurs de rangs 5 et 6 : 15 et 15 ; médiane = 15.
+- Mode : 15 (trois fois).
+- Étendue : 25 − 8 = 17.
+- Quartiles : 10/4 = 2,5, donc Q1 est la 3e valeur : 12 ; 3 × 10/4 = 7,5, donc Q3 est la 8e valeur : 18. Écart interquartile = 6.
+- Variance : écarts à la moyenne : −7, −5, −3, −3, 0, 0, 0, 3, 5, 10 ; carrés : 49, 25, 9, 9, 0, 0, 0, 9, 25, 100 ; somme = 226 ; V = 22,6.
+- Écart-type : σ = √22,6 ≈ 4,75 milliers de FCFA.
+- Coefficient de variation : 4,75/15 ≈ 0,32, soit environ 32 %.
+
+Interprétation : un étudiant dépense en moyenne 15 000 FCFA par mois ; la moitié dépense entre 12 000 et 18 000 FCFA ; la valeur 25 tire légèrement la distribution vers la droite.
+
+## Points clés
+
+- Identifier le type de variable avant de choisir indicateurs et graphiques.
+- Moyenne, médiane et mode résument le niveau ; la médiane résiste aux valeurs extrêmes.
+- Variance et écart-type mesurent la dispersion autour de la moyenne ; le CV permet de comparer.
+
+## Exercices
+
+- Exercice 1 : Donnez la nature des variables : a) nombre de salariés d''une PME ; b) région d''implantation ; c) chiffre d''affaires annuel ; d) niveau de satisfaction (faible, moyen, élevé).
+- Exercice 2 : Chiffre d''affaires journalier d''une boutique (milliers de FCFA) sur 8 jours : 45, 60, 52, 70, 48, 65, 58, 62. Calculez la moyenne, la médiane, Q1 et Q3.
+- Exercice 3 : Calculez la variance et l''écart-type de la série de l''exercice 2.
+- Exercice 4 : Deux séries ont pour moyennes 200 et 50 et pour écarts-types 30 et 12. Laquelle est relativement la plus dispersée ?
+
+## Corrigé
+
+- Exercice 1 : a) quantitative discrète ; b) qualitative nominale ; c) quantitative continue ; d) qualitative ordinale.
+- Exercice 2 : Série ordonnée : 45, 48, 52, 58, 60, 62, 65, 70. Somme = 460 ; moyenne = 57,5. Médiane = (58 + 60)/2 = 59. 8/4 = 2 : Q1 = 2e valeur = 48 ; 3 × 8/4 = 6 : Q3 = 6e valeur = 62.
+- Exercice 3 : Écarts : −12,5 ; −9,5 ; −5,5 ; 0,5 ; 2,5 ; 4,5 ; 7,5 ; 12,5. Carrés : 156,25 ; 90,25 ; 30,25 ; 0,25 ; 6,25 ; 20,25 ; 56,25 ; 156,25. Somme = 516. V = 516/8 = 64,5 ; σ ≈ 8,03.
+- Exercice 4 : CV1 = 30/200 = 0,15 ; CV2 = 12/50 = 0,24. La seconde série est relativement plus dispersée, bien que son écart-type soit plus faible.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'statistiques-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Statistique descriptive : résumer une série de données');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Probabilités : conditionnement, Bayes et variables aléatoires', '## Objectifs de la leçon
+
+- Manipuler les notions d''expérience aléatoire, d''événement et de probabilité.
+- Calculer des probabilités conditionnelles et utiliser la formule des probabilités totales et la formule de Bayes.
+- Définir une variable aléatoire discrète et calculer son espérance et sa variance.
+
+## 1. Expérience aléatoire et événements
+
+Une expérience aléatoire est une expérience dont on connaît les résultats possibles sans pouvoir prévoir lequel se produira : tirer un client au hasard dans un fichier, lancer un dé, observer si un emprunteur rembourse. L''ensemble des résultats possibles est l''univers Ω. Un événement est une partie de Ω.
+
+Opérations : A ∩ B (A et B), A ∪ B (A ou B), Ā (contraire de A). Deux événements sont incompatibles si A ∩ B = ∅.
+
+## 2. Probabilité
+
+Une probabilité associe à chaque événement un nombre entre 0 et 1, avec P(Ω) = 1 et P(A ∪ B) = P(A) + P(B) si A et B sont incompatibles. On en déduit :
+
+- P(Ā) = 1 − P(A).
+- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).
+
+En situation d''équiprobabilité, P(A) = nombre de cas favorables / nombre de cas possibles. Les dénombrements utilisent souvent les combinaisons : le nombre de façons de choisir k éléments parmi n est C(n, k) = n! / (k! (n − k)!).
+
+## 3. Probabilité conditionnelle et indépendance
+
+La probabilité de A sachant B (avec P(B) > 0) est P(A | B) = P(A ∩ B) / P(B). On en tire P(A ∩ B) = P(B) × P(A | B).
+
+A et B sont indépendants si P(A ∩ B) = P(A) × P(B), c''est-à-dire si savoir que B est réalisé ne change pas la probabilité de A.
+
+Formule des probabilités totales : si B1, …, Bk forment une partition de Ω, P(A) = somme des P(Bi) × P(A | Bi).
+
+Formule de Bayes : P(Bi | A) = P(Bi) × P(A | Bi) / P(A). Elle permet d''« inverser » le conditionnement.
+
+## Exemple : une institution de microfinance
+
+Dans le portefeuille d''une IMF (données fictives), 60 % des emprunteurs sont des femmes et 40 % des hommes. Le taux de remboursement à l''échéance est de 95 % chez les femmes et de 90 % chez les hommes.
+
+- Probabilité qu''un emprunteur pris au hasard rembourse : P(R) = 0,6 × 0,95 + 0,4 × 0,90 = 0,57 + 0,36 = 0,93.
+- Probabilité de défaut : P(D) = 1 − 0,93 = 0,07.
+- Sachant qu''un emprunteur est en défaut, probabilité que ce soit une femme : P(F | D) = P(F) × P(D | F) / P(D) = 0,6 × 0,05 / 0,07 = 0,03 / 0,07 ≈ 0,43.
+
+Bien que les femmes remboursent mieux, elles représentent environ 43 % des défauts, parce qu''elles sont majoritaires dans le portefeuille. C''est un piège classique d''interprétation.
+
+## 4. Variables aléatoires discrètes
+
+Une variable aléatoire X associe un nombre à chaque résultat d''une expérience. Elle est discrète si elle prend un nombre fini ou dénombrable de valeurs. Sa loi est donnée par les probabilités P(X = xi), dont la somme vaut 1.
+
+- Espérance : E(X) = somme des xi × P(X = xi). C''est la valeur moyenne à long terme.
+- Variance : V(X) = E(X²) − [E(X)]², avec E(X²) = somme des xi² × P(X = xi).
+- Écart-type : σ(X) = √V(X).
+- Propriétés : E(aX + b) = aE(X) + b et V(aX + b) = a²V(X).
+
+## Exemple : ventes de motos
+
+Un concessionnaire de Thiès vend chaque jour X motos, avec la loi suivante : P(X = 0) = 0,1 ; P(X = 1) = 0,3 ; P(X = 2) = 0,4 ; P(X = 3) = 0,2.
+
+- E(X) = 0 + 0,3 + 0,8 + 0,6 = 1,7 moto par jour.
+- E(X²) = 0 + 0,3 + 1,6 + 1,8 = 3,7.
+- V(X) = 3,7 − 1,7² = 3,7 − 2,89 = 0,81 ; σ = 0,9.
+
+## 5. Méthode
+
+- Définir clairement les événements par des lettres.
+- Traduire chaque donnée de l''énoncé : probabilité simple, conditionnelle, ou intersection.
+- Dessiner un arbre pondéré : la somme des branches issues d''un même nœud vaut 1 ; on multiplie le long d''un chemin, on additionne les chemins.
+- Vérifier que les résultats sont entre 0 et 1.
+
+## Points clés
+
+- P(Ā) = 1 − P(A) ; P(A ∪ B) = P(A) + P(B) − P(A ∩ B).
+- P(A | B) = P(A ∩ B) / P(B) ; indépendance si P(A ∩ B) = P(A)P(B).
+- Probabilités totales et Bayes s''appliquent avec un arbre.
+- E(X), V(X) = E(X²) − E(X)², et E(aX + b) = aE(X) + b.
+
+## Exercices
+
+- Exercice 1 : Dans une promotion, 30 % des étudiants ont un emploi à temps partiel, 20 % ont une bourse et 8 % ont les deux. Quelle est la probabilité qu''un étudiant ait un emploi ou une bourse ? Les deux événements sont-ils indépendants ?
+- Exercice 2 : Un test de qualité détecte 98 % des sacs de riz défectueux et classe à tort comme défectueux 3 % des sacs conformes. 5 % des sacs sont défectueux. Calculez la probabilité qu''un sac soit déclaré défectueux, puis la probabilité qu''il le soit vraiment sachant qu''il est déclaré défectueux.
+- Exercice 3 : X prend les valeurs 10, 20, 50 avec les probabilités 0,5 ; 0,3 ; 0,2. Calculez E(X), V(X) et σ(X).
+- Exercice 4 : De combien de façons peut-on choisir un comité de 3 personnes dans un groupe de 8 ?
+
+## Corrigé
+
+- Exercice 1 : P(E ∪ B) = 0,30 + 0,20 − 0,08 = 0,42. P(E) × P(B) = 0,06 ≠ 0,08 : les événements ne sont pas indépendants.
+- Exercice 2 : P(déclaré défectueux) = 0,05 × 0,98 + 0,95 × 0,03 = 0,049 + 0,0285 = 0,0775. P(défectueux | déclaré) = 0,049 / 0,0775 ≈ 0,632. Plus d''un sac sur trois déclaré défectueux est en réalité conforme.
+- Exercice 3 : E(X) = 5 + 6 + 10 = 21. E(X²) = 0,5 × 100 + 0,3 × 400 + 0,2 × 2 500 = 50 + 120 + 500 = 670. V(X) = 670 − 441 = 229 ; σ ≈ 15,13.
+- Exercice 4 : C(8, 3) = 8!/(3! × 5!) = (8 × 7 × 6)/(3 × 2 × 1) = 56.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'statistiques-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Probabilités : conditionnement, Bayes et variables aléatoires');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les lois usuelles : binomiale et normale', '## Objectifs de la leçon
+
+- Reconnaître une situation binomiale et calculer des probabilités avec la loi binomiale.
+- Utiliser la loi normale et la table de la loi normale centrée réduite.
+- Connaître les conditions d''approximation de la loi binomiale par la loi normale.
+
+## 1. La loi de Bernoulli et la loi binomiale
+
+Une épreuve de Bernoulli a deux issues : succès (probabilité p) et échec (probabilité 1 − p). Exemple : un appel d''un téléconseiller aboutit ou non à une vente.
+
+Si l''on répète n fois, de manière indépendante, la même épreuve de Bernoulli, le nombre X de succès suit la loi binomiale B(n, p) :
+
+- P(X = k) = C(n, k) × p^k × (1 − p)^(n − k), pour k = 0, 1, …, n.
+- E(X) = np ; V(X) = np(1 − p).
+
+Conditions à vérifier : nombre d''épreuves fixé, deux issues, probabilité de succès constante, indépendance des épreuves.
+
+## Exemple : centre d''appels à Dakar
+
+Un téléconseiller convertit un appel en vente avec une probabilité de 0,2 (indépendamment d''un appel à l''autre). Il passe 10 appels. X suit B(10 ; 0,2).
+
+- P(X = 0) = 0,8^10 ≈ 0,1074.
+- P(X = 2) = C(10, 2) × 0,2² × 0,8^8 = 45 × 0,04 × 0,16777 ≈ 0,3020.
+- P(X ≥ 2) = 1 − P(X = 0) − P(X = 1), avec P(X = 1) = 10 × 0,2 × 0,8^9 ≈ 0,2684 ; d''où P(X ≥ 2) ≈ 1 − 0,1074 − 0,2684 = 0,6242.
+- E(X) = 10 × 0,2 = 2 ventes ; V(X) = 10 × 0,2 × 0,8 = 1,6 ; σ ≈ 1,26.
+
+## 2. La loi normale
+
+Une variable continue X suit la loi normale N(μ, σ²) de moyenne μ et d''écart-type σ si sa densité a la forme d''une courbe en cloche symétrique autour de μ. De nombreux phénomènes s''en approchent : erreurs de mesure, poids de produits conditionnés, et, grâce au théorème central limite, les moyennes d''échantillons.
+
+Pour une variable continue, P(X = a) = 0 : on calcule des probabilités d''intervalles, qui correspondent à des aires sous la courbe.
+
+Centrage-réduction : si X suit N(μ, σ²), alors Z = (X − μ)/σ suit la loi normale centrée réduite N(0, 1), dont la fonction de répartition Φ(z) = P(Z ≤ z) est donnée par une table.
+
+Valeurs à connaître : Φ(1) ≈ 0,8413 ; Φ(1,5) ≈ 0,9332 ; Φ(1,645) ≈ 0,95 ; Φ(1,96) ≈ 0,975 ; Φ(2) ≈ 0,9772 ; Φ(2,576) ≈ 0,995.
+
+Règles de calcul :
+
+- P(Z ≤ −z) = 1 − Φ(z), par symétrie.
+- P(a ≤ Z ≤ b) = Φ(b) − Φ(a).
+- P(−z ≤ Z ≤ z) = 2Φ(z) − 1.
+
+Repères : environ 68 % des valeurs sont à moins d''un écart-type de la moyenne, 95 % à moins de 1,96 écart-type, et 99,7 % à moins de trois écarts-types.
+
+## Exemple : chiffre d''affaires journalier
+
+Le chiffre d''affaires journalier X d''une station de lavage suit N(500, 80²), en milliers de FCFA.
+
+- P(X ≤ 620) = Φ((620 − 500)/80) = Φ(1,5) ≈ 0,9332.
+- P(X ≥ 380) = P(Z ≥ −1,5) = Φ(1,5) ≈ 0,9332.
+- P(420 ≤ X ≤ 580) = Φ(1) − Φ(−1) = 2 × 0,8413 − 1 = 0,6826.
+- Seuil dépassé seulement 5 % des jours : x = 500 + 1,645 × 80 ≈ 631,6 milliers de FCFA.
+
+## 3. Approximation de la binomiale par la normale
+
+Lorsque n est grand et que p n''est pas trop proche de 0 ou de 1 (règle usuelle : np ≥ 5 et n(1 − p) ≥ 5, certains manuels exigent 10), la loi B(n, p) peut être approchée par N(np, np(1 − p)). On améliore la précision avec la correction de continuité : P(X ≤ k) ≈ P(Y ≤ k + 0,5).
+
+Exemple : sur 400 clients, chacun achète un produit d''épargne avec une probabilité de 0,25. X suit B(400 ; 0,25), de moyenne 100 et d''écart-type √75 ≈ 8,66. P(X ≤ 110) ≈ Φ((110,5 − 100)/8,66) = Φ(1,21) ≈ 0,887.
+
+## 4. Méthode
+
+- Identifier la loi : comptage de succès sur n épreuves indépendantes → binomiale ; variable continue en cloche → normale.
+- Écrire les paramètres.
+- Pour la normale, centrer et réduire, puis utiliser la table et la symétrie.
+- Contrôler la vraisemblance du résultat (une probabilité est entre 0 et 1, et la moyenne doit être un ordre de grandeur plausible).
+
+## Points clés
+
+- B(n, p) : P(X = k) = C(n, k) p^k (1 − p)^(n − k), E = np, V = np(1 − p).
+- N(μ, σ²) : on se ramène à Z = (X − μ)/σ et à la table de Φ.
+- 1,96 correspond à 95 % bilatéral, 1,645 à 95 % unilatéral.
+- Approximation normale de la binomiale si np et n(1 − p) sont suffisamment grands.
+
+## Exercices
+
+- Exercice 1 : Un commercial réussit une vente avec la probabilité 0,4 à chaque visite. Il fait 5 visites. Calculez la probabilité d''exactement 3 ventes et l''espérance du nombre de ventes.
+- Exercice 2 : Le poids des sacs de riz suit N(25 ; 0,2²) en kg. Calculez la probabilité qu''un sac pèse moins de 24,7 kg.
+- Exercice 3 : Les notes d''un examen suivent N(11 ; 3²). Quelle proportion d''étudiants obtient entre 8 et 14 ? Au-dessus de 17 ?
+- Exercice 4 : X suit B(100 ; 0,5). Peut-on l''approcher par une loi normale ? Donnez ses paramètres.
+
+## Corrigé
+
+- Exercice 1 : P(X = 3) = C(5, 3) × 0,4³ × 0,6² = 10 × 0,064 × 0,36 = 0,2304. E(X) = 5 × 0,4 = 2.
+- Exercice 2 : z = (24,7 − 25)/0,2 = −1,5. P = 1 − Φ(1,5) ≈ 1 − 0,9332 = 0,0668, soit environ 6,7 % des sacs.
+- Exercice 3 : Entre 8 et 14 : z de −1 à 1, P ≈ 0,6826, environ 68 %. Au-dessus de 17 : z = 2, P ≈ 1 − 0,9772 = 0,0228, environ 2,3 %.
+- Exercice 4 : np = 50 et n(1 − p) = 50, tous deux ≥ 5 : oui. Paramètres : moyenne 50, variance 25, écart-type 5.', 'texte', 55, false, 30
+from public.courses c where c.slug = 'statistiques-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les lois usuelles : binomiale et normale');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Échantillonnage et intervalles de confiance', '## Objectifs de la leçon
+
+- Distinguer population et échantillon, paramètre et estimateur.
+- Connaître la loi d''échantillonnage de la moyenne et de la proportion.
+- Construire et interpréter un intervalle de confiance pour une moyenne et pour une proportion.
+- Déterminer la taille d''échantillon nécessaire pour une précision donnée.
+
+## 1. Pourquoi échantillonner ?
+
+Interroger toute une population (tous les ménages d''un pays, tous les clients d''un opérateur) coûte cher et prend du temps. On étudie donc un échantillon, puis on généralise à la population : c''est l''inférence statistique. Les recensements, comme ceux que réalisent les instituts nationaux de statistique, sont exhaustifs ; la plupart des enquêtes (emploi, consommation, satisfaction) reposent sur des échantillons.
+
+La qualité du résultat dépend de la façon de tirer l''échantillon. Dans un échantillon aléatoire simple, chaque individu a la même probabilité d''être choisi. D''autres méthodes existent : stratification (par région, par milieu urbain et rural), tirage par grappes (quartiers, villages), méthode des quotas. Un échantillon biaisé (par exemple interroger seulement les personnes joignables par internet) donne des résultats faux, quelle que soit sa taille.
+
+## 2. Paramètres et estimateurs
+
+- Paramètres de la population (inconnus) : moyenne μ, écart-type σ, proportion p.
+- Estimateurs calculés sur l''échantillon : moyenne x̄, écart-type corrigé s (avec division par n − 1), proportion observée f.
+
+Un bon estimateur est sans biais (en moyenne, il vise juste) et convergent (sa précision augmente avec n). C''est pour obtenir un estimateur sans biais de la variance qu''on divise par n − 1.
+
+## 3. Lois d''échantillonnage
+
+D''un échantillon à l''autre, x̄ varie. Si les observations sont indépendantes, de moyenne μ et d''écart-type σ :
+
+- E(x̄) = μ et l''écart-type de x̄ (erreur type) vaut σ/√n.
+- Théorème central limite : pour n assez grand (souvent n ≥ 30), x̄ suit approximativement N(μ, σ²/n), quelle que soit la loi de la population.
+
+Pour une proportion, f suit approximativement N(p, p(1 − p)/n) si n est grand.
+
+Conséquence importante : pour diviser l''erreur type par 2, il faut multiplier la taille de l''échantillon par 4.
+
+## 4. Intervalle de confiance pour une moyenne
+
+Grand échantillon (n ≥ 30) : au niveau de confiance 95 %, IC = [x̄ − 1,96 × s/√n ; x̄ + 1,96 × s/√n]. Pour 99 %, on remplace 1,96 par 2,576 ; pour 90 %, par 1,645.
+
+Petit échantillon issu d''une population normale, σ inconnu : on utilise la loi de Student à n − 1 degrés de liberté : IC = x̄ ± t × s/√n, où t est lu dans la table de Student.
+
+Interprétation correcte : si l''on répétait l''enquête un grand nombre de fois, environ 95 % des intervalles ainsi construits contiendraient la vraie moyenne μ. On ne dit pas que μ « a 95 % de chances » d''être dans l''intervalle calculé, car μ est fixe.
+
+## Exemple : dépenses de téléphone
+
+Une enquête auprès de 100 ménages de Ziguinchor donne une dépense mensuelle moyenne de téléphonie de 12 500 FCFA, avec un écart-type corrigé s = 4 000 FCFA. Erreur type : 4 000/√100 = 400. Marge à 95 % : 1,96 × 400 = 784. IC à 95 % : [11 716 ; 13 284] FCFA.
+
+Petit échantillon : 16 commerçants déclarent un chiffre d''affaires journalier moyen de 52 milliers de FCFA, avec s = 8. Avec 15 degrés de liberté, t ≈ 2,131 pour 95 %. Marge : 2,131 × 8/4 = 4,262. IC : [47,74 ; 56,26] milliers de FCFA.
+
+## 5. Intervalle de confiance pour une proportion
+
+IC à 95 % : f ± 1,96 × √(f(1 − f)/n), valable si n est grand et que nf et n(1 − f) sont suffisamment grands (au moins 5, ou 10 selon les manuels).
+
+Exemple : sur 400 personnes interrogées, 140 déclarent épargner via un compte de monnaie électronique : f = 0,35. Erreur type : √(0,35 × 0,65/400) ≈ 0,0238. Marge : 1,96 × 0,0238 ≈ 0,047. IC à 95 % : [0,303 ; 0,397], soit entre 30,3 % et 39,7 % environ.
+
+## 6. Taille d''échantillon
+
+Pour estimer une proportion avec une marge d''erreur e au niveau 95 % : n = 1,96² × p(1 − p)/e². Si l''on ne connaît pas p, on prend p = 0,5, qui maximise p(1 − p) et donne la taille la plus prudente.
+
+Exemple : marge de 3 points (e = 0,03) : n = 3,8416 × 0,25/0,0009 ≈ 1 067,1, donc il faut au moins 1 068 personnes. C''est pourquoi beaucoup de sondages nationaux portent sur environ un millier de personnes.
+
+## Points clés
+
+- L''échantillon doit être aléatoire et représentatif ; la taille ne corrige pas un biais.
+- L''erreur type de la moyenne est σ/√n.
+- IC à 95 % : estimation ± 1,96 × erreur type (Student pour les petits échantillons).
+- n = z² p(1 − p)/e² pour une proportion.
+
+## Exercices
+
+- Exercice 1 : Sur 64 PME, le délai moyen de paiement des clients est de 48 jours, s = 16 jours. Construisez l''IC à 95 % du délai moyen.
+- Exercice 2 : Sur 300 étudiants, 126 possèdent un ordinateur portable. Construisez l''IC à 95 % de la proportion.
+- Exercice 3 : Quelle taille d''échantillon faut-il pour estimer une proportion à ± 5 points au niveau 95 %, sans information préalable ?
+- Exercice 4 : Par combien faut-il multiplier la taille d''un échantillon pour diviser la marge d''erreur par 3 ?
+
+## Corrigé
+
+- Exercice 1 : Erreur type = 16/√64 = 2. Marge = 1,96 × 2 = 3,92. IC = [44,08 ; 51,92] jours.
+- Exercice 2 : f = 126/300 = 0,42. Erreur type = √(0,42 × 0,58/300) ≈ 0,0285. Marge ≈ 0,0559. IC ≈ [0,364 ; 0,476].
+- Exercice 3 : n = 3,8416 × 0,25/0,0025 = 384,16, donc 385 personnes.
+- Exercice 4 : La marge est proportionnelle à 1/√n : pour la diviser par 3, il faut multiplier n par 9.', 'texte', 55, false, 40
+from public.courses c where c.slug = 'statistiques-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Échantillonnage et intervalles de confiance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les tests d''hypothèses : principe et applications', '## Objectifs de la leçon
+
+- Comprendre la logique d''un test statistique : hypothèses, statistique de test, règle de décision.
+- Connaître les deux types d''erreurs et la notion de p-valeur.
+- Réaliser un test sur une moyenne et un test sur une proportion.
+- Découvrir le principe du test du khi-deux d''indépendance.
+
+## 1. La logique du test
+
+Un test d''hypothèse permet de décider, à partir d''un échantillon, si une affirmation sur la population est compatible avec les données. Exemple : un fournisseur affirme que ses sacs de riz pèsent en moyenne 25 kg ; un grossiste de Kaolack veut vérifier.
+
+- Hypothèse nulle H0 : l''affirmation de référence (μ = 25).
+- Hypothèse alternative H1 : ce que l''on soupçonne (μ ≠ 25 pour un test bilatéral, μ < 25 pour un test unilatéral).
+
+On raisonne par l''absurde : on suppose H0 vraie et on calcule à quel point le résultat observé serait surprenant. Si l''observation est très improbable sous H0, on rejette H0.
+
+## 2. Erreurs et risques
+
+- Erreur de première espèce : rejeter H0 alors qu''elle est vraie. Sa probabilité maximale α (le seuil ou risque) est fixée à l''avance, souvent 5 %.
+- Erreur de seconde espèce : ne pas rejeter H0 alors qu''elle est fausse ; sa probabilité est notée β. La puissance du test vaut 1 − β ; elle augmente avec la taille de l''échantillon.
+
+Ne pas rejeter H0 ne prouve pas qu''elle est vraie : cela signifie seulement que les données ne permettent pas de conclure contre elle.
+
+## 3. Méthode générale en six étapes
+
+- Formuler H0 et H1.
+- Choisir le seuil α.
+- Choisir la statistique de test et sa loi sous H0.
+- Déterminer la région de rejet (valeurs critiques).
+- Calculer la statistique sur l''échantillon.
+- Conclure, en termes statistiques puis dans le langage du problème.
+
+## 4. Test sur une moyenne (grand échantillon)
+
+Statistique : Z = (x̄ − μ0)/(s/√n), qui suit approximativement N(0, 1) sous H0. Au seuil de 5 %, test bilatéral : on rejette H0 si |Z| > 1,96 ; test unilatéral à gauche : si Z < −1,645.
+
+Exemple : le grossiste pèse 64 sacs ; il obtient x̄ = 24,9 kg et s = 0,4 kg. H0 : μ = 25 ; H1 : μ ≠ 25. Z = (24,9 − 25)/(0,4/8) = −0,1/0,05 = −2. Comme |−2| > 1,96, on rejette H0 au seuil de 5 % : le poids moyen semble différent de 25 kg (inférieur). Au seuil de 1 % (valeur critique 2,576), on ne rejetterait pas H0 : la conclusion dépend du seuil choisi, d''où l''intérêt de la p-valeur.
+
+## 5. La p-valeur
+
+La p-valeur est la probabilité, sous H0, d''obtenir un résultat au moins aussi extrême que celui observé. On rejette H0 si p < α. Dans l''exemple : p = P(|Z| ≥ 2) = 2 × (1 − Φ(2)) = 2 × 0,0228 ≈ 0,046. Elle est inférieure à 0,05 mais supérieure à 0,01, ce qui confirme les deux conclusions précédentes.
+
+Attention : la p-valeur n''est pas la probabilité que H0 soit vraie, et un résultat « statistiquement significatif » n''est pas forcément important en pratique. Un écart de 100 g par sac peut toutefois représenter une somme importante sur des milliers de sacs.
+
+## 6. Test sur une proportion
+
+Statistique : Z = (f − p0)/√(p0(1 − p0)/n).
+
+Exemple : un opérateur affirme que 60 % de ses clients sont satisfaits. Une association de consommateurs interroge 200 clients : 108 se disent satisfaits, f = 0,54. H0 : p = 0,6 ; H1 : p < 0,6 (on soupçonne une surestimation). Z = (0,54 − 0,6)/√(0,6 × 0,4/200) = −0,06/0,0346 ≈ −1,73. Test unilatéral à 5 % : valeur critique −1,645. Comme −1,73 < −1,645, on rejette H0 : l''affirmation de l''opérateur semble exagérée.
+
+Remarque : en test bilatéral (H1 : p ≠ 0,6), |Z| = 1,73 < 1,96 et l''on ne rejetterait pas H0. Le choix de H1 doit être fait avant de regarder les données, en fonction de la question posée.
+
+## 7. Le test du khi-deux d''indépendance (principe)
+
+Pour savoir si deux variables qualitatives sont liées (par exemple, le milieu de résidence et l''usage d''un service bancaire), on compare les effectifs observés d''un tableau croisé aux effectifs théoriques attendus en cas d''indépendance (effectif théorique = total ligne × total colonne / total général). La statistique χ² = somme des (observé − théorique)²/théorique suit, sous H0 (indépendance), une loi du khi-deux à (lignes − 1) × (colonnes − 1) degrés de liberté. Une valeur élevée conduit à rejeter l''indépendance.
+
+## Points clés
+
+- H0 est l''hypothèse de référence ; on la rejette si les données sont trop improbables sous H0.
+- α est le risque de rejeter à tort H0 ; la puissance est la capacité à détecter un effet réel.
+- Rejet si |Z| > 1,96 (bilatéral, 5 %) ou si p-valeur < α.
+- Bien choisir le sens de H1 avant l''analyse.
+
+## Exercices
+
+- Exercice 1 : Un hôtel affirme que la durée moyenne de séjour est de 3 nuits. Sur 100 séjours, x̄ = 3,3 et s = 1,2. Testez au seuil de 5 % (bilatéral).
+- Exercice 2 : Une entreprise affirme que 10 % de ses produits sont défectueux au plus. Sur 400 produits contrôlés, 52 sont défectueux. Testez H0 : p = 0,10 contre H1 : p > 0,10 au seuil de 5 %.
+- Exercice 3 : Expliquez la différence entre erreur de première et de seconde espèce avec l''exemple d''un test de dépistage.
+- Exercice 4 : Une étude obtient une p-valeur de 0,03. Que conclut-on au seuil de 5 % ? au seuil de 1 % ?
+
+## Corrigé
+
+- Exercice 1 : Z = (3,3 − 3)/(1,2/10) = 0,3/0,12 = 2,5 > 1,96 : on rejette H0. La durée moyenne semble supérieure à 3 nuits.
+- Exercice 2 : f = 52/400 = 0,13. Z = (0,13 − 0,10)/√(0,1 × 0,9/400) = 0,03/0,015 = 2. Valeur critique unilatérale : 1,645. 2 > 1,645 : on rejette H0 ; la proportion de défectueux semble supérieure à 10 %.
+- Exercice 3 : H0 : la personne est saine. Erreur de première espèce : déclarer malade une personne saine (faux positif). Erreur de seconde espèce : déclarer saine une personne malade (faux négatif).
+- Exercice 4 : Au seuil de 5 %, 0,03 < 0,05 : on rejette H0. Au seuil de 1 %, 0,03 > 0,01 : on ne rejette pas H0.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'statistiques-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les tests d''hypothèses : principe et applications');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : décrire, modéliser, estimer et tester', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 2 en économie, gestion, sciences sociales.
+- Objectifs : enchaîner description, probabilités, lois usuelles, estimation et tests sur un même cas réel simulé.
+- Matériel : diaporama, table de la loi normale centrée réduite, calculatrice ou tableur.
+- Prérequis : leçons écrites 1 à 5 ; calcul de racines carrées et de puissances.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Le cas fil rouge
+
+Bonjour à tous. Aujourd''hui, nous allons suivre une étude fictive menée par une institution de microfinance de Thiès qui veut mieux connaître ses clients commerçants. Elle a des données sur leurs chiffres d''affaires, sur les remboursements, et elle se pose des questions : quel est le chiffre d''affaires typique ? quel risque de défaut ? quelle proportion de clients utilise le paiement mobile ? peut-on croire l''agence qui affirme que ses clients remboursent mieux qu''ailleurs ? Chacune de ces questions correspond à un chapitre du cours.
+
+Visuel : schéma « décrire, modéliser, estimer, tester ».
+
+## 05:00 – 17:00 · Décrire : indicateurs de position et de dispersion
+
+Commençons par dix clients et leurs ventes mensuelles, en centaines de milliers de FCFA : 8, 10, 12, 12, 15, 15, 15, 18, 20, 25. Calculons ensemble.
+
+La somme fait 150, donc la moyenne vaut 15. La série est déjà ordonnée ; n est pair, la médiane est la moyenne des 5e et 6e valeurs, soit 15. Le mode est 15. Les quartiles : Q1 est la 3e valeur, 12 ; Q3 la 8e, 18.
+
+Pour la variance, je calcule les écarts à la moyenne : −7, −5, −3, −3, 0, 0, 0, 3, 5, 10. Leurs carrés font au total 226 ; la variance vaut 22,6 et l''écart-type environ 4,75. Le coefficient de variation, écart-type divisé par moyenne, vaut environ 0,32 : la dispersion représente près d''un tiers du niveau moyen, ce qui est assez élevé. Pour l''IMF, cela signifie que le montant de prêt adapté varie beaucoup d''un client à l''autre : un produit unique ne conviendra pas à tout le monde.
+
+Visuel : boîte à moustaches avec Q1 = 12, médiane = 15, Q3 = 18, minimum 8 et maximum 25.
+
+Question à la classe : si l''on remplace 25 par 75, que deviennent la moyenne et la médiane ? Réponse : la moyenne passe à 20, la médiane reste 15. Voilà pourquoi, pour des revenus, on préfère souvent la médiane.
+
+## 17:00 – 30:00 · Modéliser : probabilités conditionnelles
+
+L''IMF compte 60 % de femmes parmi ses emprunteurs. Les femmes remboursent à 95 %, les hommes à 90 % (données fictives). Je dessine l''arbre au tableau : première branche, femme ou homme ; seconde branche, rembourse ou non.
+
+Probabilité de remboursement : 0,6 × 0,95 + 0,4 × 0,9 = 0,93. Probabilité de défaut : 0,07. Et si un dossier est en défaut, quelle probabilité que ce soit une femme ? Formule de Bayes : 0,03 divisé par 0,07, environ 43 %.
+
+Question : un journaliste écrit que « les femmes représentent 43 % des défauts, donc elles remboursent mal ». Qu''en pensez-vous ? Réponse attendue : c''est faux ; leur taux de défaut est de 5 % contre 10 % pour les hommes. Il faut toujours préciser de quelle probabilité conditionnelle on parle.
+
+## 30:00 – 42:00 · Les lois usuelles
+
+Un agent de crédit visite 10 prospects ; chacun accepte un prêt avec une probabilité de 0,2, indépendamment. Le nombre d''acceptations suit une loi binomiale B(10 ; 0,2). Probabilité d''exactement deux acceptations : 45 × 0,04 × 0,8 puissance 8, environ 0,302. Espérance : 2 ; variance : 1,6.
+
+Passons à la loi normale. Le chiffre d''affaires journalier d''un client type suit une loi normale de moyenne 500 et d''écart-type 80, en milliers de FCFA. Probabilité de dépasser 620 ? On centre et on réduit : (620 − 500)/80 = 1,5. P(Z > 1,5) = 1 − 0,9332 = 0,0668.
+
+Visuel : courbe en cloche avec les zones à 68 %, 95 % et 99,7 %.
+
+Question : quel chiffre d''affaires n''est dépassé que 5 % des jours ? Réponse : 500 + 1,645 × 80, environ 631,6.
+
+## 42:00 – 50:00 · Pause interactive et quiz
+
+Trois questions rapides, répondez sur votre feuille.
+
+- Question 1 : P(A) = 0,3, P(B) = 0,5, A et B indépendants. P(A ∩ B) ? Réponse : 0,15.
+- Question 2 : Z suit N(0, 1). P(−1,96 ≤ Z ≤ 1,96) ? Réponse : 0,95.
+- Question 3 : X suit B(20 ; 0,1). Espérance et variance ? Réponse : 2 et 1,8.
+
+Prenez deux minutes pour souffler, nous passons à l''inférence.
+
+## 50:00 – 1:02:00 · Estimer : intervalles de confiance
+
+L''IMF ne peut pas interroger ses milliers de clients. Elle tire 400 clients au hasard : 140 utilisent le paiement mobile pour leur commerce, soit 35 %. Erreur type : racine de 0,35 × 0,65 divisé par 400, environ 0,0238. Marge à 95 % : 1,96 fois 0,0238, environ 4,7 points. Intervalle : de 30,3 % à 39,7 %.
+
+Pour une moyenne : 100 clients, chiffre d''affaires mensuel moyen 1 250 milliers de FCFA, écart-type 400. Erreur type 40, marge 78,4, intervalle de 1 171,6 à 1 328,4.
+
+J''insiste sur l''interprétation : 95 % des intervalles construits de cette façon contiennent la vraie valeur. Et sur la taille : pour une marge de 3 points sans information préalable, il faut 1 068 personnes ; pour diviser la marge par deux, il faut quatre fois plus de personnes.
+
+Question : un échantillon de 5 000 personnes recrutées uniquement sur un réseau social est-il meilleur qu''un échantillon aléatoire de 1 000 ? Réponse : non, il est probablement biaisé ; la taille ne corrige pas le biais.
+
+## 1:02:00 – 1:15:00 · Tester : la logique de la décision
+
+L''agence de Thiès affirme que ses clients remboursent à plus de 93 %, la moyenne du réseau. Sur 300 dossiers tirés au hasard, 288 sont remboursés à l''échéance, soit 96 %. Test : H0 : p = 0,93 ; H1 : p > 0,93. Statistique : (0,96 − 0,93) divisé par racine de 0,93 × 0,07/300. Calculons : 0,93 × 0,07 = 0,0651 ; divisé par 300, 0,000217 ; la racine vaut environ 0,01473. Z ≈ 0,03/0,01473 ≈ 2,04. C''est supérieur à 1,645 : on rejette H0 au seuil de 5 %. L''agence semble effectivement faire mieux que le réseau.
+
+Visuel : courbe normale avec la zone de rejet à droite.
+
+Rappel des deux erreurs : rejeter H0 à tort, avec un risque α fixé ; ne pas la rejeter alors qu''elle est fausse. Et la p-valeur : ici, P(Z ≥ 2,04) ≈ 0,021 ; elle est inférieure à 5 %, donc rejet, mais supérieure à 1 %.
+
+## 1:15:00 – 1:24:00 · Aller plus loin : le khi-deux
+
+Dernière question de l''IMF : l''usage du paiement mobile dépend-il du milieu, urbain ou rural ? On construit un tableau croisé, on calcule les effectifs théoriques en cas d''indépendance, puis la statistique du khi-deux. Si elle dépasse la valeur critique pour un degré de liberté, 3,84 au seuil de 5 %, on conclut à une liaison. Prenons un tableau fictif de 300 clients. En ville, 200 clients : 120 utilisent le paiement mobile, 80 non. En milieu rural, 100 clients : 40 l''utilisent, 60 non. Au total, 160 utilisateurs et 140 non-utilisateurs.
+
+Effectifs théoriques sous l''hypothèse d''indépendance : total de la ligne fois total de la colonne divisé par 300. Ville et utilisateurs : 200 × 160/300 ≈ 106,67 ; ville et non-utilisateurs : 93,33 ; rural et utilisateurs : 53,33 ; rural et non-utilisateurs : 46,67. Chaque écart entre observé et théorique vaut 13,33 en valeur absolue. La statistique est la somme des écarts au carré divisés par les effectifs théoriques : environ 1,67 + 1,90 + 3,33 + 3,81, soit 10,71.
+
+Question à la classe : combien de degrés de liberté ? Réponse : (2 − 1) × (2 − 1) = 1. La valeur critique au seuil de 5 % est 3,84 ; 10,71 la dépasse largement : on rejette l''indépendance. L''usage du paiement mobile semble lié au milieu de résidence, plus fréquent en ville dans cet échantillon. Attention : une liaison statistique n''est pas une preuve de causalité ; d''autres facteurs, comme le revenu ou la couverture du réseau, peuvent l''expliquer.
+
+## 1:24:00 – 1:30:00 · Synthèse et évaluation finale
+
+Retenez la chaîne : décrire avec moyenne, médiane, écart-type ; modéliser avec les probabilités et les lois ; estimer avec un intervalle de confiance ; décider avec un test.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : Série 4, 6, 8, 10, 12. Moyenne et variance ? Réponse : moyenne 8 ; écarts −4, −2, 0, 2, 4 ; variance 40/5 = 8.
+- Question 2 : P(A) = 0,4 et P(B | A) = 0,5. P(A ∩ B) ? Réponse : 0,2.
+- Question 3 : X suit N(100, 15²). P(X ≤ 130) ? Réponse : z = 2, Φ(2) ≈ 0,9772.
+- Question 4 : n = 400, f = 0,5. Marge d''erreur à 95 % ? Réponse : 1,96 × √(0,25/400) = 1,96 × 0,025 = 0,049, environ 4,9 points.
+- Question 5 : Test bilatéral à 5 %, Z = 1,5. Décision ? Réponse : |Z| < 1,96, on ne rejette pas H0.
+
+Merci à tous. Pour la prochaine séance, reprenez les données de la leçon 1 dans un tableur et refaites tous les calculs.', 'video', 90, false, 60
+from public.courses c where c.slug = 'statistiques-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : décrire, modéliser, estimer et tester');
+
 -- Cours : SVT 4e : les fonctions de nutrition, la reproduction et la santé
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'svt-4e', (select id from public.levels where name = '4e'), null, 'SVT', 'SVT 4e : les fonctions de nutrition, la reproduction et la santé', 'Ce cours de Sciences de la Vie et de la Terre de 4e explique comment le corps humain se nourrit, respire, fait circuler le sang et se reproduit, puis aborde la santé : paludisme, hygiène et vaccination. Il s''appuie sur des expériences simples et des situations de la vie quotidienne en Afrique de l''Ouest. Prérequis : notions de 6e et 5e sur les êtres vivants et la cellule.', true, 40
@@ -7752,6 +8269,596 @@ Merci à tous. Votre travail personnel : construire le compte prévisionnel et l
 from public.courses c where c.slug = 'formation-parking-public'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : exploiter un parking rentable, du tarif au tableau de bord');
 
+-- Cours : Gérer une station-service
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'formation-station-service', (select id from public.levels where name = 'Formation professionnelle'), 'station-service', 'Gestion de station-service', 'Gérer une station-service', 'Cette formation couvre la gestion quotidienne d''une station-service : pompes et index, cuves et jaugeage, réception des livraisons, rapprochement des stocks et analyse des écarts, boutique et lavage, caisse et relèves d''équipe, ainsi que les principes généraux de sécurité incendie et de protection de l''environnement. Elle s''adresse aux gérants, chefs de piste, pompistes confirmés et investisseurs. Prérequis : calculs de base et pourcentages.', true, 80
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Organisation d''une station-service, pompes et index', '## Objectifs de la leçon
+
+Comprendre l''organisation d''une station-service et le rôle de chaque poste, connaître le fonctionnement d''un distributeur de carburant, et savoir calculer les volumes et montants vendus à partir des relevés d''index.
+
+## Une station-service, plusieurs métiers
+
+Une station-service est un petit commerce à plusieurs activités : la vente de carburants (essence, gasoil, parfois pétrole lampant et gaz en bouteilles), la vente de lubrifiants, la boutique, le lavage et parfois l''entretien rapide (vidange, pneumatiques). Chaque activité a ses règles de gestion, mais le carburant reste en général le cœur du chiffre d''affaires.
+
+L''équipe type comprend :
+
+- le gérant, responsable des résultats, des stocks, de la sécurité et du personnel ;
+- le chef de piste, qui encadre les pompistes pendant une équipe ;
+- les pompistes, qui servent les clients et encaissent ;
+- le caissier ou la caissière de la boutique ;
+- les laveurs ;
+- éventuellement un gardien de nuit.
+
+La station fonctionne souvent avec deux ou trois équipes par jour. La passation entre équipes, appelée relève, est un moment clé du contrôle (voir leçon 4).
+
+## Le distributeur de carburant
+
+Le distributeur (couramment appelé pompe) aspire le carburant dans une cuve enterrée et le délivre au client par un pistolet. Un distributeur peut avoir plusieurs pistolets, souvent un par produit et par face. Il comporte :
+
+- un mesureur, qui mesure le volume débité ;
+- un calculateur, qui affiche le volume et le montant de chaque vente ;
+- des totalisateurs, appelés index, qui cumulent tous les volumes débités depuis la mise en service, pistolet par pistolet.
+
+Il existe des index électroniques (lus sur l''afficheur ou le système de gestion) et souvent des index mécaniques de secours. Les deux doivent évoluer de manière cohérente. Les instruments de mesure sont soumis à des vérifications par les services compétents de métrologie ; un distributeur mal étalonné fait perdre de l''argent à la station ou lèse le client.
+
+## Calculer les ventes à partir des index
+
+L''index fonctionne comme le compteur d''eau ou d''électricité :
+
+Volume débité = index de fin − index de début.
+
+Il faut retirer de ce volume les quantités qui ne sont pas des ventes, en particulier les essais de pompe (volume tiré pour un contrôle puis reversé en cuve).
+
+Volume vendu = volume débité − retours en cuve.
+
+Montant théorique des ventes = volume vendu × prix de vente au litre.
+
+Exemple : pistolet gasoil n°2.
+
+- Index début d''équipe : 1 245 380,50 L.
+- Index fin d''équipe : 1 247 112,30 L.
+- Volume débité : 1 247 112,30 − 1 245 380,50 = 1 731,80 L.
+- Essai de pompe reversé en cuve : 10 L.
+- Volume vendu : 1 721,80 L.
+- Prix : 755 FCFA par litre (prix fictif pour l''exemple ; les prix à la pompe sont fixés par les autorités compétentes et doivent être vérifiés).
+- Montant théorique : 1 721,80 × 755 = 1 299 959 FCFA.
+
+On fait ce calcul pour chaque pistolet, puis on totalise par produit.
+
+## Bonnes pratiques de relevé
+
+- Relever les index à heure fixe, à chaque relève, en présence des deux équipes.
+- Noter les index avec toutes les décimales, sur une fiche pré-imprimée ou dans le logiciel.
+- Vérifier qu''un index n''a jamais diminué : un index qui recule signale une erreur de lecture, une panne ou une manipulation.
+- Enregistrer chaque essai de pompe et chaque retour en cuve avec la signature du chef de piste.
+- Comparer de temps en temps index électronique et index mécanique.
+
+## Points clés
+
+- La station combine carburant, lubrifiants, boutique et lavage ; chacun se gère séparément.
+- Les index sont des totalisateurs cumulés par pistolet.
+- Volume vendu = index fin − index début − retours en cuve.
+- Montant théorique = volume vendu × prix au litre.
+- Des relevés rigoureux à chaque relève sont la base de tous les contrôles.
+
+## Exercices
+
+Exercice 1. Pistolet super n°1 : index début 523 410,20 ; index fin 524 288,70. Un essai de 5 L a été reversé en cuve. Calculez le volume vendu et le montant théorique avec un prix fictif de 890 FCFA par litre.
+
+Exercice 2. Deux pistolets gasoil ont débité 1 200,40 L et 980,60 L pendant une équipe, sans essai. Calculez le volume total et le montant au prix fictif de 755 FCFA par litre.
+
+Exercice 3. Le pompiste relève un index de fin de 98 540,10 alors que l''index de début était 98 612,30. Que faites-vous ?
+
+Exercice 4. Pourquoi faut-il déduire les essais de pompe du volume débité ?
+
+## Corrigé
+
+Exercice 1. Volume débité : 524 288,70 − 523 410,20 = 878,50 L. Volume vendu : 878,50 − 5 = 873,50 L. Montant : 873,50 × 890 = 777 415 FCFA.
+
+Exercice 2. Volume : 1 200,40 + 980,60 = 2 181,00 L. Montant : 2 181 × 755 = 1 646 655 FCFA.
+
+Exercice 3. L''index de fin est inférieur à l''index de début : c''est impossible en fonctionnement normal. Il faut relire les deux index, vérifier qu''il s''agit du bon pistolet, comparer avec l''index mécanique, et en cas de doute bloquer le pistolet et alerter le gérant et le technicien.
+
+Exercice 4. Parce que ce carburant a bien été débité mais a été reversé en cuve : il n''a pas été vendu. Sans cette déduction, on réclamerait au pompiste un montant qu''il n''a pas encaissé et le stock théorique serait faux.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'formation-station-service'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Organisation d''une station-service, pompes et index');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cuves, jaugeage et réception des livraisons', '## Objectifs de la leçon
+
+Connaître les éléments d''une cuve de stockage, savoir jauger une cuve et convertir une hauteur en volume avec un barème, et conduire une réception de livraison en contrôlant les quantités et la sécurité.
+
+## Les cuves de stockage
+
+Les carburants sont stockés dans des cuves, le plus souvent enterrées, une ou plusieurs par produit. Une cuve comporte :
+
+- un trou d''homme, pour l''accès et la maintenance ;
+- une bouche de remplissage, raccordée lors des livraisons ;
+- un évent, qui laisse sortir l''air et les vapeurs pendant le remplissage ;
+- un tube de jaugeage, pour mesurer le niveau ;
+- souvent une jauge électronique qui affiche en continu la hauteur, le volume et parfois la hauteur d''eau.
+
+Les installations modernes privilégient les cuves à double paroi ou d''autres dispositifs de détection des fuites. Les exigences techniques précises relèvent de la réglementation en vigueur et des prescriptions de l''autorité compétente.
+
+## Le jaugeage manuel
+
+Le jaugeage consiste à mesurer la hauteur de produit dans la cuve à l''aide d''une règle graduée (pige ou réglette) que l''on descend jusqu''au fond. On lit la hauteur mouillée, puis on la convertit en volume grâce au barème de la cuve, un tableau fourni lors de l''installation qui donne le volume pour chaque hauteur.
+
+Règles de bonne pratique :
+
+- jauger à heure fixe, de préférence sans débit en cours ;
+- attendre que le produit soit stabilisé, surtout après une livraison ;
+- descendre la règle verticalement et la retirer sans la frotter ;
+- répéter la mesure en cas de doute ;
+- mesurer aussi l''eau au fond de la cuve, avec une pâte détectrice d''eau qui change de couleur au contact de l''eau.
+
+## Lire un barème avec interpolation
+
+Le barème donne souvent les volumes centimètre par centimètre. Si la mesure tombe entre deux valeurs, on interpole.
+
+Exemple : le barème indique 10 200 L à 100 cm et 10 310 L à 101 cm. La jauge indique 100,4 cm.
+
+- Différence pour 1 cm : 10 310 − 10 200 = 110 L.
+- Pour 0,4 cm : 0,4 × 110 = 44 L.
+- Volume : 10 200 + 44 = 10 244 L.
+
+## Volume et température
+
+Le volume d''un carburant varie avec la température : il se dilate quand il fait chaud et se contracte quand il fait plus frais. C''est pourquoi les transactions entre fournisseurs et distributeurs sont souvent exprimées à une température de référence, avec des tables de correction. Pour la station, retenir le principe : une partie des petits écarts quotidiens peut s''expliquer par la température, mais pas des écarts importants ou répétés dans le même sens.
+
+## La réception d''une livraison
+
+La réception est une opération sensible, à la fois pour la sécurité et pour les quantités. Méthode :
+
+- Avant le dépotage : vérifier le bon de livraison (produit, quantité, compartiments), les scellés du camion-citerne, la place disponible dans la cuve (pour éviter tout débordement) ; jauger la cuve et noter le volume ; arrêter les ventes sur cette cuve si la procédure de la station le prévoit.
+- Sécurité : camion moteur coupé et calé, liaison équipotentielle (mise à la terre) raccordée, extincteurs à proximité, zone balisée, interdiction de fumer et de toute flamme, présence permanente du chauffeur et d''un agent de la station.
+- Pendant : vérifier que le bon produit va dans la bonne cuve (une erreur de cuve mélange essence et gasoil, avec des conséquences graves pour les moteurs des clients).
+- Après : vidange complète des compartiments vérifiée, attente de stabilisation, nouveau jaugeage, calcul du volume reçu, comparaison avec le bon de livraison, réserves écrites en cas d''écart, signature.
+
+Exemple :
+
+- Jauge avant : 8 450 L.
+- Jauge après stabilisation : 20 380 L.
+- Volume reçu mesuré : 20 380 − 8 450 = 11 930 L.
+- Volume du bon de livraison : 12 000 L.
+- Écart : 11 930 − 12 000 = −70 L, soit 70 / 12 000 ≈ 0,58 %.
+
+Le gérant note l''écart, vérifie que les compartiments sont bien vides et formule ses réserves selon la procédure convenue avec le fournisseur.
+
+## Points clés
+
+- Une cuve comporte trou d''homme, bouche de remplissage, évent et dispositif de jaugeage.
+- Le jaugeage donne une hauteur, convertie en volume par le barème, avec interpolation si besoin.
+- La température fait varier les volumes : principe à connaître pour interpréter les petits écarts.
+- La réception exige un jaugeage avant et après, des contrôles documentaires et un strict respect de la sécurité.
+
+## Exercices
+
+Exercice 1. Barème : 150 cm = 18 400 L ; 151 cm = 18 520 L. La jauge indique 150,25 cm. Calculez le volume.
+
+Exercice 2. Avant livraison, la cuve contient 5 200 L ; après livraison et stabilisation, 14 150 L. Le bon indique 9 000 L. Calculez le volume reçu, l''écart et le taux d''écart.
+
+Exercice 3. Citez quatre mesures de sécurité pendant un dépotage.
+
+Exercice 4. Pourquoi vérifie-t-on la place disponible dans la cuve avant de commencer ?
+
+## Corrigé
+
+Exercice 1. Différence pour 1 cm : 120 L. Pour 0,25 cm : 30 L. Volume : 18 430 L.
+
+Exercice 2. Reçu : 14 150 − 5 200 = 8 950 L. Écart : 8 950 − 9 000 = −50 L. Taux : 50 / 9 000 ≈ 0,56 %.
+
+Exercice 3. Par exemple : moteur du camion coupé, liaison équipotentielle raccordée, extincteurs à portée de main, zone balisée, interdiction de fumer, présence permanente du chauffeur et d''un agent.
+
+Exercice 4. Pour éviter un débordement : si la quantité livrée dépasse la place libre, le carburant se déverse, avec un risque d''incendie et de pollution.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'formation-station-service'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cuves, jaugeage et réception des livraisons');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Rapprochement des stocks et analyse des écarts', '## Objectifs de la leçon
+
+Savoir calculer le stock théorique d''une cuve, le comparer au stock physique jaugé, calculer et interpréter les écarts journaliers et cumulés, et rechercher méthodiquement leurs causes.
+
+## Le principe du rapprochement
+
+Le rapprochement compare deux mesures indépendantes du stock :
+
+- le stock théorique, calculé à partir des mouvements : ce qui devrait se trouver dans la cuve ;
+- le stock physique, mesuré par jaugeage : ce qui s''y trouve réellement.
+
+Stock théorique = stock physique initial + réceptions − ventes (index) + retours en cuve éventuels non déduits.
+
+Pour simplifier, si les ventes sont déjà calculées nettes des essais reversés, on écrit : stock théorique = stock initial + réceptions − ventes nettes.
+
+Écart = stock physique − stock théorique.
+
+Un écart négatif est un manquant ; un écart positif, un excédent.
+
+Taux d''écart = écart / ventes de la période.
+
+On rapporte l''écart aux ventes plutôt qu''au stock, car c''est l''activité qui génère les occasions d''erreur ou de perte.
+
+## Exemple journalier
+
+Cuve de super, une journée :
+
+- stock initial jaugé : 15 200 L ;
+- réception : 10 000 L (volume mesuré) ;
+- ventes nettes selon les index : 6 850 L ;
+- stock théorique : 15 200 + 10 000 − 6 850 = 18 350 L ;
+- stock physique jaugé le soir : 18 290 L ;
+- écart : 18 290 − 18 350 = −60 L ;
+- taux : 60 / 6 850 ≈ 0,88 % de manquant.
+
+## Lire les écarts dans la durée
+
+Un écart isolé ne veut pas dire grand-chose : erreur de lecture de jauge, effet de température, débit en cours au moment du jaugeage. Ce qui compte, c''est la tendance. On tient donc un tableau journalier avec l''écart du jour et l''écart cumulé.
+
+Exemple sur une semaine (cuve de gasoil) : écarts journaliers de −12, −15, +8, −20, −18, −25 et −22 litres.
+
+- Écart cumulé : −104 L.
+- Ventes de la semaine : 42 000 L.
+- Taux cumulé : 104 / 42 000 ≈ 0,25 %.
+- Six jours sur sept sont négatifs, et les manquants tendent à grossir en fin de semaine.
+
+Interprétation : des écarts aléatoires, dus aux erreurs de mesure, devraient être tantôt positifs, tantôt négatifs, et se compenser à peu près dans le cumul. Une série presque toujours négative et croissante signale une cause réelle. La station fixe des seuils internes de tolérance avec son fournisseur ou son réseau ; au-delà, l''enquête est obligatoire.
+
+## Rechercher les causes
+
+On procède du plus simple au plus grave.
+
+- Erreurs de calcul ou de saisie : index mal recopiés, essai non déclaré, livraison saisie dans la mauvaise cuve.
+- Erreurs de mesure : jaugeage mal fait, barème inadapté, jauge électronique déréglée.
+- Effets physiques : température, évaporation (surtout pour l''essence).
+- Distributeur déréglé : il débite plus que ce qu''il affiche ; un contrôle avec une jauge étalon (mesure de capacité contrôlée) le révèle.
+- Livraison incomplète : compartiment du camion non entièrement vidé.
+- Fuite de cuve ou de tuyauterie : cause grave, à traiter en urgence pour des raisons de sécurité et d''environnement ; un écart négatif persistant, même la nuit sans vente, est un signal d''alarme.
+- Vol ou détournement : prélèvements non enregistrés, ventes non saisies.
+
+Un outil très utile : le test de nuit. On jauge la cuve le soir après fermeture des ventes sur ce produit, puis le matin avant ouverture. Sans vente ni livraison, le niveau ne devrait pas baisser, hors effet de température. Une baisse nette et répétée oriente vers une fuite ou un prélèvement.
+
+## Valoriser l''écart
+
+Pour mesurer l''enjeu, on valorise l''écart au prix de vente ou au prix d''achat selon la politique de la station. Avec un prix fictif de 755 FCFA par litre, le cumul hebdomadaire de −104 L représente 78 520 FCFA. Sur un an, si la tendance se maintient, l''enjeu dépasse 4 millions de FCFA.
+
+## Points clés
+
+- Stock théorique = stock initial + réceptions − ventes nettes.
+- Écart = physique − théorique ; taux d''écart rapporté aux ventes.
+- On lit les écarts en tendance et en cumul, pas jour par jour.
+- On cherche les causes du plus simple (saisie) au plus grave (fuite, vol).
+- Le test de nuit aide à distinguer fuite et erreurs de vente.
+
+## Exercices
+
+Exercice 1. Stock initial jaugé : 9 800 L. Réception : 6 000 L. Ventes nettes : 4 300 L. Stock jaugé le soir : 11 460 L. Calculez le stock théorique, l''écart et le taux d''écart.
+
+Exercice 2. Écarts d''une semaine sur une cuve de super : +10, −8, +5, −12, +6, −4, +3 litres. Calculez l''écart cumulé et commentez.
+
+Exercice 3. Valorisez un manquant cumulé de 104 L au prix fictif de 890 FCFA par litre.
+
+Exercice 4. Une cuve de gasoil perd 15 à 20 L chaque nuit alors qu''aucune vente n''a lieu. Quelle hypothèse privilégiez-vous et que faites-vous ?
+
+## Corrigé
+
+Exercice 1. Théorique : 9 800 + 6 000 − 4 300 = 11 500 L. Écart : 11 460 − 11 500 = −40 L. Taux : 40 / 4 300 ≈ 0,93 %.
+
+Exercice 2. Cumul : 10 − 8 + 5 − 12 + 6 − 4 + 3 = 0 L. Les écarts alternent et se compensent : ils relèvent des aléas de mesure. Pas d''anomalie particulière.
+
+Exercice 3. 104 × 890 = 92 560 FCFA.
+
+Exercice 4. Hypothèse de fuite ou de prélèvement nocturne, puisque l''effet des ventes est exclu. Il faut alerter immédiatement le gérant et le propriétaire de l''installation, faire contrôler l''étanchéité de la cuve et des tuyauteries par un technicien qualifié, renforcer la surveillance de nuit et appliquer les mesures de sécurité et d''environnement prévues.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'formation-station-service'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Rapprochement des stocks et analyse des écarts');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Boutique, lavage, caisse et relèves d''équipe', '## Objectifs de la leçon
+
+Savoir organiser une relève d''équipe complète, rapprocher les ventes théoriques et les encaissements, analyser un écart de caisse, et suivre les activités annexes (boutique et lavage) avec des indicateurs simples.
+
+## La relève d''équipe
+
+La relève est la passation entre l''équipe sortante et l''équipe entrante. Elle délimite les responsabilités : ce qui s''est passé avant la relève relève de l''équipe sortante, ce qui se passe après relève de l''équipe entrante. Une relève bâclée rend impossible l''identification d''un écart.
+
+Déroulement :
+
+- relever les index de chaque pistolet, en présence des deux équipes et du chef de piste ;
+- noter les essais et retours en cuve de l''équipe ;
+- jauger les cuves si la procédure le prévoit à chaque relève ;
+- compter la caisse de chaque pompiste : espèces, tickets de paiement par carte, reçus de paiement mobile, bons clients ;
+- remettre et vérifier le fonds de caisse de l''équipe entrante ;
+- remplir la fiche de relève, signée par le sortant, l''entrant et le chef de piste ;
+- déposer la recette au coffre avec un bordereau.
+
+## Rapprocher ventes et encaissements
+
+Ventes théoriques en valeur = somme, pour chaque produit, du volume vendu × prix au litre.
+
+Encaissements = espèces (hors fonds de caisse) + paiements par carte + paiements mobiles + bons clients et ventes à crédit autorisées.
+
+Écart de caisse = encaissements − ventes théoriques.
+
+Exemple (prix fictifs) :
+
+- gasoil : 1 721,80 L × 755 FCFA = 1 299 959 FCFA ;
+- super : 940,50 L × 890 FCFA = 837 045 FCFA ;
+- ventes théoriques : 2 137 004 FCFA.
+
+Encaissements :
+
+- espèces : 1 412 500 FCFA ;
+- cartes : 380 000 FCFA ;
+- paiement mobile : 214 000 FCFA ;
+- bons clients : 130 000 FCFA ;
+- total : 2 136 500 FCFA.
+
+Écart : 2 136 500 − 2 137 004 = −504 FCFA, un petit manquant, souvent lié aux arrondis de rendu de monnaie. Les règles de traitement des écarts (tolérance, imputation) doivent être écrites, connues de tous et conformes au règlement intérieur et au droit du travail applicable.
+
+Points de vigilance :
+
+- un bon client n''est accepté que s''il est signé par une personne habilitée du client et rattaché à un compte autorisé ;
+- les paiements mobiles se vérifient sur le relevé de l''opérateur, pas seulement sur une capture d''écran ;
+- les ventes à crédit non autorisées sont interdites.
+
+## La boutique
+
+La boutique vend lubrifiants, boissons, produits alimentaires, accessoires automobiles. Elle se gère comme un commerce de détail :
+
+- réception des marchandises contrôlée contre le bon de livraison ;
+- étiquetage des prix ;
+- inventaires réguliers, en commençant par les articles de forte valeur ;
+- suivi des dates de péremption (méthode FEFO).
+
+Deux indicateurs de base :
+
+- marge brute = chiffre d''affaires hors taxes − coût d''achat des marchandises vendues ;
+- taux de marque = marge / chiffre d''affaires ; taux de marge = marge / coût d''achat.
+
+Exemple : chiffre d''affaires du mois 3 500 000 FCFA, coût d''achat des marchandises vendues 2 625 000 FCFA. Marge : 875 000 FCFA. Taux de marque : 875 000 / 3 500 000 = 25 %. Taux de marge : 875 000 / 2 625 000 ≈ 33,3 %.
+
+## Le lavage
+
+Le lavage se suit avec un ticket ou une fiche numérotée par prestation. Indicateurs utiles :
+
+- nombre de lavages par jour et par type ;
+- chiffre d''affaires du lavage ;
+- consommation de produits (shampoing, cire) et d''eau par lavage.
+
+Exemple : 320 lavages dans le mois au prix fictif de 2 000 FCFA, soit 640 000 FCFA. Produits consommés : 96 000 FCFA, soit 300 FCFA par lavage. Si ce coût monte brusquement à 450 FCFA sans changement de prestation, il faut vérifier les dosages et les sorties de produits.
+
+## Points clés
+
+- La relève délimite les responsabilités : index, essais, jaugeage, caisse, signatures.
+- Écart de caisse = encaissements − ventes théoriques en valeur.
+- Bons clients et paiements mobiles se vérifient sur pièces.
+- La boutique se pilote par la marge et les inventaires ; le lavage par le nombre de prestations et le coût des produits par lavage.
+
+## Exercices
+
+Exercice 1. Ventes d''une équipe : gasoil 1 500 L à 755 FCFA ; super 800 L à 890 FCFA (prix fictifs). Encaissements : espèces 1 240 000 ; cartes 300 000 ; mobile 180 000 ; bons 125 000 FCFA. Calculez l''écart de caisse.
+
+Exercice 2. Boutique : chiffre d''affaires 2 000 000 FCFA, coût d''achat des marchandises vendues 1 500 000 FCFA. Calculez la marge, le taux de marque et le taux de marge.
+
+Exercice 3. Lavage : 250 lavages à 2 500 FCFA (prix fictif) et 87 500 FCFA de produits. Calculez le chiffre d''affaires et le coût des produits par lavage.
+
+Exercice 4. Pourquoi les index doivent-ils être relevés en présence des deux équipes ?
+
+## Corrigé
+
+Exercice 1. Ventes : 1 500 × 755 = 1 132 500 ; 800 × 890 = 712 000 ; total 1 844 500 FCFA. Encaissements : 1 240 000 + 300 000 + 180 000 + 125 000 = 1 845 000 FCFA. Écart : +500 FCFA (petit excédent).
+
+Exercice 2. Marge : 500 000 FCFA. Taux de marque : 500 000 / 2 000 000 = 25 %. Taux de marge : 500 000 / 1 500 000 ≈ 33,3 %.
+
+Exercice 3. Chiffre d''affaires : 250 × 2 500 = 625 000 FCFA. Coût par lavage : 87 500 / 250 = 350 FCFA.
+
+Exercice 4. Pour que les deux équipes reconnaissent le même point de départ et de fin : les ventes et donc les responsabilités de chacune sont ainsi clairement séparées, et aucun écart ne peut être contesté ensuite.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'formation-station-service'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Boutique, lavage, caisse et relèves d''équipe');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sécurité incendie et environnement : les principes généraux', '## Objectifs de la leçon
+
+Comprendre les risques d''incendie propres à une station-service, connaître les principes de prévention et d''intervention, savoir réagir face à un déversement et appliquer les bonnes pratiques de protection de l''environnement. Cette leçon présente des principes généraux : les obligations précises relèvent de la réglementation en vigueur et des prescriptions des autorités compétentes et des services de secours.
+
+## Pourquoi le risque est élevé
+
+Les carburants, et surtout l''essence, dégagent des vapeurs inflammables, plus lourdes que l''air, qui peuvent s''accumuler au ras du sol et s''enflammer au contact d''une source d''ignition. Une station réunit en permanence du combustible, de l''air et de nombreuses sources possibles d''inflammation : moteurs, cigarettes, étincelles électriques, électricité statique.
+
+## Le triangle du feu
+
+Un feu a besoin de trois éléments : un combustible, un comburant (l''oxygène de l''air) et une source d''énergie (flamme, étincelle, chaleur). Supprimer un seul de ces éléments empêche ou arrête le feu. La prévention consiste surtout à supprimer les sources d''énergie et à limiter les vapeurs ; l''extinction consiste à étouffer, refroidir ou retirer le combustible.
+
+## Les classes de feux et les extincteurs
+
+On distingue couramment :
+
+- classe A : feux de matériaux solides (bois, papier, tissus, pneus) ;
+- classe B : feux de liquides ou solides liquéfiables (essence, gasoil, huiles) ;
+- classe C : feux de gaz (gaz en bouteille) ;
+- classe D : feux de métaux.
+
+Les feux d''origine électrique demandent un agent extincteur adapté (par exemple le dioxyde de carbone) et la coupure du courant. Dans une station, les extincteurs à poudre polyvalente et à dioxyde de carbone sont fréquents. On ne projette jamais d''eau en jet sur un feu de carburant : elle disperse le liquide enflammé.
+
+Règles :
+
+- extincteurs en nombre suffisant, adaptés, visibles, accessibles et vérifiés périodiquement ;
+- personnel formé à leur utilisation, avec des exercices réguliers ;
+- bac à sable ou absorbant disponible près des pistes et de la zone de dépotage.
+
+## La prévention au quotidien
+
+- Interdiction de fumer et de toute flamme sur l''ensemble de la piste, affichée et appliquée.
+- Moteur coupé pendant le ravitaillement.
+- Usage du téléphone selon les consignes de l''exploitant.
+- Interdiction de remplir des récipients non adaptés.
+- Bouton d''arrêt d''urgence connu de tous et accessible, qui coupe l''alimentation des distributeurs.
+- Installations électriques adaptées aux zones à risque et entretenues par des techniciens qualifiés.
+- Dépotage selon la procédure (leçon 2), avec liaison équipotentielle.
+- Ordre et propreté : pas de chiffons imbibés qui traînent, pas de stockage de produits inflammables près des sources de chaleur.
+
+## Réagir en cas d''incendie
+
+Le plan d''urgence de la station doit être écrit, affiché et exercé. Ses grandes étapes :
+
+- donner l''alerte et appeler les secours ;
+- actionner l''arrêt d''urgence ;
+- attaquer un début de feu avec l''extincteur adapté, seulement si c''est sans danger ;
+- évacuer les clients et le personnel vers le point de rassemblement ;
+- empêcher l''accès des véhicules ;
+- accueillir et guider les secours.
+
+## Protéger l''environnement
+
+Une station peut polluer le sol, les eaux souterraines et les réseaux d''assainissement. Les principes :
+
+- prévenir les fuites : surveillance des écarts de stock (leçon 3), contrôles d''étanchéité, entretien des tuyauteries ;
+- collecter les eaux de ruissellement de la piste et du lavage vers un séparateur d''hydrocarbures, entretenu et vidangé régulièrement par un prestataire habilité ;
+- collecter les huiles usagées, filtres et emballages souillés dans des contenants dédiés, remis à une filière autorisée ;
+- traiter tout déversement immédiatement avec des absorbants, puis éliminer les absorbants souillés comme déchets dangereux ;
+- limiter la consommation d''eau du lavage.
+
+## Réagir à un déversement
+
+- Arrêter la fuite si possible (fermer le pistolet, la vanne, arrêter le dépotage).
+- Supprimer les sources d''ignition (arrêt d''urgence, moteurs coupés, éloigner le public).
+- Contenir le produit avec du sable ou des absorbants pour l''empêcher d''atteindre les avaloirs.
+- Récupérer et stocker les absorbants souillés.
+- Prévenir le gérant et, selon l''ampleur, les autorités et services compétents.
+- Analyser la cause et corriger.
+
+## Points clés
+
+- Les vapeurs de carburant sont inflammables et s''accumulent au sol.
+- Triangle du feu : combustible, comburant, énergie.
+- Extincteurs adaptés, vérifiés, et personnel formé ; jamais de jet d''eau sur un feu de carburant.
+- Arrêt d''urgence et plan d''urgence connus et exercés.
+- Séparateur d''hydrocarbures, collecte des déchets et réaction rapide aux déversements protègent l''environnement.
+
+## Exercices
+
+Exercice 1. Nommez les trois éléments du triangle du feu et donnez un exemple de chacun dans une station-service.
+
+Exercice 2. Pourquoi ne faut-il pas utiliser un jet d''eau sur un feu d''essence ?
+
+Exercice 3. Un client renverse environ 5 litres de gasoil sur la piste. Décrivez les actions à mener dans l''ordre.
+
+Exercice 4. Citez trois déchets dangereux produits par une station et leur mode de gestion.
+
+## Corrigé
+
+Exercice 1. Combustible : essence, gasoil ou leurs vapeurs. Comburant : l''oxygène de l''air. Énergie : cigarette, étincelle électrique, moteur chaud, électricité statique.
+
+Exercice 2. Le carburant, plus léger que l''eau et non miscible, flotte et se disperse avec le jet : le feu s''étend au lieu de s''éteindre.
+
+Exercice 3. Arrêter la distribution sur ce pistolet ; éloigner les personnes et supprimer les sources d''ignition (moteurs coupés, pas de flamme) ; contenir et absorber le gasoil avec du sable ou un absorbant en évitant qu''il atteigne les avaloirs ; récupérer les absorbants dans un contenant dédié aux déchets souillés ; informer le gérant et consigner l''incident.
+
+Exercice 4. Par exemple : huiles usagées, filtres et absorbants souillés, boues du séparateur d''hydrocarbures. Ils sont stockés dans des contenants dédiés et remis à une filière ou un prestataire autorisé.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'formation-station-service'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sécurité incendie et environnement : les principes généraux');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : une journée de gestion dans une station-service', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : gérants de station, chefs de piste, pompistes confirmés, investisseurs et étudiants en formation professionnelle.
+
+Objectifs : calculer les ventes par les index ; jauger une cuve et réceptionner une livraison ; rapprocher stocks théoriques et physiques ; réaliser une relève et analyser un écart de caisse ; appliquer les principes de sécurité incendie et de protection de l''environnement.
+
+Matériel : diaporama, tableau blanc, calculatrice, photos d''un distributeur et d''une règle de jaugeage, extrait de barème de cuve, modèles de fiche de relève et de tableau de rapprochement.
+
+Prérequis : avoir suivi les leçons 1 à 5, ou travailler en station-service.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture : la station comme une entreprise
+
+Texte du formateur : « Bonjour à tous. Une station-service, ce n''est pas seulement des pompes : c''est une entreprise qui manipule chaque jour des milliers de litres d''un produit cher et dangereux, beaucoup d''argent liquide et une équipe qui tourne en continu. Aujourd''hui, nous allons vivre une journée entière dans une station fictive, la station du Rond-Point, située à la sortie d''une ville de l''intérieur du pays, avec sa gérante, Aïssatou, et ses deux équipes. »
+
+Question posée : « D''après vous, où se cachent les pertes d''argent dans une station ? » Réponses attendues : écarts de cuve, écarts de caisse, livraisons incomplètes, vols en boutique, gaspillage au lavage.
+
+## 05:00 – 17:00 · 6 h 00 : la relève du matin et les index
+
+Texte du formateur : « Il est 6 heures. L''équipe de nuit cède la place à l''équipe du matin. Première action : relever les index de chaque pistolet, ensemble. Pourquoi ensemble ? Parce que l''index de fin de l''un est l''index de début de l''autre : si l''on n''est pas d''accord ce matin, on ne pourra jamais savoir qui doit quoi ce soir. »
+
+Visuel : photo d''un afficheur de distributeur, avec les zones montant, volume, prix et totalisateur.
+
+Texte du formateur : « Prenons le pistolet gasoil n°2. Index de début : 1 245 380,50. À la relève suivante : 1 247 112,30. Volume débité : 1 731,80 litres. Le technicien a fait un essai de 10 litres reversé en cuve : ventes nettes, 1 721,80 litres. Au prix fictif de 755 FCFA, le montant théorique est de 1 299 959 FCFA. »
+
+Texte du formateur : « Une règle simple : un index ne recule jamais. Si l''index du soir est plus petit que celui du matin, c''est une erreur de lecture, une panne ou une manipulation. On bloque, on vérifie, on appelle le technicien. »
+
+## 17:00 – 30:00 · 10 h 00 : la livraison et le jaugeage
+
+Texte du formateur : « Il est 10 heures, le camion-citerne arrive avec 12 000 litres de super. Aïssatou ne laisse pas commencer avant d''avoir fait quatre choses : vérifier le bon de livraison, vérifier les scellés, jauger la cuve et vérifier qu''il y a assez de place. Côté sécurité : moteur coupé, camion calé, liaison équipotentielle branchée, extincteurs prêts, zone balisée, personne ne fume. »
+
+Visuel : schéma d''une cuve enterrée avec bouche de remplissage, évent, tube de jaugeage, et photo d''une règle avec pâte détectrice d''eau.
+
+Texte du formateur : « Jaugeage avant : 8 450 litres. Après dépotage et stabilisation : 20 380 litres. Reçu mesuré : 11 930 litres. Le bon disait 12 000 : écart de 70 litres, environ 0,58 %. Aïssatou vérifie que les compartiments sont vides et note ses réserves selon la procédure convenue avec le fournisseur. »
+
+Texte du formateur : « Rappel sur le barème : si la règle indique 100,4 cm, entre 100 cm à 10 200 litres et 101 cm à 10 310 litres, on ajoute 0,4 fois 110, soit 44 litres : 10 244 litres. »
+
+Question posée : « Que peut-il se passer si l''on dépote du gasoil dans la cuve de super ? » Réponse : un mélange impropre qui peut endommager les moteurs des clients, la cuve à vidanger, des pertes importantes. D''où le contrôle du produit et de la cuve avant de raccorder.
+
+## 30:00 – 42:00 · 14 h 00 : la relève et la caisse
+
+Texte du formateur : « Il est 14 heures, relève de l''après-midi. On relève les index, on compte la caisse de chaque pompiste. Pour l''équipe du matin : 1 721,80 litres de gasoil à 755 FCFA et 940,50 litres de super à 890 FCFA, prix fictifs. Ventes théoriques : 2 137 004 FCFA. »
+
+Texte du formateur : « Encaissements : espèces 1 412 500, cartes 380 000, paiement mobile 214 000, bons clients 130 000. Total : 2 136 500 FCFA. Écart : moins 504 FCFA. C''est un petit manquant, souvent dû aux arrondis de monnaie. La règle de traitement doit être écrite et connue de tous à l''avance. »
+
+Visuel : fiche de relève remplie, avec les trois signatures.
+
+Texte du formateur : « Vigilance sur les bons clients : ils doivent être signés par une personne habilitée et rattachés à un compte autorisé. Et un paiement mobile se vérifie sur le relevé de l''opérateur, pas sur une capture d''écran montrée par le client. »
+
+## 42:00 – 50:00 · Pause interactive et quiz
+
+Texte du formateur : « Pause active. Quatre questions. »
+
+- Question 1 : index début 523 410,20, fin 524 288,70, essai 5 L. Volume vendu ?
+- Question 2 : jauge avant 5 200 L, après 14 150 L, bon de livraison 9 000 L. Écart ?
+- Question 3 : barème 150 cm = 18 400 L et 151 cm = 18 520 L. Volume pour 150,25 cm ?
+- Question 4 : vrai ou faux, on peut commencer un dépotage moteur tournant si le chauffeur reste à côté ?
+
+Correction : 1) 873,50 L ; 2) 8 950 − 9 000 = −50 L ; 3) 18 430 L ; 4) faux, le moteur doit être coupé.
+
+## 50:00 – 1:04:00 · 22 h 00 : le rapprochement des stocks
+
+Texte du formateur : « Il est 22 heures. Aïssatou fait le rapprochement du jour. Cuve de super : stock initial 15 200 litres, réception 10 000, ventes nettes 6 850. Stock théorique : 18 350. Jauge du soir : 18 290. Écart : moins 60 litres, soit 0,88 % des ventes. »
+
+Texte du formateur : « Faut-il s''inquiéter ? Pas sur un seul jour. Regardons la cuve de gasoil sur la semaine : moins 12, moins 15, plus 8, moins 20, moins 18, moins 25, moins 22. Cumul : moins 104 litres. Six jours sur sept sont négatifs et les manquants grossissent. Des erreurs de mesure se compenseraient ; ici, il y a une cause réelle. »
+
+Visuel : graphique de l''écart cumulé qui descend régulièrement.
+
+Texte du formateur : « On cherche du plus simple au plus grave : erreurs de saisie, jaugeage mal fait, distributeur déréglé, livraison incomplète, puis fuite ou vol. Un outil précieux : le test de nuit. On jauge le soir, on ne vend rien sur cette cuve, on jauge le matin. Si le niveau baisse nettement et régulièrement, on soupçonne une fuite ou un prélèvement, et on fait intervenir un technicien qualifié sans attendre. »
+
+Texte du formateur : « Chiffrons l''enjeu : 104 litres à 755 FCFA, c''est 78 520 FCFA par semaine, plus de 4 millions par an si rien ne change. »
+
+## 1:04:00 – 1:12:00 · Boutique et lavage
+
+Texte du formateur : « La boutique de la station a fait 3 500 000 FCFA de chiffre d''affaires ce mois-ci, pour un coût d''achat de 2 625 000. Marge : 875 000. Taux de marque : 25 %. Taux de marge : environ 33,3 %. Le lavage a réalisé 320 prestations à 2 000 FCFA, prix fictif, et consommé 96 000 FCFA de produits, soit 300 FCFA par lavage. Si ce chiffre grimpe sans raison, on vérifie les dosages et les sorties de produits. »
+
+Visuel : mini-tableau de bord boutique et lavage.
+
+## 1:12:00 – 1:22:00 · Sécurité incendie et environnement
+
+Texte du formateur : « Terminons par l''essentiel. Les vapeurs d''essence sont inflammables et plus lourdes que l''air : elles traînent au sol. Le triangle du feu nous rappelle qu''il faut un combustible, un comburant et une source d''énergie. Notre travail : supprimer les sources d''énergie. Interdiction de fumer, moteurs coupés, installations électriques adaptées, liaison équipotentielle au dépotage. »
+
+Texte du formateur : « En cas de feu : alerte, arrêt d''urgence, extincteur adapté si c''est sans danger, évacuation, accueil des secours. Jamais de jet d''eau sur un feu de carburant. Côté environnement : séparateur d''hydrocarbures entretenu, huiles usagées et absorbants souillés remis à une filière autorisée, et réaction immédiate à tout déversement : arrêter, sécuriser, contenir, récupérer, signaler. Ce sont des principes généraux ; les obligations précises sont celles de la réglementation en vigueur et des prescriptions des autorités et des services de secours. »
+
+Visuel : pictogrammes de sécurité, schéma du triangle du feu, emplacement de l''arrêt d''urgence et du point de rassemblement.
+
+Question posée : « Dans votre station, chacun sait-il où se trouve le bouton d''arrêt d''urgence ? Quand avez-vous fait le dernier exercice ? »
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+Texte du formateur : « Récapitulons la journée d''Aïssatou. Les index mesurent les ventes. Le jaugeage mesure le stock. La réception se fait avec un jaugeage avant et après, et en sécurité. Le rapprochement compare théorique et physique, et se lit en tendance. La relève sépare les responsabilités et vérifie la caisse. Et la sécurité passe avant tout. »
+
+Évaluation finale, cinq questions :
+
+- Question 1 : index début 98 000,00 et fin 99 250,00, aucun essai, prix fictif 755 FCFA. Montant théorique ? Réponse : 1 250 × 755 = 943 750 FCFA.
+- Question 2 : stock initial 9 800 L, réception 6 000 L, ventes 4 300 L, jauge 11 460 L. Écart ? Réponse : −40 L.
+- Question 3 : ventes théoriques 1 844 500 FCFA, encaissements 1 845 000 FCFA. Écart de caisse ? Réponse : +500 FCFA.
+- Question 4 : chiffre d''affaires boutique 2 000 000 FCFA, marge 500 000 FCFA. Taux de marque ? Réponse : 25 %.
+- Question 5 : citez les trois éléments du triangle du feu. Réponse : combustible, comburant, source d''énergie.
+
+Texte du formateur : « Votre mission : reprenez les écarts de cuve de votre station sur le dernier mois, calculez le cumul et dites-moi s''ils se compensent ou s''ils racontent une histoire. Merci et à bientôt. »', 'video', 90, false, 60
+from public.courses c where c.slug = 'formation-station-service'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : une journée de gestion dans une station-service');
+
 -- Cours : Gestion de flotte automobile
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-gestion-flotte', (select id from public.levels where name = 'Formation professionnelle'), 'flotte', 'Gestion de flotte', 'Gestion de flotte automobile', 'Cette formation donne les méthodes pour gérer un parc de véhicules d''entreprise ou d''administration : inventaire et dossier véhicule, maintenance préventive et curative, pneumatiques, assurances et échéances administratives, calcul du coût total de possession (TCO) et politique conducteurs. Elle s''adresse aux gestionnaires de flotte, chefs de parc, responsables des services généraux et dirigeants de PME. Prérequis : calculs de base, pourcentages et usage d''un tableur.', true, 90
@@ -8279,6 +9386,535 @@ Question 5 : achat 15 000 000 FCFA, revente 5 000 000 FCFA, autres coûts sur la
 Merci pour votre attention. Votre mission : appliquer le modèle de tableur à votre propre flotte et calculer le TCO de vos trois véhicules les plus utilisés.', 'video', 90, false, 60
 from public.courses c where c.slug = 'formation-gestion-flotte'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : piloter une flotte automobile, de l''inventaire au TCO');
+
+-- Cours : Vendre des véhicules : du stock à l'après-vente
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'formation-vente-vehicules', (select id from public.levels where name = 'Formation professionnelle'), 'vente-vehicules', 'Commerce automobile', 'Vendre des véhicules : du stock à l''après-vente', 'Cette formation couvre tout le cycle de la vente automobile : gestion du stock de véhicules neufs (VN) et d''occasion (VO), cotation et reprise d''un véhicule d''occasion, prospection et techniques de vente, devis, financement et échéanciers avec calculs de mensualités, puis après-vente et garanties. Elle s''adresse aux vendeurs, chefs des ventes, gérants de parcs automobiles et entrepreneurs du négoce de véhicules. Prérequis : calculs de base et pourcentages.', true, 100
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Gérer un stock de véhicules neufs et d''occasion', '## Objectifs de la leçon
+
+- Distinguer la gestion d''un stock de véhicules neufs (VN) et d''occasion (VO).
+- Calculer le prix de revient, la rotation et le coût de détention du stock.
+- Mettre en place une politique de vieillissement du stock.
+
+## Le stock, premier actif du vendeur de véhicules
+
+Un parc de vente automobile immobilise beaucoup d''argent : vingt véhicules d''occasion à 6 000 000 FCFA représentent 120 000 000 FCFA. Tant qu''un véhicule n''est pas vendu, il coûte : intérêts sur l''argent emprunté ou immobilisé, gardiennage, assurance, entretien courant, et perte de valeur. Un bon vendeur de véhicules est donc d''abord un bon gestionnaire de stock : acheter les bons véhicules, au bon prix, et les vendre vite.
+
+## VN et VO : deux logiques différentes
+
+Le véhicule neuf (VN) est acheté auprès d''un constructeur ou d''un importateur. Son prix d''achat et son prix de vente conseillé sont connus ; la marge est encadrée par le contrat de distribution. Le stock se pilote avec les commandes, les délais de livraison et les objectifs fixés par le fournisseur.
+
+Le véhicule d''occasion (VO) provient de reprises de clients, d''achats auprès de particuliers ou d''entreprises, de ventes aux enchères ou d''importations. Au Sénégal, une grande partie des VO est importée ; la réglementation encadre notamment l''âge des véhicules importés, et il faut vérifier la règle en vigueur avant tout achat à l''étranger. Chaque VO est unique : son prix d''achat se négocie, sa remise en état varie, et sa marge dépend de la qualité de l''achat.
+
+## La fiche de stock
+
+Chaque véhicule entre en stock avec une fiche : numéro de stock, numéro de châssis, immatriculation, marque, modèle, version, année, kilométrage, couleur, options, date d''entrée, photos, documents reçus, et surtout le prix de revient.
+
+Prix de revient = prix d''achat + transport + frais de dédouanement et d''immatriculation éventuels + remise en état + préparation (nettoyage, contrôle).
+
+Exemple : un VO importé acheté 4 200 000 FCFA, transport 450 000 FCFA, frais de dédouanement et formalités 1 100 000 FCFA (montant d''exemple, il varie selon le véhicule et la réglementation), remise en état 350 000 FCFA, préparation 50 000 FCFA. Prix de revient : 4 200 000 + 450 000 + 1 100 000 + 350 000 + 50 000 = 6 150 000 FCFA. Si le véhicule se vend 7 000 000 FCFA, la marge brute est 850 000 FCFA, soit 850 000 / 7 000 000 ≈ 12,1 % du prix de vente.
+
+## La rotation du stock
+
+La rotation mesure combien de fois le stock se renouvelle dans l''année : rotation = coût des véhicules vendus dans l''année / valeur moyenne du stock au prix de revient.
+
+La durée moyenne de stockage en jours = 365 / rotation.
+
+Exemple : une entreprise a vendu dans l''année des véhicules dont le prix de revient total est de 720 000 000 FCFA ; son stock moyen vaut 180 000 000 FCFA. Rotation = 720 000 000 / 180 000 000 = 4. Durée moyenne = 365 / 4 ≈ 91 jours.
+
+## Le coût de détention
+
+Chaque jour de stock coûte. Prenons un VO de 6 000 000 FCFA financé à un taux fictif de 10 % par an : coût financier par jour = 6 000 000 × 0,10 / 365 ≈ 1 644 FCFA. Ajoutons 500 FCFA par jour de gardiennage et d''assurance, et une perte de valeur estimée à 1 % par mois, soit environ 2 000 FCFA par jour. Le véhicule coûte environ 4 144 FCFA par jour. Après 90 jours : environ 373 000 FCFA, soit près de la moitié d''une marge de 850 000 FCFA.
+
+## La politique de vieillissement
+
+On classe le stock par ancienneté et on applique des actions prédéfinies :
+
+- De 0 à 30 jours : prix normal, mise en avant sur les annonces.
+- De 31 à 60 jours : analyse (prix, présentation, photos), première baisse de prix si nécessaire.
+- De 61 à 90 jours : baisse de prix plus marquée, offre de financement ou de garantie.
+- Au-delà de 90 jours : vente à un marchand ou aux enchères pour libérer la trésorerie.
+
+Cette politique évite l''attachement au prix d''achat : ce qui compte, c''est le prix que le marché accepte aujourd''hui.
+
+## Le stock idéal
+
+On achète en priorité les modèles qui se vendent vite dans sa clientèle : en Afrique de l''Ouest, les berlines économiques, les SUV robustes, les pick-up et les utilitaires pour les commerçants sont souvent très demandés. Le suivi des ventes par modèle, par tranche de prix et par durée de vente oriente les achats.
+
+## Points clés
+
+- Le prix de revient inclut tous les frais jusqu''à la mise en vente.
+- Rotation = coût des ventes / stock moyen ; durée de stockage = 365 / rotation.
+- Chaque jour de stock coûte : financement, gardiennage, perte de valeur.
+- La politique de vieillissement fixe à l''avance les actions par tranche d''ancienneté.
+
+## Exercices
+
+- Exercice 1 : VO acheté 3 800 000 FCFA, transport 400 000 FCFA, formalités 900 000 FCFA, remise en état 250 000 FCFA, préparation 50 000 FCFA. Calculez le prix de revient. Quelle marge pour une vente à 6 000 000 FCFA ?
+- Exercice 2 : coût des ventes annuel 540 000 000 FCFA, stock moyen 90 000 000 FCFA. Calculez la rotation et la durée moyenne de stockage.
+- Exercice 3 : un véhicule coûte 3 500 FCFA par jour de détention. Combien a-t-il coûté après 75 jours ?
+- Exercice 4 : un véhicule est en stock depuis 70 jours. Quelles actions prévoit la politique de vieillissement ?
+
+## Corrigé
+
+Exercice 1 : prix de revient = 3 800 000 + 400 000 + 900 000 + 250 000 + 50 000 = 5 400 000 FCFA. Marge = 6 000 000 - 5 400 000 = 600 000 FCFA, soit 10 % du prix de vente.
+
+Exercice 2 : rotation = 540 000 000 / 90 000 000 = 6 ; durée = 365 / 6 ≈ 61 jours.
+
+Exercice 3 : 3 500 × 75 = 262 500 FCFA.
+
+Exercice 4 : il est dans la tranche 61 à 90 jours : baisse de prix plus marquée et offre commerciale (financement, garantie) ; s''il n''est pas vendu à 90 jours, on le cède à un marchand ou aux enchères.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'formation-vente-vehicules'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gérer un stock de véhicules neufs et d''occasion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Coter et reprendre un véhicule d''occasion', '## Objectifs de la leçon
+
+- Inspecter un véhicule d''occasion avec méthode.
+- Établir une cotation de marché et calculer un prix de reprise.
+- Présenter une offre de reprise argumentée au client.
+
+## Pourquoi la cotation est décisive
+
+Dans le commerce du VO, on dit souvent que la marge se fait à l''achat. Un véhicule repris trop cher ne se vendra qu''à perte ; un véhicule repris trop bas fera fuir le client. La cotation consiste à estimer la valeur d''un véhicule, puis à en déduire le prix auquel on peut le reprendre en gardant une marge.
+
+## L''inspection du véhicule
+
+L''inspection suit une fiche, toujours dans le même ordre, pour ne rien oublier :
+
+- Documents : carte grise au nom du vendeur, concordance du numéro de châssis avec le véhicule, carnet d''entretien, factures, absence de gage ou d''opposition à vérifier selon les moyens disponibles.
+- Extérieur : carrosserie (chocs, rouille, différences de teinte révélant des réparations), vitrage, éclairage, pneus (usure, date, homogénéité).
+- Intérieur : sièges, tableau de bord, voyants au démarrage, climatisation, vitres électriques, odeurs d''humidité (véhicule inondé).
+- Mécanique : démarrage à froid, bruits, fumées à l''échappement, fuites, niveau et aspect des huiles, embrayage, boîte de vitesses, freins, direction, suspensions.
+- Essai routier : comportement en ligne droite et au freinage, passage des vitesses, bruits de roulement.
+- Kilométrage : cohérence entre compteur, usure (pédales, volant, sièges) et factures. Un compteur trafiqué est une fraude fréquente ; le moindre doute se note sur la fiche.
+
+Chaque défaut est chiffré en frais de remise en état à partir des tarifs de l''atelier ou des devis.
+
+## La cotation de marché
+
+La valeur de marché est le prix auquel des véhicules comparables (même modèle, année, motorisation, kilométrage proche, état similaire) se vendent réellement. On l''établit en relevant plusieurs annonces et transactions récentes : sites d''annonces, parcs concurrents, ventes de son propre parc. On retient une valeur centrale, en écartant les annonces anormalement hautes ou basses. Les prix affichés sont souvent négociés : il faut raisonner sur les prix de vente constatés.
+
+On ajuste ensuite pour les différences : kilométrage, options, état, couleur peu demandée. Chaque entreprise fixe ses propres règles d''ajustement à partir de son expérience. Par exemple, une règle interne peut retirer 1 % de la valeur par tranche de 10 000 km au-delà du kilométrage de référence du modèle et de l''année.
+
+## La méthode du prix de reprise
+
+On part du prix de revente attendu et l''on remonte vers le prix de reprise :
+
+Prix de reprise maximal = prix de revente attendu - frais de remise en état - frais fixes de mise en vente (préparation, garantie, frais administratifs) - marge visée.
+
+## Exemple chiffré
+
+Un client souhaite faire reprendre son SUV pour en acheter un plus récent. Le véhicule affiche 140 000 km. Les ventes constatées de modèles comparables à 100 000 km tournent autour de 7 500 000 FCFA.
+
+- Ajustement kilométrage (règle interne : 1 % par tranche de 10 000 km au-delà de 100 000 km) : 4 tranches, soit 4 % de 7 500 000 = 300 000 FCFA. Prix de revente attendu : 7 200 000 FCFA.
+- Remise en état : 4 pneus 240 000 FCFA, plaquettes et disques 85 000 FCFA, carrosserie (pare-chocs) 150 000 FCFA, nettoyage complet 25 000 FCFA, soit 500 000 FCFA.
+- Frais fixes : garantie commerciale 100 000 FCFA, frais administratifs 50 000 FCFA, soit 150 000 FCFA.
+- Marge visée : 12 % du prix de revente, soit 864 000 FCFA.
+
+Prix de reprise maximal = 7 200 000 - 500 000 - 150 000 - 864 000 = 5 686 000 FCFA. Le vendeur propose 5 650 000 FCFA.
+
+## Présenter l''offre au client
+
+Le client a souvent une idée de prix plus élevée, fondée sur les annonces. Il faut expliquer la démarche avec transparence : montrer les ventes constatées, l''ajustement de kilométrage, les frais de remise en état chiffrés. On peut aussi souligner les avantages de la reprise : pas d''annonce à publier, pas de visites d''inconnus, pas de risque d''impayé, et la valeur de reprise directement déduite du nouvel achat.
+
+## Points clés
+
+- L''inspection suit une fiche : documents, extérieur, intérieur, mécanique, essai, kilométrage.
+- La valeur de marché se fonde sur des ventes réelles de véhicules comparables.
+- Le prix de reprise se calcule à rebours : revente - remise en état - frais fixes - marge.
+- L''offre se présente avec transparence et arguments.
+
+## Exercices
+
+- Exercice 1 : citez cinq points de contrôle mécanique lors de l''inspection.
+- Exercice 2 : valeur de référence 5 000 000 FCFA à 80 000 km ; le véhicule a 110 000 km ; règle interne 1 % par tranche de 10 000 km. Calculez le prix de revente attendu.
+- Exercice 3 : avec le résultat de l''exercice 2, une remise en état de 320 000 FCFA, des frais fixes de 130 000 FCFA et une marge de 10 % du prix de revente, calculez le prix de reprise maximal.
+- Exercice 4 : quels indices peuvent révéler un compteur kilométrique trafiqué ?
+
+## Corrigé
+
+Exercice 1 : démarrage à froid, fumées à l''échappement, fuites, état des huiles, embrayage, boîte de vitesses, freins, direction, suspensions.
+
+Exercice 2 : 3 tranches de 10 000 km, soit 3 % de 5 000 000 = 150 000 FCFA ; prix de revente attendu = 4 850 000 FCFA.
+
+Exercice 3 : marge = 10 % × 4 850 000 = 485 000 FCFA ; reprise maximale = 4 850 000 - 320 000 - 130 000 - 485 000 = 3 915 000 FCFA.
+
+Exercice 4 : usure du volant, du pommeau, des pédales ou du siège conducteur incohérente avec le kilométrage ; factures d''entretien mentionnant un kilométrage supérieur ; carnet absent ; vis du tableau de bord démontées ; pneus et disques très usés pour un faible kilométrage.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'formation-vente-vehicules'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Coter et reprendre un véhicule d''occasion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Prospection et techniques de vente automobile', '## Objectifs de la leçon
+
+- Organiser une prospection régulière et mesurer ses résultats.
+- Conduire un entretien de vente en étapes.
+- Traiter les objections et conclure.
+
+## La prospection
+
+Attendre que les clients entrent dans le parc ne suffit pas. La prospection consiste à aller chercher des acheteurs potentiels, que l''on appelle des prospects ou des contacts. Les sources sont nombreuses :
+
+- Les clients existants : un client satisfait rachète et recommande ; on le recontacte au bout de quelques années pour un renouvellement.
+- Le fichier des personnes venues sans acheter.
+- Les annonces en ligne et les réseaux sociaux, très utilisés en Afrique de l''Ouest pour la vente automobile.
+- Les entreprises, ONG et administrations qui renouvellent leurs flottes.
+- Les commerçants, transporteurs et artisans qui ont besoin d''utilitaires.
+- Les salons, foires et événements locaux.
+- Les partenaires : banques, assureurs, garages.
+
+Chaque contact est enregistré dans un fichier (tableur ou logiciel de gestion de la relation client) : nom, téléphone, besoin, budget, source, date du prochain rappel. Les données personnelles des prospects doivent être traitées dans le respect de la réglementation sur la protection des données.
+
+## L''entonnoir de vente
+
+On mesure la prospection avec l''entonnoir : contacts, visites ou rendez-vous, essais, ventes. Exemple pour un mois : 400 contacts, 120 visites, 40 essais, 12 ventes.
+
+- Taux de visite : 120 / 400 = 30 %.
+- Taux d''essai : 40 / 120 ≈ 33 %.
+- Taux de conclusion après essai : 12 / 40 = 30 %.
+- Taux global : 12 / 400 = 3 %.
+
+Si l''objectif est de 18 ventes par mois avec les mêmes taux, il faut 18 / 0,03 = 600 contacts. L''entonnoir montre aussi où agir : un faible taux d''essai révèle souvent une mauvaise découverte des besoins.
+
+## Les étapes de l''entretien de vente
+
+L''accueil : saluer rapidement, se présenter, mettre à l''aise. Le client doit sentir qu''on s''intéresse à lui et non seulement à sa carte bancaire.
+
+La découverte : c''est l''étape la plus importante. Le vendeur pose des questions ouvertes pour comprendre l''usage (ville, piste, longs trajets), le nombre de passagers, le budget, le mode de paiement, le véhicule actuel, les critères de choix. Une grille souvent utilisée en formation commerciale est SONCAS, qui rappelle six motivations d''achat : sécurité, orgueil, nouveauté, confort, argent, sympathie. Elle aide à repérer ce qui compte vraiment pour le client.
+
+La présentation : on présente le véhicule en reliant chaque caractéristique au besoin exprimé, selon la méthode caractéristique, avantage, bénéfice. Exemple : "Ce pick-up a une garde au sol élevée (caractéristique), il passe facilement les pistes en saison des pluies (avantage), vous pourrez livrer vos clients des villages toute l''année (bénéfice)."
+
+L''essai : il fait passer le client de l''imagination à l''expérience. On prépare un parcours représentatif et on laisse le client conduire, après vérification de son permis.
+
+Le traitement des objections : voir ci-dessous.
+
+La conclusion : quand le client montre des signaux d''achat (il parle des couleurs, des délais, du financement), on propose de passer au devis et à la commande.
+
+## Traiter les objections
+
+Une objection n''est pas un refus : c''est une demande d''information ou de réassurance. La méthode en quatre temps :
+
+- Écouter jusqu''au bout sans interrompre.
+- Reformuler pour vérifier qu''on a compris.
+- Répondre avec des faits : preuve, comparaison, calcul.
+- Vérifier que la réponse convient.
+
+Exemple. Le client : "C''est trop cher." Le vendeur : "Vous trouvez le prix élevé par rapport à quoi ?" Le client : "J''ai vu le même modèle moins cher sur internet." Le vendeur compare : le véhicule du parc a un kilométrage contrôlé, une révision faite, des pneus neufs et une garantie de trois mois ; il chiffre ces éléments et propose de calculer la mensualité d''un financement.
+
+## L''éthique du vendeur
+
+Le vendeur ne cache pas un défaut connu, n''invente pas un historique et respecte la parole donnée. Au-delà de l''obligation légale d''information et de loyauté, c''est la condition de la recommandation, principal moteur des ventes dans un marché où la confiance est rare.
+
+## Points clés
+
+- La prospection est régulière, tracée dans un fichier et mesurée par l''entonnoir.
+- L''entretien suit six étapes : accueil, découverte, présentation, essai, objections, conclusion.
+- La découverte des besoins conditionne toute la suite.
+- L''objection se traite par l''écoute, la reformulation, les faits et la vérification.
+
+## Exercices
+
+- Exercice 1 : citez cinq sources de prospects pour un vendeur de pick-up.
+- Exercice 2 : 250 contacts, 75 visites, 30 essais, 9 ventes. Calculez les taux de l''entonnoir.
+- Exercice 3 : avec un taux global de 4 %, combien de contacts faut-il pour 20 ventes ?
+- Exercice 4 : transformez en caractéristique, avantage et bénéfice : "climatisation automatique" pour un taxi.
+- Exercice 5 : un client dit "Je dois réfléchir". Proposez une réponse.
+
+## Corrigé
+
+Exercice 1 : clients existants, transporteurs et commerçants, entreprises de BTP, annonces en ligne, réseaux sociaux, foires agricoles, partenaires bancaires.
+
+Exercice 2 : visites 75 / 250 = 30 % ; essais 30 / 75 = 40 % ; conclusion 9 / 30 = 30 % ; global 9 / 250 = 3,6 %.
+
+Exercice 3 : 20 / 0,04 = 500 contacts.
+
+Exercice 4 : caractéristique : climatisation automatique ; avantage : température agréable maintenue sans réglage ; bénéfice : les clients du taxi sont satisfaits, donnent plus volontiers un pourboire et reviennent.
+
+Exercice 5 : reformuler et chercher le point de doute : "Bien sûr. Pour vous aider, sur quel point souhaitez-vous réfléchir : le modèle, le prix ou le financement ?" Puis répondre au point précis et fixer un rendez-vous ou un rappel daté.', 'texte', 50, false, 30
+from public.courses c where c.slug = 'formation-vente-vehicules'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Prospection et techniques de vente automobile');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Devis, financement et échéanciers', '## Objectifs de la leçon
+
+- Rédiger un devis complet et conforme.
+- Présenter les solutions de financement.
+- Calculer une mensualité et construire un tableau d''amortissement.
+
+## Le devis
+
+Le devis (ou bon de commande proposé) formalise l''offre. Il comprend :
+
+- L''identité du vendeur (raison sociale, NINEA, adresse) et celle du client.
+- La désignation précise du véhicule : marque, modèle, version, année, kilométrage pour un VO, numéro de châssis, couleur, options.
+- Le prix hors taxes, la TVA et le prix toutes taxes comprises, ou la mention du régime fiscal applicable.
+- Les frais annexes : immatriculation, préparation, accessoires.
+- La valeur de reprise éventuelle, déduite du prix.
+- L''acompte demandé et le solde.
+- Le délai de livraison et la date de validité de l''offre.
+- Les garanties accordées.
+- Les conditions de paiement et de financement.
+
+Exemple de calcul de taxe : pour l''exemple, nous retenons un taux de TVA de 18 %, qui correspond au taux normal au Sénégal ; vérifiez toujours le régime applicable à l''opération (véhicule neuf ou d''occasion, statut du vendeur). Un véhicule à 10 593 220 FCFA hors taxes donne une TVA de 10 593 220 × 0,18 ≈ 1 906 780 FCFA et un prix TTC de 12 500 000 FCFA.
+
+## Les solutions de financement
+
+- Le paiement comptant, parfois avec une remise.
+- Le crédit bancaire : une banque ou un établissement financier prête au client, qui rembourse par mensualités ; le véhicule sert souvent de garantie.
+- Le crédit-bail ou location avec option d''achat : le client loue le véhicule et peut l''acheter en fin de contrat pour une valeur résiduelle.
+- La vente à tempérament par le vendeur lui-même : le client paie en plusieurs versements, ce qui fait porter le risque d''impayé au vendeur.
+- Les produits de financement conformes à la finance islamique, proposés par certains établissements, qui reposent sur une marge convenue plutôt que sur un intérêt.
+
+Les taux, frais de dossier et assurances varient selon les établissements : on les obtient par offre écrite.
+
+## Le calcul de la mensualité
+
+Pour un prêt à mensualités constantes, on utilise la formule :
+
+M = C × t / (1 - (1 + t)^(-n))
+
+où C est le capital emprunté, t le taux mensuel (taux annuel / 12) et n le nombre de mensualités. La notation (1 + t)^(-n) signifie 1 divisé par (1 + t) multiplié par lui-même n fois.
+
+## Exemple chiffré
+
+Prix TTC 12 500 000 FCFA, apport 2 500 000 FCFA, capital emprunté 10 000 000 FCFA, taux annuel fictif pour l''exemple de 12 %, soit 1 % par mois, durée 36 mois.
+
+(1,01)^36 ≈ 1,43077 ; donc (1,01)^(-36) ≈ 1 / 1,43077 ≈ 0,69892. 1 - 0,69892 = 0,30108. M = 10 000 000 × 0,01 / 0,30108 ≈ 332 143 FCFA.
+
+Coût total des remboursements : 332 143 × 36 = 11 957 148 FCFA. Coût des intérêts : 11 957 148 - 10 000 000 = 1 957 148 FCFA (hors frais de dossier et assurance).
+
+## Le tableau d''amortissement
+
+Chaque mensualité contient des intérêts (calculés sur le capital restant dû) et un remboursement de capital.
+
+- Mois 1 : intérêts 10 000 000 × 1 % = 100 000 ; capital remboursé 332 143 - 100 000 = 232 143 ; capital restant 9 767 857.
+- Mois 2 : intérêts 9 767 857 × 1 % ≈ 97 679 ; capital remboursé ≈ 234 464 ; capital restant ≈ 9 533 393.
+- Mois 3 : intérêts ≈ 95 334 ; capital remboursé ≈ 236 809 ; capital restant ≈ 9 296 584.
+
+La part d''intérêts diminue chaque mois, la part de capital augmente. Un tableur calcule facilement les 36 lignes.
+
+## La capacité de remboursement
+
+Avant de proposer un financement, on vérifie que la mensualité est supportable. On compare la mensualité aux revenus réguliers du client, en tenant compte de ses autres crédits. Chaque établissement fixe sa propre limite d''endettement ; beaucoup utilisent une règle prudente proche d''un tiers des revenus, mais il faut vérifier la politique de l''établissement concerné. Exemple : un client gagne 900 000 FCFA par mois et n''a pas d''autre crédit ; une mensualité de 332 143 FCFA représente 332 143 / 900 000 ≈ 37 % de ses revenus, au-dessus d''un tiers. On peut allonger la durée, augmenter l''apport ou choisir un véhicule moins cher.
+
+## Points clés
+
+- Le devis est complet, daté, chiffré HT et TTC, avec reprise, acompte, délais et garanties.
+- Plusieurs solutions de financement existent ; on obtient les conditions par offre écrite.
+- M = C × t / (1 - (1 + t)^(-n)) avec t taux mensuel et n nombre de mois.
+- On vérifie la capacité de remboursement avant de conclure.
+
+## Exercices
+
+- Exercice 1 : citez huit mentions d''un devis de vente de véhicule.
+- Exercice 2 : calculez la mensualité d''un prêt de 6 000 000 FCFA sur 24 mois au taux mensuel fictif de 1,5 %. On donne (1,015)^24 ≈ 1,42950.
+- Exercice 3 : calculez le coût total des intérêts du prêt de l''exercice 2.
+- Exercice 4 : pour le prêt de l''exercice 2, calculez la première ligne du tableau d''amortissement.
+- Exercice 5 : un client gagne 750 000 FCFA par mois. La mensualité de l''exercice 2 représente quelle part de ses revenus ?
+
+## Corrigé
+
+Exercice 1 : identité du vendeur et du client, désignation du véhicule, numéro de châssis, prix HT, TVA, prix TTC, frais annexes, reprise, acompte, délai de livraison, validité de l''offre, garanties, conditions de paiement.
+
+Exercice 2 : (1,015)^(-24) ≈ 1 / 1,42950 ≈ 0,69955 ; 1 - 0,69955 = 0,30045 ; M = 6 000 000 × 0,015 / 0,30045 = 90 000 / 0,30045 ≈ 299 550 FCFA. Un calcul plus précis au tableur donne 299 545 FCFA.
+
+Exercice 3 : 299 545 × 24 = 7 189 080 FCFA ; intérêts = 7 189 080 - 6 000 000 = 1 189 080 FCFA.
+
+Exercice 4 : intérêts du mois 1 = 6 000 000 × 1,5 % = 90 000 FCFA ; capital remboursé = 299 545 - 90 000 = 209 545 FCFA ; capital restant = 5 790 455 FCFA.
+
+Exercice 5 : 299 545 / 750 000 ≈ 0,40, soit environ 40 % : c''est élevé ; il faut proposer un apport plus important, une durée plus longue ou un autre véhicule.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'formation-vente-vehicules'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Devis, financement et échéanciers');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Après-vente, garanties et fidélisation', '## Objectifs de la leçon
+
+- Organiser la livraison et le suivi après-vente.
+- Distinguer les différentes garanties et gérer les réclamations.
+- Mesurer la satisfaction et la fidélisation.
+
+## L''après-vente, source de revenus et de fidélité
+
+La vente ne s''arrête pas à la remise des clés. L''après-vente (livraison, entretien, réparations, pièces, gestion des garanties, suivi du client) représente une part importante de la rentabilité des concessionnaires et des garages. Surtout, c''est pendant l''après-vente que se construit la confiance qui amène le client à racheter et à recommander. Un client mal traité après la vente en parlera autour de lui.
+
+## La livraison
+
+La livraison est un moment clé. Elle se prépare : véhicule propre, plein fait selon la politique de l''entreprise, documents prêts, accessoires montés. Le vendeur consacre du temps au client :
+
+- Contrôle contradictoire du véhicule et signature du procès-verbal de livraison.
+- Remise des documents : facture, carte grise ou documents d''immatriculation, certificat de garantie, carnet d''entretien, double des clés.
+- Explication des commandes, des voyants, des intervalles d''entretien.
+- Présentation de l''atelier et de la personne à contacter.
+- Prise de rendez-vous pour le premier entretien.
+
+## Les garanties
+
+La garantie constructeur s''applique aux véhicules neufs : elle couvre les défauts de fabrication pendant une durée ou un kilométrage fixés par le constructeur, à condition de respecter le programme d''entretien. Ses conditions figurent dans le carnet de garantie.
+
+La garantie commerciale du vendeur s''applique souvent aux véhicules d''occasion : c''est un engagement librement proposé par le vendeur, par exemple 3 mois ou 5 000 km sur le moteur et la boîte de vitesses. Son contenu, ses exclusions et sa durée doivent être écrits clairement.
+
+La garantie légale contre les vices cachés protège l''acheteur lorsque le véhicule présente un défaut grave, caché et antérieur à la vente. Au Sénégal, elle relève du droit des obligations (Code des obligations civiles et commerciales). Le vendeur ne peut pas tromper l''acheteur ; en cas de litige, il faut consulter un juriste sur les conditions et délais applicables.
+
+## Gérer une réclamation
+
+- Accueillir le client et écouter sans contester.
+- Enregistrer la réclamation : date, véhicule, kilométrage, description.
+- Diagnostiquer à l''atelier et déterminer si le problème est couvert.
+- Informer le client de la décision avec une explication claire, par écrit si nécessaire.
+- Réparer dans un délai annoncé, avec véhicule de prêt si possible.
+- Vérifier la satisfaction après la réparation et clôturer la réclamation.
+
+Toutes les réclamations sont suivies dans un registre. Leur analyse révèle les modèles fragiles ou les défauts de préparation.
+
+## Le coût des garanties
+
+La garantie commerciale a un coût qu''il faut intégrer dans le prix de vente. Exemple : un parc a vendu 120 VO avec une garantie de 3 mois. 15 % des véhicules ont fait l''objet d''une intervention sous garantie, au coût moyen de 180 000 FCFA. Coût total : 120 × 0,15 × 180 000 = 3 240 000 FCFA, soit 3 240 000 / 120 = 27 000 FCFA par véhicule vendu. Ce montant est provisionné dans chaque prix de revient. Si l''on améliore la préparation (contrôle plus complet avant la vente) et que le taux descend à 10 %, le coût par véhicule tombe à 18 000 FCFA.
+
+## Les services d''après-vente
+
+- Entretien et réparations à l''atelier, avec rappel des échéances par SMS ou messagerie.
+- Vente de pièces et d''accessoires.
+- Contrats d''entretien à prix forfaitaire, intéressants pour les flottes d''entreprise.
+- Assistance et dépannage.
+- Reprise du véhicule pour un renouvellement futur.
+
+## Mesurer la satisfaction et la fidélisation
+
+- Taux de satisfaction : enquête courte après livraison et après chaque passage à l''atelier.
+- Taux de réclamation : réclamations / véhicules vendus.
+- Taux de retour atelier : part des clients qui reviennent faire l''entretien chez le vendeur.
+- Taux de fidélisation : part des ventes réalisées auprès d''anciens clients.
+- Nombre de recommandations : nouveaux clients venus sur conseil d''un client.
+
+## Exemple : un garage-concession à Thiès
+
+Un garage qui vend 200 véhicules par an constate que seuls 35 % de ses clients reviennent pour l''entretien. Il met en place : présentation de l''atelier à chaque livraison, premier entretien offert pour les VO, rappels automatiques, contrats d''entretien pour les entreprises. Un an plus tard, 55 % des clients reviennent ; le chiffre d''affaires de l''atelier progresse et les ventes à d''anciens clients augmentent.
+
+## Points clés
+
+- L''après-vente construit la rentabilité et la fidélité.
+- La livraison est préparée et formalisée par un procès-verbal.
+- Trois niveaux de garantie : constructeur, commerciale, légale contre les vices cachés.
+- Le coût des garanties se calcule et s''intègre au prix ; la satisfaction se mesure.
+
+## Exercices
+
+- Exercice 1 : citez cinq documents ou éléments remis au client à la livraison.
+- Exercice 2 : expliquez la différence entre garantie commerciale et garantie légale contre les vices cachés.
+- Exercice 3 : 80 VO vendus, 20 % d''interventions sous garantie, coût moyen 150 000 FCFA. Calculez le coût total et le coût par véhicule.
+- Exercice 4 : 240 véhicules vendus, 18 réclamations. Calculez le taux de réclamation.
+
+## Corrigé
+
+Exercice 1 : facture, documents d''immatriculation, certificat de garantie, carnet d''entretien, double des clés, procès-verbal de livraison signé.
+
+Exercice 2 : la garantie commerciale est un engagement volontaire du vendeur, dont il fixe le contenu et la durée par écrit. La garantie légale contre les vices cachés découle de la loi : elle protège l''acheteur contre un défaut grave, caché et antérieur à la vente, même sans garantie commerciale.
+
+Exercice 3 : 80 × 0,20 = 16 interventions ; 16 × 150 000 = 2 400 000 FCFA ; par véhicule 2 400 000 / 80 = 30 000 FCFA.
+
+Exercice 4 : 18 / 240 = 0,075, soit 7,5 %.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'formation-vente-vehicules'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Après-vente, garanties et fidélisation');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : du stock à l''après-vente, vendre un véhicule pas à pas', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : vendeurs automobiles, chefs des ventes, gérants de parcs VO, entrepreneurs du négoce automobile.
+- Objectifs : piloter un stock VN et VO, coter un véhicule d''occasion, mener un entretien de vente, chiffrer un financement et organiser l''après-vente.
+- Matériel : diaporama, tableur avec modèle de stock et simulateur de crédit, fiche d''inspection VO imprimée, tableau blanc.
+- Prérequis : pourcentages ; avoir suivi les leçons du module est conseillé.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et cas fil rouge
+
+Bonjour et bienvenue. Notre cas fil rouge s''appelle Teranga Auto, un parc de véhicules fictif situé sur la route de Rufisque. Il vend des véhicules neufs d''une marque généraliste et une quarantaine de véhicules d''occasion. Le gérant a deux soucis : sa trésorerie est tendue, et ses vendeurs se plaignent de perdre des ventes au moment du financement. Pendant cette séance, nous allons suivre un véhicule du moment où il entre en stock jusqu''à son premier entretien après la vente.
+
+Visuel : photo du parc et chiffres clés. Question d''ouverture : selon vous, d''où vient une trésorerie tendue dans un parc automobile ? Notez une réponse.
+
+## 05:00 – 18:00 · Le stock et son coût
+
+La réponse la plus fréquente, c''est le stock. Je projette le tableau du stock VO de Teranga Auto trié par ancienneté. Sur 40 véhicules, 12 sont en stock depuis plus de 90 jours. Leur prix de revient total est de 72 000 000 FCFA.
+
+Calculons ce que coûte un jour de stock pour un véhicule de 6 000 000 FCFA. Avec un financement au taux fictif de 10 % par an, le coût financier est 6 000 000 fois 0,10 divisé par 365, environ 1 644 FCFA par jour. Ajoutons 500 FCFA de gardiennage et d''assurance et environ 2 000 FCFA de perte de valeur : plus de 4 100 FCFA par jour. Après 120 jours, c''est près de 500 000 FCFA.
+
+Calculons aussi la rotation. L''an dernier, le coût des VO vendus a été de 600 000 000 FCFA pour un stock moyen de 200 000 000 FCFA. Rotation : 3. Durée moyenne de stockage : 365 divisé par 3, environ 122 jours. L''objectif du gérant est d''atteindre une rotation de 5, soit environ 73 jours.
+
+Visuel : la politique de vieillissement en quatre tranches. Décision : les 12 véhicules de plus de 90 jours sont proposés à des marchands ou baissés fortement cette semaine. Question : pourquoi est-il difficile pour un vendeur d''accepter de vendre en dessous de son prix d''achat ? Réponse : on raisonne sur le passé alors que seule compte la valeur de marché d''aujourd''hui.
+
+## 18:00 – 32:00 · Coter et reprendre un véhicule d''occasion
+
+Un client, monsieur Diallo, veut acheter un SUV neuf et propose de faire reprendre sa berline. Je projette la fiche d''inspection. Ensemble, nous la parcourons : documents, carrosserie, intérieur, mécanique, essai, cohérence du kilométrage. La berline affiche 120 000 km. Nous trouvons des pneus à remplacer pour 200 000 FCFA, une rayure profonde à reprendre pour 120 000 FCFA, et un nettoyage complet à 30 000 FCFA. Total remise en état : 350 000 FCFA.
+
+Cotation : des berlines comparables à 90 000 km se vendent autour de 5 800 000 FCFA. Avec la règle interne de 1 % par tranche de 10 000 km au-delà de la référence, nous avons 3 tranches, soit 3 % de 5 800 000, ou 174 000 FCFA. Prix de revente attendu : 5 626 000 FCFA.
+
+Frais fixes : garantie et frais administratifs pour 150 000 FCFA. Marge visée : 12 % de 5 626 000, soit 675 120 FCFA. Prix de reprise maximal : 5 626 000 moins 350 000 moins 150 000 moins 675 120, soit 4 450 880 FCFA. Le vendeur proposera 4 450 000 FCFA.
+
+Visuel : le calcul à rebours en escalier. Jeu de rôle : un participant joue monsieur Diallo, qui avait vu des annonces à 5 500 000 FCFA. Comment lui présenter l''offre ? Montrer les ventes réelles, la décote kilométrique, les frais chiffrés, et rappeler les avantages de la reprise : aucune annonce, aucun risque, déduction immédiate.
+
+## 32:00 – 45:00 · L''entretien de vente
+
+Passons à la vente du SUV neuf. Nous reprenons les six étapes : accueil, découverte, présentation, essai, objections, conclusion.
+
+La découverte d''abord. Je vous propose dix questions ouvertes pour monsieur Diallo : pour quel usage ? combien de passagers ? quels trajets fréquents ? quel budget mensuel ? comment comptez-vous payer ? qu''est-ce qui vous a déplu dans votre véhicule actuel ? Nous apprenons qu''il fait souvent le trajet vers Touba avec sa famille, que la sécurité des enfants est sa priorité et qu''il veut une mensualité raisonnable.
+
+La présentation ensuite, avec la méthode caractéristique, avantage, bénéfice. Exemple : six airbags et contrôle de stabilité, c''est la caractéristique ; une meilleure protection en cas de choc et moins de risque de perte de contrôle, c''est l''avantage ; votre famille voyage plus sereinement vers Touba, c''est le bénéfice.
+
+Puis l''objection : "C''est au-dessus de mon budget." Écouter, reformuler : "Si je comprends bien, c''est le montant mensuel qui vous inquiète ?" Répondre avec un calcul de financement, que nous allons faire juste après la pause.
+
+## 45:00 – 50:00 · Pause et quiz interactif
+
+Petite pause active. Répondez dans le chat.
+
+Question 1 : coût des ventes 400 000 000 FCFA, stock moyen 100 000 000 FCFA : rotation ? Réponse : 4.
+
+Question 2 : un VO coûte 4 000 FCFA par jour ; combien après 60 jours ? Réponse : 240 000 FCFA.
+
+Question 3 : que signifie le B dans la méthode caractéristique, avantage, bénéfice ? Réponse : ce que le client y gagne personnellement.
+
+Question 4 : 300 contacts et 9 ventes : taux global ? Réponse : 3 %.
+
+Question 5 : vrai ou faux, une objection est un refus ? Réponse : faux, c''est une demande d''information ou de réassurance.
+
+## 50:00 – 1:05:00 · Devis, financement et échéancier
+
+Le SUV coûte 16 000 000 FCFA TTC. La reprise vaut 4 450 000 FCFA. Monsieur Diallo ajoute un apport de 1 550 000 FCFA. Capital à financer : 16 000 000 moins 4 450 000 moins 1 550 000, soit 10 000 000 FCFA.
+
+Visuel : le simulateur de crédit. Taux annuel fictif pour l''exemple : 12 %, soit 1 % par mois. Formule : M égale C fois t divisé par 1 moins 1 plus t puissance moins n. Sur 36 mois, (1,01) puissance 36 vaut environ 1,43077, son inverse 0,69892, et 1 moins 0,69892 donne 0,30108. M égale 100 000 divisé par 0,30108, soit environ 332 143 FCFA. Coût total des intérêts : 332 143 fois 36 moins 10 000 000, soit 1 957 148 FCFA.
+
+Monsieur Diallo gagne 1 200 000 FCFA par mois sans autre crédit. La mensualité représente 332 143 divisé par 1 200 000, environ 28 % de ses revenus. Elle est inférieure à un tiers, règle prudente souvent utilisée, sous réserve de la politique de la banque.
+
+Montrons les trois premières lignes du tableau d''amortissement : mois 1, intérêts 100 000 et capital 232 143 ; mois 2, intérêts environ 97 679 et capital 234 464 ; mois 3, intérêts environ 95 334 et capital 236 809. Question : pourquoi la part d''intérêts baisse-t-elle ? Réponse : parce qu''elle est calculée sur un capital restant qui diminue.
+
+Enfin, le devis : identité des parties, désignation du véhicule et numéro de châssis, prix HT, TVA au taux applicable et prix TTC, reprise, acompte, financement, délai de livraison, validité de l''offre, garanties.
+
+## 1:05:00 – 1:18:00 · Livraison, garanties et après-vente
+
+La commande est signée. Préparons la livraison : véhicule propre, documents prêts, procès-verbal contradictoire, explication des équipements, présentation du chef d''atelier, rendez-vous du premier entretien.
+
+Rappelons les trois garanties. La garantie constructeur couvre le SUV neuf selon les conditions du carnet. Pour la berline reprise, que Teranga Auto revendra, le parc offrira une garantie commerciale de 3 mois sur le moteur et la boîte. Et dans tous les cas, la garantie légale contre les vices cachés prévue par le droit sénégalais des obligations protège l''acheteur.
+
+Calculons le coût de la garantie commerciale. L''an dernier, Teranga Auto a vendu 150 VO garantis, dont 12 % ont eu une intervention au coût moyen de 200 000 FCFA. Coût total : 150 fois 0,12 fois 200 000, soit 3 600 000 FCFA, ou 24 000 FCFA par véhicule, à intégrer dans le prix de revient.
+
+Visuel : le tableau de bord après-vente avec le taux de satisfaction, le taux de réclamation et le taux de retour atelier. Question : quelle action mettriez-vous en place pour faire revenir les clients à l''atelier ? Réponses possibles : premier entretien offert, rappels automatiques, contrats d''entretien pour les entreprises.
+
+## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
+
+Résumons le parcours du véhicule : il entre en stock avec un prix de revient complet ; il ne doit pas vieillir ; la reprise se calcule à rebours depuis la valeur de marché ; la vente repose sur la découverte des besoins ; le financement se chiffre précisément et se vérifie au regard des revenus ; l''après-vente transforme un acheteur en client fidèle.
+
+Évaluation finale.
+
+Question 1 : écrivez la formule du prix de reprise maximal. Réponse : prix de revente attendu moins remise en état moins frais fixes moins marge visée.
+
+Question 2 : rotation de 6 : durée moyenne de stockage ? Réponse : 365 divisé par 6, environ 61 jours.
+
+Question 3 : prêt de 5 000 000 FCFA à 1 % par mois : intérêts du premier mois ? Réponse : 50 000 FCFA.
+
+Question 4 : citez les six étapes de l''entretien de vente. Réponse : accueil, découverte, présentation, essai, traitement des objections, conclusion.
+
+Question 5 : 100 VO vendus, 10 % d''interventions sous garantie à 250 000 FCFA en moyenne : coût par véhicule ? Réponse : 100 fois 0,10 fois 250 000 égale 2 500 000 FCFA, soit 25 000 FCFA par véhicule.
+
+Merci à toutes et à tous. Votre exercice : coter un véhicule d''occasion réel de votre entourage avec la fiche d''inspection et la méthode à rebours.', 'video', 90, false, 60
+from public.courses c where c.slug = 'formation-vente-vehicules'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : du stock à l''après-vente, vendre un véhicule pas à pas');
 
 -- Cours : Apprendre et enseigner en ligne efficacement
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

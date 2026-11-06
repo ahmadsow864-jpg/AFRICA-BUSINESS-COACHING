@@ -482,6 +482,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "statistiques-l2",
+  "level": "Licence 2",
+  "subject": "Statistiques",
+  "module": null,
+  "title": "Statistiques L2 : de la statistique descriptive aux tests d'hypothèses",
+  "description": "Ce cours couvre la statistique descriptive, les probabilités, les lois binomiale et normale, l'échantillonnage, les intervalles de confiance et le principe des tests d'hypothèses, avec des cas tirés d'entreprises et d'institutions de microfinance d'Afrique de l'Ouest. Il s'adresse aux étudiants de deuxième année en économie, gestion et sciences sociales. Prérequis : statistique et probabilités du lycée, aisance avec le calcul algébrique.",
+  "sort": 40,
+  "lessons": [
+   {
+    "title": "Statistique descriptive : résumer une série de données",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Maîtriser le vocabulaire de la statistique : population, individu, variable, modalité.\n- Calculer et interpréter les indicateurs de tendance centrale : moyenne, médiane, mode.\n- Calculer et interpréter les indicateurs de dispersion : étendue, quartiles, variance, écart-type, coefficient de variation.\n\n## 1. Vocabulaire de base\n\nLa statistique descriptive a pour objet de résumer et de présenter des données observées. On étudie une population (ensemble d'individus ou unités statistiques : ménages, entreprises, étudiants) à travers une ou plusieurs variables (caractères).\n\n- Variable qualitative : ses modalités ne sont pas des nombres (région, secteur d'activité, sexe). Elle peut être nominale ou ordinale (niveau d'études).\n- Variable quantitative discrète : elle prend des valeurs isolées (nombre d'enfants, nombre de pièces du logement).\n- Variable quantitative continue : elle peut prendre toute valeur d'un intervalle (revenu, taille, durée de trajet) ; on regroupe souvent ses valeurs en classes.\n\nPour chaque modalité ou classe, l'effectif ni est le nombre d'individus concernés et la fréquence fi = ni / n la proportion correspondante. Les effectifs et fréquences cumulés permettent de répondre à des questions du type « quelle part des ménages dépense moins de 50 000 FCFA ? ».\n\n## 2. Indicateurs de tendance centrale\n\n- Moyenne arithmétique : x̄ = (somme des xi) / n, ou x̄ = (somme des ni × xi) / n pour des données groupées. Pour des classes, on utilise le centre de chaque classe.\n- Médiane : valeur qui partage la série ordonnée en deux parties de même effectif. Si n est impair, c'est la valeur de rang (n + 1)/2 ; si n est pair, on prend en général la moyenne des valeurs de rangs n/2 et n/2 + 1.\n- Mode : valeur (ou classe) la plus fréquente.\n\nLa moyenne est sensible aux valeurs extrêmes, la médiane ne l'est pas. Pour les revenus, souvent très inégalement répartis, la médiane est généralement plus représentative : quelques très hauts revenus suffisent à tirer la moyenne vers le haut.\n\n## 3. Indicateurs de dispersion\n\n- Étendue : maximum − minimum.\n- Quartiles : Q1 est la plus petite valeur telle qu'au moins 25 % des observations lui sont inférieures ou égales ; Q3 la même chose avec 75 %. Avec la convention usuelle dans l'enseignement francophone, Q1 est la valeur de rang égal au plus petit entier supérieur ou égal à n/4, et Q3 celle de rang supérieur ou égal à 3n/4. L'écart interquartile Q3 − Q1 contient la moitié centrale des observations.\n- Variance : V = (1/n) × somme des (xi − x̄)², ou, formule de calcul pratique, V = (1/n) × somme des xi² − x̄².\n- Écart-type : σ = √V, exprimé dans la même unité que les données.\n- Coefficient de variation : CV = σ / x̄, utile pour comparer la dispersion de séries d'unités ou de niveaux différents.\n\nRemarque : en statistique inférentielle, pour estimer la variance d'une population à partir d'un échantillon, on divise par n − 1 au lieu de n (variance corrigée, notée s²). Nous y reviendrons à la leçon 4.\n\n## 4. Méthode\n\n- Ordonner la série.\n- Calculer la moyenne, puis repérer médiane, quartiles et mode.\n- Calculer la variance par la formule la plus pratique, puis l'écart-type.\n- Interpréter : niveau, dispersion, symétrie (comparer moyenne et médiane), valeurs atypiques.\n\n## Exemple chiffré : dépenses de transport\n\nOn interroge 10 étudiants de l'université de Saint-Louis sur leurs dépenses mensuelles de transport (en milliers de FCFA) : 8, 10, 12, 12, 15, 15, 15, 18, 20, 25.\n\n- Moyenne : somme = 150, donc x̄ = 150/10 = 15.\n- Médiane : n = 10 est pair ; valeurs de rangs 5 et 6 : 15 et 15 ; médiane = 15.\n- Mode : 15 (trois fois).\n- Étendue : 25 − 8 = 17.\n- Quartiles : 10/4 = 2,5, donc Q1 est la 3e valeur : 12 ; 3 × 10/4 = 7,5, donc Q3 est la 8e valeur : 18. Écart interquartile = 6.\n- Variance : écarts à la moyenne : −7, −5, −3, −3, 0, 0, 0, 3, 5, 10 ; carrés : 49, 25, 9, 9, 0, 0, 0, 9, 25, 100 ; somme = 226 ; V = 22,6.\n- Écart-type : σ = √22,6 ≈ 4,75 milliers de FCFA.\n- Coefficient de variation : 4,75/15 ≈ 0,32, soit environ 32 %.\n\nInterprétation : un étudiant dépense en moyenne 15 000 FCFA par mois ; la moitié dépense entre 12 000 et 18 000 FCFA ; la valeur 25 tire légèrement la distribution vers la droite.\n\n## Points clés\n\n- Identifier le type de variable avant de choisir indicateurs et graphiques.\n- Moyenne, médiane et mode résument le niveau ; la médiane résiste aux valeurs extrêmes.\n- Variance et écart-type mesurent la dispersion autour de la moyenne ; le CV permet de comparer.\n\n## Exercices\n\n- Exercice 1 : Donnez la nature des variables : a) nombre de salariés d'une PME ; b) région d'implantation ; c) chiffre d'affaires annuel ; d) niveau de satisfaction (faible, moyen, élevé).\n- Exercice 2 : Chiffre d'affaires journalier d'une boutique (milliers de FCFA) sur 8 jours : 45, 60, 52, 70, 48, 65, 58, 62. Calculez la moyenne, la médiane, Q1 et Q3.\n- Exercice 3 : Calculez la variance et l'écart-type de la série de l'exercice 2.\n- Exercice 4 : Deux séries ont pour moyennes 200 et 50 et pour écarts-types 30 et 12. Laquelle est relativement la plus dispersée ?\n\n## Corrigé\n\n- Exercice 1 : a) quantitative discrète ; b) qualitative nominale ; c) quantitative continue ; d) qualitative ordinale.\n- Exercice 2 : Série ordonnée : 45, 48, 52, 58, 60, 62, 65, 70. Somme = 460 ; moyenne = 57,5. Médiane = (58 + 60)/2 = 59. 8/4 = 2 : Q1 = 2e valeur = 48 ; 3 × 8/4 = 6 : Q3 = 6e valeur = 62.\n- Exercice 3 : Écarts : −12,5 ; −9,5 ; −5,5 ; 0,5 ; 2,5 ; 4,5 ; 7,5 ; 12,5. Carrés : 156,25 ; 90,25 ; 30,25 ; 0,25 ; 6,25 ; 20,25 ; 56,25 ; 156,25. Somme = 516. V = 516/8 = 64,5 ; σ ≈ 8,03.\n- Exercice 4 : CV1 = 30/200 = 0,15 ; CV2 = 12/50 = 0,24. La seconde série est relativement plus dispersée, bien que son écart-type soit plus faible."
+   },
+   {
+    "title": "Probabilités : conditionnement, Bayes et variables aléatoires",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les lois usuelles : binomiale et normale",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Échantillonnage et intervalles de confiance",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les tests d'hypothèses : principe et applications",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : décrire, modéliser, estimer et tester",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "svt-4e",
   "level": "4e",
   "subject": "SVT",
@@ -674,6 +722,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "formation-station-service",
+  "level": "Formation professionnelle",
+  "subject": "Gestion de station-service",
+  "module": "station-service",
+  "title": "Gérer une station-service",
+  "description": "Cette formation couvre la gestion quotidienne d'une station-service : pompes et index, cuves et jaugeage, réception des livraisons, rapprochement des stocks et analyse des écarts, boutique et lavage, caisse et relèves d'équipe, ainsi que les principes généraux de sécurité incendie et de protection de l'environnement. Elle s'adresse aux gérants, chefs de piste, pompistes confirmés et investisseurs. Prérequis : calculs de base et pourcentages.",
+  "sort": 80,
+  "lessons": [
+   {
+    "title": "Organisation d'une station-service, pompes et index",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\nComprendre l'organisation d'une station-service et le rôle de chaque poste, connaître le fonctionnement d'un distributeur de carburant, et savoir calculer les volumes et montants vendus à partir des relevés d'index.\n\n## Une station-service, plusieurs métiers\n\nUne station-service est un petit commerce à plusieurs activités : la vente de carburants (essence, gasoil, parfois pétrole lampant et gaz en bouteilles), la vente de lubrifiants, la boutique, le lavage et parfois l'entretien rapide (vidange, pneumatiques). Chaque activité a ses règles de gestion, mais le carburant reste en général le cœur du chiffre d'affaires.\n\nL'équipe type comprend :\n\n- le gérant, responsable des résultats, des stocks, de la sécurité et du personnel ;\n- le chef de piste, qui encadre les pompistes pendant une équipe ;\n- les pompistes, qui servent les clients et encaissent ;\n- le caissier ou la caissière de la boutique ;\n- les laveurs ;\n- éventuellement un gardien de nuit.\n\nLa station fonctionne souvent avec deux ou trois équipes par jour. La passation entre équipes, appelée relève, est un moment clé du contrôle (voir leçon 4).\n\n## Le distributeur de carburant\n\nLe distributeur (couramment appelé pompe) aspire le carburant dans une cuve enterrée et le délivre au client par un pistolet. Un distributeur peut avoir plusieurs pistolets, souvent un par produit et par face. Il comporte :\n\n- un mesureur, qui mesure le volume débité ;\n- un calculateur, qui affiche le volume et le montant de chaque vente ;\n- des totalisateurs, appelés index, qui cumulent tous les volumes débités depuis la mise en service, pistolet par pistolet.\n\nIl existe des index électroniques (lus sur l'afficheur ou le système de gestion) et souvent des index mécaniques de secours. Les deux doivent évoluer de manière cohérente. Les instruments de mesure sont soumis à des vérifications par les services compétents de métrologie ; un distributeur mal étalonné fait perdre de l'argent à la station ou lèse le client.\n\n## Calculer les ventes à partir des index\n\nL'index fonctionne comme le compteur d'eau ou d'électricité :\n\nVolume débité = index de fin − index de début.\n\nIl faut retirer de ce volume les quantités qui ne sont pas des ventes, en particulier les essais de pompe (volume tiré pour un contrôle puis reversé en cuve).\n\nVolume vendu = volume débité − retours en cuve.\n\nMontant théorique des ventes = volume vendu × prix de vente au litre.\n\nExemple : pistolet gasoil n°2.\n\n- Index début d'équipe : 1 245 380,50 L.\n- Index fin d'équipe : 1 247 112,30 L.\n- Volume débité : 1 247 112,30 − 1 245 380,50 = 1 731,80 L.\n- Essai de pompe reversé en cuve : 10 L.\n- Volume vendu : 1 721,80 L.\n- Prix : 755 FCFA par litre (prix fictif pour l'exemple ; les prix à la pompe sont fixés par les autorités compétentes et doivent être vérifiés).\n- Montant théorique : 1 721,80 × 755 = 1 299 959 FCFA.\n\nOn fait ce calcul pour chaque pistolet, puis on totalise par produit.\n\n## Bonnes pratiques de relevé\n\n- Relever les index à heure fixe, à chaque relève, en présence des deux équipes.\n- Noter les index avec toutes les décimales, sur une fiche pré-imprimée ou dans le logiciel.\n- Vérifier qu'un index n'a jamais diminué : un index qui recule signale une erreur de lecture, une panne ou une manipulation.\n- Enregistrer chaque essai de pompe et chaque retour en cuve avec la signature du chef de piste.\n- Comparer de temps en temps index électronique et index mécanique.\n\n## Points clés\n\n- La station combine carburant, lubrifiants, boutique et lavage ; chacun se gère séparément.\n- Les index sont des totalisateurs cumulés par pistolet.\n- Volume vendu = index fin − index début − retours en cuve.\n- Montant théorique = volume vendu × prix au litre.\n- Des relevés rigoureux à chaque relève sont la base de tous les contrôles.\n\n## Exercices\n\nExercice 1. Pistolet super n°1 : index début 523 410,20 ; index fin 524 288,70. Un essai de 5 L a été reversé en cuve. Calculez le volume vendu et le montant théorique avec un prix fictif de 890 FCFA par litre.\n\nExercice 2. Deux pistolets gasoil ont débité 1 200,40 L et 980,60 L pendant une équipe, sans essai. Calculez le volume total et le montant au prix fictif de 755 FCFA par litre.\n\nExercice 3. Le pompiste relève un index de fin de 98 540,10 alors que l'index de début était 98 612,30. Que faites-vous ?\n\nExercice 4. Pourquoi faut-il déduire les essais de pompe du volume débité ?\n\n## Corrigé\n\nExercice 1. Volume débité : 524 288,70 − 523 410,20 = 878,50 L. Volume vendu : 878,50 − 5 = 873,50 L. Montant : 873,50 × 890 = 777 415 FCFA.\n\nExercice 2. Volume : 1 200,40 + 980,60 = 2 181,00 L. Montant : 2 181 × 755 = 1 646 655 FCFA.\n\nExercice 3. L'index de fin est inférieur à l'index de début : c'est impossible en fonctionnement normal. Il faut relire les deux index, vérifier qu'il s'agit du bon pistolet, comparer avec l'index mécanique, et en cas de doute bloquer le pistolet et alerter le gérant et le technicien.\n\nExercice 4. Parce que ce carburant a bien été débité mais a été reversé en cuve : il n'a pas été vendu. Sans cette déduction, on réclamerait au pompiste un montant qu'il n'a pas encaissé et le stock théorique serait faux."
+   },
+   {
+    "title": "Cuves, jaugeage et réception des livraisons",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Rapprochement des stocks et analyse des écarts",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Boutique, lavage, caisse et relèves d'équipe",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sécurité incendie et environnement : les principes généraux",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : une journée de gestion dans une station-service",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-gestion-flotte",
   "level": "Formation professionnelle",
   "subject": "Gestion de flotte",
@@ -715,6 +811,54 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : piloter une flotte automobile, de l'inventaire au TCO",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-vente-vehicules",
+  "level": "Formation professionnelle",
+  "subject": "Commerce automobile",
+  "module": "vente-vehicules",
+  "title": "Vendre des véhicules : du stock à l'après-vente",
+  "description": "Cette formation couvre tout le cycle de la vente automobile : gestion du stock de véhicules neufs (VN) et d'occasion (VO), cotation et reprise d'un véhicule d'occasion, prospection et techniques de vente, devis, financement et échéanciers avec calculs de mensualités, puis après-vente et garanties. Elle s'adresse aux vendeurs, chefs des ventes, gérants de parcs automobiles et entrepreneurs du négoce de véhicules. Prérequis : calculs de base et pourcentages.",
+  "sort": 100,
+  "lessons": [
+   {
+    "title": "Gérer un stock de véhicules neufs et d'occasion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Distinguer la gestion d'un stock de véhicules neufs (VN) et d'occasion (VO).\n- Calculer le prix de revient, la rotation et le coût de détention du stock.\n- Mettre en place une politique de vieillissement du stock.\n\n## Le stock, premier actif du vendeur de véhicules\n\nUn parc de vente automobile immobilise beaucoup d'argent : vingt véhicules d'occasion à 6 000 000 FCFA représentent 120 000 000 FCFA. Tant qu'un véhicule n'est pas vendu, il coûte : intérêts sur l'argent emprunté ou immobilisé, gardiennage, assurance, entretien courant, et perte de valeur. Un bon vendeur de véhicules est donc d'abord un bon gestionnaire de stock : acheter les bons véhicules, au bon prix, et les vendre vite.\n\n## VN et VO : deux logiques différentes\n\nLe véhicule neuf (VN) est acheté auprès d'un constructeur ou d'un importateur. Son prix d'achat et son prix de vente conseillé sont connus ; la marge est encadrée par le contrat de distribution. Le stock se pilote avec les commandes, les délais de livraison et les objectifs fixés par le fournisseur.\n\nLe véhicule d'occasion (VO) provient de reprises de clients, d'achats auprès de particuliers ou d'entreprises, de ventes aux enchères ou d'importations. Au Sénégal, une grande partie des VO est importée ; la réglementation encadre notamment l'âge des véhicules importés, et il faut vérifier la règle en vigueur avant tout achat à l'étranger. Chaque VO est unique : son prix d'achat se négocie, sa remise en état varie, et sa marge dépend de la qualité de l'achat.\n\n## La fiche de stock\n\nChaque véhicule entre en stock avec une fiche : numéro de stock, numéro de châssis, immatriculation, marque, modèle, version, année, kilométrage, couleur, options, date d'entrée, photos, documents reçus, et surtout le prix de revient.\n\nPrix de revient = prix d'achat + transport + frais de dédouanement et d'immatriculation éventuels + remise en état + préparation (nettoyage, contrôle).\n\nExemple : un VO importé acheté 4 200 000 FCFA, transport 450 000 FCFA, frais de dédouanement et formalités 1 100 000 FCFA (montant d'exemple, il varie selon le véhicule et la réglementation), remise en état 350 000 FCFA, préparation 50 000 FCFA. Prix de revient : 4 200 000 + 450 000 + 1 100 000 + 350 000 + 50 000 = 6 150 000 FCFA. Si le véhicule se vend 7 000 000 FCFA, la marge brute est 850 000 FCFA, soit 850 000 / 7 000 000 ≈ 12,1 % du prix de vente.\n\n## La rotation du stock\n\nLa rotation mesure combien de fois le stock se renouvelle dans l'année : rotation = coût des véhicules vendus dans l'année / valeur moyenne du stock au prix de revient.\n\nLa durée moyenne de stockage en jours = 365 / rotation.\n\nExemple : une entreprise a vendu dans l'année des véhicules dont le prix de revient total est de 720 000 000 FCFA ; son stock moyen vaut 180 000 000 FCFA. Rotation = 720 000 000 / 180 000 000 = 4. Durée moyenne = 365 / 4 ≈ 91 jours.\n\n## Le coût de détention\n\nChaque jour de stock coûte. Prenons un VO de 6 000 000 FCFA financé à un taux fictif de 10 % par an : coût financier par jour = 6 000 000 × 0,10 / 365 ≈ 1 644 FCFA. Ajoutons 500 FCFA par jour de gardiennage et d'assurance, et une perte de valeur estimée à 1 % par mois, soit environ 2 000 FCFA par jour. Le véhicule coûte environ 4 144 FCFA par jour. Après 90 jours : environ 373 000 FCFA, soit près de la moitié d'une marge de 850 000 FCFA.\n\n## La politique de vieillissement\n\nOn classe le stock par ancienneté et on applique des actions prédéfinies :\n\n- De 0 à 30 jours : prix normal, mise en avant sur les annonces.\n- De 31 à 60 jours : analyse (prix, présentation, photos), première baisse de prix si nécessaire.\n- De 61 à 90 jours : baisse de prix plus marquée, offre de financement ou de garantie.\n- Au-delà de 90 jours : vente à un marchand ou aux enchères pour libérer la trésorerie.\n\nCette politique évite l'attachement au prix d'achat : ce qui compte, c'est le prix que le marché accepte aujourd'hui.\n\n## Le stock idéal\n\nOn achète en priorité les modèles qui se vendent vite dans sa clientèle : en Afrique de l'Ouest, les berlines économiques, les SUV robustes, les pick-up et les utilitaires pour les commerçants sont souvent très demandés. Le suivi des ventes par modèle, par tranche de prix et par durée de vente oriente les achats.\n\n## Points clés\n\n- Le prix de revient inclut tous les frais jusqu'à la mise en vente.\n- Rotation = coût des ventes / stock moyen ; durée de stockage = 365 / rotation.\n- Chaque jour de stock coûte : financement, gardiennage, perte de valeur.\n- La politique de vieillissement fixe à l'avance les actions par tranche d'ancienneté.\n\n## Exercices\n\n- Exercice 1 : VO acheté 3 800 000 FCFA, transport 400 000 FCFA, formalités 900 000 FCFA, remise en état 250 000 FCFA, préparation 50 000 FCFA. Calculez le prix de revient. Quelle marge pour une vente à 6 000 000 FCFA ?\n- Exercice 2 : coût des ventes annuel 540 000 000 FCFA, stock moyen 90 000 000 FCFA. Calculez la rotation et la durée moyenne de stockage.\n- Exercice 3 : un véhicule coûte 3 500 FCFA par jour de détention. Combien a-t-il coûté après 75 jours ?\n- Exercice 4 : un véhicule est en stock depuis 70 jours. Quelles actions prévoit la politique de vieillissement ?\n\n## Corrigé\n\nExercice 1 : prix de revient = 3 800 000 + 400 000 + 900 000 + 250 000 + 50 000 = 5 400 000 FCFA. Marge = 6 000 000 - 5 400 000 = 600 000 FCFA, soit 10 % du prix de vente.\n\nExercice 2 : rotation = 540 000 000 / 90 000 000 = 6 ; durée = 365 / 6 ≈ 61 jours.\n\nExercice 3 : 3 500 × 75 = 262 500 FCFA.\n\nExercice 4 : il est dans la tranche 61 à 90 jours : baisse de prix plus marquée et offre commerciale (financement, garantie) ; s'il n'est pas vendu à 90 jours, on le cède à un marchand ou aux enchères."
+   },
+   {
+    "title": "Coter et reprendre un véhicule d'occasion",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Prospection et techniques de vente automobile",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Devis, financement et échéanciers",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Après-vente, garanties et fidélisation",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : du stock à l'après-vente, vendre un véhicule pas à pas",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
