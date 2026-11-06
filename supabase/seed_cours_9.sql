@@ -1610,8 +1610,8 @@ from public.courses c where c.slug = 'lic-cg-l2'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Comptabilité analytique 2 (coûts partiels, seuil, imputation rationnelle) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Construire un compte de résultat différentiel ; calculer seuil de rentabilité, point mort, indice de sécurité et levier opérationnel.
-- Utiliser les coûts spécifiques pour décider du maintien d''un produit.
+- Construire le compte de résultat différentiel ; calculer seuil de rentabilité, point mort, indice de sécurité et levier opérationnel.
+- Décider du maintien d''un produit avec les coûts spécifiques.
 - Appliquer l''imputation rationnelle des charges fixes.
 
 ## 1. Charges variables et charges fixes
@@ -1637,7 +1637,7 @@ Le seuil de rentabilité (SR) est le chiffre d''affaires pour lequel le résulta
 
 Schéma décrit : CA en abscisse ; la droite de MCV (y = 0,4 x) coupe la droite horizontale des charges fixes au point d''abscisse 150 000 000 ; à droite, zone de bénéfice.
 
-Activité saisonnière : on cherche le mois où le CA cumulé atteint le SR.
+Activité saisonnière : on repère le mois où le CA cumulé atteint le SR.
 
 ## 4. Le levier opérationnel
 
@@ -2275,7 +2275,7 @@ La méthode ABC (Activity-Based Costing), formalisée à la fin des années 1980
 - Inducteur de coût : facteur qui explique la consommation de ressources par l''activité (nombre de lots, de commandes).
 - Processus : enchaînement d''activités orienté vers un résultat (traiter une commande client de bout en bout).
 
-Démarche : 1) identifier les activités ; 2) affecter les charges indirectes aux activités ; 3) choisir un inducteur par activité ; 4) calculer le coût unitaire de l''inducteur = coût de l''activité / volume de l''inducteur ; 5) affecter aux produits selon leur consommation d''inducteurs. Les activités ayant le même inducteur peuvent être regroupées en centres de regroupement.
+Démarche : 1) identifier les activités ; 2) affecter les charges indirectes aux activités ; 3) choisir un inducteur par activité ; 4) calculer le coût unitaire de l''inducteur = coût de l''activité / volume de l''inducteur ; 5) affecter aux produits selon leur consommation d''inducteurs. Les activités de même inducteur forment des centres de regroupement.
 
 ## 3. Cas : Afrik Emballages (entreprise fictive, Dakar)
 
@@ -2322,7 +2322,6 @@ Cas : Afrik Emballages conçoit un sac biodégradable. L''étude de marché indi
 
 - ABC : les produits consomment des activités, qui consomment des ressources.
 - Coût de l''inducteur = coût de l''activité / volume de l''inducteur.
-- ABC révèle les subventions croisées entre produits de grande et de petite série.
 - Coût cible = prix de marché − marge cible ; il pilote la conception.
 
 ## Exercices pratiques
@@ -2686,7 +2685,7 @@ Bonjour à toutes et à tous. Un pilote d''avion ne regarde pas sa comptabilité
 
 Trois outils sont souvent confondus. Le budget fixe des objectifs chiffrés pour l''année. Le reporting fait remonter, vers la hiérarchie ou le siège, des informations surtout financières pour rendre compte. Le tableau de bord est l''outil du responsable lui-même pour piloter son activité : il contient des indicateurs financiers et non financiers, produits vite, souvent chaque semaine ou chaque mois.
 
-Les qualités d''un bon tableau de bord : peu d''indicateurs, une dizaine au plus ; une présentation visuelle ; une comparaison avec une cible ; un lien direct avec les leviers d''action du responsable.
+Les qualités d''un bon tableau de bord : peu d''indicateurs, une dizaine au plus ; une présentation visuelle ; une comparaison avec une cible ; un lien direct avec les leviers d''action du responsable. Ajoutons la rapidité : un tableau de bord parfait livré le 25 du mois suivant ne sert plus à rien. Mieux vaut un indicateur approché disponible le 2 du mois qu''un chiffre exact trop tardif. C''est une différence majeure avec la comptabilité, qui privilégie l''exactitude.
 
 ## 15:00 – 27:00 · Choisir les indicateurs : une démarche en quatre étapes
 
@@ -2738,6 +2737,8 @@ Interprétation : l''agence a presque atteint son objectif de volume, mais la qu
 
 ## 76:00 – 84:00 · Limites et effets pervers
 
+Avant les limites, un mot sur la présentation. Un tableau de bord efficace tient sur une page ou un écran. En haut, l''essentiel : trois ou quatre indicateurs clés avec leur feu. En dessous, le détail par axe. Pour chaque indicateur : la valeur du mois, l''objectif, l''écart, la tendance sur plusieurs mois, souvent sous forme d''une petite courbe, et un commentaire d''une ligne du responsable. La tendance est essentielle : un feu orange qui s''améliore depuis trois mois n''appelle pas la même réaction qu''un feu orange qui se dégrade. Enfin, la périodicité doit correspondre au rythme de décision : quotidienne pour un chef de dépôt, hebdomadaire pour un chef d''agence, mensuelle pour la direction générale.
+
 Un indicateur peut devenir une fin en soi. Si l''on récompense les livreurs uniquement sur la ponctualité, ils risquent de bâcler la manutention. Si l''agent de crédit est jugé seulement sur le nombre de crédits, il prête à des clients fragiles. C''est pourquoi le balanced scorecard équilibre les axes, et pourquoi le dialogue de gestion compte plus que le chiffre. Autres limites : coût de collecte des données, inflation du nombre d''indicateurs, difficulté de tester les liens de cause à effet.
 
 ## 84:00 – 90:00 · Synthèse et évaluation finale
@@ -2786,7 +2787,7 @@ Cas de la commune fictive : crédits du programme « Éducation de base » 1 200
 
 Revenons aux groupes. Une division centre d''investissement est jugée sur la rentabilité de ses capitaux. ROI : résultat sur capitaux investis. Résultat résiduel : résultat moins le coût des capitaux, c''est-à-dire capitaux fois taux exigé.
 
-Pourquoi deux mesures ? Parce que le ROI peut pousser à refuser des projets rentables. Nous le verrons dans le cas.
+Pourquoi deux mesures ? Parce que le ROI peut pousser à refuser des projets rentables. Nous le verrons dans le cas. Le ROI a pourtant un avantage : c''est un ratio, qui permet de comparer des divisions de tailles différentes. Le résultat résiduel est un montant, qui favorise mécaniquement les grandes divisions. En pratique, on présente les deux, avec le même taux exigé pour toutes les divisions de risque comparable.
 
 ## 40:00 – 46:00 · Pause et quiz
 
@@ -2830,7 +2831,7 @@ Sujet possible : « Le prix de cession interne est-il un outil de coordination o
 - Question 4 : plancher du PCI pour une division vendeuse non saturée ? Réponse : son coût variable.
 - Question 5 : résultat 40 millions, capitaux 250 millions, taux exigé 12 % ; résultat résiduel ? Réponse : 10 millions.
 
-Merci et bonne préparation.', 'video', 90, false, 80
+Merci et bonne préparation. Pour la prochaine fois, refaites le cas Sénégal Agro avec un PCI de 800 FCFA, puis calculez le ROI et le résultat résiduel de chaque division à ce prix : vous vérifierez que la somme des résultats ne change pas.', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-cg-l3'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Contrôle de gestion des PME et du secteur public, prix de cession interne');
 
