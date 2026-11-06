@@ -1,5 +1,1478 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 19/20). À exécuter après seed.sql.
+-- Cours (partie 19/21). À exécuter après seed.sql.
+
+-- Cours : Doctorat Informatique : préparer l'examen de qualification doctorale
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'doc-info', (select id from public.levels where name = 'Doctorat'), null, 'Informatique', 'Doctorat Informatique : préparer l''examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale (comprehensive exam) en Informatique : le débat entre l''ingénierie logicielle classique fondée sur la preuve et la vérification formelle, et l''apprentissage automatique fondé sur les données, la boîte noire et l''explicabilité ; les méthodes de recherche du champ (preuve formelle, expérimentation et benchmarking, étude empirique par fouille de dépôts logiciels) ; une épreuve type corrigée et une simulation complète de soutenance. Public : doctorants en informatique préparant leur examen de qualification. Prérequis : Master en informatique.', true, 803
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir son examen de qualification doctorale en Informatique', '## Objectifs de la leçon
+
+Cette première leçon pose le cadre de l''examen de qualification doctorale (comprehensive exam) en
+Informatique. Avant d''entrer dans les courants théoriques du champ, il faut comprendre ce que le jury
+attend réellement de vous, et se doter d''une méthode de travail tenable sur plusieurs semaines. Un
+doctorant qui aborde cet examen comme une accumulation de lectures isolées s''épuise sans jamais produire
+de vision d''ensemble ; un doctorant qui construit, dès le départ, une cartographie des courants et une
+note de synthèse vivante progresse de façon cumulative.
+
+## Nature de l''épreuve
+
+L''examen de qualification doctorale en Informatique n''est pas un contrôle de connaissances techniques au
+sens d''un examen de Master. Il vérifie trois choses très différentes.
+
+- La maîtrise de l''état de l''art : savoir situer les grands courants de la discipline (génie logiciel
+  formel, intelligence artificielle et apprentissage automatique, systèmes, algorithmique, réseaux, sécurité
+  informatique, selon la spécialité de la thèse), leurs auteurs fondateurs, leurs méthodes et leurs limites.
+- La capacité de synthèse critique : ne pas réciter des définitions, mais comparer deux courants, montrer
+  leurs tensions (par exemple preuve formelle contre apprentissage statistique), et argumenter pourquoi un
+  projet de thèse se positionne d''un côté, de l''autre, ou à leur intersection.
+- La défense orale d''un projet de thèse : présenter, devant un jury de chercheurs confirmés, la
+  problématique, l''ancrage théorique et la méthodologie envisagée, puis répondre à des questions qui
+  testent la solidité du raisonnement plus que la mémorisation.
+
+Le format concret varie selon les universités et les écoles doctorales (épreuve écrite de synthèse,
+soutenance orale, ou les deux), mais le fond est partout le même : montrer que vous maîtrisez le champ
+scientifique dans lequel votre thèse va s''inscrire, et que vous êtes capable de le discuter, pas seulement
+de le réciter.
+
+## Ce que le jury attend vraiment
+
+Un jury doctoral en informatique cherche d''abord de la rigueur intellectuelle. Une affirmation du type
+« les réseaux de neurones ont remplacé les méthodes formelles » sera immédiatement sanctionnée, parce
+qu''elle ignore que ces deux courants coexistent et se complètent selon les problèmes traités (un système
+critique de pilotage aérien reste vérifié formellement ; un système de recommandation s''appuie sur
+l''apprentissage statistique). Le jury valorise au contraire une pensée qui articule :
+
+- la connaissance précise des définitions et des limites théoriques de chaque courant,
+- la capacité à citer les contributions fondatrices sans les déformer,
+- l''aptitude à relier ces courants à des méthodes de recherche concrètes (preuve, expérimentation,
+  étude empirique),
+- et la capacité à situer sa propre problématique de thèse dans cette cartographie, en expliquant ce que
+  son travail apporte par rapport à l''existant.
+
+Le jury sanctionne à l''inverse l''absence de recul critique, les généralisations non étayées, et toute
+affirmation chiffrée ou citation qui ne pourrait pas être vérifiée dans la littérature.
+
+## Méthode de travail recommandée
+
+Trois outils structurent efficacement une préparation sur plusieurs semaines.
+
+La fiche de lecture systématique. Pour chaque article, ouvrage ou chapitre important, une fiche courte
+qui répond à quatre questions : quelle est la problématique traitée ? Quelle est la méthode utilisée
+(preuve, expérimentation, étude empirique) ? Quel est le résultat principal ? Quelles sont les limites
+reconnues par l''auteur lui-même ou par la littérature postérieure ? Cette discipline évite de relire un
+même texte plusieurs fois sans en retenir l''essentiel.
+
+La cartographie des courants. Un schéma ou un tableau, régulièrement mis à jour, qui place les grands
+courants du champ (par exemple : méthodes formelles, apprentissage automatique, systèmes distribués,
+algorithmique et complexité) avec, pour chacun, ses auteurs fondateurs, ses méthodes de recherche
+privilégiées, ses succès reconnus et ses critiques. Cette carte devient le squelette de la note de
+synthèse finale et du plan de soutenance.
+
+La note de synthèse vivante. Un document unique, réécrit et enrichi semaine après semaine, qui ne
+recopie pas les fiches de lecture mais construit un discours argumenté : « le champ de l''informatique est
+traversé par la tension entre vérifiabilité formelle et efficacité empirique des heuristiques ; ma thèse se
+positionne... ». C''est ce document, et non les fiches brutes, qui doit être présentable au jury.
+
+## Plan de travail sur 8 semaines
+
+- Semaines 1 et 2 : lecture de synthèse sur le premier grand courant théorique du champ (fiches de lecture,
+  début de cartographie).
+- Semaines 3 et 4 : lecture de synthèse sur le second grand courant, en construisant systématiquement des
+  comparaisons avec le premier (points communs, tensions, exemples de systèmes relevant de chacun).
+- Semaine 5 : approfondissement des méthodes de recherche du champ (preuve formelle, expérimentation,
+  étude empirique des dépôts logiciels) et rédaction d''un protocole de recherche illustratif.
+- Semaine 6 : rédaction de la note de synthèse qui articule les deux courants et les méthodes de
+  recherche, et premier positionnement du projet de thèse personnel dans cette cartographie.
+- Semaine 7 : entraînement à l''oral sur des questions type, seul puis devant un collègue ou un encadrant,
+  avec chronométrage des réponses.
+- Semaine 8 : répétition générale de la soutenance (quinze minutes de présentation, puis questions de
+  jury), relecture finale de la note de synthèse, vérification de tous les exemples chiffrés ou calculs
+  mentionnés.
+
+Ce plan n''est pas rigide : il doit être adapté à la spécialité exacte de la thèse et aux exigences propres
+de l''école doctorale. Mais le principe reste valable dans tous les cas : construire, lecture après lecture,
+une vision argumentée du champ plutôt qu''un empilement de connaissances disjointes.
+
+## Exercices pratiques
+
+1. Dressez la liste des deux ou trois grands courants théoriques de l''informatique qui vous semblent les
+   plus pertinents pour votre propre projet de thèse, et justifiez ce choix en deux phrases chacun.
+2. Rédigez une fiche de lecture (modèle : problématique, méthode, résultat, limites) sur un article ou un
+   ouvrage de référence que vous avez déjà lu dans votre spécialité.
+3. Esquissez, sous forme de tableau à deux colonnes, une première cartographie opposant « méthodes
+   formelles / vérification » et « apprentissage automatique / approche statistique ».
+4. Formulez, en une phrase, la question de synthèse que vous redoutez le plus pour votre propre examen de
+   qualification, et expliquez pourquoi.
+5. Construisez votre propre plan de travail sur 8 semaines en adaptant celui proposé ici à votre
+   spécialité et à votre calendrier réel.
+
+## Corrigé
+
+1. Il n''existe pas de bonne réponse unique : l''essentiel est que les courants choisis soient réellement
+   structurants pour votre champ (par exemple, pour une thèse en apprentissage automatique appliqué, les
+   courants pertinents seraient plutôt « apprentissage statistique » et « explicabilité / IA de confiance »,
+   alors que pour une thèse en vérification de systèmes critiques, ce seraient « méthodes formelles » et
+   « test et validation empirique »), et que la justification montre un lien explicite avec la problématique
+   de thèse envisagée.
+2. Une fiche réussie reste courte (une demi-page au maximum), distingue clairement les quatre rubriques, et
+   formule les limites sans les minimiser : un bon candidat sait dire ce qu''un travail ne démontre pas.
+3. Le tableau doit éviter la caricature « les méthodes formelles sont dépassées » ou « l''apprentissage
+   automatique est sans fondement » : chaque courant possède des succès reconnus (la preuve formelle pour
+   les systèmes où une erreur est inacceptable, l''apprentissage statistique pour les problèmes où la
+   spécification exacte du comportement attendu est elle-même inconnue ou trop complexe à écrire) et des
+   limites assumées (coût et rigidité de la preuve formelle à grande échelle, difficulté à expliquer et à
+   garantir le comportement d''un modèle statistique, en particulier dans des cas rares).
+4. Toute question honnête est recevable ; l''essentiel est d''identifier précisément la source de la crainte
+   (manque de lectures sur un sous-thème, difficulté à comparer deux courants, manque d''aisance à l''oral)
+   pour y consacrer un temps de travail ciblé dans les semaines suivantes.
+5. Un bon plan conserve la logique générale (courant 1, courant 2, méthodes, synthèse, entraînement oral,
+   répétition générale) mais adapte les durées à la charge réelle de lecture disponible dans la
+   spécialité choisie, et prévoit des marges pour les imprévus (délai de l''encadrant, autres obligations
+   doctorales).', 'texte', 50, true, 10
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en Informatique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Courant théorique n°1 : l''ingénierie logicielle classique, la preuve et la vérification formelle', '## Objectifs de la leçon
+
+Cette leçon présente le premier grand courant théorique du champ informatique : l''approche dite
+« classique » du génie logiciel, fondée sur la spécification rigoureuse, la preuve et la vérification
+formelle. Ce courant pose une question centrale pour toute l''informatique : comment garantir, avec
+certitude mathématique, qu''un programme fait exactement ce qu''il doit faire, ni plus ni moins ?
+
+## Définitions
+
+La vérification formelle désigne l''ensemble des techniques qui établissent, par le raisonnement
+mathématique et non par le simple test, qu''un programme respecte une spécification donnée. Une
+spécification est un énoncé précis des propriétés attendues : par exemple, « cette fonction de tri
+retourne toujours une liste triée, de même longueur et contenant les mêmes éléments que la liste
+d''entrée ». La preuve formelle consiste à démontrer, étape par étape, que le code satisfait cette
+spécification pour toute entrée possible, et non seulement pour les cas testés.
+
+Ce courant se distingue radicalement du test logiciel classique. Un test exécute le programme sur un
+nombre fini de cas et vérifie le résultat obtenu ; il peut révéler la présence d''une erreur, mais jamais
+garantir son absence totale, puisque l''espace des entrées possibles est en général infini ou trop grand
+pour être parcouru entièrement. La preuve, à l''inverse, raisonne sur le programme lui-même, pas sur des
+exécutions particulières : si elle est correcte, elle couvre toutes les entrées simultanément.
+
+## Auteurs fondateurs et évolution historique
+
+Ce courant trouve sa source dans les travaux fondateurs sur la calculabilité et la logique des
+programmes au milieu du vingtième siècle. Alan Turing a posé, dès les années 1930 et 1940, les bases
+théoriques de ce qu''un programme peut ou ne peut pas calculer, et a esquissé très tôt l''idée que la
+correction d''un programme pouvait être établie par un raisonnement formel plutôt que par la seule
+observation de son exécution.
+
+Dans les années 1960 et 1970, plusieurs chercheurs ont donné à cette intuition un cadre mathématique
+exploitable. Robert Floyd a proposé une méthode d''assertions attachées aux points du programme,
+permettant de raisonner sur l''état des variables à chaque étape de l''exécution. Tony Hoare a formalisé
+ce travail sous la forme d''une logique de programmation (la logique de Hoare), qui exprime une preuve de
+correction comme une suite de « triplets » reliant une précondition, une instruction, et une
+postcondition. Edsger Dijkstra, de son côté, a défendu avec force l''idée que la correction d''un programme
+devait être pensée et prouvée en même temps que le programme était construit, plutôt que vérifiée après
+coup par des tests, et a insisté sur la discipline de programmation structurée comme condition de la
+vérifiabilité.
+
+Cette ligne de pensée s''est ensuite prolongée, à partir des années 1980 et 1990, par le développement
+d''outils de vérification automatique ou semi-automatique : les démonstrateurs de théorèmes assistés par
+ordinateur, qui aident un humain à construire une preuve formelle complète, et le model checking, une
+technique qui explore de façon exhaustive et automatique tous les états possibles d''un système fini pour
+vérifier qu''aucun d''eux ne viole la spécification. Le model checking a connu un succès particulier dans la
+vérification de protocoles de communication et de circuits matériels, où le nombre d''états, bien que très
+grand, reste fini et peut être exploré par des algorithmes dédiés.
+
+## Domaines d''application et succès reconnus
+
+L''ingénierie logicielle classique fondée sur la preuve trouve son terrain d''élection dans les systèmes où
+une erreur est inacceptable : logiciels de pilotage aérien, systèmes de signalisation ferroviaire,
+microprocesseurs, protocoles de sécurité cryptographique. Dans ces domaines, des projets ont démontré
+qu''il est possible de prouver formellement la correction de composants entiers d''un système, et pas
+seulement de petits algorithmes isolés. Ce courant a également produit des langages de spécification
+formelle, qui décrivent précisément ce qu''un système doit faire avant même d''écrire le code.
+
+## Limites et critiques
+
+Ce courant fait l''objet de critiques bien documentées, qui expliquent en partie pourquoi il ne s''est pas
+généralisé à l''ensemble du développement logiciel.
+
+- Le coût. Écrire une spécification formelle complète et construire une preuve associée demande un temps
+  et une expertise considérables, hors de portée pour la majorité des projets logiciels commerciaux aux
+  délais contraints.
+- L''explosion combinatoire. Le model checking, bien qu''automatique, se heurte au problème de l''explosion
+  du nombre d''états à explorer lorsque le système devient complexe, ce qui limite la taille des systèmes
+  vérifiables en pratique.
+- L''écart entre spécification et besoin réel. Une preuve ne garantit que la conformité du programme à sa
+  spécification ; si la spécification elle-même ne traduit pas correctement le besoin réel de
+  l''utilisateur, le programme peut être prouvé correct et pourtant inutile ou dangereux. Ce problème,
+  parfois appelé l''écart de validation, rappelle qu''une preuve ne dispense jamais d''une réflexion sur la
+  pertinence de la spécification choisie.
+- L''inadaptation à certains problèmes. De nombreux problèmes informatiques modernes (reconnaissance
+  d''images, traduction automatique, recommandation de contenus) n''admettent pas de spécification exacte et
+  complète du comportement attendu : on ne sait pas écrire, de façon formelle, la règle qui définirait
+  « une bonne traduction ». Ce constat ouvre sur le second grand courant théorique du champ, fondé sur
+  l''apprentissage à partir de données plutôt que sur la spécification explicite.
+
+## Points clés à retenir
+
+- La vérification formelle prouve mathématiquement qu''un programme respecte une spécification, pour
+  toutes les entrées, contrairement au test qui n''examine qu''un nombre fini de cas.
+- Les contributions fondatrices (Turing sur la calculabilité, Floyd et Hoare sur la logique de preuve,
+  Dijkstra sur la discipline de programmation prouvable) structurent encore le vocabulaire du domaine.
+- Le model checking automatise l''exploration exhaustive des états d''un système fini, avec une limite
+  pratique liée à l''explosion combinatoire.
+- Ce courant excelle sur les systèmes critiques à spécification claire, et atteint ses limites sur les
+  problèmes où la spécification exacte du comportement attendu n''est elle-même pas formulable.
+
+## Exercices pratiques
+
+1. Expliquez, dans vos propres mots et sans citation textuelle, la différence entre « tester » un
+   programme et « prouver » sa correction.
+2. En quoi la contribution de Dijkstra sur la programmation structurée est-elle liée à la possibilité de
+   prouver un programme correct ?
+3. Donnez un exemple de système informatique pour lequel la preuve formelle est particulièrement adaptée,
+   et un exemple pour lequel elle serait difficile ou impossible à mettre en œuvre, en justifiant chaque
+   choix.
+4. Qu''est-ce que « l''écart de validation » et pourquoi montre-t-il qu''une preuve formelle ne suffit pas,
+   seule, à garantir la qualité d''un logiciel ?
+5. En quoi l''explosion combinatoire limite-t-elle la portée pratique du model checking ?
+6. Préparez, en cinq phrases, une réponse synthétique à la question : « Le génie logiciel fondé sur la
+   preuve formelle est-il encore pertinent à l''ère de l''apprentissage automatique ? »
+
+## Corrigé
+
+1. Le test exécute le programme sur un ensemble fini de cas choisis et observe si le résultat est celui
+   attendu ; il peut révéler une erreur mais ne peut jamais garantir qu''aucune erreur ne subsiste, car il
+   ne couvre pas la totalité des entrées possibles. La preuve, au contraire, raisonne sur la structure du
+   programme et sa spécification de façon à couvrir toutes les entrées simultanément : si elle est
+   correcte, elle établit une garantie universelle, pas seulement ponctuelle.
+2. La programmation structurée limite les constructions autorisées (évite les sauts incontrôlés dans le
+   programme) pour que l''état du programme à chaque étape reste prévisible et analysable pas à pas. Cette
+   discipline rend le raisonnement par assertions et par triplets de Hoare applicable de façon
+   systématique, alors qu''un code désorganisé rendrait ce raisonnement pratiquement impossible.
+3. Exemple adapté : un protocole cryptographique ou un algorithme de contrôle d''un système embarqué
+   critique, où le comportement attendu est entièrement spécifiable. Exemple inadapté : un système de
+   reconnaissance de visages, où il n''existe pas de règle formelle complète définissant ce qu''est
+   « reconnaître correctement » un visage dans toutes les conditions possibles.
+4. L''écart de validation désigne le risque qu''une spécification, bien que respectée à la lettre par le
+   programme prouvé correct, ne traduise pas fidèlement le besoin réel de l''utilisateur. Un programme peut
+   donc être formellement correct par rapport à sa spécification et néanmoins inadapté, incomplet ou
+   dangereux si cette spécification elle-même contenait une erreur de conception ou une mauvaise
+   compréhension du besoin.
+5. Le nombre d''états possibles d''un système croît en général de façon exponentielle avec le nombre de ses
+   composants : explorer exhaustivement tous ces états devient rapidement impraticable en temps de calcul
+   et en mémoire, même pour des systèmes de taille modeste. C''est cette croissance explosive, et non une
+   limite de la méthode elle-même, qui borne la taille des systèmes vérifiables automatiquement.
+6. Une réponse synthétique de qualité reconnaîtrait que la preuve formelle reste irremplaçable pour les
+   systèmes critiques à spécification claire, qu''elle coexiste avec l''apprentissage automatique plutôt que
+   d''être « dépassée » par lui, et que des travaux récents cherchent même à combiner les deux (par
+   exemple vérifier formellement certaines propriétés de sécurité d''un système qui intègre des composants
+   d''apprentissage).', 'texte', 55, false, 20
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique n°1 : l''ingénierie logicielle classique, la preuve et la vérification formelle');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Courant théorique n°2 : l''apprentissage automatique, la boîte noire et l''explicabilité', '## Objectifs de la leçon
+
+Cette leçon présente le second grand courant théorique du champ, en tension et en complémentarité avec le
+premier : l''apprentissage automatique, fondé non pas sur une spécification écrite à l''avance par un
+humain, mais sur l''extraction automatique de régularités statistiques à partir de données. Ce courant
+pose une question aussi centrale que la précédente : comment construire des systèmes performants pour des
+problèmes qu''on ne sait pas spécifier formellement, et comment leur faire confiance si l''on ne peut pas,
+le plus souvent, prouver leur comportement ?
+
+## Définitions
+
+L''apprentissage automatique (en anglais machine learning) désigne l''ensemble des méthodes qui permettent
+à un programme d''améliorer ses performances sur une tâche à partir de données d''exemple, sans que la
+règle de décision soit écrite explicitement par un développeur. Au lieu d''écrire : « si telle condition
+précise, alors telle action », on fournit au système un grand nombre d''exemples (des images déjà
+étiquetées, des textes déjà classés, des décisions passées déjà observées), et un algorithme
+d''apprentissage ajuste automatiquement un modèle statistique qui reproduit, puis généralise, les
+régularités observées dans ces exemples.
+
+Le problème de la boîte noire désigne la difficulté, pour de nombreux modèles d''apprentissage performants
+(en particulier les réseaux de neurones profonds), à expliquer de façon compréhensible par un humain
+pourquoi le modèle a produit telle prédiction pour telle entrée donnée. Le modèle peut être extrêmement
+précis statistiquement tout en restant opaque dans son fonctionnement interne : des millions de paramètres
+numériques interagissent sans qu''aucun d''eux, pris isolément, ne corresponde à une règle lisible par un
+humain. L''explicabilité (en anglais interpretability ou explainability) est le champ de recherche qui
+cherche à rendre ces décisions compréhensibles, soit en construisant des modèles intrinsèquement plus
+simples à lire, soit en développant des méthodes qui expliquent, après coup, les décisions d''un modèle
+complexe.
+
+## Auteurs fondateurs et évolution historique
+
+Les racines de ce courant remontent aux premiers travaux sur les réseaux de neurones artificiels. Frank
+Rosenblatt a proposé, à la fin des années 1950, le perceptron, un modèle simple capable d''ajuster
+automatiquement ses paramètres à partir d''exemples pour séparer deux catégories de données, posant ainsi
+la première pierre de l''apprentissage statistique moderne. Ce modèle a connu une période de scepticisme
+après que ses limites théoriques sur certains problèmes simples ont été démontrées, ce qui a ralenti la
+recherche sur les réseaux de neurones pendant plus d''une décennie.
+
+Le courant a connu un renouveau décisif dans les années 1980 avec la diffusion de l''algorithme de
+rétropropagation du gradient, qui a permis d''entraîner efficacement des réseaux de neurones à plusieurs
+couches, popularisé notamment par les travaux de David Rumelhart, Geoffrey Hinton et leurs collègues. En
+parallèle, Vladimir Vapnik a développé, à partir des années 1960 et surtout dans les années 1990, la
+théorie de l''apprentissage statistique, qui fournit un cadre mathématique rigoureux pour comprendre à
+quelles conditions un modèle appris sur un ensemble d''exemples peut raisonnablement généraliser à des
+données nouvelles qu''il n''a jamais vues.
+
+À partir des années 2010, la combinaison de très grandes quantités de données, de capacités de calcul
+accrues et de réseaux de neurones profonds (l''apprentissage profond, ou deep learning) a permis des
+progrès très rapides sur des tâches jusque-là considérées comme hors de portée : reconnaissance d''images,
+traduction automatique, génération de texte. C''est précisément cette montée en puissance qui a rendu le
+problème de l''explicabilité urgent : des systèmes de plus en plus influents sur des décisions humaines
+(crédit, recrutement, santé, justice) fonctionnent sur des principes statistiques que leurs propres
+concepteurs ne peuvent pas toujours expliquer finement.
+
+## Domaines d''application et succès reconnus
+
+L''apprentissage automatique excelle précisément là où le courant précédent atteint ses limites : les
+problèmes pour lesquels il n''existe pas de règle explicite et complète, mais pour lesquels on dispose de
+nombreux exemples représentatifs. La reconnaissance vocale, la traduction automatique, la détection de
+fraude, le diagnostic assisté à partir d''images médicales, ou la recommandation de contenus en sont des
+illustrations couramment citées dans la littérature. Dans tous ces cas, il serait extrêmement difficile,
+voire impossible, d''écrire à la main une spécification formelle complète du comportement attendu, alors
+qu''il est possible de rassembler des exemples représentatifs du problème.
+
+## Limites et critiques
+
+- L''opacité et le risque d''erreurs non détectées. Un modèle statistique peut se tromper de façon
+  systématique sur des cas rares ou atypiques, sans qu''aucun signal n''alerte explicitement les
+  concepteurs, puisque le modèle n''offre pas de preuve de correction, seulement une performance moyenne
+  mesurée sur un échantillon de test.
+- Le biais hérité des données. Un modèle appris sur des données reflétant des inégalités ou des erreurs
+  historiques peut reproduire, voire amplifier, ces biais, sans qu''un simple examen du code ne permette de
+  le détecter : le problème ne réside pas dans une instruction erronée, mais dans la statistique des
+  données d''apprentissage elles-mêmes.
+- L''absence de garantie formelle. À la différence du courant précédent, l''apprentissage automatique ne
+  fournit, dans l''immense majorité des cas, aucune preuve mathématique que le modèle se comportera
+  correctement sur toute entrée future : la confiance repose sur une évaluation empirique, nécessairement
+  partielle.
+- La dépendance à la qualité et à la quantité des données disponibles, problème particulier dans les
+  contextes où les données numériques structurées restent rares, notamment pour certaines langues
+  africaines ou secteurs économiques peu numérisés.
+
+## Points clés à retenir
+
+- L''apprentissage automatique construit un modèle statistique à partir d''exemples, plutôt que d''appliquer
+  une règle écrite explicitement par un humain.
+- Les contributions fondatrices (Rosenblatt sur le perceptron, Rumelhart et Hinton sur la
+  rétropropagation, Vapnik sur la théorie de l''apprentissage statistique) structurent encore le
+  vocabulaire du domaine.
+- Le problème de la boîte noire et le champ de l''explicabilité répondent à la difficulté de comprendre, a
+  posteriori, pourquoi un modèle complexe a pris telle décision.
+- Ce courant excelle sur les problèmes sans spécification formelle possible, mais ne fournit, en général,
+  aucune garantie de correction comparable à une preuve formelle.
+
+## Exercices pratiques
+
+1. Expliquez, sans citation textuelle, la différence entre « écrire une règle » et « apprendre un modèle
+   à partir de données », à l''aide d''un exemple de votre choix.
+2. En quoi la théorie de l''apprentissage statistique de Vapnik répond-elle à une question différente de
+   celle que pose la logique de Hoare étudiée dans la leçon précédente ?
+3. Donnez un exemple de problème pour lequel l''apprentissage automatique est particulièrement adapté, et
+   un exemple pour lequel il serait risqué de s''y fier sans garde-fou supplémentaire.
+4. Pourquoi le biais hérité des données constitue-t-il un problème différent d''une simple erreur de
+   programmation au sens classique ?
+5. Qu''est-ce que l''explicabilité cherche à résoudre, et pourquoi ce besoin est-il devenu plus pressant
+   avec l''apprentissage profond ?
+6. Préparez, en cinq phrases, une réponse synthétique à la question : « L''apprentissage automatique
+   rend-il obsolète la vérification formelle ? »
+
+## Corrigé
+
+1. Écrire une règle consiste à formuler explicitement, à l''avance, la logique de décision (par exemple :
+   « refuser un crédit si le revenu mensuel est inférieur à un seuil donné »). Apprendre un modèle
+   consiste à fournir de nombreux dossiers déjà traités et à laisser un algorithme ajuster automatiquement
+   une fonction statistique qui généralise les régularités observées, sans qu''un humain n''ait écrit la
+   règle.
+2. La logique de Hoare répond à : « comment prouver qu''un programme, dont la spécification est connue à
+   l''avance, respecte effectivement cette spécification ? ». La théorie de l''apprentissage statistique
+   répond à une question différente : « à quelles conditions un modèle ajusté sur un ensemble fini
+   d''exemples peut-il généraliser à des données nouvelles, pour un problème sans spécification explicite
+   complète ? ».
+3. Exemple adapté : la reconnaissance vocale ou la détection de fraude bancaire, où il existe une grande
+   quantité d''exemples mais aucune règle simple et exhaustive. Exemple à risque : l''octroi automatique de
+   crédit sans aucun contrôle humain, où un biais peut avoir des conséquences sociales graves et où
+   l''absence de garantie formelle appelle un contrôle supplémentaire.
+4. Une erreur de programmation classique se situe dans une instruction identifiable du code, que l''on peut
+   localiser et corriger. Un biais hérité des données ne vient d''aucune instruction fausse : le code peut
+   être parfaitement correct et le modèle performant en moyenne, tout en reproduisant une inégalité déjà
+   présente dans les données d''entraînement.
+5. L''explicabilité cherche à rendre compréhensible, pour un humain, la raison pour laquelle un modèle a
+   produit telle prédiction, ce qui est nécessaire pour détecter les erreurs ou contester une décision.
+   Ce besoin s''est renforcé avec l''apprentissage profond parce que la complexité interne des réseaux de
+   neurones (des millions de paramètres sans règles lisibles) rend l''explication a posteriori plus
+   difficile que pour des modèles statistiques plus simples.
+6. Une bonne réponse refuserait l''opposition binaire : l''apprentissage automatique répond à des problèmes
+   sans spécification formelle possible ; les systèmes critiques à spécification claire continuent de
+   relever de la preuve formelle. Les deux courants coexistent selon la nature du problème traité, et la
+   recherche actuelle explore des approches hybrides, par exemple vérifier formellement certaines
+   propriétés d''un système qui intègre des composants d''apprentissage.', 'texte', 55, false, 30
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique n°2 : l''apprentissage automatique, la boîte noire et l''explicabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les méthodes de recherche en Informatique : preuve, expérimentation et étude empirique', '## Objectifs de la leçon
+
+Après avoir situé les deux grands courants théoriques du champ, cette leçon présente les méthodes de
+recherche propres à l''informatique : la preuve formelle, l''expérimentation et le benchmarking, et l''étude
+empirique du génie logiciel par fouille de dépôts de code (mining software repositories). Un travail de
+thèse en informatique se définit autant par le courant théorique dans lequel il s''inscrit que par la ou
+les méthodes qu''il mobilise pour produire des résultats valides et vérifiables.
+
+## La preuve formelle comme méthode de recherche
+
+Déjà présentée comme courant théorique, la preuve formelle est aussi, concrètement, une méthode de
+travail du chercheur : écrire une spécification précise, construire un raisonnement déductif (manuel ou
+assisté par un outil logiciel) qui établit la conformité du système à cette spécification, puis faire
+vérifier ce raisonnement, soit par un outil automatique, soit par la communauté scientifique lors de la
+publication. La validité d''un résultat obtenu par cette méthode repose sur la rigueur de la déduction :
+une erreur dans un seul pas du raisonnement invalide la conclusion entière, ce qui impose une relecture
+particulièrement exigeante, souvent facilitée aujourd''hui par des outils d''assistance à la preuve.
+
+## L''expérimentation et le benchmarking
+
+L''expérimentation en informatique consiste à mesurer, de façon contrôlée et reproductible, la performance
+d''un système ou d''un algorithme sur des données ou des tâches représentatives. Le benchmarking désigne
+plus précisément la comparaison de plusieurs méthodes concurrentes sur un même jeu de données ou un même
+protocole de test, afin de déterminer laquelle est la plus rapide, la plus précise, ou la plus économe en
+ressources.
+
+Une expérimentation rigoureuse en informatique respecte plusieurs exigences méthodologiques : un jeu de
+données de test clairement défini et si possible partagé avec la communauté, une séparation nette entre
+les données utilisées pour ajuster une méthode (apprentissage) et celles utilisées pour mesurer sa
+performance finale (test), une répétition des mesures pour tenir compte de la variabilité (temps
+d''exécution qui peut varier légèrement d''une exécution à l''autre, initialisation aléatoire d''un modèle
+d''apprentissage), et une description suffisamment précise du protocole pour qu''un autre chercheur puisse
+reproduire l''expérience de façon indépendante. Cette dernière exigence, la reproductibilité, est devenue
+un critère central d''évaluation de la qualité scientifique d''un travail expérimental en informatique.
+
+## L''étude empirique du génie logiciel par fouille de dépôts
+
+La troisième méthode, plus récente dans son ampleur, consiste à étudier empiriquement comment les
+logiciels sont réellement conçus, modifiés et maintenus, en analysant à grande échelle les dépôts de code
+source et leur historique (fouille de dépôts logiciels, mining software repositories). Un dépôt de code
+conserve, au fil du temps, chaque modification apportée au code, chaque correction de défaut, chaque
+discussion entre développeurs liée à un changement. Cette masse de données constitue un matériau
+empirique considérable pour répondre à des questions que ni la preuve ni l''expérimentation contrôlée ne
+peuvent trancher seules : quels types d''erreurs reviennent le plus souvent dans la pratique réelle ?
+Quelles pratiques de développement sont statistiquement associées à moins de défauts ? Comment les
+équipes de développement collaborent-elles effectivement ?
+
+Cette méthode se distingue de l''expérimentation contrôlée par son caractère observationnel : le chercheur
+n''intervient pas sur le système étudié, il observe et analyse statistiquement des données déjà produites
+par l''activité réelle de développement. Elle partage avec les méthodes empiriques des sciences sociales
+des exigences de rigueur statistique (taille de l''échantillon, contrôle des facteurs de confusion,
+prudence dans l''interprétation causale d''une simple corrélation observée).
+
+## Protocole de recherche illustratif (contexte sénégalais fictif)
+
+Pour illustrer l''articulation de ces méthodes, prenons un exemple fictif de protocole de recherche :
+une équipe doctorale sénégalaise souhaite étudier la fiabilité des applications mobiles de paiement
+utilisées par de petits commerçants dans plusieurs marchés de Dakar.
+
+- Question de recherche : les défauts logiciels les plus fréquents dans ces applications relèvent-ils
+  principalement de la logique métier (calculs de montants, gestion des soldes) ou de la gestion des
+  pannes réseau propres au contexte local (coupures de connexion fréquentes) ?
+- Méthode 1, fouille de dépôts : analyser l''historique de développement (fictif, à des fins pédagogiques)
+  de plusieurs applications open source comparables, en classant chaque correction de défaut archivée
+  selon sa catégorie (logique métier, réseau, interface, sécurité), pour obtenir une répartition empirique
+  des types de défauts.
+- Méthode 2, expérimentation contrôlée : soumettre, en environnement de test, les applications étudiées à
+  des scénarios simulant des coupures réseau répétées, et mesurer le taux d''erreurs observées (montants
+  incorrects, transactions dupliquées) comparé à un scénario de réseau stable.
+- Articulation des deux méthodes : la fouille de dépôts donne une image de ce qui a historiquement posé
+  problème en conditions réelles ; l''expérimentation contrôlée permet de vérifier, dans un cadre maîtrisé,
+  si l''hypothèse issue de cette analyse (davantage de défauts liés au réseau que de défauts purement
+  logiques) se confirme de façon mesurable.
+- Limite assumée du protocole : un échantillon fictif ou restreint d''applications ne permettrait pas de
+  généraliser la conclusion à l''ensemble de l''écosystème des paiements mobiles ouest-africains ; toute
+  généralisation devrait être formulée avec prudence et accompagnée d''une proposition d''étude à plus
+  grande échelle.
+
+## Points clés à retenir
+
+- La preuve formelle, l''expérimentation et le benchmarking, et l''étude empirique par fouille de dépôts
+  sont trois méthodes de recherche complémentaires, pas concurrentes, en informatique.
+- La reproductibilité (données partagées, protocole décrit précisément) est un critère central de
+  validité pour les méthodes expérimentales.
+- La fouille de dépôts logiciels est une méthode observationnelle, qui demande la même rigueur
+  statistique que les méthodes empiriques des sciences sociales, notamment sur la distinction entre
+  corrélation et causalité.
+- Un protocole de recherche solide articule souvent plusieurs méthodes et assume explicitement ses
+  limites plutôt que de généraliser abusivement un résultat partiel.
+
+## Exercices pratiques
+
+1. Expliquez, en une phrase chacune, la différence entre une preuve formelle, une expérimentation
+   contrôlée et une étude empirique par fouille de dépôts.
+2. Pourquoi la reproductibilité est-elle devenue un critère central d''évaluation d''un travail
+   expérimental en informatique ?
+3. Dans le protocole fictif proposé sur les applications de paiement mobile, identifiez une menace
+   possible à la validité de la conclusion (un facteur qui pourrait fausser l''interprétation du résultat).
+4. Proposez, pour votre propre spécialité de thèse, une question de recherche qui mobiliserait à la fois
+   une méthode expérimentale et une méthode empirique observationnelle.
+5. En quoi la fouille de dépôts logiciels est-elle une méthode « observationnelle », et pourquoi cela
+   impose-t-il une prudence particulière dans l''interprétation causale des résultats ?
+
+## Corrigé
+
+1. La preuve formelle établit, par un raisonnement déductif, qu''un système respecte une spécification
+   pour toute entrée possible. L''expérimentation contrôlée mesure la performance d''un système sur des
+   scénarios de test définis par le chercheur, qui peut faire varier certains facteurs pour isoler leur
+   effet. L''étude empirique par fouille de dépôts analyse statistiquement des données déjà produites par
+   l''activité réelle de développement, sans intervention du chercheur sur le système observé.
+2. Parce qu''un résultat expérimental qu''aucun autre chercheur ne peut reproduire avec le même protocole
+   et les mêmes données reste fragile scientifiquement : il pourrait provenir d''un artefact particulier du
+   jeu de test utilisé, d''une erreur d''implémentation non détectée, ou d''un choix de paramètres
+   favorable au résultat souhaité. La reproductibilité permet à la communauté de vérifier
+   indépendamment la validité d''une conclusion.
+3. Une menace possible : les applications open source analysées en fouille de dépôts pourraient ne pas
+   être représentatives des applications commerciales réellement utilisées par les petits commerçants
+   dakarois, qui restent souvent propriétaires et dont le code n''est pas accessible à l''analyse ; la
+   répartition des défauts observée pourrait donc différer de la réalité du terrain visé.
+4. Toute proposition cohérente est recevable : l''essentiel est que les deux méthodes répondent à des
+   aspects complémentaires de la même question (par exemple, une étude empirique observationnelle pour
+   identifier un phénomène fréquent en conditions réelles, puis une expérimentation contrôlée pour en
+   tester une explication causale précise).
+5. La méthode est observationnelle parce que le chercheur ne manipule aucune variable : il se contente
+   d''observer des données déjà produites par l''activité normale de développement. Cette absence de
+   manipulation contrôlée signifie qu''une association statistique observée (par exemple, telle pratique
+   de développement associée à moins de défauts) peut s''expliquer par un facteur caché plutôt que par un
+   lien de cause à effet direct, ce qui impose de formuler les conclusions comme des corrélations à
+   confirmer, pas comme des causes établies.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en Informatique : preuve, expérimentation et étude empirique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Épreuve type d''examen de qualification en Informatique', '## Objectifs de la leçon
+
+Cette leçon simule une épreuve type (non officielle, construite pour l''exercice) de l''examen de
+qualification doctorale en Informatique. Elle mobilise les deux courants théoriques étudiés (ingénierie
+logicielle classique fondée sur la preuve, apprentissage automatique fondé sur les données) et les
+méthodes de recherche vues précédemment (preuve formelle, expérimentation et benchmarking, étude
+empirique par fouille de dépôts). L''objectif n''est pas de mémoriser cette réponse, mais de comprendre la
+structure d''un bon plan de réponse, transposable à d''autres questions de synthèse.
+
+## Question de synthèse type
+
+« Dans quelle mesure la distinction entre systèmes dont le comportement peut être garanti par la preuve
+formelle et systèmes dont le comportement ne peut être évalué que de façon empirique constitue-t-elle une
+limite théorique fondamentale de l''informatique, plutôt qu''une simple difficulté pratique actuelle ? Vous
+illustrerez votre réponse par des exemples chiffrés. »
+
+## Analyse de la question
+
+Une question de synthèse de ce type attend trois mouvements de pensée : définir précisément les termes en
+jeu (ce qu''est une garantie formelle, ce qu''est une évaluation empirique), discuter si la limite évoquée
+est de nature théorique (liée à la calculabilité et à la complexité, donc permanente) ou seulement
+pratique (liée aux moyens actuels, donc susceptible d''évoluer), et illustrer la réponse par des exemples
+vérifiables, chiffrés si possible, plutôt que par des affirmations générales invérifiables.
+
+## Plan de réponse détaillé
+
+Introduction. Rappeler les deux courants (preuve formelle issue des travaux de Turing, Floyd, Hoare et
+Dijkstra ; apprentissage automatique issu des travaux de Rosenblatt, puis de la théorie de l''apprentissage
+statistique de Vapnik et de l''apprentissage profond) et annoncer le plan : d''abord une limite théorique
+réelle liée à la calculabilité et à la complexité, ensuite une limite pratique liée à l''efficacité des
+heuristiques, enfin une articulation par les méthodes de recherche.
+
+Partie 1, une limite théorique réelle. La théorie de la calculabilité, fondée par Turing, établit qu''il
+existe des problèmes pour lesquels aucun programme ne peut, en toute généralité, décider correctement
+(le problème de l''arrêt en est l''exemple fondateur) : ceci n''est pas une limite de nos outils actuels,
+mais une impossibilité démontrée mathématiquement, donc une limite théorique au sens strict. De même, la
+théorie de la complexité montre que certains problèmes, bien que calculables en principe, demandent un
+temps de calcul qui croît si rapidement avec la taille de l''entrée qu''aucune machine, aussi puissante
+soit-elle, ne pourrait les résoudre exactement à grande échelle dans un temps raisonnable. On peut
+illustrer cette croissance par un exemple vérifié : une recherche dans une liste non triée de mille
+éléments demande, dans le pire cas, mille comparaisons (complexité dite linéaire), alors qu''une recherche
+dans une liste triée de même taille, par recherche binaire, n''en demande que dix. Pour un million
+d''éléments, la recherche linéaire exige, dans le pire cas, un million de comparaisons, contre seulement
+vingt pour la recherche binaire : l''écart entre les deux approches se creuse fortement lorsque la taille
+du problème augmente, ce qui illustre concrètement pourquoi le choix d''une structure de données et d''un
+algorithme adaptés constitue, en soi, un résultat théorique et non un simple détail d''implémentation.
+
+Partie 2, une limite pratique qui n''est pas pour autant anodine. En revanche, la distinction entre
+« garanti par la preuve » et « évalué empiriquement » relève, pour une grande partie des systèmes
+courants, d''une difficulté pratique plutôt que d''une impossibilité théorique : il est souvent possible,
+en principe, d''écrire une spécification formelle d''un système, mais le coût humain et calculatoire de
+cette preuve la rend irréaliste à l''échelle de la majorité des logiciels. C''est précisément ce qui
+explique le succès pratique des heuristiques de l''apprentissage automatique : elles acceptent de renoncer
+à une garantie formelle universelle pour obtenir, à un coût raisonnable, une performance mesurée très
+élevée sur les cas réellement rencontrés. On peut l''illustrer par un exemple chiffré et vérifié de
+métrique de classification : sur un ensemble fictif de cent dossiers de crédit évalués par un modèle
+statistique, avec 18 vrais positifs, 7 faux positifs, 5 faux négatifs et 70 vrais négatifs, l''exactitude
+globale du modèle atteint 88 pour cent, sa précision 72 pour cent, son rappel environ 78 pour cent et son
+F1-score 75 pour cent. Ces chiffres montrent une performance globale élevée, mais aussi des erreurs
+résiduelles (douze dossiers mal classés sur cent) qu''aucune preuve formelle ne vient garantir absentes :
+la confiance dans le système repose sur cette évaluation statistique, pas sur une démonstration
+mathématique universelle.
+
+Partie 3, l''articulation par les méthodes de recherche. La preuve formelle reste la méthode de référence
+quand une spécification complète existe et qu''une erreur est inacceptable. L''expérimentation et le
+benchmarking permettent de mesurer, de façon rigoureuse et reproductible, la performance d''un système
+d''apprentissage sur des données représentatives, comme dans l''exemple chiffré ci-dessus. L''étude
+empirique par fouille de dépôts logiciels permet, de son côté, d''observer à grande échelle où et
+pourquoi les systèmes réels échouent en pratique, qu''ils relèvent de l''un ou l''autre courant, nourrissant
+ainsi en retour la recherche théorique.
+
+Conclusion. La limite entre vérifiabilité formelle et évaluation empirique recouvre en réalité deux
+phénomènes distincts qu''il faut savoir dissocier dans une bonne réponse de synthèse : une limite
+théorique réelle et démontrée (calculabilité, complexité), qui ne disparaîtra jamais quels que soient les
+progrès technologiques, et une limite pratique mouvante (coût de la preuve, disponibilité des données),
+qui explique pourquoi l''apprentissage automatique domine aujourd''hui de nombreux usages sans pour autant
+rendre la preuve formelle obsolète sur son terrain propre.
+
+## Points clés à retenir
+
+- Une bonne réponse de synthèse distingue toujours limite théorique (permanente, démontrée) et limite
+  pratique (actuelle, liée aux moyens disponibles).
+- Les exemples chiffrés doivent être vérifiés, pas inventés : un ordre de grandeur correct (par exemple
+  l''écart entre recherche linéaire et recherche binaire) vaut mieux qu''un chiffre impressionnant mais
+  incertain.
+- Le jury valorise l''articulation explicite entre courants théoriques et méthodes de recherche, plutôt
+  que leur traitement séparé.
+
+## Exercices pratiques
+
+1. Reformulez, dans vos propres mots, la différence entre une limite théorique et une limite pratique en
+   informatique, à l''aide d''un exemple autre que ceux proposés dans cette leçon.
+2. Pourquoi le problème de l''arrêt est-il cité comme exemple fondateur d''une limite théorique, et non
+   d''une simple difficulté pratique ?
+3. Expliquez pourquoi un écart de performance entre deux algorithmes peut se creuser fortement quand la
+   taille du problème augmente, même si les deux algorithmes restent corrects.
+4. En quoi un F1-score de 75 pour cent, dans l''exemple chiffré de cette leçon, illustre-t-il à la fois le
+   succès pratique et la limite d''un système fondé sur l''apprentissage ?
+5. Construisez votre propre plan en trois parties pour la question : « L''étude empirique des dépôts
+   logiciels peut-elle remplacer l''expérimentation contrôlée ? »
+6. Entraînez-vous à présenter oralement, en trois minutes chronométrées, le plan de réponse détaillé
+   proposé dans cette leçon.
+
+## Corrigé
+
+1. Une limite théorique reste vraie quels que soient les progrès futurs (par exemple, aucun ordinateur,
+   même infiniment plus puissant, ne pourra résoudre en toute généralité le problème de l''arrêt). Une
+   limite pratique peut reculer avec le temps (par exemple, un problème jugé trop coûteux à prouver
+   formellement aujourd''hui pourrait devenir abordable avec de meilleurs outils de preuve assistée dans
+   dix ans).
+2. Parce qu''il a été démontré mathématiquement, par un raisonnement valable pour tout programme possible,
+   qu''aucun algorithme ne peut décider dans tous les cas si un programme donné s''arrêtera ou non : ce
+   n''est pas une question de puissance de calcul insuffisante, mais une impossibilité logique définitive.
+3. Parce que la relation entre la taille du problème et le nombre d''opérations nécessaires n''est pas la
+   même pour les deux algorithmes : si l''un croît proportionnellement à la taille (linéaire) et l''autre
+   beaucoup plus lentement (logarithmique, comme la recherche binaire), l''écart entre les deux, négligeable
+   pour de petites tailles, devient considérable pour de grandes tailles, comme le montre le passage de
+   mille à un million d''éléments dans l''exemple vérifié de cette leçon.
+4. Un F1-score de 75 pour cent montre que le modèle obtient un bon équilibre entre précision et rappel sur
+   l''échantillon testé, ce qui illustre le succès pratique de l''approche statistique sur un problème sans
+   spécification formelle complète. Il montre en même temps la limite du courant : contrairement à une
+   preuve formelle, ce chiffre ne garantit rien pour un dossier futur particulier, et vingt-cinq pour cent
+   d''erreur relative sur les cas positifs identifiés reste un risque résiduel assumé, pas éliminé.
+5. Un plan possible : d''abord ce que l''étude empirique par fouille de dépôts apporte (données massives,
+   conditions réelles, aucune intervention du chercheur) ; ensuite ce qu''elle ne peut pas apporter
+   (contrôle précis des facteurs, preuve de causalité) ; enfin une conclusion montrant que les deux
+   méthodes sont complémentaires et non substituables l''une à l''autre.
+6. Il n''existe pas de corrigé unique pour un exercice oral ; l''essentiel est de respecter la structure en
+   trois parties, de citer les exemples chiffrés avec exactitude, et de conclure explicitement sur la
+   distinction entre limite théorique et limite pratique.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification en Informatique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Vidéo 1 : l''ingénierie logicielle classique, la preuve et la vérification formelle', '## Fiche du cours vidéo
+
+Durée : 1h30. Objectifs : approfondir, à l''oral et avec des exemples commentés en direct, le courant de
+l''ingénierie logicielle classique fondée sur la preuve et la vérification formelle, et savoir le défendre
+devant un jury doctoral. Matériel : tableau ou diaporama avec les définitions clés, un exemple de petit
+algorithme pour la démonstration de preuve. Prérequis : avoir lu la leçon texte correspondante et les
+fiches de lecture associées.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et mise en contexte
+
+Bonjour à toutes et à tous. Dans cette séance d''une heure trente, nous allons approfondir le premier
+grand courant théorique de votre examen de qualification en informatique : l''ingénierie logicielle
+fondée sur la preuve et la vérification formelle. L''enjeu de cette vidéo n''est pas de répéter la leçon
+écrite mot pour mot, mais de vous entraîner à en parler à l''oral, avec vos propres mots, de façon à être
+prêts le jour de la soutenance. Je vous propose de commencer par une question simple que je vous invite à
+vous poser mentalement : si l''on vous demandait, en trente secondes, de définir ce qu''est une preuve de
+correction d''un programme, que diriez-vous ? Gardez cette question en tête, nous y reviendrons.
+
+Visuel à montrer : le plan de la séance, avec les grandes étapes annoncées (définitions, auteurs
+fondateurs, exemple de preuve, domaines d''application, limites, quiz, synthèse, évaluation).
+
+## 05:00 – 15:00 · Définitions précises
+
+Reprenons les définitions avec soin, car c''est souvent sur l''imprécision du vocabulaire que les
+candidats perdent des points en soutenance. La vérification formelle, c''est l''ensemble des techniques qui
+établissent, par un raisonnement mathématique, qu''un programme respecte une spécification. J''insiste sur
+le mot « établissent » : il ne s''agit pas de rendre probable, ni de rendre vraisemblable, mais
+d''établir avec certitude, pour toutes les entrées possibles du programme, pas seulement pour celles que
+l''on a testées.
+
+Il faut absolument savoir distinguer, à l''oral, la preuve du simple test. Un test exécute le programme
+sur un nombre fini de cas et observe le résultat : c''est une démarche empirique, qui peut révéler une
+erreur mais jamais garantir son absence totale. La preuve, elle, raisonne sur la structure du programme
+lui-même : si elle est valide, elle couvre, en un seul raisonnement, l''ensemble infini ou quasi infini
+des entrées possibles. C''est cette différence de nature, et non seulement de degré, qui fait la
+spécificité de ce courant.
+
+Visuel à montrer : un schéma à deux colonnes, « test » contre « preuve », avec la portée de chaque
+démarche.
+
+Question à poser aux apprenants : pouvez-vous citer, de mémoire, un exemple de système pour lequel un
+simple test ne suffirait pas et où une preuve serait nécessaire ?
+
+## 15:00 – 28:00 · Auteurs fondateurs et évolution historique
+
+Revenons maintenant sur les contributions fondatrices, en veillant à les présenter par leur apport
+scientifique réel, sans jamais inventer de citation textuelle précise que vous ne pourriez pas vérifier.
+Alan Turing, dès les années 1930 et 1940, a posé les bases théoriques de la calculabilité : il a montré
+qu''il existe des limites démontrables à ce qu''un programme peut calculer, ouvrant la voie à l''idée que la
+correction d''un programme pouvait elle-même se raisonner formellement.
+
+Dans les années 1960, Robert Floyd a introduit une méthode d''assertions attachées aux points du
+programme : à chaque étape, on associe une propriété que les variables doivent vérifier si le programme
+fonctionne correctement jusqu''à ce point. Tony Hoare a formalisé cette idée en une véritable logique de
+programmation, la logique de Hoare, qui exprime la preuve comme une chaîne de « triplets » reliant une
+précondition, une instruction, et une postcondition. Edsger Dijkstra, enfin, a insisté sur l''idée que la
+preuve devait accompagner la construction du programme, et non intervenir après coup : la discipline de
+programmation structurée qu''il a défendue rend justement ce raisonnement pas à pas possible.
+
+Visuel à montrer : une frise chronologique avec Turing, Floyd, Hoare, Dijkstra, puis le model checking à
+partir des années 1980.
+
+## 28:00 – 40:00 · Exemple de preuve simple, étape par étape
+
+Voici maintenant l''exercice que nous allons détailler ensemble, car un exemple concret vaut mieux que
+beaucoup de définitions abstraites. Prenons l''algorithme le plus simple possible : la recherche d''un
+élément dans une liste, en parcourant la liste du début jusqu''à la fin. La spécification est la
+suivante : si l''élément cherché est présent dans la liste, l''algorithme doit retourner sa position ; s''il
+est absent, l''algorithme doit le signaler après avoir examiné tous les éléments.
+
+La méthode de preuve la plus naturelle ici repose sur un invariant de boucle : une propriété qui reste
+vraie avant chaque tour de boucle, et qui, combinée à la condition d''arrêt, permet de conclure que le
+résultat final est correct. Dans notre cas, l''invariant est : « au début de chaque tour de boucle,
+l''élément cherché ne se trouve pas parmi les éléments déjà examinés ». Cet invariant est vrai au départ,
+avant le premier tour, puisqu''aucun élément n''a encore été examiné. Si, à un tour donné, l''élément
+courant est égal à l''élément cherché, l''algorithme retourne immédiatement sa position, ce qui est
+correct. Si l''élément courant est différent, l''invariant reste vrai au tour suivant, puisque l''ensemble
+des éléments déjà examinés s''est simplement agrandi d''un élément qui n''était pas la cible. Si la boucle
+se termine sans avoir trouvé l''élément, c''est que tous les éléments de la liste ont été examinés sans
+succès, et l''invariant garantit alors que l''élément cherché n''était présent dans aucun d''eux : conclure
+qu''il est absent est donc correct.
+
+Pour vérifier concrètement que ce raisonnement n''est pas qu''une affirmation en l''air, on peut l''éprouver
+empiriquement : en exécutant cette méthode de recherche sur deux cents listes aléatoires différentes et
+en vérifiant, pour chacune, que l''algorithme retrouve bien la bonne position d''un élément que l''on sait
+présent, on obtient deux cents succès sur deux cents essais, ce qui est cohérent avec la preuve par
+invariant, sans pour autant la remplacer : ce test conforte la confiance, mais seule la preuve par
+invariant garantit la correction pour toute liste possible, y compris les listes qu''aucun test n''a
+couvertes.
+
+Visuel à montrer : le déroulé pas à pas de l''invariant sur une petite liste d''exemple, tour de boucle par
+tour de boucle, avec la propriété rappelée à chaque étape.
+
+Question à poser aux apprenants : que se passerait-il si l''invariant énoncé était faux au départ, avant
+même le premier tour de boucle ? Pourquoi toute la preuve s''effondrerait-elle ?
+
+## 40:00 – 48:00 · Pause et quiz interactif
+
+Faisons une courte pause et testons ce que nous venons de voir avec un quiz à choix de réponses, que vous
+pouvez répondre mentalement ou à voix haute.
+
+Question 1 : un test logiciel qui passe sur mille cas garantit-il l''absence totale d''erreurs ? Réponse :
+non, un test ne couvre jamais, en général, l''ensemble infini ou quasi infini des entrées possibles.
+
+Question 2 : qu''est-ce qu''un invariant de boucle ? Réponse : une propriété qui reste vraie avant chaque
+tour de boucle, et qui, combinée à la condition d''arrêt, permet de conclure la correction du résultat
+final.
+
+Question 3 : quelle est la différence essentielle entre Floyd et Hoare dans l''histoire de ce courant ?
+Réponse : Floyd a introduit les assertions attachées aux points du programme, Hoare a formalisé ce
+raisonnement sous la forme d''une logique complète, la logique de Hoare, avec ses triplets précondition,
+instruction, postcondition.
+
+Question 4 : le model checking explore-t-il un échantillon ou la totalité des états d''un système fini ?
+Réponse : la totalité, ce qui le distingue du test classique, mais au prix d''un risque d''explosion
+combinatoire sur les systèmes complexes.
+
+## 48:00 – 58:00 · Domaines d''application et succès reconnus
+
+Reprenons les domaines où ce courant brille particulièrement : les logiciels de pilotage aérien, les
+systèmes de signalisation ferroviaire, les microprocesseurs et les protocoles cryptographiques. Dans
+tous ces cas, une erreur a un coût si élevé qu''investir dans une preuve formelle, malgré son coût humain
+et calculatoire, devient justifié. C''est aussi dans ces domaines que les langages de spécification
+formelle, qui décrivent précisément le comportement attendu avant même d''écrire le code, ont trouvé leur
+usage le plus développé.
+
+Visuel à montrer : une liste illustrée des domaines cités, avec, pour chacun, la raison pour laquelle une
+erreur y est jugée inacceptable.
+
+## 58:00 – 1:10:00 · Limites et critiques, l''écart de validation
+
+Abordons maintenant les limites, car un bon candidat à l''examen de qualification doit savoir critiquer le
+courant qu''il défend, pas seulement le vanter. Premièrement, le coût : écrire une spécification complète
+et construire la preuve associée demande un temps considérable, hors de portée de la plupart des projets
+commerciaux. Deuxièmement, l''explosion combinatoire, qui limite la taille des systèmes vérifiables
+automatiquement par model checking. Troisièmement, et c''est le point le plus subtil, l''écart de
+validation : une preuve ne garantit que la conformité du programme à sa spécification, pas la pertinence
+de cette spécification par rapport au besoin réel. Un système peut être prouvé correct et pourtant
+inadapté si la spécification elle-même traduisait mal l''intention de l''utilisateur. Enfin, certains
+problèmes n''admettent simplement aucune spécification exacte et complète : on ne sait pas écrire, de
+façon formelle, ce qu''est « une bonne traduction » pour toute phrase possible. C''est précisément ce
+constat qui introduit le second courant théorique, que nous verrons dans la prochaine vidéo.
+
+Question à poser aux apprenants : pouvez-vous imaginer un exemple où un programme serait formellement
+prouvé correct par rapport à sa spécification, et pourtant jugé défaillant par ses utilisateurs réels ?
+
+## 1:10:00 – 1:22:00 · Synthèse et mise en perspective pour la soutenance
+
+Pour conclure cette partie, voici comment je vous conseille de synthétiser ce courant en soutenance, en
+une trentaine de secondes si le jury vous le demande : « L''ingénierie logicielle classique prouve, par un
+raisonnement mathématique s''appuyant notamment sur les travaux de Turing, Floyd, Hoare et Dijkstra, que
+tout programme respecte sa spécification pour toutes les entrées possibles, ce qui la distingue
+radicalement du simple test. Ce courant excelle sur les systèmes critiques à spécification claire, mais
+se heurte au coût de la preuve, à l''explosion combinatoire, et à l''écart de validation, ce qui explique
+qu''il coexiste, plutôt que de s''y opposer frontalement, avec l''apprentissage automatique sur les
+problèmes sans spécification formelle possible. » Entraînez-vous à reformuler cette synthèse avec vos
+propres mots, sans la réciter mécaniquement.
+
+## 1:22:00 – 1:30:00 · Évaluation finale
+
+Cinq questions pour conclure cette séance.
+
+1. Quelle est la différence essentielle entre tester un programme et le prouver correct ? Réponse : le
+   test couvre un nombre fini de cas choisis, la preuve raisonne sur la structure du programme pour
+   couvrir, en principe, toutes les entrées possibles.
+2. Citez deux contributeurs fondateurs de la logique de preuve des programmes et leur apport respectif.
+   Réponse : Robert Floyd a introduit les assertions attachées aux points du programme ; Tony Hoare a
+   formalisé ce raisonnement en une logique complète, exprimée par des triplets précondition, instruction,
+   postcondition.
+3. Qu''est-ce qu''un invariant de boucle et à quoi sert-il dans une preuve de correction ? Réponse : une
+   propriété qui reste vraie avant chaque tour de boucle ; combinée à la condition d''arrêt de la boucle,
+   elle permet de conclure que le résultat final du programme est correct.
+4. Qu''est-ce que l''écart de validation et pourquoi montre-t-il qu''une preuve formelle ne suffit pas à
+   elle seule ? Réponse : c''est le risque qu''une spécification, bien que respectée par le programme
+   prouvé correct, ne traduise pas fidèlement le besoin réel de l''utilisateur ; la preuve garantit la
+   conformité à la spécification, pas la pertinence de cette spécification.
+5. Pourquoi l''explosion combinatoire limite-t-elle la portée pratique du model checking ? Réponse : le
+   nombre d''états possibles d''un système croît en général de façon exponentielle avec ses composants, ce
+   qui rend leur exploration exhaustive rapidement impraticable en temps de calcul et en mémoire, même
+   pour des systèmes de taille modeste.', 'video', 90, false, 60
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Vidéo 1 : l''ingénierie logicielle classique, la preuve et la vérification formelle');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Vidéo 2 : l''apprentissage automatique, la boîte noire et l''explicabilité', '## Fiche du cours vidéo
+
+Durée : 1h30. Objectifs : approfondir le courant de l''apprentissage automatique, savoir en exposer les
+définitions, les auteurs fondateurs et les limites, et manier avec aisance un exemple chiffré de
+métriques de classification. Matériel : tableau ou diaporama, un exemple de matrice de confusion à
+projeter. Prérequis : avoir lu la leçon texte correspondante.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bienvenue dans cette seconde séance consacrée aux courants théoriques du champ. Nous avons vu, dans la
+vidéo précédente, le courant de la preuve formelle. Nous allons maintenant explorer son pendant, en
+tension mais aussi en complémentarité : l''apprentissage automatique. Gardez à l''esprit, tout au long de
+cette séance, la question suivante : pourquoi ce courant a-t-il pris une telle importance alors même
+qu''il ne fournit, le plus souvent, aucune garantie formelle de correction ?
+
+Visuel à montrer : le plan de la séance.
+
+## 05:00 – 15:00 · Définitions précises
+
+L''apprentissage automatique, c''est l''ensemble des méthodes qui permettent à un programme d''améliorer sa
+performance sur une tâche à partir d''exemples, sans que la règle de décision soit écrite explicitement.
+Au lieu d''écrire une condition précise, on fournit des exemples, et un algorithme ajuste automatiquement
+un modèle statistique qui généralise les régularités observées.
+
+Deux notions sont essentielles à bien maîtriser pour l''oral. D''abord, le problème de la boîte noire :
+certains modèles, en particulier les réseaux de neurones profonds, sont si complexes dans leur
+fonctionnement interne qu''il devient très difficile d''expliquer, de façon compréhensible par un humain,
+pourquoi telle prédiction a été produite pour telle entrée. Ensuite, l''explicabilité : le champ de
+recherche qui tente de rendre ces décisions compréhensibles, soit par des modèles plus simples à lire,
+soit par des méthodes qui expliquent a posteriori les décisions d''un modèle complexe.
+
+Visuel à montrer : un schéma « règle écrite par un humain » contre « modèle appris à partir de données ».
+
+Question à poser aux apprenants : pouvez-vous donner un exemple de tâche pour laquelle il serait presque
+impossible d''écrire une règle explicite complète ?
+
+## 15:00 – 28:00 · Auteurs fondateurs et évolution historique
+
+Frank Rosenblatt a proposé, à la fin des années 1950, le perceptron, un modèle qui ajuste automatiquement
+ses paramètres à partir d''exemples pour séparer deux catégories de données : c''est la première pierre de
+l''apprentissage statistique moderne. Ce modèle a connu une période de scepticisme après la démonstration
+de ses limites sur certains problèmes simples, ce qui a ralenti la recherche pendant plus d''une décennie.
+
+Le courant renaît dans les années 1980 avec l''algorithme de rétropropagation du gradient, qui permet
+d''entraîner efficacement des réseaux de neurones à plusieurs couches, popularisé notamment par David
+Rumelhart et Geoffrey Hinton. En parallèle, Vladimir Vapnik développe, à partir des années 1960 et
+surtout dans les années 1990, la théorie de l''apprentissage statistique, qui établit à quelles
+conditions un modèle appris sur des exemples peut raisonnablement généraliser à des données nouvelles.
+Depuis les années 2010, la combinaison de grandes quantités de données, de capacités de calcul accrues et
+de réseaux profonds a permis des progrès rapides sur des tâches jusque-là hors de portée.
+
+Visuel à montrer : une frise chronologique, Rosenblatt, puis la période de scepticisme, puis
+rétropropagation, puis théorie de Vapnik, puis apprentissage profond.
+
+## 28:00 – 42:00 · Exemple chiffré vérifié : la matrice de confusion et ses métriques
+
+Voici l''exemple que je vous recommande de maîtriser parfaitement pour l''oral, car les questions de jury
+portent souvent sur la capacité à interpréter un chiffre, pas seulement à le citer. Imaginons un modèle
+statistique chargé d''évaluer, pour cent dossiers de crédit fictifs, le risque de défaut de paiement. On
+construit une matrice de confusion à partir des résultats du modèle comparés à la réalité observée
+ensuite : dix-huit vrais positifs, c''est-à-dire des dossiers correctement identifiés comme risqués ; sept
+faux positifs, des dossiers jugés risqués à tort ; cinq faux négatifs, des dossiers risqués que le modèle
+n''a pas détectés ; et soixante-dix vrais négatifs, des dossiers correctement jugés non risqués.
+
+À partir de ces quatre nombres, qui totalisent bien cent dossiers, on calcule quatre métriques
+essentielles. L''exactitude, ou accuracy, est la proportion de dossiers correctement classés sur
+l''ensemble : dix-huit plus soixante-dix, divisé par cent, soit quatre-vingt-huit pour cent. La précision
+est la proportion de dossiers réellement risqués parmi ceux que le modèle a jugés risqués : dix-huit
+divisé par dix-huit plus sept, soit soixante-douze pour cent. Le rappel, ou sensibilité, est la
+proportion de dossiers réellement risqués que le modèle a su détecter : dix-huit divisé par dix-huit plus
+cinq, soit environ soixante-dix-huit pour cent. Le F1-score, enfin, combine précision et rappel en une
+seule mesure équilibrée : il vaut ici soixante-quinze pour cent.
+
+Pourquoi ces quatre chiffres racontent-ils une histoire différente ? L''exactitude, à quatre-vingt-huit
+pour cent, paraît très rassurante, mais elle peut être trompeuse si les deux catégories ne sont pas
+équilibrées : un modèle qui prédirait systématiquement « pas de risque » obtiendrait ici, sur cette
+répartition, une exactitude déjà élevée simplement parce que la majorité des dossiers ne sont
+effectivement pas risqués, sans avoir rien appris d''utile sur les cas réellement risqués. C''est précisément
+pour cette raison que la précision et le rappel, qui se concentrent sur la catégorie qui nous intéresse
+réellement (les dossiers risqués), apportent une information plus fine : ici, le modèle rate environ un
+cinquième des dossiers réellement risqués (cinq faux négatifs sur vingt-trois dossiers réellement
+risqués), ce qui est précisément le type d''erreur qu''aucune preuve formelle ne permettrait d''exclure a
+priori : seule l''évaluation empirique, répétée sur des données représentatives, permet de la quantifier.
+
+Visuel à montrer : la matrice de confusion projetée en tableau deux par deux, avec le calcul de chaque
+métrique détaillé à côté.
+
+Question à poser aux apprenants : si l''on réduisait le nombre de faux négatifs en acceptant davantage de
+faux positifs, quelles métriques évolueraient, et dans quel sens ?
+
+## 42:00 – 50:00 · Pause et quiz interactif
+
+Question 1 : qu''est-ce qui distingue fondamentalement l''apprentissage automatique d''une règle écrite
+explicitement ? Réponse : le modèle est ajusté automatiquement à partir d''exemples, sans qu''un humain
+n''écrive la règle de décision sous une forme explicite.
+
+Question 2 : qu''est-ce que le problème de la boîte noire ? Réponse : la difficulté à expliquer, de façon
+compréhensible par un humain, pourquoi un modèle complexe a produit telle prédiction pour telle entrée.
+
+Question 3 : dans notre exemple de cent dossiers, combien de dossiers étaient réellement risqués au
+total ? Réponse : vingt-trois, soit les dix-huit vrais positifs plus les cinq faux négatifs.
+
+Question 4 : pourquoi l''exactitude seule peut-elle être trompeuse ? Réponse : si les catégories sont
+déséquilibrées, un modèle qui prédit toujours la catégorie majoritaire peut obtenir une exactitude élevée
+sans avoir appris à détecter la catégorie minoritaire qui nous intéresse le plus.
+
+## 50:00 – 1:00:00 · Domaines d''application et succès reconnus
+
+L''apprentissage automatique excelle là où le courant précédent atteint ses limites : la reconnaissance
+vocale, la traduction automatique, la détection de fraude, le diagnostic assisté à partir d''images
+médicales, la recommandation de contenus. Dans tous ces cas, il serait extrêmement difficile d''écrire à
+la main une règle complète, alors qu''il est possible de rassembler des exemples représentatifs.
+
+Visuel à montrer : une liste illustrée des domaines cités.
+
+## 1:00:00 – 1:12:00 · Limites et critiques
+
+Quatre limites méritent d''être maîtrisées à l''oral. L''opacité et le risque d''erreurs non détectées sur
+des cas rares, puisque le modèle n''offre pas de preuve, seulement une performance moyenne mesurée. Le
+biais hérité des données, qui peut reproduire une inégalité historique sans qu''aucune instruction du code
+ne soit en cause. L''absence de garantie formelle, qui distingue radicalement ce courant du précédent : la
+confiance repose sur une évaluation empirique, nécessairement partielle. Enfin, la dépendance à la
+qualité et à la quantité des données disponibles, qui pose un problème particulier dans certains
+contextes où les données structurées restent rares.
+
+Question à poser aux apprenants : pourquoi un biais hérité des données est-il plus difficile à détecter
+qu''une erreur de programmation classique ?
+
+## 1:12:00 – 1:22:00 · Synthèse pour la soutenance
+
+Voici la synthèse que je vous propose de mémoriser, en vos propres mots : « L''apprentissage automatique
+construit un modèle statistique à partir d''exemples, grâce notamment aux travaux de Rosenblatt, Vapnik,
+Rumelhart et Hinton, pour traiter des problèmes sans spécification formelle possible. Il atteint des
+performances élevées, comme le montre un F1-score de soixante-quinze pour cent sur notre exemple chiffré,
+mais ne fournit, en général, aucune garantie de correction comparable à une preuve formelle, d''où
+l''importance croissante du champ de l''explicabilité. » Entraînez-vous à la restituer sans la réciter
+mécaniquement, et à l''articuler avec le courant précédent plutôt qu''à l''opposer frontalement.
+
+## 1:22:00 – 1:30:00 · Évaluation finale
+
+1. Qu''est-ce que l''apprentissage automatique, en une phrase ? Réponse : un ensemble de méthodes qui
+   permettent à un programme d''améliorer sa performance sur une tâche à partir d''exemples, sans règle de
+   décision écrite explicitement par un humain.
+2. Citez un auteur fondateur du perceptron et un auteur fondateur de la théorie de l''apprentissage
+   statistique. Réponse : Frank Rosenblatt pour le perceptron ; Vladimir Vapnik pour la théorie de
+   l''apprentissage statistique.
+3. Dans l''exemple chiffré de cette séance, que vaut la précision du modèle, et comment se calcule-t-elle ?
+   Réponse : soixante-douze pour cent, calculée en divisant les vrais positifs par la somme des vrais
+   positifs et des faux positifs, soit dix-huit divisé par vingt-cinq.
+4. Pourquoi l''exactitude seule ne suffit-elle pas à évaluer un modèle de classification ? Réponse : parce
+   qu''elle peut rester élevée même si le modèle échoue à détecter correctement la catégorie minoritaire,
+   en particulier quand les catégories sont déséquilibrées.
+5. Qu''est-ce que l''explicabilité cherche à résoudre ? Réponse : rendre compréhensible, pour un humain, la
+   raison pour laquelle un modèle complexe a produit telle prédiction, afin de détecter les erreurs et
+   d''établir la confiance dans le système.', 'video', 90, false, 70
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Vidéo 2 : l''apprentissage automatique, la boîte noire et l''explicabilité');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Vidéo 3 : les méthodes de recherche en Informatique', '## Fiche du cours vidéo
+
+Durée : 1h30. Objectifs : approfondir les trois méthodes de recherche du champ informatique (preuve
+formelle, expérimentation et benchmarking, étude empirique par fouille de dépôts logiciels), et savoir
+construire oralement un protocole de recherche cohérent. Matériel : tableau ou diaporama, le protocole
+fictif de la leçon écrite à projeter. Prérequis : avoir lu la leçon texte correspondante.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Dans cette troisième séance, nous quittons les courants théoriques pour nous concentrer sur un aspect
+souvent sous-estimé par les candidats : les méthodes de recherche elles-mêmes. Un jury doctoral attend
+de vous que vous sachiez non seulement ce que vous pensez étudier, mais comment vous allez l''étudier, et
+pourquoi cette méthode est la plus adaptée à votre question.
+
+Visuel à montrer : le plan de la séance.
+
+## 05:00 – 18:00 · La preuve formelle comme méthode
+
+Nous avons déjà vu la preuve formelle comme courant théorique ; voyons-la maintenant comme méthode de
+travail concrète du chercheur. Elle consiste à écrire une spécification précise, à construire un
+raisonnement déductif, manuel ou assisté par un outil logiciel, qui établit la conformité du système à
+cette spécification, puis à faire vérifier ce raisonnement, par un outil automatique ou par la
+communauté scientifique lors de la publication. La validité du résultat repose entièrement sur la
+rigueur de la déduction : une seule erreur dans un pas du raisonnement invalide la conclusion entière.
+C''est pourquoi la relecture d''une preuve, par soi-même ou par des pairs, est une étape aussi importante
+que sa construction.
+
+Question à poser aux apprenants : pourquoi une seule erreur dans un pas de raisonnement suffit-elle à
+invalider toute une preuve, alors qu''une erreur ponctuelle dans un grand jeu de données expérimentales
+n''invalide pas nécessairement toute une expérimentation ?
+
+Un point à ne pas négliger pour l''oral : la preuve formelle, en tant que méthode, se prête aussi
+aujourd''hui à des outils d''assistance, les démonstrateurs de théorèmes assistés par ordinateur, qui
+vérifient mécaniquement chaque pas du raisonnement humain. Cette assistance ne dispense pas le
+chercheur de concevoir la stratégie de preuve, mais elle réduit fortement le risque d''erreur de détail
+qui invaliderait l''ensemble, et elle facilite la relecture par les pairs lors de la publication, puisque
+l''outil peut rejouer automatiquement la vérification.
+
+## 18:00 – 32:00 · L''expérimentation et le benchmarking
+
+L''expérimentation consiste à mesurer, de façon contrôlée et reproductible, la performance d''un système
+sur des données ou des tâches représentatives. Le benchmarking compare plusieurs méthodes concurrentes
+sur un même protocole, pour déterminer laquelle est la plus rapide, la plus précise, ou la plus économe
+en ressources.
+
+Une expérimentation rigoureuse respecte plusieurs exigences : un jeu de données de test clairement
+défini, une séparation nette entre données d''apprentissage et données de test, une répétition des
+mesures pour tenir compte de la variabilité, et une description du protocole suffisamment précise pour
+qu''un autre chercheur puisse reproduire l''expérience de façon indépendante. Cette dernière exigence, la
+reproductibilité, est devenue un critère central d''évaluation scientifique en informatique : un résultat
+qui ne peut pas être reproduit reste fragile, quelle que soit la qualité apparente de l''article qui le
+présente.
+
+Visuel à montrer : un schéma du protocole expérimental type, données d''apprentissage séparées des
+données de test, répétition des mesures.
+
+Un piège fréquent, à signaler explicitement à l''oral : comparer deux méthodes sur des jeux de données
+différents, ou avec des conditions de mesure différentes (matériel, paramètres, prétraitement des
+données), rend le benchmarking non valide, même si chaque méthode, prise isolément, a été correctement
+évaluée. La comparabilité du protocole, et pas seulement sa rigueur interne à chaque méthode, conditionne
+la validité d''une conclusion de type « la méthode A est meilleure que la méthode B ».
+
+## 32:00 – 46:00 · L''étude empirique par fouille de dépôts logiciels
+
+La troisième méthode consiste à étudier empiriquement comment les logiciels sont réellement conçus et
+maintenus, en analysant à grande échelle les dépôts de code source et leur historique. Chaque
+modification, chaque correction de défaut, chaque discussion liée à un changement est conservée dans ces
+dépôts, constituant un matériau empirique considérable pour répondre à des questions que ni la preuve ni
+l''expérimentation contrôlée ne peuvent trancher seules : quels types d''erreurs reviennent le plus
+souvent dans la pratique ? Quelles pratiques de développement sont statistiquement associées à moins de
+défauts ?
+
+Cette méthode est observationnelle : le chercheur n''intervient pas sur le système étudié, il observe et
+analyse statistiquement des données déjà produites. Elle demande la même rigueur statistique que les
+méthodes empiriques des sciences sociales, en particulier la prudence sur la distinction entre
+corrélation observée et causalité établie.
+
+Question à poser aux apprenants : pourquoi la fouille de dépôts logiciels ne permet-elle pas, en général,
+d''établir seule une relation de cause à effet entre une pratique de développement et une réduction des
+défauts ?
+
+## 46:00 – 54:00 · Pause et quiz interactif
+
+Question 1 : quelle est la différence entre expérimentation contrôlée et étude empirique
+observationnelle ? Réponse : dans l''expérimentation contrôlée, le chercheur manipule certains facteurs
+pour en isoler l''effet ; dans l''étude observationnelle, il n''intervient pas et analyse des données déjà
+produites par l''activité réelle.
+
+Question 2 : qu''est-ce que la reproductibilité et pourquoi est-elle devenue un critère central ? Réponse :
+la possibilité, pour un autre chercheur, de reproduire une expérience avec le même protocole et d''obtenir
+un résultat cohérent ; elle garantit qu''un résultat ne provient pas d''un artefact particulier du jeu de
+test ou d''un choix de paramètres favorable.
+
+Question 3 : dans la preuve formelle, que se passe-t-il si une seule étape du raisonnement est fausse ?
+Réponse : la conclusion entière est invalidée, car la preuve est une chaîne déductive où chaque étape
+dépend de la validité de la précédente.
+
+Question 4 : qu''est-ce que le benchmarking ? Réponse : la comparaison de plusieurs méthodes concurrentes
+sur un même jeu de données ou un même protocole de test.
+
+## 54:00 – 1:08:00 · Le protocole de recherche illustratif, pas à pas
+
+Reprenons maintenant, pas à pas, le protocole fictif présenté dans la leçon écrite, car vous pourriez
+être interrogés sur votre capacité à construire un protocole similaire pour votre propre sujet. Une
+équipe doctorale sénégalaise souhaite étudier la fiabilité des applications mobiles de paiement utilisées
+par de petits commerçants sur plusieurs marchés de Dakar. La question de recherche est précise : les
+défauts les plus fréquents relèvent-ils de la logique métier ou de la gestion des pannes réseau propres
+au contexte local ?
+
+La première méthode mobilisée est la fouille de dépôts : analyser l''historique de développement
+d''applications open source comparables, en classant chaque correction de défaut selon sa catégorie, pour
+obtenir une répartition empirique des types de défauts. La seconde méthode est l''expérimentation
+contrôlée : soumettre les applications, en environnement de test, à des scénarios simulant des coupures
+réseau répétées, et mesurer le taux d''erreurs observées comparé à un scénario de réseau stable.
+L''articulation des deux méthodes est essentielle : la fouille de dépôts indique ce qui a historiquement
+posé problème en conditions réelles, l''expérimentation contrôlée vérifie, dans un cadre maîtrisé, si
+l''hypothèse qui en découle se confirme de façon mesurable. Enfin, la limite du protocole doit être
+assumée explicitement : un échantillon fictif ou restreint ne permettrait pas de généraliser la
+conclusion à l''ensemble de l''écosystème des paiements mobiles ouest-africains.
+
+Visuel à montrer : le protocole en quatre blocs, question, méthode 1, méthode 2, articulation et limite.
+
+## 1:08:00 – 1:22:00 · Synthèse pour la soutenance
+
+La synthèse que je vous propose : « Les trois méthodes du champ, preuve formelle, expérimentation et
+benchmarking, étude empirique par fouille de dépôts, répondent à des questions complémentaires plutôt que
+concurrentes. Un protocole de recherche solide, comme celui construit sur les applications de paiement
+mobile, articule souvent plusieurs méthodes et assume explicitement ses limites plutôt que de
+généraliser abusivement un résultat partiel. » Entraînez-vous à construire, pour votre propre sujet de
+thèse, un protocole similaire, en quatre blocs : question, méthode principale, méthode complémentaire,
+limite assumée.
+
+## 1:22:00 – 1:30:00 · Évaluation finale
+
+1. Quelles sont les trois méthodes de recherche propres au champ informatique étudiées dans cette
+   séance ? Réponse : la preuve formelle, l''expérimentation et le benchmarking, et l''étude empirique par
+   fouille de dépôts logiciels.
+2. Pourquoi la reproductibilité est-elle un critère central en recherche expérimentale informatique ?
+   Réponse : parce qu''un résultat non reproductible reste fragile scientifiquement, pouvant provenir d''un
+   artefact du jeu de test ou d''un choix de paramètres favorable plutôt que d''un effet réel et général.
+3. Qu''est-ce qui distingue une méthode observationnelle d''une méthode expérimentale contrôlée ? Réponse :
+   dans la méthode observationnelle, le chercheur n''intervient pas sur le système étudié ; dans la méthode
+   expérimentale, il manipule certains facteurs pour en isoler l''effet.
+4. Dans le protocole illustratif sur les applications de paiement mobile, quelle méthode permettrait de
+   vérifier, en conditions maîtrisées, une hypothèse issue de la fouille de dépôts ? Réponse :
+   l''expérimentation contrôlée, en soumettant les applications à des scénarios de coupures réseau simulées.
+5. Pourquoi faut-il toujours assumer explicitement les limites d''un protocole de recherche ? Réponse :
+   parce qu''un échantillon restreint ou un contexte particulier ne permet pas, en général, de généraliser
+   une conclusion à l''ensemble d''une population ou d''un écosystème sans étude complémentaire à plus
+   grande échelle.', 'video', 90, false, 80
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Vidéo 3 : les méthodes de recherche en Informatique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Vidéo 4 : épreuve type d''examen de qualification en Informatique', '## Fiche du cours vidéo
+
+Durée : 1h30. Objectifs : s''entraîner à construire, à l''oral et en temps limité, une réponse complète à
+une question de synthèse type, en mobilisant les deux courants théoriques et les méthodes de recherche
+étudiés dans les séances précédentes. Matériel : tableau ou diaporama, un chronomètre pour l''entraînement
+oral. Prérequis : avoir visionné les trois vidéos précédentes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Dans cette quatrième séance, nous allons nous entraîner directement sur une question de synthèse type,
+du genre de celles qui peuvent être posées à l''écrit ou à l''oral lors de l''examen de qualification.
+L''objectif n''est pas de mémoriser une réponse par cœur, mais de s''entraîner à construire, en temps
+limité, un raisonnement structuré qui mobilise plusieurs courants et plusieurs méthodes à la fois.
+
+Visuel à montrer : la question de synthèse projetée en entier.
+
+## 05:00 – 12:00 · Présentation de la question et analyse
+
+Voici la question : « Dans quelle mesure la distinction entre systèmes dont le comportement peut être
+garanti par la preuve formelle et systèmes dont le comportement ne peut être évalué que de façon
+empirique constitue-t-elle une limite théorique fondamentale de l''informatique, plutôt qu''une simple
+difficulté pratique actuelle ? Vous illustrerez votre réponse par des exemples chiffrés. »
+
+Cette question attend trois mouvements : définir précisément les termes, discuter la nature de la limite
+évoquée, théorique ou pratique, et illustrer par des exemples vérifiables. Prenez quelques secondes pour
+identifier, mentalement, les mots clés de la question avant que nous ne construisions la réponse ensemble.
+
+## 12:00 – 26:00 · Partie 1, la limite théorique réelle, avec l''exemple de la recherche dans une liste
+
+La théorie de la calculabilité, fondée par Turing, établit qu''il existe des problèmes pour lesquels aucun
+programme ne peut, en toute généralité, décider correctement : le problème de l''arrêt en est l''exemple
+fondateur, et ceci n''est pas une limite de nos outils actuels, mais une impossibilité démontrée
+mathématiquement. La théorie de la complexité montre, de son côté, que certains problèmes calculables en
+principe demandent un temps de calcul qui croît si rapidement avec la taille de l''entrée qu''aucune
+machine ne pourrait les résoudre exactement à grande échelle.
+
+Illustrons cela par un exemple vérifié et facile à retenir. Une recherche dans une liste non triée de
+mille éléments demande, dans le pire cas, mille comparaisons : c''est une complexité dite linéaire,
+puisque le nombre d''opérations croît proportionnellement à la taille de la liste. Une recherche dans une
+liste triée de même taille, par recherche binaire, qui compare toujours l''élément du milieu et élimine
+la moitié des possibilités restantes à chaque étape, n''en demande que dix. Pour un million d''éléments,
+l''écart se creuse spectaculairement : un million de comparaisons dans le pire cas pour la recherche
+linéaire, contre seulement vingt pour la recherche binaire. Cet écart n''est pas un détail
+d''implémentation : il illustre une différence de nature dans la façon dont le nombre d''opérations
+nécessaires croît avec la taille du problème, ce qui est un résultat théorique vérifiable, pas une
+estimation approximative.
+
+Visuel à montrer : un tableau avec les quatre tailles de liste (mille, dix mille, cent mille, un million)
+et, pour chacune, le nombre de comparaisons en recherche linéaire contre recherche binaire.
+
+Question à poser aux apprenants : pourquoi l''écart entre les deux méthodes de recherche se creuse-t-il
+davantage pour de grandes tailles de liste que pour de petites tailles ?
+
+## 26:00 – 40:00 · Partie 2, la limite pratique, avec l''exemple de la matrice de confusion
+
+En revanche, la distinction entre « garanti par la preuve » et « évalué empiriquement » relève, pour une
+grande partie des systèmes courants, d''une difficulté pratique plutôt que d''une impossibilité théorique :
+il est souvent possible, en principe, d''écrire une spécification formelle, mais le coût humain et
+calculatoire de la preuve la rend irréaliste à l''échelle de la majorité des logiciels. C''est précisément
+ce qui explique le succès pratique des heuristiques de l''apprentissage automatique.
+
+Reprenons l''exemple chiffré de la vidéo précédente : sur cent dossiers de crédit fictifs évalués par un
+modèle statistique, avec dix-huit vrais positifs, sept faux positifs, cinq faux négatifs et soixante-dix
+vrais négatifs, l''exactitude atteint quatre-vingt-huit pour cent, la précision soixante-douze pour cent,
+le rappel environ soixante-dix-huit pour cent, et le F1-score soixante-quinze pour cent. Ces chiffres
+montrent une performance globale élevée, mais aussi des erreurs résiduelles, douze dossiers mal classés
+sur cent, qu''aucune preuve formelle ne vient garantir absentes : la confiance dans le système repose sur
+cette évaluation statistique, répétée et reproductible, pas sur une démonstration mathématique
+universelle.
+
+Visuel à montrer : la matrice de confusion et ses quatre métriques, déjà vue en vidéo 2, reprise ici pour
+l''articuler avec la question de synthèse.
+
+Question à poser aux apprenants : en quoi cet exemple illustre-t-il une limite « pratique » plutôt que
+« théorique » ?
+
+## 40:00 – 48:00 · Pause et quiz interactif
+
+Question 1 : le problème de l''arrêt illustre-t-il une limite théorique ou pratique ? Réponse : une
+limite théorique, démontrée mathématiquement, qui ne disparaîtra jamais quels que soient les progrès
+futurs.
+
+Question 2 : combien de comparaisons la recherche binaire nécessite-t-elle, dans le pire cas, pour une
+liste triée d''un million d''éléments ? Réponse : vingt comparaisons.
+
+Question 3 : pourquoi le coût de la preuve formelle constitue-t-il une limite pratique et non une
+impossibilité théorique ? Réponse : parce qu''il est souvent possible, en principe, d''écrire une
+spécification et de construire une preuve, mais le coût humain et calculatoire rend cette démarche
+irréaliste à grande échelle pour la majorité des logiciels actuels.
+
+Question 4 : que signifie un F1-score de soixante-quinze pour cent dans notre exemple de matrice de
+confusion ? Réponse : un équilibre correct, mais non parfait, entre précision et rappel, qui laisse
+subsister une proportion significative d''erreurs que seule une évaluation empirique permet de quantifier.
+
+## 48:00 – 1:02:00 · Partie 3, l''articulation par les méthodes de recherche
+
+La preuve formelle reste la méthode de référence quand une spécification complète existe et qu''une
+erreur est inacceptable. L''expérimentation et le benchmarking permettent de mesurer, de façon rigoureuse
+et reproductible, la performance d''un système d''apprentissage sur des données représentatives, comme
+dans notre exemple chiffré. L''étude empirique par fouille de dépôts logiciels permet d''observer, à
+grande échelle, où et pourquoi les systèmes réels échouent en pratique, qu''ils relèvent de l''un ou
+l''autre courant, nourrissant en retour la recherche théorique elle-même.
+
+Entraînons-nous maintenant, ensemble, à relier ces trois méthodes à la question initiale en une seule
+phrase de transition : « Ainsi, la preuve formelle documente la limite théorique au sens strict, tandis
+que l''expérimentation et l''étude empirique documentent, chiffres à l''appui, l''ampleur réelle de la
+limite pratique actuelle. » Essayez de reformuler cette phrase de transition avec vos propres mots, en
+veillant à ne jamais présenter l''un des deux courants comme simplement supérieur à l''autre : le jury
+sanctionne systématiquement ce type de raccourci, qui ignore que chaque courant répond à un type de
+problème différent plutôt qu''à concurrencer directement l''autre sur le même terrain.
+
+## 1:02:00 – 1:22:00 · Entraînement oral chronométré
+
+Prenez maintenant trois minutes, chronomètre en main, pour restituer oralement le plan complet de
+réponse : introduction, partie 1 sur la limite théorique avec l''exemple de la recherche binaire, partie 2
+sur la limite pratique avec l''exemple de la matrice de confusion, partie 3 sur l''articulation par les
+méthodes de recherche, conclusion. Ne cherchez pas à tout dire en détail : l''objectif est de tenir le fil
+du raisonnement dans le temps imparti, comme vous devrez le faire devant un jury. Recommencez l''exercice
+une seconde fois en essayant d''améliorer la fluidité de la transition entre les parties.
+
+## 1:22:00 – 1:30:00 · Évaluation finale
+
+1. Quelle est la différence entre une limite théorique et une limite pratique en informatique ? Réponse :
+   une limite théorique reste vraie quels que soient les progrès futurs, car elle est démontrée
+   mathématiquement ; une limite pratique peut reculer avec le temps, car elle dépend des moyens
+   disponibles.
+2. Pourquoi le problème de l''arrêt est-il un exemple fondateur de limite théorique ? Réponse : parce
+   qu''il a été démontré qu''aucun algorithme ne peut décider, dans tous les cas, si un programme donné
+   s''arrêtera, ce qui est une impossibilité logique définitive et non un manque de puissance de calcul.
+3. Dans l''exemple vérifié de cette séance, combien de comparaisons la recherche linéaire nécessite-t-elle
+   dans le pire cas pour une liste de cent mille éléments ? Réponse : cent mille comparaisons.
+4. Que vaut le rappel dans l''exemple de la matrice de confusion utilisée dans cette séance, et comment se
+   calcule-t-il ? Réponse : environ soixante-dix-huit pour cent, calculé en divisant les vrais positifs
+   par la somme des vrais positifs et des faux négatifs, soit dix-huit divisé par vingt-trois.
+5. Pourquoi une bonne réponse de synthèse doit-elle articuler plusieurs méthodes de recherche plutôt que
+   n''en défendre qu''une seule ? Réponse : parce que les méthodes répondent à des questions complémentaires
+   (preuve pour la garantie universelle, expérimentation pour la performance mesurée, étude empirique
+   pour la réalité observée à grande échelle), et qu''un jury valorise la capacité à les articuler plutôt
+   qu''à opposer les courants de façon caricaturale.', 'video', 90, false, 90
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Vidéo 4 : épreuve type d''examen de qualification en Informatique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Vidéo 5 : simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
+
+Durée : 1h30. Objectifs : vivre, en conditions proches du réel, une simulation complète de soutenance de
+qualification doctorale en Informatique, de la présentation du champ et d''un projet de thèse fictif aux
+questions de jury. Matériel : tableau ou diaporama, chronomètre pour respecter le temps de présentation.
+Prérequis : avoir visionné les quatre vidéos précédentes et relu la note de synthèse personnelle construite
+au fil du cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et consignes de la simulation
+
+Bienvenue dans cette cinquième et dernière vidéo, consacrée à la simulation complète d''une soutenance.
+Nous allons procéder en deux temps : d''abord une présentation de quinze minutes du champ et d''un projet
+de thèse fictif, puis une séquence de questions de jury type, avec, pour chacune, la structure d''une
+bonne réponse. Gardez à l''esprit que l''objectif n''est pas de mémoriser ce projet fictif, mais d''observer
+la méthode de présentation et de réponse pour la transposer à votre propre sujet.
+
+## 05:00 – 20:00 · Présentation de quinze minutes : le champ et le projet de thèse fictif
+
+Voici la présentation telle qu''un candidat pourrait la dérouler devant un jury. « Mesdames et Messieurs
+les membres du jury, mon travail de thèse se situe à l''intersection de deux courants théoriques majeurs
+de l''informatique. Le premier, l''ingénierie logicielle fondée sur la preuve, hérité des travaux de
+Turing, Floyd, Hoare et Dijkstra, garantit mathématiquement la conformité d''un programme à sa
+spécification. Le second, l''apprentissage automatique, hérité des travaux de Rosenblatt puis de la
+théorie de l''apprentissage statistique de Vapnik et des avancées de l''apprentissage profond, construit
+des modèles statistiques performants à partir de données, sans spécification explicite complète.
+
+Mon projet de thèse fictif porte sur la fiabilité des systèmes d''aide à la décision de crédit dans le
+secteur de la microfinance en Afrique de l''Ouest, des systèmes qui combinent de plus en plus souvent un
+modèle d''apprentissage automatique pour l''évaluation du risque et des règles métier classiques pour les
+contraintes réglementaires. Ma question de recherche est la suivante : comment concevoir une
+architecture qui combine la garantie formelle, là où la réglementation l''exige de façon stricte, et la
+performance statistique de l''apprentissage, là où la complexité du risque réel ne se prête à aucune règle
+simple et exhaustive ?
+
+Ma méthodologie s''appuiera sur trois piliers méthodologiques déjà développés dans ce cours : premièrement,
+une preuve formelle des règles réglementaires non négociables du système, afin de garantir qu''aucune
+décision ne puisse les enfreindre, quelle que soit la sortie du modèle statistique ; deuxièmement, un
+protocole de benchmarking rigoureux et reproductible pour comparer plusieurs modèles de scoring sur un
+même jeu de données représentatif, avec des métriques de classification clairement définies ;
+troisièmement, une étude empirique par fouille de dépôts, portant sur des systèmes open source
+comparables, pour identifier les types d''erreurs les plus fréquents en conditions réelles de déploiement.
+Ce travail se positionne ainsi non pas comme un choix entre les deux grands courants du champ, mais
+comme une étude de leur articulation concrète dans un contexte où les deux sont simultanément
+nécessaires. Je vous remercie de votre attention et me tiens à votre disposition pour vos questions. »
+
+Visuel à montrer : le plan de la présentation en quatre blocs (courants théoriques, projet, question de
+recherche, méthodologie), projeté pendant tout l''exposé.
+
+## 20:00 – 28:00 · Première série de questions de jury (1 à 3)
+
+Question de jury 1 : « Pourquoi ne pas simplement tout prouver formellement, puisque vous travaillez
+dans un secteur réglementé ? » Structure d''une bonne réponse : rappeler que la preuve formelle s''applique
+efficacement aux règles réglementaires, dont la spécification est connue et stable, mais que l''évaluation
+fine du risque de crédit, qui dépend de facteurs multiples et évolutifs, n''admet pas de spécification
+exacte et complète, ce qui justifie l''architecture mixte proposée plutôt qu''une preuve totale.
+
+Question de jury 2 : « Comment allez-vous garantir que votre benchmarking est valide et reproductible ? »
+Structure d''une bonne réponse : préciser la séparation entre données d''apprentissage et données de test,
+la description complète du protocole pour permettre une réplication indépendante, et la répétition des
+mesures pour tenir compte de la variabilité.
+
+Question de jury 3 : « Quelle métrique privilégierez-vous pour évaluer vos modèles de scoring, et
+pourquoi pas seulement l''exactitude ? » Structure d''une bonne réponse : expliquer que l''exactitude seule
+peut être trompeuse en cas de déséquilibre entre bons et mauvais payeurs, et qu''une analyse combinant
+précision, rappel et F1-score donne une vision plus fine des erreurs réellement commises par le modèle.
+
+## 28:00 – 36:00 · Deuxième série de questions de jury (4 à 6)
+
+Question de jury 4 : « Votre fouille de dépôts logiciels porte sur des systèmes open source : en quoi
+cela reste-t-il pertinent pour des systèmes commerciaux souvent fermés ? » Structure d''une bonne
+réponse : reconnaître honnêtement la limite de représentativité de l''échantillon, tout en expliquant que
+cette analyse permet de formuler des hypothèses sur les types d''erreurs à surveiller, hypothèses qui
+pourront ensuite être testées, si l''accès est négocié, sur des systèmes commerciaux comparables.
+
+Question de jury 5 : « Comment réagiriez-vous si votre modèle d''apprentissage se révélait biaisé envers
+certaines catégories de demandeurs ? » Structure d''une bonne réponse : expliquer que ce risque, inhérent
+à l''apprentissage automatique, justifie précisément un contrôle a posteriori par des règles formellement
+vérifiées, et un suivi empirique régulier des métriques de classification par sous-catégorie, pas
+seulement sur la population globale.
+
+Question de jury 6 : « En quoi votre travail apporte-t-il quelque chose de nouveau par rapport à la
+littérature existante sur le scoring de crédit ? » Structure d''une bonne réponse : situer précisément
+l''apport du travail par rapport à l''état de l''art déjà présenté dans les quatre premières vidéos,
+notamment en insistant sur l''articulation méthodologique entre preuve et apprentissage, plutôt que sur
+une performance statistique isolée.
+
+## 36:00 – 44:00 · Pause et quiz interactif
+
+Question 1 : dans le projet de thèse fictif, quelle partie du système relève de la preuve formelle, et
+laquelle relève de l''apprentissage automatique ? Réponse : les règles réglementaires non négociables
+relèvent de la preuve formelle ; l''évaluation fine du risque de crédit relève de l''apprentissage
+automatique.
+
+Question 2 : pourquoi le candidat ne privilégie-t-il pas uniquement l''exactitude pour évaluer ses
+modèles ? Réponse : parce qu''elle peut être trompeuse en cas de déséquilibre entre catégories, masquant
+des erreurs importantes sur la catégorie minoritaire.
+
+Question 3 : quelle méthode de recherche permet d''identifier, en amont, les types d''erreurs fréquentes
+en conditions réelles ? Réponse : l''étude empirique par fouille de dépôts logiciels.
+
+## 44:00 – 1:02:00 · Troisième série de questions de jury (7 à 10), les questions les plus difficiles
+
+Question de jury 7 : « Votre architecture mixte n''est-elle pas simplement un compromis qui affaiblit les
+deux approches plutôt que de les renforcer ? » Structure d''une bonne réponse : réfuter la prémisse en
+montrant que chaque composant de l''architecture conserve ses propriétés propres dans son domaine
+d''application (garantie formelle sur les règles réglementaires, performance statistique sur
+l''évaluation du risque), sans que l''un n''affaiblisse l''autre ; le compromis porterait seulement sur la
+complexité de conception du système global.
+
+Question de jury 8 : « Comment traiteriez-vous le cas où votre preuve formelle et votre modèle
+statistique entreraient en conflit sur une décision ? » Structure d''une bonne réponse : préciser
+explicitement une règle de priorité conçue dès la spécification du système (par exemple, la règle
+formellement prouvée prévaut toujours sur la sortie du modèle statistique lorsqu''elles sont en désaccord
+sur une contrainte réglementaire), plutôt que de laisser cette situation ambiguë.
+
+Question de jury 9 : « Quelle est la limite la plus sérieuse de votre méthodologie, selon vous-même ? »
+Structure d''une bonne réponse : identifier honnêtement une limite réelle, par exemple la représentativité
+incertaine de l''échantillon de fouille de dépôts, plutôt que de minimiser systématiquement toute
+objection ; un jury valorise fortement l''autocritique argumentée.
+
+Question de jury 10 : « En une phrase, pourquoi votre travail mérite-t-il d''être poursuivi jusqu''à la
+thèse ? » Structure d''une bonne réponse : une phrase de synthèse qui relie explicitement la question de
+recherche, l''originalité méthodologique et l''enjeu pratique, sans emphase ni généralisation non étayée.
+
+## 1:02:00 – 1:30:00 · Synthèse finale et grille d''auto-évaluation de la soutenance simulée
+
+Cette dernière séquence remplace l''évaluation habituelle à cinq questions par une grille d''auto-évaluation,
+que vous pourrez réutiliser après chacun de vos propres entraînements à la soutenance. Pour chacun des
+six critères suivants, notez-vous de façon honnête sur une échelle de 1 (insuffisant) à 4 (excellent), et
+notez une action concrète d''amélioration si le score est inférieur à 3.
+
+- Clarté de la présentation du champ : avez-vous su présenter les deux grands courants théoriques sans
+  les caricaturer, en quinze minutes maîtrisées ?
+- Précision des auteurs fondateurs : avez-vous cité les contributions des auteurs par leur apport réel,
+  sans citation textuelle inventée ni erreur factuelle ?
+- Rigueur des exemples chiffrés : vos exemples numériques (complexité algorithmique, métriques de
+  classification) étaient-ils exacts et correctement interprétés ?
+- Articulation méthodologique : avez-vous su relier votre projet de thèse à plusieurs méthodes de
+  recherche (preuve, expérimentation, étude empirique) plutôt qu''à une seule ?
+- Qualité des réponses aux questions de jury : avez-vous répondu directement à la question posée, en
+  reconnaissant les limites de votre travail plutôt qu''en les évitant ?
+- Gestion du temps et de l''oral : avez-vous respecté le temps imparti pour la présentation, et gardé un
+  débit de parole clair et posé pendant les questions ?
+
+Pour conclure ce cours, rappelez-vous que l''examen de qualification ne récompense pas la perfection, mais
+la solidité d''un raisonnement capable de situer un projet de thèse dans la littérature existante, d''en
+reconnaître les limites, et de le défendre avec rigueur devant des pairs exigeants. Bonne préparation à
+votre propre soutenance.', 'video', 90, false, 100
+from public.courses c where c.slug = 'doc-info'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Vidéo 5 : simulation complète d''une soutenance de qualification doctorale');
 
 -- Cours : Doctorat Contrôle de gestion : réussir l'examen de qualification doctorale
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1287,552 +2760,3 @@ Critère huit : réalisme et honnêteté du calendrier de thèse présenté, ave
 Additionnez vos points sur ces huit critères. Un score élevé indique une préparation solide ; un score faible sur un critère précis indique exactement où concentrer votre travail dans les jours qui précèdent votre soutenance réelle. Ce cours se termine ici : vous disposez maintenant des deux courants théoriques du champ, des méthodes de recherche propres à la comptabilité, d''un exemple complet d''épreuve type, et d''une simulation entière de soutenance. La suite du travail vous appartient : répétez, faites-vous challenger par des pairs ou par votre directeur de thèse, et présentez-vous à l''épreuve avec la même honnêteté critique que celle démontrée par le candidat fictif de cette séance.', 'video', 90, false, 100
 from public.courses c where c.slug = 'doc-compta'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');
-
--- Cours : Doctorat Finance : préparer l'examen de qualification doctorale
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'doc-fin', (select id from public.levels where name = 'Doctorat'), null, 'Finance', 'Doctorat Finance : préparer l''examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale en Finance : hypothèse d''efficience des marchés face à la finance comportementale, théorème de Modigliani-Miller et ses extensions sur la structure de financement, méthodes de recherche du champ (études d''événements, économétrie financière, enquêtes de dirigeants) et application critique aux marchés financiers en développement d''Afrique de l''Ouest. Public : doctorants en finance préparant leur soutenance de qualification. Prérequis : Master en finance ou en gestion financière.', true, 806
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir son examen de qualification doctorale en Finance', 'La thèse de doctorat en finance se prépare par étapes, et l''une des premières, souvent la plus redoutée, est l''examen de qualification doctorale (comprehensive exam). Cette leçon pose le cadre de cette épreuve et donne une méthode de travail pour s''y préparer sur plusieurs semaines, avant d''entrer dans le détail des courants théoriques et des méthodes propres au champ de la finance.
-
-## Nature de l''épreuve
-
-L''examen de qualification n''est pas un examen de cours comme en Master : il vérifie que le doctorant maîtrise l''état de l''art de la discipline financière, qu''il est capable de situer n''importe quelle question dans les grands débats théoriques (efficience des marchés, structure de financement, gouvernance, risque), et qu''il peut déjà esquisser une problématique de thèse cohérente avec cette littérature. Trois formats se combinent, selon les établissements : une épreuve écrite de synthèse (répondre à une ou plusieurs questions larges du champ, en mobilisant plusieurs courants et auteurs), une soutenance orale devant un jury de 3 à 5 enseignants-chercheurs, et la défense d''un pré-projet de thèse (problématique, revue de littérature initiale, méthode envisagée). Le jury n''attend pas une récitation de cours : il juge la capacité à comparer des cadres théoriques concurrents (par exemple l''hypothèse d''efficience des marchés face à la finance comportementale), à discuter leurs limites empiriques, et à argumenter pourquoi telle méthode de recherche convient à telle question.
-
-## Attentes d''un jury doctoral en finance
-
-Un jury de qualification en finance évalue généralement cinq points : la maîtrise des grands courants théoriques et de leur généalogie (qui a proposé quoi, et pourquoi, sans réciter des citations exactes non vérifiées) ; la capacité à articuler théorie et méthode (quelle méthode d''investigation permet de tester telle hypothèse théorique) ; l''esprit critique (savoir citer les limites d''un courant, les anomalies empiriques qui le contestent, les extensions qui l''ont enrichi) ; la capacité à transposer une théorie construite sur des marchés financiers profonds (Bourses de New York, Paris, Londres) à un contexte de marché financier peu profond, comme celui de l''Afrique de l''Ouest (BRVM) ; et enfin la clarté de l''expression, à l''écrit comme à l''oral, qui est elle-même jugée comme une compétence de chercheur.
-
-## Méthode de travail recommandée
-
-Trois outils structurent une préparation efficace. D''abord, la fiche de lecture : pour chaque article ou ouvrage fondateur, noter en une page la question posée, l''hypothèse testée, la méthode employée, le résultat principal et sa limite ; cette fiche doit pouvoir se relire en moins de deux minutes la veille de l''oral. Ensuite, la cartographie des courants : un schéma (sur une feuille ou un tableau) qui place chaque courant théorique en vis-à-vis de ceux qui le prolongent ou le contestent, avec les dates approximatives et les grandes idées, pas les équations complètes. Enfin, la note de synthèse : un document de quelques pages qui résume, pour chaque grand débat du programme (ici : efficience des marchés contre finance comportementale ; structure de financement et théorème de Modigliani-Miller), les positions en présence, les preuves empiriques de part et d''autre, et une appréciation personnelle argumentée — c''est cette capacité à prendre position avec nuance qui distingue un candidat brillant d''un candidat qui récite.
-
-## Plan de travail sur 8 semaines
-
-Une préparation réaliste s''étale sur huit semaines, avec un rythme hebdomadaire tenable pour un doctorant qui avance aussi sur sa thèse.
-
-- Semaines 1-2 : relecture des bases de la théorie financière (valeur, risque, rendement, marchés) et premières fiches de lecture sur l''hypothèse d''efficience des marchés.
-- Semaines 3-4 : approfondissement de la finance comportementale et des anomalies de marché ; début de la cartographie comparant les deux courants.
-- Semaines 5-6 : théorème de Modigliani-Miller et ses extensions (fiscalité, coûts de faillite, asymétrie d''information) ; lecture sur les marchés financiers en développement (cas de la BRVM en Afrique de l''Ouest).
-- Semaine 7 : méthodes de recherche en finance (études d''événements, modélisation économétrique de séries financières, enquêtes auprès de dirigeants financiers) ; rédaction des notes de synthèse.
-- Semaine 8 : simulation d''oral avec un collègue ou un encadrant, révision des fiches, relecture du pré-projet de thèse.
-
-## Points clés à retenir
-
-- L''examen de qualification teste la maîtrise du champ, pas la restitution d''un cours : il faut comparer, critiquer, articuler théorie et méthode.
-- Trois outils de travail : fiche de lecture, cartographie des courants, note de synthèse.
-- La préparation se répartit sur 8 semaines, avec une place centrale pour la confrontation efficience/finance comportementale et pour le débat sur la structure de financement.
-- Toujours savoir transposer un cadre théorique construit sur des marchés développés à un contexte de marché financier en développement, comme celui de l''Afrique de l''Ouest.
-
-## Exercices pratiques
-
-1. Rédigez en une page la fiche de lecture type que vous utiliseriez pour un article fondateur de l''hypothèse d''efficience des marchés (sans citer le contenu exact de l''article, en décrivant la structure attendue de votre fiche).
-2. Construisez le squelette d''une cartographie des courants opposant l''hypothèse d''efficience des marchés et la finance comportementale : quelles entrées (auteurs, dates, idées, critiques) feriez-vous figurer ?
-3. Proposez un plan de travail hebdomadaire alternatif sur 8 semaines si vous disposiez de deux fois moins de temps (4 semaines) : que garderiez-vous, que sacrifieriez-vous ?
-4. Un jury vous demande : « Pourquoi la finance comportementale ne remplace-t-elle pas simplement l''hypothèse d''efficience des marchés ? » Esquissez en 10 lignes les grandes lignes d''une réponse nuancée.
-5. Expliquez en quoi la défense d''un pré-projet de thèse diffère d''une restitution de cours de Master en finance d''entreprise.
-
-## Corrigé
-
-1. Une fiche de lecture de qualification doit comporter : la question de recherche posée par l''article, l''hypothèse testée, le contexte de marché étudié (pays, période, type d''actifs), la méthode empirique utilisée, le résultat principal reformulé avec ses propres mots, et une limite ou une critique identifiée dans la littérature postérieure. Elle ne doit jamais comporter de citation textuelle exacte non vérifiée, mais une reformulation fidèle de l''apport.
-
-2. Une cartographie utile distingue au moins quatre colonnes : la période approximative d''émergence de l''idée, les grandes hypothèses du courant (marchés efficients : prix reflètent toute l''information disponible ; finance comportementale : biais cognitifs des investisseurs, anomalies de marché), les preuves empiriques mobilisées de part et d''autre, et les prolongements ou critiques qui relient les deux courants (par exemple les modèles qui intègrent des agents partiellement rationnels).
-
-3. Avec 4 semaines, il faut fusionner les étapes : semaine 1 pour les deux courants théoriques en parallèle (efficience et finance comportementale), semaine 2 pour Modigliani-Miller et ses extensions avec le contexte des marchés en développement, semaine 3 pour les méthodes de recherche condensées, semaine 4 pour la simulation d''oral et la révision. On sacrifie la profondeur de lecture (moins d''articles par courant) mais on conserve la structure comparative, qui est ce que le jury évalue réellement.
-
-4. Une réponse nuancée rappellerait que l''hypothèse d''efficience des marchés reste un point de référence utile (elle explique pourquoi il est difficile de « battre le marché » de façon régulière), que la finance comportementale documente des anomalies récurrentes (sous-réaction ou surréaction à l''information, biais de confiance excessive) sans pour autant proposer un cadre prédictif unifié aussi simple, et que la recherche actuelle tend à combiner les deux approches plutôt qu''à les opposer frontalement : les marchés seraient efficients « en moyenne » avec des écarts transitoires exploitables sous certaines conditions.
-
-5. En Master, l''étudiant résout un cas d''entreprise avec les outils déjà établis du champ (il applique une méthode connue à une situation donnée). En doctorat, le pré-projet de thèse doit identifier un vide ou une tension dans la littérature existante (par exemple : la théorie de Modigliani-Miller a-t-elle été testée sur un marché financier peu profond comme celui de l''Afrique de l''Ouest ?), formuler une question de recherche originale, et proposer une méthode pour y répondre — l''enjeu n''est plus d''appliquer un savoir mais d''en produire.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en Finance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique 1 : l''hypothèse d''efficience des marchés face à la finance comportementale', 'Le premier grand débat du programme oppose deux visions de la formation des prix sur les marchés financiers : l''hypothèse d''efficience des marchés, qui postule une intégration rapide et complète de l''information dans les cours, et la finance comportementale, qui documente des biais systématiques des investisseurs et des anomalies persistantes. Comprendre ce débat, ses auteurs fondateurs et ses limites est un passage obligé de tout examen de qualification en finance.
-
-## L''hypothèse d''efficience des marchés
-
-L''hypothèse d''efficience des marchés (Efficient Market Hypothesis, EMH) soutient que les prix des actifs financiers reflètent, à chaque instant, toute l''information disponible sur leur valeur fondamentale. Le cadre le plus connu a été formalisé par Eugene Fama, qui distingue trois formes d''efficience : la forme faible (les prix intègrent toute l''information contenue dans les cours passés, ce qui rend l''analyse technique vaine pour générer un profit régulier) ; la forme semi-forte (les prix intègrent aussi toute l''information publique disponible, ce qui rend l''analyse fondamentale classique peu utile pour « battre le marché ») ; et la forme forte (les prix intègrent même l''information privée, y compris celle des initiés, ce qui est la version la plus contestée empiriquement). L''implication centrale de l''EMH est qu''il devient très difficile, sur la durée, d''obtenir un rendement ajusté au risque systématiquement supérieur à celui du marché, sauf à détenir une information non encore intégrée aux prix.
-
-## Les fondements théoriques de l''efficience
-
-L''EMH repose sur l''idée que les investisseurs sont globalement rationnels et que, même si certains se trompent, leurs erreurs s''annulent en moyenne et sont corrigées par l''arbitrage : si un titre est mal évalué, des investisseurs informés profitent de l''écart jusqu''à ce que le prix revienne à sa valeur fondamentale. Cette hypothèse s''articule avec la marche aléatoire des cours (random walk), observée empiriquement sur de nombreux marchés développés : les variations de prix d''un jour sur l''autre ne sont pas prévisibles à partir des variations passées. L''EMH a longtemps structuré la gestion de portefeuille (avec le développement de la gestion indicielle, qui part du principe qu''il est difficile de surperformer le marché de façon régulière) et la réglementation financière (qui mise sur la diffusion rapide de l''information pour protéger les investisseurs).
-
-## La finance comportementale : biais cognitifs des investisseurs
-
-À partir des années 1980-1990, un courant dit de finance comportementale, nourri par les travaux de psychologie cognitive de Daniel Kahneman et Amos Tversky puis développé en finance notamment par Richard Thaler et Robert Shiller, a mis en cause le postulat de rationalité pleine des investisseurs. Ce courant documente des biais cognitifs récurrents : l''excès de confiance (les investisseurs surestiment la précision de leurs propres informations), l''aversion à la perte (une perte est ressentie plus douloureusement qu''un gain équivalent n''est ressenti comme agréable, ce qui pousse à conserver trop longtemps des titres perdants), le biais d''ancrage (les décisions restent influencées par une information initiale, même non pertinente), et le comportement moutonnier (suivre la tendance du groupe plutôt que sa propre analyse). Ces biais ne sont pas de simples erreurs individuelles qui s''annuleraient en moyenne : la finance comportementale montre qu''ils peuvent se renforcer collectivement et affecter durablement les prix de marché.
-
-## Les anomalies de marché documentées
-
-Plusieurs anomalies empiriques sont régulièrement citées comme difficiles à expliquer par la seule hypothèse d''efficience : l''effet taille (les petites capitalisations auraient historiquement généré un rendement ajusté au risque supérieur aux grandes capitalisations, sur certaines périodes et certains marchés) ; l''effet momentum (les titres ayant bien performé récemment continueraient à bien performer sur un horizon de quelques mois, ce qui contredit une marche parfaitement aléatoire) ; les bulles spéculatives et leur éclatement (des hausses de prix prolongées et déconnectées des fondamentaux, suivies de corrections brutales) ; et la volatilité excessive des cours par rapport à celle des fondamentaux économiques sous-jacents, mise en évidence par Robert Shiller. Ces anomalies ne signifient pas que les marchés sont totalement inefficients, mais qu''ils comportent des écarts persistants que l''EMH stricte a du mal à expliquer.
-
-## Un débat en évolution plutôt qu''un affrontement tranché
-
-La recherche contemporaine tend à dépasser l''opposition frontale entre les deux courants. Les modèles dits d''« efficience adaptative » (prolongeant notamment les travaux d''Andrew Lo) proposent que les marchés évoluent entre des phases plus ou moins efficientes selon les conditions, à l''image d''un écosystème où biais comportementaux et arbitrage rationnel coexistent et se limitent mutuellement. La finance comportementale ne nie d''ailleurs pas l''utilité du concept d''efficience comme point de référence : elle cherche plutôt à expliquer pourquoi et quand des écarts aux prix fondamentaux apparaissent et durent, notamment lorsque l''arbitrage est coûteux ou risqué (limites à l''arbitrage). La bonne posture doctorale consiste donc à présenter les deux courants non comme des blocs opposés, mais comme deux grilles de lecture complémentaires, pertinentes selon le contexte de marché, le type d''actif et l''horizon considéré.
-
-## Application à un marché financier en développement
-
-La question de l''efficience se pose avec une acuité particulière sur les marchés financiers peu profonds, comme la Bourse Régionale des Valeurs Mobilières (BRVM) qui couvre l''Afrique de l''Ouest. Un nombre réduit de titres cotés, des volumes d''échange faibles, une information financière parfois moins standardisée et une base d''investisseurs institutionnels plus restreinte créent des conditions moins favorables à une efficience de forme semi-forte : l''information y circule plus lentement et l''arbitrage y est souvent plus coûteux, ce qui laisse davantage de place à des écarts de prix durables. Cela ne signifie pas que la BRVM est « inefficiente » par nature, mais que les deux grilles de lecture doivent y être mobilisées avec prudence, sans extrapoler des résultats obtenus sur des places boursières très liquides comme New York ou Londres.
-
-## Points clés à retenir
-
-- L''hypothèse d''efficience des marchés distingue trois formes (faible, semi-forte, forte) et repose sur la rationalité moyenne des investisseurs et l''arbitrage.
-- La finance comportementale documente des biais cognitifs individuels (excès de confiance, aversion à la perte, ancrage, mimétisme) et des anomalies de marché (effet taille, momentum, bulles, volatilité excessive).
-- La recherche récente tend à articuler les deux courants plutôt qu''à les opposer (efficience adaptative, limites à l''arbitrage).
-- Sur un marché peu profond comme la BRVM, les conclusions obtenues sur des marchés développés doivent être transposées avec prudence.
-
-## Exercices pratiques
-
-1. Distinguez les trois formes d''efficience des marchés et donnez, pour chacune, un exemple de stratégie d''investissement qu''elle rendrait, en théorie, sans intérêt.
-2. Expliquez en quoi l''aversion à la perte et le comportement moutonnier peuvent se combiner pour amplifier une baisse de marché.
-3. Un doctorant affirme : « L''effet momentum prouve que les marchés sont inefficients. » Discutez cette affirmation de façon nuancée.
-4. En quoi la notion de « limites à l''arbitrage » permet-elle de concilier l''existence d''anomalies de marché avec l''idée d''efficience ?
-5. Pourquoi la profondeur et la liquidité d''un marché financier doivent-elles être prises en compte avant de transposer une conclusion sur l''efficience obtenue sur une grande Bourse internationale à un marché comme la BRVM ?
-6. Proposez un plan de réponse (titres de parties uniquement) pour une question d''examen : « Efficience des marchés et finance comportementale : deux théories inconciliables ? »
-
-## Corrigé
-
-1. Forme faible : une stratégie fondée uniquement sur l''historique des cours (analyse technique) ne devrait pas permettre de surperformer durablement. Forme semi-forte : une stratégie fondée sur l''analyse des informations publiques (résultats publiés, annonces) ne devrait pas non plus permettre de surperformer durablement, puisque l''information est déjà intégrée aux prix. Forme forte : même une stratégie fondée sur une information privée (délit d''initié) ne devrait, en théorie, pas permettre de surperformer, ce qui est la forme la plus contestée empiriquement.
-
-2. Lorsque les prix commencent à baisser, l''aversion à la perte peut pousser certains investisseurs à vendre précipitamment pour éviter une perte ressentie comme très douloureuse ; d''autres investisseurs, observant ce mouvement de vente, peuvent l''imiter par comportement moutonnier sans analyse individuelle approfondie, ce qui amplifie la baisse au-delà de ce que justifieraient les seuls fondamentaux économiques, créant une spirale baissière auto-entretenue.
-
-3. L''affirmation est trop catégorique. L''effet momentum est une anomalie statistique documentée sur certaines périodes et certains marchés, mais il ne prouve pas que les marchés sont inefficients au sens strict : il peut s''expliquer par une sous-réaction initiale à l''information (les prix s''ajustent progressivement plutôt qu''instantanément) ou par des facteurs de risque non encore identifiés dans les modèles d''évaluation utilisés pour mesurer la performance ajustée au risque. Une réponse nuancée distingue ces explications concurrentes plutôt que de conclure directement à l''inefficience.
-
-4. Les limites à l''arbitrage expliquent pourquoi un écart de prix par rapport à la valeur fondamentale peut persister même si des investisseurs rationnels l''identifient : l''arbitrage peut être coûteux (frais de transaction, difficulté à vendre à découvert), risqué (l''écart peut s''accentuer avant de se corriger, ce qui met en péril la position de l''arbitragiste) ou limité par des contraintes de capital. Cela permet de concilier l''existence d''anomalies avec l''idée que les marchés tendent, à terme, vers l''efficience.
-
-5. Un marché peu liquide et peu profond concentre l''information sur un nombre réduit d''acteurs, ralentit la diffusion et le traitement de l''information, et rend l''arbitrage plus coûteux ou plus risqué faute de contreparties suffisantes. Les résultats empiriques obtenus sur des marchés très liquides (comme New York) supposent des conditions (nombreux arbitragistes, information standardisée, coûts de transaction faibles) qui ne sont pas automatiquement réunies sur un marché comme la BRVM, d''où la nécessité de tester spécifiquement l''efficience sur ce contexte plutôt que de l''assumer par analogie.
-
-6. Plan possible : I. L''hypothèse d''efficience des marchés : fondements et formes. II. La finance comportementale : biais cognitifs et anomalies documentées. III. Des théories concurrentes en apparence : les points de friction empirique. IV. Vers une articulation plutôt qu''une opposition : efficience adaptative et limites à l''arbitrage. V. Application prudente au cas des marchés financiers en développement (exemple de la BRVM).', 'texte', 45, false, 20
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 1 : l''hypothèse d''efficience des marchés face à la finance comportementale');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique 2 : la structure de financement, de Modigliani-Miller à ses extensions', 'Le deuxième grand débat du programme porte sur la structure de financement de l''entreprise : la combinaison entre dette et capitaux propres a-t-elle, ou non, un effet sur la valeur de l''entreprise ? C''est l''une des questions fondatrices de la finance d''entreprise moderne, ouverte par le théorème de Modigliani-Miller, puis prolongée par de nombreuses extensions qui réintroduisent les frictions du monde réel.
-
-## Le théorème de Modigliani-Miller en marchés parfaits
-
-En 1958, Franco Modigliani et Merton Miller démontrent un résultat qui a durablement structuré la finance d''entreprise : sous des hypothèses de marchés parfaits (absence d''impôt, absence de coûts de transaction et de faillite, information parfaitement partagée entre tous les acteurs, possibilité pour les investisseurs d''emprunter et de prêter au même taux que l''entreprise), la valeur totale d''une entreprise ne dépend pas de la façon dont elle est financée, c''est-à-dire de la répartition entre dette et capitaux propres. C''est la proposition I de Modigliani-Miller (MM1) : deux entreprises ayant les mêmes actifs et les mêmes flux de trésorerie futurs ont la même valeur totale, quelle que soit leur structure de financement, car un investisseur peut toujours reproduire par lui-même, en empruntant ou en prêtant à titre personnel, l''effet d''un levier financier que l''entreprise n''aurait pas choisi (c''est l''argument dit de l''arbitrage, ou « home-made leverage »). La proposition II (MM2) complète ce résultat : le coût des capitaux propres augmente avec le niveau d''endettement, car les actionnaires supportent un risque financier croissant, mais cette hausse compense exactement l''avantage apparent d''une dette moins chère, si bien que le coût moyen pondéré du capital reste constant.
-
-## Pourquoi ce résultat est un point de départ, pas une conclusion
-
-Le théorème de Modigliani-Miller n''a jamais eu pour objectif de décrire la réalité des entreprises : il visait à identifier, par la négative, les frictions réelles qui font que la structure de financement compte en pratique. C''est précisément parce que les hypothèses de MM1 sont irréalistes qu''elles sont utiles : chaque hypothèse relâchée a donné naissance à une extension théorique qui explique une partie des choix de financement observés dans la réalité des entreprises.
-
-## Extension 1 : la fiscalité et l''avantage de la dette
-
-Lorsque l''on réintroduit l''impôt sur les sociétés, la dette devient fiscalement avantageuse : les intérêts versés aux créanciers sont généralement déductibles du résultat imposable, ce qui crée une économie d''impôt (parfois appelée « bouclier fiscal ») qui accroît la valeur de l''entreprise endettée par rapport à une entreprise non endettée, toutes choses égales par ailleurs. Cette extension prédit que les entreprises devraient, en théorie, chercher à s''endetter fortement pour maximiser cet avantage fiscal — ce qui ne correspond pourtant pas aux niveaux d''endettement modérés observés dans la réalité, d''où la nécessité d''autres extensions pour comprendre ce qui limite le recours à la dette.
-
-## Extension 2 : les coûts de faillite et de détresse financière
-
-Un endettement croissant augmente la probabilité qu''une entreprise ne puisse plus honorer ses engagements, et donc la probabilité d''une faillite ou d''une restructuration coûteuse. Ces coûts de faillite ne sont pas seulement les frais juridiques et administratifs directs d''une procédure : ils incluent aussi des coûts indirects, souvent plus importants, comme la perte de confiance des clients et fournisseurs, le départ de salariés clés, ou les décisions d''investissement sous-optimales prises par une entreprise financièrement fragile (parfois appelées coûts de détresse financière). La théorie du compromis (trade-off theory) combine cette extension avec l''avantage fiscal de la dette : l''entreprise choisirait un niveau d''endettement qui maximise l''avantage fiscal net des coûts attendus de détresse financière, ce qui explique l''existence d''un niveau d''endettement optimal, ni nul ni maximal.
-
-## Extension 3 : l''asymétrie d''information
-
-Une troisième extension, portée notamment par les travaux de Stewart Myers sur la théorie du financement hiérarchique (pecking order theory), part du constat que les dirigeants disposent généralement de plus d''informations sur la valeur réelle de l''entreprise que les investisseurs externes. Cette asymétrie d''information a une consequence directe sur le choix des sources de financement : émettre de nouvelles actions peut être interprété par le marché comme un signal négatif (si les dirigeants pensent que l''action est surévaluée, ils ont intérêt à émettre maintenant, ce que le marché anticipe et sanctionne par une baisse du cours à l''annonce). Les entreprises préfèrent donc, selon cette théorie, financer leurs projets dans un ordre hiérarchique : d''abord l''autofinancement (bénéfices non distribués), puis la dette, et seulement en dernier recours l''émission de nouvelles actions. Cette théorie n''explique pas un niveau d''endettement optimal précis, mais plutôt une séquence de préférences qui s''écarte de la recherche d''un optimum fixe.
-
-## Synthèse des extensions et débat actuel
-
-Les trois grandes extensions (fiscalité, coûts de faillite, asymétrie d''information) ne s''excluent pas : elles éclairent des aspects complémentaires du choix de financement, et la recherche contemporaine cherche à les combiner avec d''autres dimensions, comme les problèmes d''agence entre dirigeants et actionnaires (l''endettement peut aussi discipliner les dirigeants en réduisant les ressources qu''ils contrôlent librement) ou les conditions macroéconomiques et le cycle de marché (une entreprise émet plus facilement des actions lorsque les valorisations de marché sont élevées). Un bon candidat à l''examen de qualification doit pouvoir mobiliser ces extensions ensemble, en situant chacune par rapport au résultat de référence de Modigliani-Miller.
-
-## Application à un marché financier en développement (Afrique de l''Ouest)
-
-Les hypothèses de marchés parfaits de Modigliani-Miller sont déjà fortement contestées sur les marchés financiers développés ; elles le sont davantage encore sur un marché financier peu profond comme la zone UEMOA et la BRVM. Trois spécificités doivent être prises en compte lorsqu''on y applique ces cadres théoriques. D''abord, l''accès au financement obligataire ou boursier y est limité à un nombre restreint de grandes entreprises, ce qui pousse la majorité des entreprises, notamment les petites et moyennes entreprises, à dépendre fortement du crédit bancaire, rendant la théorie du financement hiérarchique particulièrement pertinente dans ce contexte. Ensuite, l''asymétrie d''information y est potentiellement plus marquée, du fait d''états financiers parfois moins standardisés ou moins audités selon les entreprises, ce qui renforce les prédictions de la pecking order theory sur la préférence pour l''autofinancement et la dette bancaire. Enfin, les coûts de faillite et de détresse financière peuvent y être amplifiés par un cadre judiciaire de traitement des difficultés d''entreprise encore en consolidation selon les pays, ce qui peut rendre les créanciers plus prudents et renchérir le coût de la dette au-delà de ce que prédirait un modèle calibré sur un marché développé. Un travail doctoral sérieux doit donc tester empiriquement ces extensions sur des données locales plutôt que de transposer sans vérification des résultats obtenus ailleurs.
-
-## Points clés à retenir
-
-- MM1 : en marchés parfaits, la valeur de l''entreprise est indépendante de sa structure de financement ; MM2 : le coût des capitaux propres croît avec l''endettement pour compenser le risque financier accru.
-- Trois extensions majeures réintroduisent les frictions réelles : l''avantage fiscal de la dette, les coûts de faillite et de détresse financière (théorie du compromis), et l''asymétrie d''information (théorie du financement hiérarchique).
-- Ces extensions se combinent plutôt qu''elles ne s''excluent, et se complètent avec les théories d''agence et les effets de cycle de marché.
-- Sur un marché financier en développement comme la zone UEMOA, l''accès restreint aux marchés de capitaux, une asymétrie d''information potentiellement plus marquée et un cadre de traitement des défaillances en consolidation justifient une vérification empirique locale plutôt qu''une transposition directe.
-
-## Exercices pratiques
-
-1. Énoncez la proposition I de Modigliani-Miller et expliquez le rôle de l''argument d''arbitrage (« home-made leverage ») dans sa démonstration.
-2. Pourquoi l''avantage fiscal de la dette, pris isolément, prédirait-il un endettement maximal, et quelle extension vient corriger cette prédiction ?
-3. Expliquez le mécanisme par lequel une émission d''actions peut être perçue négativement par le marché selon la théorie du financement hiérarchique.
-4. Un dirigeant sénégalais affirme : « Puisque la dette est fiscalement avantageuse, mon entreprise doit s''endetter au maximum. » Discutez cette affirmation à la lumière des extensions de Modigliani-Miller.
-5. En quoi la faible profondeur du marché obligataire et boursier en zone UEMOA renforce-t-elle la pertinence de la théorie du financement hiérarchique pour les PME de la région ?
-6. Proposez un plan de réponse (titres de parties uniquement) pour la question : « La structure de financement est-elle neutre sur la valeur de l''entreprise ? »
-
-## Corrigé
-
-1. MM1 énonce que la valeur totale d''une entreprise est indépendante de sa structure de financement en marchés parfaits. L''argument d''arbitrage montre qu''un investisseur peut reproduire à titre personnel, en empruntant ou en prêtant lui-même, l''effet de levier qu''une entreprise choisirait ; si deux entreprises identiques par ailleurs avaient des valeurs différentes du seul fait de leur endettement, un investisseur pourrait acheter l''entreprise sous-évaluée et vendre à découvert la surévaluée pour un profit sans risque, ce qui ramènerait les prix à l''égalité.
-
-2. Un endettement croissant maximiserait l''économie d''impôt si cette seule force agissait ; mais la théorie des coûts de faillite et de détresse financière montre qu''au-delà d''un certain seuil, la probabilité et le coût attendu des difficultés financières croissent plus vite que l''avantage fiscal marginal, ce qui crée un niveau d''endettement optimal intermédiaire plutôt qu''un maximum.
-
-3. Si les dirigeants, mieux informés que le marché, savent que l''action est surévaluée, ils ont intérêt à émettre de nouvelles actions pour profiter de ce prix avantageux ; les investisseurs, anticipant ce comportement rationnel des dirigeants, interprètent toute annonce d''émission comme un signal probable de surévaluation et révisent le cours à la baisse, ce qui rend l''émission d''actions coûteuse en termes de signal et explique la préférence pour d''autres sources de financement.
-
-4. L''affirmation néglige les extensions du théorème : au-delà d''un certain seuil d''endettement, les coûts de détresse financière (risque de rupture de covenants bancaires, perte de confiance des partenaires commerciaux, renchérissement du coût de la dette) peuvent dépasser l''économie d''impôt additionnelle. La théorie du compromis invite plutôt à rechercher un niveau d''endettement optimal qui équilibre ces deux forces, et non un maximum.
-
-5. Lorsque l''accès au marché boursier ou obligataire est limité à un petit nombre de grandes entreprises, les PME de la zone UEMOA n''ont, de fait, qu''un accès restreint aux fonds propres externes ; elles dépendent donc largement de l''autofinancement puis du crédit bancaire, ce qui correspond exactement à la séquence de préférences prédite par la théorie du financement hiérarchique, renforcée par une asymétrie d''information potentiellement plus marquée vis-à-vis des créanciers.
-
-6. Plan possible : I. Le théorème de Modigliani-Miller en marchés parfaits (MM1 et MM2). II. Pourquoi ce résultat est un point de départ théorique plutôt qu''une description du réel. III. L''extension fiscale : l''avantage de la dette. IV. L''extension par les coûts de faillite : la théorie du compromis. V. L''extension par l''asymétrie d''information : la théorie du financement hiérarchique. VI. Application et limites sur un marché financier en développement (zone UEMOA).', 'texte', 45, false, 30
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 2 : la structure de financement, de Modigliani-Miller à ses extensions');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Les méthodes de recherche en finance : études d''événements, économétrie financière et enquêtes de terrain', 'La recherche en finance mobilise un ensemble de méthodes bien identifiées, que tout doctorant doit savoir choisir et justifier selon la question posée. Cette leçon présente trois familles de méthodes particulièrement centrales dans le champ — les études d''événements, la modélisation économétrique de séries financières, et les enquêtes auprès de dirigeants financiers — et propose un exemple de protocole de recherche appliqué à un contexte sénégalais fictif.
-
-## L''étude d''événement (event study)
-
-L''étude d''événement mesure l''effet d''un événement précis (annonce de résultats, fusion-acquisition, changement de dirigeant, décision de politique monétaire) sur le cours d''un titre financier. La méthode consiste à estimer, pour une fenêtre de temps entourant l''événement, la rentabilité « anormale » (abnormal return, AR), c''est-à-dire l''écart entre la rentabilité réellement observée du titre et celle qui aurait été attendue en l''absence de l''événement. Cette rentabilité attendue est généralement estimée par un modèle de marché simple : R attendu = alpha + bêta × R marché, où alpha et bêta sont estimés sur une période antérieure à l''événement, hors de la fenêtre d''étude. La rentabilité anormale cumulée sur plusieurs jours (cumulative abnormal return, CAR) permet ensuite de juger si le marché a réagi significativement à l''annonce, et dans quel sens. Cette méthode est centrale pour tester empiriquement l''hypothèse d''efficience des marchés : si les prix réagissent très vite et sans dérive persistante après l''annonce, cela soutient la forme semi-forte de l''efficience ; si une dérive post-annonce est observée (le titre continue à monter ou baisser dans les jours suivants), cela constitue une anomalie à expliquer, par exemple par la finance comportementale.
-
-## Illustration numérique de l''étude d''événement
-
-Prenons un exemple pédagogique simplifié : un titre annonce un résultat le jour « 0 ». Sur la fenêtre -2 à +2 jours, on observe des rentabilités quotidiennes du titre et de l''indice de marché, et on calcule l''AR et le CAR selon la formule ci-dessus (calcul vérifié en Python : paramètres alpha = 0,02 % et bêta = 1,1 estimés sur une période antérieure hors fenêtre). Le résultat obtenu donne un CAR cumulé d''environ +1,45 % sur les cinq jours, avec la plus grande partie de cette rentabilité anormale concentrée le jour même de l''annonce (+1,37 %) : cela suggère une réaction rapide du marché, cohérente avec une forme au moins semi-forte d''efficience, mais la légère dérive observée les jours suivants (+0,28 % puis -0,24 %) illustre le type d''écart résiduel que la recherche empirique chercherait à expliquer sur un échantillon de plusieurs dizaines ou centaines d''événements, et non sur un cas unique.
-
-## La modélisation économétrique de séries financières
-
-Les séries de rendements financiers (quotidiens, hebdomadaires) ont des propriétés statistiques particulières qu''un chercheur doit connaître avant toute modélisation : elles présentent souvent une distribution à queues plus épaisses qu''une loi normale (des variations extrêmes plus fréquentes qu''attendu), une volatilité qui varie dans le temps et qui tend à se regrouper en périodes calmes et en périodes agitées (hétéroscédasticité conditionnelle), et une autocorrélation généralement faible des rendements eux-mêmes mais souvent significative de leur volatilité. Les modèles de la famille ARCH/GARCH (autoregressive conditional heteroskedasticity), introduits par Robert Engle puis étendus par Tim Bollerslev, sont conçus précisément pour modéliser cette volatilité variable dans le temps, ce qui est essentiel pour l''évaluation du risque, la gestion de portefeuille ou le calcul d''une prime de risque. En complément, les modèles d''évaluation d''actifs (comme le modèle à trois facteurs ou des extensions multifactorielles) servent à expliquer la rentabilité moyenne des titres par des facteurs de risque communs (taille, valorisation, momentum), en s''appuyant sur des régressions en séries temporelles et en coupe transversale (panel). Dans l''exemple pédagogique vérifié en Python de cette leçon, une série simulée de 250 rendements quotidiens avec une volatilité quotidienne d''environ 1,9 % donne, une fois annualisée (en multipliant par la racine carrée de 252 jours de bourse), une volatilité annuelle d''environ 30 %, un ordre de grandeur courant pour une action individuelle, qui illustre pourquoi l''horizon de mesure de la volatilité doit toujours être précisé dans un travail de recherche.
-
-## L''enquête auprès de dirigeants financiers
-
-Une troisième famille de méthodes, de nature plus qualitative ou mixte, consiste à interroger directement les dirigeants financiers (directeurs financiers, trésoriers) sur leurs pratiques et leurs perceptions, par questionnaire structuré ou par entretien semi-directif. Cette méthode a notamment été popularisée en finance d''entreprise par les enquêtes sur les pratiques de structure de financement et de budgétisation des investissements, qui ont permis de confronter les théories (comme celles vues en leçon 3) aux motivations réellement déclarées par les praticiens — révélant par exemple que des considérations de flexibilité financière ou de maintien d''une notation de crédit pèsent souvent autant que l''optimisation fiscale théorique dans les décisions d''endettement observées. L''enquête permet d''explorer le « pourquoi » derrière des choix observés dans les données financières, mais elle comporte des limites méthodologiques propres : biais de déclaration (les dirigeants peuvent présenter leurs pratiques de façon favorable), taux de réponse souvent faible, et difficulté à généraliser à partir d''un échantillon de dirigeants volontaires. Elle est donc le plus souvent utilisée en complément d''une analyse quantitative des données financières observées, plutôt qu''en substitut.
-
-## Exemple de protocole de recherche (contexte sénégalais fictif)
-
-Prenons un exemple de protocole, fictif et à visée pédagogique, pour un doctorant qui souhaiterait tester la théorie du financement hiérarchique auprès de PME sénégalaises du secteur agroalimentaire. Le protocole combinerait deux volets. D''abord un volet quantitatif : collecte des états financiers de l''entreprise sur plusieurs exercices auprès d''un échantillon de PME (avec l''accord des entreprises et le respect de la confidentialité des données), construction d''indicateurs de structure de financement (part de la dette bancaire, de l''autofinancement, des apports en capital) et test statistique de leur évolution en fonction des besoins de financement et de la profitabilité, conformément aux prédictions de la théorie du financement hiérarchique. Ensuite un volet qualitatif : entretiens semi-directifs avec les dirigeants ou directeurs financiers de quelques entreprises de l''échantillon, pour comprendre les raisons déclarées de leurs choix de financement (accès au crédit bancaire, relation avec les banques locales, réticence à ouvrir le capital) et vérifier si elles correspondent aux prédictions théoriques ou révèlent des spécificités locales non prévues par la théorie d''origine, construite sur des données d''entreprises de marchés développés. Ce protocole mixte illustre comment articuler une méthode quantitative (données financières) et une méthode qualitative (enquête auprès de dirigeants) pour tester une théorie financière dans un contexte de marché en développement.
-
-## Points clés à retenir
-
-- L''étude d''événement mesure la rentabilité anormale (AR) et cumulée (CAR) autour d''un événement, et sert notamment à tester empiriquement l''hypothèse d''efficience des marchés.
-- La modélisation économétrique des séries financières (notamment les modèles de la famille ARCH/GARCH) traite les propriétés particulières des rendements : queues épaisses, volatilité variable dans le temps.
-- L''enquête auprès de dirigeants financiers complète l''analyse quantitative en explorant les motivations déclarées des décisions financières, avec ses propres limites méthodologiques.
-- Un protocole mixte (données financières + entretiens) est souvent le plus adapté pour tester une théorie financière dans un contexte de marché en développement, où les spécificités locales doivent être documentées et non supposées.
-
-## Exercices pratiques
-
-1. Expliquez les étapes d''une étude d''événement, de l''estimation du modèle de marché jusqu''au calcul du CAR.
-2. Pourquoi une dérive persistante des rentabilités anormales après l''annonce (post-event drift) pose-t-elle problème à l''hypothèse d''efficience des marchés sous sa forme semi-forte ?
-3. Expliquez pourquoi un modèle de type GARCH est plus adapté qu''une simple moyenne constante pour modéliser la volatilité d''une série de rendements financiers.
-4. Quelles sont les principales limites méthodologiques d''une enquête par questionnaire auprès de dirigeants financiers, et comment peut-on les atténuer ?
-5. Concevez, en quelques lignes, un protocole mixte (quantitatif et qualitatif) pour tester si les PME sénégalaises du secteur du commerce suivent la théorie du financement hiérarchique.
-6. Pourquoi est-il préférable, dans un travail doctoral, de combiner plusieurs méthodes plutôt que de se limiter à une seule pour tester une théorie financière ?
-
-## Corrigé
-
-1. Les étapes sont : définir l''événement et sa date précise ; choisir une fenêtre d''estimation antérieure (hors événement) pour estimer alpha et bêta du modèle de marché ; calculer la rentabilité attendue sur la fenêtre d''événement à partir de ces paramètres et de la rentabilité du marché observée ; calculer l''AR quotidien comme écart entre rentabilité observée et rentabilité attendue ; cumuler les AR sur la fenêtre pour obtenir le CAR ; tester si ce CAR est statistiquement différent de zéro sur un échantillon de plusieurs événements similaires.
-
-2. Si l''hypothèse d''efficience semi-forte est vérifiée, toute information publique (comme l''annonce étudiée) devrait être intégrée rapidement et le CAR devrait se stabiliser dès les jours suivant l''annonce. Une dérive persistante (le titre continue de monter ou de baisser significativement plusieurs jours ou semaines après) suggère que le marché n''a pas intégré l''information instantanément, ce qui constitue une anomalie empirique à expliquer, par exemple par une sous-réaction initiale documentée en finance comportementale.
-
-3. Les rendements financiers présentent des périodes de forte volatilité suivies de périodes plus calmes (regroupement de la volatilité) : une moyenne ou un écart-type constant sur toute la période masquerait cette dynamique et sous-estimerait le risque pendant les phases agitées. Un modèle GARCH modélise explicitement la volatilité comme dépendante des chocs passés, ce qui permet de mieux anticiper les périodes de risque élevé.
-
-4. Limites principales : biais de déclaration (réponses valorisantes), taux de réponse faible, échantillon non représentatif (volontariat). Atténuations possibles : garantir l''anonymat des réponses, croiser les déclarations avec des données financières objectives, élargir et diversifier l''échantillon, et compléter par des entretiens qui permettent de nuancer les réponses au questionnaire.
-
-5. Protocole possible : collecte des bilans et comptes de résultat d''un échantillon de PME commerciales sur 3 à 5 exercices ; calcul de la part de l''autofinancement, de la dette bancaire et des apports en capital dans le financement des nouveaux besoins ; test statistique de la séquence prédite par la théorie du financement hiérarchique (autofinancement d''abord, puis dette, puis capital) ; entretiens avec un sous-échantillon de dirigeants pour comprendre les raisons déclarées de leurs choix et identifier d''éventuelles spécificités locales (accès au crédit, relation bancaire).
-
-6. Combiner plusieurs méthodes (triangulation méthodologique) permet de compenser les limites propres à chacune : une méthode quantitative documente ce qui se passe réellement dans les données mais pas toujours pourquoi, tandis qu''une méthode qualitative explore les motivations mais sur un échantillon restreint et sujet à des biais déclaratifs. La combinaison renforce la validité des conclusions et permet de détecter des résultats contradictoires qui méritent une explication plus approfondie.', 'texte', 45, false, 40
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en finance : études d''événements, économétrie financière et enquêtes de terrain');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Épreuve type d''examen de qualification en Finance : question de synthèse et plan de réponse corrigé', 'Cette leçon propose une épreuve type d''examen de qualification doctorale en finance (question non officielle, construite à titre pédagogique), avec un plan de réponse détaillé qui mobilise les deux courants théoriques vus en leçons 2 et 3, ainsi qu''une méthode de recherche vue en leçon 4. L''objectif est de montrer, sur un exemple complet, comment structurer une réponse de niveau doctoral.
-
-## La question d''examen
-
-« Dans quelle mesure les débats théoriques sur l''efficience des marchés et sur la structure de financement des entreprises doivent-ils être reconsidérés lorsqu''on les applique à un marché financier en développement comme celui de l''Afrique de l''Ouest ? Vous illustrerez votre propos par une proposition de protocole empirique. »
-
-## Analyse de la question avant de répondre
-
-Une question de ce type appelle d''abord un travail d''analyse avant toute rédaction : elle comporte trois exigences croisées qu''il faut traiter ensemble et non séparément. La première est théorique : il faut mobiliser à la fois le débat efficience/finance comportementale et le débat sur la structure de financement (Modigliani-Miller et ses extensions), sans se limiter à l''un des deux. La seconde est contextuelle : la question demande explicitement une discussion critique de la transposition de ces théories à un contexte de marché en développement, ce qui exclut une réponse purement descriptive des théories occidentales. La troisième est méthodologique : la question exige une proposition concrète de protocole empirique, qui doit s''appuyer sur une méthode vue en leçon 4 et être adaptée au contexte évoqué.
-
-## Plan de réponse détaillé
-
-Une réponse de niveau qualification doctorale pourrait suivre le plan suivant.
-
-- Introduction : rappeler que les deux débats (efficience des marchés, structure de financement) ont été construits et testés essentiellement sur des marchés financiers profonds et liquides, et poser la problématique de leur transposition à un contexte de marché en développement comme celui de l''Afrique de l''Ouest (BRVM, zone UEMOA).
-- I. Le débat efficience/finance comportementale reconsidéré en contexte de marché peu profond : rappeler les formes de l''efficience et les apports de la finance comportementale (voir leçon 2), puis montrer que la faible liquidité, le nombre réduit de titres cotés et les coûts d''arbitrage plus élevés sur un marché comme la BRVM peuvent limiter l''efficience de forme semi-forte et laisser davantage de place à des anomalies durables, sans pour autant que cela traduise une irrationalité plus marquée des investisseurs locaux : il s''agit d''une différence de structure de marché, pas nécessairement de comportement.
-- II. Le débat sur la structure de financement reconsidéré en contexte de marché peu profond : rappeler le théorème de Modigliani-Miller et ses trois extensions (fiscalité, coûts de faillite, asymétrie d''information, voir leçon 3), puis montrer que l''accès restreint aux marchés de capitaux externes, l''asymétrie d''information potentiellement plus marquée et un cadre de traitement des défaillances encore en consolidation renforcent particulièrement la pertinence de la théorie du financement hiérarchique pour les entreprises de la région, davantage que dans un contexte de marché développé où l''accès aux fonds propres externes est plus large.
-- III. Mise en tension des deux débats : montrer que les deux débats se rejoignent sur un même constat méthodologique : les théories financières de référence, construites sur des hypothèses de marchés profonds et d''information largement diffusée, doivent être testées empiriquement sur le contexte local avant d''être supposées valides, plutôt que transposées par analogie.
-- IV. Proposition de protocole empirique : une étude d''événement (voir leçon 4) appliquée à un échantillon d''annonces de résultats ou de décisions de financement d''entreprises cotées à la BRVM, pour mesurer l''ampleur et la durée des rentabilités anormales (test de l''efficience en contexte local), complétée par une enquête auprès de directeurs financiers d''entreprises de la région sur leurs pratiques déclarées de financement (test de la théorie du financement hiérarchique en contexte local).
-- Conclusion : rappeler que la valeur d''un travail doctoral dans ce contexte tient précisément à cette vérification empirique locale, qui peut à la fois confirmer, nuancer ou enrichir les théories de référence plutôt que les rejeter ou les accepter en bloc.
-
-## Rédaction d''un extrait de réponse (partie I, à titre d''illustration)
-
-« L''hypothèse d''efficience des marchés distingue classiquement trois formes, et la forme semi-forte — selon laquelle les prix intègrent rapidement toute information publique disponible — constitue le cadre de référence le plus testé empiriquement. Sur un marché développé et liquide, la présence de nombreux arbitragistes et la faiblesse des coûts de transaction favorisent une intégration rapide de l''information nouvelle dans les prix. Sur un marché comme la BRVM, caractérisé par un nombre de titres cotés plus restreint et des volumes d''échange plus faibles, les mécanismes d''arbitrage peuvent être moins actifs, ce qui n''invalide pas le cadre théorique de l''efficience mais invite à en vérifier empiriquement le degré effectif plutôt que de le supposer identique à celui observé sur des places boursières plus profondes. La finance comportementale apporte ici un éclairage complémentaire : si des biais comme le comportement moutonnier sont documentés sur de nombreux marchés, leur effet sur les prix peut être amplifié sur un marché où le nombre d''investisseurs actifs et la diversité des stratégies d''arbitrage sont plus limités. » Cet extrait illustre la posture attendue : mobiliser la théorie avec précision, la nuancer par le contexte, sans jamais affirmer un résultat empirique précis qui n''aurait pas été vérifié par une étude dédiée.
-
-## Ce qui distingue une excellente réponse d''une réponse moyenne
-
-Une réponse moyenne se contente de résumer séparément les deux débats théoriques sans jamais les articuler à la question du contexte de marché en développement, et propose éventuellement une méthode de recherche sans la relier précisément aux théories discutées. Une excellente réponse, à l''inverse, maintient en permanence le fil directeur de la question (la nécessité de reconsidérer, pas de rejeter, les théories de référence), articule systématiquement chaque argument théorique à sa traduction possible dans le contexte de l''Afrique de l''Ouest, et propose un protocole empirique qui découle logiquement de l''analyse théorique qui précède plutôt que d''être ajouté de façon artificielle en fin de réponse.
-
-## Points clés à retenir
-
-- Une question de synthèse d''examen de qualification doit toujours être décomposée en ses exigences théoriques, contextuelles et méthodologiques avant la rédaction.
-- Le plan de réponse doit traiter chaque courant théorique, les mettre en tension avec le contexte imposé (ici : marché financier en développement), puis proposer une méthode cohérente avec l''analyse qui précède.
-- La nuance est préférable à l''affirmation catégorique : les théories financières de référence ne sont pas invalidées par un contexte de marché différent, elles doivent y être testées.
-- Le protocole empirique proposé doit découler de l''analyse théorique, pas lui être ajouté artificiellement.
-
-## Exercices pratiques
-
-1. Identifiez, dans la question d''examen proposée, les trois exigences croisées (théorique, contextuelle, méthodologique) et reformulez chacune en une phrase.
-2. Pourquoi une réponse qui se limiterait à résumer séparément l''efficience des marchés et la structure de financement, sans les relier au contexte de marché en développement, serait-elle jugée insuffisante par un jury ?
-3. Proposez une introduction alternative (5 à 8 lignes) pour la question d''examen, différente de celle du plan proposé.
-4. En vous appuyant sur la partie IV du plan, expliquez pourquoi une étude d''événement et une enquête auprès de dirigeants financiers sont complémentaires pour répondre à la question posée.
-5. Rédigez, sur le modèle de l''extrait fourni, un paragraphe équivalent pour la partie II du plan (structure de financement en contexte de marché en développement).
-
-## Corrigé
-
-1. Exigence théorique : mobiliser à la fois le débat efficience/finance comportementale et le débat sur la structure de financement, sans en privilégier un seul. Exigence contextuelle : discuter explicitement la validité de ces théories lorsqu''elles sont appliquées à un marché financier en développement plutôt que les présenter comme universellement valides. Exigence méthodologique : proposer un protocole empirique concret, cohérent avec l''analyse théorique et contextuelle qui précède.
-
-2. Un jury doctoral évalue la capacité à articuler théorie et contexte, pas seulement la connaissance des théories elles-mêmes : une réponse qui les résume séparément sans les relier à la question du marché en développement ne répond pas réellement à la question posée et laisse penser que le candidat n''a pas intégré les connaissances de façon critique, mais seulement de façon descriptive.
-
-3. Exemple d''introduction alternative : « Les grandes théories financières de référence — l''hypothèse d''efficience des marchés et le théorème de Modigliani-Miller sur la structure de financement — ont été élaborées et testées empiriquement, pour l''essentiel, sur des marchés financiers profonds et liquides des économies avancées. Leur application à des marchés émergents ou en développement, comme celui de la zone UEMOA, soulève une question de fond : ces théories doivent-elles être rejetées, adaptées, ou simplement testées empiriquement dans ce nouveau contexte avant toute conclusion ? Ce travail soutient la troisième option. »
-
-4. L''étude d''événement renseigne sur la vitesse et l''ampleur de la réaction des prix à une information nouvelle (test de l''efficience), mais elle ne dit rien des motivations des dirigeants dans leurs décisions de financement ; l''enquête auprès des directeurs financiers renseigne sur ces motivations déclarées (test de la théorie du financement hiérarchique) mais ne mesure pas directement la réaction des prix de marché. Les deux méthodes répondent ainsi à des aspects différents et complémentaires de la question posée, qui porte à la fois sur l''efficience et sur la structure de financement.
-
-5. Exemple de paragraphe : « Le théorème de Modigliani-Miller établit, en marchés parfaits, la neutralité de la structure de financement sur la valeur de l''entreprise ; ses extensions montrent que la fiscalité, les coûts de faillite et l''asymétrie d''information expliquent les choix de financement observés en pratique. Sur un marché comme la zone UEMOA, où l''accès aux marchés de capitaux externes reste concentré sur un nombre restreint de grandes entreprises, la théorie du financement hiérarchique semble particulièrement pertinente pour expliquer la forte dépendance des PME à l''autofinancement puis au crédit bancaire ; cette hypothèse, cohérente avec les contraintes structurelles du marché local, doit néanmoins être vérifiée empiriquement plutôt que simplement déduite par analogie avec des résultats obtenus sur des marchés développés. »', 'texte', 45, false, 50
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification en Finance : question de synthèse et plan de réponse corrigé');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : l''hypothèse d''efficience des marchés face à la finance comportementale', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants en finance préparant leur examen de qualification. Objectifs : maîtriser les formes de l''hypothèse d''efficience des marchés, les apports de la finance comportementale, et savoir discuter leur articulation, y compris sur un marché financier en développement. Matériel : diaporama, tableau pour les schémas de cartographie des courants. Prérequis : avoir lu la leçon texte correspondante (leçon 2).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux
-
-Bonjour à toutes et à tous. Dans cette séance, nous allons reprendre en profondeur le débat entre l''hypothèse d''efficience des marchés et la finance comportementale, qui constitue l''un des piliers de tout programme doctoral en finance. L''enjeu n''est pas de choisir un camp, mais de comprendre pourquoi ce débat structure encore aujourd''hui la recherche en finance de marché, et comment vous devrez le mobiliser devant un jury de qualification. Je vous propose d''afficher à l''écran le plan de la séance : d''abord l''hypothèse d''efficience et ses trois formes, puis la finance comportementale et ses biais, ensuite les anomalies de marché documentées, puis l''articulation contemporaine des deux courants, et enfin l''application prudente à un marché financier en développement comme la BRVM. Une pause quiz interviendra au milieu de la séance, et nous terminerons par une évaluation de cinq questions.
-
-## 05:00 – 20:00 · L''hypothèse d''efficience des marchés
-
-Commençons par le cœur de l''hypothèse d''efficience des marchés, formalisée notamment par Eugene Fama. Je vous demande de noter au tableau, avec moi, les trois formes de l''efficience : forme faible, forme semi-forte, forme forte. La forme faible soutient que les prix intègrent déjà toute l''information contenue dans l''historique des cours : si c''est vrai, l''analyse technique, qui cherche des motifs dans les graphiques de prix passés, ne devrait pas permettre de gagner de l''argent de façon systématique. La forme semi-forte va plus loin : elle affirme que les prix intègrent aussi toute l''information publique disponible, comme les résultats financiers publiés ou les annonces économiques — ce qui réduit fortement l''intérêt de l''analyse fondamentale classique pour « battre le marché » une fois l''information rendue publique. La forme forte, enfin, est la plus extrême et la plus contestée : elle prétend que même l''information privée, détenue par des initiés, serait déjà intégrée aux prix, ce qui est largement démenti empiriquement par les gains significatifs parfois réalisés par des investisseurs disposant d''informations privilégiées. Je vous invite à visualiser sur le diaporama le schéma classique de la marche aléatoire des cours : une trajectoire de prix qui ne montre aucun motif prévisible d''un jour sur l''autre, ce qui est la signature empirique la plus citée de l''efficience de forme faible. Posons-nous une première question de réflexion : si les marchés étaient parfaitement efficients à la forme forte, quel serait l''intérêt économique de produire de la recherche financière ou de rémunérer des analystes ? Cette question, qui peut sembler provocante, est en réalité une excellente porte d''entrée pour comprendre les limites pratiques de la forme forte de l''EMH.
-
-## 20:00 – 35:00 · La finance comportementale et ses biais cognitifs
-
-Passons maintenant au second courant. La finance comportementale part d''un constat emprunté à la psychologie cognitive, notamment aux travaux de Daniel Kahneman et Amos Tversky, puis développé en finance par des chercheurs comme Richard Thaler et Robert Shiller : les investisseurs ne sont pas parfaitement rationnels, et leurs erreurs systématiques peuvent affecter durablement les prix de marché, contrairement à ce que suppose l''hypothèse d''efficience. Je vous propose de détailler quatre biais cognitifs centraux, que vous devez pouvoir définir et illustrer sans hésitation à l''oral. Premier biais : l''excès de confiance, qui pousse un investisseur à surestimer la fiabilité de ses propres analyses, et donc à sous-estimer le risque de ses positions. Deuxième biais : l''aversion à la perte, documentée par la théorie des perspectives, selon laquelle la douleur ressentie face à une perte est plus intense que le plaisir ressenti face à un gain équivalent — ce qui explique pourquoi de nombreux investisseurs conservent trop longtemps des titres en perte, espérant un retour à l''équilibre. Troisième biais : l''ancrage, qui fait qu''une information initiale, même arbitraire, continue d''influencer les décisions ultérieures, par exemple un prix d''achat passé qui sert de référence psychologique pour décider de vendre ou non. Quatrième biais : le comportement moutonnier, qui pousse les investisseurs à suivre la tendance du groupe plutôt que leur propre jugement, ce qui peut amplifier des mouvements de marché au-delà de ce que justifient les fondamentaux économiques. Prenez le temps de noter un exemple personnel pour chacun de ces biais : c''est un excellent exercice pour vous préparer à l''illustrer spontanément à l''oral devant un jury.
-
-## 35:00 – 45:00 · Les anomalies de marché documentées
-
-Voyons à présent les anomalies empiriques les plus souvent citées en complément des biais individuels. L''effet taille suggère qu''historiquement, sur certaines périodes et certains marchés, les petites capitalisations auraient généré un rendement ajusté au risque supérieur aux grandes capitalisations. L''effet momentum documente la tendance des titres récemment performants à continuer de bien performer sur quelques mois, ce qui contredit directement l''idée d''une marche parfaitement aléatoire des cours. Les bulles spéculatives, enfin, illustrent des phases où les prix s''éloignent durablement des fondamentaux avant une correction parfois brutale — un phénomène que Robert Shiller a notamment étudié à travers la notion de volatilité excessive des cours boursiers par rapport à celle des dividendes ou des bénéfices sous-jacents. Il est essentiel de rappeler que documenter une anomalie statistique ne suffit pas à prouver que les marchés sont globalement inefficients : il faut encore écarter d''autres explications possibles, comme l''existence de facteurs de risque non mesurés par le modèle d''évaluation utilisé.
-
-## 45:00 – 50:00 · Pause et quiz interactif
-
-Nous marquons une pause de cinq minutes. Avant de reprendre, je vous propose un quiz rapide à trois questions, à répondre mentalement ou à l''écrit si vous le souhaitez. Première question : citez les trois formes de l''hypothèse d''efficience des marchés dans l''ordre croissant d''exigence. Deuxième question : quel biais cognitif explique qu''un investisseur conserve trop longtemps un titre en perte ? Troisième question : citez une anomalie de marché qui contredit directement l''idée d''une marche aléatoire des cours. Je vous laisse quelques instants pour y réfléchir avant de donner les réponses : forme faible, forme semi-forte, forme forte pour la première ; l''aversion à la perte pour la deuxième ; l''effet momentum pour la troisième.
-
-## 50:00 – 65:00 · Articulation des deux courants : vers l''efficience adaptative
-
-Reprenons maintenant avec la partie la plus importante pour votre préparation à l''oral : comment articuler ces deux courants plutôt que les opposer frontalement. Les modèles dits d''efficience adaptative, qui prolongent notamment les travaux d''Andrew Lo, proposent une image dynamique : les marchés évolueraient entre des phases plus ou moins efficientes selon les conditions économiques et le comportement collectif des investisseurs, un peu comme un écosystème où différentes stratégies (rationnelles et comportementales) coexistent et se limitent mutuellement par la concurrence. Un concept clé à maîtriser ici est celui des limites à l''arbitrage : même si un investisseur rationnel identifie un écart de prix par rapport à la valeur fondamentale, l''exploiter peut être coûteux, risqué, ou limité par des contraintes de capital, ce qui explique pourquoi certaines anomalies persistent dans le temps sans être immédiatement corrigées par le marché. Je vous invite à retenir une formule de synthèse pour votre oral : l''efficience des marchés n''est pas un absolu binaire (efficient ou non), mais un continuum, influencé par la liquidité, le nombre d''arbitragistes actifs, le coût de l''information et la nature des investisseurs présents sur le marché considéré.
-
-## 65:00 – 80:00 · Application à un marché financier en développement (BRVM)
-
-Terminons la partie théorique par l''application au contexte de marché en développement, qui est l''un des axes les plus attendus dans un travail doctoral ancré en Afrique de l''Ouest. La Bourse Régionale des Valeurs Mobilières (BRVM), qui couvre plusieurs pays de la zone UEMOA, se caractérise par un nombre de titres cotés plus restreint que sur les grandes places boursières internationales, des volumes d''échange plus faibles et une base d''investisseurs institutionnels moins large. Ces caractéristiques structurelles ont une conséquence directe sur le degré d''efficience observable : moins d''arbitragistes actifs, des coûts de transaction relativement plus élevés rapportés à la taille des transactions, et une diffusion de l''information parfois plus lente, notamment pour les entreprises moins suivies par les analystes. Cela ne signifie en aucun cas que les investisseurs de la région sont moins rationnels : il s''agit d''une différence de structure de marché et non de comportement individuel. Pour un sujet de thèse, cela suggère une piste de recherche intéressante : tester empiriquement, par une étude d''événement par exemple, le degré effectif d''efficience de forme semi-forte sur la BRVM, sans présupposer qu''il serait identique à celui mesuré sur des marchés développés, ni qu''il en serait radicalement différent — c''est précisément ce que la recherche doit vérifier plutôt que supposer.
-
-## 80:00 – 85:00 · Synthèse de la séance
-
-Récapitulons les points essentiels de cette séance. L''hypothèse d''efficience des marchés distingue trois formes et repose sur la rationalité moyenne des investisseurs et l''arbitrage. La finance comportementale documente des biais individuels et des anomalies collectives qui questionnent cette rationalité. La recherche contemporaine articule les deux courants par la notion d''efficience adaptative et de limites à l''arbitrage. Enfin, l''application à un marché comme la BRVM doit se faire avec prudence méthodologique, en testant empiriquement plutôt qu''en supposant le degré d''efficience local.
-
-## 85:00 – 1:30:00 · Évaluation finale (5 questions avec réponses)
-
-Nous terminons par une évaluation de cinq questions, avec leurs réponses, pour consolider vos acquis avant l''examen.
-
-- Question 1 : Quelle forme de l''hypothèse d''efficience est la plus contestée empiriquement, et pourquoi ? Réponse : la forme forte, car des gains significatifs liés à une information privée (délit d''initié) ont été documentés, ce qui contredit l''idée que même l''information privée serait déjà intégrée aux prix.
-- Question 2 : Donnez un exemple de biais cognitif qui peut amplifier une baisse de marché. Réponse : le comportement moutonnier, qui pousse des investisseurs à vendre en imitant les autres plutôt qu''en analysant individuellement la situation, amplifiant ainsi le mouvement de baisse.
-- Question 3 : Qu''est-ce que l''effet momentum, et en quoi contredit-il la marche aléatoire des cours ? Réponse : c''est la tendance des titres récemment performants à continuer de bien performer sur quelques mois ; cela contredit la marche aléatoire, qui suppose que les variations de prix ne sont pas prévisibles à partir de l''historique des cours.
-- Question 4 : Expliquez la notion de « limites à l''arbitrage » et son rôle dans le débat efficience/finance comportementale. Réponse : elle désigne les coûts, risques et contraintes qui empêchent un arbitragiste rationnel de corriger immédiatement un écart de prix par rapport à la valeur fondamentale, ce qui permet d''expliquer la persistance de certaines anomalies sans rejeter totalement l''idée d''efficience à terme.
-- Question 5 : Pourquoi faut-il tester empiriquement, plutôt que supposer, le degré d''efficience de la BRVM ? Réponse : parce que les caractéristiques structurelles de ce marché (liquidité, nombre d''arbitragistes, diffusion de l''information) diffèrent de celles des marchés développés sur lesquels l''essentiel de la littérature a été produit, et qu''une transposition sans vérification empirique risquerait de produire des conclusions non fondées sur ce contexte précis.', 'video', 90, false, 60
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : l''hypothèse d''efficience des marchés face à la finance comportementale');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : la structure de financement, de Modigliani-Miller à ses extensions', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants en finance préparant leur examen de qualification. Objectifs : maîtriser le théorème de Modigliani-Miller (MM1 et MM2), ses trois grandes extensions, et savoir les appliquer de façon critique à un marché financier en développement. Matériel : diaporama avec les formules de calcul du CMPC, tableau pour les schémas. Prérequis : avoir lu la leçon texte correspondante (leçon 3) et disposer d''une calculatrice.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette séance consacrée au deuxième grand débat du programme : la structure de financement de l''entreprise. Nous allons partir du théorème de Modigliani-Miller, qui constitue le point de référence incontournable de toute discussion sur le choix entre dette et capitaux propres, puis nous verrons ses trois grandes extensions, avant de les appliquer à un contexte de marché financier en développement. Une pause quiz interviendra au milieu, et nous terminerons par une évaluation de cinq questions.
-
-## 05:00 – 20:00 · Le théorème de Modigliani-Miller en marchés parfaits
-
-Commençons par la proposition I de Modigliani-Miller, dite MM1. Sous des hypothèses de marchés parfaits — absence d''impôt, absence de coûts de transaction et de faillite, information parfaitement partagée, et possibilité pour tout investisseur d''emprunter ou de prêter au même taux que l''entreprise — la valeur totale d''une entreprise ne dépend pas de sa structure de financement. L''argument clé, que vous devez pouvoir restituer précisément à l''oral, est celui de l''arbitrage, parfois appelé « home-made leverage » : si deux entreprises identiques par ailleurs avaient des valeurs différentes du seul fait de leur endettement, un investisseur pourrait reproduire à titre personnel l''effet de levier manquant, en empruntant ou en prêtant lui-même, et réaliser un profit sans risque en achetant l''entreprise sous-évaluée et en vendant à découvert la surévaluée — ce mécanisme d''arbitrage ramène les deux valeurs à l''égalité. La proposition II, MM2, complète ce résultat : le coût des capitaux propres croît avec le niveau d''endettement, car les actionnaires supportent un risque financier croissant, mais cette hausse compense exactement l''avantage apparent d''une dette moins chère, de sorte que le coût moyen pondéré du capital (CMPC, ou WACC en anglais) reste constant quelle que soit la structure de financement choisie.
-
-## 20:00 – 30:00 · Calcul illustratif du coût moyen pondéré du capital
-
-Prenons un exemple numérique pour illustrer concrètement le calcul du CMPC, vérifié en Python. Une entreprise a des capitaux propres de 600 millions de FCFA et une dette de 400 millions de FCFA, soit une valeur totale de 1 milliard de FCFA. Le coût des capitaux propres est de 14 %, le coût de la dette avant impôt de 9 %, et le taux d''impôt sur les sociétés, fictif pour l''exemple, de 30 %. La formule du CMPC est : CMPC = (E/V) × coût des capitaux propres + (D/V) × coût de la dette × (1 moins le taux d''impôt). En appliquant cette formule à nos chiffres, on obtient : (600/1000) × 14 % + (400/1000) × 9 % × (1 - 30 %), soit 8,4 % plus 2,52 %, ce qui donne un CMPC d''environ 10,92 %. Ce résultat illustre un point essentiel de MM2 : le coût de la dette, apparemment moins élevé que celui des capitaux propres, ne doit jamais être interprété isolément, car l''entreprise devient plus risquée à mesure qu''elle s''endette, ce qui fait augmenter en parallèle le coût exigé par les actionnaires.
-
-## 30:00 – 40:00 · Extension 1 : la fiscalité et l''avantage de la dette
-
-Passons à la première grande extension du théorème. Lorsque l''on réintroduit l''impôt sur les sociétés, les intérêts de la dette deviennent généralement déductibles du résultat imposable, ce qui crée une économie d''impôt qui augmente la valeur de l''entreprise endettée. Reprenons notre exemple : avec une dette de 400 millions de FCFA et un taux d''impôt fictif de 30 %, le gain fiscal théorique, selon la formule simplifiée VL = VU + taux d''impôt × dette, serait de 30 % × 400 millions, soit 120 millions de FCFA, ce qui porterait la valeur de l''entreprise endettée à 1,12 milliard de FCFA au lieu de 1 milliard pour l''entreprise non endettée. Cette extension prédit, si elle agissait seule, un endettement maximal pour maximiser cet avantage fiscal — ce qui ne correspond pas aux niveaux d''endettement modérés observés en pratique, d''où la nécessité de la deuxième extension.
-
-## 40:00 – 50:00 · Extension 2 : les coûts de faillite et la théorie du compromis
-
-La deuxième extension réintroduit les coûts de faillite et de détresse financière. Un endettement croissant augmente la probabilité qu''une entreprise ne puisse plus honorer ses engagements. Ces coûts incluent des coûts directs (frais juridiques et administratifs d''une procédure collective) mais surtout des coûts indirects souvent plus importants : perte de confiance des clients et fournisseurs, départ de salariés clés, décisions d''investissement sous-optimales prises par une direction sous contrainte financière. La théorie du compromis, ou trade-off theory, combine cette extension avec l''avantage fiscal : l''entreprise chercherait un niveau d''endettement optimal qui maximise l''avantage fiscal net des coûts attendus de détresse financière. Je vous invite à visualiser mentalement une courbe en cloche inversée : la valeur de l''entreprise augmente avec l''endettement grâce à l''avantage fiscal, atteint un maximum, puis diminue lorsque les coûts de détresse financière deviennent dominants — ce sommet représente le niveau d''endettement optimal théorique.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Prenons cinq minutes de pause avec un quiz rapide. Première question : quelle est la différence entre MM1 et MM2 ? Deuxième question : pourquoi l''avantage fiscal de la dette, pris isolément, prédirait un endettement maximal ? Troisième question : quel type de coût la théorie du compromis ajoute-t-elle pour corriger cette prédiction ? Réponses : MM1 porte sur la valeur totale de l''entreprise, invariante à la structure de financement ; MM2 porte sur le coût des capitaux propres, qui croît avec l''endettement. L''avantage fiscal croît proportionnellement à la dette sans limite apparente si on l''isole. La théorie du compromis ajoute les coûts de faillite et de détresse financière, qui croissent plus vite que l''avantage fiscal au-delà d''un certain seuil.
-
-## 55:00 – 70:00 · Extension 3 : l''asymétrie d''information et le financement hiérarchique
-
-Reprenons avec la troisième extension, portée notamment par les travaux de Stewart Myers sur la théorie du financement hiérarchique, ou pecking order theory. Cette théorie part du constat que les dirigeants disposent généralement de plus d''informations sur la valeur réelle de l''entreprise que les investisseurs externes. Une émission de nouvelles actions peut alors être interprétée comme un signal négatif par le marché : si les dirigeants pensent que l''action est surévaluée, ils ont intérêt à émettre maintenant, ce que le marché anticipe rationnellement et sanctionne par une baisse du cours à l''annonce de l''émission. Les entreprises préfèrent donc, selon cette théorie, une séquence de financement hiérarchisée : d''abord l''autofinancement, puis la dette, et en dernier recours seulement l''émission de nouvelles actions. Il est important de noter que cette théorie ne prédit pas un niveau d''endettement optimal précis comme la théorie du compromis, mais plutôt un ordre de préférence entre les sources de financement, ce qui en fait une théorie complémentaire plutôt que concurrente de la précédente.
-
-## 70:00 – 80:00 · Application à un marché financier en développement
-
-Terminons la partie théorique par l''application au contexte de marché en développement, central pour votre travail doctoral. Sur un marché comme la zone UEMOA et sa Bourse Régionale des Valeurs Mobilières, l''accès au financement obligataire ou boursier reste concentré sur un nombre restreint de grandes entreprises, ce qui pousse la majorité des entreprises, en particulier les petites et moyennes entreprises, à dépendre fortement du crédit bancaire — une situation qui rend la théorie du financement hiérarchique particulièrement pertinente dans ce contexte. L''asymétrie d''information y est potentiellement plus marquée, du fait d''états financiers parfois moins standardisés selon les entreprises, ce qui renforce encore la prédiction de préférence pour l''autofinancement et la dette bancaire. Enfin, un cadre judiciaire de traitement des difficultés d''entreprise encore en consolidation selon les pays peut amplifier les coûts de faillite perçus par les créanciers, renchérissant le coût de la dette au-delà de ce que prédirait un modèle calibré uniquement sur un marché développé. Pour un sujet de thèse, cela ouvre une piste intéressante : tester empiriquement, sur des données d''entreprises locales, laquelle des théories — compromis ou financement hiérarchique — explique le mieux les choix de financement observés dans ce contexte spécifique.
-
-## 80:00 – 85:00 · Synthèse de la séance
-
-Récapitulons. MM1 établit la neutralité de la structure de financement sur la valeur de l''entreprise en marchés parfaits ; MM2 montre que le coût des capitaux propres croît avec l''endettement. Les trois extensions — fiscalité, coûts de faillite, asymétrie d''information — réintroduisent les frictions réelles et expliquent les choix de financement observés en pratique. Sur un marché financier en développement, la théorie du financement hiérarchique semble particulièrement pertinente, mais doit être vérifiée empiriquement plutôt que supposée.
-
-## 85:00 – 1:30:00 · Évaluation finale (5 questions avec réponses)
-
-Terminons par une évaluation de cinq questions.
-
-- Question 1 : Énoncez MM1 et l''argument qui la démontre. Réponse : en marchés parfaits, la valeur de l''entreprise est indépendante de sa structure de financement, ce que démontre l''argument d''arbitrage (home-made leverage) : tout écart de valeur serait annulé par des investisseurs reproduisant eux-mêmes l''effet de levier manquant.
-- Question 2 : Calculez le CMPC d''une entreprise avec E=700 millions de FCFA, D=300 millions de FCFA, coût des capitaux propres 15 %, coût de la dette avant impôt 8 %, taux d''impôt fictif 25 %. Réponse : CMPC = (700/1000)×15% + (300/1000)×8%×(1-25%) = 10,5% + 1,8% = 12,3%.
-- Question 3 : Quelle extension explique pourquoi les entreprises ne s''endettent pas au maximum malgré l''avantage fiscal de la dette ? Réponse : la théorie du compromis, par les coûts de faillite et de détresse financière qui croissent plus vite que l''avantage fiscal au-delà d''un certain seuil d''endettement.
-- Question 4 : Pourquoi une émission d''actions peut-elle être perçue négativement par le marché selon la théorie du financement hiérarchique ? Réponse : parce que les dirigeants, mieux informés, ont intérêt à émettre lorsque l''action est surévaluée, ce que le marché anticipe et sanctionne par une baisse du cours à l''annonce.
-- Question 5 : Pourquoi la théorie du financement hiérarchique est-elle jugée particulièrement pertinente pour les PME de la zone UEMOA ? Réponse : parce que leur accès restreint aux marchés de capitaux externes, combiné à une asymétrie d''information potentiellement plus marquée, les pousse structurellement à privilégier l''autofinancement puis la dette bancaire, conformément à la séquence prédite par cette théorie.', 'video', 90, false, 70
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : la structure de financement, de Modigliani-Miller à ses extensions');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en finance', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants en finance préparant leur examen de qualification. Objectifs : maîtriser les étapes d''une étude d''événement, les principes de la modélisation économétrique des séries financières, et les apports et limites de l''enquête auprès de dirigeants financiers. Matériel : diaporama avec exemples chiffrés, tableau pour les schémas. Prérequis : avoir lu la leçon texte correspondante (leçon 4).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette séance consacrée aux méthodes de recherche en finance. Nous allons détailler trois familles de méthodes que vous devrez savoir choisir et justifier devant un jury : l''étude d''événement, la modélisation économétrique des séries financières, et l''enquête auprès de dirigeants financiers. Une pause quiz interviendra au milieu, et nous terminerons par une évaluation finale.
-
-## 05:00 – 20:00 · L''étude d''événement : principes et formules
-
-L''étude d''événement est sans doute la méthode la plus emblématique de la recherche empirique en finance de marché. Elle mesure l''effet d''un événement précis — annonce de résultats, fusion-acquisition, décision de politique monétaire — sur le cours d''un titre. La première étape consiste à estimer un modèle de marché sur une période antérieure à l''événement, hors de la fenêtre d''étude : rentabilité attendue égale alpha plus bêta multiplié par la rentabilité du marché. La deuxième étape consiste à calculer, pour chaque jour de la fenêtre d''événement, la rentabilité anormale, ou AR, qui est l''écart entre la rentabilité réellement observée et la rentabilité attendue selon le modèle estimé. La troisième étape cumule ces rentabilités anormales sur la fenêtre pour obtenir le CAR, la rentabilité anormale cumulée, qui permet de juger l''ampleur et la persistance de la réaction du marché à l''événement.
-
-## 20:00 – 35:00 · Illustration numérique vérifiée de l''étude d''événement
-
-Prenons l''exemple vérifié en Python de cette séquence. Sur une fenêtre de cinq jours autour d''une annonce (jours -2, -1, 0, +1, +2), avec un modèle de marché estimé à alpha = 0,02 % et bêta = 1,1, on obtient les résultats suivants : jour -2, AR d''environ -0,01 % et CAR cumulé de -0,01 % ; jour -1, AR de +0,05 % et CAR de +0,04 % ; jour 0, le jour de l''annonce, AR de +1,37 % et CAR de +1,41 % ; jour +1, AR de +0,28 % et CAR de +1,69 % ; jour +2, AR de -0,24 % et CAR de +1,45 %. Observez avec moi ce qui se passe : la très grande majorité de la rentabilité anormale est concentrée le jour même de l''annonce, ce qui est cohérent avec une réaction rapide du marché, compatible avec une forme au moins semi-forte d''efficience. La légère variation des jours suivants est le type de résidu que la recherche cherche à expliquer, mais sur un échantillon de plusieurs dizaines ou centaines d''événements, jamais sur un cas unique comme celui-ci, qui n''a qu''une valeur pédagogique.
-
-## 35:00 – 50:00 · La modélisation économétrique des séries financières
-
-Passons à la deuxième grande méthode. Les séries de rendements financiers ont des propriétés statistiques particulières : des distributions à queues plus épaisses qu''une loi normale, c''est-à-dire des variations extrêmes plus fréquentes qu''attendu sous une hypothèse de normalité ; et une volatilité qui varie dans le temps et se regroupe en périodes calmes et en périodes agitées, un phénomène appelé hétéroscédasticité conditionnelle. Les modèles de la famille ARCH, introduits par Robert Engle, puis GARCH, étendus par Tim Bollerslev, sont conçus pour modéliser cette volatilité variable, ce qui est essentiel pour l''évaluation du risque et la gestion de portefeuille. Illustrons avec un exemple vérifié en Python : une série simulée de 250 rendements quotidiens, avec une volatilité quotidienne d''environ 1,9 %, donne, une fois annualisée en multipliant par la racine carrée de 252 jours de bourse, une volatilité annuelle d''environ 30 %. Retenez bien ce principe d''annualisation : il revient très souvent dans les questions de jury sur la mesure du risque. Au-delà de la seule volatilité, ces modèles économétriques servent aussi de brique de base aux modèles d''évaluation d''actifs multifactoriels, qui expliquent la rentabilité moyenne des titres par des facteurs de risque communs comme la taille des entreprises, leur niveau de valorisation ou leur momentum récent, estimés par des régressions en séries temporelles ou en panel sur de larges échantillons de titres. Un point de méthode à toujours mentionner devant un jury : avant d''appliquer un modèle ARCH/GARCH ou un modèle multifactoriel, il faut vérifier la stationnarité de la série étudiée, c''est-à-dire que ses propriétés statistiques (moyenne, variance) ne dérivent pas systématiquement dans le temps, sous peine d''obtenir des résultats économétriques trompeurs.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Prenons cinq minutes de pause avec un quiz. Première question : quelles sont les trois étapes d''une étude d''événement ? Deuxième question : que mesure un modèle GARCH que ne mesure pas un simple écart-type constant ? Troisième question : comment annualise-t-on une volatilité quotidienne ? Réponses : estimation du modèle de marché hors fenêtre, calcul de l''AR, calcul du CAR cumulé. Un modèle GARCH capture la variation de la volatilité dans le temps et son regroupement en périodes calmes et agitées. On annualise en multipliant la volatilité quotidienne par la racine carrée du nombre de jours de bourse dans l''année, généralement 252.
-
-## 55:00 – 70:00 · L''enquête auprès de dirigeants financiers
-
-Reprenons avec la troisième méthode, de nature plus qualitative. L''enquête auprès de dirigeants financiers, par questionnaire structuré ou entretien semi-directif, permet d''explorer les motivations déclarées derrière des choix de financement ou d''investissement observés dans les données. Cette méthode a notamment permis de révéler que des considérations comme la flexibilité financière ou le maintien d''une notation de crédit pèsent souvent autant, dans la pratique, que l''optimisation fiscale théorique dans les décisions d''endettement. Cette méthode comporte cependant des limites qu''il faut toujours mentionner à l''oral : le biais de déclaration, qui pousse les dirigeants à présenter leurs pratiques de façon favorable ; le taux de réponse souvent faible ; et la difficulté à généraliser à partir d''un échantillon de volontaires. C''est pourquoi cette méthode est le plus souvent utilisée en complément d''une analyse quantitative, et non en substitut.
-
-## 70:00 – 80:00 · Protocole mixte appliqué à un contexte sénégalais
-
-Voyons maintenant comment combiner ces méthodes dans un protocole de recherche concret, à titre pédagogique et fictif. Imaginons un doctorant souhaitant tester la théorie du financement hiérarchique auprès de PME sénégalaises du secteur agroalimentaire. Le volet quantitatif collecterait les états financiers de l''entreprise sur plusieurs exercices, avec l''accord des entreprises et le respect de la confidentialité des données, pour construire des indicateurs de structure de financement et tester statistiquement leur évolution en fonction des besoins et de la profitabilité. Le volet qualitatif mènerait des entretiens semi-directifs avec les dirigeants ou directeurs financiers pour comprendre les raisons déclarées de leurs choix, et vérifier si elles correspondent aux prédictions théoriques ou révèlent des spécificités locales non prévues par la théorie d''origine. Cette articulation entre données financières et entretiens illustre la triangulation méthodologique attendue dans un travail doctoral rigoureux.
-
-## 80:00 – 85:00 · Synthèse de la séance
-
-Récapitulons les trois méthodes vues aujourd''hui. L''étude d''événement mesure la réaction des prix à une information nouvelle via l''AR et le CAR. La modélisation économétrique, notamment via les modèles ARCH/GARCH, traite la volatilité variable des séries financières. L''enquête auprès de dirigeants financiers explore les motivations déclarées, en complément indispensable de l''analyse quantitative. Le choix et la combinaison de ces méthodes doivent toujours être justifiés par la question de recherche posée.
-
-## 85:00 – 1:30:00 · Évaluation finale (5 questions avec réponses)
-
-Terminons par une évaluation de cinq questions.
-
-- Question 1 : Qu''est-ce qu''une rentabilité anormale cumulée (CAR), et à quoi sert-elle ? Réponse : c''est la somme des rentabilités anormales (écarts entre rentabilité observée et rentabilité attendue par le modèle de marché) sur une fenêtre de jours autour d''un événement ; elle permet de juger l''ampleur et la persistance de la réaction du marché à cet événement.
-- Question 2 : Pourquoi un modèle GARCH est-il préférable à un écart-type constant pour une série de rendements financiers ? Réponse : parce que la volatilité des rendements financiers varie dans le temps et se regroupe en périodes calmes et agitées, ce qu''un écart-type constant ne peut pas représenter.
-- Question 3 : Une volatilité quotidienne de 2 % correspond approximativement à quelle volatilité annualisée (avec 252 jours de bourse) ? Réponse : environ 2% × racine de 252, soit environ 31,7 %.
-- Question 4 : Citez deux limites méthodologiques de l''enquête auprès de dirigeants financiers. Réponse : le biais de déclaration (réponses valorisantes) et le taux de réponse souvent faible, qui limite la représentativité de l''échantillon.
-- Question 5 : Pourquoi recommande-t-on un protocole mixte (quantitatif et qualitatif) pour tester une théorie de structure de financement dans un contexte de marché en développement ? Réponse : parce que l''analyse quantitative documente les choix de financement réellement observés tandis que l''enquête qualitative en explore les motivations, et leur combinaison permet de détecter d''éventuelles spécificités locales non prévues par la théorie d''origine.', 'video', 90, false, 80
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en finance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : traiter une question de synthèse d''examen de qualification en Finance', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants en finance préparant leur examen de qualification. Objectifs : s''entraîner en direct au traitement d''une question de synthèse d''examen, en mobilisant les deux courants théoriques et une méthode de recherche vus dans les séances précédentes. Matériel : diaporama, tableau pour construire le plan en direct. Prérequis : avoir visionné les trois vidéos précédentes et lu la leçon texte correspondante (leçon 5).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette séance d''entraînement direct au traitement d''une question de synthèse d''examen de qualification. Nous allons reprendre la question étudiée en leçon texte : « Dans quelle mesure les débats théoriques sur l''efficience des marchés et sur la structure de financement des entreprises doivent-ils être reconsidérés lorsqu''on les applique à un marché financier en développement comme celui de l''Afrique de l''Ouest ? » et construire ensemble, pas à pas, une réponse complète. Une pause quiz interviendra au milieu, et nous terminerons par une évaluation finale.
-
-## 05:00 – 15:00 · Décomposer la question avant de répondre
-
-La première compétence à démontrer devant un jury, avant même de commencer à répondre, est la capacité à décomposer la question posée. Je vous propose de noter au tableau, avec moi, les trois exigences croisées de cette question. Exigence théorique : mobiliser à la fois le débat efficience/finance comportementale et le débat sur la structure de financement, sans en privilégier un seul au détriment de l''autre. Exigence contextuelle : la question porte explicitement sur la transposition de ces théories à un marché financier en développement, ce qui exclut une réponse purement descriptive qui se contenterait de résumer les théories occidentales sans les discuter. Exigence méthodologique : la question demande une proposition concrète de protocole empirique, qui doit découler logiquement de l''analyse qui précède plutôt que lui être ajoutée artificiellement en fin de copie. Un jury sanctionne sévèrement une réponse qui ignore une de ces trois exigences, même si les connaissances théoriques exposées sont par ailleurs correctes.
-
-## 15:00 – 30:00 · Construire le plan en direct : parties I et II
-
-Construisons maintenant le plan ensemble. La partie I traite le débat efficience/finance comportementale reconsidéré en contexte de marché peu profond : on rappelle les formes de l''efficience et les apports de la finance comportementale, puis on montre que la faible liquidité et les coûts d''arbitrage plus élevés sur un marché comme la BRVM peuvent limiter l''efficience de forme semi-forte, sans que cela traduise nécessairement une irrationalité plus marquée des investisseurs locaux — il s''agit d''une différence de structure de marché, pas de comportement. La partie II traite le débat sur la structure de financement reconsidéré dans le même contexte : on rappelle le théorème de Modigliani-Miller et ses trois extensions, puis on montre que l''accès restreint aux marchés de capitaux externes et l''asymétrie d''information potentiellement plus marquée renforcent particulièrement la pertinence de la théorie du financement hiérarchique pour les entreprises de la région. Remarquez la symétrie de construction entre ces deux parties : chacune suit le même schéma, rappel théorique puis discussion contextuelle, ce qui donne une cohérence visible à votre réponse.
-
-## 30:00 – 40:00 · Construire le plan en direct : parties III et IV
-
-La partie III met en tension les deux débats précédents, en montrant qu''ils se rejoignent sur un même constat méthodologique : les théories financières de référence, construites sur des hypothèses de marchés profonds, doivent être testées empiriquement sur le contexte local avant d''être supposées valides, plutôt que transposées par analogie. C''est cette partie III qui distingue une excellente réponse d''une réponse moyenne, car elle montre que vous ne traitez pas deux questions séparées mais une seule problématique unifiée. La partie IV propose le protocole empirique : une étude d''événement appliquée à un échantillon d''annonces d''entreprises cotées à la BRVM pour mesurer l''efficience locale, complétée par une enquête auprès de directeurs financiers de la région pour tester la théorie du financement hiérarchique. Notez bien que ce protocole combine les deux méthodes vues en séance précédente, ce qui montre au jury votre capacité à relier théorie et méthode de façon cohérente.
-
-## 40:00 – 45:00 · Pause et quiz interactif
-
-Prenons cinq minutes de pause avec un quiz. Première question : quelles sont les trois exigences croisées de la question d''examen étudiée ? Deuxième question : pourquoi la partie III du plan est-elle considérée comme la plus discriminante pour le jury ? Troisième question : quelles deux méthodes sont mobilisées dans le protocole empirique proposé ? Réponses : exigence théorique, exigence contextuelle, exigence méthodologique. La partie III montre que le candidat traite une problématique unifiée plutôt que deux questions séparées. Le protocole mobilise une étude d''événement et une enquête auprès de dirigeants financiers.
-
-## 45:00 – 60:00 · Rédiger un extrait en direct
-
-Passons maintenant à la rédaction, car un bon plan ne suffit pas : il faut savoir le rédiger avec précision à l''oral comme à l''écrit. Reprenons l''extrait de la partie I étudié en leçon texte et décomposons sa construction phrase par phrase. La première phrase pose le cadre théorique avec précision (la forme semi-forte de l''efficience). La deuxième phrase introduit la condition qui rend ce cadre théorique vérifié sur un marché développé (nombreux arbitragistes, coûts de transaction faibles). La troisième phrase introduit la nuance contextuelle, sans jamais affirmer un résultat empirique non vérifié (« ce qui n''invalide pas le cadre théorique mais invite à en vérifier empiriquement le degré effectif »). La quatrième phrase ajoute l''éclairage du second courant théorique (la finance comportementale) pour enrichir l''analyse plutôt que la répéter. Cette structure en quatre temps — cadre théorique, condition de validité, nuance contextuelle, éclairage complémentaire — est une excellente grille de rédaction que vous pouvez réutiliser pour n''importe quelle partie de votre réponse à l''oral.
-
-## 60:00 – 75:00 · Simuler les objections d''un jury
-
-Un jury ne se contente jamais d''écouter une réponse préparée : il pose des questions de relance pour tester la profondeur de votre maîtrise. Entraînons-nous à anticiper trois objections possibles sur cette question. Première objection : « Vous affirmez que la BRVM est moins efficiente, mais avez-vous des preuves empiriques précises ? » Bonne réponse : rappeler que l''on ne peut affirmer un résultat empirique précis sans étude dédiée, et que c''est précisément la raison du protocole proposé en partie IV — la nuance plutôt que l''affirmation catégorique est la meilleure défense. Deuxième objection : « La théorie du financement hiérarchique s''applique-t-elle aussi aux grandes entreprises cotées, ou seulement aux PME ? » Bonne réponse : préciser que la théorie a été développée principalement sur des entreprises cotées de marchés développés, et que son application aux PME de marchés en développement, où l''accès aux fonds propres externes est encore plus restreint, constitue justement une extension intéressante à tester empiriquement. Troisième objection : « Ne pourrait-on pas simplement appliquer les résultats obtenus sur des marchés comme Paris ou New York ? » Bonne réponse : rappeler que les caractéristiques structurelles diffèrent (liquidité, nombre d''arbitragistes, cadre institutionnel), ce qui justifie précisément la nécessité d''un test empirique local plutôt qu''une transposition directe.
-
-## 75:00 – 85:00 · Synthèse de la séance
-
-Récapitulons les compétences travaillées aujourd''hui. Décomposer systématiquement une question de synthèse en ses exigences théoriques, contextuelles et méthodologiques. Construire un plan qui traite chaque courant puis les met en tension avec le contexte imposé. Rédiger selon une grille en quatre temps : cadre théorique, condition de validité, nuance contextuelle, éclairage complémentaire. Anticiper les objections de relance d''un jury en privilégiant toujours la nuance méthodologique à l''affirmation catégorique non vérifiée.
-
-## 85:00 – 1:30:00 · Évaluation finale (5 questions avec réponses)
-
-Terminons par une évaluation de cinq questions.
-
-- Question 1 : Citez les trois exigences croisées d''une question de synthèse d''examen de qualification en finance appliquée à un contexte de marché en développement. Réponse : exigence théorique (mobiliser plusieurs courants), exigence contextuelle (discuter la transposition au contexte imposé), exigence méthodologique (proposer un protocole empirique cohérent).
-- Question 2 : Pourquoi une réponse qui traite séparément les deux courants théoriques sans les mettre en tension avec le contexte est-elle jugée insuffisante ? Réponse : parce qu''elle ne répond pas réellement à la question posée, qui porte sur la reconsidération conjointe des théories dans un contexte spécifique, et non sur leur simple restitution.
-- Question 3 : Décrivez la grille de rédaction en quatre temps présentée dans cette séance. Réponse : cadre théorique précis, condition de validité de ce cadre, nuance contextuelle sans affirmation catégorique non vérifiée, éclairage complémentaire d''un second courant théorique.
-- Question 4 : Un jury vous demande des preuves empiriques précises que vous n''avez pas. Quelle est la meilleure stratégie de réponse ? Réponse : reconnaître qu''aucune affirmation empirique précise ne peut être faite sans étude dédiée, et rappeler que c''est précisément la raison d''être du protocole empirique proposé.
-- Question 5 : Pourquoi ne peut-on pas simplement transposer des résultats obtenus sur un marché développé à un marché financier en développement ? Réponse : parce que les caractéristiques structurelles (liquidité, nombre d''arbitragistes, cadre institutionnel, accès aux marchés de capitaux) diffèrent, ce qui impose une vérification empirique locale plutôt qu''une transposition par analogie.', 'video', 90, false, 90
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : traiter une question de synthèse d''examen de qualification en Finance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale en Finance', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants en finance en fin de préparation à leur examen de qualification. Objectifs : vivre, dans des conditions proches du réel, une simulation complète de soutenance de qualification doctorale en finance, avec présentation du champ, défense d''un projet de thèse fictif, et questions de jury type. Matériel : diaporama de présentation, grille d''auto-évaluation finale. Prérequis : avoir suivi les quatre vidéos précédentes et lu les cinq leçons texte du cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et mise en situation
-
-Bienvenue dans cette cinquième et dernière vidéo, la plus importante pour votre préparation finale : une simulation complète de soutenance de qualification doctorale en finance. Je vais jouer le rôle du candidat doctorant, puis nous passerons en revue les questions qu''un jury type poserait, avec la structure attendue d''une bonne réponse pour chacune. Mettez-vous dans les conditions réelles de l''épreuve : calme, concentration, et une bonne gestion du temps de parole, qui est aussi évaluée par le jury.
-
-## 05:00 – 20:00 · Présentation du champ (15 minutes)
-
-« Mesdames, Messieurs les membres du jury, je vous propose de présenter en 15 minutes l''état du champ de la finance qui structure mon projet de thèse. La finance de marché et la finance d''entreprise sont traversées par deux grands débats que j''ai choisi d''articuler. D''une part, le débat entre l''hypothèse d''efficience des marchés, qui postule une intégration rapide de l''information dans les prix, et la finance comportementale, qui documente des biais cognitifs systématiques et des anomalies de marché durables. D''autre part, le débat sur la structure de financement des entreprises, ouvert par le théorème de Modigliani-Miller, puis enrichi par trois extensions majeures : l''avantage fiscal de la dette, les coûts de faillite et de détresse financière, et l''asymétrie d''information, cette dernière donnant naissance à la théorie du financement hiérarchique. Ces deux débats, bien que portant sur des objets différents — la formation des prix d''un côté, le choix des sources de financement de l''autre — partagent un point commun essentiel pour mon projet de thèse : ils ont été construits et testés empiriquement, pour l''essentiel, sur des marchés financiers profonds et liquides des économies avancées. Mon projet de thèse propose de les tester empiriquement sur la Bourse Régionale des Valeurs Mobilières et sur un échantillon d''entreprises de la zone UEMOA, en combinant deux méthodes : une étude d''événement pour mesurer le degré effectif d''efficience locale, et une enquête auprès de directeurs financiers pour tester la pertinence de la théorie du financement hiérarchique dans ce contexte. Ma problématique centrale est la suivante : dans quelle mesure les théories de référence de la finance doivent-elles être reconsidérées, plutôt que simplement transposées, lorsqu''elles sont appliquées à un marché financier en développement ? » Voilà le type d''exposé structuré, avec une problématique claire énoncée explicitement à la fin, que votre jury attend de vous en quinze minutes.
-
-## 20:00 – 25:00 · Transition et consignes pour la suite
-
-Après cette présentation, le jury engage généralement une série de questions, qui alternent entre questions de connaissance pure, questions de mise en tension critique, et questions sur la faisabilité méthodologique du projet. Nous allons maintenant passer en revue dix questions de jury type, avec chaque fois la structure attendue d''une bonne réponse, plutôt qu''une réponse mot à mot à mémoriser — c''est cette structure qu''il faut intérioriser.
-
-## 25:00 – 55:00 · Questions de jury type 1 à 5
-
-- Question 1 du jury : « Pourquoi avez-vous choisi d''articuler ces deux débats théoriques plutôt que de vous concentrer sur un seul ? » Structure de bonne réponse : rappeler que les deux débats partagent le même enjeu méthodologique (la transposition à un marché en développement), ce qui justifie leur articulation plutôt qu''un choix exclusif, et montrer que cette articulation enrichit la problématique sans la disperser.
-- Question 2 du jury : « L''hypothèse d''efficience des marchés n''est-elle pas réfutée par l''existence de bulles spéculatives ? » Structure de bonne réponse : nuancer en distinguant les formes de l''efficience, rappeler que les bulles sont documentées comme anomalies mais que leur existence ne réfute pas nécessairement l''efficience de forme faible, et mentionner les limites à l''arbitrage comme explication de leur persistance.
-- Question 3 du jury : « Pourquoi la théorie du financement hiérarchique vous semble-t-elle plus pertinente que la théorie du compromis pour votre terrain ? » Structure de bonne réponse : ne jamais rejeter totalement l''une des deux théories, mais argumenter que les caractéristiques structurelles du terrain (accès restreint aux marchés de capitaux, asymétrie d''information) rendent la théorie du financement hiérarchique a priori plus prédictive, tout en précisant que cela reste une hypothèse à tester, pas une certitude.
-- Question 4 du jury : « Votre étude d''événement portera sur combien d''entreprises, et pourquoi ce nombre ? » Structure de bonne réponse : donner un ordre de grandeur réaliste compte tenu du nombre de titres cotés à la BRVM, reconnaître la contrainte d''un échantillon plus restreint que sur un marché développé, et expliquer les implications statistiques de cette contrainte (puissance du test, nécessité de regrouper plusieurs types d''événements).
-- Question 5 du jury : « Comment garantirez-vous la qualité des réponses à votre enquête auprès des directeurs financiers ? » Structure de bonne réponse : mentionner les techniques de fiabilisation (anonymat des réponses, croisement avec des données financières objectives, pré-test du questionnaire auprès d''un petit échantillon) et reconnaître honnêtement les limites qui subsisteront malgré ces précautions.
-
-## 55:00 – 60:00 · Pause et quiz interactif
-
-Prenons cinq minutes de pause. Je vous propose, à titre de quiz, de reformuler mentalement en une phrase chacune des cinq questions de jury déjà vues, sans relire vos notes, pour tester votre capacité de restitution sous une forme proche de l''oral réel.
-
-## 60:00 – 85:00 · Questions de jury type 6 à 10
-
-- Question 6 du jury : « Si votre étude d''événement montre une réaction de marché très rapide, en conclurez-vous que la BRVM est efficiente ? » Structure de bonne réponse : refuser la conclusion hâtive, rappeler qu''un seul résultat ne suffit pas à trancher, et qu''il faudrait répliquer l''analyse sur plusieurs types d''événements et plusieurs périodes avant toute généralisation.
-- Question 7 du jury : « Votre projet mentionne un taux d''impôt sur les sociétés pour vos simulations : sur quelle source officielle vous appuyez-vous ? » Structure de bonne réponse : préciser explicitement que toute valeur chiffrée utilisée dans les illustrations théoriques est fictive, à but pédagogique, et qu''une application réelle nécessiterait de vérifier le taux officiel en vigueur auprès des sources réglementaires compétentes au moment de l''étude.
-- Question 8 du jury : « En quoi votre travail apporte-t-il une contribution originale par rapport à la littérature existante ? » Structure de bonne réponse : rappeler que la plupart des tests empiriques de ces théories ont été menés sur des marchés développés, et que leur test systématique et combiné sur un marché financier en développement comme la BRVM, avec une méthode mixte, constitue l''apport attendu, sans exagérer la portée de ce qui reste une étude de cas régionale.
-- Question 9 du jury : « Quelles limites anticipez-vous déjà pour votre travail ? » Structure de bonne réponse : citer honnêtement la taille réduite de l''échantillon disponible, les éventuelles limites de qualité ou de disponibilité des données financières locales, et le biais de déclaration possible dans l''enquête — une bonne réponse anticipe les limites plutôt que de les laisser découvrir par le jury.
-- Question 10 du jury : « Si vos résultats empiriques contredisaient vos hypothèses théoriques, que feriez-vous ? » Structure de bonne réponse : affirmer qu''un résultat contraire aux hypothèses initiales est aussi une contribution scientifique légitime, à condition d''être discuté rigoureusement, et qu''il faudrait alors explorer les raisons de cet écart plutôt que de le dissimuler ou de forcer l''interprétation des données.
-
-## 85:00 – 1:30:00 · Grille d''auto-évaluation de la soutenance simulée
-
-Cette dernière vidéo se termine, non par une évaluation à cinq questions avec réponses comme les précédentes, mais par une grille d''auto-évaluation que vous devez utiliser après chaque entraînement oral, seul ou avec un collègue. Notez-vous honnêtement de 1 à 4 sur chacun des critères suivants (1 = à retravailler, 4 = maîtrisé).
-
-- Clarté de la problématique énoncée en fin de présentation de 15 minutes : la problématique est-elle formulée en une phrase compréhensible, sans jargon excessif ?
-- Articulation des deux courants théoriques : les deux débats sont-ils reliés par un fil directeur clair, plutôt que juxtaposés sans lien ?
-- Précision du vocabulaire théorique : les termes techniques (formes de l''efficience, extensions de Modigliani-Miller, AR, CAR) sont-ils employés avec exactitude ?
-- Gestion des questions pièges : les réponses évitent-elles les affirmations catégoriques non vérifiées, au profit d''une nuance méthodologique assumée ?
-- Honnêteté sur les limites du projet : les limites de l''échantillon, des données ou de la méthode sont-elles reconnues spontanément plutôt qu''évitées ?
-- Gestion du temps de parole : la présentation tient-elle dans le temps imparti sans précipitation ni longueurs excessives ?
-- Capacité à relier théorie et méthode : chaque méthode proposée est-elle justifiée par rapport à la théorie qu''elle permet de tester ?
-- Ancrage dans le contexte régional : le projet évite-t-il la transposition par analogie, au profit d''une vérification empirique explicitement revendiquée ?
-
-Faites le total sur 32 points. Un score supérieur à 26 traduit une préparation solide ; entre 18 et 26, continuez à retravailler les points les plus faibles identifiés ; en dessous de 18, reprenez les quatre premières vidéos de ce cours avant de retenter une simulation complète. Cette grille, répétée à intervalles réguliers durant vos huit semaines de préparation, est l''outil le plus efficace pour transformer une connaissance théorique en une performance orale maîtrisée devant un jury réel.', 'video', 90, false, 100
-from public.courses c where c.slug = 'doc-fin'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale en Finance');

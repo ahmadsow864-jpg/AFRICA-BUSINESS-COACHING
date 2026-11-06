@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 1/20). À exécuter après seed.sql.
+-- Cours (partie 1/21). À exécuter après seed.sql.
 
 -- Cours : Économie générale L1 : marchés, agrégats et monnaie en zone UEMOA
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

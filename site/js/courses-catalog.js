@@ -5450,6 +5450,78 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "doc-info",
+  "level": "Doctorat",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Doctorat Informatique : préparer l'examen de qualification doctorale",
+  "description": "Préparation à l'examen de qualification doctorale (comprehensive exam) en Informatique : le débat entre l'ingénierie logicielle classique fondée sur la preuve et la vérification formelle, et l'apprentissage automatique fondé sur les données, la boîte noire et l'explicabilité ; les méthodes de recherche du champ (preuve formelle, expérimentation et benchmarking, étude empirique par fouille de dépôts logiciels) ; une épreuve type corrigée et une simulation complète de soutenance. Public : doctorants en informatique préparant leur examen de qualification. Prérequis : Master en informatique.",
+  "sort": 803,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\nCette première leçon pose le cadre de l'examen de qualification doctorale (comprehensive exam) en\nInformatique. Avant d'entrer dans les courants théoriques du champ, il faut comprendre ce que le jury\nattend réellement de vous, et se doter d'une méthode de travail tenable sur plusieurs semaines. Un\ndoctorant qui aborde cet examen comme une accumulation de lectures isolées s'épuise sans jamais produire\nde vision d'ensemble ; un doctorant qui construit, dès le départ, une cartographie des courants et une\nnote de synthèse vivante progresse de façon cumulative.\n\n## Nature de l'épreuve\n\nL'examen de qualification doctorale en Informatique n'est pas un contrôle de connaissances techniques au\nsens d'un examen de Master. Il vérifie trois choses très différentes.\n\n- La maîtrise de l'état de l'art : savoir situer les grands courants de la discipline (génie logiciel\n  formel, intelligence artificielle et apprentissage automatique, systèmes, algorithmique, réseaux, sécurité\n  informatique, selon la spécialité de la thèse), leurs auteurs fondateurs, leurs méthodes et leurs limites.\n- La capacité de synthèse critique : ne pas réciter des définitions, mais comparer deux courants, montrer\n  leurs tensions (par exemple preuve formelle contre apprentissage statistique), et argumenter pourquoi un\n  projet de thèse se positionne d'un côté, de l'autre, ou à leur intersection.\n- La défense orale d'un projet de thèse : présenter, devant un jury de chercheurs confirmés, la\n  problématique, l'ancrage théorique et la méthodologie envisagée, puis répondre à des questions qui\n  testent la solidité du raisonnement plus que la mémorisation.\n\nLe format concret varie selon les universités et les écoles doctorales (épreuve écrite de synthèse,\nsoutenance orale, ou les deux), mais le fond est partout le même : montrer que vous maîtrisez le champ\nscientifique dans lequel votre thèse va s'inscrire, et que vous êtes capable de le discuter, pas seulement\nde le réciter.\n\n## Ce que le jury attend vraiment\n\nUn jury doctoral en informatique cherche d'abord de la rigueur intellectuelle. Une affirmation du type\n« les réseaux de neurones ont remplacé les méthodes formelles » sera immédiatement sanctionnée, parce\nqu'elle ignore que ces deux courants coexistent et se complètent selon les problèmes traités (un système\ncritique de pilotage aérien reste vérifié formellement ; un système de recommandation s'appuie sur\nl'apprentissage statistique). Le jury valorise au contraire une pensée qui articule :\n\n- la connaissance précise des définitions et des limites théoriques de chaque courant,\n- la capacité à citer les contributions fondatrices sans les déformer,\n- l'aptitude à relier ces courants à des méthodes de recherche concrètes (preuve, expérimentation,\n  étude empirique),\n- et la capacité à situer sa propre problématique de thèse dans cette cartographie, en expliquant ce que\n  son travail apporte par rapport à l'existant.\n\nLe jury sanctionne à l'inverse l'absence de recul critique, les généralisations non étayées, et toute\naffirmation chiffrée ou citation qui ne pourrait pas être vérifiée dans la littérature.\n\n## Méthode de travail recommandée\n\nTrois outils structurent efficacement une préparation sur plusieurs semaines.\n\nLa fiche de lecture systématique. Pour chaque article, ouvrage ou chapitre important, une fiche courte\nqui répond à quatre questions : quelle est la problématique traitée ? Quelle est la méthode utilisée\n(preuve, expérimentation, étude empirique) ? Quel est le résultat principal ? Quelles sont les limites\nreconnues par l'auteur lui-même ou par la littérature postérieure ? Cette discipline évite de relire un\nmême texte plusieurs fois sans en retenir l'essentiel.\n\nLa cartographie des courants. Un schéma ou un tableau, régulièrement mis à jour, qui place les grands\ncourants du champ (par exemple : méthodes formelles, apprentissage automatique, systèmes distribués,\nalgorithmique et complexité) avec, pour chacun, ses auteurs fondateurs, ses méthodes de recherche\nprivilégiées, ses succès reconnus et ses critiques. Cette carte devient le squelette de la note de\nsynthèse finale et du plan de soutenance.\n\nLa note de synthèse vivante. Un document unique, réécrit et enrichi semaine après semaine, qui ne\nrecopie pas les fiches de lecture mais construit un discours argumenté : « le champ de l'informatique est\ntraversé par la tension entre vérifiabilité formelle et efficacité empirique des heuristiques ; ma thèse se\npositionne... ». C'est ce document, et non les fiches brutes, qui doit être présentable au jury.\n\n## Plan de travail sur 8 semaines\n\n- Semaines 1 et 2 : lecture de synthèse sur le premier grand courant théorique du champ (fiches de lecture,\n  début de cartographie).\n- Semaines 3 et 4 : lecture de synthèse sur le second grand courant, en construisant systématiquement des\n  comparaisons avec le premier (points communs, tensions, exemples de systèmes relevant de chacun).\n- Semaine 5 : approfondissement des méthodes de recherche du champ (preuve formelle, expérimentation,\n  étude empirique des dépôts logiciels) et rédaction d'un protocole de recherche illustratif.\n- Semaine 6 : rédaction de la note de synthèse qui articule les deux courants et les méthodes de\n  recherche, et premier positionnement du projet de thèse personnel dans cette cartographie.\n- Semaine 7 : entraînement à l'oral sur des questions type, seul puis devant un collègue ou un encadrant,\n  avec chronométrage des réponses.\n- Semaine 8 : répétition générale de la soutenance (quinze minutes de présentation, puis questions de\n  jury), relecture finale de la note de synthèse, vérification de tous les exemples chiffrés ou calculs\n  mentionnés.\n\nCe plan n'est pas rigide : il doit être adapté à la spécialité exacte de la thèse et aux exigences propres\nde l'école doctorale. Mais le principe reste valable dans tous les cas : construire, lecture après lecture,\nune vision argumentée du champ plutôt qu'un empilement de connaissances disjointes.\n\n## Exercices pratiques\n\n1. Dressez la liste des deux ou trois grands courants théoriques de l'informatique qui vous semblent les\n   plus pertinents pour votre propre projet de thèse, et justifiez ce choix en deux phrases chacun.\n2. Rédigez une fiche de lecture (modèle : problématique, méthode, résultat, limites) sur un article ou un\n   ouvrage de référence que vous avez déjà lu dans votre spécialité.\n3. Esquissez, sous forme de tableau à deux colonnes, une première cartographie opposant « méthodes\n   formelles / vérification » et « apprentissage automatique / approche statistique ».\n4. Formulez, en une phrase, la question de synthèse que vous redoutez le plus pour votre propre examen de\n   qualification, et expliquez pourquoi.\n5. Construisez votre propre plan de travail sur 8 semaines en adaptant celui proposé ici à votre\n   spécialité et à votre calendrier réel.\n\n## Corrigé\n\n1. Il n'existe pas de bonne réponse unique : l'essentiel est que les courants choisis soient réellement\n   structurants pour votre champ (par exemple, pour une thèse en apprentissage automatique appliqué, les\n   courants pertinents seraient plutôt « apprentissage statistique » et « explicabilité / IA de confiance »,\n   alors que pour une thèse en vérification de systèmes critiques, ce seraient « méthodes formelles » et\n   « test et validation empirique »), et que la justification montre un lien explicite avec la problématique\n   de thèse envisagée.\n2. Une fiche réussie reste courte (une demi-page au maximum), distingue clairement les quatre rubriques, et\n   formule les limites sans les minimiser : un bon candidat sait dire ce qu'un travail ne démontre pas.\n3. Le tableau doit éviter la caricature « les méthodes formelles sont dépassées » ou « l'apprentissage\n   automatique est sans fondement » : chaque courant possède des succès reconnus (la preuve formelle pour\n   les systèmes où une erreur est inacceptable, l'apprentissage statistique pour les problèmes où la\n   spécification exacte du comportement attendu est elle-même inconnue ou trop complexe à écrire) et des\n   limites assumées (coût et rigidité de la preuve formelle à grande échelle, difficulté à expliquer et à\n   garantir le comportement d'un modèle statistique, en particulier dans des cas rares).\n4. Toute question honnête est recevable ; l'essentiel est d'identifier précisément la source de la crainte\n   (manque de lectures sur un sous-thème, difficulté à comparer deux courants, manque d'aisance à l'oral)\n   pour y consacrer un temps de travail ciblé dans les semaines suivantes.\n5. Un bon plan conserve la logique générale (courant 1, courant 2, méthodes, synthèse, entraînement oral,\n   répétition générale) mais adapte les durées à la charge réelle de lecture disponible dans la\n   spécialité choisie, et prévoit des marges pour les imprévus (délai de l'encadrant, autres obligations\n   doctorales)."
+   },
+   {
+    "title": "Courant théorique n°1 : l'ingénierie logicielle classique, la preuve et la vérification formelle",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Courant théorique n°2 : l'apprentissage automatique, la boîte noire et l'explicabilité",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les méthodes de recherche en Informatique : preuve, expérimentation et étude empirique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Épreuve type d'examen de qualification en Informatique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Vidéo 1 : l'ingénierie logicielle classique, la preuve et la vérification formelle",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Vidéo 2 : l'apprentissage automatique, la boîte noire et l'explicabilité",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Vidéo 3 : les méthodes de recherche en Informatique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Vidéo 4 : épreuve type d'examen de qualification en Informatique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Vidéo 5 : simulation complète d'une soutenance de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "doc-cg",
   "level": "Doctorat",
   "subject": "Contrôle de gestion",
@@ -5666,6 +5738,78 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "doc-eco",
+  "level": "Doctorat",
+  "subject": "Économie",
+  "module": null,
+  "title": "Doctorat Économie : préparer l'examen de qualification doctorale",
+  "description": "Préparation à l'examen de qualification doctorale en économie : maîtrise critique du courant néoclassique et des approches institutionnalistes, structuralistes et de la dépendance appliquées au développement africain, méthodes de recherche (économétrie de panel, évaluation d'impact, analyse institutionnelle qualitative), et entraînement complet à l'épreuve écrite et à la soutenance orale devant jury. Public : doctorants en économie, prérequis master en économie.",
+  "sort": 807,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Nature de l'épreuve\n\nL'examen de qualification doctorale (comprehensive exam) en économie n'est pas un examen de connaissances comme ceux rencontrés en licence ou en master. Il ne s'agit plus de résoudre un exercice ou d'appliquer une formule, mais de démontrer que le doctorant maîtrise l'état de l'art de sa discipline, qu'il est capable de situer son propre projet de thèse dans les débats théoriques existants, et qu'il peut défendre ce positionnement devant un jury composé de professeurs expérimentés. Cette épreuve se déroule en général en deux temps : une phase écrite, qui prend la forme d'une note de synthèse ou d'un essai critique portant sur un ou plusieurs courants théoriques du champ, et une phase orale, la soutenance de qualification, au cours de laquelle le candidat présente son projet de thèse puis répond aux questions du jury.\n\nLa différence essentielle avec le master tient au niveau d'abstraction attendu. En master, on demande de résoudre un cas concret d'entreprise ou de politique publique en appliquant des outils déjà balisés. En doctorat, le jury veut vérifier que le candidat sait comparer des cadres théoriques concurrents, en identifier les hypothèses implicites, en mesurer la portée et les limites, et choisir ou construire une méthode de recherche cohérente avec le cadre théorique retenu. L'examen de qualification est donc un filtre qui atteste que le doctorant est prêt à produire une contribution originale à la connaissance, et non plus seulement à consommer des connaissances existantes.\n\n## Ce qu'attend un jury doctoral\n\nUn jury de qualification évalue principalement quatre compétences. La première est la maîtrise des grands courants théoriques du champ économique : le candidat doit pouvoir exposer, sans notes, les hypothèses fondatrices de l'école néoclassique, celles des approches institutionnalistes et structuralistes, et situer les débats qui les opposent, en particulier sur la question du développement. La deuxième compétence est la capacité de synthèse critique : il ne s'agit pas de réciter des auteurs, mais de montrer en quoi un cadre théorique éclaire ou, au contraire, échoue à expliquer un phénomène économique observé, par exemple la trajectoire des économies ouest-africaines depuis les indépendances. La troisième compétence est la maîtrise des méthodes de recherche propres à la discipline : l'économétrie appliquée, en particulier les modèles de panel, les méthodes d'évaluation d'impact comme la différence de différences, et les approches qualitatives d'analyse institutionnelle. La quatrième compétence, enfin, est l'aptitude à articuler un projet de thèse personnel avec cette littérature : pourquoi cette question, pourquoi maintenant, avec quelle méthode, et en quoi le travail envisagé apporte-t-il quelque chose de nouveau.\n\nLe jury est en général sévère sur deux points précis. D'abord l'exactitude : un candidat qui attribue à un auteur une thèse qu'il n'a pas défendue, ou qui confond deux courants proches, perd immédiatement en crédibilité. Ensuite la nuance : un bon candidat ne défend pas un courant contre un autre comme on défend une équipe de football, il montre qu'il comprend pourquoi chaque cadre a été construit, quels problèmes il résout, et dans quelles conditions il devient insuffisant.\n\n## Méthode de travail pour préparer l'épreuve\n\nLa préparation d'un examen de qualification doctorale repose sur trois outils de travail complémentaires. Le premier est la fiche de lecture structurée : pour chaque texte fondateur ou chaque article de synthèse lu, le doctorant rédige une fiche courte qui résume la question posée par l'auteur, la réponse apportée, les hypothèses sur lesquelles elle repose, et les critiques qui lui ont été adressées par la suite. Cette discipline évite l'écueil classique qui consiste à avoir beaucoup lu sans pouvoir restituer l'essentiel sous pression, à l'oral.\n\nLe deuxième outil est la cartographie des courants : un tableau ou un schéma qui place les écoles de pensée les unes par rapport aux autres, selon leurs hypothèses sur le comportement des agents, le rôle du marché, le rôle de l'État et des institutions, et leur lecture du développement économique. Construire puis mémoriser cette carte permet, à l'oral, de répondre à une question en resituant immédiatement la position de chaque courant plutôt que de partir d'une page blanche.\n\nLe troisième outil est la note de synthèse thématique : un document d'une dizaine de pages, rédigé par le doctorant lui-même, qui traite un débat précis — par exemple le débat sur les politiques d'ajustement structurel en Afrique de l'Ouest — en mobilisant plusieurs courants théoriques et en proposant une méthode empirique pour trancher ou nuancer le débat. Rédiger plusieurs notes de ce type sur les grands débats du champ constitue le meilleur entraînement à l'épreuve écrite, et fournit une base de révision solide pour l'oral.\n\n## Plan de travail sur huit semaines\n\nUn plan de préparation réaliste s'étale sur huit semaines. Les deux premières semaines sont consacrées à la relecture des textes fondateurs du champ et à la rédaction des premières fiches de lecture, en commençant par les courants que le candidat connaît le moins bien. Les semaines trois et quatre servent à construire la cartographie des courants et à rédiger une première note de synthèse sur un débat central, par exemple celui qui oppose les lectures néoclassique et structuraliste du développement africain. Les semaines cinq et six sont centrées sur les méthodes de recherche : revoir les principes de l'économétrie de panel, les méthodes d'évaluation d'impact et l'analyse institutionnelle qualitative, puis rédiger un protocole de recherche fictif qui applique une de ces méthodes à une question africaine. La semaine sept est consacrée à des simulations orales, idéalement devant un collègue ou un directeur de thèse qui joue le rôle du jury et pose des questions imprévues. La huitième semaine, enfin, est réservée à la relecture du projet de thèse personnel, à l'anticipation des objections les plus probables du jury sur ce projet, et à un repos suffisant avant l'épreuve, car la fatigue est le pire ennemi de la clarté d'exposition à l'oral.\n\n## Exercices pratiques\n\n1. Construisez votre propre cartographie des courants économiques du développement (néoclassique, institutionnaliste, structuraliste/dépendantiste) sous forme de tableau comparatif, en précisant pour chaque courant son hypothèse centrale sur le comportement des agents et son hypothèse centrale sur le rôle de l'État.\n\n2. Rédigez une fiche de lecture de deux pages maximum sur un auteur fondateur de l'école néoclassique au choix, en indiquant la question posée, la réponse apportée, et une critique majeure qui lui a été faite.\n\n3. Identifiez trois questions qu'un jury doctoral pourrait poser à un candidat qui affirme vouloir étudier, dans sa thèse, l'impact d'une politique publique sur l'emploi informel en Afrique de l'Ouest, et indiquez pour chacune la nature de la réponse attendue.\n\n4. Expliquez en cinq lignes pourquoi l'examen de qualification doctorale diffère d'un examen de master dans la même discipline.\n\n5. Proposez un plan de travail personnel sur huit semaines, en adaptant le plan proposé dans la leçon à votre propre emploi du temps, et en identifiant les deux courants théoriques que vous devez le plus retravailler.\n\n## Corrigé\n\n1. Un tableau correctement construit doit comporter trois lignes (une par courant) et au moins deux colonnes (hypothèse sur les agents, hypothèse sur l'État). Pour le courant néoclassique : agents rationnels optimisateurs, marché autorégulateur, État dont l'intervention est en général présentée comme une source de distorsion. Pour l'institutionnalisme : comportement des agents encadré par des règles et des conventions, importance des institutions (droits de propriété, règles contractuelles) pour expliquer la performance économique. Pour le structuralisme/la dépendance : rapports de domination structurels entre centre et périphérie, rôle actif de l'État jugé nécessaire pour corriger les déséquilibres hérités de la division internationale du travail.\n\n2. Une fiche réussie reste factuelle : elle attribue à l'auteur une contribution précise (par exemple la formalisation de l'équilibre général, ou la théorie de l'utilité) sans lui prêter de citation textuelle non vérifiée, et mentionne une limite reconnue de cette contribution (hypothèses très simplificatrices, difficulté à rendre compte des situations de marché imparfait, etc.).\n\n3. Exemples de questions possibles : « Quel cadre théorique mobilisez-vous pour définir l'emploi informel et pourquoi ? » (réponse attendue : justifier le choix entre une lecture néoclassique de l'informalité comme choix rationnel d'évitement de la réglementation, et une lecture institutionnaliste de l'informalité comme résultat de règles mal adaptées) ; « Quelle méthode empirique permettrait de mesurer cet impact ? » (réponse attendue : discuter la pertinence d'une différence de différences ou d'une analyse de panel, et les conditions nécessaires à sa validité) ; « En quoi votre travail se distingue-t-il de la littérature existante ? » (réponse attendue : positionnement clair par rapport à des travaux déjà connus).\n\n4. Le master évalue la capacité à appliquer des outils déjà établis à un cas concret ; le doctorat évalue la capacité à comparer, critiquer et choisir entre des cadres théoriques concurrents, puis à concevoir une méthode de recherche originale, ce qui suppose un niveau d'abstraction et d'autonomie intellectuelle supérieur.\n\n5. Il n'existe pas de corrigé unique ; un plan réussi respecte la logique proposée (lecture puis cartographie puis méthode puis simulation puis consolidation) et identifie honnêtement les points faibles personnels du candidat plutôt que de répéter mécaniquement le plan type."
+   },
+   {
+    "title": "Le courant néoclassique : rationalité, marché et équilibre général",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Institutionnalisme, structuralisme et théories de la dépendance : lectures critiques du développement africain",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Méthodes de recherche en économie du développement : économétrie de panel, évaluation d'impact et analyse institutionnelle",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Épreuve type d'examen de qualification : le débat sur l'ajustement structurel en Afrique de l'Ouest",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : le courant néoclassique, rationalité et équilibre général",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : institutionnalisme, structuralisme, dépendance et le débat sur l'ajustement structurel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : économétrie de panel, évaluation d'impact et analyse institutionnelle",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : s'entraîner à l'épreuve type de synthèse théorique et méthodologique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "doc-droit",
   "level": "Doctorat",
   "subject": "Droit des affaires",
@@ -5803,6 +5947,78 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale en marketing",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "doc-log",
+  "level": "Doctorat",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Doctorat Logistique et transport : préparer l'examen de qualification doctorale",
+  "description": "Cours de préparation à l'examen de qualification doctorale en logistique et transport : maîtrise des deux grands débats théoriques du champ (approche opérationnelle et ingénierique contre approche managériale et relationnelle de la chaîne ; résilience mondiale contre régionalisation, appliquée aux corridors ouest-africains), des méthodes de recherche du domaine (modélisation et recherche opérationnelle, étude de cas, enquête), et entraînement complet à l'épreuve écrite et à la soutenance orale. Public : doctorants en logistique, transport, génie industriel ou sciences de gestion préparant leur examen de qualification.",
+  "sort": 810,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en Logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "L'examen de qualification doctorale, parfois appelé examen de synthèse ou comprehensive exam selon les programmes, marque la frontière entre la formation doctorale et le travail de thèse proprement dit. En logistique et transport, cette épreuve ne porte pas sur un sujet de thèse encore à l'état d'ébauche : elle porte sur la maîtrise du champ disciplinaire dans son ensemble, c'est-à-dire sur la capacité du doctorant à montrer qu'il connaît les grands courants théoriques, qu'il sait les comparer de façon critique, qu'il maîtrise les méthodes de recherche reconnues du domaine, et qu'il est capable de situer une problématique de thèse dans une littérature déjà riche et plurielle. Réussir cette épreuve, c'est démontrer qu'on a cessé d'être un simple consommateur de connaissances pour devenir un producteur potentiel de connaissances nouvelles.\n\n## La nature de l'épreuve\n\nDans la plupart des programmes doctoraux en sciences de gestion, en génie industriel ou en économie du transport, l'examen de qualification se déroule en deux temps complémentaires. Le premier temps est une synthèse écrite de la littérature : le candidat doit produire un document qui couvre les grands courants de la discipline, discute leurs apports respectifs, leurs limites, et les tensions ou débats qui les opposent. Ce document n'est pas une simple liste de résumés d'articles ; c'est une mise en perspective critique, organisée autour de problématiques transversales, qui montre que le candidat maîtrise l'architecture intellectuelle du champ. Le second temps est une soutenance orale devant un jury de professeurs, parfois couplée à la défense d'un projet de thèse encore provisoire. Le jury y teste la capacité du candidat à argumenter en temps réel, à défendre un positionnement théorique, à reconnaître les limites de ses propres connaissances, et à articuler une question de recherche pertinente et originale.\n\nEn logistique et transport, cette épreuve a une spécificité qu'il faut avoir en tête dès le départ : le champ est à la croisée de plusieurs disciplines mères. On y retrouve l'héritage du génie industriel et de la recherche opérationnelle, qui traite la chaîne logistique comme un système physique à optimiser ; l'héritage des sciences de gestion et de la stratégie, qui traite la chaîne comme un réseau d'acteurs organisationnels en interaction ; et l'héritage de l'économie des transports et de la géographie économique, qui s'intéresse aux infrastructures, aux corridors, et à l'organisation spatiale des échanges. Un bon candidat doit savoir circuler entre ces registres sans les confondre, et surtout sans réduire la discipline à un seul d'entre eux.\n\n## Les attentes d'un jury doctoral\n\nUn jury de qualification ne cherche pas l'exhaustivité encyclopédique mais la profondeur critique. Il valorise un candidat capable de dire, pour chaque courant théorique convoqué, qui en sont les auteurs fondateurs, quel problème concret ce courant a voulu résoudre à son origine, comment ses outils ou ses concepts ont évolué, quelles critiques lui ont été adressées, et dans quel contexte il demeure pertinent aujourd'hui. Le jury pénalise au contraire la paraphrase non digérée, l'empilement de citations sans articulation, et surtout l'incapacité à relier la théorie à des cas concrets ou à une méthode de recherche opérationnalisable. En logistique et transport, le jury attend aussi une sensibilité au terrain : un doctorant qui ignore les réalités opérationnelles des ports, des corridors routiers, des entrepôts ou des plateformes multimodales aura du mal à convaincre, même s'il maîtrise parfaitement la théorie abstraite. L'inverse est vrai aussi : un candidat qui ne sait parler que d'opérations sans mobiliser de cadre théorique ne sera pas jugé suffisamment doctoral.\n\n## Méthode de travail recommandée\n\nLa préparation d'un tel examen se construit sur plusieurs mois et s'organise autour de trois outils complémentaires. Le premier est la fiche de lecture structurée : pour chaque texte fondateur ou chaque article de synthèse important, il est utile de noter systématiquement la question de recherche posée par l'auteur, le cadre théorique mobilisé, la méthode employée, les résultats principaux, et surtout les limites explicites ou implicites du travail. Cette discipline évite l'écueil classique du doctorant qui a lu beaucoup mais retenu peu de façon utilisable.\n\nLe deuxième outil est la cartographie des courants : il s'agit de construire, au fil de la lecture, un schéma ou un tableau qui positionne les différentes écoles de pensée les unes par rapport aux autres, selon leurs hypothèses de départ, leurs unités d'analyse privilégiées, et leurs divergences méthodologiques. En logistique et transport, une cartographie utile oppose par exemple les approches qui prennent le flux physique comme unité d'analyse centrale et les approches qui prennent la relation interorganisationnelle comme unité d'analyse centrale. Cette cartographie devient la colonne vertébrale de la note de synthèse finale.\n\nLe troisième outil est la note de synthèse elle-même, document de plusieurs dizaines de pages qui organise l'ensemble des lectures autour de deux ou trois grandes tensions théoriques du champ, chacune illustrée par les auteurs clés, les méthodes associées, et des exemples concrets. C'est ce document, retravaillé et condensé, qui sert ensuite de support à la soutenance orale.\n\n## Un plan de travail sur huit semaines\n\nUn calendrier réaliste pour préparer l'examen pourrait s'organiser ainsi. Durant les deux premières semaines, le candidat recense et classe la littérature existante, identifie les textes fondateurs incontournables, et construit une première cartographie provisoire des courants. Durant les semaines trois et quatre, il approfondit le premier grand courant théorique du champ, rédige des fiches de lecture détaillées, et commence une première version écrite de sa synthèse sur ce courant. Durant les semaines cinq et six, il applique la même démarche au second grand courant, en veillant à articuler explicitement les deux en montrant leurs points de tension ou de complémentarité. La semaine sept est consacrée à la consolidation méthodologique : revue des méthodes de recherche du domaine, choix argumenté d'une méthode pour le projet de thèse, et rédaction d'un protocole de recherche illustratif. La semaine huit, enfin, est consacrée à la préparation de l'oral : simulation de soutenance, anticipation des questions difficiles, et répétition de la présentation orale devant des pairs ou des collègues. Ce calendrier n'est qu'indicatif ; il doit être adapté à la densité de la littérature du sous-domaine choisi et au temps disponible du doctorant, mais la logique de progression, du repérage large vers l'approfondissement ciblé puis vers la restitution orale, reste valable dans la plupart des programmes doctoraux de gestion et de génie industriel.\n\n## Exercices pratiques\n\n1. Construisez une liste de dix textes ou articles que vous considérez comme fondateurs pour la logistique et le transport, en justifiant chaque choix en une phrase.\n\n2. Rédigez une fiche de lecture structurée pour un article de synthèse sur la chaîne logistique, en respectant les cinq rubriques proposées dans la leçon.\n\n3. Esquissez une cartographie des courants théoriques du champ, en plaçant au moins quatre écoles de pensée sur deux axes de votre choix, et justifiez le choix de ces deux axes.\n\n4. Formulez trois questions qu'un jury pourrait vous poser sur l'articulation entre l'approche opérationnelle et l'approche managériale de la chaîne logistique.\n\n5. Proposez un calendrier de préparation personnalisé sur huit semaines, en tenant compte de vos contraintes professionnelles actuelles.\n\n## Corrigé\n\n1. Une liste pertinente devrait couvrir au moins les apports suivants : les travaux fondateurs sur la gestion des stocks et la quantité économique de commande, les travaux sur la dynamique industrielle et l'effet d'amplification de la demande le long de la chaîne, les travaux fondateurs de l'économie des coûts de transaction appliqués aux relations interentreprises, les travaux sur la dépendance aux ressources entre organisations, les travaux du courant des réseaux industriels sur les relations acheteur-fournisseur, les travaux sur la résilience des chaînes d'approvisionnement face aux perturbations, les travaux sur la gouvernance des chaînes de valeur mondiales, les travaux de recherche opérationnelle sur l'optimisation des tournées de véhicules, les travaux sur la gestion de la relation client-fournisseur dans les canaux de distribution, et les travaux sur l'économie des infrastructures de transport. La justification attendue porte sur le problème originel que chaque texte a voulu résoudre.\n\n2. Une fiche de lecture réussie distingue clairement la question de recherche, le cadre théorique, la méthode utilisée, les résultats, et une critique personnelle argumentée, sans se limiter à un résumé descriptif du contenu.\n\n3. Une cartographie pertinente peut par exemple croiser l'axe unité d'analyse physique contre unité d'analyse relationnelle avec l'axe logique de contrôle centralisé contre logique de coordination négociée entre partenaires autonomes.\n\n4. Des questions plausibles portent sur la façon dont un modèle d'optimisation suppose implicitement une forme de gouvernance entre les partenaires, sur les limites d'une approche purement relationnelle quand les flux physiques doivent respecter des contraintes techniques dures, ou encore sur la possibilité d'une synthèse entre les deux approches dans un contexte de digitalisation des chaînes.\n\n5. Le calendrier doit respecter la logique suivante : repérage large, approfondissement du premier courant, approfondissement du second courant et articulation, consolidation méthodologique, préparation orale, quel que soit le découpage précis en semaines retenu."
+   },
+   {
+    "title": "Grand courant théorique n°1 : approche opérationnelle contre approche managériale et relationnelle de la chaîne logistique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Grand courant théorique n°2 : chaînes mondiales, régionalisation et résilience — le cas des corridors ouest-africains",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les méthodes de recherche en logistique et transport : modélisation, étude de cas et enquête",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Épreuve type d'examen de qualification : la résilience des chaînes logistiques en question",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : approche opérationnelle contre approche managériale et relationnelle de la chaîne logistique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : chaînes mondiales, régionalisation et résilience dans les corridors ouest-africains",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : méthodes de recherche en logistique et transport, calculs vérifiés",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : s'entraîner à l'épreuve type de l'examen de qualification",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale en logistique et transport",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
