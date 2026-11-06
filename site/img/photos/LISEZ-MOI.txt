@@ -1,0 +1,23 @@
+PHOTOS DES MODULES
+==================
+
+Déposez ici une photo par module, au format JPG, avec EXACTEMENT ces noms :
+
+  paie-senegal.jpg          Paie & RH Sénégal
+  paie-uemoa.jpg            Paie & RH UEMOA / CEDEAO
+  transport-logistique.jpg  Transport & Logistique
+  carburant.jpg             Gestion Carburant
+  transport.jpg             Gestion Transport
+  parking-entreprise.jpg    Parking dans les entreprises
+  parking-public.jpg        Parkings hors entreprise
+  station-service.jpg       Station-service avancée
+  flotte.jpg                Gestion des Flottes
+  vente-vehicules.jpg       Vente de Véhicules
+  gps.jpg                   GPS avancé
+  education.jpg             Éducation en ligne
+
+Conseils : format paysage (16:9 ou 16:10), environ 1600 pixels de large, moins de 400 Ko.
+Tant qu'une photo manque, le site affiche automatiquement l'illustration du module.
+
+Vous pouvez aussi envoyer une photo depuis l'espace administrateur
+(Services du site → Modifier → « envoyer une photo ») une fois Supabase installé.
