@@ -1,5 +1,831 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 9/9). À exécuter après seed.sql.
+-- Cours (partie 9/10). À exécuter après seed.sql.
+
+-- Cours : Informatique Licence 3 : réussir ses examens (génie logiciel, web et API, sécurité)
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-info-l3', (select id from public.levels where name = 'Licence 3'), null, 'Informatique', 'Informatique Licence 3 : réussir ses examens (génie logiciel, web et API, sécurité)', 'Ce cours prépare aux examens de Licence 3 en informatique : génie logiciel et UML (cycle de vie, diagrammes, tests), développement web et API (HTML, CSS, JavaScript, HTTP, REST) et sécurité informatique (menaces, cryptographie de base, bonnes pratiques). Il propose des fiches de cours, des exercices corrigés, un sujet type d''examen et trois cours vidéo de 1h30. Prérequis : programmation, bases de données et réseaux de Licence 1 et 2.', true, 323
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 3 en Informatique', '## Objectifs de la leçon
+
+- Situer la Licence 3 dans le parcours LMD et comprendre ses enjeux : diplôme, stage, poursuite en Master ou insertion professionnelle.
+- Connaître les trois matières clés de l''année et les compétences évaluées.
+- Savoir traiter les épreuves typiques : étude de cas UML, conception d''API, analyse de sécurité, projet.
+- Bâtir un plan de révision sur six semaines.
+
+## 1. La Licence 3 dans le système LMD
+
+La Licence 3 correspond aux semestres 5 et 6, les derniers de la Licence. Elle conserve l''organisation en unités d''enseignement (UE) et en crédits, avec capitalisation, compensation selon le règlement et session de rattrapage. Selon les établissements, elle comprend aussi un projet tutoré, un stage en entreprise ou un mémoire de fin de cycle, évalués par un rapport et une soutenance. Les modalités exactes (poids du stage, conditions d''obtention du diplôme, dettes de crédits autorisées) figurent dans le règlement de ta formation : vérifie-les dès la rentrée.
+
+L''enjeu est double : obtenir la Licence, et constituer un dossier solide pour l''admission en Master ou pour un premier emploi (développeur, technicien réseau, administrateur de bases de données, analyste en sécurité). Les notes de Licence 3 et le projet comptent souvent beaucoup dans ces dossiers.
+
+## 2. Les matières clés de la Licence 3
+
+- Génie logiciel et UML : cycle de vie du logiciel, méthodes (cascade, cycle en V, itératif, agile), recueil des exigences, diagrammes UML (cas d''utilisation, classes, séquence, activité, états), stratégies de test. On attend des diagrammes corrects et justifiés à partir d''un texte.
+- Développement web et API : HTML, CSS, JavaScript, protocole HTTP, conception d''API REST. On attend du code lisible, une bonne connaissance des méthodes et codes HTTP, et des routes REST cohérentes.
+- Sécurité informatique : menaces et vulnérabilités, cryptographie de base (symétrique, asymétrique, hachage, signature), bonnes pratiques (authentification, mises à jour, sauvegardes, moindre privilège). On attend des explications précises et des recommandations réalistes.
+
+Ces matières forment un tout : un projet web se conçoit avec UML, s''implémente avec HTML, CSS, JavaScript et une API, se teste, et doit être sécurisé dès la conception. Les sujets d''examen mélangent volontiers les trois.
+
+## 3. Les types d''épreuves
+
+- Étude de cas UML : un texte décrit un système (gestion des abonnements d''une salle de sport, plateforme de livraison). Tu dois produire un diagramme de cas d''utilisation, un diagramme de classes, parfois un diagramme de séquence. Commence par souligner les acteurs (noms de personnes ou de systèmes externes), les actions (verbes) et les informations (noms porteurs de données).
+- Conception d''API : proposer les routes REST d''un service, avec méthodes, codes de retour et exemples de JSON. Sois systématique : une ressource, ses opérations, ses codes.
+- Lecture de code web : prévoir l''affichage d''un script JavaScript, corriger une feuille de style, calculer la largeur d''une boîte CSS.
+- Analyse de sécurité : repérer une injection SQL dans un extrait de code, proposer une politique de mots de passe, expliquer un échange de clés. On attend la vulnérabilité, son impact et la correction.
+- Exercices de cryptographie : chiffrement par décalage, petit calcul RSA, propriétés d''une fonction de hachage.
+- QCM : codes HTTP, ports, notions UML et de sécurité.
+- Projet et soutenance : démonstration d''une application, présentation de la conception et des tests. Prépare une démonstration courte, qui fonctionne, et sache justifier chaque choix technique.
+
+## 4. Méthode de révision
+
+- Fiches de synthèse : une par diagramme UML (notation, règles, exemple), une pour HTTP (méthodes et codes), une pour la cryptographie (types d''algorithmes et usages).
+- Pratique : refaire les études de cas des TD sans regarder la correction ; écrire une petite page web avec un formulaire et un appel à une API ; tester les exemples de cryptographie en Python.
+- Annales et sujets types en temps limité.
+- Révisions en groupe : un étudiant joue le client qui décrit son besoin, les autres modélisent. C''est l''exercice le plus proche d''une vraie étude de cas.
+- Projet : ne laisse pas le projet dévorer tes révisions. Planifie-le avec des jalons hebdomadaires.
+
+## 5. Le jour de l''épreuve
+
+Lis le sujet en entier, puis relis l''étude de cas en soulignant acteurs, actions et données. Fais un brouillon de diagramme avant de le recopier proprement : un diagramme raturé est difficile à corriger. Pour les questions de sécurité, structure tes réponses en trois temps : menace, conséquence, contre-mesure.
+
+## 6. Plan de révision sur six semaines
+
+- Semaine 1 : bilan, fiches, planning du projet.
+- Semaine 2 : génie logiciel. Cycles de vie et méthodes agiles lundi, cas d''utilisation mardi, classes mercredi et jeudi, séquence vendredi, tests samedi.
+- Semaine 3 : web. HTML et CSS, puis JavaScript et DOM, puis HTTP et REST ; construis une mini-application.
+- Semaine 4 : sécurité. Menaces, injection et XSS, cryptographie symétrique et asymétrique, hachage et mots de passe, bonnes pratiques.
+- Semaine 5 : deux sujets complets en temps limité, correction et reprise des points faibles.
+- Semaine 6 : consolidation, rappel actif, préparation de la soutenance si elle a lieu à la même période.
+
+## Points clés
+
+- La Licence 3 conclut la Licence : règlement, stage et projet comptent ; renseigne-toi tôt.
+- Génie logiciel, web et sécurité se combinent dans les sujets.
+- Pour la sécurité : menace, conséquence, contre-mesure.
+
+## Exercices pratiques
+
+1. Dans la phrase « Le caissier enregistre le paiement du client », repère l''acteur, l''action et la donnée.
+2. Pourquoi faire un brouillon de diagramme avant de le recopier ?
+3. Échauffement : que signifie le code HTTP 404 ?
+4. Échauffement : quelle est la différence entre chiffrer et hacher un mot de passe ?
+5. Propose ta semaine 4 jour par jour.
+
+## Corrigé
+
+1. Acteur : le caissier (il interagit avec le système) ; action : enregistrer le paiement (futur cas d''utilisation) ; donnée : le paiement (futur attribut ou classe Paiement, lié à Client).
+2. Parce que la première version est rarement juste : il faut ajuster les multiplicités, déplacer des attributs, ajouter des classes. Un diagramme final propre est plus lisible et mieux noté.
+3. La ressource demandée n''existe pas sur le serveur (Not Found).
+4. Un chiffrement est réversible avec une clé ; un hachage est à sens unique. On stocke les mots de passe hachés (avec un sel), jamais chiffrés de façon réversible, et encore moins en clair.
+5. Exemple : lundi menaces et triade confidentialité-intégrité-disponibilité ; mardi injection SQL et XSS ; mercredi chiffrement symétrique ; jeudi chiffrement asymétrique et RSA ; vendredi hachage, signature et certificats ; samedi bonnes pratiques et mini-sujet ; dimanche repos.', 'texte', 60, true, 10
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 3 en Informatique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Génie logiciel et UML : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Connaître les phases du cycle de vie du logiciel et les principales méthodes de développement.
+- Distinguer exigences fonctionnelles et non fonctionnelles.
+- Lire et construire les principaux diagrammes UML.
+- Concevoir des tests à partir des partitions d''équivalence et des valeurs limites.
+
+## Fiche 1 : cycle de vie et méthodes
+
+Les phases du cycle de vie sont : expression du besoin, analyse et spécification (ce que le logiciel doit faire), conception (comment il le fait), implémentation, tests, déploiement, maintenance (corrective, évolutive).
+
+- Cascade : les phases se suivent sans retour. Simple, mais les erreurs de spécification se découvrent tard.
+- Cycle en V : à chaque phase de conception correspond une phase de test (la spécification est validée par les tests système, la conception détaillée par les tests unitaires).
+- Itératif et incrémental : le logiciel est livré par morceaux, chaque itération repassant par l''analyse, la conception et les tests.
+- Agile, par exemple Scrum : itérations courtes (sprints de quelques semaines), un carnet de produit (product backlog) priorisé par le responsable de produit (product owner), un facilitateur (scrum master), une équipe pluridisciplinaire, une démonstration à la fin de chaque sprint. Adapté quand les besoins évoluent.
+
+Exigences : une exigence fonctionnelle décrit un service (« le client peut réserver une place »). Une exigence non fonctionnelle décrit une qualité : performance, sécurité, disponibilité, ergonomie (« la page de réservation s''affiche en moins de 2 secondes sur une connexion mobile »).
+
+## Fiche 2 : les diagrammes UML essentiels
+
+Étude de cas fil rouge : la compagnie fictive Teranga Voyages veut une application où un client consulte les trajets, réserve des places et paie par mobile ; un agent de guichet enregistre les réservations sur place ; un administrateur gère les trajets. Le paiement passe par un service externe de paiement mobile.
+
+Diagramme de cas d''utilisation : acteurs (bonhommes) à l''extérieur du rectangle du système, cas d''utilisation (ovales) à l''intérieur. Ici : Client relié à « Consulter les trajets », « Réserver des places », « Payer » ; Agent relié à « Réserver des places » ; Administrateur relié à « Gérer les trajets » ; Service de paiement (acteur secondaire, système externe) relié à « Payer ». Relations : « Réserver des places » inclut « S''authentifier » (include : toujours exécuté) ; « Appliquer un code promotionnel » étend « Payer » (extend : optionnel).
+
+Diagramme de classes : chaque classe a un nom, des attributs et des opérations, avec leur visibilité (+ public, − privé, # protégé). Exemple :
+
+- Client : − nom, − telephone ; + reserver(trajet, nb).
+- Trajet : − villeDepart, − villeArrivee, − dateHeure, − prix.
+- Reservation : − numero, − nbPlaces ; + montant().
+- Paiement : − montant, − date, − statut.
+
+Associations et multiplicités : un Client effectue 0..* Réservations, une Réservation appartient à exactement 1 Client ; une Réservation concerne 1 Trajet, un Trajet a 0..* Réservations ; une Réservation donne lieu à 0..1 Paiement. Composition (losange plein) : la partie n''existe pas sans le tout (une ligne de facture et sa facture). Agrégation (losange vide) : lien plus faible. Héritage (flèche à triangle vide) : ClientEntreprise hérite de Client.
+
+Diagramme de séquence : lignes de vie verticales (Client, Interface, ServeurReservation, ServicePaiement), messages horizontaux dans l''ordre chronologique : 1) le client choisit un trajet ; 2) l''interface demande les places disponibles au serveur ; 3) le serveur répond ; 4) le client valide ; 5) le serveur crée la réservation et demande le paiement ; 6) le service de paiement confirme ; 7) l''interface affiche le reçu. Un fragment « alt » représente l''alternative paiement accepté ou refusé.
+
+Diagramme d''activité : enchaînement des actions avec décisions (losanges) et parallélismes. Diagramme d''états-transitions : états d''un objet, par exemple une Réservation : Créée → Payée → Utilisée, ou Créée → Annulée si le paiement n''arrive pas dans le délai.
+
+## Fiche 3 : les tests
+
+Niveaux : tests unitaires (une fonction, une classe), tests d''intégration (plusieurs composants ensemble), tests système (le logiciel complet face à sa spécification), tests d''acceptation ou recette (par le client). Les tests de non-régression vérifient qu''une modification n''a rien cassé.
+
+Boîte noire : on teste à partir de la spécification, sans regarder le code. Boîte blanche : on conçoit les tests à partir du code (chaque branche exécutée au moins une fois).
+
+Partitions d''équivalence et valeurs limites. Spécification : la fonction categorie(age) renvoie "enfant" de 0 à 11 ans, "jeune" de 12 à 25, "adulte" de 26 à 59, "senior" à partir de 60, et lève une erreur si l''âge est négatif ou supérieur à 120. Classes valides : [0, 11], [12, 25], [26, 59], [60, 120] ; classes invalides : moins de 0 et plus de 120. Valeurs limites à tester : −1, 0, 11, 12, 25, 26, 59, 60, 120, 121.
+
+import unittest
+
+def categorie(age):
+    if age < 0 or age > 120:
+        raise ValueError("âge invalide")
+    if age <= 11:
+        return "enfant"
+    if age <= 25:
+        return "jeune"
+    if age <= 59:
+        return "adulte"
+    return "senior"
+
+class TestCategorie(unittest.TestCase):
+    def test_limites(self):
+        self.assertEqual(categorie(0), "enfant")
+        self.assertEqual(categorie(11), "enfant")
+        self.assertEqual(categorie(12), "jeune")
+        self.assertEqual(categorie(25), "jeune")
+        self.assertEqual(categorie(26), "adulte")
+        self.assertEqual(categorie(59), "adulte")
+        self.assertEqual(categorie(60), "senior")
+        self.assertEqual(categorie(120), "senior")
+
+    def test_invalides(self):
+        with self.assertRaises(ValueError):
+            categorie(-1)
+        with self.assertRaises(ValueError):
+            categorie(121)
+
+On lance les tests avec la commande python -m unittest suivie du nom du fichier. Les deux tests passent.
+
+## Points clés
+
+- Cascade, V, itératif, agile : savoir citer avantages et limites.
+- Cas d''utilisation : acteurs hors du système ; include obligatoire, extend optionnel.
+- Classes : attributs, opérations, visibilité, multiplicités des deux côtés de chaque association.
+- Tests : niveaux, boîte noire et blanche, valeurs limites de part et d''autre de chaque frontière.
+
+## Exercices pratiques
+
+1. Classe en fonctionnelle ou non fonctionnelle : a) l''agent peut annuler une réservation ; b) les données de paiement sont chiffrées ; c) l''application fonctionne sur un téléphone d''entrée de gamme ; d) le client reçoit un reçu par SMS.
+2. Pourquoi le service de paiement mobile est-il un acteur et non une classe du système ?
+3. Donne les multiplicités entre Trajet et Bus, sachant qu''un trajet est assuré par un seul bus et qu''un bus assure plusieurs trajets ou aucun (bus en maintenance).
+4. Une réduction de 10 % (règle commerciale fictive) s''applique aux réservations de 5 à 9 places et de 20 % à partir de 10 places, avec un maximum de 50 places. Donne les classes d''équivalence et les valeurs limites à tester.
+5. Dans quel cas préférer Scrum au cycle en V ? Et l''inverse ?
+6. Cas pratique. Une mutuelle de santé fictive veut une application où l''adhérent consulte ses remboursements, l''agent saisit les feuilles de soins, et le médecin-conseil valide les dossiers dépassant un seuil. Donne les acteurs et quatre cas d''utilisation, puis un diagramme de classes simplifié (trois classes avec multiplicités).
+
+## Corrigé
+
+1. a) fonctionnelle ; b) non fonctionnelle (sécurité) ; c) non fonctionnelle (portabilité, performance) ; d) fonctionnelle.
+
+2. Parce qu''il est extérieur au système : l''application interagit avec lui sans le réaliser. Dans le diagramme de classes, on pourra avoir une classe d''interface (par exemple PasserellePaiement) qui l''appelle, mais le service lui-même reste un acteur.
+
+3. Trajet 0..* — 1 Bus : chaque trajet est lié à exactement un bus ; chaque bus est lié à zéro ou plusieurs trajets.
+
+4. Classes valides : 1 à 4 places (pas de réduction), 5 à 9 (10 %), 10 à 50 (20 %) ; invalides : 0 ou moins, plus de 50. Valeurs limites : 0, 1, 4, 5, 9, 10, 50, 51.
+
+5. Scrum quand les besoins sont incertains ou évoluent (application grand public, start-up) et que le client peut participer régulièrement. Le cycle en V quand les exigences sont stables et la traçabilité imposée (logiciel embarqué, système critique).
+
+6. Acteurs : Adhérent, Agent, Médecin-conseil. Cas : Consulter ses remboursements (Adhérent), Saisir une feuille de soins (Agent), Valider un dossier (Médecin-conseil), S''authentifier (inclus par les trois autres). Classes : Adherent 1 — 0..* Dossier ; Dossier 1 — 1..* FeuilleDeSoins ; Dossier 0..* — 0..1 MedecinConseil (seuls certains dossiers sont validés par un médecin-conseil).', 'texte', 75, false, 20
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Génie logiciel et UML : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Développement web et API : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Structurer une page avec HTML et la mettre en forme avec CSS (sélecteurs, modèle de boîte, mise en page flexible).
+- Manipuler la page avec JavaScript et appeler une API.
+- Décrire une requête et une réponse HTTP, connaître méthodes et codes d''état.
+- Concevoir une API REST cohérente.
+
+## Fiche 1 : HTML, la structure
+
+HTML décrit la structure et le sens du contenu à l''aide de balises. Squelette d''une page de recherche pour une bibliothèque universitaire fictive :
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bibliothèque universitaire</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>Bibliothèque universitaire</header>
+    <main>
+      <form id="recherche">
+        <label for="q">Titre recherché</label>
+        <input id="q" name="q" type="text" required>
+        <button type="submit">Rechercher</button>
+      </form>
+      <section id="resultats"></section>
+    </main>
+    <footer>Service de documentation</footer>
+  </body>
+</html>
+
+À connaître aussi : les titres hiérarchisés (balises h1 à h6), les paragraphes (balise p), les liens (balise a et son attribut href), les images (balise img, avec un attribut alt qui décrit l''image pour l''accessibilité), les listes (ul ou ol contenant des li), les tableaux (table). Le script JavaScript est chargé en fin de body avec la balise script et son attribut src. Les balises sémantiques (header, nav, main, section, article, footer) aident l''accessibilité et le référencement. La balise meta viewport rend la page lisible sur téléphone, essentiel quand la majorité des utilisateurs naviguent sur mobile.
+
+## Fiche 2 : CSS, la présentation
+
+Une règle CSS associe un sélecteur à des déclarations : main { max-width: 800px; margin: 0 auto; }. Sélecteurs : par balise (section), par classe (.carte), par identifiant (#resultats), descendant (main .carte). En cas de conflit, la règle la plus spécifique l''emporte (identifiant plus fort que classe, classe plus forte que balise) ; à spécificité égale, la dernière écrite gagne.
+
+Modèle de boîte : contenu, puis marge intérieure (padding), bordure (border), marge extérieure (margin). Par défaut (box-sizing: content-box), width ne concerne que le contenu : une boîte de width 300px, padding 20px et border 5px occupe 300 + 2 × 20 + 2 × 5 = 350 pixels de large. Avec box-sizing: border-box, la largeur totale reste 300 pixels.
+
+Mise en page : display: flex aligne des éléments sur une ligne ou une colonne (justify-content, align-items, gap). Les requêtes média adaptent la page à la taille d''écran : @media (max-width: 600px) { ... } applique des règles aux petits écrans.
+
+## Fiche 3 : JavaScript
+
+JavaScript s''exécute dans le navigateur. On déclare les variables avec const (non réaffectable) ou let. Exemple de fonction, testable aussi avec Node.js :
+
+function totalPanier(articles) {
+  let total = 0;
+  for (const a of articles) {
+    total += a.prix * a.quantite;
+  }
+  return total;
+}
+console.log(totalPanier([{ prix: 2500, quantite: 2 }, { prix: 1200, quantite: 3 }]));
+
+Le programme affiche 8600 (5 000 + 3 600 FCFA).
+
+Manipulation de la page (DOM) et appel d''API avec fetch :
+
+document.querySelector("#recherche").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const q = document.querySelector("#q").value;
+  const rep = await fetch("/api/v1/livres?titre=" + encodeURIComponent(q));
+  if (!rep.ok) {
+    document.querySelector("#resultats").textContent = "Erreur " + rep.status;
+    return;
+  }
+  const livres = await rep.json();
+  document.querySelector("#resultats").textContent = livres.length + " livre(s) trouvé(s)";
+});
+
+preventDefault empêche le rechargement de la page ; await attend la réponse sans bloquer le navigateur ; textContent insère du texte brut, ce qui protège contre l''injection de code (voir la leçon sur la sécurité).
+
+## Fiche 4 : HTTP
+
+HTTP est un protocole client-serveur, sans état : chaque requête est indépendante (la session est simulée par des cookies ou des jetons). Une requête comprend une méthode, un chemin, des en-têtes et éventuellement un corps ; une réponse comprend un code d''état, des en-têtes et un corps.
+
+GET /api/v1/livres/42 HTTP/1.1
+Host: bu.exemple.test
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"id": 42, "titre": "Algorithmique", "disponible": true}
+
+Méthodes : GET (lire), POST (créer), PUT (remplacer), PATCH (modifier partiellement), DELETE (supprimer). GET, PUT et DELETE sont idempotentes (les répéter produit le même état) ; POST ne l''est pas.
+
+Codes d''état : 200 OK ; 201 Created (ressource créée) ; 204 No Content ; 301 redirection permanente ; 400 requête invalide ; 401 non authentifié ; 403 accès interdit ; 404 introuvable ; 409 conflit ; 500 erreur du serveur. Familles : 2xx succès, 3xx redirection, 4xx erreur du client, 5xx erreur du serveur. HTTPS chiffre les échanges avec TLS.
+
+## Fiche 5 : concevoir une API REST
+
+REST organise une API autour de ressources désignées par des URI, manipulées avec les méthodes HTTP, et échangées dans un format comme JSON. Règles : noms au pluriel, pas de verbe dans l''URI, imbrication pour les relations, version dans le chemin, filtres et pagination en paramètres.
+
+- GET /api/v1/livres?auteur=Diop&page=2 : liste filtrée et paginée → 200.
+- GET /api/v1/livres/42 : un livre → 200, ou 404.
+- POST /api/v1/livres : création, corps JSON → 201 et en-tête Location.
+- PATCH /api/v1/livres/42 : modification partielle → 200.
+- DELETE /api/v1/livres/42 : suppression → 204.
+- GET /api/v1/etudiants/E01/emprunts : emprunts d''un étudiant.
+- POST /api/v1/emprunts : nouvel emprunt → 201, ou 409 si le livre est déjà emprunté.
+
+## Points clés
+
+- HTML pour la structure, CSS pour la présentation, JavaScript pour le comportement.
+- Largeur d''une boîte en content-box : width + paddings + bordures.
+- GET lit, POST crée, PUT remplace, PATCH modifie, DELETE supprime ; 2xx, 3xx, 4xx, 5xx.
+- REST : ressources au pluriel, méthodes HTTP, codes adaptés, JSON.
+
+## Exercices pratiques
+
+1. Une boîte a width: 250px, padding: 15px, border: 2px et margin: 10px. Quelle largeur occupe-t-elle à l''écran (bordure comprise) en content-box ? Et en border-box ?
+2. Deux règles : #resultats { color: green; } et .zone { color: red; }. L''élément section id="resultats" class="zone" s''affiche en quelle couleur ?
+3. Quel code renvoyer : a) création réussie ; b) jeton absent ; c) jeton valide mais droits insuffisants ; d) panne de la base de données ?
+4. Écris en JavaScript une fonction moyenne(notes) qui renvoie la moyenne d''un tableau, et donne moyenne([12, 15, 9]).
+5. Pourquoi l''URI POST /api/v1/creerLivre n''est-elle pas conforme à REST ?
+6. Cas pratique. Une coopérative agricole fictive de la vallée du fleuve veut une API pour gérer ses membres et leurs livraisons de riz paddy. Propose les routes (méthode, URI, code de succès) pour : lister les membres, consulter un membre, enregistrer une livraison pour un membre, lister les livraisons d''un membre, corriger le poids d''une livraison, supprimer une livraison erronée.
+
+## Corrigé
+
+1. Content-box : 250 + 2 × 15 + 2 × 2 = 284 pixels (la marge de 10 px s''ajoute à l''extérieur, de chaque côté, sans faire partie de la boîte). Border-box : 250 pixels.
+
+2. En vert : le sélecteur d''identifiant est plus spécifique que le sélecteur de classe.
+
+3. a) 201 ; b) 401 ; c) 403 ; d) 500 (ou 503 si le service est temporairement indisponible).
+
+4. On additionne puis on divise par la longueur.
+
+function moyenne(notes) {
+  let s = 0;
+  for (const n of notes) {
+    s += n;
+  }
+  return s / notes.length;
+}
+console.log(moyenne([12, 15, 9]));
+
+Résultat : 36 / 3 = 12.
+
+5. L''action est déjà exprimée par la méthode POST ; l''URI doit désigner la ressource : POST /api/v1/livres.
+
+6. GET /api/v1/membres → 200 ; GET /api/v1/membres/{id} → 200 (404 si inconnu) ; POST /api/v1/membres/{id}/livraisons → 201 ; GET /api/v1/membres/{id}/livraisons → 200 ; PATCH /api/v1/livraisons/{idLivraison} avec le corps {"poids_kg": 1250} → 200 ; DELETE /api/v1/livraisons/{idLivraison} → 204.', 'texte', 75, false, 30
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Développement web et API : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sécurité informatique : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Définir les objectifs de sécurité et identifier les principales menaces.
+- Reconnaître et corriger une injection SQL et une faille XSS.
+- Distinguer chiffrement symétrique, asymétrique, hachage et signature ; réaliser un petit calcul RSA.
+- Recommander des bonnes pratiques adaptées à une organisation.
+
+## Fiche 1 : objectifs et menaces
+
+La sécurité vise trois objectifs (triade CIA) : confidentialité (seules les personnes autorisées accèdent à l''information), intégrité (l''information n''est pas modifiée sans autorisation), disponibilité (le service est accessible quand on en a besoin). On y ajoute l''authentification (prouver son identité) et la non-répudiation (ne pas pouvoir nier une action).
+
+Vocabulaire : une vulnérabilité est une faiblesse ; une menace est ce qui peut l''exploiter ; le risque combine la probabilité et l''impact.
+
+Menaces courantes :
+
+- Hameçonnage (phishing) : faux message (SMS, courriel, appel) qui pousse à révéler un code ou un mot de passe, par exemple un faux agent de transfert d''argent qui demande le code reçu par SMS.
+- Logiciels malveillants : virus, ver (se propage seul), cheval de Troie, rançongiciel (chiffre les fichiers et exige une rançon).
+- Déni de service : saturer un serveur pour le rendre indisponible.
+- Ingénierie sociale : manipuler une personne plutôt que la machine.
+- Failles applicatives : injection SQL, XSS, mots de passe faibles, contrôle d''accès absent.
+
+## Fiche 2 : injection SQL et XSS
+
+Injection SQL : quand une requête est construite en collant le texte saisi par l''utilisateur, celui-ci peut modifier la requête.
+
+saisie = "'' OR ''1''=''1"
+requete = "SELECT login FROM compte WHERE login = ''" + saisie + "''"
+print(db.execute(requete).fetchall())
+print(db.execute("SELECT login FROM compte WHERE login = ?", (saisie,)).fetchall())
+
+La requête construite par concaténation devient WHERE login = '''' OR ''1''=''1'' : la condition est toujours vraie et tous les comptes sortent ([(''awa'',), (''ousmane'',)]). Avec une requête paramétrée (le point d''interrogation), la saisie est traitée comme une simple valeur : aucun résultat ([]). Contre-mesures : requêtes paramétrées, validation des entrées, compte de base de données aux droits minimaux.
+
+XSS (cross-site scripting) : un attaquant enregistre un commentaire contenant du code JavaScript ; si le site l''affiche tel quel dans la page, le code s''exécute chez les autres visiteurs (vol de session). Contre-mesures : échapper les caractères spéciaux à l''affichage, utiliser textContent plutôt qu''insérer du HTML, politique de sécurité du contenu (en-tête Content-Security-Policy).
+
+## Fiche 3 : cryptographie de base
+
+- Chiffrement symétrique (AES, par exemple) : la même clé chiffre et déchiffre. Rapide ; difficulté : partager la clé de façon sûre.
+- Chiffrement asymétrique (RSA, par exemple) : une clé publique chiffre, la clé privée correspondante déchiffre. Résout l''échange de clés, mais plus lent. En pratique (HTTPS), on utilise l''asymétrique pour établir une clé de session, puis le symétrique pour les données.
+- Hachage (SHA-256, par exemple) : empreinte de taille fixe, à sens unique ; une petite modification du message change complètement l''empreinte ; il doit être très difficile de trouver deux messages de même empreinte. Usage : vérifier l''intégrité d''un fichier.
+- Signature numérique : on hache le message, puis on signe l''empreinte avec sa clé privée ; tout le monde vérifie avec la clé publique. Elle garantit intégrité, authenticité et non-répudiation.
+- Certificat : document signé par une autorité de certification qui lie une clé publique à une identité (un nom de domaine, par exemple).
+
+RSA en miniature (nombres minuscules, uniquement pour comprendre ; une vraie clé utilise des nombres de plusieurs centaines de chiffres) : p = 61, q = 53, n = p × q = 3 233, φ = (p − 1)(q − 1) = 3 120. On choisit e = 17, premier avec 3 120. La clé privée d vérifie e × d ≡ 1 (mod 3 120) : d = 2 753, car 17 × 2 753 = 46 801 = 15 × 3 120 + 1. Chiffrement de m = 65 : c = pow(65, 17, 3233).
+
+n, e, d = 61 * 53, 17, 2753
+c = pow(65, e, n)
+print(n, (17 * 2753) % 3120, c, pow(c, d, n))
+
+Le programme affiche 3233 1 2790 65 : le message chiffré vaut 2 790 et le déchiffrement redonne 65.
+
+Mots de passe : on ne les stocke jamais en clair ni chiffrés de façon réversible. On stocke un hachage lent et salé (algorithmes comme bcrypt, scrypt, Argon2 ou PBKDF2) : le sel, aléatoire et propre à chaque utilisateur, empêche d''utiliser des tables précalculées.
+
+import hashlib, os
+sel = os.urandom(16)
+h = hashlib.pbkdf2_hmac("sha256", "Teranga2026!".encode(), sel, 200000)
+print(len(h), h == hashlib.pbkdf2_hmac("sha256", "Teranga2026!".encode(), sel, 200000))
+
+Le programme affiche 32 True : l''empreinte fait 32 octets, et le même mot de passe avec le même sel redonne la même empreinte, ce qui permet de vérifier une connexion sans connaître le mot de passe.
+
+## Fiche 4 : bonnes pratiques
+
+- Authentification forte : mots de passe longs (une phrase de passe), gestionnaire de mots de passe, authentification à plusieurs facteurs.
+- Mises à jour régulières des systèmes et applications.
+- Sauvegardes : règle 3-2-1 (trois copies, deux supports différents, une copie hors site), et tests de restauration.
+- Moindre privilège : chacun n''a que les droits nécessaires.
+- Journalisation et surveillance des accès.
+- Sensibilisation du personnel, car l''humain est souvent visé en premier.
+- Protection des données personnelles : le Sénégal dispose d''une loi sur la protection des données à caractère personnel et d''une autorité de contrôle, la Commission de protection des données personnelles (CDP) ; vérifie les obligations en vigueur pour chaque traitement.
+
+## Exercices pratiques
+
+1. Associe chaque incident à un objectif de sécurité : a) un site est saturé et inaccessible ; b) un relevé de notes est modifié ; c) des dossiers médicaux sont publiés sur Internet.
+2. Chiffre « DAKAR » avec un décalage de 3 lettres (chiffre de César). Ce chiffrement est-il sûr ?
+3. RSA miniature : p = 5, q = 11, e = 3. Calcule n, φ et d. Chiffre m = 8 puis déchiffre.
+4. Pourquoi saler les empreintes de mots de passe ?
+5. Cas pratique. Une PME de transfert d''argent de Thiès (12 employés) a subi un hameçonnage : un employé a donné son mot de passe. Propose cinq mesures prioritaires.
+
+## Corrigé
+
+1. a) disponibilité ; b) intégrité ; c) confidentialité.
+
+2. D → G, A → D, K → N, A → D, R → U : « GDNDU ». Non : il n''y a que 25 décalages possibles, qu''on teste tous en quelques secondes.
+
+def cesar(texte, k):
+    return "".join(chr((ord(c) - 65 + k) % 26 + 65) for c in texte)
+
+print(cesar("DAKAR", 3), cesar("GDNDU", -3))
+
+3. n = 55 ; φ = 4 × 10 = 40 ; d = 27 car 3 × 27 = 81 = 2 × 40 + 1. Chiffrement : pow(8, 3, 55) = 512 mod 55 = 17. Déchiffrement : pow(17, 27, 55) = 8.
+
+4. Sans sel, deux utilisateurs ayant le même mot de passe ont la même empreinte, et un attaquant peut comparer les empreintes volées à des tables précalculées de mots de passe courants. Le sel rend chaque empreinte unique et ces tables inutiles.
+
+5. Changer immédiatement le mot de passe compromis et vérifier les journaux d''accès ; activer l''authentification à plusieurs facteurs ; former le personnel à reconnaître l''hameçonnage ; appliquer le moindre privilège (limiter les montants et opérations par profil) ; mettre en place des sauvegardes testées et un plan de réponse aux incidents.', 'texte', 75, false, 40
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sécurité informatique : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 3 Informatique (corrigé détaillé)', '## Présentation
+
+Sujet d''entraînement, non officiel, sur le modèle d''une épreuve semestrielle de Licence 3. Durée conseillée : 3 heures, sans document. Barème indicatif, non officiel, sur 20 points. L''entreprise et les tarifs sont fictifs.
+
+## Exercice 1 : génie logiciel et UML (7 points)
+
+La start-up fictive Jàng Online propose des cours de soutien en ligne. Un élève crée un compte, consulte le catalogue, s''abonne pour une durée de 1 à 12 mois et paie par paiement mobile. Un enseignant publie des cours, chaque cours relevant d''une seule matière. Un administrateur valide les comptes des enseignants. Le paiement est traité par un opérateur externe.
+
+1.1 (2 pts) Donne les acteurs et au moins cinq cas d''utilisation. Indique une relation include.
+
+1.2 (3 pts) Propose un diagramme de classes avec Eleve, Enseignant, Cours, Matiere et Abonnement : attributs principaux et multiplicités.
+
+1.3 (2 pts) Le prix d''un abonnement est de 5 000 FCFA par mois, avec une remise de 10 % à partir de 6 mois (tarif fictif). Une durée hors de 1 à 12 mois est refusée. Donne les valeurs limites à tester et les résultats attendus.
+
+## Exercice 2 : web et API (6 points)
+
+2.1 (1,5 pt) Quel code HTTP renvoyer : a) cours introuvable ; b) cours publié avec succès ; c) élève non connecté qui veut consulter un cours payant ?
+
+2.2 (2 pts) Propose les routes REST pour : lister les cours d''une matière, consulter un cours, publier un cours, supprimer un cours.
+
+2.3 (1,5 pt) Qu''affiche ce code JavaScript ?
+
+const notes = [14, 8, 17, 11];
+const admis = notes.filter(n => n >= 10);
+console.log(admis.length, Math.max(...notes));
+
+2.4 (1 pt) Une carte a width: 320px, padding: 12px, border: 1px, en content-box. Quelle largeur occupe-t-elle ?
+
+## Exercice 3 : sécurité (7 points)
+
+3.1 (2 pts) Le code de connexion construit la requête ainsi : "SELECT * FROM eleve WHERE email = ''" + email + "''". Quel est le risque ? Comment corriger ?
+
+3.2 (2,5 pts) RSA miniature : p = 7, q = 11, e = 7. Calcule n, φ, d. Chiffre m = 9.
+
+3.3 (1 pt) Pourquoi ne faut-il pas chiffrer les mots de passe de façon réversible ?
+
+3.4 (1,5 pt) Propose trois mesures pour protéger la disponibilité de la plateforme.
+
+## Corrigé détaillé
+
+1.1 Acteurs principaux : Élève, Enseignant, Administrateur ; acteur secondaire : Opérateur de paiement. Cas : Créer un compte (Élève), Consulter le catalogue (Élève), S''abonner (Élève), Payer (Élève, Opérateur de paiement), Publier un cours (Enseignant), Valider un enseignant (Administrateur). Relation include : « S''abonner » inclut « Payer » (le paiement est obligatoire) ; on peut aussi faire inclure « S''authentifier » par les cas réservés aux utilisateurs connectés.
+
+1.2 Classes et attributs : Eleve (id, nom, telephone), Enseignant (id, nom, valide : booléen), Matiere (code, libelle), Cours (id, titre, datePublication), Abonnement (id, dateDebut, dureeMois, montant). Multiplicités : Eleve 1 — 0..* Abonnement (un élève peut se réabonner) ; Enseignant 1 — 0..* Cours ; Matiere 1 — 0..* Cours (chaque cours relève d''une seule matière) ; Abonnement donne accès au catalogue, sans association directe à un cours. On accepte aussi une classe Utilisateur dont héritent Eleve et Enseignant.
+
+1.3 Classes valides : 1 à 5 mois (sans remise), 6 à 12 mois (remise) ; invalides : 0 ou moins, 13 ou plus. Valeurs limites et résultats : 0 → refus ; 1 → 5 000 FCFA ; 5 → 25 000 FCFA ; 6 → 30 000 − 3 000 = 27 000 FCFA ; 12 → 60 000 − 6 000 = 54 000 FCFA ; 13 → refus.
+
+def prix(mois):
+    if mois < 1 or mois > 12:
+        raise ValueError("durée refusée")
+    brut = 5000 * mois
+    if mois >= 6:
+        return brut - brut * 10 // 100
+    return brut
+
+print(prix(1), prix(5), prix(6), prix(12))
+
+2.1 a) 404 ; b) 201 ; c) 401 (non authentifié). S''il était connecté sans abonnement, on renverrait plutôt 403.
+
+2.2 GET /api/v1/matieres/{code}/cours → 200 ; GET /api/v1/cours/{id} → 200 ou 404 ; POST /api/v1/cours (corps JSON avec titre, matière, contenu) → 201 ; DELETE /api/v1/cours/{id} → 204. Une variante GET /api/v1/cours?matiere=MATH est aussi correcte.
+
+2.3 filter garde 14, 17 et 11 : admis.length vaut 3 ; Math.max(...notes) vaut 17. Affichage : 3 17.
+
+2.4 320 + 2 × 12 + 2 × 1 = 346 pixels.
+
+3.1 Risque d''injection SQL : une saisie comme '' OR ''1''=''1 rend la condition toujours vraie et peut contourner l''authentification ou exposer des données. Correction : requête paramétrée (SELECT * FROM eleve WHERE email = ?, la valeur étant passée séparément), validation du format de l''adresse, compte de base de données aux droits limités, et ne jamais afficher les messages d''erreur SQL à l''utilisateur.
+
+3.2 n = 77 ; φ = 6 × 10 = 60 ; d = 43 car 7 × 43 = 301 = 5 × 60 + 1. Chiffrement : c = pow(9, 7, 77) = 37. Vérification : pow(37, 43, 77) = 9.
+
+print(7 * 11, (7 * 43) % 60, pow(9, 7, 77), pow(37, 43, 77))
+
+3.3 Si la clé de déchiffrement est volée avec la base, tous les mots de passe sont révélés, et les utilisateurs réutilisent souvent leurs mots de passe ailleurs. Un hachage lent et salé ne se « déchiffre » pas : l''attaquant doit essayer les mots de passe un par un.
+
+3.4 Sauvegardes régulières et testées (règle 3-2-1) ; hébergement redondant ou plan de reprise ; protection contre le déni de service (limitation du nombre de requêtes, service de filtrage) ; surveillance et alertes ; mises à jour planifiées hors des heures de forte affluence.
+
+## Exercices pratiques
+
+1. Cite deux différences entre une agrégation et une composition.
+2. Quel en-tête HTTP indique le format du corps de la réponse ?
+3. Un hachage SHA-256 produit une empreinte de combien de bits ?
+4. Que signifie l''idempotence d''une méthode HTTP ?
+
+## Corrigé
+
+1. Dans une composition, la partie ne peut exister sans le tout et disparaît avec lui, et elle n''appartient qu''à un seul tout ; dans une agrégation, la partie peut exister seule et être partagée. Notation : losange plein pour la composition, vide pour l''agrégation.
+2. Content-Type (par exemple application/json).
+3. 256 bits, soit 32 octets.
+4. Répéter la même requête une ou plusieurs fois laisse le serveur dans le même état (GET, PUT, DELETE).', 'texte', 90, false, 50
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 3 Informatique (corrigé détaillé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Génie logiciel et UML', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 Informatique.
+- Objectifs : choisir un cycle de vie adapté ; extraire les exigences d''un texte ; construire un diagramme de cas d''utilisation, un diagramme de classes et un diagramme de séquence ; concevoir des tests par valeurs limites.
+- Matériel : tableau blanc, diaporama, outil de modélisation UML (ou papier quadrillé), Python pour les tests.
+- Prérequis : programmation, bases de données ; leçon « Génie logiciel et UML : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil
+
+Texte du formateur : « Bonjour. Beaucoup de projets informatiques échouent non pas parce que le code est mauvais, mais parce qu''on a construit le mauvais logiciel, ou qu''on l''a construit sans plan. Le génie logiciel, c''est l''art de construire le bon logiciel, et de le construire bien. Aujourd''hui, nous suivons un projet du texte du client jusqu''aux tests. »
+
+## 05:00 – 15:00 · Cycles de vie : choisir sa méthode
+
+Texte du formateur : « Toute méthode passe par les mêmes activités : comprendre le besoin, spécifier, concevoir, coder, tester, déployer, maintenir. Ce qui change, c''est l''enchaînement. En cascade, on fait tout dans l''ordre, une seule fois. Le cycle en V associe chaque niveau de conception à un niveau de test : c''est rassurant pour un système critique, comme un logiciel de contrôle dans un hôpital. Avec l''itératif et l''agile, on livre souvent, par petits morceaux, et le client corrige le tir à chaque démonstration. »
+
+« Scrum, concrètement : le responsable de produit tient le carnet de produit, une liste priorisée de fonctionnalités écrites comme des récits utilisateur, par exemple "En tant que client, je veux suivre ma commande pour savoir quand elle arrive". Toutes les deux à quatre semaines, l''équipe choisit des récits, les réalise, et les montre. Le scrum master protège l''équipe et anime les réunions. »
+
+Question au public : « Pour une application de livraison de repas dont le client change d''avis chaque semaine, quelle méthode ? » Réponse attendue : agile.
+
+## 15:00 – 30:00 · Du texte aux cas d''utilisation
+
+Énoncé projeté : « La plateforme fictive Lekk Express permet à un client de commander un repas auprès des restaurants partenaires de Dakar, de payer en ligne et de suivre la livraison. Le restaurateur reçoit les commandes et met à jour son menu. Le livreur accepte les courses et confirme la livraison. Un administrateur valide les nouveaux restaurants. »
+
+Texte du formateur : « Méthode : je souligne les acteurs, je mets les verbes en évidence. Acteurs : client, restaurateur, livreur, administrateur, et le service de paiement, acteur externe. Cas d''utilisation : Commander un repas, Payer, Suivre la livraison, Recevoir les commandes, Mettre à jour le menu, Accepter une course, Confirmer la livraison, Valider un restaurant. »
+
+« Commander un repas inclut Payer : impossible de commander sans payer, d''où include. Appliquer un code promotionnel étend Payer : c''est optionnel, d''où extend. Attention au sens des flèches : pour include, la flèche part du cas de base vers le cas inclus ; pour extend, elle part de l''extension vers le cas de base. »
+
+Visuel : le diagramme dessiné en direct, le rectangle du système au centre, les acteurs à gauche et à droite.
+
+« Exigences non fonctionnelles repérées en relisant : la plateforme doit fonctionner sur des téléphones modestes avec une connexion mobile irrégulière, et les paiements doivent être sécurisés. Ce ne sont pas des cas d''utilisation, ce sont des qualités : notez-les à part. »
+
+## 30:00 – 35:00 · Quiz interactif
+
+- Q1 : un acteur peut-il être un système ? Réponse : oui, par exemple le service de paiement.
+- Q2 : un cas toujours exécuté avec un autre : include ou extend ? Réponse : include.
+- Q3 : dans Scrum, qui priorise le carnet de produit ? Réponse : le responsable de produit (product owner).
+- Q4 : « La page s''affiche en moins de 3 secondes » est une exigence de quel type ? Réponse : non fonctionnelle.
+
+## 35:00 – 55:00 · Correction commentée : le diagramme de classes
+
+Texte du formateur : « Je relis l''énoncé et je cherche les noms porteurs de données : client, restaurant, repas (plat), commande, livreur, paiement. Chaque nom devient une classe candidate. Je garde ceux qui ont des attributs propres. »
+
+Classes proposées au tableau :
+
+- Client : nom, téléphone, adresse.
+- Restaurant : nom, quartier, validé.
+- Plat : nom, prix.
+- Commande : numéro, date, statut ; opération montantTotal().
+- LigneCommande : quantité.
+- Livreur : nom, téléphone.
+- Paiement : montant, date, référence.
+
+« Multiplicités, une par une, en lisant dans les deux sens. Un client passe 0..* commandes ; une commande est passée par exactement 1 client. Une commande contient 1..* lignes ; une ligne appartient à 1 commande : composition, car une ligne sans sa commande n''a aucun sens. Une ligne porte sur 1 plat ; un plat apparaît dans 0..* lignes. Un restaurant propose 1..* plats. Une commande est livrée par 0..1 livreur, car au moment de la création, personne n''a encore accepté la course. Une commande a 0..1 paiement. »
+
+Correction d''une copie typique : un étudiant a mis l''attribut « plats » dans Commande, sous forme de liste. Le formateur explique que la quantité de chaque plat n''a alors nulle part où vivre : c''est précisément le rôle de LigneCommande, qui deviendra une table d''association en base de données, exactement comme en Licence 2.
+
+## 55:00 – 1:05:00 · Le diagramme de séquence
+
+Texte du formateur : « Le diagramme de séquence raconte un scénario dans le temps. Scénario nominal "Commander un repas" : le client valide son panier sur l''application ; l''application envoie la commande au serveur ; le serveur calcule le montant et demande le paiement au service externe ; le service répond "accepté" ; le serveur enregistre la commande au statut "payée" et notifie le restaurant ; l''application affiche la confirmation au client. »
+
+« Le scénario alternatif, paiement refusé, se dessine dans un fragment alt : une branche "accepté", une branche "refusé" où le serveur annule la commande et l''application affiche un message d''erreur. Les flèches pleines sont des appels, les flèches en pointillé des retours. »
+
+Visuel : cinq lignes de vie (Client, Application, Serveur, ServicePaiement, Restaurant) avec les messages numérotés.
+
+## 1:05:00 – 1:15:00 · Tester avec les valeurs limites
+
+Texte du formateur : « Règle métier fictive : la livraison est gratuite à partir de 10 000 FCFA de commande, sinon elle coûte 1 000 FCFA ; une commande doit être comprise entre 1 500 et 200 000 FCFA. Où sont les frontières ? À 1 500, à 10 000 et à 200 000. On teste juste en dessous et juste au niveau de chaque frontière, plus une valeur au-dessus du maximum. »
+
+def frais_livraison(montant):
+    if montant < 1500 or montant > 200000:
+        raise ValueError("montant hors limites")
+    if montant >= 10000:
+        return 0
+    return 1000
+
+cas = [1500, 9999, 10000, 200000]
+print([frais_livraison(m) for m in cas])
+
+« Résultat attendu : [1000, 1000, 0, 0]. Et 1 499 et 200 001 doivent lever une erreur. Remarquez : si le développeur avait écrit montant > 10000 au lieu de montant >= 10000, seul le test à 10 000 l''aurait détecté. C''est tout l''intérêt des valeurs limites : les erreurs se cachent aux frontières. »
+
+« Dernier point : ces tests ne s''écrivent pas une fois pour toutes. On les range dans le projet et on les relance automatiquement à chaque modification du code : ce sont les tests de non-régression. Dans une équipe, un serveur d''intégration continue exécute toute la batterie de tests avant d''accepter une nouvelle version. Un test qui échoue bloque la livraison, et c''est tant mieux : mieux vaut un développeur averti qu''un client mécontent. »
+
+## 1:15:00 – 1:22:00 · Synthèse
+
+Texte du formateur : « Le chemin complet : un texte, des acteurs et des cas d''utilisation, des classes avec leurs multiplicités, des scénarios en séquence, puis des tests aux frontières. Choisissez la méthode selon la stabilité des besoins. Et souvenez-vous : un diagramme sert à communiquer ; s''il n''est pas lisible, il ne sert à rien. »
+
+## 1:22:00 – 1:30:00 · Évaluation finale (5 questions)
+
+1. Quelle méthode associe à chaque phase de conception une phase de test ? Réponse : le cycle en V.
+2. Écris un récit utilisateur pour le livreur. Réponse : « En tant que livreur, je veux voir les courses disponibles près de moi pour en accepter une rapidement. »
+3. Multiplicité côté Livreur pour une commande qui vient d''être créée ? Réponse : 0..1.
+4. Quel fragment représente une alternative dans un diagramme de séquence ? Réponse : alt.
+5. Valeurs limites pour une note valide de 0 à 20 ? Réponse : −1, 0, 20, 21 (éventuellement 1 et 19).
+
+Mot de fin : « Reprenez l''énoncé Lekk Express seul, sans vos notes, et produisez les trois diagrammes en 45 minutes. C''est le format d''une étude de cas d''examen. »', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Génie logiciel et UML');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Développement web et API', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 Informatique.
+- Objectifs : structurer une page HTML accessible ; maîtriser le modèle de boîte et la spécificité CSS ; manipuler des données et la page en JavaScript ; décrire les échanges HTTP ; concevoir une API REST.
+- Matériel : éditeur de code et navigateur projetés, outils de développement du navigateur (onglet Réseau), Node.js, diaporama.
+- Prérequis : leçon « Développement web et API : l''essentiel pour l''examen » ; notions de réseaux de Licence 2.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil
+
+Texte du formateur : « Bonjour. Une application web, c''est trois langages côté navigateur, HTML, CSS et JavaScript, et un dialogue avec un serveur par HTTP. Aujourd''hui, nous construisons mentalement le site d''un restaurant fictif de Saint-Louis qui affiche son menu et reçoit des commandes, puis nous concevons son API. »
+
+## 05:00 – 20:00 · HTML : structure et accessibilité
+
+Texte du formateur : « HTML dit ce que sont les choses, pas à quoi elles ressemblent. Un titre principal se balise en h1, même si vous voulez qu''il soit petit : la taille, c''est le travail du CSS. Les balises sémantiques header, nav, main, section, footer permettent aux lecteurs d''écran, utilisés par les personnes malvoyantes, de naviguer dans la page. »
+
+« Pour le formulaire de commande, chaque champ a son label relié par l''attribut for. Cliquer sur le texte du label place le curseur dans le champ, et le lecteur d''écran annonce correctement le champ. Les attributs type="tel", required ou min font une première validation dans le navigateur. Mais attention : cette validation est un confort pour l''utilisateur, jamais une sécurité. Le serveur doit tout revérifier, car n''importe qui peut envoyer une requête sans passer par votre formulaire. »
+
+Visuel : le formulaire avec trois champs (nom, téléphone, quantité) et un bouton « Commander ».
+
+« Et chaque image du menu porte un attribut alt qui décrit le plat : "Assiette de thiéboudienne au poisson". Si l''image ne se charge pas, sur une connexion lente par exemple, le texte s''affiche à sa place. »
+
+## 20:00 – 35:00 · CSS : boîte, spécificité, mise en page
+
+Texte du formateur : « Premier calcul d''examen : la largeur d''une boîte. width: 280px, padding: 16px, border: 2px. En content-box, le comportement par défaut, la largeur visible est 280 + 32 + 4 = 316 pixels. En border-box, elle reste 280 pixels et c''est le contenu qui rétrécit à 280 − 32 − 4 = 244 pixels. Beaucoup de développeurs appliquent border-box à tous les éléments pour simplifier les calculs. »
+
+« Deuxième notion : la spécificité. Un sélecteur d''identifiant bat un sélecteur de classe, qui bat un sélecteur de balise. Si #menu .plat { color: brown } et .plat { color: black } s''appliquent au même élément, il est marron : un identifiant et une classe pèsent plus lourd qu''une classe seule. »
+
+« Troisième notion : la mise en page. Pour afficher les cartes des plats côte à côte, on écrit sur le conteneur display: flex; flex-wrap: wrap; gap: 16px. Sur un téléphone, une requête média @media (max-width: 600px) passe les cartes en colonne. On conçoit d''abord pour le mobile, puis on enrichit pour les grands écrans. »
+
+## 35:00 – 40:00 · Quiz interactif
+
+- Q1 : quelle balise contient le titre affiché dans l''onglet du navigateur ? Réponse : title, dans head.
+- Q2 : quelle largeur pour width: 200px, padding: 10px, border: 1px en content-box ? Réponse : 222 pixels.
+- Q3 : un identifiant ou une classe : lequel est le plus spécifique ? Réponse : l''identifiant.
+- Q4 : la validation dans le navigateur suffit-elle ? Réponse : non, il faut toujours valider côté serveur.
+
+## 40:00 – 55:00 · JavaScript : données et page
+
+Texte du formateur : « JavaScript manipule des données et la page. Commençons par les données : le menu est un tableau d''objets. »
+
+const menu = [
+  { nom: "Thiéboudienne", prix: 2500 },
+  { nom: "Yassa poulet", prix: 2000 },
+  { nom: "Mafé", prix: 1800 },
+  { nom: "Bissap 1 L", prix: 1000 },
+];
+const abordables = menu.filter(p => p.prix <= 2000).map(p => p.nom);
+console.log(abordables.join(", "));
+const total = menu.reduce((s, p) => s + p.prix, 0);
+console.log(total);
+
+« filter garde les plats à 2 000 FCFA au plus, map ne retient que leur nom, reduce additionne les prix. Affichage : Yassa poulet, Mafé, Bissap 1 L, puis 7300. Ces trois méthodes reviennent sans cesse à l''examen : sachez prévoir leur résultat. »
+
+« Ensuite, la page. On sélectionne un élément avec document.querySelector, on réagit à un événement avec addEventListener, et on modifie le contenu avec textContent. Pour charger le menu depuis le serveur, on utilise fetch avec await : la page reste réactive pendant l''attente. Toujours tester rep.ok avant de lire le JSON : un code 404 ou 500 n''est pas une exception réseau, fetch ne lève pas d''erreur dans ce cas. »
+
+Le formateur montre ensuite comment afficher le menu dans la page, en créant un élément par plat :
+
+const zone = document.querySelector("#menu");
+for (const plat of menu) {
+  const carte = document.createElement("article");
+  carte.className = "plat";
+  carte.textContent = plat.nom + " : " + plat.prix + " FCFA";
+  zone.append(carte);
+}
+
+« createElement fabrique une balise article, className lui donne la classe plat, que la feuille de style mettra en forme, et append l''ajoute dans la zone du menu. Remarquez encore textContent : si un nom de plat contenait du code, il serait affiché comme du texte, jamais exécuté. »
+
+Démonstration : dans l''onglet Réseau des outils de développement, le formateur montre la requête GET vers /api/v1/plats, son code 200, l''en-tête Content-Type: application/json et le corps de la réponse.
+
+## 55:00 – 1:10:00 · Correction commentée : concevoir l''API du restaurant
+
+Énoncé : « Concevoir l''API permettant de lister les plats, consulter un plat, ajouter un plat (gérant), modifier le prix d''un plat, retirer un plat, passer une commande, consulter une commande et l''annuler. »
+
+Proposition corrigée au tableau :
+
+- GET /api/v1/plats → 200, avec pagination ?page=1&taille=20.
+- GET /api/v1/plats/{id} → 200, ou 404.
+- POST /api/v1/plats → 201 (gérant authentifié ; 401 sans jeton, 403 si le jeton n''est pas celui d''un gérant).
+- PATCH /api/v1/plats/{id} avec {"prix": 2200} → 200.
+- DELETE /api/v1/plats/{id} → 204.
+- POST /api/v1/commandes → 201, avec en-tête Location: /api/v1/commandes/{id} ; 400 si la quantité est invalide.
+- GET /api/v1/commandes/{id} → 200.
+- Annulation : PATCH /api/v1/commandes/{id} avec {"statut": "annulee"} → 200, ou 409 si la commande est déjà livrée.
+
+Texte du formateur : « Erreurs relevées sur les copies : des verbes dans les URI, comme /annulerCommande ; GET utilisé pour supprimer, ce qui est dangereux car un simple lien ou un robot d''indexation pourrait déclencher la suppression ; 200 renvoyé pour tout, y compris les erreurs, avec un message dans le corps. Les codes d''état existent pour que les clients de l''API réagissent sans lire du texte. »
+
+« Pour les erreurs, renvoyez un corps JSON régulier, par exemple {"erreur": "quantite_invalide", "message": "La quantité doit être comprise entre 1 et 20"}. Le client affiche le message, le programme teste le code. »
+
+## 1:10:00 – 1:20:00 · Bonnes pratiques d''une API
+
+Texte du formateur : « Cinq règles. Un : HTTPS partout. Deux : authentification par jeton envoyé dans l''en-tête Authorization, jamais dans l''URL, car les URL finissent dans les journaux. Trois : validation de toutes les entrées côté serveur. Quatre : versionnement dans le chemin, /v1/, pour faire évoluer l''API sans casser les applications existantes. Cinq : documentation, avec un exemple de requête et de réponse pour chaque route. On ajoute souvent une limitation du nombre de requêtes par client, qui protège le service contre les abus. »
+
+« Un mot sur l''état. HTTP est sans état : le serveur ne se souvient pas de vous entre deux requêtes. C''est le jeton, envoyé à chaque fois, qui dit qui vous êtes. Cette propriété permet de répartir les requêtes sur plusieurs serveurs sans difficulté. »
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale (5 questions)
+
+Synthèse : « HTML pour le sens, CSS pour l''apparence, JavaScript pour le comportement, HTTP pour le dialogue, REST pour une API prévisible. »
+
+1. Qu''affiche [3, 8, 12].map(x => x * 2).filter(x => x > 10) ? Réponse : [16, 24].
+2. Code HTTP pour une création réussie ? Réponse : 201.
+3. Pourquoi ne pas utiliser GET pour supprimer ? Réponse : GET doit être sûr (sans effet) ; un lien, un préchargement ou un robot pourrait supprimer des données.
+4. Largeur d''une boîte width: 300px, padding: 20px, border: 3px en border-box ? Réponse : 300 pixels.
+5. Où placer le jeton d''authentification ? Réponse : dans l''en-tête Authorization, sur une connexion HTTPS.
+
+Mot de fin : « Construisez ce petit site chez vous, avec un faux serveur si besoin, et observez chaque requête dans l''onglet Réseau. »', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Développement web et API');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Sécurité informatique', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 Informatique.
+- Objectifs : analyser un risque ; expliquer et corriger les attaques courantes ; évaluer la robustesse d''un mot de passe ; comprendre l''échange de clés, le hachage et la signature ; bâtir un plan de sécurité pour une PME.
+- Matériel : diaporama, Python projeté, tableau blanc, étude de cas distribuée.
+- Prérequis : leçon « Sécurité informatique : l''essentiel pour l''examen » ; SQL et HTTP.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil
+
+Texte du formateur : « Bonjour. Avec le développement du paiement mobile et des services en ligne, la sécurité informatique est devenue une préoccupation de toutes les entreprises, petites ou grandes. La bonne nouvelle : la plupart des attaques réussies exploitent des erreurs simples. Aujourd''hui, nous apprenons à les reconnaître et à les éviter. »
+
+## 05:00 – 15:00 · Penser en risques
+
+Texte du formateur : « Le risque, c''est une menace qui exploite une vulnérabilité, avec un certain impact. Prenons une agence fictive de transfert d''argent à Thiès. Ses biens à protéger : les comptes clients, l''argent, la réputation. Menaces : hameçonnage des employés, vol d''un ordinateur portable, rançongiciel, fraude interne. Pour chaque couple menace-vulnérabilité, on estime la probabilité et l''impact, et on traite d''abord les risques élevés. »
+
+Visuel : une matrice probabilité-impact à trois niveaux, où le formateur place l''hameçonnage (probabilité forte, impact fort) et l''incendie de l''agence (probabilité faible, impact fort).
+
+« Une fois les risques classés, quatre traitements sont possibles. Réduire le risque, par une mesure technique ou organisationnelle : la double authentification réduit l''hameçonnage. Transférer le risque, par exemple à un assureur ou à un prestataire spécialisé. Éviter le risque, en renonçant à l''activité qui le crée : ne plus envoyer les relevés clients par courriel non protégé. Accepter le risque, quand il est faible et que la mesure coûterait plus cher que le dommage, à condition de le décider et de l''écrire. Ce qui est interdit, c''est d''ignorer un risque sans l''avoir jamais évalué. »
+
+« Rappel de la triade : confidentialité, intégrité, disponibilité. Un rançongiciel attaque surtout la disponibilité ; une fuite de fichier clients attaque la confidentialité ; un virement modifié attaque l''intégrité. »
+
+## 15:00 – 30:00 · Attaques applicatives et mots de passe
+
+Texte du formateur : « Injection SQL : si le code colle la saisie dans la requête, l''utilisateur écrit du SQL à votre place. La saisie '' OR ''1''=''1 transforme une recherche ciblée en "tout afficher". La correction est toujours la même : requêtes paramétrées. XSS : si le site réaffiche un commentaire sans l''échapper, un script malveillant s''exécute chez chaque visiteur. Correction : échapper à l''affichage et utiliser textContent. »
+
+« Passons aux mots de passe. Combien de combinaisons pour 8 lettres minuscules ? pow(26, 8), soit environ 209 milliards. Cela paraît énorme, mais pour un attaquant qui testerait un milliard d''empreintes par seconde (hypothèse pour l''exemple, cela dépend du matériel et de l''algorithme), il suffit d''environ 209 secondes. Avec 12 caractères pris parmi minuscules, majuscules et chiffres, soit 62 symboles : pow(62, 12), environ 3,2 × 10²¹ combinaisons, soit de l''ordre de 100 000 ans au même rythme. La longueur est l''arme principale. »
+
+print(pow(26, 8), round(pow(26, 8) / 1e9), round(pow(62, 12) / 1e9 / 3600 / 24 / 365))
+
+« Le programme affiche 208827064576, 209 secondes et environ 102 304 ans. Et c''est pour cela qu''on stocke les mots de passe avec un hachage lent : il réduit fortement le nombre d''essais par seconde. »
+
+## 30:00 – 35:00 · Quiz interactif
+
+- Q1 : une sauvegarde chiffrée par un rançongiciel : quel objectif est atteint ? Réponse : la disponibilité.
+- Q2 : quelle est la meilleure correction d''une injection SQL ? Réponse : les requêtes paramétrées.
+- Q3 : qu''est-ce qui augmente le plus la robustesse d''un mot de passe ? Réponse : sa longueur.
+- Q4 : un SMS demandant « votre code secret pour débloquer votre compte » : quelle attaque ? Réponse : l''hameçonnage.
+
+## 35:00 – 55:00 · Cryptographie : partager un secret
+
+Texte du formateur : « Le chiffrement symétrique est rapide, mais comment deux machines qui ne se connaissent pas se mettent-elles d''accord sur une clé, à travers un réseau espionné ? Réponse : l''échange de Diffie-Hellman. Version miniature, au tableau. On choisit publiquement p = 23 et g = 5. Awa choisit en secret a = 6 et envoie A = pow(5, 6, 23) = 8. Moussa choisit en secret b = 15 et envoie B = pow(5, 15, 23) = 19. Awa calcule pow(19, 6, 23) = 2 ; Moussa calcule pow(8, 15, 23) = 2. Ils obtiennent le même secret, 2, sans jamais l''avoir transmis. L''espion voit 23, 5, 8 et 19, mais retrouver a ou b est très difficile quand les nombres sont gigantesques. »
+
+p, g, a, b = 23, 5, 6, 15
+A, B = pow(g, a, p), pow(g, b, p)
+print(A, B, pow(B, a, p), pow(A, b, p))
+
+« Le programme affiche 8 19 2 2. En pratique, HTTPS utilise ce type d''échange pour établir une clé de session, puis chiffre les données avec un algorithme symétrique comme AES. Le certificat du serveur, signé par une autorité de certification, garantit que vous parlez bien au bon serveur et pas à un imposteur placé au milieu. »
+
+« Et RSA ? Avec la clé publique, on chiffre ; avec la clé privée, on déchiffre. Reprenez l''exemple de la leçon : n = 3 233, e = 17, d = 2 753. Chiffrer 65 donne 2 790, et déchiffrer 2 790 redonne 65. »
+
+## 55:00 – 1:10:00 · Hachage et signature
+
+Texte du formateur : « Une fonction de hachage transforme n''importe quel message en une empreinte de taille fixe. Regardez : je hache "Bonjour" puis "bonjour" avec SHA-256. »
+
+import hashlib
+h1 = hashlib.sha256("Bonjour".encode()).hexdigest()
+h2 = hashlib.sha256("bonjour".encode()).hexdigest()
+print(len(h1), h1[:16], h2[:16])
+
+« Le programme affiche 64 caractères hexadécimaux, soit 256 bits, et les débuts d''empreintes 9172e8eec99f144f et 2cb4b1431b84ec15 : une seule majuscule change tout. C''est l''effet avalanche. Usage : un éditeur publie l''empreinte d''un fichier d''installation ; après téléchargement, vous recalculez l''empreinte et vous comparez. »
+
+« La signature combine hachage et asymétrique. L''émetteur hache le document, puis transforme l''empreinte avec sa clé privée. Le destinataire refait l''opération inverse avec la clé publique et compare avec sa propre empreinte. En miniature, avec la clé de la leçon, signer l''empreinte 123 donne s = pow(123, 2753, 3233) = 2 746 ; vérifier donne pow(2746, 17, 3233) = 123 : la signature est valide. Si un octet du document change, l''empreinte change et la vérification échoue. »
+
+## 1:10:00 – 1:20:00 · Correction commentée : plan de sécurité d''une PME
+
+Énoncé : « Une agence fictive de transfert d''argent (12 employés, 2 agences) vient d''être victime d''un hameçonnage. Proposez un plan d''action priorisé. »
+
+Proposition corrigée :
+
+- Immédiat : réinitialiser les mots de passe compromis, analyser les journaux, bloquer les opérations suspectes, informer les clients concernés si leurs données sont touchées, en respectant les obligations légales en vigueur.
+- Court terme : authentification à plusieurs facteurs pour tous les accès sensibles ; plafonds d''opérations par profil (moindre privilège) ; formation de tout le personnel à l''hameçonnage.
+- Moyen terme : sauvegardes selon la règle 3-2-1 avec tests de restauration ; mises à jour automatiques ; procédure écrite de réponse aux incidents ; revue trimestrielle des droits d''accès.
+
+Texte du formateur : « Sur les copies, l''erreur la plus fréquente est la liste de mesures sans priorité, ou le tout technique. Ici, l''attaque est humaine : la formation et la double authentification sont prioritaires. Un antivirus de plus n''aurait rien changé. »
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale (5 questions)
+
+Synthèse : « Pensez en risques, corrigez les failles connues, protégez les mots de passe, chiffrez les échanges, signez ce qui doit être authentique, et formez les humains. »
+
+1. Quel objectif de sécurité la signature numérique garantit-elle, en plus de l''intégrité ? Réponse : l''authenticité et la non-répudiation.
+2. Diffie-Hellman avec p = 23, g = 5, a = 3, b = 7 : quel secret commun ? Réponse : A = 10, B = 17, secret = pow(17, 3, 23) = 14.
+3. Pourquoi ajouter un sel avant de hacher un mot de passe ? Réponse : pour que deux mots de passe identiques aient des empreintes différentes et rendre inutiles les tables précalculées.
+4. Combien de combinaisons pour un code à 4 chiffres ? Réponse : pow(10, 4) = 10 000.
+5. Citer la règle de sauvegarde vue en cours. Réponse : 3-2-1, trois copies, deux supports, une hors site.
+
+Mot de fin : « La sécurité n''est pas un produit qu''on achète, c''est une habitude. Commencez par la vôtre : activez dès ce soir la double authentification sur vos comptes, et refaites le calcul Diffie-Hellman de l''évaluation sans regarder la correction. »', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-info-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Sécurité informatique');
 
 -- Cours : Contrôle de gestion Licence 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1354,1371 +2180,1368 @@ Merci à tous pour votre attention et votre participation. Refaites le cas Sén�
 from public.courses c where c.slug = 'lic-cg-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Analyse des écarts');
 
--- Cours : Finance Licence 1 : réussir les examens de première année
+-- Cours : Contrôle de gestion Licence 3 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'lic-fin-l1', (select id from public.levels where name = 'Licence 1'), null, 'Finance', 'Finance Licence 1 : réussir les examens de première année', 'Ce cours prépare aux partiels et examens de première année de Licence en finance : introduction au système financier de l''UEMOA (banques, BCEAO, microfinance, BRVM), mathématiques financières appliquées (valeur actuelle et acquise, emprunts indivis, tableaux d''amortissement) et statistiques descriptives appliquées à la finance. Il s''adresse aux étudiants des universités et écoles du Sénégal et de l''espace UEMOA. Prérequis : niveau baccalauréat en mathématiques (pourcentages, puissances).', true, 351
+select 'lic-cg-l3', (select id from public.levels where name = 'Licence 3'), null, 'Contrôle de gestion', 'Contrôle de gestion Licence 3 : réussir ses examens', 'Préparation aux partiels et examens semestriels de troisième année de Licence en contrôle de gestion : méthode ABC et coût cible, tableaux de bord et balanced scorecard, contrôle de gestion des PME et du secteur public, prix de cession interne. Fiches, cas d''entreprises et d''organisations fictives d''Afrique de l''Ouest, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : coûts complets et partiels, budgets et analyse des écarts (L1 et L2).', true, 333
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Licence 1 en Finance', '## Objectifs de la leçon
+select c.id, 'Réussir ses examens de Licence 3 en Contrôle de gestion', '## Objectifs de la leçon
 
-- Comprendre comment est organisée une première année de Licence dans le système LMD.
-- Identifier les matières de finance de la Licence 1 et ce que les examinateurs attendent dans chacune.
-- Connaître les grands types d''épreuves et la manière de les aborder.
+- Situer la troisième année de Licence en contrôle de gestion et ses enjeux (diplôme, poursuite en Master, insertion).
+- Identifier les matières clés de l''année et les attentes des correcteurs.
+- Adopter une méthode de révision qui combine calcul et analyse critique.
+- Planifier six semaines de révision.
+
+## 1. La Licence 3 dans le système LMD
+
+La Licence 3 conclut le premier cycle du système LMD. Ses deux semestres sont organisés en unités d''enseignement créditées ; l''obtention de l''ensemble des crédits de la Licence donne le diplôme. Beaucoup de parcours prévoient aussi un stage ou un mémoire de fin de cycle. Les règles précises (crédits, compensation, rattrapage, poids du stage, conditions d''admission en Master) relèvent du règlement de votre établissement : consultez-le dès la rentrée, car les dossiers de candidature en Master s''appuient souvent sur les résultats de Licence 3.
+
+## 2. Les matières clés de l''année
+
+En Licence 3, le contrôle de gestion devient stratégique et s''ouvre à des contextes variés. Ce cours traite trois matières :
+
+- Méthode ABC et coût cible : limites des coûts complets traditionnels, activités et inducteurs, calcul des coûts par activités, gestion par les activités, coût cible (target costing) et analyse de la valeur.
+- Tableaux de bord et indicateurs de performance : conception d''un tableau de bord, choix des indicateurs, balanced scorecard (tableau de bord prospectif) et carte stratégique, pilotage par les feux de signalisation.
+- Contrôle de gestion des PME et du secteur public, prix de cession interne : spécificités des PME, budget-programme et performance publique dans l''espace UEMOA, centres de profit et d''investissement, prix de cession interne, ROI et résultat résiduel.
+
+Ces matières mobilisent tout l''acquis de L1 et L2 : coûts complets et partiels, budgets, écarts. Elles dialoguent avec la stratégie, la finance d''entreprise et le management des organisations.
+
+## 3. Ce que les correcteurs attendent
+
+En L3, le calcul juste ne suffit plus : on attend un regard critique. Pour la méthode ABC, il faut savoir calculer, mais aussi expliquer pourquoi les résultats diffèrent de la méthode traditionnelle et ce que l''entreprise doit en faire. Pour le tableau de bord, il faut justifier le choix d''un indicateur au regard de la stratégie. Pour les prix de cession interne, il faut montrer l''effet sur le comportement des responsables de division, pas seulement sur les chiffres.
+
+Types d''épreuves fréquents :
+
+- Cas pratique de synthèse : une entreprise ou un groupe fictif, plusieurs dossiers (coûts par activités, coût cible, tableau de bord, prix de cession).
+- Exercices chiffrés : coût d''un inducteur, résultat par division selon le prix de cession, ROI et résultat résiduel.
+- Dissertation : « Le balanced scorecard est-il adapté aux PME africaines ? », « Peut-on piloter la performance d''un service public ? ».
+- Commentaire de document : un article ou un extrait de rapport à analyser.
+- Projet ou mémoire : conception d''un tableau de bord pour une organisation réelle, souvent lors du stage.
+
+## 4. Méthode de révision
+
+Faites des fiches en deux colonnes : à gauche la méthode (étapes de calcul), à droite les apports et les limites. Par exemple : méthode ABC, étapes (identifier les activités, rattacher les ressources, choisir les inducteurs, calculer le coût unitaire de chaque inducteur, affecter aux produits) ; apports (meilleure traçabilité des charges indirectes, révélation des subventions croisées entre produits) ; limites (coût de mise en place, subjectivité des rattachements, charges de structure difficiles à rattacher).
+
+Pour les dissertations, préparez une banque d''exemples sénégalais et africains fictifs mais réalistes : une PME agroalimentaire de Thiès, une institution de microfinance, un hôpital régional, une commune, un groupe industriel à plusieurs divisions. Préparez aussi quelques références d''auteurs bien identifiées (Kaplan et Norton pour le balanced scorecard ; Cooper et Kaplan pour la méthode ABC), sans inventer de citations.
+
+## 5. Plan de révision sur 6 semaines
+
+- Semaine 1 : méthode ABC, 3 cas de calcul et 1 comparaison avec la méthode des centres d''analyse.
+- Semaine 2 : coût cible et analyse de la valeur ; 2 cas ; 1 dissertation sur le pilotage par les coûts.
+- Semaine 3 : tableaux de bord et balanced scorecard ; construire un tableau de bord complet pour une entreprise de votre choix.
+- Semaine 4 : contrôle de gestion des PME et du secteur public ; prix de cession interne, ROI et résultat résiduel ; 3 cas.
+- Semaine 5 : sujet type complet en 3 heures, puis correction et carnet d''erreurs.
+- Semaine 6 : deuxième sujet type, révision des fiches, entraînement aux introductions de dissertation.
+
+## 6. Le jour J
+
+Lisez le sujet entièrement ; identifiez les dossiers indépendants ; gérez votre temps selon le barème. Dans les dossiers de calcul, présentez des tableaux propres et vérifiez toujours un total (la somme des coûts par activités redonne les charges indirectes ; la somme des résultats des divisions redonne le résultat du groupe). Réservez du temps aux questions de commentaire : elles valent souvent autant de points que les calculs et départagent les copies.
+
+## Points clés
+
+- La L3 est l''année de la synthèse et de l''esprit critique.
+- Trois matières : ABC et coût cible ; tableaux de bord et balanced scorecard ; PME, secteur public et prix de cession interne.
+- Toujours un total de contrôle et un commentaire.
+
+## Exercices
+
+- Exercice 1 : rédigez la fiche « méthode ABC » en deux colonnes.
+- Exercice 2 : proposez une problématique et un plan pour la dissertation « Le balanced scorecard est-il adapté aux PME africaines ? ».
+- Exercice 3 : quels totaux de contrôle utiliser dans un exercice sur les prix de cession interne ?
+
+## Corrigé
+
+- Exercice 1 : voir la section 4 ; ajoutez la formule « coût unitaire de l''inducteur = coût de l''activité / volume de l''inducteur ».
+- Exercice 2 : problématique, un outil conçu pour de grandes entreprises peut-il être utile à des structures aux ressources limitées ? Plan : I. Un outil pertinent pour clarifier la stratégie et équilibrer les indicateurs ; II. Des conditions d''adaptation : peu d''indicateurs, données simples, implication du dirigeant.
+- Exercice 3 : la somme des résultats des divisions égale le résultat du groupe, quel que soit le prix de cession (tant que les volumes ne changent pas) ; les achats internes de l''une égalent les ventes internes de l''autre.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 3 en Contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Méthode ABC et coût cible : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Expliquer les limites de la méthode des centres d''analyse et les principes de la méthode ABC.
+- Calculer des coûts par activités et les comparer aux coûts traditionnels.
+- Déterminer un coût cible et l''effort de réduction de coût à fournir.
+
+## 1. Pourquoi la méthode ABC ?
+
+La méthode des centres d''analyse impute les charges indirectes avec des unités d''œuvre souvent liées au volume (heures de MOD, heures machine). Or, dans les entreprises modernes, une part croissante des charges indirectes dépend de la diversité et de la complexité : nombre de références, de lots, de commandes, de contrôles. Les produits fabriqués en petites séries, personnalisés, consomment beaucoup de ces ressources mais peu d''heures : la méthode traditionnelle les sous-évalue, et surévalue les produits de grande série. On parle de subventionnement croisé.
+
+La méthode ABC (Activity-Based Costing), formalisée à la fin des années 1980 notamment par Robin Cooper et Robert S. Kaplan, repose sur une idée simple : les produits consomment des activités, et les activités consomment des ressources.
+
+## 2. Vocabulaire et démarche
+
+- Activité : ensemble de tâches homogènes (régler une machine, traiter une commande, contrôler un lot).
+- Inducteur de coût : facteur qui explique la consommation de ressources par l''activité (nombre de lots, de commandes).
+- Processus : enchaînement d''activités orienté vers un résultat (traiter une commande client de bout en bout).
+
+Démarche : 1) identifier les activités ; 2) affecter les charges indirectes aux activités ; 3) choisir un inducteur par activité ; 4) calculer le coût unitaire de l''inducteur = coût de l''activité / volume de l''inducteur ; 5) affecter aux produits selon leur consommation d''inducteurs. Les activités ayant le même inducteur peuvent être regroupées en centres de regroupement.
+
+## 3. Cas : Afrik Emballages (entreprise fictive, Dakar)
+
+L''entreprise fabrique des sacs standard (S) et des sacs personnalisés (P). Données du mois :
+
+- Production et ventes : 100 000 sacs S à 550 FCFA ; 20 000 sacs P à 1 200 FCFA.
+- Coûts directs unitaires (matière et MOD) : S 300 FCFA ; P 450 FCFA.
+- Charges indirectes : 30 000 000 FCFA. MOD : 0,02 h par sac S (2 000 h au total), 0,05 h par sac P (1 000 h).
+
+Méthode traditionnelle (unité d''œuvre heure de MOD) : 30 000 000 / 3 000 = 10 000 FCFA l''heure. S reçoit 20 000 000 FCFA, soit 200 FCFA par sac ; P reçoit 10 000 000, soit 500 FCFA. Coûts complets : S 500 FCFA ; P 950 FCFA.
+
+Méthode ABC :
+
+- Réglage des machines : 9 000 000 FCFA ; inducteur nombre de lots ; volume 90 (S 20, P 70) ; coût de l''inducteur 100 000 FCFA.
+- Gestion des commandes : 6 000 000 FCFA ; inducteur nombre de commandes ; volume 300 (S 50, P 250) ; coût de l''inducteur 20 000 FCFA.
+- Contrôle qualité : 4 500 000 FCFA ; inducteur nombre de contrôles ; volume 150 (S 30, P 120) ; coût de l''inducteur 30 000 FCFA.
+- Fabrication : 10 500 000 FCFA ; inducteur heure machine ; volume 3 500 (S 2 500, P 1 000) ; coût de l''inducteur 3 000 FCFA.
+
+- S : 20 × 100 000 + 50 × 20 000 + 30 × 30 000 + 2 500 × 3 000 = 11 400 000 FCFA, soit 114 FCFA par sac ; coût complet 414 FCFA.
+- P : 70 × 100 000 + 250 × 20 000 + 120 × 30 000 + 1 000 × 3 000 = 18 600 000 FCFA, soit 930 FCFA par sac ; coût complet 1 380 FCFA.
+- Contrôle : 11 400 000 + 18 600 000 = 30 000 000 FCFA.
+
+Comparaison des résultats :
+
+- Méthode traditionnelle : S 5 000 000 FCFA ; P 5 000 000 FCFA.
+- Méthode ABC : S 13 600 000 FCFA ; P −3 600 000 FCFA.
+
+Le résultat total est le même (10 000 000 FCFA), mais la lecture s''inverse : P, qu''on croyait le plus rentable par unité (250 FCFA de marge contre 50 pour S), perd de l''argent, car il consomme beaucoup de réglages et de commandes. Décisions possibles : relever le prix de P, imposer des quantités minimales par commande, réduire le coût des réglages (formation, outillage rapide), ou réorienter l''effort commercial vers S. C''est le passage de l''ABC à l''ABM (Activity-Based Management) : agir sur les activités et leurs inducteurs.
+
+## 4. Le coût cible
+
+La logique traditionnelle part du coût : prix = coût + marge. Le coût cible (target costing), développé dans l''industrie japonaise, inverse le raisonnement : coût cible = prix accepté par le marché − marge souhaitée. Il s''applique surtout en phase de conception, où l''essentiel des coûts futurs est déterminé.
+
+Cas : Afrik Emballages conçoit un sac biodégradable. L''étude de marché indique un prix acceptable de 800 FCFA ; la direction exige une marge de 15 % du prix. Coût cible = 800 × (1 − 0,15) = 680 FCFA. Le bureau d''études estime le coût actuel du projet à 760 FCFA :
+
+- matière : 380 FCFA (50,0 % du coût estimé).
+- fabrication : 220 FCFA (28,9 % du coût estimé).
+- conditionnement : 60 FCFA (7,9 % du coût estimé).
+- distribution : 100 FCFA (13,2 % du coût estimé).
+
+Écart à combler : 760 − 680 = 80 FCFA, soit 10,5 % du coût estimé. L''équipe projet (conception, achats, production, marketing) recourt à l''analyse de la valeur : identifier les fonctions attendues par le client (contenir, résister à l''humidité, afficher la marque, se dégrader), estimer leur importance et allouer le coût cible entre les composants en proportion. On cherche ensuite des solutions : matière alternative, simplification de l''impression, emballage groupé. Si l''écart ne peut être comblé, le projet est revu ou abandonné.
+
+## Points clés
+
+- ABC : les produits consomment des activités, qui consomment des ressources.
+- Coût de l''inducteur = coût de l''activité / volume de l''inducteur.
+- ABC révèle les subventions croisées entre produits de grande et de petite série.
+- Coût cible = prix de marché − marge cible ; il pilote la conception.
+
+## Exercices pratiques
+
+- Exercice 1 : l''activité « réception des marchandises » coûte 2 400 000 FCFA pour 160 réceptions. Calculez le coût de l''inducteur et le coût imputé à un produit nécessitant 25 réceptions.
+- Exercice 2 : citez trois inducteurs possibles pour les activités d''une banque (ouverture de compte, octroi de crédit, gestion des réclamations).
+- Exercice 3 : dans le cas Afrik Emballages, quel prix de P permettrait une marge de 10 % du prix en ABC ?
+- Exercice 4 : le nombre de lots de P passe de 70 à 40 grâce à des commandes groupées, et le coût de l''activité réglage baisse en proportion du nombre total de lots. Calculez le nouveau coût ABC unitaire de P.
+- Exercice 5 : un produit a un prix de marché de 15 000 FCFA ; marge cible 20 % ; coût estimé 13 200 FCFA. Calculez le coût cible et l''effort de réduction.
+- Exercice 6 (cas pratique) : rédigez une note au directeur d''Afrik Emballages présentant les résultats ABC et trois recommandations.
+
+## Corrigé
+
+- Exercice 1 : 2 400 000 / 160 = 15 000 FCFA par réception ; 25 × 15 000 = 375 000 FCFA.
+- Exercice 2 : nombre de comptes ouverts ; nombre de dossiers de crédit ; nombre de réclamations traitées.
+- Exercice 3 : prix p tel que p − 1 380 = 0,10 p, soit p = 1 380 / 0,9 ≈ 1 533 FCFA.
+- Exercice 4 : total des lots 60 ; coût de l''activité = 9 000 000 × 60 / 90 = 6 000 000 FCFA, toujours 100 000 FCFA par lot ; P reçoit 40 × 100 000 = 4 000 000 au lieu de 7 000 000 ; charges ABC de P = 15 600 000 FCFA, soit 780 FCFA par sac ; coût complet 1 230 FCFA. P redevient rentable à 1 200 FCFA.
+- Exercice 5 : coût cible = 15 000 × 0,8 = 12 000 FCFA ; effort = 1 200 FCFA, soit 9,1 % du coût estimé.
+- Exercice 6 : constat (P déficitaire de 3 600 000 FCFA, S bénéficiaire de 13 600 000 FCFA en ABC) ; causes (forte consommation de réglages, de commandes et de contrôles par P) ; recommandations (prix de P ou facturation des petites commandes, réduction des temps de réglage, quantité minimale de commande).', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthode ABC et coût cible : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Tableaux de bord et indicateurs de performance (balanced scorecard) : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Distinguer tableau de bord, reporting et budget.
+- Choisir des indicateurs pertinents et construire un tableau de bord.
+- Présenter le balanced scorecard et la carte stratégique.
+- Calculer et interpréter des indicateurs avec un système de feux.
+
+## 1. Le tableau de bord : définition et rôles
+
+Un tableau de bord est un ensemble restreint d''indicateurs, financiers et non financiers, conçu pour permettre à un responsable de suivre la réalisation de ses objectifs et de réagir vite. Il se distingue du reporting, qui remonte des informations vers la hiérarchie, souvent financières et périodiques, et du budget, qui fixe des objectifs chiffrés annuels. Le tableau de bord est un outil d''aide au pilotage, propre à chaque responsable.
+
+Qualités d''un bon tableau de bord : peu d''indicateurs (une dizaine au plus), rapidité de production, lisibilité (graphiques, feux), lien avec les objectifs et les leviers d''action du responsable, comparaison avec une référence (objectif, période précédente).
+
+## 2. Les indicateurs
+
+Un indicateur est une information chiffrée qui renseigne sur l''atteinte d''un objectif. On distingue :
+
+- Indicateurs de résultat (a posteriori : chiffre d''affaires, marge) et indicateurs de pilotage ou avancés (a priori : taux de livraisons à l''heure, qui annonce la satisfaction future).
+- Indicateurs financiers et non financiers (qualité, délais, satisfaction, compétences).
+- Indicateurs d''efficacité, d''efficience, de qualité.
+
+Un bon indicateur est pertinent (lié à un objectif), mesurable à un coût raisonnable, compréhensible, maîtrisable par le responsable et assorti d''une cible (méthode SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini).
+
+## 3. Le balanced scorecard
+
+Proposé au début des années 1990 par Robert S. Kaplan et David P. Norton, le balanced scorecard (tableau de bord prospectif ou équilibré) répond à une critique : les indicateurs financiers sont tardifs et poussent au court terme. Il traduit la stratégie en objectifs et indicateurs selon quatre axes :
+
+- Financier : comment satisfaire les actionnaires ? (rentabilité, croissance, trésorerie)
+- Clients : comment les clients nous perçoivent-ils ? (satisfaction, fidélité, part de marché)
+- Processus internes : dans quels processus exceller ? (qualité, délais, coûts)
+- Apprentissage organisationnel : comment progresser ? (compétences, systèmes d''information, climat social)
+
+La carte stratégique relie les objectifs par des relations de cause à effet. Schéma décrit pour un distributeur : en bas, « former les livreurs et équiper les camions de GPS » (apprentissage) ; au-dessus, « livrer à l''heure et sans casse » (processus) ; au-dessus, « clients satisfaits et fidèles » (clients) ; en haut, « croissance du chiffre d''affaires et de la marge » (financier). Des flèches montent d''un niveau à l''autre.
+
+Pour une organisation publique ou associative, on place souvent les bénéficiaires et la mission en haut de la carte, à la place de l''axe financier.
+
+## 4. Cas : Sahel Distribution (entreprise fictive, Dakar)
+
+Distributeur de produits laitiers, Sahel Distribution suit chaque mois un tableau de bord prospectif. Règle des feux : vert si l''objectif est atteint ; orange si l''écart relatif à l''objectif ne dépasse pas 10 % ; rouge au-delà. Tableau de bord du mois de mars :
+
+- Financier · Chiffre d''affaires du mois : objectif 250 000 000 FCFA ; réel 235 000 000 FCFA (relevé des ventes) ; feu orange.
+- Financier · Taux de marge brute : objectif 22,0 % ; réel 20,5 % (marge brute 48 175 000 / CA 235 000 000) ; feu orange.
+- Financier · Délai moyen de paiement clients (jours) : objectif 30 jours ; réel 36 jours (créances 282 000 000 / CA 235 000 000 × 30) ; feu rouge.
+- Clients · Taux de livraisons à l''heure : objectif 95,0 % ; réel 92,1 % (4 420 livraisons à l''heure / 4 800) ; feu orange.
+- Clients · Taux de réclamation : objectif 1,0 % ; réel 0,9 % (43 réclamations / 4 800 livraisons) ; feu vert.
+- Processus internes · Taux de casse : objectif 0,8 % ; réel 1,1 % (1 650 cartons endommagés / 150 000 livrés) ; feu rouge.
+- Processus internes · Couverture du stock (jours) : objectif 10 jours ; réel 9 jours (stock moyen 56 047 500 / coût des ventes 186 825 000 × 30) ; feu vert.
+- Apprentissage · Heures de formation par salarié (trimestre) : objectif 6,0 h ; réel 5,7 h (684 heures / 120 salariés) ; feu orange.
+- Apprentissage · Taux d''absentéisme : objectif 3,0 % ; réel 5,0 % (1 008 heures d''absence / 20 160 heures théoriques, soit 120 salariés × 168 heures) ; feu rouge.
+
+Lecture. Aucun feu rouge n''est isolé : le délai de paiement clients (36 jours) pèse sur la trésorerie ; la casse (1,1 %) et l''absentéisme (5,0 %) se renforcent probablement (livreurs remplaçants moins expérimentés, manutention plus brutale), ce qui rejoint le taux de livraisons à l''heure en orange. Selon la carte stratégique, ces difficultés dans les processus et l''apprentissage annoncent une dégradation des résultats financiers : le chiffre d''affaires et la marge sont déjà en orange. Actions : plan de relance des créances ; enquête sur l''absentéisme ; formation à la manutention ; suivi hebdomadaire de la casse par tournée.
+
+## 5. Limites et conditions de réussite
+
+Le balanced scorecard peut devenir une usine à gaz (trop d''indicateurs), les relations de cause à effet sont des hypothèses à tester, et les indicateurs peuvent produire des comportements opportunistes (manipuler un indicateur au lieu d''améliorer la performance). Conditions de réussite : implication de la direction, déclinaison par niveaux hiérarchiques, mise à jour régulière, lien avec le dialogue de gestion plutôt qu''avec la sanction.
+
+## Points clés
+
+- Un tableau de bord : peu d''indicateurs, liés aux objectifs et aux leviers d''action.
+- Balanced scorecard : quatre axes reliés par une carte stratégique de cause à effet.
+- Feux de signalisation : lecture rapide, mais l''analyse des liens entre indicateurs reste indispensable.
+
+## Exercices pratiques
+
+- Exercice 1 : distinguez tableau de bord et reporting.
+- Exercice 2 : classez dans les axes du balanced scorecard : taux de fidélisation, nombre de jours de formation, délai de traitement d''une commande, rentabilité des capitaux.
+- Exercice 3 : une agence de microfinance fictive a accordé 1 240 crédits pour un objectif de 1 300 ; 62 sont en retard de plus de 30 jours. Calculez le taux de réalisation, le taux de retard et attribuez les feux (objectif de retard : 4 % au plus).
+- Exercice 4 : proposez deux indicateurs avancés pour un hôtel.
+- Exercice 5 (cas pratique) : proposez une carte stratégique simplifiée (un objectif par axe) pour une clinique privée de Thiès, avec un indicateur par objectif.
+
+## Corrigé
+
+- Exercice 1 : le tableau de bord sert au pilotage par le responsable lui-même, avec des indicateurs variés et rapides ; le reporting remonte vers la hiérarchie des informations surtout financières pour rendre compte.
+- Exercice 2 : clients ; apprentissage ; processus internes ; financier.
+- Exercice 3 : réalisation = 1 240 / 1 300 = 95,4 %, orange (écart de 4,6 %) ; retard = 62 / 1 240 = 5,0 %, orange (écart relatif de 25,0 % par rapport à 4 %).
+- Exercice 4 : taux de réservation à 30 jours ; note de satisfaction des clients en cours de séjour.
+- Exercice 5 : financier, rentabilité (marge par patient) ; clients, satisfaction des patients (taux de satisfaction en enquête de sortie) ; processus, réduire l''attente (délai moyen avant consultation) ; apprentissage, compétences du personnel (heures de formation par soignant).', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Tableaux de bord et indicateurs de performance (balanced scorecard) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Contrôle de gestion des PME et du secteur public, prix de cession interne : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Adapter les outils du contrôle de gestion aux PME.
+- Comprendre le contrôle de gestion dans le secteur public et la logique du budget-programme.
+- Évaluer des centres de profit et d''investissement (ROI, résultat résiduel).
+- Choisir et analyser un prix de cession interne.
+
+## 1. Le contrôle de gestion dans les PME
+
+Les PME, majoritaires dans le tissu économique sénégalais, ont des caractéristiques propres : rôle central du dirigeant, peu de cadres fonctionnels, information souvent informelle, comptabilité parfois externalisée, forte sensibilité à la trésorerie. Le contrôle de gestion doit y être simple, rapide et orienté vers l''action.
+
+Outils adaptés : un tableau de bord de cinq à huit indicateurs (chiffre d''affaires, marge, trésorerie, créances clients, stock, carnet de commandes), un budget de trésorerie glissant, un calcul de coût de revient par produit ou par chantier, le seuil de rentabilité. Le tableur suffit souvent ; un logiciel de gestion intégré se justifie quand l''activité se développe.
+
+Exemple d''analyse simple et puissante : la concentration du chiffre d''affaires (loi de Pareto). Une PME de Kaolack réalise 100 millions de FCFA avec cinq clients :
+
+- client 1 : 45 millions de FCFA, cumul 45 %.
+- client 2 : 25 millions de FCFA, cumul 70 %.
+- client 3 : 15 millions de FCFA, cumul 85 %.
+- client 4 : 10 millions de FCFA, cumul 95 %.
+- client 5 : 5 millions de FCFA, cumul 100 %.
+
+Deux clients font 70 % du chiffre d''affaires : la dépendance est forte. Le dirigeant doit suivre ces clients de près (délais de paiement, satisfaction) et diversifier sa clientèle.
+
+## 2. Le contrôle de gestion dans le secteur public
+
+Les administrations, collectivités territoriales, établissements publics (hôpitaux, universités) ne cherchent pas le profit mais l''accomplissement d''une mission d''intérêt général avec des ressources budgétaires limitées. Dans l''espace UEMOA, le cadre harmonisé des finances publiques a promu la gestion budgétaire axée sur les résultats : les crédits sont présentés par programmes, chacun confié à un responsable de programme, avec des objectifs et des indicateurs de performance, et des rapports annuels de performance. Les modalités et calendriers de mise en œuvre relèvent des textes de chaque État.
+
+Trois dimensions de la performance publique sont habituellement distinguées : l''efficacité socio-économique (impact pour le citoyen), la qualité du service rendu (point de vue de l''usager) et l''efficience de la gestion (point de vue du contribuable).
+
+Exemple : programme « Éducation de base » d''une commune fictive de la région de Thiès. Crédits ouverts : 1 200 000 000 FCFA ; engagements : 1 080 000 000 FCFA ; ordonnancements : 930 000 000 FCFA.
+
+- Taux d''engagement = 1 080 000 000 / 1 200 000 000 = 90,0 % ; taux d''exécution (ordonnancements / crédits) = 77,5 %.
+- Efficacité : 18 salles de classe construites sur 24 prévues, soit 75 %.
+- Efficience : dépenses de construction 486 000 000 FCFA, soit 27 000 000 FCFA par salle contre 25 000 000 prévus (8,0 %).
+
+Une forte exécution budgétaire ne prouve pas la performance : le contrôle de gestion public doit relier les dépenses aux réalisations et aux effets (taux de scolarisation, effectifs par classe).
+
+## 3. Centres de profit et d''investissement : ROI et résultat résiduel
+
+Le ROI (return on investment, rentabilité des capitaux investis) = résultat de la division / capitaux investis. Le résultat résiduel (RR) = résultat − taux de rémunération exigé × capitaux investis. Le RR évite un effet pervers du ROI : un responsable qui affiche un ROI élevé peut refuser un projet rentable pour le groupe s''il fait baisser son ratio.
+
+## 4. Le prix de cession interne
+
+Quand une division vend à une autre division du même groupe, le prix de cession interne (PCI) détermine le partage du résultat entre elles. Il ne modifie pas le résultat du groupe tant que les volumes ne changent pas, mais il influence les décisions des responsables et leur évaluation.
+
+Méthodes : prix du marché (si un marché existe), coût variable, coût complet, coût majoré d''une marge, prix négocié. Fourchette de négociation : le prix plancher pour la division vendeuse est son coût variable si elle a de la capacité disponible, ou le prix de marché diminué des frais commerciaux économisés si elle est saturée ; le prix plafond pour la division acheteuse est le prix auquel elle pourrait s''approvisionner à l''extérieur.
+
+Cas : le groupe fictif Sénégal Agro comprend une Huilerie et une division Conditionnement. L''Huilerie produit 900 000 litres d''huile en vrac : 600 000 cédés au Conditionnement et 300 000 vendus à l''extérieur à 850 FCFA ; coût variable 600 FCFA le litre ; charges fixes 135 000 000 FCFA (coût complet 750 FCFA le litre). Le Conditionnement embouteille et vend l''huile à 1 400 FCFA le litre, avec un coût variable propre de 250 FCFA et des charges fixes de 60 000 000 FCFA.
+
+- PCI = 600 FCFA (coût variable) : résultat de l''Huilerie −60 000 000 ; résultat du Conditionnement 270 000 000 ; groupe 210 000 000 FCFA.
+- PCI = 750 FCFA (coût complet) : résultat de l''Huilerie 30 000 000 ; résultat du Conditionnement 180 000 000 ; groupe 210 000 000 FCFA.
+- PCI = 850 FCFA (prix du marché) : résultat de l''Huilerie 90 000 000 ; résultat du Conditionnement 120 000 000 ; groupe 210 000 000 FCFA.
+
+Le résultat du groupe (210 000 000 FCFA) ne dépend pas du PCI. Au coût variable, l''Huilerie est en perte et son responsable est démotivé ; au prix du marché, la performance de chaque division est comparable à celle d''une entreprise indépendante. Si l''Huilerie est saturée et économise 30 FCFA de frais commerciaux par litre cédé en interne, le PCI plancher est 820 FCFA.
+
+Évaluation au prix du marché, capitaux investis 600 000 000 FCFA (Huilerie) et 400 000 000 FCFA (Conditionnement), taux exigé 12 % (fictif) :
+
+- Huilerie : ROI = 90 000 000 / 600 000 000 = 15 % ; RR = 90 000 000 − 12 % × 600 000 000 = 18 000 000 FCFA.
+- Conditionnement : ROI = 30 % ; RR = 72 000 000 FCFA.
+- Projet de 50 000 000 FCFA au Conditionnement rapportant 10 000 000 FCFA (20 %) : le ROI de la division tomberait à 28,9 %, ce qui pourrait inciter son responsable à refuser ; le RR passerait à 76 000 000 FCFA (+4 000 000), signalant un projet créateur de valeur.
+
+## Points clés
+
+- PME : peu d''outils, simples, centrés sur la trésorerie et la marge.
+- Secteur public : budget-programme, performance en efficacité, qualité, efficience.
+- PCI : neutre pour le groupe, décisif pour les divisions ; fourchette entre plancher et plafond.
+- Le résultat résiduel corrige les effets pervers du ROI.
+
+## Exercices pratiques
+
+- Exercice 1 : citez trois spécificités des PME qui influencent leur contrôle de gestion.
+- Exercice 2 : un hôpital régional fictif dispose de 800 millions de FCFA de crédits et en a ordonnancé 600 millions. Taux d''exécution ? Pourquoi est-ce insuffisant pour juger sa performance ?
+- Exercice 3 : avec un PCI de 800 FCFA, calculez les résultats des deux divisions de Sénégal Agro.
+- Exercice 4 : une division a un résultat de 30 millions pour 200 millions de capitaux ; taux exigé 12 % (fictif). ROI et RR ?
+- Exercice 5 (cas pratique) : le responsable du Conditionnement veut acheter l''huile à l''extérieur à 820 FCFA. L''Huilerie, non saturée, ne peut pas vendre davantage à l''extérieur. Quel est l''intérêt du groupe ?
+
+## Corrigé
+
+- Exercice 1 : rôle central du dirigeant ; peu de personnel administratif ; priorité à la trésorerie ; information informelle.
+- Exercice 2 : 600 / 800 = 75 %. Il faut rapporter les dépenses aux réalisations (actes, patients soignés) et aux effets (qualité des soins, délais d''attente).
+- Exercice 3 : Huilerie 60 000 000 FCFA ; Conditionnement 150 000 000 FCFA ; total 210 000 000 FCFA.
+- Exercice 4 : ROI = 15 % ; RR = 30 − 24 = 6 millions de FCFA.
+- Exercice 5 : pour le groupe, produire en interne coûte 600 FCFA variables par litre, contre 820 FCFA à l''extérieur ; l''achat externe ferait perdre 132 000 000 FCFA au groupe (600 000 × 220). Il faut fixer un PCI inférieur ou égal à 820 FCFA, négocié entre 600 et 820 FCFA.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Contrôle de gestion des PME et du secteur public, prix de cession interne : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 3 en Contrôle de gestion (corrigé)', '## Présentation du sujet
+
+Sujet d''entraînement de Licence 3, contrôle de gestion. Durée : 3 heures ; calculatrice autorisée ; documents interdits. Sujet non officiel ; barème indicatif, non officiel. Entreprises fictives ; montants hors taxes.
+
+## Dossier 1 · Méthode ABC (6 points)
+
+Ndiaye Équipements fabrique un modèle standard A (10 000 unités) et un modèle sur mesure B (2 000 unités). Charges indirectes : 14 400 000 FCFA, réparties en activités :
+
+- Approvisionnement : 3 600 000 FCFA ; inducteur nombre de références commandées ; A 20, B 40.
+- Réglages : 4 800 000 FCFA ; inducteur nombre de lots ; A 10, B 30.
+- Assemblage : 6 000 000 FCFA ; inducteur heure machine ; A 2 000, B 1 000.
+
+- 1.1 (3 pts) Calculez le coût des inducteurs et les charges indirectes par produit et par unité.
+- 1.2 (1,5 pt) Comparez avec une imputation traditionnelle sur les heures machine.
+- 1.3 (1,5 pt) Commentez.
+
+## Dossier 2 · Coût cible (3 points)
+
+Pour un nouveau modèle, le prix de marché est de 25 000 FCFA ; la marge cible est de 20 % du prix ; le coût estimé est de 23 000 FCFA.
+
+- 2.1 (1,5 pt) Calculez le coût cible et l''écart à combler.
+- 2.2 (1,5 pt) Présentez deux démarches pour le combler.
+
+## Dossier 3 · Tableau de bord (5 points)
+
+- 3.1 (2 pts) Présentez les quatre axes du balanced scorecard.
+- 3.2 (3 pts) Proposez, pour Ndiaye Équipements, un objectif et un indicateur par axe, et expliquez les liens de cause à effet.
+
+## Dossier 4 · Prix de cession interne (6 points)
+
+La division Filature cède 120 000 mètres de fil à la division Tissage et en vend 50 000 à l''extérieur à 600 FCFA. Coût variable de la Filature : 400 FCFA le mètre ; charges fixes : 20 000 000 FCFA. Le Tissage transforme chaque mètre et vend le produit 1 500 FCFA, avec un coût variable propre de 450 FCFA et des charges fixes de 25 000 000 FCFA.
+
+- 4.1 (3 pts) Calculez le résultat de chaque division et du groupe pour un PCI de 500 FCFA puis de 600 FCFA.
+- 4.2 (1,5 pt) Quelle est la fourchette de négociation si la Filature a de la capacité disponible ?
+- 4.3 (1,5 pt) Quel PCI recommandez-vous ? Justifiez.
+
+## Corrigé détaillé
+
+Dossier 1.
+
+- 1.1 : coûts des inducteurs : 60 000 FCFA par référence ; 120 000 FCFA par lot ; 2 000 FCFA par heure machine. A : 20 × 60 000 + 10 × 120 000 + 2 000 × 2 000 = 6 400 000 FCFA, soit 640 FCFA par unité. B : 40 × 60 000 + 30 × 120 000 + 1 000 × 2 000 = 8 000 000 FCFA, soit 4 000 FCFA par unité. Contrôle : 14 400 000 FCFA.
+- 1.2 : taux traditionnel 14 400 000 / 3 000 = 4 800 FCFA par heure machine ; A 9 600 000 (960 par unité) ; B 4 800 000 (2 400 par unité).
+- 1.3 : la méthode traditionnelle surévalue A et sous-évalue B de 1 600 FCFA par unité : le sur-mesure consomme beaucoup de références et de lots. Il faut revoir le prix de B ou réduire le coût de sa complexité.
+
+Dossier 2.
+
+- 2.1 : coût cible = 25 000 × 0,8 = 20 000 FCFA ; écart = 3 000 FCFA, soit 13,0 % du coût estimé.
+- 2.2 : analyse de la valeur (supprimer les fonctions peu valorisées par le client, standardiser des composants) ; négociation avec les fournisseurs associés dès la conception ; simplification du processus de fabrication.
+
+Dossier 3.
+
+- 3.1 : financier, clients, processus internes, apprentissage organisationnel (voir la leçon 3).
+- 3.2 : exemple : apprentissage, polyvalence des techniciens (part des techniciens formés à deux postes) ; processus, réduire le temps de réglage (minutes par lot) ; clients, respecter les délais du sur-mesure (taux de livraison dans les délais) ; financier, améliorer la marge de B (marge par unité). Liens : la polyvalence réduit les temps de réglage, ce qui raccourcit les délais, satisfait les clients et améliore la marge.
+
+Dossier 4.
+
+- 4.1 : PCI 500 : Filature 2 000 000 ; Tissage 41 000 000 ; groupe 43 000 000 FCFA. PCI 600 : Filature 14 000 000 ; Tissage 29 000 000 ; groupe 43 000 000 FCFA.
+- 4.2 : entre 400 FCFA (coût variable, plancher de la Filature) et 600 FCFA (prix du marché, plafond du Tissage).
+- 4.3 : un prix proche du marché (600 FCFA, éventuellement diminué des frais commerciaux économisés) permet d''évaluer chaque division comme une entreprise autonome ; il ne change pas le résultat du groupe.
+
+## Exercices pratiques
+
+- Exercice 1 : dans le dossier 4, quel PCI rend nul le résultat de la Filature ?
+- Exercice 2 : pourquoi la méthode ABC est-elle coûteuse à mettre en place ?
+- Exercice 3 : donnez un indicateur d''efficience pour une université publique.
+
+## Corrigé
+
+- Exercice 1 : 120 000 × (p − 400) + 10 000 000 − 20 000 000 = 0, soit p = 400 + 10 000 000 / 120 000 = 483,33 FCFA.
+- Exercice 2 : il faut analyser les activités (entretiens, relevés de temps), mesurer les inducteurs et mettre à jour régulièrement le modèle.
+- Exercice 3 : coût par étudiant diplômé ou coût par étudiant inscrit.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 3 en Contrôle de gestion (corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Méthode ABC et coût cible', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 en contrôle de gestion.
+- Objectifs : comprendre les limites des coûts complets traditionnels, calculer des coûts par activités, interpréter les écarts avec la méthode traditionnelle, déterminer un coût cible et organiser la démarche de réduction des coûts.
+- Matériel : diaporama, schéma ressources → activités → produits, tableur, calculatrice.
+- Prérequis : méthode des centres d''analyse (L1) ; leçon « Méthode ABC et coût cible : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à toutes et à tous. Imaginez un directeur qui pousse son produit le plus rentable sur le papier, et dont les résultats se dégradent année après année. C''est souvent la faute d''un mauvais calcul de coûts. Aujourd''hui, nous apprenons la méthode ABC et le coût cible, deux outils qui ont transformé le contrôle de gestion. Notre fil rouge : Afrik Emballages, fabricant fictif de sacs à Dakar.
+
+## 05:00 – 15:00 · Les limites de la méthode traditionnelle
+
+Visuel : un camembert des coûts d''une entreprise industrielle, avec une part importante de charges indirectes.
+
+En L1, vous avez réparti les charges indirectes dans des centres, puis imputé ces centres aux produits avec des unités d''œuvre comme l''heure de main-d''œuvre directe. Cette logique convient quand les charges indirectes sont faibles et liées au volume. Mais aujourd''hui, une large part des charges indirectes vient de la complexité : régler les machines entre deux séries, gérer de nombreuses références, traiter de petites commandes, contrôler la qualité de produits personnalisés.
+
+Question au public : un sac personnalisé fabriqué en petite série consomme-t-il plus ou moins de réglages par sac qu''un sac standard ? Beaucoup plus. Pourtant, la méthode traditionnelle lui impute des charges en proportion de ses heures de MOD. Résultat : les petites séries sont subventionnées par les grandes séries. C''est le subventionnement croisé.
+
+## 15:00 – 25:00 · Les principes de l''ABC
+
+Visuel : trois blocs reliés par des flèches. Ressources, activités, produits.
+
+La méthode ABC a été formalisée à la fin des années 1980, notamment par Robin Cooper et Robert Kaplan. Son principe : les produits consomment des activités, les activités consomment des ressources. Le vocabulaire : une activité est un ensemble de tâches homogènes ; un inducteur est la cause de la consommation de ressources par l''activité ; un processus est une chaîne d''activités.
+
+Démarche en cinq étapes : identifier les activités, leur affecter les charges, choisir les inducteurs, calculer le coût unitaire de chaque inducteur, affecter aux produits.
+
+## 25:00 – 42:00 · Cas Afrik Emballages : correction commentée
+
+Énoncé : 100 000 sacs standard S et 20 000 sacs personnalisés P ; charges indirectes 30 000 000 FCFA.
+
+Méthode traditionnelle : 2 000 heures de MOD pour S, 1 000 pour P. Taux : 10 000 FCFA par heure. S reçoit 200 FCFA par sac, P 500. Coûts complets : 500 et 950.
+
+Méthode ABC. Réglage : 9 000 000 FCFA pour 90 lots, 100 000 par lot. Commandes : 6 000 000 pour 300 commandes, 20 000 par commande. Contrôle qualité : 4 500 000 pour 150 contrôles, 30 000 par contrôle. Fabrication : 10 500 000 pour 3 500 heures machine, 3 000 par heure.
+
+Pour S : 20 lots, 50 commandes, 30 contrôles, 2 500 heures : 11 400 000 FCFA, soit 114 par sac. Pour P : 70 lots, 250 commandes, 120 contrôles, 1 000 heures : 18 600 000 FCFA, soit 930 par sac. Contrôle : le total redonne 30 000 000.
+
+Coûts complets ABC : S 414, P 1 380. Avec des prix de 550 et 1 200 FCFA, S gagne 13 600 000 FCFA et P perd 3 600 000 FCFA. En méthode traditionnelle, chacun semblait gagner 5 000 000 FCFA. Le résultat global, 10 000 000, est identique : l''ABC ne crée pas de profit, il éclaire sa répartition.
+
+## 42:00 – 48:00 · Pause et quiz
+
+- Question 1 : une activité coûte 3 000 000 FCFA pour 150 commandes ; coût de l''inducteur ? Réponse : 20 000 FCFA.
+- Question 2 : l''ABC modifie-t-il le résultat global de l''entreprise ? Réponse : non, seulement sa répartition entre produits.
+- Question 3 : quel type de produit la méthode traditionnelle a-t-elle tendance à sous-évaluer ? Réponse : les produits de petite série ou complexes.
+
+## 48:00 – 58:00 · De l''ABC à l''ABM
+
+Calculer ne suffit pas : il faut agir. C''est la gestion par les activités, l''ABM. Trois leviers pour Afrik Emballages. Agir sur le prix : facturer la personnalisation, ou appliquer un supplément pour les petites commandes. Agir sur le volume d''inducteurs : regrouper les commandes en lots plus importants ; si P passe de 70 à 40 lots, son coût unitaire tombe à 1 230 FCFA et il redevient rentable. Agir sur le coût de l''inducteur : former les régleurs, adopter des outillages à changement rapide.
+
+Attention aux limites : coût de mise en place, rattachements parfois subjectifs, charges de structure (direction générale) difficiles à rattacher à une activité. Certaines entreprises utilisent une version simplifiée, fondée sur les temps, plus légère à maintenir.
+
+## 58:00 – 72:00 · Le coût cible : correction commentée
+
+Changeons de logique. Traditionnellement : prix = coût + marge. Avec le coût cible : coût cible = prix de marché − marge souhaitée. C''est le marché qui commande.
+
+Afrik Emballages conçoit un sac biodégradable. Prix accepté par le marché : 800 FCFA. Marge exigée : 15 %. Coût cible : 680 FCFA. Coût estimé par le bureau d''études : 760 FCFA, dont matière 380, fabrication 220, conditionnement 60, distribution 100. Écart : 80 FCFA, 10,5 % du coût estimé.
+
+Comment combler l''écart ? Par l''analyse de la valeur. On liste les fonctions attendues par le client : contenir, résister à l''humidité, porter la marque, se dégrader. On demande aux clients l''importance relative de chaque fonction. Supposons que l''impression de la marque compte peu pour les clients mais représente un coût élevé : on simplifie l''impression. On travaille avec le fournisseur de matière dès la conception. Le coût cible se décline par composant et chaque équipe reçoit un objectif.
+
+## 72:00 – 82:00 · Exercice d''application corrigé
+
+Énoncé : prix de marché 15 000 FCFA, marge cible 20 %, coût estimé 13 200 FCFA. Calculez le coût cible et l''effort.
+
+Correction : coût cible 15 000 × 0,8 = 12 000 FCFA ; effort de 1 200 FCFA, soit 9,1 % du coût estimé. Si l''équipe réduit la matière de 700 FCFA et la fabrication de 300 FCFA, il reste 200 FCFA à trouver : simplification de l''emballage, ou renégociation de la distribution. Si l''écart reste irréductible, la direction peut accepter une marge plus faible pour un produit stratégique, ou renoncer au lancement.
+
+## 82:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : l''ABC suit la causalité des coûts indirects ; il révèle les subventions croisées ; l''ABM transforme le calcul en actions ; le coût cible part du marché pour piloter la conception.
+
+- Question 1 : formule du coût unitaire d''un inducteur ? Réponse : coût de l''activité / volume de l''inducteur.
+- Question 2 : activité réglage 6 000 000 FCFA, 50 lots ; un produit utilise 12 lots ; charges imputées ? Réponse : 1 440 000 FCFA.
+- Question 3 : prix de marché 40 000, marge 25 % ; coût cible ? Réponse : 30 000 FCFA.
+- Question 4 : citez deux limites de l''ABC. Réponse : coût de mise en place ; subjectivité des rattachements.
+- Question 5 : à quelle phase du cycle de vie le coût cible est-il le plus utile ? Réponse : la conception.
+
+Merci et bon entraînement.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthode ABC et coût cible');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Tableaux de bord et balanced scorecard', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 en contrôle de gestion.
+- Objectifs : concevoir un tableau de bord, choisir des indicateurs pertinents, construire un balanced scorecard et une carte stratégique, analyser un tableau de bord avec un système de feux.
+- Matériel : diaporama, modèle de tableau de bord, carte stratégique type, tableur.
+- Prérequis : budgets et écarts (L2) ; leçon « Tableaux de bord et indicateurs de performance : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à toutes et à tous. Un pilote d''avion ne regarde pas sa comptabilité pour savoir s''il est à la bonne altitude : il regarde son tableau de bord. Le dirigeant d''entreprise a besoin de la même chose : quelques cadrans, mis à jour vite, qui lui disent s''il va dans la bonne direction. Aujourd''hui, nous construisons un tableau de bord et un balanced scorecard pour Sahel Distribution, distributeur fictif de produits laitiers à Dakar.
+
+## 05:00 – 15:00 · Tableau de bord, reporting, budget
+
+Trois outils sont souvent confondus. Le budget fixe des objectifs chiffrés pour l''année. Le reporting fait remonter, vers la hiérarchie ou le siège, des informations surtout financières pour rendre compte. Le tableau de bord est l''outil du responsable lui-même pour piloter son activité : il contient des indicateurs financiers et non financiers, produits vite, souvent chaque semaine ou chaque mois.
+
+Les qualités d''un bon tableau de bord : peu d''indicateurs, une dizaine au plus ; une présentation visuelle ; une comparaison avec une cible ; un lien direct avec les leviers d''action du responsable.
+
+## 15:00 – 27:00 · Choisir les indicateurs
+
+Visuel : une grille avec en colonnes les objectifs et en lignes les indicateurs candidats.
+
+On part toujours des objectifs, jamais des données disponibles. Pour l''objectif « livrer à l''heure », l''indicateur est le taux de livraisons à l''heure. Pour « réduire la casse », le taux de casse. Vérifiez la méthode SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini.
+
+Distinguez les indicateurs de résultat, qui constatent après coup, comme le chiffre d''affaires, et les indicateurs avancés, qui annoncent l''avenir, comme le taux de livraisons à l''heure, qui prépare la fidélité des clients. Un bon tableau de bord mélange les deux.
+
+Question au public : le nombre de visites commerciales par semaine est-il un indicateur de résultat ou avancé ? Réponse : avancé, il prépare les ventes futures.
+
+## 27:00 – 40:00 · Le balanced scorecard et la carte stratégique
+
+Au début des années 1990, Robert Kaplan et David Norton ont proposé le balanced scorecard. Leur constat : les indicateurs financiers seuls regardent dans le rétroviseur. Ils proposent quatre axes : financier, clients, processus internes, apprentissage organisationnel.
+
+Visuel : la carte stratégique de Sahel Distribution. En bas, apprentissage : former les livreurs, réduire l''absentéisme. Au-dessus, processus : livrer à l''heure, réduire la casse, maîtriser les stocks. Au-dessus, clients : satisfaction, peu de réclamations. En haut, financier : chiffre d''affaires, marge, trésorerie. Les flèches montent : des livreurs formés et présents livrent mieux, des clients bien livrés achètent plus, et le chiffre d''affaires progresse.
+
+Retenez : les relations de cause à effet sont des hypothèses. Le contrôleur doit les tester dans le temps en observant si les indicateurs évoluent ensemble.
+
+## 40:00 – 46:00 · Pause et quiz
+
+- Question 1 : dans quel axe placer le taux de fidélisation ? Réponse : clients.
+- Question 2 : dans quel axe placer le délai de traitement d''une commande ? Réponse : processus internes.
+- Question 3 : vrai ou faux, un tableau de bord doit contenir tous les indicateurs disponibles. Faux.
+
+## 46:00 – 66:00 · Analyse du tableau de bord de mars : correction commentée
+
+Règle des feux : vert si l''objectif est atteint, orange si l''écart relatif ne dépasse pas 10 %, rouge au-delà.
+
+Axe financier. Chiffre d''affaires : 235 000 000 pour 250 000 000 visés, soit 94,0 % de l''objectif : orange. Taux de marge brute : 20,5 % pour 22 % : écart relatif de 6,8 %, orange. Délai clients : créances 282 000 000 divisées par le CA du mois, fois 30 : 36 jours pour 30 visés, écart de 20 %, rouge.
+
+Axe clients. Livraisons à l''heure : 4 420 sur 4 800, 92,1 % : orange. Réclamations : 43 sur 4 800, 0,9 % pour 1 % au plus : vert.
+
+Axe processus. Casse : 1 650 cartons sur 150 000, 1,1 % pour 0,8 % : rouge. Couverture du stock : stock moyen 56 047 500 divisé par le coût des ventes du mois, 186 825 000, fois 30 : 9 jours pour 10 au plus : vert.
+
+Axe apprentissage. Formation : 684 heures pour 120 salariés, 5,7 heures pour 6 : orange. Absentéisme : 1 008 heures d''absence sur 120 fois 168 heures théoriques, soit 5,0 % pour 3 % au plus : rouge.
+
+Lecture transversale : l''absentéisme élevé oblige à recourir à des livreurs remplaçants, moins formés ; la casse augmente et la ponctualité baisse ; à terme, la satisfaction et le chiffre d''affaires en souffriront. Le délai clients, lui, appelle une action spécifique de recouvrement. Plan d''action : entretien avec les équipes sur les causes de l''absentéisme, formation à la manutention, suivi hebdomadaire de la casse par tournée, relance des clients en retard.
+
+## 66:00 – 76:00 · Exercice : la microfinance
+
+Énoncé : une agence fictive de microfinance visait 1 300 crédits et en a accordé 1 240 ; 62 sont en retard de plus de 30 jours ; objectif de retard au plus 4 %.
+
+Correction : réalisation 95,4 %, orange. Taux de retard 62 / 1 240 = 5,0 %, orange car l''écart relatif est de 25 % ? Attention, calculons bien : 5 % contre 4 %, l''écart relatif est de 1 point sur 4, soit 25 %. Selon notre règle, c''est donc rouge, pas orange. Je corrige : le feu est rouge. Ce petit piège montre l''importance de définir clairement la règle des feux : écart en points ou écart relatif ? Il faut l''écrire en tête du tableau de bord. Dans la leçon écrite, l''exercice retient l''écart relatif : faites le calcul vous-même et vérifiez.
+
+## 76:00 – 84:00 · Limites et effets pervers
+
+Un indicateur peut devenir une fin en soi. Si l''on récompense les livreurs uniquement sur la ponctualité, ils risquent de bâcler la manutention. Si l''agent de crédit est jugé seulement sur le nombre de crédits, il prête à des clients fragiles. C''est pourquoi le balanced scorecard équilibre les axes, et pourquoi le dialogue de gestion compte plus que le chiffre. Autres limites : coût de collecte des données, inflation du nombre d''indicateurs, difficulté de tester les liens de cause à effet.
+
+## 84:00 – 90:00 · Synthèse et évaluation finale
+
+- Question 1 : différence entre tableau de bord et reporting ? Réponse : pilotage par le responsable contre compte rendu à la hiérarchie.
+- Question 2 : les quatre axes du balanced scorecard ? Réponse : financier, clients, processus internes, apprentissage.
+- Question 3 : objectif 95 %, réel 90 %, règle de 10 % d''écart relatif ; feu ? Réponse : orange (écart relatif de 5,3 %).
+- Question 4 : 240 heures d''absence sur 6 000 heures théoriques ; taux ? Réponse : 4 %.
+- Question 5 : donnez un indicateur avancé pour une boutique. Réponse : nombre de visiteurs ou taux de transformation des visites en achats.
+
+Merci à toutes et à tous.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Tableaux de bord et balanced scorecard');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Contrôle de gestion des PME et du secteur public, prix de cession interne', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 en contrôle de gestion.
+- Objectifs : adapter le contrôle de gestion aux PME et au secteur public, évaluer des divisions par le ROI et le résultat résiduel, choisir et négocier un prix de cession interne.
+- Matériel : diaporama, schéma d''un groupe à deux divisions, calculatrice.
+- Prérequis : coûts partiels (L2), centres de responsabilité (L1) ; leçon « Contrôle de gestion des PME et du secteur public, prix de cession interne : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à toutes et à tous. Le contrôle de gestion est né dans les grandes entreprises industrielles. Mais l''essentiel de l''économie sénégalaise, ce sont des PME ; et une large part des services essentiels relève du secteur public. Aujourd''hui, trois questions : comment faire du contrôle de gestion dans une PME ? Comment piloter la performance d''un service public ? Et comment fixer le prix auquel deux divisions d''un même groupe s''échangent des produits ?
+
+## 05:00 – 18:00 · Le contrôle de gestion dans les PME
+
+Les PME ont des traits communs : le dirigeant décide de tout, il y a peu de cadres administratifs, l''information circule oralement, la comptabilité est souvent tenue par un cabinet extérieur, et la trésorerie est la préoccupation numéro un.
+
+Le contrôle de gestion doit donc être léger. Je recommande un tableau de bord d''une page : chiffre d''affaires, marge, trésorerie, créances clients, stock, carnet de commandes. Un budget de trésorerie glissant sur trois mois. Un coût de revient par produit ou par chantier. Le seuil de rentabilité.
+
+Exemple : une PME de Kaolack réalise 100 millions de FCFA avec cinq clients. Les deux premiers font 45 et 25 millions, soit 70 % du total. C''est la loi de Pareto. Le dirigeant doit le savoir : si le premier client part, l''entreprise perd près de la moitié de son activité. Action : suivre ces clients de près et diversifier.
+
+## 18:00 – 32:00 · Le contrôle de gestion dans le secteur public
+
+Une commune, un hôpital, une université ne cherchent pas le profit. Leur performance se juge sur la mission. Dans l''espace UEMOA, le cadre harmonisé des finances publiques a introduit la gestion axée sur les résultats : les crédits sont organisés en programmes, chaque programme a un responsable, des objectifs et des indicateurs, et l''on rend compte dans des rapports de performance. Les modalités précises dépendent des textes de chaque État.
+
+Trois points de vue sur la performance : le citoyen attend un impact, c''est l''efficacité socio-économique ; l''usager attend un service de qualité ; le contribuable attend une gestion efficiente.
+
+Cas de la commune fictive : crédits du programme « Éducation de base » 1 200 000 000 FCFA ; engagements 1 080 000 000 ; ordonnancements 930 000 000. Taux d''engagement 90,0 %, taux d''exécution 77,5 %. Mais construire 18 salles sur 24, c''est 75 % d''efficacité ; et chaque salle a coûté 27 000 000 FCFA contre 25 000 000 prévus, soit 8,0 % de plus. Message clé : dépenser tout son budget n''est pas une performance.
+
+## 32:00 – 40:00 · ROI et résultat résiduel
+
+Revenons aux groupes. Une division centre d''investissement est jugée sur la rentabilité de ses capitaux. ROI : résultat sur capitaux investis. Résultat résiduel : résultat moins le coût des capitaux, c''est-à-dire capitaux fois taux exigé.
+
+Pourquoi deux mesures ? Parce que le ROI peut pousser à refuser des projets rentables. Nous le verrons dans le cas.
+
+## 40:00 – 46:00 · Pause et quiz
+
+- Question 1 : résultat 18 millions, capitaux 120 millions ; ROI ? Réponse : 15 %.
+- Question 2 : même division, taux exigé 10 % ; résultat résiduel ? Réponse : 6 millions.
+- Question 3 : le taux d''exécution budgétaire mesure-t-il l''efficacité d''un service public ? Réponse : non, il mesure la consommation des crédits.
+
+## 46:00 – 66:00 · Prix de cession interne : correction commentée
+
+Visuel : deux rectangles, Huilerie et Conditionnement, reliés par une flèche « 600 000 litres ».
+
+Données : l''Huilerie produit 900 000 litres ; coût variable 600 ; charges fixes 135 000 000 ; coût complet 750 ; elle vend 300 000 litres dehors à 850. Le Conditionnement vend à 1 400, coût variable propre 250, charges fixes 60 000 000.
+
+Testons trois PCI. Au coût variable, 600 : Huilerie −60 000 000, Conditionnement 270 000 000. Au coût complet, 750 : Huilerie 30 000 000, Conditionnement 180 000 000. Au prix du marché, 850 : Huilerie 90 000 000, Conditionnement 120 000 000. Dans les trois cas, le groupe gagne 210 000 000 FCFA.
+
+Conclusion : le PCI est un partage du gâteau, il ne change pas sa taille tant que les volumes restent les mêmes. Mais il change la motivation. Au coût variable, le responsable de l''Huilerie est en perte permanente : il n''a aucune raison de bien servir son client interne. Au coût complet, il couvre ses charges mais ne réalise pas de profit sur les ventes internes, et ses inefficacités sont transmises à l''aval. Le prix du marché est la référence quand un marché existe.
+
+Fourchette de négociation : plancher de l''Huilerie, son coût variable 600 si elle a de la capacité inutilisée ; 820 si elle est saturée et économise 30 FCFA de frais commerciaux par litre cédé en interne. Plafond du Conditionnement : le prix d''achat extérieur.
+
+## 66:00 – 78:00 · ROI, résultat résiduel et décision d''investissement
+
+Au prix du marché, capitaux de 600 000 000 pour l''Huilerie et 400 000 000 pour le Conditionnement, taux exigé 12 %, taux fictif pour l''exemple. Huilerie : ROI 15 %, résultat résiduel 18 000 000. Conditionnement : ROI 30 %, résultat résiduel 72 000 000.
+
+Un projet de 50 000 000 FCFA est proposé au Conditionnement, avec 10 000 000 FCFA de résultat annuel, soit 20 %. C''est plus que les 12 % exigés par le groupe : le projet crée de la valeur. Mais le ROI de la division passerait de 30 % à 28,9 % : un responsable jugé sur son ROI serait tenté de refuser. Le résultat résiduel, lui, augmente de 4 000 000 FCFA. Voilà pourquoi beaucoup de groupes complètent le ROI par le résultat résiduel.
+
+## 78:00 – 84:00 · Méthode pour la dissertation
+
+Sujet possible : « Le prix de cession interne est-il un outil de coordination ou de conflit ? » Plan : I. Un outil de coordination et d''évaluation des divisions ; II. Une source de conflits et de comportements opportunistes, que l''on limite par la négociation encadrée, le prix de marché et l''arbitrage de la direction générale. Exemples : le groupe agroalimentaire du cours, un groupe industriel à plusieurs filiales dans l''UEMOA. Précisez que, entre sociétés de pays différents, les prix de transfert sont aussi encadrés par les règles fiscales, sujet à vérifier dans les textes en vigueur.
+
+## 84:00 – 90:00 · Synthèse et évaluation finale
+
+- Question 1 : citez deux outils prioritaires du contrôle de gestion d''une PME. Réponse : budget de trésorerie, tableau de bord simplifié.
+- Question 2 : quels sont les trois points de vue de la performance publique ? Réponse : citoyen, usager, contribuable.
+- Question 3 : le PCI change-t-il le résultat du groupe à volumes constants ? Réponse : non.
+- Question 4 : plancher du PCI pour une division vendeuse non saturée ? Réponse : son coût variable.
+- Question 5 : résultat 40 millions, capitaux 250 millions, taux exigé 12 % ; résultat résiduel ? Réponse : 10 millions.
+
+Merci et bonne préparation.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-cg-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Contrôle de gestion des PME et du secteur public, prix de cession interne');
+
+-- Cours : Licence 1 Comptabilité : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-compta-l1', (select id from public.levels where name = 'Licence 1'), null, 'Comptabilité', 'Licence 1 Comptabilité : réussir ses examens', 'Ce cours prépare les étudiants de première année de Licence en comptabilité, finance ou gestion (universités et écoles du Sénégal et de l''espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : la comptabilité générale selon le SYSCOHADA révisé (partie double, journal, grand livre, balance, achats, ventes et TVA), les mathématiques financières (intérêts simples et composés, escompte, annuités) et l''introduction au droit des affaires OHADA (commerçant et sociétés). Fiches, exercices corrigés aux calculs vérifiés, sujet d''entraînement et trois cours vidéo de 1h30. Prérequis : niveau Baccalauréat, aisance avec les pourcentages.', true, 341
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 1 en Comptabilité', '## Objectifs de la leçon
+
+- Comprendre l''organisation de la première année de Licence dans le système LMD.
+- Identifier les matières clés de l''année et ce que les correcteurs attendent.
+- Connaître les types d''épreuves et la méthode pour chacun.
 - Construire un plan de révision réaliste sur six semaines.
 
 ## 1. La Licence 1 dans le système LMD
 
-Les universités et grandes écoles du Sénégal et de l''espace UEMOA appliquent le système LMD (Licence, Master, Doctorat). La Licence se déroule en six semestres. Chaque semestre regroupe plusieurs unités d''enseignement (UE) ; chaque UE contient une ou plusieurs matières (on parle aussi d''éléments constitutifs, EC) et donne droit à un nombre de crédits.
+Les universités et grandes écoles du Sénégal et de l''espace UEMOA ont adopté le système LMD (Licence, Master, Doctorat). La Licence se prépare en trois années, soit six semestres. Chaque semestre est découpé en unités d''enseignement (UE), elles-mêmes composées d''éléments constitutifs (les matières). Chaque UE vaut un nombre de crédits ; une année complète correspond en général à 60 crédits, mais le nombre de crédits par UE, les coefficients et les règles de compensation varient d''un établissement à l''autre. Lisez attentivement le règlement des examens de votre établissement : c''est lui qui fait foi.
 
-Quelques principes généraux, qui varient d''un établissement à l''autre :
+Retenez trois idées. D''abord, la note d''une UE combine souvent un contrôle continu (devoirs, exposés, travaux dirigés) et un examen terminal. Ensuite, la compensation entre matières d''une même UE, ou entre UE d''un même semestre, existe souvent mais selon des règles locales. Enfin, une session de rattrapage est généralement prévue : ne comptez pas sur elle, préparez la première session sérieusement.
 
-- Une UE est validée lorsque sa moyenne atteint le seuil fixé par le règlement des études ; les notes des matières d''une même UE peuvent souvent se compenser entre elles.
-- La note d''une matière combine en général un contrôle continu (devoirs, exposés, travaux dirigés) et un examen terminal de fin de semestre.
-- Une session de rattrapage est prévue pour les UE non validées.
-- Les crédits obtenus sont capitalisés : une UE validée reste acquise.
+## 2. Les matières clés de l''année
 
-Le nombre exact de crédits, les coefficients, les seuils de validation et les règles de compensation sont fixés par chaque établissement. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité. Ne vous fiez pas aux rumeurs de couloir.
+Ce cours se concentre sur trois matières qui pèsent lourd en Licence 1 Comptabilité :
 
-## 2. Les matières de finance de la Licence 1
+- Comptabilité générale 1 : principes du SYSCOHADA révisé, partie double, journal, grand livre, balance, achats, ventes, réductions commerciales et financières, TVA.
+- Mathématiques financières : intérêts simples, escompte commercial, intérêts composés, valeur actuelle, annuités, tableau d''amortissement d''un emprunt.
+- Introduction au droit des affaires OHADA : le commerçant, les actes de commerce, le registre du commerce, les grandes formes de sociétés.
 
-Ce cours couvre les trois matières de finance que l''on retrouve dans la plupart des maquettes de première année :
+D''autres matières complètent l''année (économie générale, statistique descriptive, informatique, techniques d''expression, anglais des affaires). Elles sont traitées dans d''autres cours de la plateforme. En Licence 2, vous approfondirez les travaux d''inventaire, la comptabilité des sociétés et la fiscalité ; en Licence 3, les états financiers, la consolidation et l''audit.
 
-- Introduction à la finance et au système financier : rôle de la finance, finance directe et indirecte, banques, BCEAO, systèmes financiers décentralisés (microfinance), marché financier régional et BRVM. Les sujets mêlent questions de cours et petits calculs (marge d''intérêt, rendement d''une action, taux réel).
-- Mathématiques financières appliquées : intérêts simples et composés, valeur acquise et valeur actuelle, annuités, emprunts indivis et tableaux d''amortissement. C''est la matière la plus calculatoire : la rigueur et la présentation comptent autant que le résultat.
-- Statistiques descriptives pour la finance : moyenne, médiane, mode, variance, écart-type, coefficient de variation, séries groupées en classes, indices et taux de croissance, covariance et corrélation de deux séries de rentabilités.
+## 3. Ce que les correcteurs attendent
 
-Les maîtriser vous prépare directement à l''analyse financière et aux marchés financiers de Licence 2, puis aux décisions d''investissement et de financement de Licence 3.
+En comptabilité, une écriture juste mais mal présentée perd des points. Le correcteur vérifie : la date, les numéros et intitulés de comptes, le sens débit ou crédit, les montants, l''équilibre de chaque écriture et un libellé clair. En mathématiques financières, il attend la formule littérale, l''application numérique, le résultat arrondi correctement et une phrase de conclusion. En droit, il attend un raisonnement : identifier le problème juridique, rappeler la règle, l''appliquer aux faits, conclure.
 
-## 3. Les types d''épreuves et comment les aborder
+## 4. Les types d''épreuves et la méthode
 
-- L''exercice chiffré : calculer une valeur actuelle, dresser un tableau d''amortissement, calculer une variance. Posez la formule, remplacez les lettres par les valeurs, donnez le résultat avec son unité (FCFA, %) et une phrase d''interprétation.
-- Le cas pratique : une entreprise ou un ménage fictif doit prendre une décision (choisir entre deux offres de prêt, comparer deux placements). On attend une démarche structurée : hypothèses, calculs, comparaison, conclusion argumentée.
-- Le QCM : lisez toutes les propositions avant de répondre ; méfiez-vous des réponses presque justes (taux proportionnel au lieu de taux équivalent, variance au lieu d''écart-type). Vérifiez si les mauvaises réponses sont pénalisées.
-- La question de cours ou la courte dissertation : en introduction à la finance, on peut vous demander « Montrez le rôle des banques dans le financement de l''économie ». Il faut une introduction (définitions, problématique), un plan en deux ou trois parties et une conclusion.
-- Le projet ou dossier : certains enseignants demandent un travail de groupe (par exemple, présenter une société cotée à la BRVM à partir de documents publics). La note tient compte du fond, de la forme et de la présentation orale.
+- Exercice chiffré : lisez tout l''énoncé avant de calculer, notez les données dans la marge, posez la formule, calculez, vérifiez l''ordre de grandeur.
+- Cas pratique comptable : une entreprise fictive et une liste d''opérations à enregistrer. Travaillez opération par opération, contrôlez l''équilibre de chaque écriture, puis reportez au grand livre et établissez la balance.
+- QCM : éliminez d''abord les réponses absurdes ; méfiez-vous des pièges sur le sens débit ou crédit et sur les bases de calcul de la TVA.
+- Dissertation ou question de cours (surtout en droit) : introduction (définition, intérêt du sujet, problématique, annonce du plan), deux parties équilibrées, pas de hors-sujet.
+- Cas pratique juridique : faits, problème de droit, règle applicable, application, solution.
+- Projet ou dossier : certains enseignants demandent un dossier en groupe, par exemple la tenue de la comptabilité d''une petite entreprise sur un mois.
 
-## 4. Les erreurs qui coûtent des points
+## 5. Gérer son temps le jour de l''examen
 
-- Confondre taux annuel et taux mensuel, ou oublier de convertir une durée en jours ou en mois.
-- Utiliser l''intérêt simple là où l''énoncé impose l''intérêt composé (et inversement).
-- Présenter un tableau d''amortissement dont la dernière ligne ne ramène pas le capital restant dû à zéro.
-- Confondre variance et écart-type, ou oublier que l''écart-type s''exprime dans la même unité que la série.
-- Donner un résultat sans phrase de conclusion.
-- Recopier des chiffres « officiels » appris par cœur sans en être sûr : dans ce cours, tous les taux d''intérêt et d''impôt des exemples sont fictifs pour l''exemple. Pour un taux réel (taux directeur, taux d''usure, fiscalité), il faut toujours consulter la source officielle en vigueur (BCEAO, administration fiscale).
-
-## 5. Méthode de révision
-
-- Fiches : une fiche par chapitre avec les définitions, les formules encadrées et un exemple résolu.
-- Formulaire : une page unique regroupant toutes les formules de mathématiques financières et de statistiques. Relisez-la chaque jour.
-- Entraînement actif : refaites les exercices de TD sans regarder la correction, puis comparez.
-- Calculatrice : entraînez-vous avec la calculatrice autorisée à l''examen (puissances, puissances négatives, mémoires, mode statistique).
+Prenez cinq minutes pour lire tout le sujet et répartir votre temps selon le barème. Commencez par la partie où vous êtes le plus solide pour gagner confiance. Gardez dix minutes à la fin pour relire : équilibre des écritures, unités, conclusions. Une copie propre, avec des résultats encadrés et des étapes numérotées, se corrige plus facilement et inspire confiance au correcteur.
 
 ## 6. Plan de révision sur six semaines
 
-- Semaine 1 : système financier (acteurs, rôle de la BCEAO, microfinance, marché financier régional) ; fiches de cours et petits calculs de rendement.
-- Semaine 2 : intérêts simples et composés, valeur acquise, valeur actuelle, taux proportionnels et équivalents.
-- Semaine 3 : annuités et emprunts indivis (amortissement constant, annuités constantes, remboursement in fine) ; trois tableaux d''amortissement complets.
-- Semaine 4 : statistiques descriptives (séries simples et séries classées, paramètres de position et de dispersion).
-- Semaine 5 : indices, taux de croissance moyen, covariance et corrélation ; reprise des points faibles.
-- Semaine 6 : sujets d''examen blancs en temps limité (voir la leçon 5), correction et relecture du formulaire.
+- Semaine 1 : principes comptables, classes de comptes, partie double. Refaire dix écritures simples par jour.
+- Semaine 2 : achats et ventes, réductions commerciales et financières, TVA ; grand livre et balance.
+- Semaine 3 : intérêts simples, escompte commercial, intérêts composés, valeur actuelle.
+- Semaine 4 : annuités et tableau d''amortissement d''emprunt ; fiches de formules.
+- Semaine 5 : droit OHADA (commerçant, actes de commerce, RCCM, sociétés) ; entraînement aux cas pratiques juridiques.
+- Semaine 6 : sujets complets en temps limité, correction, révision des points faibles.
 
-La veille de l''examen, ne commencez rien de nouveau : relisez vos fiches, préparez votre matériel (pièce d''identité, carte d''étudiant, calculatrice, stylos) et dormez suffisamment.
+Chaque semaine, consacrez une séance à revoir les erreurs des semaines précédentes. Travaillez en petit groupe une fois par semaine : expliquer une notion à un camarade est la meilleure façon de vérifier qu''on la maîtrise.
 
-## Points clés
+## 7. Les outils indispensables
 
-- Le règlement des études de votre établissement fixe les crédits, les coefficients et les règles de validation : lisez-le.
-- Trois matières de finance en Licence 1 : système financier, mathématiques financières, statistiques descriptives.
-- Formule, application numérique, résultat avec unité, interprétation : cette démarche rapporte des points dans toutes les épreuves chiffrées.
-
-## Exercices pratiques
-
-- Exercice 1 : citez les trois matières de finance de ce cours et, pour chacune, deux notions à maîtriser.
-- Exercice 2 : un étudiant obtient 9 de moyenne en mathématiques financières et 13 en statistiques, deux matières de même coefficient dans la même UE, et le seuil de validation de l''UE est de 10 dans son établissement. Calculez la moyenne de l''UE si la compensation est autorisée, et concluez.
-- Exercice 3 : proposez la structure (introduction, deux parties, conclusion) d''une réponse au sujet « Le rôle de la microfinance dans le financement des petites entreprises ».
-- Exercice 4 (cas pratique) : Awa, étudiante à Saint-Louis, a quatre semaines au lieu de six avant ses examens. Adaptez le plan de révision.
-
-## Corrigé
-
-- Exercice 1 : système financier (rôle de la BCEAO, différence entre finance directe et indirecte) ; mathématiques financières (valeur actuelle, tableau d''amortissement) ; statistiques (écart-type, coefficient de variation). D''autres réponses sont acceptables si elles figurent dans le programme.
-- Exercice 2 : moyenne = (9 + 13) / 2 = 11. Si la compensation est autorisée dans l''UE, celle-ci est validée avec 11, même si la note de mathématiques financières est inférieure à 10. Sans compensation, il faudrait repasser cette matière au rattrapage. Seul le règlement de l''établissement permet de trancher.
-- Exercice 3 : introduction (définir la microfinance et la petite entreprise, constater la difficulté d''accès au crédit bancaire, problématique : la microfinance comble-t-elle ce manque ?) ; partie 1 : les apports (proximité, petits montants, garanties adaptées comme la caution solidaire, épargne de proximité) ; partie 2 : les limites (coût du crédit plus élevé, durées courtes, risque de surendettement, besoin de supervision) ; conclusion : la microfinance est complémentaire des banques et du marché financier, et non un substitut.
-- Exercice 4 : semaine 1 : système financier et intérêts simples et composés ; semaine 2 : annuités et emprunts indivis ; semaine 3 : statistiques descriptives complètes ; semaine 4 : deux sujets blancs en temps limité et relecture du formulaire. On fusionne les révisions et on garde obligatoirement l''entraînement en conditions d''examen.', 'texte', 60, true, 10
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Finance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Introduction à la finance et au système financier : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Définir la finance et le système financier, distinguer finance directe et finance indirecte.
-- Présenter les principaux acteurs dans l''UEMOA : banques, BCEAO, systèmes financiers décentralisés, marché financier régional.
-- Réaliser les calculs de base attendus à l''examen : marge d''intérêt, coût d''un microcrédit, capitalisation boursière, rendement d''une action, taux réel.
-
-## Fiche 1 : la finance et ses fonctions
-
-La finance étudie la manière dont les agents économiques obtiennent, placent et utilisent l''argent dans le temps, en tenant compte du risque. Certains agents ont une capacité de financement (ils dépensent moins qu''ils ne gagnent, comme beaucoup de ménages), d''autres ont un besoin de financement (entreprises qui investissent, État en déficit). Le système financier organise la rencontre entre les deux.
-
-Ses fonctions principales :
-
-- Collecter l''épargne et la transformer en crédits ou en investissements.
-- Assurer les paiements (comptes, virements, cartes, monnaie électronique sur téléphone mobile).
-- Répartir et gérer les risques (assurance, diversification).
-- Produire de l''information sur les prix (cours, taux).
-
-## Fiche 2 : finance directe et finance indirecte
-
-Schéma décrit en texte : à gauche les agents à capacité de financement, à droite les agents à besoin de financement. Une flèche du haut passe directement de gauche à droite par le marché financier (achat d''actions et d''obligations) : c''est la finance directe. Une flèche du bas passe par une banque ou une institution de microfinance, qui reçoit des dépôts et accorde des crédits : c''est la finance indirecte, ou intermédiée.
-
-- En finance directe, l''épargnant détient lui-même le titre émis par l''entreprise ou l''État et supporte directement le risque.
-- En finance indirecte, l''épargnant détient une créance sur la banque (son dépôt) ; la banque détient une créance sur l''emprunteur et supporte le risque de crédit.
-
-Dans l''UEMOA, la finance indirecte reste dominante : la majorité des entreprises, surtout les PME, se financent auprès des banques et des institutions de microfinance plutôt qu''en bourse.
-
-## Fiche 3 : les acteurs dans l''UEMOA
-
-- La BCEAO (Banque centrale des États de l''Afrique de l''Ouest), dont le siège est à Dakar, est la banque centrale commune des huit États de l''UEMOA (Bénin, Burkina Faso, Côte d''Ivoire, Guinée-Bissau, Mali, Niger, Sénégal, Togo). Elle émet le franc CFA, conduit la politique monétaire commune avec pour objectif principal la stabilité des prix, gère les réserves de change et veille au bon fonctionnement des systèmes de paiement.
-- La Commission bancaire de l''UMOA supervise les banques et établissements financiers.
-- Les banques commerciales collectent les dépôts, accordent des crédits et gèrent les moyens de paiement.
-- Les systèmes financiers décentralisés (SFD), c''est-à-dire les institutions de microfinance (mutuelles d''épargne et de crédit, associations, sociétés), servent une clientèle souvent exclue des banques : commerçants, artisans, agriculteurs, femmes entrepreneures.
-- Le marché financier régional comprend la BRVM (Bourse régionale des valeurs mobilières, siège à Abidjan, avec des antennes nationales dans chaque État), le Dépositaire central / Banque de règlement, les SGI (sociétés de gestion et d''intermédiation) qui passent les ordres des investisseurs, et un régulateur régional (l''AMF-UMOA, anciennement CREPMF).
-
-Le franc CFA de l''UEMOA a une parité fixe avec l''euro : 1 euro = 655,957 FCFA.
-
-## Fiche 4 : les calculs de base
-
-Marge d''intérêt d''une banque. Exemple fictif : la Banque Téranga Fictive collecte 50 000 millions FCFA de dépôts rémunérés à 3 % (taux fictif pour l''exemple) et prête 40 000 millions à 9 % (taux fictif pour l''exemple).
-
-- Intérêts reçus = 40 000 × 9 % = 3 600 millions.
-- Intérêts versés = 50 000 × 3 % = 1 500 millions.
-- Marge d''intérêt = 3 600 − 1 500 = 2 100 millions FCFA. Elle doit couvrir les frais généraux, le coût du risque (crédits non remboursés) et dégager un bénéfice.
-
-Coût d''un microcrédit. Fatou, commerçante à Thiès, emprunte 500 000 FCFA auprès d''une mutuelle, remboursable en 12 mensualités constantes au taux de 2 % par mois (taux fictif pour l''exemple). La mensualité vaut 500 000 × 0,02 / (1 − 1,02^−12) ≈ 47 280 FCFA (formule étudiée en leçon 3). Total remboursé ≈ 12 × 47 280 = 567 360 FCFA ; coût du crédit ≈ 67 360 FCFA (67 358 FCFA sans arrondir la mensualité).
-
-Indicateurs boursiers. La société fictive Téranga Agro SA compte 10 000 000 d''actions cotées à 2 500 FCFA. Elle verse un dividende de 150 FCFA par action et son bénéfice par action (BPA) est de 250 FCFA.
-
-- Capitalisation boursière = nombre d''actions × cours = 10 000 000 × 2 500 = 25 milliards FCFA.
-- Rendement du dividende = dividende / cours = 150 / 2 500 = 6 %.
-- PER (price earning ratio) = cours / BPA = 2 500 / 250 = 10 : l''action vaut dix années de bénéfice.
-
-Obligation. Une obligation de valeur nominale 10 000 FCFA, au taux facial de 6,5 %, rapporte un coupon annuel de 650 FCFA. Si elle s''échange à 10 200 FCFA, le rendement courant vaut 650 / 10 200 ≈ 6,37 %.
-
-Taux réel (relation de Fisher). Si un dépôt rapporte 6 % nominal et que l''inflation est de 2 % (valeurs fictives pour l''exemple), le taux réel vaut (1,06 / 1,02) − 1 ≈ 3,92 %. L''approximation 6 % − 2 % = 4 % reste acceptable pour des taux faibles.
+- Une calculatrice autorisée par votre établissement, que vous savez utiliser pour les puissances (touche x^y).
+- Un plan de comptes SYSCOHADA révisé à jour. Dans ce cours, quand un numéro de compte est cité, vérifiez l''intitulé dans le plan de comptes officiel.
+- Des fiches de synthèse d''une page par chapitre.
+- Les sujets des années précédentes, s''ils sont disponibles à la bibliothèque ou auprès des associations d''étudiants.
 
 ## Points clés
 
-- Finance directe : marché financier ; finance indirecte : banques et SFD.
-- La BCEAO conduit la politique monétaire commune ; la Commission bancaire supervise les banques.
-- La BRVM est la bourse commune des huit États ; les ordres passent par les SGI.
-- Formules : marge d''intérêt, capitalisation, rendement du dividende, PER, rendement courant, taux réel.
+- Le règlement des examens de votre établissement fixe les crédits, coefficients et règles de compensation.
+- Trois matières clés dans ce cours : comptabilité générale, mathématiques financières, droit OHADA.
+- Chaque type d''épreuve a sa méthode : formule puis calcul, ou problème puis règle puis solution.
+- Un plan de six semaines, avec révisions régulières des erreurs, vaut mieux qu''un bachotage de dernière minute.
 
 ## Exercices pratiques
 
-- Exercice 1 : définissez finance directe et finance indirecte et donnez un exemple de chacune au Sénégal.
-- Exercice 2 : citez trois missions de la BCEAO et l''organe qui supervise les banques de l''UMOA.
-- Exercice 3 : une banque fictive prête 80 000 millions FCFA à 8,5 % et rémunère 100 000 millions de dépôts à 2,5 % (taux fictifs pour l''exemple). Calculez sa marge d''intérêt.
-- Exercice 4 : la société fictive Baobab Télécom SA a 5 000 000 d''actions cotées 4 200 FCFA, un dividende de 336 FCFA et un BPA de 420 FCFA. Calculez la capitalisation, le rendement du dividende et le PER.
-- Exercice 5 : un placement rapporte 8 % nominal ; l''inflation est de 3 % (valeurs fictives pour l''exemple). Calculez le taux réel exact et approché.
-- Exercice 6 (cas pratique) : Moussa, menuisier à Kaolack, veut financer une machine de 1 500 000 FCFA. Il n''a pas de garanties immobilières. Présentez-lui deux sources de financement adaptées et expliquez pourquoi l''introduction en bourse n''est pas réaliste pour lui.
+- Exercice 1 : citez les trois niveaux du système LMD et le nombre de semestres d''une Licence.
+- Exercice 2 : quelle différence faites-vous entre une UE et un élément constitutif ?
+- Exercice 3 : un étudiant dispose de 2 heures pour un sujet noté sur 20 : comptabilité 10 points, mathématiques financières 6 points, droit 4 points. Proposez une répartition du temps en gardant 10 minutes de relecture et 5 minutes de lecture initiale.
+- Exercice 4 : quelles sont les cinq vérifications à faire sur chaque écriture comptable ?
+- Exercice 5 (cas pratique) : Fatou a trois semaines avant ses examens et se sent faible en mathématiques financières. Adaptez le plan de six semaines en un plan de trois semaines.
 
 ## Corrigé
 
-- Exercice 1 : finance directe : l''agent à besoin de financement émet des titres achetés directement par les épargnants (un État qui émet des obligations souscrites par des particuliers via une SGI). Finance indirecte : un intermédiaire collecte l''épargne et prête (une banque qui accorde un crédit d''équipement à une PME de Dakar).
-- Exercice 2 : émettre le franc CFA, conduire la politique monétaire commune (stabilité des prix), gérer les réserves de change, veiller aux systèmes de paiement. La supervision des banques relève de la Commission bancaire de l''UMOA.
-- Exercice 3 : intérêts reçus = 80 000 × 8,5 % = 6 800 millions ; intérêts versés = 100 000 × 2,5 % = 2 500 millions ; marge d''intérêt = 4 300 millions FCFA.
-- Exercice 4 : capitalisation = 5 000 000 × 4 200 = 21 milliards FCFA ; rendement du dividende = 336 / 4 200 = 8 % ; PER = 4 200 / 420 = 10.
-- Exercice 5 : taux réel exact = 1,08 / 1,03 − 1 ≈ 4,85 % ; approché = 8 % − 3 % = 5 %.
-- Exercice 6 : premièrement, un crédit d''une institution de microfinance (caution solidaire, nantissement de la machine, montants adaptés) ; deuxièmement, un crédit-bail ou un crédit d''équipement bancaire, éventuellement avec un fonds de garantie. L''introduction en bourse suppose une société anonyme, des comptes certifiés, une taille minimale et des coûts d''émission élevés : elle ne concerne pas une entreprise individuelle de cette taille.', 'texte', 60, false, 20
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Introduction à la finance et au système financier : l''essentiel pour l''examen');
+- Exercice 1 : Licence, Master, Doctorat. La Licence comprend six semestres (trois années).
+- Exercice 2 : l''UE est un regroupement cohérent de matières, auquel sont attachés des crédits ; l''élément constitutif est une matière à l''intérieur de l''UE (par exemple, Comptabilité générale 1 dans une UE Techniques comptables).
+- Exercice 3 : 120 − 5 − 10 = 105 minutes à répartir sur 20 points, soit 5,25 minutes par point. Comptabilité : 10 × 5,25 = 52,5 minutes, environ 52 minutes ; mathématiques financières : 6 × 5,25 = 31,5 minutes, environ 32 minutes ; droit : 4 × 5,25 = 21 minutes. Total : 52 + 32 + 21 = 105 minutes.
+- Exercice 4 : la date et le libellé ; les numéros et intitulés de comptes ; le sens débit ou crédit ; les montants ; l''égalité total débit = total crédit.
+- Exercice 5 : semaine 1 : comptabilité (principes, achats, ventes, TVA, balance) en séances courtes, et une séance quotidienne de mathématiques financières (intérêts simples, escompte) ; semaine 2 : mathématiques financières (intérêts composés, annuités, emprunts) en priorité, plus le droit OHADA ; semaine 3 : deux sujets complets en temps limité, corrections et fiches de formules relues chaque jour. L''essentiel est de donner plus de temps à la matière faible sans abandonner les autres.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Comptabilité');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Mathématiques financières appliquées : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Comptabilité générale 1 : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Calculer intérêts simples et intérêts composés, valeur acquise et valeur actuelle.
-- Passer d''un taux annuel à un taux proportionnel ou équivalent.
-- Calculer la valeur d''une suite d''annuités constantes.
-- Construire un tableau d''amortissement d''emprunt indivis selon les trois modalités classiques.
+- Connaître le SYSCOHADA révisé et ses principes.
+- Maîtriser partie double, journal, grand livre, balance, achats, ventes et TVA.
 
-Tous les taux de cette leçon sont fictifs pour l''exemple.
+## 1. Le cadre : le SYSCOHADA révisé
 
-## Fiche 1 : intérêts simples
+Dans les États de l''OHADA, la comptabilité relève de l''Acte uniforme relatif au droit comptable et à l''information financière, qui contient le SYSCOHADA révisé, applicable aux comptes personnels des entités depuis les exercices ouverts en 2018. Il fixe un plan de comptes, des règles d''évaluation et des modèles d''états financiers.
 
-On utilise l''intérêt simple pour les opérations de moins d''un an. L''intérêt est proportionnel au capital, au taux et à la durée : I = C × t × n, avec la durée exprimée dans la même unité que le taux. En jours, on utilise par convention l''année commerciale de 360 jours : I = C × t × j / 360.
+Classes du plan de comptes : 1 ressources durables ; 2 actif immobilisé ; 3 stocks ; 4 tiers ; 5 trésorerie ; 6 charges des activités ordinaires ; 7 produits des activités ordinaires ; 8 autres charges et produits (hors activités ordinaires, impôt sur le résultat). Pour chaque numéro cité, vérifiez l''intitulé dans le plan de comptes officiel.
 
-Exemple : 2 000 000 FCFA placés 90 jours à 6 % : I = 2 000 000 × 0,06 × 90 / 360 = 30 000 FCFA. Valeur acquise = 2 030 000 FCFA.
+## 2. Les principes comptables
 
-## Fiche 2 : intérêts composés
+- Prudence : on tient compte des pertes probables, pas des gains probables.
+- Continuité d''exploitation : l''entité est supposée poursuivre son activité.
+- Permanence des méthodes : pas de changement sans justification ni information.
+- Coût historique : un bien est enregistré à son coût d''acquisition.
+- Spécialisation des exercices : chaque exercice reçoit ses propres charges et produits.
+- Intangibilité du bilan d''ouverture : il reprend le bilan de clôture précédent.
+- Non-compensation, transparence, prééminence de la réalité sur l''apparence.
 
-Au-delà d''un an, les intérêts de chaque période s''ajoutent au capital et produisent à leur tour des intérêts.
+## 3. La partie double
 
-- Valeur acquise : Cn = C0 × (1 + i)^n.
-- Valeur actuelle : C0 = Cn × (1 + i)^−n.
+Chaque opération touche au moins deux comptes, débités et crédités pour le même total :
 
-Exemple 1 : 5 000 000 FCFA placés 5 ans à 7 % : C5 = 5 000 000 × 1,07^5 ≈ 7 012 759 FCFA.
+- Un compte d''actif (immobilisations, stocks, créances, trésorerie) augmente au débit et diminue au crédit.
+- Un compte de passif (capital, emprunts, dettes) augmente au crédit et diminue au débit.
+- Une charge s''enregistre au débit ; un produit au crédit.
 
-Exemple 2 : une créance de 10 000 000 FCFA payable dans 4 ans, actualisée à 8 %, vaut aujourd''hui 10 000 000 × 1,08^−4 ≈ 7 350 299 FCFA. Actualiser, c''est ramener une somme future à sa valeur d''aujourd''hui : un franc reçu demain vaut moins qu''un franc reçu aujourd''hui.
+Schéma décrit : un « T », débit à gauche, crédit à droite ; le solde est débiteur si le total débit l''emporte.
 
-## Fiche 3 : taux proportionnels et taux équivalents
+## 4. Journal, grand livre, balance
 
-- Taux proportionnel : taux annuel divisé par le nombre de périodes. 12 % par an donne 1 % par mois. Il est utilisé à intérêts simples.
-- Taux équivalent : il donne la même valeur acquise à intérêts composés. Taux mensuel équivalent à 12 % annuel : (1,12)^(1/12) − 1 ≈ 0,9489 % par mois.
+Le journal enregistre les opérations dans l''ordre chronologique. Le grand livre regroupe les mouvements compte par compte. La balance liste les comptes et leurs soldes : l''égalité soldes débiteurs = soldes créditeurs est un premier contrôle, qui ne détecte pas une imputation dans le mauvais compte.
 
-Le taux équivalent est toujours un peu inférieur au taux proportionnel, car les intérêts sont capitalisés plus souvent.
+## 5. Les réductions sur factures
 
-## Fiche 4 : les annuités constantes
+- Réductions commerciales : remise, rabais (défaut de qualité), ristourne (sur une période). Portées sur la facture, elles ne s''enregistrent pas : on comptabilise le net commercial.
+- Escompte de règlement (paiement anticipé) : 673 Escomptes accordés chez le vendeur, 773 Escomptes obtenus chez l''acheteur.
+- Ordre de calcul : brut, moins remise, moins rabais (en cascade), égal net commercial ; moins escompte, égal net financier ; la TVA se calcule sur le net financier.
 
-Une suite d''annuités est une série de versements égaux à intervalles réguliers (versements en fin de période).
+## 6. La TVA
 
-- Valeur acquise au moment du dernier versement : Vn = a × [(1 + i)^n − 1] / i.
-- Valeur actuelle une période avant le premier versement : V0 = a × [1 − (1 + i)^−n] / i.
+Taux de TVA de 20 % : taux fictif pour l''exemple, choisi pour simplifier les calculs. Le taux réel est fixé par le code général des impôts de chaque État : vérifiez toujours le texte en vigueur.
 
-Exemple : une tontine d''épargne bancaire où l''on verse 500 000 FCFA par an pendant 6 ans à 6 % donne Vn = 500 000 × (1,06^6 − 1) / 0,06 ≈ 3 487 659 FCFA. Cinq annuités de 1 000 000 FCFA actualisées à 8 % valent V0 = 1 000 000 × (1 − 1,08^−5) / 0,08 ≈ 3 992 710 FCFA.
+TVA collectée sur les ventes (4431), TVA récupérable sur achats (4452) et sur immobilisations (4451). TVA due = collectée − récupérable ; si négative : crédit de TVA (4449) reportable. Formules : TVA = HT × taux ; TTC = HT × (1 + taux) ; HT = TTC ÷ (1 + taux).
 
-## Fiche 5 : les emprunts indivis
+## 7. Exemples chiffrés (entreprise fictive Sahel Négoce SARL, Kaolack)
 
-Un emprunt indivis est contracté auprès d''un seul prêteur (une banque). Chaque échéance, appelée annuité, se décompose en intérêt et amortissement du capital : annuité = intérêt + amortissement, avec intérêt = capital restant dû en début de période × taux.
+Vente de marchandises réglée immédiatement par virement : prix brut 3 000 000, rabais 2 % (60 000), net commercial 2 940 000, escompte 1 % (29 400), net financier 2 910 600, TVA 582 120, net à payer 3 492 720.
 
-Cas : la société fictive Ndiaye Distribution SARL emprunte 12 000 000 FCFA sur 4 ans à 9 %.
+- Débit 521 Banques : 3 492 720
+- Débit 673 Escomptes accordés : 29 400
+- Crédit 701 Ventes de marchandises : 2 940 000
+- Crédit 4431 État, TVA facturée sur ventes : 582 120
+- Total débit = total crédit = 3 522 120
 
-Modalité 1, amortissement constant : chaque année, on rembourse 12 000 000 / 4 = 3 000 000 FCFA.
-
-- Année 1 : capital début 12 000 000 ; intérêt 1 080 000 ; amortissement 3 000 000 ; annuité 4 080 000 ; capital fin 9 000 000.
-- Année 2 : 9 000 000 ; 810 000 ; 3 000 000 ; 3 810 000 ; 6 000 000.
-- Année 3 : 6 000 000 ; 540 000 ; 3 000 000 ; 3 540 000 ; 3 000 000.
-- Année 4 : 3 000 000 ; 270 000 ; 3 000 000 ; 3 270 000 ; 0.
-
-Total des intérêts : 2 700 000 FCFA. Les annuités sont décroissantes.
-
-Modalité 2, annuités constantes : a = C × i / [1 − (1 + i)^−n] = 12 000 000 × 0,09 / (1 − 1,09^−4) ≈ 3 704 024 FCFA.
-
-- Année 1 : capital début 12 000 000 ; intérêt 1 080 000 ; amortissement 2 624 024 ; capital fin 9 375 976.
-- Année 2 : 9 375 976 ; 843 838 ; 2 860 186 ; 6 515 790.
-- Année 3 : 6 515 790 ; 586 421 ; 3 117 603 ; 3 398 187.
-- Année 4 : 3 398 187 ; 305 837 ; 3 398 187 ; 0.
-
-Total des intérêts ≈ 2 816 096 FCFA. Contrôles : la somme des amortissements vaut 12 000 000 ; les amortissements forment une suite géométrique de raison 1,09 (2 624 024 × 1,09 ≈ 2 860 186) ; le premier amortissement vaut a − C × i.
-
-Modalité 3, remboursement in fine : on paie seulement les intérêts (1 080 000 par an) et le capital à la fin. Dernière annuité : 13 080 000 FCFA. Total des intérêts : 4 320 000 FCFA.
-
-Lecture : plus le capital est remboursé tard, plus le coût total en intérêts est élevé, mais plus la charge des premières années est légère.
+La vente est enregistrée au net commercial ; l''escompte est une charge financière.
 
 ## Points clés
 
-- Intérêt simple : I = C × t × j / 360 ; intérêt composé : Cn = C0 × (1 + i)^n.
-- Actualiser : multiplier par (1 + i)^−n.
-- Annuité constante d''emprunt : a = C × i / [1 − (1 + i)^−n].
-- Tableau d''amortissement : intérêt calculé sur le capital restant dû ; le capital final doit être nul.
+- Total débit = total crédit pour chaque écriture.
+- Escompte enregistré (673 ou 773) ; TVA calculée sur le net financier.
 
 ## Exercices pratiques
 
-- Exercice 1 : calculez l''intérêt de 1 500 000 FCFA placés 120 jours à 5 %.
-- Exercice 2 : quelle est la valeur actuelle à 7 % d''une somme de 8 000 000 FCFA payable dans 3 ans ?
-- Exercice 3 : quel montant faut-il verser en fin d''année pendant 5 ans, à 6 %, pour disposer de 10 000 000 FCFA au dernier versement ?
-- Exercice 4 : calculez le taux trimestriel équivalent à 8 % annuel, puis le taux trimestriel proportionnel.
-- Exercice 5 : construisez le tableau d''amortissement d''un emprunt de 6 000 000 FCFA sur 3 ans à 10 %, par annuités constantes.
-- Exercice 6 (cas pratique) : un fournisseur propose à une clinique de Ziguinchor un échographe soit à 3 000 000 FCFA comptant, soit à 1 000 000 FCFA comptant plus 1 100 000 FCFA dans un an et 1 200 000 FCFA dans deux ans. Au taux de 9 %, quelle offre choisir ?
+- Exercice 1 : donnez la classe des comptes 101, 2441, 31, 411, 521, 601, 701.
+- Exercice 2 : une facture affiche 1 800 000 TTC, TVA 20 % (taux fictif). Calculez le HT et la TVA.
+- Exercice 3 : facture d''achat à crédit : brut 4 000 000, remise 5 %, rabais 2 %, TVA 20 % (fictif). Calculez et enregistrez.
+- Exercice 4 : en mars, TVA collectée 1 900 000 ; TVA récupérable sur achats 1 150 000 ; sur immobilisations 300 000 ; crédit de TVA de février 100 000. Calculez la TVA due et passez l''écriture de liquidation.
+- Exercice 5 (cas pratique) : Ets Fall et Fils SARL (Saint-Louis) démarre le 1er mars. 1/03 : apport en capital de 10 000 000 versé en banque. 5/03 : achat de marchandises à crédit 4 000 000 HT. 12/03 : vente de marchandises réglée par virement 3 000 000 HT. 20/03 : achat de matériel de bureau payé par virement 1 500 000 HT. 28/03 : loyer de mars 400 000 payé par virement (on suppose le loyer hors champ de la TVA pour l''exercice). TVA 20 % (fictif). Passez les écritures, calculez les soldes et présentez la balance.
 
 ## Corrigé
 
-- Exercice 1 : I = 1 500 000 × 0,05 × 120 / 360 = 25 000 FCFA.
-- Exercice 2 : 8 000 000 × 1,07^−3 ≈ 6 530 383 FCFA.
-- Exercice 3 : a = 10 000 000 × 0,06 / (1,06^5 − 1) ≈ 1 773 964 FCFA par an.
-- Exercice 4 : équivalent : 1,08^(1/4) − 1 ≈ 1,943 % ; proportionnel : 8 % / 4 = 2 %.
-- Exercice 5 : a = 6 000 000 × 0,10 / (1 − 1,10^−3) ≈ 2 412 689 FCFA. Année 1 : intérêt 600 000 ; amortissement 1 812 689 ; capital fin 4 187 311. Année 2 : intérêt 418 731 ; amortissement 1 993 958 ; capital fin 2 193 353. Année 3 : amortissement 2 193 353 ; intérêt 219 336 (écart d''arrondi de 1 FCFA absorbé par la dernière ligne) ; capital fin 0.
-- Exercice 6 : valeur actuelle de l''offre B = 1 000 000 + 1 100 000 / 1,09 + 1 200 000 / 1,09² ≈ 3 019 190 FCFA. Elle est supérieure à 3 000 000 FCFA : le paiement comptant est moins coûteux, d''environ 19 190 FCFA en valeur actuelle. On choisit le paiement comptant si la clinique dispose de la trésorerie.', 'texte', 60, false, 30
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mathématiques financières appliquées : l''essentiel pour l''examen');
+- Exercice 1 : le premier chiffre donne la classe : 1, 2, 3, 4, 5, 6, 7 dans l''ordre.
+- Exercice 2 : HT = 1 800 000 ÷ 1,2 = 1 500 000 ; TVA = 300 000.
+
+Exercice 3 : remise 200 000, soit 3 800 000 ; rabais 2 % de 3 800 000 = 76 000, soit un net commercial de 3 724 000 ; TVA 744 800 ; TTC 4 468 800.
+
+- Débit 601 Achats de marchandises : 3 724 000
+- Débit 4452 État, TVA récupérable sur achats : 744 800
+- Crédit 401 Fournisseurs : 4 468 800
+- Total débit = total crédit = 4 468 800
+
+Exercice 4 : TVA due = 1 900 000 − 1 150 000 − 300 000 − 100 000 = 350 000.
+
+- Débit 4431 État, TVA facturée sur ventes : 1 900 000
+- Crédit 4452 État, TVA récupérable sur achats : 1 150 000
+- Crédit 4451 État, TVA récupérable sur immobilisations : 300 000
+- Crédit 4449 État, crédit de TVA à reporter : 100 000
+- Crédit 4441 État, TVA due : 350 000
+- Total débit = total crédit = 1 900 000
+
+Exercice 5 : écritures, toutes équilibrées (vérifier l''intitulé dans le plan de comptes officiel) :
+
+- Débit 521 Banques : 10 000 000
+- Crédit 101 Capital social : 10 000 000
+
+- Débit 601 Achats de marchandises : 4 000 000
+- Débit 4452 État, TVA récupérable sur achats : 800 000
+- Crédit 401 Fournisseurs : 4 800 000
+
+- Débit 521 Banques : 3 600 000
+- Crédit 701 Ventes de marchandises : 3 000 000
+- Crédit 4431 État, TVA facturée sur ventes : 600 000
+
+- Débit 2441 Matériel de bureau : 1 500 000
+- Débit 4451 État, TVA récupérable sur immobilisations : 300 000
+- Crédit 521 Banques : 1 800 000
+
+- Débit 622 Locations : 400 000
+- Crédit 521 Banques : 400 000
+
+Balance au 31 mars (soldes) :
+
+- 101 Capital social : solde créditeur 10 000 000
+- 2441 Matériel de bureau : solde débiteur 1 500 000
+- 401 Fournisseurs : solde créditeur 4 800 000
+- 4431 État, TVA facturée sur ventes : solde créditeur 600 000
+- 4451 État, TVA récupérable sur immobilisations : solde débiteur 300 000
+- 4452 État, TVA récupérable sur achats : solde débiteur 800 000
+- 521 Banques : solde débiteur 11 400 000
+- 601 Achats de marchandises : solde débiteur 4 000 000
+- 622 Locations : solde débiteur 400 000
+- 701 Ventes de marchandises : solde créditeur 3 000 000
+- Totaux : soldes débiteurs 18 400 000 = soldes créditeurs 18 400 000
+
+Banque : 10 000 000 + 3 600 000 − 1 800 000 − 400 000 = 11 400 000. TVA : 600 000 − 1 100 000 = −500 000, crédit de TVA reportable.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comptabilité générale 1 : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Statistiques descriptives pour la finance : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Mathématiques financières : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Calculer et interpréter les paramètres de position (moyenne, médiane, mode) et de dispersion (étendue, variance, écart-type, coefficient de variation).
-- Traiter une série regroupée en classes.
-- Calculer un indice, un taux de variation et un taux de croissance annuel moyen.
-- Mesurer la liaison entre deux séries de rentabilités (covariance, corrélation).
+- Calculer intérêts simples, valeur acquise et escompte commercial.
+- Maîtriser les intérêts composés, les taux équivalents et la valeur actuelle.
+- Calculer valeur acquise et valeur actuelle d''une suite d''annuités, et construire un tableau d''amortissement d''emprunt.
 
-## Fiche 1 : vocabulaire
+Les taux d''intérêt utilisés ici sont des taux de marché imaginés pour les exemples : ce ne sont ni des taux officiels ni des taux de la BCEAO.
 
-- Population : ensemble étudié (les clients d''une mutuelle d''épargne, les mois d''une année boursière).
-- Individu : chaque élément de la population.
-- Variable (ou caractère) : ce que l''on mesure. Elle est quantitative discrète (nombre de crédits), quantitative continue (montant d''un prêt, rentabilité) ou qualitative (secteur d''activité).
-- Effectif ni : nombre d''individus ayant une modalité ; fréquence fi = ni / N.
+## 1. Intérêts simples
 
-## Fiche 2 : série simple, l''exemple d''une action
+Pour le court terme (moins d''un an). Formule : I = C × t × n ÷ 360 si n est en jours (année commerciale de 360 jours) ; I = C × t × n ÷ 12 si n est en mois. Valeur acquise : VA = C + I.
 
-Rentabilités mensuelles en % d''une action fictive cotée, Sahel Ciment SA, sur 10 mois : 2,0 ; −1,5 ; 3,2 ; 0,8 ; −0,4 ; 1,6 ; 2,5 ; −2,1 ; 1,1 ; 0,8.
+Exemple : la coopérative Jappo (Ziguinchor) place 1 500 000 FCFA à 9 % l''an pendant 120 jours. I = 1 500 000 × 0,09 × 120 ÷ 360 = 45 000. Valeur acquise : 1 545 000.
 
-- Moyenne : x̄ = Σxi / N = 8,0 / 10 = 0,8 % par mois.
-- Médiane : on range la série : −2,1 ; −1,5 ; −0,4 ; 0,8 ; 0,8 ; 1,1 ; 1,6 ; 2,0 ; 2,5 ; 3,2. N est pair : médiane = (0,8 + 1,1) / 2 = 0,95 %. La moitié des mois ont une rentabilité inférieure à 0,95 %.
-- Mode : 0,8 % (valeur la plus fréquente, deux fois).
-- Étendue : 3,2 − (−2,1) = 5,3 points.
-- Variance : V = Σ(xi − x̄)² / N. La somme des carrés des écarts vaut 25,96, donc V = 2,596. Formule de calcul équivalente : V = Σxi² / N − x̄² = 32,36 / 10 − 0,64 = 2,596.
-- Écart-type : σ = √2,596 ≈ 1,61 %. C''est la mesure du risque la plus utilisée en finance : plus il est élevé, plus la rentabilité est volatile.
-- Coefficient de variation : CV = σ / x̄ ≈ 1,61 / 0,8 ≈ 2,01. Il mesure le risque par unité de rentabilité et permet de comparer des séries de moyennes différentes.
+## 2. L''escompte commercial
 
-Remarque : la variance d''échantillon divise par N − 1 : 25,96 / 9 ≈ 2,884, écart-type ≈ 1,70. Indiquez la formule choisie.
+Une entreprise peut remettre un effet de commerce à sa banque avant l''échéance pour obtenir de la trésorerie. La banque retient l''escompte, calculé sur la valeur nominale : e = V × t × n ÷ 360, où n est le nombre de jours jusqu''à l''échéance (parfois majoré de jours de banque). S''y ajoutent des commissions ; l''ensemble forme les agios. Valeur nette = valeur nominale − agios.
 
-## Fiche 3 : série groupée en classes
+Exemple : effet de 2 400 000, échéance dans 75 jours, taux 10 %, commission fixe 5 000 (tarif imaginé). e = 2 400 000 × 0,10 × 75 ÷ 360 = 50 000 ; agios = 55 000 ; valeur nette = 2 345 000. Les taxes éventuelles sur commissions sont ignorées ici.
 
-Une institution de microfinance fictive de Kaolack classe 100 crédits selon leur montant (milliers de FCFA) :
+## 3. Intérêts composés
 
-- [0 ; 200[ : 15 crédits.
-- [200 ; 500[ : 40 crédits.
-- [500 ; 1 000[ : 30 crédits.
-- [1 000 ; 2 000[ : 15 crédits.
+À la fin de chaque période, les intérêts s''ajoutent au capital et produisent eux-mêmes des intérêts. Valeur acquise : Cn = C0 × (1 + i)^n.
 
-Méthode : on remplace chaque classe par son centre (100 ; 350 ; 750 ; 1 500).
+Exemple : 2 000 000 placés à 8 % l''an pendant 5 ans : C5 = 2 000 000 × 1,08^5 = 2 938 656 (arrondi au franc). Les intérêts cumulés valent 938 656, contre 800 000 en intérêts simples : c''est l''effet de capitalisation.
 
-- Moyenne : (100 × 15 + 350 × 40 + 750 × 30 + 1 500 × 15) / 100 = 60 500 / 100 = 605 milliers de FCFA.
-- Variance : V = Σni × ci² / N − x̄². Σni × ci² = 15 × 10 000 + 40 × 122 500 + 30 × 562 500 + 15 × 2 250 000 = 55 675 000 ; V = 556 750 − 605² = 556 750 − 366 025 = 190 725.
-- Écart-type : σ = √190 725 ≈ 436,7 milliers de FCFA.
-- Médiane par interpolation : N / 2 = 50. Les effectifs cumulés croissants valent 15, 55, 85, 100 : la médiane est dans la classe [200 ; 500[. Me = 200 + (50 − 15) / 40 × 300 = 462,5 milliers de FCFA.
-- Classe modale : avec des classes d''amplitudes inégales, on compare les densités (effectif / amplitude) : 0,075 ; 0,133 ; 0,06 ; 0,015. La classe modale est [200 ; 500[.
+Taux équivalents : deux taux sont équivalents s''ils donnent la même valeur acquise sur la même durée. Taux mensuel équivalent à 12 % annuel : im = 1,12^(1/12) − 1 ≈ 0,9489 %. Attention, le taux proportionnel (12 % ÷ 12 = 1 %) n''est pas équivalent en intérêts composés.
 
-La moyenne (605) est supérieure à la médiane (462,5) : quelques gros crédits tirent la moyenne vers le haut. La distribution est étalée à droite, situation fréquente pour des montants de prêts.
+Valeur actuelle : C0 = Cn × (1 + i)^(−n). Exemple : recevoir 5 000 000 dans 4 ans, au taux de 10 %, vaut aujourd''hui 5 000 000 ÷ 1,1^4 = 3 415 067.
 
-## Fiche 4 : indices et taux de croissance
+## 4. Les annuités
 
-- Taux de variation entre deux dates : (V1 − V0) / V0.
-- Indice simple base 100 : I = V1 / V0 × 100. Si l''encours de crédit d''une agence passe de 1 200 à 1 350 millions FCFA, l''indice vaut 112,5 et la hausse 12,5 %.
-- Taux de croissance annuel moyen (TCAM) sur n années : (Vn / V0)^(1/n) − 1. Si l''encours passe de 1 200 à 1 750 millions en 4 ans : (1 750 / 1 200)^(1/4) − 1 ≈ 9,89 % par an. Attention : on ne divise pas la hausse totale (45,8 %) par 4.
+Une suite d''annuités constantes est une série de versements égaux, à intervalles réguliers. Notations : a l''annuité, i le taux par période, n le nombre de versements.
 
-## Fiche 5 : covariance et corrélation
+- Valeur acquise (au moment du dernier versement) : Vn = a × [(1 + i)^n − 1] ÷ i.
+- Valeur actuelle (une période avant le premier versement) : V0 = a × [1 − (1 + i)^(−n)] ÷ i.
 
-Deux actions fictives X et Y ont, sur 5 mois, les rentabilités suivantes (%) : X : 1 ; 2 ; −1 ; 3 ; 0. Y : 0,5 ; 1,5 ; −0,5 ; 2 ; 1,5.
+Exemple : un commerçant de Touba verse 500 000 en fin d''année pendant 6 ans, à 7 %. V6 = 500 000 × (1,07^6 − 1) ÷ 0,07 = 3 576 645.
 
-- Moyennes : x̄ = 5 / 5 = 1 ; ȳ = 5 / 5 = 1.
-- Covariance : cov(X, Y) = Σ(xi − x̄)(yi − ȳ) / N. Les produits des écarts valent 0 ; 0,5 ; 3 ; 2 ; −0,5, de somme 5 : cov = 1.
-- Écarts-types : σX = √2 ≈ 1,414 ; σY = √0,8 ≈ 0,894.
-- Coefficient de corrélation : r = cov / (σX × σY) = 1 / (1,414 × 0,894) ≈ 0,79.
+## 5. L''emprunt indivis à annuités constantes
 
-r est compris entre −1 et 1. Ici, la liaison est positive et assez forte : les deux titres évoluent plutôt dans le même sens.
+Pour un emprunt C remboursé en n annuités constantes au taux i : a = C × i ÷ [1 − (1 + i)^(−n)]. Chaque annuité = intérêt de l''année (capital restant dû × i) + amortissement du capital. Les amortissements croissent en progression géométrique de raison (1 + i).
+
+Exemple : Boulangerie Teranga emprunte 10 000 000 sur 5 ans à 9 %. a = 10 000 000 × 0,09 ÷ (1 − 1,09^(−5)) = 2 570 925 (arrondi au franc). Tableau (arrondi au franc, dernière annuité ajustée) :
+
+- Année 1 : capital dû en début 10 000 000 ; intérêt 900 000 ; amortissement 1 670 925 ; annuité 2 570 925 ; capital restant dû 8 329 075
+- Année 2 : capital dû en début 8 329 075 ; intérêt 749 617 ; amortissement 1 821 308 ; annuité 2 570 925 ; capital restant dû 6 507 767
+- Année 3 : capital dû en début 6 507 767 ; intérêt 585 699 ; amortissement 1 985 226 ; annuité 2 570 925 ; capital restant dû 4 522 541
+- Année 4 : capital dû en début 4 522 541 ; intérêt 407 029 ; amortissement 2 163 896 ; annuité 2 570 925 ; capital restant dû 2 358 645
+- Année 5 : capital dû en début 2 358 645 ; intérêt 212 278 ; amortissement 2 358 645 ; annuité 2 570 923 ; capital restant dû 0
+
+Contrôle : la somme des amortissements est égale au capital emprunté, 10 000 000.
 
 ## Points clés
 
-- Position : moyenne, médiane, mode. Dispersion : étendue, variance, écart-type, CV.
-- Série classée : centres de classes, médiane par interpolation, densités pour la classe modale.
-- TCAM = (Vn / V0)^(1/n) − 1.
-- r = cov / (σX × σY), toujours entre −1 et 1.
+- Court terme : intérêts simples (base 360) ; long terme : intérêts composés.
+- Taux proportionnel ≠ taux équivalent.
+- Annuité = intérêt + amortissement ; dernier capital restant dû nul.
 
 ## Exercices pratiques
 
-- Exercice 1 : nombre de dossiers de crédit traités par jour dans une agence bancaire de Dakar sur 7 jours : 12 ; 16 ; 9 ; 18 ; 15 ; 21 ; 14. Calculez la moyenne, la médiane, l''étendue, la variance et l''écart-type.
-- Exercice 2 : l''encours d''épargne d''une mutuelle passe de 4,0 à 6,5 milliards FCFA en 5 ans. Calculez le taux de variation global et le TCAM.
-- Exercice 3 : rentabilités trimestrielles (%) de deux fonds fictifs. Fonds A : 1,5 ; 0,5 ; 2,0 ; 1,0. Fonds B : 4,0 ; −2,0 ; 3,0 ; 1,0. Calculez moyenne, écart-type et CV de chacun.
-- Exercice 4 (cas pratique) : à partir de l''exercice 3, un client prudent de Saint-Louis vous demande quel fonds choisir. Argumentez.
-- Exercice 5 : expliquez pourquoi, dans une série de montants de crédits, la médiane est souvent préférée à la moyenne.
+- Exercice 1 : calculez l''intérêt simple et la valeur acquise de 800 000 placés à 6 % pendant 90 jours.
+- Exercice 2 : pendant combien de jours faut-il placer 1 200 000 à 7,5 % pour obtenir 30 000 d''intérêts ?
+- Exercice 3 : un effet de 1 800 000 est escompté 60 jours avant l''échéance au taux de 9 %, commission fixe 3 000 (imaginée). Calculez l''escompte, les agios et la valeur nette.
+- Exercice 4 : 3 000 000 sont placés 4 ans à 6 % l''an, intérêts composés annuellement. Calculez la valeur acquise. Comparez avec un placement à 3 % par semestre pendant 8 semestres.
+- Exercice 5 : à quel taux annuel un capital double-t-il en 10 ans ?
+- Exercice 6 (cas pratique) : la société Diallo Transport hésite entre payer un véhicule 4 000 000 comptant ou verser 5 annuités de 1 000 000 en fin d''année. Le taux d''actualisation est 8 %. Quelle option choisir ? Elle emprunte par ailleurs 6 000 000 sur 4 ans à 10 % : calculez l''annuité et dressez le tableau d''amortissement.
 
 ## Corrigé
 
-- Exercice 1 : somme = 105, moyenne = 15. Série rangée : 9 ; 12 ; 14 ; 15 ; 16 ; 18 ; 21 : médiane = 15. Étendue = 21 − 9 = 12. Écarts : −3 ; 1 ; −6 ; 3 ; 0 ; 6 ; −1 ; somme des carrés = 92 ; variance = 92 / 7 ≈ 13,14 ; écart-type ≈ 3,63 dossiers.
-- Exercice 2 : taux global = (6,5 − 4,0) / 4,0 = 62,5 %. TCAM = (6,5 / 4,0)^(1/5) − 1 ≈ 10,20 % par an.
-- Exercice 3 : fonds A : moyenne 1,25 % ; variance = (0,0625 + 0,5625 + 0,5625 + 0,0625) / 4 = 0,3125 ; écart-type ≈ 0,56 % ; CV ≈ 0,45. Fonds B : moyenne 1,5 % ; variance = (6,25 + 12,25 + 2,25 + 0,25) / 4 = 5,25 ; écart-type ≈ 2,29 % ; CV ≈ 1,53.
-- Exercice 4 : le fonds B rapporte un peu plus en moyenne (1,5 % contre 1,25 %) mais il est beaucoup plus risqué (écart-type quatre fois plus élevé, un trimestre à −2 %). Son CV est plus de trois fois supérieur. Pour un client prudent, le fonds A est préférable.
-- Exercice 5 : la médiane n''est pas influencée par les valeurs extrêmes. Quelques très gros crédits gonflent la moyenne, alors que la médiane donne le montant du crédit « typique » : la moitié des crédits sont inférieurs, l''autre moitié supérieurs.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Statistiques descriptives pour la finance : l''essentiel pour l''examen');
+- Exercice 1 : I = 800 000 × 0,06 × 90 ÷ 360 = 12 000 ; valeur acquise 812 000.
+- Exercice 2 : n = I × 360 ÷ (C × t) = 30 000 × 360 ÷ (1 200 000 × 0,075) = 120 jours.
+- Exercice 3 : e = 1 800 000 × 0,09 × 60 ÷ 360 = 27 000 ; agios = 30 000 ; valeur nette = 1 770 000.
+- Exercice 4 : 3 000 000 × 1,06^4 = 3 787 431 ; 3 000 000 × 1,03^8 = 3 800 310. Le placement semestriel rapporte plus (12 879 de plus) car 3 % par semestre équivaut à 1,03² − 1 = 6,09 % par an.
+- Exercice 5 : (1 + i)^10 = 2, donc i = 2^(1/10) − 1 ≈ 7,18 %.
+
+Exercice 6 : valeur actuelle des annuités = 1 000 000 × (1 − 1,08^(−5)) ÷ 0,08 = 3 992 710, inférieure à 4 000 000 : le paiement échelonné est plus avantageux, de 7 290 en valeur actuelle. Emprunt : a = 6 000 000 × 0,10 ÷ (1 − 1,1^(−4)) = 1 892 825.
+
+- Année 1 : capital dû en début 6 000 000 ; intérêt 600 000 ; amortissement 1 292 825 ; annuité 1 892 825 ; capital restant dû 4 707 175
+- Année 2 : capital dû en début 4 707 175 ; intérêt 470 718 ; amortissement 1 422 107 ; annuité 1 892 825 ; capital restant dû 3 285 068
+- Année 3 : capital dû en début 3 285 068 ; intérêt 328 507 ; amortissement 1 564 318 ; annuité 1 892 825 ; capital restant dû 1 720 750
+- Année 4 : capital dû en début 1 720 750 ; intérêt 172 075 ; amortissement 1 720 750 ; annuité 1 892 825 ; capital restant dû 0
+
+Contrôle : 1 292 825 + 1 422 107 + 1 564 318 + 1 720 750 = 6 000 000.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mathématiques financières : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Licence 1 Finance (entraînement corrigé)', '## Présentation
+select c.id, 'Droit des affaires OHADA : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-Ce sujet est un sujet d''entraînement, conçu pour ce cours : ce n''est pas un sujet officiel. Il mobilise les trois matières de l''année. Durée conseillée : 3 heures. Calculatrice non programmable autorisée. Barème indicatif, non officiel : partie A sur 5 points, partie B sur 8 points, partie C sur 7 points. Tous les taux sont fictifs pour l''exemple.
+- Situer l''OHADA, ses Actes uniformes et ses institutions.
+- Définir le commerçant, les actes de commerce et les obligations du commerçant.
+- Distinguer les grandes formes de sociétés commerciales et leurs principes de fonctionnement.
 
-## Partie A : système financier (5 points)
+Attention : cette leçon présente les principes. Pour tout chiffre (capital minimum, nombre d''associés, délais), reportez-vous au texte officiel en vigueur de l''Acte uniforme concerné et aux éventuelles dispositions nationales.
 
-- A1 (1,5 point) : distinguez finance directe et finance indirecte. Laquelle domine dans l''UEMOA ? Pourquoi ?
-- A2 (1,5 point) : présentez le rôle de la BCEAO et celui de la BRVM.
-- A3 (2 points) : la société fictive Kayar Pêche SA a 2 400 000 actions cotées 3 200 FCFA ; elle verse un dividende de 192 FCFA par action. Calculez sa capitalisation boursière et le rendement du dividende. Un épargnant qui achète 100 actions via une SGI paie combien, hors frais ?
+## 1. L''OHADA en bref
 
-## Partie B : mathématiques financières (8 points)
+L''Organisation pour l''harmonisation en Afrique du droit des affaires (OHADA) a été créée par le traité de Port-Louis de 1993, révisé à Québec en 2008. Elle regroupe dix-sept États, dont le Sénégal. Elle adopte des Actes uniformes directement applicables dans les États membres. Les plus utiles en Licence 1 sont l''Acte uniforme relatif au droit commercial général (AUDCG) et l''Acte uniforme relatif au droit des sociétés commerciales et du groupement d''intérêt économique (AUSCGIE). La Cour commune de justice et d''arbitrage (CCJA), siégeant à Abidjan, assure l''interprétation et l''application uniformes du droit OHADA ; elle statue notamment en cassation sur les litiges relatifs aux Actes uniformes.
 
-La société fictive Diallo Transports SARL, à Touba, emprunte 9 000 000 FCFA à sa banque pour acheter un véhicule. Durée 3 ans, taux 8 %, remboursement par annuités constantes de fin d''année.
+## 2. Le commerçant
 
-- B1 (1,5 point) : calculez l''annuité.
-- B2 (3 points) : présentez le tableau d''amortissement complet.
-- B3 (1,5 point) : calculez le coût total du crédit, puis comparez avec un remboursement par amortissements constants.
-- B4 (2 points) : le vendeur propose aussi un paiement unique de 12 000 000 FCFA dans 2 ans. Au taux de 8 %, quelle est la valeur actuelle de cette proposition ? Est-elle intéressante par rapport à un prix comptant de 9 000 000 FCFA ?
+Est commerçant celui qui fait de l''accomplissement d''actes de commerce par nature sa profession. Trois conditions ressortent de cette définition : accomplir des actes de commerce par nature ; le faire de manière habituelle et à titre de profession ; agir en son nom et pour son propre compte, de façon indépendante. Un salarié qui vend pour le compte de son employeur n''est donc pas commerçant.
 
-## Partie C : statistiques descriptives (7 points)
+Les actes de commerce par nature comprennent notamment l''achat de biens en vue de leur revente, les opérations de banque, de bourse, de change, de courtage, d''assurance et de transit, les contrats entre commerçants pour les besoins de leur commerce, l''exploitation industrielle de mines et carrières, les opérations de location de meubles, de manufacture et de transport. Les actes de commerce par la forme sont commerciaux quelle que soit la personne qui les accomplit : la lettre de change, le billet à ordre et le warrant, ainsi que les actes des sociétés commerciales par la forme. Il existe aussi des actes de commerce par accessoire, accomplis par un commerçant pour les besoins de son commerce.
 
-Dépôts hebdomadaires (milliers de FCFA) collectés par un agent de microfinance à Mbour sur 8 semaines : 420 ; 380 ; 510 ; 460 ; 390 ; 600 ; 450 ; 430.
+## 3. Capacité, incompatibilités et obligations
 
-- C1 (2 points) : calculez la moyenne et la médiane.
-- C2 (3 points) : calculez la variance et l''écart-type.
-- C3 (2 points) : calculez le coefficient de variation et interprétez la régularité de la collecte.
+Pour être commerçant, il faut avoir la capacité juridique ; certaines professions sont incompatibles avec le commerce (fonctionnaires, officiers ministériels, professions libérales réglementées, selon les textes) ; certaines personnes sont frappées d''interdiction. Le commerçant doit :
 
-## Corrigé détaillé de la partie A
+- s''immatriculer au Registre du commerce et du crédit mobilier (RCCM) ;
+- tenir une comptabilité conforme au droit comptable OHADA ;
+- respecter les règles de concurrence loyale et ses obligations fiscales et sociales.
 
-A1. En finance directe, les agents à besoin de financement émettent des titres (actions, obligations) achetés directement par les épargnants sur le marché financier. En finance indirecte, un intermédiaire (banque, institution de microfinance) collecte les dépôts et accorde des crédits en supportant le risque. Dans l''UEMOA, la finance indirecte domine : la plupart des entreprises sont des PME qui ne remplissent pas les conditions d''accès à la bourse (forme de société anonyme, comptes certifiés, taille, coûts d''émission) ; le crédit bancaire et la microfinance restent leurs principales sources externes.
+L''immatriculation au RCCM fait présumer la qualité de commerçant. Une personne non immatriculée qui exerce une activité commerciale ne peut pas se prévaloir de cette qualité à l''égard des tiers, mais les tiers peuvent, eux, l''invoquer contre elle.
 
-A2. La BCEAO est la banque centrale commune des huit États de l''UEMOA : elle émet le franc CFA, conduit la politique monétaire commune (objectif principal : stabilité des prix), gère les réserves de change et veille aux systèmes de paiement. La BRVM est la bourse régionale commune aux huit États : elle organise la cotation et les échanges d''actions et d''obligations ; les ordres sont transmis par les SGI.
+## 4. L''entreprenant
 
-A3. Capitalisation = 2 400 000 × 3 200 = 7 680 000 000 FCFA, soit 7,68 milliards. Rendement du dividende = 192 / 3 200 = 6 %. Achat de 100 actions : 100 × 3 200 = 320 000 FCFA hors commissions.
+L''AUDCG révisé a créé le statut d''entreprenant : entrepreneur individuel, personne physique, qui exerce une activité professionnelle civile, commerciale, artisanale ou agricole, avec un chiffre d''affaires ne dépassant pas un seuil fixé par les textes. Il fait une simple déclaration d''activité au RCCM et bénéficie d''obligations comptables allégées. C''est un outil de formalisation du secteur informel, très présent au Sénégal.
 
-## Corrigé détaillé de la partie B
+## 5. Les sociétés commerciales : principes
 
-B1. a = 9 000 000 × 0,08 / (1 − 1,08^−3) ≈ 3 492 302 FCFA.
+La société est instituée par deux ou plusieurs personnes qui affectent des biens (apports) à une activité commune, en vue de partager le bénéfice ou de profiter de l''économie qui en résulte, en s''engageant à contribuer aux pertes. L''AUSCGIE admet aussi la société créée par une seule personne (SARL, SA et SAS unipersonnelles). Les éléments caractéristiques : les apports (en numéraire, en nature, en industrie selon la forme), l''affectio societatis (volonté de collaborer sur un pied d''égalité), la vocation aux bénéfices et la contribution aux pertes. La société acquiert la personnalité morale à compter de son immatriculation au RCCM.
 
-B2. Tableau (arrondis au franc ; la dernière ligne absorbe l''écart d''arrondi) :
+Les formes commerciales prévues :
 
-- Année 1 : capital début 9 000 000 ; intérêt 720 000 ; amortissement 2 772 302 ; annuité 3 492 302 ; capital fin 6 227 698.
-- Année 2 : capital début 6 227 698 ; intérêt 498 216 ; amortissement 2 994 086 ; annuité 3 492 302 ; capital fin 3 233 612.
-- Année 3 : capital début 3 233 612 ; intérêt 258 690 ; amortissement 3 233 612 ; annuité 3 492 302 ; capital fin 0.
+- Société en nom collectif (SNC) : associés commerçants, responsables indéfiniment et solidairement des dettes sociales ; parts difficilement cessibles.
+- Société en commandite simple (SCS) : commandités responsables indéfiniment et solidairement ; commanditaires responsables à hauteur de leurs apports.
+- Société à responsabilité limitée (SARL) : responsabilité limitée aux apports ; capital divisé en parts sociales ; gérance par un ou plusieurs gérants ; forme la plus fréquente pour les PME.
+- Société anonyme (SA) : capital divisé en actions ; responsabilité limitée ; organisation avec conseil d''administration ou administrateur général ; commissaire aux comptes obligatoire.
+- Société par actions simplifiée (SAS) : introduite lors de la révision de 2014 ; grande liberté statutaire ; président obligatoire.
 
-Contrôle : 2 772 302 + 2 994 086 + 3 233 612 = 9 000 000.
+Le groupement d''intérêt économique (GIE) n''est pas une société : il prolonge l''activité de ses membres. Le capital minimum des SARL et des SA est fixé par l''Acte uniforme, qui permet aux États de prévoir d''autres montants pour la SARL : vérifiez le montant applicable dans votre pays.
 
-B3. Coût total = 3 × 3 492 302 − 9 000 000 ≈ 1 476 906 FCFA (1 476 905 sans arrondir l''annuité). Avec des amortissements constants de 3 000 000 FCFA : intérêts = 720 000 + 480 000 + 240 000 = 1 440 000 FCFA. L''amortissement constant coûte environ 36 905 FCFA de moins, car le capital est remboursé plus vite ; en contrepartie, la première annuité est plus lourde (3 720 000 FCFA contre 3 492 302 FCFA).
+## 6. Exemple d''analyse (cas fictif)
 
-B4. Valeur actuelle = 12 000 000 × 1,08^−2 ≈ 10 288 066 FCFA. Elle est supérieure au prix comptant de 9 000 000 FCFA : la proposition de paiement différé est plus coûteuse. Autre lecture : 9 000 000 placés 2 ans à 8 % ne deviennent que 10 497 600 FCFA, bien moins que 12 000 000.
+Moussa, informaticien salarié, achète chaque mois des téléphones à Dubaï pour les revendre au marché Sandaga, sans immatriculation. Problème : est-il commerçant ? Règle : est commerçant celui qui accomplit habituellement, à titre professionnel et pour son compte, des actes de commerce par nature. Application : l''achat pour revendre est un acte de commerce par nature ; l''activité est régulière et indépendante de son emploi. Solution : il est commerçant de fait ; faute d''immatriculation, il ne peut pas s''en prévaloir mais les tiers peuvent l''invoquer contre lui ; il doit s''immatriculer, ou opter pour le statut d''entreprenant s''il remplit les conditions.
 
-## Corrigé détaillé de la partie C
+## Points clés
 
-C1. Somme = 3 640 ; moyenne = 3 640 / 8 = 455 milliers de FCFA. Série rangée : 380 ; 390 ; 420 ; 430 ; 450 ; 460 ; 510 ; 600. Médiane = (430 + 450) / 2 = 440 milliers de FCFA.
-
-C2. Écarts à la moyenne : −35 ; −75 ; 55 ; 5 ; −65 ; 145 ; −5 ; −25. Somme des carrés = 1 225 + 5 625 + 3 025 + 25 + 4 225 + 21 025 + 25 + 625 = 35 800. Variance = 35 800 / 8 = 4 475. Écart-type = √4 475 ≈ 66,9 milliers de FCFA.
-
-C3. CV = 66,9 / 455 ≈ 0,147, soit 14,7 %. La dispersion est modérée : la collecte est assez régulière. La semaine à 600 (peut-être un jour de marché ou une fête) tire la moyenne au-dessus de la médiane.
-
-## Conseils de présentation
-
-- Encadrez les formules et les résultats ; indiquez toujours l''unité.
-- Pour le tableau d''amortissement, vérifiez que le capital final est nul et que la somme des amortissements égale l''emprunt.
-- Terminez chaque partie par une phrase de conclusion.
+- OHADA : Actes uniformes directement applicables ; CCJA à Abidjan.
+- Commerçant : actes de commerce par nature, habitude, profession, indépendance ; immatriculation au RCCM.
+- Sociétés : apports, affectio societatis, bénéfices et pertes ; personnalité morale à l''immatriculation.
 
 ## Exercices pratiques
 
-- Exercice 1 : quel est le taux mensuel proportionnel à 9 % annuel ? Le taux mensuel équivalent ?
-- Exercice 2 : quelle est la valeur acquise de 9 000 000 FCFA placés 3 ans à 8 % ?
-- Exercice 3 : vrai ou faux : « La variance s''exprime dans la même unité que la série. »
-- Exercice 4 : citez deux acteurs du marché financier régional autres que la BRVM.
-- Exercice 5 : dans un tableau d''amortissement à annuités constantes, comment évoluent les intérêts et les amortissements ?
+- Exercice 1 : citez les deux Actes uniformes OHADA étudiés dans cette leçon et leur objet.
+- Exercice 2 : classez : signature d''une lettre de change par un enseignant ; achat d''un camion par un transporteur pour son activité ; achat de riz par une ménagère pour sa famille ; opération de change par un bureau de change.
+- Exercice 3 : quelle différence entre un commerçant et un entreprenant ?
+- Exercice 4 : citez quatre éléments caractéristiques du contrat de société.
+- Exercice 5 : trois amis veulent créer une agence de voyages à Mbour, limiter leur responsabilité et garder une organisation simple. Quelles formes leur conseillez-vous ?
+- Exercice 6 (cas pratique) : Aminata, associée d''une SNC, est poursuivie personnellement par un fournisseur impayé de la société. Elle soutient qu''elle n''a pas signé la commande. Que lui répondez-vous ?
 
 ## Corrigé
 
-- Exercice 1 : proportionnel : 9 % / 12 = 0,75 % ; équivalent : 1,09^(1/12) − 1 ≈ 0,7207 %.
-- Exercice 2 : 9 000 000 × 1,08^3 = 11 337 408 FCFA.
-- Exercice 3 : faux. La variance s''exprime dans l''unité au carré ; c''est l''écart-type qui a la même unité que la série.
-- Exercice 4 : les SGI, le Dépositaire central / Banque de règlement, le régulateur régional (AMF-UMOA).
-- Exercice 5 : les intérêts diminuent car le capital restant dû diminue ; les amortissements augmentent (suite géométrique de raison 1 + i) ; leur somme reste égale à l''annuité.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 Finance (entraînement corrigé)');
+- Exercice 1 : l''AUDCG (statut du commerçant et de l''entreprenant, RCCM, bail commercial, fonds de commerce, vente commerciale) et l''AUSCGIE (constitution, fonctionnement et dissolution des sociétés commerciales et du GIE).
+- Exercice 2 : la lettre de change est un acte de commerce par la forme, même signée par un enseignant ; l''achat du camion est un acte de commerce par accessoire ; l''achat de riz pour la famille est un acte civil ; l''opération de change est un acte de commerce par nature.
+- Exercice 3 : l''entreprenant est une personne physique dont l''activité reste en dessous d''un seuil de chiffre d''affaires ; il fait une déclaration d''activité et a des obligations allégées ; le commerçant s''immatricule et supporte l''ensemble des obligations comptables.
+- Exercice 4 : les apports, l''affectio societatis, la vocation aux bénéfices ou à l''économie, la contribution aux pertes.
+- Exercice 5 : une SARL (forme classique des PME, gérance simple, responsabilité limitée aux apports) ou une SAS (liberté statutaire). Il faut vérifier le capital minimum applicable et les éventuelles autorisations administratives propres à l''activité d''agence de voyages.
+- Exercice 6 : dans une SNC, les associés répondent indéfiniment et solidairement des dettes sociales. Le fournisseur peut la poursuivre personnellement, même si elle n''a pas signé, en principe après une mise en demeure infructueuse adressée à la société. Elle pourra ensuite se retourner contre ses coassociés pour leur part.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des affaires OHADA : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Introduction à la finance et au système financier', '## Fiche du cours vidéo
+select c.id, 'Sujet type d''examen de Licence 1 (entraînement)', '## Présentation
+
+Sujet d''entraînement de type examen semestriel de Licence 1 (ce n''est pas un sujet officiel). Durée conseillée : 3 heures. Calculatrice autorisée. Barème indicatif, non officiel, sur 20 points. Taux de TVA de 20 % : taux fictif pour l''exemple, choisi pour simplifier les calculs. Le taux réel est fixé par le code général des impôts de chaque État : vérifiez toujours le texte en vigueur.
+
+## Sujet
+
+Partie I. Comptabilité générale (9 points). Dakar Bureautique SARL vend du matériel de bureau.
+
+- 1. (1 point) Énoncez le principe de prudence et le principe de spécialisation des exercices.
+- 2. (3 points) Le 4 mai, elle vend des marchandises à un client qui paie immédiatement par virement : prix brut 5 000 000, remise 10 %, escompte 2 %. Établissez la facture et passez l''écriture.
+- 3. (2 points) Le 9 mai, elle achète à crédit des marchandises : prix brut 2 500 000, remise 4 %. Écriture.
+- 4. (1 point) Le 15 mai, elle retourne au fournisseur des marchandises défectueuses pour 200 000 HT et reçoit une facture d''avoir. Écriture.
+- 5. (2 points) Calculez la TVA due de mai (aucun crédit antérieur) et passez l''écriture de liquidation.
+
+Partie II. Mathématiques financières (7 points)
+
+- 6. (2 points) Un capital de 2 500 000 est placé 3 ans à 7 % l''an à intérêts composés. Valeur acquise ?
+- 7. (2 points) Un effet de 900 000 est escompté 40 jours avant l''échéance au taux de 9 %. Escompte et valeur nette (pas de commission).
+- 8. (3 points) La société emprunte 8 000 000 sur 3 ans à 8 %, remboursables par annuités constantes. Annuité et tableau d''amortissement.
+
+Partie III. Droit des affaires OHADA (4 points)
+
+- 9. (4 points) Khady vend depuis deux ans des tissus au marché HLM, chaque jour, sans être immatriculée. Elle veut s''associer avec sa sœur pour ouvrir une boutique, en limitant sa responsabilité. Est-elle commerçante ? Quelle forme de société conseiller ?
+
+## Corrigé détaillé
+
+Question 1 : prudence : appréciation raisonnable des faits pour ne pas transférer sur l''avenir des risques présents ; on enregistre les pertes probables, pas les gains probables. Spécialisation : chaque exercice supporte les charges et produits qui le concernent, et eux seuls.
+
+Question 2 : remise 500 000, net commercial 4 500 000 ; escompte 2 % = 90 000 ; net financier 4 410 000 ; TVA 20 % = 882 000 ; net à payer 5 292 000.
+
+- Débit 521 Banques : 5 292 000
+- Débit 673 Escomptes accordés : 90 000
+- Crédit 701 Ventes de marchandises : 4 500 000
+- Crédit 4431 État, TVA facturée sur ventes : 882 000
+- Total débit = total crédit = 5 382 000
+
+Question 3 : net commercial 2 400 000 ; TVA 480 000 ; TTC 2 880 000.
+
+- Débit 601 Achats de marchandises : 2 400 000
+- Débit 4452 État, TVA récupérable sur achats : 480 000
+- Crédit 401 Fournisseurs : 2 880 000
+- Total débit = total crédit = 2 880 000
+
+Question 4 : l''avoir annule une partie de l''achat et de la TVA récupérable.
+
+- Débit 401 Fournisseurs : 240 000
+- Crédit 601 Achats de marchandises : 200 000
+- Crédit 4452 État, TVA récupérable sur achats : 40 000
+- Total débit = total crédit = 240 000
+
+Question 5 : TVA récupérable nette = 480 000 − 40 000 = 440 000 ; TVA due = 882 000 − 440 000 = 442 000.
+
+- Débit 4431 État, TVA facturée sur ventes : 882 000
+- Crédit 4452 État, TVA récupérable sur achats : 440 000
+- Crédit 4441 État, TVA due : 442 000
+- Total débit = total crédit = 882 000
+
+Question 6 : 2 500 000 × 1,07³ = 3 062 608 (arrondi au franc).
+
+Question 7 : e = 900 000 × 0,09 × 40 ÷ 360 = 9 000 ; valeur nette 891 000.
+
+Question 8 : a = 8 000 000 × 0,08 ÷ (1 − 1,08^(−3)) = 3 104 268.
+
+- Année 1 : capital dû en début 8 000 000 ; intérêt 640 000 ; amortissement 2 464 268 ; annuité 3 104 268 ; capital restant dû 5 535 732
+- Année 2 : capital dû en début 5 535 732 ; intérêt 442 859 ; amortissement 2 661 409 ; annuité 3 104 268 ; capital restant dû 2 874 323
+- Année 3 : capital dû en début 2 874 323 ; intérêt 229 946 ; amortissement 2 874 323 ; annuité 3 104 269 ; capital restant dû 0
+
+Question 9 : l''achat pour revendre est un acte de commerce par nature ; Khady l''accomplit chaque jour, à titre professionnel et pour son compte : elle est commerçante de fait. Non immatriculée, elle ne peut se prévaloir de cette qualité mais les tiers peuvent l''invoquer contre elle. Elle doit s''immatriculer au RCCM (ou faire une déclaration d''entreprenant si elle remplit les conditions). Pour s''associer en limitant sa responsabilité : SARL (ou SAS), en vérifiant le capital minimum applicable. La SNC est à écarter : responsabilité indéfinie et solidaire.
+
+## Exercices pratiques
+
+- Exercice 1 : un client paie par chèque une facture de 1 200 000 TTC. Écriture.
+- Exercice 2 : valeur actuelle de 1 000 000 payable dans 2 ans au taux de 10 % ?
+- Exercice 3 : quel acte de commerce est commercial quelle que soit la personne qui le signe ?
+- Exercice 4 : quel compte enregistre un escompte obtenu ?
+
+## Corrigé
+
+- Exercice 1 : débit 521 Banques 1 200 000 ; crédit 411 Clients 1 200 000.
+- Exercice 2 : 1 000 000 ÷ 1,1² = 826 446 (arrondi au franc).
+- Exercice 3 : la lettre de change (acte de commerce par la forme), comme le billet à ordre et le warrant.
+- Exercice 4 : le compte 773 Escomptes obtenus, au crédit (produit financier).', 'texte', 90, false, 50
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 (entraînement)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Comptabilité générale 1', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 1 Finance, Banque, Comptabilité-Finance.
-- Objectifs : expliquer le rôle du système financier, présenter les acteurs de l''UEMOA (banques, BCEAO, SFD, marché financier régional), réaliser les calculs de base (marge d''intérêt, coût d''un microcrédit, indicateurs boursiers, taux réel).
-- Matériel : tableau blanc, diaporama avec le schéma de la finance directe et indirecte, calculatrice.
-- Prérequis : leçon 2 du cours ; pourcentages.
-- Tous les taux cités sont fictifs pour l''exemple.
+- Public : étudiants de Licence 1 Comptabilité, Finance, Gestion.
+- Objectifs : appliquer la partie double, enregistrer achats, ventes, réductions et TVA, reporter au grand livre et établir une balance.
+- Matériel : tableau blanc ou diaporama, plan de comptes SYSCOHADA révisé, calculatrice, fiche d''exercices.
+- Prérequis : leçon « Comptabilité générale 1 : l''essentiel pour l''examen ».
+- Convention : TVA à 20 %, taux fictif pour l''exemple ; vérifier l''intitulé des comptes dans le plan de comptes officiel.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et situation de départ
+## 00:00 – 05:00 · Accueil et objectifs
 
-« Bonjour à toutes et à tous. Imaginons Khady, qui vend du thiakry et du jus de bissap au marché de Sandaga. Chaque soir, il lui reste un peu d''argent. Que peut-elle en faire ? Le garder chez elle, le déposer sur un compte de mutuelle, le confier à une banque, l''envoyer sur son porte-monnaie électronique, ou un jour acheter des actions. À l''autre bout, Ibrahima veut ouvrir un atelier de couture et il lui manque 2 millions de francs. Le système financier, c''est l''ensemble des institutions et des marchés qui permettent à l''argent de Khady d''aller financer le projet d''Ibrahima. Notre séance répond à trois questions : comment l''épargne rencontre-t-elle les besoins de financement ? Qui sont les acteurs dans l''UEMOA ? Quels calculs simples faut-il savoir faire à l''examen ? »
+Bonjour à toutes et à tous. Pendant une heure et demie, nous allons faire ce que l''examen vous demandera : enregistrer des opérations, sans hésiter sur le sens débit ou crédit, puis vérifier que tout est équilibré. À la fin de la séance, vous saurez traiter une facture avec remise, rabais et escompte, calculer la TVA due du mois et présenter une balance. Prenez une feuille, une calculatrice et votre plan de comptes. Visuel : la liste des objectifs à l''écran.
 
-Visuel : une diapositive avec Khady à gauche, Ibrahima à droite, et un point d''interrogation au centre.
+## 05:00 – 15:00 · Rappel : le SYSCOHADA révisé et les classes de comptes
 
-## 05:00 – 15:00 · Capacité et besoin de financement
+Le SYSCOHADA révisé est le référentiel comptable des États de l''OHADA. Il fixe un plan de comptes en classes. Je les écris au tableau : 1 ressources durables, 2 actif immobilisé, 3 stocks, 4 tiers, 5 trésorerie, 6 charges, 7 produits, 8 autres charges et produits. Un moyen mnémotechnique : les classes 1 à 5 forment le bilan, les classes 6 à 8 alimentent le compte de résultat. Question à la salle : dans quelle classe range-t-on un camion de livraison ? Réponse attendue : classe 2, c''est une immobilisation. Et un stock de ciment chez un quincaillier ? Classe 3.
 
-« Un agent a une capacité de financement quand son épargne dépasse ses investissements. C''est souvent le cas des ménages. Un agent a un besoin de financement dans le cas inverse : entreprises qui investissent, État dont les dépenses dépassent les recettes. Le système financier remplit quatre fonctions : collecter et allouer l''épargne, assurer les paiements, répartir les risques, produire de l''information sur les prix des actifs. Notez ces quatre fonctions : elles reviennent souvent en question de cours. »
+Je rappelle les principes qui tombent souvent en question de cours : prudence, continuité d''exploitation, permanence des méthodes, coût historique, spécialisation des exercices, intangibilité du bilan d''ouverture. Pour chacun, retenez une phrase et un exemple.
 
-Question à poser : « Une entreprise qui vend plus qu''elle n''investit et qui dépose ses excédents à la banque est-elle en capacité ou en besoin de financement ? » Réponse attendue : en capacité de financement.
+## 15:00 – 25:00 · La partie double en image
 
-## 15:00 – 27:00 · Finance directe et finance indirecte
+Je dessine un compte en T. À gauche le débit, à droite le crédit. Règle : un actif augmente au débit, un passif augmente au crédit, une charge se débite, un produit se crédite. Prenons l''apport de 10 000 000 en banque à la création d''une SARL. La banque, actif, augmente : débit 521. Le capital, ressource, augmente : crédit 101. Chaque écriture se termine par le contrôle : total débit égal total crédit.
 
-« Dessinons le schéma. À gauche, les épargnants. À droite, les emprunteurs. En haut, une flèche directe : c''est le marché financier. L''entreprise émet des actions ou des obligations, l''épargnant les achète par l''intermédiaire d''une SGI. Il détient le titre, il supporte le risque. En bas, une flèche qui passe par une boîte : la banque ou l''institution de microfinance. L''épargnant dépose, la banque prête. L''épargnant détient une créance sur la banque, la banque détient une créance sur l''emprunteur. C''est elle qui supporte le risque de non-remboursement. On dit que la banque transforme : elle reçoit des dépôts à vue et accorde des crédits à moyen terme. »
+- Débit 521 Banques : 10 000 000
+- Crédit 101 Capital social : 10 000 000
+- Total débit = total crédit = 10 000 000
 
-« Dans notre zone, c''est la finance indirecte qui domine. La raison est simple : la grande majorité des entreprises sont des PME, voire des entreprises individuelles, qui ne peuvent pas aller en bourse. »
+Deuxième exemple : l''entreprise achète un ordinateur de 900 000 HT payé par virement. Le matériel de bureau, actif, augmente : débit 2441. La TVA récupérable sur immobilisations, créance sur l''État, augmente : débit 4451. La banque diminue : crédit 521. Erreur classique : inverser le sens parce qu''on raisonne comme la banque. Sur votre relevé bancaire, la banque « crédite » votre compte quand vous recevez de l''argent : c''est le point de vue de la banque, pas le vôtre.
 
-Visuel : le schéma complet avec les deux flèches.
+## 25:00 – 40:00 · Les factures avec réductions
 
-## 27:00 – 40:00 · Les acteurs de l''UEMOA
+Écran : une facture de vente de la société fictive Kayor Équipements. Prix brut 6 000 000, remise 5 %, rabais 2 %, escompte 1 % pour paiement comptant. Calculons ensemble, dans l''ordre. Remise : 300 000, il reste 5 700 000. Rabais : 2 % de 5 700 000 = 114 000, net commercial 5 586 000. Escompte : 1 % de 5 586 000 = 55 860, net financier 5 530 140. TVA à 20 % fictif : 1 106 028. Net à payer : 6 636 168.
 
-« Premier acteur, la BCEAO, Banque centrale des États de l''Afrique de l''Ouest, dont le siège est à Dakar. Elle est commune à huit pays : Bénin, Burkina Faso, Côte d''Ivoire, Guinée-Bissau, Mali, Niger, Sénégal, Togo. Elle émet le franc CFA, conduit la politique monétaire commune avec pour objectif principal la stabilité des prix, gère les réserves de change et surveille les systèmes de paiement. Retenez la parité fixe : 1 euro = 655,957 francs CFA. »
+Chez le vendeur, la vente se comptabilise au net commercial, l''escompte en charge financière :
 
-« Deuxième acteur, la Commission bancaire de l''UMOA, qui supervise les banques et établissements financiers. Troisième acteur, les banques commerciales. Quatrième, les systèmes financiers décentralisés, c''est-à-dire la microfinance : mutuelles d''épargne et de crédit, associations, sociétés. Elles servent les commerçantes comme Khady, les artisans, les agriculteurs. Cinquième ensemble, le marché financier régional : la BRVM, bourse commune installée à Abidjan avec une antenne dans chaque pays, le Dépositaire central / Banque de règlement qui conserve les titres et règle les opérations, les SGI qui transmettent les ordres, et un régulateur régional, l''AMF-UMOA, anciennement CREPMF. Enfin, les assurances et caisses de retraite, qui sont de gros investisseurs. »
+- Débit 521 Banques : 6 636 168
+- Débit 673 Escomptes accordés : 55 860
+- Crédit 701 Ventes de marchandises : 5 586 000
+- Crédit 4431 État, TVA facturée sur ventes : 1 106 028
+- Total débit = total crédit = 6 692 028
 
-« Attention : pour tout chiffre officiel, taux directeur ou montant réglementaire, la seule source fiable est la publication officielle en vigueur, notamment celle de la BCEAO. À l''examen, on vous demande surtout de comprendre les rôles. »
+Chez l''acheteur, la même facture donne :
 
-## 40:00 – 48:00 · Pause interactive et quiz
+- Débit 601 Achats de marchandises : 5 586 000
+- Débit 4452 État, TVA récupérable sur achats : 1 106 028
+- Crédit 521 Banques : 6 636 168
+- Crédit 773 Escomptes obtenus : 55 860
+- Total débit = total crédit = 6 692 028
 
-« Faites une pause de deux minutes, puis répondez à ces cinq questions sans regarder vos notes. »
+Je vous laisse une minute pour vérifier les totaux sur votre calculatrice. Pourquoi la TVA se calcule-t-elle sur le net financier ? Parce que c''est le prix réellement payé pour la marchandise.
 
-- Question 1 : où est situé le siège de la BCEAO ? Réponse : à Dakar.
-- Question 2 : qui transmet les ordres de bourse des investisseurs à la BRVM ? Réponse : les SGI.
-- Question 3 : un dépôt sur un compte d''épargne relève-t-il de la finance directe ou indirecte ? Réponse : indirecte.
-- Question 4 : combien d''États partagent la BCEAO ? Réponse : huit.
-- Question 5 : qui supervise les banques de l''UMOA ? Réponse : la Commission bancaire de l''UMOA.
+## 40:00 – 50:00 · Pause active : quiz
 
-## 48:00 – 58:00 · Calcul 1 : la marge d''intérêt d''une banque
+Cinq questions, trente secondes chacune. Notez vos réponses.
 
-« Passons aux calculs. Une banque fictive prête 60 000 millions de francs à 8 % et rémunère 75 000 millions de dépôts à 3 %, deux taux fictifs pour l''exemple. Intérêts reçus : 60 000 × 0,08 = 4 800 millions. Intérêts versés : 75 000 × 0,03 = 2 250 millions. Marge d''intérêt : 2 550 millions. Cette marge doit payer les salaires, les agences, l''informatique, couvrir les crédits non remboursés et laisser un bénéfice. Voilà pourquoi un taux débiteur est toujours supérieur au taux créditeur. »
+- Question 1 : une remise accordée sur facture s''enregistre-t-elle ? Réponse : non, on enregistre le net commercial.
+- Question 2 : quel compte pour un escompte accordé ? Réponse : 673.
+- Question 3 : TTC de 2 000 000 HT avec TVA à 20 % fictif ? Réponse : 2 400 000.
+- Question 4 : HT d''une facture de 3 600 000 TTC ? Réponse : 3 000 000.
+- Question 5 : une balance équilibrée garantit-elle l''absence d''erreur ? Réponse : non ; une écriture dans le mauvais compte, ou oubliée, ne déséquilibre pas la balance.
 
-## 58:00 – 1:08:00 · Calcul 2 : le coût d''un microcrédit
+## 50:00 – 1:00:00 · Retours, avoirs et TVA due
 
-« Ibrahima obtient d''une mutuelle 300 000 francs remboursables en 6 mensualités constantes, à 2,5 % par mois, taux fictif pour l''exemple. La formule de la mensualité, que vous approfondirez en mathématiques financières, est : m = C × i / [1 − (1 + i)^−n]. Ici : m = 300 000 × 0,025 / (1 − 1,025^−6) ≈ 54 465 francs. Il rembourse au total 6 × 54 465 = 326 790 francs, soit un coût de 26 790 francs. Pourquoi le taux mensuel d''un microcrédit est-il souvent plus élevé que celui d''un crédit bancaire classique ? Parce que les montants sont petits, les frais de suivi élevés par franc prêté, et que l''institution supporte un risque important sans garanties classiques. »
+Le fournisseur reprend des marchandises défectueuses pour 300 000 HT : il nous adresse une facture d''avoir. Nous annulons partiellement l''achat et la TVA récupérable :
 
-Exercice corrigé en direct : « Calculez le coût si le prêt était remboursé en une seule fois au bout de 6 mois à intérêts simples au taux proportionnel de 2,5 % par mois. » Correction : 300 000 × 0,025 × 6 = 45 000 francs. « Le coût est plus élevé, car Ibrahima garde tout le capital pendant 6 mois au lieu de le rembourser progressivement. »
+- Débit 401 Fournisseurs : 360 000
+- Crédit 601 Achats de marchandises : 300 000
+- Crédit 4452 État, TVA récupérable sur achats : 60 000
+- Total débit = total crédit = 360 000
 
-## 1:08:00 – 1:18:00 · Calcul 3 : indicateurs boursiers et taux réel
+Fin du mois : TVA collectée 2 500 000, TVA récupérable sur achats 1 400 000, sur immobilisations 600 000. TVA due 500 000. Écriture de liquidation :
 
-« Une société fictive, Saloum Énergie SA, compte 8 000 000 d''actions cotées 1 500 francs. Capitalisation : 8 000 000 × 1 500 = 12 milliards de francs. Dividende : 120 francs ; rendement du dividende : 120 / 1 500 = 8 %. Bénéfice par action : 150 francs ; PER : 1 500 / 150 = 10. »
+- Débit 4431 État, TVA facturée sur ventes : 2 500 000
+- Crédit 4452 État, TVA récupérable sur achats : 1 400 000
+- Crédit 4451 État, TVA récupérable sur immobilisations : 600 000
+- Crédit 4441 État, TVA due : 500 000
+- Total débit = total crédit = 2 500 000
 
-« Une obligation de nominal 10 000 francs au taux facial de 7 % verse un coupon de 700 francs par an. Si elle cote 9 800 francs, son rendement courant vaut 700 / 9 800 ≈ 7,14 %. Quand le prix baisse, le rendement monte : retenez cette relation inverse. »
+Puis, au paiement : débit 4441, crédit 521. Si la TVA récupérable dépasse la TVA collectée, le solde va au 4449 crédit de TVA à reporter.
 
-« Dernier calcul : le taux réel. Un placement rapporte 7 % ; l''inflation est de 2,5 %, chiffres fictifs. Taux réel exact : 1,07 / 1,025 − 1 ≈ 4,39 %. L''approximation 7 − 2,5 = 4,5 % est proche, mais l''examinateur préfère la formule exacte. »
+## 1:00:00 – 1:15:00 · Correction commentée d''un mini-cas : grand livre et balance
 
-## 1:18:00 – 1:24:00 · Synthèse
+Énoncé à l''écran : une entreprise a passé dans le mois les écritures suivantes : apport 10 000 000 en banque ; achat de marchandises à crédit 4 000 000 HT ; vente au comptant par banque 3 000 000 HT ; achat de matériel de bureau 1 500 000 HT par banque ; loyer 400 000 par banque, hors TVA pour l''exercice. Je reporte au tableau, compte par compte. Banques : débit 10 000 000 et 3 600 000, crédit 1 800 000 et 400 000 ; solde débiteur 11 400 000. Fournisseurs : crédit 4 800 000. Achats : débit 4 000 000. Ventes : crédit 3 000 000. TVA facturée : crédit 600 000. TVA récupérable sur achats : débit 800 000. TVA sur immobilisations : débit 300 000. Matériel de bureau : débit 1 500 000. Locations : débit 400 000. Capital : crédit 10 000 000.
 
-« Résumons. Le système financier relie capacité et besoin de financement, par la finance directe (marché) et indirecte (banques, SFD). Dans l''UEMOA, la BCEAO conduit la politique monétaire, la Commission bancaire supervise, la BRVM organise la bourse régionale avec les SGI et le Dépositaire central. Les calculs à maîtriser : marge d''intérêt, coût d''un crédit, capitalisation, rendement du dividende, PER, rendement courant, taux réel. Pour chaque calcul, écrivez la formule, faites l''application numérique, donnez l''unité et terminez par une phrase d''interprétation : c''est cette rigueur qui fait la différence entre un 12 et un 16 sur 20. »
+Balance : soldes débiteurs 11 400 000 + 4 000 000 + 800 000 + 300 000 + 1 500 000 + 400 000 = 18 400 000 ; soldes créditeurs 10 000 000 + 4 800 000 + 3 000 000 + 600 000 = 18 400 000. Égalité vérifiée. Commentaire : la TVA du mois est un crédit de 500 000, car l''entreprise a beaucoup acheté en démarrant.
 
-## 1:24:00 – 1:30:00 · Évaluation finale
+## 1:15:00 – 1:22:00 · Synthèse
 
-- Question 1 : définissez la finance indirecte. Réponse : financement passant par un intermédiaire (banque, SFD) qui collecte l''épargne, accorde des crédits et supporte le risque.
-- Question 2 : citez deux missions de la BCEAO. Réponse : émettre la monnaie et conduire la politique monétaire commune (aussi : gérer les réserves de change, veiller aux systèmes de paiement).
-- Question 3 : une action cote 2 000 francs et verse 100 francs de dividende. Rendement du dividende ? Réponse : 100 / 2 000 = 5 %.
-- Question 4 : 4 000 000 d''actions à 2 000 francs : capitalisation ? Réponse : 8 milliards de francs.
-- Question 5 : taux nominal 5 %, inflation 2 % (fictifs) : taux réel exact ? Réponse : 1,05 / 1,02 − 1 ≈ 2,94 %.
+Trois réflexes pour l''examen. Un : calculer la facture dans l''ordre brut, remise, rabais, escompte, TVA. Deux : écrire chaque ligne avec numéro, intitulé, sens et montant, puis contrôler l''équilibre. Trois : à la fin du mois, liquider la TVA et vérifier la balance. N''oubliez pas : tous les taux de TVA de cette séance sont fictifs ; au Sénégal comme ailleurs, le taux réel figure dans le code général des impôts en vigueur.
 
-« Merci pour votre attention. Refaites les exercices de la leçon 2 avant la prochaine séance. »', 'video', 90, false, 60
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Introduction à la finance et au système financier');
+## 1:22:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : une facture brute de 1 000 000 avec remise 10 % et escompte 2 % : net financier ? Réponse : 900 000 − 18 000 = 882 000.
+- Question 2 : TVA sur ce net financier au taux fictif de 20 % ? Réponse : 176 400.
+- Question 3 : chez l''acheteur, dans quel compte et quel sens enregistre-t-on l''escompte ? Réponse : 773 Escomptes obtenus, au crédit.
+- Question 4 : TVA collectée 900 000, récupérable 1 100 000 : conséquence ? Réponse : crédit de TVA de 200 000 au 4449, reportable.
+- Question 5 : quel document recense tous les comptes avec leurs soldes ? Réponse : la balance.
+
+Merci pour votre attention. Refaites le mini-cas seuls, sans regarder la correction, avant la prochaine séance.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Comptabilité générale 1');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Mathématiques financières appliquées', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Mathématiques financières', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 1 Finance et Gestion.
-- Objectifs : maîtriser intérêts simples et composés, valeur actuelle, taux équivalents, annuités, et construire sans erreur un tableau d''amortissement d''emprunt indivis.
-- Matériel : tableau blanc, diaporama avec un modèle de tableau d''amortissement vide, calculatrice scientifique.
-- Prérequis : puissances et puissances négatives ; leçon 3 du cours.
-- Tous les taux sont fictifs pour l''exemple.
+- Public : étudiants de Licence 1.
+- Objectifs : choisir entre intérêts simples et composés, calculer un escompte, une valeur actuelle, une annuité et un tableau d''amortissement.
+- Matériel : diaporama, calculatrice scientifique (touche puissance), fiche de formules.
+- Prérequis : pourcentages, puissances.
+- Convention : les taux d''intérêt utilisés sont des taux imaginés pour les exemples.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Pourquoi le temps a un prix
+## 00:00 – 05:00 · Pourquoi les mathématiques financières ?
 
-« Bonjour. Je vous pose une question : préférez-vous recevoir 1 000 000 de francs aujourd''hui ou 1 000 000 de francs dans un an ? Tout le monde choisit aujourd''hui. Pourquoi ? Parce qu''avec l''argent d''aujourd''hui, je peux le placer, le dépenser ou me protéger d''un imprévu. L''intérêt est le prix du temps. Toute la séance repose sur cette idée : on ne compare jamais des sommes versées à des dates différentes sans les ramener à la même date. »
+Bonjour. Un franc aujourd''hui ne vaut pas un franc dans un an : on peut le placer, et il rapporte un intérêt. Toute la matière repose sur cette idée. Elle sert à négocier un crédit, à choisir entre payer comptant ou à crédit, à évaluer un investissement. Visuel : une flèche du temps, avec un capital qui grossit vers la droite (capitalisation) et qui rétrécit vers la gauche (actualisation).
 
-## 05:00 – 15:00 · Intérêts simples
+## 05:00 – 20:00 · Les intérêts simples et l''escompte
 
-« Pour les opérations de moins d''un an, on utilise l''intérêt simple : I = C × t × j / 360, l''année commerciale comptant 360 jours. Exemple : une entreprise de Rufisque place 3 000 000 de francs pendant 60 jours à 8 %. I = 3 000 000 × 0,08 × 60 / 360 = 40 000 francs. La valeur acquise est 3 040 000 francs. Piège classique : oublier de diviser par 360 et trouver 14 400 000 francs d''intérêts ! Un résultat absurde doit toujours vous alerter. »
+Formule au tableau : I = C × t × n ÷ 360, avec n en jours. Exemple : une tontine d''entreprise place 2 400 000 à 6 % pendant 150 jours. I = 2 400 000 × 0,06 × 150 ÷ 360 = 60 000. Valeur acquise : 2 460 000.
 
-## 15:00 – 27:00 · Intérêts composés, valeur acquise, valeur actuelle
+Pour calculer un nombre de jours entre deux dates, on compte les jours réels du calendrier, mais on divise par 360 : c''est la convention commerciale. Du 10 mars au 30 avril : 21 jours restants en mars, plus 30 jours en avril, soit 51 jours.
 
-« Au-delà d''un an, les intérêts sont capitalisés. Valeur acquise : Cn = C0 × (1 + i)^n. Valeur actuelle : C0 = Cn × (1 + i)^−n. Exemple : 4 000 000 de francs placés 3 ans à 6 % donnent 4 000 000 × 1,06³ = 4 764 064 francs. À l''inverse, 4 000 000 de francs à recevoir dans 3 ans valent aujourd''hui, à 6 %, 4 000 000 × 1,06^−3 ≈ 3 358 477 francs. »
+L''escompte commercial : la banque achète votre effet avant l''échéance. Effet de 3 600 000 à 50 jours, taux 8 % : e = 3 600 000 × 0,08 × 50 ÷ 360 = 40 000. Avec une commission de 4 000 (tarif imaginé), agios 44 000, valeur nette 3 556 000. Question à la salle : pourquoi l''escompte se calcule-t-il sur la valeur nominale et non sur la valeur nette ? Parce que c''est la convention bancaire de l''escompte commercial ; elle avantage légèrement la banque.
 
-« Taux équivalents : quel taux semestriel donne le même résultat que 10 % par an ? (1,10)^(1/2) − 1 ≈ 4,88 %. Le taux proportionnel serait 5 %. Le taux mensuel équivalent est 1,10^(1/12) − 1 ≈ 0,797 %. Retenez : proportionnel pour l''intérêt simple, équivalent pour l''intérêt composé. »
+Les examinateurs aiment aussi les questions inverses. Retrouver le taux : un placement de 900 000 pendant 80 jours a rapporté 16 000 ; t = I × 360 ÷ (C × n) = 16 000 × 360 ÷ (900 000 × 80) = 0,08, soit 8 %. Retrouver le capital : quel capital, placé à 6 % pendant 120 jours, rapporte 24 000 ? C = I × 360 ÷ (t × n) = 24 000 × 360 ÷ (0,06 × 120) = 1 200 000. Je vous conseille de toujours partir de la formule de base et d''isoler l''inconnue, plutôt que d''apprendre quatre formules différentes.
 
-Visuel : un axe du temps avec 0, 1, 2, 3 et des flèches vers la droite (capitaliser) et vers la gauche (actualiser).
+Dernier point sur le court terme : le taux effectif de l''escompte. La banque vous remet 3 556 000 aujourd''hui et récupère 3 600 000 dans 50 jours. Le coût réel, rapporté à la somme effectivement reçue, est 44 000 × 360 ÷ (3 556 000 × 50), soit environ 8,91 % : plus que le taux affiché de 8 %, à cause de la commission et du calcul sur la valeur nominale. C''est une bonne question de réflexion pour un oral.
 
-## 27:00 – 38:00 · Les annuités constantes
+## 20:00 – 35:00 · Les intérêts composés
 
-« Une annuité est un versement régulier. Si un commerçant verse 300 000 francs à la fin de chaque année pendant 4 ans sur un compte rémunéré à 7 %, il dispose au dernier versement de Vn = 300 000 × (1,07⁴ − 1) / 0,07 ≈ 1 331 983 francs. Si une entreprise doit recevoir 2 000 000 de francs par an pendant 3 ans, la valeur actuelle de ces flux à 9 % est V0 = 2 000 000 × (1 − 1,09^−3) / 0,09 ≈ 5 062 589 francs. Ces deux formules sont la base des emprunts. »
+Cn = C0 × (1 + i)^n. Placement de 1 000 000 à 10 % pendant 3 ans : 1 000 000 × 1,1³ = 1 331 000. En intérêts simples, on aurait 1 300 000. Les 31 000 de différence, ce sont les intérêts des intérêts.
 
-« Une précision qui tombe souvent en QCM : ces formules supposent des versements en fin de période. Si les versements ont lieu en début de période, chaque flux est placé une période de plus : on multiplie la valeur obtenue par (1 + i). Lisez donc attentivement l''énoncé : “à la fin de chaque année” ou “au début de chaque année” ne donne pas le même résultat. »
+Taux équivalent et taux proportionnel : 12 % par an, c''est 1 % par mois en taux proportionnel, mais le taux mensuel équivalent est 1,12^(1/12) − 1, soit environ 0,9489 %. Retenez : en intérêts composés, on utilise le taux équivalent, sauf si l''énoncé précise un taux nominal capitalisé par période.
 
-## 38:00 – 45:00 · Pause interactive et quiz
+Actualisation : C0 = Cn × (1 + i)^(−n). Une prime de 2 000 000 promise dans 3 ans, taux 8 % : 2 000 000 ÷ 1,08³ = 1 587 664. C''est la valeur aujourd''hui de cette promesse.
 
-- Question 1 : intérêt de 1 800 000 francs placés 30 jours à 6 % ? Réponse : 1 800 000 × 0,06 × 30 / 360 = 9 000 francs.
-- Question 2 : vrai ou faux, le taux mensuel équivalent à 12 % annuel vaut exactement 1 % ? Réponse : faux, il vaut environ 0,949 %.
-- Question 3 : que signifie actualiser ? Réponse : ramener une somme future à sa valeur d''aujourd''hui, en la multipliant par (1 + i)^−n.
-- Question 4 : 1 000 000 de francs placés 2 ans à 10 % deviennent ? Réponse : 1 210 000 francs.
+## 35:00 – 45:00 · Pause quiz
 
-## 45:00 – 58:00 · Emprunt indivis : amortissement constant
+- Question 1 : intérêt simple de 600 000 à 9 % pendant 60 jours ? Réponse : 9 000.
+- Question 2 : valeur acquise de 1 000 000 à 5 % pendant 2 ans, intérêts composés ? Réponse : 1 102 500.
+- Question 3 : 1 % par mois est-il équivalent à 12 % par an en intérêts composés ? Réponse : non, 1,01^12 − 1 ≈ 12,68 %.
+- Question 4 : valeur actuelle de 1 210 000 dans 2 ans à 10 % ? Réponse : 1 000 000.
 
-« Passons au cœur de l''examen. La société fictive Sow Équipements SARL, à Thiès, emprunte 8 000 000 de francs sur 4 ans à 10 %. Première modalité : l''amortissement constant, 8 000 000 / 4 = 2 000 000 de francs par an. Je remplis le tableau ligne par ligne, et je vous demande de le faire avec moi. »
+## 45:00 – 1:00:00 · Les annuités
 
-- Année 1 : capital début 8 000 000 ; intérêt 800 000 ; amortissement 2 000 000 ; annuité 2 800 000.
-- Année 2 : 6 000 000 ; 600 000 ; 2 000 000 ; 2 600 000.
-- Année 3 : 4 000 000 ; 400 000 ; 2 000 000 ; 2 400 000.
-- Année 4 : 2 000 000 ; 200 000 ; 2 000 000 ; 2 200 000.
+Valeur acquise d''annuités constantes : Vn = a × [(1 + i)^n − 1] ÷ i. Valeur actuelle : V0 = a × [1 − (1 + i)^(−n)] ÷ i. Je montre au tableau d''où vient la formule : la somme des valeurs acquises de chaque versement est une suite géométrique de raison (1 + i).
 
-« Total des intérêts : 2 000 000 de francs. Les annuités baissent de 200 000 chaque année, soit l''amortissement multiplié par le taux. »
+Exemple : un jeune entrepreneur de Thiès épargne 200 000 à la fin de chaque mois pendant 24 mois, au taux mensuel de 0,5 %. V24 = 200 000 × (1,005^24 − 1) ÷ 0,005 = 5 086 391. Il aura versé 4 800 000 ; la différence, 286 391, ce sont les intérêts.
 
-## 58:00 – 1:12:00 · Emprunt indivis : annuités constantes
+Utilisons maintenant la valeur actuelle pour décider. Un fournisseur propose une chambre froide à 2 700 000 comptant, ou 3 versements annuels de 1 000 000, le premier dans un an. Au taux de 6 %, la valeur actuelle des versements est 1 000 000 × (1 − 1,06^(−3)) ÷ 0,06 = 2 673 012. Elle est inférieure au prix comptant : le paiement échelonné est plus avantageux, de 26 988 en valeur d''aujourd''hui. Attention au piège : comparer 3 000 000 à 2 700 000 sans actualiser conduit à la mauvaise décision. On ne compare jamais des sommes situées à des dates différentes sans les ramener à la même date.
 
-« Deuxième modalité, la plus courante dans les banques : l''annuité constante. a = C × i / [1 − (1 + i)^−n] = 8 000 000 × 0,10 / (1 − 1,10^−4) ≈ 2 523 766 francs. Méthode pour chaque ligne : intérêt = capital début × taux ; amortissement = annuité − intérêt ; capital fin = capital début − amortissement. »
+## 1:00:00 – 1:15:00 · Correction commentée : l''emprunt à annuités constantes
 
-- Année 1 : capital début 8 000 000 ; intérêt 800 000 ; amortissement 1 723 766 ; capital fin 6 276 234.
-- Année 2 : 6 276 234 ; 627 623 ; 1 896 143 ; 4 380 091.
-- Année 3 : 4 380 091 ; 438 009 ; 2 085 757 ; 2 294 334.
-- Année 4 : 2 294 334 ; 229 432 ; 2 294 334 ; 0.
+Exercice : un atelier de couture emprunte 5 000 000 sur 3 ans à 10 %. Annuité : a = 5 000 000 × 0,10 ÷ (1 − 1,1^(−3)) = 2 010 574. Tableau, arrondi au franc :
 
-« Dans la dernière ligne, l''amortissement est égal au capital restant et l''intérêt absorbe l''écart d''arrondi. Contrôles : premier amortissement = a − C × i = 2 523 766 − 800 000 = 1 723 766 ; les amortissements sont multipliés par 1,10 d''une année à l''autre ; leur somme fait 8 000 000. Total des intérêts : 4 × 2 523 766 − 8 000 000 ≈ 2 095 064 francs, un peu plus qu''en amortissement constant. »
+- Année 1 : capital dû en début 5 000 000 ; intérêt 500 000 ; amortissement 1 510 574 ; annuité 2 010 574 ; capital restant dû 3 489 426
+- Année 2 : capital dû en début 3 489 426 ; intérêt 348 943 ; amortissement 1 661 631 ; annuité 2 010 574 ; capital restant dû 1 827 795
+- Année 3 : capital dû en début 1 827 795 ; intérêt 182 780 ; amortissement 1 827 795 ; annuité 2 010 575 ; capital restant dû 0
 
-Exercice corrigé en direct : « Un ménage de Pikine emprunte 6 000 000 de francs sur 5 ans à 7,5 %. Annuité ? » Correction : a = 6 000 000 × 0,075 / (1 − 1,075^−5) ≈ 1 482 988 francs ; première ligne : intérêt 450 000, amortissement 1 032 988, capital fin 4 967 012.
+Commentaire ligne par ligne : l''intérêt de l''année 1 est 10 % de 5 000 000 ; l''amortissement est l''annuité moins l''intérêt ; le capital restant dû diminue d''autant. Vérifications : la somme des amortissements fait 5 000 000 ; le dernier capital restant dû est nul ; les amortissements augmentent chaque année d''environ 10 %, car ils forment une suite géométrique de raison 1,1. À l''examen, on vous demandera parfois une seule ligne du tableau, par exemple la troisième : inutile alors de tout recalculer, le capital restant dû après k annuités est égal à la valeur actuelle des annuités restantes. Pensez aussi à la lecture comptable : les intérêts vont en charges financières, l''amortissement du capital réduit la dette d''emprunt.
 
-## 1:12:00 – 1:20:00 · Remboursement in fine et comparaison
+## 1:15:00 – 1:22:00 · Synthèse
 
-« Troisième modalité : in fine. On paie 800 000 francs d''intérêts chaque année et on rembourse les 8 000 000 à la fin ; dernière annuité 8 800 000 francs ; total des intérêts 3 200 000 francs. Comparaison : amortissement constant 2 000 000, annuités constantes environ 2 095 064, in fine 3 200 000. Plus on rembourse tard, plus on paie d''intérêts. Mais le choix dépend aussi de la trésorerie : un projet qui rapporte surtout les dernières années peut préférer l''in fine. »
+Court terme : intérêts simples, base 360. Long terme : intérêts composés. Capitaliser, c''est multiplier par (1 + i)^n ; actualiser, c''est diviser. Pour les annuités, retenez les deux formules et sachez de quelle date vous parlez. Pour un emprunt : annuité, puis tableau, puis contrôles.
 
-« Faisons ensemble un petit cas pratique. Le gérant de Sow Équipements prévoit des recettes faibles la première année, car il doit former ses techniciens, puis des recettes fortes ensuite. Quelle modalité lui conseiller ? L''amortissement constant est le moins cher, mais la première annuité, 2 800 000 francs, est la plus lourde. L''annuité constante lisse la charge à 2 523 766 francs. L''in fine allège les premières années mais concentre un risque énorme à l''échéance. Une réponse argumentée : l''annuité constante, avec un compromis entre coût total et charge de la première année ; l''in fine seulement si l''entreprise peut constituer progressivement une épargne pour le remboursement final. À l''examen, ce qui compte est l''argumentation chiffrée. »
+Les erreurs les plus fréquentes dans les copies : utiliser 365 jours au lieu de 360 sans que l''énoncé le demande ; écrire 8 au lieu de 0,08 dans la formule ; diviser un taux annuel par 12 en intérêts composés ; oublier d''arrondir au franc ; oublier de conclure par une phrase. Une dernière astuce : estimez toujours l''ordre de grandeur avant de calculer. Un capital placé à 10 % pendant 3 ans doit augmenter d''un peu plus de 30 % : si vous trouvez 300 %, il y a une erreur.
+
+## 1:22:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : intérêt simple de 1 800 000 à 8 % pendant 45 jours ? Réponse : 18 000.
+- Question 2 : valeur acquise de 500 000 à 6 % pendant 2 ans en intérêts composés ? Réponse : 561 800.
+- Question 3 : valeur actuelle de 1 331 000 payable dans 3 ans à 10 % ? Réponse : 1 000 000.
+- Question 4 : valeur acquise de 4 annuités de 100 000 à 10 % ? Réponse : 100 000 × (1,1^4 − 1) ÷ 0,1 = 464 100.
+- Question 5 : dans un emprunt à annuités constantes, que deviennent les intérêts au fil des années ? Réponse : ils diminuent, car le capital restant dû diminue.
+
+Merci. Refaites le tableau d''amortissement seul, puis vérifiez avec la correction.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Mathématiques financières');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Droit des affaires OHADA', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 Comptabilité et Gestion.
+- Objectifs : situer l''OHADA, qualifier un commerçant et un acte de commerce, choisir une forme de société, réussir un cas pratique juridique.
+- Matériel : diaporama, Actes uniformes (AUDCG, AUSCGIE) en version officielle, fiche méthode du cas pratique.
+- Prérequis : leçon « Droit des affaires OHADA : l''essentiel pour l''examen ».
+- Précaution : les seuils, montants et délais doivent toujours être vérifiés dans le texte officiel en vigueur ; cette séance présente des principes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bonjour à tous. Vous êtes futurs comptables : pourquoi du droit ? Parce que chaque écriture traduit un acte juridique : une vente, un apport, un contrat de prêt. Et parce que la forme de l''entreprise détermine ses obligations comptables, la responsabilité des associés et le contrôle des comptes. Aujourd''hui : l''OHADA, le commerçant, les sociétés, et la méthode du cas pratique.
+
+## 05:00 – 15:00 · L''OHADA, ses Actes uniformes et la CCJA
+
+L''OHADA naît du traité de Port-Louis en 1993, révisé à Québec en 2008. Dix-sept États membres, dont le Sénégal. Son originalité : les Actes uniformes s''appliquent directement dans chaque État, sans loi de transposition, et priment sur les dispositions nationales contraires. Je les cite au tableau : droit commercial général, sociétés commerciales et GIE, sûretés, procédures de recouvrement et voies d''exécution, procédures collectives, arbitrage, droit comptable et information financière, transport de marchandises par route, sociétés coopératives, médiation. La CCJA, à Abidjan, unifie l''interprétation. Question : un litige sur un bail commercial à Dakar peut-il finir devant la CCJA ? Oui, en cassation, puisqu''il porte sur l''application d''un Acte uniforme.
+
+## 15:00 – 30:00 · Le commerçant et les actes de commerce
+
+Définition : est commerçant celui qui fait de l''accomplissement d''actes de commerce par nature sa profession. Je décompose : des actes de commerce par nature ; accomplis habituellement, à titre de profession ; en son nom et pour son compte.
+
+Trois familles d''actes. Par nature : achat pour revendre, banque, change, assurance, transport, intermédiation. Par la forme : lettre de change, billet à ordre, warrant, et actes des sociétés commerciales par la forme. Par accessoire : actes d''un commerçant pour les besoins de son commerce, comme l''achat d''un véhicule de livraison.
+
+Exemple commenté : Ibrahima, chauffeur salarié d''une société de transport, n''est pas commerçant : il agit pour le compte de son employeur. Sa voisine, qui achète du poisson au port de Joal et le revend chaque jour à Thiès, l''est.
+
+Autres situations à trancher avec vous. Un agriculteur qui vend sa propre récolte d''arachide au marché : en principe, il ne fait pas d''achat pour revendre ; il vend le produit de son travail, ce qui relève d''une activité civile. Un médecin qui ouvre un cabinet : profession libérale, civile, non commerciale. Une gérante de SARL : elle n''est pas commerçante du seul fait de sa fonction, puisque c''est la société qui fait le commerce. En revanche, l''associé d''une SNC a la qualité de commerçant. Retenez la question à se poser : qui accomplit l''acte, à quel titre, et pour le compte de qui ?
+
+Je vous montre aussi l''intérêt pratique de la qualification. Entre commerçants, la preuve est en principe libre ; les règles de prescription et le tribunal compétent peuvent différer de ceux applicables aux actes civils. C''est pourquoi le juge commence toujours par qualifier l''acte et la personne.
+
+## 30:00 – 40:00 · Obligations, RCCM et entreprenant
+
+Le commerçant s''immatricule au RCCM, tient une comptabilité, respecte ses obligations fiscales et sociales. L''immatriculation fait présumer la qualité de commerçant. L''entreprenant, statut créé par la révision de l''AUDCG, fait une simple déclaration d''activité ; ses obligations comptables sont allégées tant que son chiffre d''affaires reste sous le seuil fixé par les textes. Pour le Sénégal, c''est un outil de formalisation de nombreux petits commerces.
+
+## 40:00 – 50:00 · Pause quiz
+
+- Question 1 : où siège la CCJA ? Réponse : Abidjan.
+- Question 2 : la signature d''une lettre de change par un fonctionnaire est-elle un acte de commerce ? Réponse : oui, par la forme ; elle ne fait pas pour autant de lui un commerçant.
+- Question 3 : qu''est-ce qui fait présumer la qualité de commerçant ? Réponse : l''immatriculation au RCCM.
+- Question 4 : l''entreprenant s''immatricule-t-il ? Réponse : non, il fait une déclaration d''activité au RCCM.
+
+## 50:00 – 1:05:00 · Les sociétés commerciales
+
+Le contrat de société : des apports, l''affectio societatis, la vocation aux bénéfices et la contribution aux pertes. La personnalité morale naît avec l''immatriculation. Je projette un tableau comparatif décrit en texte. SNC : associés commerçants, responsabilité indéfinie et solidaire. SCS : commandités indéfiniment responsables, commanditaires limités à leurs apports. SARL : responsabilité limitée aux apports, parts sociales, gérant. SA : actions, conseil d''administration ou administrateur général, commissaire aux comptes. SAS : grande liberté statutaire, président. Le GIE n''est pas une société : il prolonge l''activité de ses membres.
+
+Regardons le fonctionnement. Dans la SARL, le ou les gérants dirigent ; les décisions importantes, comme la modification des statuts, sont prises par les associés en assemblée, selon des conditions de majorité prévues par l''Acte uniforme. Les comptes annuels sont approuvés chaque année par les associés. Dans la SA, le conseil d''administration fixe les orientations et contrôle, le directeur général ou le président-directeur général dirige ; l''assemblée générale ordinaire approuve les comptes et décide de l''affectation du résultat ; l''assemblée extraordinaire modifie les statuts. Le commissaire aux comptes certifie les comptes : vous le retrouverez en Licence 3 dans la matière audit. Dans la SAS, les statuts organisent librement la direction, avec au moins un président qui représente la société.
+
+Pour le capital minimum, l''Acte uniforme fixe des montants pour la SARL et la SA et permet aux États de retenir d''autres montants pour la SARL : vérifiez le texte en vigueur dans votre pays. Ne récitez jamais un chiffre dont vous n''êtes pas sûr à l''examen : expliquez le principe.
+
+## 1:05:00 – 1:20:00 · Correction commentée d''un cas pratique
+
+Énoncé : Mariama et Ousmane exploitent ensemble, depuis trois ans, un restaurant à Saly, sans statuts écrits ni immatriculation. Un fournisseur impayé poursuit Ousmane seul pour la totalité de la dette. Ousmane conteste : c''est Mariama qui a passé la commande.
+
+Méthode en quatre temps. Les faits : deux personnes exploitent en commun une activité commerciale, sans immatriculation. Le problème : quelle est la nature de leur groupement et quelle est l''étendue de la responsabilité d''Ousmane ? La règle : une société non immatriculée n''a pas la personnalité morale ; l''AUSCGIE organise la société créée de fait, à laquelle s''appliquent les règles de la SNC, avec une responsabilité indéfinie et solidaire des associés. Application : Mariama et Ousmane ont mis des moyens en commun et partagent les résultats ; leur comportement révèle une société créée de fait. Solution : Ousmane peut être poursuivi pour la totalité ; il se retournera ensuite contre Mariama pour sa part. Conseil : régulariser en rédigeant des statuts et en immatriculant une SARL ou une SAS pour limiter leur responsabilité à l''avenir.
+
+Variante pour vérifier que vous avez compris : et si Mariama et Ousmane avaient exploité le restaurant sous la forme d''une SARL régulièrement immatriculée ? Le fournisseur aurait dû agir contre la société, personne morale, débitrice de la dette. Les associés n''auraient répondu des dettes qu''à hauteur de leurs apports, sauf engagement personnel, par exemple une caution donnée à la banque, ou faute de gestion engageant la responsabilité du gérant. Vous voyez que le choix de la forme sociale n''est pas un détail administratif : il protège, ou non, le patrimoine personnel des associés. Prenez deux minutes pour rédiger cette variante en cinq lignes, je ramasse quelques copies pour les commenter.
 
 ## 1:20:00 – 1:24:00 · Synthèse
 
-« Retenez quatre formules : I = C × t × j / 360 ; Cn = C0 × (1 + i)^n ; V0 = a × [1 − (1 + i)^−n] / i ; a = C × i / [1 − (1 + i)^−n]. Et trois contrôles pour tout tableau : capital final nul, somme des amortissements égale à l''emprunt, annuité égale à intérêt plus amortissement. »
+Retenez la définition du commerçant et les trois familles d''actes de commerce. Erreurs fréquentes dans les copies : réciter le cours sans l''appliquer aux faits ; confondre acte de commerce par la forme et qualité de commerçant ; oublier de conclure ; inventer un chiffre ou un numéro d''article. Un correcteur préfère une règle bien expliquée à une référence fausse. Pour une société, regardez d''abord la responsabilité des associés, puis l''organisation et le contrôle. Et pour tout cas pratique : faits, problème, règle, application, solution.
 
 ## 1:24:00 – 1:30:00 · Évaluation finale
 
-- Question 1 : valeur acquise de 2 000 000 de francs placés 2 ans à 5 % ? Réponse : 2 000 000 × 1,05² = 2 205 000 francs.
-- Question 2 : valeur actuelle à 10 % de 1 331 000 francs payables dans 3 ans ? Réponse : 1 331 000 / 1,331 = 1 000 000 de francs.
-- Question 3 : emprunt de 5 000 000 de francs sur 5 ans en amortissement constant à 8 % : première annuité ? Réponse : amortissement 1 000 000 + intérêt 400 000 = 1 400 000 francs.
-- Question 4 : dans un tableau à annuités constantes, quelle est la raison de la suite des amortissements ? Réponse : 1 + i.
-- Question 5 : taux trimestriel proportionnel à 12 % annuel ? Réponse : 3 %.
-
-« Pour la prochaine séance, refaites seuls le tableau à annuités constantes sans regarder le corrigé. »', 'video', 90, false, 70
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Mathématiques financières appliquées');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Statistiques descriptives pour la finance', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 1 Finance, Banque et Gestion.
-- Objectifs : résumer une série financière par ses paramètres de position et de dispersion, traiter une série classée, calculer indices et taux de croissance moyens, mesurer la liaison entre deux séries.
-- Matériel : tableau blanc, diaporama avec les séries de données, calculatrice en mode statistique.
-- Prérequis : leçon 4 du cours ; puissances et racines.
-- Toutes les données sont fictives.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Pourquoi la statistique en finance
-
-« Bonjour. Un gestionnaire de fonds à Dakar vous dit : “Mon fonds a rapporté 6 % par an en moyenne.” Est-ce suffisant pour décider d''y placer vos économies ? Non. Il faut savoir si ces 6 % sont réguliers ou s''ils cachent des années à +20 % et d''autres à −10 %. La statistique descriptive donne les outils pour résumer la rentabilité et le risque. Aujourd''hui : position, dispersion, séries classées, indices, et liaison entre deux titres. »
-
-## 05:00 – 12:00 · Le vocabulaire indispensable
-
-« La population, ce sont les éléments étudiés : par exemple les années de vie d''un fonds. L''individu, c''est chaque année. La variable, c''est la rentabilité annuelle : variable quantitative continue. Une variable comme le nombre de crédits accordés par jour est quantitative discrète ; le secteur d''activité d''un emprunteur est une variable qualitative. L''effectif est le nombre d''individus par modalité, la fréquence est l''effectif divisé par l''effectif total. »
-
-## 12:00 – 25:00 · Série simple : rentabilité d''un fonds
-
-« Le fonds fictif Fonds Teranga Croissance a eu ces rentabilités annuelles en % sur 6 ans : 8 ; 12 ; −4 ; 10 ; 6 ; 4. Calculons ensemble. »
-
-- Moyenne : (8 + 12 − 4 + 10 + 6 + 4) / 6 = 36 / 6 = 6 %.
-- Médiane : série rangée −4 ; 4 ; 6 ; 8 ; 10 ; 12 ; N pair, donc médiane = (6 + 8) / 2 = 7 %.
-- Étendue : 12 − (−4) = 16 points.
-- Écarts à la moyenne : 2 ; 6 ; −10 ; 4 ; 0 ; −2. Carrés : 4 ; 36 ; 100 ; 16 ; 0 ; 4 ; somme 160.
-- Variance : 160 / 6 ≈ 26,67. Écart-type : √26,67 ≈ 5,16 %.
-
-« Interprétation : la rentabilité tourne autour de 6 % mais avec une dispersion d''environ 5 points ; une année négative montre que le risque de perte existe. Si votre enseignant utilise la variance d''échantillon, vous diviserez par N − 1 = 5 : 32, écart-type ≈ 5,66 %. Écrivez toujours la formule choisie. »
-
-« Astuce de calculatrice : en mode statistique, saisissez les six valeurs, puis lisez la moyenne, l''écart-type de population (souvent noté σx ou σn) et l''écart-type d''échantillon (noté sx ou σn−1). Mais à l''examen, montrez le détail du calcul : un résultat sans démarche rapporte peu de points, et un détail juste avec une erreur de frappe finale rapporte presque tous les points. »
-
-## 25:00 – 37:00 · Série classée : l''épargne des membres d''une mutuelle
-
-« Une mutuelle d''épargne fictive de Louga classe 100 membres selon leur épargne en milliers de francs : [0 ; 50[ : 20 ; [50 ; 100[ : 35 ; [100 ; 200[ : 30 ; [200 ; 400[ : 15. Première étape : les centres de classes, 25 ; 75 ; 150 ; 300. »
-
-- Moyenne : (25 × 20 + 75 × 35 + 150 × 30 + 300 × 15) / 100 = 12 125 / 100 = 121,25 milliers de francs.
-- Variance : Σni × ci² = 2 234 375 ; divisé par 100 : 22 343,75 ; moins 121,25² = 14 701,56 ; variance ≈ 7 642,19 ; écart-type ≈ 87,4 milliers de francs.
-- Médiane : effectifs cumulés 20 ; 55 ; 85 ; 100. La 50e observation se trouve dans [50 ; 100[. Me = 50 + (50 − 20) / 35 × 50 ≈ 92,9 milliers de francs.
-- Classe modale : densités 20 / 50 = 0,4 ; 35 / 50 = 0,7 ; 30 / 100 = 0,3 ; 15 / 200 = 0,075. Classe modale : [50 ; 100[.
-
-« La moyenne (121) dépasse la médiane (93) : quelques gros épargnants tirent la moyenne. Dans un rapport, pour décrire le membre typique, la médiane est plus parlante. »
-
-## 37:00 – 45:00 · Pause interactive et quiz
-
-- Question 1 : quelle mesure de position n''est pas influencée par les valeurs extrêmes ? Réponse : la médiane.
-- Question 2 : dans quelle unité s''exprime la variance d''une série en FCFA ? Réponse : en FCFA au carré ; l''écart-type est en FCFA.
-- Question 3 : moyenne de 4 ; 6 ; 8 ; 10 ? Réponse : 7.
-- Question 4 : médiane de 3 ; 9 ; 5 ; 7 ; 11 ? Réponse : on range 3 ; 5 ; 7 ; 9 ; 11, médiane 7.
-- Question 5 : avec des classes d''amplitudes inégales, comment trouver la classe modale ? Réponse : en comparant les densités, effectif divisé par amplitude.
-
-## 45:00 – 57:00 · Comparer le risque : le coefficient de variation
-
-« Deux titres fictifs, A et B, ont ces rentabilités trimestrielles en % : A : 3 ; 5 ; 4 ; 6 ; 2. B : 6 ; −2 ; 10 ; 1 ; 5. Les deux ont une moyenne de 4 %. Variance de A : 2, écart-type ≈ 1,41 %. Variance de B : 17,2, écart-type ≈ 4,15 %. CV de A ≈ 0,35 ; CV de B ≈ 1,04. À rentabilité moyenne égale, A est nettement moins risqué. Un investisseur qui n''aime pas le risque choisit A. Le CV est particulièrement utile quand les moyennes diffèrent, car il ramène le risque à une unité de rentabilité. »
-
-Exercice corrigé en direct : vérifier la variance de B. Écarts : 2 ; −6 ; 6 ; −3 ; 1 ; carrés : 4 ; 36 ; 36 ; 9 ; 1 ; somme 86 ; 86 / 5 = 17,2.
-
-## 57:00 – 1:08:00 · Indices et taux de croissance annuel moyen
-
-« L''encours de crédit d''une banque fictive passe de 1,80 à 2,31 milliards de francs en 3 ans. Indice base 100 : 2,31 / 1,80 × 100 ≈ 128,3, soit une hausse de 28,3 %. Le TCAM vaut (2,31 / 1,80)^(1/3) − 1 ≈ 8,67 % par an. L''erreur classique serait de diviser 28,3 % par 3 et d''annoncer 9,4 % : c''est faux, car les hausses se composent comme des intérêts composés. Autre exemple simple pour vérifier : une valeur passe de 100 à 121 en 2 ans ; TCAM = (121 / 100)^(1/2) − 1 = 10 %. En effet, 100 × 1,1 × 1,1 = 121. »
-
-## 1:08:00 – 1:20:00 · Covariance et corrélation
-
-« Deux séries X et Y sur 4 périodes. X : 2 ; 4 ; 6 ; 8. Y : 1 ; 3 ; 2 ; 6. Moyennes : 5 et 3. Produits des écarts : (−3)(−2) = 6 ; (−1)(0) = 0 ; (1)(−1) = −1 ; (3)(3) = 9 ; somme 14 ; covariance = 14 / 4 = 3,5. Écarts-types : σX = √5 ≈ 2,236 ; σY = √3,5 ≈ 1,871. Corrélation : r = 3,5 / (2,236 × 1,871) ≈ 0,84. »
-
-« Lecture : r proche de 1, liaison positive forte ; proche de −1, liaison négative forte ; proche de 0, pas de liaison linéaire. En finance, combiner deux titres faiblement ou négativement corrélés réduit le risque du portefeuille : c''est l''idée de la diversification, que vous approfondirez en Licence 2 et 3. Attention : corrélation ne veut pas dire causalité. »
-
-## 1:20:00 – 1:25:00 · Synthèse
-
-« Retenez : moyenne, médiane, mode pour la position ; étendue, variance, écart-type, CV pour la dispersion ; centres de classes, interpolation et densités pour les séries classées ; TCAM = (Vn / V0)^(1/n) − 1 ; r = cov / (σX × σY). À l''examen, chaque calcul se termine par une phrase d''interprétation en langage financier : rentabilité, risque, régularité. Pour réviser, reprenez les séries de cette séance et refaites-les sans regarder vos notes, en chronométrant : à l''examen, une série simple doit être traitée en moins de dix minutes. »
-
-## 1:25:00 – 1:30:00 · Évaluation finale
-
-- Question 1 : moyenne et médiane de 2 ; 5 ; 5 ; 8 ? Réponse : moyenne 5, médiane 5.
-- Question 2 : variance de 2 ; 5 ; 5 ; 8 ? Réponse : écarts −3 ; 0 ; 0 ; 3 ; somme des carrés 18 ; variance 18 / 4 = 4,5.
-- Question 3 : deux fonds de moyennes 5 % et 10 %, d''écarts-types 2 % et 5 % : lequel a le CV le plus faible ? Réponse : le premier (0,4 contre 0,5).
-- Question 4 : une valeur double en 4 ans : TCAM ? Réponse : 2^(1/4) − 1 ≈ 18,9 % par an.
-- Question 5 : que signifie r = −0,9 ? Réponse : une forte liaison linéaire négative : quand une série monte, l''autre a tendance à baisser.
-
-« Merci. Entraînez-vous avec le mode statistique de votre calculatrice : il vous fera gagner un temps précieux à l''examen. »', 'video', 90, false, 80
-from public.courses c where c.slug = 'lic-fin-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Statistiques descriptives pour la finance');
-
--- Cours : Finance Licence 2 : réussir les examens de deuxième année
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'lic-fin-l2', (select id from public.levels where name = 'Licence 2'), null, 'Finance', 'Finance Licence 2 : réussir les examens de deuxième année', 'Ce cours prépare aux examens de deuxième année de Licence en finance : analyse financière selon le SYSCOHADA révisé (soldes intermédiaires de gestion, CAF, bilan fonctionnel, FR, BFR, trésorerie nette, ratios), gestion de trésorerie (plan de trésorerie, financements à court terme) et marchés financiers (actions, obligations, rendement, évaluation simple). Il s''adresse aux étudiants de Licence 2 du Sénégal et de l''espace UEMOA. Prérequis : comptabilité générale et mathématiques financières de Licence 1.', true, 352
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Licence 2 en Finance', '## Objectifs de la leçon
-
-- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.
-- Connaître les trois matières de finance de l''année et les attentes des correcteurs.
-- Maîtriser les types d''épreuves de Licence 2, en particulier le cas de diagnostic financier.
-- Organiser six semaines de révision efficaces.
-
-## 1. La Licence 2 dans le système LMD
-
-La Licence 2 correspond aux semestres 3 et 4 du cycle de Licence. Comme en première année, chaque semestre est découpé en unités d''enseignement (UE) qui donnent des crédits, et chaque UE regroupe une ou plusieurs matières évaluées par un contrôle continu et un examen terminal, avec une session de rattrapage. Les crédits, coefficients, seuils de validation, règles de compensation et conditions de passage en Licence 3 sont propres à chaque établissement : consultez le règlement des études et la maquette de votre filière auprès de la scolarité.
-
-Ce qui change en Licence 2 : les matières deviennent plus intégrées. Un même sujet peut demander de lire des états financiers, de calculer un besoin de financement, puis de proposer une solution de financement à court terme ou un placement. L''examinateur évalue désormais votre capacité à interpréter et à recommander, pas seulement à calculer.
-
-## 2. Les matières de finance de la Licence 2
-
-- Analyse financière : lecture du compte de résultat et du bilan selon le SYSCOHADA révisé, soldes intermédiaires de gestion (marge commerciale, valeur ajoutée, excédent brut d''exploitation, résultat d''exploitation, résultat des activités ordinaires, résultat hors activités ordinaires, résultat net), capacité d''autofinancement, bilan fonctionnel, fonds de roulement, besoin en fonds de roulement, trésorerie nette, ratios.
-- Gestion de trésorerie : plan (ou budget) de trésorerie, encaissements et décaissements, financements à court terme (découvert, escompte, affacturage, crédit de campagne, facilités de caisse), placements de trésorerie excédentaire, calcul du coût réel d''un financement.
-- Marchés financiers 1 : fonctionnement du marché financier régional (BRVM, SGI, Dépositaire central / Banque de règlement), actions (rendement, dividende, PER, modèle de Gordon-Shapiro), obligations (prix, coupon, rendement actuariel, relation inverse entre taux et prix), rendement d''un portefeuille simple.
-
-Ces matières s''appuient directement sur la comptabilité générale et les mathématiques financières de Licence 1 : si vos tableaux d''amortissement ou vos calculs d''actualisation sont fragiles, révisez-les en priorité.
-
-## 3. Les types d''épreuves
-
-- Le cas de diagnostic financier : on vous donne un compte de résultat et un bilan d''une entreprise fictive. On attend les SIG, la CAF, le bilan fonctionnel, deux ou trois ratios et un commentaire structuré (forces, faiblesses, recommandations). C''est l''épreuve reine de la Licence 2.
-- Le plan de trésorerie : construire un budget mensuel, repérer les mois déficitaires, choisir le financement le moins coûteux. La présentation en tableau (ici décrite ligne par ligne) doit être claire et vérifiable.
-- L''exercice d''évaluation : prix d''une obligation, valeur d''une action par le modèle de Gordon-Shapiro, rendement d''un placement.
-- Le QCM ou les questions de cours : définitions (BFR, CAF, coupon couru, SGI), relations (si les taux montent, le prix des obligations baisse).
-- Le commentaire ou la courte dissertation : « L''entreprise rentable peut-elle faire faillite ? » (oui, par manque de trésorerie : c''est l''occasion de mobiliser FR, BFR et TN).
-
-## 4. Les erreurs fréquentes
-
-- Confondre résultat et trésorerie : une entreprise bénéficiaire peut avoir une trésorerie négative si son BFR explose.
-- Oublier les retraitements du bilan fonctionnel (amortissements cumulés en ressources stables, valeurs brutes en emplois stables).
-- Intégrer les produits de cession d''immobilisations dans la CAF : c''est faux, ils en sont exclus.
-- Inscrire les ventes du mois dans les encaissements du mois alors que les clients paient à 30 ou 60 jours.
-- Calculer le coût d''un escompte sur la valeur nominale de l''effet au lieu du montant net réellement reçu.
-- Oublier qu''une hausse des taux fait baisser le prix des obligations existantes.
-- Utiliser des taux réels de mémoire : dans ce cours, les taux d''intérêt et d''impôt des exemples sont fictifs pour l''exemple. Pour un dossier réel, consultez les textes et publications officiels en vigueur.
-
-## 5. Méthode de révision
-
-- Une fiche par matière avec les schémas : bilan fonctionnel en quatre masses, cascade des SIG, plan de trésorerie type.
-- Un formulaire unique (CAF, FR, BFR, TN, ratios, Gordon-Shapiro, prix d''une obligation, coût de l''escompte).
-- Une méthode de commentaire : constat chiffré, explication, conséquence, recommandation.
-- Des sujets complets en temps limité, car la gestion du temps est le premier facteur d''échec dans les cas de diagnostic.
-
-## 6. Plan de révision sur six semaines
-
-- Semaine 1 : rappel du compte de résultat et du bilan SYSCOHADA ; cascade des SIG ; CAF par les deux méthodes.
-- Semaine 2 : bilan fonctionnel, FR, BFR, TN ; ratios de structure, d''activité et de rentabilité ; rédaction de commentaires.
-- Semaine 3 : plan de trésorerie (budgets des encaissements et des décaissements) ; financements à court terme et calcul de leur coût.
-- Semaine 4 : marchés financiers : organisation régionale, actions (rendement, PER, Gordon-Shapiro).
-- Semaine 5 : obligations (prix, rendement actuariel, coupon couru) ; reprise des points faibles.
-- Semaine 6 : deux sujets d''examen blancs (voir la leçon 5) en conditions réelles, correction, relecture du formulaire.
-
-## Points clés
-
-- En Licence 2, on attend des calculs justes et une interprétation argumentée.
-- Le diagnostic financier (SIG, CAF, FR, BFR, TN, ratios) est le cœur de l''année.
-- Résultat et trésorerie sont deux choses différentes.
-
-## Exercices pratiques
-
-- Exercice 1 : citez dans l''ordre les soldes intermédiaires de gestion du SYSCOHADA révisé, de la marge commerciale au résultat net.
-- Exercice 2 : vrai ou faux : « Une entreprise bénéficiaire ne peut pas avoir de problème de trésorerie. » Justifiez.
-- Exercice 3 : proposez un plan de commentaire pour un diagnostic financier.
-- Exercice 4 (cas pratique) : Ousmane, étudiant à Dakar, doit aussi préparer un stage pendant ses six semaines de révision. Il dispose de deux heures par soir en semaine et du samedi. Proposez une répartition.
-
-## Corrigé
-
-- Exercice 1 : marge commerciale, valeur ajoutée, excédent brut d''exploitation, résultat d''exploitation, résultat financier, résultat des activités ordinaires, résultat hors activités ordinaires, résultat net. Le chiffre d''affaires figure aussi dans le tableau des SIG.
-- Exercice 2 : faux. Le résultat mesure l''enrichissement, la trésorerie mesure l''argent disponible. Si les clients paient tard, si les stocks gonflent ou si l''entreprise investit sans financement à long terme, la trésorerie peut devenir négative malgré un bénéfice.
-- Exercice 3 : 1) activité et rentabilité (évolution du chiffre d''affaires, VA, EBE, résultat net, CAF) ; 2) équilibre financier (FR, BFR, TN) ; 3) structure et solvabilité (autonomie, endettement, capacité de remboursement) ; 4) conclusion et recommandations.
-- Exercice 4 : soirs de semaine (2 heures) : fiches et exercices courts d''une matière par soir, en tournant sur les trois matières ; samedi : un cas complet en temps limité. Semaines 1 et 2 : analyse financière ; semaines 3 et 4 : trésorerie puis marchés financiers ; semaines 5 et 6 : sujets blancs. On garde au moins un sujet complet par semaine en fin de période.', 'texte', 60, true, 10
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 2 en Finance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Analyse financière : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Calculer les soldes intermédiaires de gestion (SIG) du SYSCOHADA révisé et la capacité d''autofinancement (CAF).
-- Construire un bilan fonctionnel et calculer FR, BFR et trésorerie nette.
-- Calculer et commenter les principaux ratios.
-
-Cas fil rouge : Kër Textiles SA, entreprise fictive de Thiès (montants en millions de FCFA). Le taux d''impôt sur le résultat de 30 % est fictif pour l''exemple.
-
-## Fiche 1 : la cascade des SIG
-
-Données de l''exercice : ventes de marchandises 400 ; achats de marchandises 260 ; variation de stocks de marchandises 10 (déstockage) ; ventes de produits fabriqués 900 ; travaux et services vendus 50 ; produits accessoires 10 ; production stockée 20 ; subventions d''exploitation 10 ; autres produits 5 ; achats de matières premières 380 ; variation de stocks de matières −15 (stockage) ; autres achats 40 ; transports 30 ; services extérieurs 120 ; impôts et taxes 25 ; autres charges 10 ; charges de personnel 300 ; dotations aux amortissements, provisions et dépréciations 90 ; reprises 5 ; revenus financiers 8 ; frais financiers 40 ; produits des cessions d''immobilisations 30 ; valeur comptable des immobilisations cédées 18.
-
-- Marge commerciale = ventes de marchandises − (achats de marchandises ± variation de stocks) = 400 − (260 + 10) = 130.
-- Chiffre d''affaires = 400 + 900 + 50 + 10 = 1 360.
-- Valeur ajoutée = marge commerciale + ventes de produits fabriqués + travaux et services + produits accessoires + production stockée + subventions d''exploitation + autres produits − (achats de matières ± variation + autres achats + transports + services extérieurs + impôts et taxes + autres charges) = 1 125 − 590 = 535. Dans le SYSCOHADA, les subventions d''exploitation entrent dans la valeur ajoutée et les impôts et taxes en sont déduits.
-- Excédent brut d''exploitation (EBE) = VA − charges de personnel = 535 − 300 = 235.
-- Résultat d''exploitation = EBE + reprises − dotations = 235 + 5 − 90 = 150.
-- Résultat financier = 8 − 40 = −32.
-- Résultat des activités ordinaires (RAO) = 150 − 32 = 118.
-- Résultat hors activités ordinaires (RHAO) = 30 − 18 = 12.
-- Impôt sur le résultat (30 %, fictif) = 0,30 × (118 + 12) = 39.
-- Résultat net = 118 + 12 − 39 = 91.
-
-L''EBE mesure la performance économique avant amortissements et financement.
-
-## Fiche 2 : la capacité d''autofinancement
-
-La CAF est le surplus monétaire potentiel dégagé par l''activité, qui finance investissements, remboursements et dividendes.
-
-Méthode additive : CAF = résultat net + dotations − reprises − produits de cession d''immobilisations + valeur comptable des cessions = 91 + 90 − 5 − 30 + 18 = 164.
-
-Méthode soustractive : CAF = EBE + produits encaissables − charges décaissables (hors cessions) = 235 + 8 − 40 − 39 = 164.
-
-Les deux méthodes donnent le même résultat : c''est votre contrôle. Si l''entreprise distribue 40 de dividendes, l''autofinancement vaut 164 − 40 = 124.
-
-## Fiche 3 : le bilan fonctionnel
-
-Schéma décrit en texte : en haut, emplois stables (immobilisations brutes) face aux ressources stables (capitaux propres, amortissements et dépréciations cumulés, dettes financières) ; au milieu, actif et passif circulants d''exploitation et hors activités ordinaires (HAO) ; en bas, trésorerie-actif et trésorerie-passif.
-
-Bilan de Kër Textiles : immobilisations brutes 1 200 ; stocks 220 ; clients 300 ; autres créances d''exploitation 40 ; créances HAO 10 ; trésorerie-actif 35. Capitaux propres 660 ; amortissements et dépréciations cumulés 450 ; dettes financières 350 ; fournisseurs 180 ; dettes fiscales et sociales 90 ; dettes HAO 15 ; trésorerie-passif 60. Total des emplois = total des ressources = 1 805.
-
-- Ressources stables = 660 + 450 + 350 = 1 460.
-- Fonds de roulement net global (FR) = 1 460 − 1 200 = 260.
-- BFR d''exploitation = (220 + 300 + 40) − (180 + 90) = 290.
-- BFR hors activités ordinaires = 10 − 15 = −5.
-- BFR global = 285.
-- Trésorerie nette = FR − BFR = 260 − 285 = −25, et vérification : 35 − 60 = −25.
-
-Le FR, positif, ne couvre pas le BFR : l''entreprise dépend des concours bancaires courants. Le BFR d''exploitation représente 290 / 1 360 × 360 ≈ 77 jours de chiffre d''affaires.
-
-## Fiche 4 : les ratios essentiels
-
-- Délai clients ≈ clients / chiffre d''affaires × 360 = 300 / 1 360 × 360 ≈ 79 jours (en pratique, on rapporte les créances TTC au chiffre d''affaires TTC ; on raisonne ici hors taxes pour simplifier).
-- Délai fournisseurs ≈ fournisseurs / achats × 360 = 180 / (260 + 380 + 40) × 360 ≈ 95 jours.
-- Autonomie financière = capitaux propres / dettes financières = 660 / 350 ≈ 1,89.
-- Capacité de remboursement = dettes financières / CAF = 350 / 164 ≈ 2,1 années de CAF.
-- Rentabilité financière = résultat net / capitaux propres = 91 / 660 ≈ 13,8 %.
-- Taux de marge brute d''exploitation = EBE / CA = 235 / 1 360 ≈ 17,3 %.
-
-Commentaire type : Kër Textiles est rentable (marge d''EBE de 17 %, rentabilité financière proche de 14 %) et peu endettée. Sa faiblesse est son cycle d''exploitation : 79 jours de crédit clients gonflent le BFR et rendent la trésorerie négative. Recommandations : réduire les délais clients, renforcer le FR (capital ou emprunt à moyen terme), mieux gérer les stocks.
-
-## Points clés
-
-- Cascade SYSCOHADA : MC, VA, EBE, RE, RF, RAO, RHAO, RN.
-- CAF : additive et soustractive doivent concorder ; les cessions en sont exclues.
-- TN = FR − BFR = trésorerie-actif − trésorerie-passif.
-- Un ratio se compare et se commente.
-
-## Exercices pratiques
-
-- Exercice 1 : une entreprise fictive de Dakar présente : ventes de marchandises 200 ; achats de marchandises 150 ; variation de stocks de marchandises −5 ; production vendue 300 ; achats de matières 100 ; services extérieurs 60 ; impôts et taxes 10 ; charges de personnel 90 ; dotations 30 ; frais financiers 15 ; impôt 30 % (fictif). Calculez la cascade des SIG jusqu''au résultat net.
-- Exercice 2 : calculez la CAF de l''exercice 1 par les deux méthodes.
-- Exercice 3 : ressources stables 800 ; emplois stables 650 ; stocks 120 ; clients 150 ; fournisseurs 90 ; dettes fiscales et sociales 30 ; trésorerie-actif 20. Calculez FR, BFR, TN et la trésorerie-passif.
-- Exercice 4 : clients 150 et chiffre d''affaires 900 : calculez le délai clients et commentez si le secteur pratique 45 jours.
-- Exercice 5 (cas pratique) : une entreprise a un résultat net en hausse, mais une trésorerie nette passée de +40 à −60. Le FR est stable. Expliquez et proposez trois actions.
-
-## Corrigé
-
-- Exercice 1 : MC = 200 − (150 − 5) = 55 ; VA = 55 + 300 − (100 + 60 + 10) = 185 ; EBE = 185 − 90 = 95 ; RE = 95 − 30 = 65 ; RF = −15 ; RAO = 50 ; RHAO = 0 ; impôt = 15 ; résultat net = 35.
-- Exercice 2 : additive : 35 + 30 = 65. Soustractive : 95 − 15 − 15 = 65.
-- Exercice 3 : FR = 800 − 650 = 150 ; BFR = 120 + 150 − 90 − 30 = 150 ; TN = 0. L''équilibre du bilan (940 de chaque côté) donne une trésorerie-passif de 20 : TN = 20 − 20 = 0.
-- Exercice 4 : 150 / 900 × 360 = 60 jours, soit 15 jours de plus que le secteur : les clients paient trop tard, le BFR est alourdi ; il faut revoir les conditions de crédit et le recouvrement.
-- Exercice 5 : TN = FR − BFR ; le FR étant stable, c''est le BFR qui a augmenté de 100 (hausse des stocks, des créances clients ou baisse du crédit fournisseurs, souvent liée à la croissance). Actions : réduire les délais clients, ajuster les stocks, négocier de meilleurs délais fournisseurs, et renforcer le FR par des capitaux permanents.', 'texte', 60, false, 20
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Analyse financière : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Gestion de trésorerie : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Construire un plan de trésorerie mensuel à partir des budgets d''encaissements et de décaissements.
-- Connaître les financements à court terme : découvert, facilité de caisse, escompte, affacturage, crédit de campagne.
-- Calculer le coût réel d''un financement et choisir le moins cher.
-
-Tous les taux et commissions de cette leçon sont fictifs pour l''exemple ; la TVA est ignorée pour simplifier.
-
-## Fiche 1 : le rôle du trésorier
-
-Le trésorier veille à ce que l''entreprise puisse payer ses dettes à l''échéance (solvabilité à court terme) au moindre coût. Il prévoit les flux, négocie avec les banques, finance les déficits et place les excédents. L''idéal est une trésorerie proche de zéro : un excédent durable est de l''argent qui dort, un déficit durable coûte des agios et fragilise l''entreprise.
-
-## Fiche 2 : le plan de trésorerie
-
-Le plan de trésorerie (ou budget de trésorerie) récapitule, mois par mois : la trésorerie de début, les encaissements, les décaissements, le solde du mois et la trésorerie de fin.
-
-Cas : Casamance Fruits SARL, entreprise fictive de Ziguinchor qui transforme des mangues. Trésorerie au 1er janvier : 2 millions FCFA. Ventes (millions) : décembre 10, janvier 8, février 12, mars 15. Les clients paient 40 % au comptant et 60 % le mois suivant. Les achats représentent 50 % des ventes du mois et sont payés le mois suivant. Salaires : 2,5 par mois ; loyer et charges : 0,8 par mois ; échéance d''emprunt : 1,5 en février ; achat d''un camion frigorifique : 9 en février.
-
-Budget des encaissements :
-
-- Janvier : 40 % × 8 + 60 % × 10 = 3,2 + 6 = 9,2.
-- Février : 40 % × 12 + 60 % × 8 = 4,8 + 4,8 = 9,6.
-- Mars : 40 % × 15 + 60 % × 12 = 6 + 7,2 = 13,2.
-
-Budget des décaissements :
-
-- Janvier : achats de décembre 5 + salaires 2,5 + loyer 0,8 = 8,3.
-- Février : achats de janvier 4 + 2,5 + 0,8 + emprunt 1,5 + camion 9 = 17,8.
-- Mars : achats de février 6 + 2,5 + 0,8 = 9,3.
-
-Plan de trésorerie :
-
-- Janvier : début 2 ; solde du mois +0,9 ; fin 2,9.
-- Février : début 2,9 ; solde −8,2 ; fin −5,3.
-- Mars : début −5,3 ; solde +3,9 ; fin −1,4.
-
-Lecture : le déficit de février vient de l''achat du camion, un investissement durable. Règle de l''équilibre financier : un investissement se finance par des ressources stables, pas par du découvert. Si Casamance Fruits obtient un crédit d''équipement de 7 millions versé en février, la trésorerie de fin de février devient +1,7 et celle de mars +5,6 (avant la première échéance du nouveau crédit).
-
-## Fiche 3 : les financements à court terme
-
-- Facilité de caisse : découvert de quelques jours pour passer un pic de dépenses (paie, échéance fiscale).
-- Découvert autorisé : solde débiteur plus durable, dans la limite d''un plafond négocié ; les intérêts sont calculés sur les soldes débiteurs réels.
-- Escompte commercial : la banque achète un effet de commerce (lettre de change, billet à ordre) avant son échéance et verse le montant net d''agios.
-- Affacturage : un établissement spécialisé (le factor) achète les créances clients, en assure le recouvrement et en avance une partie, contre une commission et des intérêts.
-- Crédit de campagne : crédit saisonnier finançant une campagne agricole ou de commercialisation (arachide, coton, noix de cajou), remboursé avec la vente de la récolte.
-- Avances sur marchandises ou sur marchés publics : crédits adossés à un stock ou à un contrat.
-
-## Fiche 4 : calculer le coût d''un financement
-
-Escompte. Casamance Fruits remet à l''escompte un effet de 5 000 000 FCFA à 60 jours. Taux d''escompte : 10 % ; commission fixe : 5 000 FCFA (fictifs).
-
-- Escompte = 5 000 000 × 0,10 × 60 / 360 ≈ 83 333 FCFA.
-- Agios = 83 333 + 5 000 = 88 333 FCFA.
-- Montant net reçu = 5 000 000 − 88 333 = 4 911 667 FCFA.
-- Taux réel = agios / montant net × 360 / durée = 88 333 / 4 911 667 × 360 / 60 ≈ 10,79 %.
-
-Le taux réel dépasse le taux affiché : les intérêts sont prélevés d''avance et les commissions s''ajoutent. Certaines banques ajoutent aussi des jours de banque, ce qui augmente encore le coût.
-
-Découvert. Un découvert de 5 300 000 FCFA pendant 28 jours à 12 % coûte 5 300 000 × 0,12 × 28 / 360 ≈ 49 467 FCFA d''intérêts, auxquels peuvent s''ajouter des commissions.
-
-Affacturage. Sur 10 000 000 FCFA de créances à 45 jours, avec une commission d''affacturage de 1,5 %, un financement de 90 % des créances à 11 % et une retenue de garantie de 10 % : commission = 150 000 FCFA ; intérêts = 9 000 000 × 0,11 × 45 / 360 = 123 750 FCFA. L''affacturage est plus cher, mais il transfère le recouvrement et souvent le risque d''impayé.
-
-## Fiche 5 : placer les excédents
-
-Un excédent ponctuel peut être placé sur un compte à terme, en bons ou obligations du Trésor émis sur le marché régional des titres publics, ou en parts d''organismes de placement collectif. Critères : sécurité, liquidité, rendement, dans cet ordre pour un trésorier prudent.
-
-## Points clés
-
-- Plan de trésorerie : encaissements selon les délais réels de paiement, pas selon les dates de facturation.
-- Investissement : ressources stables ; décalages courts : crédits de trésorerie.
-- Taux réel de l''escompte = agios / montant net × 360 / jours.
-
-## Exercices pratiques
-
-- Exercice 1 : ventes de mars 6 millions, d''avril 9 millions ; les clients paient 30 % au comptant et 70 % à 30 jours. Calculez les encaissements d''avril.
-- Exercice 2 : un effet de 3 000 000 FCFA à 45 jours est escompté à 9 % avec une commission de 4 000 FCFA. Calculez les agios, le net reçu et le taux réel.
-- Exercice 3 : comparez avec un découvert de 3 000 000 FCFA pendant 45 jours à 11 % sans commission.
-- Exercice 4 : expliquez pourquoi un crédit de campagne est adapté à un collecteur d''arachide de Kaffrine.
-- Exercice 5 (cas pratique) : une boutique de Touba prévoit −4 millions en juin (paiement d''un stock pour la Tabaski) et +6 millions en juillet. Elle hésite entre un découvert et un emprunt à 3 ans. Conseillez-la.
-- Exercice 6 : une entreprise affiche une trésorerie excédentaire de 15 millions pendant 6 mois. Proposez deux placements et les critères de choix.
-
-## Corrigé
-
-- Exercice 1 : 30 % × 9 + 70 % × 6 = 2,7 + 4,2 = 6,9 millions.
-- Exercice 2 : escompte = 3 000 000 × 0,09 × 45 / 360 = 33 750 ; agios = 37 750 ; net = 2 962 250 ; taux réel = 37 750 / 2 962 250 × 360 / 45 ≈ 10,19 %.
-- Exercice 3 : découvert = 3 000 000 × 0,11 × 45 / 360 = 41 250 FCFA ; l''escompte est moins cher (37 750 FCFA, taux réel ≈ 10,19 % contre 11 %). On compare toujours les coûts réels, commissions comprises.
-- Exercice 4 : le besoin est saisonnier (achat de la récolte), d''un montant élevé et temporaire ; il se rembourse avec la vente de la production. Un crédit de campagne correspond exactement à ce cycle ; un emprunt à long terme serait inadapté.
-- Exercice 5 : le besoin est court (un mois) et se résorbe en juillet : un découvert autorisé ou une facilité de caisse négociés à l''avance conviennent. Un emprunt à 3 ans immobiliserait des ressources et ferait payer des intérêts inutiles.
-- Exercice 6 : compte à terme de 6 mois ; bons du Trésor ou parts d''organismes de placement collectif monétaires. Critères : sécurité du capital, disponibilité à l''échéance voulue, rendement net de frais.', 'texte', 60, false, 30
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion de trésorerie : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Marchés financiers 1 : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Décrire le marché financier régional et le parcours d''un ordre.
-- Calculer le rendement d''une action, son PER et sa valeur par le modèle de Gordon-Shapiro.
-- Calculer le prix d''une obligation, son rendement actuariel et le coupon couru.
-- Calculer le rendement d''un portefeuille simple.
-
-Toutes les sociétés citées sont fictives et tous les taux sont fictifs pour l''exemple.
-
-## Fiche 1 : organisation du marché
-
-Le marché financier régional de l''UEMOA comprend :
-
-- Le marché primaire, où les titres sont émis : une entreprise lève des capitaux (augmentation de capital, emprunt obligataire), un État émet des obligations. L''argent va à l''émetteur.
-- Le marché secondaire, où les titres déjà émis s''échangent entre investisseurs : c''est la bourse, la BRVM, basée à Abidjan avec des antennes nationales. L''argent passe d''un investisseur à un autre ; le marché secondaire donne de la liquidité aux titres.
-
-Parcours d''un ordre : l''investisseur ouvre un compte-titres auprès d''une SGI (société de gestion et d''intermédiation) et passe un ordre d''achat ou de vente (au marché, ou à cours limité en fixant un prix maximum d''achat ou minimum de vente). La SGI transmet l''ordre à la BRVM, où il est confronté aux ordres inverses. Le Dépositaire central / Banque de règlement assure la livraison des titres et le règlement des capitaux. Le régulateur régional (AMF-UMOA) autorise les émissions et protège les épargnants.
-
-## Fiche 2 : les actions
-
-Une action est un titre de propriété du capital d''une société anonyme : droit au dividende (non garanti), droit de vote, droit sur l''actif en liquidation.
-
-Rentabilité sur une période : R = (dividende + cours final − cours initial) / cours initial.
-
-Exemple : Dakar Brasserie Fictive SA est achetée à 5 000 FCFA ; elle verse 300 FCFA de dividende et cote 5 400 FCFA un an après. R = (300 + 5 400 − 5 000) / 5 000 = 700 / 5 000 = 14 %, dont 6 % de rendement du dividende et 8 % de plus-value.
-
-PER = cours / bénéfice par action. Avec un BPA de 500 FCFA : PER = 5 000 / 500 = 10. Un PER élevé traduit des anticipations de croissance, ou un titre cher.
-
-Modèle de Gordon-Shapiro : si le dividende croît à un taux constant g et que l''investisseur exige un taux de rentabilité k (avec k > g), la valeur de l''action vaut P0 = D1 / (k − g), où D1 est le dividende attendu dans un an.
-
-Exemple : D1 = 300 FCFA, k = 12 %, g = 5 % : P0 = 300 / 0,07 ≈ 4 286 FCFA. Si l''action cote 5 000 FCFA, elle paraît surévaluée pour cet investisseur. On peut aussi retrouver le taux de rentabilité implicite : k = D1 / P0 + g = 300 / 5 000 + 5 % = 11 %.
-
-## Fiche 3 : les obligations
-
-Une obligation est un titre de créance : l''émetteur emprunte et s''engage à payer des coupons (intérêts) et à rembourser le nominal. Vocabulaire : valeur nominale, taux facial (ou taux nominal), coupon = nominal × taux facial, date d''échéance, prix d''émission, remboursement in fine ou par amortissements.
-
-Prix d''une obligation : c''est la valeur actuelle, au taux du marché, des flux futurs. P = C × [1 − (1 + r)^−n] / r + N × (1 + r)^−n.
-
-Exemple : obligation fictive de l''État, nominal 10 000 FCFA, taux facial 6,5 %, coupon 650 FCFA, 5 ans, remboursement in fine au pair.
-
-- Si le taux du marché est 6,5 % : P = 10 000 FCFA (au pair).
-- Si le taux du marché monte à 7 % : P ≈ 9 795 FCFA.
-- Si le taux du marché baisse à 6 % : P ≈ 10 211 FCFA.
-
-Règle essentielle : le prix d''une obligation varie en sens inverse des taux d''intérêt. Quand les taux montent, les anciennes obligations, moins bien rémunérées que les nouvelles, perdent de la valeur : c''est le risque de taux.
-
-Rendement actuariel : c''est le taux r qui égalise le prix payé et la valeur actuelle des flux. Une obligation de nominal 10 000, coupon 600, échéance 4 ans, achetée 9 800 FCFA, a un rendement actuariel d''environ 6,58 % (supérieur au taux facial de 6 % car elle est achetée en dessous du pair). On le trouve par essais successifs.
-
-Coupon couru : entre deux dates de coupon, l''acheteur paie au vendeur la part du coupon déjà courue. Si 73 jours se sont écoulés depuis le dernier coupon annuel de 650 FCFA : coupon couru = 650 × 73 / 365 = 130 FCFA. Prix payé = prix coté (pied de coupon) + coupon couru.
-
-## Fiche 4 : rendement d''un portefeuille
-
-La rentabilité espérée d''un portefeuille est la moyenne pondérée des rentabilités des titres. Un portefeuille investi à 60 % dans une action à 10 % et à 40 % dans une obligation à 6 % a une rentabilité espérée de 0,6 × 10 % + 0,4 × 6 % = 8,4 %. Le risque dépend aussi de la corrélation entre les titres (diversification).
-
-## Points clés
-
-- Primaire : émission ; secondaire : échange ; ordres via les SGI.
-- R = (D + P1 − P0) / P0 ; PER = cours / BPA ; Gordon-Shapiro : P0 = D1 / (k − g).
-- Prix d''une obligation = valeur actuelle des coupons et du remboursement ; prix et taux varient en sens inverse.
-
-## Exercices pratiques
-
-- Exercice 1 : distinguez marché primaire et marché secondaire, et donnez le rôle d''une SGI.
-- Exercice 2 : une action achetée 4 500 FCFA verse 200 FCFA de dividende et cote 4 600 FCFA un an plus tard. Calculez sa rentabilité.
-- Exercice 3 : une action cote 6 000 FCFA, son BPA est de 400 FCFA. Calculez le PER.
-- Exercice 4 : D1 = 240 FCFA, k = 11 %, g = 3 %. Calculez la valeur de l''action selon Gordon-Shapiro.
-- Exercice 5 : une obligation de nominal 10 000 FCFA, taux facial 5 %, 3 ans, in fine. Calculez son prix si le taux du marché est 6 %, puis 4 %. Commentez.
-- Exercice 6 (cas pratique) : Mme Ba, enseignante à Kolda, dispose de 2 000 000 FCFA à placer pour 3 ans. Elle hésite entre des actions d''une société fictive cotée (rentabilité espérée 12 %, forte volatilité) et une obligation d''État fictive (rendement actuariel 6,5 %). Conseillez-la.
-- Exercice 7 : une obligation de nominal 10 000 FCFA, coupon 700 FCFA, 3 ans, cote 10 300 FCFA. Son rendement actuariel est-il supérieur ou inférieur à 7 % ? Vérifiez qu''il vaut environ 5,88 %.
-
-## Corrigé
-
-- Exercice 1 : primaire : émission de titres nouveaux, les fonds vont à l''émetteur ; secondaire : échange de titres existants entre investisseurs. La SGI tient les comptes-titres, reçoit et transmet les ordres, conseille les clients.
-- Exercice 2 : R = (200 + 4 600 − 4 500) / 4 500 = 300 / 4 500 ≈ 6,67 %.
-- Exercice 3 : PER = 6 000 / 400 = 15.
-- Exercice 4 : P0 = 240 / (0,11 − 0,03) = 3 000 FCFA.
-- Exercice 5 : à 6 % : P = 500 / 1,06 + 500 / 1,06² + 10 500 / 1,06³ ≈ 9 733 FCFA (sous le pair) ; à 4 % : P ≈ 10 278 FCFA (au-dessus du pair). La hausse des taux fait baisser le prix, la baisse le fait monter.
-- Exercice 6 : horizon court (3 ans) et profil probablement prudent : l''obligation d''État offre un revenu régulier et un risque faible si elle est conservée jusqu''à l''échéance. Les actions offrent une rentabilité espérée plus forte mais peuvent perdre de la valeur. Proposition : majorité en obligation (par exemple 70 %), le reste en actions pour profiter du potentiel, à ajuster selon sa tolérance au risque et ses besoins de liquidité.
-- Exercice 7 : elle est achetée au-dessus du pair, donc son rendement actuariel est inférieur au taux facial de 7 %. Vérification : à 5,88 %, 700 / 1,0588 + 700 / 1,0588² + 10 700 / 1,0588³ ≈ 10 300 FCFA.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Marchés financiers 1 : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Licence 2 Finance (entraînement corrigé)', '## Présentation
-
-Sujet d''entraînement conçu pour ce cours, et non sujet officiel. Durée conseillée : 3 heures. Barème indicatif, non officiel : dossier 1 sur 9 points, dossier 2 sur 6 points, dossier 3 sur 5 points. Montants en millions de FCFA sauf indication contraire. Tous les taux sont fictifs pour l''exemple ; la TVA est ignorée.
-
-## Dossier 1 : analyse financière de Sine Agro SA (9 points)
-
-Sine Agro SA, entreprise fictive de Fatick, transforme des céréales locales. Compte de résultat : ventes de produits fabriqués 800 ; production stockée 10 ; achats de matières premières 300 ; variation de stocks de matières 10 (déstockage) ; services extérieurs 90 ; impôts et taxes 20 ; charges de personnel 180 ; dotations aux amortissements 60 ; revenus financiers 5 ; frais financiers 25 ; aucune opération HAO ; impôt sur le résultat 30 % (fictif).
-
-Bilan (valeurs brutes pour l''actif immobilisé) : immobilisations 900 ; stocks 150 ; clients 200 ; trésorerie-actif 10 ; capitaux propres 500 ; amortissements cumulés 300 ; dettes financières 250 ; fournisseurs 110 ; dettes fiscales et sociales 40 ; trésorerie-passif à déterminer.
-
-- 1.1 (3 points) : calculez la valeur ajoutée, l''EBE, le résultat d''exploitation, le RAO et le résultat net.
-- 1.2 (2 points) : calculez la CAF par les deux méthodes.
-- 1.3 (2 points) : déterminez la trésorerie-passif, puis FR, BFR et TN.
-- 1.4 (2 points) : calculez le délai clients, l''autonomie financière et la capacité de remboursement, puis rédigez un commentaire de cinq lignes.
-
-## Dossier 2 : gestion de trésorerie (6 points)
-
-Trésorerie au 1er avril : 1,0. Ventes : mars 6 ; avril 7 ; mai 9 ; juin 8 ; les clients paient 50 % au comptant et 50 % à 30 jours. Achats payés au comptant : avril 3 ; mai 4 ; juin 4. Salaires : 2 par mois. Impôt à payer en mai : 2,5. Achat d''une machine en mai : 3.
-
-- 2.1 (3 points) : établissez le plan de trésorerie d''avril à juin.
-- 2.2 (3 points) : pour couvrir le déficit, l''entreprise peut escompter un effet de 2 000 000 FCFA à 30 jours au taux de 9,5 % avec une commission de 3 000 FCFA. Calculez les agios, le net et le taux réel. Ce financement est-il adapté à l''achat de la machine ?
-
-## Dossier 3 : marchés financiers (5 points)
-
-- 3.1 (2 points) : une obligation de nominal 10 000 FCFA, taux facial 6 %, remboursable in fine dans 4 ans. Calculez son prix si le taux du marché est de 7 %. Est-elle au-dessus ou en dessous du pair ? Pourquoi ?
-- 3.2 (2 points) : une action doit verser un dividende de 200 FCFA dans un an ; ce dividende croîtra de 4 % par an ; le taux exigé est 10 %. Calculez sa valeur selon Gordon-Shapiro.
-- 3.3 (1 point) : expliquez le rôle d''une SGI.
-
-## Corrigé du dossier 1
-
-1.1. Production de l''exercice et produits : 800 + 10 = 810. Consommations : 300 + 10 + 90 + 20 = 420. VA = 390. EBE = 390 − 180 = 210. Résultat d''exploitation = 210 − 60 = 150. Résultat financier = 5 − 25 = −20. RAO = 130. RHAO = 0. Impôt = 0,30 × 130 = 39. Résultat net = 91.
-
-1.2. Additive : 91 + 60 = 151. Soustractive : 210 + 5 − 25 − 39 = 151.
-
-1.3. Total des emplois = 900 + 150 + 200 + 10 = 1 260. Ressources hors trésorerie-passif = 500 + 300 + 250 + 110 + 40 = 1 200 ; trésorerie-passif = 60. Ressources stables = 1 050 ; FR = 1 050 − 900 = 150. BFR = 150 + 200 − 110 − 40 = 200. TN = 150 − 200 = −50, et 10 − 60 = −50.
-
-1.4. Délai clients = 200 / 800 × 360 = 90 jours. Autonomie financière = 500 / 250 = 2. Capacité de remboursement = 250 / 151 ≈ 1,7 année de CAF. Commentaire : Sine Agro est rentable (EBE égal à 26 % des ventes, rentabilité financière de 91 / 500 ≈ 18 %) et solide dans sa structure (capitaux propres doubles des dettes financières, dettes remboursables en moins de deux ans de CAF). Son point faible est le crédit clients de 90 jours, qui porte le BFR au-dessus du FR et rend la trésorerie négative. Il faut réduire les délais clients et, si la croissance continue, renforcer le FR.
-
-## Corrigé du dossier 2
-
-2.1. Encaissements : avril 50 % × 7 + 50 % × 6 = 6,5 ; mai 4,5 + 3,5 = 8 ; juin 4 + 4,5 = 8,5. Décaissements : avril 3 + 2 = 5 ; mai 4 + 2 + 2,5 + 3 = 11,5 ; juin 4 + 2 = 6.
-
-- Avril : début 1,0 ; solde +1,5 ; fin 2,5.
-- Mai : début 2,5 ; solde −3,5 ; fin −1,0.
-- Juin : début −1,0 ; solde +2,5 ; fin 1,5.
-
-2.2. Escompte = 2 000 000 × 0,095 × 30 / 360 ≈ 15 833 FCFA ; agios ≈ 18 833 FCFA ; net ≈ 1 981 167 FCFA ; taux réel ≈ 18 833 / 1 981 167 × 360 / 30 ≈ 11,41 %. L''escompte couvre le déficit ponctuel de mai (1 million) ; il est adapté à un décalage court. Mais la machine est un investissement durable : en bonne gestion, elle devrait être financée par une ressource stable (crédit d''équipement, crédit-bail), ce qui éviterait le déficit.
-
-## Corrigé du dossier 3
-
-3.1. P = 600 × (1 − 1,07^−4) / 0,07 + 10 000 × 1,07^−4 ≈ 9 661 FCFA. Elle cote en dessous du pair car son coupon (6 %) est inférieur au taux du marché (7 %) : le prix baisse pour offrir à l''acheteur un rendement de 7 %.
-
-3.2. P0 = 200 / (0,10 − 0,04) ≈ 3 333 FCFA.
-
-3.3. La SGI tient les comptes-titres des investisseurs, reçoit leurs ordres de bourse, les transmet à la BRVM, et peut conseiller et gérer des portefeuilles. Elle est agréée par le régulateur régional.
-
-## Conseils de méthode
-
-- Présentez les SIG sous forme de cascade, ligne par ligne, avec le contrôle de la CAF.
-- Vérifiez toujours TN = FR − BFR = trésorerie-actif − trésorerie-passif.
-- Dans un plan de trésorerie, appliquez les délais de paiement mois par mois.
-
-## Exercices pratiques
-
-- Exercice 1 : pourquoi la production stockée entre-t-elle dans la valeur ajoutée ?
-- Exercice 2 : citez deux moyens de réduire le BFR.
-- Exercice 3 : un portefeuille contient 50 % d''actions à 12 % de rentabilité espérée et 50 % d''obligations à 6,5 %. Rentabilité espérée ?
-- Exercice 4 : vrai ou faux : « La CAF est égale à la variation de trésorerie de l''exercice. »
-- Exercice 5 : calculez le coupon couru d''une obligation de coupon annuel 600 FCFA, 146 jours après le dernier coupon (base 365 jours).
-
-## Corrigé
-
-- Exercice 1 : la production stockée correspond à des biens produits pendant l''exercice mais pas encore vendus ; elle fait partie de la production de l''exercice, donc de la richesse créée.
-- Exercice 2 : réduire les délais clients (relances, escompte pour paiement rapide) ; réduire les stocks ; obtenir des délais fournisseurs plus longs.
-- Exercice 3 : 0,5 × 12 % + 0,5 × 6,5 % = 9,25 %.
-- Exercice 4 : faux. La CAF est un surplus potentiel ; la trésorerie dépend aussi de la variation du BFR, des investissements, des financements et des dividendes.
-- Exercice 5 : 600 × 146 / 365 = 240 FCFA.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 2 Finance (entraînement corrigé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Analyse financière', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 2 Finance, Comptabilité, Gestion.
-- Objectifs : réaliser un diagnostic financier complet selon le SYSCOHADA révisé (SIG, CAF, bilan fonctionnel, FR, BFR, TN, ratios) et rédiger un commentaire.
-- Matériel : tableau blanc, diaporama présentant le compte de résultat et le bilan du cas, calculatrice.
-- Prérequis : comptabilité générale de Licence 1 ; leçon 2 du cours.
-- Montants en millions de FCFA ; taux d''impôt de 30 % fictif pour l''exemple.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Présentation du cas
-
-« Bonjour. Aujourd''hui, nous sommes analystes dans une banque de Dakar. Atlantique Distribution SA, grossiste fictif en produits alimentaires, demande un crédit. Avant de répondre, le banquier veut savoir trois choses : l''entreprise est-elle rentable ? Est-elle équilibrée financièrement ? Peut-elle rembourser ? Nous allons répondre ensemble, étape par étape, comme dans un sujet d''examen. »
-
-Visuel : la diapositive des données. Ventes de marchandises 1 000 ; achats de marchandises 700 ; variation de stocks de marchandises 20 (déstockage) ; transports 20 ; services extérieurs 60 ; impôts et taxes 10 ; charges de personnel 90 ; dotations aux amortissements 35 ; frais financiers 15 ; produit de cession d''un véhicule 12 ; valeur comptable du véhicule cédé 8.
-
-## 05:00 – 20:00 · La cascade des SIG
-
-« Première étape, la marge commerciale. Elle se calcule pour une activité de négoce : ventes de marchandises moins coût d''achat des marchandises vendues. Le coût d''achat, ce sont les achats corrigés de la variation de stocks. Un déstockage de 20 signifie qu''on a vendu des marchandises achetées l''an dernier : il s''ajoute aux achats. Marge commerciale = 1 000 − (700 + 20) = 280. »
-
-« Deuxième étape, la valeur ajoutée. Ici, pas de production : VA = marge commerciale − consommations en provenance des tiers. Dans le SYSCOHADA, on y retire aussi les impôts et taxes. VA = 280 − (20 + 60 + 10) = 190. La valeur ajoutée, c''est la richesse créée par l''entreprise, qui va rémunérer le personnel, les prêteurs, l''État et les actionnaires. »
-
-« Troisième étape, l''EBE : 190 − 90 = 100. Quatrième, le résultat d''exploitation : 100 − 35 = 65. Cinquième, le résultat financier : −15. Sixième, le RAO : 65 − 15 = 50. Septième, le résultat hors activités ordinaires : 12 − 8 = 4. Impôt fictif à 30 % sur 54 : 16,2. Résultat net : 50 + 4 − 16,2 = 37,8. »
-
-Question à poser : « Pourquoi le produit de cession n''est-il pas dans le chiffre d''affaires ? » Réponse : c''est une opération exceptionnelle, hors activités ordinaires, classée en HAO.
-
-## 20:00 – 32:00 · La CAF et l''autofinancement
-
-« La CAF par la méthode additive : on part du résultat net et on neutralise ce qui n''est pas monétaire ou qui relève des cessions. 37,8 + 35 de dotations − 12 de produit de cession + 8 de valeur comptable = 68,8. Par la méthode soustractive : EBE + produits encaissables − charges décaissables, sans les cessions : 100 − 15 − 16,2 = 68,8. Les deux méthodes concordent : on peut continuer. »
-
-« Pourquoi exclure les cessions ? Parce que la CAF mesure ce que l''activité courante dégage durablement. Le prix de vente du véhicule est une ressource, mais une ressource ponctuelle, classée dans le tableau de financement parmi les désinvestissements. »
-
-« Si l''entreprise distribue 20 de dividendes, l''autofinancement est 48,8. »
-
-## 32:00 – 42:00 · Le bilan fonctionnel
-
-« Le bilan : immobilisations brutes 400 ; stocks 120 ; clients 90 ; trésorerie-actif 25. Capitaux propres 170 ; amortissements cumulés 150 ; dettes financières 100 ; fournisseurs 180 ; dettes fiscales et sociales 30 ; trésorerie-passif 5. Total : 635 de chaque côté. »
-
-« Ressources stables = 170 + 150 + 100 = 420. FR = 420 − 400 = 20. BFR = stocks + clients − fournisseurs − dettes fiscales et sociales = 120 + 90 − 180 − 30 = 0. TN = 20 − 0 = 20, et vérification : 25 − 5 = 20. »
-
-« Observez ce BFR nul : c''est typique de la distribution. Les clients paient vite, les fournisseurs sont payés lentement : le cycle d''exploitation s''autofinance. Dans une industrie, le BFR serait nettement positif. »
-
-## 42:00 – 50:00 · Pause interactive et quiz
-
-- Question 1 : un stockage de marchandises augmente-t-il ou diminue-t-il la marge commerciale ? Réponse : il l''augmente, car il réduit le coût d''achat des marchandises vendues.
-- Question 2 : où classe-t-on les amortissements cumulés dans le bilan fonctionnel ? Réponse : en ressources stables.
-- Question 3 : FR = 50, BFR = 80. TN ? Réponse : −30.
-- Question 4 : la CAF inclut-elle les dotations aux amortissements ? Réponse : oui, on les rajoute au résultat net car ce sont des charges non décaissées.
-- Question 5 : quel solde mesure la performance économique avant amortissements et financement ? Réponse : l''EBE.
-
-## 50:00 – 1:05:00 · Les ratios
-
-« Délai clients : 90 / 1 000 × 360 ≈ 32 jours. Délai fournisseurs : 180 / 700 × 360 ≈ 93 jours. Durée de stockage des marchandises : stock / coût d''achat des marchandises vendues × 360 = 120 / 720 × 360 = 60 jours. Le cycle est cohérent : les marchandises restent 60 jours en stock, les clients paient en 32 jours, soit 92 jours entre achat et encaissement, et les fournisseurs sont payés à 93 jours. »
-
-« Rentabilité financière : 37,8 / 170 ≈ 22 %. Taux de marge d''EBE : 100 / 1 000 = 10 %. Capacité de remboursement : dettes financières / CAF = 100 / 68,8 ≈ 1,5 année. »
-
-« Attention : en pratique, les délais clients et fournisseurs se calculent en TTC ; nous restons hors taxes pour simplifier. Et un ratio isolé ne dit rien : il faut le comparer à l''année précédente et aux entreprises du secteur. »
-
-Exercice corrigé en direct : « Si les fournisseurs exigeaient d''être payés à 60 jours, quel serait le nouveau poste fournisseurs, et le BFR ? » Correction : 700 × 60 / 360 ≈ 116,7 ; BFR = 120 + 90 − 116,7 − 30 ≈ 63,3 ; TN = 20 − 63,3 ≈ −43,3. « Vous voyez la fragilité : l''équilibre repose sur le crédit fournisseurs. »
-
-## 1:05:00 – 1:17:00 · Rédiger le commentaire
-
-« Un bon commentaire suit quatre temps : constat chiffré, explication, conséquence, recommandation. Je rédige avec vous. »
-
-« Activité et rentabilité : Atlantique Distribution dégage un EBE de 100, soit 10 % des ventes, et une rentabilité financière de 22 %, ce qui est satisfaisant pour un grossiste. Équilibre financier : le FR de 20 couvre un BFR nul ; la trésorerie est positive à 20. Cet équilibre repose sur des délais fournisseurs longs, qui pourraient être remis en cause. Solvabilité : les dettes financières représentent un an et demi de CAF : l''entreprise peut s''endetter davantage. Recommandation au banquier : accorder le crédit demandé s''il finance un investissement rentable, en surveillant les relations fournisseurs et en suggérant de renforcer les capitaux propres, qui restent modestes (170 pour 400 d''immobilisations brutes). »
-
-## 1:17:00 – 1:23:00 · Synthèse
-
-« Retenez la démarche complète : SIG, CAF par deux méthodes, bilan fonctionnel, FR, BFR, TN avec double vérification, ratios d''activité, de rentabilité et de structure, puis commentaire en quatre temps. Le jour de l''examen, gérez votre temps : le commentaire vaut souvent autant de points que les calculs. »
-
-« Trois erreurs reviennent chaque année dans les copies : intégrer le produit de cession dans la CAF, oublier les amortissements cumulés dans les ressources stables, et conclure sur la santé de l''entreprise à partir du seul résultat net. Un résultat positif ne garantit ni une trésorerie positive ni une capacité à rembourser : c''est précisément ce que le diagnostic complet permet de vérifier. »
-
-## 1:23:00 – 1:30:00 · Évaluation finale
-
-- Question 1 : ventes de marchandises 500, achats 350, stockage 10. Marge commerciale ? Réponse : 500 − (350 − 10) = 160.
-- Question 2 : résultat net 40, dotations 25, reprises 5, aucune cession. CAF ? Réponse : 40 + 25 − 5 = 60.
-- Question 3 : ressources stables 600, emplois stables 520, BFR 100. TN ? Réponse : FR = 80, TN = 80 − 100 = −20.
-- Question 4 : clients 150, chiffre d''affaires 1 200 (hors taxes, simplification). Délai clients ? Réponse : 150 / 1 200 × 360 = 45 jours.
-- Question 5 : citez deux actions pour améliorer une trésorerie négative due à un BFR excessif. Réponse : réduire les délais clients et les stocks ; augmenter le FR par des capitaux permanents.
-
-« Merci. Refaites le cas seuls, en 45 minutes chrono, puis comparez votre commentaire au mien. »', 'video', 90, false, 60
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Analyse financière');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Gestion de trésorerie', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 2 Finance et Gestion.
-- Objectifs : construire un plan de trésorerie, identifier les besoins de financement à court terme, calculer et comparer le coût réel de l''escompte, du découvert et de l''affacturage, proposer une décision argumentée.
-- Matériel : tableau blanc, diaporama avec un plan de trésorerie vierge, calculatrice.
-- Prérequis : intérêts simples (Licence 1), leçon 3 du cours.
-- Montants en millions de FCFA sauf indication ; tous les taux et commissions sont fictifs pour l''exemple ; TVA ignorée.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Le problème du trésorier
-
-« Bonjour. Je vous présente Gandiol Pêche SARL, entreprise fictive de mareyage près de Saint-Louis. Elle achète le poisson aux pirogues et le revend aux usines et aux marchés. Son gérant, M. Fall, me dit : “Mon entreprise gagne de l''argent, mais certains mois je ne peux pas payer les pêcheurs à temps.” C''est le problème classique de la trésorerie : le décalage entre les dates de décaissement et les dates d''encaissement. Notre mission : prévoir, puis financer au moindre coût. »
-
-## 05:00 – 15:00 · Les principes du plan de trésorerie
-
-« Le plan de trésorerie se construit en trois étapes : le budget des encaissements, le budget des décaissements, puis la synthèse mois par mois. La règle d''or : on inscrit les flux à la date où l''argent entre ou sort, pas à la date de la facture. Une vente de janvier payée à 30 jours est un encaissement de février. »
-
-« Données : trésorerie au 1er janvier 3. Ventes : décembre 20, janvier 15, février 18, mars 25. Les clients paient 25 % au comptant et 75 % à 30 jours. Achats de poisson : 60 % des ventes du mois, payés le mois suivant. Salaires 4 par mois ; autres charges 1,5 par mois ; impôt en février 3 ; réparation d''un moteur de camion en février 6. »
-
-## 15:00 – 28:00 · Construire les budgets
-
-« Encaissements. Janvier : 25 % × 15 + 75 % × 20 = 3,75 + 15 = 18,75. Février : 25 % × 18 + 75 % × 15 = 4,5 + 11,25 = 15,75. Mars : 25 % × 25 + 75 % × 18 = 6,25 + 13,5 = 19,75. »
-
-« Décaissements. Les achats de décembre, 60 % × 20 = 12, sont payés en janvier. Ceux de janvier, 9, en février. Ceux de février, 10,8, en mars. Janvier : 12 + 4 + 1,5 = 17,5. Février : 9 + 4 + 1,5 + 3 + 6 = 23,5. Mars : 10,8 + 4 + 1,5 = 16,3. »
-
-« Synthèse. »
-
-- Janvier : début 3 ; solde du mois +1,25 ; fin 4,25.
-- Février : début 4,25 ; solde −7,75 ; fin −3,5.
-- Mars : début −3,5 ; solde +3,45 ; fin −0,05.
-
-« Le diagnostic est clair : un besoin d''environ 3,5 millions en février, presque résorbé fin mars. C''est un besoin court : il relève des financements à court terme. »
-
-## 28:00 – 40:00 · Les solutions de financement à court terme
-
-« Passons en revue les outils. La facilité de caisse couvre quelques jours. Le découvert autorisé couvre quelques semaines, dans la limite d''un plafond négocié. L''escompte transforme un effet de commerce en argent avant l''échéance. L''affacturage cède les créances à un factor qui les recouvre. Le crédit de campagne finance une activité saisonnière. Pour M. Fall, l''usine cliente a accepté une lettre de change de 4 000 000 de francs à 30 jours : l''escompte est possible. »
-
-« Avant de comparer, une question de bon sens : la réparation du moteur est-elle un investissement ? Si c''est une grosse réparation qui prolonge la durée de vie du camion, elle pourrait être immobilisée et financée à moyen terme. Ici, nous la traitons comme une charge courante. »
-
-## 40:00 – 47:00 · Pause interactive et quiz
-
-- Question 1 : une vente de mars payée à 60 jours est encaissée quand ? Réponse : en mai.
-- Question 2 : l''achat d''un bâtiment doit-il être financé par découvert ? Réponse : non, par des ressources stables.
-- Question 3 : que fait une banque qui escompte un effet ? Réponse : elle en verse le montant avant l''échéance, diminué des agios.
-- Question 4 : citez un financement adapté à la commercialisation de la noix de cajou. Réponse : le crédit de campagne.
-
-## 47:00 – 1:02:00 · Calculer et comparer les coûts
-
-« Escompte de l''effet de 4 000 000 à 30 jours, taux 10 %, commission 4 000 francs. Escompte = 4 000 000 × 0,10 × 30 / 360 ≈ 33 333 francs. Agios = 37 333 francs. Net reçu = 3 962 667 francs. Taux réel = 37 333 / 3 962 667 × 360 / 30 ≈ 11,31 %. »
-
-« Découvert de 4 000 000 pendant 30 jours à 12 % : 4 000 000 × 0,12 × 30 / 360 = 40 000 francs, sans compter d''éventuelles commissions. L''escompte coûte 37 333 francs : il est moins cher, et il est adossé à une créance certaine. »
-
-« Mais attention : le découvert ne coûte que sur les montants réellement utilisés et les jours réellement débiteurs. Si le besoin réel n''est que de 3 500 000 pendant 20 jours, le découvert coûte 3 500 000 × 0,12 × 20 / 360 ≈ 23 333 francs, moins que l''escompte. Le bon choix dépend donc du profil exact du besoin. C''est ce raisonnement que l''examinateur attend. »
-
-Exercice corrigé en direct : « Un effet de 2 500 000 à 45 jours est escompté à 9 %, commission 3 000. Calculez le net. » Correction : escompte = 2 500 000 × 0,09 × 45 / 360 = 28 125 ; agios = 31 125 ; net = 2 468 875 francs.
-
-## 1:02:00 – 1:14:00 · L''affacturage et le pilotage du BFR
-
-« L''affacturage : Gandiol Pêche cède 10 000 000 de créances à 45 jours. Commission d''affacturage 1,5 % : 150 000 francs. Le factor avance 90 %, soit 9 000 000, au taux de 11 % : intérêts = 9 000 000 × 0,11 × 45 / 360 = 123 750 francs. Coût total : 273 750 francs. C''est plus cher que l''escompte, mais le factor prend en charge les relances, et souvent le risque d''impayé. Pour une petite structure sans service de recouvrement, cela peut se justifier. »
-
-« Enfin, la meilleure trésorerie est celle qu''on n''a pas besoin de financer. Si M. Fall obtenait de ses clients 50 % au comptant au lieu de 25 %, les encaissements de février passeraient à 50 % × 18 + 50 % × 15 = 16,5 au lieu de 15,75. Et en négociant 15 jours de plus avec ses fournisseurs, il décalerait une partie des achats. Agir sur le BFR, c''est agir à la source. »
-
-## 1:14:00 – 1:22:00 · Placer un excédent
-
-« En avril, la trésorerie redevient positive. Un excédent temporaire se place selon trois critères dans cet ordre : sécurité, liquidité, rendement. Compte à terme, bons du Trésor émis sur le marché régional des titres publics, parts d''organismes de placement collectif monétaires. Évitez les actions pour un excédent dont vous aurez besoin dans trois mois : leur cours peut baisser au mauvais moment. »
-
-## 1:22:00 – 1:26:00 · Synthèse
-
-« Retenez : plan de trésorerie construit selon les dates réelles de flux ; besoin court, financement court ; besoin durable, financement durable ; comparaison des coûts réels, commissions comprises ; action sur le BFR comme premier levier. À l''examen, présentez le plan de trésorerie sous forme de tableau clair, mois en colonnes, encaissements et décaissements en lignes, avec un total par mois et la trésorerie cumulée : un correcteur doit pouvoir vérifier chaque chiffre en quelques secondes. Puis rédigez deux ou trois phrases de recommandation chiffrée. »
-
-## 1:26:00 – 1:30:00 · Évaluation finale
-
-- Question 1 : ventes de mai 10, juin 12 ; 40 % au comptant, 60 % à 30 jours. Encaissements de juin ? Réponse : 4,8 + 6 = 10,8.
-- Question 2 : effet de 1 800 000 à 60 jours, taux 12 %, sans commission. Escompte ? Réponse : 1 800 000 × 0,12 × 60 / 360 = 36 000 francs.
-- Question 3 : pourquoi le taux réel de l''escompte dépasse-t-il le taux nominal ? Réponse : les intérêts sont prélevés d''avance sur un montant net plus faible, et les commissions s''ajoutent.
-- Question 4 : différence entre facilité de caisse et découvert ? Réponse : la facilité de caisse couvre quelques jours ; le découvert, quelques semaines ou mois.
-- Question 5 : trois critères pour placer un excédent ? Réponse : sécurité, liquidité, rendement.
-
-« Merci. Pour la prochaine fois, refaites le plan de trésorerie de Gandiol Pêche avec 50 % de paiement comptant. »', 'video', 90, false, 70
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gestion de trésorerie');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Marchés financiers 1', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Public : étudiants de Licence 2 Finance, Banque, Gestion.
-- Objectifs : expliquer le fonctionnement du marché financier régional, évaluer une action (rentabilité, PER, Gordon-Shapiro) et une obligation (prix, rendement actuariel, coupon couru), calculer la rentabilité d''un portefeuille.
-- Matériel : tableau blanc, diaporama avec un carnet d''ordres simplifié, calculatrice.
-- Prérequis : actualisation et annuités (Licence 1), leçon 4 du cours.
-- Sociétés et taux fictifs pour l''exemple.
-
-## Déroulé minuté
-
-## 00:00 – 06:00 · Introduction : pourquoi un marché financier
-
-« Bonjour. Une entreprise sénégalaise qui veut financer une nouvelle usine peut emprunter à sa banque. Elle peut aussi s''adresser directement aux épargnants en émettant des actions ou des obligations. Le marché financier, c''est ce lieu de rencontre. Pour l''épargnant, c''est une possibilité de placement ; pour l''entreprise ou l''État, une source de financement à long terme. Aujourd''hui, nous allons comprendre comment il fonctionne et surtout comment on évalue les titres. »
-
-## 06:00 – 18:00 · L''organisation du marché régional
-
-« Le marché primaire est celui des émissions : l''argent va à l''émetteur. Le marché secondaire est celui des échanges entre investisseurs : c''est la bourse. Dans l''UEMOA, la bourse commune est la BRVM, à Abidjan, avec une antenne dans chaque État. Les acteurs : les SGI, qui reçoivent et transmettent les ordres ; le Dépositaire central / Banque de règlement, qui conserve les titres et règle les opérations ; le régulateur régional, l''AMF-UMOA, qui autorise les opérations et protège les épargnants. »
-
-« Un ordre d''achat peut être “au marché” : il sera exécuté au prix disponible. Ou “à cours limité” : par exemple, acheter 200 actions à 2 300 francs maximum. Si le titre cote 2 350, l''ordre attend. L''ordre à cours limité protège contre une mauvaise surprise de prix, mais il peut ne pas être exécuté. »
-
-« Un mot sur la liquidité. Un titre est liquide quand il s''échange souvent et en volumes importants : on peut l''acheter ou le vendre rapidement sans faire bouger le cours. Sur un marché encore étroit, certains titres s''échangent peu ; un investisseur pressé de vendre peut alors devoir accepter un prix plus bas. C''est un risque à expliquer à tout client avant un placement en bourse. »
-
-Visuel : un carnet d''ordres simplifié avec les meilleures offres d''achat et de vente.
-
-## 18:00 – 32:00 · Évaluer une action
-
-« La rentabilité d''une action sur un an : R = (dividende + cours final − cours initial) / cours initial. Achetée 2 500, dividende 150, revendue 2 700 : R = (150 + 200) / 2 500 = 14 %. »
-
-« Le PER : cours / bénéfice par action. Avec un BPA de 250, PER = 2 500 / 250 = 10. On compare le PER d''un titre à celui des sociétés du même secteur. »
-
-« Le modèle de Gordon-Shapiro : la valeur d''une action est la valeur actuelle de tous ses dividendes futurs. Si le dividende croît à un taux constant g, et que l''investisseur exige k, avec k > g : P0 = D1 / (k − g). Attention, D1 est le dividende de l''an prochain. La société fictive Sénégal Agro-Industrie a versé D0 = 150 francs ; g = 6 % ; k = 13 %. D1 = 150 × 1,06 = 159. P0 = 159 / 0,07 ≈ 2 271 francs. Si l''action cote 2 500, elle semble chère pour cet investisseur. Piège classique : diviser D0 au lieu de D1. »
-
-Question à poser : « Que se passe-t-il si g se rapproche de k ? » Réponse attendue : la valeur tend vers l''infini ; le modèle n''est plus utilisable, il suppose k nettement supérieur à g.
-
-## 32:00 – 40:00 · Pause interactive et quiz
-
-- Question 1 : sur quel marché une entreprise lève-t-elle des fonds nouveaux ? Réponse : le marché primaire.
-- Question 2 : qui transmet les ordres à la BRVM ? Réponse : les SGI.
-- Question 3 : D1 = 100, k = 12 %, g = 2 %. Valeur ? Réponse : 100 / 0,10 = 1 000 francs.
-- Question 4 : un PER de 20 signifie quoi ? Réponse : le cours représente vingt années de bénéfice actuel.
-- Question 5 : pourquoi un investisseur préfère-t-il un titre liquide ? Réponse : parce qu''il peut le revendre rapidement, sans faire baisser fortement le cours, s''il a besoin de son argent.
-
-## 40:00 – 55:00 · Le prix d''une obligation
-
-« Une obligation est un prêt découpé en titres. L''État fictif émet une obligation de nominal 10 000 francs, taux facial 5,75 %, soit un coupon de 575 francs, durée 5 ans, remboursement in fine. Si le taux du marché est 6,5 %, le prix vaut la valeur actuelle des coupons et du remboursement : P = 575 × (1 − 1,065^−5) / 0,065 + 10 000 × 1,065^−5 ≈ 9 688 francs. Le titre cote sous le pair, car son coupon est inférieur au taux du marché. »
-
-« Règle d''or : prix et taux varient en sens inverse. Quand les taux montent, les obligations existantes perdent de la valeur. Plus l''échéance est lointaine, plus cet effet est fort. »
-
-« Le coupon couru : si vous achetez cette obligation 146 jours après le paiement du coupon, vous payez au vendeur la part de coupon qu''il a “gagnée” : 575 × 146 / 365 = 230 francs, en plus du prix coté. »
-
-## 55:00 – 1:10:00 · Le rendement actuariel par interpolation
-
-« Une obligation de nominal 10 000, coupon 600, échéance 3 ans, cote 9 700. Quel est son rendement actuariel ? C''est le taux r tel que 600 / (1 + r) + 600 / (1 + r)² + 10 600 / (1 + r)³ = 9 700. On procède par essais. À 7 % : prix ≈ 9 737,6. À 7,5 % : prix ≈ 9 609,9. Le prix cherché, 9 700, est entre les deux. Interpolation linéaire : r ≈ 7 % + (9 737,6 − 9 700) / (9 737,6 − 9 609,9) × 0,5 % ≈ 7,15 %. Le calcul exact donne aussi environ 7,15 %. »
-
-« Interprétation : en achetant à 9 700 et en gardant le titre jusqu''à l''échéance, avec réinvestissement des coupons au même taux, l''investisseur obtient environ 7,15 % par an, plus que le taux facial de 6 %, grâce à la décote. »
-
-Exercice corrigé en direct : « Une obligation de nominal 10 000, coupon 500, échéance 2 ans. Prix si le taux du marché est 4 % ? » Correction : 500 / 1,04 + 10 500 / 1,04² ≈ 480,77 + 9 707,84 ≈ 10 189 francs, au-dessus du pair.
-
-## 1:10:00 – 1:20:00 · Le portefeuille et le couple rendement-risque
-
-« Mme Ndour place 50 % en actions (rentabilité espérée 10 %), 30 % en obligations (7 %) et 20 % en compte à terme (4 %). Rentabilité espérée du portefeuille : 0,5 × 10 + 0,3 × 7 + 0,2 × 4 = 7,9 %. »
-
-« Mais la rentabilité n''est qu''une moitié de l''histoire. Les actions sont plus risquées : leur rentabilité varie beaucoup d''une année à l''autre. Les obligations d''État conservées jusqu''à l''échéance sont moins risquées, mais exposées au risque de taux si on les revend avant. Diversifier entre plusieurs titres et plusieurs classes d''actifs réduit le risque global. En Licence 3, vous mesurerez ce risque avec l''écart-type et la covariance. »
-
-## 1:20:00 – 1:25:00 · Synthèse
-
-« Retenez : primaire et secondaire ; SGI, Dépositaire central, régulateur ; R = (D + P1 − P0) / P0 ; PER ; P0 = D1 / (k − g) ; prix d''une obligation = valeur actuelle des flux ; prix et taux en sens inverse ; rendement actuariel par interpolation ; coupon couru au prorata. »
-
-## 1:25:00 – 1:30:00 · Évaluation finale
-
-- Question 1 : action achetée 1 000, dividende 50, revendue 1 080. Rentabilité ? Réponse : (50 + 80) / 1 000 = 13 %.
-- Question 2 : D0 = 200, g = 5 %, k = 15 %. Valeur ? Réponse : D1 = 210 ; P0 = 210 / 0,10 = 2 100 francs.
-- Question 3 : une obligation de coupon 6 % quand le marché est à 8 % cote-t-elle au-dessus ou en dessous du pair ? Réponse : en dessous.
-- Question 4 : coupon annuel 730 francs, 100 jours courus (base 365). Coupon couru ? Réponse : 730 × 100 / 365 = 200 francs.
-- Question 5 : 40 % à 9 % et 60 % à 5 %. Rentabilité du portefeuille ? Réponse : 3,6 + 3 = 6,6 %.
-
-« Merci. Pour vous entraîner, recalculez le prix de l''obligation à 5,75 % de coupon pour un taux de marché de 5 %, puis expliquez en deux phrases pourquoi le prix dépasse le pair. »', 'video', 90, false, 80
-from public.courses c where c.slug = 'lic-fin-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Marchés financiers 1');
+- Question 1 : en quelle année et où le traité OHADA a-t-il été signé ? Réponse : en 1993, à Port-Louis.
+- Question 2 : citez les trois conditions pour être commerçant. Réponse : actes de commerce par nature, à titre habituel et professionnel, en son nom et pour son compte.
+- Question 3 : dans quelle société les associés sont-ils indéfiniment et solidairement responsables ? Réponse : la SNC (et les commandités de la SCS).
+- Question 4 : à quel moment une société acquiert-elle la personnalité morale ? Réponse : à son immatriculation au RCCM.
+- Question 5 : quelle forme sociale a été introduite lors de la révision de l''AUSCGIE en 2014 ? Réponse : la SAS.
+
+Merci. Rédigez la solution du cas Mariama et Ousmane en une page pour vous entraîner.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-compta-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des affaires OHADA');

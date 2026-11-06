@@ -2738,6 +2738,66 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "lic-info-l3",
+  "level": "Licence 3",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique Licence 3 : réussir ses examens (génie logiciel, web et API, sécurité)",
+  "description": "Ce cours prépare aux examens de Licence 3 en informatique : génie logiciel et UML (cycle de vie, diagrammes, tests), développement web et API (HTML, CSS, JavaScript, HTTP, REST) et sécurité informatique (menaces, cryptographie de base, bonnes pratiques). Il propose des fiches de cours, des exercices corrigés, un sujet type d'examen et trois cours vidéo de 1h30. Prérequis : programmation, bases de données et réseaux de Licence 1 et 2.",
+  "sort": 323,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le parcours LMD et comprendre ses enjeux : diplôme, stage, poursuite en Master ou insertion professionnelle.\n- Connaître les trois matières clés de l'année et les compétences évaluées.\n- Savoir traiter les épreuves typiques : étude de cas UML, conception d'API, analyse de sécurité, projet.\n- Bâtir un plan de révision sur six semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6, les derniers de la Licence. Elle conserve l'organisation en unités d'enseignement (UE) et en crédits, avec capitalisation, compensation selon le règlement et session de rattrapage. Selon les établissements, elle comprend aussi un projet tutoré, un stage en entreprise ou un mémoire de fin de cycle, évalués par un rapport et une soutenance. Les modalités exactes (poids du stage, conditions d'obtention du diplôme, dettes de crédits autorisées) figurent dans le règlement de ta formation : vérifie-les dès la rentrée.\n\nL'enjeu est double : obtenir la Licence, et constituer un dossier solide pour l'admission en Master ou pour un premier emploi (développeur, technicien réseau, administrateur de bases de données, analyste en sécurité). Les notes de Licence 3 et le projet comptent souvent beaucoup dans ces dossiers.\n\n## 2. Les matières clés de la Licence 3\n\n- Génie logiciel et UML : cycle de vie du logiciel, méthodes (cascade, cycle en V, itératif, agile), recueil des exigences, diagrammes UML (cas d'utilisation, classes, séquence, activité, états), stratégies de test. On attend des diagrammes corrects et justifiés à partir d'un texte.\n- Développement web et API : HTML, CSS, JavaScript, protocole HTTP, conception d'API REST. On attend du code lisible, une bonne connaissance des méthodes et codes HTTP, et des routes REST cohérentes.\n- Sécurité informatique : menaces et vulnérabilités, cryptographie de base (symétrique, asymétrique, hachage, signature), bonnes pratiques (authentification, mises à jour, sauvegardes, moindre privilège). On attend des explications précises et des recommandations réalistes.\n\nCes matières forment un tout : un projet web se conçoit avec UML, s'implémente avec HTML, CSS, JavaScript et une API, se teste, et doit être sécurisé dès la conception. Les sujets d'examen mélangent volontiers les trois.\n\n## 3. Les types d'épreuves\n\n- Étude de cas UML : un texte décrit un système (gestion des abonnements d'une salle de sport, plateforme de livraison). Tu dois produire un diagramme de cas d'utilisation, un diagramme de classes, parfois un diagramme de séquence. Commence par souligner les acteurs (noms de personnes ou de systèmes externes), les actions (verbes) et les informations (noms porteurs de données).\n- Conception d'API : proposer les routes REST d'un service, avec méthodes, codes de retour et exemples de JSON. Sois systématique : une ressource, ses opérations, ses codes.\n- Lecture de code web : prévoir l'affichage d'un script JavaScript, corriger une feuille de style, calculer la largeur d'une boîte CSS.\n- Analyse de sécurité : repérer une injection SQL dans un extrait de code, proposer une politique de mots de passe, expliquer un échange de clés. On attend la vulnérabilité, son impact et la correction.\n- Exercices de cryptographie : chiffrement par décalage, petit calcul RSA, propriétés d'une fonction de hachage.\n- QCM : codes HTTP, ports, notions UML et de sécurité.\n- Projet et soutenance : démonstration d'une application, présentation de la conception et des tests. Prépare une démonstration courte, qui fonctionne, et sache justifier chaque choix technique.\n\n## 4. Méthode de révision\n\n- Fiches de synthèse : une par diagramme UML (notation, règles, exemple), une pour HTTP (méthodes et codes), une pour la cryptographie (types d'algorithmes et usages).\n- Pratique : refaire les études de cas des TD sans regarder la correction ; écrire une petite page web avec un formulaire et un appel à une API ; tester les exemples de cryptographie en Python.\n- Annales et sujets types en temps limité.\n- Révisions en groupe : un étudiant joue le client qui décrit son besoin, les autres modélisent. C'est l'exercice le plus proche d'une vraie étude de cas.\n- Projet : ne laisse pas le projet dévorer tes révisions. Planifie-le avec des jalons hebdomadaires.\n\n## 5. Le jour de l'épreuve\n\nLis le sujet en entier, puis relis l'étude de cas en soulignant acteurs, actions et données. Fais un brouillon de diagramme avant de le recopier proprement : un diagramme raturé est difficile à corriger. Pour les questions de sécurité, structure tes réponses en trois temps : menace, conséquence, contre-mesure.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : bilan, fiches, planning du projet.\n- Semaine 2 : génie logiciel. Cycles de vie et méthodes agiles lundi, cas d'utilisation mardi, classes mercredi et jeudi, séquence vendredi, tests samedi.\n- Semaine 3 : web. HTML et CSS, puis JavaScript et DOM, puis HTTP et REST ; construis une mini-application.\n- Semaine 4 : sécurité. Menaces, injection et XSS, cryptographie symétrique et asymétrique, hachage et mots de passe, bonnes pratiques.\n- Semaine 5 : deux sujets complets en temps limité, correction et reprise des points faibles.\n- Semaine 6 : consolidation, rappel actif, préparation de la soutenance si elle a lieu à la même période.\n\n## Points clés\n\n- La Licence 3 conclut la Licence : règlement, stage et projet comptent ; renseigne-toi tôt.\n- Génie logiciel, web et sécurité se combinent dans les sujets.\n- Pour la sécurité : menace, conséquence, contre-mesure.\n\n## Exercices pratiques\n\n1. Dans la phrase « Le caissier enregistre le paiement du client », repère l'acteur, l'action et la donnée.\n2. Pourquoi faire un brouillon de diagramme avant de le recopier ?\n3. Échauffement : que signifie le code HTTP 404 ?\n4. Échauffement : quelle est la différence entre chiffrer et hacher un mot de passe ?\n5. Propose ta semaine 4 jour par jour.\n\n## Corrigé\n\n1. Acteur : le caissier (il interagit avec le système) ; action : enregistrer le paiement (futur cas d'utilisation) ; donnée : le paiement (futur attribut ou classe Paiement, lié à Client).\n2. Parce que la première version est rarement juste : il faut ajuster les multiplicités, déplacer des attributs, ajouter des classes. Un diagramme final propre est plus lisible et mieux noté.\n3. La ressource demandée n'existe pas sur le serveur (Not Found).\n4. Un chiffrement est réversible avec une clé ; un hachage est à sens unique. On stocke les mots de passe hachés (avec un sel), jamais chiffrés de façon réversible, et encore moins en clair.\n5. Exemple : lundi menaces et triade confidentialité-intégrité-disponibilité ; mardi injection SQL et XSS ; mercredi chiffrement symétrique ; jeudi chiffrement asymétrique et RSA ; vendredi hachage, signature et certificats ; samedi bonnes pratiques et mini-sujet ; dimanche repos."
+   },
+   {
+    "title": "Génie logiciel et UML : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Développement web et API : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sécurité informatique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 Informatique (corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Génie logiciel et UML",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Développement web et API",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Sécurité informatique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "lic-cg-l1",
   "level": "Licence 1",
   "subject": "Contrôle de gestion",
@@ -2851,6 +2911,246 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : Analyse des écarts",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-cg-l3",
+  "level": "Licence 3",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Contrôle de gestion Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de troisième année de Licence en contrôle de gestion : méthode ABC et coût cible, tableaux de bord et balanced scorecard, contrôle de gestion des PME et du secteur public, prix de cession interne. Fiches, cas d'entreprises et d'organisations fictives d'Afrique de l'Ouest, sujet type corrigé et trois cours vidéo de 1h30. Prérequis : coûts complets et partiels, budgets et analyse des écarts (L1 et L2).",
+  "sort": 333,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la troisième année de Licence en contrôle de gestion et ses enjeux (diplôme, poursuite en Master, insertion).\n- Identifier les matières clés de l'année et les attentes des correcteurs.\n- Adopter une méthode de révision qui combine calcul et analyse critique.\n- Planifier six semaines de révision.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 conclut le premier cycle du système LMD. Ses deux semestres sont organisés en unités d'enseignement créditées ; l'obtention de l'ensemble des crédits de la Licence donne le diplôme. Beaucoup de parcours prévoient aussi un stage ou un mémoire de fin de cycle. Les règles précises (crédits, compensation, rattrapage, poids du stage, conditions d'admission en Master) relèvent du règlement de votre établissement : consultez-le dès la rentrée, car les dossiers de candidature en Master s'appuient souvent sur les résultats de Licence 3.\n\n## 2. Les matières clés de l'année\n\nEn Licence 3, le contrôle de gestion devient stratégique et s'ouvre à des contextes variés. Ce cours traite trois matières :\n\n- Méthode ABC et coût cible : limites des coûts complets traditionnels, activités et inducteurs, calcul des coûts par activités, gestion par les activités, coût cible (target costing) et analyse de la valeur.\n- Tableaux de bord et indicateurs de performance : conception d'un tableau de bord, choix des indicateurs, balanced scorecard (tableau de bord prospectif) et carte stratégique, pilotage par les feux de signalisation.\n- Contrôle de gestion des PME et du secteur public, prix de cession interne : spécificités des PME, budget-programme et performance publique dans l'espace UEMOA, centres de profit et d'investissement, prix de cession interne, ROI et résultat résiduel.\n\nCes matières mobilisent tout l'acquis de L1 et L2 : coûts complets et partiels, budgets, écarts. Elles dialoguent avec la stratégie, la finance d'entreprise et le management des organisations.\n\n## 3. Ce que les correcteurs attendent\n\nEn L3, le calcul juste ne suffit plus : on attend un regard critique. Pour la méthode ABC, il faut savoir calculer, mais aussi expliquer pourquoi les résultats diffèrent de la méthode traditionnelle et ce que l'entreprise doit en faire. Pour le tableau de bord, il faut justifier le choix d'un indicateur au regard de la stratégie. Pour les prix de cession interne, il faut montrer l'effet sur le comportement des responsables de division, pas seulement sur les chiffres.\n\nTypes d'épreuves fréquents :\n\n- Cas pratique de synthèse : une entreprise ou un groupe fictif, plusieurs dossiers (coûts par activités, coût cible, tableau de bord, prix de cession).\n- Exercices chiffrés : coût d'un inducteur, résultat par division selon le prix de cession, ROI et résultat résiduel.\n- Dissertation : « Le balanced scorecard est-il adapté aux PME africaines ? », « Peut-on piloter la performance d'un service public ? ».\n- Commentaire de document : un article ou un extrait de rapport à analyser.\n- Projet ou mémoire : conception d'un tableau de bord pour une organisation réelle, souvent lors du stage.\n\n## 4. Méthode de révision\n\nFaites des fiches en deux colonnes : à gauche la méthode (étapes de calcul), à droite les apports et les limites. Par exemple : méthode ABC, étapes (identifier les activités, rattacher les ressources, choisir les inducteurs, calculer le coût unitaire de chaque inducteur, affecter aux produits) ; apports (meilleure traçabilité des charges indirectes, révélation des subventions croisées entre produits) ; limites (coût de mise en place, subjectivité des rattachements, charges de structure difficiles à rattacher).\n\nPour les dissertations, préparez une banque d'exemples sénégalais et africains fictifs mais réalistes : une PME agroalimentaire de Thiès, une institution de microfinance, un hôpital régional, une commune, un groupe industriel à plusieurs divisions. Préparez aussi quelques références d'auteurs bien identifiées (Kaplan et Norton pour le balanced scorecard ; Cooper et Kaplan pour la méthode ABC), sans inventer de citations.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : méthode ABC, 3 cas de calcul et 1 comparaison avec la méthode des centres d'analyse.\n- Semaine 2 : coût cible et analyse de la valeur ; 2 cas ; 1 dissertation sur le pilotage par les coûts.\n- Semaine 3 : tableaux de bord et balanced scorecard ; construire un tableau de bord complet pour une entreprise de votre choix.\n- Semaine 4 : contrôle de gestion des PME et du secteur public ; prix de cession interne, ROI et résultat résiduel ; 3 cas.\n- Semaine 5 : sujet type complet en 3 heures, puis correction et carnet d'erreurs.\n- Semaine 6 : deuxième sujet type, révision des fiches, entraînement aux introductions de dissertation.\n\n## 6. Le jour J\n\nLisez le sujet entièrement ; identifiez les dossiers indépendants ; gérez votre temps selon le barème. Dans les dossiers de calcul, présentez des tableaux propres et vérifiez toujours un total (la somme des coûts par activités redonne les charges indirectes ; la somme des résultats des divisions redonne le résultat du groupe). Réservez du temps aux questions de commentaire : elles valent souvent autant de points que les calculs et départagent les copies.\n\n## Points clés\n\n- La L3 est l'année de la synthèse et de l'esprit critique.\n- Trois matières : ABC et coût cible ; tableaux de bord et balanced scorecard ; PME, secteur public et prix de cession interne.\n- Toujours un total de contrôle et un commentaire.\n\n## Exercices\n\n- Exercice 1 : rédigez la fiche « méthode ABC » en deux colonnes.\n- Exercice 2 : proposez une problématique et un plan pour la dissertation « Le balanced scorecard est-il adapté aux PME africaines ? ».\n- Exercice 3 : quels totaux de contrôle utiliser dans un exercice sur les prix de cession interne ?\n\n## Corrigé\n\n- Exercice 1 : voir la section 4 ; ajoutez la formule « coût unitaire de l'inducteur = coût de l'activité / volume de l'inducteur ».\n- Exercice 2 : problématique, un outil conçu pour de grandes entreprises peut-il être utile à des structures aux ressources limitées ? Plan : I. Un outil pertinent pour clarifier la stratégie et équilibrer les indicateurs ; II. Des conditions d'adaptation : peu d'indicateurs, données simples, implication du dirigeant.\n- Exercice 3 : la somme des résultats des divisions égale le résultat du groupe, quel que soit le prix de cession (tant que les volumes ne changent pas) ; les achats internes de l'une égalent les ventes internes de l'autre."
+   },
+   {
+    "title": "Méthode ABC et coût cible : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Tableaux de bord et indicateurs de performance (balanced scorecard) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Contrôle de gestion des PME et du secteur public, prix de cession interne : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en Contrôle de gestion (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthode ABC et coût cible",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Tableaux de bord et balanced scorecard",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Contrôle de gestion des PME et du secteur public, prix de cession interne",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-compta-l1",
+  "level": "Licence 1",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Licence 1 Comptabilité : réussir ses examens",
+  "description": "Ce cours prépare les étudiants de première année de Licence en comptabilité, finance ou gestion (universités et écoles du Sénégal et de l'espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : la comptabilité générale selon le SYSCOHADA révisé (partie double, journal, grand livre, balance, achats, ventes et TVA), les mathématiques financières (intérêts simples et composés, escompte, annuités) et l'introduction au droit des affaires OHADA (commerçant et sociétés). Fiches, exercices corrigés aux calculs vérifiés, sujet d'entraînement et trois cours vidéo de 1h30. Prérequis : niveau Baccalauréat, aisance avec les pourcentages.",
+  "sort": 341,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la première année de Licence dans le système LMD.\n- Identifier les matières clés de l'année et ce que les correcteurs attendent.\n- Connaître les types d'épreuves et la méthode pour chacun.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités et grandes écoles du Sénégal et de l'espace UEMOA ont adopté le système LMD (Licence, Master, Doctorat). La Licence se prépare en trois années, soit six semestres. Chaque semestre est découpé en unités d'enseignement (UE), elles-mêmes composées d'éléments constitutifs (les matières). Chaque UE vaut un nombre de crédits ; une année complète correspond en général à 60 crédits, mais le nombre de crédits par UE, les coefficients et les règles de compensation varient d'un établissement à l'autre. Lisez attentivement le règlement des examens de votre établissement : c'est lui qui fait foi.\n\nRetenez trois idées. D'abord, la note d'une UE combine souvent un contrôle continu (devoirs, exposés, travaux dirigés) et un examen terminal. Ensuite, la compensation entre matières d'une même UE, ou entre UE d'un même semestre, existe souvent mais selon des règles locales. Enfin, une session de rattrapage est généralement prévue : ne comptez pas sur elle, préparez la première session sérieusement.\n\n## 2. Les matières clés de l'année\n\nCe cours se concentre sur trois matières qui pèsent lourd en Licence 1 Comptabilité :\n\n- Comptabilité générale 1 : principes du SYSCOHADA révisé, partie double, journal, grand livre, balance, achats, ventes, réductions commerciales et financières, TVA.\n- Mathématiques financières : intérêts simples, escompte commercial, intérêts composés, valeur actuelle, annuités, tableau d'amortissement d'un emprunt.\n- Introduction au droit des affaires OHADA : le commerçant, les actes de commerce, le registre du commerce, les grandes formes de sociétés.\n\nD'autres matières complètent l'année (économie générale, statistique descriptive, informatique, techniques d'expression, anglais des affaires). Elles sont traitées dans d'autres cours de la plateforme. En Licence 2, vous approfondirez les travaux d'inventaire, la comptabilité des sociétés et la fiscalité ; en Licence 3, les états financiers, la consolidation et l'audit.\n\n## 3. Ce que les correcteurs attendent\n\nEn comptabilité, une écriture juste mais mal présentée perd des points. Le correcteur vérifie : la date, les numéros et intitulés de comptes, le sens débit ou crédit, les montants, l'équilibre de chaque écriture et un libellé clair. En mathématiques financières, il attend la formule littérale, l'application numérique, le résultat arrondi correctement et une phrase de conclusion. En droit, il attend un raisonnement : identifier le problème juridique, rappeler la règle, l'appliquer aux faits, conclure.\n\n## 4. Les types d'épreuves et la méthode\n\n- Exercice chiffré : lisez tout l'énoncé avant de calculer, notez les données dans la marge, posez la formule, calculez, vérifiez l'ordre de grandeur.\n- Cas pratique comptable : une entreprise fictive et une liste d'opérations à enregistrer. Travaillez opération par opération, contrôlez l'équilibre de chaque écriture, puis reportez au grand livre et établissez la balance.\n- QCM : éliminez d'abord les réponses absurdes ; méfiez-vous des pièges sur le sens débit ou crédit et sur les bases de calcul de la TVA.\n- Dissertation ou question de cours (surtout en droit) : introduction (définition, intérêt du sujet, problématique, annonce du plan), deux parties équilibrées, pas de hors-sujet.\n- Cas pratique juridique : faits, problème de droit, règle applicable, application, solution.\n- Projet ou dossier : certains enseignants demandent un dossier en groupe, par exemple la tenue de la comptabilité d'une petite entreprise sur un mois.\n\n## 5. Gérer son temps le jour de l'examen\n\nPrenez cinq minutes pour lire tout le sujet et répartir votre temps selon le barème. Commencez par la partie où vous êtes le plus solide pour gagner confiance. Gardez dix minutes à la fin pour relire : équilibre des écritures, unités, conclusions. Une copie propre, avec des résultats encadrés et des étapes numérotées, se corrige plus facilement et inspire confiance au correcteur.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : principes comptables, classes de comptes, partie double. Refaire dix écritures simples par jour.\n- Semaine 2 : achats et ventes, réductions commerciales et financières, TVA ; grand livre et balance.\n- Semaine 3 : intérêts simples, escompte commercial, intérêts composés, valeur actuelle.\n- Semaine 4 : annuités et tableau d'amortissement d'emprunt ; fiches de formules.\n- Semaine 5 : droit OHADA (commerçant, actes de commerce, RCCM, sociétés) ; entraînement aux cas pratiques juridiques.\n- Semaine 6 : sujets complets en temps limité, correction, révision des points faibles.\n\nChaque semaine, consacrez une séance à revoir les erreurs des semaines précédentes. Travaillez en petit groupe une fois par semaine : expliquer une notion à un camarade est la meilleure façon de vérifier qu'on la maîtrise.\n\n## 7. Les outils indispensables\n\n- Une calculatrice autorisée par votre établissement, que vous savez utiliser pour les puissances (touche x^y).\n- Un plan de comptes SYSCOHADA révisé à jour. Dans ce cours, quand un numéro de compte est cité, vérifiez l'intitulé dans le plan de comptes officiel.\n- Des fiches de synthèse d'une page par chapitre.\n- Les sujets des années précédentes, s'ils sont disponibles à la bibliothèque ou auprès des associations d'étudiants.\n\n## Points clés\n\n- Le règlement des examens de votre établissement fixe les crédits, coefficients et règles de compensation.\n- Trois matières clés dans ce cours : comptabilité générale, mathématiques financières, droit OHADA.\n- Chaque type d'épreuve a sa méthode : formule puis calcul, ou problème puis règle puis solution.\n- Un plan de six semaines, avec révisions régulières des erreurs, vaut mieux qu'un bachotage de dernière minute.\n\n## Exercices pratiques\n\n- Exercice 1 : citez les trois niveaux du système LMD et le nombre de semestres d'une Licence.\n- Exercice 2 : quelle différence faites-vous entre une UE et un élément constitutif ?\n- Exercice 3 : un étudiant dispose de 2 heures pour un sujet noté sur 20 : comptabilité 10 points, mathématiques financières 6 points, droit 4 points. Proposez une répartition du temps en gardant 10 minutes de relecture et 5 minutes de lecture initiale.\n- Exercice 4 : quelles sont les cinq vérifications à faire sur chaque écriture comptable ?\n- Exercice 5 (cas pratique) : Fatou a trois semaines avant ses examens et se sent faible en mathématiques financières. Adaptez le plan de six semaines en un plan de trois semaines.\n\n## Corrigé\n\n- Exercice 1 : Licence, Master, Doctorat. La Licence comprend six semestres (trois années).\n- Exercice 2 : l'UE est un regroupement cohérent de matières, auquel sont attachés des crédits ; l'élément constitutif est une matière à l'intérieur de l'UE (par exemple, Comptabilité générale 1 dans une UE Techniques comptables).\n- Exercice 3 : 120 − 5 − 10 = 105 minutes à répartir sur 20 points, soit 5,25 minutes par point. Comptabilité : 10 × 5,25 = 52,5 minutes, environ 52 minutes ; mathématiques financières : 6 × 5,25 = 31,5 minutes, environ 32 minutes ; droit : 4 × 5,25 = 21 minutes. Total : 52 + 32 + 21 = 105 minutes.\n- Exercice 4 : la date et le libellé ; les numéros et intitulés de comptes ; le sens débit ou crédit ; les montants ; l'égalité total débit = total crédit.\n- Exercice 5 : semaine 1 : comptabilité (principes, achats, ventes, TVA, balance) en séances courtes, et une séance quotidienne de mathématiques financières (intérêts simples, escompte) ; semaine 2 : mathématiques financières (intérêts composés, annuités, emprunts) en priorité, plus le droit OHADA ; semaine 3 : deux sujets complets en temps limité, corrections et fiches de formules relues chaque jour. L'essentiel est de donner plus de temps à la matière faible sans abandonner les autres."
+   },
+   {
+    "title": "Comptabilité générale 1 : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mathématiques financières : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des affaires OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité générale 1",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Mathématiques financières",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des affaires OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-compta-l2",
+  "level": "Licence 2",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Licence 2 Comptabilité : réussir ses examens",
+  "description": "Ce cours prépare les étudiants de deuxième année de Licence en comptabilité, finance ou gestion (Sénégal, espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : la comptabilité générale 2 et les travaux d'inventaire selon le SYSCOHADA révisé (amortissements linéaire et dégressif, dépréciations, provisions, régularisations), la comptabilité des sociétés (constitution, affectation du résultat, augmentation de capital) et la fiscalité des entreprises (mécanismes de l'impôt sur les sociétés et de la TVA, avec des taux fictifs). Fiches, exercices corrigés aux écritures vérifiées, sujet d'entraînement et trois cours vidéo de 1h30. Prérequis : comptabilité générale de Licence 1 (partie double, achats, ventes, TVA).",
+  "sort": 342,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la Licence 1.\n- Identifier les matières clés de l'année et les attentes des correcteurs.\n- Maîtriser la méthode de chaque type d'épreuve.\n- Organiser six semaines de révision efficaces.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 de la Licence. Comme en première année, les enseignements sont organisés en unités d'enseignement (UE) dotées de crédits, avec en général 60 crédits pour l'année ; mais la répartition des crédits, les coefficients, la part du contrôle continu et les règles de compensation dépendent de votre établissement. Le règlement des examens et le guide de l'étudiant de votre université ou école font foi : lisez-les en début d'année.\n\nCe qui change : on ne vous demande plus seulement d'enregistrer des opérations courantes, mais de raisonner sur la clôture de l'exercice, sur la vie juridique des sociétés et sur les conséquences fiscales des opérations. Les sujets deviennent plus longs, plus liés entre eux, et un même cas pratique peut mêler comptabilité, droit et fiscalité.\n\n## 2. Les matières clés de l'année\n\n- Comptabilité générale 2 et travaux d'inventaire : amortissements linéaire et dégressif, dépréciations des stocks et des créances, provisions pour risques et charges, régularisations des charges et des produits, variation des stocks.\n- Comptabilité des sociétés : constitution (apports en numéraire et en nature, libération du capital), affectation du résultat, augmentation de capital et droit préférentiel de souscription.\n- Fiscalité des entreprises : mécanisme de l'impôt sur les sociétés (du résultat comptable au résultat fiscal), acomptes, TVA (fait générateur, exigibilité, droit à déduction, prorata).\n\nD'autres matières accompagnent l'année (comptabilité analytique, droit des affaires approfondi, statistiques, informatique de gestion, anglais) et sont traitées dans d'autres cours. Les mathématiques financières et l'introduction au droit OHADA, vues en Licence 1, sont supposées acquises ; les états financiers, la consolidation et l'audit seront étudiés en Licence 3.\n\n## 3. Les attentes des correcteurs\n\nEn travaux d'inventaire, le correcteur attend un calcul justifié (base, taux, durée, prorata), l'écriture correcte et, souvent, l'impact sur le résultat. En comptabilité des sociétés, il attend que vous appliquiez les règles juridiques (réserve légale, libération du capital) avant de comptabiliser. En fiscalité, il attend un tableau de passage clair du résultat comptable au résultat fiscal, avec chaque réintégration et chaque déduction justifiée en une phrase. Rappelez toujours, quand vous utilisez un taux d'impôt donné par l'énoncé, qu'il s'agit de l'hypothèse du sujet.\n\n## 4. Les types d'épreuves et la méthode\n\n- Cas pratique d'inventaire : une liste d'informations au 31 décembre. Pour chacune : calcul, écriture, impact sur le résultat. Terminez par un récapitulatif.\n- Exercice de comptabilité des sociétés : commencez par le calcul juridique (bénéfice distribuable, nombre d'actions nouvelles, valeur du droit), puis passez l'écriture.\n- Exercice de fiscalité : tableau de passage, impôt dû, acomptes et solde, écritures.\n- QCM : attention aux pièges de prorata temporis, de plafond de réserve légale et de base de TVA.\n- Question de réflexion : par exemple, « pourquoi la prudence conduit-elle à déprécier mais pas à réévaluer ? ». Réponse structurée en deux ou trois idées.\n\n## 5. Organiser son temps\n\nUn sujet de Licence 2 de trois heures comporte souvent un grand cas d'inventaire. Ne vous noyez pas dans un calcul : si un élément vous bloque, posez une hypothèse explicite et continuez. Gardez un tableau récapitulatif des impacts sur le résultat : il vous permet de vérifier la cohérence de vos écritures.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : amortissements linéaire et dégressif, prorata temporis, tableaux d'amortissement, cessions simples.\n- Semaine 2 : dépréciations des stocks et des créances, provisions pour risques et charges, reprises.\n- Semaine 3 : régularisations (charges et produits constatés d'avance, charges à payer, produits à recevoir), variation des stocks ; un grand cas d'inventaire.\n- Semaine 4 : constitution des sociétés, affectation du résultat, augmentation de capital et droit préférentiel de souscription.\n- Semaine 5 : impôt sur les sociétés (tableau de passage, acomptes), TVA (déduction, prorata, liquidation).\n- Semaine 6 : deux sujets complets en temps limité, correction, fiches de synthèse.\n\n## Points clés\n\n- Le règlement des examens de votre établissement fixe crédits, coefficients et compensation.\n- Trois matières clés : inventaire, sociétés, fiscalité.\n- Toujours : calcul justifié, écriture équilibrée, impact sur le résultat.\n- Les taux fiscaux des sujets sont des hypothèses : ne les apprenez pas comme des taux officiels.\n\n## Exercices pratiques\n\n- Exercice 1 : citez trois différences d'attentes entre la Licence 1 et la Licence 2 en comptabilité.\n- Exercice 2 : quelles sont les trois étapes à rédiger pour chaque information d'un cas d'inventaire ?\n- Exercice 3 : un sujet de 3 heures comprend un cas d'inventaire sur 10 points, un exercice de sociétés sur 5 points et un exercice de fiscalité sur 5 points. Répartissez 165 minutes utiles.\n- Exercice 4 : pourquoi faut-il faire le calcul juridique avant l'écriture en comptabilité des sociétés ? Donnez un exemple.\n- Exercice 5 (cas pratique) : Ousmane a raté le partiel du semestre 3 à cause des travaux d'inventaire. Il lui reste quatre semaines avant le rattrapage. Proposez-lui un plan.\n\n## Corrigé\n\n- Exercice 1 : en Licence 2, on raisonne sur la clôture de l'exercice (inventaire), on applique des règles juridiques (sociétés) et on mesure les conséquences fiscales ; les sujets sont plus longs et transversaux.\n- Exercice 2 : le calcul justifié, l'écriture équilibrée, l'impact sur le résultat.\n- Exercice 3 : 165 minutes pour 20 points, soit 8,25 minutes par point : inventaire 82,5 minutes (environ 82), sociétés 41,25 minutes (environ 41), fiscalité 41,25 minutes (environ 42) ; total 165.\n- Exercice 4 : l'écriture traduit une décision encadrée par le droit. Exemple : la dotation à la réserve légale dépend du plafond fixé par les textes ; si la réserve a déjà atteint ce plafond, aucune dotation n'est due, et l'écriture change.\n- Exercice 5 : semaine 1 : amortissements (linéaire, dégressif, prorata) avec dix exercices courts ; semaine 2 : dépréciations, provisions et régularisations ; semaine 3 : deux grands cas d'inventaire corrigés, avec tableau des impacts ; semaine 4 : un sujet complet en temps limité et relecture des fiches. Chaque jour, refaire sans aide un exercice déjà corrigé."
+   },
+   {
+    "title": "Comptabilité générale 2 et travaux d'inventaire : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Comptabilité des sociétés : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Fiscalité des entreprises : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité générale 2 et travaux d'inventaire",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comptabilité des sociétés",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Fiscalité des entreprises",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-compta-l3",
+  "level": "Licence 3",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Licence 3 Comptabilité : réussir ses examens",
+  "description": "Ce cours prépare les étudiants de troisième année de Licence en comptabilité, finance ou audit (Sénégal, espace UEMOA/OHADA) aux partiels et examens semestriels. Il couvre trois matières clés : les états financiers du SYSCOHADA révisé (bilan, compte de résultat, tableau des flux de trésorerie), la consolidation et les opérations spéciales (méthodes de consolidation, écart d'acquisition, fusion simple) et l'audit et le contrôle interne (démarche, risques, assertions, normes en termes généraux). Fiches, exercices corrigés aux calculs vérifiés, sujet d'entraînement et trois cours vidéo de 1h30. Prérequis : comptabilité générale, travaux d'inventaire et comptabilité des sociétés (Licence 1 et 2).",
+  "sort": 343,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le parcours LMD et comprendre ses enjeux (diplôme, poursuite en Master, insertion).\n- Identifier les matières clés de l'année et le niveau d'exigence attendu.\n- Maîtriser les types d'épreuves de troisième année, y compris le projet ou le rapport de stage.\n- Construire un plan de révision de six semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6. Elle conclut le premier cycle : sa validation donne le diplôme de Licence et conditionne l'accès au Master (souvent sur dossier). Comme les années précédentes, elle est organisée en unités d'enseignement (UE) dotées de crédits, avec en général 60 crédits pour l'année ; la répartition, les coefficients, la place du stage et les règles de compensation sont fixés par chaque établissement. Le règlement des examens fait foi.\n\nDans beaucoup de filières comptables, la Licence 3 comporte un stage en entreprise ou en cabinet, suivi d'un rapport et parfois d'une soutenance. C'est aussi l'année où les recruteurs commencent à regarder vos relevés de notes : la régularité compte.\n\n## 2. Les matières clés de l'année\n\n- États financiers SYSCOHADA : établissement et analyse du bilan, du compte de résultat et du tableau des flux de trésorerie (TFT) ; soldes significatifs ; capacité d'autofinancement globale ; fonds de roulement, besoin de financement, trésorerie nette.\n- Consolidation et opérations spéciales : périmètre, pourcentages de contrôle et d'intérêt, méthodes (intégration globale, intégration proportionnelle, mise en équivalence), élimination des titres et écart d'acquisition, opérations réciproques ; fusion simple (parité d'échange, prime de fusion).\n- Audit et contrôle interne : objectifs de l'audit, démarche (prise de connaissance, évaluation des risques, contrôle interne, contrôles substantifs, rapport), assertions, seuil de signification, référentiels en termes généraux.\n\nD'autres matières complètent l'année (contrôle de gestion, finance d'entreprise, droit fiscal approfondi, droit du travail, informatique comptable). Elles sont traitées dans d'autres cours. Les travaux d'inventaire, la comptabilité des sociétés et la fiscalité, vus en Licence 2, sont supposés maîtrisés : ils servent de base à l'établissement des états financiers.\n\n## 3. Le niveau d'exigence\n\nEn Licence 3, on ne vous demande plus seulement de calculer : on vous demande d'interpréter. Un TFT juste mais sans commentaire perd une partie des points. Un calcul d'écart d'acquisition doit être suivi de son traitement. Une question d'audit attend une démarche argumentée, pas une liste récitée. Les correcteurs valorisent la précision du vocabulaire : valeur ajoutée, excédent brut d'exploitation, capacité d'autofinancement globale, contrôle exclusif, influence notable, assertion d'exhaustivité, risque de non-détection.\n\n## 4. Les types d'épreuves et la méthode\n\n- Exercice d'états financiers : à partir d'une balance ou de données, présenter le compte de résultat en cascade, calculer la CAFG, établir le TFT ; commenter en cinq à dix lignes.\n- Cas de consolidation : déterminer les pourcentages, choisir la méthode, éliminer les titres, calculer l'écart d'acquisition et les intérêts minoritaires.\n- Cas de fusion : évaluer les sociétés, calculer la parité, le nombre d'actions à créer et la prime de fusion, passer les écritures chez l'absorbante.\n- Cas d'audit : identifier les faiblesses de contrôle interne, les risques et les assertions concernées, proposer des tests et des recommandations.\n- Dissertation ou question de réflexion : par exemple, « l'auditeur garantit-il l'absence de fraude ? ».\n- Rapport de stage : description de l'entreprise, missions réalisées, analyse critique, recommandations.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan et compte de résultat SYSCOHADA ; soldes en cascade ; dix exercices courts.\n- Semaine 2 : CAFG, TFT, fonds de roulement, besoin de financement, trésorerie ; commentaires.\n- Semaine 3 : consolidation : pourcentages, méthodes, élimination des titres, écart d'acquisition, opérations réciproques.\n- Semaine 4 : fusion simple ; puis audit : démarche, risques, assertions, seuil de signification.\n- Semaine 5 : contrôle interne (composantes, séparation des tâches, cycles ventes, achats, trésorerie) ; cas d'audit.\n- Semaine 6 : deux sujets complets en temps limité, corrections, fiches.\n\n## Points clés\n\n- La Licence 3 conclut le cycle : régularité et interprétation sont valorisées.\n- Trois matières clés : états financiers, consolidation et opérations spéciales, audit et contrôle interne.\n- Toujours compléter un calcul par une interprétation.\n\n## Exercices pratiques\n\n- Exercice 1 : citez deux différences entre les attentes de Licence 2 et de Licence 3.\n- Exercice 2 : quelles étapes suivez-vous dans un cas de fusion simple ?\n- Exercice 3 : vous disposez de 4 heures pour un sujet : états financiers 8 points, consolidation 6 points, audit 6 points. Répartissez 225 minutes utiles.\n- Exercice 4 : pourquoi le vocabulaire précis est-il valorisé en audit ? Donnez deux exemples de termes.\n- Exercice 5 (cas pratique) : Aïcha doit rendre son rapport de stage et préparer ses examens en même temps. Proposez une organisation sur six semaines.\n\n## Corrigé\n\n- Exercice 1 : en Licence 3, on attend une interprétation des résultats (commentaire du TFT, traitement de l'écart d'acquisition) et une démarche argumentée (audit), en plus du calcul.\n- Exercice 2 : évaluer les deux sociétés ; calculer la valeur unitaire des titres ; déterminer la parité ; calculer le nombre d'actions à créer, l'augmentation de capital et la prime de fusion ; passer les écritures chez l'absorbante.\n- Exercice 3 : 225 ÷ 20 = 11,25 minutes par point : états financiers 90 minutes ; consolidation 67,5 minutes (environ 67) ; audit 67,5 minutes (environ 68) ; total 225.\n- Exercice 4 : parce que chaque terme correspond à un concept précis, avec ses conséquences. Exemples : « assertion d'exhaustivité » (toutes les opérations sont enregistrées), « risque de non-détection » (risque que les contrôles de l'auditeur ne détectent pas une anomalie significative).\n- Exercice 5 : réserver deux demi-journées par semaine au rapport (plan en semaine 1, rédaction semaines 2 à 4, relecture semaine 5) et suivre le plan de révision le reste du temps ; en semaine 6, priorité aux sujets complets, le rapport étant terminé."
+   },
+   {
+    "title": "États financiers SYSCOHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Consolidation et opérations spéciales : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Audit et contrôle interne : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 (entraînement)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : États financiers SYSCOHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Consolidation et opérations spéciales",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Audit et contrôle interne",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
