@@ -8236,6 +8236,509 @@ Visuel : la courbe tracée progressivement, avec la tangente et l''asymptote en 
 from public.courses c where c.slug = 'maths-terminale'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : sujet type de Bac commenté');
 
+-- Cours : Finance d'entreprise M1 : diagnostic, investissement et financement en zone UEMOA
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'finance-entreprise-master1', (select id from public.levels where name = 'Master 1'), null, 'Finance', 'Finance d''entreprise M1 : diagnostic, investissement et financement en zone UEMOA', 'Ce cours forme à l''analyse financière (soldes de gestion, CAF, ratios), à la gestion du BFR et de la trésorerie, au choix d''investissement par la VAN et le TRI, et aux décisions de financement, de la banque à la microfinance et au marché financier régional. Il s''adresse aux étudiants de Master 1 en finance et gestion et aux cadres financiers de PME. Prérequis : comptabilité générale et mathématiques financières de base.', true, 60
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Analyse financière : soldes de gestion, CAF et ratios', '## Objectifs de la leçon
+
+- Calculer et interpréter les soldes significatifs du compte de résultat SYSCOHADA.
+- Calculer la capacité d''autofinancement (CAF).
+- Construire un tableau de ratios de rentabilité, de structure et d''activité, et en tirer un diagnostic.
+
+## 1. Finalité de l''analyse financière
+
+L''analyse financière consiste à étudier les états financiers d''une entreprise pour porter un jugement sur sa performance, son équilibre financier et sa solvabilité. On compare toujours dans le temps (évolution sur trois à cinq exercices) et dans l''espace (entreprises du même secteur).
+
+## 2. Les soldes significatifs de gestion
+
+Le compte de résultat du SYSCOHADA révisé fait apparaître une cascade de soldes, qui correspondent aux soldes intermédiaires de gestion (SIG) de l''analyse financière :
+
+- Marge commerciale : ventes de marchandises − coût d''achat des marchandises vendues. Pertinente pour les activités de négoce.
+- Valeur ajoutée (VA) : richesse créée par l''entreprise = production et marge − consommations en provenance des tiers. La VA rémunère le personnel, l''État, les prêteurs, les associés et l''entreprise elle-même.
+- Excédent brut d''exploitation (EBE) : VA − charges de personnel (et, selon la présentation, impôts et taxes). C''est la ressource dégagée par l''exploitation avant politique d''amortissement et de financement ; il est indépendant de la structure financière.
+- Résultat d''exploitation : EBE − dotations aux amortissements, dépréciations et provisions + reprises.
+- Résultat financier, puis résultat des activités ordinaires (RAO).
+- Résultat hors activités ordinaires (HAO), puis résultat net après participation et impôt.
+
+## 3. La capacité d''autofinancement
+
+La CAF mesure les ressources internes générées par l''activité et disponibles pour investir, rembourser les emprunts et rémunérer les associés.
+
+Méthode additive (à partir du résultat net) : CAF = résultat net + dotations aux amortissements, dépréciations et provisions − reprises − produits de cession d''immobilisations + valeur comptable des immobilisations cédées.
+
+## 4. Les principaux ratios
+
+- Rentabilité : taux de marge brute d''exploitation = EBE / chiffre d''affaires ; rentabilité économique = résultat d''exploitation / capitaux investis (capitaux propres + dettes financières, ou actif économique) ; rentabilité financière = résultat net / capitaux propres.
+- Structure : autonomie financière = capitaux propres / total du passif ; gearing (endettement) = dettes financières / capitaux propres ; capacité de remboursement = dettes financières / CAF (en années).
+- Activité : délai clients = créances clients / ventes TTC × 360 ; délai fournisseurs = dettes fournisseurs / achats TTC × 360 ; rotation des stocks = stock moyen / coût des ventes × 360.
+- Liquidité : liquidité générale = actif circulant (y compris trésorerie) / dettes à court terme.
+
+## Exemple chiffré : « Sahel Emballages SA » (en millions de FCFA)
+
+Compte de résultat : production vendue 900 ; production stockée 20 ; consommations de matières 390 ; transports et services extérieurs 110 ; impôts et taxes 20 ; charges de personnel 180 ; dotations aux amortissements 70 ; frais financiers 30 ; impôt sur le résultat 30 (montant donné). Pas d''opérations HAO.
+
+- Production de l''exercice = 900 + 20 = 920.
+- VA = 920 − 390 − 110 − 20 = 400.
+- EBE = 400 − 180 = 220.
+- Résultat d''exploitation = 220 − 70 = 150.
+- RAO = 150 − 30 = 120 ; résultat net = 120 − 30 = 90.
+- CAF = 90 + 70 = 160.
+
+Bilan simplifié : actif immobilisé net 700 ; stocks 150 ; clients 180 ; trésorerie-actif 70 ; total 1 100. Capitaux propres 600 (y compris le résultat) ; dettes financières 300 ; fournisseurs 120 ; autres dettes à court terme 80.
+
+Ratios :
+
+- Taux de marge d''EBE = 220/900 ≈ 24,4 %.
+- Rentabilité économique = 150/(600 + 300) ≈ 16,7 % (avant impôt).
+- Rentabilité financière = 90/600 = 15 %.
+- Autonomie financière = 600/1 100 ≈ 54,5 % ; gearing = 300/600 = 0,5.
+- Capacité de remboursement = 300/160 ≈ 1,9 année.
+- Délai clients (approximé sur les ventes hors taxes faute de données TTC) = 180/900 × 360 = 72 jours.
+- Liquidité générale = (150 + 180 + 70)/(120 + 80) = 2.
+
+Diagnostic : l''entreprise est rentable et peu endettée ; sa capacité de remboursement est confortable. Le point faible est le délai clients de 72 jours, qui immobilise de la trésorerie : une action sur le recouvrement est prioritaire.
+
+## 5. Méthode de diagnostic
+
+- Retraiter et vérifier les données (exercices comparables, éléments exceptionnels).
+- Calculer les soldes et la CAF, puis les ratios.
+- Comparer : évolution sur plusieurs années, moyennes du secteur.
+- Expliquer les causes (prix, volumes, coûts, délais) plutôt que de juxtaposer des chiffres.
+- Conclure par des forces, des faiblesses et des recommandations.
+
+## Points clés
+
+- VA, EBE et résultat d''exploitation mesurent la performance économique ; le résultat net intègre financement et fiscalité.
+- La CAF est la ressource interne de financement.
+- Rentabilité, structure, activité et liquidité forment les quatre familles de ratios.
+- Un ratio n''a de sens que comparé et expliqué.
+
+## Exercices
+
+- Exercice 1 : Production vendue 500 ; production stockée −10 ; consommations externes 230 ; impôts et taxes 10 ; charges de personnel 120 ; dotations 40 ; frais financiers 15 ; impôt 20. Calculez VA, EBE, résultat d''exploitation, résultat net et CAF (en millions de FCFA).
+- Exercice 2 : Capitaux propres 250, dettes financières 400, CAF 80. Calculez le gearing et la capacité de remboursement ; commentez.
+- Exercice 3 : Créances clients 90 millions ; ventes TTC annuelles 540 millions. Calculez le délai clients.
+- Exercice 4 : Pourquoi l''EBE est-il un indicateur utile pour comparer deux entreprises qui ont des politiques de financement différentes ?
+
+## Corrigé
+
+- Exercice 1 : Production = 490 ; VA = 490 − 230 − 10 = 250 ; EBE = 250 − 120 = 130 ; résultat d''exploitation = 130 − 40 = 90 ; RAO = 75 ; résultat net = 55 ; CAF = 55 + 40 = 95.
+- Exercice 2 : Gearing = 400/250 = 1,6 ; capacité de remboursement = 400/80 = 5 années. L''entreprise est fortement endettée et mettrait cinq ans de CAF à rembourser : un banquier sera réticent à prêter davantage sans renforcement des fonds propres.
+- Exercice 3 : 90/540 × 360 = 60 jours.
+- Exercice 4 : Parce qu''il est calculé avant les frais financiers, les amortissements et l''impôt : il ne dépend ni du mode de financement, ni de la politique d''amortissement, et reflète la performance de l''exploitation.', 'texte', 55, true, 10
+from public.courses c where c.slug = 'finance-entreprise-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Analyse financière : soldes de gestion, CAF et ratios');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Fonds de roulement, BFR et gestion de la trésorerie', '## Objectifs de la leçon
+
+- Établir un bilan fonctionnel simplifié et calculer fonds de roulement, besoin en fonds de roulement et trésorerie nette.
+- Calculer un BFR normatif exprimé en jours de chiffre d''affaires.
+- Construire un budget de trésorerie et connaître les leviers d''action.
+
+## 1. L''équilibre financier : FR, BFR, TN
+
+Le bilan fonctionnel classe les postes selon les cycles : investissement, financement, exploitation. Dans une approche simplifiée, on raisonne sur les valeurs nettes :
+
+- Fonds de roulement (FR) = ressources stables (capitaux propres + dettes financières) − emplois stables (actif immobilisé).
+- Besoin en fonds de roulement (BFR) = actif circulant d''exploitation (stocks, créances clients, autres créances d''exploitation) − passif circulant d''exploitation (fournisseurs, dettes fiscales et sociales d''exploitation).
+- Trésorerie nette (TN) = FR − BFR = trésorerie-actif − trésorerie-passif.
+
+Le SYSCOHADA facilite cette lecture puisque son bilan distingue déjà actif immobilisé, actif circulant, trésorerie-actif, ressources stables, passif circulant et trésorerie-passif.
+
+Interprétation : le BFR naît du décalage entre les décaissements (achats, salaires) et les encaissements (ventes). Le FR doit financer ce besoin ; s''il n''y suffit pas, la trésorerie devient négative et l''entreprise dépend des découverts.
+
+## Exemple : Sahel Emballages SA (millions de FCFA)
+
+- Ressources stables = 600 + 300 = 900 ; emplois stables = 700 ; FR = 200.
+- BFR = stocks 150 + clients 180 − fournisseurs 120 − autres dettes d''exploitation 80 = 130.
+- TN = 200 − 130 = 70, ce qui correspond à la trésorerie-actif (pas de découvert).
+
+L''équilibre est satisfaisant. Mais si l''entreprise réalise un investissement de 150 financé sur ses fonds propres, le FR tombe à 50 et la TN à −80 : un découvert apparaît, coûteux et risqué.
+
+## 2. Le BFR normatif
+
+Pour prévoir, on exprime chaque poste en jours de chiffre d''affaires hors taxes (CAHT), en tenant compte de sa durée et de sa base :
+
+- Stocks de marchandises : durée de stockage × coût d''achat / CAHT.
+- Clients : délai de paiement × ventes TTC / CAHT.
+- Fournisseurs : délai × achats TTC / CAHT.
+
+Exemple simplifié : CAHT annuel de 720 millions, soit 2 millions par jour (année de 360 jours). On estime : stocks 20 jours de CA, clients 45 jours de CA, fournisseurs 30 jours de CA. BFR normatif = 20 + 45 − 30 = 35 jours de CA, soit 70 millions de FCFA.
+
+Conséquence clé : le BFR est proportionnel à l''activité. Si le CA augmente de 25 %, le BFR augmente de 25 % aussi, soit 17,5 millions supplémentaires à financer. Une entreprise en forte croissance peut donc manquer de trésorerie tout en étant rentable : c''est l''« effet ciseaux ». Les entreprises qui vendent à l''État ou aux grandes sociétés avec des délais de paiement longs y sont particulièrement exposées.
+
+## 3. Le budget de trésorerie
+
+Le budget de trésorerie prévoit, mois par mois, les encaissements et les décaissements, afin d''anticiper les besoins de financement à court terme.
+
+Exemple (millions de FCFA) pour un trimestre, trésorerie initiale 10 :
+
+- Janvier : encaissements 60, décaissements 75 ; solde du mois −15 ; trésorerie fin de mois −5.
+- Février : encaissements 70, décaissements 62 ; solde +8 ; trésorerie fin de mois 3.
+- Mars : encaissements 85, décaissements 70 ; solde +15 ; trésorerie fin de mois 18.
+
+Le besoin de janvier (−5) doit être couvert à l''avance : facilité de caisse, escompte d''effets, report négocié d''un décaissement. L''entreprise évite ainsi un incident de paiement.
+
+## 4. Les leviers de gestion de la trésorerie
+
+- Réduire le BFR : relances clients et facturation rapide, acomptes à la commande, escompte pour paiement anticipé, gestion fine des stocks, négociation des délais fournisseurs dans le respect de la réglementation et des relations commerciales.
+- Financements à court terme : découvert autorisé, facilité de caisse, crédit de campagne (fréquent pour les filières agricoles comme l''arachide, le coton ou la noix de cajou), escompte d''effets de commerce, affacturage, avances sur marchés publics.
+- Placements des excédents : dépôts à terme, titres de court terme.
+- Outils numériques : paiements et encaissements par monnaie électronique, qui accélèrent les flux.
+
+## Points clés
+
+- TN = FR − BFR : la trésorerie est la résultante de l''équilibre entre ressources stables et besoins d''exploitation.
+- Le BFR normatif, exprimé en jours de CA, croît avec l''activité.
+- Le budget de trésorerie anticipe les besoins mensuels.
+- Réduire le BFR libère de la trésorerie sans coût financier.
+
+## Exercices
+
+- Exercice 1 : Capitaux propres 400, dettes financières 250, actif immobilisé 550, stocks 120, clients 160, fournisseurs 140, dettes fiscales et sociales 40. Calculez FR, BFR et TN.
+- Exercice 2 : CAHT 1 080 millions par an (360 jours). Stocks 25 jours, clients 60 jours, fournisseurs 40 jours de CA. Calculez le BFR en jours et en FCFA.
+- Exercice 3 : Avec les données de l''exercice 2, l''entreprise réduit le délai clients à 45 jours. Combien de trésorerie libère-t-elle ?
+- Exercice 4 : Trésorerie initiale 5 ; encaissements prévus 40, 55, 50 ; décaissements 52, 45, 48. Établissez la trésorerie de fin de mois.
+
+## Corrigé
+
+- Exercice 1 : FR = 650 − 550 = 100 ; BFR = 120 + 160 − 140 − 40 = 100 ; TN = 0. L''équilibre est juste atteint, sans marge de sécurité.
+- Exercice 2 : 25 + 60 − 40 = 45 jours ; CA journalier = 3 millions ; BFR = 135 millions.
+- Exercice 3 : 15 jours de moins × 3 millions = 45 millions libérés ; le BFR passe à 90 millions.
+- Exercice 4 : Mois 1 : 5 + 40 − 52 = −7 ; mois 2 : −7 + 55 − 45 = 3 ; mois 3 : 3 + 50 − 48 = 5. Il faut prévoir un financement de 7 millions pour le premier mois.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'finance-entreprise-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fonds de roulement, BFR et gestion de la trésorerie');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Choix d''investissement : VAN, TRI et critères complémentaires', '## Objectifs de la leçon
+
+- Déterminer les flux de trésorerie d''un projet d''investissement.
+- Calculer et interpréter la VAN, le TRI, l''indice de profitabilité et le délai de récupération actualisé.
+- Choisir entre plusieurs projets.
+
+## 1. Les flux d''un projet
+
+Un investissement est une dépense immédiate en vue de flux de trésorerie futurs. On raisonne en flux de trésorerie différentiels, c''est-à-dire ceux que le projet ajoute à l''entreprise :
+
+- Investissement initial : coût d''acquisition, frais d''installation, et augmentation du BFR liée au projet.
+- Flux annuels d''exploitation : EBE supplémentaire − impôt sur le résultat d''exploitation supplémentaire. Une formule pratique : flux = (EBE − dotations) × (1 − t) + dotations, où t est le taux d''impôt.
+- Flux de fin de projet : valeur résiduelle nette d''impôt et récupération du BFR.
+
+On ne compte pas les frais financiers dans les flux : le coût du financement est pris en compte par le taux d''actualisation.
+
+## 2. L''actualisation
+
+Un franc reçu demain vaut moins qu''un franc aujourd''hui. La valeur actuelle d''un flux F reçu dans n années, au taux r, est F/(1 + r)^n. Pour une suite de n flux constants F : valeur actuelle = F × [1 − (1 + r)^(−n)]/r.
+
+Le taux d''actualisation est le taux de rentabilité minimum exigé, souvent le coût moyen pondéré du capital, majoré si le projet est plus risqué que l''activité habituelle.
+
+## 3. La valeur actuelle nette (VAN)
+
+VAN = somme des flux actualisés − investissement initial. Règle : on accepte un projet si VAN > 0 ; entre deux projets exclusifs de même taille et de même durée, on retient celui dont la VAN est la plus élevée. Une VAN positive signifie que le projet rémunère les capitaux au-delà du taux exigé et crée de la valeur.
+
+## Exemple 1 : flux constants
+
+Une boulangerie industrielle de Thiès envisage un nouveau four : investissement 50 millions de FCFA, flux nets de 15 millions par an pendant 5 ans, valeur résiduelle nulle, taux d''actualisation 10 %.
+
+Facteur d''annuité : [1 − 1,1^(−5)]/0,1 ≈ 3,7908. Valeur actuelle des flux : 15 × 3,7908 ≈ 56,86 millions. VAN ≈ 56,86 − 50 = 6,86 millions de FCFA > 0 : le projet est rentable.
+
+## 4. Le taux de rentabilité interne (TRI)
+
+Le TRI est le taux d''actualisation pour lequel la VAN est nulle. On accepte le projet si le TRI est supérieur au taux exigé. On le calcule par tâtonnement et interpolation linéaire, ou avec la fonction TRI d''un tableur.
+
+Pour l''exemple 1, il faut trouver r tel que 15 × [1 − (1 + r)^(−5)]/r = 50, soit un facteur d''annuité de 3,3333. À 15 %, le facteur vaut 3,3522 (VAN ≈ +0,28) ; à 16 %, 3,2743 (VAN ≈ −0,89). Par interpolation : TRI ≈ 15 % + 0,28/(0,28 + 0,89) ≈ 15,24 %. Comme 15,24 % > 10 %, le projet est accepté.
+
+## Exemple 2 : flux variables
+
+Un projet de chambre froide pour une coopérative de pêcheurs de Mbour : investissement 100 millions ; flux 30, 40, 50 et 30 millions sur 4 ans ; taux 12 %.
+
+- Flux actualisés : 30/1,12 ≈ 26,79 ; 40/1,12² ≈ 31,89 ; 50/1,12³ ≈ 35,59 ; 30/1,12⁴ ≈ 19,07. Total ≈ 113,33.
+- VAN ≈ 113,33 − 100 = 13,33 millions.
+- Indice de profitabilité (IP) = valeur actuelle des flux / investissement ≈ 1,133 : chaque franc investi rapporte 1,133 franc en valeur actuelle.
+- TRI : à 15 %, VAN ≈ 6,36 ; à 20 %, VAN ≈ −3,82. Interpolation : 15 % + 5 % × 6,36/(6,36 + 3,82) ≈ 18,1 %. Le calcul exact au tableur donne environ 18,0 % ; l''interpolation sur un intervalle large surestime légèrement.
+- Délai de récupération actualisé : cumul des flux actualisés : −73,21 après un an, −41,33 après deux ans, −5,74 après trois ans, +13,33 après quatre ans. Récupération pendant la 4e année : 3 + 5,74/19,07 ≈ 3,3 années.
+
+## 5. Choisir entre projets
+
+- Projets indépendants : on accepte tous ceux dont la VAN est positive, dans la limite du budget.
+- Projets exclusifs : VAN et TRI peuvent donner des classements différents lorsque les tailles ou les profils de flux diffèrent. Le critère de la VAN est en principe prioritaire, car il mesure la création de valeur en FCFA. L''IP est utile en cas de rationnement du capital.
+- Durées différentes : on utilise des méthodes d''équivalence (annuité équivalente).
+
+Limites : la qualité de la décision dépend de la qualité des prévisions. Il faut tester la sensibilité de la VAN à une baisse des ventes, une hausse des coûts ou un retard de démarrage, et construire des scénarios (pessimiste, central, optimiste).
+
+## Points clés
+
+- On actualise les flux de trésorerie différentiels, hors frais financiers.
+- VAN > 0 : le projet crée de la valeur ; c''est le critère de référence.
+- TRI > taux exigé : projet acceptable ; il se calcule par interpolation ou au tableur.
+- IP et délai de récupération complètent l''analyse ; la sensibilité aux hypothèses est essentielle.
+
+## Exercices
+
+- Exercice 1 : Investissement 20 millions ; flux de 8 millions par an pendant 3 ans ; taux 10 %. Calculez la VAN. Faut-il investir ?
+- Exercice 2 : Investissement 80 millions ; flux 25, 30, 35, 20 millions ; taux 10 %. Calculez la VAN et l''IP.
+- Exercice 3 : Pour l''exercice 2, la VAN vaut environ 0,48 à 14 % et −2,68 à 16 %. Estimez le TRI.
+- Exercice 4 : Pourquoi n''intègre-t-on pas les intérêts d''emprunt dans les flux du projet ?
+
+## Corrigé
+
+- Exercice 1 : Facteur d''annuité à 10 % sur 3 ans : [1 − 1,1^(−3)]/0,1 ≈ 2,4869. Valeur actuelle ≈ 8 × 2,4869 = 19,89. VAN ≈ −0,11 million < 0 : on ne retient pas le projet (son TRI, environ 9,7 %, est inférieur à 10 %).
+- Exercice 2 : 25/1,1 ≈ 22,73 ; 30/1,21 ≈ 24,79 ; 35/1,331 ≈ 26,30 ; 20/1,4641 ≈ 13,66. Total ≈ 87,48. VAN ≈ 7,48 millions ; IP ≈ 87,48/80 ≈ 1,09.
+- Exercice 3 : TRI ≈ 14 % + 2 % × 0,48/(0,48 + 2,68) ≈ 14 % + 0,30 % ≈ 14,3 %.
+- Exercice 4 : Parce que le coût du financement est déjà pris en compte dans le taux d''actualisation ; compter aussi les intérêts dans les flux reviendrait à le compter deux fois.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'finance-entreprise-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Choix d''investissement : VAN, TRI et critères complémentaires');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sources de financement, coût du capital et effet de levier', '## Objectifs de la leçon
+
+- Connaître les principales sources de financement de l''entreprise.
+- Calculer le tableau d''amortissement d''un emprunt.
+- Calculer le coût moyen pondéré du capital (CMPC) et comprendre l''effet de levier.
+
+## 1. Les sources de financement
+
+- Autofinancement : financement par la CAF, après distribution des dividendes. Il préserve l''indépendance mais limite la croissance à la capacité interne.
+- Apports en capital : des associés existants, de nouveaux investisseurs, de fonds de capital-investissement ou par introduction en bourse. Les fonds propres ne sont pas remboursables mais sont exigeants en rentabilité et diluent le contrôle.
+- Emprunts bancaires à moyen et long terme : remboursables, avec intérêts déductibles fiscalement ; souvent assortis de garanties (hypothèque, nantissement, caution). Des mécanismes de garantie publics ou régionaux peuvent faciliter l''accès des PME au crédit.
+- Crédit-bail (leasing) : l''entreprise loue un équipement avec option d''achat ; utile quand les garanties manquent, car le bien reste la propriété du bailleur.
+- Emprunts obligataires : pour les grandes entreprises et les États, via le marché financier régional (voir leçon 5).
+- Subventions et financements de partenaires au développement, financement participatif, et financements conformes à la finance islamique (mourabaha, ijara), en développement dans la sous-région.
+- Microfinance : pour les très petites entreprises et les entrepreneurs individuels (voir leçon 5).
+
+## 2. L''emprunt indivis et son tableau d''amortissement
+
+Deux modalités principales :
+
+- Amortissement constant : le capital remboursé est le même chaque année ; les annuités décroissent.
+- Annuités constantes : a = C × i / [1 − (1 + i)^(−n)].
+
+Exemple : emprunt de 100 millions de FCFA, taux 9 % (taux fictif pour l''exemple), 5 ans, annuités constantes. a = 100 × 0,09/[1 − 1,09^(−5)] ≈ 25,71 millions.
+
+- Année 1 : capital début 100 ; intérêts 9,00 ; amortissement 16,71.
+- Année 2 : capital 83,29 ; intérêts 7,50 ; amortissement 18,21.
+- Année 3 : capital 65,08 ; intérêts 5,86 ; amortissement 19,85.
+- Année 4 : capital 45,23 ; intérêts 4,07 ; amortissement 21,64.
+- Année 5 : capital 23,59 ; intérêts 2,12 ; amortissement 23,59.
+
+La somme des amortissements fait 100 ; les intérêts totaux s''élèvent à environ 28,55 millions (5 × 25,71 − 100).
+
+## 3. Le coût du capital
+
+Chaque source a un coût :
+
+- Coût de la dette après impôt : kd × (1 − t), car les intérêts sont déductibles.
+- Coût des fonds propres : rentabilité exigée par les actionnaires. On peut l''estimer par le MEDAF : ke = rf + β × (rm − rf), avec rf le taux sans risque, β la sensibilité au marché et (rm − rf) la prime de risque du marché. Dans les marchés étroits de la sous-région, l''estimation du bêta est délicate ; on utilise souvent des comparables ou une prime de risque ajoutée.
+
+Coût moyen pondéré du capital : CMPC = ke × CP/(CP + D) + kd × (1 − t) × D/(CP + D).
+
+Exemple : capitaux propres 600 millions (coût 15 %), dettes financières 300 millions (taux 9 %), taux d''impôt de 25 % (taux fictif pour l''exemple ; vérifier le taux en vigueur). Coût de la dette après impôt : 9 % × 0,75 = 6,75 %. CMPC = 15 % × 2/3 + 6,75 % × 1/3 = 10 % + 2,25 % = 12,25 %. Ce taux sert de référence pour actualiser les projets de risque comparable.
+
+## 4. L''effet de levier
+
+L''endettement peut augmenter la rentabilité des capitaux propres si la rentabilité économique dépasse le coût de la dette. Avant impôt :
+
+Rf = Re + (Re − i) × D/CP, puis, après impôt, on multiplie par (1 − t).
+
+Exemple : rentabilité économique 16 %, coût de la dette 9 %, D/CP = 0,5, taux d''impôt fictif 25 %. Rf avant impôt = 16 % + 7 % × 0,5 = 19,5 % ; après impôt : 19,5 % × 0,75 ≈ 14,6 %. Sans dette, elle serait de 16 % × 0,75 = 12 %.
+
+Mais si la rentabilité économique tombe à 6 % (crise, mauvaise campagne agricole), Rf avant impôt = 6 % + (6 % − 9 %) × 0,5 = 4,5 % : l''endettement devient un effet de massue. Le levier augmente donc le risque financier.
+
+## 5. Choisir un financement
+
+Critères : coût, maturité adaptée à la durée de l''actif financé (règle de l''équilibre financier : financer un actif durable par des ressources durables), garanties exigées, impact sur le contrôle, capacité de remboursement, flexibilité.
+
+## Points clés
+
+- Autofinancement, fonds propres, dettes, crédit-bail, marché financier et microfinance sont les principales sources.
+- Annuité constante : a = C × i / [1 − (1 + i)^(−n)].
+- CMPC = moyenne pondérée des coûts des fonds propres et de la dette après impôt.
+- L''effet de levier amplifie la rentabilité financière, à la hausse comme à la baisse.
+
+## Exercices
+
+- Exercice 1 : Emprunt de 50 millions, 3 ans, amortissement constant, taux 10 % (fictif). Établissez le tableau.
+- Exercice 2 : CP 400 (coût 14 %), D 600 (taux 8 %), taux d''impôt fictif 30 %. Calculez le CMPC.
+- Exercice 3 : Re = 12 %, i = 10 %, D/CP = 2. Calculez Rf avant impôt. Que se passe-t-il si Re = 8 % ?
+- Exercice 4 : Pourquoi le crédit-bail est-il intéressant pour une PME qui manque de garanties ?
+
+## Corrigé
+
+- Exercice 1 : Amortissement annuel 16,67. Année 1 : intérêts 5,00, annuité 21,67. Année 2 : capital 33,33, intérêts 3,33, annuité 20,00. Année 3 : capital 16,67, intérêts 1,67, annuité 18,33.
+- Exercice 2 : kd après impôt = 8 % × 0,7 = 5,6 %. CMPC = 14 % × 0,4 + 5,6 % × 0,6 = 5,6 % + 3,36 % = 8,96 %.
+- Exercice 3 : Rf = 12 % + 2 % × 2 = 16 %. Si Re = 8 % : Rf = 8 % − 2 % × 2 = 4 % : le levier joue négativement.
+- Exercice 4 : Le bien financé reste la propriété du bailleur, qui dispose ainsi d''une garantie naturelle ; la PME n''a pas besoin d''apporter d''hypothèque et finance souvent 100 % de l''équipement.', 'texte', 55, false, 40
+from public.courses c where c.slug = 'finance-entreprise-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sources de financement, coût du capital et effet de levier');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Microfinance, marché financier régional et plan de financement', '## Objectifs de la leçon
+
+- Comprendre le rôle de la microfinance dans le financement des petites entreprises.
+- Calculer le coût réel d''un crédit à taux forfaitaire.
+- Connaître le fonctionnement général du marché financier régional de l''UEMOA et de la BRVM.
+- Construire un plan de financement simple.
+
+## 1. La microfinance
+
+La microfinance offre des services financiers (crédit, épargne, transferts, assurance) aux personnes et petites entreprises peu servies par les banques. Dans l''UEMOA, on parle de systèmes financiers décentralisés (SFD) : mutuelles d''épargne et de crédit, associations, sociétés. Ils sont régis par une réglementation commune et supervisés par les autorités nationales et la BCEAO, avec l''appui de la Commission bancaire de l''UMOA pour les plus grandes institutions.
+
+Méthodologies courantes : crédit solidaire (un groupe se porte caution mutuelle), crédit individuel avec garanties légères, crédit de campagne agricole, crédit lié à l''épargne préalable.
+
+Atouts : proximité, connaissance du client, rapidité. Limites : montants modestes, durées courtes, coût élevé du crédit lié aux frais de gestion de petits prêts, risque de surendettement si plusieurs prêts se cumulent. Les taux sont encadrés par la réglementation sur l''usure et la transparence, qu''il faut vérifier dans les textes en vigueur.
+
+## 2. Calculer le coût réel d''un crédit
+
+Certains crédits affichent un taux « forfaitaire » calculé sur le capital initial, alors que le capital est remboursé progressivement. Le coût réel est alors bien plus élevé que le taux affiché.
+
+Exemple (taux fictifs pour l''exemple) : un prêt de 500 000 FCFA sur 6 mois, au taux forfaitaire de 2 % par mois sur le capital initial. Intérêts = 500 000 × 2 % × 6 = 60 000 FCFA. Mensualité = 560 000/6 ≈ 93 333 FCFA.
+
+Le taux réel mensuel r est le taux qui égalise 500 000 et la valeur actuelle de six mensualités de 93 333 : il vaut environ 3,34 % par mois (calcul au tableur, fonction TAUX), soit environ 40 % par an en taux proportionnel, contre 24 % affichés (2 % × 12). Il faut aussi ajouter les frais de dossier et l''épargne obligatoire éventuelle pour obtenir le taux effectif global. Moralité : comparez toujours les taux effectifs.
+
+## 3. Le marché financier régional
+
+Les huit États de l''UEMOA partagent un marché financier régional comprenant :
+
+- Une autorité de régulation, l''Autorité des marchés financiers de l''UMOA (AMF-UMOA, anciennement CREPMF), qui autorise les opérations d''appel public à l''épargne et contrôle les intervenants.
+- La Bourse régionale des valeurs mobilières (BRVM), dont le siège est à Abidjan, avec des antennes nationales dans chaque pays, et le Dépositaire central / Banque de règlement (DC/BR), qui assure la conservation des titres et le règlement des transactions.
+- Les sociétés de gestion et d''intermédiation (SGI), seuls intermédiaires habilités à passer les ordres de bourse, ainsi que les sociétés de gestion d''OPCVM.
+
+On y échange des actions de sociétés cotées (banques, télécommunications, distribution, agro-industrie, etc.) et des obligations émises par les États, des organismes régionaux et des entreprises. Par ailleurs, les États émettent des bons et obligations du Trésor par adjudication sur le marché des titres publics, organisé avec la BCEAO.
+
+Pour une entreprise, la cotation permet de lever des fonds propres ou de la dette auprès d''un large public, d''améliorer sa notoriété et sa gouvernance, mais elle impose des obligations de transparence (publication régulière des comptes) et des coûts. Les conditions d''admission (taille, historique, part du capital diffusée) sont fixées par le règlement de la bourse et doivent être consultées dans les textes à jour.
+
+## 4. Quelques indicateurs boursiers
+
+- Rendement du dividende = dividende par action / cours.
+- PER (price earning ratio) = cours / bénéfice par action : nombre d''années de bénéfices que le marché paie.
+- Capitalisation boursière = cours × nombre d''actions.
+
+Exemple fictif : une société cotée a 10 millions d''actions, un cours de 6 000 FCFA, un bénéfice net de 7,5 milliards et distribue 4 milliards de dividendes. Capitalisation = 60 milliards ; bénéfice par action = 750 FCFA ; PER = 8 ; dividende par action = 400 FCFA ; rendement = 400/6 000 ≈ 6,7 %.
+
+## 5. Le plan de financement
+
+Le plan de financement, établi sur 3 à 5 ans, vérifie que les besoins (investissements, augmentation du BFR, remboursements d''emprunts, dividendes) sont couverts par les ressources (CAF, apports, emprunts, subventions, cessions).
+
+Exemple simplifié (millions de FCFA), année 1 : besoins = investissement 120 + augmentation du BFR 20 + remboursement d''emprunt 15 = 155. Ressources = CAF 70 + nouvel emprunt 60 + apport en capital 30 = 160. Excédent = 5, qui augmente la trésorerie. Si les ressources étaient insuffisantes, il faudrait réduire ou étaler l''investissement, ou chercher d''autres financements.
+
+## Points clés
+
+- Les SFD financent les très petites entreprises avec des méthodologies adaptées, mais à un coût élevé.
+- Le coût réel d''un crédit à taux forfaitaire dépasse nettement le taux affiché.
+- Le marché financier régional repose sur l''AMF-UMOA, la BRVM, le DC/BR et les SGI.
+- Le plan de financement vérifie la cohérence pluriannuelle entre besoins et ressources.
+
+## Exercices
+
+- Exercice 1 : Prêt de 300 000 FCFA sur 10 mois, taux forfaitaire de 1,5 % par mois sur le capital initial (fictif). Calculez les intérêts et la mensualité. Le taux réel est-il supérieur ou inférieur à 1,5 % par mois ?
+- Exercice 2 : Cours 12 000 FCFA, bénéfice par action 1 500 FCFA, dividende 900 FCFA. Calculez le PER et le rendement.
+- Exercice 3 : Citez le rôle de la BRVM, du DC/BR et d''une SGI.
+- Exercice 4 : Besoins : investissement 200, BFR 30, remboursements 40. Ressources : CAF 110, emprunt 100. Calculez l''écart et proposez une solution.
+
+## Corrigé
+
+- Exercice 1 : Intérêts = 300 000 × 1,5 % × 10 = 45 000 ; mensualité = 345 000/10 = 34 500 FCFA. Le taux réel est supérieur à 1,5 % par mois, car les intérêts sont calculés sur le capital initial alors que le capital restant dû diminue chaque mois.
+- Exercice 2 : PER = 12 000/1 500 = 8 ; rendement = 900/12 000 = 7,5 %.
+- Exercice 3 : BRVM : organiser la cotation et les échanges de titres ; DC/BR : conserver les titres et assurer le règlement-livraison ; SGI : recevoir et exécuter les ordres des investisseurs, conseiller et accompagner les émetteurs.
+- Exercice 4 : Besoins = 270 ; ressources = 210 ; insuffisance = 60. Solutions : apport en capital, emprunt complémentaire ou crédit-bail, étalement de l''investissement, réduction du BFR.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'finance-entreprise-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Microfinance, marché financier régional et plan de financement');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : du diagnostic financier à la décision d''investir et de financer', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Master 1 en finance, comptabilité-contrôle-audit, management ; cadres financiers de PME.
+- Objectifs : mener un diagnostic financier, mesurer BFR et trésorerie, évaluer un projet par la VAN et le TRI, puis choisir un plan de financement incluant banque, crédit-bail, microfinance ou marché financier régional.
+- Matériel : diaporama, tableur, états financiers simplifiés du cas, table ou fonction d''actualisation.
+- Prérequis : leçons écrites 1 à 5.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Présentation du cas
+
+Bonjour à tous. Notre cas du jour s''appelle « Teranga Jus », une PME fictive de Rufisque qui transforme des fruits locaux, mangue, bissap, bouye, en jus pasteurisés. Le dirigeant veut installer une seconde ligne de production. Il nous demande trois choses : où en est la santé financière de l''entreprise ? le projet est-il rentable ? comment le financer ? Nous allons répondre dans cet ordre.
+
+Visuel : fiche de l''entreprise, chiffre d''affaires de 600 millions de FCFA, 45 salariés.
+
+## 05:00 – 18:00 · Diagnostic par les soldes et les ratios
+
+Visuel : compte de résultat simplifié. Production vendue 600 ; consommations externes 330 ; impôts et taxes 10 ; charges de personnel 120 ; dotations 40 ; frais financiers 20 ; impôt 20, en millions de FCFA.
+
+Calculons ensemble. Valeur ajoutée : 600 − 330 − 10 = 260. EBE : 260 − 120 = 140. Résultat d''exploitation : 100. Résultat des activités ordinaires : 80. Résultat net : 60. CAF : 60 + 40 = 100.
+
+Ratios : taux de marge d''EBE 140/600, environ 23 %. Capitaux propres 350, dettes financières 150 : gearing 0,43 ; capacité de remboursement 1,5 année. Rentabilité financière : 60/350, environ 17 %.
+
+Point de méthode : un ratio isolé ne veut rien dire. Comparons avec l''année précédente : le taux de marge d''EBE était de 25 %, il a donc légèrement baissé, à cause de la hausse du prix des emballages importés. Comparons aussi avec des entreprises agroalimentaires de taille comparable : la rentabilité est correcte. Un banquier regarderait également la régularité de la CAF sur trois ans et la qualité des garanties.
+
+Question à la classe : la banque prêtera-t-elle ? Réponse attendue : a priori oui, l''entreprise est rentable et peu endettée ; mais regardons sa trésorerie avant de conclure.
+
+## 18:00 – 30:00 · BFR et trésorerie
+
+Le bilan montre des stocks de 80, des clients de 120, des fournisseurs de 60 et des dettes fiscales et sociales de 20. BFR = 80 + 120 − 60 − 20 = 120. Les ressources stables valent 500, l''actif immobilisé 420 : fonds de roulement 80. Trésorerie nette : 80 − 120 = −40. L''entreprise vit sur un découvert.
+
+Pourquoi ? Le délai clients : 120/600 × 360 = 72 jours, car elle vend à de grandes surfaces et à des hôtels qui paient tard. Question : que se passera-t-il si l''activité augmente de 50 % avec la nouvelle ligne ? Réponse : le BFR, proportionnel à l''activité, augmentera d''environ 60 millions. Il faudra le financer en plus de l''investissement. C''est l''erreur classique des entrepreneurs : financer la machine mais oublier le BFR.
+
+Visuel : graphique de l''effet ciseaux, avec le chiffre d''affaires et le BFR qui montent, et la trésorerie qui plonge.
+
+Faisons aussi un mini budget de trésorerie pour les trois mois de la saison des mangues. La trésorerie de départ est de −40 ; les achats de fruits font exploser les décaissements en mai et juin, alors que les encaissements des hôtels n''arrivent qu''en juillet et août. Sans crédit de campagne négocié à l''avance, l''entreprise risque de ne pas pouvoir payer les producteurs, qui se tourneraient alors vers d''autres acheteurs.
+
+Leviers : réduire le délai clients par la facturation rapide et l''escompte pour paiement anticipé, demander des acomptes aux hôtels, utiliser l''affacturage ou un crédit de campagne pendant la saison des mangues.
+
+## 30:00 – 42:00 · Évaluer le projet : flux, VAN
+
+Le projet : une ligne à 100 millions, plus 30 millions de BFR supplémentaire au démarrage, récupérés en fin de projet. Durée 4 ans. Flux d''exploitation nets d''impôt prévus : 30, 40, 50 et 30 millions. Taux exigé : 12 %.
+
+Visuel : ligne du temps des flux.
+
+Pour simplifier la démonstration, je calcule d''abord la VAN de la ligne seule, sans le BFR. Flux actualisés : 30/1,12 ≈ 26,79 ; 40/1,12² ≈ 31,89 ; 50/1,12³ ≈ 35,59 ; 30/1,12⁴ ≈ 19,07. Total ≈ 113,33. VAN de la ligne ≈ 13,33 millions.
+
+Ajoutons maintenant le BFR : on décaisse 30 à la date 0 et on le récupère à la fin de l''année 4, soit 30/1,12⁴ ≈ 19,07 en valeur actuelle. L''effet net du BFR est donc −30 + 19,07 = −10,93. VAN totale ≈ 13,33 − 10,93 = 2,40 millions. Le projet reste rentable, mais de justesse : le BFR a absorbé plus des trois quarts de la valeur créée.
+
+## 42:00 – 50:00 · Pause interactive et quiz
+
+Pause active, trois questions.
+
+- Question 1 : Valeur actuelle de 110 reçus dans un an à 10 % ? Réponse : 100.
+- Question 2 : FR = 50 et BFR = 70. Trésorerie nette ? Réponse : −20.
+- Question 3 : Une VAN positive à 12 % signifie-t-elle un TRI supérieur ou inférieur à 12 % ? Réponse : supérieur.
+
+## 50:00 – 1:02:00 · TRI, sensibilité et décision
+
+Le TRI de la ligne seule, sans le BFR, est d''environ 18 %. Je vous montre l''interpolation : VAN de 6,36 à 15 % et de −3,82 à 20 %, d''où 15 % + 5 % × 6,36/10,18, environ 18,1 %, le tableur donnant 18,0 %. Avec le BFR, le TRI baisse nettement, à environ 12,8 % : il reste au-dessus de 12 %, ce qui est cohérent avec une VAN totale faiblement positive.
+
+Test de sensibilité : si chaque flux d''exploitation baisse de 10 %, la valeur actuelle des flux baisse de 11,33 et la VAN totale devient négative, environ −8,9 millions. Question à la classe : que conseillez-vous ? Réponse attendue : le projet est fragile ; il faut sécuriser les débouchés, par exemple par des contrats avec des distributeurs, et réduire le BFR avant d''investir.
+
+## 1:02:00 – 1:14:00 · Financer : banque, crédit-bail, coût du capital
+
+Besoin total : 130 millions, ligne et BFR. Options : emprunt bancaire de 80 millions sur 5 ans, crédit-bail pour la ligne, apport des associés, autofinancement.
+
+Calculons l''annuité d''un emprunt de 80 millions à 9 %, un taux fictif pour l''exemple, sur 5 ans : 80 × 0,09/[1 − 1,09^(−5)] ≈ 20,57 millions par an. La CAF actuelle est de 100 : la charge est supportable.
+
+Coût moyen pondéré du capital : fonds propres 350 à 15 %, dettes 230 à 9 %, impôt au taux fictif de 25 %. Coût de la dette après impôt : 6,75 %. CMPC = 15 % × 350/580 + 6,75 % × 230/580, environ 9,05 % + 2,68 %, soit 11,7 %. Notre taux de 12 % est donc légèrement prudent.
+
+Effet de levier : avec une rentabilité économique supérieure au coût de la dette, l''endettement améliore la rentabilité des capitaux propres, mais il augmente le risque si les ventes chutent.
+
+## 1:14:00 – 1:22:00 · Microfinance et marché financier régional
+
+Les petits producteurs de mangues qui fournissent Teranga Jus manquent de trésorerie au moment de la récolte. Une institution de microfinance pourrait leur offrir un crédit de campagne. Je rappelle comment calculer le coût réel d''un crédit à taux forfaitaire : sur 500 000 FCFA à 2 % par mois forfaitaire pendant 6 mois, le taux réel est d''environ 3,3 % par mois. Il faut toujours comparer les taux effectifs.
+
+Et à plus long terme ? Si Teranga Jus devient une grande entreprise, elle pourrait émettre des obligations ou ouvrir son capital sur le marché financier régional : la BRVM, à Abidjan, commune aux huit pays de l''UEMOA, sous la régulation de l''AMF-UMOA, avec le dépositaire central et les SGI comme intermédiaires. Cela exige transparence et gouvernance solides.
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+Récapitulons la démarche : diagnostic par les soldes et les ratios, analyse du BFR et de la trésorerie, évaluation du projet par la VAN et le TRI en n''oubliant pas le BFR, tests de sensibilité, puis choix d''un financement adapté.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : VA 300, charges de personnel 140, dotations 50. EBE et résultat d''exploitation ? Réponse : 160 et 110.
+- Question 2 : Stocks 40, clients 90, fournisseurs 50. BFR ? Réponse : 80.
+- Question 3 : Investissement 60, flux de 25 pendant 3 ans, taux 10 %. VAN ? Réponse : 25 × 2,4869 − 60 ≈ 2,17, projet acceptable.
+- Question 4 : CP 500 à 14 %, D 500 à 8 %, impôt fictif 25 %. CMPC ? Réponse : 7 % + 3 % = 10 %.
+- Question 5 : Un prêt affiché à 2 % par mois forfaitaire coûte-t-il plus ou moins que 2 % par mois en réalité ? Réponse : plus, car les intérêts sont calculés sur le capital initial.
+
+Merci à tous. Pour la prochaine séance, reprenez le cas au tableur et testez trois scénarios de ventes.', 'video', 90, false, 60
+from public.courses c where c.slug = 'finance-entreprise-master1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : du diagnostic financier à la décision d''investir et de financer');
+
 -- Cours : Gérer les parkings d'une entreprise
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-parking-entreprise', (select id from public.levels where name = 'Formation professionnelle'), 'parking-entreprise', 'Gestion des parkings', 'Gérer les parkings d''une entreprise', 'Cette formation apprend à organiser et piloter le parking d''une entreprise, d''une administration ou d''un site industriel : plan et attribution des places, politique d''accès et badges, accueil des visiteurs, sécurité et optimisation du taux d''occupation. Elle s''adresse aux responsables des services généraux, gestionnaires de sites, agents de sécurité encadrants et assistants de direction. Aucun prérequis technique n''est demandé ; savoir utiliser un tableur est un plus.', true, 60
@@ -9820,6 +10323,523 @@ Question 5 : recettes 4 000 000 FCFA, charges directes 3 000 000 FCFA : taux de 
 Merci à tous. Votre travail personnel : construire le compte prévisionnel et la grille tarifaire d''un parking que vous connaissez, avec le modèle de tableur fourni.', 'video', 90, false, 60
 from public.courses c where c.slug = 'formation-parking-public'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : exploiter un parking rentable, du tarif au tableau de bord');
+
+-- Cours : Philosophie Terminale : conscience, liberté, travail, État et méthode
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'philosophie-terminale', (select id from public.levels where name = 'Terminale'), null, 'Philosophie', 'Philosophie Terminale : conscience, liberté, travail, État et méthode', 'Ce cours de philosophie de Terminale étudie quatre notions majeures, la conscience, la liberté, le travail et l''État, en croisant auteurs classiques (Descartes, Rousseau, Kant, Hegel, Marx) et penseurs africains (Senghor, Cheikh Anta Diop, Fanon, Hountondji). Il enseigne pas à pas la méthode de la dissertation et du commentaire de texte pour le Bac. Aucun prérequis autre qu''une bonne maîtrise de l''expression écrite.', true, 70
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La conscience', '## Objectifs de la leçon
+
+- Définir la conscience et distinguer ses différentes formes.
+- Comprendre le rôle de la conscience dans la connaissance de soi (Descartes, Pascal).
+- Discuter les limites de la conscience (inconscient, aliénation) avec Freud, Fanon et Cheikh Anta Diop.
+- Mobiliser ces notions dans une problématique de dissertation.
+
+## Définitions
+
+Le mot conscience vient du latin « cum scientia », « avec savoir ». Être conscient, c''est savoir ce que l''on fait, ce que l''on vit, et savoir que l''on sait.
+
+- La conscience spontanée (ou immédiate) accompagne nos actes : je vois ce texte, j''entends le bruit de la rue.
+- La conscience réfléchie est le retour de l''esprit sur lui-même : je sais que je lis, je m''interroge sur ce que je pense.
+- La conscience morale est la capacité de juger le bien et le mal de nos actes ; c''est elle qui produit le remords.
+- La conscience collective ou historique désigne ce qu''un groupe sait de lui-même, de son passé et de son identité.
+
+Husserl résume une caractéristique essentielle : « toute conscience est conscience de quelque chose ». La conscience est toujours tournée vers un objet : c''est l''intentionnalité.
+
+## La conscience, fondement de la connaissance de soi
+
+Descartes, dans le Discours de la méthode (1637) puis les Méditations métaphysiques (1641), cherche une vérité indubitable. Il doute de tout : des sens, qui nous trompent parfois, et même des raisonnements. Mais pendant qu''il doute, il pense ; et pour penser, il faut être. D''où la célèbre formule : « Je pense, donc je suis. » La conscience de soi est la première certitude, le socle de toute connaissance. Le sujet se définit comme « une chose qui pense ».
+
+Pascal souligne la grandeur que la conscience donne à l''homme : « L''homme n''est qu''un roseau, le plus faible de la nature ; mais c''est un roseau pensant. » L''univers peut l''écraser, mais l''homme sait qu''il meurt, tandis que l''univers n''en sait rien. La conscience fait la dignité humaine.
+
+Bergson ajoute que la conscience est d''abord mémoire : elle retient le passé et anticipe l''avenir ; elle relie les moments de notre vie.
+
+## Les limites de la conscience
+
+La conscience est-elle transparente à elle-même ? Plusieurs penseurs en doutent.
+
+Freud, fondateur de la psychanalyse, fait l''hypothèse de l''inconscient : une partie de notre vie psychique (désirs refoulés, souvenirs pénibles) échappe à la conscience mais agit sur nous. Les lapsus, les actes manqués et les rêves en sont des signes. Freud écrit que « le moi n''est pas maître dans sa propre maison ». La conscience n''est donc pas toute la vie de l''esprit.
+
+Frantz Fanon, psychiatre martiniquais engagé en Algérie, montre dans Peau noire, masques blancs (1952) que la domination coloniale peut produire une conscience aliénée : le colonisé intériorise le regard dévalorisant du colonisateur et finit par se percevoir à travers lui. La conscience de soi peut donc être faussée par les rapports de domination.
+
+Cheikh Anta Diop, savant sénégalais, insiste sur la conscience historique. Dans Nations nègres et culture (1954) puis Civilisation ou barbarie (1981), il soutient qu''un peuple privé de la connaissance de son passé est fragilisé, et que l''identité culturelle repose sur des facteurs historiques, linguistiques et psychologiques. Restaurer la conscience historique des peuples africains est, pour lui, une condition de leur affirmation.
+
+## Problématiques possibles
+
+- La conscience de soi est-elle une connaissance de soi ?
+- Peut-on se connaître soi-même ?
+- L''hypothèse de l''inconscient supprime-t-elle la responsabilité ?
+- La conscience de son histoire est-elle nécessaire à un peuple ?
+
+Méthode : partir de la définition, montrer ce que la conscience permet (Descartes, Pascal), puis ce qui lui échappe (Freud, Fanon), et enfin comment la conscience peut se conquérir par un travail sur soi et sur l''histoire (analyse, éducation, conscience historique selon Cheikh Anta Diop).
+
+## Points clés
+
+- Conscience spontanée, réfléchie, morale, historique.
+- Descartes : le cogito, première certitude. Pascal : la pensée fait la dignité de l''homme.
+- Freud : l''inconscient limite la maîtrise de soi.
+- Fanon : la domination peut aliéner la conscience. Cheikh Anta Diop : la conscience historique fonde l''identité culturelle.
+
+## Exercices
+
+Exercice 1 : Définir et distinguer conscience spontanée et conscience réfléchie, avec un exemple pour chacune.
+
+Exercice 2 : Expliquer en quelques lignes le raisonnement qui conduit Descartes au « Je pense, donc je suis ».
+
+Exercice 3 : Associer chaque idée à son auteur : a) « Toute conscience est conscience de quelque chose ». b) « Le moi n''est pas maître dans sa propre maison ». c) Le roseau pensant. d) La conscience historique comme fondement de l''identité culturelle africaine.
+
+Exercice 4 : Formuler la problématique du sujet : « Peut-on se connaître soi-même ? »
+
+Exercice 5 : L''existence de l''inconscient permet-elle d''excuser toutes nos fautes ? Proposer un argument pour et un argument contre.
+
+## Corrigé
+
+Exercice 1 : La conscience spontanée accompagne l''action sans retour sur soi (je marche dans la rue en évitant les obstacles). La conscience réfléchie est le retour de la pensée sur elle-même (je me demande pourquoi j''ai réagi avec colère).
+
+Exercice 2 : Descartes doute de tout ce qui peut être mis en doute : les sens, le monde extérieur, même les vérités mathématiques. Mais il ne peut douter qu''il doute ; or douter, c''est penser, et pour penser il faut exister. Donc l''existence du sujet pensant est certaine.
+
+Exercice 3 : a) Husserl. b) Freud. c) Pascal. d) Cheikh Anta Diop.
+
+Exercice 4 : Exemple : la conscience semble nous donner un accès direct et privilégié à nous-mêmes ; pourtant, nos désirs inconscients, nos illusions et le regard des autres peuvent fausser cette connaissance. La conscience de soi suffit-elle à garantir une véritable connaissance de soi, ou celle-ci exige-t-elle un travail et la médiation d''autrui ?
+
+Exercice 5 : Pour : si une partie de nos actes vient de forces inconscientes, notre responsabilité semble diminuée. Contre : le sujet reste capable de réfléchir sur lui-même et de travailler à se comprendre ; Freud lui-même vise à rendre conscient ce qui était inconscient. L''inconscient explique certaines conduites, mais il ne dispense pas de répondre de ses actes.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'philosophie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La conscience');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La liberté', '## Objectifs de la leçon
+
+- Distinguer les différents sens de la liberté.
+- Exposer la thèse du libre arbitre et sa critique déterministe.
+- Comprendre la liberté comme autonomie et comme engagement.
+- Penser la liberté dans la société et dans l''histoire africaine.
+
+## Définitions
+
+- Au sens courant, être libre, c''est faire ce que l''on veut, sans contrainte.
+- Le libre arbitre est le pouvoir de choisir par soi-même entre plusieurs possibles.
+- L''autonomie (du grec autos, soi-même, et nomos, loi) est le fait de se donner à soi-même sa propre loi.
+- La liberté politique est l''ensemble des droits garantis par la loi : liberté d''expression, de conscience, de circulation.
+- La libération est le processus collectif par lequel un peuple s''affranchit d''une domination.
+
+## La liberté comme libre arbitre
+
+Pour Descartes, la volonté humaine est en un sens infinie : rien ne semble plus évident que notre pouvoir de choisir. Mais il précise que la « liberté d''indifférence », choisir sans raison, est « le plus bas degré de la liberté ». Le vrai degré de liberté consiste à se porter vers ce que l''on comprend clairement comme vrai et bon.
+
+## La critique déterministe
+
+Spinoza conteste l''idée de libre arbitre : « les hommes se croient libres parce qu''ils sont conscients de leurs actions et ignorants des causes qui les déterminent ». Comme une pierre lancée qui croirait se mouvoir par elle-même, nous ignorons les causes (corps, désirs, éducation, milieu) qui agissent en nous. Pour Spinoza, la liberté n''est pas l''absence de causes, mais la compréhension de la nécessité : on devient libre en connaissant ce qui nous détermine.
+
+Les sciences humaines prolongent cette critique : notre langue, notre milieu social et notre culture influencent nos goûts et nos choix.
+
+## La liberté comme autonomie
+
+Rousseau, dans Du contrat social (1762), affirme que « l''obéissance à la loi qu''on s''est prescrite est liberté ». Il ne s''agit pas de faire ce que l''on veut, mais d''obéir à une loi que l''on reconnaît comme sienne.
+
+Kant développe cette idée dans le domaine moral : la volonté est autonome lorsqu''elle agit par devoir, selon une loi universelle de la raison, et non sous l''effet des désirs. Dans Qu''est-ce que les Lumières ? (1784), il lance l''appel : « Sapere aude ! Aie le courage de te servir de ton propre entendement. » La paresse et la lâcheté maintiennent les hommes dans la « minorité », c''est-à-dire la dépendance à la pensée d''autrui.
+
+## La liberté comme engagement
+
+Pour Sartre (L''existentialisme est un humanisme, 1946), « l''existence précède l''essence » : l''homme n''a pas de nature fixée d''avance, il se fait par ses actes. Il est « condamné à être libre » : même ne pas choisir est encore un choix. Cette liberté totale implique une responsabilité totale. Invoquer les circonstances pour se décharger est de la « mauvaise foi ».
+
+## Liberté et histoire africaine
+
+La question de la liberté a pris en Afrique une dimension collective : traite négrière, colonisation, luttes d''indépendance. La Charte du Manden, transmise par la tradition orale et attribuée à l''époque de Soundiata Keïta, affirme notamment que « toute vie est une vie », principe de dignité égale. Au XXe siècle, Senghor et les poètes de la Négritude revendiquent la liberté culturelle : le droit de penser et de créer à partir de ses propres valeurs. Fanon insiste sur la nécessité d''une libération qui soit aussi celle des consciences.
+
+## Problématiques possibles
+
+- Être libre, est-ce faire ce que l''on veut ?
+- La liberté est-elle une illusion ?
+- Obéir à la loi, est-ce renoncer à sa liberté ?
+- La liberté se donne-t-elle ou se conquiert-elle ?
+
+## Points clés
+
+- Libre arbitre (Descartes) contre déterminisme (Spinoza).
+- Autonomie : obéir à la loi qu''on se donne (Rousseau, Kant).
+- Engagement et responsabilité (Sartre).
+- Dimension collective de la liberté : libération, dignité, Négritude.
+
+## Exercices
+
+Exercice 1 : Expliquer la différence entre liberté et licence (faire tout ce que l''on veut).
+
+Exercice 2 : Expliquer avec vos mots l''image de la pierre chez Spinoza.
+
+Exercice 3 : Pourquoi, selon Rousseau, obéir à la loi peut-il être une forme de liberté ?
+
+Exercice 4 : Que signifie « l''homme est condamné à être libre » ? Donner un exemple.
+
+Exercice 5 : Proposer un plan en trois parties pour le sujet : « Être libre, est-ce faire ce que l''on veut ? »
+
+## Corrigé
+
+Exercice 1 : La licence est l''absence de toute règle : chacun suit ses désirs, au risque de nuire aux autres et de devenir esclave de ses passions. La liberté suppose au contraire la maîtrise de soi et le respect de règles qui garantissent la liberté de tous.
+
+Exercice 2 : Une pierre lancée, si elle était consciente, croirait se mouvoir par sa propre volonté, alors qu''elle est poussée par une cause extérieure. De même, nous nous croyons libres parce que nous sommes conscients de nos désirs, mais nous ignorons les causes qui les produisent.
+
+Exercice 3 : Parce que dans la société du contrat, la loi exprime la volonté générale à laquelle chaque citoyen participe. En obéissant à la loi, le citoyen obéit à une règle qu''il s''est lui-même donnée, et non à la volonté arbitraire d''un autre.
+
+Exercice 4 : L''homme ne peut pas échapper au choix : même s''abstenir est une décision dont il est responsable. Exemple : un élève qui ne s''inscrit pas à l''examen « pour ne pas choisir » a en réalité choisi de ne pas le passer.
+
+Exercice 5 : I. Au sens courant, la liberté semble être l''absence de contrainte : faire ce que l''on veut (libre arbitre, Descartes). II. Mais faire ce que l''on veut, c''est souvent obéir à des désirs dont on ignore les causes (Spinoza) et nuire à la liberté des autres. III. La vraie liberté est autonomie et responsabilité : se donner sa loi et assumer ses choix (Rousseau, Kant, Sartre).', 'texte', 50, false, 20
+from public.courses c where c.slug = 'philosophie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La liberté');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Le travail', '## Objectifs de la leçon
+
+- Définir le travail et ses différentes dimensions.
+- Comprendre le travail comme transformation de la nature et de soi.
+- Analyser les critiques du travail (aliénation, exploitation).
+- Réfléchir au sens du travail dans les sociétés africaines contemporaines.
+
+## Définitions
+
+Le travail est une activité consciente et volontaire par laquelle l''homme transforme la nature pour satisfaire ses besoins. On cite souvent l''étymologie « tripalium », instrument de contrainte, mais cette origine est discutée par les linguistes ; elle a néanmoins nourri l''idée du travail comme peine.
+
+- Le travail se distingue du jeu, activité gratuite et libre.
+- Il se distingue de l''activité animale, instinctive et répétitive.
+- Il se distingue de l''œuvre, production durable, et de l''emploi, qui est la forme sociale et rémunérée du travail.
+
+## Le travail comme peine et nécessité
+
+Dans la tradition biblique, le travail apparaît comme une conséquence de la faute : « Tu gagneras ton pain à la sueur de ton front. » Dans la Grèce antique, le travail manuel était souvent jugé indigne de l''homme libre et confié aux esclaves ; la vie noble était celle de la pensée et de la politique.
+
+## Le travail comme humanisation
+
+Marx, dans Le Capital, compare l''architecte et l''abeille : l''abeille construit des cellules remarquables, mais l''architecte, même médiocre, a construit l''ouvrage dans sa tête avant de le réaliser. Le travail humain est conscient et projeté. En transformant la nature, l''homme se transforme lui-même : il développe ses facultés.
+
+Hegel, dans la Phénoménologie de l''esprit (1807), décrit la dialectique du maître et de l''esclave : le maître, qui jouit sans travailler, devient dépendant ; l''esclave, en travaillant, façonne le monde, se forme et prend conscience de lui-même. Le travail est formateur.
+
+Kant écrit que l''homme est le seul animal qui doit travailler : la nature ne lui a pas tout donné, il doit tout tirer de lui-même, et cet effort développe ses talents.
+
+Locke voit dans le travail le fondement de la propriété : en mêlant son travail à une chose de la nature, l''homme la fait sienne.
+
+## Les critiques : aliénation et exploitation
+
+Dans les Manuscrits de 1844, Marx analyse le travail aliéné : dans le système capitaliste, l''ouvrier ne possède ni les moyens de production ni le produit de son travail ; son travail lui devient étranger, il ne s''y reconnaît plus. Au lieu de l''épanouir, le travail le mutile.
+
+Le travail à la chaîne (taylorisme) parcellise les tâches : le travailleur répète un geste sans voir le sens de l''ensemble. Selon une formule attribuée à Alain, « le travail est la meilleure et la pire des choses : la meilleure, s''il est libre, la pire, s''il est serf ».
+
+L''histoire africaine rappelle la forme extrême du travail contraint : l''esclavage et la traite, puis le travail forcé de l''époque coloniale.
+
+## Le travail aujourd''hui en Afrique
+
+Dans de nombreux pays africains, une grande partie de la population travaille dans le secteur informel : marchands ambulants, artisans, transporteurs, agriculteurs. Ce travail est souvent précaire, mais il témoigne d''une grande créativité. Le chômage des jeunes diplômés pose la question du sens du travail : faut-il attendre un emploi salarié ou créer son activité ? Senghor, dans sa réflexion sur un socialisme africain, insistait sur la valeur communautaire du travail ; dans les sociétés rurales sénégalaises, les travaux collectifs des champs illustrent cette dimension de solidarité.
+
+## Problématiques possibles
+
+- Le travail est-il une contrainte ou une libération ?
+- Travailler, est-ce seulement gagner sa vie ?
+- Le travail rend-il l''homme plus humain ?
+- Une société sans travail est-elle souhaitable ?
+
+## Points clés
+
+- Le travail transforme la nature et l''homme lui-même (Marx, Hegel, Kant).
+- Il peut être aliénant lorsque le travailleur est dépossédé de son activité et de son produit.
+- Il fonde la propriété (Locke) et le lien social.
+- Ses formes contemporaines (informel, chômage) posent la question de son sens.
+
+## Exercices
+
+Exercice 1 : Distinguer travail, jeu et emploi.
+
+Exercice 2 : Expliquer la comparaison de Marx entre l''architecte et l''abeille.
+
+Exercice 3 : Pourquoi, selon Hegel, l''esclave finit-il par dépasser le maître ?
+
+Exercice 4 : Qu''est-ce que le travail aliéné ? Donner un exemple contemporain.
+
+Exercice 5 : Rédiger une introduction (amorce, problématique, annonce de plan) pour le sujet : « Le travail est-il une contrainte ou une libération ? »
+
+## Corrigé
+
+Exercice 1 : Le travail est une activité productive, souvent contraignante, orientée vers un résultat utile. Le jeu est une activité libre, sans autre but que le plaisir. L''emploi est le cadre social et rémunéré du travail (contrat, salaire) : on peut travailler sans avoir d''emploi (travail domestique, bénévolat).
+
+Exercice 2 : L''abeille construit par instinct, toujours de la même manière. L''architecte conçoit d''abord son projet en pensée, puis le réalise : le travail humain est conscient, intentionnel et inventif.
+
+Exercice 3 : Le maître dépend du travail de l''esclave pour satisfaire ses besoins. L''esclave, en transformant la matière, développe des savoir-faire, se reconnaît dans ses œuvres et prend conscience de sa valeur. Le travail le forme, tandis que le maître reste passif.
+
+Exercice 4 : C''est un travail dans lequel le travailleur ne se reconnaît pas : il ne maîtrise ni son activité ni son produit, et le travail devient un simple moyen de survivre. Exemple : un ouvrier payé à la pièce qui répète le même geste toute la journée sans connaître la destination du produit.
+
+Exercice 5 : Amorce : le jeune diplômé qui cherche un emploi espère, par le travail, gagner son autonomie ; l''ouvrier épuisé par sa journée y voit plutôt une peine. Problématique : le travail est une nécessité imposée par nos besoins ; mais n''est-il qu''une contrainte, ou peut-il être le moyen par lequel l''homme se réalise et se libère ? Plan : nous verrons d''abord que le travail est une contrainte, puis qu''il est une source d''humanisation, enfin à quelles conditions il peut devenir libérateur.', 'texte', 50, false, 30
+from public.courses c where c.slug = 'philosophie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Le travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'L''État', '## Objectifs de la leçon
+
+- Définir l''État et le distinguer de la nation, du gouvernement et de la société.
+- Expliquer l''origine de l''État selon les théories du contrat (Hobbes, Rousseau).
+- Discuter la légitimité et les limites du pouvoir de l''État.
+- Réfléchir à la construction de l''État en Afrique.
+
+## Définitions
+
+- L''État est l''ensemble des institutions qui exercent l''autorité politique sur une population, sur un territoire déterminé. Max Weber le définit comme la communauté humaine qui revendique avec succès le monopole de la violence physique légitime.
+- La nation est une communauté humaine unie par une histoire, une culture, une volonté de vivre ensemble.
+- Le gouvernement est l''ensemble des personnes qui dirigent l''État à un moment donné ; il passe, l''État demeure.
+- La société civile regroupe les individus, les familles, les associations, les entreprises.
+
+Aristote affirmait que « l''homme est par nature un animal politique » : il ne réalise pleinement son humanité que dans la cité.
+
+## L''origine de l''État : le contrat social
+
+Hobbes, dans le Léviathan (1651), imagine un état de nature sans pouvoir commun : chacun ayant droit à tout, c''est « la guerre de chacun contre chacun », où la vie humaine est, selon lui, solitaire, misérable et brève. Par peur de la mort violente, les hommes concluent un pacte : ils transfèrent leur droit à un souverain absolu qui garantit la paix et la sécurité.
+
+Rousseau, dans Du contrat social (1762), part de la formule : « L''homme est né libre, et partout il est dans les fers. » Le contrat légitime est celui par lequel chacun s''unit à tous en restant libre : le peuple souverain obéit à la volonté générale, qui vise l''intérêt commun. La loi est l''expression de cette volonté générale.
+
+## La légitimité et les limites du pouvoir
+
+Un pouvoir est légitime lorsqu''il est reconnu comme juste par ceux sur qui il s''exerce (Weber distingue légitimité traditionnelle, charismatique et légale-rationnelle). La force seule ne fonde pas le droit : Rousseau remarque que « le plus fort n''est jamais assez fort pour être toujours le maître, s''il ne transforme sa force en droit et l''obéissance en devoir ».
+
+Pour éviter les abus, Montesquieu, dans De l''esprit des lois (1748), propose la séparation des pouvoirs législatif, exécutif et judiciaire : « Il faut que, par la disposition des choses, le pouvoir arrête le pouvoir. » C''est le fondement de l''État de droit, où les gouvernants eux-mêmes sont soumis à la loi.
+
+## Les critiques de l''État
+
+- Marx et Engels voient dans l''État un instrument de domination de la classe dominante ; dans la société sans classes, l''État devrait « dépérir ».
+- Nietzsche écrit dans Ainsi parlait Zarathoustra que l''État est « le plus froid de tous les monstres froids », qui prétend être le peuple.
+- Les anarchistes estiment que toute autorité étatique est une oppression.
+
+Ces critiques rappellent que l''État peut confisquer la liberté au lieu de la garantir.
+
+## L''État en Afrique
+
+Les États africains actuels sont pour la plupart issus des frontières coloniales, tracées sans tenir compte des peuples. Avant la colonisation, l''Afrique a connu de grandes formations politiques : empires du Ghana, du Mali, du Songhaï, royaumes du Djolof, du Kayor, du Sine et du Saloum, entre autres. Cheikh Anta Diop, dans Les fondements économiques et culturels d''un État fédéral d''Afrique noire (1960), plaide pour une unité politique du continent, condition selon lui de son développement. Senghor, premier président du Sénégal, défendait l''idée d''un État fondé sur le dialogue des cultures et l''enracinement dans les valeurs africaines. La question demeure : comment construire un État légitime, efficace et respectueux des libertés, au service de nations diverses ?
+
+## Problématiques possibles
+
+- L''État est-il un mal nécessaire ?
+- L''État est-il l''ennemi de la liberté ?
+- Peut-on se passer de l''État ?
+- Toute obéissance à l''État est-elle légitime ?
+
+## Points clés
+
+- État : institutions, territoire, monopole de la violence légitime (Weber).
+- Hobbes : l''État garantit la sécurité ; Rousseau : la volonté générale garantit la liberté.
+- Montesquieu : séparation des pouvoirs, État de droit.
+- Critiques : Marx, Nietzsche. Afrique : héritage colonial, projets d''unité (Cheikh Anta Diop).
+
+## Exercices
+
+Exercice 1 : Distinguer État, nation et gouvernement, avec un exemple.
+
+Exercice 2 : Pourquoi, selon Hobbes, les hommes acceptent-ils de se soumettre à un souverain ?
+
+Exercice 3 : Expliquer la formule de Montesquieu : « le pouvoir arrête le pouvoir ».
+
+Exercice 4 : Quelle différence y a-t-il entre la légalité et la légitimité ?
+
+Exercice 5 : Proposer une problématique et un plan pour le sujet : « L''État est-il l''ennemi de la liberté ? »
+
+## Corrigé
+
+Exercice 1 : L''État est l''appareil institutionnel qui exerce l''autorité (lois, administration, armée, justice). La nation est la communauté humaine qui se reconnaît une histoire et un destin communs. Le gouvernement est l''équipe dirigeante du moment. Exemple : un changement de gouvernement après une élection ne fait pas disparaître l''État ni la nation.
+
+Exercice 2 : Dans l''état de nature, chacun craint pour sa vie. Pour sortir de cette guerre permanente, les hommes renoncent à leur droit de tout faire et le confient à un souverain qui garantit la paix : ils échangent une liberté sans limite contre la sécurité.
+
+Exercice 3 : Pour qu''un pouvoir ne devienne pas tyrannique, il faut qu''un autre pouvoir puisse le limiter. En séparant le législatif, l''exécutif et le judiciaire, on empêche une seule personne ou un seul organe de concentrer toute l''autorité.
+
+Exercice 4 : La légalité est la conformité à la loi en vigueur. La légitimité est la conformité à ce qui est juste et reconnu comme tel. Une loi peut être légale sans être légitime (par exemple une loi discriminatoire).
+
+Exercice 5 : Problématique : l''État impose des lois et dispose de la force, ce qui semble limiter la liberté ; mais sans lui, la liberté de chacun serait menacée par la violence des autres. L''État est-il un obstacle ou une condition de la liberté ? Plan : I. L''État contraint et peut opprimer (Marx, Nietzsche). II. Mais il est la condition de la sécurité et de la liberté civile (Hobbes, Rousseau). III. Il ne garantit la liberté que s''il est un État de droit, limité et contrôlé (Montesquieu).', 'texte', 50, false, 40
+from public.courses c where c.slug = 'philosophie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'L''État');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Méthode de la dissertation et du commentaire de texte', '## Objectifs de la leçon
+
+- Analyser un sujet et construire une problématique.
+- Bâtir le plan d''une dissertation et rédiger introduction, développement et conclusion.
+- Conduire l''explication d''un texte philosophique (commentaire).
+- Gérer son temps et éviter les erreurs fréquentes le jour de l''épreuve.
+
+## La dissertation : analyser le sujet
+
+La dissertation est une réflexion argumentée sur une question. Elle ne consiste ni à réciter un cours ni à donner une opinion sans justification.
+
+Étapes de l''analyse :
+- Lire le sujet plusieurs fois et souligner les mots-clés.
+- Définir chaque terme, en distinguant ses différents sens.
+- Repérer la forme de la question (« est-ce… ? », « peut-on… ? », « faut-il… ? ») : « peut-on » interroge à la fois la possibilité et la légitimité.
+- Identifier les présupposés : ce que le sujet tient pour acquis.
+- Formuler le problème : une tension entre deux réponses également défendables.
+
+Exemple : « La conscience de soi est-elle une connaissance de soi ? » Présupposé : nous avons une conscience de nous-mêmes. Tension : la conscience semble nous donner un accès immédiat à nous-mêmes, mais cet accès peut être partiel ou trompeur.
+
+## Construire le plan
+
+Le plan dialectique est le plus courant :
+- I. Thèse : on examine la réponse la plus évidente, avec ses arguments.
+- II. Antithèse : on montre ses limites et on développe la réponse opposée.
+- III. Synthèse ou dépassement : on propose une réponse plus nuancée qui intègre les acquis des deux premières parties.
+
+Chaque partie contient deux ou trois sous-parties ; chaque sous-partie présente un argument, un exemple et, si possible, une référence à un auteur expliquée (pas seulement citée). Les références africaines (Senghor, Cheikh Anta Diop, Fanon, Hountondji) et classiques (Platon, Descartes, Kant, Rousseau) se complètent.
+
+## Rédiger l''introduction et la conclusion
+
+Introduction, en un seul paragraphe :
+- une amorce : un exemple, une situation, une citation qui fait apparaître le problème ;
+- la définition des termes et la reformulation du sujet ;
+- la problématique, formulée en une ou deux questions ;
+- l''annonce du plan.
+
+Conclusion :
+- un bilan du parcours ;
+- une réponse claire à la question posée ;
+- éventuellement une ouverture vers une question voisine.
+
+## Le commentaire de texte
+
+Le commentaire consiste à expliquer un texte philosophique : dégager sa thèse, suivre son argumentation et en évaluer la portée.
+
+Introduction :
+- situer l''auteur et l''œuvre si on les connaît (sans réciter une biographie) ;
+- dégager le thème (de quoi parle le texte), le problème (à quelle question il répond) et la thèse (sa réponse) ;
+- annoncer les étapes de l''argumentation (le plan du texte, souvent marqué par des connecteurs : mais, donc, en effet, ainsi).
+
+Développement :
+- Étude ordonnée : expliquer chaque moment du texte, en citant les expressions importantes et en expliquant les concepts, les exemples et les liens logiques.
+- Intérêt philosophique : montrer ce que la thèse apporte, la confronter à d''autres positions, en discuter les limites.
+
+Conclusion : rappeler la thèse et l''apport du texte, donner une appréciation argumentée.
+
+Erreur à éviter : paraphraser, c''est-à-dire répéter le texte avec d''autres mots sans l''expliquer.
+
+## Gérer son temps
+
+Les modalités exactes de l''épreuve (durée, choix des sujets) sont fixées par les autorités du Bac : vérifiez-les dans les textes officiels de l''année. Une répartition indicative pour une épreuve de quatre heures :
+- 15 minutes pour lire tous les sujets et choisir ;
+- 1 heure à 1 heure 15 pour l''analyse et le plan détaillé au brouillon ;
+- 2 heures 15 de rédaction directe au propre (introduction et conclusion peuvent être préparées au brouillon) ;
+- 15 minutes de relecture.
+
+## Erreurs fréquentes
+
+- Hors-sujet : traiter une notion voisine.
+- Catalogue d''auteurs : citer sans expliquer.
+- Absence de problématique ou conclusion sans réponse.
+
+## Points clés
+
+- Définir, problématiser, construire un plan progressif.
+- Chaque argument : idée, explication, exemple, référence expliquée.
+- Commentaire : thème, problème, thèse, structure, explication, intérêt philosophique.
+- Relire pour la langue et la cohérence.
+
+## Exercices
+
+Exercice 1 : Analyser les termes et repérer le présupposé du sujet : « Faut-il obéir à toutes les lois ? »
+
+Exercice 2 : Formuler une problématique pour le sujet : « Le travail rend-il libre ? »
+
+Exercice 3 : Voici une phrase de Kant : « Sapere aude ! Aie le courage de te servir de ton propre entendement. » Dégager le thème, le problème et la thèse.
+
+Exercice 4 : Repérer l''erreur dans ce début de développement : « Descartes a dit “Je pense, donc je suis”. Pascal a dit que l''homme est un roseau pensant. Freud a dit qu''il y a un inconscient. »
+
+Exercice 5 : Rédiger une conclusion de quatre phrases pour le sujet : « L''État est-il l''ennemi de la liberté ? »
+
+## Corrigé
+
+Exercice 1 : « Faut-il » interroge l''obligation morale et pas seulement légale. « Obéir » : se conformer à un ordre. « Toutes les lois » : y compris les lois injustes. Présupposé : il existe des lois et un devoir général d''obéissance. Le problème porte sur les limites de ce devoir : la légalité suffit-elle à fonder l''obligation ?
+
+Exercice 2 : Le travail semble d''abord une contrainte imposée par nos besoins, qui occupe notre temps et nous soumet à un employeur ; pourtant, par lui, l''homme transforme la nature, développe ses capacités et gagne son autonomie. Le travail est-il un asservissement ou la condition de notre liberté ?
+
+Exercice 3 : Thème : l''usage de la raison (les Lumières). Problème : pourquoi les hommes restent-ils dépendants de la pensée des autres, et comment s''en libérer ? Thèse : la liberté de penser exige le courage d''utiliser sa propre raison, sans se soumettre à des tuteurs.
+
+Exercice 4 : C''est un catalogue de citations : aucune n''est expliquée ni reliée à un argument ou à la problématique. Il faut partir d''une idée, l''expliquer, l''illustrer, et utiliser l''auteur pour appuyer le raisonnement.
+
+Exercice 5 : Nous avons vu que l''État, parce qu''il impose des lois et détient la force, peut menacer la liberté. Pourtant, sans lui, la liberté de chacun serait livrée à la violence des plus forts. L''État n''est donc pas par nature l''ennemi de la liberté : il en est la condition, à condition d''être un État de droit où le pouvoir est limité et contrôlé par les citoyens. Reste à savoir comment les citoyens peuvent, concrètement, exercer ce contrôle.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'philosophie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthode de la dissertation et du commentaire de texte');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : atelier de dissertation et de commentaire', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : atelier de dissertation et de commentaire, de l''analyse du sujet à la copie rédigée.
+- Objectifs : appliquer la méthode à un sujet complet (« Le travail rend-il libre ? »), mobiliser les notions de conscience, liberté, travail et État, et s''exercer au commentaire d''un court extrait.
+- Matériel : tableau ou diaporama, fiche des auteurs du cours, brouillon, chronomètre.
+- Prérequis : leçons 1 à 5.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil
+
+« Bonjour à toutes et à tous. Beaucoup d''élèves pensent que la philosophie est une matière où “il n''y a pas de bonne réponse”. C''est vrai en partie : on ne vous demande pas une réponse unique. Mais il y a une bonne méthode, et c''est elle qui fait la différence. Aujourd''hui, nous allons construire ensemble une dissertation complète, puis nous ferons un exercice de commentaire. Préparez votre brouillon. »
+
+Visuel : le sujet affiché en grand : « Le travail rend-il libre ? »
+
+## 05:00 – 18:00 · Étape 1 : analyser le sujet
+
+« Commençons par les mots. “Le travail” : activité consciente par laquelle l''homme transforme la nature pour satisfaire ses besoins. Mais aussi, au sens social, l''emploi, le métier, le salariat. “Rend” : le verbe suggère une transformation, un effet produit. “Libre” : plusieurs sens. Indépendance matérielle ? Autonomie ? Liberté intérieure ? Maîtrise de soi et du monde ? »
+
+« Quel est le présupposé ? Que l''homme n''est pas d''emblée libre, et que quelque chose pourrait le libérer. Quelle est la tension ? D''un côté, le travail est contrainte : il répond au besoin, il fatigue, il soumet à un patron ou à un horaire. De l''autre, il est ce par quoi l''homme se forme, gagne son pain sans dépendre de personne et transforme le monde. »
+
+Question à poser : « Pensez à des exemples concrets de votre entourage. Le vendeur ambulant de Dakar est-il plus libre ou moins libre grâce à son travail ? » Réponses attendues : il gagne une indépendance, mais ses journées sont longues et ses revenus incertains.
+
+## 18:00 – 28:00 · Étape 2 : la problématique
+
+« À partir de cette tension, je formule la problématique. Écrivez-la : le travail paraît d''abord comme une nécessité imposée par nos besoins, qui nous assujettit ; pourtant, c''est par lui que l''homme transforme la nature et se transforme lui-même. Le travail est-il un asservissement, ou peut-il être le chemin de la liberté ? Et si oui, à quelles conditions ? »
+
+« Remarquez que la dernière question, “à quelles conditions”, annonce déjà une troisième partie nuancée. »
+
+## 28:00 – 45:00 · Étape 3 : le plan détaillé
+
+Le formateur construit le plan au tableau.
+
+« Première partie : le travail est une contrainte qui semble s''opposer à la liberté. Premier argument : il est imposé par le besoin ; la tradition biblique y voit une peine. Deuxième argument : dans l''Antiquité grecque, l''homme libre était celui qui n''avait pas à travailler de ses mains. Troisième argument : le travail peut être aliéné. Marx montre que l''ouvrier dépossédé de son produit ne se reconnaît pas dans son activité. L''histoire africaine en donne la forme extrême : le travail forcé et l''esclavage. »
+
+« Deuxième partie : pourtant, le travail humanise et libère. Premier argument : le travail est conscient et projeté, comme l''architecte de Marx face à l''abeille. Deuxième argument : la dialectique du maître et de l''esclave chez Hegel : par le travail, l''esclave se forme et prend conscience de lui-même, tandis que le maître devient dépendant. Troisième argument : le travail donne l''indépendance matérielle ; Kant dit que l''homme doit tout tirer de lui-même, et cet effort développe ses talents. »
+
+« Troisième partie : le travail ne rend libre qu''à certaines conditions. Premier argument : il faut qu''il ait un sens pour celui qui l''accomplit ; la formule attribuée à Alain le résume : le travail est la meilleure des choses s''il est libre, la pire s''il est serf. Deuxième argument : il faut un cadre juste, ce qui renvoie au rôle de l''État et du droit du travail, qui protègent le travailleur. Troisième argument : la liberté ne se réduit pas au travail ; le loisir, la culture, la vie politique et la vie spirituelle sont aussi des lieux de liberté. »
+
+## 45:00 – 52:00 · Pause et quiz interactif
+
+« Faisons une pause de deux minutes, puis répondez à ces questions. »
+
+- Question 1 : Qui a écrit « Je pense, donc je suis » ? Réponse : Descartes.
+- Question 2 : Pour quel auteur la liberté est-elle « l''obéissance à la loi qu''on s''est prescrite » ? Réponse : Rousseau.
+- Question 3 : Quel penseur sénégalais a insisté sur la conscience historique des peuples africains ? Réponse : Cheikh Anta Diop.
+- Question 4 : Quelle est la définition de l''État selon Max Weber ? Réponse : le monopole de la violence physique légitime.
+- Question 5 : Qu''est-ce que la paraphrase ? Réponse : répéter le texte avec d''autres mots sans l''expliquer.
+
+## 52:00 – 1:05:00 · Étape 4 : rédiger l''introduction et une sous-partie
+
+« Voici une introduction modèle. Écoutez-en la structure. »
+
+« Amorce : chaque matin, à Dakar, des milliers de travailleurs prennent les cars rapides pour rejoindre leur lieu de travail ; beaucoup y voient une fatigue nécessaire, d''autres une fierté, celle de ne dépendre de personne. Définition : le travail est l''activité consciente par laquelle l''homme transforme la nature pour répondre à ses besoins. Problématique : il paraît d''abord comme une nécessité qui nous asservit ; pourtant, c''est par lui que l''homme se forme et conquiert son indépendance. Le travail est-il un asservissement ou le chemin de la liberté ? Annonce du plan : nous verrons d''abord que le travail apparaît comme une contrainte, puis qu''il est aussi une source d''humanisation, avant de chercher à quelles conditions il peut réellement libérer l''homme. »
+
+« Maintenant, une sous-partie rédigée, avec la structure idée, explication, référence, exemple : Le travail forme celui qui l''accomplit. En effet, en transformant la matière, le travailleur acquiert des savoir-faire et prend conscience de ses capacités. C''est ce que montre Hegel avec la dialectique du maître et de l''esclave : le maître, qui consomme sans produire, devient dépendant de l''esclave, tandis que ce dernier, en travaillant, se reconnaît dans ses œuvres. On le voit chez l''apprenti menuisier de Soumbédioune, qui devient, au fil des années, un maître artisan reconnu. Le travail n''est donc pas seulement une peine : il est formation de soi. »
+
+## 1:05:00 – 1:17:00 · Étape 5 : exercice de commentaire
+
+Texte projeté : la phrase de Kant tirée de Qu''est-ce que les Lumières ? (1784) : « Sapere aude ! Aie le courage de te servir de ton propre entendement. »
+
+« Dégageons le thème : l''usage de la raison. Le problème : pourquoi les hommes restent-ils dans la dépendance intellectuelle ? La thèse : la liberté de penser est une affaire de courage, non d''intelligence. Kant explique ailleurs dans ce texte que la paresse et la lâcheté maintiennent les hommes en “minorité”, parce qu''il est confortable de laisser d''autres penser à notre place. »
+
+« Intérêt philosophique : ce texte rejoint notre réflexion sur la liberté comme autonomie. On peut le rapprocher de la critique que Paulin Hountondji adresse à l''ethnophilosophie : la philosophie africaine ne doit pas se réduire à la description d''une sagesse collective, mais être un exercice personnel et critique de la pensée. »
+
+« On peut aussi évoquer Senghor, qui distinguait une raison discursive, analytique, qu''il appelait “raison-œil”, et une raison intuitive, participative, qu''il appelait “raison-étreinte”. Cette distinction a été très discutée, notamment parce qu''elle risque d''enfermer les cultures dans des essences fixes. Dans une copie, vous pouvez l''utiliser pour montrer qu''il existe plusieurs manières de connaître, à condition de présenter aussi la critique. »
+
+## 1:17:00 – 1:24:00 · Synthèse
+
+- Analyser chaque mot du sujet et repérer le présupposé.
+- Formuler une problématique qui fait apparaître une tension.
+- Construire un plan progressif, avec des arguments expliqués et illustrés.
+- Dans le commentaire, dégager thème, problème, thèse et structure, puis discuter.
+- Mobiliser des auteurs classiques et africains, toujours en les expliquant.
+
+## 1:24:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : Citer les quatre éléments d''une introduction de dissertation. Réponse : amorce, définition des termes, problématique, annonce du plan.
+- Question 2 : Que signifie « autonomie » ? Réponse : se donner à soi-même sa propre loi.
+- Question 3 : Quel auteur compare l''architecte et l''abeille ? Réponse : Marx.
+- Question 4 : Quelle est la différence entre légalité et légitimité ? Réponse : la légalité est la conformité à la loi, la légitimité la conformité à ce qui est juste.
+- Question 5 : Que soutient Freud à propos de la conscience ? Réponse : une partie de notre vie psychique, l''inconscient, échappe à la conscience : le moi n''est pas maître dans sa propre maison.
+
+« Merci pour votre participation. À la maison, rédigez entièrement la dissertation à partir du plan construit aujourd''hui, en temps limité. C''est en écrivant que l''on apprend à penser avec rigueur. Bon courage ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'philosophie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : atelier de dissertation et de commentaire');
 
 -- Cours : Gérer une station-service
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

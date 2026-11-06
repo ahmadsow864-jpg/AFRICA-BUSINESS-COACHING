@@ -722,6 +722,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "finance-entreprise-master1",
+  "level": "Master 1",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance d'entreprise M1 : diagnostic, investissement et financement en zone UEMOA",
+  "description": "Ce cours forme à l'analyse financière (soldes de gestion, CAF, ratios), à la gestion du BFR et de la trésorerie, au choix d'investissement par la VAN et le TRI, et aux décisions de financement, de la banque à la microfinance et au marché financier régional. Il s'adresse aux étudiants de Master 1 en finance et gestion et aux cadres financiers de PME. Prérequis : comptabilité générale et mathématiques financières de base.",
+  "sort": 60,
+  "lessons": [
+   {
+    "title": "Analyse financière : soldes de gestion, CAF et ratios",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\n- Calculer et interpréter les soldes significatifs du compte de résultat SYSCOHADA.\n- Calculer la capacité d'autofinancement (CAF).\n- Construire un tableau de ratios de rentabilité, de structure et d'activité, et en tirer un diagnostic.\n\n## 1. Finalité de l'analyse financière\n\nL'analyse financière consiste à étudier les états financiers d'une entreprise pour porter un jugement sur sa performance, son équilibre financier et sa solvabilité. On compare toujours dans le temps (évolution sur trois à cinq exercices) et dans l'espace (entreprises du même secteur).\n\n## 2. Les soldes significatifs de gestion\n\nLe compte de résultat du SYSCOHADA révisé fait apparaître une cascade de soldes, qui correspondent aux soldes intermédiaires de gestion (SIG) de l'analyse financière :\n\n- Marge commerciale : ventes de marchandises − coût d'achat des marchandises vendues. Pertinente pour les activités de négoce.\n- Valeur ajoutée (VA) : richesse créée par l'entreprise = production et marge − consommations en provenance des tiers. La VA rémunère le personnel, l'État, les prêteurs, les associés et l'entreprise elle-même.\n- Excédent brut d'exploitation (EBE) : VA − charges de personnel (et, selon la présentation, impôts et taxes). C'est la ressource dégagée par l'exploitation avant politique d'amortissement et de financement ; il est indépendant de la structure financière.\n- Résultat d'exploitation : EBE − dotations aux amortissements, dépréciations et provisions + reprises.\n- Résultat financier, puis résultat des activités ordinaires (RAO).\n- Résultat hors activités ordinaires (HAO), puis résultat net après participation et impôt.\n\n## 3. La capacité d'autofinancement\n\nLa CAF mesure les ressources internes générées par l'activité et disponibles pour investir, rembourser les emprunts et rémunérer les associés.\n\nMéthode additive (à partir du résultat net) : CAF = résultat net + dotations aux amortissements, dépréciations et provisions − reprises − produits de cession d'immobilisations + valeur comptable des immobilisations cédées.\n\n## 4. Les principaux ratios\n\n- Rentabilité : taux de marge brute d'exploitation = EBE / chiffre d'affaires ; rentabilité économique = résultat d'exploitation / capitaux investis (capitaux propres + dettes financières, ou actif économique) ; rentabilité financière = résultat net / capitaux propres.\n- Structure : autonomie financière = capitaux propres / total du passif ; gearing (endettement) = dettes financières / capitaux propres ; capacité de remboursement = dettes financières / CAF (en années).\n- Activité : délai clients = créances clients / ventes TTC × 360 ; délai fournisseurs = dettes fournisseurs / achats TTC × 360 ; rotation des stocks = stock moyen / coût des ventes × 360.\n- Liquidité : liquidité générale = actif circulant (y compris trésorerie) / dettes à court terme.\n\n## Exemple chiffré : « Sahel Emballages SA » (en millions de FCFA)\n\nCompte de résultat : production vendue 900 ; production stockée 20 ; consommations de matières 390 ; transports et services extérieurs 110 ; impôts et taxes 20 ; charges de personnel 180 ; dotations aux amortissements 70 ; frais financiers 30 ; impôt sur le résultat 30 (montant donné). Pas d'opérations HAO.\n\n- Production de l'exercice = 900 + 20 = 920.\n- VA = 920 − 390 − 110 − 20 = 400.\n- EBE = 400 − 180 = 220.\n- Résultat d'exploitation = 220 − 70 = 150.\n- RAO = 150 − 30 = 120 ; résultat net = 120 − 30 = 90.\n- CAF = 90 + 70 = 160.\n\nBilan simplifié : actif immobilisé net 700 ; stocks 150 ; clients 180 ; trésorerie-actif 70 ; total 1 100. Capitaux propres 600 (y compris le résultat) ; dettes financières 300 ; fournisseurs 120 ; autres dettes à court terme 80.\n\nRatios :\n\n- Taux de marge d'EBE = 220/900 ≈ 24,4 %.\n- Rentabilité économique = 150/(600 + 300) ≈ 16,7 % (avant impôt).\n- Rentabilité financière = 90/600 = 15 %.\n- Autonomie financière = 600/1 100 ≈ 54,5 % ; gearing = 300/600 = 0,5.\n- Capacité de remboursement = 300/160 ≈ 1,9 année.\n- Délai clients (approximé sur les ventes hors taxes faute de données TTC) = 180/900 × 360 = 72 jours.\n- Liquidité générale = (150 + 180 + 70)/(120 + 80) = 2.\n\nDiagnostic : l'entreprise est rentable et peu endettée ; sa capacité de remboursement est confortable. Le point faible est le délai clients de 72 jours, qui immobilise de la trésorerie : une action sur le recouvrement est prioritaire.\n\n## 5. Méthode de diagnostic\n\n- Retraiter et vérifier les données (exercices comparables, éléments exceptionnels).\n- Calculer les soldes et la CAF, puis les ratios.\n- Comparer : évolution sur plusieurs années, moyennes du secteur.\n- Expliquer les causes (prix, volumes, coûts, délais) plutôt que de juxtaposer des chiffres.\n- Conclure par des forces, des faiblesses et des recommandations.\n\n## Points clés\n\n- VA, EBE et résultat d'exploitation mesurent la performance économique ; le résultat net intègre financement et fiscalité.\n- La CAF est la ressource interne de financement.\n- Rentabilité, structure, activité et liquidité forment les quatre familles de ratios.\n- Un ratio n'a de sens que comparé et expliqué.\n\n## Exercices\n\n- Exercice 1 : Production vendue 500 ; production stockée −10 ; consommations externes 230 ; impôts et taxes 10 ; charges de personnel 120 ; dotations 40 ; frais financiers 15 ; impôt 20. Calculez VA, EBE, résultat d'exploitation, résultat net et CAF (en millions de FCFA).\n- Exercice 2 : Capitaux propres 250, dettes financières 400, CAF 80. Calculez le gearing et la capacité de remboursement ; commentez.\n- Exercice 3 : Créances clients 90 millions ; ventes TTC annuelles 540 millions. Calculez le délai clients.\n- Exercice 4 : Pourquoi l'EBE est-il un indicateur utile pour comparer deux entreprises qui ont des politiques de financement différentes ?\n\n## Corrigé\n\n- Exercice 1 : Production = 490 ; VA = 490 − 230 − 10 = 250 ; EBE = 250 − 120 = 130 ; résultat d'exploitation = 130 − 40 = 90 ; RAO = 75 ; résultat net = 55 ; CAF = 55 + 40 = 95.\n- Exercice 2 : Gearing = 400/250 = 1,6 ; capacité de remboursement = 400/80 = 5 années. L'entreprise est fortement endettée et mettrait cinq ans de CAF à rembourser : un banquier sera réticent à prêter davantage sans renforcement des fonds propres.\n- Exercice 3 : 90/540 × 360 = 60 jours.\n- Exercice 4 : Parce qu'il est calculé avant les frais financiers, les amortissements et l'impôt : il ne dépend ni du mode de financement, ni de la politique d'amortissement, et reflète la performance de l'exploitation."
+   },
+   {
+    "title": "Fonds de roulement, BFR et gestion de la trésorerie",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Choix d'investissement : VAN, TRI et critères complémentaires",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sources de financement, coût du capital et effet de levier",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Microfinance, marché financier régional et plan de financement",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : du diagnostic financier à la décision d'investir et de financer",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-parking-entreprise",
   "level": "Formation professionnelle",
   "subject": "Gestion des parkings",
@@ -859,6 +907,54 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : exploiter un parking rentable, du tarif au tableau de bord",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "philosophie-terminale",
+  "level": "Terminale",
+  "subject": "Philosophie",
+  "module": null,
+  "title": "Philosophie Terminale : conscience, liberté, travail, État et méthode",
+  "description": "Ce cours de philosophie de Terminale étudie quatre notions majeures, la conscience, la liberté, le travail et l'État, en croisant auteurs classiques (Descartes, Rousseau, Kant, Hegel, Marx) et penseurs africains (Senghor, Cheikh Anta Diop, Fanon, Hountondji). Il enseigne pas à pas la méthode de la dissertation et du commentaire de texte pour le Bac. Aucun prérequis autre qu'une bonne maîtrise de l'expression écrite.",
+  "sort": 70,
+  "lessons": [
+   {
+    "title": "La conscience",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Définir la conscience et distinguer ses différentes formes.\n- Comprendre le rôle de la conscience dans la connaissance de soi (Descartes, Pascal).\n- Discuter les limites de la conscience (inconscient, aliénation) avec Freud, Fanon et Cheikh Anta Diop.\n- Mobiliser ces notions dans une problématique de dissertation.\n\n## Définitions\n\nLe mot conscience vient du latin « cum scientia », « avec savoir ». Être conscient, c'est savoir ce que l'on fait, ce que l'on vit, et savoir que l'on sait.\n\n- La conscience spontanée (ou immédiate) accompagne nos actes : je vois ce texte, j'entends le bruit de la rue.\n- La conscience réfléchie est le retour de l'esprit sur lui-même : je sais que je lis, je m'interroge sur ce que je pense.\n- La conscience morale est la capacité de juger le bien et le mal de nos actes ; c'est elle qui produit le remords.\n- La conscience collective ou historique désigne ce qu'un groupe sait de lui-même, de son passé et de son identité.\n\nHusserl résume une caractéristique essentielle : « toute conscience est conscience de quelque chose ». La conscience est toujours tournée vers un objet : c'est l'intentionnalité.\n\n## La conscience, fondement de la connaissance de soi\n\nDescartes, dans le Discours de la méthode (1637) puis les Méditations métaphysiques (1641), cherche une vérité indubitable. Il doute de tout : des sens, qui nous trompent parfois, et même des raisonnements. Mais pendant qu'il doute, il pense ; et pour penser, il faut être. D'où la célèbre formule : « Je pense, donc je suis. » La conscience de soi est la première certitude, le socle de toute connaissance. Le sujet se définit comme « une chose qui pense ».\n\nPascal souligne la grandeur que la conscience donne à l'homme : « L'homme n'est qu'un roseau, le plus faible de la nature ; mais c'est un roseau pensant. » L'univers peut l'écraser, mais l'homme sait qu'il meurt, tandis que l'univers n'en sait rien. La conscience fait la dignité humaine.\n\nBergson ajoute que la conscience est d'abord mémoire : elle retient le passé et anticipe l'avenir ; elle relie les moments de notre vie.\n\n## Les limites de la conscience\n\nLa conscience est-elle transparente à elle-même ? Plusieurs penseurs en doutent.\n\nFreud, fondateur de la psychanalyse, fait l'hypothèse de l'inconscient : une partie de notre vie psychique (désirs refoulés, souvenirs pénibles) échappe à la conscience mais agit sur nous. Les lapsus, les actes manqués et les rêves en sont des signes. Freud écrit que « le moi n'est pas maître dans sa propre maison ». La conscience n'est donc pas toute la vie de l'esprit.\n\nFrantz Fanon, psychiatre martiniquais engagé en Algérie, montre dans Peau noire, masques blancs (1952) que la domination coloniale peut produire une conscience aliénée : le colonisé intériorise le regard dévalorisant du colonisateur et finit par se percevoir à travers lui. La conscience de soi peut donc être faussée par les rapports de domination.\n\nCheikh Anta Diop, savant sénégalais, insiste sur la conscience historique. Dans Nations nègres et culture (1954) puis Civilisation ou barbarie (1981), il soutient qu'un peuple privé de la connaissance de son passé est fragilisé, et que l'identité culturelle repose sur des facteurs historiques, linguistiques et psychologiques. Restaurer la conscience historique des peuples africains est, pour lui, une condition de leur affirmation.\n\n## Problématiques possibles\n\n- La conscience de soi est-elle une connaissance de soi ?\n- Peut-on se connaître soi-même ?\n- L'hypothèse de l'inconscient supprime-t-elle la responsabilité ?\n- La conscience de son histoire est-elle nécessaire à un peuple ?\n\nMéthode : partir de la définition, montrer ce que la conscience permet (Descartes, Pascal), puis ce qui lui échappe (Freud, Fanon), et enfin comment la conscience peut se conquérir par un travail sur soi et sur l'histoire (analyse, éducation, conscience historique selon Cheikh Anta Diop).\n\n## Points clés\n\n- Conscience spontanée, réfléchie, morale, historique.\n- Descartes : le cogito, première certitude. Pascal : la pensée fait la dignité de l'homme.\n- Freud : l'inconscient limite la maîtrise de soi.\n- Fanon : la domination peut aliéner la conscience. Cheikh Anta Diop : la conscience historique fonde l'identité culturelle.\n\n## Exercices\n\nExercice 1 : Définir et distinguer conscience spontanée et conscience réfléchie, avec un exemple pour chacune.\n\nExercice 2 : Expliquer en quelques lignes le raisonnement qui conduit Descartes au « Je pense, donc je suis ».\n\nExercice 3 : Associer chaque idée à son auteur : a) « Toute conscience est conscience de quelque chose ». b) « Le moi n'est pas maître dans sa propre maison ». c) Le roseau pensant. d) La conscience historique comme fondement de l'identité culturelle africaine.\n\nExercice 4 : Formuler la problématique du sujet : « Peut-on se connaître soi-même ? »\n\nExercice 5 : L'existence de l'inconscient permet-elle d'excuser toutes nos fautes ? Proposer un argument pour et un argument contre.\n\n## Corrigé\n\nExercice 1 : La conscience spontanée accompagne l'action sans retour sur soi (je marche dans la rue en évitant les obstacles). La conscience réfléchie est le retour de la pensée sur elle-même (je me demande pourquoi j'ai réagi avec colère).\n\nExercice 2 : Descartes doute de tout ce qui peut être mis en doute : les sens, le monde extérieur, même les vérités mathématiques. Mais il ne peut douter qu'il doute ; or douter, c'est penser, et pour penser il faut exister. Donc l'existence du sujet pensant est certaine.\n\nExercice 3 : a) Husserl. b) Freud. c) Pascal. d) Cheikh Anta Diop.\n\nExercice 4 : Exemple : la conscience semble nous donner un accès direct et privilégié à nous-mêmes ; pourtant, nos désirs inconscients, nos illusions et le regard des autres peuvent fausser cette connaissance. La conscience de soi suffit-elle à garantir une véritable connaissance de soi, ou celle-ci exige-t-elle un travail et la médiation d'autrui ?\n\nExercice 5 : Pour : si une partie de nos actes vient de forces inconscientes, notre responsabilité semble diminuée. Contre : le sujet reste capable de réfléchir sur lui-même et de travailler à se comprendre ; Freud lui-même vise à rendre conscient ce qui était inconscient. L'inconscient explique certaines conduites, mais il ne dispense pas de répondre de ses actes."
+   },
+   {
+    "title": "La liberté",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Le travail",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "L'État",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Méthode de la dissertation et du commentaire de texte",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : atelier de dissertation et de commentaire",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
