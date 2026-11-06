@@ -82,8 +82,7 @@ from public.courses c where c.slug = 'lic-cg-l2'
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Comptabilité analytique 2 (coûts partiels, seuil, imputation rationnelle) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Construire un compte de résultat différentiel et calculer la marge sur coût variable.
-- Calculer seuil de rentabilité, point mort, indice de sécurité et levier opérationnel.
+- Construire un compte de résultat différentiel ; calculer seuil de rentabilité, point mort, indice de sécurité et levier opérationnel.
 - Utiliser les coûts spécifiques pour décider du maintien d''un produit.
 - Appliquer l''imputation rationnelle des charges fixes.
 
@@ -95,7 +94,7 @@ Une charge variable évolue avec le volume (matières, commissions). Une charge 
 
 Chiffre d''affaires − charges variables = marge sur coût variable (MCV) ; MCV − charges fixes = résultat. Le taux de marge sur coût variable est MCV / CA.
 
-Cas : Keur Briques SARL, entreprise fictive de Rufisque, fabrique des parpaings. Prévisions annuelles : 400 000 parpaings vendus à 500 FCFA ; coût variable unitaire 300 FCFA ; charges fixes 60 000 000 FCFA.
+Cas : Keur Briques SARL, entreprise fictive de Rufisque, fabrique des parpaings. Prévisions : 400 000 parpaings à 500 FCFA ; coût variable unitaire 300 FCFA ; charges fixes 60 000 000 FCFA.
 
 - CA = 200 000 000 FCFA ; charges variables = 120 000 000 FCFA ; MCV = 80 000 000 FCFA ; taux de MCV = 40 %.
 - Résultat = 80 000 000 − 60 000 000 = 20 000 000 FCFA.
@@ -108,15 +107,15 @@ Le seuil de rentabilité (SR) est le chiffre d''affaires pour lequel le résulta
 - Point mort (date d''atteinte du seuil, activité régulière sur 12 mois) : 150 000 000 / 200 000 000 × 12 = 9 mois, soit le 30 septembre.
 - Marge de sécurité = CA − SR = 50 000 000 FCFA ; indice de sécurité = 50 000 000 / 200 000 000 = 25 % : les ventes peuvent baisser de 25 % avant que l''entreprise ne subisse une perte.
 
-Schéma décrit : graphique avec le CA en abscisse ; la droite de MCV (pente 0,40) part de l''origine et coupe la droite horizontale des charges fixes (60 000 000) au point d''abscisse 150 000 000 ; à droite, zone de bénéfice ; à gauche, zone de perte.
+Schéma décrit : CA en abscisse ; la droite de MCV (y = 0,4 x) coupe la droite horizontale des charges fixes au point d''abscisse 150 000 000 ; à droite, zone de bénéfice.
 
-Si l''activité est saisonnière, on cumule le CA mois par mois et on cherche le mois où le cumul atteint le SR.
+Activité saisonnière : on cherche le mois où le CA cumulé atteint le SR.
 
 ## 4. Le levier opérationnel
 
 Le levier opérationnel (ou coefficient de levier) mesure la sensibilité du résultat aux variations du chiffre d''affaires : LO = variation relative du résultat / variation relative du CA = MCV / résultat.
 
-Pour Keur Briques : LO = 80 000 000 / 20 000 000 = 4. Une hausse de 10 % du CA entraîne une hausse de 40 % du résultat : CA 220 000 000, MCV 88 000 000, résultat 28 000 000 FCFA. L''effet joue aussi à la baisse : plus les charges fixes sont lourdes, plus le risque d''exploitation est élevé. On montre que LO = 1 / indice de sécurité : 1 / 0,25 = 4.
+Pour Keur Briques : LO = 80 000 000 / 20 000 000 = 4. Une hausse de 10 % du CA entraîne une hausse de 40 % du résultat (résultat 28 000 000 FCFA). L''effet joue aussi à la baisse : plus les charges fixes sont lourdes, plus le risque d''exploitation est élevé. On montre que LO = 1 / indice de sécurité : 1 / 0,25 = 4.
 
 ## 5. Coûts spécifiques et décision
 
@@ -647,9 +646,9 @@ Synthèse : un écart global se décompose toujours en écarts élémentaires do
 - Question 2 : prix réel 1 200, standard 1 250, 3 000 kg réels ; écart sur prix ? Réponse : 150 000 favorable.
 - Question 3 : charges fixes 3 millions, activité normale 1 500 h, activité réelle 1 350 h ; écart sur activité ? Réponse : 2 000 × 150 = 300 000 défavorable.
 - Question 4 : prix de vente réel 1 000, prévu 950, 2 000 unités vendues ; écart sur prix de vente ? Réponse : 100 000 favorable.
-- Question 5 : qui est responsable de l''écart sur quantité de matière ? Réponse : en principe le responsable de production.
+- Question 5 : qui est responsable de l''écart sur quantité de matière ? Réponse : en principe le responsable de production, sauf si la surconsommation vient d''une matière de mauvaise qualité imposée par les achats.
 
-Merci à tous. Refaites le cas Sénégal Peinture en 40 minutes, sans notes, puis rédigez la note au directeur demandée dans la leçon : c''est souvent la question qui fait la différence entre une copie moyenne et une très bonne copie.', 'video', 90, false, 80
+Merci à tous pour votre attention et votre participation. Refaites le cas Sénégal Peinture en 40 minutes, sans notes et sans calculatrice programmable, puis rédigez la note au directeur demandée dans la leçon : c''est souvent la question qui fait la différence entre une copie moyenne et une très bonne copie.', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-cg-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Analyse des écarts');
 
