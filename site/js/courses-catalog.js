@@ -5378,6 +5378,78 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "doc-compta",
+  "level": "Doctorat",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Doctorat Comptabilité : réussir l'examen de qualification doctorale",
+  "description": "Cours de préparation à l'examen de qualification doctorale en Comptabilité : maîtrise de la théorie positive de la comptabilité et des approches critiques et sociales, du débat entre harmonisation IFRS et référentiels régionaux OHADA/SYSCOHADA, et des méthodes de recherche du champ (études d'événements, recherche qualitative et institutionnelle, études de cas). Public : doctorants en comptabilité préparant leur soutenance de qualification. Prérequis : Master en comptabilité ou discipline proche, projet de thèse en cours de construction.",
+  "sort": 805,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en Comptabilité",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Objectifs de la leçon\n\nCette première leçon pose le cadre de l'examen de qualification doctorale en Comptabilité : à quoi il sert, comment un jury doctoral l'évalue, et comment organiser un travail de préparation efficace sur huit semaines. Elle s'adresse au doctorant qui a validé son inscription en thèse et doit, avant de s'y consacrer pleinement, démontrer qu'il maîtrise l'état de l'art de son champ disciplinaire.\n\nNature de l'épreuve\n\nL'examen de qualification doctorale (souvent appelé examen comprehensive dans les systèmes anglo-saxons, ou soutenance de projet de thèse dans les systèmes francophones) n'est pas un contrôle de connaissances au sens d'un examen de Master. Il vérifie trois choses distinctes.\n\n- La maîtrise de la littérature du champ : le doctorant doit savoir restituer les grands courants théoriques de la recherche comptable, leurs auteurs représentatifs (identifiés par leur apport, pas par citation exacte mémorisée), leurs débats et leurs limites.\n- La capacité de synthèse critique : il ne s'agit pas de réciter des théories côte à côte, mais de les mettre en tension, de montrer leurs présupposés respectifs et d'expliquer pourquoi des chercheurs les opposent ou les articulent.\n- La solidité du projet de thèse : le candidat doit situer sa propre problématique dans cette littérature, justifier le choix d'un cadre théorique et d'une méthode de recherche, et anticiper les critiques qu'un jury pourrait formuler.\n\nConcrètement, l'épreuve combine le plus souvent un document écrit (note de synthèse de la littérature et/ou projet de thèse détaillé) et une soutenance orale devant un jury de trois à cinq enseignants-chercheurs, dont le directeur de thèse n'est pas toujours partie prenante au vote. La durée de la soutenance varie selon les établissements, mais elle suit presque toujours la même logique : un exposé initial du candidat (15 à 30 minutes), puis une série de questions du jury portant sur la littérature, la méthode et la faisabilité du projet.\n\nCe que le jury doctoral attend réellement\n\nUn jury de qualification ne cherche pas l'exhaustivité encyclopédique. Il évalue surtout la posture de chercheur du candidat, à travers quatre attentes récurrentes.\n\n- La clarté du positionnement théorique : le candidat sait dire explicitement dans quel courant il s'inscrit (ou comment il articule plusieurs courants) et pourquoi ce choix est cohérent avec sa question de recherche.\n- L'honnêteté intellectuelle face aux limites : un bon candidat reconnaît les faiblesses de son cadre théorique et de sa méthode plutôt que de les occulter. C'est souvent ce critère qui distingue un candidat qui maîtrise son sujet d'un candidat qui le récite.\n- La cohérence méthodologique : la méthode de recherche annoncée doit être adaptée à la question posée ; un jury sanctionne sévèrement une méthode choisie par habitude plutôt que par pertinence.\n- La capacité à dialoguer : contrairement à un examen écrit, la soutenance est un échange. Le jury observe comment le candidat réagit à une objection, s'il sait nuancer sans se contredire, et s'il distingue ce qu'il sait de ce qu'il ignore encore.\n\nEn comptabilité, ces attentes prennent une coloration particulière : le champ est traversé par une tension ancienne entre une tradition de recherche proche des sciences de gestion quantitatives et des marchés financiers, et une tradition plus proche des sciences sociales, qui interroge la comptabilité comme construction sociale et politique. Un candidat qui ignore l'existence de cette tension, ou qui prétend qu'un seul courant détient la vérité, affaiblit sa position.\n\nMéthode de travail pour préparer l'épreuve\n\nTrois outils structurent efficacement la préparation.\n\n- La fiche de lecture : pour chaque texte ou chaque courant étudié, une fiche courte et standardisée (problématique, cadre théorique mobilisé, méthode, résultat principal, limite assumée par l'auteur ou relevée par la critique) évite de se noyer dans le détail et permet de réviser rapidement avant la soutenance.\n- La cartographie des courants : un schéma ou un tableau qui positionne les courants les uns par rapport aux autres (sur quoi ils s'opposent, sur quoi ils se recoupent, quels objets d'étude ils privilégient) aide à répondre aux questions transversales du jury, qui portent souvent sur les liens entre courants plutôt que sur un courant isolé.\n- La note de synthèse : un document de quelques pages qui résume l'état de l'art du champ et positionne le projet de thèse par rapport à lui. C'est souvent ce document, ou une version enrichie, qui sert de support écrit à la soutenance.\n\nPlan de travail sur huit semaines\n\nUn calendrier réaliste, à adapter selon le temps disponible, peut s'organiser ainsi.\n\n- Semaines 1 et 2 : recensement et lecture des textes fondateurs du courant de la théorie positive de la comptabilité (recherche en information financière, lien avec les marchés de capitaux) ; rédaction des fiches de lecture correspondantes.\n- Semaines 3 et 4 : recensement et lecture des textes représentatifs des approches critiques et sociales de la comptabilité (comptabilité comme construction sociale, théorie des parties prenantes, responsabilité sociétale) ; fiches de lecture ; premier essai de cartographie opposant les deux courants.\n- Semaine 5 : étude des méthodes de recherche propres au champ comptable (études d'événements sur les marchés financiers, recherche qualitative et institutionnelle, études de cas) et de leurs conditions d'application.\n- Semaine 6 : rédaction d'un premier jet de note de synthèse articulant les deux courants et une méthode, et esquisse du positionnement du projet de thèse personnel.\n- Semaine 7 : entraînement sur une question de synthèse type, rédaction d'un plan de réponse complet, puis simulation orale (seul ou avec un pair) chronométrée.\n- Semaine 8 : relecture critique, correction des points faibles identifiés lors de la simulation, préparation des réponses aux objections les plus probables, repos la veille de l'épreuve.\n\nCe plan n'est pas une recette rigide : il s'ajuste au nombre de courants exigés et au temps disponible. Ce qui compte est la régularité du travail de fiche, plus efficace qu'une révision massive de dernière minute.\n\n## Exercices pratiques\n\n1. Rédigez en cinq lignes la différence entre un examen de Master et un examen de qualification doctorale, du point de vue de ce qui est évalué.\n2. Listez les quatre attentes d'un jury doctoral présentées dans cette leçon et donnez, pour chacune, un exemple concret de ce qu'un candidat pourrait dire ou faire pour y répondre.\n3. Construisez le squelette d'une fiche de lecture (rubriques uniquement, sans contenu) que vous utiliserez pour les leçons suivantes.\n4. Pourquoi la cohérence entre la question de recherche, le cadre théorique et la méthode est-elle un critère d'évaluation central, plus que la seule exactitude des connaissances ?\n5. Rédigez votre propre plan de travail sur huit semaines en l'adaptant à votre situation (temps disponible, nombre de courants exigés par votre programme).\n\n## Corrigé\n\n1. Un examen de Master évalue la capacité à résoudre un cas ou à appliquer une connaissance balisée dans un cadre fixé par l'enseignant. Un examen de qualification doctorale évalue la capacité à se positionner soi-même dans un champ de recherche existant, à comparer de façon critique des courants théoriques concurrents, et à défendre un projet de thèse original devant un jury qui peut remettre en cause chaque choix. Le niveau attendu est donc celui d'un chercheur en formation, pas celui d'un étudiant qui applique une méthode enseignée.\n\n2. Clarté du positionnement théorique : dire explicitement « je m'inscris dans la perspective critique et sociale de la comptabilité parce que ma question porte sur la légitimité des normes, pas sur leur utilité pour les marchés ». Honnêteté sur les limites : reconnaître par exemple qu'une étude de cas unique ne permet pas de généraliser, et expliquer pourquoi ce choix reste justifié pour une recherche exploratoire. Cohérence méthodologique : ne pas annoncer une étude d'événements sur les marchés financiers si la question de recherche porte sur la perception des normes par des acteurs non cotés en bourse. Capacité à dialoguer : répondre à une objection du jury en reformulant ce qui est accepté et ce qui est nuancé, sans se contredire ni se braquer.\n\n3. Une fiche de lecture utile comporte au minimum : référence et auteur(s) identifiés par leur apport ; problématique traitée ; cadre théorique mobilisé ; méthode de recherche employée ; principal résultat ou argument ; limite assumée ou critique reçue ; lien possible avec mon propre projet de thèse.\n\n4. Parce qu'un jury évalue la capacité à raisonner comme un chercheur, pas la mémoire. Un candidat qui connaît un courant théorique mais choisit une méthode inadaptée révèle qu'il n'a pas intégré la logique de la recherche : la question doit guider le cadre théorique, qui oriente à son tour la méthode. Cette incohérence est l'un des signaux les plus visibles d'un travail insuffisamment mûri.\n\n5. Il n'existe pas de corrigé unique : la bonne réponse est un plan réaliste, daté, qui couvre bien les étapes clés (lecture des courants, méthodes, entraînement à la question de synthèse, simulation orale) et qui tient compte du temps réellement disponible du candidat. L'essentiel à vérifier soi-même : chaque semaine doit avoir un livrable concret (une fiche, une cartographie, un brouillon de note de synthèse), pas seulement une intention de lecture."
+   },
+   {
+    "title": "Courant théorique 1 : la théorie positive de la comptabilité",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Courant théorique 2 : les approches critiques et sociales de la comptabilité",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Les méthodes de recherche en comptabilité",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Épreuve type d'examen de qualification doctorale",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : la théorie positive de la comptabilité",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les approches critiques et sociales de la comptabilité",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les méthodes de recherche en comptabilité",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : s'entraîner sur une question de synthèse type",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "doc-fin",
   "level": "Doctorat",
   "subject": "Finance",
