@@ -36,8 +36,8 @@ insert into public.contact_messages (name, email, message) values ('Client', 'c@
 set role anon;
 set request.jwt.claims = '{"role":"anon"}';
 select pg_temp.ok((select count(*) = 12 from public.services), 'anon lit les 12 services publiés');
-select pg_temp.ok((select count(*) = 2 from public.courses), 'anon ne voit pas les cours non publiés');
-select pg_temp.ok((select count(*) = 1 from public.lessons), 'anon ne voit que la leçon gratuite');
+select pg_temp.ok((select count(*) = 2 from public.courses where id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'anon ne voit pas les cours non publiés');
+select pg_temp.ok((select count(*) = 1 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'anon ne voit que la leçon gratuite');
 select pg_temp.ok((select count(*) = 2 from public.course_outline('11111111-1111-1111-1111-111111111111')), 'anon voit le sommaire (titres) du cours publié');
 select pg_temp.ok((select count(*) = 0 from public.course_outline('33333333-3333-3333-3333-333333333333')), 'anon ne voit pas le sommaire d''un cours brouillon');
 select pg_temp.ok((select count(*) = 0 from public.contact_messages), 'anon ne lit pas les messages');
@@ -55,7 +55,7 @@ reset role;
 set role authenticated;
 set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated","aal":"aal1"}';
 select pg_temp.ok((select count(*) = 1 from public.profiles), 'élève ne voit que son profil');
-select pg_temp.ok((select count(*) = 1 from public.lessons), 'élève sans abonnement : leçon gratuite seulement');
+select pg_temp.ok((select count(*) = 1 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'élève sans abonnement : leçon gratuite seulement');
 do $$ begin
   begin
     update public.profiles set role = 'admin' where id = auth.uid();
@@ -79,12 +79,12 @@ end $$;
 select pg_temp.ok(true, 'élève ne peut pas changer son email de profil');
 -- Demande d'abonnement
 insert into public.subscriptions (user_id, plan_id, payment_ref)
-  values (auth.uid(), (select id from public.plans limit 1), 'REF-123');
+  values (auth.uid(), (select id from public.plans where name = 'Terminale 30 jours'), 'REF-123');
 select pg_temp.ok((select count(*) = 1 from public.subscriptions), 'élève demande un abonnement');
 do $$ begin
   begin
     insert into public.subscriptions (user_id, plan_id, status, starts_at, ends_at)
-      values (auth.uid(), (select id from public.plans limit 1), 'active', now(), now() + interval '1 year');
+      values (auth.uid(), (select id from public.plans where name = 'Terminale 30 jours'), 'active', now(), now() + interval '1 year');
     raise exception 'élève a créé un abonnement actif';
   exception when insufficient_privilege then null; end;
 end $$;
@@ -127,7 +127,7 @@ set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000a1","role":"
 select pg_temp.ok((select public.is_admin()), 'is_admin vrai avec MFA');
 select pg_temp.ok((select count(*) = 2 from public.contact_messages), 'admin lit les messages');
 select pg_temp.ok((select count(*) = 3 from public.profiles), 'admin voit tous les profils');
-select pg_temp.ok((select count(*) = 3 from public.courses), 'admin voit les cours brouillons');
+select pg_temp.ok((select count(*) = 3 from public.courses where id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'admin voit les cours brouillons');
 update public.services set title = 'Gestion Carburant Pro' where id = 'carburant';
 select pg_temp.ok((select title = 'Gestion Carburant Pro' from public.services where id = 'carburant'), 'admin modifie un service');
 select public.activate_subscription((select id from public.subscriptions limit 1));
@@ -140,7 +140,7 @@ reset role;
 -- ===== Élève 1 avec abonnement Terminale =====
 set role authenticated;
 set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated","aal":"aal1"}';
-select pg_temp.ok((select count(*) = 2 from public.lessons), 'élève abonné voit les leçons Terminale (gratuite + payante)');
+select pg_temp.ok((select count(*) = 2 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'élève abonné voit les leçons Terminale (gratuite + payante)');
 select pg_temp.ok((select not exists (select 1 from public.lessons where title = 'Leçon payante GRH')), 'élève abonné Terminale ne voit pas Master 1');
 do $$ begin
   begin
@@ -155,14 +155,14 @@ reset role;
 set role authenticated;
 set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b2","role":"authenticated","aal":"aal1"}';
 select pg_temp.ok((select count(*) = 0 from public.subscriptions), 'élève 2 ne voit pas l''abonnement de l''élève 1');
-select pg_temp.ok((select count(*) = 1 from public.lessons), 'élève 2 sans abonnement : leçon gratuite seulement');
+select pg_temp.ok((select count(*) = 1 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'élève 2 sans abonnement : leçon gratuite seulement');
 reset role;
 
 -- ===== Expiration =====
 update public.subscriptions set starts_at = now() - interval '40 days', ends_at = now() - interval '10 days';
 set role authenticated;
 set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated","aal":"aal1"}';
-select pg_temp.ok((select count(*) = 1 from public.lessons), 'abonnement expiré : plus d''accès aux leçons payantes');
+select pg_temp.ok((select count(*) = 1 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'abonnement expiré : plus d''accès aux leçons payantes');
 reset role;
 
 \echo '=== TOUS LES TESTS RLS SONT PASSÉS ==='
