@@ -1257,6 +1257,588 @@ Visuel final : fiche récapitulative des conjugaisons.', 'video', 90, false, 60
 from public.courses c where c.slug = 'bfem-espagnol'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille d''examen » en espagnol');
 
+-- Cours : Arabe LV2 : réussir l'épreuve du BFEM
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bfem-arabe', (select id from public.levels where name = '3e'), null, 'Arabe (LV2)', 'Arabe LV2 : réussir l''épreuve du BFEM', 'Ce cours d''examen prépare l''épreuve d''arabe LV2 du BFEM : lecture et compréhension d''un texte, grammaire de base (pronoms, phrase nominale et phrase verbale, accompli et inaccompli, nombres, accords), vocabulaire thématique et expression écrite. Les explications sont en français, les exemples en arabe vocalisé avec translittération. Prérequis : savoir lire l''alphabet arabe et connaître les bases étudiées au collège.', true, 109
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
+
+- Savoir ce que l''on attend de toi à l''épreuve d''arabe LV2 du BFEM.
+- Comprendre les consignes écrites en arabe.
+- Adopter une méthode pour chaque type d''exercice et éviter les erreurs fréquentes.
+- Organiser tes révisions sur 8 semaines.
+
+## Comment se présente l''épreuve
+
+L''épreuve d''arabe LV2 s''appuie en général sur un texte court en arabe, souvent vocalisé, suivi de questions. On y trouve habituellement trois familles d''exercices : la compréhension du texte, des exercices de langue (grammaire, conjugaison, vocabulaire) et une petite production écrite. La durée, le coefficient et le barème dépendent des textes officiels en vigueur : renseigne-toi auprès de ton professeur.
+
+## Convention de translittération utilisée dans ce cours
+
+Pour t''aider à lire, chaque exemple arabe est suivi d''une transcription en lettres latines :
+- ā, ī, ū : voyelles longues (alif, yāʾ, wāw) ;
+- ʿ : la lettre ʿayn (ع) ; ʾ : la hamza (ء) ;
+- ḥ (ح), ṣ (ص), ḍ (ض), ṭ (ط), ẓ (ظ) : consonnes emphatiques ou profondes ;
+- th (ث), dh (ذ), kh (خ), gh (غ), sh (ش).
+
+## Les consignes à connaître
+
+- اِقْرَأِ النَّصَّ (iqraʾi n-naṣṣa) : lis le texte.
+- أَجِبْ عَنِ الْأَسْئِلَةِ (ajib ʿani l-asʾilati) : réponds aux questions.
+- صَحِيحٌ أَمْ خَطَأٌ؟ (ṣaḥīḥun am khaṭaʾun?) : vrai ou faux ?
+- اِمْلَأِ الْفَرَاغَ (imlaʾi l-farāgha) : remplis le vide, complète.
+- ضَعْ خَطًّا تَحْتَ (ḍaʿ khaṭṭan taḥta) : souligne.
+- صَرِّفِ الْفِعْلَ (ṣarrifi l-fiʿla) : conjugue le verbe.
+- تَرْجِمْ إِلَى الْفَرَنْسِيَّةِ (tarjim ilā l-faransiyyati) : traduis en français.
+- اُكْتُبْ (uktub) : écris.
+
+## Méthode pour la compréhension
+
+- Lis le titre et les questions avant le texte : ils t''indiquent le thème.
+- Lis le texte une première fois en entier, sans t''arrêter sur les mots inconnus.
+- Repère les mots interrogatifs des questions : مَنْ (man, qui ?), مَا / مَاذَا (mā / mādhā, quoi ?), أَيْنَ (ayna, où ?), مَتَى (matā, quand ?), كَيْفَ (kayfa, comment ?), كَمْ (kam, combien ?), لِمَاذَا (limādhā, pourquoi ?), هَلْ (hal, est-ce que ?).
+- Cherche dans le texte la phrase qui contient la réponse et souligne-la.
+- Réponds par une phrase complète en reprenant les mots de la question.
+
+Exemple. Question : أَيْنَ يَسْكُنُ عُمَرُ؟ (ayna yaskunu ʿUmaru? : où habite Omar ?). Réponse complète : يَسْكُنُ عُمَرُ فِي دَاكَار (yaskunu ʿUmaru fī Dākār : Omar habite à Dakar).
+
+## Méthode pour la production écrite
+
+- Lis bien le sujet : de quoi dois-tu parler, en combien de lignes ?
+- Prépare au brouillon une liste de mots et de phrases simples que tu maîtrises.
+- Écris des phrases courtes : une phrase nominale ou verbale correcte vaut mieux qu''une phrase longue et fausse.
+- Relie tes idées avec وَ (wa, et), ثُمَّ (thumma, puis), لَكِنَّ (lākinna, mais), لِأَنَّ (li-anna, parce que).
+- Relis : accords, points sur les lettres, tāʾ marbūṭa (ة), article.
+
+## Les erreurs fréquentes
+
+- Confondre des lettres proches : ح et ه, ع et ء, س et ص, ت et ط, د et ض, ز, ذ et ظ.
+- Oublier ou mal placer les points : ب ت ث ن ي ne se distinguent que par eux.
+- Confondre la tāʾ marbūṭa (ة) du féminin et le hāʾ (ه) : مَدْرَسَةٌ (madrasatun, école) mais كِتَابُهُ (kitābuhu, son livre).
+- Oublier l''accord en genre : on dit الْبِنْتُ صَغِيرَةٌ (al-bintu ṣaghīratun) et non الْبِنْتُ صَغِيرٌ.
+- Écrire le verbe au masculin avec un sujet féminin : ذَهَبَتْ فَاطِمَةُ (dhahabat Fāṭimatu).
+- Traduire mot à mot depuis le français.
+
+## Plan de révision sur 8 semaines
+
+- Semaine 1 : lecture, voyelles, signes (sukūn, shadda, tanwīn), article et lettres solaires.
+- Semaine 2 : pronoms personnels et suffixes possessifs ; démonstratifs.
+- Semaine 3 : phrase nominale, phrase verbale, négation, interrogation.
+- Semaine 4 : conjugaison à l''accompli et à l''inaccompli ; futur.
+- Semaine 5 : nombres et accords (adjectif, verbe, pluriel non humain).
+- Semaine 6 : vocabulaire : famille, école, ville, santé, environnement.
+- Semaine 7 : production écrite (se présenter, décrire, raconter) et sujets d''entraînement.
+- Semaine 8 : sujets complets en temps limité et relecture du cahier d''erreurs.
+
+Chaque jour : lis à voix haute un petit texte vocalisé, apprends huit mots avec leur pluriel, conjugue un verbe aux deux formes.
+
+## Exercices pratiques
+
+Exercice 1 : Traduire les consignes : أَجِبْ عَنِ الْأَسْئِلَةِ ; صَرِّفِ الْفِعْلَ ; اُكْتُبْ.
+
+Exercice 2 : Donner le sens des interrogatifs : أَيْنَ ; مَتَى ; كَمْ ; لِمَاذَا.
+
+Exercice 3 : Classer selon la dernière lettre (ة ou ه) : مَدْرَسَة ; بَيْتُهُ ; سَيَّارَة ; قَلَمُهُ.
+
+Exercice 4 : Corriger : الْمُعَلِّمَةُ مُجْتَهِدٌ.
+
+Exercice 5 : Répondre par une phrase complète : أَيْنَ تَسْكُنُ عَائِشَةُ؟ (Elle habite à Dakar.)
+
+Exercice 6 : Citer quatre paires de lettres qu''il ne faut pas confondre.
+
+## Corrigé
+
+Exercice 1 : Réponds aux questions ; conjugue le verbe ; écris.
+
+Exercice 2 : أَيْنَ (ayna) : où ? ; مَتَى (matā) : quand ? ; كَمْ (kam) : combien ? ; لِمَاذَا (limādhā) : pourquoi ?
+
+Exercice 3 : Avec ة (tāʾ marbūṭa, féminin) : مَدْرَسَة (madrasa, école), سَيَّارَة (sayyāra, voiture). Avec ه (pronom « son, sa ») : بَيْتُهُ (baytuhu, sa maison), قَلَمُهُ (qalamuhu, son stylo).
+
+Exercice 4 : الْمُعَلِّمَةُ مُجْتَهِدَةٌ (al-muʿallimatu mujtahidatun : l''enseignante est travailleuse). L''adjectif s''accorde au féminin.
+
+Exercice 5 : تَسْكُنُ عَائِشَةُ فِي دَاكَار (taskunu ʿĀʾishatu fī Dākār).
+
+Exercice 6 : Par exemple : ح / ه ; ع / ء ; س / ص ; ت / ط ; د / ض ; ذ / ظ.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'bfem-arabe'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Lecture et compréhension d''un texte', '## Objectifs de la leçon
+
+- Revoir les règles de lecture : voyelles, signes, article.
+- Lire et comprendre un texte court vocalisé.
+- Répondre à des questions de compréhension par des phrases complètes.
+
+## Fiche 1 : voyelles et signes
+
+L''alphabet arabe compte 28 lettres, qui s''écrivent de droite à gauche et changent de forme selon leur position dans le mot.
+
+- Les voyelles brèves : la fatḥa (a) au-dessus de la lettre : بَ (ba) ; la ḍamma (u) au-dessus : بُ (bu) ; la kasra (i) en dessous : بِ (bi).
+- Le sukūn indique l''absence de voyelle : بْ (b). Exemple : قَلْبٌ (qalbun, cœur).
+- La shadda redouble la consonne : مُعَلِّمٌ (muʿallimun, enseignant).
+- Le tanwīn ajoute un « n » à la fin d''un mot indéfini : كِتَابٌ (kitābun), كِتَابًا (kitāban), كِتَابٍ (kitābin).
+- Les voyelles longues s''écrivent avec ا (ā), ي (ī) et و (ū) : بَابٌ (bābun, porte), كَبِيرٌ (kabīrun, grand), نُورٌ (nūrun, lumière).
+- La tāʾ marbūṭa (ة) marque souvent le féminin : طَالِبٌ (ṭālibun, étudiant), طَالِبَةٌ (ṭālibatun, étudiante).
+
+## Fiche 2 : l''article et les lettres solaires et lunaires
+
+L''article défini est الْ (al-), toujours attaché au nom. Il remplace le tanwīn : كِتَابٌ (kitābun, un livre) devient الْكِتَابُ (al-kitābu, le livre).
+
+- Devant une lettre lunaire, le lām se prononce : الْقَمَرُ (al-qamaru, la lune), الْبَيْتُ (al-baytu, la maison). Lettres lunaires : ا ب ج ح خ ع غ ف ق ك م ه و ي.
+- Devant une lettre solaire, le lām s''écrit mais ne se prononce pas ; la lettre suivante est redoublée (shadda) : الشَّمْسُ (ash-shamsu, le soleil), السُّوقُ (as-sūqu, le marché). Lettres solaires : ت ث د ذ ر ز س ش ص ض ط ظ ل ن.
+
+Astuce : les deux groupes comptent chacun 14 lettres.
+
+## Fiche 3 : salutations et présentations
+
+- السَّلَامُ عَلَيْكُمْ (as-salāmu ʿalaykum) : bonjour, la paix soit sur vous. Réponse : وَعَلَيْكُمُ السَّلَامُ (wa-ʿalaykumu s-salām).
+- كَيْفَ حَالُكَ؟ (kayfa ḥāluka? : comment vas-tu ? à un garçon) ; كَيْفَ حَالُكِ؟ (kayfa ḥāluki? à une fille). Réponse : بِخَيْرٍ، وَالْحَمْدُ لِلّٰهِ (bi-khayrin, wa-l-ḥamdu li-llāh : bien, Dieu merci).
+- مَا اسْمُكَ؟ (mā smuka? : comment t''appelles-tu ?) ; اِسْمِي ... (ismī ... : je m''appelle ...).
+- شُكْرًا (shukran) : merci ; مَعَ السَّلَامَةِ (maʿa s-salāmati) : au revoir.
+
+## Texte d''entraînement
+
+اِسْمِي عُمَرُ. أَسْكُنُ فِي مَدِينَةِ دَاكَار مَعَ أُسْرَتِي. أَبِي تَاجِرٌ فِي السُّوقِ، وَأُمِّي مُمَرِّضَةٌ فِي الْمُسْتَشْفَى. لِي أَخٌ وَاحِدٌ وَأُخْتَانِ. أَذْهَبُ إِلَى الْمَدْرَسَةِ كُلَّ يَوْمٍ مَعَ أَخِي. أُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ وَالرِّيَاضِيَّاتِ. فِي يَوْمِ الْجُمُعَةِ أَذْهَبُ مَعَ أَبِي إِلَى الْمَسْجِدِ. بَعْدَ الدِّرَاسَةِ أُسَاعِدُ أُمِّي فِي الْبَيْتِ.
+
+Translittération : ismī ʿUmaru. askunu fī madīnati Dākār maʿa usratī. abī tājirun fī s-sūqi, wa-ummī mumarriḍatun fī l-mustashfā. lī akhun wāḥidun wa-ukhtāni. adhhabu ilā l-madrasati kulla yawmin maʿa akhī. uḥibbu l-lughata l-ʿarabiyyata wa-r-riyāḍiyyāti. fī yawmi l-jumuʿati adhhabu maʿa abī ilā l-masjidi. baʿda d-dirāsati usāʿidu ummī fī l-bayti.
+
+Traduction : Je m''appelle Omar. J''habite dans la ville de Dakar avec ma famille. Mon père est commerçant au marché et ma mère est infirmière à l''hôpital. J''ai un frère et deux sœurs. Je vais à l''école chaque jour avec mon frère. J''aime la langue arabe et les mathématiques. Le vendredi, je vais à la mosquée avec mon père. Après les cours, j''aide ma mère à la maison.
+
+Remarques de lecture :
+- أُخْتَانِ (ukhtāni) est un duel : « deux sœurs ».
+- أُسْرَتِي (usratī) : la tāʾ marbūṭa de أُسْرَة devient une tāʾ ordinaire (ت) devant le suffixe ي (mon).
+- السُّوقِ, الدِّرَاسَةِ, الرِّيَاضِيَّاتِ : lettres solaires, le lām ne se prononce pas.
+
+## Exercices pratiques
+
+Exercice 1 : Lire et transcrire : الشَّمْسُ ; الْقَمَرُ ; النَّهْرُ ; الْكِتَابُ. Préciser si la lettre après l''article est solaire ou lunaire.
+
+Exercice 2 : Ajouter l''article et le transcrire : بَيْتٌ ; سُوقٌ ; مَدْرَسَةٌ.
+
+Exercice 3 : D''après le texte : أَيْنَ يَسْكُنُ عُمَرُ؟
+
+Exercice 4 : D''après le texte : أَيْنَ تَعْمَلُ أُمُّهُ؟ (ayna taʿmalu ummuhu? où travaille sa mère ?)
+
+Exercice 5 : D''après le texte : مَتَى يَذْهَبُ عُمَرُ إِلَى الْمَسْجِدِ؟ (matā yadhhabu ʿUmaru ilā l-masjidi?)
+
+Exercice 6 : صَحِيحٌ أَمْ خَطَأٌ؟ Justifier avec le texte : a) أُمُّ عُمَرَ مُعَلِّمَةٌ (ummu ʿUmara muʿallimatun). b) يَذْهَبُ عُمَرُ إِلَى الْمَدْرَسَةِ مَعَ أَخِيهِ (yadhhabu ʿUmaru ilā l-madrasati maʿa akhīhi).
+
+Exercice 7 : Traduire : لِي أَخٌ وَاحِدٌ وَأُخْتَانِ.
+
+## Corrigé
+
+Exercice 1 : ash-shamsu (le soleil, ش solaire) ; al-qamaru (la lune, ق lunaire) ; an-nahru (le fleuve, ن solaire) ; al-kitābu (le livre, ك lunaire).
+
+Exercice 2 : الْبَيْتُ (al-baytu) ; السُّوقُ (as-sūqu) ; الْمَدْرَسَةُ (al-madrasatu).
+
+Exercice 3 : يَسْكُنُ عُمَرُ فِي مَدِينَةِ دَاكَار (yaskunu ʿUmaru fī madīnati Dākār).
+
+Exercice 4 : تَعْمَلُ أُمُّهُ فِي الْمُسْتَشْفَى (taʿmalu ummuhu fī l-mustashfā) : sa mère travaille à l''hôpital.
+
+Exercice 5 : يَذْهَبُ إِلَى الْمَسْجِدِ يَوْمَ الْجُمُعَةِ (yadhhabu ilā l-masjidi yawma l-jumuʿati) : il va à la mosquée le vendredi.
+
+Exercice 6 : a) خَطَأٌ (faux) : « وَأُمِّي مُمَرِّضَةٌ فِي الْمُسْتَشْفَى » (sa mère est infirmière). b) صَحِيحٌ (vrai) : « أَذْهَبُ إِلَى الْمَدْرَسَةِ كُلَّ يَوْمٍ مَعَ أَخِي ».
+
+Exercice 7 : J''ai un frère et deux sœurs.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'bfem-arabe'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Lecture et compréhension d''un texte');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Grammaire : pronoms, phrase nominale et verbale, conjugaison', '## Objectifs de la leçon
+
+- Utiliser les pronoms personnels, les suffixes possessifs et les démonstratifs.
+- Construire une phrase nominale et une phrase verbale.
+- Conjuguer un verbe à l''accompli et à l''inaccompli, exprimer le futur et la négation.
+
+## Fiche 1 : les pronoms
+
+Pronoms personnels isolés :
+- أَنَا (anā) : je ; نَحْنُ (naḥnu) : nous.
+- أَنْتَ (anta) : tu (masculin) ; أَنْتِ (anti) : tu (féminin).
+- أَنْتُمْ (antum) : vous (masculin pluriel) ; أَنْتُنَّ (antunna) : vous (féminin pluriel).
+- هُوَ (huwa) : il ; هِيَ (hiya) : elle.
+- هُمْ (hum) : ils ; هُنَّ (hunna) : elles.
+- Duel : أَنْتُمَا (antumā) : vous deux ; هُمَا (humā) : eux deux, elles deux.
+
+Suffixes possessifs (exemple avec كِتَابٌ, livre) :
+- كِتَابِي (kitābī) : mon livre ; كِتَابُنَا (kitābunā) : notre livre.
+- كِتَابُكَ (kitābuka) : ton livre (à un garçon) ; كِتَابُكِ (kitābuki) : ton livre (à une fille).
+- كِتَابُهُ (kitābuhu) : son livre (à lui) ; كِتَابُهَا (kitābuhā) : son livre (à elle).
+- كِتَابُكُمْ (kitābukum) : votre livre ; كِتَابُهُمْ (kitābuhum) : leur livre.
+
+Avec un nom en ة, la tāʾ marbūṭa devient ت : مَدْرَسَةٌ devient مَدْرَسَتِي (madrasatī, mon école).
+
+Démonstratifs :
+- هَذَا (hādhā) : celui-ci, ceci (masculin) ; هَذِهِ (hādhihi) : celle-ci (féminin).
+- ذَلِكَ (dhālika) : celui-là ; تِلْكَ (tilka) : celle-là.
+
+Exemples : هَذَا كِتَابٌ (hādhā kitābun : ceci est un livre). هَذَا الْكِتَابُ جَدِيدٌ (hādhā l-kitābu jadīdun : ce livre est neuf). هَذِهِ مَدْرَسَتِي (hādhihi madrasatī : voici mon école).
+
+## Fiche 2 : la phrase nominale
+
+Elle commence par un nom ou un pronom. Elle comprend un sujet (الْمُبْتَدَأُ, al-mubtadaʾ) et un prédicat (الْخَبَرُ, al-khabar), tous deux au cas sujet (terminaison -u ou -un). Il n''y a pas de verbe « être » au présent.
+
+- الْبَيْتُ كَبِيرٌ (al-baytu kabīrun) : la maison est grande.
+- الْمُعَلِّمَةُ نَشِيطَةٌ (al-muʿallimatu nashīṭatun) : l''enseignante est dynamique.
+- أَبِي فِي الْبَيْتِ (abī fī l-bayti) : mon père est à la maison.
+- أَنَا تِلْمِيذٌ (anā tilmīdhun) : je suis élève.
+
+Attention à la différence : الْبَيْتُ كَبِيرٌ (la maison est grande, une phrase) et الْبَيْتُ الْكَبِيرُ (al-baytu l-kabīru : la grande maison, un simple groupe de mots).
+
+## Fiche 3 : la phrase verbale
+
+Elle commence par un verbe. Ordre habituel : verbe, sujet (الْفَاعِلُ, al-fāʿil, au cas sujet en -u), complément d''objet (الْمَفْعُولُ بِهِ, al-mafʿūl bihi, au cas direct en -a).
+
+- كَتَبَ التِّلْمِيذُ الدَّرْسَ (kataba t-tilmīdhu d-darsa) : l''élève a écrit la leçon.
+- يَقْرَأُ الْوَلَدُ الْقِصَّةَ (yaqraʾu l-waladu l-qiṣṣata) : le garçon lit l''histoire.
+
+Règle d''accord : quand le verbe est placé avant le sujet, il reste au singulier, mais il s''accorde en genre.
+- ذَهَبَ الطُّلَّابُ إِلَى الْمَلْعَبِ (dhahaba ṭ-ṭullābu ilā l-malʿabi) : les étudiants sont allés au stade.
+- ذَهَبَتِ الْبِنْتُ إِلَى السُّوقِ (dhahabati l-bintu ilā s-sūqi) : la fille est allée au marché.
+Quand le sujet vient avant, le verbe s''accorde complètement : الطُّلَّابُ ذَهَبُوا (aṭ-ṭullābu dhahabū).
+
+## Fiche 4 : l''accompli (passé)
+
+Modèle : كَتَبَ (kataba, écrire).
+- أَنَا كَتَبْتُ (katabtu) ; نَحْنُ كَتَبْنَا (katabnā).
+- أَنْتَ كَتَبْتَ (katabta) ; أَنْتِ كَتَبْتِ (katabti).
+- أَنْتُمْ كَتَبْتُمْ (katabtum) ; أَنْتُنَّ كَتَبْتُنَّ (katabtunna).
+- هُوَ كَتَبَ (kataba) ; هِيَ كَتَبَتْ (katabat).
+- هُمْ كَتَبُوا (katabū) ; هُنَّ كَتَبْنَ (katabna).
+
+Le alif final de كَتَبُوا ne se prononce pas.
+
+## Fiche 5 : l''inaccompli (présent)
+
+Modèle : يَكْتُبُ (yaktubu).
+- أَنَا أَكْتُبُ (aktubu) ; نَحْنُ نَكْتُبُ (naktubu).
+- أَنْتَ تَكْتُبُ (taktubu) ; أَنْتِ تَكْتُبِينَ (taktubīna).
+- أَنْتُمْ تَكْتُبُونَ (taktubūna) ; أَنْتُنَّ تَكْتُبْنَ (taktubna).
+- هُوَ يَكْتُبُ (yaktubu) ; هِيَ تَكْتُبُ (taktubu).
+- هُمْ يَكْتُبُونَ (yaktubūna) ; هُنَّ يَكْتُبْنَ (yaktubna).
+
+La voyelle du milieu varie d''un verbe à l''autre ; apprends-la avec le verbe : ذَهَبَ / يَذْهَبُ (dhahaba / yadhhabu, aller), دَرَسَ / يَدْرُسُ (darasa / yadrusu, étudier), جَلَسَ / يَجْلِسُ (jalasa / yajlisu, s''asseoir), فَتَحَ / يَفْتَحُ (fataḥa / yaftaḥu, ouvrir).
+
+Futur : سَـ ou سَوْفَ devant l''inaccompli : سَأَكْتُبُ (sa-aktubu : j''écrirai) ; سَوْفَ نُسَافِرُ (sawfa nusāfiru : nous voyagerons).
+
+Négation :
+- du présent : لَا + inaccompli : لَا أَذْهَبُ (lā adhhabu : je ne vais pas).
+- du passé : مَا + accompli : مَا ذَهَبْتُ (mā dhahabtu : je ne suis pas allé) ; on rencontre aussi لَمْ + inaccompli apocopé : لَمْ أَذْهَبْ (lam adhhab), de même sens.
+- de la phrase nominale : لَيْسَ, avec le prédicat au cas direct : لَيْسَ الْجَوُّ بَارِدًا (laysa l-jawwu bāridan : il ne fait pas froid).
+
+Interrogation : هَلْ أَنْتَ تِلْمِيذٌ؟ (hal anta tilmīdhun? : es-tu élève ?) نَعَمْ (naʿam : oui) ; لَا (lā : non).
+
+## Exercices pratiques
+
+Exercice 1 : Remplacer le nom par le pronom : الْوَلَدُ ; الْبِنْتُ ; الْأَوْلَادُ.
+
+Exercice 2 : Traduire avec un suffixe possessif : ma maison (بَيْتٌ) ; son école à elle (مَدْرَسَةٌ) ; notre professeur (أُسْتَاذٌ).
+
+Exercice 3 : Conjuguer دَرَسَ à l''accompli avec : أَنَا ; هِيَ ; نَحْنُ ; هُمْ.
+
+Exercice 4 : Conjuguer يَدْرُسُ à l''inaccompli avec : أَنْتِ ; هُمْ ; نَحْنُ.
+
+Exercice 5 : Dire si la phrase est nominale ou verbale : الْجَوُّ حَارٌّ ; فَتَحَ الْمُعَلِّمُ الْبَابَ.
+
+Exercice 6 : Mettre le verbe au féminin : ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ (remplacer الْوَلَدُ par الْبِنْتُ).
+
+Exercice 7 : Mettre à la forme négative : أَذْهَبُ إِلَى السُّوقِ ; الْبَيْتُ كَبِيرٌ.
+
+Exercice 8 : Mettre au futur : أَكْتُبُ رِسَالَةً.
+
+## Corrigé
+
+Exercice 1 : هُوَ (huwa) ; هِيَ (hiya) ; هُمْ (hum).
+
+Exercice 2 : بَيْتِي (baytī) ; مَدْرَسَتُهَا (madrasatuhā) ; أُسْتَاذُنَا (ustādhunā).
+
+Exercice 3 : دَرَسْتُ (darastu) ; دَرَسَتْ (darasat) ; دَرَسْنَا (darasnā) ; دَرَسُوا (darasū).
+
+Exercice 4 : تَدْرُسِينَ (tadrusīna) ; يَدْرُسُونَ (yadrusūna) ; نَدْرُسُ (nadrusu).
+
+Exercice 5 : الْجَوُّ حَارٌّ (al-jawwu ḥārrun : il fait chaud) : nominale. فَتَحَ الْمُعَلِّمُ الْبَابَ (fataḥa l-muʿallimu l-bāba : l''enseignant a ouvert la porte) : verbale.
+
+Exercice 6 : ذَهَبَتِ الْبِنْتُ إِلَى الْمَدْرَسَةِ (dhahabati l-bintu ilā l-madrasati).
+
+Exercice 7 : لَا أَذْهَبُ إِلَى السُّوقِ (lā adhhabu ilā s-sūqi) ; لَيْسَ الْبَيْتُ كَبِيرًا (laysa l-baytu kabīran).
+
+Exercice 8 : سَأَكْتُبُ رِسَالَةً (sa-aktubu risālatan : j''écrirai une lettre).', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bfem-arabe'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire : pronoms, phrase nominale et verbale, conjugaison');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Nombres, accords, vocabulaire thématique et expression écrite', '## Objectifs de la leçon
+
+- Compter et accorder les nombres usuels.
+- Appliquer les règles d''accord de l''adjectif et du verbe.
+- Réviser le vocabulaire des grands thèmes.
+- Rédiger un court texte simple et correct.
+
+## Fiche 1 : les nombres
+
+- 1 وَاحِدٌ (wāḥidun) ; 2 اِثْنَانِ (ithnāni) ; 3 ثَلَاثَةٌ (thalāthatun) ; 4 أَرْبَعَةٌ (arbaʿatun) ; 5 خَمْسَةٌ (khamsatun).
+- 6 سِتَّةٌ (sittatun) ; 7 سَبْعَةٌ (sabʿatun) ; 8 ثَمَانِيَةٌ (thamāniyatun) ; 9 تِسْعَةٌ (tisʿatun) ; 10 عَشَرَةٌ (ʿasharatun).
+- 20 عِشْرُونَ (ʿishrūna) ; 30 ثَلَاثُونَ (thalāthūna) ; 50 خَمْسُونَ (khamsūna) ; 100 مِائَةٌ (miʾatun) ; 1000 أَلْفٌ (alfun).
+
+Chiffres : le Sénégal utilise surtout les chiffres 0 à 9 ; dans de nombreux livres arabes on trouve aussi ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩.
+
+Règles simples à retenir :
+- 1 et 2 se placent après le nom comme des adjectifs, ou on emploie le duel : كِتَابٌ وَاحِدٌ (kitābun wāḥidun : un seul livre) ; كِتَابَانِ (kitābāni : deux livres) ; بِنْتَانِ (bintāni : deux filles).
+- De 3 à 10, le nombre prend le genre inverse du nom au singulier, et le nom se met au pluriel indéfini au cas indirect : ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin : trois livres, car كِتَاب est masculin) ; خَمْسُ بَنَاتٍ (khamsu banātin : cinq filles, car بِنْت est féminin) ; سَبْعَةُ أَيَّامٍ (sabʿatu ayyāmin : sept jours).
+- De 11 à 99, le nom est au singulier, au cas direct : عِشْرُونَ تِلْمِيذًا (ʿishrūna tilmīdhan : vingt élèves).
+- Avec 100 et 1000, le nom est au singulier, au cas indirect : مِائَةُ تِلْمِيذٍ (miʾatu tilmīdhin : cent élèves).
+
+Pour dire son âge, apprends l''expression telle quelle : عُمْرِي أَرْبَعَ عَشْرَةَ سَنَةً (ʿumrī arbaʿa ʿashrata sanatan : j''ai quatorze ans) ; عُمْرِي خَمْسَ عَشْرَةَ سَنَةً (ʿumrī khamsa ʿashrata sanatan : j''ai quinze ans).
+
+## Fiche 2 : les accords
+
+L''adjectif suit le nom et s''accorde avec lui en genre, en nombre, en définition (avec ou sans article) et en cas :
+- وَلَدٌ صَغِيرٌ (waladun ṣaghīrun) : un petit garçon ; الْوَلَدُ الصَّغِيرُ (al-waladu ṣ-ṣaghīru) : le petit garçon.
+- بِنْتٌ صَغِيرَةٌ (bintun ṣaghīratun) : une petite fille ; الْبِنْتُ الصَّغِيرَةُ (al-bintu ṣ-ṣaghīratu).
+- Pluriel de personnes : مُعَلِّمُونَ مُجْتَهِدُونَ (muʿallimūna mujtahidūna) : des enseignants travailleurs.
+- Pluriel de choses ou d''animaux (pluriel non humain) : l''adjectif et le verbe se mettent au féminin singulier : كُتُبٌ جَدِيدَةٌ (kutubun jadīdatun : des livres neufs) ; الْأَشْجَارُ طَوِيلَةٌ (al-ashjāru ṭawīlatun : les arbres sont hauts).
+
+## Fiche 3 : vocabulaire thématique
+
+La famille (الْأُسْرَةُ, al-usratu) : أَبٌ (abun, père), أُمٌّ (ummun, mère), أَخٌ (akhun, frère), أُخْتٌ (ukhtun, sœur), جَدٌّ (jaddun, grand-père), جَدَّةٌ (jaddatun, grand-mère), اِبْنٌ (ibnun, fils), بِنْتٌ (bintun, fille).
+
+L''école (الْمَدْرَسَةُ, al-madrasatu) : مُعَلِّمٌ (muʿallimun, enseignant), أُسْتَاذٌ (ustādhun, professeur), تِلْمِيذٌ (tilmīdhun, élève ; pluriel تَلَامِيذُ, talāmīdhu), فَصْلٌ (faṣlun, classe), كِتَابٌ (kitābun, livre ; pluriel كُتُبٌ, kutubun), قَلَمٌ (qalamun, stylo ; pluriel أَقْلَامٌ, aqlāmun), دَفْتَرٌ (daftarun, cahier), سَبُّورَةٌ (sabbūratun, tableau), دَرْسٌ (darsun, leçon), اِمْتِحَانٌ (imtiḥānun, examen).
+
+La ville (الْمَدِينَةُ, al-madīnatu) : شَارِعٌ (shāriʿun, rue), سُوقٌ (sūqun, marché), مَسْجِدٌ (masjidun, mosquée), حَيٌّ (ḥayyun, quartier), بَيْتٌ (baytun, maison), قَرْيَةٌ (qaryatun, village), سَيَّارَةٌ (sayyāratun, voiture).
+
+La santé (الصِّحَّةُ, aṣ-ṣiḥḥatu) : طَبِيبٌ (ṭabībun, médecin), مُمَرِّضَةٌ (mumarriḍatun, infirmière), مَرِيضٌ (marīḍun, malade), دَوَاءٌ (dawāʾun, médicament), مُسْتَشْفَى (mustashfā, hôpital). رَأْسِي يُؤْلِمُنِي (raʾsī yuʾlimunī) : j''ai mal à la tête.
+
+L''environnement (الْبِيئَةُ, al-bīʾatu) : شَجَرَةٌ (shajaratun, arbre ; pluriel أَشْجَارٌ, ashjārun), مَاءٌ (māʾun, eau), بَحْرٌ (baḥrun, mer), مَطَرٌ (maṭarun, pluie), نَظِيفٌ (naẓīfun, propre), نَظَافَةٌ (naẓāfatun, propreté), أَوْسَاخٌ (awsākhun, saletés, déchets).
+
+Les jours : الْأَحَدُ (al-aḥadu, dimanche), الِاثْنَيْنِ (al-ithnayni, lundi), الثُّلَاثَاءُ (ath-thulāthāʾu, mardi), الْأَرْبِعَاءُ (al-arbiʿāʾu, mercredi), الْخَمِيسُ (al-khamīsu, jeudi), الْجُمُعَةُ (al-jumuʿatu, vendredi), السَّبْتُ (as-sabtu, samedi).
+
+## Fiche 4 : l''expression écrite
+
+Pour se présenter, un modèle simple :
+
+اِسْمِي فَاطِمَةُ. عُمْرِي أَرْبَعَ عَشْرَةَ سَنَةً. أَسْكُنُ فِي قَرْيَةٍ قَرِيبَةٍ مِنَ الْبَحْرِ. أَنَا تِلْمِيذَةٌ فِي الْمَدْرَسَةِ الْإِعْدَادِيَّةِ. أُحِبُّ الْقِرَاءَةَ وَالرِّيَاضَةَ. فِي الْمُسْتَقْبَلِ، أُرِيدُ أَنْ أَكُونَ طَبِيبَةً.
+
+Translittération : ismī Fāṭimatu. ʿumrī arbaʿa ʿashrata sanatan. askunu fī qaryatin qarībatin mina l-baḥri. anā tilmīdhatun fī l-madrasati l-iʿdādiyyati. uḥibbu l-qirāʾata wa-r-riyāḍata. fī l-mustaqbali, urīdu an akūna ṭabībatan.
+
+Traduction : Je m''appelle Fatima. J''ai quatorze ans. J''habite dans un village proche de la mer. Je suis élève au collège. J''aime la lecture et le sport. Plus tard, je veux être médecin.
+
+Conseils : utilise surtout des phrases nominales simples et des verbes que tu sais conjuguer ; vérifie chaque accord masculin ou féminin ; termine par une phrase au futur ou un souhait.
+
+## Exercices pratiques
+
+Exercice 1 : Écrire en lettres arabes : 3 ; 7 ; 10 ; 20.
+
+Exercice 2 : Traduire : trois stylos (قَلَمٌ, pluriel أَقْلَامٌ) ; deux livres.
+
+Exercice 3 : Accorder l''adjectif : بِنْتٌ (مُجْتَهِد) ; الْبَيْتُ (الْجَدِيد).
+
+Exercice 4 : Accorder avec un pluriel non humain : السَّيَّارَاتُ (سَرِيع).
+
+Exercice 5 : Donner le sens : طَبِيبٌ ; سُوقٌ ; شَجَرَةٌ ; جَدَّةٌ ; دَفْتَرٌ.
+
+Exercice 6 : Traduire en arabe : le marché est grand ; la grande école.
+
+Exercice 7 : Rédiger 4 phrases pour présenter ta famille.
+
+## Corrigé
+
+Exercice 1 : ثَلَاثَةٌ (thalāthatun) ; سَبْعَةٌ (sabʿatun) ; عَشَرَةٌ (ʿasharatun) ; عِشْرُونَ (ʿishrūna).
+
+Exercice 2 : ثَلَاثَةُ أَقْلَامٍ (thalāthatu aqlāmin : قَلَم est masculin, donc le nombre prend la forme en ة) ; كِتَابَانِ (kitābāni).
+
+Exercice 3 : بِنْتٌ مُجْتَهِدَةٌ (bintun mujtahidatun) ; الْبَيْتُ الْجَدِيدُ (al-baytu l-jadīdu).
+
+Exercice 4 : السَّيَّارَاتُ سَرِيعَةٌ (as-sayyārātu sarīʿatun : les voitures sont rapides).
+
+Exercice 5 : médecin ; marché ; arbre ; grand-mère ; cahier.
+
+Exercice 6 : السُّوقُ كَبِيرٌ (as-sūqu kabīrun) ; الْمَدْرَسَةُ الْكَبِيرَةُ (al-madrasatu l-kabīratu).
+
+Exercice 7 : Modèle : أُسْرَتِي كَبِيرَةٌ (usratī kabīratun : ma famille est grande). أَبِي فَلَّاحٌ (abī fallāḥun : mon père est cultivateur). أُمِّي تَعْمَلُ فِي الْبَيْتِ (ummī taʿmalu fī l-bayti : ma mère travaille à la maison). لِي أَخَوَانِ (lī akhawāni : j''ai deux frères).', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bfem-arabe'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Nombres, accords, vocabulaire thématique et expression écrite');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
+
+Voici un sujet d''entraînement conçu pour ce cours, sur le modèle des épreuves d''arabe LV2 du BFEM. Ce n''est pas un sujet officiel. Traite-le en temps limité, sans dictionnaire, puis compare avec le corrigé. La répartition des points sur 20 est indicative ; le barème réel relève des textes officiels en vigueur et des correcteurs.
+
+## Texte : يَوْمُ النَّظَافَةِ (yawmu n-naẓāfati, la journée de la propreté)
+
+فِي يَوْمِ السَّبْتِ، اِجْتَمَعَ تَلَامِيذُ مَدْرَسَتِنَا فِي السَّاحَةِ. حَمَلَ الْأَوْلَادُ الْمَكَانِسَ، وَحَمَلَتِ الْبَنَاتُ أَكْيَاسًا كَبِيرَةً. نَظَّفَ التَّلَامِيذُ السَّاحَةَ وَالْفُصُولَ، وَجَمَعُوا الْأَوْسَاخَ. ثُمَّ غَرَسَ الْمُعَلِّمُ مَعَ التَّلَامِيذِ عَشْرَ شَجَرَاتٍ أَمَامَ الْمَدْرَسَةِ. قَالَ الْمُدِيرُ: «النَّظَافَةُ مِنَ الْإِيمَانِ، وَالْبِيئَةُ أَمَانَةٌ فِي أَيْدِينَا». فَرِحَ التَّلَامِيذُ كَثِيرًا، وَقَرَّرُوا أَنْ يُنَظِّفُوا الْمَدْرَسَةَ كُلَّ شَهْرٍ.
+
+Translittération : fī yawmi s-sabti, ijtamaʿa talāmīdhu madrasatinā fī s-sāḥati. ḥamala l-awlādu l-makānisa, wa-ḥamalati l-banātu akyāsan kabīratan. naẓẓafa t-talāmīdhu s-sāḥata wa-l-fuṣūla, wa-jamaʿū l-awsākha. thumma gharasa l-muʿallimu maʿa t-talāmīdhi ʿashra shajarātin amāma l-madrasati. qāla l-mudīru : « an-naẓāfatu mina l-īmāni, wa-l-bīʾatu amānatun fī aydīnā ». fariḥa t-talāmīdhu kathīran, wa-qarrarū an yunaẓẓifū l-madrasata kulla shahrin.
+
+Vocabulaire : السَّاحَةُ (as-sāḥatu) : la cour ; مِكْنَسَةٌ (miknasatun, pluriel مَكَانِسُ) : balai ; كِيسٌ (kīsun, pluriel أَكْيَاسٌ) : sac ; غَرَسَ (gharasa) : planter ; أَمَانَةٌ (amānatun) : un dépôt confié, une responsabilité ; قَرَّرَ (qarrara) : décider.
+
+## Questions
+
+I. Compréhension (8 points)
+- 1. مَتَى اجْتَمَعَ التَّلَامِيذُ؟ (matā jtamaʿa t-talāmīdhu?) (1 point)
+- 2. أَيْنَ اجْتَمَعُوا؟ (ayna jtamaʿū?) (1 point)
+- 3. مَاذَا حَمَلَتِ الْبَنَاتُ؟ (mādhā ḥamalati l-banātu?) (1 point)
+- 4. كَمْ شَجَرَةً غَرَسُوا؟ (kam shajaratan gharasū?) (1 point)
+- 5. صَحِيحٌ أَمْ خَطَأٌ؟ Justifier : قَرَّرَ التَّلَامِيذُ أَنْ يُنَظِّفُوا الْمَدْرَسَةَ كُلَّ سَنَةٍ. (2 points)
+- 6. Traduire la phrase du directeur. (2 points)
+
+II. Langue (6 points)
+- 1. Relever deux verbes à l''accompli. (1 point)
+- 2. Conjuguer حَمَلَ / يَحْمِلُ à l''inaccompli avec هُوَ, نَحْنُ et هُمْ. (1,5 point)
+- 3. Mettre au féminin : الْمُعَلِّمُ نَشِيطٌ. (1 point)
+- 4. Dire si la phrase est nominale ou verbale : النَّظَافَةُ مِنَ الْإِيمَانِ ; غَرَسَ الْمُعَلِّمُ شَجَرَةً. (1 point)
+- 5. Écrire en lettres et accorder : 3 كُتُب ; 5 بَنَات. (1,5 point)
+
+III. Production écrite (6 points)
+Décris ton quartier en 6 à 8 phrases et dis ce que tu feras pour le garder propre.
+
+## Corrigé détaillé
+
+I. Compréhension
+- 1. اِجْتَمَعُوا يَوْمَ السَّبْتِ (ijtamaʿū yawma s-sabti) : samedi.
+- 2. اِجْتَمَعُوا فِي سَاحَةِ الْمَدْرَسَةِ (ijtamaʿū fī sāḥati l-madrasati) : dans la cour de l''école.
+- 3. حَمَلَتِ الْبَنَاتُ أَكْيَاسًا كَبِيرَةً (ḥamalati l-banātu akyāsan kabīratan) : de grands sacs.
+- 4. غَرَسُوا عَشْرَ شَجَرَاتٍ (gharasū ʿashra shajarātin) : dix arbres.
+- 5. خَطَأٌ (faux) : « قَرَّرُوا أَنْ يُنَظِّفُوا الْمَدْرَسَةَ كُلَّ شَهْرٍ » : chaque mois, et non chaque année.
+- 6. « La propreté fait partie de la foi, et l''environnement est un dépôt confié entre nos mains. »
+
+II. Langue
+- 1. Par exemple : اِجْتَمَعَ (ijtamaʿa), حَمَلَ (ḥamala), نَظَّفَ (naẓẓafa), غَرَسَ (gharasa), قَالَ (qāla), فَرِحَ (fariḥa).
+- 2. هُوَ يَحْمِلُ (yaḥmilu) ; نَحْنُ نَحْمِلُ (naḥmilu) ; هُمْ يَحْمِلُونَ (yaḥmilūna).
+- 3. الْمُعَلِّمَةُ نَشِيطَةٌ (al-muʿallimatu nashīṭatun).
+- 4. La première est nominale (elle commence par un nom) ; la seconde est verbale (elle commence par un verbe).
+- 5. ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin) ; خَمْسُ بَنَاتٍ (khamsu banātin).
+
+III. Production écrite : modèle
+أَسْكُنُ فِي حَيٍّ كَبِيرٍ. فِي حَيِّنَا سُوقٌ وَمَسْجِدٌ وَمَدْرَسَةٌ. لَكِنَّ الشَّوَارِعَ لَيْسَتْ نَظِيفَةً. يَرْمِي بَعْضُ النَّاسِ الْأَوْسَاخَ فِي الشَّارِعِ. يَجِبُ أَنْ نُحَافِظَ عَلَى نَظَافَةِ حَيِّنَا. سَأُشَارِكُ مَعَ أَصْدِقَائِي فِي يَوْمِ النَّظَافَةِ، وَسَنَغْرِسُ أَشْجَارًا.
+
+Translittération : askunu fī ḥayyin kabīrin. fī ḥayyinā sūqun wa-masjidun wa-madrasatun. lākinna sh-shawāriʿa laysat naẓīfatan. yarmī baʿḍu n-nāsi l-awsākha fī sh-shāriʿi. yajibu an nuḥāfiẓa ʿalā naẓāfati ḥayyinā. sa-ushāriku maʿa aṣdiqāʾī fī yawmi n-naẓāfati, wa-sanaghrisu ashjāran.
+
+Traduction : J''habite dans un grand quartier. Dans notre quartier, il y a un marché, une mosquée et une école. Mais les rues ne sont pas propres. Certaines personnes jettent les déchets dans la rue. Nous devons préserver la propreté de notre quartier. Je participerai avec mes amis à la journée de la propreté et nous planterons des arbres.
+
+## Conseils de notation
+
+- En compréhension, une réponse en phrase complète, reprenant les mots de la question, est mieux valorisée qu''un mot isolé.
+- En langue, les correcteurs vérifient la terminaison exacte : يَحْمِلُونَ et non يَحْمِلُ pour هُمْ.
+- En production écrite, ils regardent généralement le respect du sujet, la correction de la langue (accords, orthographe, points), la richesse du vocabulaire et l''enchaînement des idées. Mieux vaut six phrases justes que dix phrases fautives.
+- Une écriture lisible, avec les points bien placés, évite des pertes de points inutiles.
+
+## Exercices pratiques
+
+Exercice 1 : Relever dans le texte un verbe accordé au féminin et expliquer pourquoi.
+
+Exercice 2 : Pourquoi écrit-on نَظَّفَ التَّلَامِيذُ (verbe au singulier) mais وَجَمَعُوا (pluriel) ?
+
+Exercice 3 : Mettre au futur : نَغْرِسُ شَجَرَةً.
+
+Exercice 4 : Mettre à la forme négative : أَرْمِي الْأَوْسَاخَ فِي الشَّارِعِ.
+
+Exercice 5 : Traduire : la cour est propre.
+
+## Corrigé
+
+Exercice 1 : حَمَلَتِ الْبَنَاتُ (ḥamalati l-banātu) : le sujet الْبَنَاتُ est féminin, le verbe prend la marque du féminin ت.
+
+Exercice 2 : Placé avant son sujet, le verbe reste au singulier ; le second verbe vient après le sujet déjà exprimé, il s''accorde donc au pluriel.
+
+Exercice 3 : سَنَغْرِسُ شَجَرَةً (sa-naghrisu shajaratan).
+
+Exercice 4 : لَا أَرْمِي الْأَوْسَاخَ فِي الشَّارِعِ (lā armī l-awsākha fī sh-shāriʿi).
+
+Exercice 5 : السَّاحَةُ نَظِيفَةٌ (as-sāḥatu naẓīfatun).', 'texte', 60, false, 50
+from public.courses c where c.slug = 'bfem-arabe'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive « veille d''examen » en arabe', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : séance de révision intensive de la veille de l''épreuve d''arabe LV2.
+- Objectifs : revoir la lecture, les pronoms, les deux types de phrases, la conjugaison, les nombres et les accords ; corriger des exercices types ; préparer la production écrite et la gestion du temps.
+- Matériel : tableau ou diaporama, cahier, tableaux de conjugaison.
+- Prérequis : leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« السَّلَامُ عَلَيْكُمْ, as-salāmu ʿalaykum, bonsoir à toutes et à tous. Demain, c''est l''épreuve d''arabe. Ce soir, nous révisons l''essentiel, calmement. Je vais expliquer en français et écrire les exemples en arabe avec leur lecture. Prenez votre cahier. Quand je dis « pause », arrêtez la vidéo et cherchez seuls avant de regarder la correction. »
+
+Visuel : le plan : lecture, consignes, pronoms, phrase nominale et verbale, conjugaison, quiz, nombres et accords, compréhension, production écrite, évaluation.
+
+## 05:00 – 15:00 · Lecture et consignes
+
+« Commençons par la lecture. Fatḥa pour a, ḍamma pour u, kasra pour i, sukūn pour l''absence de voyelle, shadda pour une consonne doublée. L''article الْ se prononce devant les lettres lunaires, comme dans الْقَمَرُ, al-qamaru, et s''assimile devant les lettres solaires, comme dans الشَّمْسُ, ash-shamsu. »
+
+« Les consignes maintenant : أَجِبْ عَنِ الْأَسْئِلَةِ, réponds aux questions ; صَحِيحٌ أَمْ خَطَأٌ, vrai ou faux ; صَرِّفِ الْفِعْلَ, conjugue le verbe ; تَرْجِمْ, traduis ; اُكْتُبْ, écris. Si vous ne comprenez pas la consigne, vous risquez de faire un exercice juste… mais qui ne correspond pas à la question. »
+
+Question à poser : « Comment lit-on السُّوقُ ? » Réponse : as-sūqu, car س est une lettre solaire.
+
+## 15:00 – 27:00 · Pronoms et phrase nominale
+
+« Les pronoms : أَنَا anā, je ; أَنْتَ anta, tu au masculin ; أَنْتِ anti, tu au féminin ; هُوَ huwa, il ; هِيَ hiya, elle ; نَحْنُ naḥnu, nous ; هُمْ hum, ils. Les suffixes : كِتَابِي, kitābī, mon livre ; كِتَابُهُ, kitābuhu, son livre à lui ; كِتَابُهَا, kitābuhā, son livre à elle. »
+
+« La phrase nominale commence par un nom et n''a pas de verbe être : الْبَيْتُ كَبِيرٌ, al-baytu kabīrun, la maison est grande. Attention : الْبَيْتُ الْكَبِيرُ, avec l''article sur l''adjectif, signifie seulement « la grande maison ». La différence est dans l''article. »
+
+« Pause. Traduisez : l''école est propre. Correction : الْمَدْرَسَةُ نَظِيفَةٌ, al-madrasatu naẓīfatun. Remarquez que l''adjectif prend le ة du féminin, comme le nom. »
+
+## 27:00 – 42:00 · Phrase verbale et conjugaison
+
+« La phrase verbale commence par un verbe : كَتَبَ التِّلْمِيذُ الدَّرْسَ, kataba t-tilmīdhu d-darsa, l''élève a écrit la leçon. Le sujet porte -u, le complément d''objet porte -a. Quand le verbe est avant le sujet, il reste au singulier mais prend le genre du sujet : ذَهَبَ الطُّلَّابُ, dhahaba ṭ-ṭullābu ; ذَهَبَتِ الْبِنْتُ, dhahabati l-bintu. »
+
+« Accompli de كَتَبَ : كَتَبْتُ katabtu, كَتَبْتَ katabta, كَتَبْتِ katabti, كَتَبَ kataba, كَتَبَتْ katabat, كَتَبْنَا katabnā, كَتَبُوا katabū. Inaccompli : أَكْتُبُ aktubu, تَكْتُبُ taktubu, تَكْتُبِينَ taktubīna, يَكْتُبُ yaktubu, نَكْتُبُ naktubu, يَكْتُبُونَ yaktubūna. Futur : سَأَكْتُبُ, sa-aktubu. Négation : لَا أَكْتُبُ au présent, مَا كَتَبْتُ au passé. »
+
+« Pause. Conjuguez ذَهَبَ avec هِيَ à l''accompli, puis avec نَحْنُ à l''inaccompli. Correction : ذَهَبَتْ, dhahabat ; نَذْهَبُ, nadhhabu. »
+
+## 42:00 – 50:00 · Pause interactive : quiz
+
+« Pause après chaque question, écrivez la réponse, puis reprenez. »
+
+- Question 1 : Comment dit-on « nous » ? Réponse : نَحْنُ (naḥnu).
+- Question 2 : Accompli de كَتَبَ avec هِيَ ? Réponse : كَتَبَتْ (katabat).
+- Question 3 : Inaccompli de ذَهَبَ avec أَنَا ? Réponse : أَذْهَبُ (adhhabu).
+- Question 4 : Féminin de مُعَلِّمٌ ? Réponse : مُعَلِّمَةٌ (muʿallimatun).
+- Question 5 : Le duel de كِتَابٌ ? Réponse : كِتَابَانِ (kitābāni).
+- Question 6 : الشَّمْسُ : lettre solaire ou lunaire ? Réponse : solaire, on lit ash-shamsu.
+
+« Cinq ou six bonnes réponses : très bien. Moins de quatre : relisez ce soir les tableaux de conjugaison, sans paniquer. »
+
+## 50:00 – 1:00:00 · Nombres et accords
+
+« Les nombres de 1 à 10 : وَاحِدٌ, اِثْنَانِ, ثَلَاثَةٌ, أَرْبَعَةٌ, خَمْسَةٌ, سِتَّةٌ, سَبْعَةٌ, ثَمَانِيَةٌ, تِسْعَةٌ, عَشَرَةٌ. De 3 à 10, le nombre prend le genre inverse du nom : ثَلَاثَةُ كُتُبٍ, thalāthatu kutubin, car كِتَاب est masculin ; خَمْسُ بَنَاتٍ, khamsu banātin, car بِنْت est féminin. »
+
+« Les accords : l''adjectif suit le nom en genre, en nombre et avec ou sans article : بِنْتٌ صَغِيرَةٌ, الْبِنْتُ الصَّغِيرَةُ. Pour un pluriel de choses, l''adjectif se met au féminin singulier : الْأَشْجَارُ طَوِيلَةٌ, al-ashjāru ṭawīlatun. »
+
+« Pause. Écrivez « trois stylos ». Correction : ثَلَاثَةُ أَقْلَامٍ, thalāthatu aqlāmin. قَلَم est masculin, donc le nombre a la forme en ة. »
+
+## 1:00:00 – 1:10:00 · Compréhension commentée
+
+Visuel : texte court. « أَسْكُنُ فِي قَرْيَةٍ صَغِيرَةٍ. أَبِي فَلَّاحٌ. يَذْهَبُ إِلَى الْحَقْلِ كُلَّ صَبَاحٍ. » (askunu fī qaryatin ṣaghīratin. abī fallāḥun. yadhhabu ilā l-ḥaqli kulla ṣabāḥin : j''habite dans un petit village. Mon père est cultivateur. Il va au champ chaque matin.)
+
+« Question : مَاذَا يَعْمَلُ الْأَبُ؟ mādhā yaʿmalu l-abu ? Réponse complète : الْأَبُ فَلَّاحٌ, al-abu fallāḥun. Question : مَتَى يَذْهَبُ إِلَى الْحَقْلِ؟ Réponse : يَذْهَبُ إِلَى الْحَقْلِ كُلَّ صَبَاحٍ. Vous voyez : on reprend les mots de la question et du texte. Pour un vrai ou faux, on écrit صَحِيحٌ ou خَطَأٌ, puis on cite la phrase du texte. »
+
+## 1:10:00 – 1:18:00 · Production écrite et gestion du temps
+
+« Pour la production écrite, préparez quelques phrases sûres : اِسْمِي ... ; عُمْرِي أَرْبَعَ عَشْرَةَ سَنَةً ; أَسْكُنُ فِي ... ; أُحِبُّ ... ; فِي الْمُسْتَقْبَلِ أُرِيدُ أَنْ أَكُونَ ... . Reliez les idées avec وَ, ثُمَّ, لَكِنَّ, لِأَنَّ. Pour parler de l''environnement : يَجِبُ أَنْ نُحَافِظَ عَلَى نَظَافَةِ الْحَيِّ, il faut préserver la propreté du quartier. »
+
+« Gestion du temps : lisez tout le sujet, faites d''abord la compréhension, puis la langue, puis la production écrite. Gardez au moins un quart du temps pour écrire, et cinq minutes pour relire : points sur les lettres, ة du féminin, accords, article. Écrivez lisiblement : une lettre mal formée peut être comptée comme une faute. »
+
+« Ce soir : préparez vos stylos, relisez vos fiches une dernière fois et dormez tôt. »
+
+## 1:18:00 – 1:26:00 · Évaluation finale
+
+« Cinq questions. Pause, réponses écrites, puis correction. »
+
+- 1. Traduire « la maison est grande ». Réponse : الْبَيْتُ كَبِيرٌ (al-baytu kabīrun).
+- 2. Conjuguer دَرَسَ à l''accompli avec نَحْنُ. Réponse : دَرَسْنَا (darasnā).
+- 3. Mettre à la forme négative : أَذْهَبُ. Réponse : لَا أَذْهَبُ (lā adhhabu).
+- 4. Accorder : السَّيَّارَاتُ (جَدِيد). Réponse : السَّيَّارَاتُ جَدِيدَةٌ (as-sayyārātu jadīdatun), pluriel non humain.
+- 5. Mettre au futur : أَكْتُبُ. Réponse : سَأَكْتُبُ (sa-aktubu).
+
+« Correction commentée : à la question 4, beaucoup d''élèves écrivent جَدِيدُونَ ; c''est une erreur, car les voitures ne sont pas des personnes. À la question 2, n''oubliez pas le sukūn sur le س : darasnā. »
+
+## 1:26:00 – 1:30:00 · Synthèse et encouragements
+
+« Récapitulons : lire avec les voyelles et l''article ; reconnaître la phrase nominale et la phrase verbale ; conjuguer à l''accompli et à l''inaccompli ; accorder l''adjectif, le verbe et le nombre ; répondre par des phrases complètes ; écrire simple et juste. Vous êtes prêts. بِالتَّوْفِيقِ, bi-t-tawfīq : bonne chance à toutes et à tous ! مَعَ السَّلَامَةِ. »
+
+Visuel final : fiche récapitulative pronoms, conjugaisons et nombres.', 'video', 90, false, 60
+from public.courses c where c.slug = 'bfem-arabe'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille d''examen » en arabe');
+
 -- Cours : Géolocalisation et télématique des véhicules
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-gps-avance', (select id from public.levels where name = 'Formation professionnelle'), 'gps', 'Géolocalisation et télématique', 'Géolocalisation et télématique des véhicules', 'Cette formation explique le fonctionnement du GPS (satellites, temps, trilatération), les traceurs et la télématique embarquée, le géofencing et les alertes, l''analyse des trajets et du comportement de conduite, ainsi que la protection des données personnelles des conducteurs. Elle s''adresse aux gestionnaires de flotte, responsables sécurité, exploitants de transport et techniciens qui déploient ou exploitent une solution de géolocalisation. Prérequis : calculs de base, notion de vitesse (distance / temps) et racine carrée.', true, 110

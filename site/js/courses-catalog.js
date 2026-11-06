@@ -1586,6 +1586,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "bfem-arabe",
+  "level": "3e",
+  "subject": "Arabe (LV2)",
+  "module": null,
+  "title": "Arabe LV2 : réussir l'épreuve du BFEM",
+  "description": "Ce cours d'examen prépare l'épreuve d'arabe LV2 du BFEM : lecture et compréhension d'un texte, grammaire de base (pronoms, phrase nominale et phrase verbale, accompli et inaccompli, nombres, accords), vocabulaire thématique et expression écrite. Les explications sont en français, les exemples en arabe vocalisé avec translittération. Prérequis : savoir lire l'alphabet arabe et connaître les bases étudiées au collège.",
+  "sort": 109,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce que l'on attend de toi à l'épreuve d'arabe LV2 du BFEM.\n- Comprendre les consignes écrites en arabe.\n- Adopter une méthode pour chaque type d'exercice et éviter les erreurs fréquentes.\n- Organiser tes révisions sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nL'épreuve d'arabe LV2 s'appuie en général sur un texte court en arabe, souvent vocalisé, suivi de questions. On y trouve habituellement trois familles d'exercices : la compréhension du texte, des exercices de langue (grammaire, conjugaison, vocabulaire) et une petite production écrite. La durée, le coefficient et le barème dépendent des textes officiels en vigueur : renseigne-toi auprès de ton professeur.\n\n## Convention de translittération utilisée dans ce cours\n\nPour t'aider à lire, chaque exemple arabe est suivi d'une transcription en lettres latines :\n- ā, ī, ū : voyelles longues (alif, yāʾ, wāw) ;\n- ʿ : la lettre ʿayn (ع) ; ʾ : la hamza (ء) ;\n- ḥ (ح), ṣ (ص), ḍ (ض), ṭ (ط), ẓ (ظ) : consonnes emphatiques ou profondes ;\n- th (ث), dh (ذ), kh (خ), gh (غ), sh (ش).\n\n## Les consignes à connaître\n\n- اِقْرَأِ النَّصَّ (iqraʾi n-naṣṣa) : lis le texte.\n- أَجِبْ عَنِ الْأَسْئِلَةِ (ajib ʿani l-asʾilati) : réponds aux questions.\n- صَحِيحٌ أَمْ خَطَأٌ؟ (ṣaḥīḥun am khaṭaʾun?) : vrai ou faux ?\n- اِمْلَأِ الْفَرَاغَ (imlaʾi l-farāgha) : remplis le vide, complète.\n- ضَعْ خَطًّا تَحْتَ (ḍaʿ khaṭṭan taḥta) : souligne.\n- صَرِّفِ الْفِعْلَ (ṣarrifi l-fiʿla) : conjugue le verbe.\n- تَرْجِمْ إِلَى الْفَرَنْسِيَّةِ (tarjim ilā l-faransiyyati) : traduis en français.\n- اُكْتُبْ (uktub) : écris.\n\n## Méthode pour la compréhension\n\n- Lis le titre et les questions avant le texte : ils t'indiquent le thème.\n- Lis le texte une première fois en entier, sans t'arrêter sur les mots inconnus.\n- Repère les mots interrogatifs des questions : مَنْ (man, qui ?), مَا / مَاذَا (mā / mādhā, quoi ?), أَيْنَ (ayna, où ?), مَتَى (matā, quand ?), كَيْفَ (kayfa, comment ?), كَمْ (kam, combien ?), لِمَاذَا (limādhā, pourquoi ?), هَلْ (hal, est-ce que ?).\n- Cherche dans le texte la phrase qui contient la réponse et souligne-la.\n- Réponds par une phrase complète en reprenant les mots de la question.\n\nExemple. Question : أَيْنَ يَسْكُنُ عُمَرُ؟ (ayna yaskunu ʿUmaru? : où habite Omar ?). Réponse complète : يَسْكُنُ عُمَرُ فِي دَاكَار (yaskunu ʿUmaru fī Dākār : Omar habite à Dakar).\n\n## Méthode pour la production écrite\n\n- Lis bien le sujet : de quoi dois-tu parler, en combien de lignes ?\n- Prépare au brouillon une liste de mots et de phrases simples que tu maîtrises.\n- Écris des phrases courtes : une phrase nominale ou verbale correcte vaut mieux qu'une phrase longue et fausse.\n- Relie tes idées avec وَ (wa, et), ثُمَّ (thumma, puis), لَكِنَّ (lākinna, mais), لِأَنَّ (li-anna, parce que).\n- Relis : accords, points sur les lettres, tāʾ marbūṭa (ة), article.\n\n## Les erreurs fréquentes\n\n- Confondre des lettres proches : ح et ه, ع et ء, س et ص, ت et ط, د et ض, ز, ذ et ظ.\n- Oublier ou mal placer les points : ب ت ث ن ي ne se distinguent que par eux.\n- Confondre la tāʾ marbūṭa (ة) du féminin et le hāʾ (ه) : مَدْرَسَةٌ (madrasatun, école) mais كِتَابُهُ (kitābuhu, son livre).\n- Oublier l'accord en genre : on dit الْبِنْتُ صَغِيرَةٌ (al-bintu ṣaghīratun) et non الْبِنْتُ صَغِيرٌ.\n- Écrire le verbe au masculin avec un sujet féminin : ذَهَبَتْ فَاطِمَةُ (dhahabat Fāṭimatu).\n- Traduire mot à mot depuis le français.\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : lecture, voyelles, signes (sukūn, shadda, tanwīn), article et lettres solaires.\n- Semaine 2 : pronoms personnels et suffixes possessifs ; démonstratifs.\n- Semaine 3 : phrase nominale, phrase verbale, négation, interrogation.\n- Semaine 4 : conjugaison à l'accompli et à l'inaccompli ; futur.\n- Semaine 5 : nombres et accords (adjectif, verbe, pluriel non humain).\n- Semaine 6 : vocabulaire : famille, école, ville, santé, environnement.\n- Semaine 7 : production écrite (se présenter, décrire, raconter) et sujets d'entraînement.\n- Semaine 8 : sujets complets en temps limité et relecture du cahier d'erreurs.\n\nChaque jour : lis à voix haute un petit texte vocalisé, apprends huit mots avec leur pluriel, conjugue un verbe aux deux formes.\n\n## Exercices pratiques\n\nExercice 1 : Traduire les consignes : أَجِبْ عَنِ الْأَسْئِلَةِ ; صَرِّفِ الْفِعْلَ ; اُكْتُبْ.\n\nExercice 2 : Donner le sens des interrogatifs : أَيْنَ ; مَتَى ; كَمْ ; لِمَاذَا.\n\nExercice 3 : Classer selon la dernière lettre (ة ou ه) : مَدْرَسَة ; بَيْتُهُ ; سَيَّارَة ; قَلَمُهُ.\n\nExercice 4 : Corriger : الْمُعَلِّمَةُ مُجْتَهِدٌ.\n\nExercice 5 : Répondre par une phrase complète : أَيْنَ تَسْكُنُ عَائِشَةُ؟ (Elle habite à Dakar.)\n\nExercice 6 : Citer quatre paires de lettres qu'il ne faut pas confondre.\n\n## Corrigé\n\nExercice 1 : Réponds aux questions ; conjugue le verbe ; écris.\n\nExercice 2 : أَيْنَ (ayna) : où ? ; مَتَى (matā) : quand ? ; كَمْ (kam) : combien ? ; لِمَاذَا (limādhā) : pourquoi ?\n\nExercice 3 : Avec ة (tāʾ marbūṭa, féminin) : مَدْرَسَة (madrasa, école), سَيَّارَة (sayyāra, voiture). Avec ه (pronom « son, sa ») : بَيْتُهُ (baytuhu, sa maison), قَلَمُهُ (qalamuhu, son stylo).\n\nExercice 4 : الْمُعَلِّمَةُ مُجْتَهِدَةٌ (al-muʿallimatu mujtahidatun : l'enseignante est travailleuse). L'adjectif s'accorde au féminin.\n\nExercice 5 : تَسْكُنُ عَائِشَةُ فِي دَاكَار (taskunu ʿĀʾishatu fī Dākār).\n\nExercice 6 : Par exemple : ح / ه ; ع / ء ; س / ص ; ت / ط ; د / ض ; ذ / ظ."
+   },
+   {
+    "title": "Lecture et compréhension d'un texte",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Grammaire : pronoms, phrase nominale et verbale, conjugaison",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Nombres, accords, vocabulaire thématique et expression écrite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive « veille d'examen » en arabe",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-gps-avance",
   "level": "Formation professionnelle",
   "subject": "Géolocalisation et télématique",
