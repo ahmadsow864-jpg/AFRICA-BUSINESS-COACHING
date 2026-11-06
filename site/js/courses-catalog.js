@@ -5378,6 +5378,78 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "doc-cg",
+  "level": "Doctorat",
+  "subject": "Contrôle de gestion",
+  "module": null,
+  "title": "Doctorat Contrôle de gestion : réussir l'examen de qualification doctorale",
+  "description": "Préparation à l'examen de qualification doctorale en contrôle de gestion : l'opposition entre l'approche cybernétique et rationnelle du contrôle et les approches socio-organisationnelles, le débat budget traditionnel contre beyond budgeting, les méthodes de recherche du champ (étude de cas clinique, recherche-intervention, enquêtes quantitatives) et une simulation complète de soutenance. Public : doctorants en sciences de gestion ayant déjà une formation de niveau Master en contrôle de gestion.",
+  "sort": 804,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en contrôle de gestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "L'examen de qualification doctorale en contrôle de gestion n'est pas un contrôle de connaissances au sens scolaire du terme. C'est une épreuve de passage, souvent appelée comprehensive exam ou examen de synthèse selon les programmes, qui vérifie qu'un doctorant maîtrise suffisamment l'état de l'art de son champ pour s'engager, en toute autonomie intellectuelle, dans la rédaction d'une thèse. Avant cette épreuve, on est étudiant qui apprend une discipline ; après, on est censé être un chercheur qui peut la faire avancer. Comprendre cette bascule est la première clé de la réussite.\n\n## Nature de l'épreuve\n\nDans la plupart des programmes doctoraux en sciences de gestion, l'examen de qualification en contrôle de gestion comporte deux volets qui se répondent.\n\nLe premier est une synthèse écrite de la littérature. Le candidat doit produire un document qui démontre qu'il connaît les grands courants théoriques du contrôle de gestion, qu'il peut les situer historiquement les uns par rapport aux autres, qu'il perçoit leurs tensions et leurs complémentarités, et qu'il est capable d'en tirer un positionnement pour son propre projet de thèse. Ce n'est pas un résumé juxtaposé d'auteurs : c'est une mise en intrigue de la littérature, organisée autour de débats (par exemple l'opposition entre une vision cybernétique du contrôle, héritée des travaux fondateurs sur la planification-contrôle, et une vision socio-organisationnelle qui voit le contrôle comme une construction sociale traversée par des jeux d'acteurs).\n\nLe second volet est une soutenance orale devant un jury, généralement composé de trois à cinq enseignants-chercheurs du département, parfois complété par un spécialiste extérieur. Le candidat y présente d'abord brièvement son positionnement théorique et l'esquisse de son projet de thèse, puis répond à des questions qui testent la profondeur de sa compréhension : peut-il expliquer pourquoi un courant a émergé en réaction à un autre ? Peut-il discuter les limites d'une méthode de recherche qu'il envisage d'utiliser ? Peut-il relier un phénomène de terrain qu'il a observé à un concept théorique précis ?\n\n## Ce qu'attend un jury doctoral\n\nUn jury de qualification n'attend pas l'exhaustivité, il attend la maîtrise. Un candidat qui cite vingt auteurs sans jamais les faire dialoguer entre eux inquiète davantage un jury qu'un candidat qui structure sa pensée autour de trois ou quatre débats solides, qu'il explique avec précision et qu'il relie explicitement à son projet.\n\nTrois qualités sont systématiquement recherchées. La rigueur conceptuelle, d'abord : les termes du champ (contrôle de gestion, pilotage, planification, budget, tableau de bord, contrôle organisationnel) doivent être employés avec la précision qu'exige la discipline, et non comme des synonymes interchangeables. La distance critique, ensuite : un bon candidat ne récite pas une théorie, il sait dire dans quel contexte elle s'applique bien, dans quel contexte elle a été critiquée, et par qui. La capacité de positionnement, enfin : le candidat doit montrer qu'il sait où se situe son propre projet de recherche dans cette cartographie théorique, et pourquoi ce positionnement est pertinent et original.\n\nUn jury sanctionne en revanche très sévèrement trois défauts récurrents : la paraphrase sans recul (répéter ce que dit un auteur sans jamais le discuter), l'anachronisme théorique (utiliser un cadre d'analyse hors de son contexte d'émergence sans le justifier), et l'approximation historique (confondre l'ordre d'apparition des courants, ce qui trahit une connaissance livresque et non digérée).\n\n## Méthode de travail recommandée\n\nLa préparation d'un examen de qualification s'étale typiquement sur plusieurs mois et repose sur trois outils complémentaires.\n\nLes fiches de lecture sont le socle. Pour chaque texte ou chaque courant important, une fiche synthétique doit répondre à des questions stables : quelle est la question de recherche ou le problème pratique à l'origine de ce courant ? Quels sont les concepts clés qu'il mobilise ? Quelles hypothèses sur l'organisation et sur l'acteur humain sous-tend-il ? Quelles critiques lui ont été adressées, et par quels courants concurrents ? Quels usages empiriques en a-t-on faits ?\n\nLa cartographie des courants vient ensuite. Il s'agit de construire, au fil de la lecture, une représentation visuelle (un tableau à double entrée, une frise chronologique, un schéma de filiations) qui situe les courants les uns par rapport aux autres : qui critique qui, qui prolonge qui, quels courants partagent des présupposés malgré des vocabulaires différents. Cette cartographie est l'outil qui permet, le jour de l'oral, de répondre avec aisance à une question inattendue en resituant immédiatement l'enjeu dans l'ensemble du champ.\n\nLa note de synthèse, enfin, est l'aboutissement écrit : un document structuré de quelques dizaines de pages qui expose la cartographie sous forme de texte argumenté, conclut sur les zones encore peu explorées de la littérature (les « trous » dans lesquels une thèse peut s'insérer utilement), et propose un positionnement théorique et méthodologique pour le projet de thèse du candidat.\n\n## Plan de travail sur huit semaines\n\nUn calendrier de préparation réaliste peut s'organiser ainsi. Les deux premières semaines sont consacrées à la relecture des textes fondateurs du champ et à l'ouverture des fiches de lecture ; l'objectif est de couvrir large avant d'aller en profondeur. Les semaines trois et quatre approfondissent les deux ou trois grands débats théoriques jugés les plus structurants pour le projet de thèse, avec un effort particulier sur les critiques croisées entre courants. La semaine cinq est consacrée aux méthodes de recherche du champ : il faut être capable de discuter, pour chaque grande méthode, ses forces, ses limites, et les débats épistémologiques qu'elle soulève. La semaine six est celle de la rédaction de la note de synthèse. La semaine sept est consacrée à des simulations d'oral, idéalement devant des pairs doctorants ou un directeur de thèse, qui posent des questions déstabilisantes. La semaine huit, enfin, est une semaine de consolidation : relecture de la cartographie, révision des points faibles identifiés lors des simulations, et repos la veille de l'épreuve, car un jury perçoit immédiatement la fatigue intellectuelle d'un candidat.\n\nCe cours vous accompagne dans cette préparation en se concentrant sur le contrôle de gestion : ses grands débats théoriques, ses méthodes de recherche spécifiques, et un exercice type d'examen de qualification entièrement corrigé.\n\n## Exercices pratiques\n\n1. Construisez le squelette d'une fiche de lecture type (rubriques et questions) que vous utiliserez pour chaque courant théorique étudié dans ce cours.\n\n2. Esquissez une première version de votre cartographie des courants en contrôle de gestion, même incomplète : placez au moins quatre courants ou auteurs que vous connaissez déjà et tracez les relations (filiation, critique, complémentarité) que vous pressentez entre eux.\n\n3. Identifiez, dans votre propre projet de thèse (même à l'état d'ébauche), la question pratique de contrôle de gestion à laquelle il cherche à répondre. Reformulez-la en une phrase qui pourrait ouvrir votre note de synthèse.\n\n4. Rédigez un calendrier de préparation sur huit semaines adapté à votre situation (temps disponible, accès aux textes, disponibilité d'un directeur de thèse pour les simulations d'oral).\n\n5. Listez trois questions que vous redoutez qu'un jury vous pose sur votre projet de thèse, et pour chacune, notez en une phrase l'angle par lequel vous pourriez commencer à y répondre.\n\n## Corrigé\n\n1. Une fiche de lecture robuste comporte au minimum les rubriques suivantes : référence complète du texte ou identification du courant ; problème pratique ou question de recherche à l'origine ; concepts clés et leur définition précise ; hypothèses implicites sur l'organisation et sur l'acteur ; principaux apports ; principales critiques reçues, avec le nom des courants ou auteurs critiques ; usages empiriques connus ; liens possibles avec votre propre projet de thèse.\n\n2. Il n'y a pas de corrigé unique : l'exercice vise à vous faire prendre conscience, dès le début de la préparation, de l'état réel de vos connaissances et de leurs lacunes. Une cartographie satisfaisante à ce stade montre au moins une opposition claire (par exemple une approche qui insiste sur la rationalité des dispositifs de contrôle face à une approche qui insiste sur leur dimension sociale et politique) et une filiation claire (par exemple un courant qui prolonge et complexifie un modèle plus ancien).\n\n3. L'exercice est individuel, mais une bonne reformulation évite deux pièges : elle n'est pas purement théorique et déconnectée du terrain (« étudier le contrôle de gestion dans les PME »), et elle n'est pas purement opérationnelle sans portée théorique (« aider une entreprise à construire son budget »). Une formulation réussie relie un phénomène observable à une question conceptuelle non résolue dans la littérature.\n\n4. Le calendrier proposé dans la leçon est un gabarit ; l'essentiel est de vérifier qu'il réserve du temps explicite à quatre activités distinctes : lecture large, approfondissement des débats structurants, travail sur les méthodes, et entraînement oral — cette dernière étant souvent négligée par les candidats qui sur-investissent la seule lecture.\n\n5. Il n'y a pas de bonne ou de mauvaise question redoutée : l'intérêt de l'exercice est de la nommer explicitement plutôt que de l'éviter, et de commencer, même modestement, à y préparer une réponse structurée plutôt que de compter sur l'improvisation le jour de l'oral."
+   },
+   {
+    "title": "Courant théorique 1 : l'approche cybernétique et rationnelle du contrôle de gestion",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Courant théorique 2 : les approches socio-organisationnelles du contrôle",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Les méthodes de recherche en contrôle de gestion",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Épreuve type d'examen de qualification : budget traditionnel et beyond budgeting",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : l'approche cybernétique et rationnelle du contrôle de gestion",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les approches socio-organisationnelles du contrôle",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les méthodes de recherche en contrôle de gestion",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : budget traditionnel et beyond budgeting, un débat théorique renouvelé",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "doc-compta",
   "level": "Doctorat",
   "subject": "Comptabilité",
