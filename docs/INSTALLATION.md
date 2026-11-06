@@ -84,6 +84,12 @@ La clé *anon* peut être publique : ce sont les règles RLS de la base qui prot
 
 ## Étape 5 — Héberger le site (sans GitHub)
 
+**Recommandé : Google Firebase Hosting** — suivez le guide [HEBERGEMENT-GOOGLE.md](HEBERGEMENT-GOOGLE.md)
+(configuration déjà prête dans `firebase.json`). Textes pour Facebook et LinkedIn :
+[RESEAUX-SOCIAUX.md](RESEAUX-SOCIAUX.md).
+
+Autre possibilité, n'importe quel hébergeur web :
+
 Le site n'est **jamais** publié sur GitHub : GitHub sert uniquement à conserver le code.
 
 1. Choisissez un hébergeur web avec certificat HTTPS (hébergeur au Sénégal ou international)
