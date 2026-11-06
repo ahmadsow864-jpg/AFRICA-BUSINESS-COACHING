@@ -8754,6 +8754,532 @@ Merci pour votre participation. Pour la suite, je vous invite à réaliser le di
 from public.courses c where c.slug = 'formation-parking-entreprise'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : piloter le parking d''une entreprise de A à Z');
 
+-- Cours : Physique-Chimie Terminale : mécanique, oscillations et chimie des solutions
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'physique-chimie-terminale', (select id from public.levels where name = 'Terminale'), null, 'Physique-Chimie', 'Physique-Chimie Terminale : mécanique, oscillations et chimie des solutions', 'Ce cours de Terminale scientifique traite la cinématique et les lois de Newton, l''énergie mécanique, les oscillations mécaniques et électriques, puis les réactions acido-basiques et la cinétique chimique. Il prépare au Bac avec des méthodes de résolution et des travaux pratiques commentés. Prérequis : programme de Première (vecteurs, forces, énergie, quantité de matière) et dérivation.', true, 60
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cinématique du point', '## Objectifs de la leçon
+
+- Définir un référentiel, un repère et la trajectoire d''un mobile.
+- Déterminer les vecteurs position, vitesse et accélération.
+- Établir et utiliser les équations horaires des mouvements rectilignes uniformes et uniformément variés.
+- Caractériser le mouvement circulaire uniforme.
+
+## Référentiel et repère
+
+Un mouvement est toujours décrit par rapport à un référentiel, c''est-à-dire un objet de référence associé à une horloge. Le passager assis dans un car qui roule de Dakar vers Saint-Louis est immobile par rapport au car, mais en mouvement par rapport à la route. En Terminale, on utilise surtout le référentiel terrestre (supposé galiléen pour des mouvements de courte durée).
+
+Dans le référentiel, on choisit un repère (O ; i, j, k). La position du mobile M est donnée par le vecteur position OM = x i + y j + z k. La trajectoire est l''ensemble des positions successives du mobile.
+
+## Vitesse et accélération
+
+- Vecteur vitesse : v = dOM/dt, de coordonnées vx = dx/dt, vy = dy/dt, vz = dz/dt. Il est tangent à la trajectoire. Sa norme s''exprime en m/s (1 m/s = 3,6 km/h).
+- Vecteur accélération : a = dv/dt, de coordonnées ax = dvx/dt… Sa norme s''exprime en m/s².
+
+Le mouvement est accéléré si le produit scalaire a · v est positif, ralenti s''il est négatif.
+
+## Mouvement rectiligne uniforme (MRU)
+
+La trajectoire est une droite et la vitesse est constante : a = 0. Équation horaire : x(t) = v t + x₀.
+
+## Mouvement rectiligne uniformément varié (MRUV)
+
+La trajectoire est une droite et l''accélération est constante (a ≠ 0). Équations horaires :
+- x(t) = (1/2) a t² + v₀ t + x₀ ;
+- v(t) = a t + v₀ ;
+- relation indépendante du temps : v² − v₀² = 2a(x − x₀).
+
+Exemple : un taxi démarre à un feu avec une accélération de 2 m/s². Au bout de 5 s, sa vitesse est v = 2 × 5 = 10 m/s (36 km/h) et il a parcouru x = (1/2) × 2 × 25 = 25 m.
+
+## Mouvement circulaire uniforme (MCU)
+
+La trajectoire est un cercle de rayon r et la valeur de la vitesse est constante. La vitesse angulaire est ω = v/r (en rad/s), et la période T = 2π/ω.
+
+Attention : même si la valeur de la vitesse est constante, sa direction change, donc l''accélération n''est pas nulle. Elle est centripète (dirigée vers le centre du cercle) et vaut a = v²/r = rω².
+
+## Méthode de résolution
+
+- Préciser le référentiel et le repère, ainsi que l''origine des dates.
+- Identifier le type de mouvement à partir des données (vitesse constante ? accélération constante ?).
+- Écrire les équations horaires avec les conditions initiales (x₀, v₀).
+- Convertir les unités (km/h en m/s : diviser par 3,6).
+- Résoudre et vérifier la cohérence (signe, ordre de grandeur).
+
+## Points clés
+
+- v = dOM/dt et a = dv/dt.
+- MRU : x = vt + x₀. MRUV : x = (1/2)at² + v₀t + x₀, v = at + v₀, v² − v₀² = 2aΔx.
+- MCU : a = v²/r, dirigée vers le centre.
+- 1 m/s = 3,6 km/h.
+
+## Exercices
+
+Exercice 1 : L''abscisse d''un mobile est x(t) = 2t² + 3t + 5 (x en m, t en s). Déterminer v(t) et a(t). Calculer x et v à t = 2 s. Quelle est la nature du mouvement ?
+
+Exercice 2 : Une moto part du repos avec une accélération constante de 2 m/s². Au bout de combien de temps atteint-elle 20 m/s ? Quelle distance a-t-elle alors parcourue ?
+
+Exercice 3 : Un véhicule roulant à 72 km/h freine et s''arrête sur 40 m avec une décélération constante. Calculer l''accélération et la durée du freinage.
+
+Exercice 4 : Un point de la périphérie d''une roue de rayon 0,3 m a une vitesse de 6 m/s. Calculer la vitesse angulaire et l''accélération de ce point.
+
+Exercice 5 : On suppose que deux villes sont distantes de 70 km sur une route rectiligne. Un bus part de la ville A à 60 km/h et, au même instant, une voiture part de la ville B vers A à 80 km/h. Quand et où se croisent-ils ?
+
+## Corrigé
+
+Exercice 1 : v(t) = 4t + 3 (m/s) ; a = 4 m/s². À t = 2 s : x = 8 + 6 + 5 = 19 m et v = 11 m/s. L''accélération est constante et la trajectoire rectiligne : MRUV accéléré (a et v de même signe).
+
+Exercice 2 : v = at, donc t = 20/2 = 10 s. Distance : x = (1/2) × 2 × 10² = 100 m.
+
+Exercice 3 : v₀ = 72/3,6 = 20 m/s. v² − v₀² = 2a Δx : 0 − 400 = 2a × 40, donc a = −5 m/s². Durée : 0 = −5t + 20, donc t = 4 s.
+
+Exercice 4 : ω = v/r = 6/0,3 = 20 rad/s. a = v²/r = 36/0,3 = 120 m/s², dirigée vers le centre de la roue.
+
+Exercice 5 : Origine en A, axe orienté vers B. Bus : x₁ = 60t ; voiture : x₂ = 70 − 80t (x en km, t en h). Croisement : 60t = 70 − 80t, donc 140t = 70 et t = 0,5 h = 30 min. Position : x = 60 × 0,5 = 30 km de la ville A.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'physique-chimie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cinématique du point');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les lois de Newton et leurs applications', '## Objectifs de la leçon
+
+- Énoncer les trois lois de Newton.
+- Appliquer la deuxième loi (théorème du centre d''inertie) à des situations variées.
+- Étudier la chute libre et le mouvement d''un projectile.
+
+## Forces et système
+
+Une force modélise une action mécanique ; elle est représentée par un vecteur (point d''application, direction, sens, valeur en newtons N). Forces usuelles :
+- le poids P = m g, vertical, vers le bas (g ≈ 9,8 m/s² ; on prend souvent 10 m/s² pour simplifier) ;
+- la réaction d''un support R, qui se décompose en réaction normale et force de frottement ;
+- la tension d''un fil ou d''un ressort ;
+- la poussée d''Archimède dans un fluide.
+
+Avant tout calcul, on précise le système étudié et le référentiel, puis on fait le bilan des forces extérieures.
+
+## Les trois lois de Newton
+
+Première loi (principe d''inertie) : dans un référentiel galiléen, si la somme des forces extérieures appliquées à un système est nulle, son centre d''inertie est soit au repos, soit en mouvement rectiligne uniforme.
+
+Deuxième loi (théorème du centre d''inertie) : dans un référentiel galiléen, ΣF = m a, où a est l''accélération du centre d''inertie.
+
+Troisième loi (actions réciproques) : si A exerce sur B une force F(A/B), alors B exerce sur A une force F(B/A) = −F(A/B), de même droite d''action.
+
+## Méthode d''application de la deuxième loi
+
+- Définir le système et le référentiel galiléen.
+- Faire le bilan des forces et les représenter.
+- Écrire ΣF = m a.
+- Projeter sur des axes bien choisis (souvent l''axe du mouvement et l''axe perpendiculaire).
+- En déduire l''accélération, puis les équations horaires.
+
+## Exemple 1 : plan incliné
+
+Un solide de masse m glisse sans frottement sur un plan incliné d''un angle α par rapport à l''horizontale. Forces : poids P et réaction normale R. Sur l''axe parallèle au plan, orienté vers le bas : m a = m g sin α, donc a = g sin α. Le mouvement est rectiligne uniformément accéléré. Avec α = 30° et g = 10 m/s², a = 5 m/s².
+
+S''il existe une force de frottement f constante opposée au mouvement : m a = m g sin α − f.
+
+## Exemple 2 : chute libre verticale
+
+Un objet est en chute libre s''il n''est soumis qu''à son poids. Alors m a = m g, donc a = g, quelle que soit la masse. Lâché sans vitesse initiale d''une hauteur h, axe vertical orienté vers le bas : z = (1/2) g t² et v = g t. Il atteint le sol au bout de t = √(2h/g), avec la vitesse v = √(2gh).
+
+## Exemple 3 : mouvement d''un projectile
+
+Un ballon est lancé depuis l''origine avec une vitesse v₀ faisant un angle α avec l''horizontale. On néglige l''air. Repère : Ox horizontal, Oy vertical vers le haut. a = g, donc ax = 0 et ay = −g.
+- vx = v₀ cos α ; vy = −g t + v₀ sin α.
+- x = v₀ cos α × t ; y = −(1/2) g t² + v₀ sin α × t.
+- Équation de la trajectoire (parabole) : y = −g x² / (2 v₀² cos² α) + x tan α.
+- Portée (retour à y = 0) : xmax = v₀² sin(2α)/g, maximale pour α = 45°.
+- Flèche (hauteur maximale) : h = v₀² sin² α/(2g).
+
+Application : un footballeur frappe le ballon à 20 m/s sous un angle de 45° (g = 10 m/s²). Portée : 400 × 1/10 = 40 m. Flèche : 400 × 0,5/20 = 10 m.
+
+## Points clés
+
+- Toujours : système, référentiel, bilan des forces, ΣF = m a, projection.
+- Chute libre : a = g, indépendante de la masse.
+- Projectile : mouvement uniforme selon x, uniformément varié selon y ; trajectoire parabolique.
+
+## Exercices
+
+On prendra g = 10 m/s².
+
+Exercice 1 : Une mangue se détache d''une branche située à 20 m de hauteur. En négligeant l''air, calculer la durée de chute et la vitesse à l''arrivée au sol.
+
+Exercice 2 : Un solide glisse sans frottement sur un plan incliné de 30°. Calculer son accélération.
+
+Exercice 3 : Une caisse de 2 kg est tirée sur un sol horizontal par une force horizontale de 10 N. Les frottements équivalent à une force de 4 N opposée au mouvement. Calculer l''accélération.
+
+Exercice 4 : Une balle est lancée horizontalement à 10 m/s depuis une hauteur de 5 m. Au bout de combien de temps touche-t-elle le sol ? À quelle distance horizontale du point de lancement ?
+
+Exercice 5 : Une personne de 60 kg se tient sur un pèse-personne dans un ascenseur qui monte avec une accélération de 2 m/s². Quelle force le pèse-personne exerce-t-il sur elle ?
+
+## Corrigé
+
+Exercice 1 : t = √(2h/g) = √(40/10) = 2 s. v = g t = 20 m/s (soit 72 km/h).
+
+Exercice 2 : a = g sin 30° = 10 × 0,5 = 5 m/s².
+
+Exercice 3 : Sur l''axe du mouvement : m a = F − f, soit 2a = 10 − 4 = 6, donc a = 3 m/s². (Poids et réaction normale se compensent sur l''axe vertical.)
+
+Exercice 4 : Selon la verticale, chute libre sans vitesse initiale verticale : 5 = (1/2) × 10 × t², donc t = 1 s. Selon l''horizontale, mouvement uniforme : x = 10 × 1 = 10 m.
+
+Exercice 5 : Forces : poids P = 600 N vers le bas, réaction R vers le haut. Axe vertical vers le haut : R − m g = m a, donc R = m(g + a) = 60 × 12 = 720 N. Le pèse-personne indique une valeur supérieure au poids.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'physique-chimie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les lois de Newton et leurs applications');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Travail, énergie et puissance', '## Objectifs de la leçon
+
+- Calculer le travail d''une force constante et la puissance.
+- Appliquer le théorème de l''énergie cinétique.
+- Utiliser l''énergie potentielle de pesanteur et l''énergie mécanique.
+- Analyser la conservation ou la non-conservation de l''énergie mécanique.
+
+## Travail d''une force constante
+
+Le travail d''une force constante F dont le point d''application se déplace de A à B est : W(F) = F · AB = F × AB × cos θ, où θ est l''angle entre F et AB. Il s''exprime en joules (J).
+- Si 0 ≤ θ < 90°, le travail est moteur (positif).
+- Si θ = 90°, le travail est nul (exemple : la réaction normale sur un plan horizontal).
+- Si 90° < θ ≤ 180°, le travail est résistant (négatif), comme celui des frottements.
+
+Travail du poids entre A et B (axe vertical vers le haut) : W(P) = m g (zA − zB). Il ne dépend pas du chemin suivi, seulement de la différence d''altitude.
+
+## Puissance
+
+La puissance moyenne est P = W/Δt, en watts (W). Pour une force constante appliquée à un objet de vitesse v : P = F · v.
+
+## Énergie cinétique et théorème de l''énergie cinétique
+
+L''énergie cinétique d''un solide en translation est Ec = (1/2) m v² (m en kg, v en m/s, Ec en J).
+
+Théorème de l''énergie cinétique : dans un référentiel galiléen, la variation d''énergie cinétique d''un solide entre deux instants est égale à la somme des travaux des forces extérieures : Ec(B) − Ec(A) = ΣW(A→B).
+
+Exemple : un car de transport en commun de 2 000 kg roule à 54 km/h, soit 15 m/s. Ec = (1/2) × 2 000 × 15² = 225 000 J. Pour l''arrêter, les freins doivent fournir un travail résistant de −225 000 J. Si la force de freinage est constante et vaut 9 000 N, la distance d''arrêt est d = 225 000/9 000 = 25 m. Comme Ec est proportionnelle à v², doubler la vitesse multiplie par quatre la distance de freinage : c''est un argument essentiel de sécurité routière.
+
+## Énergie potentielle et énergie mécanique
+
+Énergie potentielle de pesanteur : Epp = m g z, l''axe vertical étant orienté vers le haut et l''origine des altitudes choisie (Epp = 0 en z = 0).
+
+Énergie mécanique : Em = Ec + Epp.
+
+- En l''absence de frottements (seul le poids travaille, ou des forces de travail nul), l''énergie mécanique se conserve : Em(A) = Em(B).
+- En présence de frottements, l''énergie mécanique diminue : Em(B) − Em(A) = W(frottements) < 0. L''énergie perdue est transformée en chaleur.
+
+## Exemple : chute d''un objet
+
+Une noix de coco de 1,5 kg tombe d''un cocotier de 12 m (on néglige l''air, g = 10 m/s²). En haut : Ec = 0, Epp = 1,5 × 10 × 12 = 180 J. Au sol : Epp = 0, donc Ec = 180 J, d''où v = √(2 × 180/1,5) = √240 ≈ 15,5 m/s. On retrouve v = √(2gh).
+
+## Méthode
+
+- Définir le système, le référentiel et les deux états (initial et final).
+- Choisir l''outil : théorème de l''énergie cinétique (si l''on connaît les forces) ou conservation de l''énergie mécanique (si pas de frottements).
+- Exprimer chaque terme, puis résoudre.
+
+## Points clés
+
+- W(F) = F × AB × cos θ ; W(P) = m g (zA − zB).
+- Ec = (1/2) m v² ; ΔEc = ΣW.
+- Em = Ec + Epp ; Em constante sans frottements ; ΔEm = W(frottements) sinon.
+- P = W/Δt.
+
+## Exercices
+
+On prendra g = 10 m/s².
+
+Exercice 1 : Calculer l''énergie cinétique d''une voiture de 1 200 kg roulant à 90 km/h.
+
+Exercice 2 : Un commerçant soulève un sac de riz de 50 kg d''une hauteur de 1,2 m. Calculer le travail du poids du sac.
+
+Exercice 3 : Une balle de 0,5 kg est lâchée sans vitesse d''une hauteur de 5 m. En négligeant l''air, calculer sa vitesse en arrivant au sol.
+
+Exercice 4 : Un enfant de 30 kg descend un toboggan d''une hauteur de 3 m, en partant sans vitesse. Il arrive en bas à 6 m/s. Calculer l''énergie mécanique perdue et le travail des frottements.
+
+Exercice 5 : Une pompe solaire élève 3 m³ d''eau d''un puits de 15 m de profondeur en une heure. Calculer le travail fourni contre le poids et la puissance utile moyenne (masse volumique de l''eau : 1 000 kg/m³).
+
+## Corrigé
+
+Exercice 1 : v = 90/3,6 = 25 m/s. Ec = (1/2) × 1 200 × 25² = 600 × 625 = 375 000 J.
+
+Exercice 2 : Le sac monte : W(P) = m g (zA − zB) = 50 × 10 × (0 − 1,2) = −600 J. Le travail du poids est résistant.
+
+Exercice 3 : Conservation de l''énergie mécanique : m g h = (1/2) m v², donc v = √(2gh) = √100 = 10 m/s.
+
+Exercice 4 : Em initiale = m g h = 30 × 10 × 3 = 900 J (Ec = 0, origine en bas). Em finale = (1/2) × 30 × 36 = 540 J. Énergie perdue : 900 − 540 = 360 J. Travail des frottements : W(f) = −360 J.
+
+Exercice 5 : Masse d''eau : 3 × 1 000 = 3 000 kg. Travail : W = m g h = 3 000 × 10 × 15 = 450 000 J. Puissance : P = 450 000/3 600 = 125 W.', 'texte', 50, false, 30
+from public.courses c where c.slug = 'physique-chimie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Travail, énergie et puissance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les oscillations mécaniques et électriques', '## Objectifs de la leçon
+
+- Établir l''équation différentielle d''un oscillateur mécanique (ressort, pendule).
+- Connaître la solution sinusoïdale, la période propre et l''énergie de l''oscillateur.
+- Décrire l''amortissement et ses régimes.
+- Faire l''analogie avec l''oscillateur électrique LC.
+
+## Le pendule élastique horizontal
+
+Un solide de masse m, fixé à un ressort de raideur k, glisse sans frottement sur un plan horizontal. On repère sa position par l''abscisse x, l''origine étant la position d''équilibre.
+
+Forces : poids et réaction normale (qui se compensent), tension du ressort T = −k x i.
+
+Deuxième loi de Newton projetée sur l''axe : m ẍ = −k x, soit l''équation différentielle :
+
+ẍ + (k/m) x = 0.
+
+Solution : x(t) = Xm cos(ω₀ t + φ), avec :
+- Xm l''amplitude (m) ;
+- ω₀ = √(k/m) la pulsation propre (rad/s) ;
+- φ la phase à l''origine, déterminée par les conditions initiales.
+
+Période propre : T₀ = 2π/ω₀ = 2π √(m/k). Fréquence : f₀ = 1/T₀.
+
+Si l''on écarte le solide de Xm et qu''on le lâche sans vitesse à t = 0, alors x(0) = Xm et v(0) = 0, donc φ = 0 et x(t) = Xm cos(ω₀ t).
+
+Vitesse : v(t) = −Xm ω₀ sin(ω₀ t + φ), de valeur maximale Vm = Xm ω₀ (au passage par la position d''équilibre).
+
+## Énergie de l''oscillateur
+
+Em = (1/2) m v² + (1/2) k x². Sans frottement, elle est constante et vaut (1/2) k Xm² = (1/2) m Vm². Pendant l''oscillation, l''énergie passe sans cesse de la forme potentielle élastique (maximale aux extrémités) à la forme cinétique (maximale au centre).
+
+## Le pendule simple
+
+Une petite masse suspendue à un fil de longueur l oscille dans le champ de pesanteur. Pour de petites oscillations (angle inférieur à une quinzaine de degrés environ), la période est :
+
+T₀ = 2π √(l/g).
+
+Elle ne dépend ni de la masse ni de l''amplitude (isochronisme des petites oscillations). Cette propriété permet de mesurer g au laboratoire.
+
+## Oscillations amorties
+
+En réalité, les frottements dissipent l''énergie : l''amplitude diminue au cours du temps.
+- Frottements faibles : régime pseudo-périodique, avec une pseudo-période proche de T₀.
+- Frottements importants : régime apériodique, le système revient à l''équilibre sans osciller.
+
+Les amortisseurs des véhicules utilisent cet effet pour éviter que la carrosserie oscille longtemps après un nid-de-poule.
+
+Si un oscillateur est soumis à une excitation périodique de fréquence proche de sa fréquence propre, l''amplitude peut devenir très grande : c''est la résonance (utile pour un instrument de musique, dangereuse pour un pont).
+
+## L''oscillateur électrique LC
+
+Un condensateur de capacité C, chargé, se décharge dans une bobine d''inductance L (résistance négligée). La charge q vérifie : q̈ + q/(LC) = 0. C''est la même forme que pour le ressort : q(t) = Qm cos(ω₀ t + φ) avec ω₀ = 1/√(LC) et T₀ = 2π √(LC). L''énergie oscille entre le condensateur (q²/(2C)) et la bobine ((1/2) L i²). Analogies : x ↔ q, m ↔ L, k ↔ 1/C.
+
+## Points clés
+
+- Ressort : ẍ + (k/m) x = 0, T₀ = 2π√(m/k).
+- Pendule simple (petites oscillations) : T₀ = 2π√(l/g).
+- Em = (1/2) k Xm² sans frottement ; amortissement : pseudo-périodique ou apériodique.
+- Circuit LC : T₀ = 2π√(LC).
+
+## Exercices
+
+Exercice 1 : Un solide de 0,2 kg est fixé à un ressort de raideur 20 N/m. Calculer la pulsation propre, la période propre et la fréquence propre.
+
+Exercice 2 : Le même oscillateur est écarté de 5 cm et lâché sans vitesse. Écrire l''équation horaire x(t), puis calculer l''énergie mécanique et la vitesse maximale.
+
+Exercice 3 : Calculer la période d''un pendule simple de 1 m de longueur (g = 9,8 m/s²).
+
+Exercice 4 : Au laboratoire d''un lycée, un pendule de 0,50 m effectue 20 oscillations en 28,4 s. En déduire une valeur de g.
+
+Exercice 5 : Un circuit LC comprend une bobine de 0,1 H et un condensateur de 10 µF. Calculer la période et la fréquence propres.
+
+## Corrigé
+
+Exercice 1 : ω₀ = √(20/0,2) = √100 = 10 rad/s. T₀ = 2π/10 ≈ 0,628 s. f₀ = 1/T₀ ≈ 1,59 Hz.
+
+Exercice 2 : x(t) = 0,05 cos(10 t) (x en m, t en s), car x(0) = Xm et v(0) = 0 donnent φ = 0. Em = (1/2) × 20 × 0,05² = 0,025 J. Vm = Xm ω₀ = 0,05 × 10 = 0,5 m/s. Vérification : (1/2) × 0,2 × 0,5² = 0,025 J.
+
+Exercice 3 : T₀ = 2π √(1/9,8) ≈ 2π × 0,319 ≈ 2,0 s.
+
+Exercice 4 : T₀ = 28,4/20 = 1,42 s. De T₀ = 2π√(l/g), on tire g = 4π² l / T₀² = 4 × 9,87 × 0,50 / 1,42² ≈ 19,74/2,016 ≈ 9,79 m/s².
+
+Exercice 5 : LC = 0,1 × 10 × 10⁻⁶ = 10⁻⁶ s². T₀ = 2π √(10⁻⁶) = 2π × 10⁻³ ≈ 6,28 × 10⁻³ s, soit 6,28 ms. f₀ ≈ 159 Hz.', 'texte', 55, false, 40
+from public.courses c where c.slug = 'physique-chimie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les oscillations mécaniques et électriques');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Chimie : acides et bases, cinétique chimique', '## Objectifs de la leçon
+
+- Définir acide, base, couple acide/base, pH, Ka et pKa.
+- Calculer le pH de solutions d''acide fort et de base forte ; utiliser la relation pH = pKa + log([A⁻]/[AH]).
+- Exploiter un dosage acido-basique.
+- Définir la vitesse de réaction, les facteurs cinétiques et le temps de demi-réaction.
+
+## Acides et bases selon Brønsted
+
+Un acide est une espèce capable de céder un proton H⁺ ; une base est une espèce capable de capter un proton. Un acide AH et sa base conjuguée A⁻ forment un couple AH/A⁻ : AH = A⁻ + H⁺.
+
+Couples de l''eau : H₃O⁺/H₂O et H₂O/HO⁻. L''eau est un ampholyte.
+
+## pH et produit ionique de l''eau
+
+pH = −log[H₃O⁺], soit [H₃O⁺] = 10^(−pH) (concentrations en mol/L). À 25 °C, le produit ionique de l''eau est Ke = [H₃O⁺][HO⁻] = 10⁻¹⁴, soit pKe = 14. Une solution est acide si pH < 7, neutre si pH = 7, basique si pH > 7 (à 25 °C).
+
+- Acide fort (réaction totale avec l''eau, exemple acide chlorhydrique) de concentration C : pH = −log C.
+- Base forte (exemple hydroxyde de sodium) de concentration C : [HO⁻] = C, pH = 14 + log C.
+
+## Acides faibles, Ka et pKa
+
+Un acide faible réagit partiellement avec l''eau : AH + H₂O ⇌ A⁻ + H₃O⁺. La constante d''acidité est Ka = [A⁻][H₃O⁺]/[AH], et pKa = −log Ka. Plus le pKa est petit, plus l''acide est fort.
+
+Relation fondamentale : pH = pKa + log([A⁻]/[AH]).
+- Si pH < pKa, la forme acide AH prédomine ;
+- si pH > pKa, la forme basique A⁻ prédomine ;
+- si pH = pKa, [AH] = [A⁻].
+
+Exemple : pour le couple acide éthanoïque/ion éthanoate (présent dans le vinaigre), pKa ≈ 4,8.
+
+## Le dosage acido-basique
+
+On dose une solution d''acide (concentration Ca inconnue, volume Va) par une solution de base forte de concentration Cb connue. On suit le pH avec un pH-mètre.
+- À l''équivalence, les réactifs ont été mélangés dans les proportions stœchiométriques : Ca Va = Cb VbE.
+- Le point d''équivalence se repère par la méthode des tangentes parallèles ou par le maximum de la dérivée dpH/dVb ; on peut aussi utiliser un indicateur coloré dont la zone de virage contient le pH à l''équivalence.
+- Pour un acide faible, à la demi-équivalence (Vb = VbE/2), pH = pKa. Au voisinage, le pH varie peu : c''est une solution tampon.
+
+## Cinétique chimique
+
+Certaines réactions sont rapides (précipitation, acide-base), d''autres lentes (oxydation des ions iodure par l''eau oxygénée, rouille du fer). La cinétique étudie l''évolution de l''avancement x au cours du temps.
+
+Vitesse volumique de réaction : v = (1/V) dx/dt. Graphiquement, c''est le coefficient directeur de la tangente à la courbe x(t), divisé par le volume. En général, elle diminue au cours du temps car les réactifs s''épuisent.
+
+Facteurs cinétiques :
+- la concentration des réactifs : plus elle est grande, plus la réaction est rapide ;
+- la température : une température plus élevée accélère la réaction (c''est pourquoi on conserve le poisson au frais, et pourquoi la cuisson accélère les transformations des aliments) ;
+- un catalyseur : il accélère la réaction sans être consommé.
+
+Temps de demi-réaction t½ : durée au bout de laquelle l''avancement atteint la moitié de sa valeur finale.
+
+## Points clés
+
+- pH = −log[H₃O⁺] ; Ke = 10⁻¹⁴ à 25 °C.
+- pH = pKa + log([A⁻]/[AH]) ; demi-équivalence : pH = pKa.
+- Équivalence : Ca Va = Cb VbE.
+- v = (1/V) dx/dt ; facteurs : concentration, température, catalyseur ; t½ : x = xf/2.
+
+## Exercices
+
+Exercice 1 : Calculer le pH d''une solution d''acide chlorhydrique à 1,0 × 10⁻² mol/L, puis celui d''une solution d''hydroxyde de sodium à 1,0 × 10⁻³ mol/L (25 °C).
+
+Exercice 2 : On dose Va = 20,0 mL d''une solution d''acide éthanoïque par de la soude à Cb = 0,10 mol/L. L''équivalence est obtenue pour VbE = 16,0 mL. Calculer Ca. Quel est le pH pour Vb = 8,0 mL ?
+
+Exercice 3 : Pour le couple acide éthanoïque/ion éthanoate (pKa = 4,8), quelle espèce prédomine à pH 3 ? à pH 7 ?
+
+Exercice 4 : Dans une solution de ce couple, [A⁻] = 10 [AH]. Calculer le pH.
+
+Exercice 5 : On suit l''avancement d''une réaction lente (xf = 2,0 mmol) : t (min) : 0 ; 2 ; 4 ; 6 ; 8 ; 10 ; 20 ; 30. x (mmol) : 0 ; 0,6 ; 1,0 ; 1,3 ; 1,5 ; 1,65 ; 1,95 ; 2,0. Déterminer t½. Comment évoluerait t½ si on réalisait l''expérience à une température plus élevée ?
+
+## Corrigé
+
+Exercice 1 : HCl : pH = −log(10⁻²) = 2. NaOH : pH = 14 + log(10⁻³) = 14 − 3 = 11.
+
+Exercice 2 : Ca = Cb VbE / Va = 0,10 × 16,0 / 20,0 = 0,080 mol/L. Vb = 8,0 mL correspond à la demi-équivalence : pH = pKa = 4,8.
+
+Exercice 3 : À pH 3 < 4,8, l''acide éthanoïque prédomine. À pH 7 > 4,8, l''ion éthanoate prédomine.
+
+Exercice 4 : pH = 4,8 + log 10 = 4,8 + 1 = 5,8.
+
+Exercice 5 : t½ correspond à x = xf/2 = 1,0 mmol, atteint à t = 4 min, donc t½ = 4 min. À température plus élevée, la réaction est plus rapide : t½ serait plus petit.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'physique-chimie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Chimie : acides et bases, cinétique chimique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : TP et exercices commentés de mécanique et de chimie', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : de la mécanique à la chimie, séance de travaux pratiques commentés et d''exercices de type Bac.
+- Objectifs : réinvestir les lois de Newton et l''énergie sur un exemple complet ; mesurer g avec un pendule ; exploiter un dosage pH-métrique et un suivi cinétique.
+- Matériel : tableau ou diaporama, vidéos ou photos de montages (pendule, burette, pH-mètre), courbes projetées, calculatrice.
+- Prérequis : leçons 1 à 5. On prendra g = 10 m/s² sauf indication contraire.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+« Bonjour à toutes et à tous. Cette séance est un peu particulière : nous allons travailler comme au laboratoire. Nous commencerons par un problème de mécanique complet, puis nous mesurerons l''accélération de la pesanteur avec un simple pendule, et nous terminerons par deux manipulations de chimie : un dosage et un suivi cinétique. Pour chaque partie, je vous montrerai comment rédiger comme au Bac. »
+
+Visuel : le plan en quatre parties : mécanique, oscillations, dosage, cinétique.
+
+## 05:00 – 20:00 · Partie 1 : un skieur… sur une dune
+
+« Imaginez un sandboarder, c''est-à-dire un glisseur sur planche, sur une dune près de Lompoul. Masse totale : 70 kg. Il part sans vitesse du sommet A, glisse sur une pente rectiligne de 20 m de long inclinée de 30°, et arrive en B. Première question : en l''absence de frottements, quelle est sa vitesse en B ? »
+
+« Méthode énergétique : le dénivelé est h = 20 × sin 30° = 10 m. Conservation de l''énergie mécanique : m g h = (1/2) m vB², donc vB = √(2 × 10 × 10) = √200 ≈ 14,1 m/s. »
+
+« Méthode dynamique pour vérifier : a = g sin 30° = 5 m/s². Avec v² = 2 a d : v² = 2 × 5 × 20 = 200. Même résultat, heureusement ! »
+
+« Deuxième question : en réalité, il arrive en B à 10 m/s. Calculer la force de frottement supposée constante. Théorème de l''énergie cinétique : (1/2) × 70 × 100 − 0 = m g h − f × 20, soit 3 500 = 7 000 − 20 f, donc f = 175 N. »
+
+« Troisième question : après B, le glisseur arrive sur une partie horizontale où la force de frottement vaut toujours 175 N. Quelle distance parcourt-il avant de s''arrêter ? Théorème de l''énergie cinétique entre B et l''arrêt C : 0 − 3 500 = −175 × BC, donc BC = 20 m. Remarquez que sur l''horizontale, le poids ne travaille pas : seule la force de frottement intervient. »
+
+Question à poser : « Pourquoi la réaction normale ne travaille-t-elle pas ? » Réponse : elle est perpendiculaire au déplacement.
+
+## 20:00 – 32:00 · Partie 2 : mesurer g avec un pendule
+
+« Au laboratoire, il suffit d''une ficelle, d''une petite masse et d''un chronomètre. On mesure la durée de 10 oscillations plutôt qu''une seule, pour réduire l''erreur de déclenchement du chronomètre. »
+
+Tableau projeté : l = 0,40 m : 10 T = 12,7 s ; l = 0,60 m : 10 T = 15,5 s ; l = 0,80 m : 10 T = 17,9 s.
+
+« Calculons T² : 1,27² ≈ 1,61 ; 1,55² ≈ 2,40 ; 1,79² ≈ 3,20. Comme T² = (4π²/g) × l, T² est proportionnel à l. Le coefficient directeur vaut environ 1,61/0,40 ≈ 4,03, 2,40/0,60 = 4,00, 3,20/0,80 = 4,00. Donc 4π²/g ≈ 4,0 et g ≈ 39,5/4,0 ≈ 9,9 m/s². C''est très proche de la valeur attendue d''environ 9,8 m/s². »
+
+Question : « Pourquoi garder de petites amplitudes ? » Réponse : la formule T = 2π√(l/g) n''est valable que pour de petites oscillations.
+
+## 32:00 – 42:00 · Partie 3 : l''oscillateur à ressort et l''énergie
+
+« Un solide de 0,5 kg est accroché à un ressort horizontal de raideur 50 N/m. On l''écarte de 4 cm et on le lâche. ω₀ = √(50/0,5) = 10 rad/s ; T₀ = 2π/10 ≈ 0,63 s ; x(t) = 0,04 cos(10t). Énergie mécanique : (1/2) × 50 × 0,04² = 0,04 J. Vitesse maximale : 0,04 × 10 = 0,4 m/s. »
+
+Visuel : graphiques superposés de Ec(t) et Ep(t) qui s''échangent, et Em constante.
+
+« Regardez bien ces courbes. Aux instants où le solide est à une extrémité, x = ±4 cm, la vitesse est nulle : toute l''énergie est potentielle élastique, 0,04 J. Au passage par la position d''équilibre, x = 0, toute l''énergie est cinétique. Remarquez aussi que Ec et Ep oscillent deux fois plus vite que x : leur période est T₀/2, soit environ 0,31 s. Si l''on ajoute des frottements, par exemple en faisant frotter le solide sur un support rugueux, l''amplitude diminue à chaque oscillation et Em décroît par paliers : on passe au régime pseudo-périodique. »
+
+## 42:00 – 50:00 · Pause et quiz interactif
+
+- Question 1 : Unité de la raideur d''un ressort ? Réponse : N/m.
+- Question 2 : La période d''un pendule simple dépend-elle de la masse ? Réponse : non.
+- Question 3 : Accélération d''un objet en chute libre ? Réponse : g, quelle que soit sa masse.
+- Question 4 : pH d''une solution où [H₃O⁺] = 10⁻⁵ mol/L ? Réponse : 5.
+- Question 5 : Un catalyseur est-il consommé ? Réponse : non.
+
+## 50:00 – 1:05:00 · Partie 4 : dosage du vinaigre
+
+« On veut vérifier la concentration en acide éthanoïque d''un vinaigre. On le dilue 10 fois. On prélève 10,0 mL de solution diluée, que l''on dose par de la soude à 0,100 mol/L en suivant le pH. »
+
+Visuel : courbe pH = f(Vb) avec un saut de pH autour de 14 mL.
+
+« Méthode des tangentes : on trace deux tangentes parallèles de part et d''autre du saut, puis la parallèle équidistante ; elle coupe la courbe au point d''équivalence. On lit VbE = 14,0 mL et pH à l''équivalence ≈ 8,8, supérieur à 7 car l''ion éthanoate est une base faible. L''indicateur adapté est donc la phénolphtaléine, dont la zone de virage (environ 8,2 à 10) contient ce pH. »
+
+« Calcul : Cdiluée = 0,100 × 14,0 / 10,0 = 0,140 mol/L. Le vinaigre est 10 fois plus concentré : C₀ = 1,40 mol/L. Avec M(CH₃COOH) = 60 g/mol, la concentration massique vaut 1,40 × 60 = 84 g/L. »
+
+« À la demi-équivalence, Vb = 7,0 mL, on lit pH ≈ 4,8 : c''est le pKa du couple. »
+
+Question : « Pourquoi diluer le vinaigre avant de le doser ? » Réponse : pour que le volume équivalent soit mesurable avec une burette de 25 mL et pour économiser la soude.
+
+## 1:05:00 – 1:17:00 · Partie 5 : suivi cinétique
+
+« On étudie la réaction lente entre les ions peroxodisulfate et les ions iodure, qui produit du diiode coloré : S₂O₈²⁻ + 2 I⁻ → 2 SO₄²⁻ + I₂. La couleur brune du diiode s''intensifie ; un spectrophotomètre mesure l''absorbance, proportionnelle à [I₂], ce qui permet de suivre l''avancement. »
+
+Visuel : courbe x(t) croissante qui tend vers xf.
+
+Tableau projeté : t (min) : 0 ; 5 ; 10 ; 15 ; 20 ; 30 ; 40 ; 60. x (mmol) : 0 ; 0,9 ; 1,5 ; 1,9 ; 2,2 ; 2,6 ; 2,8 ; 3,0. On considère que xf = 3,0 mmol.
+
+« Première question : comment évolue la vitesse ? La pente de la tangente diminue au cours du temps : la vitesse diminue car les réactifs se consomment. Deuxième question : t½. On lit l''abscisse du point où x = xf/2 = 1,5 mmol : ici t½ = 10 min. Troisième question : si on refait l''expérience dans un bain d''eau chaude, la courbe monte plus vite et t½ diminue. »
+
+« Application de la vie courante : la chaîne du froid pour le poisson débarqué à Kayar ralentit les réactions de décomposition. »
+
+## 1:17:00 – 1:24:00 · Synthèse
+
+- Mécanique : système, référentiel, forces ; Newton pour l''accélération, l''énergie pour les vitesses.
+- Oscillations : T₀ = 2π√(m/k) et 2π√(l/g) ; énergie qui s''échange.
+- Dosage : Ca Va = Cb VbE ; demi-équivalence : pH = pKa.
+- Cinétique : vitesse = pente, facteurs cinétiques, t½.
+
+## 1:24:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : Vitesse d''un objet lâché de 45 m après sa chute (sans frottement) ? Réponse : √(2 × 10 × 45) = 30 m/s.
+- Question 2 : Ec d''une moto de 150 kg à 20 m/s ? Réponse : 30 000 J.
+- Question 3 : Période d''un ressort k = 40 N/m avec m = 0,4 kg ? Réponse : 2π√(0,01) = 0,2π ≈ 0,63 s.
+- Question 4 : 10,0 mL d''acide dosés par 12,5 mL de soude à 0,20 mol/L. Ca ? Réponse : 0,20 × 12,5 / 10,0 = 0,25 mol/L.
+- Question 5 : Citer deux facteurs cinétiques. Réponse : température et concentration (ou catalyseur).
+
+« Merci pour votre attention. Refaites les calculs de cette séance seuls, et entraînez-vous à lire les courbes : c''est une compétence très demandée au Bac. »', 'video', 90, false, 60
+from public.courses c where c.slug = 'physique-chimie-terminale'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : TP et exercices commentés de mécanique et de chimie');
+
 -- Cours : Exploiter un parking public ou privé
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-parking-public', (select id from public.levels where name = 'Formation professionnelle'), 'parking-public', 'Gestion des parkings', 'Exploiter un parking public ou privé', 'Cette formation prépare à exploiter un parking ouvert au public, en gestion propre ou déléguée : modèle économique, construction d''une grille tarifaire horaire et d''abonnements avec calculs de rentabilité, caisse et contrôle des recettes, pilotage de plusieurs sites par indicateurs. Elle s''adresse aux exploitants, investisseurs, chefs de parking, caissiers principaux et agents des collectivités. Les calculs utilisent les quatre opérations et les pourcentages ; un tableur est recommandé.', true, 70

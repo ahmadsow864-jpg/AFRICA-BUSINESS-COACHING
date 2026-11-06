@@ -770,6 +770,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "physique-chimie-terminale",
+  "level": "Terminale",
+  "subject": "Physique-Chimie",
+  "module": null,
+  "title": "Physique-Chimie Terminale : mécanique, oscillations et chimie des solutions",
+  "description": "Ce cours de Terminale scientifique traite la cinématique et les lois de Newton, l'énergie mécanique, les oscillations mécaniques et électriques, puis les réactions acido-basiques et la cinétique chimique. Il prépare au Bac avec des méthodes de résolution et des travaux pratiques commentés. Prérequis : programme de Première (vecteurs, forces, énergie, quantité de matière) et dérivation.",
+  "sort": 60,
+  "lessons": [
+   {
+    "title": "Cinématique du point",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Définir un référentiel, un repère et la trajectoire d'un mobile.\n- Déterminer les vecteurs position, vitesse et accélération.\n- Établir et utiliser les équations horaires des mouvements rectilignes uniformes et uniformément variés.\n- Caractériser le mouvement circulaire uniforme.\n\n## Référentiel et repère\n\nUn mouvement est toujours décrit par rapport à un référentiel, c'est-à-dire un objet de référence associé à une horloge. Le passager assis dans un car qui roule de Dakar vers Saint-Louis est immobile par rapport au car, mais en mouvement par rapport à la route. En Terminale, on utilise surtout le référentiel terrestre (supposé galiléen pour des mouvements de courte durée).\n\nDans le référentiel, on choisit un repère (O ; i, j, k). La position du mobile M est donnée par le vecteur position OM = x i + y j + z k. La trajectoire est l'ensemble des positions successives du mobile.\n\n## Vitesse et accélération\n\n- Vecteur vitesse : v = dOM/dt, de coordonnées vx = dx/dt, vy = dy/dt, vz = dz/dt. Il est tangent à la trajectoire. Sa norme s'exprime en m/s (1 m/s = 3,6 km/h).\n- Vecteur accélération : a = dv/dt, de coordonnées ax = dvx/dt… Sa norme s'exprime en m/s².\n\nLe mouvement est accéléré si le produit scalaire a · v est positif, ralenti s'il est négatif.\n\n## Mouvement rectiligne uniforme (MRU)\n\nLa trajectoire est une droite et la vitesse est constante : a = 0. Équation horaire : x(t) = v t + x₀.\n\n## Mouvement rectiligne uniformément varié (MRUV)\n\nLa trajectoire est une droite et l'accélération est constante (a ≠ 0). Équations horaires :\n- x(t) = (1/2) a t² + v₀ t + x₀ ;\n- v(t) = a t + v₀ ;\n- relation indépendante du temps : v² − v₀² = 2a(x − x₀).\n\nExemple : un taxi démarre à un feu avec une accélération de 2 m/s². Au bout de 5 s, sa vitesse est v = 2 × 5 = 10 m/s (36 km/h) et il a parcouru x = (1/2) × 2 × 25 = 25 m.\n\n## Mouvement circulaire uniforme (MCU)\n\nLa trajectoire est un cercle de rayon r et la valeur de la vitesse est constante. La vitesse angulaire est ω = v/r (en rad/s), et la période T = 2π/ω.\n\nAttention : même si la valeur de la vitesse est constante, sa direction change, donc l'accélération n'est pas nulle. Elle est centripète (dirigée vers le centre du cercle) et vaut a = v²/r = rω².\n\n## Méthode de résolution\n\n- Préciser le référentiel et le repère, ainsi que l'origine des dates.\n- Identifier le type de mouvement à partir des données (vitesse constante ? accélération constante ?).\n- Écrire les équations horaires avec les conditions initiales (x₀, v₀).\n- Convertir les unités (km/h en m/s : diviser par 3,6).\n- Résoudre et vérifier la cohérence (signe, ordre de grandeur).\n\n## Points clés\n\n- v = dOM/dt et a = dv/dt.\n- MRU : x = vt + x₀. MRUV : x = (1/2)at² + v₀t + x₀, v = at + v₀, v² − v₀² = 2aΔx.\n- MCU : a = v²/r, dirigée vers le centre.\n- 1 m/s = 3,6 km/h.\n\n## Exercices\n\nExercice 1 : L'abscisse d'un mobile est x(t) = 2t² + 3t + 5 (x en m, t en s). Déterminer v(t) et a(t). Calculer x et v à t = 2 s. Quelle est la nature du mouvement ?\n\nExercice 2 : Une moto part du repos avec une accélération constante de 2 m/s². Au bout de combien de temps atteint-elle 20 m/s ? Quelle distance a-t-elle alors parcourue ?\n\nExercice 3 : Un véhicule roulant à 72 km/h freine et s'arrête sur 40 m avec une décélération constante. Calculer l'accélération et la durée du freinage.\n\nExercice 4 : Un point de la périphérie d'une roue de rayon 0,3 m a une vitesse de 6 m/s. Calculer la vitesse angulaire et l'accélération de ce point.\n\nExercice 5 : On suppose que deux villes sont distantes de 70 km sur une route rectiligne. Un bus part de la ville A à 60 km/h et, au même instant, une voiture part de la ville B vers A à 80 km/h. Quand et où se croisent-ils ?\n\n## Corrigé\n\nExercice 1 : v(t) = 4t + 3 (m/s) ; a = 4 m/s². À t = 2 s : x = 8 + 6 + 5 = 19 m et v = 11 m/s. L'accélération est constante et la trajectoire rectiligne : MRUV accéléré (a et v de même signe).\n\nExercice 2 : v = at, donc t = 20/2 = 10 s. Distance : x = (1/2) × 2 × 10² = 100 m.\n\nExercice 3 : v₀ = 72/3,6 = 20 m/s. v² − v₀² = 2a Δx : 0 − 400 = 2a × 40, donc a = −5 m/s². Durée : 0 = −5t + 20, donc t = 4 s.\n\nExercice 4 : ω = v/r = 6/0,3 = 20 rad/s. a = v²/r = 36/0,3 = 120 m/s², dirigée vers le centre de la roue.\n\nExercice 5 : Origine en A, axe orienté vers B. Bus : x₁ = 60t ; voiture : x₂ = 70 − 80t (x en km, t en h). Croisement : 60t = 70 − 80t, donc 140t = 70 et t = 0,5 h = 30 min. Position : x = 60 × 0,5 = 30 km de la ville A."
+   },
+   {
+    "title": "Les lois de Newton et leurs applications",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Travail, énergie et puissance",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Les oscillations mécaniques et électriques",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Chimie : acides et bases, cinétique chimique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : TP et exercices commentés de mécanique et de chimie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-parking-public",
   "level": "Formation professionnelle",
   "subject": "Gestion des parkings",
