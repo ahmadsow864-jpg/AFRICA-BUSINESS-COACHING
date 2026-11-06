@@ -146,6 +146,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "formation-transport-logistique",
+  "level": "Formation professionnelle",
+  "subject": "Transport et logistique",
+  "module": "transport-logistique",
+  "title": "Transport et logistique : de la commande à la livraison",
+  "description": "Cette formation professionnelle couvre toute la chaîne logistique : flux et coûts, entreposage et gestion des stocks (méthode ABC, FIFO, inventaires), planification des tournées, documents de transport et principes des incoterms, puis indicateurs de performance. Elle s'adresse aux gérants de PME, magasiniers, responsables de parc et logisticiens d'Afrique francophone. Aucun prérequis autre que les quatre opérations et l'usage des pourcentages.",
+  "sort": 30,
+  "lessons": [
+   {
+    "title": "La chaîne logistique : flux, acteurs et coûts",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\nÀ la fin de cette leçon, vous serez capable de définir la chaîne logistique, d'identifier ses trois types de flux, de nommer les principaux acteurs qui interviennent entre la commande et la livraison, et de calculer un coût logistique complet par unité livrée.\n\n## Qu'est-ce que la chaîne logistique ?\n\nLa chaîne logistique (en anglais supply chain) est l'ensemble des étapes qui permettent de mettre un produit à la disposition du client, au bon endroit, au bon moment, en bonne quantité, en bon état et au meilleur coût. Elle commence chez le fournisseur de matières premières et se termine chez le consommateur final. Pour une entreprise de distribution, elle couvre l'achat, le transport d'approvisionnement, la réception, le stockage, la préparation des commandes, le transport de livraison et le service après-livraison.\n\nOn parle souvent des « 5 B » de la logistique : le bon produit, en bonne quantité, au bon endroit, au bon moment, au bon coût. Chaque fois qu'un de ces « B » manque, le client est insatisfait ou l'entreprise perd de l'argent.\n\n## Les trois flux\n\nUne chaîne logistique fait circuler trois types de flux qui doivent rester synchronisés.\n\n- Les flux physiques : ce sont les marchandises elles-mêmes, qui se déplacent du fournisseur vers le client (sacs de riz, cartons d'huile, pièces détachées).\n- Les flux d'information : bons de commande, bons de livraison, factures, états de stock, messages entre le client, le commercial, le magasinier et le chauffeur.\n- Les flux financiers : paiements des clients, règlements aux fournisseurs et aux transporteurs, frais de douane et de manutention.\n\nUn problème classique dans les PME est le décalage entre flux physique et flux d'information : la marchandise sort de l'entrepôt mais le stock n'est pas mis à jour, ou la livraison est faite mais la facture part avec plusieurs jours de retard. Ces décalages créent des ruptures de stock « surprises » et dégradent la trésorerie.\n\n## Les acteurs\n\nEntre la commande et la livraison, plusieurs acteurs interviennent :\n\n- le fournisseur ou fabricant, qui produit ou vend la marchandise ;\n- le transitaire et le commissionnaire en douane, qui organisent le transport international et accomplissent les formalités douanières ;\n- le transporteur (maritime, routier, aérien, ferroviaire) ;\n- le gestionnaire d'entrepôt, qui reçoit, stocke et prépare les commandes ;\n- le distributeur (grossiste, demi-grossiste, détaillant) ;\n- le client final.\n\nDans une petite entreprise, plusieurs rôles sont souvent tenus par la même personne : le gérant passe les commandes, suit le stock et organise les livraisons. Plus l'entreprise grandit, plus il devient nécessaire de séparer ces fonctions et de formaliser les procédures.\n\n## Le coût logistique total\n\nLe coût logistique total regroupe toutes les dépenses engagées pour faire passer la marchandise du fournisseur au client. On distingue généralement :\n\n- le transport d'approvisionnement (amont) ;\n- la manutention (chargement, déchargement) ;\n- le stockage (loyer de l'entrepôt, gardiennage, assurance, pertes) ;\n- le transport de distribution (aval) ;\n- les frais administratifs liés à la logistique (saisie, suivi, documents).\n\nLa méthode consiste à recenser toutes ces dépenses sur une période (par exemple un mois), puis à les diviser par la quantité livrée sur la même période. On obtient un coût logistique unitaire, comparable d'un mois à l'autre.\n\n## Exemple chiffré : un distributeur de riz à Dakar\n\nUne entreprise de Dakar importe du riz par le port, le stocke dans un entrepôt de la zone industrielle et le distribue à des grossistes à Thiès, Kaolack et Touba. Elle livre 500 tonnes par mois. Ses coûts logistiques mensuels (chiffres fictifs) ramenés à la tonne sont :\n\n- transport amont (port vers entrepôt) : 12 000 FCFA par tonne ;\n- stockage : 3 000 FCFA par tonne ;\n- manutention : 2 500 FCFA par tonne ;\n- distribution vers les régions : 9 500 FCFA par tonne ;\n- frais administratifs : 1 000 FCFA par tonne.\n\nCoût logistique total par tonne : 12 000 + 3 000 + 2 500 + 9 500 + 1 000 = 28 000 FCFA.\n\nCoût logistique mensuel : 28 000 × 500 = 14 000 000 FCFA.\n\nCe calcul permet de raisonner. Si le gérant obtient une baisse de 1 000 FCFA par tonne sur la distribution en regroupant mieux ses livraisons, il économise 500 000 FCFA par mois, soit 6 000 000 FCFA par an. On voit aussi que la distribution représente 9 500 / 28 000, soit environ 33,9 % du coût logistique : c'est un poste prioritaire à surveiller.\n\n## Méthode : cartographier sa chaîne en quatre étapes\n\n- Étape 1 : dessiner le parcours de la marchandise, du fournisseur au client, en listant chaque lieu (port, entrepôt, dépôt, point de vente).\n- Étape 2 : pour chaque étape, noter qui agit, quel document circule et combien de temps cela prend.\n- Étape 3 : relever les coûts de chaque étape sur un mois.\n- Étape 4 : repérer les points faibles : attentes, doubles manipulations, documents manquants, postes de coût les plus lourds.\n\nCette cartographie simple, faite sur une feuille ou un tableur, est le point de départ de toute amélioration.\n\n## Points clés\n\n- La chaîne logistique relie le fournisseur au client final et vise les « 5 B ».\n- Elle fait circuler des flux physiques, d'information et financiers qui doivent rester synchronisés.\n- De nombreux acteurs interviennent : fournisseur, transitaire, transporteur, entrepôt, distributeur.\n- Le coût logistique total se calcule en additionnant tous les postes puis en divisant par les quantités livrées.\n- Cartographier sa chaîne permet d'identifier les postes et les étapes à améliorer.\n\n## Exercices\n\nExercice 1. Classez chacun des éléments suivants dans le bon type de flux : a) un camion de ciment qui quitte l'usine ; b) un bon de livraison signé ; c) un virement au transporteur ; d) un message de confirmation de commande ; e) des cartons d'huile déchargés à l'entrepôt.\n\nExercice 2. Dans l'exemple du distributeur de riz, le riz est vendu en sacs de 50 kg. Calculez le coût logistique par sac.\n\nExercice 3. Une PME de Ziguinchor qui vend des produits d'entretien supporte en un mois : transport amont 1 800 000 FCFA, stockage 600 000 FCFA, manutention 300 000 FCFA, distribution 1 500 000 FCFA, frais administratifs 200 000 FCFA. Elle a livré 220 tonnes. Calculez le coût logistique total et le coût par tonne.\n\nExercice 4. Dans l'exercice 3, quel poste pèse le plus ? Calculez sa part en pourcentage du coût total.\n\n## Corrigé\n\nExercice 1. a) flux physique ; b) flux d'information ; c) flux financier ; d) flux d'information ; e) flux physique.\n\nExercice 2. Une tonne correspond à 1 000 kg, soit 1 000 / 50 = 20 sacs. Coût par sac : 28 000 / 20 = 1 400 FCFA.\n\nExercice 3. Coût total : 1 800 000 + 600 000 + 300 000 + 1 500 000 + 200 000 = 4 400 000 FCFA. Coût par tonne : 4 400 000 / 220 = 20 000 FCFA.\n\nExercice 4. Le poste le plus lourd est le transport amont (1 800 000 FCFA). Sa part : 1 800 000 / 4 400 000 ≈ 0,409, soit environ 40,9 % du coût logistique total. C'est ce poste qu'il faut analyser en premier (choix du transporteur, regroupement des approvisionnements)."
+   },
+   {
+    "title": "Entreposage et gestion des stocks : ABC, FIFO et inventaires",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Planifier les tournées de livraison",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Documents de transport et incoterms : les principes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Mesurer la performance logistique : les indicateurs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : de la commande à la livraison, piloter sa logistique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-parking-entreprise",
   "level": "Formation professionnelle",
   "subject": "Gestion des parkings",

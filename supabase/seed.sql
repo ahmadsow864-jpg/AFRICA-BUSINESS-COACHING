@@ -865,7 +865,7 @@ select c.id, 'Déclarations sociales et fiscales, contrôles et solde de tout co
 
 ## Les déclarations : principe général
 
-Retenir des cotisations et de l''impôt sur le salaire ne suffit pas : l''employeur doit les déclarer et les reverser aux organismes, dans des délais fixés par les textes. Ces obligations sont périodiques (mensuelles ou trimestrielles selon l''organisme et la taille de l''entreprise) et annuelles (récapitulatifs nominatifs). Le Sénégal développe les téléprocédures : déclaration et paiement en ligne auprès de l''administration fiscale et, de plus en plus, des organismes sociaux. Le gestionnaire doit tenir un calendrier précis, car les retards entraînent majorations et pénalités.
+Retenir des cotisations et de l''impôt sur le salaire ne suffit pas : l''employeur doit les déclarer et les reverser aux organismes, dans des délais fixés par les textes. Ces obligations sont périodiques (mensuelles ou trimestrielles selon l''organisme et la taille de l''entreprise) et annuelles (récapitulatifs nominatifs). Les téléprocédures (déclaration et paiement en ligne) se développent. Le gestionnaire doit tenir un calendrier précis, car les retards entraînent majorations et pénalités.
 
 ## Les principales déclarations
 
@@ -894,7 +894,6 @@ Les organismes sociaux, l''administration fiscale et l''inspection du travail pe
 
 - Conserver les journaux de paie, bulletins, déclarations et preuves de paiement pendant la durée légale de conservation.
 - Tenir un dossier de paramétrage : chaque taux et chaque règle avec sa source et sa date d''effet.
-- Corriger spontanément une erreur détectée, par une régularisation documentée.
 
 ## Le solde de tout compte
 
@@ -1667,6 +1666,596 @@ Pourcentage : « Le prix d''un sac de riz de 25 kg passe de 12 000 FCFA à 13 20
 « Bravo pour votre travail. Pour progresser encore, refaites les exercices des leçons sans regarder le corrigé, puis comparez. À bientôt ! »', 'video', 90, false, 60
 from public.courses c where c.slug = 'maths-6e'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision guidée du programme de 6e');
+
+-- Cours : Transport et logistique : de la commande à la livraison
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'formation-transport-logistique', (select id from public.levels where name = 'Formation professionnelle'), 'transport-logistique', 'Transport et logistique', 'Transport et logistique : de la commande à la livraison', 'Cette formation professionnelle couvre toute la chaîne logistique : flux et coûts, entreposage et gestion des stocks (méthode ABC, FIFO, inventaires), planification des tournées, documents de transport et principes des incoterms, puis indicateurs de performance. Elle s''adresse aux gérants de PME, magasiniers, responsables de parc et logisticiens d''Afrique francophone. Aucun prérequis autre que les quatre opérations et l''usage des pourcentages.', true, 30
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La chaîne logistique : flux, acteurs et coûts', '## Objectifs de la leçon
+
+À la fin de cette leçon, vous serez capable de définir la chaîne logistique, d''identifier ses trois types de flux, de nommer les principaux acteurs qui interviennent entre la commande et la livraison, et de calculer un coût logistique complet par unité livrée.
+
+## Qu''est-ce que la chaîne logistique ?
+
+La chaîne logistique (en anglais supply chain) est l''ensemble des étapes qui permettent de mettre un produit à la disposition du client, au bon endroit, au bon moment, en bonne quantité, en bon état et au meilleur coût. Elle commence chez le fournisseur de matières premières et se termine chez le consommateur final. Pour une entreprise de distribution, elle couvre l''achat, le transport d''approvisionnement, la réception, le stockage, la préparation des commandes, le transport de livraison et le service après-livraison.
+
+On parle souvent des « 5 B » de la logistique : le bon produit, en bonne quantité, au bon endroit, au bon moment, au bon coût. Chaque fois qu''un de ces « B » manque, le client est insatisfait ou l''entreprise perd de l''argent.
+
+## Les trois flux
+
+Une chaîne logistique fait circuler trois types de flux qui doivent rester synchronisés.
+
+- Les flux physiques : ce sont les marchandises elles-mêmes, qui se déplacent du fournisseur vers le client (sacs de riz, cartons d''huile, pièces détachées).
+- Les flux d''information : bons de commande, bons de livraison, factures, états de stock, messages entre le client, le commercial, le magasinier et le chauffeur.
+- Les flux financiers : paiements des clients, règlements aux fournisseurs et aux transporteurs, frais de douane et de manutention.
+
+Un problème classique dans les PME est le décalage entre flux physique et flux d''information : la marchandise sort de l''entrepôt mais le stock n''est pas mis à jour, ou la livraison est faite mais la facture part avec plusieurs jours de retard. Ces décalages créent des ruptures de stock « surprises » et dégradent la trésorerie.
+
+## Les acteurs
+
+Entre la commande et la livraison, plusieurs acteurs interviennent :
+
+- le fournisseur ou fabricant, qui produit ou vend la marchandise ;
+- le transitaire et le commissionnaire en douane, qui organisent le transport international et accomplissent les formalités douanières ;
+- le transporteur (maritime, routier, aérien, ferroviaire) ;
+- le gestionnaire d''entrepôt, qui reçoit, stocke et prépare les commandes ;
+- le distributeur (grossiste, demi-grossiste, détaillant) ;
+- le client final.
+
+Dans une petite entreprise, plusieurs rôles sont souvent tenus par la même personne : le gérant passe les commandes, suit le stock et organise les livraisons. Plus l''entreprise grandit, plus il devient nécessaire de séparer ces fonctions et de formaliser les procédures.
+
+## Le coût logistique total
+
+Le coût logistique total regroupe toutes les dépenses engagées pour faire passer la marchandise du fournisseur au client. On distingue généralement :
+
+- le transport d''approvisionnement (amont) ;
+- la manutention (chargement, déchargement) ;
+- le stockage (loyer de l''entrepôt, gardiennage, assurance, pertes) ;
+- le transport de distribution (aval) ;
+- les frais administratifs liés à la logistique (saisie, suivi, documents).
+
+La méthode consiste à recenser toutes ces dépenses sur une période (par exemple un mois), puis à les diviser par la quantité livrée sur la même période. On obtient un coût logistique unitaire, comparable d''un mois à l''autre.
+
+## Exemple chiffré : un distributeur de riz à Dakar
+
+Une entreprise de Dakar importe du riz par le port, le stocke dans un entrepôt de la zone industrielle et le distribue à des grossistes à Thiès, Kaolack et Touba. Elle livre 500 tonnes par mois. Ses coûts logistiques mensuels (chiffres fictifs) ramenés à la tonne sont :
+
+- transport amont (port vers entrepôt) : 12 000 FCFA par tonne ;
+- stockage : 3 000 FCFA par tonne ;
+- manutention : 2 500 FCFA par tonne ;
+- distribution vers les régions : 9 500 FCFA par tonne ;
+- frais administratifs : 1 000 FCFA par tonne.
+
+Coût logistique total par tonne : 12 000 + 3 000 + 2 500 + 9 500 + 1 000 = 28 000 FCFA.
+
+Coût logistique mensuel : 28 000 × 500 = 14 000 000 FCFA.
+
+Ce calcul permet de raisonner. Si le gérant obtient une baisse de 1 000 FCFA par tonne sur la distribution en regroupant mieux ses livraisons, il économise 500 000 FCFA par mois, soit 6 000 000 FCFA par an. On voit aussi que la distribution représente 9 500 / 28 000, soit environ 33,9 % du coût logistique : c''est un poste prioritaire à surveiller.
+
+## Méthode : cartographier sa chaîne en quatre étapes
+
+- Étape 1 : dessiner le parcours de la marchandise, du fournisseur au client, en listant chaque lieu (port, entrepôt, dépôt, point de vente).
+- Étape 2 : pour chaque étape, noter qui agit, quel document circule et combien de temps cela prend.
+- Étape 3 : relever les coûts de chaque étape sur un mois.
+- Étape 4 : repérer les points faibles : attentes, doubles manipulations, documents manquants, postes de coût les plus lourds.
+
+Cette cartographie simple, faite sur une feuille ou un tableur, est le point de départ de toute amélioration.
+
+## Points clés
+
+- La chaîne logistique relie le fournisseur au client final et vise les « 5 B ».
+- Elle fait circuler des flux physiques, d''information et financiers qui doivent rester synchronisés.
+- De nombreux acteurs interviennent : fournisseur, transitaire, transporteur, entrepôt, distributeur.
+- Le coût logistique total se calcule en additionnant tous les postes puis en divisant par les quantités livrées.
+- Cartographier sa chaîne permet d''identifier les postes et les étapes à améliorer.
+
+## Exercices
+
+Exercice 1. Classez chacun des éléments suivants dans le bon type de flux : a) un camion de ciment qui quitte l''usine ; b) un bon de livraison signé ; c) un virement au transporteur ; d) un message de confirmation de commande ; e) des cartons d''huile déchargés à l''entrepôt.
+
+Exercice 2. Dans l''exemple du distributeur de riz, le riz est vendu en sacs de 50 kg. Calculez le coût logistique par sac.
+
+Exercice 3. Une PME de Ziguinchor qui vend des produits d''entretien supporte en un mois : transport amont 1 800 000 FCFA, stockage 600 000 FCFA, manutention 300 000 FCFA, distribution 1 500 000 FCFA, frais administratifs 200 000 FCFA. Elle a livré 220 tonnes. Calculez le coût logistique total et le coût par tonne.
+
+Exercice 4. Dans l''exercice 3, quel poste pèse le plus ? Calculez sa part en pourcentage du coût total.
+
+## Corrigé
+
+Exercice 1. a) flux physique ; b) flux d''information ; c) flux financier ; d) flux d''information ; e) flux physique.
+
+Exercice 2. Une tonne correspond à 1 000 kg, soit 1 000 / 50 = 20 sacs. Coût par sac : 28 000 / 20 = 1 400 FCFA.
+
+Exercice 3. Coût total : 1 800 000 + 600 000 + 300 000 + 1 500 000 + 200 000 = 4 400 000 FCFA. Coût par tonne : 4 400 000 / 220 = 20 000 FCFA.
+
+Exercice 4. Le poste le plus lourd est le transport amont (1 800 000 FCFA). Sa part : 1 800 000 / 4 400 000 ≈ 0,409, soit environ 40,9 % du coût logistique total. C''est ce poste qu''il faut analyser en premier (choix du transporteur, regroupement des approvisionnements).', 'texte', 45, true, 10
+from public.courses c where c.slug = 'formation-transport-logistique'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La chaîne logistique : flux, acteurs et coûts');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Entreposage et gestion des stocks : ABC, FIFO et inventaires', '## Objectifs de la leçon
+
+Savoir organiser un entrepôt, classer les articles avec la méthode ABC, valoriser et faire sortir les stocks selon la méthode FIFO, calculer un point de commande et conduire un inventaire en analysant les écarts.
+
+## Le rôle de l''entrepôt
+
+L''entrepôt n''est pas un simple local où l''on entasse la marchandise. Il remplit quatre fonctions : la réception (contrôle des quantités et de l''état des produits), le stockage (rangement sûr et accessible), la préparation des commandes (prélèvement des articles demandés) et l''expédition (chargement et documents). Un entrepôt bien organisé distingue physiquement ces zones : quai de réception, zone de stockage, zone de préparation, quai d''expédition.
+
+Quelques règles de base : chaque emplacement porte une adresse (allée, rayonnage, niveau), chaque article a une fiche de stock, les produits lourds sont rangés en bas, les produits les plus demandés sont placés près de la zone de préparation, et rien n''entre ni ne sort sans document.
+
+## La méthode ABC
+
+Un entrepôt contient souvent des centaines d''articles. On ne peut pas les surveiller tous avec la même intensité. La méthode ABC (inspirée de la loi de Pareto) classe les articles selon leur valeur de consommation annuelle (quantité consommée × coût unitaire).
+
+Méthode :
+
+- calculer la valeur de consommation annuelle de chaque article ;
+- classer les articles par valeur décroissante ;
+- calculer le pourcentage cumulé de la valeur ;
+- affecter les classes : A jusqu''à environ 80 % de la valeur cumulée, B de 80 à 95 %, C au-delà.
+
+Exemple : un grossiste de Kaolack a 8 articles, pour une valeur totale de 100 000 000 FCFA par an.
+
+- Riz : 48 000 000 FCFA, cumul 48 %.
+- Huile : 30 000 000 FCFA, cumul 78 %.
+- Sucre : 12 000 000 FCFA, cumul 90 %.
+- Lait en poudre : 4 000 000 FCFA, cumul 94 %.
+- Savon : 2 500 000 FCFA, cumul 96,5 %.
+- Pâtes : 1 800 000 FCFA, cumul 98,3 %.
+- Allumettes : 1 000 000 FCFA, cumul 99,3 %.
+- Bougies : 700 000 FCFA, cumul 100 %.
+
+Classe A : riz et huile (2 articles sur 8, soit 25 % des articles mais 78 % de la valeur). Classe B : sucre et lait. Classe C : savon, pâtes, allumettes, bougies. Conséquence pratique : les articles A sont comptés souvent (par exemple chaque semaine), commandés avec précision et bien protégés ; les articles C sont gérés plus simplement.
+
+## La méthode FIFO
+
+FIFO signifie « First In, First Out » : premier entré, premier sorti. Physiquement, on fait sortir en priorité les lots les plus anciens, ce qui évite le vieillissement des produits. Pour les produits périssables (lait, médicaments, produits alimentaires), on applique une variante, le FEFO (« First Expired, First Out ») : on sort d''abord le lot dont la date de péremption est la plus proche.
+
+FIFO est aussi une méthode de valorisation des sorties : chaque sortie est valorisée au coût des lots les plus anciens.
+
+Exemple : stock initial 100 sacs à 15 000 FCFA ; entrée de 200 sacs à 16 000 FCFA ; sortie de 250 sacs.
+
+- Sortie valorisée : 100 × 15 000 + 150 × 16 000 = 1 500 000 + 2 400 000 = 3 900 000 FCFA.
+- Stock restant : 50 sacs à 16 000 FCFA, soit 800 000 FCFA.
+
+## Stock de sécurité et point de commande
+
+Le stock de sécurité protège contre les imprévus (retard du fournisseur, pic de demande). Le point de commande est le niveau de stock auquel il faut passer commande :
+
+Point de commande = consommation journalière × délai de livraison (en jours) + stock de sécurité.
+
+Exemple : consommation 40 sacs par jour, délai fournisseur 5 jours, stock de sécurité 60 sacs. Point de commande = 40 × 5 + 60 = 260 sacs. Dès que le stock descend à 260 sacs, on commande.
+
+## Les inventaires
+
+L''inventaire consiste à compter physiquement les stocks et à comparer avec le stock théorique (celui des fiches ou du logiciel).
+
+- Inventaire annuel (ou intermittent) : on compte tout, en général à la clôture de l''exercice, souvent en fermant le magasin.
+- Inventaire tournant : on compte une partie des articles chaque semaine, les articles A plus souvent.
+- Inventaire permanent : c''est la tenue continue des fiches de stock, qui donne à tout moment le stock théorique.
+
+Bonnes pratiques : compter en binôme, utiliser des fiches de comptage pré-numérotées, bloquer les mouvements pendant le comptage, recompter en cas d''écart important.
+
+Écart d''inventaire = stock physique − stock théorique. Taux d''écart = écart / stock théorique.
+
+Exemple : stock théorique 1 250 cartons, stock compté 1 232 cartons. Écart = −18 cartons. Taux = 18 / 1 250 = 1,44 %. Il faut ensuite rechercher les causes : erreurs de saisie, casse non déclarée, livraisons non enregistrées, vols.
+
+## Points clés
+
+- L''entrepôt réceptionne, stocke, prépare et expédie : chaque zone a son rôle.
+- La méthode ABC concentre l''effort de contrôle sur les articles à forte valeur.
+- FIFO (et FEFO pour les périssables) fait sortir les lots les plus anciens et valorise les sorties au coût le plus ancien.
+- Point de commande = consommation journalière × délai + stock de sécurité.
+- L''inventaire compare le physique au théorique ; tout écart doit être expliqué.
+
+## Exercices
+
+Exercice 1. Classez en A, B, C les articles suivants (valeur annuelle) : P1 6 000 000 FCFA ; P2 2 000 000 FCFA ; P3 1 200 000 FCFA ; P4 500 000 FCFA ; P5 300 000 FCFA.
+
+Exercice 2. Stock initial : 40 cartons à 10 000 FCFA. Entrée : 60 cartons à 11 000 FCFA. Sortie : 70 cartons. Valorisez la sortie et le stock final selon FIFO.
+
+Exercice 3. Une quincaillerie de Saint-Louis consomme 25 cartons de clous par jour. Le fournisseur livre en 8 jours. Le stock de sécurité est fixé à 50 cartons. Calculez le point de commande.
+
+Exercice 4. Stock théorique : 800 bidons. Stock physique : 776 bidons. Calculez l''écart et le taux d''écart.
+
+## Corrigé
+
+Exercice 1. Total : 10 000 000 FCFA. Cumuls : P1 60 % ; P2 80 % ; P3 92 % ; P4 97 % ; P5 100 %. Classe A : P1 et P2 (80 %). Classe B : P3. Classe C : P4 et P5.
+
+Exercice 2. Sortie : 40 × 10 000 + 30 × 11 000 = 400 000 + 330 000 = 730 000 FCFA. Stock final : 30 cartons à 11 000 FCFA = 330 000 FCFA. Vérification : valeur totale disponible 400 000 + 660 000 = 1 060 000 = 730 000 + 330 000.
+
+Exercice 3. Point de commande = 25 × 8 + 50 = 250 cartons.
+
+Exercice 4. Écart = 776 − 800 = −24 bidons. Taux = 24 / 800 = 3 %. Écart élevé : recomptage puis recherche des causes.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'formation-transport-logistique'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Entreposage et gestion des stocks : ABC, FIFO et inventaires');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Planifier les tournées de livraison', '## Objectifs de la leçon
+
+Savoir construire une tournée de livraison réaliste en respectant la capacité du véhicule, les horaires des clients et le temps de travail, puis en calculer la distance, la durée et le coût.
+
+## Les notions de base
+
+Une tournée est un circuit qui part d''un dépôt, dessert plusieurs clients et revient au dépôt. Planifier une tournée, c''est décider quels clients sont livrés par quel véhicule et dans quel ordre.
+
+Les contraintes à respecter :
+
+- la capacité du véhicule (en poids et en volume) ;
+- les fenêtres horaires des clients (une boutique de marché ne reçoit pas à midi ; certains clients ferment le vendredi après-midi) ;
+- la durée de travail du chauffeur et les pauses ;
+- les conditions de circulation (heures de pointe à Dakar, routes dégradées en saison des pluies, restrictions de circulation des poids lourds dans certaines zones) ;
+- les temps d''arrêt chez chaque client (déchargement, contrôle, signature).
+
+L''objectif est de minimiser la distance et le temps total tout en livrant tous les clients à l''heure.
+
+## Méthode en cinq étapes
+
+- Étape 1 : lister les commandes du jour avec le poids, l''adresse et la fenêtre horaire de chaque client.
+- Étape 2 : regrouper les clients par secteur géographique (par exemple : Pikine-Guédiawaye, Rufisque, centre-ville). Chaque secteur devient une tournée potentielle.
+- Étape 3 : vérifier que la charge de chaque secteur tient dans un véhicule. Sinon, découper le secteur.
+- Étape 4 : ordonner les arrêts. Une méthode simple est celle du « plus proche voisin » : depuis le dépôt, on va au client le plus proche, puis de ce client au client non encore visité le plus proche, et ainsi de suite, avant de revenir au dépôt.
+- Étape 5 : calculer la durée totale (trajets + arrêts), vérifier les horaires, puis calculer le coût.
+
+La méthode du plus proche voisin ne donne pas toujours le meilleur circuit possible, mais elle donne rapidement une solution correcte. On peut ensuite essayer d''inverser deux arrêts pour voir si la distance diminue.
+
+## Exemple chiffré
+
+Un distributeur de boissons part de son dépôt O et doit livrer quatre clients A, B, C et E. Les distances (en km) sont :
+
+- O-A : 8 ; O-B : 12 ; O-C : 15 ; O-E : 10.
+- A-B : 5 ; A-C : 11 ; A-E : 9.
+- B-C : 6 ; B-E : 14.
+- C-E : 7.
+
+Application du plus proche voisin :
+
+- Depuis O, le plus proche est A (8 km).
+- Depuis A, on compare B (5), C (11), E (9) : on choisit B.
+- Depuis B, on compare C (6) et E (14) : on choisit C.
+- Depuis C, il reste E (7).
+- Retour E-O : 10 km.
+
+Tournée : O-A-B-C-E-O. Distance : 8 + 5 + 6 + 7 + 10 = 36 km.
+
+Vérifions une autre possibilité, O-A-E-C-B-O : 8 + 9 + 7 + 6 + 12 = 42 km. Elle est plus longue, on garde la première.
+
+Capacité : le camion porte 5 tonnes. Les commandes sont A 1,2 t ; B 0,8 t ; C 1,5 t ; E 1,0 t, soit 4,5 tonnes. La capacité est respectée, avec un taux de remplissage de 4,5 / 5 = 90 %.
+
+Durée : vitesse moyenne en ville 25 km/h, donc 36 / 25 = 1,44 heure, soit environ 1 h 26 min de conduite. Avec 20 minutes d''arrêt par client (4 × 20 = 80 min), la tournée dure environ 2 h 46 min. Un départ à 8 h 00 permet un retour vers 10 h 46, et donc une seconde tournée dans la journée.
+
+Coût : si le coût d''exploitation du camion est de 650 FCFA par km (valeur fictive incluant carburant, entretien et pneus), la tournée coûte 36 × 650 = 23 400 FCFA, hors salaire du chauffeur. Coût par tonne livrée : 23 400 / 4,5 = 5 200 FCFA.
+
+## Conseils pratiques
+
+- Préparer les tournées la veille, à partir des commandes validées.
+- Charger le camion dans l''ordre inverse des livraisons : le premier client livré est chargé en dernier, près des portes.
+- Remettre au chauffeur une feuille de route indiquant l''ordre des arrêts, les contacts des clients et les heures prévues.
+- Recueillir au retour les bons de livraison signés, les heures réelles et les kilomètres parcourus, pour améliorer les prochaines tournées.
+
+## Points clés
+
+- Une tournée part du dépôt, dessert plusieurs clients et y revient.
+- Contraintes : capacité, fenêtres horaires, temps de travail, circulation, temps d''arrêt.
+- Méthode : regrouper par secteur, vérifier la charge, ordonner (plus proche voisin), calculer durée et coût.
+- Le coût par tonne livrée permet de comparer les tournées.
+
+## Exercices
+
+Exercice 1. Un dépôt O doit livrer trois clients P, Q et R. Distances : O-P 4 km ; O-Q 6 km ; O-R 9 km ; P-Q 3 km ; P-R 7 km ; Q-R 4 km. Construisez la tournée par la méthode du plus proche voisin et calculez sa distance.
+
+Exercice 2. Comparez votre résultat avec les tournées O-P-R-Q-O et O-Q-P-R-O. Laquelle est la plus courte ?
+
+Exercice 3. La tournée de l''exercice 1 est faite à 20 km/h de moyenne, avec 15 minutes d''arrêt par client. Le départ a lieu à 8 h 00. À quelle heure le camion revient-il ?
+
+Exercice 4. Le coût d''exploitation est de 700 FCFA par km (valeur fictive). Les charges livrées sont P 0,8 t ; Q 1,2 t ; R 1,0 t. Calculez le coût de la tournée et le coût par tonne.
+
+## Corrigé
+
+Exercice 1. Depuis O, le plus proche est P (4). Depuis P : Q (3) ou R (7), on choisit Q. Depuis Q : R (4). Retour R-O : 9. Tournée O-P-Q-R-O = 4 + 3 + 4 + 9 = 20 km.
+
+Exercice 2. O-P-R-Q-O = 4 + 7 + 4 + 6 = 21 km. O-Q-P-R-O = 6 + 3 + 7 + 9 = 25 km. La tournée O-P-Q-R-O (20 km) est la plus courte des trois.
+
+Exercice 3. Conduite : 20 / 20 = 1 heure. Arrêts : 3 × 15 = 45 minutes. Durée totale : 1 h 45. Retour à 9 h 45.
+
+Exercice 4. Coût : 20 × 700 = 14 000 FCFA. Charge totale : 0,8 + 1,2 + 1,0 = 3 tonnes. Coût par tonne : 14 000 / 3 ≈ 4 667 FCFA.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'formation-transport-logistique'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Planifier les tournées de livraison');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Documents de transport et incoterms : les principes', '## Objectifs de la leçon
+
+Connaître les principaux documents qui accompagnent une marchandise, comprendre le rôle des incoterms, distinguer les règles les plus utilisées et calculer un coût de revient rendu entrepôt pour une importation.
+
+## Pourquoi des documents ?
+
+Chaque déplacement de marchandise doit être prouvé et tracé. Les documents servent à prouver ce qui a été remis et reçu, à transférer la responsabilité d''un acteur à l''autre, à permettre le dédouanement et à déclencher la facturation et le paiement. Un document manquant peut bloquer un conteneur au port pendant des jours et générer des frais de stationnement importants.
+
+## Les principaux documents
+
+- Le bon de commande : il formalise la demande du client (articles, quantités, prix, date et lieu de livraison).
+- Le bon de livraison : il accompagne la marchandise ; le client le signe à la réception, en notant les réserves éventuelles (colis abîmés, manquants).
+- La lettre de voiture : document du transport routier qui matérialise le contrat de transport entre l''expéditeur, le transporteur et le destinataire.
+- Le connaissement (Bill of Lading) : document du transport maritime. Il prouve la prise en charge de la marchandise par le transporteur et, dans sa forme négociable, il représente la marchandise elle-même : celui qui le détient peut en prendre livraison.
+- La lettre de transport aérien : son équivalent pour l''aérien, non négociable.
+- La facture commerciale : elle indique la valeur de la marchandise et sert de base au dédouanement.
+- La liste de colisage : détail du contenu de chaque colis (poids, dimensions, nombre).
+- Le certificat d''origine : il atteste du pays d''origine, ce qui peut avoir un effet sur les droits applicables.
+- La déclaration en douane : établie en général par un commissionnaire en douane agréé, elle permet de dédouaner la marchandise.
+
+Règle pratique : à la réception, toujours vérifier la concordance entre la commande, le bon de livraison, la facture et la marchandise réellement reçue, et noter les réserves précises sur le document du transporteur avant de signer.
+
+## Les incoterms : à quoi servent-ils ?
+
+Les incoterms sont des règles internationales publiées par la Chambre de commerce internationale. La version la plus récente en usage est celle de 2020. Ils précisent, dans un contrat de vente, la répartition entre vendeur et acheteur :
+
+- des frais (transport, assurance, chargement, dédouanement) ;
+- des risques (à quel moment la marchandise voyage aux risques de l''acheteur) ;
+- de certaines formalités (dédouanement export, dédouanement import).
+
+Attention : les incoterms ne fixent ni le prix, ni le moment du transfert de propriété, ni les conditions de paiement. Ils doivent toujours être suivis d''un lieu précis et de la version, par exemple « FOB port de chargement, Incoterms 2020 ».
+
+## Les onze règles en deux familles
+
+Règles utilisables pour tous les modes de transport : EXW, FCA, CPT, CIP, DAP, DPU, DDP.
+
+Règles réservées au transport maritime et fluvial : FAS, FOB, CFR, CIF.
+
+Quelques règles très utilisées, en principe :
+
+- EXW (à l''usine) : le vendeur met la marchandise à disposition dans ses locaux ; l''acheteur fait presque tout et supporte presque tous les risques.
+- FOB (franco à bord) : le vendeur livre la marchandise à bord du navire au port de chargement ; à partir de ce moment, frais et risques passent à l''acheteur, qui paie le fret maritime.
+- CFR (coût et fret) : le vendeur paie le fret jusqu''au port de destination, mais le risque passe à l''acheteur dès le chargement à bord au départ.
+- CIF (coût, assurance et fret) : comme CFR, avec en plus une assurance souscrite par le vendeur au profit de l''acheteur. Le risque passe aussi au chargement à bord.
+- DAP (rendu au lieu de destination) : le vendeur supporte frais et risques jusqu''au lieu convenu, marchandise prête à être déchargée ; l''acheteur s''occupe du dédouanement import.
+- DDP (rendu droits acquittés) : le vendeur assume tout, y compris le dédouanement import et les droits.
+
+Point souvent mal compris : en CFR et CIF, le vendeur paie le transport jusqu''à destination, mais si la marchandise est endommagée en mer, c''est l''acheteur qui supporte le risque (d''où l''intérêt de l''assurance).
+
+## Exemple : coût de revient rendu entrepôt
+
+Un importateur de Dakar achète du matériel électrique en FOB port d''Asie. Données (montants fictifs) :
+
+- valeur FOB : 10 000 000 FCFA ;
+- fret maritime : 1 500 000 FCFA ;
+- assurance : 100 000 FCFA ;
+- droits et taxes à l''importation : 2 000 000 FCFA (montant fictif ; les taux dépendent du tarif douanier en vigueur, à vérifier auprès d''un commissionnaire agréé) ;
+- frais de transit et de manutention portuaire : 400 000 FCFA ;
+- transport du port à l''entrepôt : 250 000 FCFA.
+
+Valeur CIF (valeur rendue au port de destination) : 10 000 000 + 1 500 000 + 100 000 = 11 600 000 FCFA.
+
+Coût de revient rendu entrepôt : 11 600 000 + 2 000 000 + 400 000 + 250 000 = 14 250 000 FCFA.
+
+Ce calcul montre que le prix d''achat FOB ne représente qu''une partie du coût réel : ici 10 000 000 / 14 250 000, soit environ 70 %. Comparer deux fournisseurs sur leur seul prix FOB peut conduire à une mauvaise décision.
+
+## Points clés
+
+- Chaque mouvement de marchandise est accompagné de documents qui prouvent, transfèrent la responsabilité et permettent le paiement.
+- Le connaissement maritime négociable représente la marchandise.
+- Les incoterms répartissent frais, risques et formalités ; ils ne règlent ni le prix ni la propriété.
+- Toujours indiquer l''incoterm, le lieu précis et la version.
+- Le coût de revient rendu entrepôt inclut fret, assurance, droits, transit et transport final.
+
+## Exercices
+
+Exercice 1. Dans une vente FOB, qui paie le fret maritime ? Et dans une vente CIF ?
+
+Exercice 2. En CIF, la marchandise est endommagée pendant le voyage en mer. Qui supporte le risque ?
+
+Exercice 3. Valeur FOB 8 000 000 FCFA, fret 1 200 000 FCFA, assurance 60 000 FCFA. Calculez la valeur CIF.
+
+Exercice 4. Un acheteur de Bamako, débutant, ne veut s''occuper d''aucune formalité ni d''aucun transport. Quelle règle lui est la plus favorable ? Laquelle serait la plus défavorable ?
+
+Exercice 5. Citez trois documents à vérifier lors de la réception d''une livraison.
+
+## Corrigé
+
+Exercice 1. En FOB, l''acheteur paie le fret maritime. En CIF, c''est le vendeur.
+
+Exercice 2. L''acheteur : en CIF, le risque passe au chargement à bord au port de départ. Il sera indemnisé par l''assurance souscrite par le vendeur à son profit, dans les limites de la police.
+
+Exercice 3. CIF = 8 000 000 + 1 200 000 + 60 000 = 9 260 000 FCFA.
+
+Exercice 4. La plus favorable est DDP, où le vendeur assume tout jusqu''à destination, dédouanement import compris. La plus défavorable est EXW, où l''acheteur doit tout organiser depuis les locaux du vendeur.
+
+Exercice 5. Par exemple : le bon de commande, le bon de livraison et la facture (ou la lettre de voiture, la liste de colisage).', 'texte', 60, false, 40
+from public.courses c where c.slug = 'formation-transport-logistique'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Documents de transport et incoterms : les principes');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Mesurer la performance logistique : les indicateurs', '## Objectifs de la leçon
+
+Savoir choisir, calculer et interpréter les principaux indicateurs de performance logistique (taux de service, remplissage, rotation des stocks, coûts unitaires, qualité de préparation) et les organiser dans un tableau de bord simple.
+
+## Pourquoi mesurer ?
+
+« Ce qui ne se mesure pas ne s''améliore pas. » Un responsable logistique doit pouvoir répondre chaque mois à trois questions : servons-nous bien nos clients ? Utilisons-nous bien nos moyens ? Combien cela nous coûte-t-il ? Un indicateur (ou KPI, Key Performance Indicator) est une mesure chiffrée qui répond à l''une de ces questions et que l''on compare à un objectif.
+
+Un bon indicateur est simple à comprendre, calculé toujours de la même façon, alimenté par des données fiables, et associé à un responsable qui peut agir.
+
+## Les indicateurs de service client
+
+- Taux de service OTIF (On Time In Full, à l''heure et complet) = nombre de commandes livrées à l''heure et complètes / nombre total de commandes. C''est l''indicateur le plus exigeant, car une commande en retard ou incomplète compte comme un échec.
+- Délai moyen de livraison : temps moyen entre la commande et la livraison.
+- Taux de réclamations : réclamations / livraisons.
+
+Exemple : sur 480 commandes du mois, 432 ont été livrées à l''heure et complètes. OTIF = 432 / 480 = 90 %.
+
+## Les indicateurs d''utilisation des moyens
+
+- Taux de remplissage des véhicules = charge transportée / capacité. Un camion de 10 tonnes qui roule en moyenne avec 7,5 tonnes a un taux de remplissage de 75 %.
+- Taux de disponibilité de la flotte = jours où les véhicules sont disponibles / jours prévus.
+- Productivité de préparation = lignes de commande préparées par heure de travail.
+
+## Les indicateurs de stock
+
+- Rotation des stocks = coût d''achat des marchandises vendues sur l''année / stock moyen (en valeur).
+- Couverture des stocks (en jours) = 365 / rotation, ou stock moyen / consommation journalière.
+- Taux de rupture = nombre de références en rupture / nombre total de références suivies.
+
+Exemple : coût d''achat des marchandises vendues sur l''année 120 000 000 FCFA, stock moyen 15 000 000 FCFA. Rotation = 120 000 000 / 15 000 000 = 8 fois par an. Couverture = 365 / 8 ≈ 45,6 jours. L''entreprise garde en moyenne un mois et demi de ventes en stock. Si son fournisseur livre en une semaine, ce stock est probablement trop élevé : de la trésorerie dort dans l''entrepôt.
+
+## Les indicateurs de coût
+
+- Coût par kilomètre = dépenses de la flotte / kilomètres parcourus.
+- Coût par tonne livrée = coût logistique total / tonnes livrées.
+- Coût logistique en pourcentage du chiffre d''affaires.
+
+Exemple : la flotte a coûté 3 900 000 FCFA dans le mois pour 6 000 km parcourus. Coût par km = 3 900 000 / 6 000 = 650 FCFA.
+
+## Les indicateurs de qualité
+
+- Taux d''erreur de préparation = lignes erronées / lignes préparées. Exemple : 12 erreurs sur 1 600 lignes, soit 0,75 %.
+- Taux de casse ou d''avarie = valeur des marchandises endommagées / valeur transportée.
+- Écart d''inventaire (vu en leçon 2).
+
+## Construire un tableau de bord
+
+Méthode :
+
+- choisir 6 à 8 indicateurs maximum, répartis entre service, moyens, stocks, coûts et qualité ;
+- fixer pour chacun un objectif réaliste et des seuils : vert (objectif atteint), orange (vigilance), rouge (action immédiate) ;
+- définir la source des données, la fréquence (hebdomadaire ou mensuelle) et le responsable ;
+- présenter les résultats sur une page, avec l''évolution sur plusieurs mois ;
+- pour chaque indicateur en rouge, écrire une action corrective, un responsable et une échéance.
+
+Exemple de lecture : si l''OTIF baisse de 90 % à 82 % alors que le taux de remplissage monte de 75 % à 92 %, on peut soupçonner que l''on attend trop de commandes pour remplir les camions, au détriment des délais. Les indicateurs se lisent ensemble, jamais isolément.
+
+## Points clés
+
+- Un indicateur répond à une question précise et se compare à un objectif.
+- OTIF mesure le service ; remplissage et disponibilité mesurent l''utilisation des moyens.
+- Rotation et couverture mesurent l''efficacité des stocks.
+- Coût par km et coût par tonne permettent de piloter les dépenses.
+- Un tableau de bord court, régulier et suivi d''actions vaut mieux qu''une longue liste de chiffres.
+
+## Exercices
+
+Exercice 1. Sur 250 livraisons, 230 sont arrivées à l''heure, parmi lesquelles 220 étaient aussi complètes. Calculez le taux de ponctualité et l''OTIF.
+
+Exercice 2. Coût d''achat des marchandises vendues : 90 000 000 FCFA par an. Stock moyen : 18 000 000 FCFA. Calculez la rotation et la couverture en jours.
+
+Exercice 3. Un camion de 20 tonnes transporte en moyenne 14 tonnes. Calculez son taux de remplissage.
+
+Exercice 4. Le coût logistique du mois est de 2 600 000 FCFA pour 400 tonnes livrées. Calculez le coût par tonne.
+
+Exercice 5. L''OTIF est en rouge depuis deux mois. Proposez deux causes possibles et une action pour chacune.
+
+## Corrigé
+
+Exercice 1. Ponctualité = 230 / 250 = 92 %. OTIF = 220 / 250 = 88 %.
+
+Exercice 2. Rotation = 90 000 000 / 18 000 000 = 5 fois par an. Couverture = 365 / 5 = 73 jours.
+
+Exercice 3. Taux de remplissage = 14 / 20 = 70 %.
+
+Exercice 4. Coût par tonne = 2 600 000 / 400 = 6 500 FCFA.
+
+Exercice 5. Exemples : ruptures de stock sur des articles A (action : revoir le point de commande et le stock de sécurité) ; tournées mal planifiées ou camions indisponibles (action : planifier la veille et renforcer l''entretien préventif). Toute réponse cohérente associant une cause et une action mesurable est acceptée.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'formation-transport-logistique'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mesurer la performance logistique : les indicateurs');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : de la commande à la livraison, piloter sa logistique', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : responsables logistiques, gérants de PME de distribution, magasiniers et chefs de parc, étudiants en formation professionnelle.
+
+Objectifs : relier en une séance les grandes étapes de la chaîne logistique ; savoir classer un stock en ABC, valoriser en FIFO et calculer un point de commande ; construire une tournée simple ; distinguer les incoterms principaux ; lire un tableau de bord logistique.
+
+Matériel : diaporama, tableau blanc, calculatrice, un exemple de bon de livraison et de connaissement (modèles vierges), un tableur pour la démonstration.
+
+Prérequis : avoir lu les leçons 1 à 5 de la formation, ou disposer d''une expérience pratique en entrepôt ou en livraison.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et fil rouge
+
+Texte du formateur : « Bonjour à toutes et à tous, et bienvenue dans ce cours consacré à la logistique, de la commande jusqu''à la livraison. Pendant une heure trente, nous allons suivre un fil rouge : une entreprise fictive, Distri-Sahel, grossiste en produits alimentaires installée à Dakar, qui livre des boutiques et des demi-grossistes à Dakar, Thiès et Mbour. Chaque fois que nous verrons une notion, nous l''appliquerons à Distri-Sahel. À la fin, vous aurez une méthode complète que vous pourrez reproduire dans votre propre entreprise. »
+
+Visuel : carte schématique Dakar – Thiès – Mbour avec l''entrepôt et les clients.
+
+Question posée : « Dans votre entreprise, qui est responsable du trajet complet de la marchandise, de la commande à l''encaissement ? » Laisser quelques réponses : souvent, personne n''a la vision complète.
+
+## 05:00 – 15:00 · La chaîne logistique et ses trois flux
+
+Texte du formateur : « La chaîne logistique, c''est l''ensemble des étapes qui amènent le bon produit, en bonne quantité, au bon endroit, au bon moment et au bon coût. Chez Distri-Sahel, la chaîne commence au port, où arrivent les conteneurs de riz et d''huile, passe par l''entrepôt de la zone industrielle, puis par les camions de livraison, et se termine au comptoir du boutiquier. Trois flux circulent en parallèle : les marchandises, les informations et l''argent. Le jour où ces trois flux se désynchronisent, les problèmes commencent : on livre sans facturer, on vend un produit qui n''est plus en stock, on paie un transporteur deux fois. »
+
+Visuel : schéma à trois bandes horizontales (physique, information, financier) avec les documents qui accompagnent chaque étape.
+
+Texte du formateur : « Distri-Sahel livre 500 tonnes par mois. Son coût logistique est de 28 000 FCFA par tonne, soit 14 millions de FCFA par mois. Le poste le plus lourd après l''approvisionnement, c''est la distribution, avec 9 500 FCFA par tonne, environ un tiers du total. Retenez la méthode : additionner tous les postes, diviser par les quantités livrées, puis attaquer le poste le plus lourd. »
+
+## 15:00 – 27:00 · L''entrepôt et la méthode ABC
+
+Texte du formateur : « Entrons dans l''entrepôt. Il a quatre zones : réception, stockage, préparation, expédition. Chaque emplacement doit avoir une adresse. Si un nouveau magasinier ne trouve pas un article en moins d''une minute, l''entrepôt est mal organisé. »
+
+Texte du formateur : « Distri-Sahel gère 8 articles principaux. Faut-il surveiller la boîte d''allumettes autant que le sac de riz ? Évidemment non. La méthode ABC nous aide. On calcule pour chaque article la valeur consommée sur l''année, on classe par ordre décroissant, on calcule le pourcentage cumulé. Riz 48 %, huile 30 % : à eux deux, 78 % de la valeur. Ce sont les articles A. Sucre et lait en poudre portent le cumul à 94 % : ce sont les B. Le reste, ce sont les C. »
+
+Visuel : tableau ABC et courbe cumulée en forme de coude.
+
+Question posée : « Quelle fréquence d''inventaire proposeriez-vous pour les articles A ? » Réponse attendue : un comptage tournant fréquent, par exemple hebdomadaire.
+
+## 27:00 – 38:00 · FIFO, point de commande et inventaire
+
+Texte du formateur : « Deuxième règle d''or de l''entrepôt : premier entré, premier sorti. Le sac arrivé le premier doit partir le premier. Pour le lait en poudre, on va plus loin : on fait sortir le lot qui périme le premier, c''est le FEFO. FIFO sert aussi à valoriser : si j''ai 100 sacs à 15 000 FCFA et 200 sacs à 16 000 FCFA, et que je sors 250 sacs, je valorise 100 sacs à 15 000 et 150 sacs à 16 000, soit 3 900 000 FCFA. »
+
+Texte du formateur : « Quand faut-il commander ? Distri-Sahel vend 40 sacs de riz par jour, son fournisseur local livre en 5 jours, et elle garde 60 sacs de sécurité. Point de commande : 40 fois 5 plus 60, soit 260 sacs. Le magasinier doit donc alerter dès que le stock passe à 260. »
+
+Texte du formateur : « Enfin, l''inventaire. Stock théorique 1 250 cartons, stock compté 1 232 : écart de 18 cartons, soit 1,44 %. Un écart n''est pas une faute en soi, mais il doit toujours être expliqué. »
+
+Visuel : fiche de comptage vierge, fiche de stock FIFO.
+
+## 38:00 – 45:00 · Pause interactive et quiz
+
+Texte du formateur : « Faisons une pause active. Je vous propose quatre questions. Notez vos réponses, nous corrigeons dans trois minutes. »
+
+- Question 1 : citez les trois flux de la chaîne logistique.
+- Question 2 : un article représente 5 % de la valeur et le cumul atteint 97 %. Dans quelle classe est-il ?
+- Question 3 : consommation 30 unités par jour, délai 4 jours, stock de sécurité 40. Point de commande ?
+- Question 4 : vrai ou faux, FEFO s''applique surtout aux produits périssables ?
+
+Correction : 1) physique, information, financier ; 2) classe C ; 3) 30 × 4 + 40 = 160 unités ; 4) vrai.
+
+## 45:00 – 58:00 · Planifier une tournée
+
+Texte du formateur : « Sortons de l''entrepôt. Demain, Distri-Sahel doit livrer quatre clients, A, B, C et E, avec un camion de 5 tonnes. Nous avons le tableau des distances. Appliquons la méthode du plus proche voisin : depuis le dépôt, le client le plus proche est A, à 8 km. Depuis A, le plus proche est B, à 5 km. Depuis B, c''est C, à 6 km. Depuis C, il reste E, à 7 km, puis le retour, 10 km. Total : 36 km. »
+
+Visuel : tableau des distances, puis tracé progressif de la tournée sur la carte.
+
+Texte du formateur : « Vérifions la capacité : 1,2 plus 0,8 plus 1,5 plus 1 égale 4,5 tonnes, sur 5 possibles. La durée : 36 km à 25 km/h en ville, environ 1 h 26, plus 4 arrêts de 20 minutes, soit environ 2 h 46. Le coût : 36 km à 650 FCFA, soit 23 400 FCFA, ou 5 200 FCFA par tonne livrée. N''oubliez pas : on charge le camion dans l''ordre inverse des livraisons. »
+
+Question posée : « Que se passe-t-il si le client C n''accepte les livraisons qu''après 11 h ? » Discussion : il faut réordonner la tournée ou le placer sur une seconde tournée.
+
+## 58:00 – 1:10:00 · Documents et incoterms
+
+Texte du formateur : « Revenons au début de la chaîne : l''importation. Le riz de Distri-Sahel arrive par la mer. Le document clé est le connaissement : sous sa forme négociable, il représente la marchandise. Sans lui, pas de retrait au port. Ajoutez la facture commerciale, la liste de colisage, le certificat d''origine si nécessaire, et la déclaration en douane établie par le commissionnaire agréé. »
+
+Texte du formateur : « Les incoterms, publiés par la Chambre de commerce internationale, précisent qui paie quoi et qui supporte quels risques. Il y en a onze dans la version 2020. Quatre sont réservés au maritime : FAS, FOB, CFR et CIF. Le piège classique : en CIF, le vendeur paie le fret et l''assurance, mais le risque passe à l''acheteur dès le chargement à bord au départ. »
+
+Visuel : frise du trajet usine – port de départ – navire – port d''arrivée – entrepôt, avec le point de transfert des risques pour EXW, FOB, CIF, DAP, DDP.
+
+Texte du formateur : « Calculons un coût de revient. Valeur FOB 10 millions, fret 1,5 million, assurance 100 000 : valeur CIF 11,6 millions. Ajoutons des droits et taxes, ici 2 millions, montant fictif pour l''exemple car les taux dépendent du tarif en vigueur, puis 400 000 de transit et 250 000 de transport jusqu''à l''entrepôt : 14,25 millions. Le prix FOB ne représente qu''environ 70 % du coût réel. »
+
+## 1:10:00 – 1:20:00 · Le tableau de bord logistique
+
+Texte du formateur : « Dernière étape : piloter. Voici le tableau de bord mensuel de Distri-Sahel. OTIF : 432 commandes à l''heure et complètes sur 480, soit 90 %. Taux de remplissage des camions : 75 %. Rotation du stock : 8 fois par an, soit une couverture d''environ 46 jours. Coût par km : 650 FCFA. Taux d''erreur de préparation : 0,75 %. »
+
+Visuel : tableau de bord d''une page avec code couleur vert, orange, rouge et courbes sur six mois.
+
+Texte du formateur : « Comment lire ce tableau ? La couverture de 46 jours est élevée alors que le fournisseur local livre en 5 jours : il y a de la trésorerie immobilisée. Le remplissage à 75 % suggère qu''on pourrait regrouper certaines tournées, à condition de ne pas dégrader l''OTIF. On lit toujours les indicateurs ensemble. »
+
+Question posée : « Si vous ne pouviez suivre que trois indicateurs, lesquels choisiriez-vous pour votre entreprise, et pourquoi ? »
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Texte du formateur : « Récapitulons. Un : la chaîne logistique fait circuler trois flux qui doivent rester synchronisés. Deux : dans l''entrepôt, ABC concentre l''effort, FIFO fait tourner le stock, le point de commande évite les ruptures, l''inventaire vérifie. Trois : une tournée se construit par secteur, se vérifie en capacité et en temps, se chiffre en coût par tonne. Quatre : les documents et les incoterms sécurisent l''importation. Cinq : le tableau de bord transforme tout cela en décisions. »
+
+Évaluation finale, cinq questions :
+
+- Question 1 : coût logistique de 4 400 000 FCFA pour 220 tonnes. Coût par tonne ? Réponse : 20 000 FCFA.
+- Question 2 : stock initial 40 cartons à 10 000 FCFA, entrée 60 cartons à 11 000 FCFA, sortie 70 cartons. Valeur FIFO de la sortie ? Réponse : 400 000 + 330 000 = 730 000 FCFA.
+- Question 3 : tournée de 20 km à 700 FCFA/km pour 3 tonnes. Coût par tonne ? Réponse : 14 000 / 3 ≈ 4 667 FCFA.
+- Question 4 : en FOB, qui paie le fret maritime ? Réponse : l''acheteur.
+- Question 5 : 250 livraisons, 220 à l''heure et complètes. OTIF ? Réponse : 88 %.
+
+Texte du formateur : « Merci pour votre attention. Votre mission pour la semaine : cartographier votre propre chaîne logistique et calculer votre coût par tonne ou par colis livré. Ce sera votre point de départ. »', 'video', 90, false, 60
+from public.courses c where c.slug = 'formation-transport-logistique'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : de la commande à la livraison, piloter sa logistique');
 
 -- Cours : Gérer les parkings d'une entreprise
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
