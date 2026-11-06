@@ -4784,6 +4784,72 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "mas-eco-m2",
+  "level": "Master 2",
+  "subject": "Économie",
+  "module": null,
+  "title": "Économie Master 2 : réussir ses examens",
+  "description": "Préparation aux examens de Master 2 en Économie : économie internationale et intégration régionale africaine (UEMOA/CEDEAO), finance du développement et politiques publiques (évaluation d'impact), méthodologie du mémoire de recherche et soutenance. Pour étudiants ayant validé le Master 1 en Économie. Fiches avancées, cas fictifs sénégalais/africains, exercices corrigés, sujet type d'examen et quatre cours vidéo de 1h30 dont un atelier méthodologie.",
+  "sort": 762,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Économie",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Objectifs de la leçon\n\nCette leçon ouvre votre année de Master 2 en Économie, la dernière année de votre cursus avant l'entrée dans la vie professionnelle ou la poursuite en doctorat. Elle présente les spécificités de cette année : la préparation du mémoire de recherche ou professionnel, les trois matières avancées du semestre, et un plan de révision sur six semaines. Elle ne répète aucune matière déjà vue en Licence ni en Master 1.\n\nCe qui change en Master 2\n\nLe Master 2 est l'année de la spécialisation et de la production personnelle. Contrairement au Master 1, où vous consolidiez encore des méthodes, le Master 2 vous demande de produire un travail original : un mémoire de recherche ou un mémoire professionnel, souvent adossé à un stage, qui mobilise l'ensemble de vos acquis pour traiter une question économique précise. L'évaluation finale combine généralement des examens de connaissances sur les matières avancées et une soutenance orale de votre mémoire devant un jury.\n\nLes trois matières de ce semestre\n\n1. Économie internationale et intégration régionale africaine. Cette matière approfondit les théories du commerce international (avantage comparatif, théories plus modernes du commerce) et les mécanismes concrets de l'intégration régionale ouest-africaine : l'union douanière de l'UEMOA, les enjeux de la zone de libre-échange continentale africaine et de la convergence avec la CEDEAO, les effets de création et de détournement de commerce.\n\n2. Finance du développement et politiques publiques. Cette matière porte sur les instruments de financement du développement (financement public, aide au développement, financement privé et partenariats), et sur les principes méthodologiques de l'évaluation d'impact des politiques publiques et des projets de développement, utilisés pour juger si un programme atteint réellement ses objectifs.\n\n3. Méthodologie du mémoire de recherche et soutenance. Cette matière, transversale, vous accompagne dans la construction méthodologique de votre mémoire : formulation d'une question de recherche, revue de littérature rigoureuse, choix et justification d'une méthode, présentation honnête des résultats, et préparation de la soutenance orale devant un jury.\n\nLe mémoire de fin de Master\n\nQue votre mémoire soit à dominante recherche ou à dominante professionnelle, la logique est la même : vous devez répondre à une question précise et utile, en mobilisant une méthode adaptée aux données ou au terrain dont vous disposez, et en argumentant honnêtement, y compris sur les limites de votre travail. Un bon mémoire de Master 2 ne prétend jamais résoudre un problème économique majeur à lui seul ; il apporte une contribution modeste mais rigoureuse, clairement délimitée.\n\nRègle d'or sur les sources : ne citez jamais un auteur, une institution, un chiffre officiel ou une étude empirique que vous n'avez pas vérifiés vous-même dans une source fiable. En cas de doute sur un chiffre précis (taux de croissance d'un pays, montant d'un programme, date d'un accord régional), formulez le constat en termes généraux plutôt que d'inventer une précision que vous ne maîtrisez pas. Un correcteur ou un jury détecte très vite une référence fabriquée, et cela discrédite immédiatement l'ensemble du travail.\n\nMéthode de travail en Master 2\n\n- Construisez un calendrier de mémoire dès le début du semestre : question de recherche d'ici deux semaines, revue de littérature d'ici un mois, collecte ou analyse des données ensuite, rédaction continue plutôt que tout en fin de parcours.\n- Pour les matières d'examen, privilégiez les cas transversaux : un sujet de Master 2 combine souvent intégration régionale, financement du développement et parfois une dimension méthodologique.\n- Préparez votre soutenance comme un exercice de communication professionnelle : dix minutes pour présenter l'essentiel de votre travail à un public qui ne l'a pas lu en détail, puis des réponses construites aux questions du jury.\n\nPlan de révision sur six semaines\n\nSemaine 1 : consolidation des prérequis de Licence et Master 1 utiles (avantage comparatif, politiques économiques en économie ouverte, trilemme de Mundell) et cadrage de votre sujet de mémoire.\n\nSemaine 2 : économie internationale et intégration régionale, partie théorique (avantage comparatif ricardien, théories modernes du commerce).\n\nSemaine 3 : économie internationale et intégration régionale, partie appliquée (union douanière, création et détournement de commerce, CEDEAO/UEMOA en termes généraux).\n\nSemaine 4 : finance du développement et politiques publiques, partie instruments de financement, puis partie évaluation d'impact (principes, méthode de la différence de différences en exemple simple).\n\nSemaine 5 : méthodologie du mémoire, revue de littérature de votre propre sujet, préparation d'un plan détaillé.\n\nSemaine 6 : révision croisée, sujets types, et répétition orale de votre présentation de soutenance devant un camarade ou un miroir, chronométrée à dix minutes.\n\nPoints clés à retenir\n- Le Master 2 est l'année de la production personnelle : le mémoire mobilise l'ensemble de vos acquis.\n- L'économie internationale avancée porte sur les théories du commerce et l'intégration régionale ouest-africaine concrète.\n- La finance du développement combine instruments de financement et méthodes d'évaluation d'impact des politiques publiques.\n- La méthodologie du mémoire et la préparation à la soutenance sont une matière à part entière, à ne pas négliger.\n- Aucune référence, chiffre ou étude ne doit être inventé dans un mémoire ; en cas de doute, restez en termes généraux.\n\n## Exercices pratiques\n\n1. Citez les trois matières avancées de ce semestre de Master 2 et expliquez en une phrase ce que chacune apporte par rapport au Master 1.\n2. Pourquoi un mémoire de Master 2 doit-il se limiter à une contribution modeste et clairement délimitée plutôt que viser à résoudre un problème économique majeur ?\n3. Que risque un étudiant qui cite, dans son mémoire, un chiffre officiel qu'il n'a pas vérifié et qui se révèle faux ?\n4. Construisez un calendrier personnel de rédaction de mémoire sur les six semaines de cette séquence, en l'adaptant à votre propre sujet.\n5. Pourquoi la préparation de la soutenance orale est-elle considérée comme une compétence professionnelle à part entière, au-delà du contenu du mémoire lui-même ?\n\n## Corrigé\n\n1. Économie internationale et intégration régionale africaine : approfondit les théories du commerce et les mécanismes concrets de l'intégration régionale ouest-africaine. Finance du développement et politiques publiques : instruments de financement du développement et méthodes d'évaluation d'impact. Méthodologie du mémoire et soutenance : accompagne la construction méthodologique et la communication orale du travail de fin d'études.\n2. Parce qu'un sujet de mémoire trop large ou trop ambitieux dépasse généralement les moyens méthodologiques et le temps disponibles d'un étudiant de Master, ce qui conduit à un travail superficiel sur tous les points plutôt qu'à une contribution rigoureuse sur un point précis ; les jurys valorisent davantage la rigueur sur un périmètre restreint que l'ambition mal maîtrisée.\n3. Il risque de voir la crédibilité de l'ensemble de son travail remise en cause par le jury, au-delà du seul chiffre erroné : une erreur factuelle vérifiable fait douter de la rigueur générale du mémoire et peut affecter sérieusement la note, en plus de poser un problème d'intégrité académique si l'erreur relève d'une invention plutôt que d'une simple imprécision involontaire.\n4. Réponse libre : l'essentiel est d'inclure un cadrage du sujet en semaine 1, une revue de littérature en semaines 2 à 3, puis une phase d'analyse et de rédaction continue, avec un temps dédié à la répétition de la soutenance en fin de parcours.\n5. Parce que, dans la vie professionnelle, savoir présenter clairement et convaincre un public qui n'a pas le temps de lire un document complet est une compétence aussi précieuse que la capacité à produire une analyse rigoureuse ; la soutenance est souvent la première occasion pour un étudiant de s'exercer formellement à cet exercice devant un jury exigeant."
+   },
+   {
+    "title": "Économie internationale et intégration régionale africaine : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Finance du développement et politiques publiques : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Méthodologie du mémoire de recherche et soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 Économie (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Économie internationale et intégration régionale africaine",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Finance du développement et politiques publiques",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire de recherche et soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie — construire son mémoire pas à pas",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "mas-droit-m1",
   "level": "Master 1",
   "subject": "Droit des affaires",

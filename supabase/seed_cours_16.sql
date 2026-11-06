@@ -675,6 +675,602 @@ Bon courage à toutes et à tous pour la suite de votre préparation et vos exam
 from public.courses c where c.slug = 'mas-eco-m1'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — cas pratique filé');
 
+-- Cours : Économie Master 2 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-eco-m2', (select id from public.levels where name = 'Master 2'), null, 'Économie', 'Économie Master 2 : réussir ses examens', 'Préparation aux examens de Master 2 en Économie : économie internationale et intégration régionale africaine (UEMOA/CEDEAO), finance du développement et politiques publiques (évaluation d''impact), méthodologie du mémoire de recherche et soutenance. Pour étudiants ayant validé le Master 1 en Économie. Fiches avancées, cas fictifs sénégalais/africains, exercices corrigés, sujet type d''examen et quatre cours vidéo de 1h30 dont un atelier méthodologie.', true, 762
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 2 en Économie', 'Objectifs de la leçon
+
+Cette leçon ouvre votre année de Master 2 en Économie, la dernière année de votre cursus avant l''entrée dans la vie professionnelle ou la poursuite en doctorat. Elle présente les spécificités de cette année : la préparation du mémoire de recherche ou professionnel, les trois matières avancées du semestre, et un plan de révision sur six semaines. Elle ne répète aucune matière déjà vue en Licence ni en Master 1.
+
+Ce qui change en Master 2
+
+Le Master 2 est l''année de la spécialisation et de la production personnelle. Contrairement au Master 1, où vous consolidiez encore des méthodes, le Master 2 vous demande de produire un travail original : un mémoire de recherche ou un mémoire professionnel, souvent adossé à un stage, qui mobilise l''ensemble de vos acquis pour traiter une question économique précise. L''évaluation finale combine généralement des examens de connaissances sur les matières avancées et une soutenance orale de votre mémoire devant un jury.
+
+Les trois matières de ce semestre
+
+1. Économie internationale et intégration régionale africaine. Cette matière approfondit les théories du commerce international (avantage comparatif, théories plus modernes du commerce) et les mécanismes concrets de l''intégration régionale ouest-africaine : l''union douanière de l''UEMOA, les enjeux de la zone de libre-échange continentale africaine et de la convergence avec la CEDEAO, les effets de création et de détournement de commerce.
+
+2. Finance du développement et politiques publiques. Cette matière porte sur les instruments de financement du développement (financement public, aide au développement, financement privé et partenariats), et sur les principes méthodologiques de l''évaluation d''impact des politiques publiques et des projets de développement, utilisés pour juger si un programme atteint réellement ses objectifs.
+
+3. Méthodologie du mémoire de recherche et soutenance. Cette matière, transversale, vous accompagne dans la construction méthodologique de votre mémoire : formulation d''une question de recherche, revue de littérature rigoureuse, choix et justification d''une méthode, présentation honnête des résultats, et préparation de la soutenance orale devant un jury.
+
+Le mémoire de fin de Master
+
+Que votre mémoire soit à dominante recherche ou à dominante professionnelle, la logique est la même : vous devez répondre à une question précise et utile, en mobilisant une méthode adaptée aux données ou au terrain dont vous disposez, et en argumentant honnêtement, y compris sur les limites de votre travail. Un bon mémoire de Master 2 ne prétend jamais résoudre un problème économique majeur à lui seul ; il apporte une contribution modeste mais rigoureuse, clairement délimitée.
+
+Règle d''or sur les sources : ne citez jamais un auteur, une institution, un chiffre officiel ou une étude empirique que vous n''avez pas vérifiés vous-même dans une source fiable. En cas de doute sur un chiffre précis (taux de croissance d''un pays, montant d''un programme, date d''un accord régional), formulez le constat en termes généraux plutôt que d''inventer une précision que vous ne maîtrisez pas. Un correcteur ou un jury détecte très vite une référence fabriquée, et cela discrédite immédiatement l''ensemble du travail.
+
+Méthode de travail en Master 2
+
+- Construisez un calendrier de mémoire dès le début du semestre : question de recherche d''ici deux semaines, revue de littérature d''ici un mois, collecte ou analyse des données ensuite, rédaction continue plutôt que tout en fin de parcours.
+- Pour les matières d''examen, privilégiez les cas transversaux : un sujet de Master 2 combine souvent intégration régionale, financement du développement et parfois une dimension méthodologique.
+- Préparez votre soutenance comme un exercice de communication professionnelle : dix minutes pour présenter l''essentiel de votre travail à un public qui ne l''a pas lu en détail, puis des réponses construites aux questions du jury.
+
+Plan de révision sur six semaines
+
+Semaine 1 : consolidation des prérequis de Licence et Master 1 utiles (avantage comparatif, politiques économiques en économie ouverte, trilemme de Mundell) et cadrage de votre sujet de mémoire.
+
+Semaine 2 : économie internationale et intégration régionale, partie théorique (avantage comparatif ricardien, théories modernes du commerce).
+
+Semaine 3 : économie internationale et intégration régionale, partie appliquée (union douanière, création et détournement de commerce, CEDEAO/UEMOA en termes généraux).
+
+Semaine 4 : finance du développement et politiques publiques, partie instruments de financement, puis partie évaluation d''impact (principes, méthode de la différence de différences en exemple simple).
+
+Semaine 5 : méthodologie du mémoire, revue de littérature de votre propre sujet, préparation d''un plan détaillé.
+
+Semaine 6 : révision croisée, sujets types, et répétition orale de votre présentation de soutenance devant un camarade ou un miroir, chronométrée à dix minutes.
+
+Points clés à retenir
+- Le Master 2 est l''année de la production personnelle : le mémoire mobilise l''ensemble de vos acquis.
+- L''économie internationale avancée porte sur les théories du commerce et l''intégration régionale ouest-africaine concrète.
+- La finance du développement combine instruments de financement et méthodes d''évaluation d''impact des politiques publiques.
+- La méthodologie du mémoire et la préparation à la soutenance sont une matière à part entière, à ne pas négliger.
+- Aucune référence, chiffre ou étude ne doit être inventé dans un mémoire ; en cas de doute, restez en termes généraux.
+
+## Exercices pratiques
+
+1. Citez les trois matières avancées de ce semestre de Master 2 et expliquez en une phrase ce que chacune apporte par rapport au Master 1.
+2. Pourquoi un mémoire de Master 2 doit-il se limiter à une contribution modeste et clairement délimitée plutôt que viser à résoudre un problème économique majeur ?
+3. Que risque un étudiant qui cite, dans son mémoire, un chiffre officiel qu''il n''a pas vérifié et qui se révèle faux ?
+4. Construisez un calendrier personnel de rédaction de mémoire sur les six semaines de cette séquence, en l''adaptant à votre propre sujet.
+5. Pourquoi la préparation de la soutenance orale est-elle considérée comme une compétence professionnelle à part entière, au-delà du contenu du mémoire lui-même ?
+
+## Corrigé
+
+1. Économie internationale et intégration régionale africaine : approfondit les théories du commerce et les mécanismes concrets de l''intégration régionale ouest-africaine. Finance du développement et politiques publiques : instruments de financement du développement et méthodes d''évaluation d''impact. Méthodologie du mémoire et soutenance : accompagne la construction méthodologique et la communication orale du travail de fin d''études.
+2. Parce qu''un sujet de mémoire trop large ou trop ambitieux dépasse généralement les moyens méthodologiques et le temps disponibles d''un étudiant de Master, ce qui conduit à un travail superficiel sur tous les points plutôt qu''à une contribution rigoureuse sur un point précis ; les jurys valorisent davantage la rigueur sur un périmètre restreint que l''ambition mal maîtrisée.
+3. Il risque de voir la crédibilité de l''ensemble de son travail remise en cause par le jury, au-delà du seul chiffre erroné : une erreur factuelle vérifiable fait douter de la rigueur générale du mémoire et peut affecter sérieusement la note, en plus de poser un problème d''intégrité académique si l''erreur relève d''une invention plutôt que d''une simple imprécision involontaire.
+4. Réponse libre : l''essentiel est d''inclure un cadrage du sujet en semaine 1, une revue de littérature en semaines 2 à 3, puis une phase d''analyse et de rédaction continue, avec un temps dédié à la répétition de la soutenance en fin de parcours.
+5. Parce que, dans la vie professionnelle, savoir présenter clairement et convaincre un public qui n''a pas le temps de lire un document complet est une compétence aussi précieuse que la capacité à produire une analyse rigoureuse ; la soutenance est souvent la première occasion pour un étudiant de s''exercer formellement à cet exercice devant un jury exigeant.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en Économie');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Économie internationale et intégration régionale africaine : l''essentiel pour l''examen', 'Objectifs de la leçon
+
+Cette leçon approfondit l''économie internationale et l''intégration régionale africaine : les théories du commerce international au-delà de l''avantage comparatif simple, et les mécanismes concrets d''une union douanière comme l''UEMOA, avec les notions de création et de détournement de commerce. Tous les calculs numériques ont été vérifiés.
+
+Rappel et approfondissement : l''avantage comparatif ricardien
+
+En Licence, vous avez vu que chaque pays a intérêt à se spécialiser dans la production où son coût d''opportunité est le plus faible. Reprenons un exemple fictif vérifié : au Sénégal fictif, produire une unité de tissu nécessite 4 heures de travail, et une unité de riz 8 heures. En Côte d''Ivoire fictive, tissu et riz nécessitent chacun 6 heures. Le coût d''opportunité du tissu, exprimé en riz sacrifié, est de 4/8 = 0,5 au Sénégal fictif, contre 6/6 = 1,0 en Côte d''Ivoire fictive. Le Sénégal fictif a donc un avantage comparatif dans le tissu (coût d''opportunité plus faible), et la Côte d''Ivoire fictive dans le riz (coût d''opportunité du riz, en tissu, de 1,0 contre 2,0 au Sénégal fictif). Chaque pays gagne à se spécialiser et à échanger, même si l''un des deux pays (ici la Côte d''Ivoire fictive) n''a d''avantage absolu dans aucun des deux biens dans cet exemple particulier.
+
+Au-delà de Ricardo : les théories modernes du commerce
+
+Le modèle ricardien explique la spécialisation par les différences de productivité du travail entre pays. Les théories plus modernes enrichissent ce cadre : le modèle de Heckscher-Ohlin explique la spécialisation par les différences de dotations en facteurs de production (travail, capital, terre) entre pays ; les théories de la concurrence imparfaite et des économies d''échelle expliquent pourquoi des pays aux structures économiques proches échangent quand même beaucoup entre eux (commerce intra-branche, différenciation de produit) ; enfin, les théories plus récentes insistent sur l''hétérogénéité des entreprises au sein d''un même secteur, où seules les entreprises les plus productives parviennent à exporter, ce qui explique pourquoi l''ouverture commerciale peut accroître la productivité moyenne d''un secteur sans que chaque entreprise individuelle change de technologie.
+
+L''intégration régionale ouest-africaine : mécanismes
+
+L''UEMOA constitue une union douanière : les pays membres appliquent un tarif extérieur commun face aux pays tiers, et suppriment les droits de douane entre eux (tarif nul pour le commerce intra-régional). C''est une étape plus poussée qu''une simple zone de libre-échange, où chaque pays garde son propre tarif extérieur. La Communauté économique des États de l''Afrique de l''Ouest (CEDEAO), plus large géographiquement, poursuit également des objectifs d''intégration économique régionale, avec des enjeux de convergence entre les différents cadres institutionnels de la région. La zone de libre-échange continentale africaine (ZLECAf) vise, à une échelle encore plus large, à réduire les barrières commerciales entre pays africains. Ces architectures se complètent et se chevauchent partiellement, ce qui pose des défis pratiques de cohérence des règles commerciales.
+
+Création et détournement de commerce : un exemple numérique vérifié
+
+Une union douanière peut avoir deux effets opposés sur le bien-être économique, qu''il faut savoir distinguer avec un exemple chiffré.
+
+Avant l''union, un pays fictif importe un bien du reste du monde au prix mondial de 100 FCFA (en unité fictive), avec un tarif national de 30 %, soit un prix domestique payé par le consommateur de 100 × 1,30 = 130 FCFA.
+
+Après l''union douanière, ce pays importe désormais sans tarif (tarif nul intra-régional) auprès d''un partenaire régional dont le coût de production est de 105 FCFA — un partenaire moins efficace que le reste du monde (dont le prix restait à 100 FCFA), mais dont l''accès est désormais exonéré de tarif.
+
+Le consommateur paie maintenant 105 FCFA au lieu de 130 FCFA : c''est un gain de pouvoir d''achat de 25 FCFA par unité, lié à la suppression du tarif. Mais comparé au prix mondial hors tarif de référence, 100 FCFA, le partenaire régional reste 5 FCFA plus cher : c''est un coût de détournement de commerce, car les échanges se sont réorientés vers un fournisseur moins efficace (le partenaire régional) au détriment du fournisseur le plus efficace au niveau mondial, uniquement en raison de la structure tarifaire de l''union.
+
+Ce cas illustre le détournement de commerce : les échanges se détournent d''un fournisseur mondial plus efficace vers un partenaire régional moins efficace, simplement parce que ce dernier bénéficie d''une exonération tarifaire. À l''inverse, on parle de création de commerce lorsque l''union douanière permet des échanges nouveaux, bénéfiques, qui n''existaient pas auparavant, par exemple si le partenaire régional avait été plus efficace que le reste du monde (un coût de production inférieur à 100 FCFA dans notre exemple) : dans ce cas, l''union n''aurait fait que révéler et exploiter un avantage comparatif réel, sans coût de détournement.
+
+L''enjeu pour les décideurs de politique commerciale régionale est donc de concevoir des règles d''origine et des tarifs extérieurs communs qui maximisent la création de commerce (échanges avec les partenaires les plus efficaces) et limitent le détournement de commerce (échanges biaisés vers des partenaires moins efficaces mais favorisés tarifairement).
+
+Points clés à retenir
+- L''avantage comparatif ricardien reste la base, mais les théories modernes (Heckscher-Ohlin, concurrence imparfaite, hétérogénéité des entreprises) enrichissent l''analyse du commerce international.
+- L''UEMOA est une union douanière : tarif extérieur commun et suppression des tarifs intra-régionaux, une étape plus intégrée qu''une simple zone de libre-échange.
+- La création de commerce est un gain net lorsque l''union révèle un avantage comparatif réel ; le détournement de commerce est une perte d''efficacité lorsque l''union réoriente les échanges vers un partenaire moins efficace que le reste du monde.
+- Un exemple numérique simple permet de quantifier ces effets : comparer le prix domestique avant l''union, le prix du partenaire régional après l''union, et le prix mondial de référence.
+
+## Exercices pratiques
+
+1. Expliquez la différence entre une zone de libre-échange et une union douanière.
+2. Si le coût du partenaire régional était de 98 FCFA (prix mondial 100 FCFA), s''agirait-il de création ou de détournement de commerce ? Justifiez.
+3. Pourquoi les théories modernes du commerce expliquent-elles mieux que le modèle ricardien le fait que deux pays proches commercent beaucoup entre eux ?
+4. Cas pratique : un pays fictif a un tarif national de 40 % sur un bien au prix mondial de 200 FCFA. Son partenaire régional le produit à 230 FCFA. Calculez le prix avant/après union, et qualifiez l''effet.
+5. Pourquoi la coexistence de plusieurs cadres d''intégration (UEMOA, CEDEAO, ZLECAf) pose-t-elle des défis de cohérence ?
+6. Si le coût du travail pour le riz passait à 10 heures en Côte d''Ivoire fictive (au lieu de 6), les avantages comparatifs changeraient-ils ? Recalculez.
+7. Pourquoi un décideur doit-il se préoccuper à la fois de création et de détournement de commerce lors de la conception d''un tarif extérieur commun ?
+
+## Corrigé
+
+1. Zone de libre-échange : suppression des tarifs entre membres, chacun garde son tarif extérieur propre. Union douanière : suppression des tarifs entre membres ET tarif extérieur commun face aux tiers — une intégration plus poussée.
+2. Création de commerce : à 98 FCFA, le partenaire régional est moins cher que le prix mondial (100 FCFA). L''union révèle alors un avantage comparatif réel, sans réorienter les échanges vers un fournisseur moins efficace.
+3. Le modèle ricardien explique le commerce par des différences de productivité ; or une grande partie du commerce mondial se fait entre pays aux structures proches, mieux expliquée par la concurrence imparfaite et la différenciation de produit (diversité des préférences, économies d''échelle).
+4. Avant : 200×1,40 = 280 FCFA. Après : 230 FCFA. Gain consommateur : 50 FCFA, mais le partenaire (230) reste plus cher que le monde (200) : détournement de commerce, coût d''inefficacité de 30 FCFA/unité.
+5. Des règles d''origine, tarifs ou calendriers différents entre cadres créent des incohérences pour les entreprises exportant dans plusieurs cadres, complexifient les formalités, et ralentissent la convergence vers un marché régional unifié.
+6. Oui, partiellement. Coût d''opportunité du tissu en Côte d''Ivoire fictive : 6/10 = 0,6 (contre 0,5 au Sénégal, inchangé) : le Sénégal garde l''avantage. Coût d''opportunité du riz : 10/6 ≈ 1,67 (contre 2,0 au Sénégal) : la Côte d''Ivoire garde aussi son avantage, mais l''écart se resserre.
+7. Un tarif mal calibré peut maximiser le détournement (partenaires moins efficaces favorisés) plutôt que la création (échanges avec les partenaires réellement les plus efficaces) ; l''objectif est de maximiser les gains nets d''efficacité pour la zone, pas seulement de protéger les producteurs existants.', 'texte', 50, false, 20
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Économie internationale et intégration régionale africaine : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Finance du développement et politiques publiques : l''essentiel pour l''examen', 'Objectifs de la leçon
+
+Cette leçon traite de la finance du développement et des politiques publiques : les principaux instruments de financement du développement, et les principes méthodologiques de l''évaluation d''impact, utilisés pour juger si un programme ou une politique publique atteint réellement ses objectifs. Les calculs numériques sont vérifiés et les données fictives.
+
+Les instruments de financement du développement
+
+Le financement du développement mobilise plusieurs grandes catégories de ressources, qu''il convient de connaître en termes généraux. Le financement public domestique provient des recettes fiscales et non fiscales de l''État, et de l''emprunt public (marchés financiers nationaux ou régionaux, institutions internationales). Le financement extérieur public comprend l''aide au développement (dons et prêts concessionnels d''institutions bilatérales ou multilatérales) et les prêts non concessionnels. Le financement privé comprend les investissements directs étrangers, les investissements de portefeuille, le crédit bancaire privé, et des montages plus récents comme les partenariats public-privé, qui associent financement et gestion privés à des infrastructures ou services d''intérêt public.
+
+Chaque instrument a ses avantages et ses limites. L''aide au développement concessionnelle peut financer des investissements à fort impact social mais à faible rentabilité financière directe (santé, éducation de base), mais elle dépend de la volonté des bailleurs et peut être volatile. L''emprunt sur les marchés financiers offre davantage d''autonomie mais à un coût financier plus élevé et avec un risque de change si la dette est libellée en devise étrangère. Les partenariats public-privé peuvent mobiliser l''expertise et le capital privés pour des infrastructures, mais nécessitent des contrats complexes et un partage rigoureux des risques entre les parties, sous peine de coûts cachés pour les finances publiques à long terme.
+
+L''évaluation d''impact : principes méthodologiques
+
+Une politique publique ou un programme de développement (par exemple un programme de microcrédit, une subvention agricole, un programme de formation professionnelle) a-t-il réellement produit l''effet escompté ? Répondre correctement à cette question nécessite une méthode rigoureuse, car il ne suffit pas d''observer que la situation des bénéficiaires s''est améliorée après le programme : cette amélioration aurait pu se produire même sans le programme, pour d''autres raisons (tendance générale de l''économie, saison agricole favorable, etc.).
+
+Le principe central de l''évaluation d''impact est la comparaison à un contrefactuel : que serait-il arrivé aux bénéficiaires SANS le programme ? Puisque l''on ne peut observer directement ce contrefactuel, les méthodes d''évaluation construisent une approximation crédible, le plus souvent à l''aide d''un groupe témoin (ou groupe de comparaison) qui n''a pas bénéficié du programme mais qui lui est similaire par ailleurs.
+
+La méthode de la différence de différences (DID)
+
+Une méthode simple et très utilisée consiste à comparer l''évolution dans le temps du groupe bénéficiaire (groupe « traité ») à celle d''un groupe témoin comparable, avant et après la mise en place du programme. L''idée : si les deux groupes auraient évolué de façon similaire sans le programme, alors tout écart d''évolution entre les deux groupes après le programme peut être attribué à l''effet du programme.
+
+Exemple numérique fictif vérifié : un programme de microcrédit fictif est mis en place dans une région test. Le revenu mensuel moyen des ménages, en milliers de FCFA, est mesuré avant et après le programme, dans la région test (bénéficiaire) et dans une région témoin comparable (non bénéficiaire) :
+
+Région test (traitée) : avant = 85, après = 112. Région témoin : avant = 83, après = 92.
+
+Différence dans le groupe traité : 112 - 85 = 27 milliers de FCFA. Différence dans le groupe témoin : 92 - 83 = 9 milliers de FCFA. L''effet DID, c''est-à-dire l''impact net attribuable au programme, est la différence de ces deux différences : 27 - 9 = 18 milliers de FCFA par mois.
+
+Interprétation : sans le programme, on aurait pu s''attendre à ce que le revenu de la région test augmente d''environ 9 milliers de FCFA, comme dans la région témoin (évolution de fond commune aux deux régions, due par exemple à la conjoncture économique générale). L''augmentation effective de 27 milliers de FCFA dans la région traitée dépasse donc cette évolution de fond de 18 milliers de FCFA, ce supplément étant attribué à l''effet net du programme de microcrédit.
+
+Hypothèse clé et limites de la méthode
+
+La différence de différences repose sur une hypothèse cruciale appelée « hypothèse des tendances parallèles » : en l''absence du programme, les deux groupes auraient évolué de façon similaire dans le temps. Cette hypothèse n''est jamais directement vérifiable après le fait, mais elle peut être rendue plus ou moins crédible en choisissant un groupe témoin réellement comparable (mêmes caractéristiques socio-économiques, même zone géographique, même exposition aux chocs économiques généraux), et en vérifiant si possible que les deux groupes évoluaient déjà de façon parallèle avant le programme.
+
+Un décideur public ou un bailleur de fonds qui doit juger de l''efficacité d''un programme de développement doit toujours se poser trois questions : le groupe témoin est-il réellement comparable au groupe traité ? L''hypothèse des tendances parallèles est-elle plausible dans ce contexte ? L''effet mesuré est-il suffisamment important, au regard du coût du programme, pour justifier sa généralisation à plus grande échelle ?
+
+Points clés à retenir
+- Le financement du développement combine ressources publiques domestiques, financement extérieur (aide, emprunt), et financement privé (investissement direct, partenariats public-privé).
+- L''évaluation d''impact répond à la question : que serait-il arrivé sans le programme ? en construisant un contrefactuel crédible, souvent via un groupe témoin.
+- La méthode de la différence de différences compare l''évolution du groupe traité à celle du groupe témoin, avant et après le programme.
+- L''hypothèse des tendances parallèles est la condition de validité centrale de cette méthode, à toujours discuter dans une analyse rigoureuse.
+- Aucun chiffre officiel de financement ou de résultat d''évaluation réelle ne doit être inventé ; les exemples numériques de cette leçon sont fictifs et construits pour l''exercice.
+
+## Exercices pratiques
+
+1. Citez trois instruments de financement du développement et une limite de chacun.
+2. Pourquoi ne suffit-il pas d''observer une amélioration après un programme pour conclure qu''il a été efficace ?
+3. Si le revenu du groupe témoin était resté parfaitement stable (avant = après = 83), quel serait l''effet DID calculé ?
+4. Qu''est-ce que l''hypothèse des tendances parallèles, et pourquoi est-elle difficile à vérifier directement ?
+5. Cas pratique : un programme fictif de formation est évalué. Taux d''emploi des bénéficiaires avant = 40 %, après = 58 %. Groupe témoin avant = 42 %, après = 48 %. Calculez l''effet DID et interprétez.
+6. Pourquoi un partenariat public-privé mal structuré peut-il générer des coûts cachés pour les finances publiques ?
+7. Un décideur compare un programme à effet DID de 2 points à coût élevé, et un autre à effet de 1,5 point à coût bien plus faible. Quels éléments doivent entrer dans sa décision ?
+
+## Corrigé
+
+1. Aide concessionnelle : fort impact social possible mais dépend des bailleurs, volatile. Emprunt sur les marchés : autonomie mais coût plus élevé et risque de change si en devise étrangère. Partenariat public-privé : mobilise expertise et capital privés mais contrats complexes, risque de coûts cachés si le partage des risques est mal défini.
+2. Parce que cette amélioration aurait pu survenir même sans le programme (tendance générale, facteurs saisonniers) : sans contrefactuel crédible, on ne peut isoler l''effet propre du programme.
+3. Différence traité : 112-85=27. Différence témoin : 0. Effet DID = 27, plus élevé que les 18 du cours, car l''absence totale d''évolution du témoin attribue davantage au programme.
+4. C''est l''hypothèse que, sans le programme, les deux groupes auraient évolué de façon similaire. Difficile à vérifier car le contrefactuel réel est inobservable ; on évalue sa plausibilité en comparant les tendances avant le programme.
+5. Différence traité : 58-40=18 points. Différence témoin : 48-42=6 points. Effet DID = 18-6 = 12 points. Le programme est associé à une amélioration nette d''environ 12 points du taux d''emploi, au-delà de la tendance générale.
+6. Les contrats peuvent sous-estimer des risques futurs (maintenance, demande, coûts), les transférer implicitement à l''État en cas de défaillance du partenaire, ou inclure des garanties publiques coûteuses révélées bien après la signature.
+7. Comparer le rapport effet/coût (rentabilité sociale par FCFA investi), vérifier la robustesse méthodologique de chaque évaluation (échantillon, qualité du témoin, plausibilité des tendances parallèles), et envisager de combiner les programmes selon les contraintes budgétaires et priorités.', 'texte', 50, false, 30
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Finance du développement et politiques publiques : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Méthodologie du mémoire de recherche et soutenance : l''essentiel pour l''examen', 'Objectifs de la leçon
+
+Cette leçon traite de la méthodologie du mémoire de recherche ou professionnel et de la préparation à la soutenance orale, dernière matière avancée de ce semestre. Elle s''applique aussi bien à un mémoire académique qu''à un mémoire professionnel adossé à un stage.
+
+Formuler une question de recherche
+
+Un bon mémoire commence par une question précise, pas par un sujet vague. Une question vague du type « l''intégration régionale en Afrique de l''Ouest » ne permet pas de structurer un travail rigoureux. Une question précise, par exemple « dans quelle mesure l''ouverture tarifaire intra-UEMOA a-t-elle affecté la compétitivité d''un secteur donné dans un pays donné sur une période donnée », permet de délimiter le travail, de choisir une méthode adaptée, et de conclure clairement.
+
+Une bonne question de recherche doit être : précise (délimitée dans le temps, l''espace, le secteur), pertinente (elle intéresse un public économique ou professionnel réel), faisable (vous disposez ou pouvez obtenir les données ou les informations nécessaires dans le temps imparti), et honnête (vous ne savez pas déjà la réponse avant de commencer le travail : c''est une vraie question, pas une démonstration a priori).
+
+La revue de littérature
+
+La revue de littérature situe votre travail par rapport à ce qui a déjà été écrit sur le sujet ou sur des sujets proches. Elle poursuit trois objectifs : montrer que vous connaissez le champ de votre question, identifier ce qui a déjà été établi (pour ne pas refaire un travail déjà fait) et ce qui reste incertain ou débattu (c''est souvent là que se loge votre contribution), et construire le cadre théorique ou conceptuel que vous allez utiliser dans votre propre analyse.
+
+Règle absolue sur les sources : chaque référence citée dans votre revue de littérature doit avoir été réellement lue ou au minimum son résumé vérifié par vous-même, auprès d''une source fiable (ouvrage, article académique, rapport institutionnel). N''inventez jamais un auteur, un titre, une date de publication ou un résultat empirique précis que vous n''avez pas vérifié. Si vous avez un doute sur un chiffre ou une référence, il est toujours préférable d''écrire une phrase plus générale et honnête (« plusieurs études ont montré un effet positif de ce type de programme dans des contextes comparables », sans citer précisément une étude non vérifiée) que d''inventer une précision non maîtrisée. Une référence fabriquée, si elle est détectée par le jury, peut gravement compromettre la crédibilité de l''ensemble du mémoire.
+
+Choisir et justifier une méthode
+
+Une fois la question posée et la littérature maîtrisée, vous devez choisir une méthode adaptée aux données ou au terrain réellement disponibles, et non une méthode « idéale » que vous ne pourrez pas mettre en œuvre. Un petit échantillon de données qualitatives (entretiens, études de cas) appelle une méthode d''analyse qualitative rigoureuse ; des données chiffrées suffisantes peuvent justifier une analyse économétrique ; l''absence de groupe témoin crédible limite les méthodes d''évaluation d''impact disponibles. La méthode doit toujours être justifiée explicitement dans le mémoire : pourquoi cette méthode, et pas une autre, est-elle adaptée à votre question et à vos données ?
+
+Présenter des résultats honnêtes
+
+Un résultat statistiquement non significatif, un résultat partiel, ou un résultat qui contredit votre hypothèse initiale, ne doivent jamais être cachés ou maquillés : ils doivent être présentés et discutés honnêtement, avec leurs limites. Un jury valorise beaucoup plus un travail qui présente honnêtement des résultats modestes mais bien analysés, qu''un travail qui prétend à des conclusions plus fortes que ce que les données permettent réellement d''établir. La section « limites de l''étude », loin d''être une faiblesse, est un signe de maturité méthodologique : elle montre que vous comprenez la portée réelle de votre travail.
+
+Préparer la soutenance orale
+
+La soutenance est un exercice de communication professionnelle, distinct de la rédaction écrite. Quelques principes à appliquer : préparez une présentation d''environ dix minutes qui résume l''essentiel (question, méthode, résultat principal, limite principale) sans entrer dans tous les détails techniques du mémoire écrit ; anticipez les questions attendues du jury (pourquoi cette méthode, pourquoi ce choix de données, quelle est la limite principale de votre travail, quelle serait la suite possible de cette recherche) et préparez des réponses construites ; entraînez-vous à voix haute, chronométré, devant un public même informel (camarade, membre de la famille), car la fluidité orale ne s''acquiert pas en lisant ses notes en silence ; enfin, montrez que vous savez prendre du recul sur votre propre travail en acceptant les critiques du jury sans vous braquer ni sur-défendre un point faible identifié à juste titre.
+
+Points clés à retenir
+- Une question de recherche doit être précise, pertinente, faisable et honnête.
+- La revue de littérature situe le travail et construit le cadre théorique ; aucune référence ne doit être inventée.
+- La méthode choisie doit être justifiée par rapport aux données et au terrain réellement disponibles, pas par rapport à une méthode idéale inaccessible.
+- Les résultats, même modestes ou partiels, doivent être présentés honnêtement, avec leurs limites clairement assumées.
+- La soutenance est un exercice de communication à préparer spécifiquement : présentation courte et claire, anticipation des questions, entraînement oral chronométré.
+
+## Exercices pratiques
+
+1. Transformez le sujet vague « le financement des petites entreprises au Sénégal » en une question de recherche précise, pertinente et faisable.
+2. Pourquoi une revue de littérature ne doit-elle pas se limiter à résumer ce que d''autres ont déjà écrit, sans identifier ce qui reste incertain ou débattu ?
+3. Un étudiant trouve un résultat statistiquement non significatif après plusieurs semaines de travail. Que doit-il faire, et que ne doit-il surtout pas faire ?
+4. Pourquoi la justification explicite de la méthode choisie est-elle un élément attendu par un jury de mémoire ?
+5. Préparez, en cinq phrases maximum, le squelette d''une présentation orale de dix minutes pour un mémoire fictif sur un sujet de votre choix.
+6. Pourquoi une référence bibliographique fabriquée ou non vérifiée est-elle particulièrement risquée pour la crédibilité d''un mémoire ?
+7. Quelles sont les quatre questions que le jury pose presque systématiquement à un candidat, et comment s''y préparer ?
+
+## Corrigé
+
+1. Exemple de question précise : « Dans quelle mesure l''accès au microcrédit a-t-il affecté la survie à trois ans des petites entreprises commerciales dans une zone urbaine donnée du Sénégal, sur la période récente ? » Elle est précise (secteur, zone, horizon temporel), pertinente (enjeu réel de politique économique), potentiellement faisable (données d''enquête ou administratives mobilisables), et honnête (la réponse n''est pas connue à l''avance).
+2. Parce que l''objectif d''un mémoire est d''apporter une contribution, même modeste ; si la revue de littérature se limite à résumer l''existant sans identifier une zone d''incertitude ou de débat, le mémoire n''a alors aucun espace propre pour apporter quoi que ce soit de nouveau, même à petite échelle.
+3. Il doit présenter ce résultat honnêtement, en discutant ses causes possibles (échantillon limité, variable manquante, effet réellement faible dans ce contexte) et ses implications. Il ne doit surtout pas maquiller le résultat, choisir arbitrairement une autre spécification du modèle jusqu''à obtenir un résultat « significatif » sans justification théorique, ni cacher ce résultat en ne présentant que les résultats qui confirment son hypothèse initiale.
+4. Parce que la rigueur méthodologique, et non seulement le résultat final, est au cœur de l''évaluation d''un mémoire de Master : un jury veut vérifier que l''étudiant comprend pourquoi sa méthode est adaptée à sa question et à ses données, et pas seulement qu''il sait appliquer une technique de façon mécanique.
+5. Réponse libre, exemple de structure : présenter la question de recherche et sa pertinence ; situer brièvement le contexte et la littérature existante ; présenter la méthode choisie et pourquoi elle est adaptée ; présenter le résultat principal ; conclure sur la limite principale et une piste de recherche future.
+6. Parce qu''une référence fabriquée, si elle est détectée, remet en cause non seulement cette référence précise mais la fiabilité de l''ensemble du travail aux yeux du jury, posant un problème de rigueur académique qui dépasse largement l''erreur ponctuelle elle-même.
+7. Pourquoi ce terrain ? pourquoi cette méthode ? quelle est la principale limite ? quelle suite de recherche ? S''y préparer consiste à anticiper des réponses construites et honnêtes, appuyées sur les choix réellement faits, plutôt qu''à improviser le jour de la soutenance.', 'texte', 50, false, 40
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire de recherche et soutenance : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 2 Économie (entraînement, corrigé détaillé)', '## Fiche du sujet type
+
+Ce sujet type d''examen de Master 2 en Économie couvre les trois matières avancées du semestre : économie internationale et intégration régionale africaine, finance du développement et politiques publiques, et méthodologie de recherche. Sujet NON OFFICIEL construit pour l''entraînement, barème indicatif sur 20 points. Durée indicative : 3 heures.
+
+## Sujet
+
+Partie 1 — Économie internationale et intégration régionale (7 points)
+
+Un pays fictif membre d''une union douanière régionale importe un bien dont le prix mondial est de 150 FCFA (unité fictive). Son tarif national avant l''union était de 20 %. Après l''union, il importe ce bien sans tarif auprès d''un partenaire régional dont le coût de production est de 160 FCFA.
+
+1.1. (2 points) Calculez le prix payé par le consommateur avant l''union, et après l''union.
+1.2. (2 points) Qualifiez l''effet de cette union sur ce marché (création ou détournement de commerce) et justifiez par le calcul.
+1.3. (3 points) Expliquez, en mobilisant la théorie de l''avantage comparatif, pourquoi un pays peut avoir intérêt à participer à une union régionale même si celle-ci génère, sur certains biens précis, un détournement de commerce.
+
+Partie 2 — Finance du développement et évaluation d''impact (7 points)
+
+Un programme fictif de subvention agricole est évalué par la méthode de la différence de différences. Le rendement moyen (en sacs de 50 kg par hectare) est mesuré avant et après le programme, dans une zone bénéficiaire et une zone témoin comparable : zone bénéficiaire avant = 18, après = 27 ; zone témoin avant = 17, après = 20.
+
+2.1. (3 points) Calculez l''effet DID du programme sur le rendement agricole.
+2.2. (2 points) Citez l''hypothèse clé de validité de cette méthode et expliquez pourquoi elle est difficile à vérifier directement.
+2.3. (2 points) Citez deux instruments de financement qui pourraient avoir permis de financer ce programme, avec une limite de chacun.
+
+Partie 3 — Méthodologie de recherche (6 points)
+
+Un étudiant de Master 2 souhaite rédiger son mémoire sur le sujet suivant, tel qu''il l''a formulé initialement : « l''impact du commerce régional sur le développement en Afrique de l''Ouest ».
+
+3.1. (2 points) Expliquez pourquoi ce sujet, formulé ainsi, n''est pas encore une question de recherche satisfaisante, et reformulez-le en une question précise, pertinente et faisable.
+3.2. (2 points) L''étudiant trouve, après son analyse, un résultat statistiquement non significatif sur sa variable principale d''intérêt. Que doit-il faire dans la rédaction de son mémoire ?
+3.3. (2 points) Citez deux questions que le jury est susceptible de poser à cet étudiant lors de sa soutenance, et expliquez comment il devrait s''y préparer.
+
+## Corrigé détaillé
+
+1.1. Avant l''union : 150 × 1,20 = 180 FCFA. Après l''union : 160 FCFA (prix du partenaire régional, sans tarif).
+
+1.2. Le consommateur gagne (180-160 = 20 FCFA de baisse de prix), mais le partenaire régional (160 FCFA) reste plus cher que le prix mondial de référence (150 FCFA) : il s''agit donc de détournement de commerce, avec un coût d''inefficacité de 160-150 = 10 FCFA par unité par rapport au fournisseur mondial le plus efficace.
+
+1.3. Même en présence d''un détournement de commerce sur certains biens précis, un pays peut avoir intérêt global à l''union régionale pour plusieurs raisons : la baisse de prix pour les consommateurs reste positive par rapport à la situation pré-union (gain net de 20 FCFA dans cet exemple, même si ce n''est pas optimal au niveau mondial) ; l''union peut générer une création de commerce nette sur d''autres biens où le partenaire régional est réellement plus efficace que le reste du monde, conformément à la théorie de l''avantage comparatif ; enfin, l''intégration régionale peut apporter des bénéfices dynamiques plus larges (économies d''échelle de marché, attractivité pour l''investissement, stabilité politique et institutionnelle régionale) qui dépassent le cadre étroit d''un seul bien analysé isolément.
+
+2.1. Différence zone bénéficiaire : 27-18 = 9 sacs/ha. Différence zone témoin : 20-17 = 3 sacs/ha. Effet DID = 9-3 = 6 sacs de 50 kg par hectare, attribuable au programme de subvention agricole.
+
+2.2. L''hypothèse des tendances parallèles : en l''absence du programme, les deux zones auraient évolué de façon similaire dans le temps. Elle est difficile à vérifier directement car le contrefactuel réel (ce qui serait arrivé à la zone bénéficiaire sans le programme) n''est jamais observable ; on ne peut qu''évaluer la plausibilité de cette hypothèse, par exemple en comparant les tendances des deux zones avant la mise en place du programme.
+
+2.3. Aide au développement concessionnelle : peut financer ce type de programme à fort impact social, mais dépend de la volonté et de la disponibilité des bailleurs, une source potentiellement volatile. Financement public domestique (budget national) : offre davantage d''autonomie et de pérennité, mais est contraint par les capacités fiscales de l''État et peut être mis en concurrence avec d''autres priorités budgétaires.
+
+3.1. Ce sujet est trop vague : il ne précise ni le secteur, ni la période, ni le pays, ni l''indicateur de développement retenu, ce qui rend le travail difficile à délimiter et à mener à bien dans le temps imparti. Reformulation possible : « Dans quelle mesure la suppression des tarifs intra-régionaux sur les produits agricoles transformés a-t-elle affecté le revenu des producteurs d''une filière donnée dans un pays donné, sur la période récente ? » Cette question est précise (secteur, pays, période), pertinente, et potentiellement faisable si des données sont mobilisables.
+
+3.2. Il doit présenter ce résultat honnêtement dans son mémoire, en discutant les causes possibles (échantillon limité, variable omise, effet réellement faible dans ce contexte précis) et en évitant deux pièges : ne pas maquiller le résultat pour le faire apparaître plus favorable qu''il ne l''est, et ne pas chercher arbitrairement une autre spécification statistique jusqu''à obtenir un résultat significatif sans justification théorique solide (une pratique appelée recherche de significativité, à proscrire).
+
+3.3. Exemples de questions possibles : pourquoi avoir choisi ce secteur et cette période précise plutôt qu''un autre cadre d''analyse ? Quelle est la principale limite méthodologique de votre travail, notamment liée à la non-significativité du résultat principal ? Pour s''y préparer, l''étudiant doit anticiper des réponses construites et honnêtes, fondées sur les choix réellement faits dans son mémoire (disponibilité des données, contraintes de temps), et s''entraîner à voix haute à les formuler clairement avant le jour de la soutenance.
+
+## Exercices pratiques
+
+1. Dans la partie 1, si le coût du partenaire régional était de 140 FCFA au lieu de 160 FCFA, l''effet serait-il toujours un détournement de commerce ?
+2. Dans la partie 2, si la zone témoin avait connu une baisse de rendement (avant = 17, après = 15), recalculez l''effet DID et commentez.
+3. Pourquoi la reformulation d''une question de recherche vague en question précise est-elle presque toujours nécessaire avant de commencer un mémoire ?
+
+## Corrigé
+
+1. Non : à 140 FCFA, le partenaire régional serait moins cher que le prix mondial de référence (150 FCFA). Il s''agirait alors de création de commerce, l''union révélant un avantage comparatif réel du partenaire régional plutôt que de détourner les échanges vers un fournisseur moins efficace.
+2. Différence zone témoin : 15-17 = -2 sacs/ha. Effet DID = 9 - (-2) = 11 sacs/ha, un effet net plus élevé que les 6 sacs calculés initialement, car la zone témoin a connu une évolution défavorable que la zone bénéficiaire n''a pas connue, accentuant l''écart attribué au programme.
+3. Parce qu''une question vague ne permet pas de délimiter les données nécessaires, la méthode adaptée, ni le temps de travail requis ; elle rend le mémoire difficile à structurer et expose l''étudiant au risque de dériver vers un travail trop large et superficiel, insatisfaisant pour un jury qui attend une contribution rigoureuse sur un périmètre clairement défini.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 Économie (entraînement, corrigé détaillé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Économie internationale et intégration régionale africaine', '## Fiche du cours vidéo
+
+Durée : 1h30 (90 minutes). Sujet : Économie internationale et intégration régionale africaine — théories du commerce, union douanière, création et détournement de commerce.
+Objectifs : maîtriser l''avantage comparatif et les théories modernes du commerce, comprendre les mécanismes de l''UEMOA et de la CEDEAO, savoir calculer et interpréter la création et le détournement de commerce.
+Matériel : tableau ou diaporama, calculatrice.
+Prérequis : économie monétaire et internationale (Licence 3).
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil
+
+Bonjour et bienvenue dans ce premier cours vidéo de votre semestre de Master 2. Nous allons approfondir l''économie internationale et l''intégration régionale africaine, un sujet central pour comprendre les choix de politique commerciale de nos pays. Au programme : les théories du commerce international au-delà de l''avantage comparatif simple, le fonctionnement concret d''une union douanière, et les notions de création et de détournement de commerce, avec des calculs vérifiés.
+
+## 05:00 – 20:00 · L''avantage comparatif, rappel et approfondissement
+
+Reprenons notre exemple fictif vérifié. Au Sénégal fictif, produire une unité de tissu nécessite 4 heures de travail, une unité de riz 8 heures. En Côte d''Ivoire fictive, chaque bien nécessite 6 heures. Calculons le coût d''opportunité du tissu, en riz sacrifié : au Sénégal fictif, 4 divisé par 8, égal 0,5 ; en Côte d''Ivoire fictive, 6 divisé par 6, égal 1,0. Le Sénégal fictif a donc un coût d''opportunité plus faible dans le tissu : il détient l''avantage comparatif dans ce bien. Symétriquement, le coût d''opportunité du riz, en tissu, est de 8 divisé par 4, égal 2,0 au Sénégal fictif, et de 6 divisé par 6, égal 1,0 en Côte d''Ivoire fictive : c''est la Côte d''Ivoire fictive qui détient l''avantage comparatif dans le riz. Chaque pays gagne à se spécialiser et à échanger, même si, dans cet exemple, la Côte d''Ivoire fictive n''a d''avantage absolu dans aucun des deux biens : c''est tout l''intérêt pédagogique du modèle ricardien, qui montre que le commerce profite aux deux parties indépendamment des niveaux absolus de productivité.
+
+Mais ce modèle, aussi élégant soit-il, laisse de côté une grande partie du commerce mondial réel. Les théories modernes l''enrichissent : le modèle de Heckscher-Ohlin explique la spécialisation par les différences de dotations en facteurs de production, travail, capital, terre, entre pays. Les théories de la concurrence imparfaite et des économies d''échelle expliquent pourquoi des pays aux structures économiques très proches échangent quand même énormément entre eux, ce qu''on appelle le commerce intra-branche, par la différenciation de produit et la diversité des préférences des consommateurs. Enfin, les théories plus récentes sur l''hétérogénéité des entreprises montrent que, au sein d''un même secteur, seules les entreprises les plus productives parviennent à exporter, ce qui explique pourquoi l''ouverture commerciale peut augmenter la productivité moyenne d''un secteur par un effet de sélection, sans que chaque entreprise individuelle ait changé de technologie.
+
+## 20:00 – 35:00 · L''architecture de l''intégration régionale ouest-africaine
+
+Parlons maintenant des mécanismes concrets de l''intégration régionale en Afrique de l''Ouest, toujours en termes généraux. L''UEMOA constitue une union douanière : ses pays membres appliquent un tarif extérieur commun face aux pays tiers, et suppriment les droits de douane entre eux. C''est une étape plus intégrée qu''une simple zone de libre-échange, où chaque pays garde son propre tarif extérieur face au reste du monde. La Communauté économique des États de l''Afrique de l''Ouest, la CEDEAO, plus large géographiquement, poursuit également des objectifs d''intégration économique régionale, avec des enjeux de convergence entre les différents cadres institutionnels présents dans la région. À une échelle encore plus large, la zone de libre-échange continentale africaine vise à réduire les barrières commerciales entre l''ensemble des pays africains.
+
+Ces architectures se complètent, mais se chevauchent aussi partiellement, ce qui pose de véritables défis pratiques : des règles d''origine différentes, des calendriers de libéralisation différents, des formalités douanières parfois redondantes pour une entreprise qui exporte dans plusieurs de ces cadres à la fois. Un des grands enjeux de la gouvernance économique régionale actuelle est précisément de renforcer la cohérence entre ces différents niveaux d''intégration.
+
+## 35:00 – 50:00 · Création et détournement de commerce : construction de l''exemple
+
+Passons maintenant à l''outil analytique central de cette séance : la distinction entre création et détournement de commerce, que nous allons construire pas à pas avec un exemple numérique vérifié.
+
+Imaginons un pays fictif qui importe un bien dont le prix mondial est de 100 FCFA, en unité fictive. Avant l''union douanière, ce pays applique un tarif national de 30 % sur ce bien : le prix payé par le consommateur domestique est donc de 100 multiplié par 1,30, soit 130 FCFA.
+
+Après l''union douanière, ce pays importe désormais ce bien sans tarif auprès d''un partenaire régional, dont le coût de production est de 105 FCFA — un partenaire moins efficace que le reste du monde, dont le prix restait à 100 FCFA, mais dont l''accès est désormais exonéré de tarif grâce à l''union.
+
+Calculons l''effet sur le consommateur : il paie maintenant 105 FCFA au lieu de 130 FCFA, soit un gain de pouvoir d''achat de 25 FCFA par unité. Mais comparons ce nouveau prix au prix mondial de référence, 100 FCFA : le partenaire régional reste 5 FCFA plus cher. C''est le coût du détournement de commerce : les échanges se sont réorientés vers un fournisseur moins efficace au niveau mondial, uniquement parce que la structure tarifaire de l''union l''avantage artificiellement.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Pause de cinq minutes avec un quiz. Première question : dans l''exemple précédent, si le coût du partenaire régional avait été de 95 FCFA au lieu de 105 FCFA, s''agirait-il de création ou de détournement de commerce ? Deuxième question : pourquoi dit-on que l''UEMOA est une union douanière et pas seulement une zone de libre-échange ? Troisième question : citez un défi pratique posé par la coexistence de l''UEMOA, de la CEDEAO et de la ZLECAf.
+
+Correction : premièrement, à 95 FCFA, le partenaire régional serait moins cher que le prix mondial de référence de 100 FCFA : il s''agirait de création de commerce, l''union révélant un avantage comparatif réel du partenaire. Deuxièmement, parce que l''UEMOA combine suppression des tarifs intra-régionaux ET adoption d''un tarif extérieur commun face aux pays tiers, alors qu''une simple zone de libre-échange ne supprime que les tarifs internes, chaque pays gardant son propre tarif extérieur. Troisièmement, par exemple des règles d''origine ou des calendriers de libéralisation différents entre les cadres, compliquant les formalités pour les entreprises qui exportent dans plusieurs d''entre eux.
+
+## 55:00 – 1:25:00 · Application guidée et discussion des implications de politique commerciale
+
+Reprenons un cas guidé complet. Un gouvernement fictif, membre d''une union douanière régionale, doit décider s''il maintient ou révise son tarif extérieur commun sur un bien stratégique, par exemple un intrant industriel. Le prix mondial de cet intrant est de 80 FCFA. Le tarif extérieur commun actuel est de 25 %, donnant un prix domestique, pour les importations hors zone, de 80 multiplié par 1,25, soit 100 FCFA. Un partenaire régional produit cet intrant à 90 FCFA, sans tarif intra-régional.
+
+Calculons : le prix payé actuellement pour l''intrant importé du partenaire régional est de 90 FCFA, contre 100 FCFA s''il venait du reste du monde avec le tarif actuel, et 80 FCFA au prix mondial hors tout tarif. Le partenaire régional, à 90 FCFA, reste 10 FCFA plus cher que le prix mondial : nous sommes dans une situation de détournement de commerce sur ce bien précis.
+
+Question de politique économique : ce gouvernement doit-il pour autant chercher à réduire le tarif extérieur commun pour limiter ce détournement de commerce ? La réponse nécessite de mettre en balance plusieurs éléments : l''intérêt des consommateurs et des entreprises utilisatrices de cet intrant à payer un prix plus proche du prix mondial, face à l''intérêt de préserver un espace de production régional pour cet intrant, susceptible de générer des emplois et une capacité industrielle régionale, même si celle-ci n''est pas immédiatement la plus compétitive au niveau mondial. C''est précisément ce type d''arbitrage, entre efficacité économique de court terme et objectifs plus larges de développement industriel régional, qui anime les débats de politique commerciale dans les instances régionales ouest-africaines.
+
+## 1:25:00 – 1:30:00 · Évaluation finale
+
+Question 1 : Donnez la formule du coût d''opportunité du tissu, en riz sacrifié, dans le modèle ricardien.
+Réponse : heures de travail nécessaires pour une unité de tissu, divisées par les heures nécessaires pour une unité de riz.
+
+Question 2 : Quelle théorie moderne explique le commerce intra-branche entre pays aux structures économiques proches ?
+Réponse : les théories de la concurrence imparfaite et des économies d''échelle, via la différenciation de produit.
+
+Question 3 : Quelle est la différence structurelle entre une union douanière et une zone de libre-échange ?
+Réponse : l''union douanière ajoute un tarif extérieur commun face aux pays tiers, en plus de la suppression des tarifs internes.
+
+Question 4 : Qu''est-ce que le détournement de commerce ?
+Réponse : une réorientation des échanges vers un partenaire régional moins efficace que le reste du monde, uniquement en raison d''une exonération tarifaire intra-régionale.
+
+Question 5 : Pourquoi un décideur de politique commerciale doit-il mettre en balance l''efficacité de court terme et des objectifs de développement industriel régional ?
+Réponse : parce qu''un tarif extérieur commun qui génère un détournement de commerce pénalise les consommateurs à court terme, mais peut aussi soutenir une capacité industrielle régionale jugée stratégique à plus long terme, un arbitrage politique et économique qui dépasse le seul calcul d''efficacité statique.
+
+Merci pour votre attention. La prochaine vidéo portera sur la finance du développement et l''évaluation d''impact des politiques publiques.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Économie internationale et intégration régionale africaine');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Finance du développement et politiques publiques', '## Fiche du cours vidéo
+
+Durée : 1h30 (90 minutes). Sujet : Finance du développement et politiques publiques — instruments de financement et évaluation d''impact par la différence de différences.
+Objectifs : connaître les principaux instruments de financement du développement, maîtriser la logique du contrefactuel et calculer un effet DID.
+Matériel : tableau ou diaporama, calculatrice.
+Prérequis : économie publique (Licence 3), statistiques de base.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil
+
+Bonjour et bienvenue dans ce deuxième cours vidéo de votre semestre de Master 2. Nous allons aujourd''hui parler de finance du développement et d''évaluation des politiques publiques, deux sujets au cœur du travail de nombreux économistes dans les administrations, les institutions internationales, ou les organisations de développement. Nous verrons les grands instruments de financement, puis nous nous concentrerons sur une méthode d''évaluation d''impact simple et puissante, la différence de différences, avec un calcul entièrement vérifié.
+
+## 05:00 – 20:00 · Les instruments de financement du développement
+
+Commençons par une cartographie générale des instruments de financement du développement. Premièrement, le financement public domestique : les recettes fiscales et non fiscales de l''État, et l''emprunt public sur les marchés financiers nationaux ou régionaux. Deuxièmement, le financement extérieur public : l''aide au développement, sous forme de dons ou de prêts concessionnels accordés par des institutions bilatérales ou multilatérales, et les prêts non concessionnels. Troisièmement, le financement privé : les investissements directs étrangers, les investissements de portefeuille, le crédit bancaire privé, et des montages comme les partenariats public-privé, qui associent financement et gestion privés à des infrastructures ou services d''intérêt public.
+
+Chaque instrument a ses avantages et ses limites, qu''un futur économiste doit savoir discuter. L''aide concessionnelle peut financer des investissements à fort impact social, en santé ou en éducation de base par exemple, mais elle dépend de la volonté et de la disponibilité des bailleurs, une source potentiellement volatile d''une année sur l''autre. L''emprunt sur les marchés financiers offre davantage d''autonomie de décision à l''État emprunteur, mais à un coût financier plus élevé, et avec un risque de change si la dette est libellée en devise étrangère alors que les recettes de l''État sont en monnaie locale. Les partenariats public-privé peuvent mobiliser l''expertise technique et le capital du secteur privé pour construire des infrastructures, mais nécessitent des contrats complexes et un partage rigoureux des risques entre les parties : mal négociés, ils peuvent générer des coûts cachés pour les finances publiques, révélés seulement plusieurs années après la signature du contrat.
+
+## 20:00 – 35:00 · Le problème du contrefactuel
+
+Passons maintenant au cœur méthodologique de cette séance : comment savoir si une politique publique ou un programme de développement a réellement fonctionné ? Il ne suffit pas d''observer que la situation des bénéficiaires s''est améliorée après le programme, car cette amélioration aurait pu se produire même sans le programme, pour d''autres raisons : une tendance générale de l''économie, une saison agricole favorable, une autre politique mise en œuvre en parallèle.
+
+Le principe central de toute évaluation d''impact rigoureuse est la comparaison à un contrefactuel : que serait-il arrivé aux bénéficiaires SANS le programme ? Ce contrefactuel n''est jamais directement observable — on ne peut pas observer le même individu, à la fois avec et sans le programme, au même moment. Les méthodes d''évaluation d''impact construisent donc une approximation crédible de ce contrefactuel, le plus souvent à l''aide d''un groupe témoin, c''est-à-dire un groupe similaire au groupe bénéficiaire par ailleurs, mais qui n''a pas bénéficié du programme.
+
+## 35:00 – 50:00 · La méthode de la différence de différences, calcul guidé
+
+La méthode de la différence de différences, souvent abrégée DID, compare l''évolution dans le temps du groupe bénéficiaire, dit groupe traité, à celle d''un groupe témoin comparable, avant et après la mise en place du programme. L''idée centrale : si les deux groupes auraient évolué de façon similaire sans le programme, alors tout écart d''évolution entre les deux groupes après le programme peut être attribué à l''effet du programme lui-même.
+
+Reprenons notre exemple numérique fictif, entièrement vérifié. Un programme de microcrédit fictif est mis en place dans une région test. Le revenu mensuel moyen des ménages, en milliers de FCFA, est mesuré avant et après le programme, dans la région test et dans une région témoin comparable. Région test : avant = 85, après = 112. Région témoin : avant = 83, après = 92.
+
+Calculons ensemble, étape par étape. D''abord, la différence dans le groupe traité : 112 moins 85, égal 27 milliers de FCFA. Ensuite, la différence dans le groupe témoin : 92 moins 83, égal 9 milliers de FCFA. Enfin, l''effet DID, c''est-à-dire l''impact net attribuable au programme : 27 moins 9, égal 18 milliers de FCFA par mois.
+
+Interprétons ce résultat avec précision, car c''est exactement ce qui est attendu de vous à l''examen : sans le programme, on aurait pu s''attendre à ce que le revenu de la région test augmente d''environ 9 milliers de FCFA, comme dans la région témoin — c''est l''évolution de fond commune aux deux régions, due par exemple à la conjoncture économique générale. L''augmentation effective de 27 milliers de FCFA dans la région traitée dépasse cette évolution de fond de 18 milliers de FCFA, ce supplément étant attribué à l''effet net du programme de microcrédit.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Pause de cinq minutes avec un quiz. Première question : pourquoi ne peut-on pas se contenter de regarder uniquement l''évolution du groupe traité (27 milliers de FCFA) pour mesurer l''effet du programme ? Deuxième question : qu''est-ce qu''un groupe témoin, et quelle est sa fonction méthodologique ? Troisième question : si le groupe témoin avait connu une évolution de 15 milliers de FCFA au lieu de 9, quel serait le nouvel effet DID ?
+
+Correction : premièrement, parce que cette évolution de 27 milliers de FCFA inclut à la fois l''effet propre du programme ET l''évolution de fond qui se serait produite de toute façon (conjoncture générale, saison) ; sans comparaison à un groupe témoin, on surestimerait l''effet réel du programme. Deuxièmement, le groupe témoin sert à approximer le contrefactuel : ce qui serait arrivé au groupe traité sans le programme, en observant un groupe similaire mais non bénéficiaire. Troisièmement, le nouvel effet DID serait 27 moins 15, égal 12 milliers de FCFA, plus faible que les 18 calculés initialement, car une plus grande partie de l''évolution du groupe traité serait alors attribuée à la tendance générale plutôt qu''au programme.
+
+## 55:00 – 1:25:00 · L''hypothèse des tendances parallèles et discussion critique
+
+La différence de différences repose sur une hypothèse cruciale, appelée hypothèse des tendances parallèles : en l''absence du programme, les deux groupes auraient évolué de façon similaire dans le temps. Cette hypothèse n''est jamais directement vérifiable après le fait — on ne peut jamais observer ce qui se serait réellement passé sans le programme — mais elle peut être rendue plus ou moins crédible selon la qualité du choix du groupe témoin.
+
+Un bon groupe témoin partage des caractéristiques socio-économiques comparables avec le groupe traité, une exposition similaire aux chocs économiques généraux, et, idéalement, une évolution déjà parallèle à celle du groupe traité avant la mise en place du programme — ce qu''on peut vérifier si des données antérieures au programme sont disponibles sur plusieurs périodes.
+
+Un décideur public ou un bailleur de fonds qui doit juger de l''efficacité d''un programme de développement doit se poser systématiquement trois questions avant d''accepter les conclusions d''une évaluation DID : le groupe témoin est-il réellement comparable au groupe traité, au-delà des apparences ? L''hypothèse des tendances parallèles est-elle plausible dans ce contexte précis, ou existe-t-il des raisons de penser que les deux groupes auraient évolué différemment même sans le programme ? Enfin, l''effet mesuré est-il suffisamment important, au regard du coût du programme, pour justifier sa généralisation à plus grande échelle, par exemple à l''ensemble d''un pays plutôt qu''à une seule région test ?
+
+Ces trois questions doivent devenir des réflexes automatiques chaque fois que vous lisez ou produisez une évaluation d''impact, qu''il s''agisse d''un examen, d''un mémoire, ou plus tard d''un rapport professionnel.
+
+## 1:25:00 – 1:30:00 · Évaluation finale
+
+Question 1 : Citez trois grandes catégories d''instruments de financement du développement.
+Réponse : financement public domestique, financement extérieur public (aide, emprunt), financement privé (investissement direct, partenariats public-privé).
+
+Question 2 : Qu''est-ce qu''un contrefactuel en évaluation d''impact ?
+Réponse : ce qui serait arrivé aux bénéficiaires en l''absence du programme, jamais directement observable, et approximé par des méthodes comme le groupe témoin.
+
+Question 3 : Donnez la formule de l''effet DID.
+Réponse : (après - avant) du groupe traité, moins (après - avant) du groupe témoin.
+
+Question 4 : Qu''est-ce que l''hypothèse des tendances parallèles ?
+Réponse : l''hypothèse que, sans le programme, le groupe traité et le groupe témoin auraient évolué de façon similaire dans le temps.
+
+Question 5 : Citez les trois questions à se poser systématiquement avant d''accepter les conclusions d''une évaluation DID.
+Réponse : le groupe témoin est-il réellement comparable ? l''hypothèse des tendances parallèles est-elle plausible ? l''effet mesuré justifie-t-il, au regard du coût, une généralisation à plus grande échelle ?
+
+Merci de votre attention. La prochaine et dernière vidéo de ce semestre sera un atelier consacré à la méthodologie du mémoire et à la préparation de votre soutenance.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Finance du développement et politiques publiques');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire de recherche et soutenance', '## Fiche du cours vidéo
+
+Durée : 1h30 (90 minutes). Sujet : Méthodologie du mémoire de recherche et préparation de la soutenance.
+Objectifs : savoir formuler une question de recherche, construire une revue de littérature rigoureuse, choisir et justifier une méthode, présenter des résultats honnêtes, préparer une soutenance orale.
+Matériel : tableau ou diaporama, votre propre projet de mémoire si vous en avez déjà un.
+Prérequis : aucun prérequis technique spécifique, mais une idée même approximative de votre futur sujet de mémoire est utile.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et enjeux
+
+Bonjour et bienvenue dans ce troisième cours vidéo de votre semestre de Master 2, consacré à la méthodologie du mémoire de recherche et à la préparation de la soutenance. Cette matière est différente des deux précédentes : elle ne porte pas sur un contenu économique précis, mais sur la méthode de travail qui va structurer votre dernier semestre d''études, qu''il s''agisse d''un mémoire académique ou d''un mémoire professionnel adossé à un stage.
+
+## 05:00 – 20:00 · Formuler une question de recherche précise
+
+Tout commence par la question de recherche. Un sujet vague, par exemple « l''intégration régionale en Afrique de l''Ouest », ne permet pas de structurer un travail rigoureux : il est trop large, ne précise ni le secteur, ni la période, ni le pays, ni l''angle d''analyse retenu. Une bonne question de recherche doit remplir quatre critères : être précise, délimitée dans le temps, l''espace et le secteur ; être pertinente, c''est-à-dire intéresser un public économique ou professionnel réel ; être faisable, c''est-à-dire que vous disposez ou pouvez obtenir les données ou les informations nécessaires dans le temps qui vous est imparti ; et être honnête, c''est-à-dire que vous ne connaissez pas déjà la réponse avant de commencer votre travail — c''est une vraie question, pas une démonstration décidée à l''avance.
+
+Exercice pratique immédiat : prenons le sujet vague cité plus haut, et transformons-le ensemble. Une reformulation possible : « Dans quelle mesure la suppression des tarifs intra-régionaux sur les produits agricoles transformés a-t-elle affecté le revenu des producteurs d''une filière donnée, dans un pays donné, sur la période récente ? » Observez comment cette reformulation ajoute une délimitation sectorielle, géographique et temporelle précise, tout en restant une vraie question ouverte.
+
+## 20:00 – 35:00 · La revue de littérature et la règle d''or des sources
+
+La revue de littérature situe votre travail par rapport à ce qui a déjà été écrit. Elle poursuit trois objectifs : montrer votre maîtrise du champ de votre question, identifier ce qui est déjà établi pour ne pas refaire un travail déjà fait, et repérer ce qui reste incertain ou débattu — c''est souvent là que se loge votre propre contribution, même modeste.
+
+J''insiste maintenant sur une règle absolue, que je veux que vous reteniez durablement : chaque référence citée dans votre mémoire doit avoir été réellement lue, ou au minimum son résumé vérifié par vous-même, auprès d''une source fiable. N''inventez jamais un auteur, un titre, une date de publication, ou un résultat empirique précis que vous n''avez pas vérifié. Si vous avez un doute sur un chiffre ou une référence exacte, il est toujours préférable d''écrire une phrase plus générale et honnête, du type « plusieurs études ont montré un effet positif de ce type de programme dans des contextes comparables », plutôt que d''inventer une précision que vous ne maîtrisez pas. Une référence fabriquée, si elle est détectée par le jury — et elle l''est souvent, car les jurys connaissent bien leur champ — peut compromettre gravement la crédibilité de l''ensemble de votre mémoire, bien au-delà de cette seule référence.
+
+## 35:00 – 50:00 · Choisir et justifier sa méthode
+
+Une fois la question posée et la littérature maîtrisée, vous devez choisir une méthode adaptée aux données ou au terrain réellement disponibles, et non une méthode idéale que vous ne pourrez jamais mettre en œuvre dans le temps imparti. Un petit nombre d''entretiens qualitatifs appelle une méthode d''analyse qualitative rigoureuse, pas une tentative de régression statistique sur trop peu d''observations. Des données chiffrées suffisantes peuvent justifier une analyse économétrique. L''absence d''un groupe témoin crédible limite les méthodes d''évaluation d''impact réellement disponibles pour vous.
+
+Point essentiel : la méthode doit toujours être justifiée explicitement dans votre mémoire. Pourquoi cette méthode, et pas une autre, est-elle adaptée à votre question précise et aux données dont vous disposez réellement ? Un jury valorise énormément cette justification explicite, bien plus que la seule sophistication technique de la méthode employée.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Pause de cinq minutes avec un quiz. Première question : citez les quatre critères d''une bonne question de recherche. Deuxième question : pourquoi une référence bibliographique non vérifiée est-elle particulièrement risquée ? Troisième question : pourquoi la méthode choisie doit-elle être justifiée par rapport aux données disponibles, et non par rapport à une méthode jugée « idéale » en théorie ?
+
+Correction : premièrement, précise, pertinente, faisable, honnête. Deuxièmement, parce qu''elle peut être détectée par le jury et compromettre la crédibilité de l''ensemble du travail, pas seulement celle de cette référence précise. Troisièmement, parce qu''une méthode inaccessible avec les données ou le temps réellement disponibles ne pourra pas être menée à bien rigoureusement, produisant un travail bâclé ou incomplet, alors qu''une méthode plus modeste mais bien exécutée est toujours préférable à l''examen comme en soutenance.
+
+## 55:00 – 1:25:00 · Résultats honnêtes et préparation de la soutenance
+
+Un résultat statistiquement non significatif, un résultat partiel, ou un résultat qui contredit votre hypothèse de départ, ne doivent jamais être cachés ou maquillés : présentez-les et discutez-les honnêtement, avec leurs limites. Un jury valorise beaucoup plus un travail qui présente honnêtement des résultats modestes mais bien analysés qu''un travail qui prétend à des conclusions plus fortes que ce que les données permettent réellement d''établir. La section « limites de l''étude » est un signe de maturité méthodologique, pas une faiblesse à minimiser.
+
+Passons à la préparation de la soutenance orale elle-même, un exercice de communication professionnelle distinct de la rédaction écrite. Préparez une présentation d''environ dix minutes qui résume l''essentiel : la question, la méthode, le résultat principal, la limite principale, sans entrer dans tous les détails techniques du mémoire écrit. Anticipez les questions attendues du jury : pourquoi cette méthode, pourquoi ce choix de données, quelle est la limite principale de votre travail, quelle serait la suite possible de cette recherche. Préparez des réponses construites à chacune. Entraînez-vous à voix haute, chronométré, devant un public même informel : la fluidité orale ne s''acquiert jamais en lisant simplement ses notes en silence. Enfin, montrez que vous savez prendre du recul sur votre propre travail en acceptant les critiques du jury sans vous braquer, ni sur-défendre un point faible identifié à juste titre : un jury valorise davantage un candidat qui reconnaît intelligemment les limites de son travail qu''un candidat qui refuse toute critique.
+
+## 1:25:00 – 1:30:00 · Évaluation finale
+
+Question 1 : Citez les quatre critères d''une bonne question de recherche.
+Réponse : précise, pertinente, faisable, honnête.
+
+Question 2 : Quels sont les trois objectifs d''une revue de littérature ?
+Réponse : montrer la maîtrise du champ, identifier ce qui est déjà établi, repérer ce qui reste incertain ou débattu pour situer sa propre contribution.
+
+Question 3 : Que doit faire un étudiant face à un résultat non significatif ?
+Réponse : le présenter honnêtement, en discutant ses causes possibles et ses implications, sans le maquiller ni chercher arbitrairement une autre spécification pour obtenir un résultat significatif.
+
+Question 4 : Citez trois questions fréquemment posées par un jury en soutenance.
+Réponse : pourquoi cette méthode plutôt qu''une autre ? quelle est la principale limite de votre travail ? quelle suite donneriez-vous à cette recherche ?
+
+Question 5 : Pourquoi l''entraînement oral chronométré est-il indispensable avant une soutenance ?
+Réponse : parce que la fluidité et la clarté de l''expression orale, sous contrainte de temps, ne s''acquièrent pas en lisant silencieusement ses notes, mais par la répétition active devant un public, même informel.
+
+Un dernier mot avant de conclure cette séance : beaucoup d''étudiants sous-estiment le temps nécessaire à la préparation de la soutenance, pensant qu''il suffit de bien connaître son mémoire écrit pour improviser une présentation convaincante le jour venu. C''est une erreur fréquente. La capacité à résumer dix pages de méthode et de résultats en dix minutes orales, de façon claire pour un jury qui n''a peut-être lu votre travail que partiellement avant la soutenance, est une compétence qui se travaille spécifiquement, indépendamment de la qualité du mémoire écrit lui-même. Un excellent mémoire mal présenté oralement peut laisser une impression de confusion ; un mémoire plus modeste mais présenté avec clarté, structure et honnêteté intellectuelle peut au contraire convaincre pleinement un jury. Ne négligez donc jamais cette dimension de votre travail de fin d''études, qui compte généralement pour une part significative de votre note finale.
+
+Merci pour votre attention. La prochaine et dernière vidéo de ce semestre sera un atelier pratique où nous construirons ensemble, étape par étape, le squelette méthodologique d''un mémoire fictif complet, de la question de recherche jusqu''à la préparation concrète de la soutenance.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire de recherche et soutenance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier méthodologie — construire son mémoire pas à pas', '## Fiche du cours vidéo
+
+Durée : 1h30 (90 minutes). Sujet : Atelier méthodologie — construire pas à pas le squelette d''un mémoire de Master 2 en Économie, de la question de recherche à la préparation de la soutenance.
+Objectifs : appliquer concrètement, sur un exemple fictif complet, les étapes méthodologiques vues dans les trois vidéos précédentes du semestre.
+Matériel : tableau ou diaporama, une feuille pour noter votre propre plan de mémoire en parallèle.
+Prérequis : les trois vidéos précédentes de ce semestre (économie internationale, finance du développement, méthodologie du mémoire).
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Présentation de l''atelier
+
+Bonjour et bienvenue dans cette quatrième et dernière vidéo de votre semestre de Master 2. Contrairement aux trois précédentes, cette séance est un atelier pratique : nous allons construire ensemble, étape par étape, le squelette méthodologique complet d''un mémoire fictif, en mobilisant à la fois la méthodologie de recherche et les deux matières économiques du semestre, l''économie internationale et la finance du développement. Munissez-vous d''une feuille pour noter, en parallèle, les étapes équivalentes de votre propre projet de mémoire.
+
+## 05:00 – 20:00 · Étape 1 : du sujet vague à la question de recherche
+
+Notre étudiant fictif, que nous appellerons Awa, part d''une idée vague : « je voudrais travailler sur le financement de l''agriculture dans mon pays ». Suivons ensemble la démarche de transformation de cette idée en question de recherche exploitable.
+
+Première sous-étape : délimiter le secteur. Awa choisit de se concentrer sur une filière précise, par exemple la filière maraîchère, plutôt que « l''agriculture » en général, trop vaste pour un mémoire de Master.
+
+Deuxième sous-étape : délimiter la zone géographique et la période. Awa choisit une zone de production précise et une période récente de quelques années, pour laquelle elle pourra raisonnablement espérer obtenir des données ou réaliser des entretiens.
+
+Troisième sous-étape : préciser l''angle économique. Plutôt que de rester sur « le financement », trop général, Awa se demande ce qui l''intéresse vraiment dans ce thème. En repensant à ce qu''elle a appris sur la finance du développement, elle choisit de s''orienter vers l''évaluation de l''effet d''un instrument de financement précis, par exemple un programme de subvention ou de microcrédit agricole, sur un indicateur mesurable, par exemple le rendement ou le revenu des producteurs.
+
+Résultat de cette étape : la question de recherche d''Awa devient : « Dans quelle mesure un programme de subvention agricole a-t-il affecté le rendement des producteurs maraîchers dans une zone de production donnée, sur la période récente ? » Vérifions les quatre critères : précise (filière, zone, période, indicateur), pertinente (enjeu réel de politique agricole), faisable (si des données de rendement avant et après le programme sont mobilisables), honnête (Awa ne connaît pas encore la réponse).
+
+## 20:00 – 35:00 · Étape 2 : la revue de littérature et le cadrage théorique
+
+Awa doit maintenant situer sa question par rapport à ce qui existe déjà. Elle mobilise deux champs théoriques vus ce semestre : d''une part, les instruments de financement du développement, pour situer la subvention agricole parmi les autres outils possibles, comme l''aide concessionnelle ou le crédit bancaire ; d''autre part, et surtout, les méthodes d''évaluation d''impact, pour comprendre comment la littérature économique évalue habituellement ce type de programme.
+
+Rappel de la règle d''or : chaque référence que mentionnerait Awa dans sa revue de littérature doit avoir été réellement vérifiée par elle. Si elle n''a pas accès à une étude précise sur un programme comparable, elle doit rester prudente dans sa formulation, par exemple « des évaluations de programmes agricoles comparables, dans d''autres contextes, suggèrent souvent des effets positifs mais variables selon la conception du programme », plutôt que d''inventer un auteur ou un chiffre précis qu''elle ne maîtrise pas.
+
+## 35:00 – 50:00 · Étape 3 : choisir et justifier la méthode
+
+Awa a accès à des données de rendement avant et après le programme, à la fois dans la zone bénéficiaire du programme et dans une zone témoin comparable qui n''en a pas bénéficié. Cette situation de données correspond exactement à ce que nous avons étudié : la méthode de la différence de différences est donc adaptée à son cas, et elle doit le justifier explicitement dans son mémoire, en expliquant pourquoi elle dispose des deux groupes nécessaires (traité et témoin) et des deux périodes nécessaires (avant et après).
+
+Simulons le calcul qu''Awa pourrait obtenir, avec des chiffres fictifs pour l''exercice : rendement moyen dans la zone bénéficiaire, avant = 20 sacs par hectare, après = 29 sacs par hectare ; rendement moyen dans la zone témoin, avant = 19, après = 23. Calculons ensemble : différence zone bénéficiaire, 29 moins 20, égal 9. Différence zone témoin, 23 moins 19, égal 4. Effet DID : 9 moins 4, égal 5 sacs par hectare, un effet net attribuable au programme.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Pause de cinq minutes. Premier exercice : si la zone témoin d''Awa avait connu une différence de 6 sacs par hectare au lieu de 4, quel serait le nouvel effet DID ? Deuxième exercice : pourquoi Awa doit-elle vérifier que sa zone témoin est réellement comparable à sa zone bénéficiaire, au-delà de la simple disponibilité des données ?
+
+Correction : premièrement, nouvel effet DID égal 9 moins 6, égal 3 sacs par hectare, un effet plus faible, car une plus grande part de l''évolution de la zone bénéficiaire serait attribuée à une tendance générale partagée avec la zone témoin. Deuxièmement, parce que l''hypothèse des tendances parallèles, condition de validité de la méthode, n''est crédible que si les deux zones sont réellement similaires par ailleurs ; une zone témoin disponible mais peu comparable rendrait les résultats peu fiables, même si le calcul lui-même reste correct.
+
+## 55:00 – 1:25:00 · Étape 4 : présenter honnêtement et préparer l''oral
+
+Supposons maintenant qu''Awa obtienne, après analyse statistique complète, un effet DID qui reste faible et proche de la limite de significativité statistique sur son échantillon réel. Comment doit-elle présenter ce résultat dans son mémoire ? Elle doit l''annoncer clairement, discuter les raisons possibles de cette faible significativité, par exemple un échantillon de zones limité ou une forte variabilité climatique d''une année à l''autre, et éviter absolument de présenter son résultat comme plus solide qu''il ne l''est réellement.
+
+Préparons maintenant, ensemble, le squelette de sa présentation orale de dix minutes. Minute 1 à 2 : présentation de la question de recherche et de sa pertinence pour la politique agricole régionale. Minute 2 à 4 : cadrage théorique rapide, instruments de financement et méthodes d''évaluation d''impact. Minute 4 à 6 : présentation de la méthode choisie et justification par rapport aux données disponibles. Minute 6 à 8 : présentation du résultat principal, avec ses limites assumées. Minute 8 à 10 : conclusion, implications pour la politique agricole, et pistes de recherche future.
+
+Anticipons les questions du jury pour Awa : pourquoi cette filière et cette zone précises ? Pourquoi la méthode DID plutôt qu''une autre approche d''évaluation ? Quelle est la principale limite de son travail ? Que recommanderait-elle à un décideur public sur la base de ce résultat, en tenant compte de son incertitude ? Awa doit préparer des réponses construites à chacune, ancrées dans les choix réels de son mémoire.
+
+## 1:25:00 – 1:30:00 · Synthèse finale et évaluation
+
+Cet atelier a parcouru l''ensemble du processus méthodologique : de la question vague à la question précise, de la revue de littérature prudente au choix de méthode justifié, de la présentation honnête des résultats à la préparation structurée de la soutenance. C''est exactement cette démarche que vous devez appliquer à votre propre projet de mémoire dans les semaines qui viennent.
+
+Question 1 : Quelles sont les trois sous-étapes pour transformer un sujet vague en question de recherche précise ?
+Réponse : délimiter le secteur, délimiter la zone géographique et la période, préciser l''angle économique de l''analyse.
+
+Question 2 : Pourquoi Awa choisit-elle la méthode de la différence de différences pour son mémoire ?
+Réponse : parce qu''elle dispose de données avant et après le programme, à la fois pour une zone bénéficiaire et pour une zone témoin comparable, exactement la configuration de données requise par cette méthode.
+
+Question 3 : Si l''effet DID recalculé avec une zone témoin différente passe de 5 à 3, que doit en conclure Awa sur la robustesse de son résultat ?
+Réponse : que le résultat est sensible au choix du groupe témoin, ce qui doit l''inciter à discuter cette sensibilité comme une limite explicite de son travail plutôt qu''à la cacher.
+
+Question 4 : Comment Awa doit-elle traiter un résultat statistiquement fragile dans son mémoire ?
+Réponse : le présenter honnêtement, en discutant ses causes possibles, sans le présenter comme plus solide qu''il ne l''est réellement.
+
+Question 5 : Citez deux questions que le jury pourrait poser à Awa lors de sa soutenance.
+Réponse : pourquoi cette méthode plutôt qu''une autre approche d''évaluation ? quelle est la principale limite de son travail ? (toute reformulation pertinente de ces deux questions, ou d''autres questions cohérentes avec le cours, est acceptée).
+
+Merci à toutes et à tous pour votre travail ce semestre, et bon courage pour la construction et la soutenance de votre propre mémoire de Master 2.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-eco-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie — construire son mémoire pas à pas');
+
 -- Cours : Droit des affaires Master 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'mas-droit-m1', (select id from public.levels where name = 'Master 1'), null, 'Droit des affaires', 'Droit des affaires Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en droit des affaires : gouvernance et groupes de sociétés, contrats d''affaires et concurrence, arbitrage et modes alternatifs de résolution des litiges. Public : étudiants de Master 1 ayant validé une Licence en droit des affaires (introduction au droit, obligations, sociétés OHADA, droit du travail de base).', true, 771
@@ -1679,1040 +2275,3 @@ Pour conclure cette année de Master 2, et ce cycle complet de la Licence au Mas
 Cinq questions d''évaluation finale pour clore l''année. Question 1 : quelle est la méthode en trois étapes pour répondre à une question de jury sur une limite de votre travail ? Réponse : reconnaître la limite, l''expliquer, proposer une piste de dépassement. Question 2 : citez les trois grandes familles de méthodes de détermination des prix de transfert. Réponse : comparaison directe des prix, méthodes fondées sur les marges, partage des bénéfices. Question 3 : pourquoi faut-il éviter le silence prolongé face à une question difficile du jury ? Réponse : parce qu''il vaut mieux formuler une hypothèse raisonnée et explicitement présentée comme telle, qui montre une capacité de réflexion, plutôt que de laisser penser à une absence totale de maîtrise du sujet. Question 4 : quel est le fil méthodologique transversal reliant la qualification d''une convention réglementée, l''analyse d''un risque anticoncurrentiel, et le contrôle d''un prix de transfert ? Réponse : la comparaison systématique à une référence objective de marché ou de conditions normales, plutôt qu''un jugement fondé uniquement sur l''existence d''un lien d''intérêt ou de pouvoir économique. Question 5 : quelle compétence générale ce cycle de Master 2 a-t-il cherché à développer, au-delà des connaissances de fond en droit international des affaires et en fiscalité ? Réponse : la capacité à mener un travail de recherche personnel rigoureux, à le structurer autour d''une problématique précise, et à le défendre oralement avec honnêteté intellectuelle face à des questions critiques, ce qui constitue une compétence professionnelle transférable bien au-delà du cadre académique. Merci à toutes et à tous pour votre travail durant ces deux années de Master ; bon courage pour vos soutenances et le début de votre vie professionnelle.', 'video', 90, false, 90
 from public.courses c where c.slug = 'mas-droit-m2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance');
-
--- Cours : Marketing et commerce Master 1 : réussir ses examens
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-mkt-m1', (select id from public.levels where name = 'Master 1'), null, 'Marketing et commerce', 'Marketing et commerce Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en Marketing et commerce : marketing stratégique approfondi et branding, marketing international et export, stratégie de distribution et trade marketing. Études de cas d''entreprises sénégalaises fictives, calculs chiffrés vérifiés, sujet type et quatre cours vidéo de 1h30. Public : étudiants de Master 1 ayant validé une Licence en marketing et commerce.', true, 781
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 1 en Marketing et commerce', 'Le Master 1 en Marketing et commerce marque une rupture nette avec la Licence. On ne vous demande plus
-seulement de connaître des outils (mix marketing, étude de marché, techniques de vente) : on vous demande de les
-mobiliser pour analyser des situations complexes, souvent incertaines, et de construire une argumentation de niveau
-cadre. Les examens de M1 prennent trois formes principales : des épreuves écrites de cas (étude d''un cas d''entreprise
-réel ou fictif, avec questions de diagnostic et de recommandation), des dossiers de recherche appliquée (mini-mémoire
-ou dossier d''étude portant sur une problématique marketing précise, avec revue de littérature courte), et parfois une
-soutenance orale de dossier de stage ou de projet tuteuré. Il faut donc préparer à la fois des connaissances
-théoriques solides et une méthode de raisonnement transférable à des cas inédits.
-
-## Les trois matières avancées de l''année
-
-Ce cours d''examen couvre trois matières clés du M1 Marketing et commerce, qui prolongent sans jamais répéter les
-fondamentaux déjà vus en Licence :
-
-- Le marketing stratégique approfondi et le branding : modèles de capital-marque, positionnement complexe,
-  repositionnement, architecture de marque.
-- Le marketing international et export : choix des modes d''entrée à l''étranger, arbitrage entre standardisation et
-  adaptation de l''offre.
-- La stratégie de distribution et le trade marketing : conception des canaux, gestion de la relation
-  fabricant-distributeur, merchandising et budgets coopératifs.
-
-Ces trois matières se répondent : une marque forte (matière 1) facilite l''entrée sur un marché export (matière 2),
-qui elle-même suppose une stratégie de distribution adaptée au pays cible (matière 3). Les sujets d''examen de M1
-aiment précisément tester cette articulation en vous demandant de suivre une même entreprise fictive sur les trois
-dimensions.
-
-## La méthode de travail attendue en Master
-
-En Licence, on valorisait la restitution organisée d''un cours. En Master, on valorise le diagnostic argumenté. Trois
-réflexes à développer :
-
-- L''étude de cas complexe : face à un cas d''entreprise (souvent 1 à 2 pages de contexte chiffré), commencez toujours
-  par un diagnostic structuré (forces/faiblesses internes, opportunités/menaces externes, ou modèle des 5 forces de
-  Porter si pertinent) avant de proposer une recommandation. Une recommandation sans diagnostic explicite est
-  sanctionnée, même si elle est pertinente sur le fond.
-- Le business case chiffré : en M1, on attend que vous sachiez construire et interpréter de petits calculs
-  (seuil de rentabilité d''un mode d''entrée, marge d''un circuit de distribution, valeur d''une marque). Un correcteur
-  de Master valorise un raisonnement chiffré juste et explicité plus qu''une récitation théorique non appliquée.
-- La revue de littérature courte : pour un dossier de recherche appliquée, on vous demande de situer votre
-  problématique par rapport à deux ou trois courants ou auteurs de référence du marketing (par exemple le débat
-  standardisation/adaptation de Levitt et Kotler), sans invention de citations ou de références que vous ne
-  maîtrisez pas précisément. Mieux vaut citer un concept sobrement et correctement que d''inventer une référence
-  précise non vérifiée.
-
-## Plan de révision sur six semaines
-
-- Semaines 1 et 2 : reprendre en profondeur le marketing stratégique et le branding (leçon 2), avec, pour chaque
-  concept, un exemple d''entreprise sénégalaise ou africaine que vous pouvez mobiliser à l''examen.
-- Semaines 3 et 4 : traiter le marketing international et export (leçon 3) ; s''entraîner à construire des seuils de
-  rentabilité comparant deux modes d''entrée, exercice classique des sujets de M1.
-- Semaine 5 : travailler la stratégie de distribution et le trade marketing (leçon 4) ; mémoriser les mécanismes de
-  calcul de marge en cascade sur un circuit de distribution (prix public, marge détaillant, marge distributeur, prix
-  de cession fabricant).
-- Semaine 6 : traiter le sujet type d''examen (leçon 5) en conditions chronométrées (3 heures), puis reprendre les
-  quatre cours vidéo d''1h30 en vous arrêtant sur les quiz intermédiaires.
-
-## Points de vigilance pour l''examen
-
-- Un cas d''entreprise fictif doit rester cohérent du début à la fin de votre copie : ne changez pas les chiffres
-  donnés dans l''énoncé.
-- Un calcul juste mais non interprété (vous donnez un chiffre sans dire ce qu''il signifie pour la décision) ne
-  rapporte qu''une partie des points en Master.
-- Les correcteurs de Master attendent une structure visible : titres de parties, phrase de diagnostic, phrase de
-  recommandation. Une copie dense et non structurée, même juste sur le fond, perd des points de forme.
-
-## Exercices pratiques
-
-1. Listez les trois matières avancées de ce cours de M1 et expliquez en une phrase chacune pourquoi elle prolonge,
-   sans la répéter, une matière vue en Licence 3 Marketing et commerce.
-2. Pourquoi un correcteur de Master sanctionne-t-il une recommandation sans diagnostic explicite, même si elle est
-   pertinente ?
-3. Construisez votre propre planning de révision sur six semaines en reprenant la trame proposée, en l''adaptant à
-   votre emploi du temps réel.
-4. Expliquez la différence entre une récitation théorique et un raisonnement chiffré appliqué à un cas, à l''aide
-   d''un exemple que vous inventez (une entreprise fictive de votre choix, sans données officielles précises).
-
-## Corrigé
-
-1. Marketing stratégique approfondi et branding : prolonge le marketing stratégique de Licence 3 en introduisant les
-   modèles de capital-marque et le positionnement complexe (repositionnement, architecture de marque), non traités
-   en Licence. Marketing international et export : prolonge le commerce international de Licence 3 en se concentrant
-   sur le choix argumenté des modes d''entrée et l''arbitrage standardisation/adaptation, plus avancé que les notions
-   de base du commerce international. Stratégie de distribution et trade marketing : prolonge le marketing
-   opérationnel de Licence 2 en se concentrant sur la conception des canaux et la relation fabricant-distributeur,
-   non abordées en détail en Licence.
-2. Parce qu''en Master, on évalue la capacité à construire un raisonnement professionnel complet : le diagnostic
-   prouve que la recommandation découle d''une analyse de la situation réelle de l''entreprise, et non d''une intuition
-   ou d''une récitation. Une bonne idée non justifiée par un diagnostic ne prouve pas la maîtrise de la méthode
-   attendue d''un futur cadre marketing.
-3. Réponse libre : l''essentiel est de retrouver, dans le planning personnel, les six blocs proposés (deux semaines
-   de marketing stratégique et branding, deux semaines d''international et export, une semaine de distribution et
-   trade marketing, une semaine de sujet type et de révision vidéo), avec des jours précis et des créneaux
-   réalistes.
-4. Exemple de réponse : une récitation théorique dirait « le seuil de rentabilité est le niveau d''activité pour
-   lequel les charges totales égalent le chiffre d''affaires ». Un raisonnement chiffré appliqué calculerait, pour une
-   entreprise fictive « Petit Marché SA » qui envisage d''exporter vers un pays voisin, le seuil de rentabilité en
-   tonnes de deux modes d''entrée (export direct et implantation locale), comparerait les deux seuils aux volumes
-   réellement prévus par l''énoncé, puis conclurait sur le mode d''entrée le plus adapté à ce volume précis. C''est
-   cette dernière démarche qui est valorisée en Master.', 'texte', 40, true, 10
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en Marketing et commerce');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Marketing stratégique approfondi et branding : l''essentiel pour l''examen', 'Le branding et le marketing stratégique approfondi forment le cœur analytique du M1. Il ne s''agit plus de
-définir un positionnement en une phrase (promesse, cible, différenciation), comme en Licence, mais de comprendre
-comment une marque crée une valeur mesurable et comment la repositionner lorsque le marché change.
-
-## Le capital-marque : deux grilles de lecture complémentaires
-
-Le capital-marque (brand equity) désigne la valeur additionnelle qu''une marque apporte à un produit, au-delà de ses
-caractéristiques fonctionnelles. Deux modèles structurent la réflexion en Master :
-
-- Le modèle d''Aaker distingue quatre dimensions du capital-marque : la notoriété (la marque est-elle connue et
-  reconnue ?), la qualité perçue (la marque est-elle jugée fiable et performante par le marché, indépendamment de sa
-  qualité réelle mesurée en laboratoire ?), les associations de marque (quelles images, valeurs, personnalités sont
-  attachées à la marque ?) et la fidélité (les clients rachètent-ils la marque, résistent-ils aux offres
-  concurrentes moins chères ?).
-- Le modèle CBBE (Customer-Based Brand Equity) de Keller propose une pyramide en quatre étages : identité de marque
-  (qui êtes-vous ?), sens de la marque (performance et imagerie), réponses du client (jugements et sentiments) et,
-  au sommet, résonance (intensité de la relation et fidélité active).
-
-Pour l''examen, retenez surtout que ces modèles structurent le diagnostic : plutôt que « la marque est forte », on
-dit « forte sur la notoriété et la qualité perçue, mais fragile sur la fidélité », ce qui oriente la recommandation.
-
-## Mesurer le capital-marque : un indice pondéré
-
-Une méthode pédagogique simple consiste à construire un indice de capital-marque pondéré à partir d''une étude
-consommateurs notée sur 10 par dimension.
-
-Cas d''entreprise fictif : Téranga Cosmétiques, marque sénégalaise de cosmétiques naturels vendue à Dakar et dans les
-principales villes régionales. Une étude consommateurs donne les scores suivants sur 10 : notoriété 7,5 ; qualité
-perçue 8,0 ; fidélité 6,5 ; associations de marque 7,0. L''entreprise pondère ces dimensions selon leur importance
-pour sa catégorie : qualité perçue 30 %, fidélité 30 %, notoriété 20 %, associations 20 %.
-
-Indice de capital-marque = (0,20 × 7,5) + (0,30 × 8,0) + (0,30 × 6,5) + (0,20 × 7,0)
-= 1,50 + 2,40 + 1,95 + 1,40 = 7,25 sur 10.
-
-Diagnostic : Téranga Cosmétiques a une qualité perçue forte, mais sa fidélité (6,5) est le point le plus faible
-malgré son poids élevé (30 %). La recommandation devrait porter en priorité sur la fidélisation (programme de
-fidélité, communication sur l''engagement dans la durée) plutôt que sur la notoriété, déjà satisfaisante.
-
-## Valoriser la marque par la méthode du premium de prix
-
-Une seconde méthode, utilisée en gestion de marque, consiste à estimer la valeur financière annuelle apportée par la
-marque à partir du supplément de prix qu''elle permet d''obtenir par rapport à un produit générique équivalent.
-
-Téranga Cosmétiques vend sa crème phare à 3 500 FCFA, contre 2 800 FCFA pour un produit générique comparable sur le
-marché. Le volume annuel vendu est de 120 000 unités.
-
-Premium unitaire = 3 500 − 2 800 = 700 FCFA par unité.
-Valeur de marque annuelle = 700 × 120 000 = 84 000 000 FCFA, soit 84 millions de FCFA par an.
-
-Cette méthode a une limite importante à mentionner à l''examen : elle suppose le produit générique strictement
-équivalent en qualité fonctionnelle, ce qui n''est pas toujours vérifiable, et elle ignore les coûts marketing
-nécessaires pour entretenir ce premium.
-
-## Le positionnement complexe et le repositionnement
-
-En Licence, le positionnement se résume à une carte perceptuelle à deux axes. En Master, il faut gérer des
-situations plus complexes :
-
-- Le repositionnement : une marque change de positionnement quand son marché évolue (nouveaux concurrents,
-  nouvelle génération de consommateurs) ou quand son image s''est érodée (banalisation, vieillissement). Il est
-  risqué : trop brutal, il déroute les clients fidèles ; trop timide, il reste invisible.
-- Le positionnement multi-segments : une marque qui s''adresse à plusieurs segments (particuliers et professionnels,
-  par exemple) doit choisir entre un positionnement unique assez large, ou des sous-marques différenciées, au
-  risque de complexifier son architecture de marque.
-- L''architecture de marque : marque-mère unique (même nom pour tous les produits, synergies de notoriété mais
-  risque de contagion en cas de crise), marques multiples (chaque gamme a son nom, image protégée mais
-  investissement plus coûteux), ou stratégies intermédiaires (marque-caution, endossement).
-
-## Exemple de repositionnement chiffré
-
-Téranga Cosmétiques constate une érosion de sa part de marché auprès des 18-25 ans, qui perçoivent la marque comme
-« pour leurs mères ». Le risque principal pour l''examen : un repositionnement trop brutal peut diluer l''indice de
-fidélité (6,5 déjà fragile) des clientes historiques. Une recommandation raisonnable consisterait à lancer une
-gamme jeune distincte (« Téranga Jeune ») plutôt qu''un repositionnement total de la marque-mère, limitant le risque
-de contagion négative sur la clientèle fidèle existante.
-
-## Exercices pratiques
-
-1. Calculez l''indice de capital-marque d''une entreprise fictive « Sahel Beauté » avec les scores suivants sur 10 :
-   notoriété 6,0 ; qualité perçue 7,5 ; fidélité 8,0 ; associations 6,5, et les pondérations suivantes : notoriété
-   25 %, qualité perçue 25 %, fidélité 35 %, associations 15 %.
-2. Identifiez la dimension la plus fragile de Sahel Beauté et proposez une recommandation marketing cohérente.
-3. Une marque de boissons fictive, « Baobab Fraîcheur », se vend 600 FCFA la bouteille contre 480 FCFA pour
-   l''équivalent générique, pour un volume annuel de 2 400 000 bouteilles. Calculez la valeur de marque annuelle par
-   la méthode du premium de prix.
-4. Citez une limite méthodologique de la méthode du premium de prix.
-5. Expliquez, en deux phrases, la différence entre une stratégie de marque unique et une stratégie de marques
-   multiples, avec un exemple fictif pour chacune.
-6. Cas pratique complet : « Casamance Délices », marque fictive de jus de fruits artisanaux, a les scores suivants :
-   notoriété 5,5 ; qualité perçue 8,5 ; fidélité 7,0 ; associations 7,5, pondérés respectivement 30 %, 25 %, 25 %,
-   20 %. Elle vend sa bouteille à 900 FCFA contre 650 FCFA pour le générique, sur un volume annuel de 300 000
-   bouteilles. a) Calculez l''indice de capital-marque. b) Calculez la valeur de marque annuelle. c) Rédigez un
-   diagnostic en trois phrases et une recommandation stratégique.
-
-## Corrigé
-
-1. Indice = (0,25 × 6,0) + (0,25 × 7,5) + (0,35 × 8,0) + (0,15 × 6,5) = 1,50 + 1,875 + 2,80 + 0,975 = 7,15 sur 10.
-2. La dimension la plus fragile est la notoriété (6,0), qui est également sous-pondérée (25 %) mais reste la plus
-   basse des quatre. Recommandation : renforcer les investissements en visibilité (communication, présence en
-   points de vente, partenariats) pour faire connaître une marque dont la qualité perçue et la fidélité sont déjà
-   bonnes une fois le client touché.
-3. Premium unitaire = 600 − 480 = 120 FCFA. Valeur de marque annuelle = 120 × 2 400 000 = 288 000 000 FCFA (288
-   millions de FCFA).
-4. Elle suppose que le produit générique de comparaison est strictement équivalent en qualité fonctionnelle, ce qui
-   est rarement vérifiable avec certitude, et elle ignore les coûts marketing nécessaires pour entretenir ce
-   premium.
-5. Dans une stratégie de marque unique, tous les produits portent le même nom (exemple fictif : toute la gamme
-   « Téranga », cosmétiques et compléments, sous une seule marque), ce qui maximise les synergies de notoriété mais
-   expose tous les produits à une crise sur l''un d''entre eux. Dans une stratégie de marques multiples, chaque gamme
-   a son propre nom (exemple fictif : le groupe « Sahel Groupe » commercialise « Douceur Fatou » et « Pure Nature »
-   comme deux marques distinctes), ce qui protège l''image globale du groupe mais coûte plus cher en investissement
-   marketing séparé.
-6. a) Indice = (0,30 × 5,5) + (0,25 × 8,5) + (0,25 × 7,0) + (0,20 × 7,5) = 1,65 + 2,125 + 1,75 + 1,50 = 7,025, soit
-   environ 7,03 sur 10. b) Premium unitaire = 900 − 650 = 250 FCFA ; valeur de marque annuelle = 250 × 300 000 =
-   75 000 000 FCFA (75 millions de FCFA). c) Diagnostic : qualité perçue (8,5) et fidélité (7,0) solides expliquent
-   le premium de prix malgré un volume modeste ; la notoriété (5,5), la plus fortement pondérée (30 %), est le
-   point faible qui limite la note d''ensemble. Recommandation : investir en visibilité (dégustations, réseaux
-   sociaux, distribution élargie) pour élargir la notoriété sans diluer le positionnement artisanal.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Marketing stratégique approfondi et branding : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Marketing international et export : l''essentiel pour l''examen', 'Le marketing international et export est l''une des matières les plus exigeantes du M1 : il faut arbitrer entre
-plusieurs modes d''entrée sur un marché étranger, chacun avec son niveau de risque et de contrôle, et décider
-jusqu''où adapter son offre à un marché local.
-
-## Les modes d''entrée à l''international : une échelle de contrôle et de risque
-
-On distingue classiquement, par ordre croissant d''engagement :
-
-- L''exportation indirecte : l''entreprise vend via un intermédiaire (agent, négociant, société de commerce
-  international) qui connaît déjà le marché cible. Investissement et risque faibles, mais contrôle commercial
-  également faible et marge partagée avec l''intermédiaire.
-- L''exportation directe : l''entreprise vend elle-même sur le marché cible, en général via un agent commissionné ou
-  un distributeur exclusif local. Contrôle et marge meilleurs, mais il faut investir en prospection et logistique.
-- La licence et la franchise : l''entreprise cède un droit d''exploitation de sa marque, de son savoir-faire ou de son
-  procédé à un partenaire local contre redevance. Peu d''investissement direct, développement rapide, mais contrôle
-  qualité limité et risque de voir le partenaire devenir un concurrent une fois le savoir-faire transféré.
-- La coentreprise (joint-venture) : l''entreprise s''associe à un partenaire local pour créer une structure commune,
-  partageant investissement, risque et bénéfices. Utile pour accéder à des marchés réglementairement fermés aux
-  investisseurs étrangers seuls, ou pour bénéficier de la connaissance du terrain d''un partenaire.
-- La filiale à 100 % : l''entreprise investit seule dans une implantation locale complète. Contrôle maximal et marge
-  conservée en totalité, mais investissement et risque les plus élevés, notamment en cas d''instabilité du marché.
-
-Le choix dépend de quatre critères à mobiliser dans une copie d''examen : taille et potentiel du marché cible, risque
-politique et économique du pays, ressources financières et managériales disponibles, et nécessité ou non d''adapter
-fortement l''offre (ce qui favorise les modes à fort contrôle).
-
-## Cas d''entreprise : Sahel Agro Export et le choix d''un mode d''entrée
-
-Sahel Agro Export SA, entreprise sénégalaise fictive de transformation de céréales, souhaite entrer sur le marché
-d''un pays voisin de l''UEMOA. Deux options sont étudiées : l''export direct depuis le Sénégal, ou une coentreprise
-avec un partenaire local qui produirait sur place.
-
-Export direct : coûts fixes annuels (prospection, agent commercial, logistique) de 15 000 000 FCFA ; coût variable
-de 180 000 FCFA par tonne livrée (transport, douane) ; prix de vente de 260 000 FCFA la tonne.
-Marge sur coût variable = 260 000 − 180 000 = 80 000 FCFA par tonne.
-Seuil de rentabilité (en tonnes) = 15 000 000 ÷ 80 000 = 187,5 tonnes par an.
-
-Coentreprise locale : coûts fixes annuels (investissement amorti, structure locale) de 45 000 000 FCFA ; coût
-variable de 140 000 FCFA par tonne (production locale moins chère, pas de transport longue distance) ; même prix de
-vente de 260 000 FCFA la tonne.
-Marge sur coût variable = 260 000 − 140 000 = 120 000 FCFA par tonne.
-Seuil de rentabilité (en tonnes) = 45 000 000 ÷ 120 000 = 375 tonnes par an.
-
-## Le point d''indifférence entre les deux modes d''entrée
-
-Au-delà du seuil propre à chaque option, l''examen attend souvent le point d''indifférence, le volume pour lequel
-les deux modes coûtent exactement la même chose :
-
-15 000 000 + 180 000 × Q = 45 000 000 + 140 000 × Q
-40 000 × Q = 30 000 000
-Q = 750 tonnes par an.
-
-Interprétation : en dessous de 750 tonnes par an, l''export direct est le moins coûteux. Au-delà, la coentreprise
-devient plus avantageuse, ses coûts fixes élevés étant amortis sur un volume plus important. Si Sahel Agro Export
-prévoit 500 tonnes la première année, l''export direct reste préférable ; si elle vise 1 000 tonnes à terme, la
-coentreprise devient rationnelle sur le plan des coûts, à condition d''intégrer les critères qualitatifs : risque
-politique du pays cible et fiabilité du partenaire local pressenti.
-
-## Standardisation ou adaptation de l''offre
-
-Le second grand débat du marketing international, popularisé par l''opposition entre Theodore Levitt (partisan d''une
-standardisation mondiale pour profiter des économies d''échelle) et les tenants d''une adaptation systématique aux
-spécificités locales (langue, religion, pouvoir d''achat, réglementation), reste central en M1. La position
-dominante, dite « glocalisation », consiste à standardiser ce qui peut l''être sans perte de valeur perçue (formule
-du produit, identité de marque) et à adapter ce qui doit l''être localement (packaging, distribution, communication,
-parfois le prix).
-
-Pour Sahel Agro Export, un produit céréalier standardisé en formule pourrait nécessiter une adaptation du
-conditionnement (formats familiaux, langue locale) et du réseau de distribution (marchés traditionnels plutôt que
-grandes surfaces), tout en conservant son identité visuelle de marque.
-
-## Exercices pratiques
-
-1. Classez les cinq modes d''entrée présentés par ordre croissant de contrôle et de risque.
-2. Une entreprise fictive « Fouta Textile » envisage l''export direct (coûts fixes 8 000 000 FCFA/an, coût variable
-   25 000 FCFA par lot, prix de vente 45 000 FCFA par lot) ou une licence de marque (coûts fixes 2 000 000 FCFA/an,
-   redevance reçue de 6 000 FCFA par lot vendu par le licencié, pas de coût variable pour Fouta Textile). Calculez
-   le seuil de rentabilité de l''export direct en nombre de lots.
-3. Expliquez en quoi la licence change la nature du seuil de rentabilité par rapport à l''export direct.
-4. Résumez en deux phrases le débat Levitt / adaptation et la position de la « glocalisation ».
-5. Pour Sahel Agro Export, citez un critère qualitatif (non chiffré) qui pourrait faire préférer l''export direct à
-   la coentreprise même au-delà de 750 tonnes.
-6. Cas pratique complet : une entreprise fictive « Thiès Mécanique » compare l''export direct (coûts fixes 20 000 000
-   FCFA/an, coût variable 95 000 FCFA/unité, prix de vente 155 000 FCFA/unité) à une filiale locale à 100 % (coûts
-   fixes 60 000 000 FCFA/an, coût variable 55 000 FCFA/unité, même prix de vente). a) Calculez le seuil de
-   rentabilité de chaque option. b) Calculez le point d''indifférence entre les deux. c) Thiès Mécanique prévoit de
-   vendre 550 unités par an : quelle option recommandez-vous sur le plan des coûts ?
-
-## Corrigé
-
-1. Du moins au plus engagé : exportation indirecte, exportation directe, licence/franchise, coentreprise, filiale à
-   100 %.
-2. Marge sur coût variable = 45 000 − 25 000 = 20 000 FCFA par lot. Seuil de rentabilité = 8 000 000 ÷ 20 000 = 400
-   lots par an.
-3. Dans la licence, Fouta Textile ne supporte pas de coût variable de production ou de distribution : son seul
-   enjeu de rentabilité est de couvrir ses coûts fixes de gestion de la licence (2 000 000 FCFA) par les redevances
-   reçues (6 000 FCFA par lot vendu par le licencié), soit un seuil de 2 000 000 ÷ 6 000 ≈ 333 lots vendus par le
-   licencié. Le risque commercial (volume vendu) est transféré pour partie au licencié.
-4. Levitt défend une standardisation mondiale de l''offre pour profiter des économies d''échelle, estimant les goûts
-   des consommateurs de plus en plus homogènes. La position de la glocalisation, dominante aujourd''hui, consiste à
-   standardiser ce qui peut l''être (produit, identité de marque) et à adapter ce qui doit l''être localement
-   (packaging, distribution, communication).
-5. Exemple de réponse acceptable : un risque politique ou réglementaire élevé dans le pays cible, qui rendrait un
-   investissement en coentreprise trop risqué malgré son avantage de coût à volume élevé ; ou l''absence d''un
-   partenaire local fiable et compétent identifié par Sahel Agro Export.
-6. a) Export direct : marge = 155 000 − 95 000 = 60 000 FCFA/unité ; seuil = 20 000 000 ÷ 60 000 ≈ 333,3 unités.
-   Filiale locale : marge = 155 000 − 55 000 = 100 000 FCFA/unité ; seuil = 60 000 000 ÷ 100 000 = 600 unités.
-   b) Point d''indifférence : 20 000 000 + 95 000 × Q = 60 000 000 + 55 000 × Q → 40 000 × Q = 40 000 000 → Q = 1 000
-   unités. c) À 550 unités par an, on est au-dessus du seuil de rentabilité de l''export direct (333,3) mais en
-   dessous du seuil de la filiale locale (600) : la filiale locale ne serait même pas rentable à ce volume, alors
-   que l''export direct l''est déjà. L''export direct est donc la recommandation sur le plan des coûts à ce niveau de
-   volume.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Marketing international et export : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Stratégie de distribution et trade marketing : l''essentiel pour l''examen', 'La stratégie de distribution et le trade marketing forment la troisième matière avancée du M1 : il s''agit
-de comprendre comment une entreprise choisit ses canaux de vente, gère sa relation avec les distributeurs, et
-construit les actions commerciales conjointes (merchandising, promotions, budgets coopératifs) qui font vivre un
-produit dans les points de vente.
-
-## Les stratégies de canaux de distribution
-
-Trois grandes stratégies de couverture du marché, à mobiliser selon la nature du produit :
-
-- La distribution intensive : le produit est présent dans le plus grand nombre possible de points de vente
-  (boissons, produits d''épicerie courante). Elle maximise la disponibilité mais dilue le contrôle de l''image et des
-  conditions de vente, et complique la gestion logistique du grand nombre de points de vente.
-- La distribution sélective : l''entreprise choisit un nombre limité de distributeurs répondant à des critères
-  (image, zone de chalandise, compétence technique), courante pour les produits semi-techniques ou de milieu de
-  gamme.
-- La distribution exclusive : un nombre très restreint de distributeurs, parfois un seul par zone, reçoit le droit
-  de vendre le produit, en échange d''engagements (stock minimum, formation, respect de l''image de marque). Elle
-  maximise le contrôle mais limite fortement la couverture du marché et la disponibilité pour le consommateur final.
-
-## Les conflits de canal et les systèmes marketing verticaux
-
-Un conflit de canal apparaît lorsque les intérêts du fabricant et de ses distributeurs (ou de plusieurs
-distributeurs entre eux) divergent : un distributeur peut casser les prix au détriment des autres, un fabricant peut
-vendre en direct en ligne en concurrence avec ses propres distributeurs physiques (conflit de canal dit
-« cannibalisation numérique »). Les systèmes marketing verticaux (SMV) sont des dispositifs qui réduisent ces
-conflits en intégrant davantage la relation fabricant-distributeur : SMV administré (le fabricant, par sa puissance
-de marque, oriente sans contrat formel les pratiques du distributeur), SMV contractuel (franchise, chaîne
-volontaire, coopérative de détaillants, où les droits et devoirs sont formalisés par contrat) et SMV intégré
-(le fabricant possède lui-même son réseau de distribution, comme un magasin de marque).
-
-## Le trade marketing : un partenariat fabricant-distributeur
-
-Le trade marketing regroupe les actions menées conjointement par le fabricant et le distributeur pour optimiser les
-ventes au point de vente : merchandising (présentation en rayon, emplacement, facing), opérations promotionnelles
-partagées, catalogues, publicité sur le lieu de vente, et budgets de coopération commerciale. Il se distingue du
-marketing classique en ce qu''il s''adresse autant au distributeur, considéré comme un client à part entière du
-fabricant, qu''au consommateur final.
-
-## Cas d''entreprise : Baobab Distribution et la marge en cascade
-
-Baobab Distribution, distributeur fictif de produits d''hygiène dans la région de Dakar, achète un produit à un
-fabricant et le revend à des détaillants, qui le revendent ensuite au consommateur final. Le prix public conseillé
-est de 1 200 FCFA.
-
-Le détaillant applique une marge de 18 % sur le prix public :
-Marge détaillant = 1 200 × 0,18 = 216 FCFA.
-Prix de cession au détaillant (ce que le détaillant paie à Baobab Distribution) = 1 200 − 216 = 984 FCFA.
-
-Baobab Distribution applique à son tour une marge de 12 % sur son propre prix de revente (984 FCFA) :
-Prix de cession du fabricant à Baobab Distribution = 984 × (1 − 0,12) = 984 × 0,88 = 865,92 FCFA, soit
-environ 866 FCFA.
-
-Cette décomposition en cascade est un classique des sujets de M1 : elle permet de vérifier que chaque acteur du
-canal dégage une marge suffisante pour couvrir ses propres coûts (stockage, transport, risque d''invendus) à partir
-d''un prix public donné, en partant de l''aval (le consommateur) vers l''amont (le fabricant).
-
-## Le budget de coopération commerciale
-
-Pour renforcer la mise en avant de ses produits chez un distributeur important, un fabricant négocie souvent un
-budget de coopération commerciale (ou publicité coopérative), exprimé en pourcentage du chiffre d''affaires net
-réalisé avec ce distributeur.
-
-Exemple : Baobab Distribution réalise un chiffre d''affaires net annuel de 250 000 000 FCFA avec une grande chaîne de
-détaillants partenaire. Le fabricant accepte de financer un budget de coopération commerciale de 3 % de ce chiffre
-d''affaires net.
-Budget de coopération = 250 000 000 × 0,03 = 7 500 000 FCFA par an.
-
-Ce budget peut financer des têtes de gondole, des animations en magasin, ou des catalogues communs. Pour l''examen,
-il faut savoir discuter la contrepartie attendue de ce budget : le fabricant doit vérifier que l''investissement se
-traduit par une hausse de volume ou de part de linéaire mesurable, sans quoi le budget devient une simple ristourne
-déguisée qui érode sa marge sans contrepartie commerciale réelle.
-
-## Exercices pratiques
-
-1. Associez chaque stratégie de distribution (intensive, sélective, exclusive) à un exemple de produit fictif
-   plausible, en justifiant brièvement votre choix.
-2. Donnez un exemple de conflit de canal lié à la vente en ligne directe d''un fabricant.
-3. Pour un produit vendu 2 000 FCFA au public, avec une marge détaillant de 20 % et une marge distributeur de 15 %
-   (appliquée sur le prix de cession au détaillant), calculez le prix de cession du fabricant au distributeur.
-4. Expliquez la différence entre un SMV administré et un SMV contractuel.
-5. Un fabricant finance un budget de coopération commerciale de 4 % sur un chiffre d''affaires net de 180 000 000
-   FCFA réalisé avec un distributeur. Calculez ce budget et expliquez le risque d''un tel budget mal contrôlé.
-6. Cas pratique complet : « Teranga Hygiène », fabricant fictif, vend un savon au prix public de 800 FCFA. Le
-   détaillant applique une marge de 22 % sur ce prix public, et le distributeur applique une marge de 10 % sur son
-   prix de cession au détaillant. a) Calculez le prix de cession au détaillant. b) Calculez le prix de cession du
-   fabricant. c) Si Teranga Hygiène vend 400 000 unités par an au distributeur à ce prix de cession, calculez son
-   chiffre d''affaires annuel issu de ce circuit.
-
-## Corrigé
-
-1. Réponse libre attendue : distribution intensive pour un produit d''épicerie courante (boisson, par exemple) car
-   l''achat est fréquent et peu réfléchi ; distribution sélective pour un produit électroménager de milieu de gamme,
-   qui nécessite conseil et service après-vente ; distribution exclusive pour un produit de luxe ou très technique,
-   où l''image et la compétence du point de vente sont déterminantes.
-2. Exemple : un fabricant de vêtements vend directement sur son site internet au même prix que ses boutiques
-   partenaires physiques, ce qui capte une partie des ventes que les boutiques auraient réalisées, sans que ces
-   dernières touchent de marge, créant une tension sur la relation commerciale.
-3. Marge détaillant = 2 000 × 0,20 = 400 FCFA ; prix de cession au détaillant = 2 000 − 400 = 1 600 FCFA. Marge
-   distributeur = 1 600 × 0,15 = 240 FCFA ; prix de cession du fabricant = 1 600 − 240 = 1 360 FCFA.
-4. Dans un SMV administré, le fabricant influence les pratiques du distributeur par sa puissance de marque ou de
-   négociation, sans contrat formalisant cette influence. Dans un SMV contractuel, les droits et obligations de
-   chaque partie (franchise, chaîne volontaire, coopérative) sont fixés par un contrat écrit.
-5. Budget = 180 000 000 × 0,04 = 7 200 000 FCFA. Risque : si ce budget n''est pas associé à des contreparties
-   commerciales mesurables (mise en avant réelle, hausse de volume constatée), il devient une ristourne déguisée qui
-   réduit la marge du fabricant sans bénéfice commercial vérifiable.
-6. a) Marge détaillant = 800 × 0,22 = 176 FCFA ; prix de cession au détaillant = 800 − 176 = 624 FCFA. b) Marge
-   distributeur = 624 × 0,10 = 62,4 FCFA ; prix de cession du fabricant = 624 − 62,4 = 561,6 FCFA. c) Chiffre
-   d''affaires annuel = 561,6 × 400 000 = 224 640 000 FCFA (environ 224,64 millions de FCFA).', 'texte', 45, false, 40
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Stratégie de distribution et trade marketing : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 1 en Marketing et commerce (corrigé)', 'Ce sujet type (non officiel, barème indicatif) rassemble les trois matières du Master 1 Marketing et
-commerce : marketing stratégique et branding, marketing international et export, stratégie de distribution et
-trade marketing. Durée indicative : 3 heures. Il s''appuie sur un cas d''entreprise fictif unique, « Fouta Textile
-SA », suivi sur les trois dimensions.
-
-## Sujet
-
-Fouta Textile SA est une entreprise sénégalaise fictive qui fabrique et vend du tissu wax et des vêtements de
-confection. Elle est présente au Sénégal depuis quinze ans et envisage de se développer sur un marché voisin de
-l''UEMOA.
-
-Une étude consommateurs locale lui donne les scores suivants sur 10 : notoriété 6,5 ; qualité perçue 8,0 ; fidélité
-7,5 ; associations de marque 6,0. L''entreprise pondère ces dimensions à 20 % (notoriété), 30 % (qualité perçue),
-30 % (fidélité) et 20 % (associations).
-
-Partie 1 (8 points) — Branding. a) Calculez l''indice de capital-marque de Fouta Textile SA (4 points). b) Identifiez
-la dimension la plus fragile de la marque et proposez une recommandation stratégique argumentée (4 points).
-
-Partie 2 (8 points) — International. Fouta Textile SA compare deux modes d''entrée sur le marché voisin : export
-direct (coûts fixes annuels 12 000 000 FCFA, coût variable 8 000 FCFA par pièce, prix de vente 14 000 FCFA par
-pièce) et franchise locale (coûts fixes annuels 3 000 000 FCFA, redevance reçue de 1 500 FCFA par pièce vendue par
-le franchisé, aucun coût variable supporté par Fouta Textile SA). a) Calculez le seuil de rentabilité de chaque
-option, en nombre de pièces (4 points). b) Fouta Textile SA prévoit un volume de 1 800 pièces la première année :
-quelle option lui est financièrement la plus favorable à ce volume, et pourquoi (4 points) ?
-
-Partie 3 (8 points) — Distribution et trade marketing. Le vêtement se vend au prix public de 15 000 FCFA. Le
-détaillant applique une marge de 25 % sur ce prix public, et le distributeur applique une marge de 10 % sur son
-propre prix de cession au détaillant. a) Calculez le prix de cession au détaillant, puis le prix de cession du
-fabricant (4 points). b) Fouta Textile SA envisage un budget de coopération commerciale de 2,5 % sur un chiffre
-d''affaires net de 90 000 000 FCFA réalisé avec son principal distributeur partenaire. Calculez ce budget et
-discutez en trois phrases la contrepartie commerciale à exiger pour qu''il ne devienne pas une simple ristourne
-déguisée (4 points).
-
-## Corrigé détaillé
-
-Partie 1. a) Indice = (0,20 × 6,5) + (0,30 × 8,0) + (0,30 × 7,5) + (0,20 × 6,0) = 1,30 + 2,40 + 2,25 + 1,20 = 7,15
-sur 10. b) La dimension la plus fragile est l''association de marque (6,0), malgré un poids identique à la
-notoriété (20 %) ; la qualité perçue et la fidélité sont déjà des points forts. Recommandation : renforcer le
-travail sur l''identité et les valeurs associées à la marque (histoire du tissu wax, savoir-faire artisanal,
-ancrage local) dans la communication, plutôt que sur la qualité produit déjà bien perçue.
-
-Partie 2. a) Export direct : marge sur coût variable = 14 000 − 8 000 = 6 000 FCFA par pièce ; seuil = 12 000 000 ÷
-6 000 = 2 000 pièces. Franchise : seuil (en pièces vendues par le franchisé pour couvrir les coûts fixes de gestion
-de la franchise) = 3 000 000 ÷ 1 500 = 2 000 pièces également. b) À 1 800 pièces, aucune des deux options n''atteint
-son seuil de rentabilité (2 000 pièces chacune) : les deux seraient en perte à ce volume précis. Cela doit être
-signalé explicitement dans la copie : la bonne réponse n''est pas de choisir arbitrairement l''une des deux, mais de
-constater qu''aucune n''est encore rentable à 1 800 pièces, et de recommander soit d''augmenter le volume prévisionnel
-avant de lancer l''une ou l''autre option, soit de réduire les coûts fixes de l''option retenue.
-
-Partie 3. a) Marge détaillant = 15 000 × 0,25 = 3 750 FCFA ; prix de cession au détaillant = 15 000 − 3 750 =
-11 250 FCFA. Marge distributeur = 11 250 × 0,10 = 1 125 FCFA ; prix de cession du fabricant = 11 250 − 1 125 =
-10 125 FCFA. b) Budget = 90 000 000 × 0,025 = 2 250 000 FCFA. Discussion : ce budget ne doit pas être versé sans
-contrepartie mesurable ; Fouta Textile SA devrait exiger un engagement contractuel du distributeur sur un nombre
-minimal de têtes de gondole ou d''animations en magasin sur la période, avec un suivi du volume de vente généré
-pendant ces opérations, afin de vérifier que l''investissement se traduit réellement par un gain de part de
-linéaire ou de volume, et non par une simple réduction de prix déguisée qui érode la marge de Fouta Textile SA
-sans bénéfice commercial constaté.
-
-## Exercices pratiques (questions complémentaires)
-
-1. Pourquoi est-il important, dans une copie de Master, de signaler explicitement qu''aucune des deux options de la
-   Partie 2 n''atteint son seuil de rentabilité à 1 800 pièces, plutôt que de choisir une option par défaut ?
-2. Si Fouta Textile SA révise son volume prévisionnel à 2 500 pièces, laquelle des deux options (export direct ou
-   franchise) devient la plus profitable, et de combien, en FCFA de marge totale ?
-3. Proposez une troisième dimension du capital-marque (parmi notoriété, qualité perçue, fidélité, associations) sur
-   laquelle Fouta Textile SA pourrait aussi agir en complément de votre recommandation de la Partie 1, en justifiant
-   votre choix.
-4. Expliquez pourquoi un budget de coopération commerciale non contrôlé peut, à terme, dégrader la rentabilité du
-   fabricant sans qu''aucune règle légale ne soit nécessairement violée.
-5. Cas pratique complémentaire : un concurrent de Fouta Textile SA, « Wax Création », a un indice de capital-marque
-   de 6,80 sur 10 avec les scores suivants : notoriété 8,0 ; qualité perçue 6,5 ; fidélité 6,0 ; associations 7,5,
-   pondérés à 20 %, 30 %, 30 %, 20 %. Vérifiez par le calcul si l''indice annoncé (6,80) est exact, et commentez.
-
-## Corrigé (questions complémentaires)
-
-1. Parce qu''un correcteur de Master valorise la rigueur du diagnostic chiffré plutôt que la production d''une
-   recommandation par défaut : choisir arbitrairement une option sans vérifier sa rentabilité réelle au volume
-   prévisionnel donné serait une erreur méthodologique grave, même si la formule de seuil de rentabilité est par
-   ailleurs correctement appliquée.
-2. À 2 500 pièces : marge totale export direct = (2 500 × 6 000) − 12 000 000 = 15 000 000 − 12 000 000 =
-   3 000 000 FCFA. Marge totale franchise = (2 500 × 1 500) − 3 000 000 = 3 750 000 − 3 000 000 = 750 000 FCFA.
-   L''export direct devient le plus profitable, avec un écart de 3 000 000 − 750 000 = 2 250 000 FCFA en sa faveur.
-3. Réponse libre : par exemple, la fidélité pourrait encore être renforcée par un programme de fidélité ou des
-   éditions limitées de tissus, en complément du travail sur les associations de marque, car une fidélité élevée
-   (7,5) reste un atout à consolider plutôt qu''un problème à corriger en priorité.
-4. Parce qu''un budget de coopération commerciale est une pratique commerciale négociée entre deux entreprises
-   privées, et non un prélèvement obligatoire encadré par la loi : son usage dépend uniquement du contrôle de
-   gestion interne de chaque entreprise, ce qui signifie qu''une dérive (versement sans contrepartie réelle) peut se
-   poursuivre longtemps sans être détectée si personne ne la mesure.
-5. Indice recalculé = (0,20 × 8,0) + (0,30 × 6,5) + (0,30 × 6,0) + (0,20 × 7,5) = 1,60 + 1,95 + 1,80 + 1,50 = 6,85
-   sur 10, et non 6,80 comme annoncé : l''indice communiqué par l''énoncé est légèrement erroné (écart de 0,05 point).
-   Ce type de vérification arithmétique systématique est une compétence attendue en Master : ne jamais accepter un
-   chiffre donné sans le recalculer soi-même avant de construire une recommandation sur cette base.', 'texte', 50, false, 50
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 en Marketing et commerce (corrigé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Marketing stratégique approfondi et branding', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : étudiants de Master 1 Marketing et commerce préparant leurs examens. Objectifs : savoir
-construire et interpréter un indice de capital-marque pondéré, savoir valoriser une marque par la méthode du
-premium de prix, et savoir argumenter un repositionnement ou une architecture de marque. Matériel : tableau ou
-diaporama avec deux tableaux de chiffres (indice de capital-marque, valorisation de marque), calculatrice.
-Prérequis : avoir lu la leçon 2 de ce cours (Marketing stratégique approfondi et branding).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et objectifs de la séance
-
-Bonjour à toutes et à tous. Dans cette séance, nous allons consacrer une heure et demie à l''un des sujets les plus
-redoutés, mais aussi les plus valorisés, des examens de Master 1 en marketing : le branding et le capital-marque.
-Pourquoi redouté ? Parce que les étudiants confondent souvent le discours sur l''image de marque, assez intuitif, et
-la capacité à le chiffrer, beaucoup plus exigeante. Pourquoi valorisé ? Parce qu''un correcteur de Master qui voit
-une copie capable de construire un indice chiffré et d''en tirer une recommandation argumentée sait immédiatement
-qu''il a affaire à un raisonnement de niveau professionnel. Aujourd''hui, nous allons reprendre ensemble les deux
-méthodes de mesure du capital-marque vues dans la leçon 2, les appliquer pas à pas sur notre entreprise fictive
-Téranga Cosmétiques, puis travailler le repositionnement et l''architecture de marque.
-
-## 05:00 – 20:00 · Les deux modèles de capital-marque
-
-Commençons par rappeler les deux grandes grilles de lecture. Le modèle d''Aaker distingue quatre dimensions :
-notoriété, qualité perçue, associations de marque, fidélité. Retenez bien que ces quatre dimensions ne se valent
-pas pour toutes les catégories de produits : pour un produit cosmétique comme celui de Téranga Cosmétiques, la
-qualité perçue et la fidélité pèsent généralement plus lourd que la simple notoriété, parce que l''achat répété et
-la confiance dans l''efficacité du produit sont déterminants. Le modèle CBBE de Keller, lui, organise la réflexion
-en pyramide : on part de l''identité (qui êtes-vous ?), on construit le sens de la marque (performance et imagerie),
-on observe les réponses du client (jugements et sentiments), et l''on vise, au sommet, la résonance, c''est-à-dire
-une relation active et durable avec le client. Pour l''examen, l''erreur la plus fréquente est de réciter ces modèles
-sans jamais les relier à un cas concret. Nous allons corriger cela tout de suite.
-
-Prenez votre feuille. Je vous donne les scores d''une étude consommateurs sur Téranga Cosmétiques : notoriété 7,5 sur
-10, qualité perçue 8,0, fidélité 6,5, associations de marque 7,0. Les pondérations retenues par l''entreprise sont :
-notoriété 20 %, qualité perçue 30 %, fidélité 30 %, associations 20 %. Avant que je ne vous donne le calcul,
-essayez de deviner : à votre avis, quel est le point faible de cette marque ? Beaucoup d''entre vous diront
-spontanément « la notoriété », parce que c''est le chiffre qu''on associe intuitivement à une marque fragile. Or
-regardez bien les chiffres : c''est la fidélité, à 6,5, qui est le score le plus bas, et c''est aussi la dimension la
-plus pondérée. C''est exactement le genre de piège qu''un sujet d''examen de Master aime tendre.
-
-## 20:00 – 35:00 · Calcul guidé de l''indice de capital-marque
-
-Calculons ensemble, étape par étape. Indice = (0,20 × 7,5) + (0,30 × 8,0) + (0,30 × 6,5) + (0,20 × 7,0). Premier
-terme : 0,20 × 7,5 = 1,50. Deuxième terme : 0,30 × 8,0 = 2,40. Troisième terme : 0,30 × 6,5 = 1,95. Quatrième terme :
-0,20 × 7,0 = 1,40. Faisons la somme : 1,50 + 2,40 = 3,90 ; 3,90 + 1,95 = 5,85 ; 5,85 + 1,40 = 7,25. L''indice de
-capital-marque de Téranga Cosmétiques est donc de 7,25 sur 10.
-
-Maintenant, l''étape que beaucoup d''étudiants oublient : l''interprétation. Un indice de 7,25 sur 10 est globalement
-bon, mais il cache une fragilité précise. La fidélité, pondérée à 30 %, n''obtient que 6,5, le score le plus bas des
-quatre. Si cette dimension passait à 8,0 comme la qualité perçue, l''indice global gagnerait immédiatement 0,30 ×
-(8,0 − 6,5) = 0,30 × 1,5 = 0,45 point, pour atteindre 7,70. C''est ce type de simulation « et si » qui impressionne
-un correcteur : vous ne vous contentez pas de calculer, vous montrez l''effet d''une amélioration ciblée sur
-l''indice global.
-
-## 35:00 – 45:00 · La méthode du premium de prix
-
-Passons à la seconde méthode : la valorisation financière de la marque par le premium de prix. Téranga Cosmétiques
-vend sa crème phare à 3 500 FCFA, contre 2 800 FCFA pour un produit générique comparable. Le volume annuel vendu
-est de 120 000 unités. Le premium unitaire est simplement la différence : 3 500 moins 2 800, soit 700 FCFA par
-unité vendue. Pour obtenir la valeur annuelle apportée par la marque, on multiplie ce premium par le volume : 700 ×
-120 000. Faites le calcul avec moi : 700 × 120 000 = 84 000 000 FCFA, soit 84 millions de FCFA par an. C''est la
-valeur que la marque, et uniquement la marque, apporte chaque année par rapport à un produit sans image de marque
-différenciante.
-
-## 45:00 – 50:00 · Pause quiz interactif
-
-Avant d''aller plus loin, faisons une pause quiz. Je vous pose trois questions, prenez quelques instants pour y
-répondre avant que je ne donne la correction. Première question : dans le modèle d''Aaker, quelles sont les quatre
-dimensions du capital-marque ? Deuxième question : si le volume annuel de Téranga Cosmétiques passait de 120 000 à
-150 000 unités, toutes choses égales par ailleurs, quelle serait la nouvelle valeur de marque annuelle ? Troisième
-question : quelle est la principale limite méthodologique de la méthode du premium de prix ? Je vous laisse
-quelques secondes... Réponses : premièrement, notoriété, qualité perçue, associations, fidélité. Deuxièmement, 700
-× 150 000 = 105 000 000 FCFA, soit 105 millions de FCFA. Troisièmement, cette méthode suppose que le produit
-générique de comparaison est strictement équivalent en qualité fonctionnelle, ce qui n''est pas toujours vérifiable,
-et elle ignore les coûts marketing nécessaires pour entretenir ce premium.
-
-## 50:00 – 1:05:00 · Repositionnement et architecture de marque
-
-Reprenons maintenant la question du repositionnement. Imaginons que Téranga Cosmétiques constate, dans une étude
-qualitative, que les 18-25 ans perçoivent la marque comme vieillissante. Deux options s''offrent à la direction :
-repositionner totalement la marque-mère vers une image plus jeune, ou créer une extension de gamme ciblée, par
-exemple « Téranga Jeune », tout en conservant l''identité de la marque-mère pour sa clientèle historique. Pourquoi
-la seconde option est-elle souvent recommandée dans ce type de cas ? Parce que la fidélité de Téranga Cosmétiques,
-nous l''avons vu, est déjà le point faible de la marque à 6,5 sur 10. Un repositionnement trop brutal de la
-marque-mère risquerait de dérouter précisément les clientes fidèles existantes, aggravant ce point faible déjà
-identifié par notre indice. L''extension de gamme permet de toucher une nouvelle cible sans fragiliser davantage la
-relation avec la clientèle historique.
-
-Cela nous amène à l''architecture de marque. Si Téranga Cosmétiques multiplie les extensions dans les années qui
-suivent, elle devra choisir entre rester une marque-mère unique portant toutes ses gammes, ou développer des
-marques filles distinctes. Rappelez-vous l''arbitrage : une marque-mère unique maximise les synergies de notoriété,
-mais expose l''ensemble du portefeuille à une crise sur un seul produit ; des marques multiples protègent l''image
-globale du groupe, mais coûtent nettement plus cher à construire et à faire connaître séparément.
-
-## 1:05:00 – 1:20:00 · Application sur un second cas et correction commentée
-
-Appliquons maintenant ces mêmes méthodes à un second cas, pour vérifier votre maîtrise. « Sahel Beauté » obtient les
-scores suivants sur 10 : notoriété 6,0, qualité perçue 7,5, fidélité 8,0, associations 6,5, pondérés respectivement
-à 25 %, 25 %, 35 %, 15 %. Prenez deux minutes pour calculer l''indice avant que je ne corrige. Voici la correction :
-indice = (0,25 × 6,0) + (0,25 × 7,5) + (0,35 × 8,0) + (0,15 × 6,5) = 1,50 + 1,875 + 2,80 + 0,975 = 7,15 sur 10. Ici,
-contrairement à Téranga Cosmétiques, c''est la notoriété qui est la dimension la plus faible, à 6,0, bien qu''elle ne
-soit pas la plus pondérée. La recommandation serait donc inversée par rapport à Téranga Cosmétiques : il faudrait
-ici investir en visibilité, et non en fidélisation, puisque la fidélité est déjà le point fort de Sahel Beauté.
-Vous voyez bien que la méthode est identique, mais la recommandation dépend entièrement des chiffres propres à
-chaque entreprise : ne récitez jamais une recommandation standard sans recalculer l''indice du cas qui vous est
-donné à l''examen.
-
-## 1:20:00 – 1:27:00 · Synthèse
-
-Pour résumer cette séance : le capital-marque se mesure par un indice pondéré, qui révèle souvent un point faible
-différent de l''intuition de départ ; la valeur financière d''une marque peut s''estimer par la méthode du premium de
-prix, en gardant à l''esprit ses limites méthodologiques ; et toute décision de repositionnement ou d''architecture
-de marque doit être reliée explicitement au diagnostic chiffré préalable, jamais décidée dans l''abstrait.
-
-## 1:27:00 – 1:30:00 · Évaluation finale
-
-Cinq questions pour clore la séance. Un : citez les quatre dimensions du modèle d''Aaker. Réponse : notoriété,
-qualité perçue, associations, fidélité. Deux : une marque vend son produit 2 000 FCFA contre 1 700 FCFA pour le
-générique, sur un volume de 80 000 unités ; quelle est la valeur de marque annuelle ? Réponse : premium unitaire =
-300 FCFA ; valeur = 300 × 80 000 = 24 000 000 FCFA. Trois : pourquoi une marque-mère unique est-elle plus risquée en
-cas de crise qu''une stratégie de marques multiples ? Réponse : parce qu''une crise sur un seul produit peut
-contaminer l''image de toutes les autres gammes portant le même nom. Quatre : quelle est la limite principale de la
-méthode du premium de prix ? Réponse : l''hypothèse d''équivalence fonctionnelle stricte avec le produit générique,
-rarement vérifiable, et l''oubli des coûts marketing nécessaires pour entretenir ce premium. Cinq : dans quel cas
-une extension de gamme est-elle préférable à un repositionnement total de la marque-mère ? Réponse : lorsque la
-marque-mère a déjà un point faible identifié (ici la fidélité) que le repositionnement total risquerait
-d''aggraver auprès de la clientèle existante. Merci à toutes et à tous, et bon travail pour la suite de votre
-préparation.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Marketing stratégique approfondi et branding');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Marketing international et export', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : étudiants de Master 1 Marketing et commerce. Objectifs : savoir choisir et justifier un
-mode d''entrée à l''international à partir d''un calcul de seuil de rentabilité comparé, savoir calculer et interpréter
-un point d''indifférence entre deux modes d''entrée, et savoir argumenter l''arbitrage standardisation/adaptation.
-Matériel : tableau ou diaporama, calculatrice. Prérequis : avoir lu la leçon 3 (Marketing international et export).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette séance consacrée au marketing international et export. C''est, avec le branding, l''une des
-matières les plus techniques du Master 1, parce qu''elle mêle stratégie et calcul financier. Beaucoup d''étudiants
-savent réciter la liste des modes d''entrée, mais échouent à l''examen parce qu''ils ne savent pas construire ni
-interpréter correctement le calcul de seuil de rentabilité comparé qui accompagne presque toujours un cas de choix
-de mode d''entrée. C''est précisément ce que nous allons travailler aujourd''hui, avec notre entreprise fictive Sahel
-Agro Export.
-
-## 05:00 – 18:00 · Rappel des modes d''entrée et de leurs arbitrages
-
-Récapitulons rapidement l''échelle des modes d''entrée, du moins au plus engagé : l''exportation indirecte, via un
-intermédiaire qui connaît déjà le marché ; l''exportation directe, où l''entreprise gère elle-même sa prospection ;
-la licence ou la franchise, où l''on cède un droit d''exploitation contre redevance ; la coentreprise, où l''on
-partage investissement et risque avec un partenaire local ; et la filiale à 100 %, l''implantation complète en
-nom propre. Retenez la logique générale : plus on monte dans cette échelle, plus le contrôle et la marge
-potentielle augmentent, mais plus l''investissement initial et le risque augmentent également. Le choix dépend de
-quatre critères : la taille du marché cible, le risque politique et économique du pays, les ressources disponibles,
-et le besoin d''adaptation de l''offre.
-
-## 18:00 – 35:00 · Construction du calcul de seuil de rentabilité comparé
-
-Passons au cas Sahel Agro Export. L''entreprise envisage d''entrer sur un marché voisin de l''UEMOA par export direct
-ou par coentreprise locale. Pour l''export direct, les coûts fixes annuels s''élèvent à 15 000 000 FCFA (prospection,
-agent, logistique), le coût variable est de 180 000 FCFA par tonne livrée, et le prix de vente est de 260 000 FCFA
-la tonne. Calculons la marge sur coût variable : 260 000 moins 180 000, soit 80 000 FCFA par tonne. Le seuil de
-rentabilité s''obtient en divisant les coûts fixes par cette marge unitaire : 15 000 000 divisé par 80 000, soit
-187,5 tonnes par an.
-
-Pour la coentreprise locale, les coûts fixes annuels sont nettement plus élevés, 45 000 000 FCFA, car ils intègrent
-l''investissement amorti dans la structure locale. Mais le coût variable baisse à 140 000 FCFA par tonne, la
-production locale évitant le transport longue distance. Marge sur coût variable : 260 000 moins 140 000, soit
-120 000 FCFA par tonne. Seuil de rentabilité : 45 000 000 divisé par 120 000, soit 375 tonnes par an.
-
-Arrêtons-nous un instant. Beaucoup d''étudiants, à ce stade, concluent trop vite que l''export direct est « meilleur »
-parce que son seuil de rentabilité est plus bas. C''est une erreur de raisonnement : un seuil plus bas ne signifie
-pas une option plus profitable à tous les niveaux de volume, cela signifie seulement qu''elle devient profitable
-plus vite. Il faut comparer les deux options sur toute la gamme de volumes possibles, pas seulement sur leur seuil
-individuel.
-
-## 35:00 – 50:00 · Le point d''indifférence : la clé du raisonnement
-
-C''est ici qu''intervient le point d''indifférence, la compétence la plus discriminante de cette matière à l''examen.
-On pose l''égalité des coûts totaux des deux options : 15 000 000 + 180 000 × Q égale 45 000 000 + 140 000 × Q. On
-regroupe les termes en Q d''un côté : 180 000 × Q moins 140 000 × Q égale 45 000 000 moins 15 000 000, soit 40 000 ×
-Q égale 30 000 000. On isole Q : Q égale 30 000 000 divisé par 40 000, soit 750 tonnes par an.
-
-Que signifie ce chiffre ? En dessous de 750 tonnes par an, l''export direct coûte moins cher au total, parce que ses
-coûts fixes, plus faibles, ne sont pas encore pénalisés par son coût variable plus élevé sur un petit volume. Au-delà
-de 750 tonnes, c''est la coentreprise qui devient la moins coûteuse, parce que ses coûts fixes élevés sont amortis
-sur un volume suffisant, et son coût variable plus faible joue alors pleinement en sa faveur. Vérifions avec un
-exemple à 500 tonnes : coût total export direct = 15 000 000 + 180 000 × 500 = 15 000 000 + 90 000 000 =
-105 000 000 FCFA ; coût total coentreprise = 45 000 000 + 140 000 × 500 = 45 000 000 + 70 000 000 = 115 000 000
-FCFA. L''export direct est bien moins coûteux à ce volume, comme attendu puisque 500 est inférieur à 750.
-Vérifions maintenant à 1 000 tonnes : coût total export direct = 15 000 000 + 180 000 000 = 195 000 000 FCFA ; coût
-total coentreprise = 45 000 000 + 140 000 000 = 185 000 000 FCFA. Cette fois, c''est la coentreprise qui coûte moins
-cher, confirmant notre point d''indifférence à 750 tonnes.
-
-## 50:00 – 55:00 · Pause quiz interactif
-
-Petite pause avec trois questions. Un : si Sahel Agro Export prévoit 600 tonnes la première année, quelle option
-est la moins coûteuse ? Deux : que se passe-t-il exactement à 750 tonnes ? Trois : le calcul du point d''indifférence
-suffit-il seul à prendre la décision finale, ou faut-il d''autres critères ? Réponses : un, à 600 tonnes, on est
-toujours en dessous de 750, donc l''export direct reste la solution la moins coûteuse. Deux, à 750 tonnes exactement,
-les deux options coûtent rigoureusement la même chose au total. Trois, non : il faut aussi intégrer les critères
-qualitatifs non chiffrés, comme le risque politique du pays cible ou la fiabilité du partenaire local pressenti
-pour la coentreprise.
-
-## 55:00 – 1:10:00 · Standardisation ou adaptation : l''arbitrage glocal
-
-Changeons de thème pour la seconde partie de cette séance : l''arbitrage entre standardisation et adaptation de
-l''offre. Souvenez-vous de l''opposition historique entre Theodore Levitt, partisan d''une offre mondiale standardisée
-pour profiter des économies d''échelle, et les tenants d''une adaptation systématique aux spécificités locales :
-langue, religion, pouvoir d''achat, habitudes de consommation, réglementation. La position dominante aujourd''hui,
-dite glocalisation, consiste à standardiser ce qui ne perd pas de valeur perçue en restant identique, typiquement
-la formule du produit et l''identité de marque, et à adapter ce qui doit l''être pour rester pertinent localement :
-packaging, canaux de distribution, communication, parfois le prix lui-même.
-
-Pour Sahel Agro Export, imaginons que le produit céréalier conserve sa formule et son identité visuelle, mais que
-le conditionnement soit adapté en formats familiaux plus grands avec des inscriptions dans la langue locale
-dominante du pays cible, et que le réseau de distribution privilégie les marchés traditionnels plutôt que les
-grandes surfaces encore peu développées dans ce pays. C''est un bon exemple de glocalisation appliquée : rien n''est
-laissé au hasard, mais rien n''est non plus adapté « par principe » sans justification.
-
-## 1:10:00 – 1:25:00 · Cas d''application et correction commentée
-
-Appliquons tout cela à un nouveau cas pour vérifier votre maîtrise. « Thiès Mécanique » compare l''export direct
-(coûts fixes 20 000 000 FCFA par an, coût variable 95 000 FCFA par unité, prix de vente 155 000 FCFA par unité) à
-une filiale locale à 100 % (coûts fixes 60 000 000 FCFA par an, coût variable 55 000 FCFA par unité, même prix de
-vente). Prenez deux minutes pour calculer les deux seuils de rentabilité et le point d''indifférence avant que je
-ne corrige.
-
-Voici la correction. Export direct : marge = 155 000 moins 95 000, soit 60 000 FCFA par unité ; seuil = 20 000 000
-divisé par 60 000, soit environ 333,3 unités. Filiale locale : marge = 155 000 moins 55 000, soit 100 000 FCFA par
-unité ; seuil = 60 000 000 divisé par 100 000, soit 600 unités. Point d''indifférence : 20 000 000 + 95 000 × Q
-égale 60 000 000 + 55 000 × Q, donc 40 000 × Q égale 40 000 000, donc Q égale 1 000 unités. Si Thiès Mécanique
-prévoit de vendre 550 unités par an, on est au-dessus du seuil de l''export direct mais en dessous du seuil de la
-filiale locale : la filiale ne serait même pas encore rentable à ce volume, alors que l''export direct l''est déjà.
-L''export direct est donc clairement recommandé à ce niveau de volume.
-
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
-
-Synthèse : le choix d''un mode d''entrée à l''international ne se limite jamais à comparer deux seuils de
-rentabilité isolés ; il faut calculer le point d''indifférence pour savoir, selon le volume réellement prévu,
-quelle option est la moins coûteuse, puis confronter ce résultat chiffré aux critères qualitatifs du marché cible.
-
-Cinq questions pour conclure. Un : citez les cinq modes d''entrée à l''international dans l''ordre croissant
-d''engagement. Réponse : exportation indirecte, exportation directe, licence ou franchise, coentreprise, filiale à
-100 %. Deux : à quoi sert le point d''indifférence ? Réponse : à déterminer le volume à partir duquel une option
-devient moins coûteuse que l''autre. Trois : qu''est-ce que la glocalisation ? Réponse : standardiser ce qui peut
-l''être sans perte de valeur perçue, et adapter ce qui doit l''être localement. Quatre : pour une entreprise avec des
-coûts fixes de 10 000 000 FCFA et une marge de 50 000 FCFA par unité, quel est le seuil de rentabilité ? Réponse :
-10 000 000 divisé par 50 000, soit 200 unités. Cinq : citez un critère qualitatif à prendre en compte en complément
-du calcul chiffré. Réponse : par exemple le risque politique et économique du pays cible, ou la fiabilité d''un
-partenaire local pressenti. Merci à toutes et à tous pour votre attention, bon travail pour la suite.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Marketing international et export');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Stratégie de distribution et trade marketing', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : étudiants de Master 1 Marketing et commerce. Objectifs : savoir décomposer une marge en
-cascade sur un circuit de distribution, savoir calculer un budget de coopération commerciale et en discuter la
-contrepartie, savoir argumenter le choix d''une stratégie de distribution. Matériel : tableau ou diaporama,
-calculatrice. Prérequis : avoir lu la leçon 4 (Stratégie de distribution et trade marketing).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bienvenue dans cette séance consacrée à la stratégie de distribution et au trade marketing. C''est la matière la
-plus « concrète » des trois de ce Master 1, parce qu''elle se joue littéralement dans les rayons des points de
-vente. Mais c''est aussi une matière où les calculs de marge en cascade, du prix public jusqu''au prix payé par le
-fabricant, piègent beaucoup d''étudiants qui confondent le sens dans lequel appliquer un pourcentage. Nous allons
-lever ce piège avec méthode, sur notre cas fictif Baobab Distribution.
-
-## 05:00 – 18:00 · Les stratégies de distribution et les conflits de canal
-
-Rappelons les trois stratégies de couverture du marché. La distribution intensive vise le plus grand nombre
-possible de points de vente, typique des produits d''achat fréquent et peu réfléchi. La distribution sélective
-limite le nombre de distributeurs à ceux qui répondent à certains critères de qualité ou de compétence technique.
-La distribution exclusive réserve la vente à un nombre très restreint de distributeurs, parfois un seul par zone,
-en échange d''engagements forts sur l''image et le service. Un conflit de canal classique à citer à l''examen : un
-fabricant vend en ligne directement au même prix que ses distributeurs physiques, capturant une partie des ventes
-sans que ces derniers touchent de marge, ce qui tend fortement la relation commerciale. Les systèmes marketing
-verticaux, administré, contractuel ou intégré, existent précisément pour limiter ce type de tension en structurant
-davantage la relation fabricant-distributeur.
-
-## 18:00 – 35:00 · La marge en cascade, pas à pas
-
-Voici l''exercice central de cette matière : la décomposition de la marge en cascade. Baobab Distribution vend un
-produit d''hygiène dont le prix public conseillé est de 1 200 FCFA. Le détaillant applique une marge de 18 % sur ce
-prix public. Attention à bien comprendre le sens du calcul : la marge se calcule sur le prix de vente du
-détaillant, c''est-à-dire le prix public, et non sur le prix qu''il a lui-même payé. Marge détaillant = 1 200 × 0,18
-= 216 FCFA. Le prix de cession au détaillant, c''est-à-dire ce que le détaillant paie à Baobab Distribution pour
-obtenir le produit, est donc le prix public moins cette marge : 1 200 moins 216, soit 984 FCFA.
-
-Deuxième étage de la cascade : Baobab Distribution applique elle-même une marge de 12 %, mais cette fois sur son
-propre prix de revente, qui est précisément ce prix de 984 FCFA que nous venons de calculer. Marge du distributeur
-= 984 × 0,12 = 118,08 FCFA. Le prix de cession du fabricant à Baobab Distribution, celui que le fabricant reçoit
-réellement, est donc 984 moins 118,08, soit 865,92 FCFA, que l''on arrondit à environ 866 FCFA.
-
-Retenez bien la logique : à chaque étage, on part du prix de vente de l''acteur considéré, on calcule sa marge sur
-ce prix de vente, puis on soustrait cette marge pour obtenir ce que cet acteur a lui-même payé en amont. On
-descend ainsi la chaîne du consommateur final vers le fabricant, étage par étage. C''est une erreur très fréquente
-de calculer la marge du distributeur sur le prix public plutôt que sur le prix qu''il facture réellement au
-détaillant : si vous appliquiez par erreur les 12 % de Baobab Distribution directement sur 1 200 FCFA, vous
-obtiendriez 144 FCFA de marge, un résultat faux, puisque Baobab Distribution ne vend jamais au prix public, elle
-vend au détaillant à 984 FCFA. Prenez l''habitude, à chaque étage, de vous demander explicitement : « à quel prix
-cet acteur vend-il réellement ? », avant d''appliquer le pourcentage de marge qui lui correspond.
-
-## 35:00 – 45:00 · Pause quiz interactif
-
-Vérifions votre compréhension. Un produit se vend 2 000 FCFA au public. Le détaillant applique une marge de 20 %
-sur ce prix public, et le distributeur applique une marge de 15 % sur son propre prix de cession au détaillant.
-Calculez le prix de cession du fabricant. Prenez une minute avant la correction... Voici la correction : marge
-détaillant = 2 000 × 0,20 = 400 FCFA ; prix de cession au détaillant = 2 000 moins 400, soit 1 600 FCFA. Marge
-distributeur = 1 600 × 0,15 = 240 FCFA ; prix de cession du fabricant = 1 600 moins 240, soit 1 360 FCFA. Si vous
-avez trouvé ce résultat, vous maîtrisez la mécanique de la cascade.
-
-## 45:00 – 1:05:00 · Le budget de coopération commerciale
-
-Passons maintenant au trade marketing proprement dit, et en particulier au budget de coopération commerciale,
-parfois appelé publicité coopérative. C''est un budget que le fabricant accepte de financer pour renforcer la mise
-en avant de ses produits chez un distributeur important, exprimé en pourcentage du chiffre d''affaires net réalisé
-avec ce distributeur. Baobab Distribution réalise un chiffre d''affaires net annuel de 250 000 000 FCFA avec une
-grande chaîne de détaillants partenaire, et le fabricant accepte un budget de coopération de 3 % de ce chiffre
-d''affaires. Le calcul est direct : 250 000 000 × 0,03 = 7 500 000 FCFA par an.
-
-C''est un chiffre important, mais la question qui compte vraiment à l''examen n''est pas le calcul lui-même, trop
-simple pour être discriminant seul : c''est la discussion de la contrepartie. Ce budget doit financer des actions
-mesurables, des têtes de gondole, des animations en magasin, des catalogues communs, et le fabricant doit vérifier
-que ces actions se traduisent par une hausse constatée du volume vendu ou de la part de linéaire occupée.
-Pourquoi cette vigilance est-elle nécessaire ? Parce que, sans contrôle, ce budget peut devenir une simple
-ristourne déguisée : le distributeur l''empoche sans mener d''action particulière, et le fabricant perd 7 500 000
-FCFA de marge sans aucune contrepartie commerciale réelle. Un bon correcteur de Master attend que vous souleviez
-ce risque spontanément, sans qu''on vous le demande explicitement dans l''énoncé.
-
-## 1:05:00 – 1:22:00 · Cas d''application complet et correction commentée
-
-Appliquons tout cela à un nouveau cas. « Teranga Hygiène » vend un savon au prix public de 800 FCFA. Le détaillant
-applique une marge de 22 % sur ce prix public, et le distributeur applique une marge de 10 % sur son propre prix
-de cession au détaillant. Première question : calculez le prix de cession au détaillant, puis le prix de cession
-du fabricant. Deuxième question : si Teranga Hygiène vend 400 000 unités par an au distributeur à ce prix de
-cession, quel est son chiffre d''affaires annuel issu de ce circuit ? Prenez trois minutes avant la correction.
-
-Voici la correction. Marge détaillant = 800 × 0,22 = 176 FCFA ; prix de cession au détaillant = 800 moins 176,
-soit 624 FCFA. Marge distributeur = 624 × 0,10 = 62,4 FCFA ; prix de cession du fabricant = 624 moins 62,4, soit
-561,6 FCFA. Chiffre d''affaires annuel de Teranga Hygiène = 561,6 × 400 000 = 224 640 000 FCFA, soit environ 224,64
-millions de FCFA. Vérifiez bien que vous retrouvez chacune de ces étapes avec votre propre calcul avant de
-continuer.
-
-## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
-
-Synthèse de cette séance : la marge en cascade se calcule toujours en partant du prix de vente de chaque acteur, du
-consommateur final vers le fabricant ; le budget de coopération commerciale se calcule simplement en pourcentage
-du chiffre d''affaires net, mais sa vraie difficulté est de savoir en discuter la contrepartie commerciale attendue.
-
-Cinq questions pour conclure. Un : dans quel sens calcule-t-on la marge d''un acteur du circuit de distribution ?
-Réponse : toujours sur son propre prix de vente, jamais sur le prix qu''il a payé en amont. Deux : qu''est-ce qu''un
-conflit de canal, avec un exemple ? Réponse : une divergence d''intérêts entre fabricant et distributeurs, par
-exemple la vente directe en ligne au même prix que les boutiques partenaires physiques. Trois : à quoi sert un
-budget de coopération commerciale ? Réponse : à financer des actions de mise en avant mesurables chez un
-distributeur important. Quatre : quel est le principal risque d''un tel budget mal contrôlé ? Réponse : qu''il
-devienne une ristourne déguisée, sans contrepartie commerciale réelle. Cinq : pour un prix public de 1 500 FCFA,
-une marge détaillant de 20 % et une marge distributeur de 10 %, quel est le prix de cession du fabricant ? Réponse :
-marge détaillant = 1 500 × 0,20 = 300 FCFA ; prix de cession au détaillant = 1 200 FCFA ; marge distributeur =
-1 200 × 0,10 = 120 FCFA ; prix de cession du fabricant = 1 080 FCFA. Merci à toutes et à tous, bon travail.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Stratégie de distribution et trade marketing');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Atelier cas pratique transversal — branding, export et distribution', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : étudiants de Master 1 Marketing et commerce, en fin de préparation aux examens. Objectifs :
-mobiliser ensemble, sur un même cas d''entreprise fictif filé, les trois matières du semestre (branding, marketing
-international, distribution et trade marketing), pour s''entraîner à l''épreuve type qui les combine. Matériel :
-tableau ou diaporama, calculatrice, le sujet type de la leçon 5 à portée de main. Prérequis : avoir traité les
-leçons 2, 3, 4 et 5, et visionné les trois cours vidéo précédents.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction à l''atelier
-
-Bienvenue dans ce quatrième et dernier cours vidéo de votre préparation au Master 1 Marketing et commerce. Ce
-n''est pas un cours de transmission classique : c''est un atelier de synthèse, où nous allons suivre une seule
-entreprise fictive, « Casamance Agro-Industrie », à travers les trois matières du semestre, exactement comme un
-sujet d''examen le ferait. L''objectif n''est pas d''apprendre de nouvelles notions, mais de s''entraîner à l''enchaînement
-des trois raisonnements dans une même copie, avec la gestion du temps que cela implique.
-
-## 05:00 – 15:00 · Présentation du cas fil rouge et consignes de méthode
-
-Casamance Agro-Industrie est une entreprise fictive sénégalaise qui transforme des fruits locaux en jus et en
-confitures. Elle est reconnue localement pour la qualité de ses produits, mais souhaite se développer à
-l''international et renforcer sa présence en grande distribution au Sénégal. Avant de commencer les calculs,
-rappelons la méthode générale à suivre pour chaque partie d''un sujet qui combine plusieurs matières : d''abord
-identifier la question posée et la matière concernée, ensuite extraire uniquement les données chiffrées utiles à
-cette question précise (un cas d''examen contient souvent des chiffres qui serviront à une autre partie, ne les
-mélangez pas), puis appliquer la formule appropriée, et enfin formuler une phrase de conclusion qui répond
-explicitement à la question posée, pas seulement un chiffre nu.
-
-## 15:00 – 32:00 · Partie branding appliquée au cas fil rouge
-
-Une étude consommateurs donne à Casamance Agro-Industrie les scores suivants sur 10 : notoriété 6,0, qualité
-perçue 8,5, fidélité 7,0, associations 7,5, pondérés respectivement à 25 %, 30 %, 25 %, 20 %. Calculons l''indice :
-(0,25 × 6,0) + (0,30 × 8,5) + (0,25 × 7,0) + (0,20 × 7,5). Premier terme : 1,50. Deuxième terme : 2,55. Troisième
-terme : 1,75. Quatrième terme : 1,50. Somme : 1,50 + 2,55 + 1,75 + 1,50 = 7,30 sur 10. La notoriété, à 6,0, est le
-point faible, malgré un poids proche des autres dimensions. Recommandation : avant même d''investir dans
-l''international, Casamance Agro-Industrie devrait renforcer sa visibilité sur son marché domestique, car une
-notoriété insuffisante au Sénégal fragiliserait aussi sa crédibilité de marque une fois exportée.
-
-## 32:00 – 50:00 · Pause quiz puis partie international appliquée au cas fil rouge
-
-Avant de poursuivre, un quiz rapide : si la pondération de la fidélité passait de 25 % à 35 % au détriment de la
-notoriété (qui passerait à 15 %), l''indice augmenterait-il ou diminuerait-il, sachant que la fidélité (7,0) est
-supérieure à la notoriété (6,0) ? Réponse : il augmenterait, puisqu''on donne plus de poids à la dimension la plus
-forte et moins de poids à la dimension la plus faible.
-
-Passons à l''international. Casamance Agro-Industrie envisage d''exporter vers un pays voisin par export direct
-(coûts fixes annuels 10 000 000 FCFA, coût variable 60 000 FCFA par carton, prix de vente 100 000 FCFA par carton)
-ou par une franchise locale (coûts fixes annuels 2 500 000 FCFA, redevance reçue de 8 000 FCFA par carton vendu
-par le franchisé, aucun coût variable supporté par Casamance Agro-Industrie). Calculons les deux seuils : export
-direct, marge = 100 000 moins 60 000, soit 40 000 FCFA par carton ; seuil = 10 000 000 divisé par 40 000, soit 250
-cartons. Franchise : seuil = 2 500 000 divisé par 8 000, soit 312,5 cartons. Si l''entreprise prévoit de vendre
-800 cartons la première année, les deux seuils sont largement dépassés : il faut alors comparer les marges
-totales. Marge totale export direct à 800 cartons = (800 × 40 000) moins 10 000 000 = 32 000 000 moins 10 000 000
-= 22 000 000 FCFA. Marge totale franchise à 800 cartons = (800 × 8 000) moins 2 500 000 = 6 400 000 moins 2 500 000
-= 3 900 000 FCFA. L''export direct est ici nettement plus profitable à ce volume, malgré un seuil de rentabilité
-individuel plus bas pour la franchise : c''est exactement le piège de raisonnement que nous avions signalé dans le
-cours vidéo sur l''international, et vous voyez qu''il reste valable sur un nouveau cas.
-
-## 50:00 – 1:08:00 · Partie distribution et trade marketing appliquée au cas fil rouge
-
-Pour sa présence en grande distribution au Sénégal, Casamance Agro-Industrie vend sa confiture au prix public de
-1 800 FCFA. Le détaillant applique une marge de 20 % sur ce prix public, et le distributeur applique une marge de
-12 % sur son propre prix de cession au détaillant. Calculons : marge détaillant = 1 800 × 0,20 = 360 FCFA ; prix de
-cession au détaillant = 1 800 moins 360, soit 1 440 FCFA. Marge distributeur = 1 440 × 0,12 = 172,8 FCFA ; prix de
-cession du fabricant = 1 440 moins 172,8, soit 1 267,2 FCFA, arrondi à environ 1 267 FCFA. Si Casamance
-Agro-Industrie négocie par ailleurs un budget de coopération commerciale de 2 % sur un chiffre d''affaires net de
-60 000 000 FCFA réalisé avec son distributeur principal, ce budget s''élève à 60 000 000 × 0,02 = 1 200 000 FCFA.
-Comme toujours, ce budget ne devrait être validé qu''en échange d''une contrepartie mesurable en mise en avant ou en
-volume additionnel constaté.
-
-## 1:08:00 – 1:22:00 · Gestion du temps d''examen et synthèse transversale
-
-Un mot maintenant sur la gestion du temps, essentielle pour ce type d''épreuve de trois heures combinant trois
-matières. Sur un sujet de 24 points réparti en trois parties égales, consacrez environ 50 à 55 minutes par partie,
-en gardant 15 à 20 minutes de marge pour la relecture globale et la vérification de vos calculs. Ne vous attardez
-jamais plus de quelques minutes sur une question qui bloque : notez votre meilleure hypothèse, passez à la
-question suivante, et revenez-y seulement s''il reste du temps en fin d''épreuve.
-
-Autre réflexe utile : avant de commencer à rédiger, parcourez l''ensemble du sujet et repérez, pour chaque partie,
-les chiffres qui vous seront utiles. Il arrive qu''un sujet donne une information commune aux trois parties, par
-exemple le volume annuel prévisionnel de l''entreprise, qui doit alors être réutilisé de façon cohérente dans
-chacune des parties du marketing international, de la distribution, et parfois même du branding si l''on vous
-demande de recalculer une valeur de marque sur ce même volume. Une erreur fréquente est d''inventer un nouveau
-chiffre de volume dans une partie alors que l''énoncé en donnait déjà un, ce qui crée une incohérence interne à
-votre copie, immédiatement repérée par le correcteur.
-
-La synthèse transversale de cette séance : les trois matières de ce Master 1 se répondent toujours dans un même
-cas d''entreprise cohérent, comme nous venons de le voir sur Casamance Agro-Industrie ; chaque partie a sa méthode
-propre, mais la rigueur de vérification arithmétique, la cohérence des données réutilisées d''une partie à l''autre,
-et l''habitude de conclure par une phrase de recommandation explicite reliée au diagnostic chiffré sont communes
-aux trois.
-
-## 1:22:00 – 1:30:00 · Évaluation finale
-
-Avant les cinq questions finales, un dernier conseil de méthode : relisez toujours votre copie en vous posant la
-question du correcteur, pas la vôtre. Le correcteur ne cherche pas seulement un chiffre juste, il cherche la preuve
-que vous avez compris pourquoi ce chiffre répond à la question posée. Une copie qui aligne des calculs corrects
-sans jamais formuler explicitement la recommandation qui en découle perd des points, même avec une arithmétique
-parfaite. Prenez donc, à la fin de chaque partie, dix secondes pour vous demander : « ai-je répondu à la question
-posée, ou seulement calculé un chiffre ? »
-
-Cinq questions pour clore cette préparation. Un : dans l''indice de capital-marque de Casamance Agro-Industrie,
-quelle dimension est-elle le point faible ? Réponse : la notoriété, à 6,0 sur 10. Deux : pourquoi l''export direct
-reste-t-il plus profitable que la franchise à 800 cartons malgré un seuil de rentabilité individuel plus élevé ?
-Réponse : parce qu''au-delà du seuil, sa marge unitaire plus importante (40 000 FCFA contre 8 000 FCFA par carton)
-génère une marge totale bien supérieure sur un volume conséquent. Trois : quel est le prix de cession du fabricant
-pour la confiture vendue 1 800 FCFA au public, avec les marges données ? Réponse : environ 1 267 FCFA. Quatre :
-combien de temps consacrer, en moyenne, à chaque partie d''un sujet de trois heures réparti en trois parties
-égales ? Réponse : environ 50 à 55 minutes, en gardant 15 à 20 minutes pour la relecture finale. Cinq : quelle
-habitude commune aux trois matières ce cours a-t-il mise en évidence ? Réponse : vérifier systématiquement ses
-calculs arithmétiques et toujours conclure chaque partie par une phrase de recommandation explicite reliée au
-diagnostic chiffré. Bon courage à toutes et à tous pour vos examens de Master 1.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-mkt-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier cas pratique transversal — branding, export et distribution');
