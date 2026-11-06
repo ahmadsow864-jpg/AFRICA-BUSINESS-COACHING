@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 5/5). À exécuter après seed.sql.
+-- Cours (partie 5/6). À exécuter après seed.sql.
 
 -- Cours : Sciences physiques (PC) : réussir l'épreuve du BFEM
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -2927,3 +2927,1735 @@ Texte du formateur : « Récapitulons. Pour apprendre : se tester, espacer, alte
 « Merci à toutes et à tous. Votre mission pour la semaine : créer dix fiches de révision et les réviser chaque jour selon les boîtes, ou, si vous êtes formateur, finaliser votre fiche de séquence alignée. »', 'video', 90, false, 60
 from public.courses c where c.slug = 'formation-education-numerique'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : apprendre à apprendre et concevoir une séquence en ligne');
+
+-- Cours : Mathématiques série S : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-mathematiques-s', (select id from public.levels where name = 'Terminale'), null, 'Mathématiques (série S)', 'Mathématiques série S : réussir l''épreuve du Bac', 'Ce cours de préparation au Baccalauréat s''adresse aux élèves de Terminale des séries scientifiques (S) du Sénégal et d''Afrique francophone. Il révise l''analyse (limites, continuité, dérivation, exponentielle et logarithme, intégrales, équations différentielles), les suites, les nombres complexes et leurs applications géométriques, ainsi que les probabilités et statistiques, avec des fiches de cours, des exercices progressifs corrigés et un sujet d''entraînement complet. Prérequis : le programme de Première S et l''essentiel du programme de Terminale S.', true, 201
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## À qui s''adresse ce cours
+
+Ce cours vise les candidats au Baccalauréat des séries scientifiques (S). Il reprend le programme du lycée, de la Seconde à la Terminale, sous l''angle de la révision, en insistant sur la Terminale. Les élèves des séries L et G trouveront des cours adaptés à leur propre épreuve sur la plateforme.
+
+## Objectifs de la leçon
+
+- Connaître la forme habituelle d''un sujet de mathématiques au Bac S et les grands types d''exercices.
+- Adopter une méthode de travail efficace pendant l''épreuve.
+- Repérer les erreurs qui coûtent le plus de points.
+- Construire un plan de révision sur 10 semaines.
+
+## Comment se présente l''épreuve
+
+Le sujet de mathématiques du Bac S comporte en général plusieurs exercices indépendants et un problème. Les exercices portent souvent sur les nombres complexes et la géométrie, sur les probabilités ou les statistiques, parfois sur les suites. Le problème est presque toujours un problème d''analyse : étude d''une fonction (souvent avec exponentielle ou logarithme), représentation graphique, calcul d''aire par une intégrale, et parfois une suite ou une équation différentielle liée à la fonction. La durée de l''épreuve, son coefficient et le barème officiel sont fixés par les textes officiels en vigueur : renseigne-toi auprès de ton établissement. Les répartitions de points données dans ce cours sont indicatives, non officielles.
+
+Les questions sont enchaînées : une partie A prépare souvent la partie B. Si tu ne réussis pas à démontrer un résultat donné dans l''énoncé (« montrer que… »), tu peux l''admettre et l''utiliser pour la suite.
+
+## Les verbes de consigne
+
+- Calculer, déterminer : donner un résultat justifié par les étapes de calcul.
+- Montrer, démontrer, justifier : raisonnement complet, propriétés citées, conclusion écrite.
+- En déduire : utiliser obligatoirement le résultat précédent.
+- Étudier les variations : calculer la dérivée, étudier son signe, dresser le tableau de variations avec les limites.
+- Interpréter graphiquement : traduire un résultat (une limite, un nombre dérivé, une intégrale) en asymptote, tangente ou aire.
+- Conjecturer : proposer un résultat à partir d''un graphique ou de calculs, sans démonstration.
+
+## La méthode pendant l''épreuve
+
+- Lire tout le sujet pendant les dix premières minutes, souligner les données et repérer les questions faciles.
+- Commencer par l''exercice où tu te sens le plus solide, mais garder du temps pour le problème, qui pèse lourd.
+- Chercher au brouillon, rédiger proprement sur la copie : une idée par ligne, les égalités alignées.
+- Encadrer les résultats et répondre par une phrase de conclusion.
+- Vérifier la cohérence : une probabilité est entre 0 et 1, une aire est positive, un module est positif, une fonction croissante ne peut pas avoir une dérivée négative.
+- Garder 10 à 15 minutes à la fin pour relire, contrôler les numéros de questions et l''orthographe des noms de théorèmes.
+
+## Les erreurs fréquentes
+
+- Oublier le domaine de définition, surtout avec ln : ln(u) n''existe que si u > 0.
+- Conclure sur une forme indéterminée (∞ − ∞, 0 × ∞, ∞/∞, 0/0) sans la lever.
+- Écrire un tableau de variations sans justifier le signe de la dérivée.
+- Confondre f(a), f''(a) et l''équation de la tangente y = f''(a)(x − a) + f(a).
+- Oublier les unités d''aire : une aire se donne en unités d''aire (u.a.), puis éventuellement en cm² selon le repère.
+- En probabilités, additionner des probabilités d''événements qui ne sont pas incompatibles.
+- Pour les complexes, donner un argument sans vérifier le quadrant (signe de la partie réelle et de la partie imaginaire).
+- Pour une récurrence, oublier l''initialisation ou écrire l''hérédité sans utiliser l''hypothèse.
+
+## La calculatrice : une alliée, pas une béquille
+
+La calculatrice sert à vérifier une valeur, à tracer une courbe pour conjecturer, à calculer des termes de suite ou une valeur approchée. Mais une réponse sans justification ne rapporte presque rien. Écris toujours la valeur exacte (3 − 4/e, ln 2, √3) avant la valeur approchée, et précise l''arrondi demandé.
+
+## Plan de révision sur 10 semaines
+
+- Semaine 1 : limites, continuité, théorème des valeurs intermédiaires.
+- Semaine 2 : dérivation, tangentes, études de fonctions rationnelles et asymptotes.
+- Semaine 3 : fonction logarithme népérien.
+- Semaine 4 : fonction exponentielle et croissances comparées.
+- Semaine 5 : primitives, intégrales, calculs d''aires, intégration par parties, équations différentielles.
+- Semaine 6 : suites numériques (récurrence, convergence, suites auxiliaires).
+- Semaine 7 : nombres complexes et transformations du plan.
+- Semaine 8 : dénombrement, probabilités, loi binomiale ; statistiques à deux variables.
+- Semaine 9 : deux sujets complets en temps réel, corrigés soigneusement.
+- Semaine 10 : relecture des fiches, reprise des erreurs, un dernier sujet, repos la veille.
+
+Chaque semaine, prévois trois temps : relire la fiche de cours (30 minutes), refaire les exercices corrigés sans regarder la solution, puis traiter au moins un exercice nouveau de niveau Bac. Travailler en groupe d''étude, comme cela se fait dans beaucoup de lycées de Dakar, Thiès ou Ziguinchor, est très utile : expliquer une méthode à un camarade est la meilleure façon de la maîtriser.
+
+## Exercices pratiques
+
+1. Classe les verbes suivants selon qu''ils demandent une démonstration ou un simple calcul : calculer, montrer, justifier, déterminer une valeur approchée.
+
+2. Un élève écrit : « lim (x → +∞) de (x² − x) = +∞ − ∞ = 0 ». Explique son erreur et donne la bonne limite.
+
+3. Donne l''ensemble de définition de f(x) = ln(2x − 6).
+
+4. Un élève affirme qu''une aire vaut −2,5 u.a. Que doit-il contrôler ?
+
+5. Un candidat dispose de 4 heures (durée supposée pour l''exercice) pour un sujet de trois exercices notés 4, 4 et 12 points (barème indicatif). Propose une répartition du temps.
+
+6. Rédige la structure complète d''une démonstration par récurrence de la propriété P(n) : « 2ⁿ ≥ n + 1 » pour tout entier n ≥ 0.
+
+## Corrigé
+
+1. Démonstration : montrer, justifier. Calcul : calculer, déterminer une valeur approchée (mais les étapes doivent rester visibles).
+
+2. ∞ − ∞ est une forme indéterminée, on ne peut pas conclure directement. On factorise : x² − x = x²(1 − 1/x). Comme x² tend vers +∞ et (1 − 1/x) tend vers 1, la limite est +∞.
+
+3. Il faut 2x − 6 > 0, soit x > 3. Df = ]3 ; +∞[.
+
+4. Une aire est toujours positive. S''il a calculé une intégrale sur un intervalle où la fonction est négative, l''aire est l''opposé de l''intégrale, soit 2,5 u.a. Il doit vérifier le signe de la fonction sur l''intervalle.
+
+5. Exemple : 10 minutes de lecture, environ 40 minutes pour chaque exercice de 4 points, 2 heures pour le problème de 12 points, 10 minutes de relecture. Total : 10 + 80 + 120 + 10 = 220 minutes, ce qui laisse 20 minutes de marge.
+
+6. Initialisation : pour n = 0, 2⁰ = 1 et 0 + 1 = 1, donc P(0) est vraie. Hérédité : on suppose P(n) vraie pour un entier n ≥ 0, c''est-à-dire 2ⁿ ≥ n + 1. Alors 2ⁿ⁺¹ = 2 × 2ⁿ ≥ 2(n + 1) = 2n + 2 ≥ n + 2, car n ≥ 0. Donc P(n + 1) est vraie. Conclusion : P(n) est vraie pour tout entier n ≥ 0.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'bac-mathematiques-s'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Analyse : limites, dérivation, exp et ln, intégrales et équations différentielles', '## Objectifs de la leçon
+
+- Calculer des limites et lever les formes indéterminées.
+- Utiliser la continuité et le théorème des valeurs intermédiaires.
+- Dériver, étudier des variations et rédiger une étude de fonction complète.
+- Maîtriser exp et ln, les primitives, les intégrales et les équations différentielles simples.
+
+## Fiche 1 : limites et asymptotes
+
+- Formes indéterminées : ∞ − ∞, 0 × ∞, ∞/∞, 0/0. On les lève en factorisant par le terme dominant, en simplifiant ou en utilisant les croissances comparées.
+- En ±∞, une fonction polynôme a la même limite que son terme de plus haut degré ; une fonction rationnelle a la même limite que le quotient de ses termes de plus haut degré.
+- Croissances comparées : lim (x → +∞) eˣ/x = +∞ ; lim (x → +∞) ln(x)/x = 0 ; lim (x → −∞) x eˣ = 0 ; lim (x → 0⁺) x ln(x) = 0.
+- Si lim f(x) = b en ±∞ : asymptote horizontale y = b. Si lim f(x) = ±∞ quand x tend vers a : asymptote verticale x = a.
+- Si lim [f(x) − (ax + b)] = 0 en ±∞ : la droite y = ax + b est asymptote oblique. Le signe de f(x) − (ax + b) donne la position relative.
+
+## Fiche 2 : continuité et théorème des valeurs intermédiaires
+
+Si f est continue et strictement monotone sur [a ; b] et si k est compris entre f(a) et f(b), alors l''équation f(x) = k admet une unique solution dans [a ; b]. C''est le corollaire du théorème des valeurs intermédiaires (ou théorème de la bijection). On encadre ensuite la solution α par balayage à la calculatrice.
+
+## Fiche 3 : dérivation
+
+- (uv)'' = u''v + uv'' ; (u/v)'' = (u''v − uv'')/v² ; (uⁿ)'' = n u'' uⁿ⁻¹ ; (√u)'' = u''/(2√u).
+- (eᵘ)'' = u'' eᵘ ; (ln u)'' = u''/u avec u > 0.
+- Tangente au point d''abscisse a : y = f''(a)(x − a) + f(a).
+- Si f'' > 0 sur un intervalle (sauf en des points isolés où elle s''annule), f est strictement croissante sur cet intervalle.
+
+## Fiche 4 : exponentielle et logarithme
+
+- exp est définie sur ℝ, strictement positive, strictement croissante, exp'' = exp, e⁰ = 1, eᵃ⁺ᵇ = eᵃ × eᵇ.
+- ln est définie sur ]0 ; +∞[, strictement croissante, ln'' (x) = 1/x, ln 1 = 0, ln e = 1, ln(ab) = ln a + ln b, ln(aⁿ) = n ln a.
+- Pour x > 0 et y réel : y = ln x ⇔ x = eʸ. Donc eˡⁿ ˣ = x et ln(eʸ) = y.
+- Limites : ln x tend vers −∞ en 0⁺ et vers +∞ en +∞ ; eˣ tend vers 0 en −∞ et vers +∞ en +∞.
+
+## Fiche 5 : primitives et intégrales
+
+- Primitives usuelles : xⁿ → xⁿ⁺¹/(n + 1) (n ≠ −1) ; 1/x → ln x sur ]0 ; +∞[ ; eᵃˣ → eᵃˣ/a ; u''eᵘ → eᵘ ; u''/u → ln|u| ; cos x → sin x ; sin x → −cos x.
+- Si F est une primitive de f sur [a ; b] : ∫ de a à b de f(x) dx = F(b) − F(a).
+- Linéarité, relation de Chasles, positivité : si f ≥ 0 sur [a ; b] avec a ≤ b, l''intégrale est positive et égale à l''aire sous la courbe en u.a.
+- Intégration par parties : ∫ u v'' = [uv] − ∫ u''v (entre les mêmes bornes).
+- Valeur moyenne de f sur [a ; b] : (1/(b − a)) × ∫ de a à b de f(x) dx.
+
+## Fiche 6 : équations différentielles
+
+- y'' = ay (a réel) : solutions y = C eᵃˣ, C réel.
+- y'' = ay + b (a ≠ 0) : solutions y = C eᵃˣ − b/a.
+- y'''' + ω²y = 0 : solutions y = A cos(ωx) + B sin(ωx).
+- y'''' + a y'' + b y = 0 : on résout l''équation caractéristique r² + ar + b = 0 ; deux racines réelles r₁ et r₂ donnent y = A e^(r₁x) + B e^(r₂x) ; une racine double r donne y = (Ax + B) eʳˣ ; deux racines complexes α ± iβ donnent y = e^(αx)(A cos βx + B sin βx).
+- Une condition initiale (y(0) = …) fixe les constantes.
+
+## Méthode : l''étude de fonction en sept étapes
+
+- Ensemble de définition.
+- Limites aux bornes, asymptotes.
+- Dérivée et signe de la dérivée.
+- Tableau de variations complet.
+- Points particuliers : intersections avec les axes, tangentes demandées.
+- Position relative courbe / asymptote si besoin.
+- Tracé soigné : asymptotes en pointillés, tangentes, points remarquables.
+
+## Exemple guidé
+
+Soit f(x) = x − ln x sur ]0 ; +∞[. On a f''(x) = 1 − 1/x = (x − 1)/x. Sur ]0 ; 1[, f'' < 0 ; sur ]1 ; +∞[, f'' > 0. Donc f admet un minimum en 1, égal à f(1) = 1. Conséquence : pour tout x > 0, x − ln x ≥ 1 > 0, donc ln x < x. Voilà comment une étude de fonction sert à démontrer une inégalité.
+
+## Exercices pratiques
+
+1. Calculer la limite en +∞ de f(x) = (2x² − 3x + 1)/(x² + 4).
+
+2. Soit f(x) = x³ − 3x + 1 sur ℝ. Étudier ses variations et déterminer le nombre de solutions de f(x) = 0.
+
+3. Dériver g(x) = (2x + 1)e⁻ˣ et h(x) = ln(x² + 1).
+
+4. Calculer I = ∫ de 0 à 1 de (3x² + 2x) dx et J = ∫ de 1 à e de (1/x) dx.
+
+5. Résoudre l''équation différentielle y'' = −2y avec y(0) = 5.
+
+6. À l''aide d''une intégration par parties, calculer K = ∫ de 0 à 1 de x eˣ dx.
+
+7. Résoudre l''équation différentielle y'''' + 4y = 0 avec y(0) = 1 et y''(0) = 2.
+
+## Corrigé
+
+1. On factorise par x² : f(x) = (2 − 3/x + 1/x²)/(1 + 4/x²). Quand x tend vers +∞, le numérateur tend vers 2 et le dénominateur vers 1. La limite est 2 : la droite y = 2 est asymptote horizontale.
+
+2. f''(x) = 3x² − 3 = 3(x − 1)(x + 1). f'' > 0 sur ]−∞ ; −1[ et sur ]1 ; +∞[, f'' < 0 sur ]−1 ; 1[. f est croissante sur ]−∞ ; −1], décroissante sur [−1 ; 1], croissante sur [1 ; +∞[. f(−1) = −1 + 3 + 1 = 3 et f(1) = 1 − 3 + 1 = −1. Limites : −∞ en −∞ et +∞ en +∞. Sur chacun des trois intervalles, f est continue, strictement monotone et change de signe (de −∞ à 3, de 3 à −1, de −1 à +∞). Par le théorème de la bijection, l''équation f(x) = 0 a exactement trois solutions.
+
+3. g''(x) = 2e⁻ˣ − (2x + 1)e⁻ˣ = (1 − 2x)e⁻ˣ. h''(x) = 2x/(x² + 1), car x² + 1 > 0 pour tout réel x.
+
+4. Une primitive de 3x² + 2x est x³ + x². I = (1 + 1) − 0 = 2. J = ln e − ln 1 = 1 − 0 = 1.
+
+5. Les solutions sont y = C e⁻²ˣ. y(0) = C = 5, donc y = 5e⁻²ˣ.
+
+6. On pose u = x, v'' = eˣ, donc u'' = 1, v = eˣ. K = [x eˣ] de 0 à 1 − ∫ de 0 à 1 de eˣ dx = e − (e − 1) = 1.
+
+7. Ici ω² = 4, ω = 2 : y = A cos(2x) + B sin(2x). y(0) = A = 1. y''(x) = −2A sin(2x) + 2B cos(2x), donc y''(0) = 2B = 2 et B = 1. Solution : y = cos(2x) + sin(2x).', 'texte', 75, false, 20
+from public.courses c where c.slug = 'bac-mathematiques-s'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Analyse : limites, dérivation, exp et ln, intégrales et équations différentielles');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Suites numériques, nombres complexes et géométrie', '## Objectifs de la leçon
+
+- Étudier une suite définie explicitement ou par récurrence, sa monotonie et sa limite.
+- Utiliser les suites arithmétiques, géométriques et les suites auxiliaires.
+- Calculer avec les nombres complexes sous forme algébrique, trigonométrique et exponentielle.
+- Résoudre des problèmes de géométrie plane avec les complexes et les transformations.
+
+## Fiche 1 : suites arithmétiques et géométriques
+
+- Arithmétique de raison r : uₙ₊₁ = uₙ + r ; uₙ = u₀ + nr ; somme de termes consécutifs = (nombre de termes) × (premier + dernier)/2.
+- Géométrique de raison q : uₙ₊₁ = q uₙ ; uₙ = u₀ qⁿ ; somme de termes consécutifs = premier terme × (1 − q^(nombre de termes))/(1 − q), pour q ≠ 1.
+- Limite de qⁿ : 0 si −1 < q < 1 ; +∞ si q > 1 ; pas de limite si q ≤ −1.
+
+## Fiche 2 : étude d''une suite
+
+- Monotonie : étudier le signe de uₙ₊₁ − uₙ, ou comparer uₙ₊₁/uₙ à 1 si la suite est strictement positive, ou utiliser une récurrence.
+- Une suite croissante et majorée converge ; une suite décroissante et minorée converge.
+- Si uₙ₊₁ = f(uₙ), si (uₙ) converge vers ℓ et si f est continue en ℓ, alors ℓ = f(ℓ) : la limite est un point fixe.
+- Suite auxiliaire : pour uₙ₊₁ = a uₙ + b (a ≠ 1), on pose vₙ = uₙ − ℓ où ℓ = aℓ + b. Alors (vₙ) est géométrique de raison a.
+
+## Exemple guidé de suite
+
+u₀ = 1 et uₙ₊₁ = 0,5 uₙ + 3. Le point fixe vérifie ℓ = 0,5ℓ + 3, d''où ℓ = 6. On pose vₙ = uₙ − 6 : vₙ₊₁ = 0,5uₙ + 3 − 6 = 0,5(uₙ − 6) = 0,5 vₙ. La suite (vₙ) est géométrique de raison 0,5 et v₀ = −5. Donc vₙ = −5 × 0,5ⁿ et uₙ = 6 − 5 × 0,5ⁿ. Comme 0,5ⁿ tend vers 0, (uₙ) converge vers 6.
+
+## Fiche 3 : nombres complexes
+
+- Forme algébrique z = a + ib, avec i² = −1. Conjugué : z̄ = a − ib. z z̄ = a² + b².
+- Module : |z| = √(a² + b²). Argument θ : cos θ = a/|z| et sin θ = b/|z|.
+- Forme trigonométrique : z = r(cos θ + i sin θ). Forme exponentielle : z = r e^(iθ).
+- Règles : |zz''| = |z||z''| ; arg(zz'') = arg z + arg z'' (modulo 2π) ; arg(z/z'') = arg z − arg z''.
+- Formule de Moivre : (cos θ + i sin θ)ⁿ = cos(nθ) + i sin(nθ). Formules d''Euler : cos θ = (e^(iθ) + e^(−iθ))/2 et sin θ = (e^(iθ) − e^(−iθ))/(2i).
+- Équation az² + bz + c = 0 à coefficients réels avec Δ < 0 : z = (−b ± i√(−Δ))/(2a), deux solutions conjuguées.
+- Racines n-ièmes de l''unité : e^(2ikπ/n), k = 0, 1, …, n − 1.
+
+## Fiche 4 : complexes et géométrie
+
+- Si A et B ont pour affixes a et b : AB = |b − a| ; le milieu de [AB] a pour affixe (a + b)/2.
+- Angle orienté : (AB→, AC→) = arg((c − a)/(b − a)).
+- (c − a)/(b − a) réel : A, B, C alignés. (c − a)/(b − a) imaginaire pur : triangle rectangle en A.
+- (c − a)/(b − a) = e^(±iπ/3) : triangle équilatéral.
+- Transformations z'' = az + b : translation si a = 1 ; homothétie si a réel différent de 1 ; rotation si |a| = 1 et a ≠ 1 ; dans le cas général (a ≠ 1), similitude directe de rapport |a|, d''angle arg a et de centre d''affixe ω = b/(1 − a).
+
+## Méthode : trouver la forme exponentielle
+
+Calcule le module, puis cos θ et sin θ, puis cherche l''angle remarquable. Exemple : z = 1 + i√3. |z| = √(1 + 3) = 2. cos θ = 1/2 et sin θ = √3/2, donc θ = π/3 et z = 2e^(iπ/3).
+
+## Points clés
+
+Pour une suite, pense toujours à la suite auxiliaire. Pour un complexe, choisis la forme adaptée : algébrique pour additionner, exponentielle pour multiplier, diviser et élever à une puissance.
+
+## Exercices pratiques
+
+1. Écrire sous forme algébrique z₁ = (1 + i)(2 − 3i) et z₂ = (3 + i)/(1 − i).
+
+2. Donner la forme exponentielle de z = 1 + i√3, puis calculer z⁶.
+
+3. Résoudre dans ℂ l''équation z² − 2z + 5 = 0.
+
+4. (uₙ) est arithmétique, u₀ = 3, r = 4. Calculer u₁₀ puis S = u₀ + u₁ + … + u₁₀.
+
+5. Moussa place 500 000 FCFA à intérêts composés au taux annuel de 5 %. On note Cₙ le capital après n années. Exprimer Cₙ, calculer C₁₀ arrondi au franc, puis le nombre d''années nécessaire pour que le capital double.
+
+6. u₀ = 2 et uₙ₊₁ = (1/3)uₙ + 4. Exprimer uₙ en fonction de n et donner sa limite.
+
+7. Déterminer l''image de A d''affixe 2 + i par la rotation de centre O et d''angle π/2, puis la nature et les éléments caractéristiques de la transformation z'' = (1 + i)z + 2.
+
+## Corrigé
+
+1. z₁ = 2 − 3i + 2i − 3i² = 2 − i + 3 = 5 − i. z₂ = (3 + i)(1 + i)/((1 − i)(1 + i)) = (3 + 3i + i + i²)/2 = (2 + 4i)/2 = 1 + 2i.
+
+2. z = 2e^(iπ/3) (voir la méthode). z⁶ = 2⁶ e^(i6π/3) = 64 e^(2iπ) = 64.
+
+3. Δ = 4 − 20 = −16 = (4i)². z = (2 + 4i)/2 = 1 + 2i ou z = 1 − 2i.
+
+4. u₁₀ = 3 + 10 × 4 = 43. S compte 11 termes : S = 11 × (3 + 43)/2 = 11 × 23 = 253.
+
+5. Cₙ₊₁ = 1,05 Cₙ, donc Cₙ = 500 000 × 1,05ⁿ. C₁₀ = 500 000 × 1,05¹⁰ ≈ 814 447 FCFA. Le capital double si 1,05ⁿ ≥ 2, soit n ln(1,05) ≥ ln 2, n ≥ ln 2/ln 1,05 ≈ 14,2. Il faut 15 années.
+
+6. Point fixe : ℓ = ℓ/3 + 4, donc (2/3)ℓ = 4 et ℓ = 6. vₙ = uₙ − 6 est géométrique de raison 1/3, v₀ = −4. Donc uₙ = 6 − 4 × (1/3)ⁿ. Comme (1/3)ⁿ tend vers 0, la limite est 6.
+
+7. La rotation s''écrit z'' = e^(iπ/2) z = iz. Image de A : i(2 + i) = 2i + i² = −1 + 2i. Pour z'' = (1 + i)z + 2 : |1 + i| = √2 et arg(1 + i) = π/4. Centre : ω = 2/(1 − (1 + i)) = 2/(−i) = 2i. C''est la similitude directe de centre Ω d''affixe 2i, de rapport √2 et d''angle π/4.', 'texte', 70, false, 30
+from public.courses c where c.slug = 'bac-mathematiques-s'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Suites numériques, nombres complexes et géométrie');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Probabilités et statistiques', '## Objectifs de la leçon
+
+- Dénombrer avec les listes, les arrangements et les combinaisons.
+- Calculer des probabilités, y compris conditionnelles, avec un arbre pondéré.
+- Étudier une variable aléatoire et la loi binomiale.
+- Traiter une série statistique à deux variables : ajustement affine et corrélation.
+
+## Fiche 1 : dénombrement
+
+- Nombre de p-listes (tirages successifs avec remise) d''un ensemble à n éléments : nᵖ.
+- Arrangements (tirages successifs sans remise, l''ordre compte) : Aₙᵖ = n!/(n − p)!.
+- Combinaisons (tirages simultanés, l''ordre ne compte pas) : C(n, p) = n!/(p!(n − p)!).
+- Propriétés : C(n, p) = C(n, n − p) ; C(n, p) + C(n, p + 1) = C(n + 1, p + 1).
+
+## Fiche 2 : probabilités
+
+- En situation d''équiprobabilité : P(A) = nombre de cas favorables / nombre de cas possibles.
+- P(Ā) = 1 − P(A) ; P(A ∪ B) = P(A) + P(B) − P(A ∩ B).
+- Probabilité conditionnelle : P_A(B) = P(A ∩ B)/P(A), avec P(A) ≠ 0.
+- Formule des probabilités totales : si A et Ā partagent l''univers, P(B) = P(A)P_A(B) + P(Ā)P_Ā(B).
+- A et B indépendants si P(A ∩ B) = P(A) × P(B).
+
+## Fiche 3 : variable aléatoire et loi binomiale
+
+- Loi de X : liste des valeurs xᵢ et des probabilités pᵢ, avec somme des pᵢ = 1.
+- Espérance : E(X) = somme des xᵢ pᵢ. Variance : V(X) = E(X²) − [E(X)]². Écart-type : σ = √V(X).
+- Schéma de Bernoulli : n épreuves identiques et indépendantes à deux issues, succès de probabilité p. X = nombre de succès suit la loi binomiale B(n, p) : P(X = k) = C(n, k) pᵏ (1 − p)ⁿ⁻ᵏ ; E(X) = np ; V(X) = np(1 − p).
+
+## Fiche 4 : statistiques à deux variables
+
+- Point moyen G(x̄ ; ȳ).
+- Variance : V(x) = (1/n) Σ (xᵢ − x̄)² = (1/n) Σ xᵢ² − x̄².
+- Covariance : cov(x, y) = (1/n) Σ (xᵢ − x̄)(yᵢ − ȳ) = (1/n) Σ xᵢyᵢ − x̄ȳ.
+- Coefficient de corrélation linéaire : r = cov(x, y)/(σ(x)σ(y)). Si |r| est proche de 1 (en pratique |r| ≥ 0,87 est souvent retenu comme seuil), l''ajustement affine est justifié.
+- Droite de régression de y en x : y = ax + b avec a = cov(x, y)/V(x) et b = ȳ − a x̄. Elle passe par G.
+
+## Exemple guidé : production d''une coopérative
+
+Une coopérative maraîchère des Niayes note sa production (en tonnes) sur cinq années numérotées x = 1 à 5 : y = 10 ; 12 ; 15 ; 17 ; 21. On a x̄ = 3 et ȳ = 75/5 = 15. Les écarts sont, pour x : −2, −1, 0, 1, 2 ; pour y : −5, −3, 0, 2, 6.
+
+cov(x, y) = (10 + 3 + 0 + 2 + 12)/5 = 27/5 = 5,4. V(x) = (4 + 1 + 0 + 1 + 4)/5 = 2. V(y) = (25 + 9 + 0 + 4 + 36)/5 = 14,8.
+
+r = 5,4/√(2 × 14,8) ≈ 0,993 : corrélation très forte. a = 5,4/2 = 2,7 et b = 15 − 2,7 × 3 = 6,9. Droite : y = 2,7x + 6,9. Estimation pour l''année 7 : y = 2,7 × 7 + 6,9 = 25,8 tonnes, si la tendance se maintient.
+
+## Méthode : l''arbre pondéré
+
+Sur chaque branche on écrit une probabilité ; la somme des branches issues d''un même nœud vaut 1 ; la probabilité d''un chemin est le produit des probabilités de ses branches ; la probabilité d''un événement est la somme des chemins qui y mènent. Une probabilité « sachant que » se lit sur une branche du deuxième niveau.
+
+## Points clés
+
+Repère d''abord le type de tirage (simultané, successif avec ou sans remise). Pour « au moins un », passe par l''événement contraire. Pour une loi binomiale, justifie les trois conditions : épreuves identiques, indépendantes, à deux issues.
+
+## Exercices pratiques
+
+1. Une urne contient 5 boules rouges et 3 vertes. On tire simultanément 2 boules. Calculer la probabilité d''obtenir 2 rouges, 2 vertes, puis une boule de chaque couleur.
+
+2. Combien de codes à 4 chiffres peut-on former ? Combien ont 4 chiffres tous différents ?
+
+3. P(A) = 0,4 ; P(B) = 0,5 ; P(A ∪ B) = 0,7. A et B sont-ils indépendants ?
+
+4. Dans une région, 10 % des personnes testées sont atteintes de paludisme. Un test rapide est positif pour 95 % des malades et pour 8 % des personnes non malades (valeurs fictives). Calculer la probabilité qu''un test soit positif, puis la probabilité qu''une personne au test positif soit malade.
+
+5. À un jeu de kermesse, on lance un dé équilibré : on gagne 500 FCFA si on obtient 6, 100 FCFA si on obtient 4 ou 5, on perd 200 FCFA sinon. Soit X le gain algébrique. Donner la loi de X, E(X) et σ(X).
+
+6. Un semencier annonce que 20 % des graines d''un lot ne germent pas. On sème 10 graines, de façon indépendante. X est le nombre de graines qui ne germent pas. Calculer P(X = 0), P(X ≥ 1), P(X = 2) et E(X).
+
+7. Série : x = 2 ; 4 ; 6 ; 8 et y = 3 ; 7 ; 8 ; 10. Calculer r et la droite de régression de y en x.
+
+## Corrigé
+
+1. Nombre de tirages : C(8, 2) = 28. P(2 rouges) = C(5, 2)/28 = 10/28 = 5/14. P(2 vertes) = C(3, 2)/28 = 3/28. P(une de chaque) = (5 × 3)/28 = 15/28. Contrôle : 10 + 3 + 15 = 28.
+
+2. 10⁴ = 10 000 codes. Chiffres tous différents : A₁₀⁴ = 10 × 9 × 8 × 7 = 5 040.
+
+3. P(A ∩ B) = P(A) + P(B) − P(A ∪ B) = 0,4 + 0,5 − 0,7 = 0,2. Or P(A) × P(B) = 0,2. Ils sont indépendants.
+
+4. P(T) = 0,1 × 0,95 + 0,9 × 0,08 = 0,095 + 0,072 = 0,167. P_T(M) = 0,095/0,167 ≈ 0,569. Un peu plus d''une personne sur deux testée positive est réellement malade : il faut confirmer par un autre examen.
+
+5. P(X = 500) = 1/6 ; P(X = 100) = 2/6 ; P(X = −200) = 3/6. E(X) = (500 + 200 − 600)/6 = 100/6 ≈ 16,67 FCFA. E(X²) = (250 000 + 2 × 10 000 + 3 × 40 000)/6 = 390 000/6 = 65 000. V(X) = 65 000 − (100/6)² ≈ 64 722,2 et σ(X) ≈ 254,4 FCFA. Le jeu est légèrement favorable au joueur.
+
+6. X suit B(10 ; 0,2). P(X = 0) = 0,8¹⁰ ≈ 0,107. P(X ≥ 1) = 1 − 0,8¹⁰ ≈ 0,893. P(X = 2) = C(10, 2) × 0,2² × 0,8⁸ = 45 × 0,04 × 0,8⁸ ≈ 0,302. E(X) = 10 × 0,2 = 2.
+
+7. x̄ = 5, ȳ = 7. Écarts x : −3, −1, 1, 3 ; écarts y : −4, 0, 1, 3. cov = (12 + 0 + 1 + 9)/4 = 5,5. V(x) = (9 + 1 + 1 + 9)/4 = 5. V(y) = (16 + 0 + 1 + 9)/4 = 6,5. r = 5,5/√(5 × 6,5) ≈ 0,965. a = 5,5/5 = 1,1 ; b = 7 − 1,1 × 5 = 1,5. Droite : y = 1,1x + 1,5.', 'texte', 65, false, 40
+from public.courses c where c.slug = 'bac-mathematiques-s'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Probabilités et statistiques');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
+
+Voici un sujet d''entraînement complet, conçu sur le modèle des épreuves de mathématiques du Bac S. Ce n''est pas un sujet officiel. La répartition des points est indicative, non officielle. Traite-le en temps limité, sans calculatrice programmable non autorisée, puis compare avec le corrigé.
+
+## Exercice 1 : nombres complexes (4 points)
+
+1. Résoudre dans ℂ l''équation z² − 2√3 z + 4 = 0.
+
+2. On note a la solution de partie imaginaire positive et b l''autre. Écrire a et b sous forme exponentielle.
+
+3. Dans le plan complexe, A et B ont pour affixes a et b. Montrer que le triangle OAB est équilatéral.
+
+4. Montrer que A est l''image de B par la rotation de centre O et d''angle π/3.
+
+5. Calculer a⁶.
+
+## Exercice 2 : probabilités (4 points)
+
+Une coopérative de Casamance achète ses mangues à deux producteurs : 70 % au producteur A et 30 % au producteur B. 5 % des mangues de A et 10 % de celles de B sont abîmées (données fictives). On prend une mangue au hasard.
+
+1. Construire un arbre pondéré.
+
+2. Calculer la probabilité que la mangue soit abîmée.
+
+3. La mangue est abîmée. Quelle est la probabilité qu''elle vienne du producteur A ?
+
+4. On prélève 5 mangues, le stock étant assez grand pour assimiler les tirages à des tirages indépendants. Calculer la probabilité qu''aucune ne soit abîmée, puis qu''au moins une le soit (arrondis à 10⁻³).
+
+## Problème : analyse (12 points)
+
+Soit f la fonction définie sur ℝ par f(x) = (x + 2)e⁻ˣ et C sa courbe dans un repère orthonormé.
+
+Partie A
+
+1. Calculer les limites de f en −∞ et en +∞. Interpréter graphiquement.
+
+2. Montrer que f''(x) = −(x + 1)e⁻ˣ. Dresser le tableau de variations de f.
+
+3. Déterminer le point d''intersection de C avec l''axe des abscisses, puis une équation de la tangente T à C au point d''abscisse 0.
+
+Partie B
+
+1. Déterminer les réels a et b tels que F(x) = (ax + b)e⁻ˣ soit une primitive de f.
+
+2. Calculer l''aire A du domaine limité par C, l''axe des abscisses et les droites x = 0 et x = 1. Donner la valeur exacte puis une valeur approchée à 10⁻² près.
+
+Partie C
+
+1. Vérifier que f est solution de l''équation différentielle (E) : y'' + y = e⁻ˣ.
+
+2. On pose uₙ = f(n) pour tout entier n ≥ 0. Montrer que (uₙ) est décroissante et déterminer sa limite.
+
+## Corrigé de l''exercice 1
+
+1. Δ = 12 − 16 = −4 = (2i)². z = (2√3 + 2i)/2 = √3 + i ou z = √3 − i.
+
+2. |a| = √(3 + 1) = 2 ; cos θ = √3/2 et sin θ = 1/2, donc θ = π/6. a = 2e^(iπ/6) et b = ā = 2e^(−iπ/6).
+
+3. OA = |a| = 2, OB = |b| = 2, AB = |a − b| = |2i| = 2. Les trois côtés sont égaux : OAB est équilatéral.
+
+4. La rotation s''écrit z'' = e^(iπ/3) z. e^(iπ/3) × 2e^(−iπ/6) = 2e^(iπ/6) = a. Donc A est l''image de B.
+
+5. a⁶ = 2⁶ e^(iπ) = −64.
+
+## Corrigé de l''exercice 2
+
+1. Premier niveau : A (0,7) et B (0,3). Second niveau : après A, abîmée D (0,05) ou non (0,95) ; après B, D (0,10) ou non (0,90).
+
+2. P(D) = 0,7 × 0,05 + 0,3 × 0,10 = 0,035 + 0,030 = 0,065.
+
+3. P_D(A) = 0,035/0,065 = 7/13 ≈ 0,538.
+
+4. Le nombre X de mangues abîmées suit B(5 ; 0,065). P(X = 0) = 0,935⁵ ≈ 0,715. P(X ≥ 1) = 1 − 0,935⁵ ≈ 0,285.
+
+## Corrigé du problème
+
+Partie A
+
+1. En −∞ : x + 2 tend vers −∞ et e⁻ˣ vers +∞, donc f tend vers −∞. En +∞ : f(x) = x e⁻ˣ + 2e⁻ˣ ; par croissance comparée x e⁻ˣ = x/eˣ tend vers 0, et 2e⁻ˣ tend vers 0. Donc f tend vers 0 : l''axe des abscisses (y = 0) est asymptote horizontale en +∞.
+
+2. f''(x) = 1 × e⁻ˣ + (x + 2)(−e⁻ˣ) = (1 − x − 2)e⁻ˣ = −(x + 1)e⁻ˣ. Comme e⁻ˣ > 0, f''(x) a le signe de −(x + 1) : positive sur ]−∞ ; −1[, négative sur ]−1 ; +∞[. f est croissante sur ]−∞ ; −1], décroissante sur [−1 ; +∞[, avec un maximum f(−1) = 1 × e¹ = e ≈ 2,72.
+
+3. f(x) = 0 ⇔ x + 2 = 0 ⇔ x = −2 : point (−2 ; 0). f(0) = 2 et f''(0) = −1, donc T : y = −x + 2.
+
+Partie B
+
+1. F''(x) = a e⁻ˣ − (ax + b)e⁻ˣ = (−ax + a − b)e⁻ˣ. On veut −a = 1 et a − b = 2 : a = −1 et b = −3. F(x) = (−x − 3)e⁻ˣ.
+
+2. Sur [0 ; 1], f(x) > 0, donc A = F(1) − F(0) = −4e⁻¹ − (−3) = 3 − 4/e u.a. ≈ 1,53 u.a.
+
+Partie C
+
+1. f''(x) + f(x) = −(x + 1)e⁻ˣ + (x + 2)e⁻ˣ = e⁻ˣ. f est bien solution de (E).
+
+2. f est décroissante sur [−1 ; +∞[, donc sur [0 ; +∞[ : pour tout n ≥ 0, n < n + 1 entraîne f(n + 1) < f(n), c''est-à-dire uₙ₊₁ < uₙ. La suite est décroissante. Comme f tend vers 0 en +∞, lim uₙ = 0.
+
+## Conseils
+
+- Dans l''exercice de complexes, le module et l''argument se lisent mieux après avoir écrit a sous forme exponentielle : toute la suite devient rapide.
+- En probabilités, écris l''événement en toutes lettres avant de calculer.
+- Dans le problème, la partie A est la plus rentable : ne la bâcle jamais. Si tu bloques en Partie B, l''identification des coefficients (méthode utilisée ici) est la technique standard à maîtriser.
+- Trace la courbe avec soin : asymptote, maximum (−1 ; e), tangente T, point (−2 ; 0).
+
+## Exercices pratiques
+
+Pour compléter l''entraînement, voici cinq questions courtes de difficulté croissante, dans l''esprit des questions de cours du Bac.
+
+1. Calculer la limite en +∞ de ln(x)/x².
+
+2. Résoudre dans ℝ l''équation e²ˣ − 3eˣ + 2 = 0.
+
+3. Résoudre l''équation ln(x) + ln(x − 1) = ln 2.
+
+4. Calculer (1 + i)⁸.
+
+5. X suit la loi binomiale B(5 ; 0,5). Calculer P(X = 3).
+
+## Corrigé
+
+1. ln(x)/x² = (ln(x)/x) × (1/x). Le premier facteur tend vers 0 (croissance comparée), le second aussi : la limite est 0.
+
+2. On pose X = eˣ > 0 : X² − 3X + 2 = 0, d''où X = 1 ou X = 2. eˣ = 1 donne x = 0 ; eˣ = 2 donne x = ln 2. Solutions : 0 et ln 2.
+
+3. Il faut x > 0 et x − 1 > 0, donc x > 1. L''équation devient ln(x(x − 1)) = ln 2, soit x² − x − 2 = 0, de racines 2 et −1. Seul 2 vérifie x > 1 : solution x = 2.
+
+4. (1 + i)² = 1 + 2i + i² = 2i, donc (1 + i)⁸ = (2i)⁴ = 16 i⁴ = 16.
+
+5. P(X = 3) = C(5, 3) × 0,5³ × 0,5² = 10/32 = 5/16 ≈ 0,313.', 'texte', 90, false, 50
+from public.courses c where c.slug = 'bac-mathematiques-s'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive de veille du Bac', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : séance de révision intensive de veille du Bac en mathématiques, série S.
+- Objectifs : revoir les résultats indispensables, corriger des exercices types en commentant la rédaction, travailler la gestion du temps, se tester avec un quiz et une évaluation finale.
+- Matériel : tableau ou diaporama, calculatrice scientifique, brouillon, fiches de révision.
+- Prérequis : leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« Bonsoir à toutes et à tous. Ce soir, nous n''apprenons rien de nouveau : nous consolidons. L''objectif est que vous entriez demain dans la salle d''examen avec des réflexes clairs. Nous allons parcourir l''analyse, les suites, les complexes et les probabilités, corriger des exercices types et parler de gestion du temps. Quand je dis “pause”, arrêtez la vidéo et cherchez seuls avant de regarder la correction. »
+
+Visuel : le plan de la séance en sept étapes.
+
+## 05:00 – 20:00 · Rappels clés d''analyse
+
+« Première règle : toujours commencer par l''ensemble de définition. Avec ln, l''expression à l''intérieur doit être strictement positive. Deuxième règle : pour une limite, on remplace d''abord ; si on tombe sur une forme indéterminée, on factorise par le terme dominant ou on utilise les croissances comparées. Retenez les quatre : eˣ/x tend vers +∞ en +∞, ln(x)/x tend vers 0 en +∞, x eˣ tend vers 0 en −∞, x ln x tend vers 0 en 0⁺. »
+
+« Pour dériver, repérez la structure : produit, quotient, composée. La dérivée de e puissance u, c''est u'' e puissance u. La dérivée de ln u, c''est u'' sur u. Et l''équation de la tangente en a : y = f''(a)(x − a) + f(a). »
+
+Visuel : tableau des primitives usuelles et la formule d''intégration par parties.
+
+« Pour une équation différentielle y'' = ay + b, la solution générale est C eᵃˣ − b/a. La condition initiale donne C. Pour y'''' + ω²y = 0, c''est A cos ωx + B sin ωx. »
+
+Question à poser : « Quelle est la dérivée de ln(x² + 1) ? » Réponse : 2x/(x² + 1).
+
+## 20:00 – 35:00 · Correction commentée : une étude de fonction avec ln
+
+Visuel : l''énoncé. « Soit g(x) = x ln x − x sur ]0 ; +∞[. Étudier g. »
+
+« Limite en 0⁺ : x ln x tend vers 0 par croissance comparée, et x tend vers 0 ; donc g tend vers 0. Limite en +∞ : j''écris g(x) = x(ln x − 1) ; x tend vers +∞ et ln x − 1 aussi, donc g tend vers +∞. »
+
+« Dérivée : la dérivée de x ln x est 1 × ln x + x × 1/x = ln x + 1. Donc g''(x) = ln x + 1 − 1 = ln x. Le signe est simple : g'' < 0 sur ]0 ; 1[ et g'' > 0 sur ]1 ; +∞[. Minimum en 1 : g(1) = 0 − 1 = −1. »
+
+« Où la courbe coupe-t-elle l''axe des abscisses ? g(x) = 0 ⇔ x(ln x − 1) = 0 ⇔ ln x = 1 (car x > 0) ⇔ x = e. Remarquez la rédaction : chaque équivalence est justifiée. Et un bonus : g''(x) = ln x, donc g est une primitive de ln. Cela permet de calculer ∫ de 1 à e de ln x dx = g(e) − g(1) = 0 − (−1) = 1. »
+
+Visuel : la courbe de g avec le minimum (1 ; −1) et le point (e ; 0).
+
+## 35:00 – 45:00 · Suites : la méthode de la suite auxiliaire
+
+« Exercice type : u₀ = 4 et uₙ₊₁ = 0,8uₙ + 2. Je cherche le point fixe : ℓ = 0,8ℓ + 2, donc 0,2ℓ = 2 et ℓ = 10. Je pose vₙ = uₙ − 10. Je calcule vₙ₊₁ = 0,8uₙ + 2 − 10 = 0,8(uₙ − 10) = 0,8vₙ. Suite géométrique de raison 0,8, de premier terme v₀ = −6. Donc uₙ = 10 − 6 × 0,8ⁿ, qui tend vers 10 car 0 < 0,8 < 1. »
+
+« Contexte réel : c''est le modèle d''un réservoir d''eau dans un village du Ferlo qui perd 20 % de son volume chaque semaine et reçoit 2 mètres cubes : à long terme, il se stabilise à 10 mètres cubes. »
+
+## 45:00 – 55:00 · Pause quiz interactif
+
+« Pause ! Cinq questions, une minute chacune. »
+
+- Q1 : lim (x → +∞) de (3x + 1)/(x − 2) ?
+- Q2 : forme exponentielle de −2i ?
+- Q3 : primitive de e³ˣ ?
+- Q4 : on tire successivement avec remise 3 boules dans une urne de 10 : combien de tirages possibles ?
+- Q5 : solution de y'' = 3y avec y(0) = 2 ?
+
+« Correction. Q1 : 3. Q2 : |−2i| = 2 et l''argument est −π/2, donc 2e^(−iπ/2). Q3 : e³ˣ/3. Q4 : 10³ = 1 000. Q5 : y = 2e³ˣ. Si vous avez 4 ou 5 bonnes réponses, bravo ; sinon, relisez la fiche correspondante ce soir, sans paniquer. »
+
+## 55:00 – 1:07:00 · Correction commentée : complexes et géométrie
+
+« Soit A, B, C les points d''affixes a = 1, b = 3 + 2i et c = −1 + 2i. Quelle est la nature du triangle ABC ? Calculons (c − a)/(b − a) = (−2 + 2i)/(2 + 2i). Je multiplie par le conjugué : (−2 + 2i)(2 − 2i)/8 = (−4 + 4i + 4i − 4i²)/8 = (−4 + 8i + 4)/8 = i. C''est un imaginaire pur de module 1 : le triangle ABC est rectangle isocèle en A. »
+
+« Rédaction attendue : (c − a)/(b − a) = i, donc AC/AB = |i| = 1 et (AB→, AC→) = arg i = π/2. Conclusion : ABC est rectangle et isocèle en A. Toujours conclure avec les mots du programme. »
+
+Visuel : la figure avec l''angle droit codé en A.
+
+## 1:07:00 – 1:15:00 · Probabilités : les trois réflexes
+
+« Réflexe 1 : identifier le type de tirage. Réflexe 2 : pour “au moins un”, passer par le contraire. Réflexe 3 : pour la loi binomiale, justifier les trois conditions. Exemple : un élève répond au hasard à 4 questions d''un QCM à 3 propositions dont une seule est juste. X suit B(4 ; 1/3). P(au moins une bonne réponse) = 1 − (2/3)⁴ = 1 − 16/81 = 65/81 ≈ 0,802. »
+
+« Et l''espérance ? E(X) = np = 4/3 ≈ 1,33 : en répondant au hasard, on obtient en moyenne un peu plus d''une bonne réponse sur quatre. »
+
+« Un mot sur les statistiques à deux variables, car elles reviennent souvent. Le calcul se fait en tableau : colonnes xᵢ, yᵢ, xᵢ², yᵢ², xᵢyᵢ, puis les totaux. Avec ces totaux, on obtient les moyennes, les variances, la covariance, puis r et la droite de régression. N''oubliez jamais que la droite de régression passe par le point moyen G : c''est un excellent contrôle. Si votre droite ne passe pas par G, il y a une erreur de calcul. Et quand on vous demande une estimation, comme une production future ou un nombre d''élèves dans un lycée, rédigez avec prudence : “si la tendance se maintient, on peut estimer…”. »
+
+Visuel : un tableau de calcul type à cinq colonnes avec la ligne des totaux.
+
+## 1:15:00 – 1:22:00 · Gestion du temps et dernière consigne
+
+« Demain : dix minutes de lecture complète. Commencez par l''exercice qui vous rassure. Le problème mérite environ la moitié du temps. Si vous bloquez plus de dix minutes sur une question, admettez le résultat et avancez. Gardez dix à quinze minutes de relecture. Écrivez les valeurs exactes, puis les approximations. Ce soir, dormez tôt : un cerveau reposé vaut mieux qu''une heure de révision supplémentaire. »
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+« Pour finir, une évaluation en cinq questions. Faites-la seuls, puis vérifiez. »
+
+- Question 1 : dériver f(x) = x e⁻²ˣ.
+- Question 2 : calculer ∫ de 0 à ln 2 de eˣ dx.
+- Question 3 : module et argument de z = −1 + i.
+- Question 4 : (uₙ) géométrique, u₀ = 3, q = 2 : calculer u₅ et u₀ + u₁ + … + u₅.
+- Question 5 : P(A) = 0,3 et P_A(B) = 0,5 : calculer P(A ∩ B).
+
+Réponses :
+
+- Réponse 1 : f''(x) = e⁻²ˣ − 2x e⁻²ˣ = (1 − 2x)e⁻²ˣ.
+- Réponse 2 : [eˣ] de 0 à ln 2 = 2 − 1 = 1.
+- Réponse 3 : |z| = √2 ; cos θ = −√2/2 et sin θ = √2/2, donc θ = 3π/4.
+- Réponse 4 : u₅ = 3 × 2⁵ = 96 ; somme = 3 × (1 − 2⁶)/(1 − 2) = 3 × 63 = 189.
+- Réponse 5 : P(A ∩ B) = P(A) × P_A(B) = 0,3 × 0,5 = 0,15.
+
+« Merci pour votre attention. Vous avez travaillé, vous avez une méthode : faites-vous confiance. Bon courage pour le Bac ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-mathematiques-s'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive de veille du Bac');
+
+-- Cours : Mathématiques série L : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-mathematiques-l', (select id from public.levels where name = 'Terminale'), null, 'Mathématiques (série L)', 'Mathématiques série L : réussir l''épreuve du Bac', 'Ce cours de préparation au Baccalauréat s''adresse aux élèves de Terminale des séries littéraires (L) du Sénégal et d''Afrique francophone, souvent peu à l''aise avec les mathématiques. Il révise pas à pas les fonctions et leurs graphiques, les suites et les pourcentages (intérêts, croissance d''une population), les statistiques et les probabilités, ainsi que la logique et la résolution de problèmes concrets, avec des exercices corrigés et un sujet d''entraînement complet. Prérequis : les calculs de base du collège (fractions, pourcentages, équations du premier degré).', true, 202
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## À qui s''adresse ce cours
+
+Ce cours est conçu pour les candidats au Baccalauréat des séries littéraires (L). Il part du principe que tu n''aimes pas forcément les mathématiques et que tu veux surtout des méthodes claires pour gagner des points. Il reprend des notions vues depuis la Seconde, sous l''angle de la révision, en insistant sur la Terminale. Les chapitres exigés peuvent varier selon ta série exacte et les instructions en vigueur : vérifie-les avec ton professeur.
+
+## Objectifs de la leçon
+
+- Savoir comment se présente l''épreuve de mathématiques en série L.
+- Comprendre ce que le correcteur attend.
+- Éviter les erreurs les plus fréquentes.
+- Organiser ses révisions sur 10 semaines.
+
+## Comment se présente l''épreuve
+
+Le sujet comporte en général deux ou trois exercices et parfois un petit problème. Les thèmes qui reviennent le plus sont : les pourcentages et les suites (évolution d''un prix, d''un capital, d''une population), les fonctions (lecture de graphique, étude simple, problème de coût et de bénéfice), les statistiques (moyenne, médiane, écart-type) et les probabilités simples. Des questions de logique ou de raisonnement peuvent aussi apparaître. La durée, le coefficient et le barème officiel sont fixés par les textes officiels en vigueur : ne te fie pas aux rumeurs. Les points indiqués dans nos sujets d''entraînement sont indicatifs, non officiels.
+
+Bonne nouvelle : en série L, les sujets sont très souvent concrets. On te parle d''une boutique, d''un champ, d''une association, d''un village. Si tu sais traduire une phrase en calcul, tu as déjà fait la moitié du travail. C''est là que tes qualités de lecteur deviennent un atout.
+
+## Ce que le correcteur attend
+
+- Des calculs posés, pas seulement des résultats.
+- Une phrase de conclusion qui répond à la question, avec l''unité (FCFA, habitants, kilogrammes).
+- Des tableaux propres quand il y a des statistiques.
+- Une justification courte quand on demande « justifier » : une propriété, un calcul ou un exemple.
+
+## La méthode en cinq étapes
+
+- Lire l''énoncé deux fois et souligner les nombres et les mots importants (« augmente de », « diminue de », « par an », « au moins »).
+- Reformuler la question avec tes mots : « On me demande combien il y aura d''habitants dans 5 ans. »
+- Écrire le calcul en entier, puis le faire à la calculatrice.
+- Vérifier si le résultat est raisonnable : un prix qui baisse ne peut pas devenir plus grand.
+- Rédiger la conclusion en une phrase.
+
+## Les erreurs fréquentes
+
+- Additionner des pourcentages successifs : une hausse de 10 % puis une hausse de 10 % ne font pas 20 %, mais 21 %.
+- Croire qu''une baisse de 20 % annule une hausse de 20 % : ce n''est pas vrai.
+- Confondre médiane et moyenne.
+- Oublier de ranger les valeurs dans l''ordre avant de chercher la médiane.
+- Donner une probabilité supérieure à 1 ou négative.
+- Confondre une implication et sa réciproque en logique.
+- Recopier un résultat de la calculatrice avec dix décimales sans arrondir correctement.
+
+## Bien utiliser sa calculatrice
+
+Apprends à utiliser les touches de puissance (pour 1,05 puissance 10 par exemple), de racine carrée et, si ta calculatrice le permet, le mode statistique qui calcule la moyenne et l''écart-type. Entraîne-toi avec ta propre calculatrice, celle que tu utiliseras le jour de l''examen.
+
+## Plan de révision sur 10 semaines
+
+- Semaine 1 : pourcentages, coefficients multiplicateurs, évolutions successives.
+- Semaine 2 : suites arithmétiques.
+- Semaine 3 : suites géométriques, intérêts simples et composés, croissance d''une population.
+- Semaine 4 : fonctions affines et lecture graphique.
+- Semaine 5 : fonctions du second degré, dérivée et tableau de variations ; problèmes de bénéfice.
+- Semaine 6 : statistiques (moyenne, médiane, quartiles, écart-type).
+- Semaine 7 : probabilités simples et tableaux à double entrée.
+- Semaine 8 : logique et raisonnement.
+- Semaine 9 : deux sujets complets en temps limité.
+- Semaine 10 : relecture des fiches, reprise des erreurs, repos la veille.
+
+Conseil pratique : 30 minutes de mathématiques par jour valent mieux que 4 heures le dimanche. Travaille avec un camarade de série S ou un grand frère ou une grande sœur : demande-lui de t''expliquer une méthode, puis réexplique-la toi-même.
+
+## Exercices pratiques
+
+1. Un article coûte 10 000 FCFA. Il augmente de 10 %, puis encore de 10 %. Quel est son nouveau prix ? Quel est le pourcentage global d''augmentation ?
+
+2. Reformule cette question avec tes mots : « Déterminer l''année à partir de laquelle la population dépassera 3 000 habitants. »
+
+3. Un élève trouve qu''une probabilité vaut 1,2. Que peut-on en conclure ?
+
+4. Range dans l''ordre et donne la médiane de la série : 12 ; 7 ; 15 ; 9 ; 10.
+
+5. Propose un emploi du temps de révision de mathématiques pour une semaine, à raison de 30 minutes par jour, pour la semaine 3 du plan.
+
+## Corrigé
+
+1. 10 000 × 1,1 = 11 000 FCFA, puis 11 000 × 1,1 = 12 100 FCFA. Coefficient global : 1,1 × 1,1 = 1,21, soit une hausse de 21 % et non de 20 %.
+
+2. « Je dois trouver la première année où le nombre d''habitants est plus grand que 3 000. » On calcule les termes successifs jusqu''à dépasser 3 000.
+
+3. Il y a une erreur : une probabilité est toujours comprise entre 0 et 1. Il faut reprendre le calcul (souvent, on a divisé dans le mauvais sens).
+
+4. Série rangée : 7 ; 9 ; 10 ; 12 ; 15. Il y a 5 valeurs : la médiane est la 3e, soit 10.
+
+5. Exemple : lundi, relire la fiche sur les suites géométriques ; mardi, deux exercices de calcul de termes ; mercredi, intérêts simples et composés ; jeudi, croissance d''une population ; vendredi, un exercice type Bac ; samedi, correction et liste des erreurs ; dimanche, repos ou quiz rapide.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'bac-mathematiques-l'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Fonctions et graphiques : lecture, second degré, dérivée et bénéfice', '## Objectifs de la leçon
+
+- Lire et interpréter un graphique.
+- Utiliser les fonctions affines et du second degré.
+- Calculer une dérivée simple et dresser un tableau de variations.
+- Résoudre un problème concret de coût, de recette et de bénéfice.
+
+## Fiche 1 : vocabulaire des fonctions
+
+Une fonction f associe à chaque nombre x un unique nombre f(x), appelé image de x. Si f(a) = b, on dit que a est un antécédent de b. La courbe de f est l''ensemble des points de coordonnées (x ; f(x)).
+
+Lecture graphique : pour trouver l''image de 3, on part de 3 sur l''axe horizontal, on monte jusqu''à la courbe et on lit la valeur sur l''axe vertical. Pour trouver les antécédents de 5, on trace la droite horizontale y = 5 et on lit les abscisses des points d''intersection avec la courbe. Résoudre f(x) = k graphiquement, c''est exactement cela.
+
+## Fiche 2 : fonctions affines
+
+- f(x) = ax + b. La courbe est une droite ; a est le coefficient directeur (la pente), b l''ordonnée à l''origine.
+- Si a > 0, f est croissante ; si a < 0, f est décroissante ; si a = 0, f est constante.
+- Calcul de a à partir de deux points : a = (f(x₂) − f(x₁))/(x₂ − x₁).
+- Une fonction linéaire f(x) = ax traduit une situation de proportionnalité.
+
+Exemple : un taxi demande 500 FCFA de prise en charge plus 200 FCFA par kilomètre. Le prix est f(x) = 200x + 500 pour x kilomètres. Pour 7 km : f(7) = 1 400 + 500 = 1 900 FCFA.
+
+## Fiche 3 : fonctions du second degré
+
+- f(x) = ax² + bx + c avec a ≠ 0. La courbe est une parabole, tournée vers le haut si a > 0 et vers le bas si a < 0.
+- Le sommet a pour abscisse x = −b/(2a). C''est là que f atteint son minimum (a > 0) ou son maximum (a < 0).
+- Racines : on calcule Δ = b² − 4ac. Si Δ > 0, deux solutions x = (−b − √Δ)/(2a) et x = (−b + √Δ)/(2a) ; si Δ = 0, une solution −b/(2a) ; si Δ < 0, pas de solution réelle.
+- Signe : ax² + bx + c est du signe de a à l''extérieur des racines et du signe contraire entre les racines.
+
+## Fiche 4 : dérivée et variations
+
+- Dérivées utiles : la dérivée d''une constante est 0 ; celle de x est 1 ; celle de x² est 2x ; celle de x³ est 3x² ; la dérivée de a × u est a × u''.
+- Si f''(x) > 0 sur un intervalle, f est croissante ; si f''(x) < 0, f est décroissante.
+- Là où la dérivée s''annule en changeant de signe, f atteint un maximum ou un minimum local.
+
+Méthode : calculer f''(x), étudier son signe (souvent une fonction affine ou un produit), dresser le tableau de variations en indiquant les valeurs de f aux bornes et aux extremums.
+
+## Fiche 5 : coût, recette, bénéfice
+
+- Recette R(x) = prix de vente unitaire × quantité vendue.
+- Bénéfice B(x) = R(x) − C(x).
+- L''entreprise est rentable quand B(x) > 0. Le bénéfice maximal correspond au sommet de la parabole ou au point où B''(x) = 0.
+
+## Exemple guidé : un atelier de couture à Thiès
+
+Un atelier fabrique x tenues par semaine (0 ≤ x ≤ 60). Son bénéfice, en milliers de FCFA, est B(x) = −2x² + 120x − 1 000.
+
+B''(x) = −4x + 120. B''(x) = 0 pour x = 30 ; B'' > 0 avant 30 et B'' < 0 après. Le bénéfice est maximal pour 30 tenues : B(30) = −1 800 + 3 600 − 1 000 = 800, soit 800 000 FCFA.
+
+Rentabilité : −2x² + 120x − 1 000 = 0 équivaut à x² − 60x + 500 = 0. Δ = 3 600 − 2 000 = 1 600 et √Δ = 40. Racines : (60 − 40)/2 = 10 et (60 + 40)/2 = 50. Comme a < 0, B(x) > 0 entre les racines : l''atelier est rentable s''il fabrique entre 10 et 50 tenues (bornes exclues).
+
+## Points clés
+
+Une fonction, c''est une machine à transformer des nombres ; un graphique, c''est une image de cette machine. Dans un problème concret, écris toujours la conclusion avec l''unité.
+
+## Exercices pratiques
+
+1. Soit f(x) = 200x + 500 (offre A d''un taxi) et g(x) = 300x (offre B), x en kilomètres, prix en FCFA. Pour quelle distance les deux offres coûtent-elles le même prix ? Quelle offre choisir pour 3 km ? pour 10 km ?
+
+2. Une droite passe par A(1 ; 4) et B(3 ; 10). Trouver son équation.
+
+3. Soit f(x) = x² − 4x + 3. Calculer f(0), trouver les racines, le sommet et dresser le tableau de variations.
+
+4. Résoudre l''inéquation x² − 4x + 3 < 0.
+
+5. Soit f(x) = x³ − 12x sur [−4 ; 4]. Calculer f''(x), étudier son signe et dresser le tableau de variations.
+
+6. Une coopérative vend du jus de bissap à 500 FCFA la bouteille. Ses coûts journaliers sont C(x) = 200x + 15 000 (en FCFA) pour x bouteilles. À partir de combien de bouteilles est-elle rentable ?
+
+## Corrigé
+
+1. 200x + 500 = 300x donne 100x = 500, x = 5 km. Pour 3 km : f(3) = 1 100 et g(3) = 900, l''offre B est moins chère. Pour 10 km : f(10) = 2 500 et g(10) = 3 000, l''offre A est moins chère.
+
+2. a = (10 − 4)/(3 − 1) = 3. Avec A : 4 = 3 × 1 + b, donc b = 1. Équation : y = 3x + 1.
+
+3. f(0) = 3. Δ = 16 − 12 = 4, √Δ = 2 ; racines (4 − 2)/2 = 1 et (4 + 2)/2 = 3. Sommet : x = 4/2 = 2, f(2) = 4 − 8 + 3 = −1. f''(x) = 2x − 4 : f décroissante sur ]−∞ ; 2], croissante sur [2 ; +∞[, minimum −1 en x = 2.
+
+4. a = 1 > 0 : le trinôme est négatif entre ses racines. Solution : 1 < x < 3, soit l''intervalle ]1 ; 3[.
+
+5. f''(x) = 3x² − 12 = 3(x² − 4) = 3(x − 2)(x + 2). f'' > 0 sur [−4 ; −2[ et sur ]2 ; 4], f'' < 0 sur ]−2 ; 2[. Valeurs : f(−4) = −64 + 48 = −16 ; f(−2) = −8 + 24 = 16 ; f(2) = 8 − 24 = −16 ; f(4) = 64 − 48 = 16. f croît de −16 à 16 sur [−4 ; −2], décroît de 16 à −16 sur [−2 ; 2], puis croît de −16 à 16 sur [2 ; 4].
+
+6. R(x) = 500x ; B(x) = 500x − 200x − 15 000 = 300x − 15 000. B(x) > 0 si x > 50. La coopérative est rentable à partir de 51 bouteilles vendues par jour (à 50 bouteilles, le bénéfice est nul).', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bac-mathematiques-l'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fonctions et graphiques : lecture, second degré, dérivée et bénéfice');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Suites et pourcentages : intérêts et croissance de population', '## Objectifs de la leçon
+
+- Calculer avec les pourcentages et les coefficients multiplicateurs.
+- Enchaîner des évolutions et trouver un taux réciproque.
+- Utiliser les suites arithmétiques et géométriques.
+- Résoudre des problèmes d''intérêts et de croissance d''une population.
+
+## Fiche 1 : pourcentages et coefficients multiplicateurs
+
+- Prendre t % d''une quantité : multiplier par t/100.
+- Augmenter de t % : multiplier par (1 + t/100). Diminuer de t % : multiplier par (1 − t/100). Ce nombre est le coefficient multiplicateur CM.
+- Taux d''évolution entre une valeur de départ V₀ et une valeur d''arrivée V₁ : t = (V₁ − V₀)/V₀ × 100.
+- Évolutions successives : on multiplie les coefficients. On n''additionne jamais les pourcentages.
+- Taux réciproque : pour revenir à la valeur de départ, on multiplie par 1/CM.
+
+Exemple : un sac de riz coûte 25 000 FCFA. Hausse de 12 % : 25 000 × 1,12 = 28 000 FCFA. Puis baisse de 12 % : 28 000 × 0,88 = 24 640 FCFA. Coefficient global 1,12 × 0,88 = 0,9856 : baisse globale de 1,44 %.
+
+Après une hausse de 25 % (CM = 1,25), le coefficient réciproque est 1/1,25 = 0,8 : il faut une baisse de 20 % pour revenir au prix initial.
+
+## Fiche 2 : suites arithmétiques
+
+- On passe d''un terme au suivant en ajoutant toujours le même nombre r, la raison : uₙ₊₁ = uₙ + r.
+- Formule : uₙ = u₀ + n × r (ou uₙ = u₁ + (n − 1) × r si on commence à u₁).
+- Somme de termes consécutifs : (nombre de termes) × (premier terme + dernier terme)/2.
+- Modèle d''une croissance constante (même nombre ajouté chaque année) : intérêts simples, salaire augmenté d''un montant fixe.
+
+## Fiche 3 : suites géométriques
+
+- On passe d''un terme au suivant en multipliant toujours par le même nombre q, la raison : uₙ₊₁ = q × uₙ.
+- Formule : uₙ = u₀ × qⁿ.
+- Somme de termes consécutifs : premier terme × (1 − q^(nombre de termes))/(1 − q), si q ≠ 1.
+- Une évolution de t % par période correspond à une suite géométrique de raison q = 1 + t/100.
+
+## Fiche 4 : intérêts simples et composés
+
+- Intérêts simples : les intérêts sont calculés chaque année sur le capital de départ. Après n années, Cₙ = C₀ + n × C₀ × t/100 : suite arithmétique.
+- Intérêts composés : les intérêts s''ajoutent au capital et rapportent à leur tour. Cₙ = C₀ × (1 + t/100)ⁿ : suite géométrique.
+
+Exemple : 200 000 FCFA placés à 6 % par an pendant 3 ans. Intérêts simples : 200 000 × 0,06 × 3 = 36 000 FCFA, capital final 236 000 FCFA. Intérêts composés : 200 000 × 1,06³ ≈ 238 203 FCFA. Le placement à intérêts composés rapporte un peu plus.
+
+## Fiche 5 : croissance d''une population
+
+Prenons une commune fictive de 50 000 habitants dont la population augmente de 3 % par an. On note Pₙ la population après n années : Pₙ = 50 000 × 1,03ⁿ. Après 10 ans : P₁₀ = 50 000 × 1,03¹⁰ ≈ 67 196 habitants.
+
+Quand la population aura-t-elle doublé ? On cherche le plus petit n tel que 1,03ⁿ ≥ 2. À la calculatrice : 1,03²³ ≈ 1,974 et 1,03²⁴ ≈ 2,033. Il faut donc 24 ans. Cette méthode par essais successifs (ou avec le tableau de valeurs de la calculatrice) suffit en série L.
+
+## Méthode : reconnaître le type de suite
+
+- « augmente de 500 chaque année » : on ajoute, suite arithmétique de raison 500.
+- « augmente de 5 % chaque année » : on multiplie, suite géométrique de raison 1,05.
+- « diminue de 10 % par mois » : suite géométrique de raison 0,9.
+
+## Points clés
+
+Un pourcentage se transforme toujours en coefficient multiplicateur. Ajouter : arithmétique. Multiplier : géométrique.
+
+## Exercices pratiques
+
+1. Un téléphone coûte 80 000 FCFA. Il subit une baisse de 15 %. Quel est son nouveau prix ?
+
+2. Le prix du litre d''huile passe de 1 200 FCFA à 1 500 FCFA. Calculer le taux d''évolution.
+
+3. Un prix augmente trois fois de suite de 10 %. Quel est le pourcentage global d''augmentation ?
+
+4. Awa est embauchée avec un salaire mensuel de 150 000 FCFA la première année. Chaque année, son salaire mensuel augmente de 5 000 FCFA. Quel sera son salaire mensuel la 10e année ? Quelle somme totale aura-t-elle perçue en 10 ans ?
+
+5. Une ferme avicole produit 1 000 œufs le premier mois, puis sa production augmente de 10 % chaque mois. Combien d''œufs produit-elle le 6e mois ? Combien en tout sur les 6 premiers mois ?
+
+6. Un capital de 300 000 FCFA est placé à intérêts composés à 4 % par an. Quel est le capital après 5 ans ?
+
+7. Le chiffre d''affaires d''une boutique augmente de 20 % la première année puis de 5 % la deuxième. Quel est le taux d''évolution global ? Quel taux annuel constant aurait donné le même résultat ?
+
+## Corrigé
+
+1. 80 000 × 0,85 = 68 000 FCFA.
+
+2. t = (1 500 − 1 200)/1 200 × 100 = 300/1 200 × 100 = 25 %.
+
+3. 1,1³ = 1,331 : augmentation globale de 33,1 %.
+
+4. Suite arithmétique : u₁ = 150 000, r = 5 000. u₁₀ = 150 000 + 9 × 5 000 = 195 000 FCFA par mois. Total des salaires mensuels sur 10 ans : 10 × (150 000 + 195 000)/2 = 1 725 000 FCFA ; comme chaque année compte 12 mois, la somme totale perçue est 12 × 1 725 000 = 20 700 000 FCFA.
+
+5. Suite géométrique : u₁ = 1 000, q = 1,1. u₆ = 1 000 × 1,1⁵ ≈ 1 611 œufs (1 610,51). Total : 1 000 × (1 − 1,1⁶)/(1 − 1,1) ≈ 7 716 œufs (7 715,61).
+
+6. 300 000 × 1,04⁵ ≈ 364 996 FCFA.
+
+7. Coefficient global : 1,2 × 1,05 = 1,26, soit + 26 %. Taux annuel constant : on cherche q tel que q² = 1,26, donc q = √1,26 ≈ 1,1225, soit environ 12,25 % par an (et non 12,5 %, la moyenne des deux taux).', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bac-mathematiques-l'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Suites et pourcentages : intérêts et croissance de population');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Statistiques, probabilités et logique', '## Objectifs de la leçon
+
+- Calculer et interpréter les indicateurs statistiques d''une série.
+- Calculer des probabilités simples, avec des tableaux et des arbres.
+- Utiliser les connecteurs logiques, les tables de vérité et les quantificateurs.
+- Raisonner correctement : implication, réciproque, contraposée, contre-exemple.
+
+## Fiche 1 : statistiques à une variable
+
+- Moyenne : x̄ = (somme des valeurs)/(effectif total) ; avec un tableau d''effectifs, x̄ = (somme des nᵢxᵢ)/N.
+- Médiane : on range les valeurs dans l''ordre croissant ; c''est la valeur du milieu (effectif impair) ou la moyenne des deux valeurs du milieu (effectif pair). Au moins la moitié des valeurs lui sont inférieures ou égales.
+- Quartiles : Q₁ est la plus petite valeur de la série telle qu''au moins 25 % des valeurs lui soient inférieures ou égales ; Q₃ de même avec 75 %. On calcule le rang N/4 (ou 3N/4) et on l''arrondit à l''entier supérieur.
+- Étendue : plus grande valeur − plus petite valeur. Écart interquartile : Q₃ − Q₁.
+- Variance : V = moyenne des carrés des écarts à la moyenne ; écart-type σ = √V. Plus σ est grand, plus les valeurs sont dispersées.
+
+## Fiche 2 : probabilités
+
+- Une expérience aléatoire a des issues ; un événement est un ensemble d''issues.
+- Si les issues sont équiprobables : P(A) = nombre d''issues favorables / nombre d''issues possibles.
+- 0 ≤ P(A) ≤ 1 ; P(Ā) = 1 − P(A) ; P(A ou B) = P(A) + P(B) − P(A et B).
+- Outils : tableau à double entrée (deux dés), arbre (épreuves successives), diagramme de Venn (ensembles qui se chevauchent).
+
+## Fiche 3 : logique
+
+- Une proposition est une phrase qui est soit vraie, soit fausse.
+- Négation « non P » : vraie quand P est fausse.
+- « P et Q » est vraie seulement si P et Q sont vraies toutes les deux. « P ou Q » est vraie si au moins l''une des deux est vraie.
+- « P ⇒ Q » (si P alors Q) est fausse seulement quand P est vraie et Q fausse.
+- Réciproque de P ⇒ Q : Q ⇒ P (pas toujours vraie). Contraposée : non Q ⇒ non P (toujours équivalente à l''implication de départ).
+- Lois de De Morgan : non(P et Q) = (non P) ou (non Q) ; non(P ou Q) = (non P) et (non Q).
+- Quantificateurs : la négation de « tous les… sont… » est « au moins un… n''est pas… » ; la négation de « il existe… » est « aucun… » (ou « pour tout…, non… »).
+- Pour montrer qu''une affirmation générale est fausse, un seul contre-exemple suffit.
+
+## Exemple guidé : implication et contraposée
+
+P : « il pleut » ; Q : « le sol de la cour est mouillé ». L''implication « s''il pleut, alors le sol est mouillé » est raisonnable. La réciproque « si le sol est mouillé, alors il pleut » est fausse : quelqu''un a pu laver la cour. La contraposée « si le sol n''est pas mouillé, alors il ne pleut pas » dit exactement la même chose que l''implication.
+
+## Méthode : construire une table de vérité
+
+On écrit toutes les combinaisons de vérité (V ou F) de P et Q, soit 4 lignes, puis on remplit colonne par colonne en appliquant les règles des connecteurs.
+
+## Points clés
+
+En statistiques, range d''abord les valeurs. En probabilités, compte toutes les issues possibles avant de compter les favorables. En logique, ne confonds jamais une implication avec sa réciproque.
+
+## Exercices pratiques
+
+1. Voici les notes de 10 élèves d''une classe de Terminale L à Saint-Louis : 8 ; 10 ; 12 ; 12 ; 14 ; 9 ; 15 ; 11 ; 13 ; 6. Calculer la moyenne, la médiane, Q₁, Q₃, l''étendue, la variance et l''écart-type.
+
+2. On a interrogé 20 élèves sur leur nombre de frères et sœurs : 0 (2 élèves), 1 (5 élèves), 2 (8 élèves), 3 (4 élèves), 4 (1 élève). Calculer la moyenne, la médiane et le mode.
+
+3. On lance deux dés équilibrés et on fait la somme. Calculer la probabilité d''obtenir 7, puis celle d''obtenir une somme supérieure ou égale à 10.
+
+4. Dans une classe de 40 élèves, 25 jouent au football, 15 au basket et 8 aux deux. On choisit un élève au hasard. Probabilité qu''il pratique au moins un des deux sports ? aucun ?
+
+5. Construire la table de vérité de P ⇒ Q et de (non Q) ⇒ (non P). Que constate-t-on ?
+
+6. Écrire la négation de : a) « Tous les élèves de la classe ont la moyenne. » b) « Il existe un élève qui parle wolof et anglais. »
+
+7. « Si un nombre entier est divisible par 6, alors il est divisible par 3. » Cette implication est-elle vraie ? Énoncer sa réciproque et sa contraposée, et dire si elles sont vraies.
+
+## Corrigé
+
+1. Série rangée : 6 ; 8 ; 9 ; 10 ; 11 ; 12 ; 12 ; 13 ; 14 ; 15. Somme 110, moyenne 11. Médiane : (11 + 12)/2 = 11,5. Q₁ : rang 10/4 = 2,5 arrondi à 3, Q₁ = 9. Q₃ : rang 7,5 arrondi à 8, Q₃ = 13. Étendue : 15 − 6 = 9. Écarts à la moyenne : −5, −3, −2, −1, 0, 1, 1, 2, 3, 4 ; carrés : 25, 9, 4, 1, 0, 1, 1, 4, 9, 16, somme 70. V = 70/10 = 7 et σ = √7 ≈ 2,65.
+
+2. Moyenne : (0 × 2 + 1 × 5 + 2 × 8 + 3 × 4 + 4 × 1)/20 = 37/20 = 1,85. Effectifs cumulés : 2, 7, 15, 19, 20. Les 10e et 11e valeurs valent 2 : médiane 2. Mode : 2 (effectif le plus grand).
+
+3. 36 issues équiprobables. Somme 7 : (1;6), (2;5), (3;4), (4;3), (5;2), (6;1), soit 6 issues : P = 6/36 = 1/6. Somme ≥ 10 : (4;6), (6;4), (5;5), (5;6), (6;5), (6;6), soit 6 issues : P = 1/6.
+
+4. Au moins un sport : 25 + 15 − 8 = 32 élèves, P = 32/40 = 0,8. Aucun : 40 − 32 = 8 élèves, P = 8/40 = 0,2.
+
+5. Lignes (P ; Q) : (V ; V), (V ; F), (F ; V), (F ; F). P ⇒ Q : V, F, V, V. (non Q) ⇒ (non P) : V, F, V, V. Les deux colonnes sont identiques : une implication et sa contraposée sont équivalentes.
+
+6. a) « Au moins un élève de la classe n''a pas la moyenne. » b) « Aucun élève ne parle à la fois wolof et anglais », autrement dit « pour chaque élève, il ne parle pas wolof ou il ne parle pas anglais ».
+
+7. Vraie : si n = 6k, alors n = 3 × (2k). Réciproque : « si un entier est divisible par 3, il est divisible par 6 » : fausse, contre-exemple 9. Contraposée : « si un entier n''est pas divisible par 3, il n''est pas divisible par 6 » : vraie, comme l''implication.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bac-mathematiques-l'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Statistiques, probabilités et logique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
+
+Voici un sujet d''entraînement complet, sur le modèle des épreuves de mathématiques des séries L. Ce n''est pas un sujet officiel ; la répartition des points est indicative, non officielle. Traite-le seul, en temps limité, avec ta calculatrice, puis compare avec le corrigé.
+
+## Exercice 1 : suites et pourcentages (6 points)
+
+En 2025, un village A compte 2 000 habitants. On suppose que sa population augmente de 4 % par an. Un village voisin B compte 2 500 habitants en 2025 et gagne 100 habitants par an. On note uₙ et vₙ les populations de A et de B en l''année 2025 + n.
+
+1. Calculer u₁ et v₁.
+
+2. Quelle est la nature de chaque suite ? Exprimer uₙ et vₙ en fonction de n.
+
+3. Calculer la population de A en 2030 (arrondie à l''unité).
+
+4. À partir de quelle année la population de A dépassera-t-elle 3 000 habitants ?
+
+5. À l''aide de la calculatrice, déterminer à partir de quelle année A sera plus peuplé que B.
+
+## Exercice 2 : statistiques et probabilités (6 points)
+
+Un club de lecture de Ziguinchor a relevé le nombre de livres lus pendant les vacances par ses 25 membres :
+
+- 1 livre : 3 membres
+- 2 livres : 6 membres
+- 3 livres : 8 membres
+- 4 livres : 5 membres
+- 5 livres : 3 membres
+
+1. Calculer le nombre moyen de livres lus.
+
+2. Déterminer la médiane et le mode.
+
+3. Calculer la variance et l''écart-type (arrondi à 0,01).
+
+4. On choisit un membre au hasard. Quelle est la probabilité qu''il ait lu au moins 4 livres ? au plus 2 livres ?
+
+5. On considère l''affirmation : « Tous les membres ont lu au moins 2 livres. » Est-elle vraie ? Écrire sa négation.
+
+## Problème : un atelier de couture (8 points)
+
+Un atelier de Pikine fabrique et vend x boubous par mois, avec 0 ≤ x ≤ 60. Chaque boubou est vendu 50 000 FCFA. Le coût de production mensuel, en milliers de FCFA, est C(x) = 0,5x² + 10x + 600.
+
+1. Exprimer la recette R(x) en milliers de FCFA.
+
+2. Montrer que le bénéfice est B(x) = −0,5x² + 40x − 600.
+
+3. Calculer B''(x), étudier son signe et dresser le tableau de variations de B sur [0 ; 60].
+
+4. Pour quelle production le bénéfice est-il maximal ? Quel est ce bénéfice en FCFA ?
+
+5. Résoudre B(x) = 0 et en déduire les productions pour lesquelles l''atelier est rentable.
+
+## Corrigé de l''exercice 1
+
+1. u₁ = 2 000 × 1,04 = 2 080 habitants ; v₁ = 2 500 + 100 = 2 600 habitants.
+
+2. (uₙ) est géométrique de raison 1,04 et de premier terme u₀ = 2 000 : uₙ = 2 000 × 1,04ⁿ. (vₙ) est arithmétique de raison 100 et de premier terme v₀ = 2 500 : vₙ = 2 500 + 100n.
+
+3. 2030 correspond à n = 5 : u₅ = 2 000 × 1,04⁵ ≈ 2 433 habitants.
+
+4. u₁₀ ≈ 2 960 et u₁₁ ≈ 3 079. La population dépasse 3 000 habitants pour n = 11, donc en 2036.
+
+5. À la calculatrice : u₂₁ ≈ 4 558 et v₂₁ = 4 600 ; u₂₂ ≈ 4 740 et v₂₂ = 4 700. A devient plus peuplé que B pour n = 22, soit en 2047. Une croissance en pourcentage finit toujours par dépasser une croissance d''un nombre fixe.
+
+## Corrigé de l''exercice 2
+
+1. Total des livres : 1 × 3 + 2 × 6 + 3 × 8 + 4 × 5 + 5 × 3 = 3 + 12 + 24 + 20 + 15 = 74. Moyenne : 74/25 = 2,96 livres.
+
+2. Effectifs cumulés : 3, 9, 17, 22, 25. La médiane est la 13e valeur : elle vaut 3. Mode : 3 livres (effectif 8).
+
+3. Moyenne des carrés : (1 × 3 + 4 × 6 + 9 × 8 + 16 × 5 + 25 × 3)/25 = (3 + 24 + 72 + 80 + 75)/25 = 254/25 = 10,16. V = 10,16 − 2,96² = 10,16 − 8,7616 = 1,3984. σ = √1,3984 ≈ 1,18.
+
+4. Au moins 4 livres : 5 + 3 = 8 membres, P = 8/25 = 0,32. Au plus 2 livres : 3 + 6 = 9 membres, P = 9/25 = 0,36.
+
+5. Fausse : 3 membres n''ont lu qu''un livre (contre-exemple). Négation : « Au moins un membre a lu moins de 2 livres. »
+
+## Corrigé du problème
+
+1. R(x) = 50x (en milliers de FCFA).
+
+2. B(x) = R(x) − C(x) = 50x − 0,5x² − 10x − 600 = −0,5x² + 40x − 600.
+
+3. B''(x) = −x + 40. B''(x) > 0 pour x < 40 et B''(x) < 0 pour x > 40. B est croissante sur [0 ; 40] et décroissante sur [40 ; 60]. Valeurs : B(0) = −600 ; B(40) = −800 + 1 600 − 600 = 200 ; B(60) = −1 800 + 2 400 − 600 = 0.
+
+4. Le bénéfice est maximal pour 40 boubous ; il vaut 200 milliers de FCFA, soit 200 000 FCFA.
+
+5. −0,5x² + 40x − 600 = 0 ⇔ x² − 80x + 1 200 = 0 (en multipliant par −2). Δ = 6 400 − 4 800 = 1 600, √Δ = 40. Solutions : (80 − 40)/2 = 20 et (80 + 40)/2 = 60. Le coefficient de x² étant négatif, B(x) > 0 entre les racines : l''atelier est rentable pour une production strictement comprise entre 20 et 60 boubous.
+
+## Conseils
+
+- Dans l''exercice 1, présente un petit tableau de valeurs de la calculatrice : c''est une justification acceptée.
+- Dans l''exercice 2, le tableau de calcul (valeurs, effectifs, produits, carrés) évite les oublis.
+- Dans le problème, écris toujours « en milliers de FCFA » puis convertis à la fin.
+- Garde 10 minutes pour relire et vérifier les unités.
+
+## Exercices pratiques
+
+Pour compléter l''entraînement, voici cinq questions courtes de difficulté croissante.
+
+1. Un pagne coûte 60 000 FCFA. Son prix augmente de 15 %. Quel est le nouveau prix ?
+
+2. (uₙ) est une suite géométrique de premier terme u₀ = 3 et de raison 2. Calculer u₄.
+
+3. Donner la médiane de la série : 5 ; 8 ; 2 ; 9 ; 4 ; 7.
+
+4. Une urne contient 3 boules rouges et 7 boules blanches. On tire une boule au hasard. Probabilité qu''elle soit rouge ? blanche ?
+
+5. Écrire la contraposée de : « Si un élève travaille régulièrement, alors il progresse. »
+
+## Corrigé
+
+1. 60 000 × 1,15 = 69 000 FCFA.
+
+2. u₄ = 3 × 2⁴ = 3 × 16 = 48.
+
+3. Série rangée : 2 ; 4 ; 5 ; 7 ; 8 ; 9. Six valeurs : médiane = (5 + 7)/2 = 6.
+
+4. P(rouge) = 3/10 = 0,3 ; P(blanche) = 1 − 0,3 = 0,7.
+
+5. « Si un élève ne progresse pas, alors il ne travaille pas régulièrement. »', 'texte', 75, false, 50
+from public.courses c where c.slug = 'bac-mathematiques-l'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive de veille du Bac', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : séance de révision intensive de veille du Bac en mathématiques, série L.
+- Objectifs : revoir les méthodes indispensables, corriger des exercices types en commentant la rédaction, apprendre à gérer son temps, se tester avec un quiz et une évaluation finale.
+- Matériel : tableau ou diaporama, calculatrice, brouillon, fiches de révision.
+- Prérequis : leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« Bonsoir à toutes et à tous. Je sais que, pour beaucoup d''entre vous, les mathématiques ne sont pas la matière préférée. Ce soir, mon objectif est simple : que vous entriez demain dans la salle avec des méthodes sûres pour aller chercher des points. Nous allons revoir les pourcentages et les suites, les fonctions, les statistiques, les probabilités et la logique. Gardez votre calculatrice et une feuille de brouillon. Quand je dis “pause”, arrêtez la vidéo et cherchez seuls. »
+
+Visuel : le plan de la séance en sept étapes.
+
+## 05:00 – 18:00 · Rappels : pourcentages et suites
+
+« Règle d''or : un pourcentage devient un coefficient multiplicateur. Augmenter de 8 %, c''est multiplier par 1,08. Diminuer de 8 %, c''est multiplier par 0,92. Deux évolutions successives ? On multiplie les coefficients. »
+
+« Exemple : le prix du kilo de poisson augmente de 20 % pendant la saison creuse puis baisse de 20 %. Coefficient global : 1,2 × 0,8 = 0,96. Le prix final est inférieur de 4 % au prix de départ. C''est l''erreur classique du Bac : beaucoup d''élèves répondent “le prix revient au départ”. »
+
+« Les suites maintenant. On ajoute toujours le même nombre : suite arithmétique, uₙ = u₀ + nr. On multiplie toujours par le même nombre : suite géométrique, uₙ = u₀ × qⁿ. Intérêts simples : arithmétique. Intérêts composés et croissance en pourcentage : géométrique. »
+
+Visuel : un tableau à deux colonnes « arithmétique / géométrique » avec la relation de récurrence, la formule explicite et la somme.
+
+Question à poser : « Une population augmente de 2 % par an. Quelle est la raison de la suite ? » Réponse : 1,02.
+
+## 18:00 – 32:00 · Correction commentée : un exercice de suites
+
+Visuel : l''énoncé. « Fatou ouvre un compte épargne avec 100 000 FCFA, placé à intérêts composés à 5 % par an. Combien aura-t-elle après 4 ans ? Après combien d''années aura-t-elle au moins 150 000 FCFA ? »
+
+« Étape 1 : je reconnais une suite géométrique de raison 1,05 et de premier terme C₀ = 100 000. J''écris : Cₙ = 100 000 × 1,05ⁿ. Étape 2 : C₄ = 100 000 × 1,05⁴. À la calculatrice, 1,05⁴ ≈ 1,2155, donc C₄ ≈ 121 551 FCFA. Étape 3 : je cherche le plus petit n tel que Cₙ ≥ 150 000, c''est-à-dire 1,05ⁿ ≥ 1,5. J''essaie : 1,05⁸ ≈ 1,477, pas encore ; 1,05⁹ ≈ 1,551, c''est bon. Il faut 9 ans. »
+
+« Regardez la rédaction : j''ai écrit la formule, le calcul, le résultat arrondi et une phrase de conclusion. C''est ce que le correcteur veut voir. Et si on me demandait la même chose avec des intérêts simples ? Chaque année, 5 000 FCFA d''intérêts. Après 4 ans : 120 000 FCFA. Moins que les 121 551 FCFA des intérêts composés. »
+
+## 32:00 – 45:00 · Rappels et exercice : fonctions et bénéfice
+
+« Pour une fonction du second degré ax² + bx + c, retenez trois choses : le sommet en x = −b/(2a), le discriminant Δ = b² − 4ac pour les racines, et le signe : du signe de a à l''extérieur des racines. »
+
+« Exemple : un vendeur de jus de bouye estime son bénéfice journalier à B(x) = −x² + 60x − 500 en centaines de FCFA, pour x litres vendus. Dérivée : B''(x) = −2x + 60, nulle pour x = 30. Bénéfice maximal : B(30) = −900 + 1 800 − 500 = 400 centaines, soit 40 000 FCFA. Racines : Δ = 3 600 − 2 000 = 1 600, √Δ = 40 ; x = (−60 + 40)/(−2) = 10 et x = (−60 − 40)/(−2) = 50. Le vendeur gagne de l''argent entre 10 et 50 litres. »
+
+Visuel : la parabole tournée vers le bas avec son sommet (30 ; 400) et les racines 10 et 50.
+
+## 45:00 – 55:00 · Pause quiz interactif
+
+« Pause ! Cinq questions, une minute chacune. »
+
+- Q1 : une hausse de 30 % correspond à quel coefficient multiplicateur ?
+- Q2 : u₀ = 5 et uₙ₊₁ = uₙ + 3 : que vaut u₁₀ ?
+- Q3 : médiane de la série 4 ; 9 ; 2 ; 7 ?
+- Q4 : on tire une carte au hasard parmi 4 cartes numérotées 1, 2, 3, 4 : probabilité d''obtenir un nombre pair ?
+- Q5 : négation de « tous les candidats sont présents » ?
+
+« Correction. Q1 : 1,3. Q2 : 5 + 10 × 3 = 35. Q3 : série rangée 2 ; 4 ; 7 ; 9, médiane (4 + 7)/2 = 5,5. Q4 : 2/4 = 1/2. Q5 : “au moins un candidat est absent”. Quatre ou cinq bonnes réponses : bravo. Sinon, relisez la fiche correspondante ce soir. »
+
+## 55:00 – 1:07:00 · Correction commentée : statistiques
+
+« Une série de notes : 7 ; 9 ; 10 ; 10 ; 12 ; 14. Moyenne : 62/6 ≈ 10,33. Médiane : effectif pair, on prend la moyenne des 3e et 4e valeurs : (10 + 10)/2 = 10. Écart-type : la calculatrice en mode statistique vous le donne, mais sachez la méthode : moyenne des carrés des écarts à la moyenne, puis racine carrée. »
+
+« Interprétation, c''est là que vous, littéraires, êtes forts : “la moyenne et la médiane sont proches, les notes sont assez regroupées autour de 10”. Une phrase claire rapporte des points. »
+
+« Passons aux probabilités, qui accompagnent souvent les statistiques. Dans un lycée, une classe de 30 élèves compte 18 filles et 12 garçons ; 10 filles et 5 garçons font partie du club de théâtre. Je fais un tableau à double entrée : en ligne, filles et garçons ; en colonne, théâtre et pas théâtre. On choisit un élève au hasard. Probabilité qu''il soit au club : 15/30 = 1/2. Probabilité que ce soit une fille du club : 10/30 = 1/3. Probabilité que ce soit une fille ou un membre du club : 18 + 15 − 10 = 23 élèves, donc 23/30. Remarquez que je n''ai pas compté deux fois les 10 filles du club : c''est la formule P(A ou B) = P(A) + P(B) − P(A et B). »
+
+Visuel : le tableau à double entrée complété, avec les totaux en ligne et en colonne (18, 12, 15, 15, 30).
+
+« Dernier conseil sur ce thème : écrivez toujours la fraction avant la valeur décimale, et simplifiez-la. Un correcteur qui lit 23/30 ≈ 0,77 voit immédiatement que vous avez compris. »
+
+## 1:07:00 – 1:15:00 · Logique : les pièges
+
+« Piège numéro un : confondre une implication et sa réciproque. “Si un élève est en Terminale L, il étudie la philosophie” : vrai. Réciproque : “s''il étudie la philosophie, il est en Terminale L” : faux, les élèves de S en font aussi. Piège numéro deux : la négation de “et”. Non(P et Q), c''est non P ou non Q. Piège numéro trois : pour démontrer qu''une phrase générale est fausse, un seul contre-exemple suffit. »
+
+## 1:15:00 – 1:22:00 · Gestion du temps
+
+« Demain : lecture complète du sujet pendant dix minutes. Commencez par l''exercice que vous maîtrisez, souvent les pourcentages ou les statistiques. Ne restez jamais bloqués plus de dix minutes sur une question. Écrivez chaque calcul, même simple. Gardez dix minutes pour relire les unités et les conclusions. Et ce soir, couchez-vous tôt. »
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+« Dernière étape : cinq questions pour vérifier que tout est en place. »
+
+- Question 1 : un prix de 40 000 FCFA baisse de 25 %. Nouveau prix ?
+- Question 2 : u₀ = 1 000 et q = 1,1. Calculer u₂.
+- Question 3 : racines de x² − 5x + 6 = 0.
+- Question 4 : moyenne de 8 ; 12 ; 13 ; 15.
+- Question 5 : contraposée de « s''il pleut, le match est annulé ».
+
+Réponses :
+
+- Réponse 1 : 40 000 × 0,75 = 30 000 FCFA.
+- Réponse 2 : 1 000 × 1,1² = 1 210.
+- Réponse 3 : Δ = 25 − 24 = 1 ; x = 2 et x = 3.
+- Réponse 4 : 48/4 = 12.
+- Réponse 5 : « si le match n''est pas annulé, alors il ne pleut pas ».
+
+« Merci de votre attention. Vous avez des méthodes, vous savez rédiger : faites-vous confiance. Bon courage pour le Bac ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-mathematiques-l'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive de veille du Bac');
+
+-- Cours : Physique-Chimie séries S : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-physique-chimie', (select id from public.levels where name = 'Terminale'), null, 'Physique-Chimie (séries S)', 'Physique-Chimie séries S : réussir l''épreuve du Bac', 'Ce cours de préparation au Baccalauréat s''adresse aux élèves de Terminale des séries scientifiques (S) du Sénégal et d''Afrique francophone. Il révise la mécanique (cinématique, lois de Newton, mouvements dans les champs, énergie), les oscillations et les ondes, l''électricité (circuits RC, RL et LC) et la chimie (acides et bases, dosages, cinétique, alcools, acides carboxyliques et esters), avec des fiches de cours, des exercices corrigés aux calculs vérifiés et un sujet d''entraînement complet. Prérequis : le programme de Première S et les bases du calcul littéral, des dérivées et des logarithmes décimaux.', true, 203
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## À qui s''adresse ce cours
+
+Ce cours vise les candidats au Baccalauréat des séries scientifiques (S). Il reprend les notions vues depuis la Seconde, sous l''angle de la révision, en insistant sur le programme de Terminale. Selon ta série exacte, certains chapitres peuvent être plus ou moins approfondis : vérifie la liste avec ton professeur.
+
+## Objectifs de la leçon
+
+- Connaître la forme habituelle d''un sujet de Physique-Chimie au Bac S.
+- Adopter une méthode de résolution rigoureuse.
+- Maîtriser les unités, les conversions et les chiffres significatifs.
+- Organiser ses révisions sur 10 semaines.
+
+## Comment se présente l''épreuve
+
+Le sujet comporte en général plusieurs exercices indépendants, à la fois en chimie et en physique. En chimie, on retrouve souvent la chimie organique (alcools, acides carboxyliques, esters), les réactions acide-base et les dosages, la cinétique chimique. En physique, la mécanique (lois de Newton, mouvements dans les champs de pesanteur, électrique ou magnétique, satellites), les oscillations et les circuits électriques (RC, RL, LC), et parfois les ondes. La durée, le coefficient et le barème officiel sont fixés par les textes officiels en vigueur. Les points indiqués dans nos sujets d''entraînement sont indicatifs, non officiels.
+
+## La méthode de résolution en six étapes
+
+- Lire l''énoncé, relever les données avec leurs unités et faire un schéma.
+- Préciser le système étudié et le référentiel (en mécanique), ou écrire l''équation de la réaction (en chimie).
+- Faire le bilan : forces, quantités de matière, grandeurs électriques.
+- Écrire la loi ou le théorème utilisé (deuxième loi de Newton, théorème de l''énergie cinétique, loi d''additivité des tensions, relation à l''équivalence…).
+- Établir l''expression littérale, puis seulement remplacer par les valeurs numériques.
+- Donner le résultat avec l''unité et un nombre raisonnable de chiffres significatifs, puis vérifier sa vraisemblance.
+
+## Unités et conversions : le carré d''as
+
+- Toujours travailler en unités du Système international : mètre, kilogramme, seconde, ampère, kelvin, mole.
+- Préfixes : m (milli) = 10⁻³ ; µ (micro) = 10⁻⁶ ; n (nano) = 10⁻⁹ ; k (kilo) = 10³ ; M (méga) = 10⁶.
+- 1 L = 10⁻³ m³ ; 1 mL = 10⁻³ L ; 1 km/h = 1/3,6 m/s ; 1 h = 3 600 s.
+- Concentration molaire en mol/L, concentration massique en g/L, et Cm = C × M.
+- Une analyse dimensionnelle permet de vérifier une formule : RC et L/R s''expriment en secondes, √(LC) aussi.
+
+## Chiffres significatifs
+
+Le résultat ne doit pas être plus précis que la donnée la moins précise. Si les données sont fournies avec 2 ou 3 chiffres significatifs, donne le résultat avec 2 ou 3 chiffres significatifs. Exemple : 2,0 × 3,14 = 6,3 (et non 6,28).
+
+## Les erreurs fréquentes
+
+- Oublier de convertir les millilitres en litres ou les microfarads en farads.
+- Projeter une force sur un axe en se trompant de sinus ou de cosinus.
+- Écrire une équation chimique non équilibrée.
+- Confondre équivalence et neutralité : à l''équivalence d''un dosage d''acide faible par une base forte, le pH est supérieur à 7.
+- Donner un résultat sans unité, ce qui coûte des points.
+- Utiliser la calculatrice en degrés au lieu de radians pour une fonction sinusoïdale du temps.
+
+## Plan de révision sur 10 semaines
+
+- Semaine 1 : cinématique et lois de Newton.
+- Semaine 2 : mouvement dans le champ de pesanteur, plan incliné, frottements.
+- Semaine 3 : mouvements dans les champs électrique et magnétique, satellites.
+- Semaine 4 : travail, énergie cinétique, énergie mécanique.
+- Semaine 5 : oscillateurs mécaniques et ondes.
+- Semaine 6 : circuits RC, RL et LC.
+- Semaine 7 : acides et bases, pH, dosages.
+- Semaine 8 : cinétique chimique ; alcools, acides carboxyliques, esters.
+- Semaine 9 : deux sujets complets en temps limité.
+- Semaine 10 : relecture des fiches de formules, reprise des erreurs, repos la veille.
+
+Prépare une fiche de formules par chapitre, avec pour chaque formule les unités de chaque grandeur. Relis-les dans le car rapide ou en attendant le début des cours : la répétition fait la mémoire.
+
+## Exercices pratiques
+
+1. Convertir : 250 mL en L ; 470 µF en F ; 72 km/h en m/s ; 5,0 ms en s.
+
+2. Vérifier par les unités que le produit RC est un temps (on rappelle q = C × u et u = R × i).
+
+3. Donner le résultat avec le bon nombre de chiffres significatifs : m = 2,5 kg et a = 3,32 m/s², F = m × a.
+
+4. Un élève écrit pour la masse d''un satellite « m = 1 200 ». Qu''est-ce qui manque ?
+
+5. On dissout 5,85 g de chlorure de sodium (M = 58,5 g/mol) dans 500 mL d''eau. Calculer la concentration molaire.
+
+6. Un élève trouve qu''une voiture roule à 300 m/s sur la route de Mbour. Que doit-il vérifier ?
+
+## Corrigé
+
+1. 250 mL = 0,250 L ; 470 µF = 4,70 × 10⁻⁴ F ; 72 km/h = 72/3,6 = 20 m/s ; 5,0 ms = 5,0 × 10⁻³ s.
+
+2. R = u/i s''exprime en V/A ; C = q/u s''exprime en C/V. RC s''exprime donc en (V/A) × (C/V) = C/A. Or 1 A = 1 C/s, donc C/A = s. RC est bien un temps.
+
+3. F = 2,5 × 3,32 = 8,30, à arrondir à 2 chiffres significatifs (comme m) : F = 8,3 N.
+
+4. L''unité : il faut écrire m = 1 200 kg (ou 1,2 × 10³ kg).
+
+5. n = 5,85/58,5 = 0,100 mol ; V = 0,500 L ; C = 0,100/0,500 = 0,200 mol/L.
+
+6. 300 m/s = 1 080 km/h : c''est invraisemblable pour une voiture. Il doit vérifier ses conversions (sans doute une confusion entre km/h et m/s ou une erreur de puissance de 10).', 'texte', 45, true, 10
+from public.courses c where c.slug = 'bac-physique-chimie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Mécanique : cinématique, lois de Newton, mouvements dans les champs et énergie', '## Objectifs de la leçon
+
+- Décrire un mouvement : position, vitesse, accélération.
+- Appliquer les lois de Newton à un solide.
+- Étudier les mouvements dans les champs de pesanteur, électrique et magnétique, et le mouvement des satellites.
+- Utiliser le théorème de l''énergie cinétique et la conservation de l''énergie mécanique.
+
+## Fiche 1 : cinématique
+
+- Le vecteur vitesse est la dérivée du vecteur position : v = dx/dt sur un axe. L''accélération est la dérivée de la vitesse : a = dv/dt.
+- Mouvement rectiligne uniforme : a = 0, x = vt + x₀.
+- Mouvement rectiligne uniformément varié : a constante, v = at + v₀, x = ½at² + v₀t + x₀, et v² − v₀² = 2a(x − x₀).
+- Mouvement circulaire uniforme de rayon r : vitesse de valeur constante, accélération centripète a = v²/r, dirigée vers le centre.
+
+## Fiche 2 : lois de Newton
+
+- Première loi (principe d''inertie) : dans un référentiel galiléen, si la somme des forces est nulle, le centre d''inertie est au repos ou en mouvement rectiligne uniforme.
+- Deuxième loi : somme des forces extérieures = m × a (vecteurs).
+- Troisième loi : deux corps en interaction exercent l''un sur l''autre des forces opposées.
+- Méthode : système, référentiel, bilan des forces, schéma, deuxième loi, projection sur des axes bien choisis.
+
+## Fiche 3 : mouvements dans les champs uniformes
+
+Champ de pesanteur (projectile lancé avec v₀ faisant un angle α avec l''horizontale, frottements négligés) : aₓ = 0 et a_y = −g. Donc x = v₀ cos α × t et y = −½gt² + v₀ sin α × t. Équation de la trajectoire : y = −g x²/(2v₀² cos²α) + x tan α : une parabole. Flèche (hauteur maximale) : v₀² sin²α/(2g). Portée sur un sol horizontal : v₀² sin(2α)/g.
+
+Plan incliné d''angle α sans frottement : a = g sin α. Avec une force de frottement f opposée au mouvement en descente : a = g sin α − f/m.
+
+Champ électrique uniforme : F = qE. Une particule accélérée sous une tension U part du repos et acquiert ½mv² = |q|U, d''où v = √(2|q|U/m). Entre deux plaques, une particule entrant avec v₀ perpendiculairement au champ suit une parabole : y = |q|E x²/(2mv₀²).
+
+## Fiche 4 : champ magnétique et satellites
+
+- Force de Lorentz : F = q v ∧ B, de valeur |q|vB quand v est perpendiculaire à B. Cette force ne travaille pas : la vitesse garde la même valeur. Le mouvement est circulaire uniforme de rayon R = mv/(|q|B).
+- Satellite en orbite circulaire de rayon r = R_T + h autour de la Terre : la seule force est l''attraction gravitationnelle GMm/r². On obtient v = √(GM/r) et la période T = 2πr/v = 2π√(r³/(GM)). Troisième loi de Kepler : T²/r³ = 4π²/(GM), constante.
+- Un satellite géostationnaire tourne dans le plan de l''équateur, dans le même sens que la Terre, avec une période égale à celle de la rotation propre de la Terre.
+
+## Fiche 5 : énergie
+
+- Énergie cinétique : Ec = ½mv². Énergie potentielle de pesanteur : Ep = mgz (z vers le haut).
+- Théorème de l''énergie cinétique : ΔEc = somme des travaux des forces. Travail du poids : W = mg(z_départ − z_arrivée). Travail d''une force constante : W = F × d × cos θ.
+- Énergie mécanique Em = Ec + Ep : elle se conserve en l''absence de frottements ; sinon, elle diminue du travail des frottements.
+
+## Exemple guidé : la chute d''une mangue
+
+Une mangue tombe d''une branche située à 5,0 m du sol, sans vitesse initiale (g = 10 m/s², frottements négligés). Conservation de l''énergie mécanique : mgh = ½mv², donc v = √(2gh) = √(2 × 10 × 5,0) = 10 m/s à l''arrivée au sol. Durée de chute : h = ½gt², donc t = √(2h/g) = √1,0 = 1,0 s.
+
+## Exercices pratiques
+
+On prendra g = 10 m/s² sauf indication contraire.
+
+1. Un mobile se déplace sur un axe selon x(t) = 2t² − 4t + 1 (x en m, t en s). Donner v(t) et a(t). À quelle date la vitesse s''annule-t-elle ? Quelle est alors la position ?
+
+2. Un colis de 2,0 kg glisse sur un plan incliné de 30° ; une force de frottement constante de 4,0 N s''oppose au mouvement. Calculer l''accélération, puis la vitesse et la distance parcourue après 2,0 s, s''il part du repos.
+
+3. Un ballon est frappé avec une vitesse de 20 m/s faisant un angle de 30° avec l''horizontale. Calculer la durée du vol, la hauteur maximale et la portée.
+
+4. Un pendule simple de longueur 1,0 m est lâché sans vitesse depuis un angle de 60° avec la verticale. Calculer sa vitesse au passage par la position d''équilibre.
+
+5. Un électron (m = 9,11 × 10⁻³¹ kg, e = 1,6 × 10⁻¹⁹ C) part du repos et est accéléré sous une tension de 1 000 V. Calculer sa vitesse finale.
+
+6. Un proton (m = 1,67 × 10⁻²⁷ kg, q = 1,6 × 10⁻¹⁹ C) entre avec une vitesse de 1,0 × 10⁶ m/s perpendiculairement à un champ magnétique uniforme de 0,10 T. Calculer le rayon de sa trajectoire.
+
+7. Un satellite tourne à 800 km d''altitude. Données : G = 6,67 × 10⁻¹¹ SI, masse de la Terre M = 5,98 × 10²⁴ kg, rayon terrestre 6 400 km. Calculer sa vitesse et sa période.
+
+## Corrigé
+
+1. v(t) = dx/dt = 4t − 4 (m/s) ; a = 4 m/s². v = 0 pour t = 1 s ; x(1) = 2 − 4 + 1 = −1 m.
+
+2. Deuxième loi projetée sur l''axe du plan, vers le bas (la réaction normale est perpendiculaire à l''axe) : ma = mg sin α − f. a = 10 × 0,5 − 4,0/2,0 = 5 − 2 = 3,0 m/s². Après 2,0 s : v = 3,0 × 2,0 = 6,0 m/s ; d = ½ × 3,0 × 2,0² = 6,0 m.
+
+3. Durée du vol : y = 0 pour t = 2v₀ sin α/g = 2 × 20 × 0,5/10 = 2,0 s. Flèche : v₀² sin²α/(2g) = 400 × 0,25/20 = 5,0 m. Portée : v₀² sin(2α)/g = 400 × sin 60°/10 ≈ 34,6 m.
+
+4. Hauteur de chute : h = l(1 − cos 60°) = 0,50 m. Conservation de l''énergie mécanique (la tension du fil ne travaille pas) : v = √(2gh) = √10 ≈ 3,2 m/s.
+
+5. ½mv² = eU, donc v = √(2eU/m) = √(2 × 1,6 × 10⁻¹⁹ × 1 000/9,11 × 10⁻³¹) ≈ 1,9 × 10⁷ m/s.
+
+6. R = mv/(qB) = (1,67 × 10⁻²⁷ × 1,0 × 10⁶)/(1,6 × 10⁻¹⁹ × 0,10) ≈ 0,10 m, soit environ 10 cm.
+
+7. r = 6 400 + 800 = 7 200 km = 7,2 × 10⁶ m. GM ≈ 3,99 × 10¹⁴ SI. v = √(GM/r) ≈ 7,4 × 10³ m/s. T = 2πr/v ≈ 6,1 × 10³ s, soit environ 101 minutes.', 'texte', 75, false, 20
+from public.courses c where c.slug = 'bac-physique-chimie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mécanique : cinématique, lois de Newton, mouvements dans les champs et énergie');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Oscillations, ondes et électricité : circuits RC, RL et LC', '## Objectifs de la leçon
+
+- Étudier les oscillateurs mécaniques libres.
+- Décrire la propagation d''une onde et ses phénomènes caractéristiques.
+- Étudier la charge et la décharge d''un condensateur (circuit RC), l''établissement du courant dans une bobine (circuit RL) et les oscillations électriques (circuit LC).
+
+## Fiche 1 : oscillateurs mécaniques
+
+- Pendule élastique horizontal, sans frottement : la deuxième loi de Newton donne m x'''' + k x = 0, soit x'''' + (k/m) x = 0. Solution : x(t) = Xm cos(ω₀t + φ), avec ω₀ = √(k/m) et la période propre T₀ = 2π√(m/k).
+- Pendule simple de faibles oscillations : T₀ = 2π√(l/g).
+- Énergie mécanique de l''oscillateur élastique : Em = ½mv² + ½kx² = ½kXm², constante sans frottement. Vitesse maximale : Vm = ω₀Xm.
+- Avec des frottements, les oscillations sont amorties.
+
+## Fiche 2 : ondes
+
+- Une onde mécanique progressive est la propagation d''une perturbation dans un milieu matériel, sans transport de matière mais avec transport d''énergie.
+- Célérité : v = d/Δt. Pour une onde périodique : λ = v × T = v/f.
+- Deux points séparés de kλ (k entier) vibrent en phase ; séparés de (k + ½)λ, ils vibrent en opposition de phase.
+- Diffraction par une fente de largeur a : écart angulaire θ = λ/a (θ en radians) ; elle est marquée quand a est du même ordre que λ.
+- Interférences lumineuses (fentes de Young, distance a entre fentes, écran à la distance D) : interfrange i = λD/a.
+
+## Fiche 3 : circuit RC
+
+- Relations : q = C u_C ; i = dq/dt = C du_C/dt.
+- Charge sous une tension E : RC du_C/dt + u_C = E. Solution : u_C = E(1 − e^(−t/τ)), avec τ = RC.
+- Décharge : u_C = E e^(−t/τ).
+- À t = τ, la charge atteint 63 % de E ; au bout de 5τ, on considère le condensateur chargé (plus de 99 %).
+- Énergie stockée : E_C = ½ C u_C².
+- Méthode graphique : τ est l''abscisse du point d''intersection de la tangente à l''origine avec l''asymptote u = E.
+
+## Fiche 4 : circuit RL
+
+- Tension aux bornes d''une bobine de résistance r : u_L = L di/dt + ri.
+- Établissement du courant sous la tension E (résistance totale R) : L di/dt + R i = E. Solution : i = (E/R)(1 − e^(−t/τ)), avec τ = L/R.
+- La bobine s''oppose aux variations du courant : le courant ne peut pas varier brusquement.
+- Énergie stockée : E_L = ½ L i².
+
+## Fiche 5 : circuit LC
+
+- Un condensateur chargé se décharge dans une bobine idéale (résistance nulle) : q'''' + q/(LC) = 0.
+- Solution : q(t) = Qm cos(ω₀t + φ), avec ω₀ = 1/√(LC), période propre T₀ = 2π√(LC), fréquence f₀ = 1/T₀.
+- L''énergie totale ½q²/C + ½Li² est constante : elle passe sans cesse du condensateur à la bobine. Im = ω₀Qm.
+- Dans un circuit réel (résistance non nulle), les oscillations sont amorties : régime pseudo-périodique.
+
+## Analogies utiles
+
+Les équations x'''' + (k/m) x = 0 et q'''' + q/(LC) = 0 ont la même forme : la masse m joue le rôle de L, la raideur k celui de 1/C, la position x celui de la charge q. Retenir l''une aide à retenir l''autre.
+
+## Exemple guidé : flash d''appareil photo
+
+Un condensateur de 100 µF est chargé sous 6,0 V à travers une résistance de 10 kΩ. τ = RC = 10 × 10³ × 100 × 10⁻⁶ = 1,0 s. Il faut environ 5τ = 5 s pour le charger. Énergie stockée : ½ × 100 × 10⁻⁶ × 6,0² = 1,8 × 10⁻³ J. Cette énergie est ensuite libérée très vite dans la lampe du flash, ce qui produit un éclair intense.
+
+## Exercices pratiques
+
+1. Un pendule élastique horizontal : m = 0,20 kg, k = 20 N/m, amplitude 5,0 cm. Calculer la période propre, l''énergie mécanique et la vitesse maximale.
+
+2. Calculer la période d''un pendule simple de longueur 1,0 m (g = 9,8 m/s²).
+
+3. Un haut-parleur émet un son de fréquence 680 Hz dans l''air (v = 340 m/s). Calculer la longueur d''onde. Deux points situés sur la même direction de propagation sont séparés de 1,25 m : comment vibrent-ils l''un par rapport à l''autre ?
+
+4. Dans une expérience de fentes de Young, λ = 600 nm, a = 0,50 mm, D = 1,5 m. Calculer l''interfrange.
+
+5. Reprendre l''exemple guidé (R = 10 kΩ, C = 100 µF, E = 6,0 V). Calculer u_C à t = 2,0 s.
+
+6. Une bobine d''inductance 0,50 H est associée à une résistance totale de 50 Ω sous une tension de 10 V. Calculer τ, l''intensité en régime permanent et l''énergie alors stockée dans la bobine.
+
+7. Un circuit LC est formé d''une bobine idéale de 0,10 H et d''un condensateur de 10 µF. Calculer la période et la fréquence propres.
+
+## Corrigé
+
+1. T₀ = 2π√(0,20/20) = 2π × 0,10 ≈ 0,63 s. Em = ½ × 20 × 0,050² = 2,5 × 10⁻² J. ω₀ = √(20/0,20) = 10 rad/s et Vm = ω₀Xm = 10 × 0,050 = 0,50 m/s. Contrôle : ½ × 0,20 × 0,50² = 2,5 × 10⁻² J.
+
+2. T₀ = 2π√(1,0/9,8) ≈ 2,0 s.
+
+3. λ = v/f = 340/680 = 0,50 m. 1,25 m = 2,5λ = (2 + ½)λ : les deux points vibrent en opposition de phase.
+
+4. i = λD/a = (600 × 10⁻⁹ × 1,5)/(0,50 × 10⁻³) = 1,8 × 10⁻³ m = 1,8 mm.
+
+5. u_C = 6,0(1 − e⁻²) = 6,0 × 0,865 ≈ 5,2 V.
+
+6. τ = L/R = 0,50/50 = 1,0 × 10⁻² s = 10 ms. I = E/R = 10/50 = 0,20 A. E_L = ½ × 0,50 × 0,20² = 1,0 × 10⁻² J.
+
+7. LC = 0,10 × 10 × 10⁻⁶ = 1,0 × 10⁻⁶ s². T₀ = 2π√(LC) = 2π × 1,0 × 10⁻³ ≈ 6,3 × 10⁻³ s. f₀ = 1/T₀ ≈ 159 Hz.', 'texte', 70, false, 30
+from public.courses c where c.slug = 'bac-physique-chimie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Oscillations, ondes et électricité : circuits RC, RL et LC');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Chimie : acides-bases et dosages, cinétique, alcools, acides carboxyliques et esters', '## Objectifs de la leçon
+
+- Calculer et interpréter un pH ; distinguer acides forts et acides faibles.
+- Exploiter un dosage acide-base.
+- Décrire l''évolution temporelle d''une réaction (cinétique).
+- Reconnaître, nommer et faire réagir alcools, acides carboxyliques et esters.
+
+## Fiche 1 : acides, bases et pH
+
+- pH = −log[H₃O⁺] et [H₃O⁺] = 10^(−pH), concentrations en mol/L. À 25 °C, Ke = [H₃O⁺][OH⁻] = 1,0 × 10⁻¹⁴, donc pH = 14 + log[OH⁻].
+- Acide fort de concentration C (réaction totale avec l''eau) : pH = −log C. Base forte : pH = 14 + log C (pour des concentrations ni trop grandes ni trop petites).
+- Acide faible : réaction limitée ; pH > −log C. Couple AH/A⁻ : Ka = [H₃O⁺][A⁻]/[AH] et pKa = −log Ka.
+- pH = pKa + log([A⁻]/[AH]). Si pH < pKa, la forme AH prédomine ; si pH > pKa, la forme A⁻ prédomine.
+- Solution tampon : pH = pKa quand [A⁻] = [AH] ; le pH varie peu par ajout modéré d''acide, de base ou par dilution.
+
+## Fiche 2 : dosages acide-base
+
+- À l''équivalence, les réactifs ont été mélangés dans les proportions stœchiométriques : Ca × Va = Cb × V_bE (pour un monoacide et une monobase).
+- Méthode des tangentes pour repérer le point d''équivalence sur la courbe pH = f(Vb). On peut aussi utiliser un indicateur coloré dont la zone de virage contient le pH à l''équivalence.
+- Acide fort dosé par une base forte : pH = 7 à l''équivalence (25 °C).
+- Acide faible dosé par une base forte : pH > 7 à l''équivalence ; à la demi-équivalence (Vb = V_bE/2), pH = pKa.
+
+## Fiche 3 : cinétique chimique
+
+- Vitesse de formation d''un produit P : v = d[P]/dt ; vitesse de disparition d''un réactif R : v = −d[R]/dt. Graphiquement, c''est le coefficient directeur de la tangente à la courbe.
+- La vitesse diminue en général au cours du temps, car les réactifs s''épuisent.
+- Temps de demi-réaction t₁/₂ : durée au bout de laquelle l''avancement atteint la moitié de sa valeur finale.
+- Facteurs cinétiques : température, concentrations des réactifs, catalyseur (qui accélère sans être consommé). C''est pourquoi on conserve le lait ou le poisson au froid.
+
+## Fiche 4 : alcools
+
+- Formule générale des alcools saturés : CₙH₂ₙ₊₁OH. Le carbone porteur du groupe OH (carbone fonctionnel) détermine la classe : primaire s''il est lié à un seul carbone (ou aucun), secondaire s''il est lié à deux, tertiaire s''il est lié à trois.
+- Oxydation ménagée (par exemple par le dichromate de potassium en milieu acide) : alcool primaire → aldéhyde → acide carboxylique ; alcool secondaire → cétone ; alcool tertiaire : pas d''oxydation ménagée.
+- Tests : la 2,4-DNPH donne un précipité jaune-orangé avec aldéhydes et cétones ; la liqueur de Fehling (précipité rouge brique) et le réactif de Tollens (miroir d''argent) ne réagissent qu''avec les aldéhydes.
+
+## Fiche 5 : acides carboxyliques et esters
+
+- Acide carboxylique : R–COOH. Exemple : acide éthanoïque CH₃–COOH (présent dans le vinaigre).
+- Ester : R–COO–R''. Nom : « alcanoate d''alkyle ». Exemple : CH₃–COO–CH₂–CH₃, éthanoate d''éthyle.
+- Estérification : acide + alcool ⇌ ester + eau. Réaction lente, limitée, quasi athermique. Avec un mélange équimolaire d''acide et d''alcool primaire, le rendement est d''environ 67 % ; la constante d''équilibre vaut environ 4.
+- L''hydrolyse de l''ester est la réaction inverse. On améliore le rendement en mettant un réactif en excès ou en éliminant un produit ; on accélère la réaction en chauffant ou avec un catalyseur (ions H₃O⁺), sans changer l''équilibre.
+- Avec un anhydride d''acide à la place de l''acide, l''estérification est rapide et totale.
+- Saponification : ester + ion hydroxyde → ion carboxylate + alcool. Réaction lente mais totale. Avec un corps gras (triester du glycérol) et la soude, on obtient du savon, comme dans les savonneries artisanales.
+
+## Exemple guidé : dosage d''un vinaigre
+
+On dose 10,0 mL d''un vinaigre dilué par une solution de soude à 0,10 mol/L. L''équivalence est obtenue pour 12,0 mL. Ca = Cb × V_bE/Va = 0,10 × 12,0/10,0 = 0,12 mol/L. Le pH à la demi-équivalence (6,0 mL versés) donne le pKa du couple acide éthanoïque/ion éthanoate, voisin de 4,8.
+
+## Exercices pratiques
+
+Masses molaires : C = 12 g/mol ; H = 1 g/mol ; O = 16 g/mol.
+
+1. Calculer le pH d''une solution d''acide chlorhydrique à 5,0 × 10⁻³ mol/L, puis celui d''une solution d''hydroxyde de sodium à 2,0 × 10⁻² mol/L.
+
+2. On dose 20,0 mL d''une solution d''acide par de la soude à 0,10 mol/L ; V_bE = 15,0 mL. Calculer la concentration de l''acide.
+
+3. Une solution d''acide de concentration 1,0 × 10⁻² mol/L a un pH de 3,4. L''acide est-il fort ou faible ? Justifier.
+
+4. Écrire les formules semi-développées et donner la classe des quatre alcools de formule C₄H₁₀O. Indiquer le produit de leur oxydation ménagée (oxydant en défaut).
+
+5. Un acide carboxylique saturé contient 36,4 % d''oxygène en masse. Trouver sa formule brute.
+
+6. On mélange 1,0 mol d''acide éthanoïque et 1,0 mol d''éthanol. À l''équilibre, il s''est formé 0,67 mol d''ester. Écrire l''équation, nommer l''ester, calculer la constante d''équilibre et la masse d''ester obtenue.
+
+7. Lors d''une réaction, la concentration d''un réactif vaut 0,080 mol/L à t = 0 ; 0,040 mol/L à 10 min ; 0,020 mol/L à 20 min ; 0,010 mol/L à 30 min (la réaction est totale). Donner le temps de demi-réaction et la vitesse moyenne de disparition entre 0 et 10 min.
+
+## Corrigé
+
+1. Acide fort : pH = −log(5,0 × 10⁻³) ≈ 2,3. Base forte : pH = 14 + log(2,0 × 10⁻²) ≈ 14 − 1,7 = 12,3.
+
+2. Ca = Cb × V_bE/Va = 0,10 × 15,0/20,0 = 7,5 × 10⁻² mol/L.
+
+3. Si l''acide était fort, on aurait pH = −log(1,0 × 10⁻²) = 2,0. Or pH = 3,4 > 2,0 : [H₃O⁺] ≈ 4 × 10⁻⁴ mol/L est bien inférieur à C. L''acide est faible.
+
+4. CH₃–CH₂–CH₂–CH₂OH, butan-1-ol, primaire → butanal (puis acide butanoïque si l''oxydant est en excès). CH₃–CH(OH)–CH₂–CH₃, butan-2-ol, secondaire → butanone. (CH₃)₂CH–CH₂OH, 2-méthylpropan-1-ol, primaire → 2-méthylpropanal. (CH₃)₃C–OH, 2-méthylpropan-2-ol, tertiaire → pas d''oxydation ménagée.
+
+5. Formule CₙH₂ₙO₂, M = 14n + 32. 32/M = 0,364 donne M ≈ 88 g/mol, donc 14n = 56 et n = 4 : C₄H₈O₂ (acide butanoïque ou acide 2-méthylpropanoïque).
+
+6. CH₃COOH + CH₃CH₂OH ⇌ CH₃COOCH₂CH₃ + H₂O ; l''ester est l''éthanoate d''éthyle. À l''équilibre : 0,67 mol d''ester et d''eau ; 0,33 mol d''acide et d''alcool. K = (0,67 × 0,67)/(0,33 × 0,33) ≈ 4,1, voisin de 4. M(C₄H₈O₂) = 48 + 8 + 32 = 88 g/mol ; m = 0,67 × 88 ≈ 59 g.
+
+7. La concentration finale est nulle ; la moitié de la transformation (0,040 mol/L) est atteinte à t₁/₂ = 10 min. Vitesse moyenne : (0,080 − 0,040)/10 = 4,0 × 10⁻³ mol/(L·min).', 'texte', 70, false, 40
+from public.courses c where c.slug = 'bac-physique-chimie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Chimie : acides-bases et dosages, cinétique, alcools, acides carboxyliques et esters');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
+
+Voici un sujet d''entraînement complet, conçu sur le modèle des épreuves de Physique-Chimie du Bac S. Ce n''est pas un sujet officiel ; la répartition des points est indicative, non officielle. Traite-le en temps limité avec ta calculatrice, puis compare avec le corrigé.
+
+Données : g = 10 m/s² ; C = 12 g/mol ; H = 1 g/mol ; O = 16 g/mol.
+
+## Exercice 1 : chimie organique (5 points)
+
+Un ester E, utilisé comme arôme, a pour formule CₙH₂ₙO₂ et contient 54,5 % de carbone en masse.
+
+1. Montrer que n = 4.
+
+2. L''hydrolyse de E donne un acide A et un alcool B. L''oxydation ménagée de B donne un composé qui réagit avec la liqueur de Fehling et qui possède deux atomes de carbone. Identifier B, puis A, puis E.
+
+3. Écrire l''équation de la saponification de E par la soude et préciser deux caractéristiques de cette réaction.
+
+## Exercice 2 : dosage acide-base (5 points)
+
+On dose 20,0 mL d''une solution d''un acide AH par une solution d''hydroxyde de sodium à 2,0 × 10⁻² mol/L. Le pH initial vaut 3,1. L''équivalence est obtenue pour 12,0 mL de soude versée, et le pH vaut 4,2 après ajout de 6,0 mL.
+
+1. Calculer la concentration Ca de l''acide.
+
+2. Montrer que l''acide est faible.
+
+3. Déterminer le pKa du couple AH/A⁻. Proposer une identification parmi : acide méthanoïque (pKa ≈ 3,8), acide benzoïque (pKa ≈ 4,2), acide éthanoïque (pKa ≈ 4,8).
+
+4. Le pH à l''équivalence est-il inférieur, égal ou supérieur à 7 ? Justifier.
+
+## Exercice 3 : mécanique (5 points)
+
+Un solide de masse m = 0,50 kg, assimilé à un point, part sans vitesse du point A d''une piste. La partie AB est un plan incliné de longueur 10 m faisant un angle de 30° avec l''horizontale ; les frottements y sont négligeables. La partie BC est horizontale ; une force de frottement constante f s''y oppose au mouvement, et le solide s''arrête après 25 m.
+
+1. Calculer le travail du poids entre A et B, puis la vitesse en B.
+
+2. Calculer f.
+
+3. Calculer la décélération sur BC et la durée du trajet sur BC.
+
+## Exercice 4 : électricité (5 points)
+
+Un condensateur de capacité C = 1 000 µF, initialement déchargé, est chargé sous une tension E = 12 V à travers une résistance R = 1,0 kΩ.
+
+1. Établir l''équation différentielle vérifiée par u_C et vérifier que u_C = E(1 − e^(−t/τ)) en est solution, avec τ = RC.
+
+2. Calculer τ, puis u_C à t = τ.
+
+3. Calculer l''énergie stockée lorsque le condensateur est complètement chargé.
+
+4. Le condensateur chargé est relié à une bobine idéale de 0,10 H. Calculer la période propre des oscillations et l''intensité maximale du courant.
+
+## Corrigé de l''exercice 1
+
+1. M = 14n + 32. 12n/(14n + 32) = 0,545 donne 12n = 7,63n + 17,44, soit 4,37n = 17,44 et n ≈ 4. Vérification : 48/88 ≈ 0,545. E : C₄H₈O₂.
+
+2. Le produit d''oxydation de B réagit avec la liqueur de Fehling : c''est un aldéhyde à deux carbones, l''éthanal. B est donc un alcool primaire à deux carbones : l''éthanol CH₃CH₂OH. A a 4 − 2 = 2 carbones : acide éthanoïque CH₃COOH. E est l''éthanoate d''éthyle CH₃COOCH₂CH₃.
+
+3. CH₃COOCH₂CH₃ + Na⁺ + HO⁻ → CH₃COO⁻ + Na⁺ + CH₃CH₂OH. La saponification est lente et totale.
+
+## Corrigé de l''exercice 2
+
+1. Ca = Cb × V_bE/Va = 2,0 × 10⁻² × 12,0/20,0 = 1,2 × 10⁻² mol/L.
+
+2. Un acide fort de cette concentration aurait un pH de −log(1,2 × 10⁻²) ≈ 1,9. Or pH = 3,1 : [H₃O⁺] ≈ 7,9 × 10⁻⁴ mol/L, inférieur à Ca. L''acide est faible.
+
+3. 6,0 mL = V_bE/2 : c''est la demi-équivalence, où pH = pKa. pKa = 4,2 : c''est l''acide benzoïque.
+
+4. À l''équivalence, la solution contient la base faible A⁻ (ion benzoate) : le pH est supérieur à 7.
+
+## Corrigé de l''exercice 3
+
+1. W(P) = mgL sin α = 0,50 × 10 × 10 × 0,5 = 25 J. Théorème de l''énergie cinétique entre A et B (la réaction du plan, perpendiculaire au mouvement, ne travaille pas) : ½mv_B² = 25 J, donc v_B² = 100 et v_B = 10 m/s.
+
+2. Sur BC, le poids et la réaction ne travaillent pas. 0 − ½mv_B² = −f × d, donc f = 25/25 = 1,0 N.
+
+3. a = f/m = 1,0/0,50 = 2,0 m/s² (décélération). Durée : t = v_B/a = 10/2,0 = 5,0 s. Contrôle : d = v_B²/(2a) = 100/4 = 25 m.
+
+## Corrigé de l''exercice 4
+
+1. Loi d''additivité des tensions : E = Ri + u_C, avec i = C du_C/dt. Donc RC du_C/dt + u_C = E. Si u_C = E(1 − e^(−t/τ)), alors du_C/dt = (E/τ)e^(−t/τ) et RC du_C/dt + u_C = E e^(−t/τ) + E − E e^(−t/τ) = E, car RC = τ. De plus u_C(0) = 0.
+
+2. τ = 1,0 × 10³ × 1 000 × 10⁻⁶ = 1,0 s. u_C(τ) = 12(1 − e⁻¹) ≈ 12 × 0,632 ≈ 7,6 V.
+
+3. E_C = ½CE² = ½ × 1,0 × 10⁻³ × 144 = 7,2 × 10⁻² J.
+
+4. T₀ = 2π√(LC) = 2π√(0,10 × 1,0 × 10⁻³) = 2π × 1,0 × 10⁻² ≈ 6,3 × 10⁻² s. Conservation de l''énergie : ½LIm² = ½CE², donc Im = E√(C/L) = 12 × √(1,0 × 10⁻²) = 12 × 0,10 = 1,2 A.
+
+## Conseils
+
+- En chimie organique, justifie chaque identification par un test ou une propriété.
+- Dans un dosage, commence toujours par la relation à l''équivalence et convertis les volumes de façon cohérente.
+- En mécanique, fais un schéma avec toutes les forces avant d''écrire le moindre calcul.
+- En électricité, établis l''équation différentielle à partir de la loi des tensions : c''est la question la plus fréquente.
+
+## Exercices pratiques
+
+Pour compléter l''entraînement, voici cinq questions courtes de difficulté croissante.
+
+1. Calculer le pH d''une solution d''hydroxyde de sodium à 1,0 × 10⁻³ mol/L.
+
+2. On dose 10,0 mL d''un acide par une base forte à 0,10 mol/L ; V_bE = 8,0 mL. Calculer Ca.
+
+3. Calculer la constante de temps d''un circuit RL avec L = 0,20 H et R = 100 Ω.
+
+4. Calculer l''énergie cinétique d''un minibus de 1 000 kg roulant à 72 km/h.
+
+5. Nommer l''ester CH₃–COO–CH₃ et indiquer l''acide et l''alcool qui permettent de le préparer.
+
+## Corrigé
+
+1. pH = 14 + log(1,0 × 10⁻³) = 14 − 3 = 11.
+
+2. Ca = 0,10 × 8,0/10,0 = 8,0 × 10⁻² mol/L.
+
+3. τ = L/R = 0,20/100 = 2,0 × 10⁻³ s = 2,0 ms.
+
+4. v = 72/3,6 = 20 m/s ; Ec = ½ × 1 000 × 20² = 2,0 × 10⁵ J.
+
+5. Éthanoate de méthyle, obtenu à partir de l''acide éthanoïque CH₃COOH et du méthanol CH₃OH.', 'texte', 90, false, 50
+from public.courses c where c.slug = 'bac-physique-chimie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive de veille du Bac', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : séance de révision intensive de veille du Bac en Physique-Chimie, séries S.
+- Objectifs : revoir les lois et formules essentielles, corriger des exercices types en commentant la rédaction, travailler la gestion du temps, se tester avec un quiz et une évaluation finale.
+- Matériel : tableau ou diaporama, calculatrice scientifique, fiches de formules, brouillon.
+- Prérequis : leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« Bonsoir à toutes et à tous. Ce soir, pas de nouvelles notions : on consolide les réflexes qui rapportent des points. Nous allons parcourir la mécanique, l''électricité, puis la chimie, avec des exercices types corrigés pas à pas. Gardez votre calculatrice et vos fiches de formules. Quand je dis “pause”, arrêtez la vidéo et cherchez seuls. »
+
+Visuel : le plan de la séance en huit étapes.
+
+## 05:00 – 18:00 · Rappels de mécanique
+
+« Toute la mécanique tient en une méthode : système, référentiel, bilan des forces, schéma, deuxième loi de Newton, projection. Ne sautez jamais le schéma. Sur un plan incliné d''angle α, la composante du poids le long du plan vaut mg sin α ; la composante perpendiculaire vaut mg cos α. »
+
+« Pour les vitesses, pensez d''abord à l''énergie : le théorème de l''énergie cinétique évite souvent de passer par les équations horaires. Pour les champs : dans un champ électrique uniforme, trajectoire parabolique ; dans un champ magnétique uniforme, avec une vitesse perpendiculaire au champ, trajectoire circulaire de rayon R = mv/(|q|B). Pour un satellite : v = √(GM/r), avec r mesuré depuis le centre de la Terre, pas depuis le sol. »
+
+Visuel : un schéma de plan incliné avec le poids décomposé, et un schéma de satellite avec r = R_T + h.
+
+Question à poser : « Que vaut le travail de la force magnétique ? » Réponse : zéro, car elle est toujours perpendiculaire à la vitesse.
+
+## 18:00 – 32:00 · Correction commentée : un projectile
+
+Visuel : l''énoncé. « Un joueur de basket lance le ballon depuis une hauteur de 2,0 m avec une vitesse de 8,0 m/s faisant 45° avec l''horizontale. Établir les équations horaires et la hauteur maximale. On prend g = 10 m/s². »
+
+« Système : le ballon. Référentiel terrestre supposé galiléen. Force : le poids seul, on néglige l''air. Deuxième loi : a = g, donc aₓ = 0 et a_y = −10. J''intègre : vₓ = 8,0 cos 45° ≈ 5,66 m/s, constante ; v_y = −10t + 8,0 sin 45° ≈ −10t + 5,66. Puis x = 5,66t et y = −5t² + 5,66t + 2,0. »
+
+« Sommet : v_y = 0 pour t = 0,566 s. Hauteur : y = −5 × 0,566² + 5,66 × 0,566 + 2,0 ≈ −1,60 + 3,20 + 2,0 = 3,6 m. Vérification par la formule : v₀² sin²α/(2g) = 64 × 0,5/20 = 1,6 m au-dessus du point de lancement, donc 3,6 m au-dessus du sol. Les deux méthodes concordent : c''est rassurant. »
+
+## 32:00 – 45:00 · Électricité : RC, RL, LC
+
+« Trois circuits, trois constantes. RC : τ = RC. RL : τ = L/R. LC : T₀ = 2π√(LC). Tout part de la loi d''additivité des tensions. Pour RC en charge : E = Ri + u_C avec i = C du_C/dt. Pour RL : E = Ri + L di/dt. Pour LC : u_C + u_L = 0, donc q/C + L d²q/dt² = 0. »
+
+« Exemple : R = 2,0 kΩ et C = 50 µF donnent τ = 2,0 × 10³ × 50 × 10⁻⁶ = 0,10 s. Une bobine de 20 mH avec 10 Ω donne τ = 2,0 ms. Un circuit LC avec L = 20 mH et C = 50 µF : LC = 1,0 × 10⁻⁶, T₀ = 2π × 10⁻³ ≈ 6,3 ms. Attention aux préfixes : c''est là que se perdent le plus de points. »
+
+Visuel : les trois courbes types : charge de condensateur, établissement du courant, oscillations sinusoïdales.
+
+## 45:00 – 55:00 · Pause quiz interactif
+
+« Pause ! Cinq questions, une minute chacune. »
+
+- Q1 : pH d''une solution d''acide chlorhydrique à 1,0 × 10⁻³ mol/L ?
+- Q2 : quel alcool ne subit pas d''oxydation ménagée ?
+- Q3 : unité de L/R ?
+- Q4 : longueur d''onde d''une onde de célérité 2,0 m/s et de fréquence 4,0 Hz ?
+- Q5 : à la demi-équivalence du dosage d''un acide faible par une base forte, que vaut le pH ?
+
+« Correction. Q1 : pH = 3,0. Q2 : l''alcool tertiaire. Q3 : la seconde. Q4 : λ = v/f = 0,50 m. Q5 : pH = pKa. Quatre ou cinq bonnes réponses : bravo. Sinon, relisez la fiche correspondante ce soir. »
+
+## 55:00 – 1:08:00 · Correction commentée : chimie
+
+« Exercice type : on dose 10,0 mL d''une solution d''acide éthanoïque par la soude à 0,050 mol/L ; l''équivalence est à 16,0 mL. Ca = 0,050 × 16,0/10,0 = 0,080 mol/L. À la demi-équivalence, 8,0 mL versés, on lit pH = pKa ≈ 4,8. Le pH à l''équivalence est supérieur à 7, car on obtient l''ion éthanoate, une base faible : on choisit la phénolphtaléine, dont la zone de virage (environ 8,2 à 10) contient ce pH. »
+
+« Côté organique : estérification lente, limitée, athermique ; saponification lente mais totale. Rendement de 67 % pour un mélange équimolaire avec un alcool primaire. Pour nommer un ester, je coupe au niveau de l''oxygène : la partie acide donne “alcanoate”, la partie alcool donne “d''alkyle”. CH₃–CH₂–COO–CH₃ : propanoate de méthyle. »
+
+« Et la cinétique ? On lit graphiquement le temps de demi-réaction ; la vitesse est la pente de la tangente. Si l''énoncé demande l''effet de la température, répondez : plus la température est élevée, plus la réaction est rapide. C''est le principe de la conservation des aliments au réfrigérateur. »
+
+## 1:08:00 – 1:15:00 · Ondes et oscillateurs : l''essentiel
+
+« λ = vT = v/f. Diffraction : θ = λ/a. Interférences : i = λD/a. Pendule élastique : T₀ = 2π√(m/k). Pendule simple : T₀ = 2π√(l/g). Si l''énoncé donne une courbe x(t), lisez l''amplitude sur l''axe vertical et la période entre deux maxima successifs. Pour la phase à l''origine, utilisez x(0) et le signe de la vitesse initiale. »
+
+« Petit exemple pour fixer les idées. Un solide de 0,50 kg accroché à un ressort de raideur 50 N/m est écarté de 4,0 cm puis lâché sans vitesse. ω₀ = √(k/m) = √(50/0,50) = 10 rad/s, donc T₀ = 2π/10 ≈ 0,63 s. Comme on lâche le solide sans vitesse à l''abscisse + 4,0 cm, x(0) = Xm : la phase à l''origine est nulle et x(t) = 4,0 × 10⁻² cos(10t), en mètres. Énergie mécanique : ½kXm² = ½ × 50 × (4,0 × 10⁻²)² = 4,0 × 10⁻² J. Vitesse maximale : ω₀Xm = 10 × 0,040 = 0,40 m/s. »
+
+« Côté ondes, retenez l''image de la houle sur la plage de Yoff : l''eau monte et descend sur place, mais la perturbation avance vers le rivage. C''est exactement la définition d''une onde progressive : transport d''énergie sans transport de matière. »
+
+Visuel : la courbe x(t) d''un oscillateur avec l''amplitude et la période repérées.
+
+## 1:15:00 – 1:22:00 · Gestion du temps
+
+« Demain : lecture complète du sujet pendant dix minutes, en notant toutes les données sur le brouillon. Commencez par l''exercice le plus sûr, souvent la chimie. Répartissez votre temps selon les points annoncés. Écrivez toujours l''expression littérale avant l''application numérique : si le calcul est faux, la formule juste rapporte quand même des points. Gardez dix minutes pour vérifier unités et chiffres significatifs. Et ce soir, dormez tôt. »
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+« Pour finir, cinq questions d''évaluation. Faites-les seuls, puis vérifiez. »
+
+- Question 1 : une particule de charge q = 3,2 × 10⁻¹⁹ C, de masse 6,6 × 10⁻²⁷ kg, à 1,0 × 10⁵ m/s, entre perpendiculairement dans B = 0,10 T. Rayon ?
+- Question 2 : vitesse d''un objet lâché sans vitesse après une chute de 20 m (frottements négligés) ?
+- Question 3 : énergie stockée dans un condensateur de 100 µF chargé sous 10 V ?
+- Question 4 : concentration d''une base dont 25,0 mL sont dosés par 10,0 mL d''acide fort à 0,10 mol/L ?
+- Question 5 : produit de l''oxydation ménagée du propan-2-ol ?
+
+Réponses :
+
+- Réponse 1 : R = mv/(qB) = (6,6 × 10⁻²⁷ × 1,0 × 10⁵)/(3,2 × 10⁻¹⁹ × 0,10) ≈ 2,1 × 10⁻² m, soit environ 2 cm.
+- Réponse 2 : v = √(2gh) = √(2 × 10 × 20) = 20 m/s.
+- Réponse 3 : ½CU² = ½ × 100 × 10⁻⁶ × 10² = 5,0 × 10⁻³ J.
+- Réponse 4 : Cb = 0,10 × 10,0/25,0 = 4,0 × 10⁻² mol/L.
+- Réponse 5 : la propanone (alcool secondaire → cétone).
+
+« Merci pour votre attention. Vous connaissez les lois, vous avez une méthode : soyez rigoureux sur les unités et faites-vous confiance. Bon courage pour le Bac ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-physique-chimie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive de veille du Bac');
