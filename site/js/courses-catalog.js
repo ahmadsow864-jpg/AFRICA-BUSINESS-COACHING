@@ -4718,6 +4718,72 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "mas-droit-m2",
+  "level": "Master 2",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Master 2 : réussir ses examens et sa soutenance",
+  "description": "Préparation aux examens de Master 2 en droit des affaires : investissements et contrats internationaux, fiscalité approfondie des groupes (prix de transfert, conventions fiscales), méthodologie du mémoire de recherche ou professionnel et de la soutenance. Public : étudiants de Master 2 ayant validé le Master 1 en droit des affaires.",
+  "sort": 772,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 40,
+    "content": "## Objectifs de la leçon\n\nLe Master 2 est la dernière année avant l'entrée dans la vie professionnelle ou la recherche. Au-delà des matières avancées, cette année est marquée par la préparation d'un mémoire (de recherche ou professionnel, selon la filière) et par sa soutenance orale. Cette leçon présente les spécificités du Master 2, les matières de l'année, la méthode de travail attendue, et un plan de révision sur six semaines qui intègre la préparation du mémoire en parallèle des révisions de matières.\n\n## Ce qui change par rapport au Master 1\n\nEn Master 1, vous avez travaillé la gouvernance des groupes, les contrats d'affaires et la concurrence, et l'arbitrage. En Master 2, l'horizon s'élargit à l'international : les investissements étrangers, les contrats internationaux, et la fiscalité des groupes qui opèrent dans plusieurs pays. Vous devez aussi, pour la première fois, produire un travail de recherche personnel et long (le mémoire), puis le défendre oralement devant un jury (la soutenance). C'est une compétence différente de la dissertation ou du cas pratique : il s'agit de choisir un sujet, de construire une problématique, de mener une recherche documentée, et de savoir répondre à des questions improvisées sur votre propre travail.\n\n## Les matières de l'année\n\n- Droit des investissements et contrats internationaux : protection des investissements étrangers, grandes clauses des contrats internationaux d'affaires, articulation avec le droit interne.\n- Droit fiscal approfondi des groupes : prix de transfert entre sociétés liées, logique générale des conventions fiscales internationales, risques de double imposition.\n- Méthodologie du mémoire de recherche ou professionnel et soutenance : choix du sujet, construction de la problématique, plan, soutenance orale.\n\n## Méthode de travail avancée\n\n- L'étude de cas complexe internationale : un scénario mêlant une entreprise sénégalaise ou ouest-africaine et un partenaire étranger, avec des enjeux d'investissement, de fiscalité et de résolution des litiges.\n- Le business case : évaluer une décision d'implantation internationale ou de restructuration fiscale en croisant l'angle juridique et l'angle économique, sans jamais utiliser de taux officiels non vérifiés.\n- La revue de littérature : situer votre mémoire dans les débats existants, sans inventer de référence précise, et construire une problématique originale plutôt que descriptive.\n\n## Plan de révision sur six semaines\n\n- Semaines 1 et 2 : droit des investissements et contrats internationaux.\n- Semaines 3 et 4 : droit fiscal approfondi des groupes, avec vérification systématique de tous les calculs.\n- Semaine 5 : méthodologie du mémoire et simulation de soutenance.\n- Semaine 6 : entraînement sur sujets types et finalisation du mémoire, avec au moins une simulation complète de soutenance devant un public (camarades, famille).\n\nContrairement au Master 1, le Master 2 demande de mener deux travaux en parallèle : les révisions de matières pour les examens écrits, et l'avancement du mémoire. Un planning réaliste doit réserver des plages dédiées à chacun, sans sacrifier l'un pour l'autre dans les dernières semaines. Beaucoup d'étudiants commettent l'erreur de repousser le mémoire après les examens, pensant gagner du temps ; en pratique, un mémoire commencé tardivement laisse trop peu de temps pour la relecture, la correction des défauts méthodologiques, et la préparation sérieuse de la soutenance, qui est elle-même une épreuve distincte des examens écrits et requiert un entraînement spécifique à l'oral.\n\n## Le lien entre mémoire et matières de l'année\n\nIl est vivement conseillé, lorsque cela est possible, de choisir un sujet de mémoire en lien avec l'une des trois matières avancées de l'année : cela permet de mutualiser les révisions et la recherche, et de présenter à l'oral un travail qui démontre une maîtrise approfondie d'une matière du programme. Un mémoire sur les prix de transfert, par exemple, consolide à la fois votre préparation à l'examen de droit fiscal approfondi des groupes et votre travail de recherche personnel, à condition de bien distinguer l'exercice de restitution attendu à l'examen (qui reste encadré par le temps limité et le barème) de l'exercice de recherche personnelle attendu dans le mémoire (qui suppose une problématique originale et une discussion argumentée, non une simple présentation descriptive du sujet).\n\n## Points clés à retenir\n\n- Le Master 2 ajoute une dimension internationale (investissements, contrats, fiscalité des groupes) aux matières déjà vues.\n- La méthodologie du mémoire et la soutenance sont une compétence à part, à travailler dès le début de l'année, pas seulement avant la soutenance.\n- Aucun taux fiscal ou seuil officiel ne doit être mémorisé comme certain sans vérification du texte en vigueur : ce cours illustre les mécanismes avec des valeurs fictives.\n\n## Exercices pratiques\n\n1. Citez les trois matières avancées du programme de Master 2 en droit des affaires.\n2. En quoi la compétence évaluée lors de la soutenance d'un mémoire diffère-t-elle de celle évaluée lors d'un examen écrit classique ?\n3. Pourquoi un planning de révision de Master 2 doit-il réserver des plages séparées pour les matières et pour le mémoire ?\n4. Proposez deux sujets de mémoire possibles (titres uniquement) en lien avec les matières de l'année.\n5. Expliquez pourquoi la dimension internationale est centrale en Master 2 alors qu'elle était peu présente en Master 1.\n\n## Corrigé\n\n1. Droit des investissements et contrats internationaux ; droit fiscal approfondi des groupes ; méthodologie du mémoire et soutenance.\n2. L'examen écrit évalue la restitution et l'application de connaissances à un cas donné en temps limité ; la soutenance évalue la capacité à défendre oralement un travail de recherche personnel, à répondre à des questions improvisées, et à démontrer une maîtrise critique de son propre sujet.\n3. Parce que les deux travaux (révisions et mémoire) sont cumulatifs et non substituables : négliger l'un pour l'autre dans les dernières semaines expose à un échec soit aux examens, soit à la soutenance, les deux étant généralement nécessaires à la validation de l'année.\n4. Exemples possibles : « Les garanties contractuelles dans les contrats internationaux d'approvisionnement agricole en Afrique de l'Ouest » ou « Les prix de transfert dans les groupes agro-industriels ouest-africains : enjeux et limites du contrôle fiscal ».\n5. Parce que le Master 2 prépare à une pratique professionnelle qui, dans le droit des affaires, implique de plus en plus des relations transfrontalières : investisseurs étrangers, groupes multinationaux, contrats avec des partenaires situés dans d'autres pays, ce qui nécessite des compétences spécifiques que le Master 1 n'abordait pas encore."
+   },
+   {
+    "title": "Droit des investissements et contrats internationaux",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Droit fiscal approfondi des groupes : prix de transfert et conventions fiscales internationales",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Méthodologie du mémoire de recherche ou professionnel et de la soutenance",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 en droit des affaires (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des investissements et contrats internationaux",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit fiscal approfondi des groupes",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire de recherche ou professionnel et soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "mas-mkt-m1",
   "level": "Master 1",
   "subject": "Marketing et commerce",
@@ -4777,6 +4843,72 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : Atelier cas pratique transversal — branding, export et distribution",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-log-m1",
+  "level": "Master 1",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Master 1 : reussir ses examens",
+  "description": "Preparation aux examens de Master 1 en Logistique et transport : supply chain management global et pilotage international, optimisation logistique avancee (localisation, reseaux, tournees), gestion des risques logistiques et continuite d'activite. Cas d'entreprises senegalaises et africaines fictifs, calculs verifies, sujet type et atelier transversal filé. Public : etudiants de Master 1 en logistique, transport ou supply chain.",
+  "sort": 791,
+  "lessons": [
+   {
+    "title": "Reussir ses examens de Master 1 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "Le Master 1 en Logistique et Transport marque une rupture nette avec la Licence. Vous ne revisez plus des notions isolees (un mode de transport, une formule de stock) : on vous demande desormais de piloter un systeme entier - une chaine logistique internationale, un reseau de distribution, un portefeuille de risques - et de justifier chaque decision par une analyse chiffree et une argumentation de gestionnaire. Les correcteurs attendent une posture de futur cadre logistique ou consultant supply chain, capable de trancher en situation d'incertitude, avec des donnees incompletes, des objectifs parfois contradictoires (cout, service, delai, risque) et une dimension internationale quasi systematique.\n\nCette annee de M1 repose sur trois piliers que vous retrouverez dans les examens, les etudes de cas et le memoire : le Supply Chain Management (SCM) global, c'est-a-dire le pilotage integre d'une chaine qui traverse plusieurs pays, plusieurs devises, plusieurs reglementations ; l'optimisation logistique avancee, qui mobilise des modeles quantitatifs (localisation d'entrepots, tournees de vehicules, reseaux de distribution) pour reduire les couts tout en maintenant le niveau de service ; et la gestion des risques logistiques, qui vous apprend a anticiper les ruptures (portuaires, fournisseurs, climatiques, systemes d'information) et a construire un plan de continuite d'activite credible.\n\n## Les specificites du Master 1 : du cas isole a la decision systemique\n\nEn Licence, un exercice vous demandait par exemple de calculer une quantite economique de commande. En Master 1, l'exercice devient : « Teranga Global Foods SA exporte de la mangue sechee vers l'Europe via trois pays d'approvisionnement ; son cash-to-cash cycle se degrade, son taux de service (OTIF) baisse, et un risque de congestion portuaire menace sa campagne de haute saison. Vous etes analyste supply chain : proposez un diagnostic et un plan d'action chiffre. » Il n'y a plus une seule bonne reponse technique : il y a une recommandation argumentee, fondee sur des indicateurs (OTIF, cash-to-cash cycle, effet coup de fouet, EMV des risques) et sur une hierarchisation des priorites compte tenu des contraintes de l'entreprise fictive presentee dans le sujet.\n\nTrois exigences methodologiques structurent desormais vos copies : l'analyse critique (discuter les hypotheses d'un modele, par exemple le fait que le centre de gravite suppose un cout de transport proportionnel a la distance, hypothese fragile en Afrique de l'Ouest) ; le cas d'entreprise complexe (sujets avec plusieurs sites, contraintes reelles de saisonnalite ou de douane qui obligent a trier l'information) ; et la prise de decision en incertitude (raisonner en esperance de perte EMV ou en scenarios, plutot qu'avec des donnees certaines).\n\n## Les matieres de l'annee et leur articulation\n\n- Supply chain management global et pilotage de la chaine logistique internationale : vous apprenez a cartographier une chaine multi-pays, a mesurer sa performance avec des indicateurs integres (SCOR, OTIF, cash-to-cash cycle) et a diagnostiquer l'effet coup de fouet (bullwhip effect) qui deforme la demande le long de la chaine.\n- Optimisation logistique avancee : vous mobilisez des modeles de localisation (centre de gravite, methode des couts totaux) pour choisir l'implantation d'un entrepot, et des modeles de tournees (algorithme des gains de Clarke et Wright) pour reduire les kilometres parcourus par une flotte de livraison.\n- Gestion des risques logistiques et continuite d'activite : vous construisez une matrice des risques (probabilite x impact), calculez une esperance de perte monetaire (EMV) et redigez les grandes lignes d'un plan de continuite d'activite (PCA) logistique.\n\nCes trois matieres s'articulent autour d'un meme fil directeur : une chaine logistique internationale performante (matiere 1) doit etre a la fois optimisee sur le plan des couts et des flux (matiere 2) et robuste face aux chocs (matiere 3). Un sujet d'examen complet melange souvent les trois : par exemple, une decision d'optimisation de reseau (fermer un entrepot pour en ouvrir un plus central) doit etre evaluee a la fois sur son impact economique et sur le risque qu'elle cree ou qu'elle reduit (dependance accrue a un seul site, par exemple).\n\n## Methode de travail avancee : etude de cas, business case, revue de litterature\n\nTrois exercices intellectuels reviennent constamment en Master. L'etude de cas complexe consiste a lire un cas d'entreprise de deux a quatre pages, en extraire les donnees utiles (souvent noyees parmi des informations secondaires), identifier le ou les problemes de gestion, et structurer une reponse en diagnostic puis recommandations chiffrees. La technique efficace est de surligner trois categories d'information en lisant : les chiffres, les contraintes, et les objectifs affiches par la direction.\n\nLe business case (etude de rentabilite d'un projet) vous demande de comparer un investissement (systeme d'information, entrepot, plan de continuite) a ses benefices attendus, a l'aide d'indicateurs comme le payback, la valeur actuelle nette (VAN) ou le taux de rentabilite interne (TRI). Explicitez toujours les hypotheses retenues (taux d'actualisation, horizon) : c'est souvent sur leur justification, plus que sur le calcul lui-meme, que le correcteur evalue votre maturite.\n\nLa revue de litterature consiste a mobiliser les modeles du cours (SCOR, Kraljic, centre de gravite, matrice des risques) en discutant leurs limites, plutot qu'a les reciter. Un bon devoir cite un modele, l'applique au cas, puis en discute une limite pertinente (par exemple : le centre de gravite suppose un cout lineaire a la distance, hypothese fragile sur le corridor Dakar-Bamako ou le dedouanement pese davantage que la distance).\n\n## Plan de revision sur six semaines\n\n- Semaines 1-2 : SCM global et pilotage international (lecon 2) : indicateurs, cash-to-cash cycle, effet coup de fouet, calculs refaits a la main.\n- Semaines 3-4 : optimisation logistique avancee (lecon 3) : centre de gravite, algorithme des gains, reseaux de distribution, entrainement sur des donnees differentes du cours.\n- Semaine 5 : gestion des risques et continuite d'activite (lecon 4) : matrice des risques, EMV, structure d'un PCA ; relecture transversale des liens entre les trois matieres.\n- Semaine 6 : sujet type (lecon 5) en conditions d'examen chronometrees, puis revision des quatre cours video (quiz et evaluations finales sans regarder le corrige avant d'avoir termine).\n\n## Points cles a retenir\n\n- Le Master 1 exige une vision systemique : chaque decision logistique doit etre analysee sous trois angles - performance (indicateurs), optimisation economique (modeles), et risque (continuite d'activite).\n- Les sujets presentent des cas d'entreprise fictifs complexes : la competence a extraire l'information pertinente compte autant que la maitrise technique des formules.\n- Toute recommandation doit etre chiffree et les hypotheses explicitees ; un calcul juste sans interpretation de gestion ne suffit plus a obtenir une bonne note.\n- Le plan de revision doit consacrer un temps specifique a l'entrainement sur cas nouveaux, pas seulement a la relecture des cours.\n\n## Exercices pratiques\n\n1. Quelle difference majeure entre un exercice de Licence et un exercice de Master 1 sur le meme theme logistique ?\n2. Cash-to-cash cycle de 45 jours = 52 jours de stock + 38 jours client - X jours fournisseur. Trouvez X.\n3. Citez les trois matieres du M1 et, pour chacune, un exemple de decision qu'elle eclaire.\n4. Donnez un exemple de limite du modele du centre de gravite appliquee au Senegal.\n5. Proposez un planning resserre pour un etudiant disposant de huit heures par semaine.\n\n## Corrige\n\n1. En Licence, l'exercice isole une formule sur des donnees fournies. En Master 1, le meme theme est integre dans un cas complet : il faut identifier les donnees pertinentes dans un texte, relier la decision a d'autres enjeux (service, risque, cout), et justifier une recommandation de gestion, pas seulement un chiffre.\n2. Cash-to-cash = jours de stock + jours client - jours fournisseur, donc 45 = 52 + 38 - X, soit X = 45 jours de credit fournisseur.\n3. SCM global : regrouper les achats de plusieurs filiales pour ameliorer le cash-to-cash cycle. Optimisation avancee : choisir la localisation d'un nouvel entrepot regional. Gestion des risques : investir dans un double sourcing pour reduire la dependance a un seul fournisseur.\n4. Reciter un modele sans le discuter ne correspond pas au niveau Master. Limite du centre de gravite au Senegal : il suppose un cout proportionnel a la distance a vol d'oiseau, alors que l'etat des routes et les delais de dedouanement font que deux trajets de meme distance peuvent couter tres differemment.\n5. Deux heures par semaine pour chaque matiere (SCM, optimisation, risques) et deux heures d'entrainement sur sujets, en se concentrant sur les points essentiels plutot que sur l'exhaustivite, avec priorite aux exercices chiffres."
+   },
+   {
+    "title": "Supply chain management global et pilotage de la chaine logistique internationale : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Optimisation logistique avancee : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion des risques logistiques et continuite d'activite : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Master 1 logistique et transport (entrainement, corrige detaille)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours video (1h30) : Supply chain management global et pilotage de la chaine logistique internationale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours video (1h30) : Optimisation logistique avancee",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours video (1h30) : Gestion des risques logistiques et continuite d'activite",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours video (1h30) : Atelier transversal, cas pratique file - Jolof Export et Logistique SA",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
