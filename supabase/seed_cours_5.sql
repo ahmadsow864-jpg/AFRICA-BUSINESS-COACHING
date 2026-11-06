@@ -1,6 +1,639 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 5/5). À exécuter après seed.sql.
 
+-- Cours : Sciences physiques (PC) : réussir l'épreuve du BFEM
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bfem-sciences-physiques', (select id from public.levels where name = '3e'), null, 'Sciences physiques', 'Sciences physiques (PC) : réussir l''épreuve du BFEM', 'Ce cours d''examen révise le programme de sciences physiques du collège, avec un accent sur la 4e et la 3e : mélanges et corps purs, atomes et ions, équations-bilans, acides, bases et pH, métaux, électricité (loi d''Ohm, puissance, énergie), forces et équilibre, réflexion, réfraction et lentilles. Il propose des fiches de révision, des exercices progressifs corrigés et un sujet d''entraînement complet. Prérequis : avoir suivi les classes de 6e à 3e et savoir utiliser une calculatrice.', true, 107
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
+
+- Savoir comment se présente une épreuve de sciences physiques (PC) au BFEM.
+- Connaître les grands types d''exercices et la manière de les rédiger.
+- Repérer les erreurs qui font perdre le plus de points.
+- Organiser ses révisions sur 8 semaines.
+
+## Comment se présente l''épreuve
+
+L''épreuve de sciences physiques du BFEM évalue le programme du collège, avec un poids important pour les chapitres de 4e et de 3e. Le sujet est en général partagé entre une partie de chimie et une partie de physique. La durée, le coefficient et le barème dépendent des textes officiels en vigueur : renseigne-toi auprès de ton établissement et ne te fie pas aux rumeurs.
+
+Ce qui ne change pas d''une année à l''autre, c''est la nature des questions. On retrouve presque toujours :
+- des questions de cours : définir un mot (corps pur, ion, lentille convergente), énoncer une loi (loi d''Ohm, conservation de la masse) ;
+- des questions d''application directe : calculer une intensité, une puissance, un poids, une vergence ;
+- des équations-bilans à écrire et à équilibrer ;
+- des schémas : circuit électrique, construction de l''image donnée par une lentille, représentation d''une force ;
+- des exercices à étapes, où chaque réponse sert à la suivante.
+
+## La méthode de résolution en 5 étapes
+
+Pour tout exercice de calcul, adopte toujours le même plan. Les correcteurs l''attendent et il te protège des oublis.
+
+- Étape 1 : lire tout l''énoncé et souligner les données avec leurs unités.
+- Étape 2 : convertir les données dans les unités du Système international (mètre, kilogramme, seconde, ampère, volt, ohm, watt, joule).
+- Étape 3 : écrire la formule littérale (exemple : U = R × I).
+- Étape 4 : remplacer par les valeurs numériques, puis calculer.
+- Étape 5 : donner le résultat avec son unité et, si on le demande, une phrase de conclusion.
+
+Exemple rédigé. Une résistance de 100 Ω est traversée par un courant de 50 mA. Calculer la tension à ses bornes.
+Données : R = 100 Ω ; I = 50 mA = 0,050 A.
+Formule : U = R × I.
+Application numérique : U = 100 × 0,050 = 5 V.
+Conclusion : la tension aux bornes de la résistance est de 5 V.
+
+## Les unités à connaître par cœur
+
+- Intensité I : ampère (A) ; 1 mA = 0,001 A.
+- Tension U : volt (V).
+- Résistance R : ohm (Ω) ; 1 kΩ = 1 000 Ω.
+- Puissance P : watt (W) ; 1 kW = 1 000 W.
+- Énergie E : joule (J) ou kilowattheure (kWh) ; 1 Wh = 3 600 J et 1 kWh = 3 600 000 J.
+- Masse m : kilogramme (kg) ; 1 g = 0,001 kg.
+- Poids P et force F : newton (N).
+- Intensité de la pesanteur g : newton par kilogramme (N/kg).
+- Distance focale f : mètre (m) ; vergence C : dioptrie (δ).
+- Concentration massique : gramme par litre (g/L).
+
+## Les erreurs fréquentes
+
+- Oublier l''unité ou en mettre une fausse : un résultat sans unité est souvent compté faux.
+- Calculer avec des milliampères ou des centimètres sans convertir.
+- Confondre masse (en kg, ne change pas) et poids (en N, dépend du lieu).
+- Écrire une équation-bilan non équilibrée : il faut le même nombre d''atomes de chaque élément de chaque côté.
+- Dessiner un circuit sans respecter les symboles normalisés, ou placer l''ampèremètre en dérivation et le voltmètre en série (c''est l''inverse).
+- Pour les lentilles, oublier les rayons particuliers ou tracer sans règle.
+- Recopier une formule au hasard : chaque lettre doit correspondre à une donnée identifiée.
+
+## Plan de révision sur 8 semaines
+
+- Semaine 1 : méthode, unités et conversions ; mélanges et corps purs ; techniques de séparation.
+- Semaine 2 : atomes, molécules, ions ; formules chimiques ; réactions chimiques et équations-bilans.
+- Semaine 3 : solutions aqueuses, concentration, acides et bases, pH ; métaux et leurs réactions.
+- Semaine 4 : électricité 1 : circuits série et dérivation, intensité, tension, résistance, loi d''Ohm.
+- Semaine 5 : électricité 2 : puissance et énergie électriques, facture d''électricité, sécurité.
+- Semaine 6 : mécanique : forces, poids et masse, équilibre d''un solide.
+- Semaine 7 : optique : réflexion, réfraction, lentilles, construction d''images.
+- Semaine 8 : sujets d''entraînement complets en temps limité, puis reprise des points faibles.
+
+Chaque séance de révision peut suivre ce rythme : 15 minutes pour relire une fiche, 30 minutes d''exercices sans regarder le corrigé, 15 minutes de correction en notant ses erreurs dans un cahier spécial. Ce cahier d''erreurs devient ton meilleur outil la dernière semaine.
+
+## Points clés
+
+- Toujours : données, conversion, formule, calcul, unité.
+- Les schémas se font à la règle et au crayon, avec une légende.
+- Le programme de 4e et de 3e est le cœur de l''épreuve.
+
+## Exercices pratiques
+
+Exercice 1 : Convertir : 250 mA en A ; 2,2 kΩ en Ω ; 1 500 W en kW ; 350 g en kg.
+
+Exercice 2 : Convertir 2 kWh en joules.
+
+Exercice 3 : Une lentille a une distance focale de 25 cm. Exprimer cette distance en mètres.
+
+Exercice 4 : Repérer l''erreur dans cette réponse : « P = U × I = 220 × 0,5 = 110 ».
+
+Exercice 5 : Un élève écrit : « La masse de Moussa est de 500 N. » Corriger sa phrase sachant que g = 10 N/kg.
+
+Exercice 6 : Rédiger complètement selon la méthode en 5 étapes : une lampe est traversée par un courant de 200 mA sous une tension de 6 V. Calculer sa puissance.
+
+## Corrigé
+
+Exercice 1 : 250 mA = 0,25 A ; 2,2 kΩ = 2 200 Ω ; 1 500 W = 1,5 kW ; 350 g = 0,35 kg.
+
+Exercice 2 : 1 kWh = 3 600 000 J, donc 2 kWh = 7 200 000 J (soit 7,2 × 10⁶ J).
+
+Exercice 3 : 25 cm = 0,25 m.
+
+Exercice 4 : Le calcul est juste mais l''unité manque. Il faut écrire P = 110 W.
+
+Exercice 5 : 500 N est un poids, pas une masse. Correction : « Le poids de Moussa est de 500 N. » Sa masse vaut m = P / g = 500 / 10 = 50 kg.
+
+Exercice 6 : Données : U = 6 V ; I = 200 mA = 0,2 A. Formule : P = U × I. Application numérique : P = 6 × 0,2 = 1,2 W. Conclusion : la puissance de la lampe est de 1,2 W.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'bfem-sciences-physiques'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Chimie : matière, atomes, ions, réactions, acides, bases et métaux', '## Objectifs de la leçon
+
+- Distinguer mélange et corps pur, corps simple et corps composé.
+- Décrire l''atome et l''ion, lire une formule chimique.
+- Écrire et équilibrer une équation-bilan, appliquer la conservation de la masse.
+- Utiliser le pH, la concentration massique et les réactions des métaux.
+
+## Fiche 1 : mélanges et corps purs
+
+Un corps pur est constitué d''une seule espèce chimique (eau distillée, sel pur). Un mélange contient plusieurs espèces. Il est homogène si l''on ne distingue pas ses constituants à l''œil nu (eau salée), hétérogène dans le cas contraire (eau boueuse du fleuve après la pluie).
+
+Techniques de séparation : décantation et filtration pour un mélange hétérogène ; évaporation ou distillation pour récupérer les constituants d''un mélange homogène. Dans les salins du lac Rose ou du Saloum, l''évaporation de l''eau par le soleil laisse le sel.
+
+Un corps pur se reconnaît à des constantes physiques fixes : sous la pression atmosphérique normale, l''eau pure bout à 100 °C et se solidifie à 0 °C.
+
+Un corps simple est formé d''un seul élément (dioxygène O₂, fer Fe, cuivre Cu). Un corps composé en contient plusieurs (eau H₂O, dioxyde de carbone CO₂).
+
+## Fiche 2 : atomes, molécules et ions
+
+L''atome est formé d''un noyau chargé positivement et d''électrons chargés négativement qui tournent autour. Il est électriquement neutre : il contient autant de charges positives dans le noyau que d''électrons.
+
+Une molécule est un assemblage d''atomes. Dans H₂O, l''indice 2 indique deux atomes d''hydrogène pour un atome d''oxygène.
+
+Un ion est un atome (ou un groupe d''atomes) qui a perdu ou gagné un ou plusieurs électrons :
+- un atome qui perd des électrons devient un ion positif ou cation : Na⁺, Fe²⁺, Cu²⁺, Al³⁺, H⁺ ;
+- un atome qui gagne des électrons devient un ion négatif ou anion : Cl⁻, OH⁻.
+
+Exemple : l''atome de fer perd 2 électrons et devient l''ion Fe²⁺. Une solution ionique est toujours électriquement neutre : le chlorure de sodium en solution s''écrit (Na⁺ + Cl⁻), le chlorure de cuivre II s''écrit (Cu²⁺ + 2 Cl⁻).
+
+## Fiche 3 : réactions chimiques et équations-bilans
+
+Au cours d''une réaction chimique, des réactifs disparaissent et des produits se forment. Les atomes ne sont ni créés ni détruits : ils se réarrangent. Conséquence : la masse totale des réactifs consommés est égale à la masse totale des produits formés (loi de Lavoisier).
+
+Méthode pour équilibrer une équation :
+- écrire les formules des réactifs à gauche et des produits à droite ;
+- compter les atomes de chaque élément de chaque côté ;
+- ajuster avec des coefficients placés devant les formules, jamais en modifiant les indices.
+
+Exemples à connaître :
+- combustion du carbone : C + O₂ → CO₂ ;
+- combustion du méthane : CH₄ + 2 O₂ → CO₂ + 2 H₂O ;
+- synthèse de l''eau : 2 H₂ + O₂ → 2 H₂O ;
+- combustion du fer : 3 Fe + 2 O₂ → Fe₃O₄.
+
+Vérifions la dernière : à gauche 3 Fe et 4 O ; à droite 3 Fe et 4 O. Elle est équilibrée.
+
+Application de la conservation de la masse : 12 g de carbone brûlent complètement avec 32 g de dioxygène. La masse de dioxyde de carbone formé est 12 + 32 = 44 g. Les masses sont proportionnelles : 6 g de carbone donneront 22 g de CO₂.
+
+## Fiche 4 : solutions, concentration, acides, bases et pH
+
+Une solution est obtenue en dissolvant un soluté dans un solvant (souvent l''eau). La concentration massique se calcule par Cm = m / V, avec m en grammes et V en litres.
+
+Exemple : on dissout 5 g de sel dans 250 mL d''eau. V = 0,25 L, donc Cm = 5 / 0,25 = 20 g/L.
+
+Le pH mesure l''acidité, sur une échelle de 0 à 14 :
+- pH inférieur à 7 : solution acide (jus de citron, vinaigre, jus de bissap) ; elle contient plus d''ions H⁺ que d''ions OH⁻ ;
+- pH égal à 7 : solution neutre (eau pure) ;
+- pH supérieur à 7 : solution basique (eau savonneuse, eau de Javel, soude) ; elle contient plus d''ions OH⁻.
+
+On mesure le pH avec du papier pH ou un pH-mètre. Quand on dilue une solution acide avec de l''eau, son pH augmente et se rapproche de 7 ; pour une solution basique, il diminue vers 7. Lors du mélange d''un acide et d''une base, il y a réaction de neutralisation : H⁺ + OH⁻ → H₂O.
+
+Sécurité : on verse toujours l''acide dans l''eau, jamais l''eau dans l''acide, et on porte des lunettes et des gants.
+
+## Fiche 5 : les métaux
+
+- Le fer rouille à l''air humide ; la rouille est poreuse et ne protège pas le métal. On le protège par la peinture, le graissage ou la galvanisation (dépôt de zinc), comme sur les tôles des toits.
+- L''aluminium se couvre d''une fine couche d''alumine qui le protège.
+- Le cuivre conduit très bien le courant : on l''utilise dans les fils électriques.
+
+Action de l''acide chlorhydrique dilué (H⁺ + Cl⁻) :
+- sur le fer : Fe + 2 H⁺ → Fe²⁺ + H₂ ;
+- sur le zinc : Zn + 2 H⁺ → Zn²⁺ + H₂ ;
+- sur l''aluminium : 2 Al + 6 H⁺ → 2 Al³⁺ + 3 H₂ ;
+- le cuivre n''est pas attaqué par l''acide chlorhydrique dilué.
+
+Tests d''identification :
+- le dihydrogène H₂ produit une légère détonation à l''approche d''une flamme ;
+- avec la soude, Fe²⁺ donne un précipité vert, Cu²⁺ un précipité bleu, Zn²⁺ et Al³⁺ un précipité blanc ;
+- avec le nitrate d''argent, l''ion Cl⁻ donne un précipité blanc qui noircit à la lumière.
+
+## Exercices pratiques
+
+Exercice 1 : Classer en mélange homogène, mélange hétérogène ou corps pur : eau distillée, eau boueuse, eau sucrée, fer.
+
+Exercice 2 : L''atome d''aluminium perd 3 électrons. Écrire la formule de l''ion obtenu. Est-ce un cation ou un anion ?
+
+Exercice 3 : Équilibrer : H₂ + Cl₂ → HCl ; Al + O₂ → Al₂O₃ ; C₃H₈ + O₂ → CO₂ + H₂O.
+
+Exercice 4 : On brûle 3 g de carbone. Sachant que 12 g de carbone donnent 44 g de CO₂, calculer la masse de CO₂ obtenue et la masse de dioxygène consommée.
+
+Exercice 5 : Aïssatou dissout 8 g de sucre dans 400 mL d''eau. Calculer la concentration massique.
+
+Exercice 6 : Trois solutions ont des pH de 2, 7 et 12. Indiquer leur nature. Que devient le pH de la première si on la dilue ?
+
+Exercice 7 : On verse de l''acide chlorhydrique dilué sur de la poudre de zinc. On observe un dégagement gazeux. Nommer le gaz, indiquer comment l''identifier et écrire l''équation-bilan. Quel précipité obtient-on en ajoutant de la soude à la solution finale ?
+
+## Corrigé
+
+Exercice 1 : eau distillée et fer : corps purs ; eau boueuse : mélange hétérogène ; eau sucrée : mélange homogène.
+
+Exercice 2 : Al³⁺ ; c''est un cation, car l''atome a perdu des électrons et porte une charge positive.
+
+Exercice 3 : H₂ + Cl₂ → 2 HCl. 4 Al + 3 O₂ → 2 Al₂O₃ (4 Al et 6 O de chaque côté). C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O (à droite : 3 C, 8 H, 6 + 4 = 10 O ; à gauche : 3 C, 8 H, 10 O).
+
+Exercice 4 : 3 g, c''est 4 fois moins que 12 g, donc m(CO₂) = 44 / 4 = 11 g. Par conservation de la masse, m(O₂) = 11 − 3 = 8 g.
+
+Exercice 5 : V = 400 mL = 0,4 L ; Cm = m / V = 8 / 0,4 = 20 g/L.
+
+Exercice 6 : pH 2 : acide ; pH 7 : neutre ; pH 12 : basique. Diluée, la solution acide voit son pH augmenter en se rapprochant de 7 (sans jamais le dépasser).
+
+Exercice 7 : Le gaz est le dihydrogène H₂ ; il produit une légère détonation à l''approche d''une flamme. Équation : Zn + 2 H⁺ → Zn²⁺ + H₂. Avec la soude, les ions Zn²⁺ donnent un précipité blanc.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bfem-sciences-physiques'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Chimie : matière, atomes, ions, réactions, acides, bases et métaux');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Électricité : circuits, loi d''Ohm, puissance et énergie', '## Objectifs de la leçon
+
+- Schématiser un circuit et appliquer les lois des intensités et des tensions.
+- Utiliser la loi d''Ohm.
+- Calculer une puissance, une énergie et le coût d''une consommation.
+
+## Fiche 1 : le circuit électrique
+
+Symboles à connaître : générateur (pile), lampe, interrupteur ouvert ou fermé, résistance (rectangle), moteur (cercle avec M), diode, ampèremètre (cercle avec A), voltmètre (cercle avec V). Le courant circule, à l''extérieur du générateur, de la borne + vers la borne −.
+
+- Montage en série : tous les dipôles forment une seule boucle. Si une lampe grille, tout s''éteint.
+- Montage en dérivation (en parallèle) : plusieurs boucles. Si une lampe grille, les autres restent allumées. C''est le cas des installations domestiques.
+
+## Fiche 2 : intensité et tension
+
+L''intensité I se mesure en ampères avec un ampèremètre branché en série. La tension U se mesure en volts avec un voltmètre branché en dérivation, aux bornes du dipôle.
+
+Lois en série :
+- l''intensité est la même en tout point : I = I₁ = I₂ ;
+- la tension aux bornes du générateur est la somme des tensions : U = U₁ + U₂.
+
+Lois en dérivation :
+- l''intensité dans la branche principale est la somme des intensités des branches : I = I₁ + I₂ (loi des nœuds) ;
+- les tensions aux bornes des branches sont égales : U = U₁ = U₂.
+
+Exemple : deux lampes en dérivation sont traversées par 0,3 A et 0,5 A. L''ampèremètre de la branche principale indique 0,3 + 0,5 = 0,8 A.
+
+## Fiche 3 : résistance et loi d''Ohm
+
+Une résistance (ou conducteur ohmique) limite le courant. Sa valeur R s''exprime en ohms (Ω) et se mesure à l''ohmmètre, hors circuit.
+
+Loi d''Ohm : la tension aux bornes d''un conducteur ohmique est proportionnelle à l''intensité qui le traverse : U = R × I. On en tire I = U / R et R = U / I.
+
+La caractéristique U = f(I) d''un conducteur ohmique est une droite qui passe par l''origine. Son coefficient directeur est R.
+
+Exemple : un conducteur ohmique de 220 Ω est traversé par 0,05 A. U = 220 × 0,05 = 11 V.
+
+Association de résistances en série : la résistance équivalente est la somme, Re = R₁ + R₂. Avec 100 Ω et 150 Ω en série : Re = 250 Ω. Sous 5 V, I = 5 / 250 = 0,02 A = 20 mA.
+
+## Fiche 4 : puissance électrique
+
+Chaque appareil porte deux indications nominales, par exemple « 220 V – 1 000 W » : sa tension de fonctionnement normal et sa puissance consommée sous cette tension.
+
+En courant continu (et pour les appareils de chauffage ou d''éclairage à incandescence en alternatif) : P = U × I, avec P en watts, U en volts, I en ampères.
+
+Pour un conducteur ohmique, en combinant avec la loi d''Ohm : P = R × I² et P = U² / R.
+
+Exemple : une lampe de 12 V – 6 W fonctionne normalement. I = P / U = 6 / 12 = 0,5 A.
+
+Exemple : un fer à repasser 220 V – 1 100 W. I = 1 100 / 220 = 5 A. Sa résistance vaut R = U / I = 220 / 5 = 44 Ω. Vérification : P = R × I² = 44 × 25 = 1 100 W.
+
+Les appareils qui chauffent (fer, bouilloire, chauffe-eau) ont les puissances les plus élevées. Plusieurs appareils puissants branchés sur la même multiprise font passer une grande intensité : risque d''échauffement et d''incendie. Le fusible ou le disjoncteur coupe le courant en cas de surintensité.
+
+## Fiche 5 : énergie électrique
+
+L''énergie consommée est E = P × t.
+- Avec P en watts et t en secondes, E est en joules (J).
+- Avec P en kilowatts et t en heures, E est en kilowattheures (kWh).
+
+Exemple : un ventilateur de 60 W fonctionne 5 h. E = 60 × 5 = 300 Wh = 0,3 kWh. En joules : E = 60 × 5 × 3 600 = 1 080 000 J.
+
+Coût : le compteur électrique mesure l''énergie en kWh. Coût = énergie (kWh) × prix du kWh. Pour l''exemple, prenons un prix fictif de 100 FCFA le kWh (le vrai tarif dépend de la tranche et des textes en vigueur). 0,3 kWh coûte 0,3 × 100 = 30 FCFA.
+
+Bilan d''une maison sur une journée (prix fictif 100 FCFA/kWh) :
+- 4 lampes de 15 W pendant 6 h : 4 × 15 × 6 = 360 Wh ;
+- un téléviseur de 100 W pendant 4 h : 400 Wh ;
+- un réfrigérateur de puissance moyenne 150 W pendant 24 h : 3 600 Wh.
+Total : 360 + 400 + 3 600 = 4 360 Wh = 4,36 kWh, soit 4,36 × 100 = 436 FCFA.
+
+## Points clés
+
+- Ampèremètre en série, voltmètre en dérivation.
+- U = R × I ; P = U × I ; E = P × t.
+- 1 kWh = 3 600 000 J.
+
+## Exercices pratiques
+
+Exercice 1 : Dans un circuit en série, la pile délivre 9 V. La tension aux bornes de la lampe est 6 V. Quelle est la tension aux bornes du moteur, seul autre dipôle ?
+
+Exercice 2 : Un conducteur ohmique est soumis à 12 V et traversé par 0,06 A. Calculer R.
+
+Exercice 3 : On mesure, pour un conducteur ohmique : U = 2 V pour I = 0,01 A ; U = 4 V pour I = 0,02 A ; U = 6 V pour I = 0,03 A. Montrer que la loi d''Ohm est vérifiée et donner R.
+
+Exercice 4 : Une bouilloire porte « 220 V – 2 000 W ». Calculer l''intensité qui la traverse en fonctionnement normal (arrondir au dixième).
+
+Exercice 5 : Cette bouilloire fonctionne 15 minutes. Calculer l''énergie consommée en kWh puis en joules.
+
+Exercice 6 : Dans un salon de coiffure à Thiès, un sèche-cheveux de 1 200 W fonctionne 2 h 30 min par jour. Calculer l''énergie consommée en 30 jours et son coût avec un prix fictif de 110 FCFA le kWh.
+
+Exercice 7 : Deux conducteurs ohmiques de 40 Ω et 60 Ω sont montés en série sous 10 V. Calculer l''intensité du courant puis la tension aux bornes de chacun.
+
+## Corrigé
+
+Exercice 1 : En série, U = U₁ + U₂, donc U(moteur) = 9 − 6 = 3 V.
+
+Exercice 2 : R = U / I = 12 / 0,06 = 200 Ω.
+
+Exercice 3 : U / I = 2 / 0,01 = 4 / 0,02 = 6 / 0,03 = 200. Le rapport est constant : U est proportionnelle à I, la loi d''Ohm est vérifiée avec R = 200 Ω.
+
+Exercice 4 : I = P / U = 2 000 / 220 ≈ 9,1 A.
+
+Exercice 5 : t = 15 min = 0,25 h ; E = 2 kW × 0,25 h = 0,5 kWh. En joules : 0,5 × 3 600 000 = 1 800 000 J. Vérification : 2 000 W × 900 s = 1 800 000 J.
+
+Exercice 6 : Par jour : 1,2 kW × 2,5 h = 3 kWh. En 30 jours : 90 kWh. Coût : 90 × 110 = 9 900 FCFA.
+
+Exercice 7 : Re = 40 + 60 = 100 Ω ; I = 10 / 100 = 0,1 A. U₁ = 40 × 0,1 = 4 V ; U₂ = 60 × 0,1 = 6 V. Contrôle : 4 + 6 = 10 V.', 'texte', 55, false, 30
+from public.courses c where c.slug = 'bfem-sciences-physiques'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Électricité : circuits, loi d''Ohm, puissance et énergie');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Mécanique et optique : forces, poids, équilibre, lentilles', '## Objectifs de la leçon
+
+- Caractériser et représenter une force.
+- Distinguer poids et masse, utiliser P = m × g.
+- Énoncer les conditions d''équilibre d''un solide soumis à deux forces.
+- Connaître la réflexion, la réfraction et les lentilles, construire une image.
+
+## Fiche 1 : les forces
+
+Une force est une action mécanique capable de mettre un objet en mouvement, de modifier son mouvement ou de le déformer. Elle peut être de contact (main qui pousse une charrette) ou à distance (attraction de la Terre, aimant).
+
+Une force se représente par un vecteur (une flèche) défini par quatre caractéristiques :
+- le point d''application ;
+- la direction (la droite d''action) ;
+- le sens ;
+- l''intensité, en newtons (N), mesurée avec un dynamomètre.
+
+Pour dessiner, on choisit une échelle, par exemple 1 cm pour 10 N : une force de 35 N est représentée par une flèche de 3,5 cm.
+
+## Fiche 2 : poids et masse
+
+La masse m mesure la quantité de matière ; elle s''exprime en kilogrammes et se mesure avec une balance. Elle ne dépend pas du lieu.
+
+Le poids P est la force d''attraction exercée par la Terre sur un objet. Ses caractéristiques : point d''application au centre de gravité G, direction verticale, sens vers le bas, intensité P = m × g.
+
+L''intensité de la pesanteur g vaut environ 9,8 N/kg à la surface de la Terre ; dans les exercices on prend souvent 10 N/kg si l''énoncé le précise. Sur la Lune, g vaut environ 1,6 N/kg : on y pèse environ six fois moins, mais la masse est la même.
+
+Exemple : un sac de riz de 25 kg, avec g = 9,8 N/kg : P = 25 × 9,8 = 245 N.
+
+## Fiche 3 : équilibre d''un solide soumis à deux forces
+
+Un solide soumis à deux forces F₁ et F₂ est en équilibre si ces deux forces :
+- ont la même droite d''action ;
+- sont de sens contraires ;
+- ont la même intensité.
+
+On écrit F₁ + F₂ = 0 (somme vectorielle nulle).
+
+Exemple : une calebasse de 2 kg est suspendue à un fil (g = 10 N/kg). Elle est soumise à son poids P (vertical, vers le bas, 20 N) et à la tension du fil T. À l''équilibre, T est verticale, vers le haut, et vaut 20 N. Le fil est vertical et passe par le centre de gravité.
+
+Exemple : un livre posé sur une table est soumis à son poids et à la réaction R de la table : R = P, verticale, vers le haut.
+
+Pour un solide soumis à trois forces non parallèles, à l''équilibre, les trois droites d''action sont dans un même plan et se coupent en un même point, et la somme vectorielle des forces est nulle.
+
+## Fiche 4 : réflexion et réfraction
+
+La lumière se propage en ligne droite dans un milieu transparent et homogène.
+
+Réflexion sur un miroir plan : le rayon réfléchi est dans le plan d''incidence et l''angle de réflexion est égal à l''angle d''incidence (i = r), angles mesurés par rapport à la normale.
+
+Réfraction : quand la lumière passe d''un milieu transparent à un autre (air vers eau), elle change de direction à la surface de séparation. De l''air vers l''eau ou le verre, le rayon se rapproche de la normale. C''est pourquoi un bâton plongé dans un seau d''eau paraît brisé. Un rayon qui arrive perpendiculairement à la surface (selon la normale) n''est pas dévié.
+
+## Fiche 5 : les lentilles
+
+- Lentille convergente : bords minces, centre épais ; elle fait converger un faisceau parallèle.
+- Lentille divergente : bords épais, centre mince ; elle fait diverger un faisceau parallèle.
+
+Éléments : centre optique O, axe optique, foyer image F′, foyer objet F (symétrique de F′ par rapport à O). La distance focale f = OF′. La vergence C = 1 / f, avec f en mètres et C en dioptries (δ). On compte f et C positifs pour une lentille convergente, négatifs pour une lentille divergente.
+
+Exemple : f = 20 cm = 0,20 m, donc C = 1 / 0,20 = 5 δ. Une lentille de vergence −4 δ est divergente, de distance focale f = 1 / (−4) = −0,25 m.
+
+Trois rayons particuliers pour une lentille convergente :
+- un rayon passant par O n''est pas dévié ;
+- un rayon parallèle à l''axe ressort en passant par F′ ;
+- un rayon passant par F ressort parallèle à l''axe.
+
+Construction de l''image d''un objet AB (A sur l''axe) : on trace deux rayons issus de B ; leur intersection donne B′, puis on abaisse la perpendiculaire à l''axe pour trouver A′.
+- Objet situé plus loin de la lentille que F : image réelle, renversée, que l''on peut recueillir sur un écran. Si l''objet est à 2f de la lentille, l''image est à 2f de l''autre côté, de même taille.
+- Objet entre F et O : image virtuelle, droite, agrandie : c''est le principe de la loupe.
+
+Applications : l''œil (le cristallin est une lentille convergente), les lunettes, l''appareil photo, le projecteur. Un œil myope se corrige avec une lentille divergente, un œil hypermétrope avec une lentille convergente.
+
+## Exercices pratiques
+
+Exercice 1 : Donner les quatre caractéristiques du poids d''un ballon de 450 g (g = 10 N/kg).
+
+Exercice 2 : Un astronaute a une masse de 80 kg. Calculer son poids sur Terre (g = 9,8 N/kg) et sur la Lune (g = 1,6 N/kg). Que vaut sa masse sur la Lune ?
+
+Exercice 3 : Représenter à l''échelle 1 cm pour 50 N une force verticale vers le haut de 175 N. Quelle est la longueur de la flèche ?
+
+Exercice 4 : Une lampe de 1,5 kg est suspendue au plafond par une chaîne. Faire l''inventaire des forces et donner les caractéristiques de la force exercée par la chaîne (g = 10 N/kg).
+
+Exercice 5 : Un rayon lumineux arrive sur un miroir plan avec un angle d''incidence de 35°. Quel est l''angle de réflexion ? Quel angle fait le rayon réfléchi avec la surface du miroir ?
+
+Exercice 6 : Calculer la vergence d''une lentille de distance focale 50 cm, puis la distance focale d''une lentille de vergence 8 δ.
+
+Exercice 7 : Un objet AB de 2 cm est placé à 30 cm d''une lentille convergente de distance focale 15 cm. Où se forme l''image ? Donner sa nature et sa taille.
+
+## Corrigé
+
+Exercice 1 : m = 0,45 kg ; P = 0,45 × 10 = 4,5 N. Point d''application : centre de gravité du ballon ; direction : verticale ; sens : vers le bas ; intensité : 4,5 N.
+
+Exercice 2 : Sur Terre : P = 80 × 9,8 = 784 N. Sur la Lune : P = 80 × 1,6 = 128 N. La masse reste 80 kg.
+
+Exercice 3 : 175 / 50 = 3,5 cm. On trace une flèche verticale vers le haut de 3,5 cm.
+
+Exercice 4 : Forces : le poids P et la tension T de la chaîne. P = 1,5 × 10 = 15 N. À l''équilibre, T a la même droite d''action (verticale passant par le centre de gravité), le sens vers le haut, et l''intensité 15 N.
+
+Exercice 5 : i = r, donc r = 35°. L''angle avec la surface vaut 90° − 35° = 55°.
+
+Exercice 6 : f = 0,50 m, C = 1 / 0,50 = 2 δ. Pour C = 8 δ : f = 1 / 8 = 0,125 m = 12,5 cm.
+
+Exercice 7 : 30 cm = 2 × 15 cm : l''objet est à 2f. L''image se forme à 30 cm de l''autre côté de la lentille ; elle est réelle, renversée, et de même taille, 2 cm.', 'texte', 55, false, 40
+from public.courses c where c.slug = 'bfem-sciences-physiques'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Mécanique et optique : forces, poids, équilibre, lentilles');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
+
+Voici un sujet d''entraînement conçu pour ce cours, sur le modèle des épreuves de sciences physiques du BFEM. Ce n''est pas un sujet officiel. Fais-le en temps limité, sans document, avec une calculatrice, puis compare avec le corrigé. Les points indiqués sont une proposition de répartition sur 20 pour t''aider à t''auto-évaluer ; le barème réel est fixé par les correcteurs selon les textes officiels en vigueur.
+
+## Sujet d''entraînement
+
+## Partie A : Chimie (8 points)
+
+Exercice 1 (4 points). Au laboratoire du collège de Kaolack, on fait réagir de la poudre de fer avec une solution d''acide chlorhydrique dilué.
+- 1. Quels sont les ions présents dans l''acide chlorhydrique ?
+- 2. On observe un dégagement gazeux. Nommer ce gaz et décrire le test d''identification.
+- 3. Écrire l''équation-bilan de la réaction (on ne fait pas figurer les ions spectateurs).
+- 4. On ajoute quelques gouttes de soude à la solution obtenue. Qu''observe-t-on ?
+- 5. Pourquoi ne peut-on pas conserver de l''acide chlorhydrique dans un récipient en fer ?
+
+Exercice 2 (4 points).
+- 1. Équilibrer : CH₄ + O₂ → CO₂ + H₂O.
+- 2. On dissout 15 g de sel dans de l''eau pour obtenir 500 mL de solution. Calculer la concentration massique.
+- 3. Le pH d''un jus de citron vaut 2,5. Est-il acide ou basique ? Comment évolue son pH si on y ajoute beaucoup d''eau ?
+- 4. L''atome de chlore gagne un électron. Écrire la formule de l''ion formé.
+
+## Partie B : Physique (12 points)
+
+Exercice 3 (6 points). Une installation solaire dans un village du Ferlo alimente, sous 12 V en courant continu, une lampe portant « 12 V – 9 W » et un petit ventilateur de 18 W, montés en dérivation.
+- 1. Faire le schéma du montage avec le générateur, un interrupteur commandant l''ensemble, la lampe, le ventilateur (symbolisé par un moteur) et un ampèremètre mesurant l''intensité principale.
+- 2. Calculer l''intensité dans la lampe et dans le ventilateur.
+- 3. En déduire l''indication de l''ampèremètre.
+- 4. Les deux appareils fonctionnent 4 h par jour. Calculer l''énergie consommée en une journée en Wh puis en joules.
+- 5. On remplace la lampe par un conducteur ohmique de 24 Ω. Calculer l''intensité qui le traverse et la puissance qu''il reçoit.
+
+Exercice 4 (6 points).
+- 1. Une jarre d''eau de masse 12 kg est posée sur le sol (g = 10 N/kg). Calculer son poids. Faire l''inventaire des forces qui s''exercent sur elle et donner les caractéristiques de la réaction du sol.
+- 2. Une lentille convergente a une vergence de 10 δ. Calculer sa distance focale en cm.
+- 3. Un objet de 1 cm est placé à 5 cm de cette lentille. Situer l''objet par rapport au foyer F et dire quel type d''image on obtient. Quel instrument utilise ce principe ?
+- 4. Un rayon passe de l''air dans l''eau. S''éloigne-t-il ou se rapproche-t-il de la normale ?
+
+## Corrigé détaillé
+
+Exercice 1.
+- 1. Les ions H⁺ et Cl⁻ (0,5 point).
+- 2. Le dihydrogène H₂ ; à l''approche d''une flamme, il produit une légère détonation (1 point).
+- 3. Fe + 2 H⁺ → Fe²⁺ + H₂ (1 point ; 0,5 si non équilibrée).
+- 4. Un précipité vert, caractéristique des ions Fe²⁺ (1 point).
+- 5. Parce que l''acide attaque le fer : le récipient serait rongé (0,5 point).
+
+Exercice 2.
+- 1. CH₄ + 2 O₂ → CO₂ + 2 H₂O : à gauche 1 C, 4 H, 4 O ; à droite 1 C, 4 H, 2 + 2 = 4 O (1 point).
+- 2. V = 0,5 L ; Cm = 15 / 0,5 = 30 g/L (1,5 point : formule, conversion, résultat avec unité).
+- 3. pH 2,5 inférieur à 7 : acide. Dilué, son pH augmente et se rapproche de 7 (1 point).
+- 4. Cl⁻ (0,5 point).
+
+Exercice 3.
+- 1. Schéma : générateur et interrupteur dans la branche principale avec l''ampèremètre en série ; lampe et moteur sur deux branches parallèles (1,5 point ; symboles normalisés exigés).
+- 2. Lampe : I₁ = P / U = 9 / 12 = 0,75 A. Ventilateur : I₂ = 18 / 12 = 1,5 A (1,5 point).
+- 3. Loi des nœuds : I = 0,75 + 1,5 = 2,25 A (1 point).
+- 4. Puissance totale 9 + 18 = 27 W ; E = 27 × 4 = 108 Wh. En joules : 108 × 3 600 = 388 800 J (1 point).
+- 5. En dérivation, la tension reste 12 V ; I = U / R = 12 / 24 = 0,5 A ; P = U × I = 12 × 0,5 = 6 W (1 point).
+
+Exercice 4.
+- 1. P = 12 × 10 = 120 N. Forces : le poids P et la réaction R du sol. R : point d''application au contact jarre-sol, direction verticale, sens vers le haut, intensité 120 N (2 points).
+- 2. f = 1 / C = 1 / 10 = 0,1 m = 10 cm (1 point).
+- 3. L''objet à 5 cm est entre le foyer F (à 10 cm) et la lentille : l''image est virtuelle, droite et agrandie. C''est le principe de la loupe (2 points).
+- 4. Il se rapproche de la normale (1 point).
+
+## Conseils de notation et de rédaction
+
+- Une formule juste avec une erreur de calcul rapporte souvent une partie des points : écris toujours la formule littérale.
+- Un résultat sans unité perd des points, même si le nombre est exact.
+- Pour les schémas, les correcteurs regardent les symboles, la position des appareils de mesure et le soin.
+- Dans un exercice à étapes, si tu bloques à une question, utilise une valeur plausible pour continuer et signale-le : la méthode des questions suivantes peut être valorisée.
+- Garde 10 minutes à la fin pour relire unités, signes et équilibrage.
+
+## Exercices pratiques
+
+Exercice 1 : Refaire l''exercice 3 avec une lampe de 12 V – 6 W et un ventilateur de 24 W.
+
+Exercice 2 : Une solution contient 4 g de soluté dans 200 mL. Calculer Cm.
+
+Exercice 3 : Équilibrer : Zn + O₂ → ZnO.
+
+Exercice 4 : Calculer le poids d''un élève de 45 kg avec g = 9,8 N/kg.
+
+Exercice 5 : Une lentille a une distance focale de −20 cm. Calculer sa vergence et donner sa nature.
+
+## Corrigé
+
+Exercice 1 : I₁ = 6 / 12 = 0,5 A ; I₂ = 24 / 12 = 2 A ; I = 2,5 A ; E = 30 W × 4 h = 120 Wh = 432 000 J.
+
+Exercice 2 : Cm = 4 / 0,2 = 20 g/L.
+
+Exercice 3 : 2 Zn + O₂ → 2 ZnO.
+
+Exercice 4 : P = 45 × 9,8 = 441 N.
+
+Exercice 5 : f = −0,20 m ; C = 1 / (−0,20) = −5 δ : lentille divergente.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'bfem-sciences-physiques'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive « veille d''examen » en sciences physiques', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : séance de révision intensive de la veille de l''examen de sciences physiques.
+- Objectifs : revoir les formules et définitions essentielles, corriger des exercices types, s''entraîner à gérer son temps, vérifier ses acquis par un quiz et une évaluation finale.
+- Matériel : tableau ou diaporama, calculatrice, règle, crayon, fiche « formules et unités ».
+- Prérequis : leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« Bonsoir à toutes et à tous. Demain, c''est l''épreuve de sciences physiques. Ce soir, nous n''allons pas apprendre de nouvelles choses : nous allons consolider ce que vous savez déjà. Le but est que vous arriviez demain calmes, avec les formules en tête et une méthode sûre. Préparez une feuille, un crayon et votre calculatrice. Pendant la séance, je vous demanderai souvent de mettre la vidéo en pause pour chercher seuls. »
+
+Visuel : le plan de la séance en six étapes : chimie, électricité, mécanique, optique, quiz, gestion du temps et évaluation.
+
+## 05:00 – 20:00 · Rappels clés de chimie
+
+« Commençons par la chimie. Première idée : un corps pur contient une seule espèce chimique, un mélange en contient plusieurs. Deuxième idée : un ion est un atome qui a gagné ou perdu des électrons. Le fer perd deux électrons et devient Fe²⁺ ; le chlore en gagne un et devient Cl⁻. Troisième idée : dans une réaction chimique, les atomes se conservent, donc la masse se conserve. »
+
+« Équilibrons ensemble la combustion du méthane. CH₄ plus O₂ donne CO₂ plus H₂O. À gauche, j''ai 4 atomes d''hydrogène : je mets un 2 devant H₂O. À droite j''ai maintenant 2 oxygènes dans CO₂ et 2 dans 2 H₂O, soit 4 : je mets 2 devant O₂. Résultat : CH₄ + 2 O₂ → CO₂ + 2 H₂O. On ne touche jamais aux indices. »
+
+« Pour les solutions : Cm = m / V, avec V en litres. pH inférieur à 7, acide ; égal à 7, neutre ; supérieur à 7, basique. Une dilution rapproche le pH de 7. Enfin les métaux : l''acide chlorhydrique attaque le fer, le zinc et l''aluminium avec dégagement de dihydrogène ; il n''attaque pas le cuivre. Tests à la soude : vert pour Fe²⁺, bleu pour Cu²⁺, blanc pour Zn²⁺ et Al³⁺. »
+
+Visuel : tableau récapitulatif des tests d''ions et des trois équations Fe, Zn, Al.
+
+Question à poser : « Que donne l''aluminium avec l''acide ? » Réponse attendue : 2 Al + 6 H⁺ → 2 Al³⁺ + 3 H₂.
+
+## 20:00 – 35:00 · Électricité : rappels et exercice corrigé
+
+« Passons à l''électricité. Trois formules suffisent pour l''essentiel : U = R × I, P = U × I, E = P × t. Et deux règles de branchement : l''ampèremètre en série, le voltmètre en dérivation. En série, l''intensité est la même partout et les tensions s''additionnent. En dérivation, les tensions sont égales et les intensités s''additionnent. »
+
+« Exercice. Une boutique à Ziguinchor utilise sous 220 V un réfrigérateur de 330 W et une lampe de 22 W, en dérivation. Mettez en pause et calculez les intensités, l''intensité totale et l''énergie consommée en 10 heures. »
+
+« Correction. Réfrigérateur : I = P / U = 330 / 220 = 1,5 A. Lampe : I = 22 / 220 = 0,1 A. Intensité totale : 1,5 + 0,1 = 1,6 A. Puissance totale : 352 W. Énergie en 10 h : 352 × 10 = 3 520 Wh, soit 3,52 kWh. Si le kWh coûtait 100 FCFA, prix fictif, cela ferait 352 FCFA. Remarquez que je n''oublie jamais l''unité. »
+
+Visuel : le schéma du montage en dérivation, avec l''ampèremètre dans la branche principale.
+
+## 35:00 – 45:00 · Mécanique : forces, poids, équilibre
+
+« Une force a quatre caractéristiques : point d''application, direction, sens, intensité en newtons. Le poids : appliqué au centre de gravité, vertical, vers le bas, intensité P = m × g. Attention : m en kilogrammes ! Un élève qui écrit 500 × 10 pour une masse de 500 g se trompe d''un facteur 1 000. »
+
+« Équilibre sous deux forces : même droite d''action, sens contraires, même intensité. Exemple : un seau de 5 kg pendu à une corde, avec g = 10 N/kg. Le poids vaut 50 N. La tension de la corde est verticale, vers le haut, 50 N. »
+
+Question à poser : « Sur la Lune, la masse du seau change-t-elle ? » Réponse : non, seul le poids change.
+
+## 45:00 – 55:00 · Pause active : quiz éclair
+
+« Mettez la vidéo en pause après chaque question, répondez par écrit, puis reprenez. »
+
+- Question 1 : Quelle est l''unité de la vergence ? Réponse : la dioptrie (δ).
+- Question 2 : Combien de joules dans 1 kWh ? Réponse : 3 600 000 J.
+- Question 3 : Un pH de 9 indique une solution… ? Réponse : basique.
+- Question 4 : Comment branche-t-on un voltmètre ? Réponse : en dérivation.
+- Question 5 : Quelle lentille corrige la myopie ? Réponse : une lentille divergente.
+- Question 6 : Quelle est la couleur du précipité de Cu²⁺ avec la soude ? Réponse : bleu.
+
+« Comptez vos bonnes réponses. Cinq ou six : très bien. Moins de quatre : relisez la fiche formules ce soir, calmement. »
+
+## 55:00 – 1:05:00 · Optique : rappels et construction commentée
+
+« En optique, retenez : réflexion, angle d''incidence égal à l''angle de réflexion. Réfraction de l''air vers l''eau, le rayon se rapproche de la normale. Pour les lentilles : C = 1 / f, f en mètres. Une lentille convergente de 20 cm a une vergence de 5 δ. »
+
+« Construction. Je dessine l''axe, la lentille, F et F′ à 2 cm de O sur mon schéma à l''échelle. L''objet AB, de 1 cm, est à 4 cm de la lentille, donc à 2f. Du point B, je trace un rayon qui passe par O : il n''est pas dévié. Puis un rayon parallèle à l''axe : il ressort par F′. Les deux se coupent en B′, à 4 cm derrière la lentille, sous l''axe. L''image est réelle, renversée, de même taille. Si je rapproche l''objet entre F et O, les rayons ne se coupent plus après la lentille : je prolonge en pointillés vers l''arrière, j''obtiens une image virtuelle, droite, agrandie : la loupe. »
+
+Visuel : construction animée pas à pas.
+
+## 1:05:00 – 1:15:00 · Gestion du temps et rédaction le jour J
+
+« Demain, commencez par lire tout le sujet pendant cinq à dix minutes. Repérez les questions faciles : questions de cours, conversions, équilibrage. Faites-les d''abord pour sécuriser des points. Partagez votre temps selon le poids de chaque partie indiqué sur le sujet. Ne restez pas plus de dix minutes bloqués sur une question : passez, et revenez à la fin. »
+
+« Pour la rédaction : données, conversion, formule littérale, application numérique, résultat avec unité. Les schémas se font à la règle, au crayon, avec légende. Gardez dix minutes pour la relecture : unités, signes des ions, coefficients des équations. »
+
+« Ce soir : relisez votre fiche, préparez votre matériel, calculatrice avec des piles neuves, règle, crayon, gomme, et dormez tôt. Une nuit de sommeil vaut plus qu''une heure de révision supplémentaire. »
+
+## 1:15:00 – 1:25:00 · Évaluation finale
+
+« Voici cinq questions pour faire le point. Pause, réponses par écrit, puis correction. »
+
+- Question 1 : Une résistance de 50 Ω est traversée par 0,2 A. Calculer la tension. Réponse : U = 50 × 0,2 = 10 V.
+- Question 2 : Une lampe de 60 W fonctionne 3 h. Énergie en kWh ? Réponse : 60 × 3 = 180 Wh = 0,18 kWh.
+- Question 3 : Équilibrer H₂ + O₂ → H₂O. Réponse : 2 H₂ + O₂ → 2 H₂O.
+- Question 4 : Poids d''une moto de 120 kg avec g = 10 N/kg ? Réponse : 1 200 N.
+- Question 5 : Distance focale d''une lentille de 4 δ ? Réponse : f = 1 / 4 = 0,25 m = 25 cm.
+
+« Corrigeons ensemble. Pour la question 2, l''erreur classique est d''écrire 180 kWh : 180, ce sont des wattheures, il faut diviser par 1 000. Pour la question 5, n''oubliez pas de convertir le résultat en centimètres si on vous le demande. »
+
+## 1:25:00 – 1:30:00 · Synthèse et encouragements
+
+« Récapitulons : en chimie, conservation des atomes, pH et réactions des métaux ; en électricité, U = R × I, P = U × I, E = P × t ; en mécanique, P = m × g et les conditions d''équilibre ; en optique, C = 1 / f et les trois rayons particuliers. Avec une méthode rigoureuse et des unités justes, vous avez tout pour réussir. Bon courage pour demain, et bonne chance à toutes et à tous. »
+
+Visuel final : fiche « formules et unités » à télécharger ou recopier.', 'video', 90, false, 60
+from public.courses c where c.slug = 'bfem-sciences-physiques'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille d''examen » en sciences physiques');
+
 -- Cours : Espagnol LV2 : réussir l'épreuve du BFEM
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'bfem-espagnol', (select id from public.levels where name = '3e'), null, 'Espagnol (LV2)', 'Espagnol LV2 : réussir l''épreuve du BFEM', 'Ce cours d''examen prépare l''épreuve d''espagnol LV2 du BFEM : méthode de compréhension écrite, vocabulaire thématique (famille, école, ville, santé, environnement), grammaire essentielle (ser et estar, présent, prétérit, futur, gustar, impératif, comparatifs) et expression écrite. Les explications sont en français et les exemples en espagnol. Prérequis : les bases d''espagnol acquises de la 4e à la 3e.', true, 108

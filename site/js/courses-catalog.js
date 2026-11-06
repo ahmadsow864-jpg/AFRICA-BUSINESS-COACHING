@@ -1298,6 +1298,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "bfem-anglais",
+  "level": "3e",
+  "subject": "Anglais",
+  "module": null,
+  "title": "Anglais : réussir l'épreuve du BFEM",
+  "description": "Ce cours de préparation à l'examen révise l'anglais du collège (6e à 3e) en vue de l'épreuve du BFEM : compréhension écrite (reading comprehension), grammaire (temps, modaux, voix passive, discours rapporté, conditionnels, comparatifs), vocabulaire et expression écrite (lettre, court essai). Les explications sont en français, les exemples et exercices en anglais, avec des situations sénégalaises. Il comprend un sujet d'entraînement corrigé et une séance vidéo de veille d'examen. Prérequis : bases de l'anglais du collège.",
+  "sort": 103,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Savoir quelles compétences l'épreuve d'anglais évalue et sous quelle forme.\n- Adopter une méthode pour chaque type d'exercice.\n- Repérer les erreurs les plus fréquentes des élèves francophones.\n- Planifier ses révisions sur 8 semaines.\n\n## Comment se présente l'épreuve\n\nL'épreuve d'anglais du BFEM s'appuie généralement sur un texte : on vérifie d'abord que tu l'as compris (reading comprehension), puis on évalue ta maîtrise de la langue (grammaire et vocabulaire), et enfin ta capacité à écrire quelques lignes ou un court texte en anglais (writing). La durée, le coefficient et le barème sont fixés par les textes officiels en vigueur : demande confirmation à ton professeur et ne te fie pas aux informations qui circulent sans source.\n\n## Les types d'exercices\n\n- True or false : dire si une phrase est vraie ou fausse et la justifier par une citation du texte (« Justify your answer by quoting the text »).\n- Answer the questions : répondre par une phrase complète en anglais.\n- Find in the text words or expressions meaning… : retrouver un synonyme ou une définition.\n- What do the words refer to? : dire à qui ou à quoi renvoie un pronom (it, they, him, its).\n- Exercices de grammaire : mettre le verbe au bon temps, transformer à la voix passive, au discours indirect, compléter avec un modal, un comparatif, une proposition conditionnelle.\n- Writing : une lettre ou un e-mail à un ami, un court paragraphe ou essai sur un thème donné.\n\n## Méthode\n\n- Lis d'abord les questions, puis le texte : tu sauras quoi chercher.\n- Lis le texte deux fois : une fois pour le sens général (qui, où, quand, quoi), une fois pour les détails.\n- Ne traduis pas mot à mot : devine le sens d'un mot inconnu grâce au contexte.\n- Pour True or false, recopie la phrase exacte du texte entre guillemets.\n- Réponds avec des phrases complètes : Question « Where does Awa live? » ; réponse : « She lives in Ziguinchor. »\n- En grammaire, identifie d'abord l'indice : un mot comme « yesterday » appelle le prétérit, « since » appelle le present perfect.\n- En expression écrite, fais un plan, utilise des phrases simples et correctes plutôt que des phrases longues pleines d'erreurs.\n\n## Les erreurs fréquentes\n\n- Oublier le -s de la troisième personne au présent : she works, he goes.\n- Écrire « I am agree » au lieu de « I agree ».\n- Employer « did » avec un verbe au prétérit : « Did you went? » au lieu de « Did you go? ».\n- Utiliser le present perfect avec une date passée : « I have seen him yesterday » au lieu de « I saw him yesterday ».\n- Confondre since (point de départ : since 2020) et for (durée : for three years).\n- Mettre un -s à information, advice, furniture, qui sont indénombrables.\n- Écrire « people is » au lieu de « people are ».\n- Tomber dans les faux amis : actually (en fait), library (bibliothèque), sensible (raisonnable), to assist (aider), eventually (finalement).\n\n## Plan de révision sur 8 semaines\n\n- Semaine 1 : présent simple et présent progressif ; vocabulaire de la famille et de l'école.\n- Semaine 2 : prétérit, past continuous, verbes irréguliers (une liste de vingt verbes par jour).\n- Semaine 3 : present perfect, past perfect, futur ; textes courts de compréhension.\n- Semaine 4 : modaux et voix passive.\n- Semaine 5 : discours rapporté, conditionnels, comparatifs et superlatifs.\n- Semaine 6 : vocabulaire thématique (environnement, santé, métiers, fêtes) et mots de liaison ; une lettre.\n- Semaine 7 : sujet complet en temps limité et correction.\n- Semaine 8 : second sujet complet ; révision des fiches et du carnet d'erreurs.\n\nConseil : écoute ou lis un peu d'anglais chaque jour (chansons, émissions, articles simples) et répète les verbes irréguliers à voix haute.\n\n## Points clés\n\n- Comprendre le texte avant de répondre.\n- Toujours justifier et répondre par des phrases complètes.\n- Chercher l'indice de temps en grammaire.\n\n## Exercices pratiques\n\nExercise 1. Correct the mistakes: a) She speak English very well. b) I am agree with you. c) Did he went to Dakar? d) The people is happy.\n\nExercise 2. Since or for? a) I have lived in Thiès … 2019. b) She has studied English … four years. c) We have been friends … we were children.\n\nExercise 3. Answer with a complete sentence: « What is the capital of Senegal? »\n\nExercise 4. Give the French meaning of these false friends: actually, library, eventually.\n\nExercise 5. Which tense does each time marker suggest? a) yesterday ; b) since Monday ; c) right now ; d) every day ; e) tomorrow.\n\nExercise 6. Read this sentence: « Binta gave her brother a book because he likes reading. » What do « her » and « he » refer to?\n\n## Corrigé\n\nExercise 1. a) She speaks English very well. b) I agree with you. c) Did he go to Dakar? d) The people are happy.\n\nExercise 2. a) since 2019 (point de départ). b) for four years (durée). c) since we were children (point de départ exprimé par une proposition).\n\nExercise 3. Dakar is the capital of Senegal.\n\nExercise 4. actually : en fait, en réalité ; library : bibliothèque ; eventually : finalement, à la fin.\n\nExercise 5. a) prétérit (simple past). b) present perfect. c) présent progressif (present continuous). d) présent simple. e) futur (will ou be going to).\n\nExercise 6. « her » renvoie à Binta ; « he » renvoie au frère de Binta (her brother)."
+   },
+   {
+    "title": "Reading comprehension : comprendre un texte en anglais",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Grammar : temps, modaux, passif, discours rapporté, conditionnels, comparatifs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Vocabulary and writing : la lettre et le court essai",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille d'examen",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "bfem-histoire-geographie",
   "level": "3e",
   "subject": "Histoire-Géographie",
