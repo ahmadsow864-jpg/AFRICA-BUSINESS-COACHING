@@ -99,6 +99,18 @@ et `og:`), `site/robots.txt`, `site/sitemap.xml` et l'étape 2.
 4. Partagez le lien sur WhatsApp, LinkedIn et Facebook : l'image d'aperçu
    (`img/og-image.png`) s'affiche automatiquement.
 
+## Ouvrir le site sur votre ordinateur Windows (Edge)
+
+1. Sur GitHub : bouton vert **Code → Download ZIP**, puis clic droit sur le ZIP → **Extraire tout**.
+2. Dans le dossier extrait, double-cliquez sur :
+   - `Ouvrir-Site-Edge.bat` → le site s'ouvre dans Microsoft Edge ;
+   - `Ouvrir-Admin-Edge.bat` → l'espace administrateur s'ouvre dans Edge.
+3. Si Windows affiche « Windows a protégé votre ordinateur », cliquez **Informations
+   complémentaires → Exécuter quand même** (le fichier ne fait qu'ouvrir Edge).
+
+Le site public fonctionne tout de suite. L'administration, les comptes élèves et
+l'enregistrement des messages demandent d'avoir fait les étapes 1 à 4 (Supabase).
+
 ## Utiliser l'administration dans Microsoft Edge
 
 Ouvrez `…/admin/` dans Edge, connectez-vous, puis menu **… → Applications → Installer ce
