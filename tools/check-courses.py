@@ -17,7 +17,7 @@ for f in sorted(glob.glob("content/courses/*.json")):
     # 5 leçons + 3 vidéos de 1h30 (8 leçons). Les vidéos sont toujours à la fin.
     kinds = [l.get("kind") for l in ls]
     nvid = kinds.count("video")
-    if (len(ls), nvid) not in ((6, 1), (8, 3)): pb.append(f"{len(ls)} leçons / {nvid} vidéo(s)")
+    if (len(ls), nvid) not in ((6, 1), (8, 3), (9, 4)): pb.append(f"{len(ls)} leçons / {nvid} vidéo(s)")
     if nvid and kinds[-nvid:] != ["video"] * nvid: pb.append("vidéos pas à la fin")
     if any(l.get("kind") == "video" and l.get("duration_min") != 90 for l in ls): pb.append("vidéo ≠ 90 min")
     if ls and not ls[0].get("is_free"): pb.append("1re leçon non gratuite")

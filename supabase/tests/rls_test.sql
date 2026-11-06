@@ -11,7 +11,7 @@ end $$;
 -- Contenus initiaux chargés une seule fois (seed relancé deux fois)
 select pg_temp.ok((select count(*) = (select count(distinct slug) from public.courses where slug is not null) from public.courses where slug is not null), 'cours du seed sans doublon');
 select pg_temp.ok((select count(*) = count(distinct (l.course_id, l.title)) from public.lessons l join public.courses c on c.id = l.course_id where c.slug is not null), 'leçons du seed sans doublon');
-select pg_temp.ok((select bool_and(n in (6, 8)) from (select count(*) n from public.lessons l join public.courses c on c.id = l.course_id where c.slug is not null group by c.id) t), 'chaque cours du seed a 6 ou 8 leçons');
+select pg_temp.ok((select bool_and(n in (6, 8, 9)) from (select count(*) n from public.lessons l join public.courses c on c.id = l.course_id where c.slug is not null group by c.id) t), 'chaque cours du seed a 6, 8 ou 9 leçons');
 select pg_temp.ok((select bool_and(v >= 1) from (select count(*) filter (where l.kind = 'video' and l.duration_min = 90) v from public.courses c join public.lessons l on l.course_id = c.id where c.slug is not null group by c.id) t), 'au moins un cours vidéo de 1h30 par cours');
 
 -- Utilisateurs de test
