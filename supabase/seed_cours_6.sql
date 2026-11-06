@@ -985,6 +985,492 @@ Merci pour votre travail. Dormez bien, emportez votre convocation et de quoi éc
 from public.courses c where c.slug = 'bac-philosophie'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive la veille du Bac de philosophie');
 
+-- Cours : Français au Bac : résumé-discussion, commentaire, dissertation
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-francais', (select id from public.levels where name = 'Terminale'), null, 'Français', 'Français au Bac : résumé-discussion, commentaire, dissertation', 'Cours d''examen pour les élèves de Terminale (séries L, S et G) qui préparent l''épreuve de français du Baccalauréat au Sénégal. Il enseigne pas à pas les trois exercices de l''épreuve : le résumé suivi de la discussion, le commentaire composé et la dissertation littéraire. Il révise l''histoire littéraire utile au Bac (Négritude, roman africain, théâtre, poésie) en s''appuyant sur des œuvres africaines et françaises citées par titre et par thème. Prérequis : maîtrise de l''expression écrite et lecture des œuvres étudiées au lycée.', true, 206
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve de français et méthode de travail', '## Objectifs de la leçon
+
+- Connaître les trois exercices de l''épreuve de français et ce que chacun évalue.
+- Choisir son sujet avec méthode.
+- Repérer les erreurs les plus coûteuses.
+- Organiser ses révisions sur 10 semaines.
+
+Ce cours d''examen s''adresse aux élèves de Terminale des séries L, S et G. La durée, le coefficient et les modalités exactes de l''épreuve dépendent de la série et sont fixés par les textes officiels en vigueur : vérifiez-les auprès de votre établissement.
+
+## Les trois sujets au choix
+
+L''épreuve de français propose en général trois sujets, parmi lesquels le candidat en choisit un seul.
+
+- Le résumé suivi d''une discussion : vous réduisez un texte argumentatif (souvent un texte d''idées sur un sujet de société : école, famille, ville, environnement, médias, développement) au nombre de mots demandé, puis vous discutez une idée du texte dans un développement argumenté.
+- Le commentaire composé : vous analysez un texte littéraire (poème, extrait de roman ou de pièce de théâtre) en l''organisant autour de deux ou trois axes de lecture.
+- La dissertation littéraire : vous réfléchissez à une question sur la littérature (le rôle du poète, la fonction du roman, le théâtre et la société…) en vous appuyant sur des œuvres précises.
+
+Chaque exercice vérifie trois capacités : comprendre un texte ou une question, organiser sa pensée, écrire dans une langue correcte et précise. La qualité de la langue compte partout : orthographe, syntaxe, ponctuation, vocabulaire.
+
+## Ce que le correcteur attend
+
+- Pour le résumé : fidélité aux idées et à leur ordre, reformulation personnelle, respect strict du nombre de mots.
+- Pour la discussion : une thèse claire, des arguments organisés, des exemples précis tirés des lectures et de la vie.
+- Pour le commentaire : une lecture qui relie le fond (ce que dit le texte) et la forme (comment il le dit), sans paraphrase ni catalogue de procédés.
+- Pour la dissertation : une problématique, un plan logique, des exemples littéraires exacts (auteur, titre, situation).
+
+## Bien choisir son sujet
+
+Lisez les trois sujets en entier. Puis posez-vous trois questions. Est-ce que je comprends parfaitement le texte ou la question ? Ai-je assez d''exemples précis (pour la discussion ou la dissertation) ? Est-ce que je maîtrise les outils d''analyse (pour le commentaire) ? Le résumé-discussion convient aux élèves rigoureux qui comptent bien leurs mots ; le commentaire à ceux qui aiment lire de près ; la dissertation à ceux qui ont beaucoup lu et retenu. Une fois votre choix fait, ne changez plus, sauf erreur manifeste dans les vingt premières minutes.
+
+## Les erreurs fréquentes
+
+- Dans le résumé : recopier des phrases du texte, écrire « l''auteur dit que », dépasser la marge de mots autorisée, oublier d''indiquer le nombre de mots.
+- Dans la discussion : réciter des généralités sans exemples, ou ne pas répondre à la question posée.
+- Dans le commentaire : paraphraser (« le poète dit que… ») ou énumérer des figures de style sans les interpréter.
+- Dans la dissertation : raconter l''histoire des œuvres au lieu d''argumenter ; citer des œuvres non lues.
+- Partout : négliger l''orthographe, ne pas relire, ne pas soigner la présentation (paragraphes, alinéas, sauts de ligne entre les parties).
+
+## Méthode de travail pendant l''année
+
+- Tenir un carnet de lecture : pour chaque œuvre, l''auteur, la date, le genre, un résumé de dix lignes, les thèmes, trois passages clés avec leur page.
+- Constituer une banque d''exemples par thème : la tradition et la modernité, la condition de la femme, la colonisation et les indépendances, la ville et l''exode rural, le pouvoir, l''engagement de l''écrivain.
+- Revoir les outils d''analyse : figures de style, versification, registres, focalisation, modalisation.
+- S''entraîner à rédiger une introduction par semaine et à résumer un article de presse.
+
+## Plan de révision sur 10 semaines
+
+- Semaine 1 : méthode du résumé ; deux résumés courts chronométrés.
+- Semaine 2 : méthode de la discussion ; un plan détaillé et une introduction.
+- Semaine 3 : outils d''analyse littéraire (figures, versification, registres).
+- Semaine 4 : méthode du commentaire composé ; un commentaire de poème.
+- Semaine 5 : histoire littéraire : la Négritude et la poésie africaine.
+- Semaine 6 : le roman africain et le roman français ; un commentaire d''extrait de roman.
+- Semaine 7 : le théâtre ; méthode de la dissertation.
+- Semaine 8 : une dissertation complète ; révision du carnet de lecture.
+- Semaine 9 : deux sujets complets en temps réel.
+- Semaine 10 : relecture des fiches, exemples, règles d''orthographe fréquentes ; repos.
+
+## Points clés
+
+- Trois sujets au choix : résumé-discussion, commentaire composé, dissertation.
+- Langue soignée et exemples précis dans tous les cas.
+- Choisir vite, avec des critères, puis s''y tenir.
+
+## Exercices pratiques
+
+Exercice 1. Pour chacun des sujets suivants, indiquez de quel exercice il s''agit : a) un poème suivi de la consigne « Vous ferez de ce texte un commentaire composé » ; b) un texte d''idées sur l''exode rural, suivi d''une consigne de nombre de mots ; c) « Le roman doit-il seulement divertir ? Vous répondrez en vous appuyant sur des œuvres précises ».
+
+Exercice 2. Corrigez cette phrase de résumé : « L''auteur nous dit que les jeunes quittent les villages pour aller à Dakar. »
+
+Exercice 3. Transformez cette phrase de commentaire en analyse : « Dans le vers 3, il y a une métaphore. »
+
+Exercice 4. Remplissez une fiche de carnet de lecture pour une œuvre de votre choix étudiée au lycée (auteur, date, genre, thèmes, deux passages clés).
+
+Exercice 5. Proposez trois thèmes pour lesquels vous pourriez citer au moins deux œuvres, et nommez ces œuvres.
+
+## Corrigé
+
+Exercice 1. a) commentaire composé ; b) résumé suivi d''une discussion ; c) dissertation littéraire.
+
+Exercice 2. Le résumé adopte le point de vue de l''auteur et ne le nomme pas ; il reformule : « Les jeunes ruraux quittent massivement leurs villages pour la capitale. »
+
+Exercice 3. Il faut nommer la figure, citer, et interpréter : « Au vers 3, la métaphore qui assimile l''Afrique à une mère souligne le lien affectif et nourricier qui unit le poète à sa terre ; elle prépare le registre lyrique de la strophe suivante. »
+
+Exercice 4. Exemple : Mariama Bâ, Une si longue lettre (1979), roman épistolaire. Ramatoulaye, veuve, écrit à son amie Aïssatou. Thèmes : la polygamie, la condition de la femme, l''amitié, l''éducation. Passages clés : l''annonce du second mariage de Modou ; le refus de Ramatoulaye d''épouser Daouda Dieng.
+
+Exercice 5. Exemples : la colonisation (Ferdinand Oyono, Une vie de boy ; Mongo Beti, Le Pauvre Christ de Bomba) ; la tradition et la modernité (Cheikh Hamidou Kane, L''Aventure ambiguë ; Camara Laye, L''Enfant noir) ; le désenchantement après les indépendances (Ahmadou Kourouma, Les Soleils des indépendances ; Ousmane Sembène, Xala).', 'texte', 50, true, 10
+from public.courses c where c.slug = 'bac-francais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve de français et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Le résumé et la discussion : méthode complète', '## Objectifs de la leçon
+
+- Réduire un texte argumentatif en respectant ses idées, leur ordre et le nombre de mots.
+- Construire une discussion argumentée à partir d''une idée du texte.
+- S''entraîner sur des textes d''idées liés à la société africaine contemporaine.
+
+## Le résumé : les règles
+
+Résumer, c''est réécrire le texte en plus court, comme si l''auteur lui-même le condensait. Quatre règles sont non négociables.
+
+- Fidélité : garder toutes les idées essentielles, n''en ajouter aucune, ne pas donner son avis.
+- Ordre : suivre l''ordre du texte et sa logique (cause, conséquence, opposition, concession).
+- Énonciation : garder le point de vue de l''auteur ; si le texte dit « je » ou « nous », le résumé peut le garder ; on n''écrit jamais « l''auteur pense que ».
+- Reformulation : ne pas recopier de phrases ; seuls les mots clés sans équivalent peuvent être repris.
+
+Le nombre de mots est fixé par la consigne, souvent autour du quart du texte, avec une marge de tolérance indiquée sur le sujet. Respectez-la strictement et indiquez le nombre de mots à la fin. Pour compter, suivez la convention indiquée par votre professeur ; en général, chaque mot séparé par une espace ou une apostrophe compte (« l''école » = deux mots), et un nombre écrit en chiffres compte pour un mot.
+
+## Le résumé : la méthode en cinq étapes
+
+- Étape 1 : lire le texte deux fois ; dégager le thème et la thèse.
+- Étape 2 : repérer les connecteurs logiques et découper le texte en paragraphes d''idées.
+- Étape 3 : pour chaque paragraphe, écrire l''idée principale en une phrase, en éliminant exemples, répétitions, citations.
+- Étape 4 : rédiger au brouillon en enchaînant les idées avec des connecteurs (« or », « en effet », « pourtant », « ainsi »).
+- Étape 5 : compter, ajuster (remplacer une proposition par un nom, une énumération par un terme générique), recopier.
+
+Techniques de réduction : la nominalisation (« parce que les villes grandissent trop vite » devient « à cause de la croissance urbaine ») ; le terme générique (« le mil, le riz, le maïs » devient « les céréales ») ; la suppression des exemples, sauf s''ils portent une idée.
+
+## Application
+
+Texte d''entraînement (rédigé pour ce cours, 150 mots environ) : « Chaque année, des milliers de jeunes quittent les villages du bassin arachidier pour Dakar. On les accuse volontiers de céder au mirage de la ville. Pourtant, leur départ obéit souvent à une logique : la terre s''appauvrit, les pluies deviennent irrégulières et les revenus agricoles ne suffisent plus à nourrir une famille. Partir n''est donc pas fuir, c''est chercher ailleurs ce que le village ne peut plus offrir. Mais la ville ne tient pas toujours ses promesses. Faute de qualification, beaucoup se retrouvent dans de petits métiers précaires et s''entassent dans des quartiers sans services. Le problème n''est donc pas d''empêcher les jeunes de partir, mais de rendre le monde rural capable de les retenir : moderniser l''agriculture, y implanter des formations, des routes et des services de santé. C''est à ce prix que l''exode cessera d''être une fatalité. »
+
+Découpage : 1) l''exode est rationnel (appauvrissement des terres, revenus insuffisants) ; 2) mais la ville déçoit (précarité, quartiers sous-équipés) ; 3) solution : développer le monde rural.
+
+Résumé proposé (41 mots) : « L''exode des jeunes ruraux vers Dakar n''est pas un caprice : l''agriculture ne nourrit plus les familles. Or la ville les condamne souvent à la précarité. Il faut donc, plutôt que freiner les départs, moderniser et équiper les campagnes. »
+
+## La discussion : la méthode
+
+La discussion porte sur une question tirée du texte, par exemple : « Pensez-vous, comme l''auteur, que le développement du monde rural suffira à freiner l''exode ? » Elle se rédige comme un petit devoir argumentatif.
+
+- Introduction : amorce, rappel de l''idée du texte, question posée, annonce du plan.
+- Développement : deux ou trois parties. Plan dialectique (oui, mais) ou plan thématique selon la consigne. Chaque paragraphe : un argument, une explication, un exemple précis (situation réelle, œuvre littéraire, fait d''actualité).
+- Conclusion : réponse nette et, si possible, ouverture.
+
+Les exemples littéraires enrichissent la discussion : l''exode rural et la ville sont présents dans Maïmouna d''Abdoulaye Sadji (la jeune fille venue de Louga à Dakar), dans Ville cruelle de Mongo Beti (publié sous le nom d''Eza Boto), ou dans La Grève des bàttu d''Aminata Sow Fall, qui met en scène les mendiants de la capitale.
+
+Plan possible : I. Le développement rural peut retenir les jeunes (revenus agricoles améliorés, formations sur place, services de santé). II. Mais il ne suffit pas : l''attrait de la ville tient aussi aux études, aux loisirs, à la liberté individuelle, au désir d''émancipation ; la migration est aussi un projet familial. III. Il faut donc penser ensemble villes et campagnes (villes secondaires, mobilité choisie plutôt que subie).
+
+## Points clés
+
+- Résumé : fidélité, ordre, point de vue de l''auteur, reformulation, nombre de mots.
+- Discussion : une question, une thèse, des arguments illustrés d''exemples précis.
+- Les exemples littéraires valorisent la copie.
+
+## Exercices pratiques
+
+Exercice 1. Réduisez par nominalisation : « Parce que les prix augmentent sans cesse, les ménages consomment moins. »
+
+Exercice 2. Remplacez par un terme générique : « la télévision, la radio, les journaux et les réseaux sociaux ».
+
+Exercice 3. Combien de mots compte la phrase « L''école n''est pas qu''un lieu d''instruction » selon la convention habituelle ?
+
+Exercice 4. Repérez les trois erreurs dans ce résumé : « Selon l''auteur, l''exode est un mirage, comme le montre l''exemple de mon cousin. La ville est bien. »
+
+Exercice 5. Résumez en 20 mots environ le premier mouvement du texte d''entraînement (jusqu''à « ce que le village ne peut plus offrir »).
+
+Exercice 6. Rédigez l''introduction de la discussion proposée dans la leçon.
+
+## Corrigé
+
+Exercice 1. « La hausse continue des prix réduit la consommation des ménages. »
+
+Exercice 2. « les médias ».
+
+Exercice 3. L'' / école / n'' / est / pas / qu'' / un / lieu / d'' / instruction : 10 mots.
+
+Exercice 4. 1) « Selon l''auteur » : on ne nomme pas l''auteur ; 2) l''exemple personnel (« mon cousin ») ajoute une idée étrangère au texte ; 3) contresens : le texte refuse de voir l''exode comme un mirage, et il présente la ville comme décevante, non comme « bien ».
+
+Exercice 5. Exemple (22 mots) : « Si les jeunes ruraux gagnent Dakar, ce n''est pas par illusion : la terre épuisée et irrégulièrement arrosée ne les nourrit plus. »
+
+Exercice 6. « Dans de nombreux pays africains, les gares routières des capitales voient arriver chaque jour de jeunes ruraux en quête d''un avenir. Pour l''auteur du texte, l''exode cessera lorsque le monde rural sera modernisé et équipé. Mais le développement des campagnes suffit-il à retenir les jeunes ? Nous verrons d''abord ce qu''il peut apporter, puis pourquoi l''attrait de la ville dépasse les seules raisons économiques, avant de proposer une approche qui relie villes et campagnes. »', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bac-francais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Le résumé et la discussion : méthode complète');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Le commentaire composé et la poésie : de la Négritude à aujourd''hui', '## Objectifs de la leçon
+
+- Maîtriser la méthode du commentaire composé.
+- Utiliser les outils d''analyse de la poésie : versification, images, rythme, sonorités.
+- Situer la Négritude et la poésie africaine dans l''histoire littéraire.
+
+## Le commentaire composé : principes
+
+Commenter un texte, c''est montrer comment sa forme produit son sens. Le commentaire est « composé » parce qu''il n''avance pas ligne à ligne : il s''organise en deux ou trois axes de lecture (centres d''intérêt), chacun divisé en sous-parties. Chaque affirmation s''appuie sur une citation courte, un procédé nommé et une interprétation. C''est la règle des trois éléments : citer, nommer, interpréter.
+
+## La méthode pas à pas
+
+- Lire le texte plusieurs fois ; noter ses premières impressions (émotion, ton, intention).
+- Identifier la situation : auteur, œuvre, date, genre, mouvement littéraire, place du passage.
+- Repérer l''énonciation : qui parle, à qui, quand, où ?
+- Relever les procédés au brouillon, en colonnes : champs lexicaux, figures de style, temps verbaux, rythme, sonorités, ponctuation, structure.
+- Regrouper les remarques en deux ou trois axes (par exemple « une célébration lyrique » et « une revendication identitaire ») et ordonner les sous-parties du plus évident au plus profond.
+- Rédiger l''introduction : présentation du texte et de son contexte, idée générale, problématique (projet de lecture), annonce des axes.
+- Rédiger le développement, avec des transitions entre les axes.
+- Conclure : bilan des axes, réponse au projet de lecture, ouverture vers une autre œuvre.
+
+## Les outils de la poésie
+
+- Le vers : on compte les syllabes ; l''alexandrin a 12 syllabes, l''octosyllabe 8, le décasyllabe 10. Le « e » muet se prononce devant une consonne à l''intérieur du vers et ne compte pas en fin de vers ni devant une voyelle.
+- Les rimes : suivies (AABB), croisées (ABAB), embrassées (ABBA).
+- Le rythme : enjambement (la phrase déborde sur le vers suivant), rejet et contre-rejet, anaphore (reprise d''un mot en début de vers), gradation.
+- Le vers libre et le verset : vers sans mètre régulier ni rime obligatoire ; le verset, long et ample, proche de la prose rythmée, est très utilisé par Senghor et Césaire.
+- Les images : comparaison (avec un outil : « comme »), métaphore (sans outil), personnification, allégorie.
+- Les sonorités : allitération (consonnes répétées), assonance (voyelles répétées).
+- Les registres : lyrique (expression des sentiments, première personne), épique (grandeur, combat), polémique (attaque), élégiaque (plainte).
+
+## Histoire littéraire : la Négritude
+
+Dans les années 1930, à Paris, des étudiants noirs venus d''Afrique et des Antilles affirment la valeur des cultures noires face au discours colonial. Léopold Sédar Senghor (Sénégal), Aimé Césaire (Martinique) et Léon-Gontran Damas (Guyane) fondent la revue L''Étudiant noir (1935). Le mot « négritude » est attribué à Césaire, qui l''emploie notamment dans le Cahier d''un retour au pays natal (1939).
+
+- Damas publie Pigments (1937), poèmes de révolte contre l''assimilation.
+- Césaire, dans le Cahier d''un retour au pays natal, crie la souffrance et la fierté du peuple noir.
+- Senghor publie Chants d''ombre (1945), Hosties noires (1948), Éthiopiques (1956), Nocturnes (1961). En 1948, il publie l''Anthologie de la nouvelle poésie nègre et malgache de langue française, préfacée par Jean-Paul Sartre (« Orphée noir »).
+- Birago Diop, conteur (Les Contes d''Amadou Koumba, 1947), est aussi poète : son poème « Souffles » évoque la présence des ancêtres dans la nature.
+- David Diop, dans Coups de pilon (1956), écrit une poésie de combat contre la colonisation (le poème « Afrique »).
+
+Thèmes majeurs : la célébration de l''Afrique et de la femme noire, le retour aux sources, la dénonciation de l''esclavage et de la colonisation, le dialogue des cultures. Après les indépendances, la poésie africaine se diversifie : poésie engagée contre les nouveaux pouvoirs, poésie intime, recherche formelle (par exemple chez Tchicaya U Tam''si, poète congolais).
+
+## Exemple de plan : « Femme noire » de Senghor (Chants d''ombre)
+
+Projet de lecture : comment le poète fait-il de l''éloge d''une femme une célébration de l''Afrique ?
+
+- I. Un éloge lyrique de la femme : l''apostrophe initiale « Femme nue, femme noire » et l''adresse à la deuxième personne ; les images sensuelles (le goût, le toucher, l''ouïe) ; le rythme ample des versets.
+- II. Une femme qui symbolise l''Afrique : les images de la terre, du fruit, du tam-tam ; la femme comme mère, amante et terre natale.
+- III. Un poème de la Négritude : la beauté noire affirmée contre les préjugés ; le poète qui chante pour fixer cette beauté contre le temps et la mort.
+
+## Points clés
+
+- Citer, nommer, interpréter : jamais un procédé sans son effet.
+- Deux ou trois axes, pas de commentaire ligne à ligne.
+- Négritude : Senghor, Césaire, Damas ; L''Étudiant noir (1935) ; Cahier (1939) ; Anthologie (1948).
+
+## Exercices pratiques
+
+Exercice 1. Comptez les syllabes du vers suivant et dites de quel type de vers il s''agit : « Le soleil sur la mer descend avec lenteur » (vers d''exemple).
+
+Exercice 2. Identifiez la figure de style : a) « Ma mère était comme un baobab » ; b) « L''Afrique, ma mère, me tend les bras » ; c) « Afrique, Afrique, Afrique ! » en début de trois vers successifs.
+
+Exercice 3. Transformez cette remarque en analyse complète : « Il y a beaucoup de mots sur la nature dans le poème. »
+
+Exercice 4. Citez les trois fondateurs de la Négritude, leur pays d''origine et une œuvre de chacun.
+
+Exercice 5. Proposez deux axes de lecture pour un poème qui dénonce la colonisation tout en exprimant l''espoir d''une Afrique libre.
+
+Exercice 6. Rédigez l''introduction d''un commentaire composé de « Femme noire » à partir du plan de la leçon.
+
+## Corrigé
+
+Exercice 1. Le / so / leil / sur / la / mer / des / cend / a / vec / len / teur : 12 syllabes, c''est un alexandrin.
+
+Exercice 2. a) comparaison (outil « comme ») ; b) personnification, l''Afrique étant présentée comme une mère vivante, et métaphore ; c) anaphore (reprise en début de vers), qui crée un effet d''appel et d''insistance.
+
+Exercice 3. « Le champ lexical de la nature (« savane », « fleuve », « baobab ») domine le poème : il enracine le poète dans le paysage africain et fait de la nature le lieu de l''identité retrouvée. »
+
+Exercice 4. Léopold Sédar Senghor (Sénégal), Chants d''ombre ; Aimé Césaire (Martinique), Cahier d''un retour au pays natal ; Léon-Gontran Damas (Guyane), Pigments.
+
+Exercice 5. I. Une dénonciation de la souffrance coloniale (champ lexical de la douleur, images de violence, registre polémique). II. Un chant d''espérance (futur, images de renaissance, rythme ascendant, registre lyrique).
+
+Exercice 6. « Poète et homme d''État sénégalais, Léopold Sédar Senghor est l''un des fondateurs de la Négritude, mouvement qui affirme la valeur des cultures noires. Dans « Femme noire », poème du recueil Chants d''ombre (1945), il s''adresse à une femme dont il chante la beauté. Comment le poète fait-il de cet éloge une célébration de l''Afrique ? Nous étudierons d''abord l''éloge lyrique de la femme, puis la manière dont elle devient le symbole de l''Afrique, avant de montrer que le poème illustre les valeurs de la Négritude. »', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bac-francais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Le commentaire composé et la poésie : de la Négritude à aujourd''hui');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La dissertation littéraire : roman africain, théâtre et grands thèmes', '## Objectifs de la leçon
+
+- Maîtriser la méthode de la dissertation littéraire.
+- Réviser l''histoire du roman africain et du théâtre.
+- Disposer d''exemples précis tirés d''œuvres africaines et françaises.
+
+## La dissertation littéraire : méthode
+
+Le sujet prend souvent la forme d''une affirmation sur la littérature suivie d''une consigne (« Vous discuterez cette opinion en vous appuyant sur des exemples précis »), ou d''une question directe (« Le roman doit-il refléter la société ? »).
+
+- Analyser le sujet : définir les mots clés (roman, engagement, divertir, réalité), repérer la thèse proposée et ses limites, identifier le genre littéraire concerné.
+- Formuler la problématique : la question que pose réellement le sujet.
+- Chercher des exemples : pour chaque idée, une œuvre précise (auteur, titre, personnage, scène), pas un simple titre.
+- Choisir le plan : dialectique (la thèse, ses limites, un dépassement) pour une opinion à discuter ; analytique ou thématique pour une question du type « En quoi… ? ».
+- Rédiger : introduction (amorce, citation du sujet ou reformulation, problématique, annonce du plan), développement avec transitions, conclusion.
+
+Chaque paragraphe suit le schéma : idée directrice, explication, exemple développé, lien avec le sujet. Un exemple développé ne raconte pas l''œuvre : il montre en quoi une scène ou un personnage prouve l''idée.
+
+## Histoire du roman africain d''expression française
+
+- Les débuts : Batouala de René Maran (prix Goncourt 1921), écrivain d''origine guyanaise, dénonce les abus coloniaux dans sa préface ; Force-Bonté de Bakary Diallo (1926) ; Karim d''Ousmane Socé (1935), roman d''un jeune Sénégalais entre Saint-Louis et Dakar.
+- Les années 1950, le roman de la contestation coloniale : Mongo Beti, Ville cruelle (1954, sous le nom d''Eza Boto) et Le Pauvre Christ de Bomba (1956) ; Ferdinand Oyono, Une vie de boy et Le Vieux Nègre et la médaille (1956) ; Ousmane Sembène, Les Bouts de bois de Dieu (1960), sur la grève des cheminots du Dakar-Niger. Camara Laye, avec L''Enfant noir (1953), offre plutôt un récit autobiographique de l''enfance en Haute-Guinée.
+- Le conflit des cultures : Cheikh Hamidou Kane, L''Aventure ambiguë (1961), où Samba Diallo, partagé entre l''école coranique et l''école occidentale, ne trouve pas d''équilibre.
+- Le désenchantement après les indépendances : Ahmadou Kourouma, Les Soleils des indépendances (1968), avec Fama, prince malinké déchu ; Ousmane Sembène, Xala (1973), satire de la nouvelle bourgeoisie ; Yambo Ouologuem, Le Devoir de violence (1968).
+- La parole des femmes : Mariama Bâ, Une si longue lettre (1979) ; Aminata Sow Fall, La Grève des bàttu (1979) ; Ken Bugul, Le Baobab fou (1982).
+- Le roman contemporain : Boubacar Boris Diop, Murambi, le livre des ossements (2000), sur le génocide des Tutsi au Rwanda ; Ahmadou Kourouma, Allah n''est pas obligé (2000), sur les enfants-soldats ; Mohamed Mbougar Sarr, La plus secrète mémoire des hommes (prix Goncourt 2021).
+
+## Histoire du théâtre africain
+
+- Les origines : les formes traditionnelles (contes dits devant un public, récits des griots, cérémonies) ; dans les années 1930, le théâtre de l''École normale William-Ponty, où les élèves mettaient en scène des sujets africains.
+- Le théâtre historique : Cheik Aliou Ndao, L''Exil d''Albouri (1967), sur le roi du Djolof face à la conquête coloniale ; Amadou Cissé Dia, Les Derniers Jours de Lat Dior ; Aimé Césaire, La Tragédie du roi Christophe (1963) et Une saison au Congo (1966), sur les difficultés du pouvoir après l''indépendance ; Bernard Dadié, Béatrice du Congo.
+- La comédie sociale : Guillaume Oyônô Mbia, Trois prétendants… un mari (1964), satire du mariage arrangé et de la dot ; Bernard Dadié, Monsieur Thôgô-gnini, satire de l''arrivisme.
+- Le théâtre contemporain : Sony Labou Tansi, La Parenthèse de sang (1981), dénonciation des dictatures ; le théâtre en langues nationales et le théâtre de sensibilisation.
+- Repères français utiles : Molière (la comédie qui corrige les mœurs : Le Tartuffe, L''Avare), Corneille et Racine (la tragédie classique), Victor Hugo (le drame romantique), Beckett et Ionesco (le théâtre de l''absurde).
+
+## Exemple de plan détaillé
+
+Sujet : « Le roman africain est avant tout un témoignage sur la société. » Discutez cette opinion.
+
+- I. Le roman africain témoigne de la société : il dénonce la colonisation (Une vie de boy, où le journal de Toundi révèle l''hypocrisie des colons), les injustices sociales (Les Bouts de bois de Dieu), la condition des femmes (Une si longue lettre).
+- II. Mais il n''est pas seulement un document : il crée des personnages et des destins singuliers (Samba Diallo dans L''Aventure ambiguë, figure tragique) ; il invente une langue (Kourouma fait entendre le malinké dans le français des Soleils des indépendances) ; il explore l''intime (L''Enfant noir).
+- III. Le témoignage passe par l''art : c''est parce qu''il est une œuvre esthétique que le roman rend la réalité sensible et durable ; l''imaginaire (l''ironie de Sembène dans Xala, l''enquête littéraire de Mbougar Sarr) éclaire mieux la société qu''un simple constat.
+
+## Points clés
+
+- Un exemple = auteur, titre, scène ou personnage, et lien explicite avec l''idée.
+- Roman : contestation coloniale (années 1950), conflit des cultures, désenchantement (1968), voix des femmes (1979), renouveau contemporain.
+- Théâtre : Ponty, théâtre historique, comédie sociale, dénonciation des dictatures.
+
+## Exercices pratiques
+
+Exercice 1. Associez chaque œuvre à son auteur : L''Aventure ambiguë ; Les Soleils des indépendances ; Trois prétendants… un mari ; L''Exil d''Albouri ; Une vie de boy.
+
+Exercice 2. Formulez une problématique pour le sujet : « Le théâtre n''est-il qu''un divertissement ? »
+
+Exercice 3. Développez un exemple (5 à 6 lignes) montrant que le roman peut dénoncer la condition des femmes.
+
+Exercice 4. Pourquoi peut-on parler de « désenchantement » à propos des Soleils des indépendances et de Xala ?
+
+Exercice 5. Proposez un plan dialectique pour : « La littérature doit-elle être engagée ? »
+
+Exercice 6. Rédigez la conclusion du plan détaillé de la leçon.
+
+## Corrigé
+
+Exercice 1. L''Aventure ambiguë : Cheikh Hamidou Kane ; Les Soleils des indépendances : Ahmadou Kourouma ; Trois prétendants… un mari : Guillaume Oyônô Mbia ; L''Exil d''Albouri : Cheik Aliou Ndao ; Une vie de boy : Ferdinand Oyono.
+
+Exercice 2. « Le théâtre, qui fait rire ou émeut un public rassemblé, se borne-t-il à distraire, ou peut-il aussi faire réfléchir et transformer la société ? »
+
+Exercice 3. « Dans Une si longue lettre, Mariama Bâ donne la parole à Ramatoulaye, qui découvre, après des années de mariage, que son mari Modou a pris une seconde épouse, très jeune. La forme de la lettre adressée à son amie Aïssatou permet d''exprimer la blessure intime de l''héroïne, mais aussi une réflexion sur la polygamie, l''éducation des filles et la place des femmes dans la société sénégalaise. Le roman transforme ainsi une souffrance individuelle en question collective. »
+
+Exercice 4. Ces romans montrent la déception qui a suivi les indépendances : les espoirs de liberté et de prospérité laissent place au parti unique, à la corruption et à la misère. Fama, dans Les Soleils des indépendances, a perdu son rang et ne trouve pas sa place dans le nouvel ordre ; El Hadji, dans Xala, incarne une bourgeoisie qui imite l''ancien colonisateur.
+
+Exercice 5. I. Oui : l''écrivain a une responsabilité et la littérature peut dénoncer (Les Bouts de bois de Dieu, Cahier d''un retour au pays natal, La Parenthèse de sang). II. Mais l''engagement peut nuire à l''art s''il réduit l''œuvre à un message, et la littérature a d''autres fonctions (plaisir, expression de l''intime, beauté de la langue). III. L''engagement le plus fort passe par la qualité de l''œuvre : c''est la force du style qui rend un message durable.
+
+Exercice 6. « Le roman africain est bien un témoignage : de la contestation coloniale aux voix des femmes, il a dit les blessures et les espoirs des sociétés africaines. Mais il ne s''y réduit pas, car il crée des personnages, une langue et un imaginaire. C''est même par cet art que le témoignage devient universel et durable. On pourrait poser la même question à la poésie de la Négritude, qui fut à la fois un combat et une recherche de beauté. »', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bac-francais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La dissertation littéraire : roman africain, théâtre et grands thèmes');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : entraînement complet corrigé', '## Présentation
+
+Voici un sujet d''entraînement conçu sur le modèle de l''épreuve de français du Bac. Ce n''est pas un sujet officiel, et les textes proposés ont été rédigés pour ce cours. Choisissez un seul des trois sujets et traitez-le en temps limité ; la durée réelle est celle fixée par les textes officiels en vigueur. La marge de mots indiquée et la grille du corrigé sont indicatives et non officielles.
+
+## Exercices pratiques
+
+Exercice 1 (sujet 1 : résumé et discussion). Lisez le texte suivant.
+
+« Le téléphone portable a changé la vie des familles africaines plus vite qu''aucune autre invention. Grâce à lui, l''étudiant parti à Dakar parle chaque soir à sa mère restée au village, le commerçant reçoit ses paiements sans se déplacer et le pêcheur connaît les prix du marché avant d''accoster. Jamais l''information n''a circulé aussi librement. Pourtant, cette révolution a son revers. Les jeunes passent des heures sur les réseaux sociaux, où les rumeurs se propagent plus vite que les vérités. Les conversations familiales s''appauvrissent : autour du plat commun, chacun regarde son écran. Les plus fragiles s''endettent pour acheter le dernier modèle, signe de réussite sociale. Faut-il pour autant condamner l''outil ? Ce serait oublier qu''un téléphone n''est ni bon ni mauvais en lui-même : tout dépend de l''usage qu''on en fait. Ce qui manque, ce n''est pas la technologie, c''est l''éducation à son usage. L''école, les familles et les médias devraient apprendre aux jeunes à vérifier une information, à protéger leur vie privée et à maîtriser leur temps d''écran. Le portable deviendrait alors ce qu''il aurait toujours dû être : un instrument de liberté, et non une nouvelle dépendance. »
+
+- a) Résumez ce texte en 55 mots (une marge de plus ou moins 10 % est admise dans cet entraînement). Indiquez le nombre de mots utilisés.
+- b) Discussion : « Ce qui manque, ce n''est pas la technologie, c''est l''éducation à son usage. » Partagez-vous ce point de vue ? Vous répondrez dans un développement argumenté et illustré d''exemples précis.
+
+Exercice 2 (sujet 2 : commentaire composé). Vous ferez un commentaire composé du poème suivant, rédigé pour cet entraînement. Vous pourrez, par exemple, étudier la célébration du fleuve et la méditation sur le temps.
+
+« Fleuve, vieux père aux eaux lentes,
+Tu portes le limon des siècles jusqu''à la mer.
+Sur tes rives, les femmes chantent en lavant le linge,
+Les enfants plongent, les pirogues glissent comme des prières.
+Fleuve, tu as vu passer les rois et les marchands,
+Les chaînes des captifs et les drapeaux nouveaux.
+Tu n''as rien dit. Tu as continué ta route.
+Apprends-moi ta patience, fleuve,
+Apprends-moi à porter la mémoire sans me noyer,
+Et à aller, comme toi, vers l''océan qui nous attend. »
+
+Exercice 3 (sujet 3 : dissertation). On dit souvent que la poésie est un luxe inutile dans un monde qui a d''abord besoin de pain et de justice. Vous discuterez cette opinion en vous appuyant sur des œuvres précises.
+
+Exercice 4 (auto-évaluation). Après avoir traité votre sujet, vérifiez : orthographe des noms d''auteurs et des titres, présence d''une problématique, transitions, nombre de mots (pour le résumé).
+
+Exercice 5 (correction). Un élève écrit en commentaire : « Au vers 4, il y a une comparaison. » Améliorez cette remarque.
+
+## Corrigé
+
+Exercice 1. a) Structure du texte : 1) les bienfaits du portable (communication, commerce, information) ; 2) ses dangers (rumeurs, appauvrissement des liens familiaux, endettement) ; 3) l''outil est neutre : il faut éduquer à son usage (vérifier, protéger, maîtriser), pour qu''il libère au lieu d''asservir.
+
+Résumé proposé (55 mots) : « Le portable a bouleversé les familles africaines : il relie les proches, facilite le commerce et libère l''information. Mais il propage des rumeurs, isole chacun devant son écran et pousse à l''endettement. Pourtant, l''outil est neutre : école, familles et médias doivent enseigner son bon usage pour qu''il libère au lieu d''asservir. »
+
+b) Discussion. Introduction : rappel de la thèse, question (l''éducation suffit-elle à résoudre les problèmes posés par le portable ?), annonce du plan. I. L''éducation est essentielle : vérifier une information, protéger ses données, gérer son temps, cela s''apprend ; exemple de la propagation de fausses nouvelles pendant une épidémie. II. Mais elle ne suffit pas : les applications sont conçues pour retenir l''attention ; la pression sociale pousse à l''achat ; l''accès inégal au réseau dans les zones rurales est aussi un problème technologique. III. Il faut donc associer éducation, règles (protection des données, régulation des plateformes) et choix collectifs. Conclusion : l''auteur a raison sur le rôle central de l''éducation, mais elle doit s''accompagner de règles et d''un accès équitable.
+
+Exercice 2. Situation : poème en vers libres, adressé au fleuve (apostrophe « Fleuve »), registre lyrique. Projet de lecture : comment le poète fait-il du fleuve un témoin de l''histoire et un maître de sagesse ?
+
+I. Une célébration du fleuve vivant. 1) La personnification : « vieux père », le tutoiement, le fleuve qui « voit » et « ne dit rien ». 2) Un tableau de la vie quotidienne : énumération des femmes, des enfants, des pirogues ; la comparaison des pirogues « comme des prières » donne au paysage une dimension sacrée. 3) Le rythme lent des vers longs imite le cours des « eaux lentes ».
+
+II. Une méditation sur le temps et la mémoire. 1) Le fleuve, témoin de l''histoire : les antithèses « rois » et « marchands », « chaînes des captifs » et « drapeaux nouveaux » résument la traite, la colonisation et les indépendances. 2) Le silence du fleuve (phrases courtes : « Tu n''as rien dit. ») contraste avec la violence de l''histoire. 3) L''anaphore « Apprends-moi » transforme l''éloge en prière : le poète demande la patience et la force de porter la mémoire « sans [se] noyer ». La mer finale, « l''océan qui nous attend », évoque la mort, acceptée avec sérénité.
+
+Conclusion : le poème unit la célébration d''un paysage africain, la mémoire historique et une leçon de sagesse ; on peut le rapprocher de « Souffles » de Birago Diop, où la nature est habitée par la présence des morts.
+
+Exercice 3. Problématique : la poésie, qui ne nourrit pas, est-elle un luxe, ou répond-elle à un besoin essentiel de l''homme ? I. La poésie peut sembler inutile : elle ne produit rien de matériel ; certains poèmes cherchent la seule beauté formelle. II. Pourtant elle combat pour la justice : Césaire dans le Cahier d''un retour au pays natal, David Diop dans Coups de pilon, Damas dans Pigments dénoncent l''oppression ; Victor Hugo, dans Les Châtiments, attaque Napoléon III. III. Elle répond aussi à un besoin aussi vital que le pain : dire la dignité, la mémoire, l''émotion ; la Négritude de Senghor affirme une identité ; la poésie orale accompagne les travaux, les fêtes et les deuils. Conclusion : la poésie n''est pas un luxe mais une nourriture de l''esprit, qui participe à la justice en éveillant les consciences.
+
+Exercice 4. Si un élément manque, retravaillez-le sur un nouveau sujet la semaine suivante.
+
+Exercice 5. « Au vers 4, la comparaison des pirogues glissant “ comme des prières ” associe le mouvement silencieux des embarcations à un acte sacré : le quotidien du fleuve prend une dimension spirituelle, qui annonce la prière finale du poète. »
+
+Grille indicative et non officielle : compréhension et fidélité ; organisation ; pertinence des exemples et des analyses ; correction de la langue.', 'texte', 75, false, 50
+from public.courses c where c.slug = 'bac-francais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : entraînement complet corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive la veille du Bac de français', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : élèves de Terminale des séries L, S et G qui passent l''épreuve de français.
+- Objectifs : revoir en accéléré les trois méthodes (résumé-discussion, commentaire composé, dissertation), corriger en direct des productions type Bac, réactiver les repères d''histoire littéraire, préparer la gestion du temps.
+- Matériel : tableau ou diaporama, textes courts imprimés, feuille de brouillon, chronomètre.
+- Prérequis : avoir suivi les leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+Bonsoir à toutes et à tous. Demain, vous aurez le choix entre trois sujets. Ce soir, notre but est simple : que chacun sache exactement quoi faire face à chacun d''eux, et qu''il entre dans la salle avec des exemples précis en tête. Nous allons alterner rappels courts, exercices et corrections. Gardez votre brouillon à portée de main.
+
+Visuel : les trois sujets de l''épreuve sous forme de trois colonnes, avec pour chacun les mots clés « fidélité », « interpréter », « argumenter ».
+
+## 05:00 – 18:00 · Rappels et correction : le résumé
+
+Rappel des quatre règles : fidélité, ordre, point de vue de l''auteur, reformulation. Et la règle d''or : le nombre de mots, dans la marge indiquée sur le sujet, avec le total écrit à la fin.
+
+Exercice : je projette un paragraphe de 80 mots environ sur l''école et l''emploi des jeunes. Il affirme que l''école forme trop de diplômés sans débouchés, que l''économie a besoin de techniciens, et qu''il faut donc développer la formation professionnelle. Résumez-le en 20 mots. Vous avez quatre minutes.
+
+Correction : « L''école multiplie les diplômés sans emploi alors que l''économie manque de techniciens : il faut développer la formation professionnelle. » Comptons ensemble : L'' / école / multiplie / les / diplômés / sans / emploi / alors / que / l'' / économie / manque / de / techniciens / il / faut / développer / la / formation / professionnelle : 20 mots. Remarquez les procédés : la logique cause-conséquence est conservée par « alors que » et « il faut » ; aucune phrase n''est recopiée ; on ne nomme pas l''auteur.
+
+## 18:00 – 28:00 · Rappels : la discussion
+
+La discussion n''est pas un résumé bis. On vous demande votre point de vue argumenté sur une idée du texte. Introduction : amorce, rappel de l''idée, question, plan. Développement : deux ou trois parties, chaque paragraphe avec un argument, une explication et un exemple précis. Conclusion : une réponse nette.
+
+Exercice oral : « La ville offre-t-elle plus de chances de réussite que la campagne ? » Donnez-moi un argument pour, un argument contre, et un exemple littéraire. Réponses attendues : pour, l''accès aux études et aux emplois ; contre, la précarité et la solitude ; exemple, Maïmouna d''Abdoulaye Sadji, où la jeune fille venue de Louga connaît à Dakar le succès puis la déchéance.
+
+Construisons maintenant l''introduction au tableau. Amorce : « Chaque année, des milliers de jeunes quittent Kolda, Matam ou Kaffrine pour Dakar, convaincus que leur avenir s''y joue. » Rappel de l''idée : le texte affirme que la ville concentre les chances de réussite. Question : la ville offre-t-elle vraiment plus de chances que la campagne ? Annonce du plan : nous verrons d''abord les atouts réels de la ville, puis ses illusions, avant de montrer que la réussite dépend surtout des conditions offertes à chacun, en ville comme à la campagne. Notez que l''introduction tient en cinq phrases : inutile d''en écrire davantage, le correcteur veut voir rapidement que vous avez compris la question.
+
+## 28:00 – 42:00 · Rappels et correction : le commentaire composé
+
+La règle des trois éléments : citer, nommer, interpréter. Je projette deux phrases d''élèves. Première : « Le poète utilise une anaphore. » Que manque-t-il ? La citation et l''effet. Version corrigée : « L''anaphore de “ Afrique ” en tête de trois vers successifs crée un effet d''appel solennel : le poète invoque sa terre comme une personne aimée. »
+
+Deuxième phrase : « Dans le texte, Kourouma raconte que Fama est triste. » C''est de la paraphrase. Version corrigée : « Le vocabulaire de la déchéance et l''ironie du narrateur font de Fama un prince dérisoire : à travers lui, Kourouma montre la fin d''un monde ancien que les indépendances n''ont pas remplacé par un monde plus juste. »
+
+Rappel de versification : alexandrin, 12 syllabes ; « e » muet compté devant consonne à l''intérieur du vers ; rimes suivies, croisées, embrassées ; enjambement ; verset chez Senghor et Césaire.
+
+## 42:00 – 50:00 · Pause et quiz interactif
+
+Petite pause, puis cinq questions. Répondez à voix haute ou dans le chat.
+
+- Question 1 : en quelle année est fondée la revue L''Étudiant noir ? Réponse : 1935.
+- Question 2 : qui a écrit L''Aventure ambiguë ? Réponse : Cheikh Hamidou Kane (1961).
+- Question 3 : quel est le genre d''Une si longue lettre ? Réponse : un roman épistolaire.
+- Question 4 : qu''est-ce qu''un enjambement ? Réponse : la phrase déborde d''un vers sur le vers suivant.
+- Question 5 : qui a écrit La Tragédie du roi Christophe ? Réponse : Aimé Césaire.
+
+## 50:00 – 1:04:00 · Correction commentée : une dissertation
+
+Sujet : « Le théâtre doit-il seulement faire rire ? » Cinq minutes pour chercher une problématique et trois idées.
+
+Correction. Problématique : le théâtre, art du spectacle, n''est-il qu''un divertissement, ou peut-il aussi instruire et faire réfléchir ? Partie I : le théâtre fait rire et divertit ; la comédie de Molière, le comique de situation de Trois prétendants… un mari de Guillaume Oyônô Mbia. Partie II : mais le rire est aussi une arme ; il corrige les mœurs et dénonce : la cupidité du père qui veut marier sa fille au plus offrant, chez Oyônô Mbia ; l''arrivisme dans Monsieur Thôgô-gnini de Bernard Dadié. Partie III : le théâtre peut aussi émouvoir et faire réfléchir sans rire : la tragédie historique, avec L''Exil d''Albouri de Cheik Aliou Ndao, ou La Tragédie du roi Christophe de Césaire, qui interroge le pouvoir après l''indépendance. Conclusion : le rire n''est qu''un des moyens du théâtre, qui vise à toucher et à éclairer le spectateur.
+
+Regardez comment chaque exemple est précis : un auteur, un titre, une situation, et le lien avec l''idée.
+
+## 1:04:00 – 1:14:00 · Banque d''exemples express
+
+Ce soir, revoyez une banque de dix exemples sûrs. Colonisation : Une vie de boy d''Oyono ; Le Pauvre Christ de Bomba de Mongo Beti. Tradition et modernité : L''Aventure ambiguë ; L''Enfant noir de Camara Laye. Indépendances : Les Soleils des indépendances ; Xala de Sembène. Condition féminine : Une si longue lettre ; La Grève des bàttu d''Aminata Sow Fall pour la société dakaroise. Poésie engagée : Cahier d''un retour au pays natal ; Coups de pilon de David Diop. Repères français : Molière pour la comédie, Hugo pour l''engagement du poète, Baudelaire et Les Fleurs du mal pour la modernité poétique.
+
+Pour chaque exemple, préparez une phrase qui le relie à une idée. Par exemple : « Dans Une vie de boy, le journal intime de Toundi révèle, derrière la façade respectable des colons, leur mépris et leur violence : le roman dévoile ce que le discours colonial cache. » Avec dix phrases de ce type, vous pourrez nourrir une discussion comme une dissertation.
+
+N''utilisez demain que des œuvres que vous avez réellement lues ou étudiées en classe : un exemple faux ou approximatif fait plus de tort qu''un exemple en moins.
+
+## 1:14:00 – 1:20:00 · Gestion du temps le jour J
+
+Répartissez votre temps en proportion de la durée officielle. Lecture des trois sujets et choix : environ 10 minutes. Brouillon : environ un quart du temps (plan détaillé, introduction rédigée ; pour le résumé, brouillon complet et comptage). Rédaction au propre. Relecture : au moins 10 minutes, en vérifiant les accords, les titres d''œuvres et, pour le résumé, le total des mots. Sautez une ligne entre les parties et faites des alinéas : une copie aérée se lit mieux.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Synthèse : le résumé exige fidélité et précision ; le commentaire relie forme et sens ; la dissertation argumente avec des exemples précis. Évaluation finale.
+
+- Question 1 : peut-on écrire « selon l''auteur » dans un résumé ? Réponse : non, le résumé adopte le point de vue de l''auteur, sans le nommer.
+- Question 2 : quels sont les trois éléments d''une bonne remarque de commentaire ? Réponse : une citation, un procédé nommé, une interprétation.
+- Question 3 : combien de syllabes compte un alexandrin ? Réponse : 12.
+- Question 4 : citez deux romans du désenchantement après les indépendances. Réponse : Les Soleils des indépendances d''Ahmadou Kourouma (1968) et Xala d''Ousmane Sembène (1973).
+- Question 5 : que doit contenir l''introduction d''une dissertation ? Réponse : une amorce, le sujet cité ou reformulé, la problématique, l''annonce du plan.
+
+Merci pour votre attention. Relisez votre banque d''exemples, préparez votre matériel, dormez suffisamment. Demain, lisez bien les trois sujets avant de choisir. Bonne chance à toutes et à tous.', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-francais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive la veille du Bac de français');
+
 -- Cours : Histoire-Géographie : réussir l'épreuve du Bac
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'bac-histoire-geographie', (select id from public.levels where name = 'Terminale'), null, 'Histoire-Géographie', 'Histoire-Géographie : réussir l''épreuve du Bac', 'Ce cours prépare les élèves de Terminale des séries L, S et G à l''épreuve d''Histoire-Géographie du Baccalauréat, en révisant le programme du lycée avec un accent sur la Terminale : relations internationales depuis 1945 (guerre froide, décolonisation, non-alignement, unité africaine) et géographie de la mondialisation, du développement et de la population. Il entraîne aux méthodes de la dissertation, du commentaire de document et du croquis, avec des fiches, des exercices corrigés et un sujet d''entraînement complet. Prérequis : connaître les grandes étapes de l''histoire du XXe siècle et savoir lire une carte.', true, 207
@@ -2839,639 +3325,3 @@ Synthèse : en compréhension, justifiez toujours par une citation exacte ; en l
 Mot de la fin : sleep well, have a good breakfast, and trust your preparation. Lisez calmement, écrivez clairement. Good luck to all of you!', 'video', 90, false, 60
 from public.courses c where c.slug = 'bac-anglais'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive veille du Bac en Anglais');
-
--- Cours : Espagnol LV2 : réussir l'épreuve du Bac
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'bac-espagnol', (select id from public.levels where name = 'Terminale'), null, 'Espagnol (LV2)', 'Espagnol LV2 : réussir l''épreuve du Bac', 'Ce cours d''examen prépare l''épreuve d''espagnol LV2 du Baccalauréat : méthode de compréhension écrite et d''analyse de texte, grammaire du Bac (subjonctif présent et imparfait, concordance des temps, conditionnel et hypothèse, ser et estar, por et para, discours indirect), expression écrite (essai argumenté, lettre) et repères de civilisation hispanique (Espagne, Amérique latine, liens avec l''Afrique). Il s''adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l''espagnol en LV2. Les explications sont en français et les exemples en espagnol. Prérequis : les acquis d''espagnol de la Seconde et de la Première.', true, 210
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
-
-- Savoir ce que l''on attend de toi à l''épreuve d''espagnol LV2 du Bac.
-- Connaître les grandes familles d''exercices et une méthode pour chacune.
-- Repérer et éviter les erreurs les plus fréquentes des candidats.
-- Organiser tes révisions sur 10 semaines.
-
-## À qui s''adresse ce cours
-
-Ce cours s''adresse d''abord aux élèves de Terminale des séries L, pour qui la deuxième langue vivante occupe une place importante, mais aussi à tout candidat qui présente l''espagnol en LV2, quelle que soit sa série (L, S ou G), selon les choix d''options prévus par les textes officiels en vigueur. La durée de l''épreuve, son coefficient et son barème sont fixés par ces textes : vérifie-les auprès de ton établissement. Ici, nous travaillons la méthode, qui reste la même quelle que soit la série.
-
-Le programme révisé couvre les trois années du lycée : les bases de la Seconde (présent, passés, ser et estar), les structures de Première (subjonctif présent, impératif, por et para) et les exigences de Terminale (subjonctif imparfait, concordance des temps, hypothèse, discours indirect, argumentation).
-
-## Comment se présente l''épreuve
-
-L''épreuve s''appuie en général sur un texte authentique ou adapté : extrait de roman, article de presse, témoignage, lettre ou poème. Il est souvent accompagné d''un paratexte (auteur, titre de l''œuvre, date, source). Les questions se répartissent habituellement en trois familles.
-
-- Compréhension écrite : questions sur le sens du texte, vrai ou faux à justifier par une citation, recherche de synonymes ou de contraires, explication d''une expression.
-- Compétence linguistique : transformations grammaticales (mettre au passé, au discours indirect, conjuguer au subjonctif), exercices à trous, parfois une courte traduction.
-- Expression écrite : un ou deux sujets au choix, en lien avec le thème du texte (essai argumenté, lettre, dialogue, suite de récit).
-
-La présentation exacte varie selon les sujets : lis toujours toutes les consignes avant de commencer.
-
-## Méthode pour la compréhension
-
-Commence par le paratexte : qui écrit, quand, dans quel pays ? Un texte de Gabriel García Márquez ne parle pas du même monde qu''un article d''un journal madrilène. Fais ensuite une première lecture complète sans t''arrêter sur les mots inconnus, pour saisir le thème général. Pendant la deuxième lecture, souligne les personnages, les lieux, les dates et les mots de liaison (pero, sin embargo, por eso, aunque).
-
-Pour répondre, applique trois règles.
-
-- Réponds en espagnol par des phrases complètes, en reformulant la question : à « ¿Por qué se fue Moussa? », on répond « Moussa se fue porque buscaba trabajo ».
-- Justifie un vrai ou faux par une citation courte entre guillemets, suivie du numéro de ligne : « no hablaba ni una palabra de español » (l. 2).
-- Ne recopie jamais un paragraphe entier : le correcteur veut voir que tu as compris, pas que tu sais recopier.
-
-## Méthode pour la compétence linguistique
-
-Lis la consigne deux fois et repère le temps demandé. Pour une transformation, identifie d''abord la structure (verbe principal, subordonnée, temps), puis applique la règle, puis relis l''accord du verbe avec son sujet. Les leçons 3 et 4 te donnent toutes les règles nécessaires, avec des tableaux à apprendre par cœur.
-
-## Méthode pour l''expression écrite
-
-Prends quelques minutes pour faire un plan au brouillon. Respecte le nombre de lignes ou de mots demandé. Écris des phrases simples et correctes plutôt que des phrases longues et fautives. Réutilise le vocabulaire du texte, mais sans le recopier. Garde du temps pour te relire : accents, accords, conjugaisons.
-
-## Organiser son temps le jour de l''épreuve
-
-Voici une répartition indicative à adapter à la durée officielle de ton épreuve : environ 15 % du temps pour lire le texte, 35 % pour la compréhension, 20 % pour la grammaire, 25 % pour l''expression écrite et 5 % pour la relecture. Si une question te bloque, passe à la suivante et reviens-y à la fin.
-
-## Les erreurs fréquentes à éviter
-
-- Les faux amis : « constipado » signifie enrhumé, « embarazada » signifie enceinte, « éxito » signifie succès (la sortie se dit « la salida »), « realizar » signifie accomplir ou réaliser un projet (« se rendre compte » se dit « darse cuenta »).
-- Les gallicismes de genre : on dit « el problema », « el tema », « el sistema », mais « la leche », « la sangre », « la costumbre ».
-- Le conditionnel après « si » : on n''écrit jamais « si tendría » ; on écrit « si tuviera ».
-- L''oubli des accents écrits, qui changent parfois le sens : « hablo » (je parle) et « habló » (il a parlé), « el » (le) et « él » (lui).
-- L''oubli des signes d''ouverture : ¿Dónde vives? ¡Qué calor!
-- La confusion de ser et estar : « estoy cansado » (état) mais « soy senegalés » (identité).
-
-## Plan de révision sur 10 semaines
-
-- Semaine 1 : diagnostic (fais un sujet complet sans aide), lecture de cette leçon, constitution d''un carnet de vocabulaire.
-- Semaine 2 : méthode de compréhension, deux textes courts par semaine (leçon 2).
-- Semaine 3 : repères de civilisation : Espagne, Amérique latine, liens avec l''Afrique (leçon 2).
-- Semaine 4 : subjonctif présent et imparfait (leçon 3).
-- Semaine 5 : concordance des temps, conditionnel, phrases hypothétiques (leçon 3).
-- Semaine 6 : ser et estar, por et para, discours indirect (leçon 4).
-- Semaine 7 : expression écrite : essai et lettre, une production corrigée par semaine (leçon 4).
-- Semaine 8 : sujet type complet en temps limité (leçon 5).
-- Semaine 9 : deuxième sujet blanc, reprise des fiches d''erreurs.
-- Semaine 10 : révision légère, cours vidéo « veille du Bac », sommeil et sérénité.
-
-Chaque jour, consacre au moins 20 minutes à l''espagnol : 10 minutes de vocabulaire, 10 minutes de lecture ou de grammaire. La régularité vaut mieux qu''une nuit blanche.
-
-## Points clés
-
-- Lis le paratexte et les consignes avant tout.
-- Réponds en phrases complètes et justifie par des citations courtes.
-- Apprends les tableaux de conjugaison et les règles de concordance.
-- Garde toujours du temps pour la relecture.
-
-## Exercices pratiques
-
-Exercice 1. Cite les trois grandes familles d''exercices de l''épreuve et donne un exemple de question pour chacune.
-
-Exercice 2. Traduis en français : « Mi hermana está embarazada y mi hermano está constipado. »
-
-Exercice 3. Corrige les erreurs : « La problema es que si tendría dinero, viajaría a Sevilla. »
-
-Exercice 4. Réponds par une phrase complète en reformulant la question : « ¿Dónde vive Awa? » (Awa vit à Saint-Louis.)
-
-Exercice 5. Ajoute les accents et les signes manquants : « Donde esta el? Que alegria! »
-
-Exercice 6. Ton épreuve dure, par hypothèse, 3 heures. Calcule le temps à consacrer à chaque partie selon la répartition indicative de la leçon.
-
-## Corrigé
-
-Exercice 1. Compréhension écrite : « ¿Por qué decide el protagonista salir de su país? ». Compétence linguistique : « Pon el verbo entre paréntesis en subjuntivo ». Expression écrite : « Escribe una carta a un amigo para contarle tus proyectos ».
-
-Exercice 2. « Ma sœur est enceinte et mon frère est enrhumé. » Deux faux amis classiques : « embarazada » ne veut pas dire embarrassée, « constipado » ne veut pas dire constipé.
-
-Exercice 3. « El problema es que, si tuviera dinero, viajaría a Sevilla. » « Problema » est masculin ; après « si » d''hypothèse, on emploie le subjonctif imparfait.
-
-Exercice 4. « Awa vive en Saint-Louis. » On reprend le verbe de la question et on ajoute l''information.
-
-Exercice 5. « ¿Dónde está él? ¡Qué alegría! »
-
-Exercice 6. 3 heures = 180 minutes. Lecture : 15 % de 180 = 27 min. Compréhension : 35 % = 63 min. Grammaire : 20 % = 36 min. Expression : 25 % = 45 min. Relecture : 5 % = 9 min. Total : 27 + 63 + 36 + 45 + 9 = 180 min.', 'texte', 50, true, 10
-from public.courses c where c.slug = 'bac-espagnol'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Compréhension écrite, analyse de texte et civilisation hispanique', '## Objectifs de la leçon
-
-- Appliquer une méthode complète de compréhension et d''analyse d''un texte.
-- Maîtriser le vocabulaire espagnol de l''analyse.
-- Connaître les repères de civilisation indispensables : Espagne, Amérique latine, liens avec l''Afrique.
-
-## Texte d''étude
-
-Voici un texte d''entraînement rédigé pour ce cours.
-
-« Cuando Moussa llegó a Madrid, hace ya diez años, no hablaba ni una palabra de español. Había cruzado el mar en cayuco desde la costa senegalesa y había pasado varias semanas en un centro de acogida de Canarias. "Al principio, todo me parecía extraño: la comida, el frío, las prisas de la gente", recuerda. Gracias a una asociación de barrio, aprendió el idioma y consiguió un trabajo en un taller de bicicletas. Hoy tiene su propio negocio y ayuda a otros jóvenes africanos a encontrar su camino. Sin embargo, no olvida a su familia de Kaolack: cada mes le envía dinero a su madre y sueña con volver algún día. "Me gustaría que mis hijos conocieran Senegal y que no tuvieran que arriesgar su vida como yo", confiesa. »
-
-## Étape 1 : identifier la situation
-
-Réponds aux questions de base : ¿quién? (Moussa, un emigrante senegalés), ¿dónde? (Madrid, Canarias, Kaolack), ¿cuándo? (hace diez años y hoy), ¿qué? (su llegada, su integración, su nostalgia), ¿cómo? (gracias a una asociación). Le texte est un témoignage : on le voit aux guillemets et aux verbes « recuerda » et « confiesa ».
-
-## Étape 2 : repérer la structure
-
-Les mots de liaison et les temps verbaux découpent le texte. Le passé (llegó, había cruzado, aprendió) raconte le parcours ; le présent (tiene, ayuda, sueña) décrit la situation actuelle ; le conditionnel et le subjonctif imparfait (me gustaría que conocieran) expriment un souhait pour l''avenir. Le connecteur « sin embargo » marque une opposition : la réussite matérielle n''efface pas l''attachement au pays.
-
-## Étape 3 : analyser le sens et le ton
-
-Le ton est à la fois positif (réussite, solidarité) et grave (le risque de la traversée en cayuco). La dernière phrase porte le message du texte : Moussa ne veut pas que ses enfants vivent la même épreuve que lui.
-
-## Le vocabulaire de l''analyse
-
-- El texto trata de... : le texte traite de...
-- El autor pone de relieve / subraya... : l''auteur met en relief / souligne...
-- El narrador cuenta... ; el protagonista siente... : le narrateur raconte... ; le protagoniste ressent...
-- Se trata de un testimonio, un artículo, un fragmento de novela : il s''agit d''un témoignage, d''un article, d''un extrait de roman.
-- El tono es irónico, nostálgico, optimista, crítico.
-- Primero..., luego..., por fin... : d''abord..., ensuite..., enfin...
-- Por una parte..., por otra parte... : d''une part..., d''autre part...
-- Sin embargo, no obstante : cependant ; por eso, por lo tanto : c''est pourquoi, donc.
-
-## Repères de civilisation : l''Espagne
-
-- Le « Siglo de Oro » (XVIe-XVIIe siècles) : grande époque culturelle ; Miguel de Cervantes publie la première partie de Don Quijote de la Mancha en 1605.
-- La guerre civile (1936-1939) oppose les républicains aux nationalistes du général Franco ; le poète Federico García Lorca est assassiné en 1936.
-- La dictature franquiste dure jusqu''à la mort de Franco en 1975. Vient ensuite la « Transición » démocratique : la Constitution est adoptée en 1978.
-- L''Espagne entre dans la Communauté européenne en 1986.
-- Thèmes actuels fréquents dans les textes : chômage des jeunes, immigration, diversité des régions et des langues (catalan, basque, galicien).
-
-## Repères de civilisation : l''Amérique latine
-
-- La conquête espagnole commence après l''arrivée de Christophe Colomb en 1492 ; les peuples autochtones (aztèques, mayas, incas) subissent la domination coloniale.
-- Les indépendances ont lieu au début du XIXe siècle, avec des figures comme Simón Bolívar et José de San Martín.
-- La révolution mexicaine commence en 1910.
-- Au XXe siècle, beaucoup de pays connaissent des dictatures militaires, puis un retour à la démocratie.
-- Littérature : Pablo Neruda (Chili, prix Nobel 1971), Gabriel García Márquez (Colombie, Cien años de soledad, prix Nobel 1982).
-- Thèmes fréquents : inégalités, droits des peuples autochtones, exode rural, violence urbaine, migrations vers les États-Unis.
-
-## Repères de civilisation : les liens avec l''Afrique
-
-- La Guinée équatoriale, indépendante depuis 1968, est le seul pays d''Afrique subsaharienne dont l''espagnol est langue officielle.
-- Ceuta et Melilla sont deux villes espagnoles situées sur la côte nord du continent africain ; les îles Canaries se trouvent au large des côtes du Maroc et du Sahara occidental.
-- Le Sahara occidental est une ancienne colonie espagnole, que l''Espagne a quittée en 1975-1976.
-- La traite négrière a déporté des millions d''Africains vers les Amériques : leurs descendants ont profondément marqué la musique, la religion et la littérature de Cuba, de la Colombie, du Venezuela ou du Pérou. Le poète cubain Nicolás Guillén a célébré cet héritage afro-cubain.
-- En Colombie, San Basilio de Palenque a été fondé au XVIIe siècle par des Africains réduits en esclavage qui s''étaient libérés ; l''UNESCO a reconnu son patrimoine culturel.
-- Depuis les années 2000, des milliers de jeunes Ouest-Africains, dont des Sénégalais, ont tenté la traversée vers les Canaries en pirogue (« cayuco »), souvent au péril de leur vie.
-
-## Points clés
-
-- Qui, où, quand, quoi, comment : c''est la base de toute compréhension.
-- Les temps verbaux et les connecteurs révèlent la structure du texte.
-- Une citation courte, avec le numéro de ligne, vaut mieux qu''une longue copie.
-- Les repères de civilisation enrichissent ton essai, à condition d''être exacts.
-
-## Exercices pratiques
-
-Exercice 1. ¿De dónde salió Moussa y adónde llegó primero?
-
-Exercice 2. Vrai ou faux ? Justifie par une citation. a) Moussa hablaba bien español al llegar. b) Moussa ha olvidado a su familia.
-
-Exercice 3. Trouve dans le texte un synonyme de « lengua » et un contraire de « recordar ».
-
-Exercice 4. Explique en espagnol la phrase « Me gustaría que mis hijos no tuvieran que arriesgar su vida como yo ».
-
-Exercice 5. Quel est le seul pays d''Afrique subsaharienne où l''espagnol est langue officielle ? Depuis quand est-il indépendant ?
-
-Exercice 6. Remets dans l''ordre chronologique : Constitution espagnole, guerre civile, entrée dans la Communauté européenne, publication de Don Quijote.
-
-Exercice 7. Rédige en espagnol une présentation du texte de 4 ou 5 lignes en utilisant au moins trois expressions de l''analyse.
-
-## Corrigé
-
-Exercice 1. Moussa salió de la costa senegalesa y llegó primero a Canarias, donde pasó varias semanas en un centro de acogida.
-
-Exercice 2. a) Faux : « no hablaba ni una palabra de español ». b) Faux : « no olvida a su familia de Kaolack ».
-
-Exercice 3. Synonyme de « lengua » : « el idioma ». Contraire de « recordar » : « olvidar » (« no olvida »).
-
-Exercice 4. Moussa desea que sus hijos visiten el país de su familia y que tengan una vida más segura: no quiere que crucen el mar en cayuco y pongan su vida en peligro como hizo él.
-
-Exercice 5. La Guinée équatoriale (Guinea Ecuatorial), indépendante depuis 1968.
-
-Exercice 6. Don Quijote (1605), guerre civile (1936-1939), Constitution (1978), entrée dans la Communauté européenne (1986).
-
-Exercice 7. Exemple : « Se trata de un testimonio sobre la emigración africana a España. El texto trata de Moussa, un senegalés que llegó a Madrid en cayuco. Primero, el autor cuenta su difícil llegada; luego, subraya su integración gracias a una asociación. Sin embargo, el tono es también nostálgico, porque Moussa sueña con volver a Senegal. »', 'texte', 60, false, 20
-from public.courses c where c.slug = 'bac-espagnol'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Compréhension écrite, analyse de texte et civilisation hispanique');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Grammaire du Bac 1 : subjonctif, concordance des temps et hypothèse', '## Objectifs de la leçon
-
-- Former le subjonctif présent et le subjonctif imparfait, y compris des verbes irréguliers.
-- Savoir quand employer le subjonctif.
-- Appliquer la concordance des temps.
-- Former le conditionnel et construire les phrases hypothétiques.
-
-## Fiche 1 : le subjonctif présent
-
-Formation : on part de la première personne du présent de l''indicatif, on enlève le « o » et on ajoute les terminaisons « inversées » : les verbes en -ar prennent un « e », les verbes en -er et -ir prennent un « a ».
-
-- hablar : hable, hables, hable, hablemos, habléis, hablen.
-- comer : coma, comas, coma, comamos, comáis, coman.
-- vivir : viva, vivas, viva, vivamos, viváis, vivan.
-
-Les irrégularités du présent se retrouvent au subjonctif : tener (tengo) donne tenga ; hacer (hago) donne haga ; decir (digo) donne diga ; salir (salgo) donne salga ; conocer (conozco) donne conozca. Les verbes à diphtongue gardent la diphtongue sauf à « nosotros » et « vosotros » : poder donne pueda mais podamos ; querer donne quiera mais queramos. Les verbes en -ir à affaiblissement changent aussi à « nosotros » : pedir donne pida et pidamos ; dormir donne duerma et durmamos.
-
-Six verbes totalement irréguliers sont à apprendre par cœur : ser (sea), ir (vaya), estar (esté), dar (dé), saber (sepa), haber (haya).
-
-## Fiche 2 : le subjonctif imparfait
-
-Formation : on part de la troisième personne du pluriel du passé simple (pretérito indefinido), on enlève « -ron » et on ajoute -ra, -ras, -ra, -ramos, -rais, -ran (la forme en -se existe aussi : hablase).
-
-- hablar : hablaron donne hablara, hablaras, hablara, habláramos, hablarais, hablaran.
-- comer : comieron donne comiera ; vivir : vivieron donne viviera.
-- tener : tuvieron donne tuviera ; hacer : hicieron donne hiciera ; decir : dijeron donne dijera.
-- ser et ir : fueron donne fuera ; estar : estuvieron donne estuviera ; poder : pudieron donne pudiera.
-- poner : pusieron donne pusiera ; venir : vinieron donne viniera ; leer : leyeron donne leyera.
-
-Remarque : la première personne du pluriel porte un accent écrit (habláramos, tuviéramos, fuéramos).
-
-## Fiche 3 : quand employer le subjonctif
-
-- Après un verbe de volonté, d''ordre, de conseil ou de demande : Quiero que estudies. Te aconsejo que descanses.
-- Après un verbe de sentiment : Me alegra que vengas. Siento que estés enfermo.
-- Après une expression impersonnelle : Es necesario que todos los niños vayan a la escuela. Es importante que protejamos el medio ambiente.
-- Après un verbe d''opinion à la forme négative : No creo que llueva hoy. Mais à la forme affirmative, on emploie l''indicatif : Creo que lloverá.
-- Après « para que » (but) : Trabajo para que mis hijos estudien.
-- Après « cuando » et les conjonctions de temps, si l''action est future : Cuando tenga dinero, compraré un ordenador. Attention : le français dit « quand j''aurai », l''espagnol ne met jamais le futur après « cuando ».
-- Après « aunque » pour une concession hypothétique : Aunque llueva, iré al mercado (même s''il pleut).
-- Après « ojalá » (pourvu que) : ¡Ojalá apruebe el bachillerato!
-- À l''impératif négatif : No hables. No salgáis.
-
-## Fiche 4 : la concordance des temps
-
-C''est la règle la plus testée au Bac. Le temps du subjonctif dépend du temps du verbe principal.
-
-- Verbe principal au présent, au futur, au passé composé ou à l''impératif : subjonctif présent. Quiero que vengas. Te pediré que vengas. Dile que venga.
-- Verbe principal au passé simple, à l''imparfait, au plus-que-parfait ou au conditionnel : subjonctif imparfait. Quería que vinieras. Le pedí que viniera. Me gustaría que vinieras.
-
-Exemple contextualisé : El director exige que los alumnos lleguen a las ocho. Au passé : El director exigió que los alumnos llegaran a las ocho.
-
-## Fiche 5 : le conditionnel
-
-Formation : infinitif + -ía, -ías, -ía, -íamos, -íais, -ían. Hablar donne hablaría ; comer donne comería. Les irréguliers ont le même radical qu''au futur : tener (tendría), poner (pondría), salir (saldría), venir (vendría), poder (podría), saber (sabría), querer (querría), haber (habría), hacer (haría), decir (diría).
-
-Emplois : la politesse (¿Podría usted ayudarme?), le souhait (Me gustaría ser médico), le conseil (Deberías estudiar más), la conséquence d''une hypothèse, et le futur dans le passé (Dijo que vendría).
-
-## Fiche 6 : les phrases hypothétiques avec « si »
-
-- Hypothèse réalisable : si + présent de l''indicatif, puis présent ou futur. Si tengo tiempo, iré a Gorée.
-- Hypothèse irréelle dans le présent : si + subjonctif imparfait, puis conditionnel. Si tuviera tiempo, iría a Gorée (si j''avais le temps, j''irais).
-- Hypothèse irréelle dans le passé : si + subjonctif plus-que-parfait, puis conditionnel passé. Si hubiera estudiado, habría aprobado (si j''avais étudié, j''aurais réussi).
-
-Règle d''or : jamais de conditionnel, ni de subjonctif présent, juste après « si » d''hypothèse.
-
-## Points clés
-
-- Subjonctif présent : radical du « yo » au présent + voyelle inversée.
-- Subjonctif imparfait : 3e personne du pluriel du passé simple sans « -ron » + -ra.
-- Principal au passé ou au conditionnel : subjonctif imparfait.
-- « Cuando » + subjonctif pour le futur ; « si » + subjonctif imparfait pour l''irréel.
-
-## Exercices pratiques
-
-Exercice 1. Conjugue au subjonctif présent : (yo) tener, (nosotros) poder, (ellos) ser, (tú) ir.
-
-Exercice 2. Conjugue au subjonctif imparfait : (yo) decir, (ella) hacer, (nosotros) ser, (ellos) poner.
-
-Exercice 3. Complète : a) Mis padres quieren que yo (estudiar) medicina. b) Es necesario que (nosotros, plantar) árboles. c) Cuando (llegar) las lluvias, los campesinos sembrarán.
-
-Exercice 4. Mets au passé en respectant la concordance : a) El profesor pide que hagamos los deberes. b) Me alegra que vengas a Dakar.
-
-Exercice 5. Transforme en hypothèse irréelle dans le présent : « Si tengo una beca, estudio en Madrid. »
-
-Exercice 6. Corrige : « Cuando seré mayor, trabajaré en Ziguinchor. » et « Si podría, ayudaría a mi barrio. »
-
-Exercice 7. Traduis : « Si les jeunes trouvaient du travail au Sénégal, ils ne prendraient pas la mer. Il faudrait que l''État crée des emplois pour qu''ils puissent rester. »
-
-## Corrigé
-
-Exercice 1. tenga ; podamos ; sean ; vayas.
-
-Exercice 2. dijera ; hiciera ; fuéramos ; pusieran.
-
-Exercice 3. a) estudie (volonté). b) plantemos (expression impersonnelle). c) lleguen (cuando + futur).
-
-Exercice 4. a) El profesor pidió que hiciéramos los deberes. b) Me alegró que vinieras a Dakar.
-
-Exercice 5. Si tuviera una beca, estudiaría en Madrid.
-
-Exercice 6. « Cuando sea mayor, trabajaré en Ziguinchor. » (cuando + subjonctif présent) ; « Si pudiera, ayudaría a mi barrio. » (si + subjonctif imparfait).
-
-Exercice 7. « Si los jóvenes encontraran trabajo en Senegal, no se irían por mar. Haría falta que el Estado creara empleos para que pudieran quedarse. » Explication : « haría falta » est au conditionnel, donc « creara » et « pudieran » sont au subjonctif imparfait (concordance). Variante acceptée : « Sería necesario que el Estado creara... ».', 'texte', 60, false, 30
-from public.courses c where c.slug = 'bac-espagnol'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire du Bac 1 : subjonctif, concordance des temps et hypothèse');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Grammaire du Bac 2 et expression écrite : ser et estar, por et para, discours indirect, essai et lettre', '## Objectifs de la leçon
-
-- Choisir sans hésiter entre ser et estar, puis entre por et para.
-- Passer du discours direct au discours indirect.
-- Rédiger un essai argumenté et une lettre en espagnol.
-
-## Fiche 1 : ser et estar
-
-Ser exprime ce qui définit : l''identité, la nationalité, l''origine, la profession, la matière, la caractéristique essentielle, l''heure et la date, le lieu d''un événement, et il sert à former la voix passive.
-
-- Soy senegalés y soy profesor. La mesa es de madera. Son las tres. La reunión es en el liceo. El puente fue construido en 2020.
-
-Estar exprime la situation et l''état : la localisation d''une personne ou d''un objet, un état passager, le résultat d''une action, et il forme la progression avec le gérondif.
-
-- Dakar está en la costa atlántica. Estoy cansado. La puerta está cerrada. Estamos estudiando.
-
-Certains adjectifs changent de sens : ser listo (être intelligent) et estar listo (être prêt) ; ser malo (être méchant) et estar malo (être malade) ; ser rico (être riche) et estar rico (être délicieux) ; ser aburrido (être ennuyeux) et estar aburrido (s''ennuyer).
-
-## Fiche 2 : por et para
-
-Por regarde vers la cause ou le chemin parcouru.
-
-- La cause : Lo hizo por amor. No salimos por la lluvia.
-- Le lieu traversé : Paseamos por el centro de Saint-Louis.
-- Le moyen : Te llamo por teléfono.
-- Le moment approximatif : por la mañana, por la tarde.
-- Le prix ou l''échange : Compré el libro por cinco mil francos CFA.
-- Le complément d''agent du passif : El libro fue escrito por una autora senegalesa.
-
-Para regarde vers le but ou la destination.
-
-- Le but : Estudio para ser ingeniero.
-- La destination : Salgo para Tambacounda.
-- Le destinataire : Este regalo es para ti.
-- L''échéance : El trabajo es para el lunes.
-- Le point de vue : Para mí, la educación es lo más importante.
-
-Astuce : si tu peux dire « à cause de » ou « à travers », c''est por ; si tu peux dire « afin de » ou « à destination de », c''est para.
-
-## Fiche 3 : le discours indirect
-
-Si le verbe introducteur est au présent (dice, pregunta), les temps ne changent pas : Fatou dice: «Estudio en Dakar». Fatou dice que estudia en Dakar.
-
-Si le verbe introducteur est au passé (dijo, preguntó), les temps reculent.
-
-- Présent devient imparfait : Dijo: «Estoy cansado». Dijo que estaba cansado.
-- Passé simple ou passé composé devient plus-que-parfait : Awa dijo: «Ayer fui al mercado». Awa dijo que el día anterior había ido al mercado.
-- Futur devient conditionnel : El profesor dijo: «Mañana habrá examen». El profesor dijo que al día siguiente habría examen.
-- Impératif devient subjonctif imparfait : Mi padre me dijo: «Estudia más». Mi padre me dijo que estudiara más.
-
-Les repères changent aussi : hoy devient aquel día, mañana devient al día siguiente, ayer devient el día anterior, aquí devient allí, este devient aquel. Les pronoms s''adaptent : « mi libro » devient « su libro ».
-
-Pour une question : on introduit avec « si » (question fermée) ou on garde le mot interrogatif, sans point d''interrogation. Él preguntó: «¿Has terminado?». Él preguntó si yo había terminado. Ella preguntó: «¿Dónde está la biblioteca?». Ella preguntó dónde estaba la biblioteca.
-
-## Méthode : l''essai argumenté
-
-Le sujet pose souvent une question : « ¿Es la emigración la única solución para los jóvenes africanos? ».
-
-- Introducción : présente le thème, pose la problématique, annonce ton plan.
-- Desarrollo : deux ou trois paragraphes, chacun avec une idée, un argument et un exemple concret (Sénégal, Afrique, monde hispanique).
-- Conclusión : réponds clairement à la question et ouvre une perspective.
-
-Connecteurs utiles : en primer lugar, además, por otra parte, sin embargo, no obstante, por eso, por lo tanto, en conclusión, para terminar. Expressions d''opinion : creo que, pienso que, me parece que (indicatif) ; no creo que (subjonctif) ; es verdad que, es evidente que (indicatif) ; es necesario que, hace falta que (subjonctif).
-
-## Méthode : la lettre
-
-- En haut à droite, lieu et date : Dakar, 12 de marzo de 2026.
-- Formule d''appel suivie de deux points : Querido Ibrahima: (familier) ; Estimado señor: ou Estimada señora: (formel).
-- Corps : salutation, raison de la lettre, développement, souhaits.
-- Formule finale : Un abrazo, Besos (familier) ; Atentamente, Le saluda atentamente (formel).
-- Signature.
-
-## Points clés
-
-- Ser définit, estar situe ou décrit un état.
-- Por : cause, passage, moyen, prix ; para : but, destination, échéance.
-- Discours indirect au passé : chaque temps recule d''un cran, l''impératif devient subjonctif imparfait.
-- Un essai réussi : plan clair, connecteurs, exemples précis.
-
-## Exercices pratiques
-
-Exercice 1. Complète avec ser ou estar : a) Mi madre ... enfermera. b) Hoy mi madre ... muy cansada. c) Saint-Louis ... en el norte de Senegal. d) El concierto ... en el estadio.
-
-Exercice 2. Complète avec por ou para : a) Trabajo ... ganar dinero. b) Pasamos ... Thiès. c) Gracias ... tu ayuda. d) Este libro es ... mi hermana.
-
-Exercice 3. Mets au discours indirect avec « Dijo que... » : a) «Vivo en Kaolack». b) «Iré a la universidad». c) «Compré un libro ayer».
-
-Exercice 4. Mets au discours indirect avec « Le pidió que... » : «Cierra la ventana».
-
-Exercice 5. Mets au discours indirect avec « Preguntó... » : «¿Cuándo empieza el examen?».
-
-Exercice 6. Rédige l''introduction d''un essai sur le sujet : « ¿Es la escuela la clave del desarrollo? » (5 lignes).
-
-Exercice 7. Rédige le début d''une lettre formelle au directeur d''une entreprise de Dakar pour demander un stage (lieu, date, formule d''appel, première phrase).
-
-## Corrigé
-
-Exercice 1. a) es (profession). b) está (état passager). c) está (localisation). d) es (lieu d''un événement).
-
-Exercice 2. a) para (but). b) por (lieu traversé). c) por (cause). d) para (destinataire).
-
-Exercice 3. a) Dijo que vivía en Kaolack. b) Dijo que iría a la universidad. c) Dijo que había comprado un libro el día anterior.
-
-Exercice 4. Le pidió que cerrara la ventana.
-
-Exercice 5. Preguntó cuándo empezaba el examen.
-
-Exercice 6. Exemple : « Hoy en día, muchos países africanos invierten en la educación. Pero, ¿es la escuela realmente la clave del desarrollo? En primer lugar, veremos que la educación forma a los trabajadores del futuro; luego, mostraremos que la escuela sola no basta si no hay empleo para los jóvenes diplomados. »
-
-Exercice 7. Exemple : « Dakar, 5 de abril de 2026. Estimado señor director: Me dirijo a usted para solicitar unas prácticas en su empresa durante las vacaciones de verano. » (« prácticas » = stage.)', 'texte', 60, false, 40
-from public.courses c where c.slug = 'bac-espagnol'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire du Bac 2 et expression écrite : ser et estar, por et para, discours indirect, essai et lettre');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
-
-Voici un sujet complet d''entraînement conçu pour ce cours. Ce n''est pas un sujet officiel du Bac. La répartition des points est indicative et non officielle ; elle sert seulement à t''entraîner à gérer ton temps. Fais-le en temps limité avant de lire le corrigé.
-
-## Texte
-
-« Yolanda vive en San Basilio de Palenque, un pueblo del Caribe colombiano fundado por africanos que huyeron de la esclavitud. Cada tarde, después de clase, se sienta con su abuela, que le enseña canciones en lengua palenquera. "Mi abuela dice que estas palabras vinieron de África hace siglos", explica la joven. Durante mucho tiempo, los habitantes del pueblo sufrieron el desprecio de la gente de la ciudad. Hoy, en cambio, muchos turistas vienen a descubrir su música y sus tradiciones. Yolanda quiere ser profesora para que los niños del pueblo no pierdan su cultura. "Si no protegemos nuestra lengua, desaparecerá con los ancianos", afirma. Su sueño sería viajar un día a África para conocer la tierra de sus antepasados. »
-
-## Partie I : compréhension (8 points, indicatif)
-
-1. ¿Dónde vive Yolanda y quiénes fundaron su pueblo? (2 pts)
-2. Vrai ou faux ? Justifie par une citation. a) Los habitantes de Palenque siempre fueron respetados. b) Yolanda aprende la lengua palenquera en familia. (2 pts)
-3. Trouve dans le texte un synonyme de « ancestros » et une expression qui s''oppose à « hoy ». (1 pt)
-4. ¿Por qué quiere Yolanda ser profesora? (1 pt)
-5. Explique en espagnol : « Si no protegemos nuestra lengua, desaparecerá con los ancianos ». (2 pts)
-
-## Partie II : compétence linguistique (6 points, indicatif)
-
-1. Mets au passé : « Yolanda quiere ser profesora para que los niños no pierdan su cultura. » (2 pts)
-2. Mets au discours indirect en commençant par « Yolanda explicó que... » : « Mi abuela dice que estas palabras vinieron de África. » (1 pt)
-3. Transforme en hypothèse irréelle : « Si no protegemos nuestra lengua, desaparecerá. » (1 pt)
-4. Complète avec ser ou estar, por ou para : « Palenque ... en Colombia. Yolanda ... estudiante. Viaja ... aprender. Pasa ... la plaza. » (2 pts)
-
-## Partie III : expression écrite (6 points, indicatif)
-
-Traite un sujet au choix (15 lignes environ).
-
-- Sujet A : « ¿Cómo proteger las lenguas y las tradiciones africanas en un mundo globalizado? »
-- Sujet B : Yolanda escribe una carta a un joven senegalés para presentarle su pueblo y hacerle preguntas sobre Senegal.
-
-## Corrigé de la partie I
-
-1. Yolanda vive en San Basilio de Palenque, un pueblo del Caribe colombiano. Lo fundaron africanos que huyeron de la esclavitud.
-
-2. a) Faux : « los habitantes del pueblo sufrieron el desprecio de la gente de la ciudad ». b) Vrai : « se sienta con su abuela, que le enseña canciones en lengua palenquera ».
-
-3. Synonyme de « ancestros » : « antepasados ». Expression qui s''oppose à « hoy » : « durante mucho tiempo » (le passé du pueblo) ; « hace siglos » est aussi accepté.
-
-4. Yolanda quiere ser profesora para que los niños del pueblo no pierdan su cultura, es decir, para transmitir la lengua y las tradiciones.
-
-5. Yolanda piensa que, si los jóvenes no aprenden ni hablan la lengua palenquera, esta morirá cuando mueran los ancianos, que son los últimos que la conocen bien. Por eso es urgente enseñarla en la escuela.
-
-Conseil : dans une explication, ne répète pas la phrase ; reformule avec tes mots et ajoute une conséquence.
-
-## Corrigé de la partie II
-
-1. « Yolanda quería ser profesora para que los niños no perdieran su cultura. » Le verbe principal passe à l''imparfait, donc « pierdan » devient « perdieran » (concordance des temps). « Quiso » est aussi accepté.
-
-2. « Yolanda explicó que su abuela decía que aquellas palabras habían venido de África. » Quatre changements : dice devient decía, vinieron devient habían venido, estas devient aquellas, et mi devient su.
-
-3. « Si no protegiéramos nuestra lengua, desaparecería. » Si + subjonctif imparfait, puis conditionnel.
-
-4. « Palenque está en Colombia. Yolanda es estudiante. Viaja para aprender. Pasa por la plaza. »
-
-## Corrigé de la partie III (exemple de plan et extraits)
-
-Sujet A, plan possible.
-
-- Introducción : la mondialisation rapproche les peuples mais menace les langues minoritaires ; problématique : comment protéger ce patrimoine ?
-- Primera parte : l''école et la famille. Exemple : la grand-mère de Yolanda ; au Sénégal, l''enseignement en langues nationales comme le wolof ou le pulaar dans certaines classes.
-- Segunda parte : la culture et le numérique : musique, radios communautaires, réseaux sociaux, tourisme culturel.
-- Conclusión : la protection des langues est l''affaire de tous ; ouverture sur l''échange entre Afrique et Amérique latine.
-
-Extrait : « En primer lugar, es necesario que la familia transmita la lengua a los niños, como hace la abuela de Yolanda. Sin embargo, la familia no basta: hace falta que la escuela también enseñe las lenguas locales. »
-
-Sujet B, extrait : « San Basilio de Palenque, 3 de mayo de 2026. Querido Abdou: Te escribo desde mi pueblo, en el Caribe colombiano. Aquí la música y las canciones de los antepasados están presentes en todas partes. Me gustaría que me contaras cómo viven los jóvenes en Senegal. ¿Hablas varias lenguas? ¿Qué tradiciones son importantes para tu familia? Ojalá pueda visitarte un día. Un abrazo, Yolanda. »
-
-## Conseils du correcteur
-
-- Les points de langue se gagnent avec des règles sûres : apprends la concordance des temps.
-- En expression écrite, les correcteurs valorisent un plan visible, des connecteurs et des exemples précis.
-- Évite de recopier le texte : réutilise ses idées avec tes propres mots.
-
-## Exercices pratiques
-
-Exercice 1. Calcule ta note sur 20 à partir de tes résultats partiels, en appliquant le barème indicatif.
-
-Exercice 2. Relève dans le texte un verbe au subjonctif présent et justifie son emploi.
-
-Exercice 3. Relève un verbe au conditionnel et indique sa valeur.
-
-Exercice 4. Mets au discours indirect : Yolanda afirmó: «Mañana cantaré con mi abuela».
-
-Exercice 5. Rédige la conclusion du sujet A en 4 lignes.
-
-## Corrigé
-
-Exercice 1. Additionne les points des trois parties (8 + 6 + 6 = 20 au maximum). Par exemple, 6/8 + 4/6 + 4/6 = 14/20.
-
-Exercice 2. « pierdan » : subjonctif présent après « para que », qui exprime le but.
-
-Exercice 3. « sería » : conditionnel qui exprime un souhait, un rêve.
-
-Exercice 4. Yolanda afirmó que al día siguiente cantaría con su abuela.
-
-Exercice 5. Exemple : « En conclusión, proteger las lenguas africanas es responsabilidad de las familias, de la escuela y de los Estados. Si todos actuáramos juntos, nuestras culturas seguirían vivas. Tal vez el ejemplo de Palenque pueda inspirar a la juventud senegalesa. »', 'texte', 60, false, 50
-from public.courses c where c.slug = 'bac-espagnol'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : révision intensive « veille du Bac » en espagnol', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Thème : séance de révision intensive la veille de l''épreuve d''espagnol LV2 du Bac.
-- Objectifs : réactiver les règles clés (subjonctif, concordance, hypothèse, ser et estar, por et para, discours indirect), corriger des exercices de type Bac, revoir la gestion du temps et la méthode d''expression écrite.
-- Matériel : tableau ou diaporama, fiches de conjugaison, un texte court imprimé, brouillon.
-- Prérequis : leçons 1 à 5 de ce cours. Les exercices sont des exercices d''entraînement, pas des sujets officiels.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Accueil et objectifs
-
-« ¡Buenas tardes a todos! Demain, c''est l''épreuve d''espagnol. Ce soir, pas de notions nouvelles : nous consolidons ce que vous savez déjà. Nous allons revoir les règles qui rapportent le plus de points, corriger ensemble des exercices type Bac, puis parler de la gestion du temps. À mi-parcours, un quiz rapide ; à la fin, une évaluation de cinq questions. Préparez une feuille et un stylo. »
-
-Visuel : le plan de la séance en six étapes.
-
-## 05:00 – 15:00 · Rappel 1 : le subjonctif présent et imparfait
-
-« Première règle d''or : le subjonctif présent se forme sur le "yo" du présent. Tengo donne tenga, hago donne haga, conozco donne conozca. Les verbes en -ar prennent un e, les verbes en -er et -ir prennent un a. N''oubliez pas les six irréguliers : sea, vaya, esté, dé, sepa, haya.
-
-Le subjonctif imparfait se forme sur la troisième personne du pluriel du passé simple : tuvieron donne tuviera, hicieron donne hiciera, fueron donne fuera, dijeron donne dijera. Si vous connaissez votre passé simple, vous connaissez votre subjonctif imparfait.
-
-Écrivez avec moi au tableau quelques phrases complètes : "Es necesario que todos los niños vayan a la escuela." "Mis padres quieren que yo sea médico." "Ojalá haga buen tiempo mañana." Dans chaque phrase, entourez le déclencheur du subjonctif : une expression impersonnelle, un verbe de volonté, ojalá. Si vous savez repérer le déclencheur, vous ne vous tromperez pas de mode. »
-
-Visuel : deux colonnes, présent du « yo » et subjonctif présent ; passé simple « ellos » et subjonctif imparfait. Question à poser : « Quel est le subjonctif imparfait de "poder" ? » Réponse attendue : pudiera.
-
-## 15:00 – 25:00 · Rappel 2 : la concordance des temps et l''hypothèse
-
-« Regardez le verbe principal. Présent, futur ou impératif : subjonctif présent. Passé ou conditionnel : subjonctif imparfait. "Quiero que vengas", mais "quería que vinieras" et "me gustaría que vinieras".
-
-Pour l''hypothèse, retenez trois formules. Si tengo tiempo, iré. Si tuviera tiempo, iría. Si hubiera tenido tiempo, habría ido. Et jamais, jamais de conditionnel juste après "si". Écrivez-le en gros sur votre fiche : "si tendría" est interdit. »
-
-Visuel : le tableau des trois hypothèses avec une flèche « interdit » sur « si + conditionnel ».
-
-Question à poser : « Comment dit-on : si nous protégions la forêt de Casamance, il y aurait plus de pluie ? » Laisser une minute, puis corriger : « Si protegiéramos el bosque de Casamance, habría más lluvia. » Faire remarquer l''accent écrit sur « protegiéramos » et le conditionnel de « haber », qui est « habría ». Autre piège à signaler : après « como si », on emploie toujours le subjonctif imparfait : « Habla como si fuera el jefe. »
-
-## 25:00 – 35:00 · Rappel 3 : ser et estar, por et para, discours indirect
-
-« Ser définit : soy senegalés, es profesora, son las cinco. Estar situe ou décrit un état : Dakar está en la costa, estoy nervioso. Attention aux adjectifs pièges : estar listo, c''est être prêt ; ser listo, c''est être intelligent. Demain, j''espère que vous serez les deux !
-
-Por, c''est la cause et le chemin : por la lluvia, por el centro. Para, c''est le but et la destination : para aprobar, para Dakar.
-
-Au discours indirect introduit par un verbe au passé, chaque temps recule : présent vers imparfait, passé vers plus-que-parfait, futur vers conditionnel, impératif vers subjonctif imparfait. "Mañana" devient "al día siguiente". »
-
-Visuel : un tableau de transformation du discours direct au discours indirect.
-
-## 35:00 – 45:00 · Correction commentée : exercice de grammaire type Bac
-
-Énoncé projeté : « 1) Pon en pasado: El profesor exige que los alumnos lleguen a tiempo. 2) Transforma en hipótesis irreal: Si estudio, apruebo. 3) Pon en estilo indirecto: Mi madre me dijo: "Ven temprano". 4) Completa: Este regalo es (por/para) ti. »
-
-« Corrigeons. Un : El profesor exigió que los alumnos llegaran a tiempo. Le principal est au passé, donc subjonctif imparfait. Deux : Si estudiara, aprobaría. Trois : Mi madre me dijo que viniera temprano : l''impératif devient subjonctif imparfait. Quatre : para ti, car c''est le destinataire. Si vous avez quatre bonnes réponses, bravo. Sinon, notez la règle oubliée sur votre fiche d''erreurs. »
-
-## 45:00 – 50:00 · Pause active : quiz éclair
-
-« Petite pause, mais le cerveau continue ! Cinq questions, répondez sur votre feuille en dix secondes chacune. »
-
-- Subjonctif présent de « ir », première personne : vaya.
-- Traduction de « estar malo » : être malade.
-- « Cuando ... (tener) dinero, viajaré » : tenga.
-- Por ou para : « Compré el pan ... 300 francos » : por.
-- Que signifie « constipado » ? Enrhumé.
-
-« Comptez vos points. Quatre ou cinq : vous êtes prêts. Moins de trois : relisez votre fiche ce soir, calmement. »
-
-## 50:00 – 1:05:00 · Correction commentée : compréhension d''un texte court
-
-Texte projeté : « Aminata trabaja en un mercado de Ziguinchor. Antes vendía pescado, pero desde hace dos años tiene un pequeño restaurante. Cada día cocina para los estudiantes de la universidad. "Me gustaría que mis hijas estudiaran y no tuvieran que levantarse a las cinco como yo", dice. »
-
-« Question 1 : ¿Dónde trabaja Aminata? Réponse complète : Aminata trabaja en un mercado de Ziguinchor. Question 2 : vrai ou faux, Aminata siempre ha tenido un restaurante. Faux, et je justifie : "Antes vendía pescado". Question 3 : explique le souhait d''Aminata. Elle veut que ses filles fassent des études et aient une vie moins dure. Remarquez la structure "me gustaría que estudiaran" : conditionnel, donc subjonctif imparfait. Le texte vous donne lui-même un exemple de concordance : profitez-en dans vos réponses.
-
-Question 4 : trouvez dans le texte un contraire de « después ». Réponse : « antes ». Question 5 : mettez au discours indirect la phrase d''Aminata en commençant par « Aminata dijo que... ». Réponse : « Aminata dijo que le gustaría que sus hijas estudiaran y no tuvieran que levantarse a las cinco como ella. » Observez bien trois changements : "dice" devient "dijo", "mis hijas" devient "sus hijas", "yo" devient "ella". Le conditionnel et le subjonctif imparfait, eux, ne bougent pas : ils sont déjà au bon temps.
-
-Erreur fréquente à signaler : beaucoup de candidats répondent "Aminata trabaja a Ziguinchor". En espagnol, la situation dans une ville se dit avec "en" : trabaja en Ziguinchor, vive en Dakar. "A" indique le mouvement : va a Ziguinchor. »
-
-Visuel : le texte avec les mots-clés surlignés et les numéros de ligne.
-
-## 1:05:00 – 1:15:00 · Méthode express de l''expression écrite
-
-« Pour l''essai : introduction avec la question posée, deux parties avec un argument et un exemple chacune, conclusion qui répond. Utilisez vos connecteurs : en primer lugar, además, sin embargo, por eso, en conclusión. Pour la lettre : lieu et date, "Querido" ou "Estimado señor" suivi de deux points, formule finale adaptée. Placez au moins un subjonctif et une hypothèse bien construits : c''est là que vous montrez votre niveau de Terminale. Et choisissez des exemples africains précis : la migration vers les Canaries, la Guinée équatoriale, l''héritage africain à Cuba ou en Colombie. »
-
-Lecture à voix haute d''une introduction modèle sur le sujet « ¿Debe Senegal proteger sus lenguas nacionales? » : « Senegal es un país donde se hablan muchas lenguas: el wolof, el pulaar, el serer, el diola y otras. Sin embargo, el francés sigue siendo la lengua de la administración. ¿Es necesario proteger las lenguas nacionales? En primer lugar, veremos que son la base de nuestra identidad; luego, mostraremos que también pueden ser útiles para la educación. »
-
-« Remarquez : une phrase de contexte, une problématique sous forme de question avec les deux points d''interrogation, et l''annonce du plan avec "en primer lugar" et "luego". C''est simple, clair, et le correcteur sait immédiatement où vous allez. »
-
-Visuel : une grille de relecture en cinq points (plan, connecteurs, subjonctif, accents, longueur).
-
-## 1:15:00 – 1:22:00 · Gestion du temps et du stress
-
-« Demain, lisez d''abord tout le sujet. Répartissez votre temps de façon indicative : un sixième environ pour la lecture, un gros tiers pour la compréhension, un cinquième pour la grammaire, un quart pour l''expression, et quelques minutes pour la relecture. Vérifiez la durée officielle sur votre convocation. Si une question bloque, passez. Ce soir : un dernier coup d''œil à vos fiches, puis dormez. Prévoyez vos stylos, votre pièce d''identité et votre convocation. »
-
-## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
-
-« Pour finir, cinq questions. Notez vos réponses, puis nous corrigeons. »
-
-- Question 1 : Mets au passé : « Quiero que me ayudes ». Réponse : Quería que me ayudaras.
-- Question 2 : Complète : « Si (tener) un coche, iría a Saly ». Réponse : tuviera.
-- Question 3 : Ser ou estar : « La fiesta ... en casa de Moussa ». Réponse : es (lieu d''un événement).
-- Question 4 : Discours indirect : Dijo: «Volveré mañana». Réponse : Dijo que volvería al día siguiente.
-- Question 5 : Quel est le seul pays d''Afrique subsaharienne où l''espagnol est langue officielle ? Réponse : la Guinée équatoriale.
-
-« Synthèse : subjonctif bien formé, concordance respectée, jamais de conditionnel après "si", ser pour définir et estar pour situer, por pour la cause et para pour le but. Vous avez travaillé, vous êtes prêts. ¡Mucha suerte mañana y hasta pronto! »', 'video', 90, false, 60
-from public.courses c where c.slug = 'bac-espagnol'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille du Bac » en espagnol');

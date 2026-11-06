@@ -1970,6 +1970,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "bac-francais",
+  "level": "Terminale",
+  "subject": "Français",
+  "module": null,
+  "title": "Français au Bac : résumé-discussion, commentaire, dissertation",
+  "description": "Cours d'examen pour les élèves de Terminale (séries L, S et G) qui préparent l'épreuve de français du Baccalauréat au Sénégal. Il enseigne pas à pas les trois exercices de l'épreuve : le résumé suivi de la discussion, le commentaire composé et la dissertation littéraire. Il révise l'histoire littéraire utile au Bac (Négritude, roman africain, théâtre, poésie) en s'appuyant sur des œuvres africaines et françaises citées par titre et par thème. Prérequis : maîtrise de l'expression écrite et lecture des œuvres étudiées au lycée.",
+  "sort": 206,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve de français et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Connaître les trois exercices de l'épreuve de français et ce que chacun évalue.\n- Choisir son sujet avec méthode.\n- Repérer les erreurs les plus coûteuses.\n- Organiser ses révisions sur 10 semaines.\n\nCe cours d'examen s'adresse aux élèves de Terminale des séries L, S et G. La durée, le coefficient et les modalités exactes de l'épreuve dépendent de la série et sont fixés par les textes officiels en vigueur : vérifiez-les auprès de votre établissement.\n\n## Les trois sujets au choix\n\nL'épreuve de français propose en général trois sujets, parmi lesquels le candidat en choisit un seul.\n\n- Le résumé suivi d'une discussion : vous réduisez un texte argumentatif (souvent un texte d'idées sur un sujet de société : école, famille, ville, environnement, médias, développement) au nombre de mots demandé, puis vous discutez une idée du texte dans un développement argumenté.\n- Le commentaire composé : vous analysez un texte littéraire (poème, extrait de roman ou de pièce de théâtre) en l'organisant autour de deux ou trois axes de lecture.\n- La dissertation littéraire : vous réfléchissez à une question sur la littérature (le rôle du poète, la fonction du roman, le théâtre et la société…) en vous appuyant sur des œuvres précises.\n\nChaque exercice vérifie trois capacités : comprendre un texte ou une question, organiser sa pensée, écrire dans une langue correcte et précise. La qualité de la langue compte partout : orthographe, syntaxe, ponctuation, vocabulaire.\n\n## Ce que le correcteur attend\n\n- Pour le résumé : fidélité aux idées et à leur ordre, reformulation personnelle, respect strict du nombre de mots.\n- Pour la discussion : une thèse claire, des arguments organisés, des exemples précis tirés des lectures et de la vie.\n- Pour le commentaire : une lecture qui relie le fond (ce que dit le texte) et la forme (comment il le dit), sans paraphrase ni catalogue de procédés.\n- Pour la dissertation : une problématique, un plan logique, des exemples littéraires exacts (auteur, titre, situation).\n\n## Bien choisir son sujet\n\nLisez les trois sujets en entier. Puis posez-vous trois questions. Est-ce que je comprends parfaitement le texte ou la question ? Ai-je assez d'exemples précis (pour la discussion ou la dissertation) ? Est-ce que je maîtrise les outils d'analyse (pour le commentaire) ? Le résumé-discussion convient aux élèves rigoureux qui comptent bien leurs mots ; le commentaire à ceux qui aiment lire de près ; la dissertation à ceux qui ont beaucoup lu et retenu. Une fois votre choix fait, ne changez plus, sauf erreur manifeste dans les vingt premières minutes.\n\n## Les erreurs fréquentes\n\n- Dans le résumé : recopier des phrases du texte, écrire « l'auteur dit que », dépasser la marge de mots autorisée, oublier d'indiquer le nombre de mots.\n- Dans la discussion : réciter des généralités sans exemples, ou ne pas répondre à la question posée.\n- Dans le commentaire : paraphraser (« le poète dit que… ») ou énumérer des figures de style sans les interpréter.\n- Dans la dissertation : raconter l'histoire des œuvres au lieu d'argumenter ; citer des œuvres non lues.\n- Partout : négliger l'orthographe, ne pas relire, ne pas soigner la présentation (paragraphes, alinéas, sauts de ligne entre les parties).\n\n## Méthode de travail pendant l'année\n\n- Tenir un carnet de lecture : pour chaque œuvre, l'auteur, la date, le genre, un résumé de dix lignes, les thèmes, trois passages clés avec leur page.\n- Constituer une banque d'exemples par thème : la tradition et la modernité, la condition de la femme, la colonisation et les indépendances, la ville et l'exode rural, le pouvoir, l'engagement de l'écrivain.\n- Revoir les outils d'analyse : figures de style, versification, registres, focalisation, modalisation.\n- S'entraîner à rédiger une introduction par semaine et à résumer un article de presse.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : méthode du résumé ; deux résumés courts chronométrés.\n- Semaine 2 : méthode de la discussion ; un plan détaillé et une introduction.\n- Semaine 3 : outils d'analyse littéraire (figures, versification, registres).\n- Semaine 4 : méthode du commentaire composé ; un commentaire de poème.\n- Semaine 5 : histoire littéraire : la Négritude et la poésie africaine.\n- Semaine 6 : le roman africain et le roman français ; un commentaire d'extrait de roman.\n- Semaine 7 : le théâtre ; méthode de la dissertation.\n- Semaine 8 : une dissertation complète ; révision du carnet de lecture.\n- Semaine 9 : deux sujets complets en temps réel.\n- Semaine 10 : relecture des fiches, exemples, règles d'orthographe fréquentes ; repos.\n\n## Points clés\n\n- Trois sujets au choix : résumé-discussion, commentaire composé, dissertation.\n- Langue soignée et exemples précis dans tous les cas.\n- Choisir vite, avec des critères, puis s'y tenir.\n\n## Exercices pratiques\n\nExercice 1. Pour chacun des sujets suivants, indiquez de quel exercice il s'agit : a) un poème suivi de la consigne « Vous ferez de ce texte un commentaire composé » ; b) un texte d'idées sur l'exode rural, suivi d'une consigne de nombre de mots ; c) « Le roman doit-il seulement divertir ? Vous répondrez en vous appuyant sur des œuvres précises ».\n\nExercice 2. Corrigez cette phrase de résumé : « L'auteur nous dit que les jeunes quittent les villages pour aller à Dakar. »\n\nExercice 3. Transformez cette phrase de commentaire en analyse : « Dans le vers 3, il y a une métaphore. »\n\nExercice 4. Remplissez une fiche de carnet de lecture pour une œuvre de votre choix étudiée au lycée (auteur, date, genre, thèmes, deux passages clés).\n\nExercice 5. Proposez trois thèmes pour lesquels vous pourriez citer au moins deux œuvres, et nommez ces œuvres.\n\n## Corrigé\n\nExercice 1. a) commentaire composé ; b) résumé suivi d'une discussion ; c) dissertation littéraire.\n\nExercice 2. Le résumé adopte le point de vue de l'auteur et ne le nomme pas ; il reformule : « Les jeunes ruraux quittent massivement leurs villages pour la capitale. »\n\nExercice 3. Il faut nommer la figure, citer, et interpréter : « Au vers 3, la métaphore qui assimile l'Afrique à une mère souligne le lien affectif et nourricier qui unit le poète à sa terre ; elle prépare le registre lyrique de la strophe suivante. »\n\nExercice 4. Exemple : Mariama Bâ, Une si longue lettre (1979), roman épistolaire. Ramatoulaye, veuve, écrit à son amie Aïssatou. Thèmes : la polygamie, la condition de la femme, l'amitié, l'éducation. Passages clés : l'annonce du second mariage de Modou ; le refus de Ramatoulaye d'épouser Daouda Dieng.\n\nExercice 5. Exemples : la colonisation (Ferdinand Oyono, Une vie de boy ; Mongo Beti, Le Pauvre Christ de Bomba) ; la tradition et la modernité (Cheikh Hamidou Kane, L'Aventure ambiguë ; Camara Laye, L'Enfant noir) ; le désenchantement après les indépendances (Ahmadou Kourouma, Les Soleils des indépendances ; Ousmane Sembène, Xala)."
+   },
+   {
+    "title": "Le résumé et la discussion : méthode complète",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Le commentaire composé et la poésie : de la Négritude à aujourd'hui",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "La dissertation littéraire : roman africain, théâtre et grands thèmes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement complet corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive la veille du Bac de français",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "bac-histoire-geographie",
   "level": "Terminale",
   "subject": "Histoire-Géographie",

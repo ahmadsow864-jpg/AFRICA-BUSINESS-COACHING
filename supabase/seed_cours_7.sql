@@ -1,6 +1,642 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 7/7). À exécuter après seed.sql.
 
+-- Cours : Espagnol LV2 : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-espagnol', (select id from public.levels where name = 'Terminale'), null, 'Espagnol (LV2)', 'Espagnol LV2 : réussir l''épreuve du Bac', 'Ce cours d''examen prépare l''épreuve d''espagnol LV2 du Baccalauréat : méthode de compréhension écrite et d''analyse de texte, grammaire du Bac (subjonctif présent et imparfait, concordance des temps, conditionnel et hypothèse, ser et estar, por et para, discours indirect), expression écrite (essai argumenté, lettre) et repères de civilisation hispanique (Espagne, Amérique latine, liens avec l''Afrique). Il s''adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l''espagnol en LV2. Les explications sont en français et les exemples en espagnol. Prérequis : les acquis d''espagnol de la Seconde et de la Première.', true, 210
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
+
+- Savoir ce que l''on attend de toi à l''épreuve d''espagnol LV2 du Bac.
+- Connaître les grandes familles d''exercices et une méthode pour chacune.
+- Repérer et éviter les erreurs les plus fréquentes des candidats.
+- Organiser tes révisions sur 10 semaines.
+
+## À qui s''adresse ce cours
+
+Ce cours s''adresse d''abord aux élèves de Terminale des séries L, pour qui la deuxième langue vivante occupe une place importante, mais aussi à tout candidat qui présente l''espagnol en LV2, quelle que soit sa série (L, S ou G), selon les choix d''options prévus par les textes officiels en vigueur. La durée de l''épreuve, son coefficient et son barème sont fixés par ces textes : vérifie-les auprès de ton établissement. Ici, nous travaillons la méthode, qui reste la même quelle que soit la série.
+
+Le programme révisé couvre les trois années du lycée : les bases de la Seconde (présent, passés, ser et estar), les structures de Première (subjonctif présent, impératif, por et para) et les exigences de Terminale (subjonctif imparfait, concordance des temps, hypothèse, discours indirect, argumentation).
+
+## Comment se présente l''épreuve
+
+L''épreuve s''appuie en général sur un texte authentique ou adapté : extrait de roman, article de presse, témoignage, lettre ou poème. Il est souvent accompagné d''un paratexte (auteur, titre de l''œuvre, date, source). Les questions se répartissent habituellement en trois familles.
+
+- Compréhension écrite : questions sur le sens du texte, vrai ou faux à justifier par une citation, recherche de synonymes ou de contraires, explication d''une expression.
+- Compétence linguistique : transformations grammaticales (mettre au passé, au discours indirect, conjuguer au subjonctif), exercices à trous, parfois une courte traduction.
+- Expression écrite : un ou deux sujets au choix, en lien avec le thème du texte (essai argumenté, lettre, dialogue, suite de récit).
+
+La présentation exacte varie selon les sujets : lis toujours toutes les consignes avant de commencer.
+
+## Méthode pour la compréhension
+
+Commence par le paratexte : qui écrit, quand, dans quel pays ? Un texte de Gabriel García Márquez ne parle pas du même monde qu''un article d''un journal madrilène. Fais ensuite une première lecture complète sans t''arrêter sur les mots inconnus, pour saisir le thème général. Pendant la deuxième lecture, souligne les personnages, les lieux, les dates et les mots de liaison (pero, sin embargo, por eso, aunque).
+
+Pour répondre, applique trois règles.
+
+- Réponds en espagnol par des phrases complètes, en reformulant la question : à « ¿Por qué se fue Moussa? », on répond « Moussa se fue porque buscaba trabajo ».
+- Justifie un vrai ou faux par une citation courte entre guillemets, suivie du numéro de ligne : « no hablaba ni una palabra de español » (l. 2).
+- Ne recopie jamais un paragraphe entier : le correcteur veut voir que tu as compris, pas que tu sais recopier.
+
+## Méthode pour la compétence linguistique
+
+Lis la consigne deux fois et repère le temps demandé. Pour une transformation, identifie d''abord la structure (verbe principal, subordonnée, temps), puis applique la règle, puis relis l''accord du verbe avec son sujet. Les leçons 3 et 4 te donnent toutes les règles nécessaires, avec des tableaux à apprendre par cœur.
+
+## Méthode pour l''expression écrite
+
+Prends quelques minutes pour faire un plan au brouillon. Respecte le nombre de lignes ou de mots demandé. Écris des phrases simples et correctes plutôt que des phrases longues et fautives. Réutilise le vocabulaire du texte, mais sans le recopier. Garde du temps pour te relire : accents, accords, conjugaisons.
+
+## Organiser son temps le jour de l''épreuve
+
+Voici une répartition indicative à adapter à la durée officielle de ton épreuve : environ 15 % du temps pour lire le texte, 35 % pour la compréhension, 20 % pour la grammaire, 25 % pour l''expression écrite et 5 % pour la relecture. Si une question te bloque, passe à la suivante et reviens-y à la fin.
+
+## Les erreurs fréquentes à éviter
+
+- Les faux amis : « constipado » signifie enrhumé, « embarazada » signifie enceinte, « éxito » signifie succès (la sortie se dit « la salida »), « realizar » signifie accomplir ou réaliser un projet (« se rendre compte » se dit « darse cuenta »).
+- Les gallicismes de genre : on dit « el problema », « el tema », « el sistema », mais « la leche », « la sangre », « la costumbre ».
+- Le conditionnel après « si » : on n''écrit jamais « si tendría » ; on écrit « si tuviera ».
+- L''oubli des accents écrits, qui changent parfois le sens : « hablo » (je parle) et « habló » (il a parlé), « el » (le) et « él » (lui).
+- L''oubli des signes d''ouverture : ¿Dónde vives? ¡Qué calor!
+- La confusion de ser et estar : « estoy cansado » (état) mais « soy senegalés » (identité).
+
+## Plan de révision sur 10 semaines
+
+- Semaine 1 : diagnostic (fais un sujet complet sans aide), lecture de cette leçon, constitution d''un carnet de vocabulaire.
+- Semaine 2 : méthode de compréhension, deux textes courts par semaine (leçon 2).
+- Semaine 3 : repères de civilisation : Espagne, Amérique latine, liens avec l''Afrique (leçon 2).
+- Semaine 4 : subjonctif présent et imparfait (leçon 3).
+- Semaine 5 : concordance des temps, conditionnel, phrases hypothétiques (leçon 3).
+- Semaine 6 : ser et estar, por et para, discours indirect (leçon 4).
+- Semaine 7 : expression écrite : essai et lettre, une production corrigée par semaine (leçon 4).
+- Semaine 8 : sujet type complet en temps limité (leçon 5).
+- Semaine 9 : deuxième sujet blanc, reprise des fiches d''erreurs.
+- Semaine 10 : révision légère, cours vidéo « veille du Bac », sommeil et sérénité.
+
+Chaque jour, consacre au moins 20 minutes à l''espagnol : 10 minutes de vocabulaire, 10 minutes de lecture ou de grammaire. La régularité vaut mieux qu''une nuit blanche.
+
+## Points clés
+
+- Lis le paratexte et les consignes avant tout.
+- Réponds en phrases complètes et justifie par des citations courtes.
+- Apprends les tableaux de conjugaison et les règles de concordance.
+- Garde toujours du temps pour la relecture.
+
+## Exercices pratiques
+
+Exercice 1. Cite les trois grandes familles d''exercices de l''épreuve et donne un exemple de question pour chacune.
+
+Exercice 2. Traduis en français : « Mi hermana está embarazada y mi hermano está constipado. »
+
+Exercice 3. Corrige les erreurs : « La problema es que si tendría dinero, viajaría a Sevilla. »
+
+Exercice 4. Réponds par une phrase complète en reformulant la question : « ¿Dónde vive Awa? » (Awa vit à Saint-Louis.)
+
+Exercice 5. Ajoute les accents et les signes manquants : « Donde esta el? Que alegria! »
+
+Exercice 6. Ton épreuve dure, par hypothèse, 3 heures. Calcule le temps à consacrer à chaque partie selon la répartition indicative de la leçon.
+
+## Corrigé
+
+Exercice 1. Compréhension écrite : « ¿Por qué decide el protagonista salir de su país? ». Compétence linguistique : « Pon el verbo entre paréntesis en subjuntivo ». Expression écrite : « Escribe una carta a un amigo para contarle tus proyectos ».
+
+Exercice 2. « Ma sœur est enceinte et mon frère est enrhumé. » Deux faux amis classiques : « embarazada » ne veut pas dire embarrassée, « constipado » ne veut pas dire constipé.
+
+Exercice 3. « El problema es que, si tuviera dinero, viajaría a Sevilla. » « Problema » est masculin ; après « si » d''hypothèse, on emploie le subjonctif imparfait.
+
+Exercice 4. « Awa vive en Saint-Louis. » On reprend le verbe de la question et on ajoute l''information.
+
+Exercice 5. « ¿Dónde está él? ¡Qué alegría! »
+
+Exercice 6. 3 heures = 180 minutes. Lecture : 15 % de 180 = 27 min. Compréhension : 35 % = 63 min. Grammaire : 20 % = 36 min. Expression : 25 % = 45 min. Relecture : 5 % = 9 min. Total : 27 + 63 + 36 + 45 + 9 = 180 min.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'bac-espagnol'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Compréhension écrite, analyse de texte et civilisation hispanique', '## Objectifs de la leçon
+
+- Appliquer une méthode complète de compréhension et d''analyse d''un texte.
+- Maîtriser le vocabulaire espagnol de l''analyse.
+- Connaître les repères de civilisation indispensables : Espagne, Amérique latine, liens avec l''Afrique.
+
+## Texte d''étude
+
+Voici un texte d''entraînement rédigé pour ce cours.
+
+« Cuando Moussa llegó a Madrid, hace ya diez años, no hablaba ni una palabra de español. Había cruzado el mar en cayuco desde la costa senegalesa y había pasado varias semanas en un centro de acogida de Canarias. "Al principio, todo me parecía extraño: la comida, el frío, las prisas de la gente", recuerda. Gracias a una asociación de barrio, aprendió el idioma y consiguió un trabajo en un taller de bicicletas. Hoy tiene su propio negocio y ayuda a otros jóvenes africanos a encontrar su camino. Sin embargo, no olvida a su familia de Kaolack: cada mes le envía dinero a su madre y sueña con volver algún día. "Me gustaría que mis hijos conocieran Senegal y que no tuvieran que arriesgar su vida como yo", confiesa. »
+
+## Étape 1 : identifier la situation
+
+Réponds aux questions de base : ¿quién? (Moussa, un emigrante senegalés), ¿dónde? (Madrid, Canarias, Kaolack), ¿cuándo? (hace diez años y hoy), ¿qué? (su llegada, su integración, su nostalgia), ¿cómo? (gracias a una asociación). Le texte est un témoignage : on le voit aux guillemets et aux verbes « recuerda » et « confiesa ».
+
+## Étape 2 : repérer la structure
+
+Les mots de liaison et les temps verbaux découpent le texte. Le passé (llegó, había cruzado, aprendió) raconte le parcours ; le présent (tiene, ayuda, sueña) décrit la situation actuelle ; le conditionnel et le subjonctif imparfait (me gustaría que conocieran) expriment un souhait pour l''avenir. Le connecteur « sin embargo » marque une opposition : la réussite matérielle n''efface pas l''attachement au pays.
+
+## Étape 3 : analyser le sens et le ton
+
+Le ton est à la fois positif (réussite, solidarité) et grave (le risque de la traversée en cayuco). La dernière phrase porte le message du texte : Moussa ne veut pas que ses enfants vivent la même épreuve que lui.
+
+## Le vocabulaire de l''analyse
+
+- El texto trata de... : le texte traite de...
+- El autor pone de relieve / subraya... : l''auteur met en relief / souligne...
+- El narrador cuenta... ; el protagonista siente... : le narrateur raconte... ; le protagoniste ressent...
+- Se trata de un testimonio, un artículo, un fragmento de novela : il s''agit d''un témoignage, d''un article, d''un extrait de roman.
+- El tono es irónico, nostálgico, optimista, crítico.
+- Primero..., luego..., por fin... : d''abord..., ensuite..., enfin...
+- Por una parte..., por otra parte... : d''une part..., d''autre part...
+- Sin embargo, no obstante : cependant ; por eso, por lo tanto : c''est pourquoi, donc.
+
+## Repères de civilisation : l''Espagne
+
+- Le « Siglo de Oro » (XVIe-XVIIe siècles) : grande époque culturelle ; Miguel de Cervantes publie la première partie de Don Quijote de la Mancha en 1605.
+- La guerre civile (1936-1939) oppose les républicains aux nationalistes du général Franco ; le poète Federico García Lorca est assassiné en 1936.
+- La dictature franquiste dure jusqu''à la mort de Franco en 1975. Vient ensuite la « Transición » démocratique : la Constitution est adoptée en 1978.
+- L''Espagne entre dans la Communauté européenne en 1986.
+- Thèmes actuels fréquents dans les textes : chômage des jeunes, immigration, diversité des régions et des langues (catalan, basque, galicien).
+
+## Repères de civilisation : l''Amérique latine
+
+- La conquête espagnole commence après l''arrivée de Christophe Colomb en 1492 ; les peuples autochtones (aztèques, mayas, incas) subissent la domination coloniale.
+- Les indépendances ont lieu au début du XIXe siècle, avec des figures comme Simón Bolívar et José de San Martín.
+- La révolution mexicaine commence en 1910.
+- Au XXe siècle, beaucoup de pays connaissent des dictatures militaires, puis un retour à la démocratie.
+- Littérature : Pablo Neruda (Chili, prix Nobel 1971), Gabriel García Márquez (Colombie, Cien años de soledad, prix Nobel 1982).
+- Thèmes fréquents : inégalités, droits des peuples autochtones, exode rural, violence urbaine, migrations vers les États-Unis.
+
+## Repères de civilisation : les liens avec l''Afrique
+
+- La Guinée équatoriale, indépendante depuis 1968, est le seul pays d''Afrique subsaharienne dont l''espagnol est langue officielle.
+- Ceuta et Melilla sont deux villes espagnoles situées sur la côte nord du continent africain ; les îles Canaries se trouvent au large des côtes du Maroc et du Sahara occidental.
+- Le Sahara occidental est une ancienne colonie espagnole, que l''Espagne a quittée en 1975-1976.
+- La traite négrière a déporté des millions d''Africains vers les Amériques : leurs descendants ont profondément marqué la musique, la religion et la littérature de Cuba, de la Colombie, du Venezuela ou du Pérou. Le poète cubain Nicolás Guillén a célébré cet héritage afro-cubain.
+- En Colombie, San Basilio de Palenque a été fondé au XVIIe siècle par des Africains réduits en esclavage qui s''étaient libérés ; l''UNESCO a reconnu son patrimoine culturel.
+- Depuis les années 2000, des milliers de jeunes Ouest-Africains, dont des Sénégalais, ont tenté la traversée vers les Canaries en pirogue (« cayuco »), souvent au péril de leur vie.
+
+## Points clés
+
+- Qui, où, quand, quoi, comment : c''est la base de toute compréhension.
+- Les temps verbaux et les connecteurs révèlent la structure du texte.
+- Une citation courte, avec le numéro de ligne, vaut mieux qu''une longue copie.
+- Les repères de civilisation enrichissent ton essai, à condition d''être exacts.
+
+## Exercices pratiques
+
+Exercice 1. ¿De dónde salió Moussa y adónde llegó primero?
+
+Exercice 2. Vrai ou faux ? Justifie par une citation. a) Moussa hablaba bien español al llegar. b) Moussa ha olvidado a su familia.
+
+Exercice 3. Trouve dans le texte un synonyme de « lengua » et un contraire de « recordar ».
+
+Exercice 4. Explique en espagnol la phrase « Me gustaría que mis hijos no tuvieran que arriesgar su vida como yo ».
+
+Exercice 5. Quel est le seul pays d''Afrique subsaharienne où l''espagnol est langue officielle ? Depuis quand est-il indépendant ?
+
+Exercice 6. Remets dans l''ordre chronologique : Constitution espagnole, guerre civile, entrée dans la Communauté européenne, publication de Don Quijote.
+
+Exercice 7. Rédige en espagnol une présentation du texte de 4 ou 5 lignes en utilisant au moins trois expressions de l''analyse.
+
+## Corrigé
+
+Exercice 1. Moussa salió de la costa senegalesa y llegó primero a Canarias, donde pasó varias semanas en un centro de acogida.
+
+Exercice 2. a) Faux : « no hablaba ni una palabra de español ». b) Faux : « no olvida a su familia de Kaolack ».
+
+Exercice 3. Synonyme de « lengua » : « el idioma ». Contraire de « recordar » : « olvidar » (« no olvida »).
+
+Exercice 4. Moussa desea que sus hijos visiten el país de su familia y que tengan una vida más segura: no quiere que crucen el mar en cayuco y pongan su vida en peligro como hizo él.
+
+Exercice 5. La Guinée équatoriale (Guinea Ecuatorial), indépendante depuis 1968.
+
+Exercice 6. Don Quijote (1605), guerre civile (1936-1939), Constitution (1978), entrée dans la Communauté européenne (1986).
+
+Exercice 7. Exemple : « Se trata de un testimonio sobre la emigración africana a España. El texto trata de Moussa, un senegalés que llegó a Madrid en cayuco. Primero, el autor cuenta su difícil llegada; luego, subraya su integración gracias a una asociación. Sin embargo, el tono es también nostálgico, porque Moussa sueña con volver a Senegal. »', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bac-espagnol'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Compréhension écrite, analyse de texte et civilisation hispanique');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Grammaire du Bac 1 : subjonctif, concordance des temps et hypothèse', '## Objectifs de la leçon
+
+- Former le subjonctif présent et le subjonctif imparfait, y compris des verbes irréguliers.
+- Savoir quand employer le subjonctif.
+- Appliquer la concordance des temps.
+- Former le conditionnel et construire les phrases hypothétiques.
+
+## Fiche 1 : le subjonctif présent
+
+Formation : on part de la première personne du présent de l''indicatif, on enlève le « o » et on ajoute les terminaisons « inversées » : les verbes en -ar prennent un « e », les verbes en -er et -ir prennent un « a ».
+
+- hablar : hable, hables, hable, hablemos, habléis, hablen.
+- comer : coma, comas, coma, comamos, comáis, coman.
+- vivir : viva, vivas, viva, vivamos, viváis, vivan.
+
+Les irrégularités du présent se retrouvent au subjonctif : tener (tengo) donne tenga ; hacer (hago) donne haga ; decir (digo) donne diga ; salir (salgo) donne salga ; conocer (conozco) donne conozca. Les verbes à diphtongue gardent la diphtongue sauf à « nosotros » et « vosotros » : poder donne pueda mais podamos ; querer donne quiera mais queramos. Les verbes en -ir à affaiblissement changent aussi à « nosotros » : pedir donne pida et pidamos ; dormir donne duerma et durmamos.
+
+Six verbes totalement irréguliers sont à apprendre par cœur : ser (sea), ir (vaya), estar (esté), dar (dé), saber (sepa), haber (haya).
+
+## Fiche 2 : le subjonctif imparfait
+
+Formation : on part de la troisième personne du pluriel du passé simple (pretérito indefinido), on enlève « -ron » et on ajoute -ra, -ras, -ra, -ramos, -rais, -ran (la forme en -se existe aussi : hablase).
+
+- hablar : hablaron donne hablara, hablaras, hablara, habláramos, hablarais, hablaran.
+- comer : comieron donne comiera ; vivir : vivieron donne viviera.
+- tener : tuvieron donne tuviera ; hacer : hicieron donne hiciera ; decir : dijeron donne dijera.
+- ser et ir : fueron donne fuera ; estar : estuvieron donne estuviera ; poder : pudieron donne pudiera.
+- poner : pusieron donne pusiera ; venir : vinieron donne viniera ; leer : leyeron donne leyera.
+
+Remarque : la première personne du pluriel porte un accent écrit (habláramos, tuviéramos, fuéramos).
+
+## Fiche 3 : quand employer le subjonctif
+
+- Après un verbe de volonté, d''ordre, de conseil ou de demande : Quiero que estudies. Te aconsejo que descanses.
+- Après un verbe de sentiment : Me alegra que vengas. Siento que estés enfermo.
+- Après une expression impersonnelle : Es necesario que todos los niños vayan a la escuela. Es importante que protejamos el medio ambiente.
+- Après un verbe d''opinion à la forme négative : No creo que llueva hoy. Mais à la forme affirmative, on emploie l''indicatif : Creo que lloverá.
+- Après « para que » (but) : Trabajo para que mis hijos estudien.
+- Après « cuando » et les conjonctions de temps, si l''action est future : Cuando tenga dinero, compraré un ordenador. Attention : le français dit « quand j''aurai », l''espagnol ne met jamais le futur après « cuando ».
+- Après « aunque » pour une concession hypothétique : Aunque llueva, iré al mercado (même s''il pleut).
+- Après « ojalá » (pourvu que) : ¡Ojalá apruebe el bachillerato!
+- À l''impératif négatif : No hables. No salgáis.
+
+## Fiche 4 : la concordance des temps
+
+C''est la règle la plus testée au Bac. Le temps du subjonctif dépend du temps du verbe principal.
+
+- Verbe principal au présent, au futur, au passé composé ou à l''impératif : subjonctif présent. Quiero que vengas. Te pediré que vengas. Dile que venga.
+- Verbe principal au passé simple, à l''imparfait, au plus-que-parfait ou au conditionnel : subjonctif imparfait. Quería que vinieras. Le pedí que viniera. Me gustaría que vinieras.
+
+Exemple contextualisé : El director exige que los alumnos lleguen a las ocho. Au passé : El director exigió que los alumnos llegaran a las ocho.
+
+## Fiche 5 : le conditionnel
+
+Formation : infinitif + -ía, -ías, -ía, -íamos, -íais, -ían. Hablar donne hablaría ; comer donne comería. Les irréguliers ont le même radical qu''au futur : tener (tendría), poner (pondría), salir (saldría), venir (vendría), poder (podría), saber (sabría), querer (querría), haber (habría), hacer (haría), decir (diría).
+
+Emplois : la politesse (¿Podría usted ayudarme?), le souhait (Me gustaría ser médico), le conseil (Deberías estudiar más), la conséquence d''une hypothèse, et le futur dans le passé (Dijo que vendría).
+
+## Fiche 6 : les phrases hypothétiques avec « si »
+
+- Hypothèse réalisable : si + présent de l''indicatif, puis présent ou futur. Si tengo tiempo, iré a Gorée.
+- Hypothèse irréelle dans le présent : si + subjonctif imparfait, puis conditionnel. Si tuviera tiempo, iría a Gorée (si j''avais le temps, j''irais).
+- Hypothèse irréelle dans le passé : si + subjonctif plus-que-parfait, puis conditionnel passé. Si hubiera estudiado, habría aprobado (si j''avais étudié, j''aurais réussi).
+
+Règle d''or : jamais de conditionnel, ni de subjonctif présent, juste après « si » d''hypothèse.
+
+## Points clés
+
+- Subjonctif présent : radical du « yo » au présent + voyelle inversée.
+- Subjonctif imparfait : 3e personne du pluriel du passé simple sans « -ron » + -ra.
+- Principal au passé ou au conditionnel : subjonctif imparfait.
+- « Cuando » + subjonctif pour le futur ; « si » + subjonctif imparfait pour l''irréel.
+
+## Exercices pratiques
+
+Exercice 1. Conjugue au subjonctif présent : (yo) tener, (nosotros) poder, (ellos) ser, (tú) ir.
+
+Exercice 2. Conjugue au subjonctif imparfait : (yo) decir, (ella) hacer, (nosotros) ser, (ellos) poner.
+
+Exercice 3. Complète : a) Mis padres quieren que yo (estudiar) medicina. b) Es necesario que (nosotros, plantar) árboles. c) Cuando (llegar) las lluvias, los campesinos sembrarán.
+
+Exercice 4. Mets au passé en respectant la concordance : a) El profesor pide que hagamos los deberes. b) Me alegra que vengas a Dakar.
+
+Exercice 5. Transforme en hypothèse irréelle dans le présent : « Si tengo una beca, estudio en Madrid. »
+
+Exercice 6. Corrige : « Cuando seré mayor, trabajaré en Ziguinchor. » et « Si podría, ayudaría a mi barrio. »
+
+Exercice 7. Traduis : « Si les jeunes trouvaient du travail au Sénégal, ils ne prendraient pas la mer. Il faudrait que l''État crée des emplois pour qu''ils puissent rester. »
+
+## Corrigé
+
+Exercice 1. tenga ; podamos ; sean ; vayas.
+
+Exercice 2. dijera ; hiciera ; fuéramos ; pusieran.
+
+Exercice 3. a) estudie (volonté). b) plantemos (expression impersonnelle). c) lleguen (cuando + futur).
+
+Exercice 4. a) El profesor pidió que hiciéramos los deberes. b) Me alegró que vinieras a Dakar.
+
+Exercice 5. Si tuviera una beca, estudiaría en Madrid.
+
+Exercice 6. « Cuando sea mayor, trabajaré en Ziguinchor. » (cuando + subjonctif présent) ; « Si pudiera, ayudaría a mi barrio. » (si + subjonctif imparfait).
+
+Exercice 7. « Si los jóvenes encontraran trabajo en Senegal, no se irían por mar. Haría falta que el Estado creara empleos para que pudieran quedarse. » Explication : « haría falta » est au conditionnel, donc « creara » et « pudieran » sont au subjonctif imparfait (concordance). Variante acceptée : « Sería necesario que el Estado creara... ».', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bac-espagnol'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire du Bac 1 : subjonctif, concordance des temps et hypothèse');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Grammaire du Bac 2 et expression écrite : ser et estar, por et para, discours indirect, essai et lettre', '## Objectifs de la leçon
+
+- Choisir sans hésiter entre ser et estar, puis entre por et para.
+- Passer du discours direct au discours indirect.
+- Rédiger un essai argumenté et une lettre en espagnol.
+
+## Fiche 1 : ser et estar
+
+Ser exprime ce qui définit : l''identité, la nationalité, l''origine, la profession, la matière, la caractéristique essentielle, l''heure et la date, le lieu d''un événement, et il sert à former la voix passive.
+
+- Soy senegalés y soy profesor. La mesa es de madera. Son las tres. La reunión es en el liceo. El puente fue construido en 2020.
+
+Estar exprime la situation et l''état : la localisation d''une personne ou d''un objet, un état passager, le résultat d''une action, et il forme la progression avec le gérondif.
+
+- Dakar está en la costa atlántica. Estoy cansado. La puerta está cerrada. Estamos estudiando.
+
+Certains adjectifs changent de sens : ser listo (être intelligent) et estar listo (être prêt) ; ser malo (être méchant) et estar malo (être malade) ; ser rico (être riche) et estar rico (être délicieux) ; ser aburrido (être ennuyeux) et estar aburrido (s''ennuyer).
+
+## Fiche 2 : por et para
+
+Por regarde vers la cause ou le chemin parcouru.
+
+- La cause : Lo hizo por amor. No salimos por la lluvia.
+- Le lieu traversé : Paseamos por el centro de Saint-Louis.
+- Le moyen : Te llamo por teléfono.
+- Le moment approximatif : por la mañana, por la tarde.
+- Le prix ou l''échange : Compré el libro por cinco mil francos CFA.
+- Le complément d''agent du passif : El libro fue escrito por una autora senegalesa.
+
+Para regarde vers le but ou la destination.
+
+- Le but : Estudio para ser ingeniero.
+- La destination : Salgo para Tambacounda.
+- Le destinataire : Este regalo es para ti.
+- L''échéance : El trabajo es para el lunes.
+- Le point de vue : Para mí, la educación es lo más importante.
+
+Astuce : si tu peux dire « à cause de » ou « à travers », c''est por ; si tu peux dire « afin de » ou « à destination de », c''est para.
+
+## Fiche 3 : le discours indirect
+
+Si le verbe introducteur est au présent (dice, pregunta), les temps ne changent pas : Fatou dice: «Estudio en Dakar». Fatou dice que estudia en Dakar.
+
+Si le verbe introducteur est au passé (dijo, preguntó), les temps reculent.
+
+- Présent devient imparfait : Dijo: «Estoy cansado». Dijo que estaba cansado.
+- Passé simple ou passé composé devient plus-que-parfait : Awa dijo: «Ayer fui al mercado». Awa dijo que el día anterior había ido al mercado.
+- Futur devient conditionnel : El profesor dijo: «Mañana habrá examen». El profesor dijo que al día siguiente habría examen.
+- Impératif devient subjonctif imparfait : Mi padre me dijo: «Estudia más». Mi padre me dijo que estudiara más.
+
+Les repères changent aussi : hoy devient aquel día, mañana devient al día siguiente, ayer devient el día anterior, aquí devient allí, este devient aquel. Les pronoms s''adaptent : « mi libro » devient « su libro ».
+
+Pour une question : on introduit avec « si » (question fermée) ou on garde le mot interrogatif, sans point d''interrogation. Él preguntó: «¿Has terminado?». Él preguntó si yo había terminado. Ella preguntó: «¿Dónde está la biblioteca?». Ella preguntó dónde estaba la biblioteca.
+
+## Méthode : l''essai argumenté
+
+Le sujet pose souvent une question : « ¿Es la emigración la única solución para los jóvenes africanos? ».
+
+- Introducción : présente le thème, pose la problématique, annonce ton plan.
+- Desarrollo : deux ou trois paragraphes, chacun avec une idée, un argument et un exemple concret (Sénégal, Afrique, monde hispanique).
+- Conclusión : réponds clairement à la question et ouvre une perspective.
+
+Connecteurs utiles : en primer lugar, además, por otra parte, sin embargo, no obstante, por eso, por lo tanto, en conclusión, para terminar. Expressions d''opinion : creo que, pienso que, me parece que (indicatif) ; no creo que (subjonctif) ; es verdad que, es evidente que (indicatif) ; es necesario que, hace falta que (subjonctif).
+
+## Méthode : la lettre
+
+- En haut à droite, lieu et date : Dakar, 12 de marzo de 2026.
+- Formule d''appel suivie de deux points : Querido Ibrahima: (familier) ; Estimado señor: ou Estimada señora: (formel).
+- Corps : salutation, raison de la lettre, développement, souhaits.
+- Formule finale : Un abrazo, Besos (familier) ; Atentamente, Le saluda atentamente (formel).
+- Signature.
+
+## Points clés
+
+- Ser définit, estar situe ou décrit un état.
+- Por : cause, passage, moyen, prix ; para : but, destination, échéance.
+- Discours indirect au passé : chaque temps recule d''un cran, l''impératif devient subjonctif imparfait.
+- Un essai réussi : plan clair, connecteurs, exemples précis.
+
+## Exercices pratiques
+
+Exercice 1. Complète avec ser ou estar : a) Mi madre ... enfermera. b) Hoy mi madre ... muy cansada. c) Saint-Louis ... en el norte de Senegal. d) El concierto ... en el estadio.
+
+Exercice 2. Complète avec por ou para : a) Trabajo ... ganar dinero. b) Pasamos ... Thiès. c) Gracias ... tu ayuda. d) Este libro es ... mi hermana.
+
+Exercice 3. Mets au discours indirect avec « Dijo que... » : a) «Vivo en Kaolack». b) «Iré a la universidad». c) «Compré un libro ayer».
+
+Exercice 4. Mets au discours indirect avec « Le pidió que... » : «Cierra la ventana».
+
+Exercice 5. Mets au discours indirect avec « Preguntó... » : «¿Cuándo empieza el examen?».
+
+Exercice 6. Rédige l''introduction d''un essai sur le sujet : « ¿Es la escuela la clave del desarrollo? » (5 lignes).
+
+Exercice 7. Rédige le début d''une lettre formelle au directeur d''une entreprise de Dakar pour demander un stage (lieu, date, formule d''appel, première phrase).
+
+## Corrigé
+
+Exercice 1. a) es (profession). b) está (état passager). c) está (localisation). d) es (lieu d''un événement).
+
+Exercice 2. a) para (but). b) por (lieu traversé). c) por (cause). d) para (destinataire).
+
+Exercice 3. a) Dijo que vivía en Kaolack. b) Dijo que iría a la universidad. c) Dijo que había comprado un libro el día anterior.
+
+Exercice 4. Le pidió que cerrara la ventana.
+
+Exercice 5. Preguntó cuándo empezaba el examen.
+
+Exercice 6. Exemple : « Hoy en día, muchos países africanos invierten en la educación. Pero, ¿es la escuela realmente la clave del desarrollo? En primer lugar, veremos que la educación forma a los trabajadores del futuro; luego, mostraremos que la escuela sola no basta si no hay empleo para los jóvenes diplomados. »
+
+Exercice 7. Exemple : « Dakar, 5 de abril de 2026. Estimado señor director: Me dirijo a usted para solicitar unas prácticas en su empresa durante las vacaciones de verano. » (« prácticas » = stage.)', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bac-espagnol'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire du Bac 2 et expression écrite : ser et estar, por et para, discours indirect, essai et lettre');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
+
+Voici un sujet complet d''entraînement conçu pour ce cours. Ce n''est pas un sujet officiel du Bac. La répartition des points est indicative et non officielle ; elle sert seulement à t''entraîner à gérer ton temps. Fais-le en temps limité avant de lire le corrigé.
+
+## Texte
+
+« Yolanda vive en San Basilio de Palenque, un pueblo del Caribe colombiano fundado por africanos que huyeron de la esclavitud. Cada tarde, después de clase, se sienta con su abuela, que le enseña canciones en lengua palenquera. "Mi abuela dice que estas palabras vinieron de África hace siglos", explica la joven. Durante mucho tiempo, los habitantes del pueblo sufrieron el desprecio de la gente de la ciudad. Hoy, en cambio, muchos turistas vienen a descubrir su música y sus tradiciones. Yolanda quiere ser profesora para que los niños del pueblo no pierdan su cultura. "Si no protegemos nuestra lengua, desaparecerá con los ancianos", afirma. Su sueño sería viajar un día a África para conocer la tierra de sus antepasados. »
+
+## Partie I : compréhension (8 points, indicatif)
+
+1. ¿Dónde vive Yolanda y quiénes fundaron su pueblo? (2 pts)
+2. Vrai ou faux ? Justifie par une citation. a) Los habitantes de Palenque siempre fueron respetados. b) Yolanda aprende la lengua palenquera en familia. (2 pts)
+3. Trouve dans le texte un synonyme de « ancestros » et une expression qui s''oppose à « hoy ». (1 pt)
+4. ¿Por qué quiere Yolanda ser profesora? (1 pt)
+5. Explique en espagnol : « Si no protegemos nuestra lengua, desaparecerá con los ancianos ». (2 pts)
+
+## Partie II : compétence linguistique (6 points, indicatif)
+
+1. Mets au passé : « Yolanda quiere ser profesora para que los niños no pierdan su cultura. » (2 pts)
+2. Mets au discours indirect en commençant par « Yolanda explicó que... » : « Mi abuela dice que estas palabras vinieron de África. » (1 pt)
+3. Transforme en hypothèse irréelle : « Si no protegemos nuestra lengua, desaparecerá. » (1 pt)
+4. Complète avec ser ou estar, por ou para : « Palenque ... en Colombia. Yolanda ... estudiante. Viaja ... aprender. Pasa ... la plaza. » (2 pts)
+
+## Partie III : expression écrite (6 points, indicatif)
+
+Traite un sujet au choix (15 lignes environ).
+
+- Sujet A : « ¿Cómo proteger las lenguas y las tradiciones africanas en un mundo globalizado? »
+- Sujet B : Yolanda escribe una carta a un joven senegalés para presentarle su pueblo y hacerle preguntas sobre Senegal.
+
+## Corrigé de la partie I
+
+1. Yolanda vive en San Basilio de Palenque, un pueblo del Caribe colombiano. Lo fundaron africanos que huyeron de la esclavitud.
+
+2. a) Faux : « los habitantes del pueblo sufrieron el desprecio de la gente de la ciudad ». b) Vrai : « se sienta con su abuela, que le enseña canciones en lengua palenquera ».
+
+3. Synonyme de « ancestros » : « antepasados ». Expression qui s''oppose à « hoy » : « durante mucho tiempo » (le passé du pueblo) ; « hace siglos » est aussi accepté.
+
+4. Yolanda quiere ser profesora para que los niños del pueblo no pierdan su cultura, es decir, para transmitir la lengua y las tradiciones.
+
+5. Yolanda piensa que, si los jóvenes no aprenden ni hablan la lengua palenquera, esta morirá cuando mueran los ancianos, que son los últimos que la conocen bien. Por eso es urgente enseñarla en la escuela.
+
+Conseil : dans une explication, ne répète pas la phrase ; reformule avec tes mots et ajoute une conséquence.
+
+## Corrigé de la partie II
+
+1. « Yolanda quería ser profesora para que los niños no perdieran su cultura. » Le verbe principal passe à l''imparfait, donc « pierdan » devient « perdieran » (concordance des temps). « Quiso » est aussi accepté.
+
+2. « Yolanda explicó que su abuela decía que aquellas palabras habían venido de África. » Quatre changements : dice devient decía, vinieron devient habían venido, estas devient aquellas, et mi devient su.
+
+3. « Si no protegiéramos nuestra lengua, desaparecería. » Si + subjonctif imparfait, puis conditionnel.
+
+4. « Palenque está en Colombia. Yolanda es estudiante. Viaja para aprender. Pasa por la plaza. »
+
+## Corrigé de la partie III (exemple de plan et extraits)
+
+Sujet A, plan possible.
+
+- Introducción : la mondialisation rapproche les peuples mais menace les langues minoritaires ; problématique : comment protéger ce patrimoine ?
+- Primera parte : l''école et la famille. Exemple : la grand-mère de Yolanda ; au Sénégal, l''enseignement en langues nationales comme le wolof ou le pulaar dans certaines classes.
+- Segunda parte : la culture et le numérique : musique, radios communautaires, réseaux sociaux, tourisme culturel.
+- Conclusión : la protection des langues est l''affaire de tous ; ouverture sur l''échange entre Afrique et Amérique latine.
+
+Extrait : « En primer lugar, es necesario que la familia transmita la lengua a los niños, como hace la abuela de Yolanda. Sin embargo, la familia no basta: hace falta que la escuela también enseñe las lenguas locales. »
+
+Sujet B, extrait : « San Basilio de Palenque, 3 de mayo de 2026. Querido Abdou: Te escribo desde mi pueblo, en el Caribe colombiano. Aquí la música y las canciones de los antepasados están presentes en todas partes. Me gustaría que me contaras cómo viven los jóvenes en Senegal. ¿Hablas varias lenguas? ¿Qué tradiciones son importantes para tu familia? Ojalá pueda visitarte un día. Un abrazo, Yolanda. »
+
+## Conseils du correcteur
+
+- Les points de langue se gagnent avec des règles sûres : apprends la concordance des temps.
+- En expression écrite, les correcteurs valorisent un plan visible, des connecteurs et des exemples précis.
+- Évite de recopier le texte : réutilise ses idées avec tes propres mots.
+
+## Exercices pratiques
+
+Exercice 1. Calcule ta note sur 20 à partir de tes résultats partiels, en appliquant le barème indicatif.
+
+Exercice 2. Relève dans le texte un verbe au subjonctif présent et justifie son emploi.
+
+Exercice 3. Relève un verbe au conditionnel et indique sa valeur.
+
+Exercice 4. Mets au discours indirect : Yolanda afirmó: «Mañana cantaré con mi abuela».
+
+Exercice 5. Rédige la conclusion du sujet A en 4 lignes.
+
+## Corrigé
+
+Exercice 1. Additionne les points des trois parties (8 + 6 + 6 = 20 au maximum). Par exemple, 6/8 + 4/6 + 4/6 = 14/20.
+
+Exercice 2. « pierdan » : subjonctif présent après « para que », qui exprime le but.
+
+Exercice 3. « sería » : conditionnel qui exprime un souhait, un rêve.
+
+Exercice 4. Yolanda afirmó que al día siguiente cantaría con su abuela.
+
+Exercice 5. Exemple : « En conclusión, proteger las lenguas africanas es responsabilidad de las familias, de la escuela y de los Estados. Si todos actuáramos juntos, nuestras culturas seguirían vivas. Tal vez el ejemplo de Palenque pueda inspirar a la juventud senegalesa. »', 'texte', 60, false, 50
+from public.courses c where c.slug = 'bac-espagnol'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive « veille du Bac » en espagnol', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : séance de révision intensive la veille de l''épreuve d''espagnol LV2 du Bac.
+- Objectifs : réactiver les règles clés (subjonctif, concordance, hypothèse, ser et estar, por et para, discours indirect), corriger des exercices de type Bac, revoir la gestion du temps et la méthode d''expression écrite.
+- Matériel : tableau ou diaporama, fiches de conjugaison, un texte court imprimé, brouillon.
+- Prérequis : leçons 1 à 5 de ce cours. Les exercices sont des exercices d''entraînement, pas des sujets officiels.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« ¡Buenas tardes a todos! Demain, c''est l''épreuve d''espagnol. Ce soir, pas de notions nouvelles : nous consolidons ce que vous savez déjà. Nous allons revoir les règles qui rapportent le plus de points, corriger ensemble des exercices type Bac, puis parler de la gestion du temps. À mi-parcours, un quiz rapide ; à la fin, une évaluation de cinq questions. Préparez une feuille et un stylo. »
+
+Visuel : le plan de la séance en six étapes.
+
+## 05:00 – 15:00 · Rappel 1 : le subjonctif présent et imparfait
+
+« Première règle d''or : le subjonctif présent se forme sur le "yo" du présent. Tengo donne tenga, hago donne haga, conozco donne conozca. Les verbes en -ar prennent un e, les verbes en -er et -ir prennent un a. N''oubliez pas les six irréguliers : sea, vaya, esté, dé, sepa, haya.
+
+Le subjonctif imparfait se forme sur la troisième personne du pluriel du passé simple : tuvieron donne tuviera, hicieron donne hiciera, fueron donne fuera, dijeron donne dijera. Si vous connaissez votre passé simple, vous connaissez votre subjonctif imparfait.
+
+Écrivez avec moi au tableau quelques phrases complètes : "Es necesario que todos los niños vayan a la escuela." "Mis padres quieren que yo sea médico." "Ojalá haga buen tiempo mañana." Dans chaque phrase, entourez le déclencheur du subjonctif : une expression impersonnelle, un verbe de volonté, ojalá. Si vous savez repérer le déclencheur, vous ne vous tromperez pas de mode. »
+
+Visuel : deux colonnes, présent du « yo » et subjonctif présent ; passé simple « ellos » et subjonctif imparfait. Question à poser : « Quel est le subjonctif imparfait de "poder" ? » Réponse attendue : pudiera.
+
+## 15:00 – 25:00 · Rappel 2 : la concordance des temps et l''hypothèse
+
+« Regardez le verbe principal. Présent, futur ou impératif : subjonctif présent. Passé ou conditionnel : subjonctif imparfait. "Quiero que vengas", mais "quería que vinieras" et "me gustaría que vinieras".
+
+Pour l''hypothèse, retenez trois formules. Si tengo tiempo, iré. Si tuviera tiempo, iría. Si hubiera tenido tiempo, habría ido. Et jamais, jamais de conditionnel juste après "si". Écrivez-le en gros sur votre fiche : "si tendría" est interdit. »
+
+Visuel : le tableau des trois hypothèses avec une flèche « interdit » sur « si + conditionnel ».
+
+Question à poser : « Comment dit-on : si nous protégions la forêt de Casamance, il y aurait plus de pluie ? » Laisser une minute, puis corriger : « Si protegiéramos el bosque de Casamance, habría más lluvia. » Faire remarquer l''accent écrit sur « protegiéramos » et le conditionnel de « haber », qui est « habría ». Autre piège à signaler : après « como si », on emploie toujours le subjonctif imparfait : « Habla como si fuera el jefe. »
+
+## 25:00 – 35:00 · Rappel 3 : ser et estar, por et para, discours indirect
+
+« Ser définit : soy senegalés, es profesora, son las cinco. Estar situe ou décrit un état : Dakar está en la costa, estoy nervioso. Attention aux adjectifs pièges : estar listo, c''est être prêt ; ser listo, c''est être intelligent. Demain, j''espère que vous serez les deux !
+
+Por, c''est la cause et le chemin : por la lluvia, por el centro. Para, c''est le but et la destination : para aprobar, para Dakar.
+
+Au discours indirect introduit par un verbe au passé, chaque temps recule : présent vers imparfait, passé vers plus-que-parfait, futur vers conditionnel, impératif vers subjonctif imparfait. "Mañana" devient "al día siguiente". »
+
+Visuel : un tableau de transformation du discours direct au discours indirect.
+
+## 35:00 – 45:00 · Correction commentée : exercice de grammaire type Bac
+
+Énoncé projeté : « 1) Pon en pasado: El profesor exige que los alumnos lleguen a tiempo. 2) Transforma en hipótesis irreal: Si estudio, apruebo. 3) Pon en estilo indirecto: Mi madre me dijo: "Ven temprano". 4) Completa: Este regalo es (por/para) ti. »
+
+« Corrigeons. Un : El profesor exigió que los alumnos llegaran a tiempo. Le principal est au passé, donc subjonctif imparfait. Deux : Si estudiara, aprobaría. Trois : Mi madre me dijo que viniera temprano : l''impératif devient subjonctif imparfait. Quatre : para ti, car c''est le destinataire. Si vous avez quatre bonnes réponses, bravo. Sinon, notez la règle oubliée sur votre fiche d''erreurs. »
+
+## 45:00 – 50:00 · Pause active : quiz éclair
+
+« Petite pause, mais le cerveau continue ! Cinq questions, répondez sur votre feuille en dix secondes chacune. »
+
+- Subjonctif présent de « ir », première personne : vaya.
+- Traduction de « estar malo » : être malade.
+- « Cuando ... (tener) dinero, viajaré » : tenga.
+- Por ou para : « Compré el pan ... 300 francos » : por.
+- Que signifie « constipado » ? Enrhumé.
+
+« Comptez vos points. Quatre ou cinq : vous êtes prêts. Moins de trois : relisez votre fiche ce soir, calmement. »
+
+## 50:00 – 1:05:00 · Correction commentée : compréhension d''un texte court
+
+Texte projeté : « Aminata trabaja en un mercado de Ziguinchor. Antes vendía pescado, pero desde hace dos años tiene un pequeño restaurante. Cada día cocina para los estudiantes de la universidad. "Me gustaría que mis hijas estudiaran y no tuvieran que levantarse a las cinco como yo", dice. »
+
+« Question 1 : ¿Dónde trabaja Aminata? Réponse complète : Aminata trabaja en un mercado de Ziguinchor. Question 2 : vrai ou faux, Aminata siempre ha tenido un restaurante. Faux, et je justifie : "Antes vendía pescado". Question 3 : explique le souhait d''Aminata. Elle veut que ses filles fassent des études et aient une vie moins dure. Remarquez la structure "me gustaría que estudiaran" : conditionnel, donc subjonctif imparfait. Le texte vous donne lui-même un exemple de concordance : profitez-en dans vos réponses.
+
+Question 4 : trouvez dans le texte un contraire de « después ». Réponse : « antes ». Question 5 : mettez au discours indirect la phrase d''Aminata en commençant par « Aminata dijo que... ». Réponse : « Aminata dijo que le gustaría que sus hijas estudiaran y no tuvieran que levantarse a las cinco como ella. » Observez bien trois changements : "dice" devient "dijo", "mis hijas" devient "sus hijas", "yo" devient "ella". Le conditionnel et le subjonctif imparfait, eux, ne bougent pas : ils sont déjà au bon temps.
+
+Erreur fréquente à signaler : beaucoup de candidats répondent "Aminata trabaja a Ziguinchor". En espagnol, la situation dans une ville se dit avec "en" : trabaja en Ziguinchor, vive en Dakar. "A" indique le mouvement : va a Ziguinchor. »
+
+Visuel : le texte avec les mots-clés surlignés et les numéros de ligne.
+
+## 1:05:00 – 1:15:00 · Méthode express de l''expression écrite
+
+« Pour l''essai : introduction avec la question posée, deux parties avec un argument et un exemple chacune, conclusion qui répond. Utilisez vos connecteurs : en primer lugar, además, sin embargo, por eso, en conclusión. Pour la lettre : lieu et date, "Querido" ou "Estimado señor" suivi de deux points, formule finale adaptée. Placez au moins un subjonctif et une hypothèse bien construits : c''est là que vous montrez votre niveau de Terminale. Et choisissez des exemples africains précis : la migration vers les Canaries, la Guinée équatoriale, l''héritage africain à Cuba ou en Colombie. »
+
+Lecture à voix haute d''une introduction modèle sur le sujet « ¿Debe Senegal proteger sus lenguas nacionales? » : « Senegal es un país donde se hablan muchas lenguas: el wolof, el pulaar, el serer, el diola y otras. Sin embargo, el francés sigue siendo la lengua de la administración. ¿Es necesario proteger las lenguas nacionales? En primer lugar, veremos que son la base de nuestra identidad; luego, mostraremos que también pueden ser útiles para la educación. »
+
+« Remarquez : une phrase de contexte, une problématique sous forme de question avec les deux points d''interrogation, et l''annonce du plan avec "en primer lugar" et "luego". C''est simple, clair, et le correcteur sait immédiatement où vous allez. »
+
+Visuel : une grille de relecture en cinq points (plan, connecteurs, subjonctif, accents, longueur).
+
+## 1:15:00 – 1:22:00 · Gestion du temps et du stress
+
+« Demain, lisez d''abord tout le sujet. Répartissez votre temps de façon indicative : un sixième environ pour la lecture, un gros tiers pour la compréhension, un cinquième pour la grammaire, un quart pour l''expression, et quelques minutes pour la relecture. Vérifiez la durée officielle sur votre convocation. Si une question bloque, passez. Ce soir : un dernier coup d''œil à vos fiches, puis dormez. Prévoyez vos stylos, votre pièce d''identité et votre convocation. »
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+« Pour finir, cinq questions. Notez vos réponses, puis nous corrigeons. »
+
+- Question 1 : Mets au passé : « Quiero que me ayudes ». Réponse : Quería que me ayudaras.
+- Question 2 : Complète : « Si (tener) un coche, iría a Saly ». Réponse : tuviera.
+- Question 3 : Ser ou estar : « La fiesta ... en casa de Moussa ». Réponse : es (lieu d''un événement).
+- Question 4 : Discours indirect : Dijo: «Volveré mañana». Réponse : Dijo que volvería al día siguiente.
+- Question 5 : Quel est le seul pays d''Afrique subsaharienne où l''espagnol est langue officielle ? Réponse : la Guinée équatoriale.
+
+« Synthèse : subjonctif bien formé, concordance respectée, jamais de conditionnel après "si", ser pour définir et estar pour situer, por pour la cause et para pour le but. Vous avez travaillé, vous êtes prêts. ¡Mucha suerte mañana y hasta pronto! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-espagnol'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille du Bac » en espagnol');
+
 -- Cours : Arabe LV2 : réussir l'épreuve du Bac
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'bac-arabe', (select id from public.levels where name = 'Terminale'), null, 'Arabe (LV2)', 'Arabe LV2 : réussir l''épreuve du Bac', 'Ce cours d''examen prépare l''épreuve d''arabe LV2 du Baccalauréat : lecture et analyse d''un texte, grammaire du Bac (cas et déclinaison, phrase nominale et phrase verbale, verbes dérivés usuels, nombres, relatifs, phrase conditionnelle), vocabulaire thématique (éducation, société, environnement) et expression écrite (essai court, lettre). Il s''adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l''arabe en LV2. Les explications sont en français, les exemples en arabe vocalisé avec translittération et traduction. Prérequis : lire couramment l''arabe et maîtriser les bases du collège et de la Seconde.', true, 211
