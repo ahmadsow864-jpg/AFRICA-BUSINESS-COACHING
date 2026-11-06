@@ -3518,6 +3518,186 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "lic-droit-l1",
+  "level": "Licence 1",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en droit et droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre l'introduction au droit (sources, organisation judiciaire, personnes, preuve), le droit des obligations 1 (formation, validité et effets du contrat) et les institutions administratives et le droit constitutionnel, avec la méthodologie juridique : cas pratique, dissertation, commentaire d'arrêt. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis.",
+  "sort": 371,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en droit des affaires (méthodologie juridique)",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 en droit (ou en droit des affaires) dans le système LMD : semestres, unités d'enseignement, crédits, évaluations.\n- Connaître les matières clés de la première année et ce que le correcteur attend de vous.\n- Maîtriser les trois exercices juridiques de base : le cas pratique, la dissertation et le commentaire d'arrêt.\n- Disposer d'un plan de révision sur 6 semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités et écoles du Sénégal et de l'espace UEMOA ont adopté le système LMD (Licence, Master, Doctorat). La Licence se déroule sur trois années de deux semestres. Chaque semestre regroupe des unités d'enseignement (UE), par exemple une UE « Fondamentaux du droit privé » qui réunit l'introduction au droit et le droit des obligations.\n\nChaque UE porte des crédits, qui mesurent le volume de travail (cours magistraux, travaux dirigés, travail personnel). Le nombre de crédits, les coefficients, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : seul le règlement des études de votre faculté ou de votre école fait foi.\n\nTrois mécanismes se retrouvent presque partout :\n\n- Le contrôle continu : interrogations en travaux dirigés (TD), fiches d'arrêt, exposés, petits devoirs sur table.\n- L'examen semestriel : une épreuve écrite de 2 à 4 heures, souvent décisive dans la note finale, parfois complétée par un oral.\n- La session de rattrapage : une seconde chance pour les UE non validées, selon les règles de l'établissement.\n\n## 2. Les matières clés de la Licence 1\n\nCe cours travaille trois matières fondamentales, à côté des enseignements de tronc commun (économie, histoire des institutions, langues, techniques d'expression).\n\n- Introduction au droit : définition du droit, distinction entre droit objectif et droits subjectifs, sources du droit (Constitution, traités dont le traité OHADA, lois, règlements, jurisprudence, coutume, doctrine), organisation judiciaire en termes généraux, personnes physiques et morales, preuve.\n- Droit des obligations 1 : le contrat. Au Sénégal, la matière est régie principalement par le Code des obligations civiles et commerciales (COCC). On étudie la formation du contrat, ses conditions de validité, la nullité et les effets du contrat.\n- Institutions administratives et droit constitutionnel : l'État, la Constitution, la séparation des pouvoirs, les régimes politiques, puis l'organisation administrative (centralisation, déconcentration, décentralisation) et les grandes notions de service public.\n\n## 3. Ce que le correcteur attend\n\nEn droit, on n'évalue pas la quantité de connaissances récitées, mais la capacité à raisonner avec la règle de droit. Une copie juridique réussie :\n\n- emploie un vocabulaire exact (on ne confond pas « nullité » et « résolution », « loi » et « décret ») ;\n- cite la règle applicable sans inventer de numéro d'article : si vous n'êtes pas sûr du numéro, écrivez « le COCC dispose que… » ou « l'Acte uniforme relatif au droit commercial général prévoit que… » ;\n- suit un plan apparent, annoncé et respecté ;\n- conclut clairement en répondant à la question posée.\n\n## 4. Méthode n°1 : le cas pratique\n\nLe cas pratique présente une situation de fait (un litige entre des personnes) et vous demande de la résoudre en droit. La méthode repose sur le syllogisme juridique : majeure (la règle), mineure (les faits), conclusion.\n\n- Étape 1. Résumer les faits utiles en les qualifiant juridiquement : « Awa » devient « la venderesse », « l'accord sur le prix » devient « l'échange des consentements ».\n- Étape 2. Poser le problème de droit sous forme de question générale : « Un contrat conclu par un mineur non émancipé est-il valable ? »\n- Étape 3. Exposer la règle de droit applicable (principe, conditions, exceptions).\n- Étape 4. Appliquer la règle aux faits, condition par condition.\n- Étape 5. Conclure par une réponse nette, éventuellement nuancée (« sous réserve de prouver que… »).\n\nS'il y a plusieurs problèmes, on les traite l'un après l'autre, chacun avec son syllogisme. Pas d'introduction historique : allez droit au problème.\n\n## 5. Méthode n°2 : la dissertation juridique\n\nLa dissertation porte sur un sujet théorique (« La force obligatoire du contrat », « La décentralisation au Sénégal »). Elle exige une démonstration organisée.\n\n- L'introduction comporte : une accroche, la définition des termes du sujet, le contexte (sources, évolution), l'intérêt du sujet, la problématique (la question centrale) et l'annonce du plan.\n- Le développement suit en principe deux parties, chacune divisée en deux sous-parties (I. A. B. ; II. A. B.), avec des titres courts et explicatifs.\n- Chaque partie commence par un chapeau (quelques lignes qui annoncent les sous-parties) et des transitions relient les parties.\n- La conclusion est facultative dans de nombreuses facultés ; si vous en faites une, elle doit ouvrir le sujet sans le résumer mécaniquement.\n\nExemple de plan sur « La force obligatoire du contrat » : I. Un principe affirmé (A. Le contrat, loi des parties ; B. Le contrat s'impose au juge) ; II. Un principe aménagé (A. Les tempéraments légaux ; B. Les aménagements conventionnels).\n\n## 6. Méthode n°3 : le commentaire d'arrêt\n\nOn vous remet une décision de justice. Vous devez l'expliquer, puis l'apprécier. Le travail commence par la fiche d'arrêt :\n\n- Les faits : qui a fait quoi, qualifié juridiquement.\n- La procédure : quelle juridiction a statué en premier, qui a fait appel, qui s'est pourvu en cassation.\n- Les prétentions des parties : les arguments opposés.\n- Le problème de droit : la question juridique tranchée par la juridiction.\n- La solution : ce qu'a décidé la juridiction, et sur quel fondement.\n\nLe commentaire lui-même suit un plan en deux parties : souvent, la première explique le sens de la solution, la seconde en apprécie la valeur (conformité aux textes, opportunité, portée). Attention : ne remplacez jamais l'analyse de la décision par une récitation du cours. Dans ce cours, les décisions proposées à l'entraînement sont fictives et présentées comme telles : on n'invente aucune jurisprudence réelle.\n\n## 7. Plan de révision sur 6 semaines\n\n- Semaine 1 : relire l'introduction au droit ; fiches sur les sources et l'organisation judiciaire.\n- Semaine 2 : droit des obligations (formation et validité du contrat) ; deux cas pratiques.\n- Semaine 3 : droit des obligations (nullités, effets du contrat) ; une fiche d'arrêt.\n- Semaine 4 : droit constitutionnel et institutions administratives ; une dissertation (plan détaillé).\n- Semaine 5 : sujets types en temps limité ; correction avec la grille de méthode.\n- Semaine 6 : relecture des fiches, apprentissage des définitions, repos la veille de l'examen.\n\n## Points clés\n\n- Le système LMD organise l'année en semestres, UE et crédits ; le règlement de votre établissement fait foi.\n- Les trois matières clés de L1 : introduction au droit, droit des obligations (contrat), institutions administratives et droit constitutionnel.\n- Le cas pratique repose sur le syllogisme ; la dissertation sur une problématique et un plan en deux parties ; le commentaire sur la fiche d'arrêt.\n\n## Exercices pratiques\n\n- Exercice 1. Citez les trois éléments du syllogisme juridique.\n- Exercice 2. Transformez cette question de fait en problème de droit : « Moussa, 16 ans, peut-il obtenir l'annulation de la vente de sa moto qu'il a conclue seul ? »\n- Exercice 3. Rédigez l'annonce de plan d'une dissertation sur « La loi et le règlement ».\n- Exercice 4. Classez ces éléments dans les rubriques d'une fiche d'arrêt : « la cour d'appel a rejeté la demande » ; « le vendeur soutient que la vente était parfaite » ; « un commerçant a livré des sacs de riz non payés ».\n\n## Corrigé\n\n- Exercice 1. La majeure (la règle de droit applicable), la mineure (les faits qualifiés juridiquement) et la conclusion (la solution qui découle de l'application de la règle aux faits).\n- Exercice 2. « Un contrat conclu par un mineur non émancipé, sans l'intervention de son représentant légal, peut-il être annulé ? » On passe de la personne (Moussa) à la catégorie juridique (le mineur non émancipé) et de l'objet (la moto) à l'acte (le contrat).\n- Exercice 3. Exemple : « Si la loi et le règlement se distinguent par leur auteur et leur domaine (I), ils s'articulent dans une hiérarchie qui garantit la cohérence de l'ordre juridique (II). »\n- Exercice 4. « Un commerçant a livré des sacs de riz non payés » : faits. « Le vendeur soutient que la vente était parfaite » : prétentions des parties. « La cour d'appel a rejeté la demande » : procédure."
+   },
+   {
+    "title": "Introduction au droit : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des obligations 1 (le contrat) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Institutions administratives et droit constitutionnel : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 en droit (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction au droit",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des obligations 1 (le contrat)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Institutions administratives et droit constitutionnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-droit-l2",
+  "level": "Licence 2",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre le droit commercial général OHADA (commerçant, entreprenant, actes de commerce, fonds de commerce, bail à usage professionnel), le droit des obligations 2 (responsabilité civile délictuelle et contractuelle) et le droit du travail (relations individuelles, en tenant compte de la transition vers un nouveau Code du travail). Fiches, cas pratiques et exercices chiffrés corrigés (taux fictifs), sujet type et trois cours vidéo de 1h30. Prérequis : les acquis de la Licence 1 (introduction au droit, contrat).",
+  "sort": 372,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le système LMD et comprendre ce qui change par rapport à la L1.\n- Connaître les trois matières clés de l'année : droit commercial général OHADA, droit des obligations 2 (responsabilité civile), droit du travail.\n- Adapter la méthode du cas pratique et du commentaire aux exigences de la L2.\n- Disposer d'un plan de révision sur 6 semaines.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4. Comme en L1, chaque semestre regroupe des unités d'enseignement (UE) dotées de crédits, évaluées par un contrôle continu (TD, devoirs, fiches d'arrêt) et un examen semestriel, avec une session de rattrapage. Les coefficients, les règles de compensation et les conditions de passage relèvent du règlement des études de votre établissement : c'est lui seul qui fait foi.\n\nCe qui change en L2 : les matières deviennent techniques et se rapprochent de la vie des affaires. Les sujets d'examen sont plus souvent des cas pratiques complexes, avec plusieurs personnes, plusieurs problèmes et parfois des calculs (indemnités, dommages-intérêts, loyers). Le correcteur attend une qualification précise des faits et une connaissance sûre des textes, en particulier des Actes uniformes de l'OHADA.\n\n## 2. Les trois matières clés\n\n- Droit commercial général OHADA : l'Acte uniforme relatif au droit commercial général (AUDCG), révisé en 2010, régit le commerçant, l'entreprenant, les actes de commerce, le Registre du commerce et du crédit mobilier (RCCM), le fonds de commerce et le bail à usage professionnel (souvent appelé bail commercial).\n- Droit des obligations 2 : la responsabilité civile. Responsabilité délictuelle (fait personnel, fait des choses, fait d'autrui) et responsabilité contractuelle (inexécution du contrat). Au Sénégal, la matière relève principalement du Code des obligations civiles et commerciales (COCC).\n- Droit du travail : les relations individuelles de travail (formation, exécution, suspension et rupture du contrat de travail). Le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026). Apprenez les mécanismes, et vérifiez auprès de vos enseignants le texte applicable à la date de votre examen.\n\n## 3. Les épreuves et la méthode\n\nLe cas pratique reste l'épreuve reine. En L2, trois exigences s'ajoutent :\n\n- Identifier tous les problèmes : lisez l'énoncé deux fois, soulignez chaque événement et demandez-vous « quelle règle s'applique ici ? ». Un énoncé de dix lignes cache souvent trois ou quatre problèmes.\n- Hiérarchiser : traitez d'abord les questions préalables (qualification de commerçant, existence d'un contrat de travail), dont dépend le reste.\n- Chiffrer quand c'est demandé : posez le calcul, les données et le résultat ; vérifiez les ordres de grandeur.\n\nLe commentaire de décision et la dissertation restent possibles, notamment en responsabilité civile. Les décisions proposées dans ce cours sont fictives et présentées comme telles : on n'invente aucune jurisprudence réelle. À l'examen, on peut aussi vous demander des questions de cours courtes : définissez avec précision, puis illustrez.\n\nRappel de la grille du cas pratique : faits qualifiés, problème de droit, règle, application, conclusion. Ne citez aucun numéro d'article dont vous n'êtes pas certain ; écrivez « l'Acte uniforme relatif au droit commercial général prévoit que… ».\n\n## 4. Les pièges classiques de la L2\n\n- Confondre commerçant et entreprenant : l'entreprenant est une personne physique qui exerce une petite activité et s'enregistre par simple déclaration ; le commerçant est immatriculé au RCCM.\n- Confondre responsabilité contractuelle et délictuelle : s'il existe un contrat valable entre l'auteur et la victime, et que le dommage résulte de son inexécution, on raisonne en principe sur le terrain contractuel.\n- Oublier la qualification du contrat de travail : sans lien de subordination, il n'y a pas de contrat de travail, quelle que soit l'appellation choisie par les parties.\n- Présenter des taux légaux de mémoire : dans ce cours, les taux utilisés en droit du travail sont fictifs pour l'exemple ; vérifiez toujours le texte en vigueur.\n\n## 5. Plan de révision sur 6 semaines\n\n- Semaine 1 : droit commercial général (commerçant, entreprenant, actes de commerce, RCCM) ; deux cas pratiques de qualification.\n- Semaine 2 : fonds de commerce et bail commercial ; un cas pratique avec calcul de loyer ou d'indemnité.\n- Semaine 3 : responsabilité du fait personnel, du fait des choses et du fait d'autrui ; une fiche de décision.\n- Semaine 4 : responsabilité contractuelle, causes d'exonération, réparation chiffrée ; une dissertation (plan détaillé).\n- Semaine 5 : droit du travail (contrat, période d'essai, suspension, rupture) ; un cas pratique avec calcul d'indemnités fictives.\n- Semaine 6 : sujet type en 3 heures, correction, relecture des fiches et repos.\n\nExemple de répartition du temps pour une épreuve de 3 heures : 20 minutes de lecture et de brouillon (repérage des problèmes), 2 heures 15 de rédaction, 25 minutes de relecture et de vérification des calculs.\n\n## Points clés\n\n- La L2 rapproche le droit de la vie des affaires : droit commercial général OHADA, responsabilité civile, droit du travail.\n- Le cas pratique domine : identifier tous les problèmes, traiter d'abord les questions préalables, chiffrer proprement.\n- Les taux de droit du travail utilisés ici sont fictifs ; le Code du travail sénégalais est en transition.\n\n## Exercices pratiques\n\n- Exercice 1. Citez les trois matières clés de la L2 et l'Acte uniforme ou le code principal de chacune.\n- Exercice 2. Dans l'énoncé suivant, repérez les problèmes juridiques sans les résoudre : « Modou, qui vend des pièces détachées sur un marché de Thiès sans être enregistré, a embauché un apprenti sans contrat écrit. En déchargeant un carton, l'apprenti a blessé un client. »\n- Exercice 3. Quelle question préalable faut-il trancher avant de calculer des indemnités de licenciement ?\n- Exercice 4. Répartissez 3 heures d'épreuve selon la méthode proposée et justifiez le temps de relecture.\n- Exercice 5. Corrigez la phrase : « Selon l'article X de l'Acte uniforme, le commerçant doit… », écrite par un étudiant qui ne connaît pas le numéro exact.\n\n## Corrigé\n\n- Exercice 1. Droit commercial général : Acte uniforme relatif au droit commercial général (OHADA). Responsabilité civile : Code des obligations civiles et commerciales (COCC). Droit du travail : Code du travail sénégalais, en transition vers un nouveau texte, et conventions collectives.\n- Exercice 2. 1) Modou a-t-il la qualité de commerçant, et quelles sont les conséquences de son absence d'immatriculation ou de déclaration ? 2) Le contrat qui le lie à l'apprenti est-il un contrat d'apprentissage ou de travail, et quelles sont les conséquences de l'absence d'écrit ? 3) Qui répond du dommage causé au client : l'apprenti (fait personnel), Modou (fait d'autrui, en tant que commettant ou maître d'apprentissage) ? Quelle est la nature de la responsabilité envers le client ?\n- Exercice 3. L'existence d'un contrat de travail (lien de subordination) et le mode de rupture (licenciement, démission, faute grave), dont dépend le droit aux indemnités.\n- Exercice 4. 20 minutes de lecture et brouillon, 2 h 15 de rédaction, 25 minutes de relecture. La relecture permet de corriger les erreurs de calcul, de vérifier que chaque problème a une conclusion et d'améliorer la lisibilité.\n- Exercice 5. « L'Acte uniforme relatif au droit commercial général prévoit que le commerçant doit… ». On cite le texte sans inventer de numéro."
+   },
+   {
+    "title": "Droit commercial général OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des obligations 2 (responsabilité civile) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit du travail (relations individuelles) : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 en droit des affaires (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit commercial général OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des obligations 2 (responsabilité civile)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit du travail (relations individuelles)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-droit-l3",
+  "level": "Licence 3",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Droit des affaires Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre le droit des sociétés commerciales OHADA (SARL, SA, SAS : constitution, fonctionnement, organes, affectation du résultat), le droit des sûretés et des procédures collectives OHADA et le droit fiscal des affaires (principes, IS, TVA, retenues, contrôle, avec des taux fictifs). Fiches, exercices chiffrés corrigés, sujet type transversal et trois cours vidéo de 1h30. Prérequis : les acquis des Licences 1 et 2 (obligations, droit commercial général).",
+  "sort": 373,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le système LMD et préparer la poursuite en Master.\n- Connaître les trois matières clés de l'année : droit des sociétés commerciales OHADA, droit des sûretés et des procédures collectives OHADA, droit fiscal des affaires.\n- Adapter la méthode aux sujets transversaux, qui mêlent plusieurs matières.\n- Disposer d'un plan de révision sur 6 semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et conclut le premier cycle. Comme les années précédentes, elle est organisée en unités d'enseignement (UE) dotées de crédits, évaluées par un contrôle continu et un examen semestriel, avec une session de rattrapage. La validation de la Licence ouvre l'accès au Master, souvent sur dossier : vos résultats de L3 comptent beaucoup. Les règles de compensation, de crédits et de passage relèvent du règlement des études de votre établissement, qui seul fait foi.\n\nEn L3, beaucoup d'établissements demandent aussi un rapport de stage ou un mémoire court : c'est l'occasion d'appliquer le droit des affaires à une entreprise réelle, avec son accord et dans le respect de la confidentialité.\n\n## 2. Les trois matières clés\n\n- Droit des sociétés commerciales OHADA : l'Acte uniforme relatif au droit des sociétés commerciales et du groupement d'intérêt économique (AUSCGIE), révisé en 2014, régit la constitution, le fonctionnement et la dissolution des sociétés. On étudie surtout la SARL, la SA et la SAS, créée par la réforme de 2014.\n- Droit des sûretés et des procédures collectives OHADA : l'Acte uniforme portant organisation des sûretés (révisé en 2010) organise les garanties du crédit (cautionnement, gage, nantissement, hypothèque…). L'Acte uniforme portant organisation des procédures collectives d'apurement du passif (révisé en 2015) traite l'entreprise en difficulté : conciliation, règlement préventif, redressement judiciaire, liquidation des biens.\n- Droit fiscal des affaires : principes généraux de l'impôt, impôt sur les sociétés, TVA, impôts sur le revenu des capitaux mobiliers, procédures de contrôle. Au Sénégal, la matière repose sur le Code général des impôts, dans le cadre des directives de l'UEMOA. Dans ce cours, tous les taux utilisés sont fictifs pour l'exemple.\n\n## 3. Les épreuves de L3\n\n- Le cas pratique transversal : une même entreprise fictive pose des questions de droit des sociétés (qui décide ?), de sûretés (qui est payé en premier ?) et de fiscalité (combien d'impôt ?). Il faut passer d'une matière à l'autre sans confusion.\n- L'exercice chiffré : répartition des bénéfices, ordre de paiement des créanciers, calcul de l'impôt sur les sociétés ou de la TVA. Présentez les données, les formules, les résultats et une phrase d'interprétation.\n- La dissertation ou le commentaire : par exemple « La SAS, société de liberté ? » ou « La place du créancier dans les procédures collectives ». Les décisions éventuellement proposées dans ce cours sont fictives et présentées comme telles.\n- Les questions de cours : définitions précises (cessation des paiements, affectio societatis, assiette de l'impôt).\n\n## 4. Méthode : le raisonnement en trois temps\n\nPour chaque question d'un cas transversal, suivez trois temps :\n\n- Qualifier : quelle société ? quelle sûreté ? quel impôt ? quelle procédure ? Une mauvaise qualification fausse toute la suite.\n- Appliquer la règle : citez l'Acte uniforme ou le code sans inventer de numéro d'article (« l'AUSCGIE prévoit que… »).\n- Chiffrer et conclure : un résultat chiffré n'est complet qu'avec sa conclusion juridique (« la décision est valablement adoptée », « le créancier chirographaire reçoit 30 % de sa créance »).\n\n## 5. Pièges fréquents\n\n- Confondre les organes : dans une SARL, le gérant ; dans une SA, le conseil d'administration et le directeur général (ou le président-directeur général), ou l'administrateur général ; dans une SAS, le président obligatoire et les organes que prévoient les statuts.\n- Confondre sûreté personnelle (une personne s'engage : la caution) et sûreté réelle (un bien est affecté : gage, hypothèque).\n- Confondre règlement préventif (avant la cessation des paiements) et redressement judiciaire (après).\n- Confondre résultat comptable et résultat fiscal : le second s'obtient à partir du premier par des réintégrations et des déductions.\n- Présenter des taux fiscaux de mémoire : utilisez ceux de l'énoncé.\n\n## 6. Plan de révision sur 6 semaines\n\n- Semaine 1 : constitution des sociétés (statuts, apports, immatriculation) ; SARL.\n- Semaine 2 : SA et SAS ; affectation du résultat ; un exercice chiffré.\n- Semaine 3 : sûretés personnelles et réelles ; ordre de paiement simplifié.\n- Semaine 4 : procédures collectives ; un cas pratique complet.\n- Semaine 5 : fiscalité (principes, IS, TVA, retenues sur dividendes) ; trois exercices chiffrés.\n- Semaine 6 : sujet type transversal en 4 heures, correction, repos.\n\n## Points clés\n\n- La L3 couvre les sociétés, les sûretés et procédures collectives, et la fiscalité des affaires.\n- Les cas transversaux exigent de qualifier, appliquer, chiffrer et conclure.\n- Les taux fiscaux de ce cours sont fictifs ; les numéros d'articles ne sont cités que si l'on en est certain.\n\n## Exercices pratiques\n\n- Exercice 1. Associez chaque matière à son texte de référence : sociétés, sûretés, procédures collectives, fiscalité.\n- Exercice 2. Qualifiez : a) un ami garantit le prêt d'un commerçant ; b) un commerçant affecte son camion à la garantie d'un prêt ; c) une banque prend une garantie sur l'immeuble d'une société.\n- Exercice 3. Une société a un résultat comptable de 20 000 000 FCFA ; elle a comptabilisé 1 000 000 FCFA de charges non déductibles. Quel est son résultat fiscal, sans autre retraitement ?\n- Exercice 4. Dans une SAS, quel organe est obligatoire ?\n- Exercice 5. Une entreprise n'arrive plus à payer ses dettes exigibles avec ses disponibilités. Quel est le nom de cette situation, et quelles procédures deviennent possibles ?\n\n## Corrigé\n\n- Exercice 1. Sociétés : AUSCGIE ; sûretés : Acte uniforme portant organisation des sûretés ; procédures collectives : Acte uniforme portant organisation des procédures collectives d'apurement du passif ; fiscalité : Code général des impôts (cadre UEMOA).\n- Exercice 2. a) Cautionnement, sûreté personnelle ; b) gage, sûreté réelle mobilière (avec ou sans dépossession selon les modalités) ; c) hypothèque, sûreté réelle immobilière.\n- Exercice 3. 20 000 000 + 1 000 000 = 21 000 000 FCFA : les charges non déductibles sont réintégrées.\n- Exercice 4. Le président, qui représente la société à l'égard des tiers.\n- Exercice 5. La cessation des paiements. Elle ouvre le redressement judiciaire si l'entreprise peut être sauvée, ou la liquidation des biens dans le cas contraire ; le règlement préventif n'est plus possible."
+   },
+   {
+    "title": "Droit des sociétés commerciales OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit des sûretés et des procédures collectives OHADA : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Droit fiscal des affaires : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en droit des affaires (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des sociétés commerciales OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit des sûretés et des procédures collectives OHADA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Droit fiscal des affaires",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "lic-mkt-l1",
   "level": "Licence 1",
   "subject": "Marketing et commerce",
@@ -3691,6 +3871,186 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : Commerce international",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-log-l1",
+  "level": "Licence 1",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 1 en logistique et transport (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'introduction à la logistique et à la chaîne d'approvisionnement, la gestion des stocks (méthode ABC, quantité économique de Wilson, stock de sécurité, point de commande) et la géographie des transports avec les grands modes et corridors ouest-africains. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis en dehors des bases de calcul.",
+  "sort": 391,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre l'organisation de la Licence 1 dans le système LMD.\n- Connaître les matières clés de la première année en logistique et transport.\n- Adopter une méthode de révision efficace pour les exercices chiffrés et les questions de cours.\n- Identifier les types d'épreuves et savoir comment les aborder.\n- Suivre un plan de révision sur six semaines.\n\n## Le système LMD en quelques mots\n\nLes universités publiques et la plupart des écoles et instituts privés du Sénégal et de l'espace UEMOA appliquent le système LMD : Licence, Master, Doctorat. La Licence se prépare en trois ans, soit six semestres. Chaque semestre est découpé en unités d'enseignement (UE), qui regroupent plusieurs éléments constitutifs (les matières). Chaque UE donne droit à un nombre de crédits lorsqu'elle est validée.\n\nLes règles précises (nombre de crédits par UE, compensation entre matières, note éliminatoire, session de rattrapage, conditions de passage en année supérieure) varient d'un établissement à l'autre. Votre premier réflexe doit donc être de lire le règlement des études de votre établissement et la maquette de votre parcours. Ne vous fiez pas aux rumeurs entre étudiants : demandez les documents officiels à la scolarité.\n\nRetenez trois idées générales :\n\n- La note d'une matière combine souvent un contrôle continu (devoirs, travaux dirigés, exposés) et un examen final.\n- Une UE peut être validée par compensation entre ses matières, selon les règles de l'établissement.\n- La session de rattrapage existe en général, mais il vaut mieux ne pas compter dessus.\n\n## Les matières clés de la Licence 1\n\nEn première année, la maquette d'un parcours logistique et transport comprend des matières de tronc commun (économie générale, mathématiques, comptabilité, droit, informatique, langues, techniques d'expression) et des matières de spécialité. Ce cours se concentre sur trois matières de spécialité qui reviennent dans presque toutes les maquettes :\n\n- Introduction à la logistique et à la chaîne d'approvisionnement : définitions, flux, acteurs, coûts logistiques, taux de service.\n- Gestion des stocks : méthode ABC, quantité économique de Wilson, stock de sécurité, point de commande, indicateurs de rotation.\n- Géographie des transports et modes de transport : route, rail, maritime, aérien, intermodalité, corridors ouest-africains.\n\nCes matières se complètent. Un sujet d'examen peut très bien vous demander de calculer une quantité économique de commande, puis de choisir un mode de transport pour livrer cette commande, puis d'en mesurer le coût logistique total.\n\n## Méthode de révision\n\nLa logistique est une discipline à la fois descriptive et quantitative. Il faut donc réviser de deux façons.\n\nPour les notions de cours :\n\n- Faites une fiche par chapitre avec les définitions exactes (logistique, chaîne d'approvisionnement, flux tendus, rupture de charge, corridor, etc.).\n- Apprenez à illustrer chaque définition par un exemple sénégalais ou ouest-africain : un grossiste de Dakar, une coopérative agricole de la vallée du fleuve, un transporteur de la route de Tambacounda.\n- Dessinez les schémas de mémoire : la chaîne fournisseur, production, distribution, client avec les trois flux (physique, d'information, financier).\n\nPour les exercices chiffrés :\n\n- Écrivez toujours la formule avant de remplacer les lettres par les chiffres.\n- Indiquez les unités (unités par an, FCFA par commande, FCFA par unité et par an, jours).\n- Vérifiez la cohérence du résultat : une quantité économique supérieure à la demande annuelle est suspecte.\n- Refaites les exercices corrigés sans regarder la solution, puis comparez.\n\n## Les types d'épreuves\n\n- Questions de cours : définir, distinguer, expliquer. Répondez par une définition précise suivie d'un exemple. Une réponse de cinq lignes bien construite vaut mieux qu'une page vague.\n- QCM : lisez toutes les propositions ; méfiez-vous des mots absolus (toujours, jamais). Si le QCM comporte des points négatifs, ne répondez pas au hasard.\n- Exercice chiffré : stocks (Wilson, point de commande), coûts logistiques, coût de transport à la tonne-kilomètre. Présentez les calculs ligne par ligne et concluez par une phrase.\n- Cas pratique : une entreprise fictive, plusieurs questions liées. Il faut diagnostiquer, calculer puis recommander. La recommandation doit s'appuyer sur vos calculs.\n- Dissertation ou question de réflexion : par exemple « Le transport est-il un frein au développement des pays enclavés d'Afrique de l'Ouest ? ». Plan en deux ou trois parties, arguments, exemples, conclusion nuancée.\n- Projet ou dossier : étude d'une chaîne logistique réelle observée (marché, entrepôt, gare routière), rendue par écrit et parfois présentée oralement.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : introduction à la logistique. Fiches de définitions, schéma des flux, calcul du coût logistique et du taux de service.\n- Semaine 2 : gestion des stocks, partie 1. Méthode ABC, indicateurs de stock (stock moyen, rotation, couverture).\n- Semaine 3 : gestion des stocks, partie 2. Formule de Wilson, stock de sécurité, point de commande, remises sur quantité.\n- Semaine 4 : géographie des transports. Comparaison des modes, intermodalité, corridors ouest-africains, calculs à la tonne-kilomètre.\n- Semaine 5 : entraînement mixte. Un sujet type complet en temps limité, puis correction.\n- Semaine 6 : révision ciblée de vos erreurs, relecture des fiches, repos la veille.\n\nChaque semaine, prévoyez au moins trois séances de deux heures, dont une consacrée uniquement aux exercices. Le jour de l'examen, lisez tout le sujet, répartissez le temps selon le barème et gardez dix minutes pour relire calculs et unités.\n\n## Points clés\n\n- Lisez le règlement des études de votre établissement : il fixe les règles de validation.\n- Trois matières de spécialité structurent ce cours : logistique générale, stocks, transports.\n- Toujours écrire la formule, les unités et une phrase de conclusion.\n- Entraînez-vous en temps limité avant l'examen.\n\n## Exercices pratiques\n\nExercice 1. Citez les trois flux qui circulent dans une chaîne logistique et donnez un exemple de chacun pour un grossiste en riz de Kaolack (entreprise fictive).\n\nExercice 2. Un sujet de 3 heures comporte quatre parties notées 4, 8, 4 et 4 points. Proposez une répartition du temps en gardant 15 minutes de lecture et 10 minutes de relecture.\n\nExercice 3. Un étudiant a obtenu 9 sur 20 en gestion des stocks et 13 sur 20 en géographie des transports, deux matières d'une même UE de coefficients 2 et 1. Calculez la moyenne de l'UE. Que faut-il vérifier dans le règlement pour savoir si l'UE est validée ?\n\nExercice 4. Rédigez une introduction de dix lignes pour le sujet de réflexion : « Le transport est-il un frein au développement des pays enclavés d'Afrique de l'Ouest ? ».\n\n## Corrigé\n\nExercice 1. Le flux physique : les sacs de riz qui arrivent du port de Dakar par camion et repartent vers les boutiques. Le flux d'information : les bons de commande des boutiquiers, les bons de livraison, l'état des stocks. Le flux financier : les paiements des clients (espèces, mobile money, virement) et les règlements aux fournisseurs et aux transporteurs.\n\nExercice 2. Temps disponible pour composer : 180 − 15 − 10 = 155 minutes. Total des points : 20. Partie de 4 points : 155 × 4/20 = 31 minutes. Partie de 8 points : 155 × 8/20 = 62 minutes. Répartition : 31, 62, 31 et 31 minutes, soit 155 minutes.\n\nExercice 3. Moyenne de l'UE = (9 × 2 + 13 × 1) / (2 + 1) = 31/3 ≈ 10,33 sur 20. Il faut vérifier si la compensation entre matières est autorisée à l'intérieur de l'UE, et s'il existe une note éliminatoire par matière. Si la compensation est admise et qu'aucune note éliminatoire n'est fixée au-dessus de 9, l'UE est validée.\n\nExercice 4. Une bonne introduction comprend une accroche (par exemple : pour un importateur de Bamako ou de Ouagadougou, les marchandises débarquées dans un port côtier doivent encore parcourir plus de mille kilomètres), la définition des termes (transport, pays enclavé, développement), la problématique (le transport n'est-il qu'un coût supplémentaire ou peut-il devenir un levier d'intégration régionale ?) et l'annonce du plan (I. Un handicap réel en coûts et en délais ; II. Des corridors et des politiques régionales qui peuvent transformer la contrainte)."
+   },
+   {
+    "title": "Introduction à la logistique et à la chaîne d'approvisionnement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion des stocks : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Géographie des transports et modes de transport : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 logistique et transport (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Introduction à la logistique et à la chaîne d'approvisionnement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des stocks",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Géographie des transports et modes de transport",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-log-l2",
+  "level": "Licence 2",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 2 en logistique et transport (système LMD, contexte Sénégal et UEMOA). Le cours couvre l'entreposage et la manutention (implantation, préparation de commandes, indicateurs), le transport routier et la gestion de flotte (coût de revient kilométrique, optimisation des tournées) et le commerce international et la douane (Incoterms 2020, documents, transit, dédouanement). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : notions de Licence 1 (stocks, modes de transport).",
+  "sort": 392,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Connaître les trois matières de spécialité traitées dans ce cours.\n- Adapter sa méthode de révision à des matières plus techniques et plus réglementaires.\n- Connaître les types d'épreuves et suivre un plan de révision sur six semaines.\n\n## La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 du parcours. Comme en première année, chaque semestre est organisé en unités d'enseignement (UE) composées de plusieurs matières, et chaque UE validée apporte des crédits. Les règles de validation, de compensation, de note éliminatoire et de rattrapage dépendent de chaque université ou école : consultez le règlement des études et la maquette de votre parcours auprès de la scolarité.\n\nCe qui change en deuxième année : les matières deviennent plus opérationnelles. On ne se contente plus de définir la logistique ; on dimensionne un entrepôt, on calcule le coût de revient d'un camion, on choisit un Incoterm et on prépare un dossier de dédouanement. Les sujets d'examen contiennent davantage de cas pratiques complets.\n\n## Les matières clés de la Licence 2\n\nÀ côté des matières transversales (comptabilité analytique, statistiques, droit des contrats et des transports, anglais professionnel, informatique de gestion), trois matières de spécialité structurent ce cours :\n\n- Entreposage et manutention : rôle de l'entrepôt, implantation, équipements, préparation de commandes, indicateurs de performance.\n- Transport routier et gestion de flotte : coût de revient kilométrique, tarification, seuil de rentabilité, indicateurs de flotte, optimisation des tournées.\n- Commerce international et douane : Incoterms 2020, documents du commerce international, rôle du transitaire et du commissionnaire en douane, régimes douaniers, calcul de la valeur en douane et des droits avec des taux fictifs.\n\nCes matières sont liées. Une marchandise importée par conteneur passe la douane, est transportée par la route jusqu'à un entrepôt, puis préparée et livrée aux clients. Un bon sujet de synthèse suit justement ce parcours.\n\n## Méthode de révision\n\nPour les matières calculatoires (entrepôt, transport routier) :\n\n- Construisez un formulaire d'une page : taux d'occupation, productivité, coût de revient kilométrique, seuil de rentabilité, économies de Clarke et Wright.\n- Refaites chaque exemple du cours en changeant un chiffre, pour vérifier que vous comprenez le raisonnement et pas seulement le résultat.\n- Présentez toujours les calculs dans un tableau ou une liste claire, avec les unités.\n\nPour la matière réglementaire (commerce international et douane) :\n\n- Apprenez les onze Incoterms 2020 en deux groupes : les sept règles utilisables pour tout mode de transport, et les quatre règles réservées au transport maritime et fluvial.\n- Pour chaque Incoterm, retenez deux choses : où se transfère le risque, qui paie le transport principal.\n- Ne citez jamais un taux de droit de douane de mémoire : à l'examen, utilisez les taux fournis par l'énoncé. Dans la vie professionnelle, on consulte le tarif officiel en vigueur.\n\n## Les types d'épreuves\n\n- Questions de cours : définir un Incoterm, distinguer transitaire et commissionnaire en douane, expliquer le principe du « marche en avant » dans un entrepôt.\n- QCM : très fréquents sur les Incoterms et les documents.\n- Exercices chiffrés : capacité d'un entrepôt, effectif de préparateurs, coût de revient kilométrique, devis, calcul de valeur en douane.\n- Cas pratique : une entreprise fictive importe, stocke et distribue ; plusieurs questions enchaînées.\n- Projet : plan d'implantation d'un entrepôt, étude de la flotte d'une PME, dossier d'importation complet.\n\nConseil : dans un cas pratique, les erreurs se propagent. Si vous n'êtes pas sûr d'un résultat intermédiaire, indiquez-le, puis poursuivez avec votre chiffre. Le correcteur valorise souvent la méthode juste appliquée à un résultat faux.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : entreposage, partie 1. Rôles de l'entrepôt, implantation, flux, équipements, calcul de capacité.\n- Semaine 2 : entreposage, partie 2. Préparation de commandes, indicateurs, dimensionnement des effectifs.\n- Semaine 3 : transport routier. Coût de revient kilométrique, devis, seuil de rentabilité, indicateurs de flotte.\n- Semaine 4 : tournées et commerce international, partie 1. Méthode de Clarke et Wright, Incoterms 2020.\n- Semaine 5 : douane. Documents, régimes, valeur en douane, calcul des droits avec taux fictifs ; puis un sujet type en temps limité.\n- Semaine 6 : correction du sujet type, révision ciblée des erreurs, fiches de synthèse.\n\nPrévoyez des séances courtes et régulières pour les Incoterms (vingt minutes par jour avec des cartes mémoire) et des séances longues pour les cas pratiques.\n\n## Points clés\n\n- La Licence 2 est plus opérationnelle : dimensionner, chiffrer, choisir.\n- Formulaire d'une page pour l'entrepôt et le transport routier.\n- Incoterms : risque et transport principal, en deux groupes.\n- Jamais de taux douanier inventé : utilisez ceux de l'énoncé.\n\n## Exercices pratiques\n\nExercice 1. Citez les onze Incoterms 2020 en les classant en deux groupes.\n\nExercice 2. Pour un sujet de 4 heures comportant quatre dossiers notés 5, 6, 5 et 4 points, proposez une répartition du temps avec 15 minutes de lecture et 15 minutes de relecture.\n\nExercice 3. Expliquez pourquoi il ne faut pas inventer un taux de droit de douane dans une copie.\n\nExercice 4. Décrivez en cinq étapes le parcours d'un conteneur importé, du navire jusqu'au client final, en citant à chaque étape la matière de Licence 2 concernée.\n\nExercice 5. Proposez trois questions de cours que vous pourriez poser à un camarade sur l'entreposage.\n\n## Corrigé\n\nExercice 1. Tous modes : EXW, FCA, CPT, CIP, DAP, DPU, DDP. Maritime et voies navigables : FAS, FOB, CFR, CIF.\n\nExercice 2. Temps de composition : 240 − 15 − 15 = 210 minutes. Par point : 210 / 20 = 10,5 minutes. Répartition : 52,5 ; 63 ; 52,5 et 42 minutes, soit 210 minutes.\n\nExercice 3. Les taux changent, dépendent du produit, de son origine et des accords applicables. Un taux inventé fausse tout le calcul et montre un manque de rigueur. À l'examen, on utilise les taux fournis ; en entreprise, on consulte le tarif officiel en vigueur ou un commissionnaire agréé.\n\nExercice 4. Déchargement au port et formalités (commerce international et douane) ; enlèvement du conteneur et transport par camion (transport routier) ; réception et rangement à l'entrepôt (entreposage) ; préparation des commandes (entreposage) ; livraison par tournées (transport routier et gestion de flotte).\n\nExercice 5. Exemples : qu'est-ce qu'un taux d'occupation ? Quelle différence entre préparation « homme vers produit » et « produit vers homme » ? Pourquoi place-t-on les articles à forte rotation près des quais ?"
+   },
+   {
+    "title": "Entreposage et manutention : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Transport routier et gestion de flotte : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Commerce international et douane : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 logistique et transport (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Entreposage et manutention",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Transport routier et gestion de flotte",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Commerce international et douane",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-log-l3",
+  "level": "Licence 3",
+  "subject": "Logistique et transport",
+  "module": null,
+  "title": "Logistique et transport Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de la Licence 3 en logistique et transport (système LMD, contexte Sénégal et UEMOA). Le cours couvre le supply chain management (prévision de la demande, planification, effet coup de fouet), le transport maritime et portuaire (conteneurisation, fret, opérations portuaires) et la logistique durable, les achats et le pilotage par indicateurs (tableaux de bord, coûts logistiques). Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : Licence 1 et 2 (stocks, transport, entreposage, Incoterms).",
+  "sort": 393,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en logistique et transport",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les enjeux de la Licence 3, dernière année du premier cycle LMD.\n- Connaître les trois matières de spécialité traitées dans ce cours.\n- Adapter sa méthode aux sujets de synthèse et aux exercices de prévision.\n- Suivre un plan de révision sur six semaines.\n\n## La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6. Elle conclut le premier cycle : sa validation donne le diplôme de Licence et conditionne l'accès au Master ou l'entrée dans la vie professionnelle. Comme les années précédentes, elle est organisée en unités d'enseignement (UE) et en crédits ; les règles de validation, de compensation et de rattrapage sont fixées par chaque établissement. Beaucoup de parcours prévoient aussi un stage et un rapport ou un mémoire de fin de cycle : renseignez-vous tôt sur le calendrier et les exigences auprès de votre scolarité.\n\nEn troisième année, on attend de vous une vision d'ensemble. Il ne suffit plus de calculer une quantité économique ou un coût de revient : il faut piloter une chaîne logistique entière, prévoir la demande, coordonner les partenaires, choisir des fournisseurs, mesurer la performance et intégrer l'environnement.\n\n## Les matières clés de la Licence 3\n\nÀ côté des matières transversales (contrôle de gestion, recherche opérationnelle, droit des transports internationaux, anglais, méthodologie du mémoire), trois matières de spécialité structurent ce cours :\n\n- Supply chain management : prévision de la demande (moyenne mobile, lissage exponentiel, régression linéaire), mesure de l'erreur, planification et calcul des besoins, effet coup de fouet et collaboration.\n- Transport maritime et portuaire : conteneurisation, types de navires et de services, fret et surcharges, connaissement, opérations portuaires et indicateurs.\n- Logistique durable, achats et pilotage par indicateurs : empreinte carbone du transport, logistique inverse, processus achats, coût total de possession, évaluation des fournisseurs, tableaux de bord.\n\nCes matières ne reprennent pas celles des années précédentes, mais elles s'appuient sur elles : la gestion des stocks de Licence 1 et les Incoterms de Licence 2 sont supposés connus.\n\n## Méthode de révision\n\n- Pour les prévisions : entraînez-vous à remplir à la main des tableaux de lissage et de régression ; présentez les colonnes (période, demande, prévision, erreur) et vérifiez chaque ligne.\n- Pour le maritime : apprenez le vocabulaire précis (EVP, FCL, LCL, ligne régulière, tramping, connaissement, surestaries, détention, BAF, THC) et sachez l'illustrer.\n- Pour le pilotage : pour chaque indicateur, retenez sa formule, son unité, son sens d'amélioration (plus haut ou plus bas est mieux) et une action corrective possible.\n- Pour les questions de synthèse : construisez des plans en deux parties avec des exemples ouest-africains, en restant prudent sur les chiffres que vous ne pouvez pas vérifier.\n\n## Les types d'épreuves\n\n- Questions de cours et QCM : définitions, comparaison de méthodes.\n- Exercices chiffrés : prévision, calcul des besoins, fret maritime, remplissage d'un conteneur, coût total de possession, notation des fournisseurs, indicateurs.\n- Cas de synthèse : une entreprise fictive importe par voie maritime, prévoit ses ventes, choisit ses fournisseurs et pilote ses coûts ; on vous demande un diagnostic et un plan d'action.\n- Dissertation : par exemple « La logistique durable est-elle compatible avec la réduction des coûts ? ».\n- Rapport de stage ou mémoire : diagnostic d'une chaîne logistique réelle avec recommandations.\n\n## Plan de révision sur six semaines\n\n- Semaine 1 : prévision de la demande. Méthodes, erreurs (MAD, MAPE), signal de suivi.\n- Semaine 2 : planification et calcul des besoins, effet coup de fouet et collaboration.\n- Semaine 3 : transport maritime. Conteneurs, navires, fret, surcharges, connaissement.\n- Semaine 4 : opérations portuaires et indicateurs ; logistique durable.\n- Semaine 5 : achats et pilotage ; puis un sujet type complet en temps limité.\n- Semaine 6 : correction, révision des erreurs, fiches de synthèse, préparation de l'oral éventuel du stage.\n\n## Points clés\n\n- La Licence 3 exige une vision globale de la chaîne.\n- Trois matières : supply chain management, maritime et portuaire, durable, achats et pilotage.\n- Pour chaque indicateur : formule, unité, sens, action.\n- Prudence sur les chiffres non vérifiables.\n\n## Exercices pratiques\n\nExercice 1. Citez trois méthodes de prévision de la demande et une limite de chacune.\n\nExercice 2. Pour un indicateur « taux de service », précisez la formule, l'unité et le sens d'amélioration.\n\nExercice 3. Proposez un plan en deux parties pour le sujet : « La logistique durable est-elle compatible avec la réduction des coûts ? ».\n\nExercice 4. Un sujet de 4 heures comporte trois dossiers notés 7, 7 et 6 points. Répartissez le temps avec 20 minutes de lecture et de relecture au total.\n\nExercice 5. Expliquez en quoi les Incoterms vus en Licence 2 sont utiles pour la matière « transport maritime et portuaire ».\n\n## Corrigé\n\nExercice 1. Moyenne mobile : réagit lentement et ne suit pas une tendance. Lissage exponentiel simple : prend du retard lorsque la demande croît régulièrement. Régression linéaire : suppose une tendance stable et ignore les ruptures ou la saisonnalité si on ne la modélise pas.\n\nExercice 2. Taux de service = commandes livrées complètes et à l'heure / commandes totales × 100 ; unité : pourcentage ; plus il est élevé, mieux c'est.\n\nExercice 3. I. Des convergences réelles : moins de kilomètres à vide, meilleur remplissage, moins de carburant, emballages réutilisables, donc moins de coûts et moins d'émissions. II. Des arbitrages : certains investissements verts coûtent cher au départ, le transport lent et massifié allonge les délais ; d'où l'intérêt de raisonner en coût total sur la durée de vie.\n\nExercice 4. Temps de composition : 240 − 20 = 220 minutes, soit 11 minutes par point. Répartition : 77, 77 et 66 minutes.\n\nExercice 5. L'Incoterm détermine qui réserve et paie le fret maritime, qui supporte le risque pendant la traversée et qui paie les frais portuaires au départ et à l'arrivée. Il conditionne donc l'organisation du transport maritime."
+   },
+   {
+    "title": "Supply chain management : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Transport maritime et portuaire : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Logistique durable, achats et pilotage par indicateurs : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 logistique et transport (entraînement, corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Supply chain management",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Transport maritime et portuaire",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Logistique durable, achats et pilotage par indicateurs",
     "kind": "video",
     "is_free": false,
     "duration_min": 90

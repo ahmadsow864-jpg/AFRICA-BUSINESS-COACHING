@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 11/12). À exécuter après seed.sql.
+-- Cours (partie 11/13). À exécuter après seed.sql.
 
 -- Cours : Économie Licence 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1847,1425 +1847,1381 @@ Merci à toutes et à tous.', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-eco-l3'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Économie publique');
 
--- Cours : Marketing et commerce Licence 1 : réussir ses examens
+-- Cours : Droit des affaires Licence 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'lic-mkt-l1', (select id from public.levels where name = 'Licence 1'), null, 'Marketing et commerce', 'Marketing et commerce Licence 1 : réussir ses examens', 'Préparation aux partiels et examens semestriels de première année de Licence en marketing et commerce (universités et écoles du Sénégal et de l''espace UEMOA, système LMD). Le cours couvre trois matières clés : les fondamentaux du marketing (besoins, marché, segmentation-ciblage-positionnement, mix 4P/7P), le comportement du consommateur et les techniques de vente et de négociation commerciale. Fiches de cours, cas d''entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : niveau Baccalauréat et aisance avec les pourcentages.', true, 381
+select 'lic-droit-l1', (select id from public.levels where name = 'Licence 1'), null, 'Droit des affaires', 'Droit des affaires Licence 1 : réussir ses examens', 'Préparation aux partiels et examens semestriels de la Licence 1 en droit et droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre l''introduction au droit (sources, organisation judiciaire, personnes, preuve), le droit des obligations 1 (formation, validité et effets du contrat) et les institutions administratives et le droit constitutionnel, avec la méthodologie juridique : cas pratique, dissertation, commentaire d''arrêt. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis.', true, 371
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Licence 1 en Marketing et commerce', '## Objectifs de la leçon
+select c.id, 'Réussir ses examens de Licence 1 en droit des affaires (méthodologie juridique)', '## Objectifs de la leçon
 
-- Comprendre comment est organisée la première année de Licence dans le système LMD.
-- Identifier les trois matières clés de l''année en marketing et commerce et ce que les correcteurs attendent.
-- Connaître les différents types d''épreuves et la bonne manière d''y répondre.
-- Construire un plan de révision réaliste sur six semaines.
+- Comprendre l''organisation de la Licence 1 en droit (ou en droit des affaires) dans le système LMD : semestres, unités d''enseignement, crédits, évaluations.
+- Connaître les matières clés de la première année et ce que le correcteur attend de vous.
+- Maîtriser les trois exercices juridiques de base : le cas pratique, la dissertation et le commentaire d''arrêt.
+- Disposer d''un plan de révision sur 6 semaines.
 
 ## 1. La Licence 1 dans le système LMD
 
-Les universités publiques et les écoles de commerce du Sénégal, comme celles des autres pays de l''espace UEMOA, appliquent le système LMD : Licence, Master, Doctorat. La Licence se déroule en trois années, soit six semestres. Chaque semestre regroupe des unités d''enseignement (UE), et chaque UE contient une ou plusieurs matières, appelées aussi éléments constitutifs (EC).
+Les universités et écoles du Sénégal et de l''espace UEMOA ont adopté le système LMD (Licence, Master, Doctorat). La Licence se déroule sur trois années de deux semestres. Chaque semestre regroupe des unités d''enseignement (UE), par exemple une UE « Fondamentaux du droit privé » qui réunit l''introduction au droit et le droit des obligations.
 
-Chaque UE donne droit à des crédits lorsqu''elle est validée. Les crédits mesurent la charge de travail de l''étudiant : cours, travaux dirigés, travail personnel. Le nombre de crédits par UE, les coefficients, les règles de compensation entre matières et les conditions de passage en deuxième année varient d''un établissement à l''autre. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité ou du département.
+Chaque UE porte des crédits, qui mesurent le volume de travail (cours magistraux, travaux dirigés, travail personnel). Le nombre de crédits, les coefficients, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : seul le règlement des études de votre faculté ou de votre école fait foi.
 
-En général, la note d''une matière combine un contrôle continu (devoirs, exposés, travaux dirigés, participation) et un examen de fin de semestre. Une session de rattrapage est souvent prévue pour les UE non validées. Retenez une règle simple : une note faible dans une matière peut parfois être compensée par d''autres notes de la même UE, mais une absence à un examen ne se compense presque jamais.
+Trois mécanismes se retrouvent presque partout :
 
-## 2. Les matières clés de l''année
+- Le contrôle continu : interrogations en travaux dirigés (TD), fiches d''arrêt, exposés, petits devoirs sur table.
+- L''examen semestriel : une épreuve écrite de 2 à 4 heures, souvent décisive dans la note finale, parfois complétée par un oral.
+- La session de rattrapage : une seconde chance pour les UE non validées, selon les règles de l''établissement.
 
-La première année installe le vocabulaire et les raisonnements de base du marketing et de la vente. Ce cours se concentre sur trois matières qui pèsent lourd dans la plupart des maquettes :
+## 2. Les matières clés de la Licence 1
 
-- Fondamentaux du marketing : besoins et demande, notion de marché, part de marché, segmentation, ciblage, positionnement, et marketing-mix (4P puis 7P pour les services).
-- Comportement du consommateur : motivations, processus de décision d''achat, facteurs d''influence, attitudes, fidélité.
-- Techniques de vente et négociation commerciale : étapes de l''entretien de vente, découverte des besoins, argumentation, traitement des objections, conclusion, préparation d''une négociation et calcul de l''impact d''une remise.
+Ce cours travaille trois matières fondamentales, à côté des enseignements de tronc commun (économie, histoire des institutions, langues, techniques d''expression).
 
-Selon les établissements, l''année comprend aussi l''économie générale, la comptabilité générale, les mathématiques et statistiques, l''expression écrite et orale, l''informatique et l''anglais commercial.
+- Introduction au droit : définition du droit, distinction entre droit objectif et droits subjectifs, sources du droit (Constitution, traités dont le traité OHADA, lois, règlements, jurisprudence, coutume, doctrine), organisation judiciaire en termes généraux, personnes physiques et morales, preuve.
+- Droit des obligations 1 : le contrat. Au Sénégal, la matière est régie principalement par le Code des obligations civiles et commerciales (COCC). On étudie la formation du contrat, ses conditions de validité, la nullité et les effets du contrat.
+- Institutions administratives et droit constitutionnel : l''État, la Constitution, la séparation des pouvoirs, les régimes politiques, puis l''organisation administrative (centralisation, déconcentration, décentralisation) et les grandes notions de service public.
 
-## 3. Les types d''épreuves et ce qu''on attend de vous
+## 3. Ce que le correcteur attend
 
-- La question de cours : définir une notion et l''illustrer. Exemple : « Définissez la segmentation et donnez trois critères. » Le correcteur attend une définition précise, une structure et un exemple concret.
-- Le QCM ou le vrai-faux : il teste la précision du vocabulaire. Lisez chaque proposition jusqu''au bout ; un seul mot change souvent le sens.
-- L''exercice chiffré : part de marché, taux de pénétration, score d''attitude, taux de transformation, impact d''une remise sur la marge. Écrivez toujours la formule, puis le calcul, puis le résultat avec son unité, puis une phrase d''interprétation.
-- Le cas pratique : une entreprise, souvent sénégalaise, avec un problème. Il faut faire un diagnostic court, proposer des actions justifiées et rester réaliste au regard du contexte (budget, circuits de distribution, habitudes des clients).
-- La dissertation ou question de réflexion : par exemple « Le marketing crée-t-il des besoins ? ». On attend une introduction avec définition des termes et problématique, un plan en deux ou trois parties, des exemples, une conclusion.
-- Le projet ou le dossier en groupe : étude d''un produit, plan de lancement, jeu de rôle de vente filmé. La forme compte : rapport structuré, sources citées, répartition des tâches.
+En droit, on n''évalue pas la quantité de connaissances récitées, mais la capacité à raisonner avec la règle de droit. Une copie juridique réussie :
 
-## 4. La méthode de révision
+- emploie un vocabulaire exact (on ne confond pas « nullité » et « résolution », « loi » et « décret ») ;
+- cite la règle applicable sans inventer de numéro d''article : si vous n''êtes pas sûr du numéro, écrivez « le COCC dispose que… » ou « l''Acte uniforme relatif au droit commercial général prévoit que… » ;
+- suit un plan apparent, annoncé et respecté ;
+- conclut clairement en répondant à la question posée.
 
-Réviser le marketing, ce n''est pas réciter des définitions. Il faut savoir les appliquer à un cas. Voici une méthode en quatre temps.
+## 4. Méthode n°1 : le cas pratique
 
-- Fiche : pour chaque chapitre, une page maximum avec les définitions, les formules et un schéma décrit avec vos mots.
-- Exemples : associez à chaque notion un exemple sénégalais tiré de votre quotidien (boutique de quartier, marché Sandaga, vendeur de crédit téléphonique, restaurant de dibiterie).
-- Entraînement : refaites les exercices de TD sans regarder le corrigé, puis comparez.
-- Oral : expliquez une notion à un camarade en deux minutes. Si vous n''y arrivez pas, vous ne la maîtrisez pas encore.
+Le cas pratique présente une situation de fait (un litige entre des personnes) et vous demande de la résoudre en droit. La méthode repose sur le syllogisme juridique : majeure (la règle), mineure (les faits), conclusion.
 
-Exemple de mini-fiche. Part de marché en valeur = chiffre d''affaires de l''entreprise / chiffre d''affaires total du marché × 100. Si une laiterie fictive de Thiès réalise 360 000 000 FCFA sur un marché de 2 400 000 000 FCFA, sa part de marché est de 15 %. Une ligne d''interprétation : l''entreprise est un acteur moyen, loin d''un leader qui détiendrait 35 %.
+- Étape 1. Résumer les faits utiles en les qualifiant juridiquement : « Awa » devient « la venderesse », « l''accord sur le prix » devient « l''échange des consentements ».
+- Étape 2. Poser le problème de droit sous forme de question générale : « Un contrat conclu par un mineur non émancipé est-il valable ? »
+- Étape 3. Exposer la règle de droit applicable (principe, conditions, exceptions).
+- Étape 4. Appliquer la règle aux faits, condition par condition.
+- Étape 5. Conclure par une réponse nette, éventuellement nuancée (« sous réserve de prouver que… »).
 
-## 5. Plan de révision sur six semaines
+S''il y a plusieurs problèmes, on les traite l''un après l''autre, chacun avec son syllogisme. Pas d''introduction historique : allez droit au problème.
 
-- Semaine 1 : bilan. Rassemblez cours, TD et anciens sujets. Listez les chapitres et notez pour chacun votre niveau (acquis, fragile, non vu).
-- Semaine 2 : fondamentaux du marketing. Fiches sur le marché, les indicateurs, la démarche segmentation-ciblage-positionnement et le mix. Exercices de part de marché.
-- Semaine 3 : comportement du consommateur. Fiches sur les motivations, le processus d''achat, les influences et les attitudes. Exercices de score multi-attributs.
-- Semaine 4 : techniques de vente et négociation. Fiches sur les étapes de la vente, la méthode SONCAS, la reformulation, les objections. Jeux de rôle à deux et calculs de remise.
-- Semaine 5 : sujets types en temps limité. Un sujet complet par séance de trois heures, puis correction sérieuse.
-- Semaine 6 : consolidation. Relecture des fiches, reprise des erreurs fréquentes, repos la veille de l''épreuve.
+## 5. Méthode n°2 : la dissertation juridique
 
-Prévoyez des séances courtes et régulières, par exemple deux heures par jour, plutôt que des nuits blanches. Travaillez en petit groupe une fois par semaine pour les jeux de rôle de vente : c''est la meilleure préparation aux oraux.
+La dissertation porte sur un sujet théorique (« La force obligatoire du contrat », « La décentralisation au Sénégal »). Elle exige une démonstration organisée.
 
-## Points clés
+- L''introduction comporte : une accroche, la définition des termes du sujet, le contexte (sources, évolution), l''intérêt du sujet, la problématique (la question centrale) et l''annonce du plan.
+- Le développement suit en principe deux parties, chacune divisée en deux sous-parties (I. A. B. ; II. A. B.), avec des titres courts et explicatifs.
+- Chaque partie commence par un chapeau (quelques lignes qui annoncent les sous-parties) et des transitions relient les parties.
+- La conclusion est facultative dans de nombreuses facultés ; si vous en faites une, elle doit ouvrir le sujet sans le résumer mécaniquement.
 
-- Lisez le règlement des études de votre établissement : crédits, coefficients et compensation y sont fixés.
-- Trois matières clés cette année : fondamentaux du marketing, comportement du consommateur, vente et négociation.
-- Pour chaque calcul : formule, application, résultat avec unité, interprétation.
-- Six semaines suffisent si le travail est régulier et tourné vers l''application.
+Exemple de plan sur « La force obligatoire du contrat » : I. Un principe affirmé (A. Le contrat, loi des parties ; B. Le contrat s''impose au juge) ; II. Un principe aménagé (A. Les tempéraments légaux ; B. Les aménagements conventionnels).
 
-## Exercices pratiques
+## 6. Méthode n°3 : le commentaire d''arrêt
 
-- Exercice 1. Citez quatre types d''épreuves que vous pouvez rencontrer en Licence 1 et, pour chacune, une erreur à éviter.
-- Exercice 2. Une boutique fictive de cosmétiques de la Médina réalise 54 000 000 FCFA de ventes annuelles sur un marché local estimé à 360 000 000 FCFA. Calculez sa part de marché en valeur et interprétez-la.
-- Exercice 3. Rédigez une mini-fiche (cinq lignes maximum) sur la notion de besoin.
-- Exercice 4. Cas pratique. Awa, étudiante en Licence 1, révise uniquement en relisant ses cours la nuit précédant chaque examen. Ses notes en exercices chiffrés sont faibles. Diagnostiquez ses erreurs de méthode et proposez-lui trois changements concrets.
+On vous remet une décision de justice. Vous devez l''expliquer, puis l''apprécier. Le travail commence par la fiche d''arrêt :
 
-## Corrigé
+- Les faits : qui a fait quoi, qualifié juridiquement.
+- La procédure : quelle juridiction a statué en premier, qui a fait appel, qui s''est pourvu en cassation.
+- Les prétentions des parties : les arguments opposés.
+- Le problème de droit : la question juridique tranchée par la juridiction.
+- La solution : ce qu''a décidé la juridiction, et sur quel fondement.
 
-- Exercice 1. Question de cours : éviter la définition approximative sans exemple. QCM : éviter de répondre sans lire chaque proposition en entier. Exercice chiffré : ne pas oublier la formule et l''interprétation. Cas pratique : ne pas proposer d''actions déconnectées du budget et de la cible. Dissertation : ne pas écrire sans problématique ni plan.
-- Exercice 2. Part de marché = 54 000 000 / 360 000 000 × 100 = 15 %. La boutique détient près d''un sixième du marché local : c''est un acteur significatif mais pas dominant ; il faut connaître la part des concurrents pour savoir si elle est leader.
-- Exercice 3. Exemple : « Le besoin est un sentiment de manque ressenti par une personne (avoir faim, se protéger, être reconnu). Il existe avant le marketing. Le désir est la forme que prend la réponse au besoin selon la culture (manger un thiéboudienne). La demande est un désir accompagné d''un pouvoir d''achat. Le marketing agit surtout sur les désirs et la demande. »
-- Exercice 4. Diagnostic : révision tardive, passive (relecture) et sans entraînement aux calculs, plus le manque de sommeil. Propositions : réviser dès six semaines avant l''examen, deux heures par jour ; refaire les exercices de TD sans corrigé ; rédiger des fiches avec formules et exemples ; faire un sujet complet chronométré par semaine ; dormir la veille de l''épreuve.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Marketing et commerce');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Fondamentaux du marketing : l''essentiel pour l''examen', '## Objectifs de la leçon
+Le commentaire lui-même suit un plan en deux parties : souvent, la première explique le sens de la solution, la seconde en apprécie la valeur (conformité aux textes, opportunité, portée). Attention : ne remplacez jamais l''analyse de la décision par une récitation du cours. Dans ce cours, les décisions proposées à l''entraînement sont fictives et présentées comme telles : on n''invente aucune jurisprudence réelle.
 
-- Définir le marketing et distinguer besoin, désir et demande.
-- Analyser un marché et calculer ses principaux indicateurs.
-- Maîtriser la démarche segmentation, ciblage, positionnement.
-- Construire un marketing-mix cohérent (4P pour un produit, 7P pour un service).
+## 7. Plan de révision sur 6 semaines
 
-## 1. Qu''est-ce que le marketing ?
-
-Le marketing est l''ensemble des méthodes par lesquelles une organisation comprend les besoins de ses clients, conçoit une offre qui y répond mieux que la concurrence, la fait connaître et la rend accessible, avec profit. Le marketing ne se limite pas à la publicité : il commence par l''écoute du marché et va jusqu''au service après-vente.
-
-On distingue trois notions souvent confondues :
-
-- Le besoin : sentiment de manque (se nourrir, se déplacer, être reconnu). Il n''est pas créé par l''entreprise.
-- Le désir : moyen privilégié de satisfaire un besoin, façonné par la culture et l''environnement. Pour se déplacer à Dakar, l''un désire un taxi, l''autre un bus rapide, un troisième une moto.
-- La demande : désir solvable, c''est-à-dire appuyé par un pouvoir d''achat.
-
-L''approche marketing s''oppose à l''approche produit (« je fabrique ce que je sais faire et je cherche des acheteurs »). Elle part du client.
-
-## 2. Le marché et ses indicateurs
-
-Au sens marketing, le marché est l''ensemble des clients actuels et potentiels d''un produit, ainsi que les concurrents et les intermédiaires. On distingue :
-
-- Le marché principal : produits identiques (yaourt).
-- Le marché environnant : produits de substitution (lait caillé artisanal, jus).
-- Le marché générique : le besoin satisfait (desserts et boissons lactées).
-- Le marché support : produits nécessaires à la consommation (réfrigérateurs).
-
-Le marché actuel regroupe les consommateurs du produit. Le marché potentiel ajoute les non-consommateurs relatifs (ils pourraient acheter mais ne le font pas encore). Les non-consommateurs absolus ne consommeront jamais le produit (raisons physiques, religieuses, culturelles).
-
-Formules à connaître :
-
-- Part de marché (PDM) en valeur = chiffre d''affaires de l''entreprise / chiffre d''affaires du marché × 100. On peut aussi la calculer en volume (quantités).
-- Part de marché relative = ventes de l''entreprise / ventes du principal concurrent (ou du leader si l''entreprise n''est pas leader). Supérieure à 1, l''entreprise est leader.
-- Taux de pénétration = nombre d''acheteurs du produit / population de référence × 100.
-
-Exemple chiffré. Teranga Lait SARL, laiterie fictive de Thiès, vend des yaourts. Le marché régional pèse 2 400 000 000 FCFA par an. Teranga Lait réalise 360 000 000 FCFA ; le leader, 840 000 000 FCFA.
-
-- PDM de Teranga Lait = 360 000 000 / 2 400 000 000 × 100 = 15 %.
-- PDM du leader = 840 000 000 / 2 400 000 000 × 100 = 35 %.
-- PDM relative de Teranga Lait = 360 000 000 / 840 000 000 = 0,43 : elle vend moins de la moitié du leader.
-- Dans sa zone, 18 000 ménages sur 50 000 achètent du yaourt au moins une fois par mois : taux de pénétration = 18 000 / 50 000 × 100 = 36 %. Il reste 64 % de ménages à convaincre, dont une partie de non-consommateurs relatifs.
-
-## 3. Segmentation, ciblage, positionnement
-
-Schéma décrit : trois marches d''escalier. Marche 1 « Segmenter » (découper le marché en groupes homogènes), marche 2 « Cibler » (choisir les groupes à servir), marche 3 « Positionner » (définir l''image voulue dans l''esprit de la cible). Le mix vient ensuite comme mise en œuvre.
-
-Segmenter consiste à découper le marché en sous-ensembles homogènes à l''intérieur, hétérogènes entre eux. Critères usuels :
-
-- Sociodémographiques : âge, sexe, revenu, profession, taille du ménage, milieu urbain ou rural.
-- Géographiques : région, ville, quartier.
-- Psychographiques : style de vie, valeurs, personnalité.
-- Comportementaux : fréquence d''achat, fidélité, avantage recherché, occasion d''usage.
-
-Un bon segment est mesurable, accessible (on peut l''atteindre par la communication et la distribution), suffisamment rentable et réellement différent des autres.
-
-Cibler, c''est choisir. Trois stratégies classiques :
-
-- Marketing indifférencié : une seule offre pour tout le marché (coûts faibles, risque d''être moyen pour tous).
-- Marketing différencié : une offre adaptée à chaque segment retenu (meilleure adaptation, coûts plus élevés).
-- Marketing concentré : un seul segment (idéal pour une PME, mais dépendance forte).
-
-Positionner, c''est définir la place que l''on veut occuper dans l''esprit des clients par rapport aux concurrents. Un positionnement efficace est simple, crédible, différent et attractif. On l''illustre par une carte perceptuelle : deux axes (par exemple prix bas ou élevé, produit traditionnel ou moderne), sur lesquels on place les marques.
-
-Exemple. Teranga Lait segmente selon l''âge et l''occasion : enfants (goûter scolaire), jeunes actifs (en-cas), familles (dessert). Elle choisit un marketing concentré sur les familles de Thiès et Mbour, avec le positionnement « le yaourt frais de la région, au goût d''autrefois, à prix familial ».
-
-## 4. Le marketing-mix
-
-Le marketing-mix est la combinaison cohérente des décisions opérationnelles. Pour un produit, on retient les 4P :
-
-- Produit : caractéristiques, qualité, gamme, emballage, marque, services associés.
-- Prix : niveau, remises, conditions de paiement.
-- Place (distribution) : canaux, points de vente, logistique.
-- Promotion (communication) : publicité, promotion des ventes, relations publiques, réseaux sociaux, force de vente.
-
-Pour un service, on ajoute trois P :
-
-- Personnel : compétence et attitude des employés en contact.
-- Processus : déroulement du service, délais, files d''attente.
-- Preuve physique (Physical evidence) : locaux, tenue, documents, tout ce qui rend le service tangible.
-
-La règle d''or est la cohérence : un positionnement « prix familial » est incompatible avec un pot de luxe vendu uniquement en supermarché haut de gamme.
+- Semaine 1 : relire l''introduction au droit ; fiches sur les sources et l''organisation judiciaire.
+- Semaine 2 : droit des obligations (formation et validité du contrat) ; deux cas pratiques.
+- Semaine 3 : droit des obligations (nullités, effets du contrat) ; une fiche d''arrêt.
+- Semaine 4 : droit constitutionnel et institutions administratives ; une dissertation (plan détaillé).
+- Semaine 5 : sujets types en temps limité ; correction avec la grille de méthode.
+- Semaine 6 : relecture des fiches, apprentissage des définitions, repos la veille de l''examen.
 
 ## Points clés
 
-- Besoin, désir, demande : trois niveaux distincts.
-- PDM = ventes entreprise / ventes marché ; PDM relative = ventes entreprise / ventes du leader ou du premier concurrent.
-- Segmenter, cibler, positionner, puis décliner le mix.
-- 4P pour les produits, 7P pour les services, et toujours la cohérence.
+- Le système LMD organise l''année en semestres, UE et crédits ; le règlement de votre établissement fait foi.
+- Les trois matières clés de L1 : introduction au droit, droit des obligations (contrat), institutions administratives et droit constitutionnel.
+- Le cas pratique repose sur le syllogisme ; la dissertation sur une problématique et un plan en deux parties ; le commentaire sur la fiche d''arrêt.
 
 ## Exercices pratiques
 
-- Exercice 1. Donnez un exemple sénégalais de besoin, de désir et de demande pour le besoin « se désaltérer ».
-- Exercice 2. Sur le marché fictif du jus local en bouteille à Saint-Louis (3 600 millions de FCFA), Bissap Ndar réalise 540 millions et le leader 1 260 millions. Calculez la PDM de chacun et la PDM relative de Bissap Ndar.
-- Exercice 3. Une ville compte 40 000 ménages ; 10 000 achètent du jus en bouteille. Calculez le taux de pénétration. Que représentent les 30 000 autres ménages ?
-- Exercice 4. Proposez trois critères de segmentation pertinents pour un service de livraison de repas à Dakar et justifiez-les.
-- Exercice 5. Cas pratique. Kër Coiffure, salon fictif de Ziguinchor, veut se positionner « salon moderne et rapide pour femmes actives ». Proposez son mix 7P.
+- Exercice 1. Citez les trois éléments du syllogisme juridique.
+- Exercice 2. Transformez cette question de fait en problème de droit : « Moussa, 16 ans, peut-il obtenir l''annulation de la vente de sa moto qu''il a conclue seul ? »
+- Exercice 3. Rédigez l''annonce de plan d''une dissertation sur « La loi et le règlement ».
+- Exercice 4. Classez ces éléments dans les rubriques d''une fiche d''arrêt : « la cour d''appel a rejeté la demande » ; « le vendeur soutient que la vente était parfaite » ; « un commerçant a livré des sacs de riz non payés ».
 
 ## Corrigé
 
-- Exercice 1. Besoin : avoir soif. Désir : boire un jus de bissap bien frais plutôt que de l''eau. Demande : acheter une bouteille de bissap à 500 FCFA car on dispose de l''argent.
-- Exercice 2. PDM Bissap Ndar = 540 / 3 600 × 100 = 15 %. PDM du leader = 1 260 / 3 600 × 100 = 35 %. PDM relative = 540 / 1 260 = 0,43. Bissap Ndar vend moins de la moitié du leader ; elle est challenger ou suiveur.
-- Exercice 3. Taux de pénétration = 10 000 / 40 000 × 100 = 25 %. Les 30 000 autres ménages sont des non-consommateurs : une partie est relative (à convaincre par le prix, la disponibilité, la communication), une partie peut être absolue (raisons de santé, par exemple).
-- Exercice 4. Quartier de résidence et de travail (géographique : délais de livraison), revenu (sociodémographique : capacité à payer la livraison), occasion d''usage (comportemental : déjeuner au bureau ou dîner familial). Chaque critère est mesurable et conduit à des offres différentes.
-- Exercice 5. Produit : coupes et tresses rapides, soins express, prise de rendez-vous. Prix : grille claire, forfaits mensuels. Place : local près des bureaux, ouvert tôt et après 18 h. Promotion : page sur les réseaux sociaux avec photos avant-après, parrainage. Personnel : coiffeuses formées et ponctuelles. Processus : rendez-vous par message, attente limitée, paiement par mobile money. Preuve physique : salon propre et climatisé, tenue uniforme, carte de fidélité.', 'texte', 60, false, 20
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fondamentaux du marketing : l''essentiel pour l''examen');
+- Exercice 1. La majeure (la règle de droit applicable), la mineure (les faits qualifiés juridiquement) et la conclusion (la solution qui découle de l''application de la règle aux faits).
+- Exercice 2. « Un contrat conclu par un mineur non émancipé, sans l''intervention de son représentant légal, peut-il être annulé ? » On passe de la personne (Moussa) à la catégorie juridique (le mineur non émancipé) et de l''objet (la moto) à l''acte (le contrat).
+- Exercice 3. Exemple : « Si la loi et le règlement se distinguent par leur auteur et leur domaine (I), ils s''articulent dans une hiérarchie qui garantit la cohérence de l''ordre juridique (II). »
+- Exercice 4. « Un commerçant a livré des sacs de riz non payés » : faits. « Le vendeur soutient que la vente était parfaite » : prétentions des parties. « La cour d''appel a rejeté la demande » : procédure.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en droit des affaires (méthodologie juridique)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Comportement du consommateur : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Introduction au droit : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Expliquer les motivations et les freins à l''achat.
-- Décrire le processus de décision d''achat et les rôles dans l''achat.
-- Identifier les facteurs qui influencent le consommateur.
-- Mesurer une attitude par un modèle multi-attributs et mesurer la fidélité.
+- Définir le droit et distinguer droit objectif et droits subjectifs.
+- Hiérarchiser les sources du droit applicables au Sénégal, y compris le droit OHADA.
+- Décrire l''organisation judiciaire en termes généraux.
+- Distinguer personnes physiques et personnes morales.
+- Maîtriser les règles de base de la preuve.
 
-## 1. Besoins, motivations et freins
+## 1. Qu''est-ce que le droit ?
 
-Le comportement du consommateur étudie la manière dont les individus et les ménages choisissent, achètent, utilisent et abandonnent des produits. Le point de départ est le besoin. La pyramide de Maslow classe les besoins en cinq niveaux : physiologiques, sécurité, appartenance, estime, accomplissement. Elle est utile pour l''examen, mais il faut en connaître la limite : les besoins ne sont pas satisfaits dans un ordre strict.
+Le droit objectif est l''ensemble des règles de conduite, générales, abstraites et obligatoires, dont le respect est assuré par l''autorité publique, à la différence de la morale, dont la sanction est intérieure ou sociale.
 
-Les motivations sont les forces qui poussent à acheter. On les classe souvent en trois types :
+Les droits subjectifs sont les prérogatives que le droit objectif reconnaît à une personne : droit de propriété sur un terrain, droit de créance contre un débiteur, droit au nom. On distingue les droits patrimoniaux (évaluables en argent, cessibles : propriété, créance) et les droits extrapatrimoniaux (non évaluables en argent : droit à l''honneur, droit à l''image).
 
-- Hédonistes : le plaisir (savourer une pâtisserie).
-- Oblatives : faire plaisir aux autres (offrir un pagne pour la Tabaski).
-- D''autoexpression : affirmer son identité (porter une marque de baskets).
+Le droit se divise en droit public (relations impliquant l''État : droit constitutionnel, administratif, fiscal) et droit privé (relations entre particuliers : droit civil, commercial, du travail) ; certaines matières sont mixtes, comme le droit des affaires.
 
-Les freins s''opposent aux motivations : peurs (risque financier, risque pour la santé), inhibitions (gêne sociale), manque d''information. Une bonne action marketing renforce les motivations et lève les freins. Exemple : une mutuelle de santé fictive lève la peur « je paie sans rien recevoir » en affichant des témoignages et un délai de remboursement.
+## 2. Les sources du droit et leur hiérarchie
 
-## 2. Le processus de décision d''achat
+On présente les sources sous forme de pyramide, la norme inférieure devant respecter la norme supérieure.
 
-Schéma décrit : une flèche horizontale en cinq étapes. 1) Reconnaissance du besoin, 2) Recherche d''information, 3) Évaluation des solutions, 4) Décision d''achat, 5) Comportement après l''achat.
+- La Constitution : au sommet de l''ordre interne. Au Sénégal, la Constitution en vigueur date de 2001 (plusieurs fois révisée). Le Conseil constitutionnel contrôle la conformité des lois à la Constitution.
+- Les traités et accords internationaux régulièrement ratifiés : ils ont, selon la Constitution sénégalaise, une autorité supérieure à celle des lois, sous réserve d''application par l''autre partie. C''est le cas du traité OHADA et des traités UEMOA et CEDEAO.
+- Les Actes uniformes de l''OHADA : adoptés par le Conseil des ministres de l''OHADA, ils sont directement applicables et obligatoires dans les États parties, et rendent inapplicables les dispositions nationales contraires. Exemples : Acte uniforme relatif au droit commercial général, Acte uniforme relatif au droit des sociétés commerciales et du groupement d''intérêt économique.
+- La loi : votée par l''Assemblée nationale dans son domaine constitutionnel (exemples : le Code des obligations civiles et commerciales, ou COCC, le Code de la famille).
+- Les règlements : décrets du Président de la République ou du Premier ministre, arrêtés ministériels, préfectoraux, municipaux.
 
-- Reconnaissance du besoin : écart entre la situation actuelle et la situation souhaitée (le téléphone est cassé).
-- Recherche d''information : sources personnelles (famille, amis), commerciales (vendeurs, publicités), publiques (avis en ligne), expérience.
-- Évaluation : comparaison des marques selon des critères (prix, autonomie, qualité de l''appareil photo, service après-vente).
-- Décision : choix de la marque, du point de vente, du moment, du mode de paiement. L''intention peut être modifiée par une rupture de stock ou l''avis d''un proche.
-- Après l''achat : satisfaction ou dissonance cognitive (doute après un achat important). Le client satisfait rachète et recommande ; le mécontent se plaint ou en parle autour de lui.
+À côté de ces sources écrites, on étudie :
 
-L''intensité du processus dépend de l''implication. Un achat de sachet d''eau est routinier, faiblement impliquant. L''achat d''une moto ou d''une parcelle est fortement impliquant : longue recherche, nombreuses comparaisons.
+- La jurisprudence : l''ensemble des décisions rendues par les juridictions. Elle interprète la loi et comble ses lacunes. Celles de la Cour suprême et, pour le droit OHADA, de la Cour commune de justice et d''arbitrage (CCJA, à Abidjan) font autorité.
+- La coutume : pratique répétée et ressentie comme obligatoire, notamment les usages commerciaux.
+- La doctrine : les écrits des juristes, qui influencent sans obliger.
 
-Les rôles dans l''achat : initiateur (l''enfant qui réclame), influenceur (l''ami qui conseille), décideur, acheteur, utilisateur. Dans un ménage sénégalais, ces rôles sont souvent tenus par des personnes différentes : le marketing doit savoir à qui parler.
+## 3. L''organisation judiciaire en termes généraux
 
-## 3. Les facteurs d''influence
+- Le double degré de juridiction : une affaire jugée en premier ressort peut être rejugée en fait et en droit par une cour d''appel.
+- Les juridictions du premier degré : tribunaux d''instance et de grande instance selon l''importance des affaires, auxquels s''ajoutent des juridictions spécialisées comme le tribunal du travail et, plus récemment, des tribunaux de commerce.
+- La Cour suprême : elle ne rejuge pas les faits ; elle vérifie la bonne application du droit (cassation). Elle comprend plusieurs chambres, dont une chambre administrative.
+- Le Conseil constitutionnel : juge de la constitutionnalité des lois et du contentieux électoral.
+- La CCJA : en matière de droit uniforme OHADA, elle joue le rôle de juridiction de cassation à la place des cours suprêmes nationales.
 
-- Facteurs culturels : culture, sous-cultures (ethniques, religieuses, régionales), classes sociales. Les fêtes religieuses et familiales rythment la consommation (Tabaski, Korité, Magal, baptêmes, mariages).
-- Facteurs sociaux : groupes de référence (amis, tontines, associations), leaders d''opinion, famille, statut.
-- Facteurs personnels : âge, cycle de vie, profession, revenu, style de vie.
-- Facteurs psychologiques : motivation, perception, apprentissage, croyances et attitudes.
+## 4. Les personnes
 
-## 4. Mesurer une attitude : le modèle multi-attributs
+La personnalité juridique est l''aptitude à être titulaire de droits et d''obligations.
 
-Une attitude est une évaluation durable, favorable ou défavorable, d''un objet. Le modèle multi-attributs compensatoire (inspiré des travaux de Fishbein) calcule un score global : Score = somme des (poids du critère × note de la marque sur ce critère). Un point faible peut être compensé par un point fort.
+- Les personnes physiques : les êtres humains. La personnalité commence à la naissance (l''enfant doit naître vivant et viable) et s''éteint à la mort. Elles sont identifiées par leur nom, leur domicile, leur état civil et leur nationalité.
+- La capacité juridique : la capacité de jouissance (être titulaire de droits) et la capacité d''exercice (exercer soi-même ses droits). Le mineur, c''est-à-dire la personne de moins de 18 ans, et certains majeurs protégés ont une capacité d''exercice limitée : ils agissent par un représentant ou avec une assistance.
+- Les personnes morales : groupements dotés de la personnalité juridique. Personnes morales de droit public (État, collectivités territoriales, établissements publics) et de droit privé (sociétés, associations, GIE). Une société commerciale OHADA acquiert la personnalité morale par son immatriculation au Registre du commerce et du crédit mobilier (RCCM).
 
-Exemple. Fatou, étudiante à Dakar, hésite entre trois téléphones fictifs A, B et C. Elle accorde les poids suivants : prix 0,4 ; autonomie 0,3 ; appareil photo 0,2 ; service après-vente 0,1 (total 1). Elle note chaque téléphone sur 10.
+Toute personne a un patrimoine : l''ensemble de ses biens et de ses dettes, qui forme une universalité. C''est le gage général de ses créanciers.
 
-- A : prix 8, autonomie 6, photo 5, service 7. Score = 0,4 × 8 + 0,3 × 6 + 0,2 × 5 + 0,1 × 7 = 3,2 + 1,8 + 1,0 + 0,7 = 6,7.
-- B : prix 5, autonomie 8, photo 8, service 6. Score = 2,0 + 2,4 + 1,6 + 0,6 = 6,6.
-- C : prix 7, autonomie 7, photo 6, service 4. Score = 2,8 + 2,1 + 1,2 + 0,4 = 6,5.
+## 5. La preuve
 
-Fatou devrait préférer A, mais l''écart est faible : une promotion sur B ou une meilleure garantie sur C peut renverser le choix. Pour le vendeur de B, deux leviers : baisser le prix ou convaincre Fatou que l''appareil photo compte plus (modifier les poids).
+Celui qui réclame l''exécution d''une obligation doit la prouver ; celui qui se prétend libéré doit prouver le fait qui l''a libéré. La charge de la preuve pèse donc, en principe, sur le demandeur.
 
-D''autres modèles sont non compensatoires : par exemple, le modèle conjonctif élimine toute marque qui n''atteint pas un seuil minimal sur un critère (« pas en dessous de 6 en autonomie »).
+- Les faits juridiques (un accident, une livraison) se prouvent par tous moyens : témoignages, présomptions, constats, photographies.
+- Les actes juridiques (un contrat, une reconnaissance de dette) doivent en principe être prouvés par écrit au-delà d''un montant fixé par la loi : vérifiez ce seuil dans le texte en vigueur. L''écrit peut être un acte authentique (dressé par un notaire ou un officier public) ou un acte sous signature privée.
+- En matière commerciale, la preuve est libre entre commerçants : les factures, la correspondance, les livres de commerce et les échanges électroniques peuvent être produits.
 
-## 5. Satisfaction et fidélité
-
-La satisfaction résulte de la comparaison entre la performance perçue et les attentes. La fidélité est la répétition d''achat accompagnée d''une attitude favorable. On distingue la fidélité vraie de l''inertie (on rachète faute d''alternative).
-
-Indicateur simple : taux de réachat = clients qui rachètent sur la période / clients de la période précédente × 100. Exemple : sur 1 200 clients d''une boulangerie fictive de Kaolack en janvier, 780 reviennent en février. Taux de réachat = 780 / 1 200 × 100 = 65 %.
+Exemple. Le grossiste fictif Baobab Alimentation, à Kaolack, réclame 3 450 000 FCFA à un boutiquier commerçant pour 150 sacs de riz livrés à 23 000 FCFA le sac (150 × 23 000 = 3 450 000). Entre commerçants, il peut prouver la vente par ses bons de livraison signés, ses factures et ses messages. Face à un acheteur non commerçant, les exigences de preuve écrite du droit civil s''appliqueraient.
 
 ## Points clés
 
-- Motivations (hédonistes, oblatives, d''autoexpression) contre freins (peurs, inhibitions).
-- Cinq étapes du processus d''achat ; son intensité dépend de l''implication.
-- Facteurs culturels, sociaux, personnels, psychologiques.
-- Score multi-attributs = somme des poids × notes ; vérifiez que les poids totalisent 1.
+- Hiérarchie : Constitution, traités (dont OHADA), lois, règlements ; jurisprudence, coutume et doctrine complètent.
+- Double degré de juridiction, cassation par la Cour suprême ou, en droit OHADA, par la CCJA.
+- Personnes physiques et morales ; capacité de jouissance et d''exercice ; patrimoine.
+- La charge de la preuve pèse sur le demandeur ; preuve libre des faits juridiques et, entre commerçants, des actes de commerce.
 
 ## Exercices pratiques
 
-- Exercice 1. Classez chaque motivation : offrir un mouton à sa mère ; s''acheter une glace par grosse chaleur ; porter une tenue à la mode pour un concert.
-- Exercice 2. Décrivez les cinq étapes du processus d''achat d''une moto par un livreur de Touba.
-- Exercice 3. Identifiez les rôles d''achat dans la situation suivante : un adolescent voit une publicité de céréales, sa tante dit qu''elles sont trop sucrées, son père donne l''argent, sa mère fait les courses, toute la famille en mange.
-- Exercice 4. Deux réfrigérateurs fictifs X et Y. Poids : prix 0,5 ; consommation électrique 0,3 ; garantie 0,2. Notes de X : 6, 9, 7. Notes de Y : 8, 6, 6. Calculez les scores et conclure.
-- Exercice 5. Un salon de thé fictif de Saint-Louis avait 600 clients en mars ; 390 sont revenus en avril. Calculez le taux de réachat. Proposez deux actions pour l''améliorer.
-- Exercice 6. Cas pratique. Une marque fictive de couches pour bébés lancée à Dakar se vend mal malgré un prix inférieur à la concurrence. Une enquête révèle que les mères craignent une qualité médiocre. Analysez le frein et proposez trois actions.
+- Exercice 1. Classez du plus élevé au moins élevé : arrêté du maire de Thiès, Constitution, loi portant COCC, traité OHADA, décret.
+- Exercice 2. Droit patrimonial ou extrapatrimonial ? a) le droit de propriété sur une boutique ; b) le droit à l''image ; c) une créance de 500 000 FCFA.
+- Exercice 3. Une disposition d''une loi nationale contredit l''Acte uniforme relatif au droit commercial général. Laquelle s''applique ? Pourquoi ?
+- Exercice 4. Le jugement d''un tribunal de grande instance vous semble mal fondé en fait. Quelle voie de recours exercer en priorité ? Pourquoi pas directement la Cour suprême ?
+- Exercice 5 (cas pratique). Mariama, 17 ans, a acheté seule un téléphone à 250 000 FCFA à un commerçant de Dakar. Ses parents veulent revenir sur l''achat. Le commerçant affirme qu''elle « avait l''air majeure ». Analysez la situation selon la méthode du cas pratique.
 
 ## Corrigé
 
-- Exercice 1. Mouton offert : oblative. Glace : hédoniste. Tenue à la mode : autoexpression.
-- Exercice 2. Besoin : sa vieille moto tombe en panne et il perd des courses. Information : il interroge d''autres livreurs, visite des revendeurs, regarde des annonces. Évaluation : prix, consommation, robustesse, pièces disponibles, crédit possible. Décision : il choisit un modèle et un vendeur qui accepte un paiement échelonné. Après l''achat : s''il est satisfait, il recommande le vendeur ; sinon dissonance et bouche-à-oreille négatif.
-- Exercice 3. Initiateur : l''adolescent. Influenceur : la tante. Décideur et payeur : le père. Acheteur : la mère. Utilisateurs : toute la famille.
-- Exercice 4. X = 0,5 × 6 + 0,3 × 9 + 0,2 × 7 = 3,0 + 2,7 + 1,4 = 7,1. Y = 0,5 × 8 + 0,3 × 6 + 0,2 × 6 = 4,0 + 1,8 + 1,2 = 7,0. X est préféré de peu : sa faible consommation compense son prix plus élevé. Le vendeur de X doit mettre en avant les économies d''électricité.
-- Exercice 5. Taux de réachat = 390 / 600 × 100 = 65 %. Actions : carte de fidélité (dixième thé offert), accueil personnalisé et nouveautés régulières annoncées sur les réseaux sociaux.
-- Exercice 6. Le frein est une peur liée au risque perçu (santé et confort du bébé) ; le prix bas renforce même le doute (« trop bon marché pour être bon »). Actions : échantillons gratuits en pharmacie et en maternité, témoignages de mères et avis de sages-femmes, garantie « satisfaite ou remboursée ». On peut aussi revoir le prix pour qu''il signale mieux la qualité.', 'texte', 60, false, 30
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comportement du consommateur : l''essentiel pour l''examen');
+- Exercice 1. Constitution ; traité OHADA ; loi portant COCC ; décret ; arrêté du maire de Thiès.
+- Exercice 2. a) patrimonial (évaluable en argent et cessible) ; b) extrapatrimonial ; c) patrimonial.
+- Exercice 3. L''Acte uniforme s''applique : le traité OHADA prévoit que les Actes uniformes sont directement applicables et obligatoires et qu''ils l''emportent sur les dispositions de droit interne contraires, antérieures ou postérieures.
+- Exercice 4. L''appel, car la cour d''appel rejuge l''affaire en fait et en droit. La Cour suprême ne juge qu''en droit, sur pourvoi.
+- Exercice 5. Faits qualifiés : un contrat de vente conclu par une mineure non émancipée sans son représentant légal. Problème : ce contrat peut-il être remis en cause ? Règle : le mineur a une capacité d''exercice limitée ; les actes qu''il accomplit seul, hors actes de la vie courante autorisés par la loi ou l''usage, sont susceptibles d''annulation dans l''intérêt du mineur (nullité relative). Application : un achat de 250 000 FCFA dépasse vraisemblablement les actes courants d''une lycéenne ; l''apparence de majorité ne suffit pas en principe à priver la mineure de sa protection, sauf manœuvres de sa part. Conclusion : les parents, représentants légaux, peuvent vraisemblablement agir en nullité ; les restitutions réciproques suivront (le téléphone contre le prix).', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Introduction au droit : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Techniques de vente et négociation commerciale : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Droit des obligations 1 (le contrat) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Connaître les étapes d''un entretien de vente et les techniques associées.
-- Découvrir les besoins avec la méthode SONCAS et argumenter avec la méthode CAP.
-- Traiter les objections et conclure.
-- Préparer une négociation et mesurer l''impact chiffré d''une remise.
+- Définir l''obligation et le contrat, et classer les contrats.
+- Expliquer la formation du contrat : offre, acceptation, pourparlers, avant-contrats.
+- Maîtriser les conditions de validité et la sanction de leur absence : la nullité.
+- Exposer les effets du contrat entre les parties et à l''égard des tiers, et les sanctions de l''inexécution.
 
-## 1. La vente : définitions
+## 1. Notions de base
 
-La vente est l''acte par lequel un vendeur aide un client à prendre une décision d''achat satisfaisante pour les deux parties. On distingue la vente en magasin, la vente terrain, la vente à distance et la vente entre entreprises (B to B).
+Une obligation est un lien de droit entre deux personnes, par lequel l''une (le créancier) peut exiger de l''autre (le débiteur) une prestation : donner, faire ou ne pas faire. Elles naissent d''actes juridiques (le contrat) ou de faits juridiques (l''accident). Au Sénégal, la matière est réglée principalement par le Code des obligations civiles et commerciales (COCC).
 
-La négociation commerciale est une discussion entre parties aux intérêts en partie divergents, qui cherchent un accord sur plusieurs variables : prix, quantités, délais, conditions de paiement, services.
+Le contrat est un accord de volontés destiné à créer, modifier, transmettre ou éteindre des obligations. Principales classifications :
 
-## 2. Les étapes de l''entretien de vente
+- Synallagmatique (obligations réciproques : la vente) ou unilatéral (une seule partie s''oblige : la donation).
+- À titre onéreux (chacun reçoit un avantage) ou à titre gratuit.
+- Consensuel (formé par le seul échange des consentements), solennel (une forme est exigée pour sa validité, par exemple un acte notarié) ou réel (formé par la remise d''une chose).
+- Instantané ou à exécution successive (bail) ; de gré à gré ou d''adhésion (abonnement de téléphonie).
 
-Schéma décrit : une échelle de sept barreaux, du bas vers le haut. Préparation, prise de contact, découverte, argumentation, traitement des objections, conclusion, prise de congé et suivi.
+## 2. La formation du contrat
 
-- Préparation : connaître son produit, ses concurrents, le client (historique d''achats), fixer un objectif et préparer ses outils (catalogue, échantillons, tarifs).
-- Prise de contact : la règle des quatre vingt (vingt premières secondes, vingt premiers mots, vingt centimètres du visage, vingt premiers gestes) rappelle l''importance de la première impression. Salutations respectueuses, sourire, présentation.
-- Découverte : questionner pour comprendre la situation, les besoins et les motivations. On alterne questions ouvertes (« Comment utilisez-vous… ? »), fermées (« Est-ce pour la maison ? ») et de contrôle. On termine par une reformulation.
-- Argumentation : présenter l''offre en partant des besoins exprimés.
-- Traitement des objections.
-- Conclusion : obtenir l''engagement.
-- Prise de congé et suivi : remercier, rassurer, planifier la relance.
+Le contrat se forme par la rencontre d''une offre et d''une acceptation.
 
-## 3. Découvrir avec SONCAS
+- L''offre (ou pollicitation) est une proposition ferme et précise, contenant les éléments essentiels du contrat (pour une vente : la chose et le prix).
+- L''acceptation est l''agrément pur et simple de l''offre. Une acceptation qui modifie l''offre constitue une contre-offre. En principe, le silence ne vaut pas acceptation, sauf circonstances particulières (relations d''affaires habituelles, usages).
+- Les pourparlers sont libres, mais une rupture brutale et de mauvaise foi engage la responsabilité extracontractuelle de son auteur.
+- Les avant-contrats préparent le contrat définitif : pacte de préférence (priorité donnée à un bénéficiaire si l''on décide de vendre) et promesse unilatérale (le promettant s''engage, le bénéficiaire dispose d''une option).
 
-La grille SONCAS classe les motivations d''achat du client :
+## 3. Les conditions de validité
 
-- Sécurité : peur du risque (garantie, solidité, marque connue).
-- Orgueil : besoin d''être valorisé (produit exclusif, prestige).
-- Nouveauté : goût du changement et de l''innovation.
-- Confort : recherche de facilité et de bien-être.
-- Argent : économie, rapport qualité-prix.
-- Sympathie : relation avec le vendeur, attachement affectif.
+Le COCC exige, pour la validité du contrat, le consentement des parties, leur capacité, un objet et une cause, ainsi que le respect de la forme lorsque la loi en impose une.
 
-Pendant la découverte, le vendeur repère les deux ou trois motivations dominantes et construit son argumentation dessus.
+- Le consentement doit exister et être exempt de vices : l''erreur (fausse représentation de la réalité portant sur une qualité essentielle, qui doit être excusable), le dol (manœuvres ou mensonges du cocontractant ayant déterminé le consentement) et la violence (contrainte physique ou morale).
+- La capacité : mineurs non émancipés et certains majeurs protégés ne contractent pas seuls.
+- L''objet : la prestation promise doit exister ou pouvoir exister, être déterminée ou déterminable, possible et licite.
+- La cause : la raison pour laquelle on s''engage. Elle doit exister (on ne s''engage pas pour rien) et être licite et morale (un contrat conclu pour financer une activité illicite est nul).
 
-## 4. Argumenter avec CAP
+## 4. La sanction : la nullité
 
-La méthode CAP (Caractéristique, Avantage, Preuve), appelée aussi CAB (B pour bénéfice), transforme une caractéristique technique en bénéfice pour le client :
+La nullité anéantit rétroactivement le contrat mal formé :
 
-- Caractéristique : « Ce congélateur a une isolation renforcée. »
-- Avantage : « Il garde le froid plus de vingt heures en cas de coupure d''électricité. »
-- Preuve : « Voici le résultat du test du fabricant, et le témoignage d''une poissonnière de Mbour. »
+- La nullité absolue : elle protège l''intérêt général (objet ou cause illicite). Elle peut être invoquée par toute personne intéressée.
+- La nullité relative : elle protège un intérêt particulier (vice du consentement, incapacité). Seule la personne protégée peut l''invoquer, et elle peut confirmer le contrat.
 
-Un argument sans lien avec les motivations du client est inutile.
+Le contrat annulé est censé n''avoir jamais existé : les parties se restituent ce qu''elles ont reçu. Ne la confondez pas avec la résolution, qui sanctionne l''inexécution d''un contrat valablement formé.
 
-## 5. Traiter les objections et conclure
+## 5. Les effets du contrat
 
-Une objection n''est pas un refus : c''est souvent une demande d''information. Méthode générale : écouter sans interrompre, reformuler, répondre, vérifier. Techniques classiques :
+- La force obligatoire : le contrat légalement formé tient lieu de loi à ceux qui l''ont fait ; il ne peut être révoqué que d''un commun accord ou pour les causes prévues par la loi, et doit être exécuté de bonne foi.
+- L''effet relatif : le contrat ne crée d''obligations qu''entre les parties. Les tiers doivent seulement respecter la situation qu''il crée (opposabilité). Exception : la stipulation pour autrui, qui fait naître un droit au profit d''un tiers (assurance-vie).
 
-- Oui, mais : on reconnaît une part de vérité puis on nuance (« Oui, le prix est plus élevé, mais la consommation est deux fois plus faible »).
-- Boomerang : on retourne l''objection en argument (« C''est justement parce que vous êtes petit commerçant que ce crédit fournisseur vous aide »).
-- Questionnement : « Trop cher par rapport à quoi ? »
+## 6. Les sanctions de l''inexécution
 
-La conclusion se fait au bon moment, quand le client envoie des signaux d''achat (questions sur la livraison, le paiement). Techniques : l''alternative (« Livraison mardi ou jeudi ? »), le résumé des avantages, la conclusion implicite (rédiger le bon de commande).
+Lorsque le débiteur n''exécute pas, le créancier dispose de plusieurs outils, souvent après une mise en demeure :
 
-## 6. Préparer une négociation
+- L''exception d''inexécution : dans un contrat synallagmatique, une partie peut suspendre sa propre prestation tant que l''autre n''exécute pas.
+- L''exécution forcée en nature, lorsqu''elle est possible ; la résolution, en principe judiciaire, sauf clause résolutoire.
+- Les dommages-intérêts, qui réparent le préjudice prévisible causé par l''inexécution : la perte subie et le gain manqué.
+- La force majeure (événement imprévisible, irrésistible et extérieur) libère le débiteur.
 
-- Objectifs : position d''ouverture, objectif réaliste, point de rupture (limite au-delà de laquelle on refuse).
-- Meilleure solution de rechange (MESORE, en anglais BATNA) : ce que l''on fera si l''accord échoue. Plus elle est bonne, plus on est fort.
-- Zone d''accord possible : intervalle entre le prix maximal de l''acheteur et le prix minimal du vendeur.
-- Monnaie d''échange : concessions peu coûteuses pour soi mais précieuses pour l''autre (délai de paiement, livraison gratuite, formation).
-- Règle : ne jamais concéder sans contrepartie (« Si je baisse le prix, vous commandez quel volume ? »).
-
-Exemple. Sénégal Froid Services, entreprise fictive de Dakar, vend une chambre froide. Son prix plancher est 4 200 000 FCFA. L''acheteur, une coopérative de pêcheurs, est prêt à payer au plus 4 800 000 FCFA. Zone d''accord = 4 800 000 − 4 200 000 = 600 000 FCFA. Tout prix entre ces deux bornes est acceptable pour les deux ; la négociation détermine qui capte la plus grande part de ces 600 000 FCFA.
-
-## 7. Calculs commerciaux
-
-Impact d''une remise. Un ventilateur est vendu 10 000 FCFA HT et coûte 7 000 FCFA. Marge unitaire = 3 000 FCFA. Le vendeur en vend 300 par mois : marge totale = 900 000 FCFA. S''il accorde une remise de 10 %, le prix devient 9 000 FCFA et la marge unitaire 2 000 FCFA. Pour garder 900 000 FCFA de marge, il faut vendre 900 000 / 2 000 = 450 unités, soit 50 % de ventes en plus. Une petite remise exige souvent une forte hausse des volumes.
-
-Ratios d''activité. Un commercial fait 80 visites, remet 30 devis et signe 12 ventes pour un chiffre d''affaires de 5 400 000 FCFA. Taux de transformation des visites = 12 / 80 × 100 = 15 %. Taux de transformation des devis = 12 / 30 × 100 = 40 %. Panier moyen = 5 400 000 / 12 = 450 000 FCFA.
+Exemple chiffré. La société fictive Sahel Froid, à Mbour, commande une chambre froide à 8 500 000 FCFA et verse un acompte de 30 %, soit 8 500 000 × 0,30 = 2 550 000 FCFA. Malgré une mise en demeure, rien n''est livré. Sahel Froid obtient la résolution, donc la restitution de l''acompte, et des dommages-intérêts : location d''un équipement de remplacement pendant 3 mois à 400 000 FCFA, soit 1 200 000 FCFA (perte subie), et marge perdue prouvée de 900 000 FCFA (gain manqué). Total des dommages-intérêts : 2 100 000 FCFA. Total à recevoir : 2 550 000 + 2 100 000 = 4 650 000 FCFA.
 
 ## Points clés
 
-- Sept étapes : préparation, contact, découverte, argumentation, objections, conclusion, suivi.
-- SONCAS pour découvrir, CAP pour argumenter.
-- Une objection est une demande d''information ; on écoute, reformule, répond, vérifie.
-- En négociation : MESORE, zone d''accord, jamais de concession sans contrepartie.
+- Conditions de validité : consentement non vicié, capacité, objet, cause, et forme si la loi l''exige.
+- Nullité absolue (intérêt général) ou relative (intérêt privé) ; effet rétroactif et restitutions.
+- Force obligatoire, bonne foi et effet relatif ; sanctions de l''inexécution : exception d''inexécution, exécution forcée, résolution, dommages-intérêts.
 
 ## Exercices pratiques
 
-- Exercice 1. Associez une motivation SONCAS à chaque phrase : « Je ne veux pas de panne » ; « Je veux le dernier modèle » ; « Combien je vais économiser ? »
-- Exercice 2. Rédigez un argument CAP pour un panneau solaire vendu à un boutiquier de Kolda.
-- Exercice 3. Un fournisseur fictif de climatiseurs vend 25 000 FCFA HT un kit d''installation qui lui coûte 18 000 FCFA. Il accorde une remise de 5 %. Calculez la nouvelle marge unitaire et la hausse des ventes nécessaire pour maintenir la marge totale.
-- Exercice 4. Un acheteur est prêt à payer au plus 2 750 000 FCFA ; le vendeur ne descendra pas sous 2 500 000 FCFA. Calculez la zone d''accord. Que se passe-t-il si le prix plancher du vendeur monte à 2 900 000 FCFA ?
-- Exercice 5. Cas pratique. Baobab Équipements, PME fictive de Thiès, vend des moulins à mil. Une association de femmes transformatrices veut acheter trois moulins mais exige 15 % de remise. Préparez la négociation : objectifs, MESORE, monnaies d''échange, contreparties à demander.
+- Exercice 1. Qualifiez : a) un vendeur de pagnes affiche « Promotions bientôt » ; b) un garage écrit « Je vous vends ce véhicule immatriculé DK-0000-A au prix de 4 000 000 FCFA, offre valable 8 jours ».
+- Exercice 2. Abdou achète un tableau présenté comme ancien ; c''est une copie récente. Le vendeur ignorait lui-même la vérité. Quel vice du consentement invoquer ? Et si le vendeur savait ?
+- Exercice 3 (chiffré). Une imprimerie fictive de Ziguinchor commande 2 000 cahiers à 650 FCFA l''unité et verse 40 % d''acompte. Le fournisseur n''en livre que la moitié ; l''imprimerie obtient la résolution pour le reste et rachète ailleurs les 1 000 cahiers manquants à 780 FCFA. Calculez l''acompte, le prix des cahiers livrés, la somme à régler ou à restituer et le préjudice lié au rachat.
+- Exercice 4 (cas pratique). Khadija, commerçante, négocie depuis quatre mois l''achat d''un local avec Boubacar. Elle a commandé des plans et des devis pour 1 300 000 FCFA. La veille de la signature prévue, Boubacar rompt sans motif pour vendre à un tiers. Que peut faire Khadija ?
+- Exercice 5. Donnez deux différences entre nullité absolue et nullité relative.
 
 ## Corrigé
 
-- Exercice 1. Sécurité ; Nouveauté ; Argent.
-- Exercice 2. Caractéristique : panneau de 200 watts avec batterie. Avantage : la boutique reste éclairée et le réfrigérateur fonctionne pendant les coupures, donc moins de pertes. Preuve : démonstration sur place et témoignage d''un commerçant voisin équipé.
-- Exercice 3. Marge initiale = 25 000 − 18 000 = 7 000 FCFA. Prix remisé = 25 000 × 0,95 = 23 750 FCFA ; nouvelle marge = 5 750 FCFA. Volume nécessaire = 7 000 / 5 750 = 1,217 fois le volume initial, soit environ 21,7 % de ventes en plus.
-- Exercice 4. Zone d''accord = 2 750 000 − 2 500 000 = 250 000 FCFA. Si le plancher monte à 2 900 000 FCFA, il dépasse le maximum de l''acheteur : il n''y a plus de zone d''accord. Il faut alors élargir la négociation (autre modèle, paiement échelonné, services) ou constater l''échec.
-- Exercice 5. Objectifs : ouverture à 3 % de remise, objectif 6 %, point de rupture 9 %. MESORE de l''entreprise : vendre ces moulins à d''autres clients en saison de récolte ; MESORE de l''association : un concurrent moins cher mais sans service. Monnaies d''échange : formation des utilisatrices, livraison et installation, pièces d''usure offertes, paiement en deux fois. Contreparties : commande ferme de trois moulins, acompte, témoignage et recommandation auprès d''autres groupements.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Techniques de vente et négociation commerciale : l''essentiel pour l''examen');
+- Exercice 1. a) Invitation à entrer en pourparlers, pas une offre (ni ferme ni précise). b) Offre : ferme, précise (chose et prix déterminés) et assortie d''un délai.
+- Exercice 2. Sans tromperie du vendeur : l''erreur sur une qualité essentielle (l''authenticité), si elle a été déterminante et excusable. Si le vendeur savait et a présenté la copie comme ancienne : le dol, qui rend l''erreur toujours prise en compte et peut justifier des dommages-intérêts. Nullité relative.
+- Exercice 3. Prix total : 2 000 × 650 = 1 300 000 FCFA ; acompte : 1 300 000 × 0,40 = 520 000 FCFA. Cahiers livrés : 1 000 × 650 = 650 000 FCFA ; restent dus 650 000 − 520 000 = 130 000 FCFA à payer par l''imprimerie. Préjudice de rachat : 1 000 × (780 − 650) = 130 000 FCFA de surcoût, que le fournisseur doit réparer. Les deux sommes se compensent : en définitive, aucune somme n''est due de part et d''autre (130 000 − 130 000 = 0).
+- Exercice 4. Problème : la rupture des pourparlers peut-elle engager la responsabilité de son auteur ? Règle : les pourparlers sont libres, mais la rupture fautive (brutale, tardive, de mauvaise foi, après avoir fait naître une confiance légitime) engage la responsabilité extracontractuelle. Application : quatre mois de négociation, rupture sans motif la veille de la signature : faute vraisemblable. Conclusion : Khadija obtiendra réparation des frais prouvés (1 300 000 FCFA), mais ni la conclusion forcée du contrat ni le gain espéré.
+- Exercice 5. La nullité absolue protège l''intérêt général et peut être invoquée par toute personne intéressée ; la nullité relative protège une partie, seule titulaire de l''action, qui peut confirmer l''acte.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des obligations 1 (le contrat) : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Licence 1 en Marketing et commerce (corrigé)', '## Présentation
+select c.id, 'Institutions administratives et droit constitutionnel : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-Ce sujet d''entraînement n''est pas un sujet officiel. Il reproduit le format fréquent d''un examen semestriel de trois heures combinant plusieurs matières. Le barème est indicatif, non officiel. Calculatrice non programmable autorisée.
+- Définir l''État et ses éléments constitutifs, distinguer État unitaire et État fédéral.
+- Expliquer la notion de Constitution, sa révision et le contrôle de constitutionnalité.
+- Comprendre la séparation des pouvoirs et classer les régimes politiques.
+- Maîtriser les notions d''organisation administrative : centralisation, déconcentration, décentralisation, service public.
 
-## Le sujet
+## 1. L''État
 
-Dossier 1 – Fondamentaux du marketing (7 points)
+L''État est une personne morale de droit public qui exerce, sur une population établie sur un territoire, un pouvoir politique souverain. On retient trois éléments constitutifs :
 
-Salam Biscuits SA, entreprise fictive de Rufisque, fabrique des biscuits. Le marché national des biscuits est estimé à 12 000 millions de FCFA. Salam Biscuits réalise 1 800 millions ; son principal concurrent, leader, 4 200 millions.
+- Une population : l''ensemble des personnes rattachées à l''État, notamment par la nationalité.
+- Un territoire : terrestre, maritime et aérien, délimité par des frontières.
+- Un pouvoir politique organisé et souverain : il n''est soumis à aucune autorité supérieure dans l''ordre interne et traite d''égal à égal avec les autres États dans l''ordre international.
 
-- 1.1 Calculez la part de marché de Salam Biscuits, celle du leader et la part de marché relative de Salam Biscuits. (2 points)
-- 1.2 L''entreprise veut lancer un biscuit enrichi en céréales locales pour les enfants scolarisés. Proposez deux critères de segmentation et une stratégie de ciblage. (2 points)
-- 1.3 Proposez un positionnement et un mix 4P cohérent. (3 points)
+Formes de l''État :
 
-Dossier 2 – Comportement du consommateur (6 points)
+- L''État unitaire : un seul centre d''impulsion politique, une seule Constitution, un seul Parlement. Le Sénégal est un État unitaire décentralisé.
+- L''État fédéral : superposition d''un État fédéral et d''États fédérés disposant chacun de leur Constitution et de leurs institutions (exemple : le Nigeria).
 
-Une enquête auprès de mères de famille donne les poids des critères d''achat d''un biscuit : prix 0,3 ; valeur nutritive 0,5 ; goût 0,2. Notes sur 10 : biscuit Salam (prix 7, nutrition 8, goût 6) ; biscuit concurrent (prix 8, nutrition 5, goût 9).
+À distinguer des organisations d''intégration régionale (UEMOA, CEDEAO) ou d''harmonisation juridique (OHADA), qui ne sont pas des États mais auxquelles les États transfèrent certaines compétences.
 
-- 2.1 Calculez le score d''attitude de chaque biscuit et concluez. (3 points)
-- 2.2 Identifiez les rôles d''achat lorsque l''enfant réclame le biscuit vu à la télévision. (1 point)
-- 2.3 Citez deux freins possibles à l''achat du nouveau biscuit et une action pour chacun. (2 points)
+## 2. La Constitution
 
-Dossier 3 – Vente et négociation (7 points)
+Au sens matériel, la Constitution est l''ensemble des règles relatives à l''organisation et au fonctionnement des pouvoirs publics et aux droits fondamentaux. Au sens formel, c''est un texte adopté et révisé selon une procédure plus exigeante que celle de la loi ordinaire : on parle de Constitution rigide.
 
-Le commercial de Salam Biscuits visite des grossistes. Le paquet est vendu 1 200 FCFA HT aux grossistes pour un coût de 900 FCFA. Un grossiste de Kaolack commande habituellement 2 000 paquets par mois et demande une remise de 5 %.
+- Le pouvoir constituant originaire établit une Constitution nouvelle (après l''indépendance, une crise ou un référendum).
+- Le pouvoir constituant dérivé révise la Constitution existante selon la procédure qu''elle prévoit (voie parlementaire ou référendaire). Certaines dispositions peuvent être déclarées non révisables.
+- Le contrôle de constitutionnalité garantit la suprématie de la Constitution. Au Sénégal, il est confié au Conseil constitutionnel, qui peut être saisi avant la promulgation d''une loi et, par voie d''exception, lorsqu''une question d''inconstitutionnalité est soulevée devant certaines juridictions, selon les conditions prévues par les textes.
 
-- 3.1 Calculez la marge mensuelle actuelle réalisée sur ce grossiste et celle après remise à volume constant. (2 points)
-- 3.2 Combien de paquets faut-il vendre pour garder la même marge ? (1 point)
-- 3.3 Proposez trois contreparties à demander au grossiste. (2 points)
-- 3.4 Rédigez une réponse à l''objection « Votre concurrent me fait de meilleurs prix ». (2 points)
+La Constitution sénégalaise actuelle a été adoptée par référendum en 2001 et révisée à plusieurs reprises. Son préambule affirme notamment l''attachement aux droits de l''homme et à l''unité africaine.
+
+## 3. La séparation des pouvoirs et les régimes politiques
+
+Montesquieu a théorisé la séparation des fonctions de l''État pour éviter l''abus de pouvoir : le pouvoir législatif (faire la loi), le pouvoir exécutif (exécuter la loi et conduire la politique), le pouvoir judiciaire (juger). Selon le degré de séparation, on distingue :
+
+- Le régime parlementaire : séparation souple. Le gouvernement est responsable devant le Parlement (motion de censure) et l''exécutif peut dissoudre l''assemblée. L''exécutif est bicéphale (chef de l''État et chef du gouvernement).
+- Le régime présidentiel : séparation stricte. Le Président, élu au suffrage universel, n''est pas responsable devant le Parlement et ne peut pas le dissoudre (modèle des États-Unis).
+- Les régimes mixtes ou « présidentialistes » : beaucoup d''États africains francophones combinent un Président élu au suffrage universel direct, aux pouvoirs importants, et un gouvernement dirigé par un Premier ministre, responsable devant l''Assemblée, avec un droit de dissolution.
+
+Au Sénégal, le Président de la République est élu au suffrage universel direct ; il nomme le Premier ministre ; le gouvernement est responsable devant l''Assemblée nationale, qui vote la loi et contrôle l''action du gouvernement ; l''Assemblée peut être dissoute dans les conditions prévues par la Constitution. Le pouvoir judiciaire est indépendant des pouvoirs législatif et exécutif.
+
+## 4. L''organisation administrative
+
+Pour administrer le territoire, l''État combine plusieurs techniques.
+
+- La centralisation : toutes les décisions sont prises par les autorités centrales (Président, Premier ministre, ministres). Elle garantit l''unité mais engorge le centre.
+- La déconcentration : l''État délègue un pouvoir de décision à ses propres représentants locaux, soumis au pouvoir hiérarchique (gouverneur de région, préfet de département, sous-préfet). C''est toujours l''État qui agit, au plus près du terrain.
+- La décentralisation : l''État transfère des compétences à des personnes morales distinctes de lui, dotées de l''autonomie administrative et financière et d''organes élus : les collectivités territoriales. Au Sénégal, la réforme dite « Acte III de la décentralisation » (2013) a érigé les départements et les communes en collectivités territoriales. L''État exerce sur elles un contrôle de légalité, et non un pouvoir hiérarchique.
+- La décentralisation technique (ou par services) : des établissements publics, personnes morales chargées d''une mission spécialisée (une université publique, un hôpital public).
+
+## 5. Le service public
+
+Le service public est une activité d''intérêt général assurée ou contrôlée par une personne publique. Il obéit à des principes de fonctionnement classiques : continuité (le service doit fonctionner sans interruption injustifiée), égalité (les usagers placés dans la même situation sont traités de la même façon) et mutabilité ou adaptabilité (le service s''adapte aux besoins). Il peut être géré directement par l''administration (régie), par un établissement public ou par une personne privée dans le cadre d''une délégation de service public ou d''un contrat de partenariat.
+
+Exemple. La commune fictive de Kër Yaakaar confie la gestion de sa gare routière à une société privée pendant 10 ans. La société perçoit les droits de stationnement auprès des transporteurs. Recettes annuelles prévues : 18 000 000 FCFA ; redevance due à la commune : 15 % des recettes (pourcentage fixé par le contrat fictif), soit 2 700 000 FCFA par an et 27 000 000 FCFA sur 10 ans si les recettes restent stables. La commune reste responsable du service : elle contrôle les tarifs et la continuité.
+
+## Points clés
+
+- L''État : population, territoire, pouvoir souverain ; le Sénégal est un État unitaire décentralisé.
+- La Constitution est rigide ; le Conseil constitutionnel en garantit la suprématie.
+- Séparation des pouvoirs : régime parlementaire (souple), présidentiel (stricte), régimes mixtes.
+- Déconcentration (représentants de l''État, pouvoir hiérarchique) et décentralisation (collectivités autonomes, contrôle de légalité).
+- Principes du service public : continuité, égalité, mutabilité.
+
+## Exercices pratiques
+
+- Exercice 1. Donnez les trois éléments constitutifs de l''État et illustrez-les à propos du Sénégal.
+- Exercice 2. Le préfet de Rufisque est-il une autorité décentralisée ? Justifiez.
+- Exercice 3. Distinguez pouvoir hiérarchique et contrôle de légalité.
+- Exercice 4. Pourquoi dit-on qu''une Constitution est « rigide » ?
+- Exercice 5 (chiffré). Une commune fictive délègue la gestion de son marché central. Recettes annuelles : 42 000 000 FCFA ; redevance : 12 % des recettes (pourcentage fictif). Calculez la redevance annuelle et sur une durée de 8 ans.
+- Exercice 6 (dissertation, plan détaillé). « La décentralisation menace-t-elle l''unité de l''État ? »
+
+## Corrigé
+
+- Exercice 1. Une population (les nationaux sénégalais et les personnes établies sur le territoire), un territoire (terrestre, maritime avec sa façade atlantique, aérien), un pouvoir politique souverain (institutions prévues par la Constitution, reconnaissance internationale).
+- Exercice 2. Non. Le préfet est un représentant de l''État dans le département : il relève de la déconcentration et est soumis au pouvoir hiérarchique du gouvernement. Les autorités décentralisées sont les organes élus des collectivités territoriales (conseil départemental, conseil municipal, maire).
+- Exercice 3. Le pouvoir hiérarchique permet au supérieur de donner des ordres, d''annuler ou de réformer les décisions de ses subordonnés, y compris pour des raisons d''opportunité. Le contrôle de légalité, exercé par l''État sur les collectivités territoriales, ne porte que sur la conformité au droit et s''exerce dans les formes prévues par les textes (souvent par saisine du juge).
+- Exercice 4. Parce que sa révision obéit à une procédure plus difficile que celle des lois ordinaires (majorités renforcées, référendum), ce qui lui assure stabilité et suprématie.
+- Exercice 5. 42 000 000 × 0,12 = 5 040 000 FCFA par an ; sur 8 ans : 5 040 000 × 8 = 40 320 000 FCFA, si les recettes restent constantes.
+- Exercice 6. Introduction : définir décentralisation et unité de l''État, rappeler la réforme de 2013, problématique : comment concilier autonomie locale et unité ? Plan : I. Une autonomie locale réelle (A. Des collectivités dotées de la personnalité morale et d''organes élus ; B. Des compétences transférées). II. Une autonomie encadrée qui préserve l''unité (A. Le contrôle de légalité exercé par l''État ; B. La dépendance financière et le cadre fixé par la loi).', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Institutions administratives et droit constitutionnel : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 1 en droit (entraînement, corrigé détaillé)', '## Présentation du sujet
+
+Ce sujet d''entraînement couvre les trois matières clés de la Licence 1. Ce n''est pas un sujet officiel : il a été conçu pour vous entraîner dans des conditions proches d''un examen semestriel. Durée conseillée : 3 heures. Barème indicatif, non officiel : 20 points. Documents non autorisés. Les personnes, entreprises et décisions de justice citées sont fictives.
+
+## Dossier 1 : Introduction au droit (4 points)
+
+- 1.1 Définissez le droit objectif et distinguez-le de la morale. (1 point)
+- 1.2 Expliquez la place des Actes uniformes OHADA dans la hiérarchie des normes au Sénégal. (2 points)
+- 1.3 Qu''est-ce que la capacité d''exercice ? Donnez un exemple d''incapacité. (1 point)
+
+## Dossier 2 : Cas pratique de droit des obligations (8 points)
+
+Le 3 mars, Aliou, menuisier à Thiès, reçoit de la société fictive Bois du Sud un courriel : « Nous vous proposons 40 madriers de 4 mètres à 18 500 FCFA l''unité, livraison sous 15 jours, offre valable jusqu''au 10 mars. » Le 8 mars, Aliou répond : « J''accepte, mais au prix de 17 000 FCFA. » Bois du Sud ne répond pas. Le 9 mars, Aliou envoie un second courriel : « Finalement, j''accepte votre offre telle quelle. » Bois du Sud livre les madriers le 20 mars.
+
+À la livraison, Aliou constate que les madriers sont en bois tendre, alors que le vendeur lui avait affirmé par écrit, lors d''un échange antérieur, qu''il s''agissait de bois dur adapté à la charpente. Bois du Sud savait que le lot était en bois tendre. Aliou n''a encore rien payé.
+
+- 2.1 Le contrat de vente est-il formé ? À quelle date ? (3 points)
+- 2.2 Aliou peut-il obtenir l''annulation du contrat ? Sur quel fondement ? (3 points)
+- 2.3 En attendant, peut-il refuser de payer ? Calculez le prix en jeu. (2 points)
+
+## Dossier 3 : Commentaire d''une décision fictive (4 points)
+
+Décision fictive, rédigée pour l''entraînement : « Attendu que le contrat légalement formé tient lieu de loi à ceux qui l''ont fait ; que, pour réduire le loyer convenu, le premier juge a retenu que la hausse des prix rendait l''exécution plus onéreuse pour le locataire ; qu''en statuant ainsi, alors que le juge ne peut modifier la convention des parties, il a violé le principe susvisé ; infirme le jugement. »
+
+- 3.1 Établissez la fiche de cette décision (faits, procédure, problème de droit, solution). (2 points)
+- 3.2 Proposez un plan en deux parties pour son commentaire. (2 points)
+
+## Dossier 4 : Droit constitutionnel et institutions administratives (4 points)
+
+Sujet de dissertation : « Déconcentration et décentralisation ». Rédigez l''introduction complète et le plan détaillé.
 
 ## Corrigé détaillé
 
-Dossier 1
+Dossier 1. 1.1 Le droit objectif est l''ensemble des règles générales, abstraites et obligatoires qui régissent la vie en société, dont le respect est garanti par une sanction étatique. La morale ne comporte qu''une sanction intérieure ou sociale, et son champ est plus large (elle commande des devoirs envers soi-même). 1.2 Le Sénégal est partie au traité OHADA ; les traités ratifiés ont une autorité supérieure aux lois. Les Actes uniformes, adoptés en application du traité, sont directement applicables et obligatoires et l''emportent sur les dispositions de droit interne contraires, antérieures ou postérieures. Ils sont placés sous la Constitution dans l''ordre interne, au-dessus des lois et règlements. 1.3 C''est l''aptitude à exercer soi-même ses droits. Exemple : le mineur non émancipé, représenté par ses parents.
 
-- 1.1 PDM Salam = 1 800 / 12 000 × 100 = 15 %. PDM leader = 4 200 / 12 000 × 100 = 35 %. PDM relative = 1 800 / 4 200 = 0,43. Salam Biscuits est un challenger qui vend moins de la moitié du leader.
-- 1.2 Critères : âge des enfants (sociodémographique) et avantage recherché par les parents (comportemental : nutrition contre plaisir). Stratégie : marketing concentré sur les parents soucieux de nutrition d''enfants de 6 à 12 ans en zone urbaine, segment accessible par les écoles et les boutiques de quartier.
-- 1.3 Positionnement : « le biscuit qui nourrit vraiment, fait avec nos céréales ». Produit : biscuits au mil et au fonio, petits paquets individuels pour le goûter, valeurs nutritionnelles affichées. Prix : petit format accessible, proche des biscuits ordinaires. Distribution : boutiques de quartier, abords des écoles via les grossistes, supermarchés. Communication : radio locale et réseaux sociaux à destination des mères, dégustations dans les écoles avec l''accord des directions.
+Dossier 2. 2.1 Problème : une acceptation qui modifie le prix forme-t-elle le contrat ? Règle : l''acceptation doit être pure et simple ; une réponse qui modifie un élément essentiel constitue une contre-offre et vaut refus de l''offre initiale. Application : le 8 mars, Aliou formule une contre-offre (17 000 FCFA). Peut-il ensuite accepter l''offre initiale le 9 mars ? On peut soutenir que la contre-offre a fait tomber l''offre initiale, de sorte que le courriel du 9 mars n''est qu''une nouvelle offre d''Aliou. Mais en livrant le 20 mars, Bois du Sud a accepté tacitement cette nouvelle offre par un commencement d''exécution. Conclusion : le contrat est formé, au plus tard le 20 mars, au prix de 18 500 FCFA l''unité. Valorisez la discussion : le correcteur attend que l''étudiant identifie la contre-offre.
 
-Dossier 2
+2.2 Problème : la tromperie sur la qualité du bois vicie-t-elle le consentement ? Règle : le dol, constitué de manœuvres ou de mensonges émanant du cocontractant, ayant déterminé le consentement, entraîne la nullité relative du contrat et peut justifier des dommages-intérêts. Application : affirmation écrite mensongère (bois dur), connaissance de la vérité par le vendeur, caractère déterminant (usage en charpente). Conclusion : Aliou peut demander l''annulation pour dol ; à défaut, l''erreur sur une qualité essentielle pourrait être invoquée. Il devra restituer les madriers.
 
-- 2.1 Salam = 0,3 × 7 + 0,5 × 8 + 0,2 × 6 = 2,1 + 4,0 + 1,2 = 7,3. Concurrent = 0,3 × 8 + 0,5 × 5 + 0,2 × 9 = 2,4 + 2,5 + 1,8 = 6,7. Salam est préféré grâce au critère le plus important (nutrition) : il doit communiquer sur ce point.
-- 2.2 Initiateur : l''enfant. Décideur et acheteuse : la mère (souvent). Utilisateur : l''enfant. Influenceurs possibles : publicité, enseignants, autres parents.
-- 2.3 Frein 1 : doute sur le goût (« les céréales, les enfants n''aiment pas »), levé par des dégustations gratuites. Frein 2 : méfiance envers une marque nouvelle, levée par l''affichage d''un contrôle qualité et des témoignages de parents.
+2.3 Prix total : 40 × 18 500 = 740 000 FCFA. Dans un contrat synallagmatique, Aliou peut opposer l''exception d''inexécution si la chose livrée n''est pas conforme, ou suspendre son paiement le temps de l''action en nullité. Il doit agir de bonne foi : conserver les madriers et mettre le vendeur en demeure par écrit.
 
-Dossier 3
+Dossier 3. 3.1 Faits : un bail prévoyant un loyer ; hausse des prix rendant l''exécution plus coûteuse pour le locataire. Procédure : le premier juge a réduit le loyer ; appel du bailleur ; la juridiction d''appel infirme. Problème de droit : le juge peut-il modifier un contrat devenu plus onéreux pour l''une des parties ? Solution : non, en vertu de la force obligatoire, le juge ne peut modifier la convention des parties. 3.2 Plan possible : I. L''affirmation de la force obligatoire du contrat (A. Le contrat, loi des parties ; B. L''interdiction faite au juge de réviser le contrat). II. Une solution rigoureuse discutable (A. Le risque de déséquilibre pour le débiteur ; B. Les tempéraments possibles : clauses de révision, renégociation, force majeure si ses conditions sont réunies).
 
-- 3.1 Marge unitaire = 1 200 − 900 = 300 FCFA ; marge mensuelle = 300 × 2 000 = 600 000 FCFA. Après remise : prix = 1 200 × 0,95 = 1 140 FCFA ; marge unitaire = 240 FCFA ; marge mensuelle = 240 × 2 000 = 480 000 FCFA, soit 120 000 FCFA de moins.
-- 3.2 Quantité nécessaire = 600 000 / 240 = 2 500 paquets, soit 25 % de plus.
-- 3.3 Contreparties : engagement de volume (au moins 2 500 paquets par mois), mise en avant des produits Salam dans le magasin, paiement comptant ou à délai réduit.
-- 3.4 « Je comprends que le prix compte pour vous. Pour comparer, parlons-nous du même produit et des mêmes conditions de livraison ? Nos biscuits tournent vite grâce à la demande des écoles, nous livrons chaque semaine sans minimum, et nous reprenons les paquets abîmés. Au final, c''est votre marge par mètre de rayon qui compte. »
+Dossier 4. Introduction : accroche (l''État doit administrer tout le territoire sans paralyser le centre) ; définitions (déconcentration : transfert d''un pouvoir de décision à des agents locaux de l''État soumis au pouvoir hiérarchique ; décentralisation : transfert de compétences à des collectivités territoriales dotées de la personnalité morale et d''organes élus, soumises à un contrôle de légalité) ; contexte (réforme de 2013, départements et communes) ; problématique : ces deux techniques s''opposent-elles ou se complètent-elles ? ; annonce du plan. Plan : I. Deux techniques distinctes (A. Par la nature de l''autorité : agent de l''État ou organe élu ; B. Par le contrôle : pouvoir hiérarchique ou contrôle de légalité). II. Deux techniques complémentaires (A. Le représentant de l''État, garant de la légalité des actes locaux ; B. Une action conjointe au service du développement territorial).
 
 ## Exercices pratiques
 
-- Exercice 1. Vrai ou faux : « La part de marché relative d''un leader est toujours supérieure à 1. »
-- Exercice 2. Donnez la différence entre marketing différencié et marketing concentré en une phrase.
-- Exercice 3. Un vendeur réalise 9 ventes sur 60 visites. Calculez son taux de transformation.
-- Exercice 4. Citez les trois P ajoutés pour les services.
-- Exercice 5. Qu''est-ce que la dissonance cognitive ?
+- Exercice 1. Combien coûteraient les 40 madriers au prix de la contre-offre d''Aliou ? Quelle différence avec l''offre initiale ?
+- Exercice 2. Citez les trois vices du consentement.
+- Exercice 3. Quelle juridiction est compétente en cassation pour une affaire relevant de l''Acte uniforme relatif au droit commercial général ?
+- Exercice 4. Donnez deux principes du service public.
 
 ## Corrigé
 
-- Exercice 1. Vrai si elle est calculée par rapport au premier concurrent : le leader vend plus que lui, donc le rapport dépasse 1 (sauf égalité parfaite, où il vaut 1).
-- Exercice 2. Le différencié propose une offre adaptée à chacun de plusieurs segments ; le concentré se consacre à un seul segment.
-- Exercice 3. 9 / 60 × 100 = 15 %.
-- Exercice 4. Personnel, processus, preuve physique.
-- Exercice 5. C''est le doute ou l''inconfort ressenti après un achat important, quand le client se demande s''il a fait le bon choix ; le vendeur le réduit par le suivi, la garantie et la confirmation des avantages.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en Marketing et commerce (corrigé)');
+- Exercice 1. 40 × 17 000 = 680 000 FCFA ; différence : 740 000 − 680 000 = 60 000 FCFA.
+- Exercice 2. L''erreur, le dol et la violence.
+- Exercice 3. La Cour commune de justice et d''arbitrage (CCJA) de l''OHADA.
+- Exercice 4. Par exemple la continuité et l''égalité (le troisième est la mutabilité).', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en droit (entraînement, corrigé détaillé)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Fondamentaux du marketing', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Introduction au droit', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 1 en marketing, commerce, gestion.
-- Objectifs : distinguer besoin, désir et demande ; analyser un marché et calculer parts de marché et taux de pénétration ; mener une démarche segmentation-ciblage-positionnement ; construire un mix 4P ou 7P cohérent.
-- Matériel : tableau ou diaporama, carte perceptuelle vierge, calculatrice.
-- Prérequis : leçon « Fondamentaux du marketing : l''essentiel pour l''examen ».
+- Public : étudiants de Licence 1 en droit, droit des affaires, gestion ou administration.
+- Objectifs : définir le droit, hiérarchiser les sources (dont le droit OHADA), décrire l''organisation judiciaire en termes généraux, distinguer les personnes et les capacités, appliquer les règles de preuve à un cas pratique.
+- Matériel : diaporama (pyramide des normes, schéma du parcours d''un procès, tableau des personnes), tableau blanc, fiche d''exercices distribuée.
+- Prérequis : avoir lu la leçon « Introduction au droit : l''essentiel pour l''examen ».
 
 ## Déroulé minuté
 
 ## 00:00 – 05:00 · Accueil et objectifs
 
-Bonjour à toutes et à tous, et bienvenue dans ce cours vidéo sur les fondamentaux du marketing. Dans une heure et demie, vous serez capables de répondre aux trois grandes questions que pose tout examen de première année : qu''est-ce que le marketing, comment analyser un marché, et comment construire une offre cohérente pour une cible précise. Notre fil rouge sera Teranga Lait, une laiterie fictive de Thiès qui fabrique des yaourts.
+Bonjour à toutes et à tous. Pendant une heure et demie, nous allons poser les fondations de toute votre Licence : l''introduction au droit. Tout ce que vous apprendrez ensuite, en droit des obligations, en droit commercial ou en droit des sociétés, repose sur ces notions. À la fin de la séance, vous saurez définir le droit, classer ses sources, expliquer comment fonctionne la justice, distinguer les personnes et raisonner sur une question de preuve. Préparez une feuille : nous ferons des exercices et un petit quiz. Toutes les personnes et entreprises citées sont fictives.
 
-Visuel : diapositive titre et plan en six parties : définitions, marché, indicateurs, segmentation-ciblage-positionnement, mix, exercices.
+Visuel : diapositive avec les cinq objectifs et le plan de la séance.
 
-## 05:00 – 15:00 · Le marketing n''est pas la publicité
+## 05:00 – 15:00 · Le droit objectif et les droits subjectifs
 
-Commençons par une question que je vous pose souvent en amphithéâtre : si je vous dis « marketing », à quoi pensez-vous ? La plupart répondent « publicité ». C''est une partie, mais une petite partie. Le marketing, c''est d''abord écouter le marché, comprendre ce dont les clients ont besoin, concevoir une offre adaptée, fixer un prix, la rendre disponible, puis la faire connaître. La publicité arrive à la fin.
+Première question : qu''est-ce qui distingue une règle de droit d''une règle de politesse ? Prenez dix secondes. La réponse attendue : la sanction. La règle de droit est générale, elle vise tout le monde dans la même situation ; abstraite, elle ne nomme personne ; obligatoire, et son respect est garanti par l''autorité publique. Si vous ne saluez pas votre voisin, personne ne vous condamnera ; si vous ne payez pas votre loyer, le juge peut vous y contraindre.
 
-Prenons trois mots. Le besoin, c''est le manque : j''ai faim. Le désir, c''est la forme culturelle de la réponse : j''ai envie d''un yaourt frais, d''un thiakry ou d''un pain au chocolat. La demande, c''est le désir solvable : j''ai 300 francs en poche et j''achète le yaourt. Notez bien : le marketing ne crée pas le besoin de manger, mais il oriente fortement les désirs et stimule la demande. C''est une excellente problématique de dissertation.
+Le droit objectif, c''est cet ensemble de règles. Les droits subjectifs sont les prérogatives qu''il reconnaît à chaque personne. Quand Mme Diop dit « c''est mon terrain », elle invoque un droit subjectif, le droit de propriété, que lui reconnaît le droit objectif. Distinguez les droits patrimoniaux, évaluables en argent et en principe cessibles, et les droits extrapatrimoniaux, comme le droit à l''honneur ou à l''image. Attention, la violation d''un droit extrapatrimonial peut donner lieu à des dommages-intérêts en argent : ce n''est pas pour autant un droit patrimonial.
 
-Question à poser : donnez un exemple où le désir existe mais pas la demande. Réponse attendue : un étudiant qui rêve d''un ordinateur récent mais n''a pas les moyens de l''acheter.
+Visuel : tableau à deux colonnes, droits patrimoniaux et extrapatrimoniaux, avec trois exemples chacun.
 
-## 15:00 – 25:00 · Le marché et ses niveaux
+## 15:00 – 30:00 · La pyramide des normes
 
-Le marché, pour un marketeur, ce n''est pas seulement un lieu comme Sandaga ou Tilène. C''est l''ensemble des clients actuels et potentiels, des concurrents et des intermédiaires. Pour Teranga Lait, le marché principal, ce sont les yaourts. Le marché environnant, ce sont les substituts : lait caillé vendu en sachet, jus locaux. Le marché générique, c''est le besoin de dessert et de boisson lactée. Le marché support, ce sont les réfrigérateurs : sans froid, pas de yaourt.
+Dessinons la pyramide. Au sommet, la Constitution. Juste en dessous, les traités régulièrement ratifiés, qui ont une autorité supérieure aux lois sous réserve de réciprocité. Pour vous, futurs juristes d''affaires, le traité le plus important est le traité OHADA. Il a créé une organisation qui adopte des Actes uniformes. Retenez trois caractères : ils sont directement applicables, sans loi nationale de transposition ; ils sont obligatoires ; ils l''emportent sur les dispositions internes contraires, antérieures ou postérieures.
 
-Visuel : quatre cercles concentriques, avec au centre le marché principal.
+Sous les traités, la loi, votée par l''Assemblée nationale dans son domaine constitutionnel. Puis les règlements : décrets, arrêtés ministériels, préfectoraux et municipaux. Chaque norme doit respecter celle qui lui est supérieure. Qui contrôle ? Le Conseil constitutionnel pour la conformité des lois à la Constitution ; le juge administratif, au sein de la Cour suprême, pour la légalité des actes administratifs.
 
-Ensuite, les consommateurs. Les consommateurs actuels achètent déjà. Les non-consommateurs relatifs pourraient acheter : ils ne le font pas par manque d''information, de moyens ou de disponibilité du produit. Les non-consommateurs absolus n''achèteront jamais, par exemple les personnes allergiques au lait. Marché potentiel = consommateurs actuels + non-consommateurs relatifs. Retenez cette formule, elle tombe souvent.
+Et la jurisprudence ? Elle n''est pas dans la pyramide au sens strict, mais elle interprète les textes et en comble les lacunes. En droit OHADA, la Cour commune de justice et d''arbitrage, la CCJA, unifie l''interprétation. Ajoutez la coutume et les usages, très présents dans le commerce, et la doctrine, qui inspire sans obliger.
 
-## 25:00 – 40:00 · Les indicateurs : exercices commentés
+Question à la salle : un arrêté municipal peut-il contredire une loi ? Non, car il lui est inférieur ; il pourrait être annulé par le juge.
 
-Passons aux calculs. Le marché régional du yaourt pèse 2 400 millions de francs. Teranga Lait fait 360 millions. Le leader fait 840 millions.
+Visuel : pyramide animée, chaque étage apparaissant avec un exemple sénégalais.
 
-Part de marché de Teranga Lait : 360 divisé par 2 400, multiplié par 100, égale 15 %. Part du leader : 840 sur 2 400, soit 35 %. Part de marché relative de Teranga Lait : 360 divisé par 840, égale 0,43. Attention à l''erreur classique : la part relative n''est pas en pourcentage, c''est un rapport. Inférieure à 1, l''entreprise n''est pas leader.
+## 30:00 – 42:00 · L''organisation judiciaire
 
-Et le leader, quelle est sa part relative ? On la calcule par rapport à son premier concurrent. Si le deuxième acteur du marché est Teranga Lait, elle vaut 840 sur 360, soit 2,33. Le leader vend plus de deux fois plus que son suivant.
+Imaginons le parcours d''un litige. Un commerçant fictif de Saint-Louis, M. Fall, réclame une somme à un fournisseur. Il saisit une juridiction du premier degré. Selon la nature et l''importance de l''affaire, ce sera un tribunal d''instance, un tribunal de grande instance ou une juridiction spécialisée, comme le tribunal de commerce ou, pour un litige entre un salarié et son employeur, le tribunal du travail.
 
-Taux de pénétration : sur 50 000 ménages de la zone, 18 000 achètent du yaourt au moins une fois par mois. 18 000 sur 50 000 égale 36 %. Interprétation : il reste un réservoir de 32 000 ménages, dont une partie de non-consommateurs relatifs à conquérir.
+Le perdant n''est pas satisfait : il fait appel. C''est le double degré de juridiction. La cour d''appel rejuge l''affaire en fait et en droit. Ensuite, un pourvoi en cassation est possible : la Cour suprême ne rejuge pas les faits, elle vérifie que le droit a été correctement appliqué. Si le litige porte sur un Acte uniforme OHADA, le pourvoi est porté devant la CCJA, à Abidjan.
 
-Exercice à faire en pause courte : le marché du jus local à Saint-Louis pèse 3 600 millions ; Bissap Ndar fait 540 millions, le leader 1 260 millions. Calculez. Correction : 15 %, 35 %, et 0,43. Vous remarquez que ce sont les mêmes proportions que Teranga Lait : c''est volontaire, pour vérifier que vous maîtrisez la méthode et non les chiffres.
+Retenez aussi les juridictions particulières : le Conseil constitutionnel, la Cour des comptes. Mon conseil : à l''examen, décrivez la logique d''ensemble ; ne récitez pas une liste dont vous n''êtes pas sûr, car l''organisation évolue par la loi.
 
-## 40:00 – 45:00 · Quiz interactif
+Visuel : schéma en escalier, premier degré, appel, cassation, avec la bifurcation vers la CCJA.
 
-Petit quiz, mettez la vidéo en pause et répondez.
+## 42:00 – 50:00 · Pause interactive : quiz
 
-- Question 1 : la part de marché relative se calcule par rapport à quoi ? Réponse : par rapport aux ventes du leader, ou du premier concurrent si l''on est soi-même leader.
-- Question 2 : un ménage qui ne boit pas de lait pour raison médicale est-il un non-consommateur relatif ou absolu ? Réponse : absolu.
-- Question 3 : vrai ou faux, le marketing commence par la publicité ? Réponse : faux, il commence par l''étude des besoins.
+Faisons un quiz de cinq questions. Répondez par écrit, je donne les réponses dans deux minutes.
 
-## 45:00 – 1:00:00 · Segmenter, cibler, positionner
+- Question 1 : citez les trois caractères de la règle de droit.
+- Question 2 : vrai ou faux, un Acte uniforme doit être transposé par une loi nationale pour s''appliquer.
+- Question 3 : quelle juridiction rejuge les faits ?
+- Question 4 : le droit à l''image est-il patrimonial ?
+- Question 5 : qui contrôle la constitutionnalité des lois au Sénégal ?
 
-Visuel : trois marches d''escalier avec les mots segmenter, cibler, positionner.
+Réponses : 1) générale, abstraite, obligatoire ; 2) faux, il est directement applicable ; 3) la cour d''appel ; 4) non, il est extrapatrimonial ; 5) le Conseil constitutionnel. Si vous avez moins de quatre bonnes réponses, relisez la pyramide ce soir.
 
-Segmenter, c''est découper le marché en groupes homogènes. Teranga Lait peut segmenter par âge : les enfants pour le goûter, les jeunes actifs pour un en-cas, les familles pour le dessert. Elle peut aussi segmenter par zone géographique, par revenu, ou par occasion d''usage, comme les cérémonies familiales où l''on sert beaucoup de desserts lactés. Un segment utile est mesurable, accessible, rentable et différent des autres.
+## 50:00 – 1:02:00 · Les personnes et la capacité
 
-Cibler, c''est choisir. Trois stratégies. Indifférenciée : un seul yaourt pour tout le monde. Différenciée : un yaourt à boire pour les jeunes, un pot familial pour les mères, un petit format pour les enfants. Concentrée : uniquement les familles de Thiès et de Mbour. Pour une PME comme Teranga Lait, la stratégie concentrée est souvent la plus raisonnable : budget limité, connaissance fine du client, réputation de spécialiste.
+La personnalité juridique est l''aptitude à être titulaire de droits et d''obligations. Deux catégories de personnes. Les personnes physiques, les êtres humains, de la naissance à la mort, identifiés par leur nom, leur domicile, leur état civil et leur nationalité. Les personnes morales, groupements dotés de la personnalité : l''État, une commune, une université publique, mais aussi une société commerciale ou une association.
 
-Positionner, c''est décider de l''image que l''on veut avoir dans l''esprit de la cible face aux concurrents. Dessinons une carte perceptuelle : axe horizontal « industriel » à gauche, « traditionnel » à droite ; axe vertical « prix bas » en bas, « prix élevé » en haut. Les grandes marques importées sont en haut à gauche. Teranga Lait se place en bas à droite : traditionnel et accessible. Son positionnement : « le yaourt frais de la région, au goût d''autrefois, à prix familial ». Simple, crédible, différent, attractif.
+Distinguez capacité de jouissance et capacité d''exercice. Un enfant de 10 ans peut être propriétaire d''un terrain hérité : il a la capacité de jouissance. Mais il ne peut pas le vendre seul : il n''a pas la capacité d''exercice ; ce sont ses représentants légaux qui agissent, dans les conditions prévues par la loi. La majorité est fixée à 18 ans.
 
-Question à poser : quel risque si Teranga Lait se positionne aussi « luxe » ? Réponse : incohérence avec sa cible familiale et perte de crédibilité.
+Pour la société commerciale, retenez qu''elle acquiert la personnalité morale par son immatriculation au Registre du commerce et du crédit mobilier. Elle a alors son propre nom (la dénomination sociale), son siège, son patrimoine distinct de celui des associés.
 
-## 1:00:00 – 1:15:00 · Le mix : du 4P au 7P
+Visuel : tableau comparatif personne physique et personne morale : naissance, identification, fin, patrimoine.
 
-Le mix, c''est la traduction concrète du positionnement. Pour un produit, quatre P.
+## 1:02:00 – 1:12:00 · La preuve
 
-Produit : yaourt nature et sucré, au lait local, pot de 500 grammes pour la famille, emballage aux couleurs régionales. Prix : légèrement inférieur aux marques importées, pour coller au mot « familial ». Place : boutiques de quartier équipées de réfrigérateurs, supérettes, marchés hebdomadaires, avec une tournée de livraison réfrigérée. Promotion : radio communautaire en wolof et en sérère, dégustations les jours de marché, page sur les réseaux sociaux avec recettes.
+Celui qui réclame quelque chose doit le prouver : la charge de la preuve pèse sur le demandeur. Pour savoir comment prouver, demandez-vous ce que vous devez prouver. Un fait juridique, comme un accident ou une livraison, se prouve par tous moyens. Un acte juridique, comme un contrat, doit en principe être prouvé par écrit au-delà d''un seuil fixé par la loi ; vérifiez ce seuil dans le texte en vigueur avant de l''utiliser. Entre commerçants, la preuve est libre : factures, correspondances, livres de commerce, messages électroniques.
 
-Pour un service, trois P supplémentaires. Imaginez que Teranga Lait ouvre un bar laitier à Thiès. Personnel : serveurs accueillants et formés à l''hygiène. Processus : commande rapide, paiement par mobile money, temps d''attente court. Preuve physique : salle propre, vitrine réfrigérée visible, tenue des serveurs. Le client d''un service ne peut pas toucher le service avant de l''acheter : ces éléments le rassurent.
+Exemple : la quincaillerie fictive Keur Matériaux réclame à un entrepreneur commerçant 2 400 000 FCFA pour 80 sacs de ciment livrés à 30 000 FCFA. Vérifions : 80 × 30 000 = 2 400 000. Elle peut prouver par les bons de livraison signés et ses factures, puisque la preuve est libre entre commerçants.
 
-La règle d''or, je la répète : cohérence. Chaque P doit servir le même positionnement.
+## 1:12:00 – 1:22:00 · Correction commentée d''un cas pratique
 
-## 1:15:00 – 1:25:00 · Correction commentée d''un cas
+Énoncé distribué : Seynabou, 17 ans, a vendu seule à un commerçant le bijou en or qu''elle a reçu en héritage, pour 600 000 FCFA. Sa mère veut annuler la vente. Le commerçant refuse.
 
-Cas : Kër Coiffure, salon fictif de Ziguinchor, veut cibler les femmes actives. Je vous donne la correction en direct. Positionnement : « salon moderne et rapide ». Produit : coupes, tresses express, soins rapides. Prix : forfaits clairs affichés. Place : près des bureaux, ouvert tôt et après la journée de travail. Promotion : réseaux sociaux avec photos avant-après. Personnel : coiffeuses ponctuelles. Processus : rendez-vous par message. Preuve physique : salon climatisé et carte de fidélité. Ce qui fait gagner des points : la justification de chaque P par rapport à la cible « femmes actives », qui manquent de temps.
+Suivons la méthode. Faits qualifiés : une vente conclue par une mineure non émancipée, sans son représentant légal. Problème de droit : un acte de disposition accompli seul par un mineur est-il valable ? Règle : le mineur non émancipé n''a pas la capacité d''exercice ; ses actes, sauf les actes de la vie courante, peuvent être annulés à sa demande ou à celle de son représentant ; il s''agit d''une nullité relative, qui protège l''intérêt du mineur. Application : vendre un bijou de 600 000 FCFA reçu en héritage est un acte grave, et non un acte courant. Conclusion : la mère, représentante légale, peut agir en nullité ; le commerçant restituera le bijou et Seynabou restituera le prix, dans la mesure prévue par la loi.
 
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
+Erreur fréquente : commencer par une introduction historique. Dans un cas pratique, allez directement au problème. Autre erreur : oublier les restitutions.
 
-Retenez : besoin, désir, demande ; PDM et PDM relative ; segmenter, cibler, positionner ; 4P ou 7P cohérents. Voici cinq questions d''évaluation.
+## 1:22:00 – 1:27:00 · Synthèse
 
-- Question 1 : définissez la demande. Réponse : un désir accompagné du pouvoir d''achat nécessaire.
-- Question 2 : une entreprise vend 600 millions sur un marché de 4 000 millions. Sa part de marché ? Réponse : 15 %.
-- Question 3 : citez quatre critères de segmentation de familles différentes. Réponse : âge, région, style de vie, fréquence d''achat.
-- Question 4 : quels sont les trois P ajoutés pour les services ? Réponse : personnel, processus, preuve physique.
-- Question 5 : citez deux qualités d''un bon positionnement. Réponse : simple et crédible (ou différent, attractif).
+Résumons. La règle de droit est générale, abstraite, obligatoire et sanctionnée. Les sources se hiérarchisent : Constitution, traités dont l''OHADA, lois, règlements. La justice repose sur le double degré et la cassation, avec la CCJA pour le droit uniforme. Les personnes sont physiques ou morales ; on distingue capacité de jouissance et d''exercice. La preuve incombe au demandeur, et elle est libre entre commerçants.
 
-Merci pour votre attention, et rendez-vous dans le prochain cours vidéo.', 'video', 90, false, 60
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Fondamentaux du marketing');
+## 1:27:00 – 1:30:00 · Évaluation finale
+
+Cinq questions. Les réponses suivent.
+
+- Question 1 : quelle différence entre droit objectif et droits subjectifs ?
+- Question 2 : quel est l''effet d''un Acte uniforme sur une loi nationale contraire ?
+- Question 3 : la Cour suprême rejuge-t-elle les faits ?
+- Question 4 : quand une société commerciale acquiert-elle la personnalité morale ?
+- Question 5 : comment un commerçant prouve-t-il une vente à un autre commerçant ?
+
+Réponses : 1) le droit objectif est l''ensemble des règles ; les droits subjectifs sont les prérogatives individuelles qu''il reconnaît ; 2) l''Acte uniforme l''emporte et la disposition contraire est inapplicable ; 3) non, elle juge en droit ; 4) à son immatriculation au RCCM ; 5) par tous moyens, la preuve étant libre entre commerçants. Merci pour votre attention, et à bientôt pour le droit des obligations.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Introduction au droit');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Comportement du consommateur', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Droit des obligations 1 (le contrat)', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 1 en marketing, commerce, gestion.
-- Objectifs : expliquer motivations et freins ; décrire le processus d''achat et les rôles d''achat ; analyser les facteurs d''influence ; calculer un score d''attitude multi-attributs et un taux de réachat.
-- Matériel : tableau ou diaporama, grille vierge de score multi-attributs, calculatrice.
-- Prérequis : leçon « Comportement du consommateur : l''essentiel pour l''examen ».
+- Public : étudiants de Licence 1 en droit, droit des affaires ou gestion.
+- Objectifs : expliquer la formation du contrat (offre, acceptation, pourparlers), vérifier ses conditions de validité, distinguer nullité absolue et relative, exposer la force obligatoire et l''effet relatif, calculer des restitutions et des dommages-intérêts, résoudre un cas pratique.
+- Matériel : diaporama (frise de formation du contrat, arbre des conditions de validité, tableau nullité et résolution), tableau blanc, calculatrice, fiche d''exercices.
+- Prérequis : la leçon « Droit des obligations 1 (le contrat) : l''essentiel pour l''examen » et la méthode du cas pratique.
 
 ## Déroulé minuté
 
 ## 00:00 – 05:00 · Accueil et objectifs
 
-Bonjour et bienvenue. Aujourd''hui, nous entrons dans la tête du client. Pourquoi achète-t-il ? Comment décide-t-il ? Qui l''influence ? Et comment mesurer son attitude envers une marque ? À la fin de la séance, vous saurez traiter les questions de cours et les exercices chiffrés de cette matière. Notre personnage fil rouge est Fatou, étudiante à Dakar, qui doit remplacer son téléphone.
+Bonjour à toutes et à tous. Aujourd''hui, nous travaillons la matière que vous retrouverez dans toute votre carrière de juriste d''affaires : le contrat. Une vente de marchandises, un bail commercial, un contrat de travail, un statut de société : tous reposent sur la théorie générale du contrat. Au Sénégal, elle se trouve principalement dans le Code des obligations civiles et commerciales, le COCC. Nos objectifs : comprendre comment un contrat naît, à quelles conditions il est valable, ce qu''il produit, et comment réagir quand il n''est pas exécuté. Les entreprises citées sont fictives.
 
-Visuel : diapositive titre, photo d''illustration d''une rue commerçante, plan en cinq parties.
+## 05:00 – 15:00 · Obligation, contrat et classifications
 
-## 05:00 – 15:00 · Besoins et motivations
+Une obligation est un lien de droit entre un créancier et un débiteur. Elle a pour objet de donner, de faire ou de ne pas faire. Le contrat est un accord de volontés destiné à produire des effets de droit.
 
-Commençons par Maslow. Sa pyramide compte cinq étages : besoins physiologiques, sécurité, appartenance, estime, accomplissement. Elle sert à classer les besoins, mais attention à sa limite, que les correcteurs aiment voir : les gens ne montent pas les étages dans l''ordre. On voit tous des personnes aux revenus modestes acheter un bel habit pour une cérémonie, besoin d''estime et d''appartenance, avant d''autres dépenses de base. C''est rationnel socialement.
+Pourquoi classer les contrats ? Parce que le régime en dépend. Un contrat synallagmatique, comme la vente, fait naître des obligations réciproques : c''est ce qui permettra l''exception d''inexécution. Un contrat consensuel se forme par le seul échange des consentements ; un contrat solennel exige une forme, faute de quoi il est nul ; un contrat réel se forme par la remise d''une chose. Un contrat d''adhésion, comme un abonnement internet, est rédigé à l''avance par une partie : on l''interprète souvent en faveur de celui qui n''a pas pu négocier.
 
-Ensuite, les motivations. Trois familles. Hédonistes : le plaisir pour soi, comme une glace à la plage de Ngor. Oblatives : faire plaisir aux autres, comme offrir un boubou à son père pour la Korité. D''autoexpression : montrer qui l''on est, par exemple porter les baskets que portent les artistes que l''on admire.
+Question : un contrat de bail est-il instantané ou à exécution successive ? À exécution successive, car il s''exécute dans la durée, mois après mois.
 
-Face aux motivations, il y a les freins : peurs (risque financier, risque de santé, risque social), inhibitions (gêne de demander un produit intime) et manque d''information. Le rôle du marketing est d''augmenter les motivations et de réduire les freins.
+## 15:00 – 30:00 · La formation : offre, acceptation, pourparlers
 
-Question à poser : quel frein principal pour l''achat d''un produit financier comme une assurance ? Réponse : la peur de payer sans rien recevoir, donc un manque de confiance.
+Visuel : une frise avec trois étapes, pourparlers, offre, acceptation.
 
-Comment lever ce frein ? Prenons une mutuelle de santé fictive de Kaolack. Elle peut afficher des témoignages d''adhérents remboursés, publier ses délais de remboursement, et faire présenter l''offre par une personne respectée dans le quartier, par exemple la présidente d''une association de femmes. Chaque action répond directement à la peur identifiée. Dans vos copies, faites toujours ce lien explicite entre le frein et l''action : c''est ce que le correcteur cherche.
+L''offre doit être ferme et précise. Ferme : son auteur est prêt à être lié par la seule acceptation. Précise : elle contient les éléments essentiels. Pour une vente, la chose et le prix. Une affiche « grandes promotions bientôt » n''est pas une offre ; « je vous vends ce camion pour 12 000 000 FCFA, offre valable dix jours » en est une.
 
-## 15:00 – 30:00 · Le processus de décision d''achat
+L''acceptation doit être pure et simple. Si vous répondez « d''accord, mais à 11 000 000 FCFA », vous ne concluez pas le contrat : vous faites une contre-offre, et c''est désormais l''autre partie qui choisit. Le silence, en principe, ne vaut pas acceptation ; on admet des exceptions, notamment entre partenaires en relations d''affaires habituelles ou quand les usages le prévoient.
 
-Visuel : flèche en cinq étapes.
+Pendant les pourparlers, chacun est libre de rompre. Mais la liberté n''est pas l''impunité : une rupture brutale, de mauvaise foi, après avoir laissé l''autre engager des frais importants, est une faute qui engage la responsabilité extracontractuelle. On répare alors les frais engagés, pas le profit espéré du contrat qui n''a jamais été conclu.
 
-Suivons Fatou. Étape 1, la reconnaissance du besoin : son téléphone tombe et l''écran se casse. Étape 2, la recherche d''information : elle demande à sa cousine, regarde des vidéos de tests, passe dans les boutiques du centre-ville. Étape 3, l''évaluation : elle compare le prix, l''autonomie, l''appareil photo, le service après-vente. Étape 4, la décision : choix du modèle, mais aussi du vendeur, du moment et du mode de paiement. Étape 5, l''après-achat : si le téléphone tient ses promesses, elle sera satisfaite et le recommandera ; sinon, elle ressentira une dissonance cognitive, ce doute désagréable qui suit un achat important.
+## 30:00 – 42:00 · Les conditions de validité
 
-Ce processus est long pour un achat impliquant, comme un téléphone, une moto ou un terrain. Il est très court pour un achat routinier comme du pain ou un sachet d''eau. Retenez le lien : plus l''implication est forte, plus la recherche d''information est longue.
+Visuel : arbre à quatre branches, consentement, capacité, objet, cause, plus une branche « forme si la loi l''exige ».
 
-Les rôles d''achat maintenant : initiateur, influenceur, décideur, acheteur, utilisateur. Dans beaucoup de familles, ce ne sont pas les mêmes personnes. Un vendeur de fournitures scolaires doit séduire l''enfant qui réclame, rassurer la mère qui achète, et convaincre le père qui finance. Bien identifier les rôles, c''est savoir à qui parler.
+Le consentement doit exister et être libre et éclairé. Trois vices. L''erreur : je crois acheter un tableau ancien, c''est une copie. Elle doit porter sur une qualité essentielle, être déterminante et excusable. Le dol : mon cocontractant m''a trompé par des manœuvres ou des mensonges. Il rend l''erreur toujours prise en considération et ouvre droit à des dommages-intérêts. La violence : une contrainte physique ou morale m''a fait signer.
 
-## 30:00 – 40:00 · Les facteurs d''influence
+La capacité : le mineur non émancipé et certains majeurs protégés ne peuvent pas contracter seuls. L''objet : la prestation doit être possible, déterminée ou déterminable, et licite. La cause : la raison de l''engagement doit exister et être licite. Un prêt consenti pour financer un trafic interdit est nul pour cause illicite.
 
-Quatre groupes de facteurs. Culturels : la culture, les sous-cultures religieuses et régionales, les classes sociales. Au Sénégal, les grands moments religieux et familiaux font varier la demande de façon très nette : moutons, tissus, denrées alimentaires, transport. Sociaux : la famille, les groupes de référence comme les tontines et les associations, les leaders d''opinion. Personnels : âge, cycle de vie, revenu, profession. Psychologiques : motivation, perception, apprentissage, croyances et attitudes.
+## 42:00 – 50:00 · Pause interactive : quiz
 
-Exemple d''application : une marque fictive de riz parfumé local veut se développer. Facteur culturel : le riz est au cœur du repas familial, donc la qualité gustative prime. Facteur social : les femmes échangent des avis lors des tontines. Facteur personnel : les familles nombreuses préfèrent les grands sacs. Facteur psychologique : certains associent encore « local » à « moins bon ». Chaque facteur suggère une action : dégustations, sacs de différentes tailles, communication sur la qualité.
+- Question 1 : « Je vous achète votre moto, mais à un prix inférieur » : acceptation ou contre-offre ?
+- Question 2 : citez les trois vices du consentement.
+- Question 3 : un contrat dont l''objet est illicite est-il frappé de nullité absolue ou relative ?
+- Question 4 : le silence vaut-il acceptation en principe ?
+- Question 5 : quel type de responsabilité engage une rupture fautive des pourparlers ?
 
-Insistez dans vos copies sur le bouche-à-oreille. Dans un environnement où la confiance passe par les relations, l''avis d''un proche vaut souvent plus qu''une publicité. Aujourd''hui, il circule aussi par les groupes de messagerie et les vidéos courtes.
+Réponses : 1) contre-offre ; 2) erreur, dol, violence ; 3) absolue, car elle protège l''intérêt général ; 4) non, sauf exceptions ; 5) une responsabilité extracontractuelle, puisqu''il n''y a pas encore de contrat.
 
-## 40:00 – 45:00 · Quiz interactif
+## 50:00 – 1:00:00 · Nullité et restitutions
 
-Mettez en pause et répondez.
+La nullité sanctionne une condition de validité absente au jour de la formation. Elle est absolue si la règle violée protège l''intérêt général : toute personne intéressée peut l''invoquer. Elle est relative si la règle protège une partie : seule celle-ci peut agir, et elle peut confirmer le contrat en renonçant à la nullité en connaissance de cause.
 
-- Question 1 : offrir un cadeau à sa mère, c''est quelle motivation ? Réponse : oblative.
-- Question 2 : à quelle étape du processus apparaît la dissonance cognitive ? Réponse : après l''achat.
-- Question 3 : un achat de pain quotidien est-il fortement impliquant ? Réponse : non, il est routinier.
+L''effet est rétroactif : le contrat est censé n''avoir jamais existé. On remet les parties dans l''état antérieur. Exemple : un client a acheté une machine à coudre à 450 000 FCFA, dont il a payé 300 000 FCFA ; la vente est annulée pour dol. Le vendeur restitue 300 000 FCFA, le client rend la machine, et le vendeur, auteur du dol, peut en plus être condamné à des dommages-intérêts.
 
-## 45:00 – 1:05:00 · Le score multi-attributs : exercice commenté
+Ne confondez pas avec la résolution, qui sanctionne une inexécution : le contrat était valable, mais il n''a pas été exécuté.
 
-Visuel : tableau à quatre lignes (critères) et trois colonnes (téléphones A, B, C), plus une colonne de poids.
+Une question revient souvent en TD : que se passe-t-il si la chose a été utilisée avant l''annulation ? Les restitutions doivent remettre les parties dans l''état antérieur ; lorsque la restitution en nature est impossible ou incomplète, on raisonne en valeur. Ne vous perdez pas dans les détails à l''examen : posez le principe de la remise en l''état antérieur, puis appliquez-le aux faits avec bon sens, en signalant les difficultés.
 
-L''attitude est une évaluation durable d''un objet. Pour la mesurer, on utilise un modèle multi-attributs compensatoire. Le score global est la somme des poids multipliés par les notes.
+Autre point : la nullité relative peut être couverte par la confirmation. Imaginons que le client trompé, après avoir découvert le dol, continue d''utiliser la machine, la revend même, en sachant parfaitement qu''il aurait pu agir. Le juge pourrait y voir une confirmation tacite, à condition que la volonté de renoncer à la nullité soit certaine. Retenez qu''une nullité absolue, elle, ne peut pas être confirmée, car elle protège l''intérêt général.
 
-Fatou donne les poids suivants : prix 0,4 ; autonomie 0,3 ; appareil photo 0,2 ; service après-vente 0,1. Premier réflexe : vérifier que les poids totalisent 1. 0,4 plus 0,3 plus 0,2 plus 0,1 égale 1. Parfait.
+## 1:00:00 – 1:10:00 · Les effets du contrat et l''inexécution
 
-Téléphone A : notes 8, 6, 5, 7. Calculons : 0,4 fois 8 égale 3,2 ; 0,3 fois 6 égale 1,8 ; 0,2 fois 5 égale 1,0 ; 0,1 fois 7 égale 0,7. Total : 6,7.
+Le contrat légalement formé tient lieu de loi à ceux qui l''ont fait : c''est la force obligatoire. Le juge ne peut pas, en principe, le modifier au motif qu''il est devenu déséquilibré. Le contrat doit être exécuté de bonne foi. Et il n''a d''effet obligatoire qu''entre les parties : c''est l''effet relatif, avec l''exception de la stipulation pour autrui.
 
-Téléphone B : notes 5, 8, 8, 6. 0,4 fois 5 égale 2,0 ; 0,3 fois 8 égale 2,4 ; 0,2 fois 8 égale 1,6 ; 0,1 fois 6 égale 0,6. Total : 6,6.
+En cas d''inexécution, le créancier met d''abord le débiteur en demeure. Puis il choisit : exception d''inexécution (je suspends mon paiement), exécution forcée, résolution, dommages-intérêts. Le débiteur est exonéré en cas de force majeure : un événement imprévisible, irrésistible et extérieur. Exemple de discussion : une inondation exceptionnelle détruit l''entrepôt d''un fournisseur de Saint-Louis. Était-elle imprévisible dans une zone régulièrement inondée ? Le fournisseur pouvait-il livrer depuis un autre stock ? À l''examen, examinez chacun des trois caractères au regard des faits, sans conclure trop vite.
 
-Téléphone C : notes 7, 7, 6, 4. 2,8 plus 2,1 plus 1,2 plus 0,4 égale 6,5.
+## 1:10:00 – 1:22:00 · Correction commentée d''un exercice chiffré
 
-Conclusion : A l''emporte, mais de très peu. C''est le prix, critère le plus lourd, qui fait la différence. Que peut faire le fabricant de B ? Deux leviers. Agir sur les notes : baisser le prix ou proposer un paiement échelonné. Agir sur les poids : convaincre Fatou que l''appareil photo est essentiel pour ses réseaux sociaux. C''est exactement ce que fait la publicité.
+Énoncé : la boulangerie fictive Le Bon Pain, à Kaolack, commande un four à 6 200 000 FCFA, verse un acompte de 25 % et attend une livraison au 1er mai. Le fournisseur ne livre pas malgré une mise en demeure. La boulangerie loue un four pendant 2 mois à 350 000 FCFA par mois et perd une marge prouvée de 480 000 FCFA. Elle obtient la résolution du contrat.
 
-Deuxième exercice, deux réfrigérateurs X et Y. Poids : prix 0,5 ; consommation 0,3 ; garantie 0,2. X a 6, 9, 7 ; Y a 8, 6, 6. X égale 3,0 plus 2,7 plus 1,4, soit 7,1. Y égale 4,0 plus 1,8 plus 1,2, soit 7,0. X gagne grâce à sa faible consommation électrique, argument à mettre en avant.
+Calculons ensemble. Acompte : 6 200 000 × 0,25 = 1 550 000 FCFA, à restituer du fait de la résolution. Perte subie : 2 × 350 000 = 700 000 FCFA. Gain manqué : 480 000 FCFA. Dommages-intérêts : 700 000 + 480 000 = 1 180 000 FCFA. Total à recevoir : 1 550 000 + 1 180 000 = 2 730 000 FCFA.
 
-Dernier point : il existe des modèles non compensatoires. Dans le modèle conjonctif, on élimine toute marque sous un seuil : « en dessous de 6 en autonomie, je n''achète pas ». Avec ce seuil, le téléphone A, noté 6, passe de justesse.
+Commentaire : beaucoup d''étudiants additionnent le prix total du four aux dommages-intérêts. C''est une erreur : la boulangerie n''a versé que l''acompte, c''est cela qu''on lui restitue. Autre erreur : oublier de justifier le préjudice. Le gain manqué doit être prouvé, par exemple par des commandes refusées.
 
-## 1:05:00 – 1:18:00 · Satisfaction, fidélité et taux de réachat
+## 1:22:00 – 1:27:00 · Synthèse
 
-La satisfaction naît de la comparaison entre ce que le client attendait et ce qu''il perçoit. Si la performance dépasse les attentes, il est ravi. Si elle est inférieure, il est déçu. Conséquence pratique : ne promettez jamais plus que ce que vous pouvez tenir.
+Le contrat naît de la rencontre d''une offre ferme et précise et d''une acceptation pure et simple. Il est valable si le consentement est libre et éclairé, les parties capables, l''objet et la cause licites, et la forme respectée quand elle est exigée. Sinon, nullité absolue ou relative, avec restitutions. Valable, il oblige les parties, de bonne foi, mais pas les tiers. Inexécuté, il ouvre plusieurs sanctions, dont les dommages-intérêts qui réparent la perte subie et le gain manqué.
 
-La fidélité, c''est racheter avec une attitude favorable. Attention à l''inertie : un client qui rachète faute de choix n''est pas vraiment fidèle ; il partira à l''arrivée d''un concurrent.
+## 1:27:00 – 1:30:00 · Évaluation finale
 
-Mesure simple : le taux de réachat. Une boulangerie fictive de Kaolack a 1 200 clients en janvier ; 780 reviennent en février. 780 divisé par 1 200, fois 100, égale 65 %. Un salon de thé de Saint-Louis : 390 clients revenus sur 600, soit également 65 %. Pour améliorer ce taux : carte de fidélité, accueil personnalisé, nouveautés régulières.
+- Question 1 : définissez l''offre.
+- Question 2 : qui peut invoquer une nullité relative ?
+- Question 3 : quelle différence entre nullité et résolution ?
+- Question 4 : citez les trois caractères de la force majeure.
+- Question 5 : un acompte de 20 % sur un prix de 3 500 000 FCFA représente combien ?
 
-## 1:18:00 – 1:26:00 · Correction commentée d''un cas
-
-Une marque fictive de couches pour bébés se vend mal à Dakar malgré un prix bas. Les mères craignent une qualité médiocre. Analyse : c''est un frein lié au risque perçu, et le prix bas renforce le doute. Actions : échantillons gratuits en maternité, avis de sages-femmes, garantie de remboursement. Ce qui fait la différence dans la copie : relier explicitement chaque action au frein identifié.
-
-## 1:26:00 – 1:30:00 · Synthèse et évaluation finale
-
-Retenez : motivations contre freins, cinq étapes du processus, rôles d''achat, quatre familles de facteurs, score multi-attributs et taux de réachat.
-
-- Question 1 : citez les cinq étages de la pyramide de Maslow. Réponse : physiologiques, sécurité, appartenance, estime, accomplissement.
-- Question 2 : qu''est-ce qu''un non-consommateur absolu ? Question piège, c''est une notion du chapitre marché ; réponse : une personne qui ne consommera jamais le produit.
-- Question 3 : poids 0,6 et 0,4 ; notes 5 et 10. Score ? Réponse : 3 + 4 = 7.
-- Question 4 : citez deux rôles d''achat. Réponse : initiateur et décideur (ou influenceur, acheteur, utilisateur).
-- Question 5 : 450 clients sur 600 rachètent. Taux de réachat ? Réponse : 75 %.
-
-Merci et à bientôt pour le cours sur la vente et la négociation.', 'video', 90, false, 70
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Comportement du consommateur');
+Réponses : 1) une proposition ferme et précise contenant les éléments essentiels du contrat ; 2) seule la partie protégée ; 3) la nullité sanctionne un vice de formation, la résolution une inexécution ; 4) imprévisible, irrésistible, extérieure ; 5) 3 500 000 × 0,20 = 700 000 FCFA. Merci, et bon travail sur les fiches d''exercices.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des obligations 1 (le contrat)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Techniques de vente et négociation commerciale', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Institutions administratives et droit constitutionnel', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 1 en marketing, commerce, gestion.
-- Objectifs : maîtriser les étapes de l''entretien de vente ; utiliser SONCAS et CAP ; traiter les objections ; préparer une négociation ; calculer l''impact d''une remise et des ratios commerciaux.
-- Matériel : tableau ou diaporama, fiche de préparation de négociation, calculatrice, deux volontaires pour un jeu de rôle.
-- Prérequis : leçon « Techniques de vente et négociation commerciale : l''essentiel pour l''examen ».
+- Public : étudiants de Licence 1 en droit, droit des affaires, administration publique ou science politique.
+- Objectifs : définir l''État et la Constitution, expliquer la séparation des pouvoirs et classer les régimes politiques, distinguer centralisation, déconcentration et décentralisation, présenter le service public, construire un plan de dissertation.
+- Matériel : diaporama (schémas des régimes, carte administrative simplifiée, tableau déconcentration et décentralisation), tableau blanc, calculatrice, fiche d''exercices.
+- Prérequis : la leçon « Institutions administratives et droit constitutionnel : l''essentiel pour l''examen ».
 
 ## Déroulé minuté
 
 ## 00:00 – 05:00 · Accueil et objectifs
 
-Bonjour à toutes et à tous. Ce cours est le plus pratique de l''année : la vente s''apprend en vendant. À la fin, vous saurez dérouler un entretien de vente complet, préparer une négociation et calculer ce que coûte réellement une remise. Notre fil rouge : Sénégal Froid Services, une entreprise fictive de Dakar qui vend des congélateurs et des chambres froides.
+Bonjour à toutes et à tous. Le juriste d''affaires ne s''occupe pas seulement de contrats et de sociétés : il doit comprendre l''État, qui fait les lois, délivre les autorisations, perçoit l''impôt et passe des marchés. Aujourd''hui, nous étudions les notions générales de droit constitutionnel et d''institutions administratives. Objectifs : définir l''État, comprendre la Constitution et la séparation des pouvoirs, classer les régimes, maîtriser l''organisation administrative et le service public, et réussir une dissertation dans cette matière.
 
-Visuel : diapositive titre et l''échelle des sept étapes de la vente.
+## 05:00 – 15:00 · L''État et ses éléments
 
-## 05:00 – 15:00 · Préparer et prendre contact
+Un État, c''est une population, un territoire, et un pouvoir politique souverain. Population : l''ensemble des personnes qui lui sont rattachées, en particulier par la nationalité. Territoire : terrestre, maritime, aérien. Souveraineté : l''État n''obéit à aucune autorité supérieure dans l''ordre interne, et il est l''égal des autres États dans l''ordre international.
 
-Un bon entretien se gagne avant de commencer. Préparer, c''est connaître son produit par cœur, ses concurrents, et son client : que fait-il, qu''a-t-il acheté avant, quels sont ses problèmes ? C''est aussi fixer un objectif réaliste pour la visite et prévoir ses outils : catalogue, tarifs, échantillons, bon de commande.
+Question : l''UEMOA est-elle un État ? Non. C''est une organisation d''intégration à laquelle les États transfèrent certaines compétences, notamment monétaires et économiques. De même, l''OHADA harmonise le droit des affaires, mais elle n''a ni territoire propre ni population.
 
-La prise de contact est rapide mais décisive. On parle de la règle des quatre vingt : vingt secondes, vingt mots, vingt gestes, vingt centimètres du visage. Au Sénégal, les salutations ont une grande importance : les écourter peut être perçu comme un manque de respect. Prenez le temps de saluer, de vous présenter, et d''expliquer le but de votre visite.
+Forme de l''État : unitaire, avec un seul centre politique, comme le Sénégal, ou fédéral, avec des États fédérés dotés de leur propre Constitution, comme le Nigeria.
 
-Un point de méthode pour l''examen : on vous demande souvent de rédiger une fiche de préparation de visite. Elle comporte l''identité du client, son historique d''achats, l''objectif de la visite (par exemple obtenir une commande d''essai), les arguments prévus, les objections probables avec leurs réponses, et les documents à emporter. Une fiche bien structurée vaut des points faciles.
+## 15:00 – 27:00 · La Constitution et sa protection
 
-Question à poser : pourquoi fixer un objectif précis pour chaque visite ? Réponse attendue : pour pouvoir mesurer le résultat et préparer la visite suivante, même si le client n''achète pas aujourd''hui.
+Visuel : schéma du pouvoir constituant originaire et dérivé.
 
-## 15:00 – 30:00 · Découvrir avec SONCAS
+La Constitution, au sens formel, est un texte placé au sommet de l''ordre juridique interne et révisable selon une procédure renforcée : c''est une Constitution rigide. Le pouvoir constituant originaire crée une Constitution nouvelle, comme lors du référendum de 2001 au Sénégal. Le pouvoir constituant dérivé la révise, par la voie parlementaire ou référendaire, dans les formes qu''elle prévoit.
 
-La découverte est l''étape la plus importante et la plus négligée. Le vendeur débutant parle ; le bon vendeur questionne. On alterne questions ouvertes, « Comment conservez-vous votre poisson aujourd''hui ? », et questions fermées, « Avez-vous des coupures d''électricité fréquentes ? ».
+Une Constitution n''est suprême que si elle est protégée. D''où le contrôle de constitutionnalité, confié au Sénégal au Conseil constitutionnel. Il peut être exercé avant la promulgation d''une loi et, dans certaines conditions prévues par les textes, à l''occasion d''un procès, par la voie de l''exception d''inconstitutionnalité. Retenez le principe ; pour les modalités précises, reportez-vous au texte constitutionnel et à la loi organique en vigueur.
 
-On écoute pour repérer les motivations SONCAS. Sécurité : « Je ne veux pas perdre ma marchandise. » Orgueil : « Je veux le plus grand modèle du quartier. » Nouveauté : « Qu''est-ce qui existe de nouveau ? » Confort : « Je veux quelque chose de simple à utiliser. » Argent : « Combien ça consomme ? » Sympathie : « Je vous fais confiance, vous connaissez mon frère. »
+## 27:00 – 42:00 · Séparation des pouvoirs et régimes politiques
 
-On termine par la reformulation : « Si je vous ai bien comprise, vous cherchez un congélateur qui garde le froid pendant les coupures et qui consomme peu, c''est bien cela ? » Le client dit oui : vous avez gagné le droit d''argumenter.
+Montesquieu partait d''un constat : tout homme qui a du pouvoir est porté à en abuser. Il faut donc que « le pouvoir arrête le pouvoir ». On distingue trois fonctions : légiférer, exécuter, juger.
 
-## 30:00 – 40:00 · Argumenter avec CAP
+Visuel : deux schémas côte à côte.
 
-Visuel : trois colonnes, caractéristique, avantage, preuve.
+Le régime parlementaire organise une séparation souple : le gouvernement est responsable devant le Parlement, qui peut le renverser ; en contrepartie, l''exécutif peut dissoudre l''assemblée. L''exécutif est bicéphale : un chef de l''État souvent effacé et un chef de gouvernement qui gouverne.
 
-Pour la poissonnière de Mbour, motivations sécurité et argent. Caractéristique : isolation renforcée. Avantage : le froid tient plus de vingt heures pendant une coupure, donc pas de poisson perdu. Preuve : le test du fabricant et le témoignage d''une autre commerçante. Deuxième argument. Caractéristique : compresseur basse consommation. Avantage : une facture d''électricité plus faible chaque mois. Preuve : la fiche technique et une simulation de facture.
+Le régime présidentiel organise une séparation stricte : le Président est élu, il n''est pas responsable devant le Congrès et ne peut pas le dissoudre. Chacun est indépendant ; ils doivent coopérer.
 
-Erreur à éviter : réciter toutes les caractéristiques. Ne choisissez que celles qui répondent aux motivations découvertes.
+Beaucoup d''États d''Afrique francophone, dont le Sénégal, ont des régimes mixtes : un Président élu au suffrage universel direct, aux pouvoirs importants, qui nomme un Premier ministre ; un gouvernement responsable devant l''Assemblée nationale ; et une possibilité de dissolution encadrée par la Constitution. À l''examen, ne vous contentez pas d''une étiquette : décrivez les mécanismes de responsabilité et de dissolution, c''est cela qui permet de qualifier un régime.
 
-Exercice rapide à faire avec moi : un boutiquier de Kolda, motivation argent et sécurité, regarde un panneau solaire. Caractéristique : panneau de 200 watts avec batterie. Avantage : la boutique reste éclairée et le réfrigérateur fonctionne pendant les coupures, donc moins de produits perdus et des ventes le soir. Preuve : démonstration sur place et témoignage d''un commerçant voisin déjà équipé. Vous voyez que l''avantage est formulé dans le langage du client, pas dans celui de l''ingénieur.
+## 42:00 – 50:00 · Pause interactive : quiz
 
-## 40:00 – 45:00 · Quiz interactif
+- Question 1 : citez les trois éléments constitutifs de l''État.
+- Question 2 : dans quel régime le gouvernement peut-il être renversé par le Parlement ?
+- Question 3 : qui contrôle la constitutionnalité des lois au Sénégal ?
+- Question 4 : vrai ou faux, l''OHADA est un État fédéral.
+- Question 5 : quelle est la différence entre pouvoir constituant originaire et dérivé ?
 
-Mettez en pause et répondez.
+Réponses : 1) population, territoire, pouvoir souverain ; 2) le régime parlementaire, et les régimes mixtes qui en reprennent ce mécanisme ; 3) le Conseil constitutionnel ; 4) faux, c''est une organisation d''harmonisation du droit des affaires ; 5) l''originaire crée une Constitution nouvelle, le dérivé révise la Constitution existante selon ses règles.
 
-- Question 1 : que signifie le A de SONCAS ? Réponse : argent.
-- Question 2 : que signifie le P de CAP ? Réponse : preuve.
-- Question 3 : quelle étape vient juste avant l''argumentation ? Réponse : la découverte, terminée par une reformulation.
+## 50:00 – 1:02:00 · Centralisation, déconcentration, décentralisation
 
-## 45:00 – 58:00 · Objections et conclusion : jeu de rôle commenté
+Visuel : tableau à trois colonnes.
 
-Visuel : liste des techniques de traitement des objections.
+Centralisation : tout se décide à Dakar, dans les ministères. Avantage : l''unité ; inconvénient : la lenteur et l''éloignement.
 
-Une objection n''est pas un refus. Méthode : écouter, reformuler, répondre, vérifier. Jeu de rôle. La cliente dit : « C''est trop cher. » Mauvaise réponse : baisser immédiatement le prix. Bonne réponse par questionnement : « Trop cher par rapport à quoi, madame ? » Elle répond : « Par rapport au modèle d''à côté. » Réponse « oui, mais » : « Oui, il coûte plus cher à l''achat, mais il consomme moins et garde le froid deux fois plus longtemps ; en un an, vous récupérez la différence. » Vérification : « Est-ce que cela répond à votre inquiétude ? »
+Déconcentration : l''État confie un pouvoir de décision à ses propres agents sur le terrain : gouverneurs, préfets, sous-préfets. C''est toujours l''État qui décide ; ses agents sont soumis au pouvoir hiérarchique : le ministre peut leur donner des ordres et réformer leurs décisions.
 
-Autres techniques : le boomerang, qui transforme l''objection en argument ; le report, quand le prix est demandé trop tôt ; la preuve par la démonstration.
+Décentralisation : l''État transfère des compétences à des personnes morales distinctes de lui, les collectivités territoriales, qui ont des organes élus et une autonomie administrative et financière. Au Sénégal, depuis la réforme de 2013 dite Acte III de la décentralisation, ce sont les départements et les communes. L''État ne leur donne pas d''ordres : il exerce un contrôle de légalité.
 
-Conclure ensuite. Guettez les signaux d''achat : « Vous livrez à Mbour ? » « On peut payer en deux fois ? » Utilisez l''alternative : « Je vous livre mardi ou jeudi ? » Puis prenez congé en remerciant, confirmez la livraison, et notez la date de relance.
+Formule à retenir : la déconcentration rapproche l''État de l''administré ; la décentralisation rapproche le pouvoir de décision des citoyens, par l''élection.
 
-## 58:00 – 1:12:00 · Préparer une négociation
+## 1:02:00 – 1:10:00 · Le service public
 
-Visuel : fiche de préparation en cinq cases.
+Le service public est une activité d''intérêt général assurée ou contrôlée par une personne publique. Trois principes : continuité, égalité, mutabilité. Modes de gestion : la régie, directement par l''administration ; l''établissement public, comme une université ; la délégation à une personne privée, qui exploite le service et se rémunère en partie sur les usagers.
 
-Sénégal Froid Services négocie une chambre froide avec une coopérative de pêcheurs. Case 1, objectifs : prix d''ouverture 5 000 000, objectif 4 600 000, prix plancher 4 200 000 francs. Case 2, la MESORE, la meilleure solution de rechange : si nous n''obtenons pas l''accord, nous avons un autre client intéressé. Celle de la coopérative : un concurrent plus lointain, sans service après-vente local. Case 3, la zone d''accord : la coopérative peut payer au plus 4 800 000. Zone d''accord égale 4 800 000 moins 4 200 000, soit 600 000 francs. Case 4, les monnaies d''échange : installation, formation, contrat d''entretien, paiement en trois fois. Case 5, les contreparties : acompte, engagement d''entretien, recommandation auprès d''autres coopératives.
+Exemple chiffré : la commune fictive de Kër Yaakaar délègue l''exploitation d''un marché pour 6 ans. Recettes annuelles prévues : 25 000 000 FCFA. Redevance contractuelle : 10 % des recettes, pourcentage fictif. Redevance annuelle : 25 000 000 × 0,10 = 2 500 000 FCFA ; sur 6 ans : 15 000 000 FCFA si les recettes sont stables.
 
-Règle d''or : jamais de concession sans contrepartie. « Je peux faire un effort sur le prix si vous versez un acompte de 40 % à la commande. »
+## 1:10:00 – 1:22:00 · Correction commentée d''une dissertation
 
-## 1:12:00 – 1:24:00 · Les calculs commerciaux : exercices corrigés
+Sujet : « Le Président de la République dans la Constitution sénégalaise ». Je corrige devant vous le plan d''un étudiant.
 
-Exercice 1. Un ventilateur à 10 000 francs HT coûte 7 000 francs. Marge unitaire : 3 000. On en vend 300 par mois : 900 000 francs de marge. Remise de 10 % : prix 9 000, marge unitaire 2 000. Pour garder 900 000 de marge, il faut 900 000 divisé par 2 000, soit 450 ventilateurs. 50 % de plus ! Une remise de 10 % sur le prix fait perdre un tiers de la marge unitaire.
+Première version : I. L''élection du Président ; II. Les pouvoirs du Président. C''est un plan descriptif, acceptable mais faible : il ne démontre rien.
 
-Exercice 2. Kit de climatisation à 25 000 francs, coût 18 000, remise de 5 %. Prix remisé 23 750, marge 5 750 au lieu de 7 000. Volume nécessaire : 7 000 divisé par 5 750, soit 1,217 fois le volume initial, environ 21,7 % de ventes en plus.
+Version améliorée, avec une problématique : la Constitution fait-elle du Président le centre du pouvoir ? I. Un Président au cœur des institutions : A. Une légitimité forte issue du suffrage universel direct ; B. Des pouvoirs étendus, de nomination et d''arbitrage. II. Un Président encadré : A. Un pouvoir partagé avec un gouvernement responsable devant l''Assemblée ; B. Des limites constitutionnelles, comme la limitation et la durée des mandats prévues par le texte, et le contrôle du juge constitutionnel.
 
-Exercice 3, les ratios. 80 visites, 30 devis, 12 ventes, 5 400 000 francs de chiffre d''affaires. Taux de transformation des visites : 12 sur 80, soit 15 %. Des devis : 12 sur 30, soit 40 %. Panier moyen : 5 400 000 divisé par 12, soit 450 000 francs. Interprétation : le commercial convertit bien ses devis, il doit surtout multiplier les visites qualifiées.
+Commentaire : les titres affirment une idée ; les deux parties s''équilibrent ; chaque sous-partie s''appuie sur des mécanismes précis. Attention à ne citer aucun article dont vous n''êtes pas sûr ; écrivez « la Constitution prévoit que… ».
 
-## 1:24:00 – 1:30:00 · Synthèse et évaluation finale
+Deuxième exercice, plus court, de type cas pratique. Le conseil municipal d''une commune fictive décide de fermer le marché hebdomadaire de bétail. Le préfet estime cette décision illégale car prise sans consultation obligatoire ; un ministre, lui, la trouve simplement inopportune et veut l''annuler. Qui peut faire quoi ?
 
-Retenez les sept étapes, SONCAS, CAP, la méthode écouter-reformuler-répondre-vérifier, la MESORE et la zone d''accord, et le coût réel des remises.
+Raisonnons. La commune est une collectivité territoriale décentralisée : elle n''est pas soumise au pouvoir hiérarchique de l''État. Le ministre ne peut donc pas annuler la délibération pour des raisons d''opportunité ; s''il le faisait, il méconnaîtrait la libre administration des collectivités. En revanche, le représentant de l''État exerce le contrôle de légalité : s''il estime que la délibération viole une règle de procédure, il peut engager les voies prévues par les textes, notamment saisir le juge compétent. Conclusion : seul un contrôle de légalité est possible, pas un contrôle d''opportunité.
 
-- Question 1 : citez les sept étapes de l''entretien de vente. Réponse : préparation, prise de contact, découverte, argumentation, traitement des objections, conclusion, prise de congé et suivi.
-- Question 2 : que veut dire MESORE ? Réponse : meilleure solution de rechange en cas d''échec de la négociation.
-- Question 3 : prix maximum acheteur 3 000 000, plancher vendeur 2 600 000. Zone d''accord ? Réponse : 400 000 francs.
-- Question 4 : prix 2 000, coût 1 500, remise 10 %. Nouvelle marge unitaire ? Réponse : 1 800 − 1 500 = 300 francs au lieu de 500.
-- Question 5 : quelle technique utilise « Je vous livre mardi ou jeudi ? » ? Réponse : la conclusion par l''alternative.
+Les erreurs que je vois souvent dans les copies : écrire que le préfet est « le supérieur hiérarchique du maire », ce qui est faux pour les compétences décentralisées ; ou oublier de conclure. Rédigez toujours une conclusion qui répond exactement à la question : qui peut faire quoi.
 
-Merci pour votre participation, et bonne préparation de vos examens.', 'video', 90, false, 80
-from public.courses c where c.slug = 'lic-mkt-l1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Techniques de vente et négociation commerciale');
+## 1:22:00 – 1:27:00 · Synthèse
 
--- Cours : Marketing et commerce Licence 2 : réussir ses examens
+L''État réunit population, territoire et souveraineté. La Constitution est suprême et protégée par le Conseil constitutionnel. Les régimes se qualifient par les mécanismes de responsabilité et de dissolution. L''administration combine centralisation, déconcentration avec pouvoir hiérarchique, et décentralisation avec contrôle de légalité. Le service public obéit aux principes de continuité, d''égalité et de mutabilité.
+
+## 1:27:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : le Sénégal est-il un État unitaire ou fédéral ?
+- Question 2 : quel contrôle l''État exerce-t-il sur les communes ?
+- Question 3 : le préfet relève-t-il de la déconcentration ou de la décentralisation ?
+- Question 4 : citez les trois principes du service public.
+- Question 5 : une redevance de 8 % sur 30 000 000 FCFA de recettes représente combien ?
+
+Réponses : 1) unitaire décentralisé ; 2) un contrôle de légalité ; 3) de la déconcentration ; 4) continuité, égalité, mutabilité ; 5) 30 000 000 × 0,08 = 2 400 000 FCFA. Merci et bonnes révisions.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-droit-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Institutions administratives et droit constitutionnel');
+
+-- Cours : Droit des affaires Licence 2 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'lic-mkt-l2', (select id from public.levels where name = 'Licence 2'), null, 'Marketing et commerce', 'Marketing et commerce Licence 2 : réussir ses examens', 'Préparation aux partiels et examens semestriels de deuxième année de Licence en marketing et commerce (Sénégal, espace UEMOA, système LMD). Trois matières clés : les études de marché (questionnaire, échantillonnage, analyse chiffrée des résultats), le marketing opérationnel (prix, marges, seuil de rentabilité, distribution, communication) et le marketing digital (réseaux sociaux, référencement, indicateurs de performance, mobile money et e-commerce en Afrique). Fiches, cas d''entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : les fondamentaux du marketing de Licence 1.', true, 382
+select 'lic-droit-l2', (select id from public.levels where name = 'Licence 2'), null, 'Droit des affaires', 'Droit des affaires Licence 2 : réussir ses examens', 'Préparation aux partiels et examens semestriels de la Licence 2 en droit des affaires (système LMD, contexte Sénégal, UEMOA et OHADA). Le cours couvre le droit commercial général OHADA (commerçant, entreprenant, actes de commerce, fonds de commerce, bail à usage professionnel), le droit des obligations 2 (responsabilité civile délictuelle et contractuelle) et le droit du travail (relations individuelles, en tenant compte de la transition vers un nouveau Code du travail). Fiches, cas pratiques et exercices chiffrés corrigés (taux fictifs), sujet type et trois cours vidéo de 1h30. Prérequis : les acquis de la Licence 1 (introduction au droit, contrat).', true, 372
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Licence 2 en Marketing et commerce', '## Objectifs de la leçon
+select c.id, 'Réussir ses examens de Licence 2 en droit des affaires', '## Objectifs de la leçon
 
-- Situer la deuxième année de Licence dans le parcours LMD et comprendre ce qui change par rapport à la première année.
-- Identifier les trois matières clés de l''année et leurs exigences.
-- Adapter sa méthode aux épreuves de Licence 2, plus chiffrées et plus appliquées.
-- Organiser six semaines de révision efficaces.
+- Situer la Licence 2 dans le système LMD et comprendre ce qui change par rapport à la L1.
+- Connaître les trois matières clés de l''année : droit commercial général OHADA, droit des obligations 2 (responsabilité civile), droit du travail.
+- Adapter la méthode du cas pratique et du commentaire aux exigences de la L2.
+- Disposer d''un plan de révision sur 6 semaines.
 
 ## 1. La Licence 2 dans le système LMD
 
-La Licence 2 correspond aux semestres 3 et 4 de la Licence. Comme en première année, chaque semestre regroupe des unités d''enseignement (UE) composées de matières, et chaque UE validée apporte des crédits. Le nombre de crédits, les coefficients, la place du contrôle continu et les règles de compensation et de rattrapage sont fixés par chaque établissement : consultez la maquette de votre filière et le règlement des études.
+La Licence 2 correspond aux semestres 3 et 4. Comme en L1, chaque semestre regroupe des unités d''enseignement (UE) dotées de crédits, évaluées par un contrôle continu (TD, devoirs, fiches d''arrêt) et un examen semestriel, avec une session de rattrapage. Les coefficients, les règles de compensation et les conditions de passage relèvent du règlement des études de votre établissement : c''est lui seul qui fait foi.
 
-Ce qui change en Licence 2, c''est le niveau d''exigence. En première année, on vérifiait que vous connaissiez le vocabulaire : marché, segmentation, mix. En deuxième année, on vous demande de produire des outils : un questionnaire, un plan d''échantillonnage, un prix calculé, un seuil de rentabilité, un tableau de bord de campagne digitale. Les copies qui récitent sans calculer ni justifier plafonnent vite.
+Ce qui change en L2 : les matières deviennent techniques et se rapprochent de la vie des affaires. Les sujets d''examen sont plus souvent des cas pratiques complexes, avec plusieurs personnes, plusieurs problèmes et parfois des calculs (indemnités, dommages-intérêts, loyers). Le correcteur attend une qualification précise des faits et une connaissance sûre des textes, en particulier des Actes uniformes de l''OHADA.
 
-## 2. Les matières clés de l''année
+## 2. Les trois matières clés
 
-- Études de marché : objectifs d''une étude, études documentaires, qualitatives et quantitatives, rédaction d''un questionnaire, méthodes d''échantillonnage, taille d''échantillon, analyse des résultats (tri à plat, tri croisé, moyenne, écart-type, intervalle de confiance, test du khi-deux).
-- Marketing opérationnel : politique de prix (coûts, marges, coefficient multiplicateur, seuil de rentabilité, élasticité), politique de distribution (canaux, circuits, marges des intermédiaires), politique de communication (cibles, messages, médias, budget, coût pour mille contacts).
-- Marketing digital : présence sur les réseaux sociaux, référencement naturel et payant, indicateurs de performance (taux de clic, taux de conversion, coût par clic, coût d''acquisition, retour sur dépenses publicitaires), mobile money et e-commerce en Afrique.
+- Droit commercial général OHADA : l''Acte uniforme relatif au droit commercial général (AUDCG), révisé en 2010, régit le commerçant, l''entreprenant, les actes de commerce, le Registre du commerce et du crédit mobilier (RCCM), le fonds de commerce et le bail à usage professionnel (souvent appelé bail commercial).
+- Droit des obligations 2 : la responsabilité civile. Responsabilité délictuelle (fait personnel, fait des choses, fait d''autrui) et responsabilité contractuelle (inexécution du contrat). Au Sénégal, la matière relève principalement du Code des obligations civiles et commerciales (COCC).
+- Droit du travail : les relations individuelles de travail (formation, exécution, suspension et rupture du contrat de travail). Le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026). Apprenez les mécanismes, et vérifiez auprès de vos enseignants le texte applicable à la date de votre examen.
 
-D''autres matières figurent souvent au programme : statistiques, comptabilité analytique, droit commercial, communication écrite, anglais des affaires, informatique de gestion. Elles sont utiles ici, notamment les statistiques pour les études de marché et les coûts pour la fixation des prix.
+## 3. Les épreuves et la méthode
 
-## 3. Les épreuves de Licence 2
+Le cas pratique reste l''épreuve reine. En L2, trois exigences s''ajoutent :
 
-- Exercice chiffré : taille d''échantillon, intervalle de confiance, prix de vente à partir d''un taux de marque, seuil de rentabilité, indicateurs digitaux. Présentez toujours : formule, application numérique, résultat avec unité, interprétation.
-- Rédaction d''outil : écrire cinq questions d''un questionnaire, construire un plan de quotas, rédiger un brief de campagne.
-- Cas pratique : une entreprise fictive souhaite lancer un produit ; vous devez proposer une étude, puis un mix chiffré.
-- Questions de réflexion : « Les réseaux sociaux remplacent-ils la publicité traditionnelle ? » Introduction, problématique, plan, exemples.
-- Dossier ou projet : réalisation d''une petite enquête de terrain en groupe, avec rapport et soutenance.
+- Identifier tous les problèmes : lisez l''énoncé deux fois, soulignez chaque événement et demandez-vous « quelle règle s''applique ici ? ». Un énoncé de dix lignes cache souvent trois ou quatre problèmes.
+- Hiérarchiser : traitez d''abord les questions préalables (qualification de commerçant, existence d''un contrat de travail), dont dépend le reste.
+- Chiffrer quand c''est demandé : posez le calcul, les données et le résultat ; vérifiez les ordres de grandeur.
 
-## 4. Méthode de travail
+Le commentaire de décision et la dissertation restent possibles, notamment en responsabilité civile. Les décisions proposées dans ce cours sont fictives et présentées comme telles : on n''invente aucune jurisprudence réelle. À l''examen, on peut aussi vous demander des questions de cours courtes : définissez avec précision, puis illustrez.
 
-- Construisez un formulaire unique d''une ou deux pages avec toutes les formules de l''année : taille d''échantillon, intervalle de confiance, khi-deux, taux de marge et de marque, seuil de rentabilité, élasticité, coût pour mille, taux de clic, taux de conversion, coût d''acquisition, retour sur dépenses publicitaires.
-- Pour chaque formule, inventez un exemple en FCFA et refaites-le de tête une semaine plus tard.
-- Entraînez-vous à rédiger : un bon questionnaire ne s''improvise pas le jour de l''examen.
-- Observez votre environnement : affiches, promotions dans les boutiques, publications sponsorisées sur votre téléphone. Ce sont des exemples réels à analyser (sans citer les marques comme modèles à copier).
+Rappel de la grille du cas pratique : faits qualifiés, problème de droit, règle, application, conclusion. Ne citez aucun numéro d''article dont vous n''êtes pas certain ; écrivez « l''Acte uniforme relatif au droit commercial général prévoit que… ».
 
-Exemple de ligne de formulaire. Seuil de rentabilité en valeur = charges fixes / taux de marge sur coûts variables. Une entreprise fictive avec 36 000 000 FCFA de charges fixes et un taux de marge sur coûts variables d''un tiers doit réaliser 36 000 000 / (1/3) = 108 000 000 FCFA de chiffre d''affaires pour ne pas perdre d''argent.
+## 4. Les pièges classiques de la L2
 
-## 5. Plan de révision sur six semaines
+- Confondre commerçant et entreprenant : l''entreprenant est une personne physique qui exerce une petite activité et s''enregistre par simple déclaration ; le commerçant est immatriculé au RCCM.
+- Confondre responsabilité contractuelle et délictuelle : s''il existe un contrat valable entre l''auteur et la victime, et que le dommage résulte de son inexécution, on raisonne en principe sur le terrain contractuel.
+- Oublier la qualification du contrat de travail : sans lien de subordination, il n''y a pas de contrat de travail, quelle que soit l''appellation choisie par les parties.
+- Présenter des taux légaux de mémoire : dans ce cours, les taux utilisés en droit du travail sont fictifs pour l''exemple ; vérifiez toujours le texte en vigueur.
 
-- Semaine 1 : bilan des cours et TD, constitution du formulaire, repérage des chapitres fragiles.
-- Semaine 2 : études de marché. Questionnaire, échantillonnage, taille d''échantillon, traitement des résultats.
-- Semaine 3 : marketing opérationnel, partie prix et seuil de rentabilité ; puis distribution.
-- Semaine 4 : communication et marketing digital : indicateurs, campagnes, mobile money, e-commerce.
-- Semaine 5 : deux sujets complets en temps limité, avec correction.
-- Semaine 6 : reprise des erreurs, révision du formulaire, repos avant les épreuves.
+## 5. Plan de révision sur 6 semaines
 
-## Points clés
+- Semaine 1 : droit commercial général (commerçant, entreprenant, actes de commerce, RCCM) ; deux cas pratiques de qualification.
+- Semaine 2 : fonds de commerce et bail commercial ; un cas pratique avec calcul de loyer ou d''indemnité.
+- Semaine 3 : responsabilité du fait personnel, du fait des choses et du fait d''autrui ; une fiche de décision.
+- Semaine 4 : responsabilité contractuelle, causes d''exonération, réparation chiffrée ; une dissertation (plan détaillé).
+- Semaine 5 : droit du travail (contrat, période d''essai, suspension, rupture) ; un cas pratique avec calcul d''indemnités fictives.
+- Semaine 6 : sujet type en 3 heures, correction, relecture des fiches et repos.
 
-- En Licence 2, on attend des outils et des calculs, pas seulement des définitions.
-- Trois matières clés : études de marché, marketing opérationnel, marketing digital.
-- Un formulaire personnel et des exemples en FCFA sont vos meilleurs alliés.
-- Chaque calcul se termine par une phrase d''interprétation et, si possible, une décision.
-
-## Exercices pratiques
-
-- Exercice 1. Expliquez en trois phrases la différence d''exigence entre la Licence 1 et la Licence 2.
-- Exercice 2. Une entreprise fictive a 18 000 000 FCFA de charges fixes et un taux de marge sur coûts variables de 30 %. Calculez son seuil de rentabilité en valeur.
-- Exercice 3. Listez six formules que doit contenir votre formulaire et précisez la matière de chacune.
-- Exercice 4. Cas pratique. Moussa, étudiant en Licence 2, connaît ses définitions mais perd des points sur les calculs et les cas. Il dispose de six semaines et peut travailler deux heures par jour en semaine. Proposez-lui un plan de travail détaillé.
-- Exercice 5. Donnez un exemple d''action de marketing digital que vous avez observée au Sénégal (sans citer de marque) et analysez sa cible et son objectif.
-
-## Corrigé
-
-- Exercice 1. En Licence 1, on attend surtout la maîtrise du vocabulaire et des démarches de base. En Licence 2, on attend la production d''outils (questionnaire, plan de quotas, prix, budget) et des calculs exacts. La justification des choix et l''interprétation des résultats deviennent décisives.
-- Exercice 2. Seuil de rentabilité = 18 000 000 / 0,30 = 60 000 000 FCFA de chiffre d''affaires.
-- Exercice 3. Exemples : taille d''échantillon n = z² × p × (1 − p) / e² (études de marché) ; intervalle de confiance d''une proportion (études de marché) ; taux de marque = marge / prix de vente HT (marketing opérationnel) ; seuil de rentabilité = charges fixes / taux de marge sur coûts variables (marketing opérationnel) ; taux de clic = clics / impressions (marketing digital) ; coût d''acquisition = dépense / nombre de conversions (marketing digital).
-- Exercice 4. Semaine 1 : formulaire et liste des exercices de TD ratés. Semaines 2 à 4 : chaque jour, trente minutes de fiche puis une heure trente d''exercices chiffrés, en suivant l''ordre études, prix et distribution, communication et digital. Le samedi, un cas pratique complet. Semaine 5 : deux sujets types chronométrés. Semaine 6 : reprise des erreurs et révision du formulaire. Il doit rédiger chaque calcul avec formule et interprétation.
-- Exercice 5. Exemple : une pâtisserie de quartier publie des vidéos courtes de ses gâteaux le vendredi avec un numéro de commande par messagerie. Cible : familles et jeunes actifs du quartier qui préparent les fêtes du week-end. Objectif : générer des commandes directes et fidéliser. Indicateurs utiles : nombre de messages reçus, commandes, panier moyen.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 2 en Marketing et commerce');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Études de marché : l''essentiel pour l''examen', '## Objectifs de la leçon
-
-- Choisir le bon type d''étude selon le problème posé.
-- Rédiger un questionnaire clair et sans biais.
-- Choisir une méthode d''échantillonnage et calculer une taille d''échantillon.
-- Analyser des résultats : tri à plat, moyenne, écart-type, intervalle de confiance, tri croisé et khi-deux.
-
-## 1. Les types d''études
-
-Une étude de marché collecte et analyse des informations pour éclairer une décision (lancer un produit, fixer un prix). On part toujours du problème à résoudre.
-
-- Étude documentaire : exploitation de sources existantes (rapports publics, statistiques nationales, données internes, articles). Peu coûteuse, à faire en premier.
-- Étude qualitative : entretiens individuels ou réunions de groupe sur un petit nombre de personnes, pour comprendre les motivations, les freins, le vocabulaire des clients. Résultats riches mais non généralisables.
-- Étude quantitative : questionnaire administré à un échantillon représentatif, pour mesurer (combien, quelle proportion, quelle moyenne). Résultats chiffrés et extrapolables, dans une marge d''erreur.
-
-Schéma décrit : un entonnoir. En haut, l''étude documentaire ; au milieu, le qualitatif qui fait émerger les hypothèses ; en bas, le quantitatif qui les mesure.
-
-## 2. Le questionnaire
-
-Un bon questionnaire est court, compréhensible par tous, neutre et ordonné. Structure conseillée :
-
-- Introduction : qui mène l''enquête, objectif, durée, anonymat.
-- Questions filtres : vérifier que la personne fait partie de la cible.
-- Questions générales puis précises (technique de l''entonnoir).
-- Questions d''identification à la fin : âge, sexe, quartier, profession, tranche de revenu.
-
-Types de questions :
-
-- Fermée unique ou multiple : « Achetez-vous du jus local en bouteille ? Oui / Non. »
-- Échelle de Likert : « Je trouve le prix acceptable : pas du tout d''accord … tout à fait d''accord » (cinq niveaux).
-- Échelle de notation : « Notez votre satisfaction de 1 à 5. »
-- Ouverte : « Que faudrait-il améliorer ? »
-
-Erreurs à éviter : question orientée (« Vous aimez sûrement notre délicieux jus ? »), question double (« Le jus est-il bon et pas cher ? »), vocabulaire technique, question trop indiscrète en début de questionnaire. Au Sénégal, pensez à la langue : le questionnaire peut être traduit en wolof ou dans d''autres langues nationales, et testé auprès de quelques personnes avant le lancement.
-
-## 3. L''échantillonnage
-
-- Méthodes probabilistes : chaque individu a une probabilité connue d''être tiré. Aléatoire simple (tirage au sort sur une liste), systématique (une personne sur k), stratifié (tirage dans chaque strate), par grappes (tirage de quartiers, puis enquête de tous les ménages tirés).
-- Méthodes non probabilistes : quotas (l''échantillon reproduit la structure de la population sur quelques critères connus), méthode des itinéraires, échantillon de convenance. Très utilisées faute de listes exhaustives.
-
-Exemple de quotas. Une enquête porte sur 500 personnes. La population de référence compte 52 % de femmes et 48 % d''hommes ; 30 % ont 18 à 24 ans, 45 % 25 à 39 ans, 25 % 40 ans et plus. Quotas : 260 femmes et 240 hommes ; 150, 225 et 125 personnes par tranche d''âge.
-
-Taille d''échantillon pour estimer une proportion : n = z² × p × (1 − p) / e², avec z = 1,96 pour un niveau de confiance de 95 %, p la proportion supposée (0,5 si on ne sait rien, cas le plus prudent) et e la marge d''erreur.
-
-- Pour e = 5 % : n = 1,96² × 0,5 × 0,5 / 0,05² = 384,16, arrondi à 385 personnes.
-- Pour e = 4 % : n = 600,25, soit 601 personnes.
-- Pour e = 3 % : n = 1 067,1, soit 1 068 personnes. Diviser la marge d''erreur par deux multiplie environ la taille par quatre.
-
-## 4. Analyser les résultats
-
-Tri à plat : distribution des réponses question par question (effectifs et pourcentages).
-
-Moyenne et écart-type. Bissap Ndar, entreprise fictive de Saint-Louis, interroge 300 clients sur leur satisfaction (1 à 5). Réponses : note 1 : 10 ; note 2 : 30 ; note 3 : 80 ; note 4 : 120 ; note 5 : 60.
-
-- Moyenne = (1 × 10 + 2 × 30 + 3 × 80 + 4 × 120 + 5 × 60) / 300 = 1 090 / 300 = 3,63.
-- Variance = moyenne des carrés des écarts = 1,03 ; écart-type = 1,02 environ. Les avis sont assez dispersés.
-- Part de satisfaits (notes 4 et 5) = 180 / 300 = 60 %.
-
-Intervalle de confiance d''une proportion : p ± 1,96 × √(p × (1 − p) / n). Sur 400 personnes, 42 % se déclarent prêtes à acheter un nouveau jus au gingembre. Erreur type = √(0,42 × 0,58 / 400) = 0,0247. Marge = 1,96 × 0,0247 = 0,048. Intervalle à 95 % : de 37,2 % à 47,0 %.
-
-Tri croisé et khi-deux. On croise la zone (urbaine, rurale) et l''achat de jus en bouteille, sur 400 personnes :
-
-- Urbains : 120 acheteurs, 80 non-acheteurs (total 200).
-- Ruraux : 60 acheteurs, 140 non-acheteurs (total 200).
-
-Effectif théorique (si pas de lien) = total ligne × total colonne / total général. Acheteurs : 200 × 180 / 400 = 90 ; non-acheteurs : 200 × 220 / 400 = 110. Khi-deux = somme des (observé − théorique)² / théorique = 900/90 + 900/110 + 900/90 + 900/110 = 36,4. Pour un tableau 2 × 2 (un degré de liberté), la valeur critique au seuil de 5 % est 3,84. Comme 36,4 est supérieur à 3,84, on conclut à un lien significatif entre zone et achat.
+Exemple de répartition du temps pour une épreuve de 3 heures : 20 minutes de lecture et de brouillon (repérage des problèmes), 2 heures 15 de rédaction, 25 minutes de relecture et de vérification des calculs.
 
 ## Points clés
 
-- Documentaire, puis qualitatif, puis quantitatif.
-- Questionnaire : neutre, court, en entonnoir, identification à la fin, pré-test.
-- n = z² p (1 − p) / e² ; p = 0,5 par prudence.
+- La L2 rapproche le droit de la vie des affaires : droit commercial général OHADA, responsabilité civile, droit du travail.
+- Le cas pratique domine : identifier tous les problèmes, traiter d''abord les questions préalables, chiffrer proprement.
+- Les taux de droit du travail utilisés ici sont fictifs ; le Code du travail sénégalais est en transition.
 
 ## Exercices pratiques
 
-- Exercice 1. Corrigez ces questions : « Ne pensez-vous pas que nos prix sont bas ? » ; « Le service est-il rapide et aimable ? »
-- Exercice 2. Calculez la taille d''échantillon pour une marge d''erreur de 6 % au niveau de confiance de 95 % (p = 0,5).
-- Exercice 3. Construisez les quotas d''un échantillon de 600 personnes : 55 % de femmes ; 40 % de 18 à 29 ans, 35 % de 30 à 49 ans, 25 % de 50 ans et plus.
-- Exercice 4. Sur 500 personnes, 65 % connaissent une marque fictive de savon local. Calculez l''intervalle de confiance à 95 %.
-- Exercice 5. Tri croisé sur 300 personnes. Hommes : 90 utilisent le paiement mobile, 60 non. Femmes : 70 oui, 80 non. Calculez le khi-deux et concluez au seuil de 5 %.
-- Exercice 6. Cas pratique. Une entreprise fictive veut ouvrir une boulangerie moderne à Kaolack. Proposez une démarche d''étude complète (types d''études, méthode d''échantillonnage, cinq questions clés).
+- Exercice 1. Citez les trois matières clés de la L2 et l''Acte uniforme ou le code principal de chacune.
+- Exercice 2. Dans l''énoncé suivant, repérez les problèmes juridiques sans les résoudre : « Modou, qui vend des pièces détachées sur un marché de Thiès sans être enregistré, a embauché un apprenti sans contrat écrit. En déchargeant un carton, l''apprenti a blessé un client. »
+- Exercice 3. Quelle question préalable faut-il trancher avant de calculer des indemnités de licenciement ?
+- Exercice 4. Répartissez 3 heures d''épreuve selon la méthode proposée et justifiez le temps de relecture.
+- Exercice 5. Corrigez la phrase : « Selon l''article X de l''Acte uniforme, le commerçant doit… », écrite par un étudiant qui ne connaît pas le numéro exact.
 
 ## Corrigé
 
-- Exercice 1. « À votre avis, nos prix sont-ils : très bas, bas, corrects, élevés, très élevés ? » La seconde est double : la scinder en « Le service est-il rapide ? » et « Le personnel est-il aimable ? », chacune sur une échelle.
-- Exercice 2. n = 1,96² × 0,25 / 0,06² = 266,8, arrondi à 267 personnes.
-- Exercice 3. 330 femmes et 270 hommes ; 240, 210 et 150 personnes par tranche d''âge.
-- Exercice 4. Erreur type = √(0,65 × 0,35 / 500) = 0,0213 ; marge = 1,96 × 0,0213 = 0,042. Intervalle : de 60,8 % à 69,2 %.
-- Exercice 5. Totaux : hommes 150, femmes 150 ; oui 160, non 140. Théoriques : oui 150 × 160 / 300 = 80 ; non 70 (pour chaque sexe). Khi-deux = 100/80 + 100/70 + 100/80 + 100/70 = 5,36. Supérieur à 3,84 : le lien entre sexe et usage du paiement mobile est significatif au seuil de 5 % ; les hommes de l''échantillon l''utilisent davantage.
-- Exercice 6. Documentaire : population du quartier, concurrents existants, prix pratiqués. Qualitatif : une dizaine d''entretiens avec des clients potentiels. Quantitatif : questionnaire auprès d''environ 385 personnes, échantillon par quotas (sexe, âge, quartier). Questions : fréquence d''achat de pain ; lieu d''achat actuel ; produits souhaités (pain, viennoiseries, gâteaux) ; prix acceptable pour une baguette améliorée ; intérêt pour la livraison ou la commande par messagerie.', 'texte', 60, false, 20
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Études de marché : l''essentiel pour l''examen');
+- Exercice 1. Droit commercial général : Acte uniforme relatif au droit commercial général (OHADA). Responsabilité civile : Code des obligations civiles et commerciales (COCC). Droit du travail : Code du travail sénégalais, en transition vers un nouveau texte, et conventions collectives.
+- Exercice 2. 1) Modou a-t-il la qualité de commerçant, et quelles sont les conséquences de son absence d''immatriculation ou de déclaration ? 2) Le contrat qui le lie à l''apprenti est-il un contrat d''apprentissage ou de travail, et quelles sont les conséquences de l''absence d''écrit ? 3) Qui répond du dommage causé au client : l''apprenti (fait personnel), Modou (fait d''autrui, en tant que commettant ou maître d''apprentissage) ? Quelle est la nature de la responsabilité envers le client ?
+- Exercice 3. L''existence d''un contrat de travail (lien de subordination) et le mode de rupture (licenciement, démission, faute grave), dont dépend le droit aux indemnités.
+- Exercice 4. 20 minutes de lecture et brouillon, 2 h 15 de rédaction, 25 minutes de relecture. La relecture permet de corriger les erreurs de calcul, de vérifier que chaque problème a une conclusion et d''améliorer la lisibilité.
+- Exercice 5. « L''Acte uniforme relatif au droit commercial général prévoit que le commerçant doit… ». On cite le texte sans inventer de numéro.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 2 en droit des affaires');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Marketing opérationnel : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Droit commercial général OHADA : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Fixer un prix à partir des coûts, de la demande et de la concurrence.
-- Calculer taux de marge, taux de marque, coefficient multiplicateur, seuil de rentabilité et élasticité.
-- Choisir des canaux de distribution et calculer les prix en cascade.
-- Construire un plan de communication et calculer un coût pour mille contacts.
+- Définir le commerçant et l''entreprenant selon l''Acte uniforme relatif au droit commercial général (AUDCG).
+- Identifier les actes de commerce, décrire le fonds de commerce et maîtriser le bail à usage professionnel.
 
-## 1. Le prix
+## 1. Le commerçant
 
-Trois approches complémentaires :
+L''AUDCG définit le commerçant comme celui qui fait de l''accomplissement d''actes de commerce par nature sa profession. Trois conditions se dégagent :
 
-- Par les coûts : prix = coût de revient + marge souhaitée.
-- Par la demande : prix psychologique (celui que les clients jugent acceptable), élasticité.
-- Par la concurrence : s''aligner, se placer au-dessus (image de qualité) ou en dessous (pénétration).
+- Accomplir des actes de commerce par nature (et non quelques actes isolés).
+- À titre de profession habituelle : de manière répétée, comme source de revenus.
+- De façon indépendante, pour son propre compte : un salarié qui vend pour son employeur n''est pas commerçant.
 
-Stratégies de lancement : écrémage (prix élevé pour une clientèle restreinte, puis baisse) ou pénétration (prix bas pour conquérir vite des parts de marché).
+Il faut aussi la capacité : le mineur non émancipé ne peut pas être commerçant. Certaines professions sont incompatibles avec le commerce (fonctionnaires, officiers ministériels, avocats) et certaines condamnations entraînent une interdiction. Les actes accomplis malgré une incompatibilité restent valables à l''égard des tiers de bonne foi, mais leur auteur s''expose à des sanctions disciplinaires.
 
-Formules de base (prix hors taxes) :
+Obligations principales du commerçant :
 
-- Marge unitaire = prix de vente HT − coût d''achat ou de revient.
-- Taux de marge = marge / coût × 100.
-- Taux de marque = marge / prix de vente HT × 100.
-- Coefficient multiplicateur = prix de vente / coût.
+- S''immatriculer au Registre du commerce et du crédit mobilier (RCCM). L''immatriculation fait présumer la qualité de commerçant.
+- Tenir une comptabilité conforme au droit comptable OHADA (SYSCOHADA révisé).
 
-Exemple. Bissap Ndar produit une bouteille de jus pour un coût variable de 400 FCFA et la vend 600 FCFA HT aux grossistes. Marge = 200 FCFA. Taux de marge = 200 / 400 = 50 %. Taux de marque = 200 / 600 = 33,3 %. Coefficient multiplicateur = 1,5.
+Effets : entre commerçants, la preuve est libre, et les obligations nées à l''occasion de leur commerce se prescrivent en principe par cinq ans, sauf prescriptions plus courtes.
 
-Calculer un prix à partir d''un taux. Pour un coût de 1 500 FCFA : avec un taux de marge de 40 %, prix = 1 500 × 1,4 = 2 100 FCFA ; avec un taux de marque de 40 %, prix = 1 500 / (1 − 0,4) = 2 500 FCFA. Ne confondez jamais les deux.
+## 2. L''entreprenant
 
-Seuil de rentabilité. Bissap Ndar supporte 36 000 000 FCFA de charges fixes par an. Marge sur coût variable unitaire = 200 FCFA ; taux de marge sur coûts variables = 200 / 600 = 1/3.
+Création de la réforme de 2010, l''entreprenant est un entrepreneur individuel, personne physique, qui exerce une activité professionnelle civile, commerciale, artisanale ou agricole, sur simple déclaration au RCCM, tant que son chiffre d''affaires reste sous un seuil fixé par chaque État. Il bénéficie d''obligations comptables simplifiées. Ce statut vise à formaliser les petites activités (tabliers, couturiers, vendeurs de marché) ; au-delà du seuil, il faut passer au régime du commerçant.
 
-- Seuil en quantité = 36 000 000 / 200 = 180 000 bouteilles.
-- Seuil en valeur = 36 000 000 / (1/3) = 108 000 000 FCFA.
-- Ventes prévues : 240 000 bouteilles, soit 144 000 000 FCFA. Résultat = 240 000 × 200 − 36 000 000 = 12 000 000 FCFA.
-- Marge de sécurité = 144 000 000 − 108 000 000 = 36 000 000 FCFA ; indice de sécurité = 25 %.
-- Point mort (ventes régulières sur l''année) = 12 × 108 / 144 = 9 mois, soit fin septembre.
+## 3. Les actes de commerce
 
-Élasticité-prix = variation relative des quantités / variation relative du prix. Si le prix passe de 600 à 650 FCFA (+8,33 %) et les ventes de 240 000 à 216 000 bouteilles (−10 %), l''élasticité vaut −10 / 8,33 = −1,2 : la demande est élastique. Pourtant, la marge sur coûts variables passe de 48 000 000 à 216 000 × 250 = 54 000 000 FCFA : la hausse peut rester rentable. Il faut toujours raisonner en marge, pas seulement en chiffre d''affaires.
+L''AUDCG énumère des actes de commerce par nature, parmi lesquels : l''achat de biens meubles ou immeubles en vue de leur revente ; les opérations de banque, de change, de courtage, d''assurance et de transit ; les contrats entre commerçants pour les besoins de leur commerce ; les opérations de transport.
 
-## 2. La distribution
+Il existe aussi des actes de commerce par la forme, quelle que soit la qualité de leur auteur : la lettre de change, le billet à ordre et le warrant. Les sociétés commerciales sont, elles, commerciales par leur forme (SARL, SA, SAS, SNC, SCS).
 
-Un canal est une voie d''acheminement ; un circuit est l''ensemble des canaux utilisés.
+Deux notions à connaître :
 
-- Canal direct : producteur → consommateur (vente à la ferme, boutique propre, vente en ligne).
-- Canal court : producteur → détaillant → consommateur.
-- Canal long : producteur → grossiste → (demi-grossiste) → détaillant → consommateur. Très répandu en Afrique de l''Ouest pour les produits de grande consommation, avec un poids important des boutiques de quartier et des marchés.
+- L''acte mixte : commercial pour une partie, civil pour l''autre (un grossiste vend du riz à un particulier) ; en matière de preuve, le particulier peut prouver contre le commerçant par tous moyens.
+- L''acte de commerce par accessoire : un acte civil par nature devient commercial lorsqu''il est accompli par un commerçant pour les besoins de son commerce (l''achat d''un véhicule de livraison).
 
-Stratégies : distribution intensive (le plus de points de vente possible : produits de consommation courante), sélective (points choisis : électroménager), exclusive (un distributeur par zone : véhicules).
+## 4. Le fonds de commerce
 
-Prix en cascade. Bissap Ndar vend 600 FCFA HT. Le grossiste applique un taux de marge de 10 % : 660 FCFA. Le détaillant applique 25 % : 825 FCFA HT. Avec une TVA à 18 % (taux utilisé ici pour l''exemple ; vérifiez le taux en vigueur), le consommateur paie 973,50 FCFA, arrondi en pratique à un prix rond. Le prix final représente 1,62 fois le prix producteur : chaque intermédiaire est rémunéré pour un service (stockage, transport, crédit, proximité).
+Le fonds de commerce est l''ensemble des moyens permettant d''attirer et de conserver une clientèle. Selon l''AUDCG, il comprend nécessairement la clientèle et l''enseigne ou le nom commercial, et peut comprendre d''autres éléments désignés : droit au bail, matériel, marchandises, licences, brevets et marques.
 
-## 3. La communication
+Bien meuble incorporel, il peut être :
 
-Démarche : objectifs (faire connaître, faire aimer, faire agir), cible, message (promesse, preuve, ton), choix des moyens, budget, calendrier, contrôle.
+- Vendu : la vente, constatée par écrit et publiée, elle protège le vendeur impayé (privilège) et les créanciers du vendeur (opposition).
+- Donné en location-gérance : un gérant, commerçant, l''exploite à ses risques contre une redevance.
+- Nanti : il garantit un prêt, avec inscription au RCCM.
 
-- Communication média : radio (très puissante, notamment en langues nationales), télévision, affichage, presse, internet.
-- Hors média : promotion des ventes (dégustations, lots, jeux), relations publiques, parrainage d''événements, salons, marketing direct.
+Exemple chiffré. La société fictive Teranga Boulangerie cède à M. Sow le fonds qu''elle exploite à Rufisque. Prix ventilé : clientèle et enseigne 15 000 000 FCFA ; droit au bail 6 000 000 FCFA ; matériel 9 000 000 FCFA ; marchandises 4 500 000 FCFA. Prix total : 15 000 000 + 6 000 000 + 9 000 000 + 4 500 000 = 34 500 000 FCFA. La ventilation précise l''assiette des garanties du vendeur.
 
-Coût pour mille contacts (CPM) = coût de la campagne / nombre de contacts × 1 000. Une campagne radio de 1 500 000 FCFA touche 600 000 contacts : CPM = 1 500 000 / 600 000 × 1 000 = 2 500 FCFA. Le CPM permet de comparer des supports, mais ne mesure ni l''attention ni les ventes.
+## 5. Le bail à usage professionnel
+
+L''AUDCG régit le bail des locaux utilisés pour une activité commerciale, industrielle, artisanale ou professionnelle :
+
+- Forme et durée : le bail peut être écrit ou verbal, à durée déterminée ou indéterminée. À défaut d''écrit ou de durée, il est réputé conclu pour une durée indéterminée.
+- Obligations du bailleur : délivrer les locaux en bon état, faire les grosses réparations, garantir une jouissance paisible.
+- Obligations du preneur : payer le loyer, exploiter conformément à la destination prévue, user des lieux raisonnablement.
+- Loyer : fixé librement ; révisable selon les modalités de l''Acte uniforme et, à défaut d''accord, par le juge (situation, superficie, loyers comparables).
+- Droit au renouvellement : le preneur qui justifie avoir exploité son activité conformément au bail pendant une durée minimale fixée par l''Acte uniforme a droit au renouvellement ; le bailleur qui refuse sans motif grave et légitime doit une indemnité d''éviction, fixée à défaut d''accord par le juge (chiffre d''affaires, investissements, situation géographique).
+- Résiliation : l''inexécution par le preneur peut conduire à la résiliation judiciaire, après une mise en demeure restée sans effet.
+
+Exemple : un commerçant paie 450 000 FCFA de loyer mensuel. Les parties conviennent d''une révision de 8 % : nouveau loyer 450 000 × 1,08 = 486 000 FCFA, soit 5 832 000 FCFA par an (486 000 × 12).
 
 ## Points clés
 
-- Taux de marge sur le coût, taux de marque sur le prix de vente.
-- Seuil de rentabilité = charges fixes / taux de marge sur coûts variables.
-- Distribution intensive, sélective ou exclusive ; prix en cascade.
-- Communication : objectifs, cible, message, moyens, budget, contrôle.
+- Commerçant : actes de commerce par nature, à titre de profession habituelle, de façon indépendante, avec capacité ; immatriculation au RCCM.
+- Fonds de commerce : clientèle et enseigne ou nom commercial au minimum ; vente, location-gérance, nantissement.
+- Bail professionnel : droit au renouvellement et indemnité d''éviction en cas de refus sans motif grave et légitime.
 
 ## Exercices pratiques
 
-- Exercice 1. Un article coûte 2 500 FCFA. Calculez le prix de vente HT pour un taux de marge de 30 %, puis pour un taux de marque de 30 %, et le coefficient multiplicateur dans le second cas.
-- Exercice 2. Un fabricant vend 1 000 FCFA HT. Le grossiste prend 8 % de marge sur son coût d''achat, le détaillant 20 %. TVA de 18 % (taux utilisé pour l''exemple). Calculez le prix TTC payé par le consommateur.
-- Exercice 3. Charges fixes 18 000 000 FCFA ; prix 5 000 FCFA ; coût variable 3 500 FCFA. Calculez le seuil en quantité et en valeur. Avec 15 000 unités vendues, calculez le résultat, l''indice de sécurité et le point mort.
-- Exercice 4. Le prix passe de 1 000 à 900 FCFA et les ventes de 5 000 à 5 750 unités. Calculez l''élasticité et l''évolution du chiffre d''affaires.
-- Exercice 5. Une campagne radio coûte 2 400 000 FCFA pour 800 000 contacts. Calculez le CPM et comparez au cas Bissap Ndar.
-- Exercice 6. Cas pratique. Une coopérative fictive de Casamance lance une confiture de mangue. Proposez une stratégie de prix, un circuit de distribution et deux actions de communication.
+- Exercice 1. Qualifiez : a) un fonctionnaire qui achète chaque semaine des tissus au marché HLM pour les revendre ; b) un agriculteur qui vend sa récolte ; c) une SARL de conseil.
+- Exercice 2. Un grossiste vend des pagnes à une enseignante pour son usage personnel. Quelle est la nature de l''acte ? Comment chacun peut-il prouver ?
+- Exercice 3. Un fonds de quincaillerie est vendu sans clientèle transmissible ni enseigne, seulement avec le matériel et le stock. Y a-t-il cession de fonds de commerce ?
+- Exercice 4 (chiffré). Une épicerie est cédée : clientèle et nom commercial 8 000 000 FCFA ; droit au bail 3 500 000 FCFA ; matériel 2 700 000 FCFA ; stock 1 850 000 FCFA. L''acheteur paie 60 % comptant. Calculez le prix total, la part comptant et le solde.
+- Exercice 5 (cas pratique). Mme Ba exploite depuis plusieurs années un salon de coiffure dans un local loué à Ziguinchor, sans bail écrit, et paie régulièrement son loyer. Le propriétaire lui annonce qu''il ne renouvelle pas, pour louer plus cher à une banque. Que peut-elle faire ?
 
 ## Corrigé
 
-- Exercice 1. Taux de marge 30 % : 2 500 × 1,3 = 3 250 FCFA. Taux de marque 30 % : 2 500 / 0,7 = 3 571 FCFA (3 571,43). Coefficient = 3 571,43 / 2 500 = 1,43.
-- Exercice 2. Grossiste : 1 000 × 1,08 = 1 080 FCFA. Détaillant : 1 080 × 1,20 = 1 296 FCFA HT. TTC = 1 296 × 1,18 = 1 529,28 FCFA.
-- Exercice 3. Marge unitaire = 1 500 FCFA ; taux = 30 %. Seuil = 18 000 000 / 1 500 = 12 000 unités, soit 60 000 000 FCFA. Résultat = 15 000 × 1 500 − 18 000 000 = 4 500 000 FCFA. Indice de sécurité = (15 000 − 12 000) / 15 000 = 20 %. Point mort = 12 × 12 000 / 15 000 = 9,6 mois, soit vers la mi-octobre.
-- Exercice 4. Variation des quantités = +15 % ; du prix = −10 % ; élasticité = −1,5 (demande élastique). Le chiffre d''affaires passe de 5 000 000 à 5 175 000 FCFA (+3,5 %). Il faut vérifier la marge avant de conclure.
-- Exercice 5. CPM = 2 400 000 / 800 000 × 1 000 = 3 000 FCFA, plus cher que 2 500 FCFA. Ce support se justifie seulement s''il touche mieux la cible.
-- Exercice 6. Prix : légèrement inférieur aux confitures importées, positionnement « fruit local de qualité » ; petit pot pour l''essai. Distribution : canal court vers supérettes et boutiques de produits locaux de Dakar et Ziguinchor, plus vente en ligne avec livraison. Communication : dégustations en magasin et foires, vidéos courtes montrant la récolte et la fabrication.', 'texte', 60, false, 30
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Marketing opérationnel : l''essentiel pour l''examen');
+- Exercice 1. a) Achats pour revendre à titre habituel : actes de commerce par nature, mais incompatibilité avec la fonction publique ; ses actes restent valables envers les tiers de bonne foi et il s''expose à des sanctions disciplinaires. b) L''activité agricole n''est pas commerciale : la vente de sa propre récolte n''est pas un achat pour revendre. c) Commerciale par la forme, quelle que soit son activité.
+- Exercice 2. Acte mixte : commercial pour le grossiste, civil pour l''enseignante. L''enseignante peut prouver contre le grossiste par tous moyens ; le grossiste devra respecter les règles de preuve du droit civil contre elle.
+- Exercice 3. Non : le fonds comprend nécessairement la clientèle et l''enseigne ou le nom commercial. Sans ces éléments, il s''agit d''une simple vente de matériel et de marchandises.
+- Exercice 4. Prix total : 8 000 000 + 3 500 000 + 2 700 000 + 1 850 000 = 16 050 000 FCFA. Comptant : 16 050 000 × 0,60 = 9 630 000 FCFA. Solde : 16 050 000 − 9 630 000 = 6 420 000 FCFA.
+- Exercice 5. Problème : le preneur d''un bail professionnel verbal peut-il s''opposer au refus de renouvellement ou obtenir une indemnité ? Règle : l''AUDCG s''applique au bail écrit ou verbal ; le preneur qui a exploité conformément au bail pendant la durée minimale prévue a droit au renouvellement ; le bailleur qui refuse sans motif grave et légitime doit une indemnité d''éviction. Application : bail verbal valable, exploitation ancienne, loyers payés ; louer plus cher n''est pas un motif grave et légitime. Conclusion : Mme Ba peut réclamer une indemnité d''éviction, à défaut d''accord fixée par le juge.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit commercial général OHADA : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Marketing digital : l''essentiel pour l''examen', '## Objectifs de la leçon
+select c.id, 'Droit des obligations 2 (responsabilité civile) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-- Comprendre l''écosystème du marketing digital : médias possédés, payés et gagnés.
-- Utiliser les réseaux sociaux et le référencement de façon professionnelle.
-- Calculer et interpréter les principaux indicateurs de performance.
-- Analyser les spécificités du mobile money et de l''e-commerce en Afrique.
+- Énoncer les trois conditions de la responsabilité civile.
+- Distinguer responsabilité du fait personnel, du fait des choses et du fait d''autrui.
+- Maîtriser la responsabilité contractuelle et ses causes d''exonération.
+- Chiffrer une réparation, y compris en cas de partage de responsabilité.
 
-## 1. Les fondements
+## 1. Notion et conditions générales
 
-Le marketing digital regroupe les actions marketing menées sur les supports numériques : site web, réseaux sociaux, moteurs de recherche, messageries, courriels, applications. On distingue trois types de médias :
+La responsabilité civile est l''obligation de réparer le dommage causé à autrui. Elle est délictuelle (ou extracontractuelle) lorsqu''aucun contrat ne lie l''auteur et la victime, et contractuelle lorsque le dommage résulte de l''inexécution d''un contrat. Au Sénégal, ses règles figurent principalement dans le Code des obligations civiles et commerciales (COCC). Trois conditions sont toujours exigées :
 
-- Médias possédés : ceux que l''entreprise contrôle (site, page, compte, liste de contacts).
-- Médias payés : la publicité en ligne (annonces sur les moteurs de recherche, publications sponsorisées).
-- Médias gagnés : ce que les autres disent de vous (partages, avis, recommandations, articles).
+- Un dommage (ou préjudice) : matériel (perte d''argent, destruction d''un bien), corporel (atteinte à l''intégrité physique) ou moral (souffrance, atteinte à l''honneur). Il doit être certain (un préjudice futur peut l''être s''il est inévitable ; la perte d''une chance sérieuse est réparable), direct et personnel.
+- Un fait générateur : une faute, le fait d''une chose ou le fait d''une personne dont on répond.
+- Un lien de causalité entre le fait générateur et le dommage.
 
-En Afrique de l''Ouest, l''accès à internet se fait surtout par le téléphone mobile. Conséquences : contenus légers, formats verticaux, vidéos courtes, sites rapides et adaptés au mobile, place centrale de la messagerie dans la relation client.
+## 2. La responsabilité du fait personnel
 
-## 2. Les réseaux sociaux
+Chacun répond du dommage causé par sa faute. La faute est un comportement que n''aurait pas eu une personne normalement prudente et diligente placée dans les mêmes circonstances : on l''apprécie « in abstracto ». Elle peut être intentionnelle (volonté de nuire) ou non intentionnelle (imprudence, négligence). Elle peut consister en une action ou en une abstention.
 
-Une stratégie social media suit une démarche : objectifs, cible, choix des plateformes, ligne éditoriale (thèmes, ton, fréquence), calendrier de publication, animation de la communauté, mesure.
+Exemple : le gérant fictif d''une station de lavage de Pikine laisse un tuyau à haute pression en travers du trottoir, sans signalisation ; un passant chute. La faute d''imprudence est caractérisée.
 
-Bonnes pratiques :
+## 3. La responsabilité du fait des choses
 
-- Publier régulièrement des contenus utiles ou divertissants, pas seulement des promotions (règle souvent citée : beaucoup de contenus de valeur pour une minorité de contenus commerciaux).
-- Répondre vite et poliment aux commentaires et messages, y compris aux critiques.
-- Travailler avec des créateurs de contenu ou des influenceurs adaptés à la cible, en exigeant la transparence sur le caractère commercial de la publication.
-- Utiliser les langues des clients : français, wolof ou autres langues nationales selon la cible.
+On est responsable du dommage causé par les choses que l''on a sous sa garde. Le gardien est celui qui a l''usage, la direction et le contrôle de la chose, en principe le propriétaire, sauf transfert de la garde (vol, prêt ou location avec transfert des pouvoirs). La victime doit prouver que la chose a été l''instrument du dommage ; lorsque la chose était en mouvement et est entrée en contact avec la victime, ce rôle est facilement admis ; si elle était inerte, la victime doit prouver son anormalité (position, état).
 
-Taux d''engagement = interactions (mentions j''aime, commentaires, partages) / abonnés × 100 (ou / personnes touchées, à préciser). Exemple : une publication de Teranga Mode, boutique fictive de prêt-à-porter à Dakar, génère 1 250 interactions pour 25 000 abonnés : taux = 5 %.
+Le gardien ne s''exonère pas en prouvant qu''il n''a pas commis de faute. Il ne peut s''exonérer, totalement ou partiellement, que par une cause étrangère : la force majeure, le fait d''un tiers ou la faute de la victime présentant les caractères requis.
 
-## 3. Le référencement
+## 4. La responsabilité du fait d''autrui
 
-- Référencement naturel (SEO) : améliorer la position d''un site dans les résultats non payants des moteurs de recherche. Leviers : contenu de qualité répondant aux questions des internautes, mots-clés pertinents dans les titres, site rapide et adapté au mobile, structure claire, liens provenant d''autres sites. Le SEO est lent mais durable.
-- Référencement payant (SEA) : annonces achetées sur des mots-clés, généralement facturées au clic. Effet immédiat, mais il s''arrête quand on cesse de payer.
-- Référencement local : fiche d''établissement avec adresse, horaires, photos et avis clients, essentielle pour un restaurant ou une boutique.
+Le COCC prévoit des cas dans lesquels une personne répond du dommage causé par une autre. Les principaux :
 
-## 4. Les indicateurs de performance
+- Les parents, pour les dommages causés par leurs enfants mineurs.
+- Les commettants (employeurs), pour les dommages causés par leurs préposés (salariés) dans l''exercice de leurs fonctions. Si le préposé a agi hors de ses fonctions, sans autorisation et à des fins étrangères à ses attributions, le commettant peut échapper à sa responsabilité.
+- D''autres personnes chargées d''organiser ou de contrôler l''activité d''autrui, selon les cas prévus par le texte (maîtres d''apprentissage, enseignants, par exemple).
 
-Schéma décrit : un entonnoir de conversion. Impressions en haut, puis clics, visites, ajouts au panier, commandes en bas.
+Ces responsabilités protègent la victime, qui obtient un débiteur solvable. Le responsable qui a indemnisé peut, dans certaines conditions, se retourner contre l''auteur direct.
 
-- Taux de clic (CTR) = clics / impressions × 100.
-- Coût par clic (CPC) = dépense / clics.
-- Taux de conversion = conversions / clics (ou visites) × 100.
-- Coût par acquisition (CPA) = dépense / conversions.
-- Retour sur dépenses publicitaires (ROAS) = chiffre d''affaires généré / dépense publicitaire.
-- Retour sur investissement (ROI) = (marge générée − dépense) / dépense.
-- Taux de rebond = visites d''une seule page sans interaction / visites totales.
+## 5. La responsabilité contractuelle
 
-Exemple. Teranga Mode dépense 450 000 FCFA en publications sponsorisées. Résultat : 200 000 impressions, 3 000 clics, 90 commandes, panier moyen 15 000 FCFA.
+Conditions : un contrat valable entre l''auteur et la victime, une inexécution (inexécution totale, partielle, défectueuse ou tardive), un dommage et un lien de causalité. La mise en demeure est en principe nécessaire pour les dommages-intérêts dus au retard.
 
-- CTR = 3 000 / 200 000 = 1,5 %.
-- CPC = 450 000 / 3 000 = 150 FCFA.
-- Taux de conversion = 90 / 3 000 = 3 %.
-- CPA = 450 000 / 90 = 5 000 FCFA.
-- Chiffre d''affaires = 90 × 15 000 = 1 350 000 FCFA ; ROAS = 1 350 000 / 450 000 = 3.
-- Avec un taux de marge brute de 40 %, marge = 540 000 FCFA ; ROI = (540 000 − 450 000) / 450 000 = 20 %.
+La distinction essentielle porte sur l''intensité de l''obligation :
 
-Un ROAS de 3 paraît excellent, mais seule la marge dit si la campagne enrichit l''entreprise.
+- Obligation de moyens : le débiteur promet de faire de son mieux (un médecin, un conseil juridique). Le créancier doit prouver une faute.
+- Obligation de résultat : le débiteur promet un résultat précis (un transporteur doit livrer la marchandise intacte). L''absence de résultat suffit ; le débiteur ne s''exonère que par une cause étrangère.
 
-## 5. Mobile money et e-commerce en Afrique
+Les clauses limitatives ou exclusives de responsabilité sont en principe valables entre professionnels, mais elles sont écartées en cas de faute lourde ou de dol du débiteur. Les dommages-intérêts couvrent en principe le préjudice prévisible lors de la conclusion du contrat, sauf faute lourde ou dolosive.
 
-Le mobile money permet d''envoyer, recevoir et payer de l''argent avec un téléphone, souvent sans compte bancaire. Il est largement utilisé dans l''espace UEMOA, où la BCEAO encadre les services de paiement et la monnaie électronique. Pour le commerçant, il facilite l''encaissement à distance, réduit la manipulation d''espèces et laisse une trace des paiements. Les frais varient selon les opérateurs et les offres : intégrez-les dans le calcul de la marge. Exemple avec un taux de frais de 1 % (taux fictif pour l''exemple) : sur 1 350 000 FCFA encaissés, les frais s''élèvent à 13 500 FCFA.
+Lorsque les conditions de la responsabilité contractuelle sont réunies, la victime ne peut en principe pas l''écarter pour invoquer la responsabilité délictuelle, plus favorable : c''est la règle du non-cumul.
 
-L''e-commerce africain présente des spécificités :
+## 6. La réparation
 
-- Commande souvent passée par messagerie ou réseau social plutôt que sur un site marchand.
-- Paiement à la livraison encore fréquent, par manque de confiance : risque de commandes non honorées.
-- Logistique du dernier kilomètre difficile : adresses imprécises, embouteillages ; recours aux livreurs à moto et aux points relais.
-- Confiance à construire : avis clients, politique de retour claire, service client réactif.
+La réparation doit être intégrale : tout le dommage, rien que le dommage. Elle se fait le plus souvent en argent (dommages-intérêts), parfois en nature. Si la victime a elle-même commis une faute qui a contribué au dommage, le juge procède à un partage de responsabilité.
+
+Exemple chiffré. Un camion de la société fictive Fleuve Transports percute la boutique de Mme Ndiaye à Saint-Louis. Préjudices : réparation du local 2 800 000 FCFA, marchandises détruites 1 200 000 FCFA, perte d''exploitation pendant la fermeture 500 000 FCFA. Total : 2 800 000 + 1 200 000 + 500 000 = 4 500 000 FCFA. Si le juge retenait une faute de la victime ayant contribué au dommage à hauteur de 30 % (par exemple un étal installé illégalement sur la chaussée), l''indemnité serait de 4 500 000 × 0,70 = 3 150 000 FCFA. Fleuve Transports, gardienne du camion et commettante du chauffeur, doit l''indemnité.
 
 ## Points clés
 
-- Médias possédés, payés, gagnés ; priorité au mobile.
-- CTR, CPC, taux de conversion, CPA, ROAS, ROI : savoir les calculer et les relier.
-- SEO durable, SEA immédiat, référencement local indispensable pour les commerces physiques.
-- Mobile money et livraison : leviers et contraintes de l''e-commerce africain.
+- Trois conditions : dommage, fait générateur, lien de causalité.
+- Fait personnel : faute appréciée in abstracto ; fait des choses : responsabilité du gardien, exonération par la seule cause étrangère ; fait d''autrui : parents, commettants, autres cas prévus.
+- Responsabilité contractuelle : obligation de moyens ou de résultat ; principe de non-cumul.
+- Réparation intégrale, réduite en cas de faute de la victime.
 
 ## Exercices pratiques
 
-- Exercice 1. Classez en médias possédés, payés ou gagnés : le site d''un hôtel de Saly ; un avis positif d''un client ; une annonce sur un moteur de recherche.
-- Exercice 2. Une publication touche 16 000 personnes pour un compte de 40 000 abonnés et génère 1 800 interactions. Calculez le taux d''engagement par abonné et par personne touchée.
-- Exercice 3. Campagne B : 120 000 impressions, 2 400 clics, 360 000 FCFA de dépense, 48 commandes, panier moyen 20 000 FCFA, taux de marge 35 %. Calculez CTR, CPC, taux de conversion, CPA, ROAS et ROI.
-- Exercice 4. Sur 5 000 visites, 2 200 quittent le site sans interaction. Calculez le taux de rebond et proposez deux causes.
-- Exercice 5. Une boutique encaisse 2 000 000 FCFA par mobile money ; frais de 1,5 % (taux fictif pour l''exemple). Calculez les frais.
-- Exercice 6. Cas pratique. Une épicerie fine fictive de Dakar veut vendre en ligne. Ses clients se plaignent de livraisons en retard et 20 % des commandes payables à la livraison sont refusées. Proposez des solutions.
+- Exercice 1. Obligation de moyens ou de résultat ? a) un transporteur de marchandises ; b) un avocat qui plaide ; c) un garagiste qui doit remplacer une pièce désignée.
+- Exercice 2. Un salarié livreur, pendant sa tournée, renverse un piéton par imprudence. Qui la victime peut-elle poursuivre ? Sur quels fondements ?
+- Exercice 3 (chiffré). Une victime subit 1 650 000 FCFA de frais médicaux, 900 000 FCFA de pertes de revenus et un préjudice moral évalué à 750 000 FCFA. Le juge retient une faute de la victime pour 20 %. Calculez l''indemnité.
+- Exercice 4 (chiffré). Un transporteur perd 40 cartons de 25 000 FCFA. Le contrat contient une clause limitant l''indemnisation à 600 000 FCFA. Calculez le préjudice, puis l''indemnité dans deux hypothèses : sans faute lourde, puis avec faute lourde prouvée.
+- Exercice 5 (cas pratique). Le fils de M. Diallo, 15 ans, joue au football dans la rue à Thiès et brise la vitrine d''une pharmacie (réparation : 380 000 FCFA). Le ballon appartient à un camarade. Le pharmacien vous consulte.
 
 ## Corrigé
 
-- Exercice 1. Site : possédé. Avis : gagné. Annonce : payé.
-- Exercice 2. Par abonné : 1 800 / 40 000 = 4,5 %. Par personne touchée : 1 800 / 16 000 = 11,25 %. Toujours préciser la base.
-- Exercice 3. CTR = 2 %. CPC = 150 FCFA. Conversion = 48 / 2 400 = 2 %. CPA = 7 500 FCFA. CA = 960 000 FCFA ; ROAS = 2,67. Marge = 336 000 FCFA ; ROI = (336 000 − 360 000) / 360 000 = −6,7 %. Malgré un ROAS supérieur à 2, la campagne perd de l''argent : il faut améliorer la conversion ou la marge.
-- Exercice 4. Taux de rebond = 2 200 / 5 000 = 44 %. Causes : page trop lente sur mobile ; contenu ne correspondant pas à l''annonce.
-- Exercice 5. Frais = 2 000 000 × 1,5 % = 30 000 FCFA.
-- Exercice 6. Livraison : créneaux annoncés, regroupement des tournées par zone, points relais dans des boutiques partenaires, suivi par message. Refus : confirmation de la commande par appel ou message, acompte ou paiement par mobile money avec petite remise, liste des clients à risque. Confiance : photos fidèles, avis clients, politique de retour claire.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Marketing digital : l''essentiel pour l''examen');
+- Exercice 1. a) Résultat (livrer intact) ; b) moyens (l''issue du procès est aléatoire) ; c) résultat, pour l''opération précise promise.
+- Exercice 2. Contre le salarié, sur le fondement de sa faute personnelle ; contre l''employeur, commettant, responsable du fait de son préposé agissant dans l''exercice de ses fonctions ; contre le gardien du véhicule de livraison au titre du fait des choses. La victime choisira le débiteur le plus solvable, en général l''employeur et son assureur.
+- Exercice 3. Préjudice total : 1 650 000 + 900 000 + 750 000 = 3 300 000 FCFA. Indemnité : 3 300 000 × 0,80 = 2 640 000 FCFA.
+- Exercice 4. Préjudice : 40 × 25 000 = 1 000 000 FCFA. Sans faute lourde, la clause s''applique entre professionnels : 600 000 FCFA. Avec faute lourde prouvée, la clause est écartée : 1 000 000 FCFA.
+- Exercice 5. Problème : qui répond du dommage causé par un mineur ? Règle : les parents répondent des dommages causés par leur enfant mineur, dans les conditions prévues par le COCC ; l''enfant peut aussi avoir commis une faute personnelle. Peu importe à qui appartient le ballon : la garde suit l''usage, la direction et le contrôle. Application : le fils de M. Diallo, mineur, a brisé la vitrine en jouant ; préjudice de 380 000 FCFA, lien de causalité direct. Conclusion : le pharmacien agira contre M. Diallo, civilement responsable de son fils, et son assureur responsabilité civile s''il en a un. Il devra prouver le dommage (devis, facture, constat).', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des obligations 2 (responsabilité civile) : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Licence 2 en Marketing et commerce (corrigé)', '## Présentation
+select c.id, 'Droit du travail (relations individuelles) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-Sujet d''entraînement, non officiel, conçu pour une épreuve de trois heures. Barème indicatif, non officiel. Calculatrice autorisée.
+- Situer les sources du droit du travail sénégalais dans un contexte de transition.
+- Qualifier le contrat de travail et distinguer CDI et CDD.
+- Décrire l''exécution et la suspension du contrat.
+- Analyser les modes de rupture et calculer des indemnités (taux fictifs pour l''exemple).
 
-## Le sujet
+## 1. Les sources, dans un contexte de transition
 
-Casamance Délices SARL, entreprise fictive de Ziguinchor, veut lancer un pot de confiture de mangue de 350 grammes sur le marché dakarois.
+Le droit du travail sénégalais repose sur le Code du travail adopté en 1997, ses décrets d''application, les conventions collectives (notamment la convention collective nationale interprofessionnelle et les conventions de branche), les conventions de l''Organisation internationale du travail ratifiées par le Sénégal, les usages et le contrat individuel. Le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026). À la date de votre examen, renseignez-vous sur le texte applicable. Dans cette leçon, on étudie des mécanismes stables ; les durées, taux et seuils utilisés dans les exemples sont fictifs pour l''exemple.
 
-Dossier 1 – Études de marché (7 points)
+## 2. Le contrat de travail
 
-- 1.1 Proposez trois questions fermées et une question ouverte pour l''enquête. (2 points)
-- 1.2 Calculez la taille d''échantillon nécessaire pour une marge d''erreur de 5 % au niveau de confiance de 95 %, en supposant p = 0,3. (2 points)
-- 1.3 L''enquête porte finalement sur 385 personnes ; 30 % déclarent qu''elles achèteraient certainement le produit. Calculez l''intervalle de confiance à 95 % et interprétez. (3 points)
+Le contrat de travail est la convention par laquelle une personne (le travailleur) s''engage à mettre son activité professionnelle, moyennant rémunération, sous la direction et l''autorité d''une autre personne (l''employeur). Trois éléments : une prestation de travail, une rémunération et un lien de subordination. Le lien de subordination est le critère décisif : pouvoir de donner des ordres, d''en contrôler l''exécution et de sanctionner les manquements. Le juge requalifie un contrat mal nommé : un « contrat de prestation » qui impose des horaires, un lieu et des consignes peut être un contrat de travail.
 
-Dossier 2 – Marketing opérationnel (7 points)
+On distingue :
 
-Le coût variable d''un pot est de 1 200 FCFA. L''entreprise vise un taux de marque de 25 %. Charges fixes annuelles : 24 000 000 FCFA. Ventes prévues : 80 000 pots.
+- Le contrat à durée indéterminée (CDI) : la forme normale de la relation de travail.
+- Le contrat à durée déterminée (CDD) : il comporte un terme et doit, en principe, être écrit. Les textes encadrent sa durée et son renouvellement ; un CDD qui ne respecte pas ces règles peut être requalifié en CDI. Vérifiez les limites précises dans le texte applicable.
+- La période d''essai : elle permet à chaque partie d''apprécier l''autre. Elle doit être prévue par écrit ; sa durée maximale dépend de la catégorie professionnelle. Pendant l''essai, chacune des parties peut en principe rompre sans préavis ni indemnité, sauf abus.
 
-- 2.1 Calculez le prix de vente HT et le taux de marge correspondant. (2 points)
-- 2.2 Calculez le seuil de rentabilité en quantité et en valeur, le résultat prévisionnel, la marge de sécurité et le point mort. (4 points)
-- 2.3 Proposez un circuit de distribution adapté. (1 point)
+## 3. L''exécution du contrat
 
-Dossier 3 – Marketing digital (6 points)
+Obligations de l''employeur : fournir le travail convenu, payer le salaire à date régulière, délivrer un bulletin de paie, assurer la sécurité et la santé des travailleurs, respecter la durée du travail et les repos, déclarer le salarié aux organismes sociaux.
 
-Campagne sponsorisée test : dépense 500 000 FCFA ; 250 000 impressions ; 5 000 clics ; 125 commandes ; panier moyen 8 000 FCFA.
+Obligations du salarié : exécuter personnellement le travail, respecter les instructions et le règlement intérieur, faire preuve de loyauté (pas de concurrence déloyale, discrétion).
 
-- 3.1 Calculez CTR, CPC, taux de conversion, CPA et ROAS. (3 points)
-- 3.2 Avec un taux de marque de 25 %, la campagne est-elle rentable ? Quel chiffre d''affaires minimal fallait-il ? (2 points)
-- 3.3 Proposez une amélioration. (1 point)
+L''employeur dispose d''un pouvoir disciplinaire : avertissement, mise à pied, licenciement pour faute, dans le respect des procédures et du principe de proportionnalité. Il peut changer les conditions de travail, mais une modification d''un élément essentiel du contrat (salaire, qualification) suppose l''accord du salarié.
+
+## 4. La suspension du contrat
+
+Certains événements suspendent le contrat sans le rompre : maladie du salarié, accident du travail, congé de maternité, congés payés, grève licite, certaines absences autorisées. Pendant la suspension, le salarié ne travaille pas, et l''employeur, selon les cas, maintient tout ou partie du salaire ou est relayé par les organismes sociaux. À l''issue, le salarié retrouve son emploi. La protection est renforcée pour la salariée enceinte et pour le salarié victime d''un accident du travail.
+
+## 5. La rupture du contrat
+
+Rupture du CDI :
+
+- La démission : volonté claire et non équivoque du salarié, qui doit respecter un préavis.
+- Le licenciement pour motif personnel : il doit reposer sur un motif légitime (faute, insuffisance professionnelle) et respecter la procédure. Sauf faute lourde, le salarié licencié a droit au préavis (ou à une indemnité compensatrice), et, à partir d''une certaine ancienneté, à une indemnité de licenciement.
+- Le licenciement pour motif économique : suppression ou transformation d''emploi liée à des difficultés économiques ou à une réorganisation ; il obéit à une procédure spécifique (information et consultation des délégués du personnel, information de l''inspection du travail, critères d''ordre des licenciements).
+- Le licenciement abusif (sans motif légitime) ouvre droit à des dommages-intérêts fixés par le juge.
+
+Rupture du CDD : il prend fin à son terme. Avant le terme, la rupture n''est en principe possible qu''en cas d''accord des parties, de faute lourde ou de force majeure ; une rupture abusive oblige à des dommages-intérêts.
+
+Les litiges individuels relèvent du tribunal du travail, après une tentative de conciliation selon les règles en vigueur ; l''inspection du travail joue un rôle important de conseil, de contrôle et de conciliation.
+
+Exemple chiffré (taux fictifs pour l''exemple). La société fictive Atlantique Conserverie, à Dakar, licencie pour motif personnel, sans faute grave, M. Gaye, 6 ans d''ancienneté, salaire moyen mensuel de 400 000 FCFA. Hypothèses fictives : préavis de 1 mois, que l''employeur dispense le salarié d''exécuter ; indemnité de licenciement égale à 25 % du salaire moyen mensuel par année pour les 5 premières années et 30 % au-delà. Indemnité compensatrice de préavis : 400 000 FCFA. Indemnité de licenciement : 400 000 × (0,25 × 5 + 0,30 × 1) = 400 000 × 1,55 = 620 000 FCFA. Total : 1 020 000 FCFA, hors congés payés et salaire dû. Vérifiez les règles réelles dans le texte et la convention collective applicables.
+
+## Points clés
+
+- Sources : Code du travail de 1997 en cours de remplacement, conventions collectives, conventions OIT, contrat.
+- Le lien de subordination est le critère du contrat de travail ; le juge requalifie.
+- CDI forme normale ; CDD écrit et encadré ; période d''essai écrite.
+- Rupture : démission, licenciement personnel ou économique, licenciement abusif ; CDD rompu avant terme seulement dans des cas limités.
+
+## Exercices pratiques
+
+- Exercice 1. Quels sont les trois éléments du contrat de travail ? Lequel est décisif ?
+- Exercice 2. Un chauffeur signe un « contrat de prestation de services » mais reçoit des horaires, un itinéraire et des sanctions en cas de retard. Qualifiez.
+- Exercice 3. Distinguez modification du contrat et changement des conditions de travail, avec un exemple de chacun.
+- Exercice 4 (chiffré, taux fictifs). Salaire moyen 350 000 FCFA, ancienneté 8 ans. Indemnité : 25 % par année pour les 5 premières années, 30 % de la 6e à la 10e. Préavis fictif : 2 mois, non exécuté à la demande de l''employeur. Calculez les indemnités.
+- Exercice 5 (chiffré). Un CDD de 12 mois à 280 000 FCFA par mois est rompu abusivement par l''employeur après 7 mois. Hypothèse fictive : le juge alloue des dommages-intérêts égaux aux salaires restant à courir. Calculez.
+- Exercice 6 (cas pratique). Awa, comptable en CDI depuis 3 ans dans une PME fictive de Kaolack, refuse une baisse de son salaire décidée unilatéralement. Son employeur la licencie pour « insubordination ». Analysez.
+
+## Corrigé
+
+- Exercice 1. Prestation de travail, rémunération, lien de subordination ; le lien de subordination est décisif.
+- Exercice 2. Les horaires, l''itinéraire imposé et le pouvoir de sanction caractérisent un lien de subordination : le juge requalifiera en contrat de travail, avec les droits qui en découlent (salaire, protection, déclaration sociale).
+- Exercice 3. La modification touche un élément essentiel (salaire, qualification, durée du travail convenue) et exige l''accord du salarié. Le changement des conditions de travail relève du pouvoir de direction (changement de bureau dans le même immeuble, nouvel outil informatique) et s''impose au salarié.
+- Exercice 4. Indemnité : 350 000 × (0,25 × 5 + 0,30 × 3) = 350 000 × 2,15 = 752 500 FCFA. Préavis : 2 × 350 000 = 700 000 FCFA. Total : 1 452 500 FCFA.
+- Exercice 5. Mois restant à courir : 12 − 7 = 5 ; dommages-intérêts : 5 × 280 000 = 1 400 000 FCFA (dans l''hypothèse fictive retenue).
+- Exercice 6. Problème : le refus d''une modification du contrat est-il une faute justifiant le licenciement ? Règle : la rémunération est un élément essentiel ; sa modification suppose l''accord du salarié ; le refus n''est pas une faute ; le licenciement doit reposer sur un motif légitime. Application : la baisse unilatérale est une modification ; le refus d''Awa est légitime ; l''« insubordination » invoquée n''est pas caractérisée. Conclusion : le licenciement est vraisemblablement abusif ; Awa peut saisir l''inspection du travail puis le tribunal du travail pour obtenir ses indemnités de rupture et des dommages-intérêts.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit du travail (relations individuelles) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 2 en droit des affaires (entraînement, corrigé détaillé)', '## Présentation du sujet
+
+Ce sujet d''entraînement couvre les trois matières clés de la Licence 2. Ce n''est pas un sujet officiel. Durée conseillée : 3 heures. Barème indicatif, non officiel : 20 points. Documents non autorisés, sauf indication contraire de votre enseignant. Personnes et entreprises fictives ; les taux de droit du travail sont fictifs pour l''exemple.
+
+## Énoncé commun
+
+M. Pape Seck exploite depuis plusieurs années, sous l''enseigne « Seck Électro », un commerce de vente d''appareils électroménagers à Thiès. Il est immatriculé au RCCM. Il loue son local à M. Faye par un bail écrit à durée déterminée, arrivé à échéance. Il emploie quatre salariés.
+
+## Dossier 1 : Droit commercial général (6 points)
+
+M. Faye refuse le renouvellement du bail sans donner de motif, car il souhaite installer son neveu dans le local. Par ailleurs, M. Seck envisage de céder son fonds : clientèle et enseigne 12 000 000 FCFA ; droit au bail 5 000 000 FCFA ; matériel et mobilier 3 600 000 FCFA ; stock 7 400 000 FCFA.
+
+- 1.1 M. Seck est-il commerçant ? Justifiez. (1 point)
+- 1.2 Quels sont ses droits face au refus de renouvellement ? (3 points)
+- 1.3 Calculez le prix de cession du fonds. Quels éléments sont indispensables pour qu''il y ait cession de fonds de commerce ? (2 points)
+
+## Dossier 2 : Responsabilité civile (7 points)
+
+Un livreur salarié de Seck Électro, pendant une livraison, gare mal le tricycle de l''entreprise ; le tricycle, mal freiné, dévale une pente et heurte Mme Sarr, qui traversait. Préjudices : frais médicaux 850 000 FCFA ; perte de revenus 450 000 FCFA ; préjudice moral 300 000 FCFA. Mme Sarr traversait hors du passage prévu, en regardant son téléphone.
+
+Par ailleurs, un réfrigérateur vendu par Seck Électro à un restaurant, et garanti « en parfait état de fonctionnement », tombe en panne au bout d''une semaine : le restaurant perd 600 000 FCFA de denrées.
+
+- 2.1 Sur quels fondements Mme Sarr peut-elle agir et contre qui ? (3 points)
+- 2.2 Le juge retient une faute de la victime pour 25 %. Calculez l''indemnité. (2 points)
+- 2.3 Quelle est la nature de la responsabilité de Seck Électro envers le restaurant ? (2 points)
+
+## Dossier 3 : Droit du travail (7 points)
+
+Fatou, vendeuse en CDI depuis 7 ans, salaire moyen 300 000 FCFA, est licenciée par lettre pour « manque de dynamisme », sans entretien préalable ni avertissement antérieur. Hypothèses fictives : préavis de 1 mois, non exécuté à la demande de l''employeur ; indemnité de licenciement de 25 % du salaire moyen par année pour les 5 premières années et 30 % au-delà.
+
+- 3.1 Le motif du licenciement vous paraît-il légitime ? (3 points)
+- 3.2 Calculez les indemnités de rupture dues en toute hypothèse. (2 points)
+- 3.3 Devant quelles instances Fatou peut-elle contester ? (2 points)
 
 ## Corrigé détaillé
 
-Dossier 1
+1.1 Oui : il accomplit à titre habituel et indépendant des achats pour revendre, actes de commerce par nature, et il est immatriculé au RCCM, ce qui fait présumer la qualité de commerçant.
 
-- 1.1 Fermées : « Consommez-vous de la confiture ? Oui / Non » ; « À quelle fréquence ? Chaque semaine / chaque mois / plus rarement » ; « Quel prix maximum accepteriez-vous pour un pot de 350 grammes ? (tranches) ». Ouverte : « Qu''est-ce qui vous donnerait envie d''acheter une confiture produite au Sénégal ? »
-- 1.2 n = 1,96² × 0,3 × 0,7 / 0,05² = 322,7, arrondi à 323 personnes. Avec p = 0,5 (hypothèse prudente), on aurait 385.
-- 1.3 Erreur type = √(0,3 × 0,7 / 385) = 0,0234 ; marge = 1,96 × 0,0234 = 0,046. Intervalle : de 25,4 % à 34,6 %. Interprétation : avec 95 % de confiance, entre un quart et un tiers environ de la population cible achèterait certainement ; l''intention déclarée surestime souvent l''achat réel, il faut rester prudent dans les prévisions.
+1.2 Problème : le preneur d''un bail professionnel peut-il s''opposer à un refus de renouvellement non motivé ? Règle : l''AUDCG reconnaît un droit au renouvellement au preneur qui a exploité conformément au bail pendant la durée minimale prévue ; le bailleur qui refuse sans motif grave et légitime doit une indemnité d''éviction, fixée à défaut d''accord par le juge en fonction notamment du chiffre d''affaires, des investissements et de la situation géographique. Application : exploitation de plusieurs années ; installer un neveu n''est pas un motif grave et légitime au sens de l''Acte uniforme, sous réserve des cas particuliers que celui-ci prévoit pour la reprise des locaux. Conclusion : M. Seck peut réclamer une indemnité d''éviction et doit agir dans les formes et délais prévus.
 
-Dossier 2
+1.3 Prix : 12 000 000 + 5 000 000 + 3 600 000 + 7 400 000 = 28 000 000 FCFA. Indispensables : la clientèle et l''enseigne ou le nom commercial.
 
-- 2.1 Prix HT = 1 200 / (1 − 0,25) = 1 600 FCFA. Marge = 400 FCFA ; taux de marge = 400 / 1 200 = 33,3 %.
-- 2.2 Seuil en quantité = 24 000 000 / 400 = 60 000 pots. Taux de marge sur coûts variables = 25 % ; seuil en valeur = 96 000 000 FCFA. CA prévu = 80 000 × 1 600 = 128 000 000 FCFA. Résultat = 80 000 × 400 − 24 000 000 = 8 000 000 FCFA. Marge de sécurité = 32 000 000 FCFA (indice 25 %). Point mort = 12 × 60 000 / 80 000 = 9 mois.
-- 2.3 Canal court : vente directe aux supérettes et épiceries fines de Dakar, complétée par la vente en ligne avec livraison ; éventuellement un grossiste pour les régions.
+2.1 Contre Seck Électro, gardienne du tricycle (fait des choses) : le tricycle en mouvement a heurté la victime ; contre l''employeur, commettant du livreur ayant agi dans ses fonctions (fait d''autrui) ; contre le livreur pour sa faute personnelle (mauvais stationnement). En pratique, Mme Sarr agira contre l''entreprise et son assureur.
 
-Dossier 3
+2.2 Préjudice : 850 000 + 450 000 + 300 000 = 1 600 000 FCFA. Indemnité : 1 600 000 × 0,75 = 1 200 000 FCFA.
 
-- 3.1 CTR = 5 000 / 250 000 = 2 %. CPC = 100 FCFA. Conversion = 125 / 5 000 = 2,5 %. CPA = 4 000 FCFA. CA = 1 000 000 FCFA ; ROAS = 2.
-- 3.2 Marge = 1 000 000 × 25 % = 250 000 FCFA, inférieure à la dépense de 500 000 FCFA : perte de 250 000 FCFA (ROI = −50 %). Chiffre d''affaires minimal = 500 000 / 0,25 = 2 000 000 FCFA, soit 250 commandes à 8 000 FCFA.
-- 3.3 Augmenter le panier moyen (lots de trois pots, coffrets cadeaux), mieux cibler les annonces, améliorer la page de commande pour relever la conversion, ou mettre en avant le premier achat comme investissement de fidélisation si les clients rachètent.
+2.3 Responsabilité contractuelle : un contrat de vente lie les parties ; le vendeur a garanti le bon fonctionnement ; la panne constitue une inexécution ; le dommage de 600 000 FCFA est en lien direct et prévisible. Règle du non-cumul : le restaurant ne peut pas agir sur le terrain délictuel.
+
+3.1 Problème : un licenciement pour « manque de dynamisme » repose-t-il sur un motif légitime ? Règle : le licenciement doit reposer sur un motif réel et sérieux (on parle de motif légitime), précis et vérifiable, et respecter la procédure applicable. Application : motif vague et subjectif, aucun avertissement en 7 ans, aucun fait précis ; procédure vraisemblablement irrégulière. Conclusion : licenciement vraisemblablement abusif, ouvrant droit à des dommages-intérêts en plus des indemnités de rupture.
+
+3.2 Préavis : 300 000 FCFA. Indemnité de licenciement : 300 000 × (0,25 × 5 + 0,30 × 2) = 300 000 × 1,85 = 555 000 FCFA. Total : 855 000 FCFA (taux fictifs).
+
+3.3 L''inspection du travail (conseil et tentative de conciliation), puis le tribunal du travail, compétent pour les litiges individuels, selon la procédure applicable.
 
 ## Exercices pratiques
 
-- Exercice 1. Quelle est la valeur critique du khi-deux pour un tableau 2 × 2 au seuil de 5 % ?
-- Exercice 2. Différence entre écrémage et pénétration ?
-- Exercice 3. Un produit coûte 800 FCFA ; coefficient multiplicateur 1,6. Prix de vente ?
-- Exercice 4. 4 000 clics et 80 commandes : taux de conversion ?
-- Exercice 5. Citez deux contraintes logistiques de l''e-commerce en Afrique.
-- Exercice 6. Le prix de la confiture passe de 1 600 à 1 700 FCFA et les ventes prévues de 80 000 à 76 000 pots. Calculez l''élasticité et la nouvelle marge sur coûts variables (coût variable inchangé à 1 200 FCFA). Faut-il augmenter le prix ?
+- Exercice 1. Recalculez l''indemnité de Mme Sarr si le juge retient une faute de la victime pour 10 %.
+- Exercice 2. Quelle part du prix de cession du fonds de M. Seck représente le stock, en pourcentage ?
+- Exercice 3. Quelle différence entre obligation de moyens et obligation de résultat ? Donnez un exemple tiré du sujet.
+- Exercice 4. Si Fatou avait 4 ans d''ancienneté, quelle serait son indemnité de licenciement avec les mêmes taux fictifs ?
 
 ## Corrigé
 
-- Exercice 1. 3,84 (un degré de liberté).
-- Exercice 2. L''écrémage fixe un prix élevé pour une clientèle restreinte ; la pénétration fixe un prix bas pour conquérir rapidement le marché.
-- Exercice 3. 800 × 1,6 = 1 280 FCFA.
-- Exercice 4. 80 / 4 000 = 2 %.
-- Exercice 5. Adresses imprécises ; embouteillages et coût du dernier kilomètre (ou refus à la livraison).
-- Exercice 6. Variation des quantités = −5 % ; variation du prix = +6,25 % ; élasticité = −5 / 6,25 = −0,8 (demande inélastique). Marge sur coûts variables : avant 80 000 × 400 = 32 000 000 FCFA ; après 76 000 × 500 = 38 000 000 FCFA. Le résultat progresserait de 6 000 000 FCFA : la hausse est intéressante sur le plan financier, sous réserve de la réaction des concurrents et de l''image « prix accessible » du produit.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 2 en Marketing et commerce (corrigé)');
+- Exercice 1. 1 600 000 × 0,90 = 1 440 000 FCFA.
+- Exercice 2. 7 400 000 / 28 000 000 = 0,264 environ, soit 26,4 %.
+- Exercice 3. L''obligation de moyens impose de faire de son mieux, le créancier devant prouver une faute ; l''obligation de résultat impose d''atteindre un résultat, dont l''absence suffit à engager la responsabilité. La garantie de « parfait état de fonctionnement » du réfrigérateur s''analyse comme une obligation de résultat.
+- Exercice 4. 300 000 × 0,25 × 4 = 300 000 FCFA.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 2 en droit des affaires (entraînement, corrigé détaillé)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Études de marché', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Droit commercial général OHADA', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 2 en marketing, commerce, gestion.
-- Objectifs : choisir un type d''étude ; rédiger un questionnaire ; construire un échantillon par quotas ; calculer une taille d''échantillon ; analyser des résultats avec moyenne, intervalle de confiance et khi-deux.
-- Matériel : diaporama, exemple de questionnaire imprimé, calculatrice.
-- Prérequis : leçon « Études de marché : l''essentiel pour l''examen » et notions de statistiques descriptives.
+- Public : étudiants de Licence 2 en droit des affaires, droit privé, gestion ou commerce.
+- Objectifs : qualifier le commerçant et l''entreprenant, identifier les actes de commerce, analyser une cession ou une location-gérance de fonds de commerce, résoudre un cas pratique de bail à usage professionnel.
+- Matériel : diaporama (arbre de qualification du commerçant, tableau des actes de commerce, schéma du fonds de commerce, frise du bail), tableau blanc, calculatrice, fiche d''exercices.
+- Prérequis : la leçon « Droit commercial général OHADA : l''essentiel pour l''examen » et la méthode du cas pratique.
 
 ## Déroulé minuté
 
 ## 00:00 – 05:00 · Accueil et objectifs
 
-Bonjour à toutes et à tous. Aujourd''hui, nous allons apprendre à poser les bonnes questions aux bonnes personnes, puis à faire parler les chiffres. Une étude de marché n''est pas un exercice académique : c''est ce qui évite à une entreprise de dépenser des millions pour un produit dont personne ne veut. Notre fil rouge : Bissap Ndar, entreprise fictive de Saint-Louis, qui envisage un nouveau jus au gingembre.
+Bonjour à toutes et à tous. Le droit commercial général, c''est le socle du droit des affaires dans l''espace OHADA. Son texte de référence est l''Acte uniforme relatif au droit commercial général, que nous appellerons l''AUDCG, révisé en 2010. Aujourd''hui, nous allons apprendre à répondre aux quatre questions qui reviennent dans presque tous les sujets : qui est commerçant ? quel acte est commercial ? qu''est-ce qu''un fonds de commerce et comment le céder ? quels sont les droits du locataire d''un local professionnel ? Toutes les personnes citées sont fictives.
 
-Visuel : diapositive titre et plan : types d''études, questionnaire, échantillon, taille, analyse.
+## 05:00 – 18:00 · Qui est commerçant ?
 
-## 05:00 – 15:00 · Partir du problème
+Visuel : arbre de décision à quatre questions.
 
-Toute étude commence par une question de décision. Pour Bissap Ndar : « Faut-il lancer un jus au gingembre à Saint-Louis et à Dakar, et à quel prix ? » De cette question découlent les objectifs d''information : qui consomme du jus local, à quelle fréquence, quel prix est acceptable, quelle part de la population achèterait.
+L''AUDCG définit le commerçant comme celui qui fait de l''accomplissement d''actes de commerce par nature sa profession. Je vous propose un arbre en quatre questions. Un : la personne accomplit-elle des actes de commerce par nature ? Deux : le fait-elle à titre de profession habituelle ? Trois : agit-elle pour son propre compte, de manière indépendante ? Quatre : a-t-elle la capacité d''être commerçant, et n''est-elle frappée d''aucune incompatibilité ou interdiction ?
 
-Ensuite, on choisit les types d''études, comme un entonnoir. En haut, la documentaire : statistiques publiques sur la population, rapports sectoriels, données de ventes internes. Elle coûte peu, faites-la toujours en premier. Au milieu, la qualitative : une dizaine d''entretiens, ou deux réunions de groupe, pour comprendre les habitudes et le vocabulaire. On découvre par exemple que les clients parlent de « jus naturel » et se méfient des « jus trop sucrés ». En bas, la quantitative : un questionnaire auprès de quelques centaines de personnes pour mesurer.
+Testons. Mme Diouf, salariée d''un supermarché, vend toute la journée : est-elle commerçante ? Non : elle agit pour le compte de son employeur, elle n''est pas indépendante. M. Kane, enseignant, achète et revend chaque week-end des téléphones : il accomplit des actes de commerce par nature, de manière habituelle et indépendante, mais sa fonction publique est incompatible avec le commerce. Ses actes restent valables envers les tiers de bonne foi, mais il s''expose à des sanctions disciplinaires.
 
-Question à poser : pourquoi faire le qualitatif avant le quantitatif ? Réponse : pour formuler des questions et des modalités de réponse qui correspondent à la réalité des clients.
+Conséquences de la qualité de commerçant : immatriculation au RCCM, tenue d''une comptabilité conforme au SYSCOHADA révisé, liberté de la preuve entre commerçants, prescription en principe de cinq ans pour les obligations nées à l''occasion de leur commerce.
 
-Un mot sur le budget et le calendrier, souvent demandés dans les cas pratiques. Une étude quantitative mobilise des enquêteurs, des déplacements, la saisie des données et l''analyse. Pour une PME, on peut réduire les coûts en recrutant des étudiants formés, en administrant une partie du questionnaire par téléphone ou en ligne, et en limitant le nombre de questions. Mais attention : un questionnaire en ligne ne touche que les personnes connectées ; l''échantillon risque alors de surreprésenter les jeunes urbains. Dans votre copie, signalez toujours ce type de biais.
+## 18:00 – 28:00 · L''entreprenant
 
-## 15:00 – 30:00 · Rédiger le questionnaire
+La réforme de 2010 a créé l''entreprenant. C''est une personne physique qui exerce une petite activité civile, commerciale, artisanale ou agricole, et qui se contente d''une déclaration au RCCM. Ses obligations comptables sont simplifiées. Le seuil de chiffre d''affaires est fixé par chaque État : ne l''inventez pas à l''examen ; dites « le seuil fixé par l''État partie ».
 
-Visuel : un questionnaire d''une page, annoté.
+Pourquoi ce statut ? Parce qu''une grande partie de l''activité économique en Afrique de l''Ouest est informelle. L''entreprenant permet à une vendeuse de légumes de Thiaroye ou à un tailleur des Parcelles Assainies d''avoir une existence juridique, de prouver son activité et d''accéder plus facilement au crédit, sans supporter toutes les charges du commerçant.
 
-Je vous montre la structure. Introduction : « Bonjour, je suis étudiant et je réalise une enquête pour une entreprise de jus. Cela prend cinq minutes, vos réponses sont anonymes. » Question filtre : « Avez-vous bu un jus en bouteille au cours du dernier mois ? » Si non, on remercie et on arrête, ou on passe à un module non-consommateurs. Puis l''entonnoir : habitudes générales, puis produit précis, puis prix. Enfin l''identification : âge, sexe, quartier, profession.
+## 28:00 – 42:00 · Les actes de commerce
 
-Maintenant, les pièges. « Vous aimez sûrement notre délicieux jus ? » : question orientée. « Le jus est-il bon et pas cher ? » : question double, la personne peut penser oui pour l''un et non pour l''autre. « Quel est votre revenu exact ? » en première question : trop indiscrète, la personne refuse de continuer. Utilisez plutôt des tranches, en fin de questionnaire.
+Visuel : tableau à quatre colonnes, par nature, par la forme, mixtes, par accessoire.
 
-Les échelles : Likert à cinq niveaux, de « pas du tout d''accord » à « tout à fait d''accord » ; notation de 1 à 5. Et n''oubliez pas le pré-test : on fait passer le questionnaire à cinq ou dix personnes pour repérer les questions mal comprises. Pensez aussi à la traduction en wolof si les enquêteurs l''utilisent : les mots doivent garder le même sens.
+Actes de commerce par nature : l''AUDCG en donne une liste, dont l''achat pour revendre, les opérations de banque, de change, de courtage, d''assurance et de transit, le transport, les contrats entre commerçants pour les besoins de leur commerce. Actes par la forme : la lettre de change, le billet à ordre, le warrant, quelle que soit la qualité de la personne qui les signe. Les sociétés commerciales, comme la SARL ou la SA, sont commerciales par leur forme.
 
-## 30:00 – 42:00 · Échantillonnage et quotas
+L''acte mixte est commercial pour l''un, civil pour l''autre : le grossiste qui vend du sucre à une mère de famille. Retenez la conséquence sur la preuve : la cliente peut prouver contre le grossiste par tous moyens, alors que le grossiste devra respecter les règles civiles contre elle.
 
-Deux grandes familles. Les méthodes probabilistes supposent une liste de la population : tirage aléatoire simple, systématique, stratifié, par grappes. Les méthodes non probabilistes, comme les quotas, sont les plus utilisées en pratique, car les listes manquent souvent.
+L''acte de commerce par accessoire : un acte civil devient commercial parce qu''il est accompli par un commerçant pour les besoins de son commerce. Le boutiquier qui achète une moto pour ses livraisons fait un acte de commerce par accessoire.
 
-Exercice commenté. On veut 500 personnes. La population compte 52 % de femmes et 48 % d''hommes ; 30 % de 18 à 24 ans, 45 % de 25 à 39 ans, 25 % de 40 ans et plus. Quotas : 500 fois 0,52, soit 260 femmes ; 240 hommes. Par âge : 150, 225 et 125. Vérifiez toujours que les totaux font bien 500 : 150 plus 225 plus 125, c''est 500. Les enquêteurs remplissent ces cases et s''arrêtent quand un quota est atteint.
+## 42:00 – 50:00 · Pause interactive : quiz
 
-## 42:00 – 47:00 · Quiz interactif
+- Question 1 : un salarié vendeur est-il commerçant ?
+- Question 2 : l''entreprenant s''immatricule-t-il ou se déclare-t-il au RCCM ?
+- Question 3 : la lettre de change est-elle un acte de commerce par nature ou par la forme ?
+- Question 4 : quels éléments doit nécessairement comprendre un fonds de commerce ?
+- Question 5 : quel est le délai de prescription de principe entre commerçants pour les obligations nées de leur commerce ?
 
-Mettez en pause.
+Réponses : 1) non, il n''est pas indépendant ; 2) il se déclare ; 3) par la forme ; 4) la clientèle et l''enseigne ou le nom commercial ; 5) cinq ans, sauf prescription plus courte.
 
-- Question 1 : quelle étude réaliser en premier ? Réponse : l''étude documentaire.
-- Question 2 : qu''est-ce qu''une question double ? Réponse : une question qui porte sur deux points à la fois.
-- Question 3 : 40 % de 18-24 ans sur un échantillon de 300 : quota ? Réponse : 120 personnes.
+## 50:00 – 1:02:00 · Le fonds de commerce et ses opérations
 
-## 47:00 – 1:00:00 · Calculer la taille de l''échantillon
+Visuel : un cercle central « clientèle + enseigne ou nom commercial », entouré des éléments facultatifs.
 
-Visuel : la formule n = z² × p × (1 − p) / e².
+Le fonds de commerce est l''ensemble des moyens qui permettent d''attirer et de conserver une clientèle. Il comprend nécessairement la clientèle et l''enseigne ou le nom commercial. Il peut comprendre le droit au bail, le matériel, les marchandises, les licences, les marques. C''est un bien meuble incorporel.
 
-z vaut 1,96 pour 95 % de confiance. p est la proportion que l''on cherche à estimer ; si on ne la connaît pas, on prend 0,5, car c''est la valeur qui donne le plus grand échantillon, donc la plus prudente. e est la marge d''erreur acceptée.
+Trois opérations. La vente : elle doit être constatée par écrit et publiée ; le vendeur impayé bénéficie d''un privilège, et les créanciers du vendeur peuvent faire opposition pour ne pas voir le prix leur échapper. La location-gérance : le propriétaire confie l''exploitation à un gérant, qui devient commerçant et exploite à ses risques en payant une redevance. Le nantissement : le fonds garantit un crédit.
 
-Calculons ensemble. Pour e égale 5 % : 1,96 au carré égale 3,8416 ; fois 0,25 égale 0,9604 ; divisé par 0,0025 égale 384,16. On arrondit toujours à l''entier supérieur : 385 personnes. Pour 4 % : 601 personnes. Pour 3 % : 1 068 personnes. Retenez l''intuition : pour diviser la marge d''erreur par deux, il faut environ quatre fois plus de personnes. La précision coûte cher.
+Exercice commenté : la société fictive Sine Optique donne son fonds en location-gérance pour 3 ans, contre une redevance mensuelle de 750 000 FCFA. Redevance annuelle : 750 000 × 12 = 9 000 000 FCFA ; sur 3 ans : 27 000 000 FCFA. Le gérant, lui, garde les bénéfices et supporte les pertes. Question piège : le propriétaire reste-t-il commerçant ? Le gérant a la qualité de commerçant et doit s''immatriculer ; le loueur, lui, ne fait plus d''actes de commerce à titre habituel au titre de ce fonds. À l''examen, discutez sa situation au regard de la définition du commerçant et des règles de publicité de la location-gérance.
 
-Si une étude antérieure indique que p est proche de 0,3, on calcule 3,8416 fois 0,21, divisé par 0,0025 : 322,7, donc 323 personnes.
+## 1:02:00 – 1:12:00 · Le bail à usage professionnel
 
-## 1:00:00 – 1:15:00 · Analyser les résultats
+Visuel : frise du bail, conclusion, exécution, renouvellement ou éviction.
 
-Premier outil, la moyenne et l''écart-type. 300 clients notent leur satisfaction : 10 donnent 1, 30 donnent 2, 80 donnent 3, 120 donnent 4, 60 donnent 5. Somme des produits : 10 plus 60 plus 240 plus 480 plus 300, soit 1 090. Moyenne : 1 090 sur 300, égale 3,63. L''écart-type vaut environ 1,02. Et 180 personnes sur 300, soit 60 %, sont satisfaites.
+L''AUDCG s''applique au bail de locaux utilisés pour une activité commerciale, industrielle, artisanale ou professionnelle. Le bail peut être écrit ou verbal, à durée déterminée ou indéterminée. Le bailleur délivre les lieux et assure une jouissance paisible ; le preneur paie le loyer et respecte la destination.
 
-Deuxième outil, l''intervalle de confiance. 42 % des 400 personnes interrogées achèteraient le jus au gingembre. Erreur type : racine de 0,42 fois 0,58 divisé par 400, soit 0,0247. Fois 1,96 : 0,048. L''intervalle va de 37,2 % à 47,0 %. Dans la copie, on écrit : « Avec 95 % de confiance, la proportion d''acheteurs potentiels dans la population est comprise entre 37 % et 47 %. »
+Le cœur du régime : le droit au renouvellement. Le preneur qui a exploité conformément au bail pendant la durée minimale fixée par l''Acte uniforme a droit au renouvellement. Si le bailleur refuse sans motif grave et légitime, il doit une indemnité d''éviction. À défaut d''accord, le juge la fixe en tenant compte notamment du chiffre d''affaires, des investissements réalisés et de la situation géographique. Je vous conseille de vérifier vous-mêmes la durée minimale et les délais dans le texte de l''Acte uniforme, et de ne jamais les inventer.
 
-Troisième outil, le khi-deux. Urbains : 120 acheteurs, 80 non-acheteurs. Ruraux : 60 et 140. Les effectifs théoriques, en l''absence de lien, valent total ligne fois total colonne divisé par total général : 90 et 110 pour chaque zone. Chaque écart vaut 30 en valeur absolue, donc chaque écart au carré vaut 900. Khi-deux : 900 sur 90, plus 900 sur 110, deux fois, soit 36,4. La valeur critique pour un degré de liberté au seuil de 5 % est 3,84. 36,4 est très au-dessus : le lien entre zone et achat est significatif. Décision marketing : concentrer le lancement en zone urbaine.
+## 1:12:00 – 1:22:00 · Correction commentée d''un cas pratique
 
-## 1:15:00 – 1:25:00 · Correction commentée d''un exercice
+Énoncé : Mme Mbaye exploite depuis longtemps une boutique de tissus dans un local de Kaolack, sans bail écrit. Son bailleur lui demande de partir dans un mois, pour louer à un prix plus élevé. Elle a investi 4 200 000 FCFA dans l''aménagement.
 
-Sur 300 personnes : hommes 90 utilisateurs du paiement mobile et 60 non ; femmes 70 et 80. Totaux : 150 hommes, 150 femmes ; 160 oui, 140 non. Théoriques : 80 oui et 70 non pour chaque sexe. Écarts au carré : 100 partout. Khi-deux : 100 sur 80 plus 100 sur 70, deux fois, soit 5,36. Supérieur à 3,84 : lien significatif. Les erreurs fréquentes que je vois dans les copies : oublier de calculer les effectifs théoriques, ou conclure sans comparer à la valeur critique.
+Correction. Problème 1 : le bail verbal relève-t-il de l''AUDCG ? Oui, l''Acte uniforme vise le bail écrit ou verbal ; en l''absence d''écrit, il est réputé à durée indéterminée. Problème 2 : le bailleur peut-il la congédier sans indemnité ? Pour mettre fin à un bail à durée indéterminée, il doit respecter les formes et le préavis de l''Acte uniforme. Si Mme Mbaye remplit les conditions du droit au renouvellement, un refus sans motif grave et légitime l''expose à une indemnité d''éviction. Louer plus cher n''est pas un tel motif. Les 4 200 000 FCFA d''investissements font partie des éléments que le juge peut prendre en compte. Conclusion : Mme Mbaye peut contester le congé et réclamer une indemnité.
 
-Dernière étape d''une étude : le rapport. Il comprend un résumé pour le dirigeant d''une page, le rappel du problème et des objectifs, la méthodologie avec ses limites, les résultats présentés en tableaux et graphiques commentés, puis les recommandations. Le dirigeant de Bissap Ndar ne veut pas un khi-deux : il veut savoir s''il lance le jus, où, et à quel prix. Terminez toujours par une recommandation claire et chiffrée.
+Erreurs fréquentes dans les copies : affirmer que le bail verbal n''est pas protégé ; inventer une durée de préavis précise ; oublier la conclusion.
 
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
+## 1:22:00 – 1:27:00 · Synthèse
 
-Retenez : documentaire, qualitatif, quantitatif ; questionnaire neutre et testé ; quotas ; n = z² p (1 − p) / e² ; intervalle de confiance ; khi-deux comparé à 3,84.
+Le commerçant accomplit des actes de commerce par nature, à titre habituel et indépendant, avec la capacité requise. L''entreprenant est un petit entrepreneur personne physique qui se déclare au RCCM. Les actes de commerce sont par nature, par la forme, mixtes ou par accessoire. Le fonds comprend au minimum la clientèle et l''enseigne ou le nom commercial ; il se vend, se loue, se nantit. Le preneur d''un bail professionnel bénéficie d''un droit au renouvellement ou, à défaut, d''une indemnité d''éviction.
 
-- Question 1 : taille d''échantillon pour e = 5 %, p = 0,5, 95 % ? Réponse : 385.
-- Question 2 : pourquoi prendre p = 0,5 ? Réponse : c''est le cas le plus prudent, qui maximise n.
-- Question 3 : citez une méthode probabiliste et une non probabiliste. Réponse : aléatoire simple ; quotas.
-- Question 4 : un khi-deux de 2,1 pour un tableau 2 × 2 est-il significatif à 5 % ? Réponse : non, car 2,1 est inférieur à 3,84.
-- Question 5 : où placer les questions d''identification ? Réponse : à la fin du questionnaire.
+## 1:27:00 – 1:30:00 · Évaluation finale
 
-Merci, et rendez-vous au prochain cours vidéo.', 'video', 90, false, 60
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Études de marché');
+- Question 1 : citez les conditions pour être commerçant.
+- Question 2 : qu''est-ce qu''un acte mixte ?
+- Question 3 : le gérant-libre a-t-il la qualité de commerçant ?
+- Question 4 : quel droit protège le preneur d''un bail professionnel à l''échéance ?
+- Question 5 : redevance de location-gérance de 600 000 FCFA par mois : montant sur 2 ans ?
+
+Réponses : 1) actes de commerce par nature, profession habituelle, indépendance, capacité, absence d''incompatibilité ou d''interdiction ; 2) un acte commercial pour une partie et civil pour l''autre ; 3) oui ; 4) le droit au renouvellement, ou l''indemnité d''éviction en cas de refus sans motif grave et légitime ; 5) 600 000 × 24 = 14 400 000 FCFA. Merci et bonnes révisions.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit commercial général OHADA');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Marketing opérationnel', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Droit des obligations 2 (responsabilité civile)', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 2 en marketing, commerce, gestion.
-- Objectifs : calculer taux de marge, taux de marque, coefficient multiplicateur, seuil de rentabilité et élasticité ; construire un prix en cascade ; choisir une stratégie de distribution ; bâtir un plan de communication et comparer des supports par le CPM.
-- Matériel : diaporama, tableau de seuil de rentabilité, calculatrice.
-- Prérequis : leçon « Marketing opérationnel : l''essentiel pour l''examen » et notions de coûts variables et fixes.
+- Public : étudiants de Licence 2 en droit, droit des affaires ou gestion.
+- Objectifs : poser les conditions de la responsabilité civile, distinguer les régimes du fait personnel, du fait des choses et du fait d''autrui, maîtriser la responsabilité contractuelle et le non-cumul, chiffrer une réparation avec partage de responsabilité, rédiger la fiche d''une décision fictive.
+- Matériel : diaporama (schéma des trois conditions, tableau des régimes, arbre contractuel ou délictuel), tableau blanc, calculatrice, fiche d''exercices.
+- Prérequis : la leçon « Droit des obligations 2 (responsabilité civile) : l''essentiel pour l''examen » et le cours de L1 sur le contrat.
 
 ## Déroulé minuté
 
 ## 00:00 – 05:00 · Accueil et objectifs
 
-Bonjour à toutes et à tous. Le marketing opérationnel, c''est le moment où la stratégie devient concrète : un prix sur une étiquette, un produit dans un rayon, un message à la radio. C''est aussi la matière où les examens comportent le plus de calculs. Notre fil rouge reste Bissap Ndar, qui vend des bouteilles de jus.
+Bonjour à toutes et à tous. La responsabilité civile, c''est la question que se pose toute victime : qui va payer ? Un accident de la circulation à Dakar, une marchandise abîmée par un transporteur, une vitrine brisée par un enfant : derrière chaque cas, la même mécanique juridique. Au Sénégal, ses règles figurent principalement dans le Code des obligations civiles et commerciales. Objectif de la séance : savoir choisir le bon régime, vérifier ses conditions et chiffrer la réparation. Les personnes et entreprises citées sont fictives, ainsi que la décision que nous analyserons.
 
-Visuel : diapositive titre et trois blocs : prix, distribution, communication.
+## 05:00 – 15:00 · Les trois conditions
 
-## 05:00 – 20:00 · Marge, marque, coefficient
+Visuel : trois blocs reliés par des flèches, fait générateur, lien de causalité, dommage.
 
-Visuel : une barre horizontale coupée en deux : coût de 400, marge de 200, prix de 600.
+Toute responsabilité civile suppose trois éléments. Un dommage : matériel, corporel ou moral, certain, direct et personnel. Un fait générateur : une faute, le fait d''une chose, ou le fait d''une personne dont on répond. Et un lien de causalité entre les deux.
 
-La bouteille coûte 400 francs et se vend 600 francs hors taxes. Marge : 200. Le taux de marge rapporte la marge au coût : 200 sur 400, soit 50 %. Le taux de marque rapporte la marge au prix de vente : 200 sur 600, soit 33,3 %. Le coefficient multiplicateur : 600 sur 400, soit 1,5.
+Prenez l''habitude, dans un cas pratique, de vérifier les trois, dans cet ordre ou dans l''ordre inverse, mais toujours tous les trois. La moitié des copies oublient le lien de causalité. Exemple : un client glisse dans un magasin le jour où le sol vient d''être lavé, mais il s''avère qu''il a fait un malaise avant de tomber. Le sol mouillé est-il la cause de la chute ? C''est toute la question du lien de causalité.
 
-C''est le piège préféré des correcteurs. Un produit coûte 1 500 francs. Avec un taux de marge de 40 %, on multiplie le coût par 1,4 : 2 100 francs. Avec un taux de marque de 40 %, on divise le coût par 0,6 : 2 500 francs. Pourquoi diviser ? Parce que si la marque représente 40 % du prix, le coût en représente 60 %. Vérifions : 2 500 moins 1 500 égale 1 000, et 1 000 sur 2 500 égale bien 40 %.
+## 15:00 – 27:00 · Le fait personnel et le fait des choses
 
-Question à poser : un commerçant dit « je prends 25 % ». Que devez-vous lui demander ? Réponse : 25 % de quoi, du coût ou du prix de vente ?
+Le fait personnel : chacun répond de sa faute. La faute s''apprécie in abstracto : on compare le comportement de l''auteur à celui d''une personne normalement prudente et diligente placée dans les mêmes circonstances. Elle peut être intentionnelle ou d''imprudence, consister en une action ou une abstention.
 
-Avant de passer au seuil, rappelons les trois approches du prix. Par les coûts, comme nous venons de le faire. Par la demande : quel prix les clients jugent-ils acceptable ? On le mesure par enquête, en demandant à partir de quel prix le produit paraît trop cher, et en dessous de quel prix on doute de sa qualité. Par la concurrence : si les jus concurrents sont à 500 francs en boutique, un jus à 1 000 francs devra justifier sa différence. Le bon prix se situe à l''intersection des trois : il couvre les coûts, il est accepté par les clients, il est cohérent avec le positionnement face aux concurrents.
+Le fait des choses : on répond du dommage causé par les choses que l''on a sous sa garde. Le gardien est celui qui a l''usage, la direction et le contrôle de la chose. Le propriétaire est présumé gardien, sauf s''il prouve avoir transféré la garde, par exemple en cas de vol. La victime doit établir que la chose a été l''instrument du dommage. Le gardien ne s''exonère pas en prouvant qu''il n''a pas commis de faute : il doit prouver une cause étrangère, comme la force majeure, le fait d''un tiers ou la faute de la victime.
 
-Et deux stratégies de lancement : l''écrémage, prix élevé au départ pour une clientèle prête à payer la nouveauté, puis baisse progressive ; la pénétration, prix bas dès le départ pour conquérir vite le marché. Pour un jus de grande consommation, la pénétration est souvent plus adaptée.
+Visuel : un taxi en stationnement dont le frein lâche ; une charrette qui heurte un passant ; un pot de fleurs qui tombe d''un balcon. Pour chacun, je vous demande : qui est le gardien ?
 
-## 20:00 – 35:00 · Le seuil de rentabilité
+## 27:00 – 40:00 · Le fait d''autrui
 
-Les charges fixes de Bissap Ndar s''élèvent à 36 millions par an : loyer, salaires administratifs, amortissement des machines. Chaque bouteille vendue rapporte une marge sur coût variable de 200 francs. Combien de bouteilles faut-il pour couvrir 36 millions ? 36 000 000 divisé par 200 : 180 000 bouteilles. En valeur : 180 000 fois 600, soit 108 millions, ou 36 millions divisé par le taux de marge sur coûts variables, un tiers.
+Le COCC prévoit des cas où l''on répond du fait d''une autre personne. Les deux grands cas d''examen : les parents pour leurs enfants mineurs, et les commettants pour leurs préposés.
 
-Bissap Ndar prévoit 240 000 bouteilles, soit 144 millions de chiffre d''affaires. Résultat : 240 000 fois 200 moins 36 millions, égale 12 millions. Marge de sécurité : 144 moins 108, soit 36 millions ; l''indice de sécurité est de 25 % : les ventes peuvent baisser d''un quart avant d''entraîner une perte. Point mort : 12 fois 108 sur 144, égale 9 mois. Si les ventes sont régulières, le seuil est atteint fin septembre. Attention, dans la réalité les ventes de jus sont saisonnières : plus fortes pendant la saison chaude et le Ramadan. Un bon étudiant le signale.
+Pour le commettant, trois conditions : un lien de préposition, c''est-à-dire un pouvoir de donner des ordres, en général issu d''un contrat de travail ; un fait dommageable du préposé ; un fait commis dans l''exercice des fonctions. Si le préposé a agi hors de ses fonctions, sans autorisation et à des fins étrangères à ses attributions, le commettant peut échapper à sa responsabilité. Exemple : le chauffeur d''une entreprise de transport qui, la nuit, utilise le camion à l''insu de son employeur pour une course personnelle.
 
-Visuel : graphique décrit avec en abscisse les quantités, une droite de chiffre d''affaires partant de zéro, une droite de coûts totaux partant de 36 millions ; elles se croisent à 180 000 bouteilles.
+Pourquoi ces responsabilités ? Pour offrir à la victime un débiteur solvable, souvent assuré. Le responsable qui a payé peut, dans les conditions prévues, se retourner contre l''auteur direct.
 
-## 35:00 – 45:00 · L''élasticité et la décision de prix
+## 40:00 – 48:00 · Pause interactive : quiz
 
-Bissap Ndar envisage de passer de 600 à 650 francs. L''étude prévoit une baisse des ventes à 216 000 bouteilles. Variation du prix : plus 8,33 %. Variation des quantités : moins 10 %. Élasticité : moins 10 divisé par 8,33, soit moins 1,2. La demande est élastique : les quantités réagissent plus que proportionnellement.
+- Question 1 : citez les trois conditions de la responsabilité civile.
+- Question 2 : comment s''apprécie la faute ?
+- Question 3 : le gardien peut-il s''exonérer en prouvant qu''il n''a commis aucune faute ?
+- Question 4 : quelles conditions pour engager la responsabilité du commettant ?
+- Question 5 : un préjudice de 2 000 000 FCFA avec une faute de la victime retenue à 40 % : quelle indemnité ?
 
-Faut-il renoncer ? Calculons la marge sur coûts variables. Avant : 240 000 fois 200, soit 48 millions. Après : 216 000 fois 250, soit 54 millions. La hausse rapporte 6 millions de marge en plus. Le chiffre d''affaires, lui, baisse un peu : 140,4 millions contre 144. Leçon : on décide sur la marge, pas sur le chiffre d''affaires.
+Réponses : 1) dommage, fait générateur, lien de causalité ; 2) in abstracto ; 3) non, il doit prouver une cause étrangère ; 4) lien de préposition, fait dommageable du préposé, dans l''exercice des fonctions ; 5) 2 000 000 × 0,60 = 1 200 000 FCFA.
 
-## 45:00 – 50:00 · Quiz interactif
+## 48:00 – 1:00:00 · La responsabilité contractuelle
 
-Mettez en pause.
+Visuel : arbre de décision « existe-t-il un contrat entre l''auteur et la victime ? ».
 
-- Question 1 : coût 1 000, taux de marque 20 %. Prix ? Réponse : 1 000 / 0,8 = 1 250 francs.
-- Question 2 : charges fixes 10 millions, marge unitaire 500. Seuil en quantité ? Réponse : 20 000 unités.
-- Question 3 : élasticité de −0,5 : demande élastique ou inélastique ? Réponse : inélastique, car sa valeur absolue est inférieure à 1.
+S''il existe un contrat valable entre l''auteur et la victime, et que le dommage résulte de son inexécution, on se place sur le terrain contractuel. Conditions : un contrat, une inexécution, un dommage, un lien de causalité. La victime ne peut pas, en principe, écarter ces règles pour invoquer la responsabilité délictuelle : c''est le non-cumul.
 
-## 50:00 – 1:05:00 · La distribution et les prix en cascade
+Distinction capitale : l''obligation de moyens, où le créancier doit prouver une faute du débiteur, et l''obligation de résultat, où l''absence du résultat promis suffit. Le transporteur de marchandises a une obligation de résultat : livrer la marchandise intacte et à temps. Le consultant a en général une obligation de moyens.
 
-Trois types de canaux : direct, court, long. Pour un jus vendu dans tout le pays, le canal long domine : grossiste, demi-grossiste, boutique de quartier. La boutique de quartier est un acteur clé : proche, ouverte tard, elle fait parfois crédit. Mais elle a peu de place et souvent un réfrigérateur limité : il faut négocier la visibilité et parfois fournir le matériel de froid.
+Les clauses limitatives de responsabilité sont en principe valables entre professionnels, mais écartées en cas de faute lourde ou de dol. Les dommages-intérêts couvrent en principe le dommage prévisible lors de la conclusion du contrat, sauf faute lourde ou dolosive.
 
-Calcul en cascade. Bissap Ndar vend 600. Le grossiste ajoute 10 % : 660. Le détaillant ajoute 25 % : 825 hors taxes. Avec une TVA de 18 %, taux utilisé pour l''exemple et à vérifier dans le texte en vigueur, on obtient 973,50 francs ; en pratique, le prix affiché sera arrondi. Rapport entre prix final et prix producteur : 973,50 sur 600, soit 1,62.
+## 1:00:00 – 1:10:00 · La réparation chiffrée
 
-Stratégies : intensive pour le jus, sélective pour un réfrigérateur, exclusive pour une marque de motos avec un concessionnaire par région.
+La réparation est intégrale : tout le dommage, rien que le dommage. Exemple : la société fictive Niayes Primeurs confie 200 cageots de tomates à un transporteur ; valeur unitaire 12 500 FCFA. Le camion arrive avec deux jours de retard et 80 cageots sont invendables. Préjudice matériel : 80 × 12 500 = 1 000 000 FCFA. Le contrat limite l''indemnisation à 5 000 FCFA par cageot. Sans faute lourde : 80 × 5 000 = 400 000 FCFA. Si le chauffeur a fait un long détour pour des raisons personnelles en laissant la marchandise au soleil, une faute lourde pourrait être retenue : la clause est écartée et l''indemnité remonte à 1 000 000 FCFA.
 
-## 1:05:00 – 1:18:00 · La communication et le CPM
+Partage de responsabilité : si la victime a contribué au dommage, le juge réduit l''indemnité dans la proportion qu''il retient. Présentez toujours le calcul en trois lignes : préjudice total, part laissée à la charge de la victime, indemnité.
 
-Démarche en six étapes : objectifs, cible, message, moyens, budget, contrôle. Pour le jus au gingembre : objectif, faire connaître le produit à 50 % de la cible urbaine en trois mois ; cible, jeunes actifs et familles des villes ; message, « le gingembre qui réveille, naturel et local » ; moyens, radio en wolof et en français, affichage près des arrêts de bus, dégustations dans les supérettes, vidéos courtes en ligne.
+## 1:10:00 – 1:22:00 · Fiche d''une décision fictive
 
-Comparer les supports : le CPM. Radio A : 1 500 000 francs pour 600 000 contacts, CPM 2 500 francs. Radio B : 2 400 000 francs pour 800 000 contacts, CPM 3 000 francs. A est moins chère au contact. Mais si B touche mieux les jeunes actifs, elle peut rester le meilleur choix. Le CPM est un outil de comparaison, pas une mesure de l''efficacité.
+Décision fictive rédigée pour l''entraînement : « Attendu que le propriétaire d''un véhicule, qui en a conservé l''usage, la direction et le contrôle, en est le gardien ; que, pour écarter sa responsabilité, la cour d''appel a retenu qu''il n''avait commis aucune faute dans l''entretien du véhicule ; qu''en statuant ainsi, alors que le gardien ne peut s''exonérer qu''en prouvant une cause étrangère, la cour d''appel a violé les règles relatives à la responsabilité du fait des choses ; casse. »
 
-Pensez aussi au hors média. La promotion des ventes provoque l''achat immédiat : dégustation gratuite en supérette, lot « trois bouteilles pour le prix de deux et demie », jeu avec bouchons gagnants. Les relations publiques construisent l''image : visite de l''usine pour des journalistes, parrainage d''un tournoi de football de quartier ou de navétanes. Question à poser : quel est le risque d''une promotion permanente ? Réponse : le client s''habitue au prix promotionnel et n''achète plus au prix normal, ce qui détruit la marge et l''image.
+Construisons la fiche. Faits : un véhicule a causé un dommage ; son propriétaire en avait conservé la garde. Procédure : la victime a agi ; la cour d''appel a rejeté sa demande ; pourvoi en cassation ; cassation. Problème de droit : le gardien d''une chose peut-il s''exonérer en prouvant qu''il n''a commis aucune faute ? Solution : non ; seule une cause étrangère l''exonère.
 
-Enfin, le contrôle : on mesure la notoriété avant et après la campagne par une petite enquête, et l''on suit les ventes par zone. Sans mesure, impossible de savoir si le budget a été bien employé.
+Plan de commentaire possible : I. Une responsabilité fondée sur la garde (A. La définition du gardien ; B. L''indifférence de la faute). II. Une exonération strictement encadrée (A. La seule cause étrangère ; B. Une solution protectrice des victimes). Erreur à éviter : réciter tout le cours sur le fait d''autrui, qui n''a rien à voir avec la décision.
 
-## 1:18:00 – 1:26:00 · Correction commentée d''un exercice
+## 1:22:00 – 1:27:00 · Synthèse
 
-Charges fixes 18 millions, prix 5 000, coût variable 3 500. Marge unitaire 1 500, taux 30 %. Seuil : 12 000 unités, 60 millions. Avec 15 000 unités : résultat 4,5 millions ; indice de sécurité 20 % ; point mort 9,6 mois, vers la mi-octobre. Erreur fréquente : diviser les charges fixes par le prix de vente au lieu de la marge unitaire. Vérifiez toujours par le calcul inverse : 12 000 fois 1 500 égale bien 18 millions.
+Trois conditions : dommage, fait générateur, causalité. Trois faits générateurs délictuels : fait personnel, fait des choses, fait d''autrui. S''il existe un contrat et que le dommage vient de son inexécution, responsabilité contractuelle, avec la distinction moyens et résultat et la règle du non-cumul. La réparation est intégrale, réduite si la victime a contribué au dommage, et parfois plafonnée par une clause valable.
 
-## 1:26:00 – 1:30:00 · Synthèse et évaluation finale
+## 1:27:00 – 1:30:00 · Évaluation finale
 
-Retenez : marge sur le coût, marque sur le prix ; seuil égale charges fixes sur taux de marge sur coûts variables ; décider sur la marge ; cascade des prix ; CPM pour comparer.
+- Question 1 : définissez le gardien.
+- Question 2 : qu''est-ce que la règle du non-cumul ?
+- Question 3 : le transporteur a-t-il une obligation de moyens ou de résultat ?
+- Question 4 : quand une clause limitative est-elle écartée ?
+- Question 5 : 60 cageots détruits à 12 500 FCFA, sans clause : préjudice ?
 
-- Question 1 : coût 400, prix 600 : taux de marque ? Réponse : 33,3 %.
-- Question 2 : seuil en valeur avec 36 millions de charges fixes et un taux de marge sur coûts variables d''un tiers ? Réponse : 108 millions.
-- Question 3 : citez les trois stratégies de distribution. Réponse : intensive, sélective, exclusive.
-- Question 4 : 3 millions pour 1 million de contacts : CPM ? Réponse : 3 000 francs.
-- Question 5 : une hausse de prix qui fait baisser le chiffre d''affaires est-elle forcément mauvaise ? Réponse : non, si la marge totale augmente.
-
-Merci et bon travail.', 'video', 90, false, 70
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Marketing opérationnel');
+Réponses : 1) celui qui a l''usage, la direction et le contrôle de la chose ; 2) la victime liée à l''auteur par un contrat dont l''inexécution a causé le dommage ne peut pas invoquer la responsabilité délictuelle ; 3) de résultat ; 4) en cas de faute lourde ou de dol ; 5) 60 × 12 500 = 750 000 FCFA. Merci, et à bientôt pour le droit du travail.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des obligations 2 (responsabilité civile)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Marketing digital', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Droit du travail (relations individuelles)', '## Fiche du cours vidéo
 
 - Durée : 1h30.
-- Public : étudiants de Licence 2 en marketing, commerce, gestion.
-- Objectifs : distinguer médias possédés, payés et gagnés ; construire une ligne éditoriale ; expliquer SEO et SEA ; calculer et interpréter CTR, CPC, taux de conversion, CPA, ROAS, ROI ; analyser mobile money et e-commerce en Afrique.
-- Matériel : diaporama, captures d''écran fictives d''une page de réseau social, calculatrice.
-- Prérequis : leçon « Marketing digital : l''essentiel pour l''examen ».
+- Public : étudiants de Licence 2 en droit des affaires, droit privé, gestion ou ressources humaines.
+- Objectifs : situer les sources du droit du travail sénégalais en période de transition, qualifier un contrat de travail, distinguer CDI, CDD et période d''essai, analyser l''exécution, la suspension et la rupture, calculer des indemnités avec des taux fictifs.
+- Matériel : diaporama (pyramide des sources, critères du contrat de travail, arbre des ruptures), tableau blanc, calculatrice, fiche d''exercices.
+- Prérequis : la leçon « Droit du travail (relations individuelles) : l''essentiel pour l''examen ».
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et objectifs
+## 00:00 – 05:00 · Accueil et précautions
 
-Bonjour à toutes et à tous. Vous passez tous plusieurs heures par jour sur votre téléphone : aujourd''hui, nous allons regarder cet écran avec les yeux d''un professionnel du marketing. Notre fil rouge : Teranga Mode, boutique fictive de prêt-à-porter à Dakar, qui vend en magasin et de plus en plus en ligne.
+Bonjour à toutes et à tous. Avant de commencer, une précaution importante. Le Sénégal est en transition vers un nouveau Code du travail : un projet de loi, numéroté 15/2026, est en cours. Nous allons donc étudier les mécanismes fondamentaux, qui sont stables, sans détailler d''articles. Tous les taux, durées et seuils que j''utiliserai dans les exemples sont fictifs pour l''exemple. À l''examen, appuyez-vous sur le texte que votre enseignant vous a indiqué comme applicable. Les entreprises citées sont fictives.
 
-Visuel : diapositive titre et plan : écosystème, réseaux sociaux, référencement, indicateurs, mobile money et e-commerce.
+## 05:00 – 15:00 · Les sources du droit du travail
 
-## 05:00 – 15:00 · L''écosystème digital
+Visuel : pyramide des sources.
 
-Trois types de médias. Les médias possédés : la page de Teranga Mode, son site, sa liste de clients sur la messagerie. Elle les contrôle. Les médias payés : les publications sponsorisées et les annonces sur les moteurs de recherche. Elle les achète. Les médias gagnés : les avis, les partages, une cliente qui publie une photo de sa tenue. Elle les mérite. La stratégie consiste à combiner les trois : on paie pour amener des gens vers ce que l''on possède, et l''on soigne l''expérience pour gagner des recommandations.
+Au sommet, la Constitution, qui protège notamment la liberté syndicale et le droit de grève. Puis les conventions de l''Organisation internationale du travail ratifiées par le Sénégal. Puis le Code du travail, adopté en 1997, et ses textes d''application, en cours de remplacement. Ensuite les conventions collectives, en particulier la convention collective nationale interprofessionnelle et les conventions de branche. Enfin, les usages, le règlement intérieur de l''entreprise et le contrat individuel.
 
-Point clé pour l''Afrique de l''Ouest : on est « mobile d''abord ». La majorité des clients découvre, compare et commande depuis un téléphone, souvent avec une connexion limitée. Donc des images légères, des vidéos courtes, des pages rapides, et la messagerie comme canal de vente.
+Un principe particulier au droit du travail : le principe de faveur. En cas de conflit entre deux normes, on applique en principe celle qui est la plus favorable au salarié, dans les limites prévues par les textes. Exemple : si une convention collective accorde une prime plus avantageuse que le minimum prévu ailleurs, le salarié en bénéficie.
 
-## 15:00 – 28:00 · Les réseaux sociaux
+## 15:00 – 28:00 · Qualifier le contrat de travail
 
-Une ligne éditoriale répond à quatre questions : de quoi parle-t-on, sur quel ton, à quelle fréquence, dans quelle langue ? Pour Teranga Mode : conseils de style, coulisses de l''atelier, présentation des nouveautés, témoignages de clientes, quelques offres. Ton chaleureux, en français avec des expressions en wolof. Rythme : trois à quatre publications par semaine, plus des vidéos courtes le week-end avant les cérémonies.
+Le contrat de travail réunit trois éléments : une prestation de travail, une rémunération, un lien de subordination. Le troisième est décisif. Il y a subordination quand l''employeur a le pouvoir de donner des ordres, d''en contrôler l''exécution et de sanctionner les manquements.
 
-L''animation de communauté est essentielle : répondre aux messages dans l''heure si possible, remercier, et traiter les critiques publiquement avec calme, puis en privé pour régler le problème. Une critique bien traitée peut devenir une preuve de sérieux.
+Le juge ne s''arrête pas aux mots. Si une société fictive de livraison, Yoon Express, fait signer à ses livreurs des « contrats de partenariat » mais leur impose des horaires, des zones, une tenue et des sanctions en cas de refus de course, le juge pourra requalifier en contrat de travail. Conséquences : salaire, congés, protection contre le licenciement, déclaration aux organismes sociaux.
 
-Calcul du taux d''engagement. 1 250 interactions pour 25 000 abonnés : 5 %. Mais attention à la base. Si une autre publication touche 16 000 personnes sur 40 000 abonnés avec 1 800 interactions, le taux est de 4,5 % par abonné et de 11,25 % par personne touchée. Dans une copie, précisez toujours la base.
+Question à la salle : un stagiaire étudiant est-il salarié ? En principe non, la convention de stage poursuit un but pédagogique. Mais si le « stage » masque un véritable emploi productif, sans dimension pédagogique, une requalification est envisageable.
 
-Les influenceurs : choisissez-les pour la proximité avec la cible, pas seulement pour le nombre d''abonnés, et exigez que le partenariat commercial soit clairement signalé.
+## 28:00 – 40:00 · CDI, CDD et période d''essai
 
-## 28:00 – 40:00 · Le référencement
+Le CDI est la forme normale du contrat. Le CDD comporte un terme ; il doit en principe être écrit ; sa durée et ses renouvellements sont encadrés par les textes. Un CDD irrégulier risque la requalification en CDI.
 
-Le référencement naturel, ou SEO, consiste à apparaître dans les résultats non payants des moteurs de recherche. Pour Teranga Mode, cela signifie des pages produits avec des titres clairs comme « robe en wax pour mariage », des textes qui répondent aux questions des clientes, un site rapide sur mobile, et des liens depuis des blogs de mode. C''est lent, plusieurs mois, mais durable.
+La période d''essai permet à chacun d''évaluer l''autre. Elle doit être prévue par écrit ; sa durée maximale dépend de la catégorie professionnelle. Pendant l''essai, chacun peut en principe rompre librement, sans préavis ni indemnité, mais pas de manière abusive, par exemple pour un motif discriminatoire.
 
-Le référencement payant, ou SEA : on achète des mots-clés et l''on paie à chaque clic. Effet immédiat, utile pour un lancement ou une période de fête, mais tout s''arrête quand le budget s''arrête.
+Exemple : un contrat signé par la PME fictive Baobab Services prévoit « une période d''essai renouvelable à volonté ». Cette clause est suspecte : la durée de l''essai et son éventuel renouvellement sont encadrés par les textes ; une clause qui laisse l''employeur prolonger indéfiniment l''essai serait contraire à cette finalité.
 
-Enfin le référencement local : une fiche d''établissement complète avec adresse, horaires, photos et avis. Quand quelqu''un cherche « boutique de mode à Dakar » sur son téléphone, c''est souvent cette fiche qui apparaît en premier.
+## 40:00 – 48:00 · Pause interactive : quiz
 
-## 40:00 – 45:00 · Quiz interactif
+- Question 1 : quel est le critère décisif du contrat de travail ?
+- Question 2 : un CDD doit-il être écrit ?
+- Question 3 : qu''est-ce que le principe de faveur ?
+- Question 4 : peut-on rompre la période d''essai pour un motif discriminatoire ?
+- Question 5 : pourquoi faut-il être prudent sur les détails du Code du travail en ce moment ?
 
-Mettez en pause.
+Réponses : 1) le lien de subordination ; 2) oui, en principe ; 3) l''application de la norme la plus favorable au salarié en cas de conflit, dans les limites prévues par les textes ; 4) non, la rupture serait abusive ; 5) parce que le Sénégal est en transition vers un nouveau Code du travail.
 
-- Question 1 : un partage spontané par une cliente, c''est quel type de média ? Réponse : un média gagné.
-- Question 2 : SEO ou SEA pour un effet immédiat ? Réponse : SEA.
-- Question 3 : 600 interactions pour 20 000 abonnés : taux d''engagement par abonné ? Réponse : 3 %.
+## 48:00 – 58:00 · Exécution et suspension
 
-## 45:00 – 1:05:00 · Les indicateurs : exercice commenté
+L''employeur fournit le travail, paie le salaire, délivre un bulletin de paie, assure la sécurité, déclare le salarié. Le salarié exécute personnellement, respecte les consignes et le règlement intérieur, et doit loyauté. Le pouvoir disciplinaire de l''employeur s''exerce dans le respect des procédures et de la proportionnalité.
 
-Visuel : l''entonnoir de conversion, impressions, clics, commandes.
+Distinguez la modification du contrat, qui porte sur un élément essentiel comme le salaire ou la qualification et exige l''accord du salarié, et le simple changement des conditions de travail, qui relève du pouvoir de direction.
 
-Teranga Mode dépense 450 000 francs. 200 000 impressions, 3 000 clics, 90 commandes, panier moyen 15 000 francs.
+La suspension : maladie, accident du travail, maternité, congés, grève licite. Le contrat n''est pas rompu, il est mis en pause. À l''issue, le salarié retrouve son emploi.
 
-CTR : 3 000 sur 200 000, soit 1,5 %. Il mesure l''attractivité de l''annonce. CPC : 450 000 sur 3 000, soit 150 francs. Taux de conversion : 90 sur 3 000, soit 3 %. Il mesure l''efficacité de la page et de l''offre. CPA : 450 000 sur 90, soit 5 000 francs pour obtenir une commande. Chiffre d''affaires : 90 fois 15 000, soit 1 350 000. ROAS : 1 350 000 sur 450 000, soit 3. Chaque franc dépensé génère trois francs de ventes.
+Petit cas pour vérifier. Mme Cissé, caissière dans un supermarché fictif de Mbour, arrive en retard trois fois dans le mois. Son employeur la licencie pour faute lourde. Qu''en pensez-vous ? Les retards sont fautifs, mais une sanction doit être proportionnée : un avertissement, puis éventuellement une mise à pied, paraissent plus adaptés. Qualifier ces retards de faute lourde, qui prive en principe la salariée du préavis et de l''indemnité, serait excessif. Le juge pourrait considérer le licenciement comme abusif.
 
-Est-ce rentable ? Avec un taux de marge brute de 40 %, la marge est de 540 000 francs. ROI : 540 000 moins 450 000, divisé par 450 000, soit 20 %. Oui, c''est rentable.
+Autre cas : M. Ndour est en arrêt maladie, justifié par un certificat médical. Son employeur le remplace et lui écrit qu''il « ne fait plus partie du personnel ». Or la maladie suspend le contrat ; elle ne le rompt pas. L''employeur ne peut pas considérer le salarié comme démissionnaire, et une rupture prononcée en raison de la maladie elle-même serait irrégulière. Les textes encadrent les situations d''absence prolongée : vérifiez-les dans le texte applicable avant de conclure.
 
-Deuxième campagne : 120 000 impressions, 2 400 clics, 360 000 francs, 48 commandes à 20 000 francs, marge de 35 %. CTR 2 %, CPC 150, conversion 2 %, CPA 7 500, chiffre d''affaires 960 000, ROAS 2,67. Marge : 336 000 francs, inférieure à la dépense. ROI : moins 6,7 %. La campagne attire bien, mais convertit mal. Diagnostic : vérifier la page produit, les prix affichés, la simplicité de la commande et le mode de paiement.
+## 58:00 – 1:10:00 · La rupture du contrat
 
-Seuil de rentabilité d''une campagne : il faut que la marge couvre la dépense. Avec 25 % de taux de marque et 500 000 francs dépensés, il faut au moins 2 millions de chiffre d''affaires.
+Visuel : arbre des ruptures. CDI : démission, licenciement pour motif personnel, licenciement pour motif économique. CDD : terme, accord, faute lourde, force majeure.
 
-Comment améliorer ces indicateurs ? On procède par tests. Le test A/B consiste à diffuser deux versions d''une annonce, par exemple deux photos ou deux accroches, à deux groupes comparables, puis à garder celle qui obtient le meilleur taux de conversion. On teste une seule différence à la fois, sinon on ne sait pas ce qui a fait la différence. On suit ensuite un petit tableau de bord hebdomadaire : dépense, impressions, clics, commandes, chiffre d''affaires, marge, et les ratios associés. Une colonne commentaire explique les variations : fête, rupture de stock, nouvelle annonce.
+Le licenciement doit reposer sur un motif légitime et respecter la procédure applicable. Sauf faute lourde, le salarié a droit au préavis ou à une indemnité compensatrice, et, à partir d''une certaine ancienneté, à une indemnité de licenciement. Le licenciement économique suit une procédure spécifique : consultation des délégués du personnel, information de l''inspection du travail, critères d''ordre. Le licenciement sans motif légitime est abusif et ouvre droit à des dommages-intérêts.
 
-## 1:05:00 – 1:20:00 · Mobile money et e-commerce en Afrique
+Le CDD ne peut en principe être rompu avant son terme qu''en cas d''accord des parties, de faute lourde ou de force majeure. Les litiges individuels vont devant le tribunal du travail, après une tentative de conciliation selon les règles en vigueur.
 
-Le mobile money a transformé le commerce. On peut payer à distance sans carte bancaire, la trace du paiement est conservée, et le commerçant manipule moins d''espèces. Dans l''espace UEMOA, la BCEAO encadre la monnaie électronique et les services de paiement. Pour le marketeur, deux conséquences : proposer le paiement mobile pour faciliter l''achat, et intégrer les frais dans la marge. Avec un taux de frais de 1 %, fictif pour l''exemple, 1 350 000 francs encaissés coûtent 13 500 francs de frais.
+## 1:10:00 – 1:22:00 · Correction commentée d''un exercice chiffré
 
-L''e-commerce africain a ses propres règles. Beaucoup de commandes passent par la messagerie : on envoie une photo, on discute, on confirme. Le paiement à la livraison reste courant par manque de confiance, avec un risque de refus à la porte. La livraison est difficile : adresses imprécises, embouteillages, coûts élevés pour de petites commandes.
+Énoncé, taux fictifs pour l''exemple : M. Thiam, magasinier à la société fictive Delta Ciment, est licencié pour motif économique après 12 ans d''ancienneté ; salaire moyen mensuel 450 000 FCFA. Hypothèses fictives : indemnité de licenciement de 25 % du salaire moyen par année pour les 5 premières années, 30 % de la 6e à la 10e, 40 % au-delà ; préavis de 2 mois, non exécuté à la demande de l''employeur.
 
-Le taux de refus a un coût. Si Teranga Mode expédie 200 colis par mois avec un coût de livraison de 1 500 francs, fictif pour l''exemple, et que 20 % sont refusés, elle perd 40 livraisons, soit 60 000 francs, sans compter le temps et les produits abîmés.
+Calculons. Tranche 1 : 5 ans × 25 % = 1,25. Tranche 2 : 5 ans × 30 % = 1,50. Tranche 3 : 2 ans × 40 % = 0,80. Total des coefficients : 1,25 + 1,50 + 0,80 = 3,55. Indemnité de licenciement : 450 000 × 3,55 = 1 597 500 FCFA. Indemnité compensatrice de préavis : 2 × 450 000 = 900 000 FCFA. Total : 2 497 500 FCFA, hors congés payés et salaire du dernier mois.
 
-Solutions : confirmer chaque commande par appel ou message, demander un acompte par paiement mobile avec un petit avantage, regrouper les tournées par quartier, utiliser des points relais dans des boutiques partenaires, et publier une politique de retour claire.
+Commentaire : l''erreur la plus fréquente est d''appliquer le taux le plus élevé à toute l''ancienneté : 450 000 × 0,40 × 12 = 2 160 000 FCFA, ce qui est faux avec un barème par tranches. Autre erreur : oublier le préavis. Enfin, rappelez toujours que les taux sont fictifs et qu''il faut vérifier le texte et la convention collective applicables.
 
-## 1:20:00 – 1:26:00 · Correction commentée d''un cas
+## 1:22:00 – 1:27:00 · Synthèse
 
-Une épicerie fine fictive de Dakar : livraisons en retard, 20 % de commandes refusées. Correction : créneaux de livraison annoncés et respectés, suivi par message, acompte ou paiement mobile pour les nouveaux clients, liste des clients à risque. Ce qui fait la différence : chiffrer l''enjeu. Si 20 % des commandes sont refusées, ce sont des frais de livraison perdus et des produits frais parfois invendables.
+Sources : Constitution, conventions OIT, Code du travail en transition, conventions collectives, usages, contrat ; principe de faveur. Contrat de travail : prestation, rémunération, subordination. CDI forme normale, CDD encadré, essai écrit. Modification du contrat avec accord, changement des conditions par décision de l''employeur. Rupture encadrée : motif légitime, procédure, préavis, indemnités.
 
-## 1:26:00 – 1:30:00 · Synthèse et évaluation finale
+## 1:27:00 – 1:30:00 · Évaluation finale
 
-Retenez : possédé, payé, gagné ; mobile d''abord ; SEO, SEA, local ; l''entonnoir et ses indicateurs ; la marge, juge final ; mobile money et logistique.
+- Question 1 : citez les trois éléments du contrat de travail.
+- Question 2 : quels cas permettent en principe de rompre un CDD avant son terme ?
+- Question 3 : une baisse de salaire imposée est-elle une modification du contrat ?
+- Question 4 : quelle juridiction est compétente pour un litige individuel de travail ?
+- Question 5 : avec les taux fictifs de l''exercice, indemnité pour 7 ans d''ancienneté et 300 000 FCFA de salaire moyen ?
 
-- Question 1 : 200 000 impressions et 4 000 clics : CTR ? Réponse : 2 %.
-- Question 2 : 300 000 francs pour 60 commandes : CPA ? Réponse : 5 000 francs.
-- Question 3 : ventes 900 000, dépense 300 000 : ROAS ? Réponse : 3.
-- Question 4 : pourquoi un ROAS de 2 peut-il signifier une perte ? Réponse : parce que si le taux de marge est inférieur à 50 %, la marge générée est inférieure à la dépense.
-- Question 5 : citez deux solutions contre les refus à la livraison. Réponse : confirmation de commande et acompte par paiement mobile.
-
-Merci à toutes et à tous, et bonne préparation.', 'video', 90, false, 80
-from public.courses c where c.slug = 'lic-mkt-l2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Marketing digital');
+Réponses : 1) prestation de travail, rémunération, lien de subordination ; 2) accord des parties, faute lourde, force majeure ; 3) oui, elle exige l''accord du salarié ; 4) le tribunal du travail ; 5) 300 000 × (0,25 × 5 + 0,30 × 2) = 300 000 × 1,85 = 555 000 FCFA. Merci et bonnes révisions.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-droit-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit du travail (relations individuelles)');
