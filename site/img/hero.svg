@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" role="img" aria-labelledby="hero-title">
+  <title id="hero-title">Illustration Logiciels de gestion Africa Business Coaching</title>
+  <defs>
+    <linearGradient id="hero-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3b55"/><stop offset="1" stop-color="#1a2433"/></linearGradient>
+    <linearGradient id="hero-base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#c3cfdc"/></linearGradient>
+    <linearGradient id="hero-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fc06f"/><stop offset="1" stop-color="#00853f"/></linearGradient>
+    <linearGradient id="hero-yellow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fdef42"/><stop offset="1" stop-color="#f5c400"/></linearGradient>
+    <linearGradient id="hero-badge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9f1f6"/></linearGradient>
+    <radialGradient id="hero-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fdef42" stop-opacity=".35"/><stop offset="1" stop-color="#fdef42" stop-opacity="0"/></radialGradient>
+    <g id="hero-b"><circle r="44" fill="#002e15" opacity=".25" transform="translate(4 8)"/><circle r="44" fill="url(#hero-badge)"/></g>
+    <path id="hero-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
+  </defs>
+  <circle cx="320" cy="270" r="250" fill="url(#hero-glow)"/>
+  <ellipse cx="320" cy="270" rx="280" ry="200" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 10" opacity=".35"/>
+  <ellipse cx="320" cy="270" rx="220" ry="150" fill="none" stroke="#fdef42" stroke-width="1.5" stroke-dasharray="2 12" opacity=".4"/>
+  <!-- laptop -->
+  <ellipse cx="320" cy="420" rx="230" ry="16" fill="#002e15" opacity=".35"/>
+  <rect x="124" y="142" width="392" height="250" rx="18" fill="url(#hero-body)"/>
+  <rect x="140" y="158" width="360" height="218" rx="8" fill="#ffffff"/>
+  <rect x="140" y="158" width="44" height="218" rx="8" fill="#1a2433"/>
+  <rect x="176" y="158" width="8" height="218" fill="#1a2433"/>
+  <circle cx="162" cy="180" r="9" fill="#fdef42"/>
+  <g fill="#fff" opacity=".4"><rect x="152" y="206" width="20" height="6" rx="3"/><rect x="152" y="224" width="20" height="6" rx="3"/><rect x="152" y="242" width="20" height="6" rx="3"/><rect x="152" y="260" width="20" height="6" rx="3"/></g>
+  <rect x="152" y="206" width="20" height="6" rx="3" fill="#2fc06f"/>
+  <rect x="198" y="172" width="110" height="10" rx="5" fill="#1a2433" opacity=".8"/>
+  <rect x="198" y="188" width="70" height="6" rx="3" fill="#b6c3d1"/>
+  <circle cx="480" cy="182" r="10" fill="#7a4a2a"/><circle cx="480" cy="179" r="4" fill="#5b3620"/>
+  <!-- kpis -->
+  <rect x="198" y="204" width="90" height="46" rx="10" fill="#e6f5ec"/><circle cx="214" cy="227" r="8" fill="#00853f"/><rect x="228" y="218" width="48" height="7" rx="3.5" fill="#00853f"/><rect x="228" y="231" width="30" height="5" rx="2.5" fill="#9fd3b4"/>
+  <rect x="296" y="204" width="90" height="46" rx="10" fill="#fff8d6"/><circle cx="312" cy="227" r="8" fill="#f5c400"/><rect x="326" y="218" width="48" height="7" rx="3.5" fill="#d9a800"/><rect x="326" y="231" width="30" height="5" rx="2.5" fill="#f2df8c"/>
+  <rect x="394" y="204" width="94" height="46" rx="10" fill="#fff1e6"/><circle cx="410" cy="227" r="8" fill="#ff8a3d"/><rect x="424" y="218" width="50" height="7" rx="3.5" fill="#e86a1a"/><rect x="424" y="231" width="30" height="5" rx="2.5" fill="#ffc9a3"/>
+  <!-- bar + line chart -->
+  <rect x="198" y="258" width="186" height="106" rx="10" fill="#f4f7fb"/>
+  <g fill="url(#hero-bar)">
+    <rect x="212" y="316" width="16" height="36" rx="4"/><rect x="236" y="300" width="16" height="52" rx="4"/><rect x="260" y="308" width="16" height="44" rx="4"/>
+    <rect x="284" y="288" width="16" height="64" rx="4"/><rect x="308" y="296" width="16" height="56" rx="4"/><rect x="332" y="276" width="16" height="76" rx="4"/>
+  </g>
+  <rect x="356" y="270" width="16" height="82" rx="4" fill="url(#hero-yellow)"/>
+  <path d="M220 300L244 284L268 292L292 272L316 280L340 262L364 254" fill="none" stroke="#2f6fde" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="364" cy="254" r="5" fill="#2f6fde" stroke="#fff" stroke-width="2"/>
+  <!-- donut -->
+  <rect x="392" y="258" width="96" height="106" rx="10" fill="#f4f7fb"/>
+  <g transform="rotate(-90 440 304)" fill="none" stroke-width="12">
+    <circle cx="440" cy="304" r="28" stroke="#dfe6ee"/>
+    <circle cx="440" cy="304" r="28" stroke="#00853f" stroke-dasharray="76 200"/>
+    <circle cx="440" cy="304" r="28" stroke="#f5c400" stroke-dasharray="48 200" stroke-dashoffset="-76"/>
+    <circle cx="440" cy="304" r="28" stroke="#e31b23" stroke-dasharray="28 200" stroke-dashoffset="-124"/>
+  </g>
+  <rect x="412" y="344" width="56" height="6" rx="3" fill="#b6c3d1"/>
+  <path d="M90 392h460l-24 26a12 12 0 0 1-9 4H123a12 12 0 0 1-9-4Z" fill="url(#hero-base)"/>
+  <rect x="282" y="392" width="76" height="8" rx="4" fill="#9aa7b8"/>
+  <!-- badge: payslip -->
+  <g transform="translate(86 120)">
+    <use href="#hero-b"/>
+    <rect x="-18" y="-24" width="36" height="48" rx="6" fill="#fff" stroke="#00853f" stroke-width="3"/>
+    <rect x="-18" y="-24" width="36" height="13" rx="5" fill="#00853f"/>
+    <rect x="-11" y="-2" width="22" height="4" rx="2" fill="#b6c3d1"/><rect x="-11" y="6" width="14" height="4" rx="2" fill="#b6c3d1"/>
+    <circle cx="14" cy="18" r="10" fill="url(#hero-yellow)" stroke="#d9a800" stroke-width="2"/>
+  </g>
+  <!-- badge: graduation cap -->
+  <g transform="translate(320 66)">
+    <use href="#hero-b"/>
+    <path d="M-14 0v12q14 8 28 0v-12Z" fill="#26344a"/>
+    <path d="M0-20L30-6L0 8L-30-6Z" fill="#1a2433"/>
+    <path d="M0-6L22 0v14" fill="none" stroke="#f5c400" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="22" cy="17" r="4" fill="#f5c400"/>
+  </g>
+  <!-- badge: truck -->
+  <g transform="translate(560 122)">
+    <use href="#hero-b"/>
+    <rect x="-28" y="-14" width="34" height="26" rx="4" fill="#00853f"/>
+    <path d="M8-6h10l10 10v8H8Z" fill="#ff8a3d"/>
+    <path d="M12-2h5l6 6h-11Z" fill="#cfe3ff"/>
+    <circle cx="-16" cy="15" r="6" fill="#1a2433"/><circle cx="16" cy="15" r="6" fill="#1a2433"/>
+    <rect x="-22" y="-8" width="18" height="4" rx="2" fill="#fdef42"/>
+  </g>
+  <!-- badge: fuel pump -->
+  <g transform="translate(588 318)">
+    <use href="#hero-b"/>
+    <rect x="-20" y="-24" width="28" height="46" rx="5" fill="#e31b23"/>
+    <rect x="-15" y="-18" width="18" height="12" rx="3" fill="#fff"/>
+    <rect x="-24" y="20" width="36" height="6" rx="3" fill="#1a2433"/>
+    <path d="M8-14h6l6 8v18q0 6-5 6t-5-6v-8h-2" fill="none" stroke="#1a2433" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(-6 8) scale(.35)" d="M0-26C10-12 18-2 18 8A18 18 0 0 1-18 8C-18-2-10-12 0-26Z" fill="#fdef42"/>
+  </g>
+  <!-- badge: GPS pin -->
+  <g transform="translate(56 316)">
+    <use href="#hero-b"/>
+    <path d="M-14 18L-28 24 0 30 28 24 14 18" fill="#cfe3ff"/>
+    <path d="M0 22C-6 12-18 2-18-10A18 18 0 1 1 18-10C18 2 6 12 0 22Z" fill="#e31b23"/>
+    <circle cx="0" cy="-10" r="7" fill="#fff"/>
+  </g>
+  <!-- connectors -->
+  <g fill="none" stroke="#fdef42" stroke-width="2.5" stroke-dasharray="3 7" stroke-linecap="round" opacity=".8">
+    <path d="M128 140Q150 160 160 158"/><path d="M518 140Q505 150 500 158"/><path d="M546 316Q530 312 516 300"/><path d="M98 304Q112 296 124 290"/><path d="M320 110V142"/>
+  </g>
+  <use href="#hero-spark" x="210" y="70" fill="#fdef42"/>
+  <use href="#hero-spark" x="450" y="60" fill="#fff"/>
+  <use href="#hero-spark" x="600" y="440" fill="#fdef42"/>
+  <use href="#hero-spark" x="40" y="440" fill="#fff"/>
+  <use href="#hero-spark" x="620" y="220" fill="#ff8a3d"/>
+  <circle cx="30" cy="210" r="5" fill="#fdef42" opacity=".8"/><circle cx="170" cy="470" r="5" fill="#fff" opacity=".6"/>
+  <circle cx="480" cy="470" r="6" fill="#e31b23" opacity=".8"/><circle cx="400" cy="30" r="4" fill="#fff" opacity=".7"/>
+</svg>

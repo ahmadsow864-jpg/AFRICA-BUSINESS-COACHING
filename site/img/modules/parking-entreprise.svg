@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="parking-entreprise-title">
+  <title id="parking-entreprise-title">Illustration Parking d’entreprise</title>
+  <defs>
+    <linearGradient id="parking-entreprise-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#e2e9f2"/></linearGradient>
+    <linearGradient id="parking-entreprise-tower" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2c3b55"/><stop offset="1" stop-color="#1a2433"/></linearGradient>
+    <linearGradient id="parking-entreprise-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9cc3ff"/><stop offset="1" stop-color="#4a82e6"/></linearGradient>
+    <linearGradient id="parking-entreprise-car1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fc06f"/><stop offset="1" stop-color="#006830"/></linearGradient>
+    <linearGradient id="parking-entreprise-car2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb070"/><stop offset="1" stop-color="#e86a1a"/></linearGradient>
+    <g id="parking-entreprise-car">
+      <path d="M0 40q0-14 14-16l22-20q8-6 18-6h52q10 0 18 8l20 18q22 2 22 18v18q0 6-6 6H6q-6 0-6-6Z"/>
+      <path d="M44 6h26v20H28Z" fill="#cfe3ff"/><path d="M78 6h26q6 0 10 4l14 16H78Z" fill="#cfe3ff"/>
+      <circle cx="36" cy="64" r="14" fill="#1a2433"/><circle cx="36" cy="64" r="6" fill="#b6c3d1"/>
+      <circle cx="128" cy="64" r="14" fill="#1a2433"/><circle cx="128" cy="64" r="6" fill="#b6c3d1"/>
+      <rect x="150" y="36" width="12" height="8" rx="3" fill="#fdef42"/>
+    </g>
+    <path id="parking-entreprise-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
+  </defs>
+  <rect width="800" height="500" rx="36" fill="url(#parking-entreprise-bg)"/>
+  <circle cx="420" cy="90" r="70" fill="#d3deeb" opacity=".7"/>
+  <g fill="#2f6fde" opacity=".2"><circle cx="720" cy="60" r="4"/><circle cx="740" cy="60" r="4"/><circle cx="760" cy="60" r="4"/><circle cx="720" cy="80" r="4"/><circle cx="740" cy="80" r="4"/><circle cx="760" cy="80" r="4"/></g>
+  <!-- ground -->
+  <rect x="0" y="380" width="800" height="120" fill="#cdd6e1"/>
+  <rect x="0" y="380" width="800" height="8" fill="#b6c3d1"/>
+  <g fill="#fff"><rect x="472" y="420" width="6" height="60"/><rect x="608" y="420" width="6" height="60"/><rect x="744" y="420" width="6" height="60"/></g>
+  <!-- building -->
+  <ellipse cx="170" cy="386" rx="130" ry="10" fill="#1a2433" opacity=".2"/>
+  <rect x="70" y="90" width="200" height="292" rx="10" fill="url(#parking-entreprise-tower)"/>
+  <rect x="96" y="70" width="148" height="24" rx="8" fill="#00853f"/>
+  <g fill="url(#parking-entreprise-glass)">
+    <rect x="92" y="112" width="44" height="40" rx="5"/><rect x="148" y="112" width="44" height="40" rx="5"/><rect x="204" y="112" width="44" height="40" rx="5"/>
+    <rect x="92" y="164" width="44" height="40" rx="5"/><rect x="148" y="164" width="44" height="40" rx="5"/><rect x="204" y="164" width="44" height="40" rx="5"/>
+    <rect x="92" y="216" width="44" height="40" rx="5"/><rect x="148" y="216" width="44" height="40" rx="5"/><rect x="204" y="216" width="44" height="40" rx="5"/>
+    <rect x="92" y="268" width="44" height="40" rx="5"/><rect x="204" y="268" width="44" height="40" rx="5"/>
+  </g>
+  <g fill="#fdef42" opacity=".75"><rect x="148" y="164" width="44" height="40" rx="5"/><rect x="92" y="268" width="44" height="40" rx="5"/></g>
+  <rect x="140" y="320" width="60" height="62" rx="6" fill="#cfe3ff"/><path d="M170 320v62" stroke="#1a2433" stroke-width="3"/>
+  <!-- booth + barrier -->
+  <ellipse cx="350" cy="386" rx="50" ry="7" fill="#1a2433" opacity=".2"/>
+  <rect x="306" y="270" width="80" height="112" rx="10" fill="#fff"/>
+  <rect x="300" y="258" width="92" height="18" rx="8" fill="#e31b23"/>
+  <rect x="318" y="288" width="56" height="36" rx="6" fill="url(#parking-entreprise-glass)"/>
+  <rect x="380" y="318" width="22" height="34" rx="6" fill="#1a2433"/>
+  <circle cx="391" cy="330" r="5" fill="#2fc06f"/>
+  <g transform="rotate(-18 396 300)">
+    <rect x="396" y="292" width="210" height="16" rx="8" fill="#fff"/>
+    <g fill="#e31b23"><rect x="420" y="292" width="22" height="16"/><rect x="466" y="292" width="22" height="16"/><rect x="512" y="292" width="22" height="16"/><rect x="558" y="292" width="22" height="16"/></g>
+  </g>
+  <circle cx="396" cy="300" r="12" fill="#1a2433"/>
+  <!-- badge -->
+  <path d="M420 236q10 12 20 0M410 230q20 26 40 0M400 224q30 40 60 0" fill="none" stroke="#00853f" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  <g transform="rotate(-8 520 170)">
+    <rect x="456" y="124" width="140" height="92" rx="14" fill="#1a2433" opacity=".12" transform="translate(6 8)"/>
+    <rect x="456" y="124" width="140" height="92" rx="14" fill="#fff"/>
+    <path d="M456 138a14 14 0 0 1 14-14h112a14 14 0 0 1 14 14v12H456Z" fill="#00853f"/>
+    <rect x="510" y="112" width="32" height="18" rx="6" fill="#1a2433"/>
+    <circle cx="490" cy="178" r="20" fill="#e9f1fb"/><circle cx="490" cy="172" r="8" fill="#5b3620"/><path d="M476 192a14 12 0 0 1 28 0Z" fill="#5b3620"/>
+    <rect x="522" y="166" width="58" height="8" rx="4" fill="#b6c3d1"/><rect x="522" y="182" width="40" height="8" rx="4" fill="#dfe6ee"/>
+    <rect x="558" y="196" width="26" height="12" rx="3" fill="#f5c400"/>
+  </g>
+  <!-- P sign -->
+  <rect x="686" y="196" width="8" height="186" rx="4" fill="#1a2433"/>
+  <rect x="650" y="120" width="80" height="80" rx="16" fill="#2f6fde"/>
+  <rect x="656" y="126" width="68" height="68" rx="12" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>
+  <path transform="translate(692 160)" fill="#fff" fill-rule="evenodd" d="M-16-26H4A16 16 0 0 1 4 6H-4V26H-16ZM-4-14H3A4 4 0 0 1 3-6H-4Z"/>
+  <!-- cars -->
+  <ellipse cx="610" cy="456" rx="150" ry="7" fill="#1a2433" opacity=".2"/>
+  <use href="#parking-entreprise-car" transform="translate(478 396) scale(.78)" fill="url(#parking-entreprise-car1)"/>
+  <use href="#parking-entreprise-car" transform="translate(614 396) scale(.78)" fill="url(#parking-entreprise-car2)"/>
+  <use href="#parking-entreprise-spark" x="320" y="200" fill="#f5c400"/>
+  <use href="#parking-entreprise-spark" x="620" y="80" fill="#00853f"/>
+  <use href="#parking-entreprise-spark" x="40" y="250" fill="#e31b23"/>
+  <circle cx="300" cy="120" r="5" fill="#ff8a3d" opacity=".6"/>
+</svg>

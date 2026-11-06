@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administration — Africa Business Coaching</title>
+  <meta name="theme-color" content="#1a2433">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+  <header class="header header--dark">
+    <div class="container header__inner">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">ABC</span>
+        <span class="logo__text">Administration</span>
+      </a>
+      <div class="admin-user" id="admin-user" hidden>
+        <span id="admin-email"></span>
+        <button class="btn btn--small btn--ghost-light" id="logout" type="button">Déconnexion</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Connexion -->
+    <section class="auth-view" id="login-view" hidden>
+      <div class="panel auth-panel">
+        <h1>Espace administrateur</h1>
+        <p class="muted">Accès réservé au fondateur et aux administrateurs.</p>
+        <form class="form form--light" id="login-form" novalidate>
+          <label>Email <input type="email" name="email" required autocomplete="username" maxlength="200"></label>
+          <label>Mot de passe <input type="password" name="password" required autocomplete="current-password"></label>
+          <button class="btn" type="submit">Se connecter</button>
+        </form>
+        <p class="msg" id="login-msg" role="alert"></p>
+      </div>
+    </section>
+
+    <!-- Double authentification -->
+    <section class="auth-view" id="mfa-view" hidden>
+      <div class="panel auth-panel">
+        <h1>Double authentification</h1>
+        <div id="mfa-enroll" hidden>
+          <p>Première connexion : scannez ce QR code avec une application d'authentification
+            (Google Authenticator, Microsoft Authenticator, Authy…) sur votre téléphone.</p>
+          <img id="mfa-qr" alt="QR code de double authentification" width="200" height="200">
+          <p class="muted">Ou saisissez cette clé : <code id="mfa-secret"></code></p>
+        </div>
+        <p id="mfa-verify-text" hidden>Saisissez le code à 6 chiffres affiché dans votre application d'authentification.</p>
+        <form class="form form--light" id="mfa-form" novalidate>
+          <label>Code à 6 chiffres <input type="text" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autocomplete="one-time-code"></label>
+          <button class="btn" type="submit">Valider</button>
+        </form>
+        <p class="msg" id="mfa-msg" role="alert"></p>
+      </div>
+    </section>
+
+    <!-- Accès refusé / non configuré -->
+    <section class="auth-view" id="info-view" hidden>
+      <div class="panel auth-panel">
+        <h1 id="info-title"></h1>
+        <p id="info-text"></p>
+        <a class="btn" href="../index.html">Retour au site</a>
+      </div>
+    </section>
+
+    <!-- Application -->
+    <div class="admin-app" id="app-view" hidden>
+      <nav class="admin-nav" id="admin-nav" aria-label="Menu administration">
+        <button data-view="dashboard" class="is-active">📊 Tableau de bord</button>
+        <button data-view="messages">✉️ Messages</button>
+        <button data-view="services">🧩 Services du site</button>
+        <button data-view="settings">⚙️ Paramètres</button>
+        <button data-view="courses">📚 Cours &amp; leçons</button>
+        <button data-view="plans">💳 Formules</button>
+        <button data-view="subscriptions">✅ Abonnements</button>
+        <button data-view="users">👥 Utilisateurs</button>
+        <button data-view="audit">🧾 Journal d'audit</button>
+      </nav>
+      <section class="admin-content">
+        <p class="msg" id="app-msg" role="alert"></p>
+        <div id="content"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/vendor/supabase-2.109.0.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* Espace administrateur */
+.header--dark { background: var(--ink); border-bottom-color: #253043; }
+.header--dark .logo { color: #fff; }
+.admin-user { display: flex; align-items: center; gap: 12px; color: #d5dce6; font-size: .9rem; }
+.admin main { min-height: calc(100vh - 64px); background: var(--bg-alt); }
+.auth-view { display: flex; justify-content: center; padding: 60px 16px; }
+.auth-panel { width: 100%; max-width: 440px; }
+.auth-panel h1 { font-size: 1.5rem; margin-bottom: 6px; }
+#mfa-qr { display: block; margin: 14px auto; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 6px; }
+.admin-app { display: grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - 64px); }
+.admin-nav { background: #fff; border-right: 1px solid var(--border); padding: 16px 10px; display: flex; flex-direction: column; gap: 4px; }
+.admin-nav button { text-align: left; background: none; border: 0; padding: 10px 12px; border-radius: 8px; font: inherit; cursor: pointer; color: var(--ink); }
+.admin-nav button:hover { background: var(--bg-alt); }
+.admin-nav button.is-active { background: var(--green); color: #fff; font-weight: 600; }
+.admin-content { padding: 24px; min-width: 0; }
+.admin-content h1 { font-size: 1.5rem; margin-bottom: 16px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.kpi { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 16px; }
+.kpi strong { display: block; font-size: 1.8rem; color: var(--green-dark); }
+.kpi span { color: var(--muted); font-size: .9rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.thumb { width: 72px; height: 45px; object-fit: cover; border-radius: 6px; }
+.preview { max-width: 320px; border-radius: 8px; border: 1px solid var(--border); }
+@media (max-width: 860px) {
+  .admin-app { grid-template-columns: 1fr; }
+  .admin-nav { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+  .admin-nav button { white-space: nowrap; }
+  .admin-user span { display: none; }
+}

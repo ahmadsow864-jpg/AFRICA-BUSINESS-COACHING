@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Éducation en ligne — collège au doctorat | Africa Business Coaching</title>
+  <meta name="description" content="Cours en ligne pour élèves et étudiants de la francophonie, du collège au doctorat, par abonnement.">
+  <meta name="theme-color" content="#00853f">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="edu-index">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">ABC</span>
+        <span class="logo__text">Africa Business Coaching</span>
+      </a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../index.html#services">Services</a>
+        <a href="index.html">Cours</a>
+        <a href="espace.html">Mon espace</a>
+        <a href="../index.html#contact" class="btn btn--small">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="module-hero">
+      <div class="container module-hero__grid">
+        <div>
+          <span class="badge badge--new">Nouveau — lancement</span>
+          <h1>Éducation en ligne : du collège au doctorat</h1>
+          <p class="module-hero__lead">
+            Élèves et étudiants de toute la francophonie : créez votre compte, choisissez une
+            formule d'abonnement et suivez les cours de votre niveau, où que vous soyez.
+          </p>
+          <div class="hero__actions">
+            <a href="#catalogue" class="btn">Voir les cours</a>
+            <a href="#compte" class="btn btn--ghost">Créer mon compte</a>
+          </div>
+        </div>
+        <div class="module-hero__visual">
+          <img src="../img/modules/education.svg" alt="Cours en ligne : ordinateur, livres et toque de diplômé" width="800" height="500">
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogue" class="section">
+      <div class="container">
+        <h2 class="section__title">Catalogue des cours</h2>
+        <p class="section__subtitle">Choisissez un cycle puis un niveau.</p>
+        <div class="filters" id="cycle-filters"></div>
+        <div class="levels" id="levels"></div>
+        <div class="grid grid--courses" id="courses"></div>
+        <p class="msg" id="catalogue-msg"></p>
+      </div>
+    </section>
+
+    <section id="formules" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Formules d'abonnement</h2>
+        <p class="section__subtitle">Les prix et durées sont fixés par l'administrateur. L'accès est activé après vérification du paiement.</p>
+        <div class="grid grid--plans" id="plans"></div>
+      </div>
+    </section>
+
+    <section id="compte" class="section section--alt">
+      <div class="container narrow">
+        <h2 class="section__title">Mon compte élève / étudiant</h2>
+        <div id="auth-box">
+          <div class="tabs" role="tablist">
+            <button class="tab is-active" data-tab="login" role="tab">Connexion</button>
+            <button class="tab" data-tab="signup" role="tab">Créer un compte</button>
+          </div>
+          <form class="form form--light" id="login-form" novalidate>
+            <label>Email <input type="email" name="email" required autocomplete="email" maxlength="200"></label>
+            <label>Mot de passe <input type="password" name="password" required autocomplete="current-password" minlength="8"></label>
+            <button class="btn" type="submit">Se connecter</button>
+            <button class="linkbtn" type="button" id="forgot">Mot de passe oublié ?</button>
+          </form>
+          <form class="form form--light" id="signup-form" hidden novalidate>
+            <label>Nom complet <input type="text" name="full_name" required maxlength="120" autocomplete="name"></label>
+            <label>Pays <select name="country" id="signup-country" required><option value="">— Choisir —</option></select></label>
+            <label>Email <input type="email" name="email" required autocomplete="email" maxlength="200"></label>
+            <label>Mot de passe (8 caractères minimum) <input type="password" name="password" required autocomplete="new-password" minlength="8"></label>
+            <label>Confirmer le mot de passe <input type="password" name="password2" required autocomplete="new-password" minlength="8"></label>
+            <button class="btn" type="submit">Créer mon compte</button>
+          </form>
+          <p class="msg" id="auth-msg" role="alert"></p>
+        </div>
+        <div id="logged-box" hidden>
+          <p class="msg msg--ok" id="logged-text"></p>
+          <a class="btn" href="espace.html">Aller à mon espace</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Africa Business Coaching — Éducation en ligne</p>
+    </div>
+  </footer>
+
+  <script src="../js/vendor/supabase-2.109.0.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/education.js"></script>
+</body>
+</html>

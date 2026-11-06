@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="paie-uemoa-title">
+  <title id="paie-uemoa-title">Illustration Paie multi-pays UEMOA</title>
+  <defs>
+    <linearGradient id="paie-uemoa-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f6fd"/><stop offset="1" stop-color="#dde8f8"/></linearGradient>
+    <linearGradient id="paie-uemoa-globe" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fb0ff"/><stop offset="1" stop-color="#2f6fde"/></linearGradient>
+    <linearGradient id="paie-uemoa-land" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fc06f"/><stop offset="1" stop-color="#006830"/></linearGradient>
+    <linearGradient id="paie-uemoa-orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb070"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
+    <linearGradient id="paie-uemoa-green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00a04c"/><stop offset="1" stop-color="#006830"/></linearGradient>
+    <path id="paie-uemoa-pin" d="M0 0C-6-10-17-20-17-33A17 17 0 1 1 17-33C17-20 6-10 0 0Z"/>
+    <path id="paie-uemoa-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
+    <clipPath id="paie-uemoa-clip"><circle cx="400" cy="246" r="168"/></clipPath>
+  </defs>
+  <rect width="800" height="500" rx="36" fill="url(#paie-uemoa-bg)"/>
+  <circle cx="120" cy="100" r="70" fill="#cfe0f8" opacity=".7"/>
+  <circle cx="700" cy="410" r="90" fill="#cfe0f8" opacity=".7"/>
+  <g fill="#2f6fde" opacity=".2"><circle cx="700" cy="60" r="4"/><circle cx="720" cy="60" r="4"/><circle cx="740" cy="60" r="4"/><circle cx="700" cy="80" r="4"/><circle cx="720" cy="80" r="4"/><circle cx="740" cy="80" r="4"/></g>
+  <ellipse cx="400" cy="448" rx="200" ry="18" fill="#1a2433" opacity=".12"/>
+  <!-- globe -->
+  <circle cx="400" cy="246" r="186" fill="#2f6fde" opacity=".1"/>
+  <circle cx="400" cy="246" r="168" fill="url(#paie-uemoa-globe)"/>
+  <g clip-path="url(#paie-uemoa-clip)" fill="none" stroke="#fff" stroke-width="2" opacity=".25">
+    <ellipse cx="400" cy="246" rx="80" ry="168"/><ellipse cx="400" cy="246" rx="140" ry="168"/>
+    <path d="M232 190H568M232 246H568M232 302H568"/>
+  </g>
+  <g clip-path="url(#paie-uemoa-clip)">
+    <path d="M318 112C345 98 392 100 430 108C456 112 470 120 478 140C486 160 498 182 520 186C540 190 552 196 540 214C526 236 508 250 502 276C496 306 486 330 466 352C448 372 438 396 420 400C404 402 398 384 396 362C392 334 392 312 380 294C372 280 362 270 344 266C318 262 290 258 276 236C262 214 262 186 274 162C284 140 298 122 318 112Z" fill="url(#paie-uemoa-land)"/>
+    <ellipse cx="514" cy="342" rx="9" ry="24" transform="rotate(20 514 342)" fill="url(#paie-uemoa-land)"/>
+    <path d="M330 130C360 118 400 120 430 128" fill="none" stroke="#fdef42" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+  </g>
+  <path d="M260 180A150 150 0 0 1 330 105" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".35"/>
+  <!-- connections -->
+  <g fill="none" stroke="#fdef42" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round">
+    <path d="M292 196Q320 150 372 172"/>
+    <path d="M372 172Q440 160 450 222"/>
+    <path d="M292 196Q300 250 348 248"/>
+    <path d="M348 248Q400 270 450 222"/>
+  </g>
+  <use href="#paie-uemoa-pin" x="292" y="196" fill="#e31b23"/><circle cx="292" cy="163" r="7" fill="#fff"/>
+  <use href="#paie-uemoa-pin" x="372" y="172" fill="#fdef42"/><circle cx="372" cy="139" r="7" fill="#fff"/>
+  <use href="#paie-uemoa-pin" x="348" y="248" fill="#ff8a3d"/><circle cx="348" cy="215" r="7" fill="#fff"/>
+  <use href="#paie-uemoa-pin" x="450" y="222" fill="#1a2433"/><circle cx="450" cy="189" r="7" fill="#fff"/>
+  <!-- left payslip -->
+  <g transform="rotate(-8 140 270)">
+    <rect x="70" y="190" width="150" height="190" rx="16" fill="#1a2433" opacity=".12" transform="translate(8 10)"/>
+    <rect x="70" y="190" width="150" height="190" rx="16" fill="#fff"/>
+    <path d="M70 206a16 16 0 0 1 16-16h118a16 16 0 0 1 16 16v30H70Z" fill="url(#paie-uemoa-green)"/>
+    <circle cx="96" cy="213" r="12" fill="#fff"/><circle cx="96" cy="210" r="5" fill="#5b3620"/><path d="M87 220a9 7 0 0 1 18 0Z" fill="#5b3620"/>
+    <rect x="116" y="207" width="70" height="8" rx="4" fill="#fff" opacity=".85"/>
+    <g fill="#dfe6ee"><rect x="88" y="256" width="60" height="8" rx="4"/><rect x="88" y="278" width="48" height="8" rx="4"/><rect x="88" y="300" width="66" height="8" rx="4"/></g>
+    <g fill="#b6c3d1"><rect x="166" y="256" width="36" height="8" rx="4"/><rect x="172" y="278" width="30" height="8" rx="4"/><rect x="162" y="300" width="40" height="8" rx="4"/></g>
+    <rect x="88" y="330" width="114" height="28" rx="8" fill="#e6f5ec"/><rect x="150" y="338" width="44" height="12" rx="6" fill="#f5c400"/>
+  </g>
+  <!-- right payslip -->
+  <g transform="rotate(7 660 250)">
+    <rect x="590" y="160" width="150" height="190" rx="16" fill="#1a2433" opacity=".12" transform="translate(8 10)"/>
+    <rect x="590" y="160" width="150" height="190" rx="16" fill="#fff"/>
+    <path d="M590 176a16 16 0 0 1 16-16h118a16 16 0 0 1 16 16v30H590Z" fill="url(#paie-uemoa-orange)"/>
+    <circle cx="616" cy="183" r="12" fill="#fff"/><circle cx="616" cy="180" r="5" fill="#8d5a3b"/><path d="M607 190a9 7 0 0 1 18 0Z" fill="#8d5a3b"/>
+    <rect x="636" y="177" width="70" height="8" rx="4" fill="#fff" opacity=".85"/>
+    <g fill="#dfe6ee"><rect x="608" y="226" width="60" height="8" rx="4"/><rect x="608" y="248" width="48" height="8" rx="4"/><rect x="608" y="270" width="66" height="8" rx="4"/></g>
+    <g fill="#b6c3d1"><rect x="686" y="226" width="36" height="8" rx="4"/><rect x="692" y="248" width="30" height="8" rx="4"/><rect x="682" y="270" width="40" height="8" rx="4"/></g>
+    <rect x="608" y="300" width="114" height="28" rx="8" fill="#fff3e8"/><rect x="670" y="308" width="44" height="12" rx="6" fill="#00853f"/>
+  </g>
+  <!-- small coins -->
+  <ellipse cx="560" cy="420" rx="26" ry="8" fill="#d9a800"/><rect x="534" y="408" width="52" height="12" fill="#f5c400"/><ellipse cx="560" cy="408" rx="26" ry="8" fill="#fdef42"/>
+  <ellipse cx="560" cy="398" rx="26" ry="8" fill="#d9a800"/><rect x="534" y="386" width="52" height="12" fill="#f5c400"/><ellipse cx="560" cy="386" rx="26" ry="8" fill="#fdef42"/>
+  <use href="#paie-uemoa-spark" x="250" y="80" fill="#f5c400"/>
+  <use href="#paie-uemoa-spark" x="580" y="100" fill="#00853f"/>
+  <use href="#paie-uemoa-spark" x="230" y="430" fill="#ff8a3d"/>
+  <circle cx="610" cy="430" r="5" fill="#e31b23" opacity=".6"/><circle cx="190" cy="140" r="5" fill="#2f6fde" opacity=".5"/>
+</svg>

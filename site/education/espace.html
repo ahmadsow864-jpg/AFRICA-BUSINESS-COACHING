@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex">
+  <title>Mon espace — Éducation en ligne | Africa Business Coaching</title>
+  <meta name="description" content="Espace élève et étudiant.">
+  <meta name="theme-color" content="#00853f">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="edu-espace">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">ABC</span>
+        <span class="logo__text">Africa Business Coaching</span>
+      </a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../index.html#services">Services</a>
+        <a href="index.html">Cours</a>
+        <a href="espace.html">Mon espace</a>
+        <a href="../index.html#contact" class="btn btn--small">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title section__title--left">Mon espace</h1>
+        <p class="msg" id="espace-msg" role="alert"></p>
+
+        <div id="recovery-box" class="panel" hidden>
+          <h2>Nouveau mot de passe</h2>
+          <form class="form form--light" id="recovery-form" novalidate>
+            <label>Nouveau mot de passe (8 caractères minimum) <input type="password" name="password" required minlength="8" autocomplete="new-password"></label>
+            <button class="btn" type="submit">Enregistrer</button>
+          </form>
+        </div>
+
+        <div id="espace" hidden>
+          <div class="panels">
+            <div class="panel">
+              <h2>Mon profil</h2>
+              <form class="form form--light" id="profile-form" novalidate>
+                <label>Nom complet <input type="text" name="full_name" maxlength="120"></label>
+                <label>Pays <select name="country" id="profile-country"><option value="">— Choisir —</option></select></label>
+                <p class="muted" id="profile-email"></p>
+                <button class="btn" type="submit">Enregistrer</button>
+                <button class="btn btn--ghost" type="button" id="logout">Se déconnecter</button>
+              </form>
+            </div>
+            <div class="panel">
+              <h2>Demander un abonnement</h2>
+              <p class="muted" id="pay-instructions"></p>
+              <form class="form form--light" id="sub-form" novalidate>
+                <label>Formule <select name="plan" id="sub-plan" required></select></label>
+                <label>Référence du paiement <input type="text" name="ref" required maxlength="120" placeholder="Numéro de transaction"></label>
+                <button class="btn" type="submit">Envoyer la demande</button>
+              </form>
+            </div>
+          </div>
+          <div class="panel">
+            <h2>Mes abonnements</h2>
+            <div class="table-wrap"><table class="table" id="subs"><thead><tr><th>Formule</th><th>Statut</th><th>Début</th><th>Fin</th><th>Référence</th></tr></thead><tbody></tbody></table></div>
+          </div>
+          <p><a class="btn" href="index.html#catalogue">Accéder aux cours</a></p>
+        </div>
+
+        <div id="need-login" hidden>
+          <p>Vous devez être connecté pour accéder à votre espace.</p>
+          <a class="btn" href="index.html#compte">Se connecter / créer un compte</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Africa Business Coaching — Éducation en ligne</p>
+    </div>
+  </footer>
+
+  <script src="../js/vendor/supabase-2.109.0.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/education.js"></script>
+</body>
+</html>

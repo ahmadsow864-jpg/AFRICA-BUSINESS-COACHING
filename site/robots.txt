@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /education/espace.html
+
+Sitemap: https://ahmadsow864-jpg.github.io/AFRICA-BUSINESS-COACHING/sitemap.xml
