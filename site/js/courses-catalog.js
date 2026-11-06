@@ -1970,6 +1970,150 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "bac-histoire-geographie",
+  "level": "Terminale",
+  "subject": "Histoire-Géographie",
+  "module": null,
+  "title": "Histoire-Géographie : réussir l'épreuve du Bac",
+  "description": "Ce cours prépare les élèves de Terminale des séries L, S et G à l'épreuve d'Histoire-Géographie du Baccalauréat, en révisant le programme du lycée avec un accent sur la Terminale : relations internationales depuis 1945 (guerre froide, décolonisation, non-alignement, unité africaine) et géographie de la mondialisation, du développement et de la population. Il entraîne aux méthodes de la dissertation, du commentaire de document et du croquis, avec des fiches, des exercices corrigés et un sujet d'entraînement complet. Prérequis : connaître les grandes étapes de l'histoire du XXe siècle et savoir lire une carte.",
+  "sort": 207,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que l'épreuve d'Histoire-Géographie du Baccalauréat attend de vous.\n- Maîtriser les trois exercices habituels : la dissertation, le commentaire de document et le croquis.\n- Repérer les erreurs qui font perdre le plus de points.\n- Construire un plan de révision réaliste sur dix semaines.\n\n## À qui s'adresse ce cours ?\n\nCe cours s'adresse aux élèves de Terminale des séries L, S et G qui passent l'épreuve d'Histoire-Géographie au Baccalauréat sénégalais. Les attentes de fond sont les mêmes pour tous ; ce qui change d'une série à l'autre (durée, coefficient, nombre de sujets proposés), c'est le cadre fixé selon les textes officiels en vigueur. Renseignez-vous auprès de votre établissement et ne vous fiez pas aux rumeurs.\n\nLe programme révisé couvre le lycée, avec un poids décisif sur la Terminale. En histoire : les relations internationales depuis 1945 (guerre froide, décolonisation de l'Asie et de l'Afrique, non-alignement, construction de l'unité africaine, mondialisation). En géographie : les grandes puissances et les ensembles économiques, l'Afrique et le Sénégal dans la mondialisation, les questions de développement et de population.\n\n## Ce que l'épreuve évalue\n\nLe correcteur vérifie quatre compétences. D'abord des connaissances exactes : dates, acteurs, notions, localisations. Ensuite la capacité à problématiser, c'est-à-dire à transformer un sujet en question à résoudre. Puis la capacité à organiser une démonstration en parties équilibrées. Enfin la qualité de l'expression : phrases correctes, vocabulaire précis, écriture lisible.\n\n## Exercice 1 : la dissertation\n\nLa dissertation est une réflexion organisée sur un sujet. Elle se prépare au brouillon en cinq étapes.\n\n- Analyser le sujet : souligner chaque mot, définir les termes clés, repérer les bornes chronologiques et l'espace concerné.\n- Formuler une problématique : une question centrale à laquelle tout le devoir répond.\n- Rassembler les connaissances : dates, faits, exemples précis, chiffres sûrs.\n- Construire un plan en deux ou trois parties, chacune divisée en deux ou trois sous-parties.\n- Rédiger l'introduction et la conclusion au brouillon, puis le développement directement au propre.\n\nL'introduction comprend une accroche (un fait ou une date forte), la définition des termes, la problématique et l'annonce du plan. La conclusion répond clairement à la problématique, puis ouvre sur une question voisine.\n\nTrois types de plans reviennent souvent. Le plan chronologique convient aux sujets d'évolution (par exemple « La guerre froide de 1947 à 1991 » : affrontement, détente, reprise puis fin). Le plan thématique convient aux sujets de bilan (causes, formes, conséquences). Le plan analytique (constat, explications, perspectives) convient bien aux sujets de géographie.\n\nExemple d'analyse : « La décolonisation de l'Afrique noire française (1944-1960) ». Les bornes sont précises : 1944 correspond à la conférence de Brazzaville, 1960 à l'année des indépendances. L'espace est l'Afrique occidentale et équatoriale françaises. Problématique possible : comment ces territoires sont-ils passés de la tutelle coloniale à l'indépendance, et par quelles étapes ?\n\n## Exercice 2 : le commentaire de document\n\nOn vous fournit un ou plusieurs documents (texte, carte, tableau statistique, graphique, caricature) et des questions ou une consigne générale.\n\n- Présenter le document : nature, auteur, date, source, contexte, idée générale.\n- Lire les questions avant le document, puis lire le document deux fois, crayon en main.\n- Prélever les informations utiles en citant le document entre guillemets ou en reprenant ses chiffres.\n- Expliquer ces informations avec vos connaissances : un document ne parle pas seul.\n- Porter un regard critique : point de vue de l'auteur, limites, ce que le document ne dit pas.\n\nErreur classique : paraphraser, c'est-à-dire recopier le texte avec d'autres mots. Le correcteur attend de l'explication, pas une répétition.\n\n## Exercice 3 : le croquis\n\nLe croquis est une représentation simplifiée d'un espace pour répondre à un sujet. Il se juge sur trois critères : la pertinence des informations, la lisibilité et la légende organisée.\n\n- Un titre qui reprend le sujet.\n- Une légende organisée en deux ou trois parties titrées, qui correspondent au plan d'une petite dissertation.\n- Des figurés adaptés : surfaces (couleurs, hachures) pour les zones, points ou symboles pour les villes et ports, lignes et flèches pour les flux et les axes.\n- Une nomenclature écrite à l'horizontale, lisible, en majuscules pour les États et océans.\n- Une orientation et une échelle si le fond de carte ne les donne pas.\n\n## Gérer le temps le jour de l'épreuve\n\nQuelle que soit la durée officielle, répartissez votre temps ainsi : environ un quart pour l'analyse du sujet et le brouillon, deux tiers pour la rédaction, et le reste pour la relecture. Ne rédigez pas tout le devoir au brouillon : vous n'aurez pas le temps de le recopier.\n\n## Les erreurs les plus fréquentes\n\n- Hors-sujet : traiter la guerre froide en général quand le sujet porte sur la crise de Cuba.\n- Dates fausses ou approximatives : mieux vaut « au début des années 1960 » qu'une date inventée.\n- Plan déséquilibré : une partie de deux pages et une autre de cinq lignes.\n- Absence d'exemples africains alors que le programme les met au cœur des questions.\n- Croquis sans légende organisée ou sans titre.\n- Copie illisible, sans paragraphes ni alinéas.\n\n## Plan de révision sur dix semaines\n\n- Semaine 1 : méthode (dissertation, commentaire, croquis) et lecture du programme.\n- Semaine 2 : la guerre froide, des origines à la détente.\n- Semaine 3 : la guerre froide, de la reprise des tensions à la fin de l'URSS ; le monde après 1991.\n- Semaine 4 : la décolonisation de l'Asie, Bandung et le non-alignement.\n- Semaine 5 : la décolonisation de l'Afrique et le Sénégal, de Brazzaville à l'indépendance.\n- Semaine 6 : la construction de l'unité africaine (OUA, UA, organisations régionales).\n- Semaine 7 : les grandes puissances et les ensembles économiques.\n- Semaine 8 : l'Afrique et le Sénégal dans la mondialisation ; développement et population.\n- Semaine 9 : sujets d'entraînement en temps limité, un en histoire, un en géographie.\n- Semaine 10 : fiches de dates, de notions et de croquis ; repos la veille.\n\nPour chaque chapitre, fabriquez une fiche d'une page : dix dates, dix notions définies, trois exemples africains, un plan de dissertation type.\n\n## Points clés\n\n- Répondre au sujet, rien qu'au sujet.\n- Une problématique claire et un plan équilibré.\n- Des connaissances exactes et des exemples africains et sénégalais.\n- Un croquis se lit d'abord par sa légende.\n\n## Exercices pratiques\n\n1. Définissez en une phrase chacun des termes suivants : problématique, paraphrase, nomenclature.\n2. Repérez les bornes chronologiques et l'espace du sujet : « Le non-alignement de 1955 à 1961 ».\n3. Proposez une problématique pour le sujet : « Les relations Est-Ouest de 1962 à 1975 ».\n4. Classez ces figurés selon leur type (surface, point, ligne) : un port, une zone agricole, une route maritime, une capitale, un désert.\n5. Une population passe de 12 à 18 millions d'habitants. Calculez l'augmentation absolue et le taux de croissance.\n6. Construisez un plan détaillé en deux parties pour le sujet : « Le Sénégal de 1944 à 1960 : de la colonie à l'État indépendant ».\n\n## Corrigé\n\n1. La problématique est la question centrale qui guide tout le devoir. La paraphrase consiste à répéter le document avec d'autres mots sans l'expliquer. La nomenclature est l'ensemble des noms de lieux écrits sur une carte ou un croquis.\n\n2. Bornes : 1955 (conférence de Bandung, avril 1955) et 1961 (conférence de Belgrade, septembre 1961, premier sommet des pays non alignés). Espace : les pays d'Asie et d'Afrique nouvellement indépendants, puis le monde entier dans le contexte de la guerre froide.\n\n3. Exemple : « Comment les relations entre les États-Unis et l'URSS passent-elles, après la crise de Cuba, d'une confrontation dangereuse à une coexistence plus apaisée, sans que la rivalité disparaisse ? »\n\n4. Surfaces : zone agricole, désert. Points : port, capitale. Lignes : route maritime.\n\n5. Augmentation absolue : 18 − 12 = 6 millions. Taux : 6 / 12 × 100 = 50 %.\n\n6. Partie 1 : une marche progressive vers l'autonomie (1944-1958) : conférence de Brazzaville (1944), citoyenneté accordée aux habitants des colonies par la loi Lamine Guèye (1946), rôle de Lamine Guèye et Léopold Sédar Senghor, loi-cadre Defferre (1956). Partie 2 : de la Communauté à l'indépendance (1958-1960) : référendum de septembre 1958 où le Sénégal vote « oui », Fédération du Mali avec le Soudan français, indépendance de la Fédération le 20 juin 1960, éclatement le 20 août 1960, Senghor élu président de la République en septembre 1960."
+   },
+   {
+    "title": "Histoire (1) : la guerre froide et le monde depuis 1945",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Histoire (2) : décolonisation, non-alignement et unité africaine",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Géographie : puissances, mondialisation, développement et population",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille du Bac en Histoire-Géographie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-economie",
+  "level": "Terminale",
+  "subject": "Économie (série G)",
+  "module": null,
+  "title": "Économie série G : réussir l'épreuve du Bac",
+  "description": "Ce cours prépare les élèves de Terminale série G à l'épreuve d'Économie du Baccalauréat : macroéconomie (agrégats, croissance, développement, inflation, chômage), monnaie et zone UEMOA, commerce international, finances publiques, entreprise et marché. Chaque leçon associe des fiches de cours, des exemples chiffrés en FCFA vérifiés et des exercices corrigés, jusqu'à un sujet d'entraînement complet. Prérequis : savoir calculer un pourcentage, un taux de variation et un indice.",
+  "sort": 208,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que l'épreuve d'Économie du Baccalauréat série G attend de vous.\n- Connaître les types d'exercices : questions de cours, exercices chiffrés, analyse de document, dissertation économique.\n- Éviter les erreurs les plus fréquentes.\n- Organiser ses révisions sur dix semaines.\n\n## À qui s'adresse ce cours ?\n\nCe cours s'adresse aux élèves de Terminale de la série G (techniques économiques et de gestion). Il révise le programme d'économie du lycée en insistant sur la Terminale : macroéconomie (agrégats, croissance, développement, inflation, chômage), monnaie et zone UEMOA, commerce international, finances publiques, entreprise et marché. La durée, le coefficient et le barème de l'épreuve sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement.\n\nPrérequis : savoir calculer un pourcentage, un taux de variation et un indice ; connaître les notions de base vues en Seconde et en Première (besoins, biens, agents économiques, circuit économique).\n\n## Ce que l'épreuve évalue\n\n- Des connaissances précises : définitions, mécanismes, relations entre les notions.\n- Des savoir-faire quantitatifs : calculer, lire un tableau, interpréter un résultat.\n- Une capacité d'analyse : expliquer un phénomène par ses causes et ses conséquences.\n- Une capacité d'argumentation : construire un raisonnement organisé et nuancé.\n\n## Type 1 : les questions de cours\n\nOn vous demande de définir, distinguer ou expliquer. Une bonne réponse comporte trois éléments : la définition exacte, un mécanisme ou une explication, un exemple concret. Exemple : « Définissez l'inflation. » Réponse attendue : hausse générale et durable du niveau des prix, qui entraîne une baisse du pouvoir d'achat de la monnaie ; elle se mesure par la variation de l'indice des prix à la consommation ; par exemple, si le prix moyen d'un panier de biens passe de 10 000 à 10 300 FCFA en un an, l'inflation est de 3 %.\n\n## Type 2 : les exercices chiffrés\n\nCe sont souvent les points les plus faciles à gagner, à condition d'être rigoureux.\n\n- Écrire la formule avant de calculer.\n- Poser le calcul avec les unités (FCFA, milliards de FCFA, %).\n- Arrondir à la fin seulement, et indiquer l'arrondi.\n- Interpréter chaque résultat par une phrase : un chiffre sans commentaire ne vaut que la moitié des points.\n\nLes formules à connaître par cœur : taux de variation = (valeur d'arrivée − valeur de départ) / valeur de départ × 100 ; indice = valeur de l'année / valeur de l'année de base × 100 ; coefficient multiplicateur = 1 + taux / 100 ; valeur réelle = valeur nominale / indice des prix × 100.\n\nExemple : un chiffre d'affaires passe de 40 à 46 millions de FCFA. Taux de variation = (46 − 40) / 40 × 100 = 15 %. Indice base 100 = 46 / 40 × 100 = 115. Interprétation : le chiffre d'affaires a augmenté de 15 % sur la période.\n\n## Type 3 : l'analyse de document\n\nOn vous donne un texte, un tableau ou un graphique. Méthode :\n\n- Présenter : nature, source, date, unité, thème.\n- Lire : que mesure chaque chiffre ? Ne confondez pas une valeur, un pourcentage et un indice.\n- Calculer si utile : écarts, taux, parts.\n- Expliquer avec vos connaissances : pourquoi ces évolutions ?\n- Conclure : ce que le document montre et ses limites.\n\nAttention : diminuer de 5 % à 3 % pour un taux d'inflation signifie que les prix augmentent encore, mais moins vite. Les prix ne baissent pas.\n\n## Type 4 : la dissertation économique\n\nUn sujet du type « La croissance économique suffit-elle à assurer le développement ? » se traite comme une dissertation : introduction (accroche, définitions, problématique, annonce du plan), développement en deux ou trois parties argumentées, conclusion (réponse et ouverture). Chaque argument suit le schéma : idée, explication, exemple. Les exemples africains et sénégalais sont attendus.\n\n## Les erreurs les plus fréquentes\n\n- Confondre grandeur nominale et grandeur réelle (en valeur ou en volume).\n- Confondre points de pourcentage et pourcentage : un taux de chômage qui passe de 10 % à 12 % augmente de 2 points, soit de 20 %.\n- Additionner des taux de croissance successifs au lieu de multiplier les coefficients.\n- Donner des chiffres officiels inventés : si vous n'êtes pas sûr, raisonnez sans chiffre.\n- Réciter le cours sans répondre à la question.\n\nExemple de l'erreur sur les taux successifs : +10 % puis +10 % ne font pas +20 %. Coefficient global = 1,10 × 1,10 = 1,21, soit +21 %.\n\n## Plan de révision sur dix semaines\n\n- Semaine 1 : méthode, formules de base (taux, indices, coefficients), vocabulaire.\n- Semaine 2 : les agrégats (PIB, valeur ajoutée, trois approches du PIB).\n- Semaine 3 : croissance et développement (facteurs, indicateurs, IDH).\n- Semaine 4 : inflation et chômage (mesures, causes, politiques).\n- Semaine 5 : monnaie, création monétaire, BCEAO et UEMOA.\n- Semaine 6 : commerce international (théories, balance des paiements, protectionnisme).\n- Semaine 7 : finances publiques (budget de l'État, impôts, déficit, dette).\n- Semaine 8 : entreprise et marché (coûts, seuil de rentabilité, offre et demande, structures de marché).\n- Semaine 9 : sujets d'entraînement en temps limité.\n- Semaine 10 : fiches de formules et de définitions, repos la veille.\n\n## Points clés\n\n- Définition, mécanisme, exemple : la règle de toute réponse.\n- Formule, calcul, unité, interprétation : la règle de tout exercice chiffré.\n- Distinguer valeur et volume, point et pourcentage.\n- Ne jamais inventer un chiffre officiel.\n\n## Exercices pratiques\n\n1. Définissez en une phrase : agrégat, inflation, chômage.\n2. Le prix d'un sac de riz passe de 15 000 à 16 500 FCFA. Calculez le taux de variation et l'indice base 100.\n3. Un taux d'intérêt passe de 4 % à 5 %. Exprimez cette hausse en points puis en pourcentage.\n4. Les ventes d'une entreprise augmentent de 20 % une année puis baissent de 20 % l'année suivante. Reviennent-elles à leur niveau initial ? Justifiez.\n5. Un salaire nominal augmente de 6 % pendant que les prix augmentent de 4 %. Calculez l'évolution du salaire réel (méthode exacte).\n6. Proposez une problématique et un plan pour le sujet : « L'inflation est-elle toujours un mal pour l'économie ? ».\n\n## Corrigé\n\n1. Un agrégat est une grandeur synthétique qui mesure l'activité de l'ensemble de l'économie (PIB, consommation nationale, investissement). L'inflation est une hausse générale et durable du niveau des prix. Le chômage est la situation des personnes en âge de travailler, sans emploi, disponibles et à la recherche d'un emploi.\n\n2. Taux = (16 500 − 15 000) / 15 000 × 100 = 10 %. Indice = 16 500 / 15 000 × 100 = 110. Le prix a augmenté de 10 %.\n\n3. Hausse de 5 − 4 = 1 point de pourcentage. En pourcentage : (5 − 4) / 4 × 100 = 25 %.\n\n4. Non. Coefficient global = 1,20 × 0,80 = 0,96. Les ventes ont baissé de 4 % par rapport au niveau initial. Exemple : 100 devient 120, puis 120 × 0,80 = 96.\n\n5. Indice du salaire réel = 1,06 / 1,04 × 100 ≈ 101,92. Le salaire réel augmente d'environ 1,92 %, un peu moins que la différence approximative de 2 points.\n\n6. Problématique : l'inflation est-elle seulement un danger, ou peut-elle accompagner la croissance ? I. Une inflation modérée peut accompagner la croissance (stimulation de la production, allègement réel des dettes). II. Une inflation forte est dangereuse (perte de pouvoir d'achat des ménages pauvres, perte de compétitivité, incertitude) ; c'est pourquoi la BCEAO a pour objectif principal la stabilité des prix."
+   },
+   {
+    "title": "Macroéconomie : agrégats, croissance, développement, inflation et chômage",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Monnaie, UEMOA-BCEAO et commerce international",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Finances publiques, entreprise et marché",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille du Bac en Économie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-anglais",
+  "level": "Terminale",
+  "subject": "Anglais (toutes séries)",
+  "module": null,
+  "title": "Anglais : réussir l'épreuve du Bac",
+  "description": "Ce cours prépare les élèves de Terminale de toutes les séries (L, S, G) à l'épreuve d'Anglais du Baccalauréat : compréhension et analyse de texte, grammaire (temps, passif, discours indirect, conditionnels, relatives, mots de liaison), vocabulaire thématique et expression écrite (essay argumentatif, lettre, résumé). Les explications sont en français, les exemples et les exercices en anglais, avec des corrigés complets et un sujet d'entraînement. Prérequis : les bases de l'anglais du collège.",
+  "sort": 209,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que l'épreuve d'Anglais du Baccalauréat attend de vous.\n- Connaître les trois grandes parties habituelles : compréhension du texte, langue (grammaire et vocabulaire), expression écrite.\n- Repérer les erreurs qui coûtent le plus de points.\n- Organiser ses révisions sur dix semaines.\n\n## À qui s'adresse ce cours ?\n\nCe cours s'adresse aux élèves de Terminale de toutes les séries (L, S et G). Le niveau d'exigence, la durée et le coefficient de l'épreuve varient selon les séries et sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement. Les explications sont données en français ; les exemples et les exercices sont en anglais, comme le jour de l'examen.\n\n## Ce que l'épreuve évalue\n\nLe sujet d'anglais se construit en général autour d'un texte de quelques paragraphes sur un thème d'actualité : mondialisation, environnement, technologie, éducation, santé, place des femmes, migrations. À partir de ce texte, on vérifie trois compétences.\n\n- Comprendre : saisir l'idée générale et les détails, retrouver une information, expliquer un mot.\n- Maîtriser la langue : conjuguer, transformer des phrases, employer le bon mot de liaison.\n- S'exprimer : rédiger un texte personnel, organisé et correct (essay, lettre, résumé).\n\n## Partie 1 : reading comprehension\n\nLes questions les plus fréquentes :\n\n- True or false? Justify with a sentence from the text. Il faut répondre « True » ou « False », puis recopier entre guillemets la phrase exacte qui le prouve.\n- Answer the questions. Répondez par une phrase complète, avec vos propres mots quand c'est possible.\n- Find in the text words or expressions that mean… Recherche de synonymes ou de définitions.\n- Who or what do the underlined words refer to? Il s'agit de retrouver ce que remplace un pronom (it, they, which, this).\n- Give a title to the text. Le titre doit résumer l'idée principale en quelques mots.\n\nMéthode : lisez d'abord le titre, la source et les questions ; lisez ensuite le texte une première fois pour l'idée générale, puis une seconde fois en soulignant les passages utiles. Les questions suivent souvent l'ordre du texte.\n\nExemple. Text: \"Many young Senegalese now use their phones to learn. Online courses, which were rare ten years ago, are becoming common.\" Question: True or false? Online courses have always been common. Answer: False. \"Online courses, which were rare ten years ago, are becoming common.\"\n\n## Partie 2 : grammar and vocabulary\n\nLes exercices classiques : mettre les verbes entre parenthèses au bon temps ; passer de l'actif au passif ; transformer au discours indirect ; compléter avec un pronom relatif ; relier deux phrases avec un mot de liaison ; former des mots (noun, adjective, adverb) ; compléter un texte à trous. Ces exercices sont mécaniques : avec des règles sûres, ce sont des points garantis. Les leçons 2 et 3 les révisent en détail.\n\n## Partie 3 : writing\n\nOn vous demande en général un texte d'une longueur indiquée (par exemple « about 150 words ») : un essay argumentatif, une lettre ou un résumé. Le correcteur regarde le respect de la consigne, l'organisation (introduction, développement, conclusion), la richesse du vocabulaire et la correction grammaticale. Respectez la longueur demandée : trop court comme trop long fait perdre des points.\n\n## Gérer le temps\n\nLisez tout le sujet d'abord. Commencez par la partie où vous êtes le plus à l'aise. Préparez l'expression écrite au brouillon par un plan rapide, mais ne rédigez pas tout au brouillon. Gardez quelques minutes pour vous relire en cherchant vos erreurs habituelles.\n\n## Les erreurs les plus fréquentes\n\n- Oublier le -s de la troisième personne au présent : \"She works\", pas \"She work\".\n- Mettre un -s aux adjectifs : \"important problems\", pas \"importants problems\".\n- Confondre \"since\" et \"for\" : \"since 2020\" (point de départ), \"for three years\" (durée).\n- Traduire mot à mot du français : \"I have 18 years\" au lieu de \"I am 18 years old\".\n- Recopier des phrases entières du texte dans l'expression écrite.\n- Répondre « True » sans justification.\n- Oublier le sujet de la phrase : \"It is important\", pas \"Is important\".\n\n## Plan de révision sur dix semaines\n\n- Semaine 1 : méthode et lecture de textes courts chaque jour.\n- Semaine 2 : les temps (présent, passé, present perfect, futur).\n- Semaine 3 : le passif et le discours indirect.\n- Semaine 4 : les conditionnels et les relatives.\n- Semaine 5 : les mots de liaison et la formation des mots.\n- Semaine 6 : vocabulaire de la mondialisation et de l'environnement.\n- Semaine 7 : vocabulaire de la technologie, de l'éducation et de la santé.\n- Semaine 8 : l'essay argumentatif, la lettre et le résumé.\n- Semaine 9 : sujets d'entraînement complets en temps limité.\n- Semaine 10 : fiches de grammaire, liste d'erreurs personnelles, repos la veille.\n\nConseil : tenez un carnet de vocabulaire par thème, avec dix mots par semaine et une phrase d'exemple pour chacun.\n\n## Points clés\n\n- Justifiez toujours un « True or false » par une citation exacte.\n- Les exercices de grammaire sont des points sûrs : révisez les règles.\n- En expression écrite, respectez la consigne et la longueur.\n- Relisez-vous en traquant vos erreurs habituelles.\n\n## Exercices pratiques\n\nText: \"Dakar is growing fast. Every year, thousands of young people leave rural areas to look for jobs in the capital. However, many of them end up working in the informal sector, where wages are low and jobs are not secure. The government has launched training programmes to help them.\"\n\n1. Give a title to the text.\n2. True or false? Justify. a) Dakar's population is decreasing. b) Jobs in the informal sector are well paid.\n3. Find in the text words that mean: a) countryside; b) salaries; c) started.\n4. What does \"them\" refer to in \"to help them\"?\n5. Correct the mistakes: a) \"He go to school every day.\" b) \"They are livings in Thiès since five years.\"\n6. Answer the question with a full sentence: Why do young people move to Dakar?\n\n## Corrigé\n\n1. Possible titles: \"Rural Exodus to Dakar\" or \"Young People and Jobs in Dakar\".\n\n2. a) False. \"Dakar is growing fast.\" b) False. \"wages are low and jobs are not secure.\"\n\n3. a) rural areas; b) wages; c) launched.\n\n4. \"them\" refers to the young people who leave rural areas (many of them working in the informal sector).\n\n5. a) \"He goes to school every day.\" b) \"They have been living in Thiès for five years.\" Explication : action commencée dans le passé et qui continue, donc present perfect continuous ; \"for\" introduit une durée.\n\n6. Young people move to Dakar because they are looking for jobs."
+   },
+   {
+    "title": "Grammaire (1) : les temps, le passif et le discours indirect",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Grammaire (2) : conditionnels, relatives, mots de liaison et formation des mots",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Vocabulaire thématique et expression écrite : essay, lettre, résumé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille du Bac en Anglais",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "bac-espagnol",
   "level": "Terminale",
   "subject": "Espagnol (LV2)",

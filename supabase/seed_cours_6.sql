@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 6/6). À exécuter après seed.sql.
+-- Cours (partie 6/7). À exécuter après seed.sql.
 
 -- Cours : SVT Terminale S : réussir l'épreuve du Bac
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -985,6 +985,1793 @@ Merci pour votre travail. Dormez bien, emportez votre convocation et de quoi éc
 from public.courses c where c.slug = 'bac-philosophie'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive la veille du Bac de philosophie');
 
+-- Cours : Histoire-Géographie : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-histoire-geographie', (select id from public.levels where name = 'Terminale'), null, 'Histoire-Géographie', 'Histoire-Géographie : réussir l''épreuve du Bac', 'Ce cours prépare les élèves de Terminale des séries L, S et G à l''épreuve d''Histoire-Géographie du Baccalauréat, en révisant le programme du lycée avec un accent sur la Terminale : relations internationales depuis 1945 (guerre froide, décolonisation, non-alignement, unité africaine) et géographie de la mondialisation, du développement et de la population. Il entraîne aux méthodes de la dissertation, du commentaire de document et du croquis, avec des fiches, des exercices corrigés et un sujet d''entraînement complet. Prérequis : connaître les grandes étapes de l''histoire du XXe siècle et savoir lire une carte.', true, 207
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
+
+- Comprendre ce que l''épreuve d''Histoire-Géographie du Baccalauréat attend de vous.
+- Maîtriser les trois exercices habituels : la dissertation, le commentaire de document et le croquis.
+- Repérer les erreurs qui font perdre le plus de points.
+- Construire un plan de révision réaliste sur dix semaines.
+
+## À qui s''adresse ce cours ?
+
+Ce cours s''adresse aux élèves de Terminale des séries L, S et G qui passent l''épreuve d''Histoire-Géographie au Baccalauréat sénégalais. Les attentes de fond sont les mêmes pour tous ; ce qui change d''une série à l''autre (durée, coefficient, nombre de sujets proposés), c''est le cadre fixé selon les textes officiels en vigueur. Renseignez-vous auprès de votre établissement et ne vous fiez pas aux rumeurs.
+
+Le programme révisé couvre le lycée, avec un poids décisif sur la Terminale. En histoire : les relations internationales depuis 1945 (guerre froide, décolonisation de l''Asie et de l''Afrique, non-alignement, construction de l''unité africaine, mondialisation). En géographie : les grandes puissances et les ensembles économiques, l''Afrique et le Sénégal dans la mondialisation, les questions de développement et de population.
+
+## Ce que l''épreuve évalue
+
+Le correcteur vérifie quatre compétences. D''abord des connaissances exactes : dates, acteurs, notions, localisations. Ensuite la capacité à problématiser, c''est-à-dire à transformer un sujet en question à résoudre. Puis la capacité à organiser une démonstration en parties équilibrées. Enfin la qualité de l''expression : phrases correctes, vocabulaire précis, écriture lisible.
+
+## Exercice 1 : la dissertation
+
+La dissertation est une réflexion organisée sur un sujet. Elle se prépare au brouillon en cinq étapes.
+
+- Analyser le sujet : souligner chaque mot, définir les termes clés, repérer les bornes chronologiques et l''espace concerné.
+- Formuler une problématique : une question centrale à laquelle tout le devoir répond.
+- Rassembler les connaissances : dates, faits, exemples précis, chiffres sûrs.
+- Construire un plan en deux ou trois parties, chacune divisée en deux ou trois sous-parties.
+- Rédiger l''introduction et la conclusion au brouillon, puis le développement directement au propre.
+
+L''introduction comprend une accroche (un fait ou une date forte), la définition des termes, la problématique et l''annonce du plan. La conclusion répond clairement à la problématique, puis ouvre sur une question voisine.
+
+Trois types de plans reviennent souvent. Le plan chronologique convient aux sujets d''évolution (par exemple « La guerre froide de 1947 à 1991 » : affrontement, détente, reprise puis fin). Le plan thématique convient aux sujets de bilan (causes, formes, conséquences). Le plan analytique (constat, explications, perspectives) convient bien aux sujets de géographie.
+
+Exemple d''analyse : « La décolonisation de l''Afrique noire française (1944-1960) ». Les bornes sont précises : 1944 correspond à la conférence de Brazzaville, 1960 à l''année des indépendances. L''espace est l''Afrique occidentale et équatoriale françaises. Problématique possible : comment ces territoires sont-ils passés de la tutelle coloniale à l''indépendance, et par quelles étapes ?
+
+## Exercice 2 : le commentaire de document
+
+On vous fournit un ou plusieurs documents (texte, carte, tableau statistique, graphique, caricature) et des questions ou une consigne générale.
+
+- Présenter le document : nature, auteur, date, source, contexte, idée générale.
+- Lire les questions avant le document, puis lire le document deux fois, crayon en main.
+- Prélever les informations utiles en citant le document entre guillemets ou en reprenant ses chiffres.
+- Expliquer ces informations avec vos connaissances : un document ne parle pas seul.
+- Porter un regard critique : point de vue de l''auteur, limites, ce que le document ne dit pas.
+
+Erreur classique : paraphraser, c''est-à-dire recopier le texte avec d''autres mots. Le correcteur attend de l''explication, pas une répétition.
+
+## Exercice 3 : le croquis
+
+Le croquis est une représentation simplifiée d''un espace pour répondre à un sujet. Il se juge sur trois critères : la pertinence des informations, la lisibilité et la légende organisée.
+
+- Un titre qui reprend le sujet.
+- Une légende organisée en deux ou trois parties titrées, qui correspondent au plan d''une petite dissertation.
+- Des figurés adaptés : surfaces (couleurs, hachures) pour les zones, points ou symboles pour les villes et ports, lignes et flèches pour les flux et les axes.
+- Une nomenclature écrite à l''horizontale, lisible, en majuscules pour les États et océans.
+- Une orientation et une échelle si le fond de carte ne les donne pas.
+
+## Gérer le temps le jour de l''épreuve
+
+Quelle que soit la durée officielle, répartissez votre temps ainsi : environ un quart pour l''analyse du sujet et le brouillon, deux tiers pour la rédaction, et le reste pour la relecture. Ne rédigez pas tout le devoir au brouillon : vous n''aurez pas le temps de le recopier.
+
+## Les erreurs les plus fréquentes
+
+- Hors-sujet : traiter la guerre froide en général quand le sujet porte sur la crise de Cuba.
+- Dates fausses ou approximatives : mieux vaut « au début des années 1960 » qu''une date inventée.
+- Plan déséquilibré : une partie de deux pages et une autre de cinq lignes.
+- Absence d''exemples africains alors que le programme les met au cœur des questions.
+- Croquis sans légende organisée ou sans titre.
+- Copie illisible, sans paragraphes ni alinéas.
+
+## Plan de révision sur dix semaines
+
+- Semaine 1 : méthode (dissertation, commentaire, croquis) et lecture du programme.
+- Semaine 2 : la guerre froide, des origines à la détente.
+- Semaine 3 : la guerre froide, de la reprise des tensions à la fin de l''URSS ; le monde après 1991.
+- Semaine 4 : la décolonisation de l''Asie, Bandung et le non-alignement.
+- Semaine 5 : la décolonisation de l''Afrique et le Sénégal, de Brazzaville à l''indépendance.
+- Semaine 6 : la construction de l''unité africaine (OUA, UA, organisations régionales).
+- Semaine 7 : les grandes puissances et les ensembles économiques.
+- Semaine 8 : l''Afrique et le Sénégal dans la mondialisation ; développement et population.
+- Semaine 9 : sujets d''entraînement en temps limité, un en histoire, un en géographie.
+- Semaine 10 : fiches de dates, de notions et de croquis ; repos la veille.
+
+Pour chaque chapitre, fabriquez une fiche d''une page : dix dates, dix notions définies, trois exemples africains, un plan de dissertation type.
+
+## Points clés
+
+- Répondre au sujet, rien qu''au sujet.
+- Une problématique claire et un plan équilibré.
+- Des connaissances exactes et des exemples africains et sénégalais.
+- Un croquis se lit d''abord par sa légende.
+
+## Exercices pratiques
+
+1. Définissez en une phrase chacun des termes suivants : problématique, paraphrase, nomenclature.
+2. Repérez les bornes chronologiques et l''espace du sujet : « Le non-alignement de 1955 à 1961 ».
+3. Proposez une problématique pour le sujet : « Les relations Est-Ouest de 1962 à 1975 ».
+4. Classez ces figurés selon leur type (surface, point, ligne) : un port, une zone agricole, une route maritime, une capitale, un désert.
+5. Une population passe de 12 à 18 millions d''habitants. Calculez l''augmentation absolue et le taux de croissance.
+6. Construisez un plan détaillé en deux parties pour le sujet : « Le Sénégal de 1944 à 1960 : de la colonie à l''État indépendant ».
+
+## Corrigé
+
+1. La problématique est la question centrale qui guide tout le devoir. La paraphrase consiste à répéter le document avec d''autres mots sans l''expliquer. La nomenclature est l''ensemble des noms de lieux écrits sur une carte ou un croquis.
+
+2. Bornes : 1955 (conférence de Bandung, avril 1955) et 1961 (conférence de Belgrade, septembre 1961, premier sommet des pays non alignés). Espace : les pays d''Asie et d''Afrique nouvellement indépendants, puis le monde entier dans le contexte de la guerre froide.
+
+3. Exemple : « Comment les relations entre les États-Unis et l''URSS passent-elles, après la crise de Cuba, d''une confrontation dangereuse à une coexistence plus apaisée, sans que la rivalité disparaisse ? »
+
+4. Surfaces : zone agricole, désert. Points : port, capitale. Lignes : route maritime.
+
+5. Augmentation absolue : 18 − 12 = 6 millions. Taux : 6 / 12 × 100 = 50 %.
+
+6. Partie 1 : une marche progressive vers l''autonomie (1944-1958) : conférence de Brazzaville (1944), citoyenneté accordée aux habitants des colonies par la loi Lamine Guèye (1946), rôle de Lamine Guèye et Léopold Sédar Senghor, loi-cadre Defferre (1956). Partie 2 : de la Communauté à l''indépendance (1958-1960) : référendum de septembre 1958 où le Sénégal vote « oui », Fédération du Mali avec le Soudan français, indépendance de la Fédération le 20 juin 1960, éclatement le 20 août 1960, Senghor élu président de la République en septembre 1960.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'bac-histoire-geographie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Histoire (1) : la guerre froide et le monde depuis 1945', '## Objectifs de la leçon
+
+- Expliquer les origines de la guerre froide et la formation des deux blocs.
+- Connaître les grandes crises et les phases de l''affrontement Est-Ouest de 1947 à 1991.
+- Comprendre la fin de la guerre froide et le nouvel ordre mondial.
+- Montrer comment l''Afrique a été concernée par cet affrontement.
+
+## Fiche 1 : définitions indispensables
+
+- Guerre froide : affrontement idéologique, politique, économique et militaire entre les États-Unis et l''URSS, de 1947 à 1991, sans conflit armé direct entre les deux Grands.
+- Bipolarisation : division du monde en deux blocs rivaux.
+- Endiguement (containment) : politique américaine visant à empêcher l''extension du communisme.
+- Équilibre de la terreur : dissuasion fondée sur la possession par chaque camp d''armes nucléaires capables de détruire l''autre.
+- Détente : période d''apaisement relatif des tensions (environ 1962-1975).
+- Coexistence pacifique : formule de Khrouchtchev, après 1956, admettant la rivalité sans guerre directe.
+
+## Fiche 2 : les origines et la formation des blocs (1945-1949)
+
+En 1945, les Alliés ont vaincu l''Allemagne et le Japon. La conférence de Yalta (février 1945) réunit Roosevelt, Churchill et Staline. L''ONU est créée par la Charte de San Francisco, signée le 26 juin 1945. Mais l''alliance se défait vite : l''URSS installe des gouvernements communistes en Europe de l''Est ; les États-Unis veulent défendre la démocratie libérale et l''économie de marché.
+
+- 12 mars 1947 : doctrine Truman, l''endiguement du communisme.
+- Juin 1947 : plan Marshall, aide économique américaine à la reconstruction de l''Europe.
+- Septembre 1947 : doctrine Jdanov, qui décrit un monde divisé en deux camps ; création du Kominform.
+- 1948-1949 : blocus de Berlin-Ouest par l''URSS ; les Occidentaux ravitaillent la ville par un pont aérien.
+- Avril 1949 : création de l''OTAN, alliance militaire occidentale.
+- 1949 : naissance de la RFA et de la RDA ; l''Allemagne est coupée en deux. En août 1949, l''URSS fait exploser sa première bombe atomique. Le 1er octobre 1949, Mao Zedong proclame la République populaire de Chine.
+- Mai 1955 : pacte de Varsovie, alliance militaire du bloc de l''Est.
+
+## Fiche 3 : les crises et les phases de l''affrontement
+
+Première phase, la confrontation (1947-1962). La guerre de Corée (1950-1953) oppose le Nord communiste, soutenu par la Chine et l''URSS, au Sud soutenu par les États-Unis et une force de l''ONU ; elle s''achève par l''armistice de Panmunjom (1953) sur une frontière proche du 38e parallèle. En 1956, l''URSS écrase l''insurrection de Budapest. Le 13 août 1961, la RDA construit le mur de Berlin. En octobre 1962, la crise de Cuba éclate : les Américains découvrent des rampes de missiles soviétiques sur l''île ; Kennedy décide un blocus naval ; Khrouchtchev accepte de retirer les missiles.
+
+Deuxième phase, la détente (1962-1975). Un « téléphone rouge » relie Washington et Moscou en 1963. Les accords SALT I (1972) limitent certains armements stratégiques. L''Acte final d''Helsinki (1975) reconnaît les frontières européennes. Mais les conflits périphériques continuent : la guerre du Vietnam se termine par la chute de Saïgon le 30 avril 1975.
+
+Troisième phase, la « guerre fraîche » (1975-1985). L''URSS intervient en Afghanistan en décembre 1979. Reagan relance la course aux armements. L''affrontement se déplace en Afrique : guerre civile en Angola après l''indépendance de 1975, avec des troupes cubaines d''un côté et l''appui américain et sud-africain de l''autre.
+
+Quatrième phase, la fin (1985-1991). Gorbatchev, au pouvoir en 1985, lance la perestroïka (restructuration) et la glasnost (transparence). Le mur de Berlin tombe le 9 novembre 1989. L''Allemagne est réunifiée le 3 octobre 1990. L''URSS disparaît en décembre 1991 ; Gorbatchev démissionne le 25 décembre 1991.
+
+## Fiche 4 : l''Afrique et la guerre froide
+
+L''Afrique n''est pas un simple spectateur. Les deux Grands y recherchent des alliés, des bases et des matières premières. La crise du Congo (1960-1965), après l''indépendance du 30 juin 1960, oppose plusieurs factions soutenues de l''extérieur ; le Premier ministre Patrice Lumumba est assassiné en janvier 1961. Beaucoup d''États africains refusent toutefois de choisir un camp : c''est le non-alignement, étudié dans la leçon suivante.
+
+## Fiche 5 : le monde après la guerre froide
+
+La fin de l''URSS laisse les États-Unis seule superpuissance. La guerre du Golfe (1991), menée avec l''accord de l''ONU, semble annoncer un « nouvel ordre mondial ». Mais les attentats du 11 septembre 2001 ouvrent une période de lutte contre le terrorisme (Afghanistan en 2001, Irak en 2003). Depuis les années 2000, le monde devient multipolaire : affirmation de la Chine, retour de la Russie, émergence de puissances comme l''Inde, le Brésil ou l''Afrique du Sud, regroupées avec la Chine et la Russie dans les BRICS.
+
+## Méthode : un plan type de dissertation
+
+Sujet : « La guerre froide de 1947 à 1991 ». Problématique : comment l''affrontement entre deux superpuissances a-t-il structuré les relations internationales pendant plus de quarante ans, avant de s''achever par la disparition de l''un des deux camps ?
+
+- I. 1947-1962 : la formation des blocs et la confrontation (Berlin, Corée, Cuba).
+- II. 1962-1985 : de la détente à la reprise des tensions (accords, Vietnam, Afghanistan, Afrique).
+- III. 1985-1991 : la fin de la guerre froide (réformes de Gorbatchev, chute du mur, fin de l''URSS).
+
+## Points clés
+
+- 1947 : doctrine Truman et plan Marshall ; 1949 : OTAN ; 1955 : pacte de Varsovie.
+- Trois crises majeures : Berlin (1948-1949 et 1961), Corée (1950-1953), Cuba (1962).
+- Fin : 9 novembre 1989 (chute du mur) et décembre 1991 (disparition de l''URSS).
+
+## Exercices pratiques
+
+1. Définissez : endiguement, équilibre de la terreur, détente.
+2. Classez dans l''ordre chronologique : pacte de Varsovie, plan Marshall, construction du mur de Berlin, création de l''OTAN, crise de Cuba.
+3. Pourquoi la crise de Cuba est-elle considérée comme le moment le plus dangereux de la guerre froide ?
+4. Expliquez en quoi la crise du Congo est liée à la guerre froide.
+5. Combien d''années séparent la doctrine Truman de la disparition de l''URSS ? Combien la construction du mur de sa chute ?
+6. Rédigez l''introduction complète du sujet : « La guerre froide de 1947 à 1991 ».
+7. Proposez une problématique et un plan en deux parties pour : « Le monde depuis 1991 : un monde unipolaire ? ».
+
+## Corrigé
+
+1. L''endiguement est la politique américaine visant à contenir l''expansion du communisme (doctrine Truman, 1947). L''équilibre de la terreur est la situation où chaque Grand renonce à attaquer l''autre parce qu''il sait que la riposte nucléaire le détruirait. La détente est la période d''apaisement relatif entre 1962 et 1975, marquée par le dialogue et des accords de limitation des armements.
+
+2. Plan Marshall (1947), création de l''OTAN (1949), pacte de Varsovie (1955), construction du mur de Berlin (1961), crise de Cuba (1962).
+
+3. Parce que, en octobre 1962, des missiles nucléaires soviétiques capables d''atteindre le territoire américain étaient installés à Cuba et que les deux Grands se sont affrontés directement par un blocus naval et des ultimatums. Une guerre nucléaire était possible. Le retrait des missiles a été obtenu par la négociation.
+
+4. Après l''indépendance du 30 juin 1960, le Congo connaît sécessions et rivalités politiques. Les factions cherchent des appuis extérieurs ; les deux blocs soutiennent des camps opposés, l''ONU intervient. Le pays devient un terrain d''affrontement indirect des deux Grands.
+
+5. De 1947 à 1991 : 44 ans. De 1961 à 1989 : 28 ans.
+
+6. Exemple : « Le 12 mars 1947, le président américain Truman annonce que les États-Unis aideront les peuples menacés par le communisme. Commence alors la guerre froide, affrontement indirect entre les États-Unis et l''URSS, sans guerre directe entre eux mais avec une rivalité totale : idéologique, économique, militaire et culturelle. Elle dure jusqu''à la disparition de l''URSS en décembre 1991. Comment cet affrontement a-t-il structuré les relations internationales pendant plus de quarante ans avant de s''achever par l''effondrement de l''un des deux camps ? Nous verrons d''abord la formation des blocs et la confrontation (1947-1962), puis le passage de la détente à la reprise des tensions (1962-1985), enfin la fin de la guerre froide (1985-1991). »
+
+7. Problématique : la disparition de l''URSS a-t-elle installé durablement la domination d''une seule puissance ? I. Une domination américaine incontestée dans les années 1990 (guerre du Golfe, puissance économique et militaire). II. Un monde devenu multipolaire et instable (terrorisme après 2001, montée de la Chine, retour de la Russie, émergents et BRICS).', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bac-histoire-geographie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Histoire (1) : la guerre froide et le monde depuis 1945');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Histoire (2) : décolonisation, non-alignement et unité africaine', '## Objectifs de la leçon
+
+- Expliquer les causes et les formes de la décolonisation en Asie et en Afrique.
+- Connaître les étapes de l''indépendance du Sénégal.
+- Comprendre le non-alignement et le rôle du Tiers-Monde.
+- Retracer la construction de l''unité africaine, de l''OUA à l''UA et aux organisations régionales.
+
+## Fiche 1 : les causes de la décolonisation
+
+- Causes internes : naissance d''élites instruites, partis politiques et syndicats, mouvements nationalistes, idée panafricaine.
+- Effets de la Seconde Guerre mondiale : participation des soldats coloniaux (dont les tirailleurs sénégalais), affaiblissement des métropoles européennes, défaites face au Japon en Asie.
+- Contexte international : la Charte de l''Atlantique (1941) et la Charte de l''ONU (1945) affirment le droit des peuples à disposer d''eux-mêmes ; les États-Unis et l''URSS sont hostiles, chacun pour ses raisons, aux empires coloniaux.
+
+## Fiche 2 : la décolonisation de l''Asie
+
+- Indonésie : indépendance proclamée par Sukarno le 17 août 1945, reconnue par les Pays-Bas en 1949 après une guerre.
+- Inde : indépendance le 15 août 1947, obtenue surtout par la non-violence (Gandhi) et la négociation (Nehru) ; la partition avec le Pakistan provoque des violences et des déplacements massifs.
+- Indochine : guerre de 1946 à 1954 entre la France et le Viet Minh d''Hô Chi Minh ; défaite française à Diên Biên Phu (mai 1954) ; accords de Genève (juillet 1954) qui partagent le Vietnam au 17e parallèle.
+
+## Fiche 3 : la décolonisation de l''Afrique
+
+Afrique du Nord : la Libye (1951), le Maroc et la Tunisie (1956) obtiennent leur indépendance. L''Algérie connaît une longue guerre, déclenchée le 1er novembre 1954 par le FLN ; les accords d''Évian (18 mars 1962) ouvrent la voie à l''indépendance, proclamée le 5 juillet 1962.
+
+Afrique britannique : la Gold Coast devient indépendante le 6 mars 1957 sous le nom de Ghana, avec Kwame Nkrumah. Au Kenya, la révolte des Mau Mau (années 1950) est durement réprimée ; l''indépendance arrive en 1963.
+
+Afrique portugaise : le Portugal refuse de décoloniser ; des guerres de libération éclatent dans les années 1960. La Guinée-Bissau (PAIGC d''Amilcar Cabral) proclame son indépendance en 1973, reconnue par le Portugal en 1974. L''Angola et le Mozambique deviennent indépendants en 1975, après la révolution des Œillets au Portugal (avril 1974).
+
+Afrique australe : le Zimbabwe devient indépendant en 1980, la Namibie en 1990. En Afrique du Sud, le régime d''apartheid prend fin au début des années 1990 : Nelson Mandela est libéré le 11 février 1990 et devient président après les élections multiraciales de 1994.
+
+## Fiche 4 : le Sénégal, de la colonie à l''indépendance
+
+- 1944 : conférence de Brazzaville ; la France promet des réformes mais refuse l''indépendance.
+- 1946 : loi Lamine Guèye, qui accorde la citoyenneté aux ressortissants des territoires d''outre-mer ; Lamine Guèye et Léopold Sédar Senghor siègent comme députés à Paris.
+- 1956 : loi-cadre Defferre, qui crée des conseils de gouvernement élus dans chaque territoire.
+- 28 septembre 1958 : référendum sur la Communauté ; le Sénégal vote « oui », la Guinée vote « non » et devient indépendante le 2 octobre 1958 avec Ahmed Sékou Touré.
+- 1959 : création de la Fédération du Mali entre le Sénégal et le Soudan français.
+- 4 avril 1960 : signature des accords de transfert des compétences ; le 4 avril est devenu la fête de l''indépendance du Sénégal.
+- 20 juin 1960 : indépendance de la Fédération du Mali.
+- 20 août 1960 : éclatement de la Fédération ; le Sénégal devient un État souverain.
+- Septembre 1960 : Senghor est élu président de la République ; Mamadou Dia est président du Conseil.
+
+## Fiche 5 : Bandung et le non-alignement
+
+Du 18 au 24 avril 1955, la conférence de Bandung (Indonésie) réunit 29 pays d''Asie et d''Afrique, dont l''Inde de Nehru, l''Égypte de Nasser, la Chine de Zhou Enlai et l''Indonésie de Sukarno. Elle condamne le colonialisme et affirme l''égalité des peuples. On y voit la naissance politique du Tiers-Monde.
+
+En septembre 1961, la conférence de Belgrade (Yougoslavie), à l''initiative notamment de Tito, Nasser et Nehru, fonde le mouvement des non-alignés : refus d''appartenir à l''un des deux blocs, soutien aux luttes de libération, coexistence pacifique. Les pays du Tiers-Monde revendiquent aussi un nouvel ordre économique international (CNUCED, créée en 1964).
+
+Limites : beaucoup de non-alignés restaient proches d''un des deux Grands, et le mouvement était divisé.
+
+## Fiche 6 : la construction de l''unité africaine
+
+Au lendemain des indépendances, deux courants s''opposent. Le groupe de Casablanca (1961, autour de Nkrumah) veut une union politique rapide, des « États-Unis d''Afrique ». Le groupe de Monrovia (1961), majoritaire, dont le Sénégal de Senghor, préfère une coopération progressive entre États souverains.
+
+- 25 mai 1963 : création de l''Organisation de l''unité africaine (OUA) à Addis-Abeba, par 32 États. Principes : souveraineté, non-ingérence, intangibilité des frontières héritées de la colonisation, lutte contre le colonialisme et l''apartheid.
+- Bilan de l''OUA : succès dans le soutien aux mouvements de libération ; faiblesse face aux guerres civiles, aux coups d''État et au sous-développement.
+- 9 septembre 1999 : déclaration de Syrte ; 2000 : Acte constitutif adopté à Lomé ; 9 juillet 2002 : lancement de l''Union africaine (UA) à Durban. L''UA se dote d''une Commission, d''un Parlement panafricain et d''un Conseil de paix et de sécurité ; elle admet un droit d''intervention en cas de crimes graves.
+- 2001 : NEPAD ; 2015 : Agenda 2063, la vision à long terme de l''UA.
+- Zone de libre-échange continentale africaine (ZLECAf) : accord signé à Kigali le 21 mars 2018, entré en vigueur en 2019, échanges lancés le 1er janvier 2021.
+
+L''intégration se fait aussi par régions : la CEDEAO (traité de Lagos, 28 mai 1975) pour l''Afrique de l''Ouest, l''UEMOA (traité de Dakar, 10 janvier 1994) pour les pays utilisant le franc CFA de l''Ouest.
+
+## Points clés
+
+- Deux voies : négociation (Inde, Afrique noire française) et guerre (Indochine, Algérie, colonies portugaises).
+- 1955 Bandung, 1961 Belgrade : le Tiers-Monde s''affirme.
+- Sénégal : 4 avril 1960 (transfert des compétences), 20 juin 1960 (indépendance de la Fédération du Mali), 20 août 1960 (État souverain).
+- OUA 1963, UA 2002, ZLECAf 2018-2021.
+
+## Exercices pratiques
+
+1. Citez trois causes de la décolonisation et classez-les (internes, liées à la guerre, internationales).
+2. Associez chaque pays à sa date d''indépendance : Ghana, Guinée, Algérie, Inde, Angola. Dates : 1947, 1957, 1958, 1962, 1975.
+3. Pourquoi la Guinée devient-elle indépendante dès 1958 ?
+4. Expliquez la différence entre le groupe de Casablanca et le groupe de Monrovia.
+5. Combien d''années séparent la création de l''OUA du lancement de l''UA ?
+6. Montrez que le non-alignement est à la fois un succès et une ambition limitée.
+7. Construisez le plan détaillé du sujet : « De l''OUA à l''UA : l''Afrique à la recherche de son unité ».
+
+## Corrigé
+
+1. Internes : élites instruites et partis nationalistes. Liées à la guerre : participation des soldats coloniaux et affaiblissement des métropoles. Internationales : droit des peuples affirmé par la Charte de l''ONU et pression des deux Grands.
+
+2. Inde : 1947 ; Ghana : 1957 ; Guinée : 1958 ; Algérie : 1962 ; Angola : 1975.
+
+3. Lors du référendum du 28 septembre 1958, la Guinée, sous la conduite de Sékou Touré, vote « non » à la Communauté proposée par la France. Elle devient donc immédiatement indépendante, le 2 octobre 1958.
+
+4. Le groupe de Casablanca, autour de Nkrumah, voulait une union politique immédiate du continent. Le groupe de Monrovia, majoritaire, voulait une coopération progressive qui respecte la souveraineté de chaque État. L''OUA de 1963 reflète surtout cette seconde conception.
+
+5. 2002 − 1963 = 39 ans.
+
+6. Succès : il donne une voix collective aux pays nouvellement indépendants, condamne le colonialisme, soutient les luttes de libération et défend un nouvel ordre économique. Limites : des membres restent proches d''un bloc, le mouvement est divisé et pèse peu face aux deux Grands sur le plan économique et militaire.
+
+7. Introduction : création de l''OUA le 25 mai 1963. Problématique : comment l''Afrique a-t-elle tenté de s''unir, et avec quels résultats ? I. L''OUA (1963-2002) : naissance, principes, succès dans la décolonisation, limites face aux conflits et au sous-développement. II. L''UA depuis 2002 : institutions nouvelles, paix et sécurité, NEPAD, Agenda 2063, ZLECAf, appui sur les organisations régionales (CEDEAO, UEMOA). Conclusion : une unité en progrès mais encore incomplète, freinée par les crises et la faiblesse des échanges entre pays africains.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bac-histoire-geographie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Histoire (2) : décolonisation, non-alignement et unité africaine');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Géographie : puissances, mondialisation, développement et population', '## Objectifs de la leçon
+
+- Connaître les fondements de la puissance et les grands pôles de l''économie mondiale.
+- Présenter les principaux ensembles économiques régionaux.
+- Situer l''Afrique et le Sénégal dans la mondialisation.
+- Maîtriser les notions de développement et de population, et savoir réaliser un croquis.
+
+## Fiche 1 : la mondialisation, notions clés
+
+- Mondialisation : mise en relation croissante des différentes parties du monde par les échanges de marchandises, de capitaux, d''informations et de personnes.
+- Acteurs : États, firmes transnationales (FTN), organisations internationales (OMC, FMI, Banque mondiale), ONG, individus (migrants, touristes).
+- Flux : commerce maritime (l''essentiel du commerce mondial en volume transite par la mer), flux financiers, flux d''informations par Internet et câbles sous-marins, flux migratoires.
+- Institutions : le FMI et la Banque mondiale naissent des accords de Bretton Woods (juillet 1944) ; le GATT est signé en 1947 ; l''OMC le remplace le 1er janvier 1995.
+- Triade : expression désignant les trois pôles dominants de l''économie mondiale à la fin du XXe siècle (Amérique du Nord, Europe occidentale, Asie orientale avec le Japon). Aujourd''hui, la Chine fait partie de ce cœur.
+
+## Fiche 2 : les grandes puissances
+
+Les États-Unis sont la première puissance mondiale par l''ensemble de leurs atouts : poids économique et financier (le dollar est la principale monnaie internationale), puissance militaire, innovation (universités, entreprises du numérique), influence culturelle (soft power). Limites : endettement, inégalités sociales, dépendance de certaines chaînes d''approvisionnement.
+
+La Chine est devenue, depuis les réformes lancées par Deng Xiaoping à partir de 1978, la grande puissance émergente : « atelier du monde », premier exportateur mondial de marchandises, puissance technologique et militaire en essor, présence forte en Afrique (infrastructures, prêts, commerce). Limites : vieillissement de la population, inégalités entre littoral et intérieur, problèmes environnementaux.
+
+L''Union européenne est une puissance économique et commerciale, mais politiquement et militairement moins unie.
+
+Les pays émergents (Inde, Brésil, Afrique du Sud, Indonésie, Turquie…) ont une croissance rapide et une influence croissante. Le groupe des BRICS (Brésil, Russie, Inde, Chine, Afrique du Sud) tient son premier sommet en 2009, accueille l''Afrique du Sud en 2010-2011 et s''élargit à de nouveaux membres à partir de 2024.
+
+## Fiche 3 : les ensembles économiques régionaux
+
+- Union européenne : issue de la CEE (traité de Rome, 25 mars 1957) ; traité de Maastricht (1992) ; monnaie unique, l''euro, introduite en 1999 pour les marchés et en 2002 sous forme de pièces et de billets. C''est l''ensemble le plus intégré : marché unique, politiques communes.
+- Amérique du Nord : l''ALENA (1994) a été remplacé en 2020 par l''accord États-Unis-Mexique-Canada (ACEUM).
+- Asie : l''ASEAN (1967) regroupe des pays d''Asie du Sud-Est.
+- Amérique du Sud : le Mercosur (1991).
+- Afrique : CEDEAO (1975), UEMOA (1994), CEMAC, SADC, EAC, et à l''échelle du continent la ZLECAf.
+
+On distingue les degrés d''intégration : zone de libre-échange (suppression des droits de douane entre membres), union douanière (en plus, un tarif extérieur commun), marché commun (libre circulation des facteurs de production), union économique et monétaire (monnaie commune). L''UEMOA est une union économique et monétaire.
+
+## Fiche 4 : l''Afrique dans la mondialisation
+
+L''Afrique est longtemps présentée comme « en marge » de la mondialisation : sa part du commerce mondial reste faible, ses exportations sont dominées par les matières premières (pétrole, minerais, produits agricoles) et ses échanges internes restent limités. Mais le continent s''intègre de plus en plus : nouveaux partenaires (Chine, Inde, Turquie, pays du Golfe), grands ports et corridors, téléphonie mobile et paiement mobile, essor des villes et des classes moyennes, ZLECAf.
+
+Les contraintes demeurent : dépendance aux cours des matières premières, déficit d''infrastructures et d''électricité, dette, instabilité dans certaines régions, fuite des cerveaux.
+
+## Fiche 5 : le Sénégal dans la mondialisation
+
+- Atouts : position de carrefour à la pointe occidentale de l''Afrique, port autonome de Dakar, aéroport international Blaise Diagne (ouvert en 2017), stabilité politique reconnue, câbles sous-marins, diaspora importante dont les envois de fonds soutiennent les familles.
+- Ressources : phosphates, or, zircon, pêche, arachide, horticulture ; pétrole (gisement de Sangomar, production lancée en 2024) et gaz (projet Grand Tortue Ahmeyim partagé avec la Mauritanie).
+- Aménagements : TER Dakar-Diamniadio mis en service en décembre 2021, pôle urbain de Diamniadio, projet de port en eau profonde à Ndayane, zones économiques spéciales.
+- Limites : déséquilibre entre la région de Dakar et l''intérieur du pays, balance commerciale déficitaire, forte dépendance aux importations de produits alimentaires et de produits manufacturés, chômage des jeunes, émigration irrégulière.
+
+## Fiche 6 : développement et population
+
+Le développement ne se réduit pas à la croissance. La croissance est l''augmentation de la production (PIB). Le développement est l''amélioration durable des conditions de vie de la population : santé, éducation, revenus, libertés. Le PNUD le mesure depuis 1990 par l''indice de développement humain (IDH), compris entre 0 et 1, qui combine espérance de vie, niveau d''éducation et revenu par habitant. Le développement durable, défini en 1987 par le rapport Brundtland, répond aux besoins du présent sans compromettre ceux des générations futures. Les Objectifs de développement durable (ODD) ont été adoptés par l''ONU en 2015, à l''horizon 2030.
+
+La population mondiale a franchi le cap de 8 milliards d''habitants en novembre 2022 selon l''ONU. La transition démographique est le passage d''une natalité et d''une mortalité élevées à une natalité et une mortalité faibles. Pendant la transition, la mortalité baisse avant la natalité : la population augmente fortement. L''Afrique subsaharienne est aujourd''hui la région du monde où la croissance démographique est la plus rapide, avec une population très jeune.
+
+Au Sénégal, le recensement général de 2023 (RGPH-5, ANSD) a dénombré un peu plus de 18 millions d''habitants. La population est jeune et de plus en plus urbaine ; la région de Dakar concentre une part importante des habitants et des activités. Cette jeunesse est un atout (dividende démographique) si l''éducation, la formation et l''emploi suivent ; sinon, elle devient une source de tensions.
+
+Formules utiles : taux de natalité = naissances / population × 1000 ; taux de mortalité = décès / population × 1000 ; taux d''accroissement naturel = taux de natalité − taux de mortalité (en ‰).
+
+## Exercices pratiques
+
+1. Définissez : FTN, Triade, IDH.
+2. Classez du moins intégré au plus intégré : marché commun, zone de libre-échange, union économique et monétaire, union douanière.
+3. Un pays compte 20 millions d''habitants, 700 000 naissances et 120 000 décès dans l''année. Calculez les taux de natalité, de mortalité et d''accroissement naturel.
+4. Donnez deux atouts et deux limites de la Chine.
+5. Pourquoi dit-on que l''Afrique reste faiblement intégrée à la mondialisation ? Nuancez.
+6. Expliquez pourquoi croissance et développement ne sont pas synonymes.
+7. Rédigez la problématique et le plan du sujet : « L''Afrique dans la mondialisation : marginalisation ou intégration ? ».
+
+## Corrigé
+
+1. Une FTN est une entreprise qui exerce ses activités dans plusieurs pays par l''intermédiaire de filiales. La Triade désigne les trois pôles dominants de l''économie mondiale (Amérique du Nord, Europe occidentale, Asie orientale). L''IDH est un indicateur du PNUD, compris entre 0 et 1, qui combine santé, éducation et niveau de vie.
+
+2. Zone de libre-échange, union douanière, marché commun, union économique et monétaire.
+
+3. Natalité : 700 000 / 20 000 000 × 1000 = 35 ‰. Mortalité : 120 000 / 20 000 000 × 1000 = 6 ‰. Accroissement naturel : 35 − 6 = 29 ‰, soit 2,9 %.
+
+4. Atouts : puissance industrielle et commerciale (premier exportateur mondial de marchandises), progrès technologiques. Limites : vieillissement de la population, inégalités entre le littoral et l''intérieur.
+
+5. Sa part du commerce mondial est faible et ses exportations portent surtout sur des matières premières. Nuance : le continent attire de nouveaux partenaires, développe ses ports, son numérique et son marché intérieur avec la ZLECAf.
+
+6. Un pays peut voir son PIB augmenter (croissance) sans que la santé, l''éducation ou les revenus de la majorité s''améliorent, par exemple si la richesse est mal répartie. Le développement suppose une amélioration durable et partagée des conditions de vie.
+
+7. Problématique : l''Afrique subit-elle la mondialisation ou commence-t-elle à en tirer profit ? I. Une intégration ancienne mais dépendante (matières premières, faible part du commerce mondial, dette). II. Des dynamiques nouvelles (nouveaux partenaires, villes, numérique, ports, ZLECAf). III. Des défis persistants (infrastructures, emploi des jeunes, stabilité, transformation locale des ressources).', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bac-histoire-geographie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Géographie : puissances, mondialisation, développement et population');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : entraînement corrigé', '## Présentation
+
+Ce sujet est un sujet d''entraînement conçu pour ce cours. Ce n''est pas un sujet officiel du Baccalauréat. Il reprend la forme habituelle des épreuves : un choix entre plusieurs exercices en histoire et en géographie. La répartition des points indiquée est indicative et non officielle ; la durée, le coefficient et les modalités réelles sont fixés selon les textes officiels en vigueur. Entraînez-vous en temps limité, puis comparez votre travail au corrigé.
+
+## Le sujet d''entraînement
+
+Histoire (10 points, répartition indicative). Traitez au choix l''un des deux sujets.
+
+- Sujet 1 (dissertation) : La décolonisation de l''Afrique noire française de 1944 à 1960.
+- Sujet 2 (commentaire de document) : Document. Extrait du communiqué final de la conférence de Bandung (avril 1955), présenté ici sous forme résumée : les pays participants déclarent que le colonialisme sous toutes ses formes est un mal auquel il faut mettre fin rapidement ; ils affirment que l''assujettissement des peuples à une domination étrangère constitue une négation des droits fondamentaux de l''homme et est contraire à la Charte des Nations unies ; ils appuient la cause de la liberté et de l''indépendance des peuples dépendants. Questions : a) Présentez le document. b) Relevez les idées principales. c) Expliquez le contexte de cette conférence. d) Montrez la portée de ce texte pour l''Afrique.
+
+Géographie (10 points, répartition indicative). Traitez au choix l''un des deux sujets.
+
+- Sujet 3 (dissertation) : Les atouts et les limites de la puissance chinoise.
+- Sujet 4 (croquis) : Réalisez un croquis, accompagné d''une légende organisée, sur le thème : « Le Sénégal dans la mondialisation ».
+
+## Corrigé du sujet 1 (dissertation d''histoire)
+
+Analyse : « Afrique noire française » désigne l''AOF (dont le Sénégal) et l''AEF, ainsi que les territoires sous tutelle comme le Togo et le Cameroun. Les bornes sont 1944 (conférence de Brazzaville) et 1960 (année où ces territoires deviennent indépendants).
+
+Introduction proposée : « En janvier-février 1944, à Brazzaville, le général de Gaulle réunit les responsables de l''Empire français. La conférence promet des réformes mais écarte toute idée d''indépendance. Seize ans plus tard, en 1960, l''ensemble de l''Afrique noire française accède pourtant à l''indépendance. Comment ces territoires sont-ils passés de la domination coloniale à la souveraineté, et pourquoi cette décolonisation s''est-elle faite surtout par la négociation ? Nous étudierons d''abord les réformes et l''éveil politique (1944-1956), puis le passage de l''autonomie à l''indépendance (1956-1960). »
+
+Partie I. Réformes et éveil politique (1944-1956).
+
+- La conférence de Brazzaville : participation de l''Empire à la guerre, promesses de réformes, mais refus de l''autonomie.
+- 1946 : suppression du travail forcé (loi Houphouët-Boigny), citoyenneté (loi Lamine Guèye), création de l''Union française ; des Africains élus siègent à Paris.
+- Naissance des partis : le Rassemblement démocratique africain (RDA, 1946, autour de Félix Houphouët-Boigny) ; au Sénégal, rôle de Lamine Guèye puis de Senghor, qui fonde le Bloc démocratique sénégalais en 1948.
+- Rôle des syndicats et des étudiants ; grande grève des cheminots du Dakar-Niger (1947-1948).
+
+Partie II. De l''autonomie à l''indépendance (1956-1960).
+
+- 1956 : loi-cadre Defferre, suffrage universel et conseils de gouvernement élus dans chaque territoire.
+- 1958 : référendum sur la Communauté ; seule la Guinée vote « non » et devient indépendante le 2 octobre 1958.
+- 1959-1960 : la Fédération du Mali (Sénégal et Soudan), indépendante le 20 juin 1960, éclate le 20 août 1960 ; les autres territoires deviennent indépendants au cours de l''année 1960.
+- Une décolonisation globalement pacifique, à une exception majeure : la guerre menée au Cameroun contre l''UPC.
+
+Conclusion : la décolonisation de l''Afrique noire française s''est faite par étapes et surtout par la négociation, sous la pression des élites africaines et du contexte international. Mais les nouveaux États conservent des liens étroits avec la France (accords de coopération, franc CFA), ce qui ouvre la question de l''indépendance réelle.
+
+## Corrigé du sujet 2 (commentaire)
+
+a) Présentation : texte politique, communiqué final d''une conférence internationale réunie à Bandung (Indonésie) du 18 au 24 avril 1955, à l''initiative de pays asiatiques ; 29 pays d''Asie et d''Afrique y participent. Thème : la condamnation du colonialisme.
+
+b) Idées principales : le colonialisme est un mal qui doit cesser rapidement ; la domination étrangère viole les droits de l''homme et la Charte de l''ONU ; les participants soutiennent l''indépendance des peuples encore dépendants.
+
+c) Contexte : en 1955, l''Asie est en grande partie décolonisée (Inde 1947, Indonésie 1949, défaite française en Indochine en 1954), mais la plus grande partie de l''Afrique est encore colonisée ; la guerre d''Algérie a commencé en novembre 1954. La guerre froide divise le monde en deux blocs.
+
+d) Portée : Bandung marque l''entrée du Tiers-Monde sur la scène internationale. Le texte encourage les mouvements de libération africains et prépare le non-alignement (Belgrade, 1961). Limite : les participants n''ont pas de moyens militaires ou économiques pour imposer la décolonisation, et ils sont divisés face à la guerre froide.
+
+## Corrigé du sujet 3 (dissertation de géographie)
+
+Problématique : la Chine est-elle devenue une superpuissance complète, capable de rivaliser avec les États-Unis ?
+
+- I. Des atouts considérables : population nombreuse, puissance industrielle (« atelier du monde »), premier exportateur mondial de marchandises, réserves financières, montée technologique, puissance militaire et spatiale, présence mondiale (investissements, routes de la soie, présence en Afrique).
+- II. Des limites réelles : vieillissement de la population, inégalités entre le littoral et l''intérieur, pollution, dépendance énergétique, tensions avec ses voisins et avec les États-Unis, influence culturelle encore limitée.
+
+Conclusion : une puissance majeure, au cœur de la mondialisation, mais encore incomplète sur certains plans.
+
+## Corrigé du sujet 4 (croquis)
+
+Titre : « Le Sénégal dans la mondialisation ». Légende possible :
+
+- I. Les portes d''entrée du territoire : Dakar (gros point rouge), le port autonome (ancre), l''AIBD (avion), câbles sous-marins (trait bleu partant de Dakar).
+- II. Les espaces productifs liés au monde : zones de pêche le long du littoral (hachures bleues), phosphates dans la région de Thiès (symbole), or au Sénégal oriental (symbole jaune), gisements d''hydrocarbures en mer (Sangomar, GTA au large de Saint-Louis), zone touristique de la Petite-Côte.
+- III. Un territoire inégalement intégré : cœur Dakar-Thiès-Diamniadio (aplat foncé), axes principaux vers Touba, Kaolack et Saint-Louis (traits épais), périphéries de l''est et du sud (aplat clair), flux d''importations et flux migratoires (flèches).
+
+## Conseils du correcteur
+
+- Choisissez le sujet sur lequel vous avez le plus de connaissances précises, pas celui qui semble le plus facile.
+- En commentaire, citez le texte et expliquez-le avec des dates.
+- Au croquis, une légende organisée en parties vaut souvent plus que des dessins nombreux.
+- Gardez dix minutes pour relire l''orthographe et les dates.
+
+## Exercices pratiques
+
+1. Rédigez la conclusion du sujet 3 en cinq lignes, avec une ouverture.
+2. Donnez deux limites du document de Bandung comme source historique.
+3. Proposez une accroche différente pour le sujet 1.
+4. Quels figurés utiliseriez-vous pour représenter l''axe Dakar-Touba et les envois de fonds de la diaspora ?
+5. Refaites le sujet 2 en temps limité, puis comparez avec le corrigé.
+
+## Corrigé
+
+1. Exemple : « La Chine est devenue, en quelques décennies, une puissance économique et commerciale de premier plan, présente sur tous les continents, notamment en Afrique. Elle reste cependant fragilisée par son vieillissement, ses inégalités et ses problèmes environnementaux. Elle est une grande puissance, mais pas encore une superpuissance complète. Reste à savoir si sa rivalité avec les États-Unis structurera le monde du XXIe siècle comme la guerre froide a structuré le XXe. »
+
+2. C''est un texte officiel qui exprime la position commune des gouvernements, en gommant leurs divisions ; il exprime des intentions, pas des résultats concrets.
+
+3. Exemple : « Le 4 avril 1960, le Sénégal obtient le transfert des compétences qui lui ouvre la voie de l''indépendance. »
+
+4. L''axe Dakar-Touba : un trait épais. Les envois de fonds : des flèches orientées de l''extérieur (Europe, autres pays africains) vers le Sénégal.
+
+5. Vérifiez que votre réponse contient bien : la présentation complète, des citations du texte, au moins trois dates de contexte et une portée nuancée.', 'texte', 75, false, 50
+from public.courses c where c.slug = 'bac-histoire-geographie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive veille du Bac en Histoire-Géographie', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : élèves de Terminale (séries L, S et G) à la veille de l''épreuve d''Histoire-Géographie du Baccalauréat.
+- Objectifs : réactiver les dates et notions essentielles, revoir la méthode de la dissertation, du commentaire et du croquis, s''entraîner à gérer le temps.
+- Matériel : tableau ou diaporama, frise chronologique 1945-2025, fond de carte du Sénégal et planisphère, feuilles de brouillon, crayons de couleur.
+- Prérequis : avoir suivi les leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs de la séance
+
+Bonjour à toutes et à tous. Nous sommes à la veille de l''épreuve, et l''objectif de cette séance n''est pas d''apprendre du nouveau, mais de mettre de l''ordre dans ce que vous savez déjà. Pendant une heure et demie, nous allons revoir les dates qui comptent, les notions que le correcteur attend, et surtout la manière de les utiliser dans une copie. Préparez une feuille et un crayon : je vous poserai des questions et vous répondrez avant que j''affiche la correction.
+
+Visuel : le plan de la séance en six étapes, de la frise chronologique au quiz final.
+
+## 05:00 – 20:00 · La guerre froide en quinze minutes
+
+Commençons par la frise. Je place quatre jalons : 1947, 1962, 1975, 1991. En 1947, la doctrine Truman et le plan Marshall d''un côté, la doctrine Jdanov de l''autre : le monde se coupe en deux. En 1948 et 1949, le blocus de Berlin ; en avril 1949, l''OTAN ; en mai 1955, le pacte de Varsovie. Retenez les trois grandes crises : Berlin, la Corée de 1950 à 1953, Cuba en octobre 1962.
+
+Après Cuba vient la détente : téléphone rouge en 1963, accords SALT I en 1972, Acte final d''Helsinki en 1975. Puis la reprise des tensions : l''URSS entre en Afghanistan en décembre 1979. Enfin, la fin : Gorbatchev arrive au pouvoir en 1985, le mur tombe le 9 novembre 1989, l''URSS disparaît en décembre 1991.
+
+Question au public : quel continent a servi de terrain d''affrontement indirect avec le Congo en 1960 et l''Angola après 1975 ? Réponse : l''Afrique. N''oubliez jamais ces exemples africains dans vos copies.
+
+Visuel : la frise avec les quatre phases en couleurs différentes.
+
+## 20:00 – 32:00 · Décolonisation, Bandung et Sénégal
+
+Deuxième bloc : la décolonisation. Deux voies, à retenir comme un réflexe : la négociation et la guerre. Inde, 15 août 1947, plutôt négociée. Indochine, guerre de 1946 à 1954, avec Diên Biên Phu en mai 1954. Algérie, guerre de 1954 à 1962, avec les accords d''Évian en mars 1962 et l''indépendance le 5 juillet 1962.
+
+Pour l''Afrique noire, mémorisez cette chaîne : Brazzaville 1944, loi Lamine Guèye 1946, loi-cadre Defferre 1956, référendum de septembre 1958, Guinée indépendante le 2 octobre 1958, Ghana le 6 mars 1957 dans l''Afrique britannique. Pour le Sénégal : 4 avril 1960, transfert des compétences ; 20 juin 1960, indépendance de la Fédération du Mali ; 20 août 1960, éclatement de la Fédération.
+
+Puis le Tiers-Monde : Bandung, du 18 au 24 avril 1955, 29 pays d''Asie et d''Afrique ; Belgrade, septembre 1961, naissance du mouvement des non-alignés.
+
+Visuel : carte de l''Afrique colorée selon les décennies d''indépendance.
+
+## 32:00 – 42:00 · L''unité africaine
+
+Troisième bloc : l''unité africaine. Le 25 mai 1963, l''OUA naît à Addis-Abeba avec 32 États. Ses principes : non-ingérence, intangibilité des frontières, lutte contre le colonialisme et l''apartheid. Avant elle, deux groupes s''opposent : Casablanca, partisan d''une union politique rapide autour de Nkrumah, et Monrovia, partisan d''une coopération progressive, auquel appartient le Sénégal de Senghor.
+
+L''Union africaine est lancée à Durban le 9 juillet 2002. Elle se dote d''un Conseil de paix et de sécurité et d''un Parlement panafricain. Ajoutez le NEPAD en 2001, l''Agenda 2063 en 2015 et la ZLECAf : accord signé à Kigali en mars 2018, échanges lancés le 1er janvier 2021. Côté régional : CEDEAO en 1975, UEMOA en 1994.
+
+Question : pourquoi l''OUA a-t-elle maintenu les frontières coloniales ? Réponse : pour éviter des guerres en chaîne, car presque toutes les frontières pouvaient être contestées.
+
+## 42:00 – 50:00 · Pause active et quiz de mi-parcours
+
+Nous faisons une pause de deux minutes, puis un quiz éclair. Répondez par écrit, sans regarder vos notes.
+
+- Question 1 : en quelle année l''OTAN est-elle créée ? Réponse : 1949.
+- Question 2 : que se passe-t-il le 13 août 1961 ? Réponse : la construction du mur de Berlin.
+- Question 3 : quel pays vote « non » au référendum de 1958 ? Réponse : la Guinée.
+- Question 4 : où et quand l''Union africaine est-elle lancée ? Réponse : à Durban, le 9 juillet 2002.
+- Question 5 : que signifie « coexistence pacifique » ? Réponse : la rivalité entre les deux blocs continue, mais sans guerre directe.
+
+Comptez vos points. Quatre ou cinq bonnes réponses : vous êtes prêts. Moins de trois : relisez ce soir vos fiches de dates, et seulement elles.
+
+## 50:00 – 62:00 · Géographie : puissances, ensembles et Sénégal
+
+Passons à la géographie. Pour parler d''une puissance, utilisez toujours la même grille : économie, finance, armée, technologie, culture, et les limites. Les États-Unis cochent toutes les cases. La Chine est la puissance montante depuis les réformes de 1978 : premier exportateur mondial de marchandises, mais vieillissement et inégalités. L''Union européenne est un géant économique mais moins unie politiquement.
+
+Les ensembles régionaux : retenez l''échelle d''intégration, de la zone de libre-échange à l''union économique et monétaire. Exemples : ACEUM, ASEAN, Mercosur, Union européenne, et pour nous la CEDEAO, l''UEMOA et la ZLECAf.
+
+Pour le Sénégal : un carrefour atlantique, le port de Dakar, l''AIBD depuis 2017, le TER depuis décembre 2021, Diamniadio, le pétrole de Sangomar depuis 2024 et le gaz partagé avec la Mauritanie. Limites : déséquilibre Dakar-intérieur, dépendance alimentaire, chômage des jeunes.
+
+Développement et population : croissance n''est pas développement ; l''IDH est compris entre 0 et 1 ; la population mondiale a dépassé 8 milliards en 2022 ; le Sénégal compte un peu plus de 18 millions d''habitants selon le recensement de 2023.
+
+## 62:00 – 75:00 · Correction commentée d''une introduction de dissertation
+
+Prenons un sujet type Bac : « L''Afrique dans les relations internationales de 1955 à 1963 ». Je vous laisse quatre minutes pour analyser le sujet. Que représentent ces bornes ? 1955, c''est Bandung ; 1963, c''est la création de l''OUA. Le sujet porte donc sur l''affirmation du continent sur la scène mondiale.
+
+Voici une copie d''élève fictive : « Après la Seconde Guerre mondiale, l''Afrique était colonisée. Il y a eu beaucoup d''événements. Nous allons voir ce qui s''est passé. » Qu''est-ce qui ne va pas ? Pas d''accroche précise, pas de définition, pas de problématique, pas de plan annoncé.
+
+Version corrigée : « Du 18 au 24 avril 1955, à Bandung, des pays d''Asie et d''Afrique condamnent le colonialisme. Huit ans plus tard, le 25 mai 1963, les États africains indépendants fondent l''OUA à Addis-Abeba. Entre ces deux dates, comment l''Afrique passe-t-elle du statut d''enjeu des puissances à celui d''acteur des relations internationales ? Nous verrons d''abord l''accession aux indépendances dans un monde bipolaire, puis la recherche d''une voix africaine commune, du non-alignement à l''OUA. »
+
+## 75:00 – 82:00 · Gestion du temps et dernière check-list croquis
+
+Le jour J, appliquez la règle des trois temps : un quart du temps pour comprendre le sujet et construire le plan, deux tiers pour rédiger, le reste pour relire. Ne recopiez jamais un brouillon complet.
+
+Pour le commentaire de document, retenez la formule « présenter, prélever, expliquer, critiquer ». Présenter : nature, auteur, date, contexte. Prélever : citer le texte entre guillemets ou reprendre les chiffres exacts. Expliquer : relier chaque information à vos connaissances, avec des dates. Critiquer : se demander qui parle, pour qui, et ce que le document ne dit pas. Un commentaire qui se contente de reformuler le texte reste sous la moyenne, même s''il est bien écrit.
+
+Pour le croquis : un titre, une légende en parties, des figurés cohérents. Surfaces pour les zones, points pour les villes, lignes et flèches pour les axes et les flux. Écrivez les noms à l''horizontale. Une couleur, une signification.
+
+## 82:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : en histoire, quatre blocs, la guerre froide, la décolonisation, le non-alignement et l''unité africaine ; en géographie, les puissances, les ensembles régionaux, l''Afrique et le Sénégal dans la mondialisation, le développement et la population. Dans chaque copie : une problématique, un plan, des dates exactes, des exemples africains.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : quelles sont les deux dates qui encadrent la guerre froide ? Réponse : 1947 et 1991.
+- Question 2 : que décident les accords d''Évian du 18 mars 1962 ? Réponse : un cessez-le-feu et la voie vers l''indépendance de l''Algérie, proclamée le 5 juillet 1962.
+- Question 3 : citez les trois étapes de l''indépendance du Sénégal en 1960. Réponse : 4 avril (transfert des compétences), 20 juin (indépendance de la Fédération du Mali), 20 août (éclatement de la Fédération).
+- Question 4 : quelle différence entre une zone de libre-échange et une union douanière ? Réponse : l''union douanière ajoute un tarif extérieur commun à la suppression des droits de douane entre membres.
+- Question 5 : que mesure l''IDH ? Réponse : le développement humain, à partir de la santé (espérance de vie), de l''éducation et du revenu par habitant.
+
+Mot de la fin : dormez bien ce soir. Une copie claire, organisée et exacte vaut mieux qu''une copie longue. Bonne chance à toutes et à tous.', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-histoire-geographie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive veille du Bac en Histoire-Géographie');
+
+-- Cours : Économie série G : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-economie', (select id from public.levels where name = 'Terminale'), null, 'Économie (série G)', 'Économie série G : réussir l''épreuve du Bac', 'Ce cours prépare les élèves de Terminale série G à l''épreuve d''Économie du Baccalauréat : macroéconomie (agrégats, croissance, développement, inflation, chômage), monnaie et zone UEMOA, commerce international, finances publiques, entreprise et marché. Chaque leçon associe des fiches de cours, des exemples chiffrés en FCFA vérifiés et des exercices corrigés, jusqu''à un sujet d''entraînement complet. Prérequis : savoir calculer un pourcentage, un taux de variation et un indice.', true, 208
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
+
+- Comprendre ce que l''épreuve d''Économie du Baccalauréat série G attend de vous.
+- Connaître les types d''exercices : questions de cours, exercices chiffrés, analyse de document, dissertation économique.
+- Éviter les erreurs les plus fréquentes.
+- Organiser ses révisions sur dix semaines.
+
+## À qui s''adresse ce cours ?
+
+Ce cours s''adresse aux élèves de Terminale de la série G (techniques économiques et de gestion). Il révise le programme d''économie du lycée en insistant sur la Terminale : macroéconomie (agrégats, croissance, développement, inflation, chômage), monnaie et zone UEMOA, commerce international, finances publiques, entreprise et marché. La durée, le coefficient et le barème de l''épreuve sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement.
+
+Prérequis : savoir calculer un pourcentage, un taux de variation et un indice ; connaître les notions de base vues en Seconde et en Première (besoins, biens, agents économiques, circuit économique).
+
+## Ce que l''épreuve évalue
+
+- Des connaissances précises : définitions, mécanismes, relations entre les notions.
+- Des savoir-faire quantitatifs : calculer, lire un tableau, interpréter un résultat.
+- Une capacité d''analyse : expliquer un phénomène par ses causes et ses conséquences.
+- Une capacité d''argumentation : construire un raisonnement organisé et nuancé.
+
+## Type 1 : les questions de cours
+
+On vous demande de définir, distinguer ou expliquer. Une bonne réponse comporte trois éléments : la définition exacte, un mécanisme ou une explication, un exemple concret. Exemple : « Définissez l''inflation. » Réponse attendue : hausse générale et durable du niveau des prix, qui entraîne une baisse du pouvoir d''achat de la monnaie ; elle se mesure par la variation de l''indice des prix à la consommation ; par exemple, si le prix moyen d''un panier de biens passe de 10 000 à 10 300 FCFA en un an, l''inflation est de 3 %.
+
+## Type 2 : les exercices chiffrés
+
+Ce sont souvent les points les plus faciles à gagner, à condition d''être rigoureux.
+
+- Écrire la formule avant de calculer.
+- Poser le calcul avec les unités (FCFA, milliards de FCFA, %).
+- Arrondir à la fin seulement, et indiquer l''arrondi.
+- Interpréter chaque résultat par une phrase : un chiffre sans commentaire ne vaut que la moitié des points.
+
+Les formules à connaître par cœur : taux de variation = (valeur d''arrivée − valeur de départ) / valeur de départ × 100 ; indice = valeur de l''année / valeur de l''année de base × 100 ; coefficient multiplicateur = 1 + taux / 100 ; valeur réelle = valeur nominale / indice des prix × 100.
+
+Exemple : un chiffre d''affaires passe de 40 à 46 millions de FCFA. Taux de variation = (46 − 40) / 40 × 100 = 15 %. Indice base 100 = 46 / 40 × 100 = 115. Interprétation : le chiffre d''affaires a augmenté de 15 % sur la période.
+
+## Type 3 : l''analyse de document
+
+On vous donne un texte, un tableau ou un graphique. Méthode :
+
+- Présenter : nature, source, date, unité, thème.
+- Lire : que mesure chaque chiffre ? Ne confondez pas une valeur, un pourcentage et un indice.
+- Calculer si utile : écarts, taux, parts.
+- Expliquer avec vos connaissances : pourquoi ces évolutions ?
+- Conclure : ce que le document montre et ses limites.
+
+Attention : diminuer de 5 % à 3 % pour un taux d''inflation signifie que les prix augmentent encore, mais moins vite. Les prix ne baissent pas.
+
+## Type 4 : la dissertation économique
+
+Un sujet du type « La croissance économique suffit-elle à assurer le développement ? » se traite comme une dissertation : introduction (accroche, définitions, problématique, annonce du plan), développement en deux ou trois parties argumentées, conclusion (réponse et ouverture). Chaque argument suit le schéma : idée, explication, exemple. Les exemples africains et sénégalais sont attendus.
+
+## Les erreurs les plus fréquentes
+
+- Confondre grandeur nominale et grandeur réelle (en valeur ou en volume).
+- Confondre points de pourcentage et pourcentage : un taux de chômage qui passe de 10 % à 12 % augmente de 2 points, soit de 20 %.
+- Additionner des taux de croissance successifs au lieu de multiplier les coefficients.
+- Donner des chiffres officiels inventés : si vous n''êtes pas sûr, raisonnez sans chiffre.
+- Réciter le cours sans répondre à la question.
+
+Exemple de l''erreur sur les taux successifs : +10 % puis +10 % ne font pas +20 %. Coefficient global = 1,10 × 1,10 = 1,21, soit +21 %.
+
+## Plan de révision sur dix semaines
+
+- Semaine 1 : méthode, formules de base (taux, indices, coefficients), vocabulaire.
+- Semaine 2 : les agrégats (PIB, valeur ajoutée, trois approches du PIB).
+- Semaine 3 : croissance et développement (facteurs, indicateurs, IDH).
+- Semaine 4 : inflation et chômage (mesures, causes, politiques).
+- Semaine 5 : monnaie, création monétaire, BCEAO et UEMOA.
+- Semaine 6 : commerce international (théories, balance des paiements, protectionnisme).
+- Semaine 7 : finances publiques (budget de l''État, impôts, déficit, dette).
+- Semaine 8 : entreprise et marché (coûts, seuil de rentabilité, offre et demande, structures de marché).
+- Semaine 9 : sujets d''entraînement en temps limité.
+- Semaine 10 : fiches de formules et de définitions, repos la veille.
+
+## Points clés
+
+- Définition, mécanisme, exemple : la règle de toute réponse.
+- Formule, calcul, unité, interprétation : la règle de tout exercice chiffré.
+- Distinguer valeur et volume, point et pourcentage.
+- Ne jamais inventer un chiffre officiel.
+
+## Exercices pratiques
+
+1. Définissez en une phrase : agrégat, inflation, chômage.
+2. Le prix d''un sac de riz passe de 15 000 à 16 500 FCFA. Calculez le taux de variation et l''indice base 100.
+3. Un taux d''intérêt passe de 4 % à 5 %. Exprimez cette hausse en points puis en pourcentage.
+4. Les ventes d''une entreprise augmentent de 20 % une année puis baissent de 20 % l''année suivante. Reviennent-elles à leur niveau initial ? Justifiez.
+5. Un salaire nominal augmente de 6 % pendant que les prix augmentent de 4 %. Calculez l''évolution du salaire réel (méthode exacte).
+6. Proposez une problématique et un plan pour le sujet : « L''inflation est-elle toujours un mal pour l''économie ? ».
+
+## Corrigé
+
+1. Un agrégat est une grandeur synthétique qui mesure l''activité de l''ensemble de l''économie (PIB, consommation nationale, investissement). L''inflation est une hausse générale et durable du niveau des prix. Le chômage est la situation des personnes en âge de travailler, sans emploi, disponibles et à la recherche d''un emploi.
+
+2. Taux = (16 500 − 15 000) / 15 000 × 100 = 10 %. Indice = 16 500 / 15 000 × 100 = 110. Le prix a augmenté de 10 %.
+
+3. Hausse de 5 − 4 = 1 point de pourcentage. En pourcentage : (5 − 4) / 4 × 100 = 25 %.
+
+4. Non. Coefficient global = 1,20 × 0,80 = 0,96. Les ventes ont baissé de 4 % par rapport au niveau initial. Exemple : 100 devient 120, puis 120 × 0,80 = 96.
+
+5. Indice du salaire réel = 1,06 / 1,04 × 100 ≈ 101,92. Le salaire réel augmente d''environ 1,92 %, un peu moins que la différence approximative de 2 points.
+
+6. Problématique : l''inflation est-elle seulement un danger, ou peut-elle accompagner la croissance ? I. Une inflation modérée peut accompagner la croissance (stimulation de la production, allègement réel des dettes). II. Une inflation forte est dangereuse (perte de pouvoir d''achat des ménages pauvres, perte de compétitivité, incertitude) ; c''est pourquoi la BCEAO a pour objectif principal la stabilité des prix.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'bac-economie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Macroéconomie : agrégats, croissance, développement, inflation et chômage', '## Objectifs de la leçon
+
+- Calculer la valeur ajoutée et le PIB selon les trois approches.
+- Distinguer croissance nominale et croissance réelle, croissance et développement.
+- Mesurer et expliquer l''inflation et le chômage.
+- Réussir les exercices chiffrés de macroéconomie.
+
+Remarque : les chiffres des exemples portent sur un pays fictif, « le pays A », et sont choisis pour l''exercice. Ce ne sont pas des statistiques officielles.
+
+## Fiche 1 : la valeur ajoutée et le PIB
+
+La valeur ajoutée (VA) mesure la richesse réellement créée par une unité de production : VA = valeur de la production − consommations intermédiaires. Les consommations intermédiaires sont les biens et services détruits ou transformés au cours de la production (matières premières, énergie, transport).
+
+Exemple de filière arachide (sans autres consommations intermédiaires, pour simplifier) : un producteur du bassin arachidier vend sa récolte 1 000 000 FCFA à une huilerie ; l''huilerie vend l''huile 2 500 000 FCFA à un distributeur ; le distributeur la vend 3 200 000 FCFA aux consommateurs. VA du producteur : 1 000 000 ; VA de l''huilerie : 2 500 000 − 1 000 000 = 1 500 000 ; VA du distributeur : 3 200 000 − 2 500 000 = 700 000. Total des VA : 3 200 000 FCFA, soit exactement la valeur du produit final. Additionner les chiffres d''affaires (6 700 000 FCFA) compterait plusieurs fois la même richesse.
+
+Le produit intérieur brut (PIB) mesure la richesse produite pendant une année sur le territoire national, par des unités résidentes. On le calcule de trois façons qui donnent en principe le même résultat.
+
+- Optique production : PIB = somme des valeurs ajoutées + impôts sur les produits − subventions sur les produits.
+- Optique dépenses (emplois) : PIB = consommation finale + formation brute de capital fixe + variation des stocks + exportations − importations.
+- Optique revenus : PIB = rémunération des salariés + excédent brut d''exploitation (et revenu mixte) + impôts sur la production et les importations − subventions.
+
+Exemple pour le pays A (en milliards de FCFA) : consommation finale 7 000 ; FBCF 2 500 ; variation des stocks 100 ; exportations 2 000 ; importations 3 100. PIB = 7 000 + 2 500 + 100 + 2 000 − 3 100 = 8 500 milliards de FCFA.
+
+Le PIB a des limites : il ignore le travail domestique et une partie de l''activité informelle, très importante en Afrique ; il ne mesure ni les inégalités, ni la dégradation de l''environnement.
+
+## Fiche 2 : la croissance économique
+
+La croissance est l''augmentation durable de la production, mesurée par le taux de croissance du PIB réel. Le PIB nominal (en valeur) est mesuré aux prix courants ; le PIB réel (en volume) retire l''effet de la hausse des prix.
+
+Formule : coefficient de variation du volume = coefficient de variation de la valeur / coefficient de variation des prix.
+
+Exemple : le PIB nominal du pays A passe de 8 500 à 9 180 milliards (+8 %) et les prix augmentent de 5 %. Volume : 1,08 / 1,05 ≈ 1,0286. La croissance réelle est d''environ 2,86 %, et non de 3 % comme le donnerait la soustraction approximative.
+
+Les facteurs de la croissance sont le facteur travail (quantité et qualification), le facteur capital (machines, infrastructures) et le progrès technique, qui améliore la productivité.
+
+Le PIB par habitant rapporte le PIB à la population. Si le PIB augmente de 3 % et la population de 3 %, le PIB par habitant stagne (1,03 / 1,03 = 1).
+
+## Fiche 3 : le développement
+
+Le développement est l''ensemble des transformations économiques, sociales et culturelles qui améliorent durablement le bien-être de la population. Il est mesuré notamment par l''indice de développement humain (IDH) du PNUD, compris entre 0 et 1, qui combine santé (espérance de vie), éducation (durée de scolarisation) et niveau de vie (revenu par habitant).
+
+Il peut y avoir croissance sans développement : richesse concentrée, rente pétrolière ou minière mal redistribuée.
+
+## Fiche 4 : l''inflation
+
+L''inflation est une hausse générale et durable du niveau des prix. Elle se mesure par l''indice des prix à la consommation (IPC), calculé sur un panier de biens et services représentatif. Taux d''inflation = (IPC de l''année − IPC de l''année précédente) / IPC de l''année précédente × 100.
+
+- Inflation par la demande : la demande dépasse les capacités de production.
+- Inflation par les coûts : hausse des salaires, de l''énergie, des matières premières.
+- Inflation importée : hausse du prix des produits importés (riz, blé, carburant), très sensible dans les pays qui importent beaucoup.
+- Inflation d''origine monétaire : la quantité de monnaie augmente plus vite que la production.
+
+Conséquences : baisse du pouvoir d''achat, surtout pour les revenus fixes ; perte de compétitivité des exportations ; allègement réel des dettes.
+
+## Fiche 5 : le chômage
+
+Selon la définition du Bureau international du travail (BIT), un chômeur est une personne en âge de travailler, sans emploi, disponible pour travailler et qui recherche activement un emploi. La population active regroupe les actifs occupés et les chômeurs.
+
+- Taux de chômage = chômeurs / population active × 100.
+- Taux d''activité = population active / population en âge de travailler × 100.
+
+Exemple pour le pays A : 4 200 000 actifs occupés et 300 000 chômeurs. Population active = 4 500 000. Taux de chômage = 300 000 / 4 500 000 × 100 ≈ 6,67 %.
+
+Types de chômage : frictionnel (temps de passage d''un emploi à l''autre), conjoncturel (lié au ralentissement de l''activité), structurel (inadéquation entre les qualifications et les emplois). En Afrique, le chômage au sens strict ne suffit pas : il faut aussi considérer le sous-emploi et l''emploi informel, souvent précaire.
+
+## Points clés
+
+- VA = production − consommations intermédiaires ; PIB = somme des VA (+ impôts nets sur les produits).
+- Réel = nominal / prix : on divise les coefficients, on ne soustrait pas les taux.
+- Croissance (quantité) et développement (qualité de vie) ne se confondent pas.
+- Taux de chômage = chômeurs / population active.
+
+## Exercices pratiques
+
+1. Une boulangerie de Thiès réalise un chiffre d''affaires de 18 000 000 FCFA ; elle achète pour 7 500 000 FCFA de farine, 1 200 000 FCFA d''énergie et 800 000 FCFA d''emballages. Calculez sa valeur ajoutée.
+2. Avec les données suivantes (milliards de FCFA) : consommation finale 5 200, FBCF 1 600, variation des stocks −50, exportations 1 100, importations 1 850, calculez le PIB.
+3. L''IPC passe de 125 à 130. Calculez le taux d''inflation.
+4. Le PIB nominal augmente de 7 % et les prix de 2,5 %. Calculez la croissance réelle.
+5. Un pays compte 6 000 000 de personnes en âge de travailler, dont 3 900 000 actifs occupés et 600 000 chômeurs. Calculez la population active, le taux d''activité et le taux de chômage.
+6. Le PIB réel augmente de 4 % et la population de 2,7 %. Calculez l''évolution du PIB réel par habitant.
+7. Expliquez pourquoi un pays importateur de riz et de carburant est exposé à l''inflation importée, et proposez une réponse de politique économique.
+
+## Corrigé
+
+1. Consommations intermédiaires = 7 500 000 + 1 200 000 + 800 000 = 9 500 000 FCFA. VA = 18 000 000 − 9 500 000 = 8 500 000 FCFA.
+
+2. PIB = 5 200 + 1 600 − 50 + 1 100 − 1 850 = 6 000 milliards de FCFA.
+
+3. (130 − 125) / 125 × 100 = 4 %.
+
+4. 1,07 / 1,025 ≈ 1,0439. Croissance réelle d''environ 4,39 %.
+
+5. Population active = 3 900 000 + 600 000 = 4 500 000. Taux d''activité = 4 500 000 / 6 000 000 × 100 = 75 %. Taux de chômage = 600 000 / 4 500 000 × 100 ≈ 13,33 %.
+
+6. 1,04 / 1,027 ≈ 1,0127. Le PIB réel par habitant augmente d''environ 1,27 %.
+
+7. Quand le prix mondial du riz ou du pétrole augmente, le coût de ces importations augmente pour les commerçants et les entreprises, qui répercutent la hausse sur les prix intérieurs. Réponses possibles : développer la production locale (riz de la vallée du fleuve Sénégal, par exemple), diversifier les sources d''énergie, mesures ciblées de soutien aux ménages modestes, et, à l''échelle de l''UEMOA, une politique monétaire de la BCEAO orientée vers la stabilité des prix.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bac-economie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Macroéconomie : agrégats, croissance, développement, inflation et chômage');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Monnaie, UEMOA-BCEAO et commerce international', '## Objectifs de la leçon
+
+- Connaître les fonctions et les formes de la monnaie, et le mécanisme de la création monétaire.
+- Comprendre, de façon générale, l''organisation monétaire de l''UEMOA et le rôle de la BCEAO.
+- Expliquer les théories du commerce international et lire une balance commerciale.
+- Comparer libre-échange et protectionnisme.
+
+## Fiche 1 : la monnaie
+
+La monnaie est un actif accepté par tous en paiement des biens, des services et des dettes. Elle remplit trois fonctions :
+
+- Intermédiaire des échanges : elle évite les difficultés du troc.
+- Unité de compte : elle permet d''exprimer la valeur de tous les biens dans une même unité (le franc CFA).
+- Réserve de valeur : elle permet de reporter une dépense dans le temps, à condition que l''inflation reste faible.
+
+Formes : monnaie divisionnaire (pièces), monnaie fiduciaire (billets), monnaie scripturale (soldes des comptes bancaires, utilisés par chèque, virement ou carte) et monnaie électronique, très répandue en Afrique de l''Ouest grâce aux services de paiement par téléphone mobile.
+
+La masse monétaire est la quantité de monnaie en circulation dans l''économie. On la décrit par des agrégats emboîtés, du plus liquide au moins liquide : M1 regroupe la monnaie fiduciaire en circulation et les dépôts à vue ; M2 ajoute d''autres dépôts, comme certains dépôts d''épargne.
+
+## Fiche 2 : la création monétaire
+
+Ce sont surtout les banques commerciales qui créent la monnaie, en accordant des crédits : « les crédits font les dépôts ». Quand une banque prête 5 000 000 FCFA à un commerçant de Kaolack, elle inscrit cette somme sur son compte : de la monnaie nouvelle apparaît. Quand le crédit est remboursé, cette monnaie est détruite.
+
+La création monétaire est limitée par les besoins de liquidité des banques (retraits de billets, paiements vers d''autres banques) et par les réserves obligatoires qu''elles doivent déposer à la banque centrale. Dans un modèle simplifié, le multiplicateur de crédit vaut 1 / r, où r est le taux de réserves. Avec un taux fictif de 10 % choisi pour l''exemple, une injection de 100 millions de FCFA de monnaie centrale peut permettre au maximum 100 / 0,10 = 1 000 millions de FCFA de dépôts.
+
+## Fiche 3 : l''UEMOA et la BCEAO
+
+L''Union économique et monétaire ouest-africaine (UEMOA), créée par le traité de Dakar du 10 janvier 1994, regroupe huit États : Bénin, Burkina Faso, Côte d''Ivoire, Guinée-Bissau (membre depuis 1997), Mali, Niger, Sénégal et Togo. Ils partagent une monnaie commune, le franc CFA, émise par la Banque centrale des États de l''Afrique de l''Ouest (BCEAO), dont le siège est à Dakar.
+
+- Parité fixe : le franc CFA est rattaché à l''euro selon une parité fixe, 1 euro = 655,957 FCFA.
+- Dévaluation de janvier 1994 : la valeur du franc CFA a été divisée par deux par rapport au franc français.
+- Objectif principal de la BCEAO : la stabilité des prix. Elle agit par ses taux directeurs (qui renchérissent ou allègent le refinancement des banques), par les réserves obligatoires et par les opérations d''injection de liquidités.
+- Surveillance multilatérale : les États s''engagent à respecter des critères de convergence portant notamment sur l''inflation, le déficit budgétaire et la dette publique ; les seuils précis sont fixés par les textes de l''Union en vigueur.
+
+Avantages de la parité fixe : stabilité des échanges avec la zone euro, inflation généralement plus faible, crédibilité. Inconvénients : impossibilité d''ajuster le taux de change pour soutenir les exportations, politique monétaire commune qui ne convient pas toujours à chaque pays, débat sur la souveraineté monétaire.
+
+## Fiche 4 : pourquoi les pays échangent-ils ?
+
+Adam Smith (1776) : la théorie des avantages absolus. Chaque pays se spécialise dans la production où il est le plus efficace, et importe le reste.
+
+David Ricardo (1817) : la théorie des avantages comparatifs. Même un pays moins efficace en tout gagne à se spécialiser dans la production où son désavantage est le plus faible. Exemple classique de Ricardo : pour produire une même quantité de drap, l''Angleterre a besoin de 100 heures de travail et le Portugal de 90 ; pour le vin, l''Angleterre a besoin de 120 heures et le Portugal de 80. Le Portugal a un avantage absolu dans les deux productions. Mais, en Angleterre, une unité de drap coûte 100 / 120 ≈ 0,83 unité de vin, contre 90 / 80 = 1,125 au Portugal : l''Angleterre a un avantage comparatif dans le drap, le Portugal dans le vin.
+
+Théorie HOS (Heckscher, Ohlin, Samuelson) : chaque pays se spécialise dans les productions qui utilisent intensément le facteur dont il est abondamment doté (travail, terre, capital). Limite pour l''Afrique : une spécialisation dans les matières premières expose aux variations des cours mondiaux et à la dégradation des termes de l''échange.
+
+## Fiche 5 : mesurer les échanges
+
+- Solde commercial = exportations − importations de biens.
+- Taux de couverture = exportations / importations × 100. Supérieur à 100 : excédent ; inférieur à 100 : déficit.
+- Termes de l''échange = indice des prix à l''exportation / indice des prix à l''importation × 100. S''ils baissent, il faut exporter davantage pour importer la même quantité.
+
+La balance des paiements enregistre toutes les opérations entre résidents et non-résidents : le compte courant (biens, services, revenus primaires, revenus secondaires dont les envois de fonds des migrants), le compte de capital et le compte financier (investissements directs, investissements de portefeuille, prêts).
+
+## Fiche 6 : libre-échange ou protectionnisme ?
+
+Le libre-échange élargit les marchés, fait baisser les prix pour les consommateurs et stimule la concurrence. Le protectionnisme (droits de douane, quotas, normes, subventions) protège les industries naissantes : c''est le « protectionnisme éducateur » défendu par Friedrich List au XIXe siècle. En Afrique de l''Ouest, la CEDEAO applique un tarif extérieur commun et l''Afrique construit la ZLECAf pour développer les échanges entre pays africains.
+
+## Points clés
+
+- Trois fonctions de la monnaie ; les crédits font les dépôts.
+- UEMOA : huit États, BCEAO à Dakar, 1 euro = 655,957 FCFA, objectif de stabilité des prix.
+- Smith : avantage absolu ; Ricardo : avantage comparatif.
+- Taux de couverture = X / M × 100 ; termes de l''échange = prix X / prix M × 100.
+
+## Exercices pratiques
+
+1. Citez les trois fonctions de la monnaie et illustrez chacune par un exemple sénégalais.
+2. Une banque accorde un crédit de 3 000 000 FCFA à une couturière de Thiès. Expliquez ce qui se passe sur la masse monétaire au moment du crédit et au moment du remboursement.
+3. Un exportateur de mangues reçoit 45 000 euros. Combien de FCFA obtient-il ?
+4. Exportations : 2 400 milliards de FCFA ; importations : 3 600 milliards. Calculez le solde commercial et le taux de couverture.
+5. L''indice des prix à l''exportation passe à 96 et celui des prix à l''importation à 120 (base 100). Calculez les termes de l''échange et interprétez.
+6. Pays X : 1 tonne de produit A demande 20 heures, 1 tonne de produit B 40 heures. Pays Y : 30 heures pour A, 45 heures pour B. Identifiez les avantages absolus et comparatifs.
+
+## Corrigé
+
+1. Intermédiaire des échanges : on paie son ticket de bus en francs CFA. Unité de compte : le prix d''un sac de riz est exprimé en FCFA. Réserve de valeur : un parent épargne sur un compte pour la rentrée scolaire.
+
+2. Au moment du crédit, la banque inscrit 3 000 000 FCFA sur le compte de la couturière : la masse monétaire augmente de 3 000 000 FCFA. Au remboursement, cette monnaie est détruite : la masse monétaire diminue d''autant (les intérêts, eux, rémunèrent la banque).
+
+3. 45 000 × 655,957 = 29 518 065 FCFA.
+
+4. Solde = 2 400 − 3 600 = −1 200 milliards (déficit). Taux de couverture = 2 400 / 3 600 × 100 ≈ 66,67 %.
+
+5. 96 / 120 × 100 = 80. Les termes de l''échange se sont dégradés de 20 % : le pays doit exporter davantage pour importer la même quantité de biens.
+
+6. Le pays X a un avantage absolu dans les deux produits (20 < 30 et 40 < 45). Coût relatif de A en B : X, 20 / 40 = 0,5 ; Y, 30 / 45 ≈ 0,67. X a un avantage comparatif en A. Coût relatif de B en A : X, 40 / 20 = 2 ; Y, 45 / 30 = 1,5. Y a un avantage comparatif en B.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bac-economie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Monnaie, UEMOA-BCEAO et commerce international');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Finances publiques, entreprise et marché', '## Objectifs de la leçon
+
+- Comprendre le budget de l''État, les impôts, le déficit et la dette publique.
+- Expliquer la politique budgétaire et l''effet multiplicateur.
+- Calculer les coûts et le seuil de rentabilité d''une entreprise.
+- Analyser l''équilibre d''un marché et les différentes structures de marché.
+
+## Fiche 1 : le budget de l''État
+
+Le budget de l''État est l''ensemble des recettes et des dépenses prévues pour une année. Il est présenté par le gouvernement dans le projet de loi de finances et voté par l''Assemblée nationale : c''est la loi de finances initiale.
+
+- Recettes : recettes fiscales (impôts et taxes), recettes non fiscales (revenus du domaine de l''État, redevances), dons des partenaires extérieurs.
+- Dépenses : dépenses de fonctionnement (salaires des fonctionnaires, achats courants), dépenses d''investissement (routes, écoles, hôpitaux), charges de la dette (intérêts).
+- Solde budgétaire = recettes − dépenses. S''il est négatif, il y a déficit, financé par l''emprunt ; l''accumulation des déficits forme la dette publique.
+
+On rapporte souvent le déficit et la dette au PIB pour comparer les pays. Exemple fictif : un déficit de 450 milliards de FCFA pour un PIB de 9 000 milliards représente 450 / 9 000 × 100 = 5 % du PIB.
+
+## Fiche 2 : les impôts
+
+- Impôts directs : payés et supportés par la même personne, par exemple l''impôt sur le revenu des personnes physiques ou l''impôt sur les sociétés.
+- Impôts indirects : payés par l''entreprise mais supportés par le consommateur final, par exemple la taxe sur la valeur ajoutée (TVA) ou les droits de douane.
+
+La TVA est collectée à chaque étape mais ne pèse que sur le consommateur final, car chaque entreprise déduit la TVA payée sur ses achats. Exemple avec un taux de 18 % utilisé ici pour l''exemple (vérifiez le taux en vigueur) : un commerçant achète un téléviseur 200 000 FCFA hors taxes et le revend 260 000 FCFA hors taxes. TVA collectée = 260 000 × 0,18 = 46 800 FCFA ; TVA déductible = 200 000 × 0,18 = 36 000 FCFA ; TVA à reverser = 10 800 FCFA, soit 18 % de la valeur ajoutée de 60 000 FCFA. Le client paie 260 000 + 46 800 = 306 800 FCFA toutes taxes comprises.
+
+## Fiche 3 : la politique budgétaire
+
+La politique budgétaire utilise les recettes et les dépenses publiques pour agir sur l''activité. Une politique de relance augmente les dépenses ou baisse les impôts pour soutenir la demande ; une politique de rigueur réduit le déficit.
+
+Selon Keynes, une dépense publique supplémentaire provoque une augmentation plus que proportionnelle du revenu national : c''est l''effet multiplicateur. Dans le modèle simple, k = 1 / (1 − c), où c est la propension marginale à consommer. Si c = 0,8, k = 1 / 0,2 = 5 : une dépense supplémentaire de 100 milliards peut accroître le revenu de 500 milliards au maximum. Limites : une partie du revenu sert à acheter des produits importés (fuites), le déficit alourdit la dette, et la hausse de la demande peut provoquer de l''inflation.
+
+## Fiche 4 : l''entreprise et ses coûts
+
+L''entreprise combine des facteurs de production (travail et capital) pour produire des biens ou des services vendus sur un marché.
+
+- Coûts fixes (CF) : indépendants des quantités produites (loyer, assurance).
+- Coûts variables (CV) : liés aux quantités (matières premières, emballages).
+- Coût total : CT = CF + CV ; coût moyen : CM = CT / Q ; coût marginal : coût de la dernière unité produite.
+
+Le seuil de rentabilité est le chiffre d''affaires pour lequel l''entreprise ne fait ni bénéfice ni perte. Marge sur coût variable (MCV) = chiffre d''affaires − coûts variables ; taux de MCV = MCV / CA ; seuil de rentabilité = CF / taux de MCV.
+
+Exemple : une unité de transformation de céréales à Kaolack réalise un chiffre d''affaires annuel de 60 000 000 FCFA, avec 36 000 000 FCFA de coûts variables et 18 000 000 FCFA de coûts fixes. MCV = 24 000 000 ; taux de MCV = 40 % ; seuil = 18 000 000 / 0,40 = 45 000 000 FCFA. Résultat = 24 000 000 − 18 000 000 = 6 000 000 FCFA. Avec une activité régulière, le seuil est atteint après 45 / 60 × 12 = 9 mois.
+
+## Fiche 5 : le marché
+
+Le marché est le lieu, réel ou virtuel, de rencontre entre l''offre et la demande. En général, la demande diminue quand le prix augmente et l''offre augmente quand le prix augmente. Le prix d''équilibre égalise les quantités offertes et demandées.
+
+Exemple : demande Qd = 1 000 − 2P et offre Qo = 3P − 500. À l''équilibre, 1 000 − 2P = 3P − 500, donc 5P = 1 500 et P = 300 ; Q = 1 000 − 600 = 400.
+
+L''élasticité-prix de la demande = variation relative de la quantité / variation relative du prix. Si le prix augmente de 10 % et la quantité demandée baisse de 5 %, l''élasticité vaut −0,5 : la demande est peu élastique, comme pour les biens de première nécessité.
+
+Structures de marché :
+
+- Concurrence pure et parfaite : atomicité, homogénéité du produit, libre entrée, transparence de l''information, mobilité des facteurs. Aucun agent n''influence le prix.
+- Monopole : un seul vendeur, qui peut fixer le prix.
+- Oligopole : quelques grandes entreprises, comme souvent dans la téléphonie ou le ciment.
+- Concurrence monopolistique : beaucoup de vendeurs aux produits différenciés par la marque ou la qualité.
+
+Quand l''État fixe un prix plafond en dessous du prix d''équilibre, la demande dépasse l''offre : risque de pénurie et de marché parallèle.
+
+## Points clés
+
+- Solde budgétaire = recettes − dépenses ; dette = accumulation des déficits.
+- La TVA porte sur la valeur ajoutée et pèse sur le consommateur final.
+- k = 1 / (1 − c).
+- Seuil de rentabilité = CF / taux de MCV.
+
+## Exercices pratiques
+
+1. Distinguez impôt direct et impôt indirect, avec un exemple de chacun.
+2. Recettes de l''État : 3 800 milliards de FCFA ; dépenses : 4 300 milliards ; PIB : 12 500 milliards. Calculez le solde budgétaire et son poids dans le PIB.
+3. Taux de TVA de 18 % utilisé pour l''exercice : un grossiste achète des marchandises 500 000 FCFA HT et les revend 650 000 FCFA HT. Calculez la TVA collectée, la TVA déductible et la TVA à reverser.
+4. La propension marginale à consommer est de 0,75. Calculez le multiplicateur et l''effet maximal d''une dépense publique supplémentaire de 40 milliards de FCFA.
+5. Une entreprise de jus de bissap a des coûts fixes de 4 500 000 FCFA, vend 30 000 bouteilles à 500 FCFA, avec un coût variable unitaire de 200 FCFA. Calculez le résultat et le seuil de rentabilité en valeur et en quantité.
+6. Demande : Qd = 800 − 4P ; offre : Qo = 2P − 100. Déterminez l''équilibre.
+
+## Corrigé
+
+1. L''impôt direct est payé et supporté par le même contribuable (impôt sur le revenu, impôt sur les sociétés). L''impôt indirect est payé par une entreprise mais répercuté sur le consommateur (TVA, droits de douane).
+
+2. Solde = 3 800 − 4 300 = −500 milliards (déficit). Poids : 500 / 12 500 × 100 = 4 % du PIB.
+
+3. TVA collectée = 650 000 × 0,18 = 117 000 FCFA. TVA déductible = 500 000 × 0,18 = 90 000 FCFA. TVA à reverser = 27 000 FCFA (18 % de la valeur ajoutée de 150 000 FCFA).
+
+4. k = 1 / (1 − 0,75) = 4. Effet maximal : 40 × 4 = 160 milliards de FCFA.
+
+5. CA = 30 000 × 500 = 15 000 000 FCFA. CV = 30 000 × 200 = 6 000 000 FCFA. MCV = 9 000 000 FCFA ; taux de MCV = 60 %. Résultat = 9 000 000 − 4 500 000 = 4 500 000 FCFA. Seuil en valeur = 4 500 000 / 0,60 = 7 500 000 FCFA. Seuil en quantité = 7 500 000 / 500 = 15 000 bouteilles (vérification : 4 500 000 / 300 de marge unitaire = 15 000).
+
+6. 800 − 4P = 2P − 100, donc 6P = 900 et P = 150. Q = 800 − 600 = 200.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bac-economie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Finances publiques, entreprise et marché');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : entraînement corrigé', '## Présentation
+
+Ce sujet est un sujet d''entraînement conçu pour ce cours ; ce n''est pas un sujet officiel du Baccalauréat. Il combine les types d''exercices habituels de l''épreuve d''Économie en série G. La répartition des points est indicative et non officielle ; la durée, le coefficient et le barème réels sont fixés selon les textes officiels en vigueur. Tous les chiffres concernent un pays fictif, le « pays B », et ont été choisis pour l''exercice.
+
+## Le sujet d''entraînement
+
+Première partie : questions de cours (5 points, indicatif).
+
+- a) Définissez le PIB et citez ses trois optiques de calcul.
+- b) Distinguez chômage frictionnel et chômage structurel.
+- c) Expliquez la phrase : « les crédits font les dépôts ».
+- d) Quel est l''objectif principal de la politique monétaire de la BCEAO ?
+
+Deuxième partie : exercice chiffré (7 points, indicatif). Données du pays B (en milliards de FCFA, sauf indication) :
+
+- PIB nominal : année N, 10 000 ; année N+1, 10 815.
+- Indice des prix (base 100 en N) : 103 en N+1.
+- Population : 16 millions en N ; 16,4 millions en N+1.
+- Exportations de biens : 2 500 en N ; 2 700 en N+1.
+- Importations de biens : 3 400 en N ; 3 600 en N+1.
+- En N+1 : 7,2 millions d''actifs, dont 0,9 million de chômeurs.
+
+Questions : 1) Calculez le taux de croissance nominale puis réelle du PIB. 2) Calculez le PIB nominal par habitant en N et en N+1, puis l''évolution du PIB réel par habitant. 3) Calculez le solde commercial et le taux de couverture pour les deux années ; commentez. 4) Calculez le taux de chômage en N+1. 5) Rédigez un court commentaire d''ensemble.
+
+Troisième partie : réflexion argumentée (8 points, indicatif). Sujet : « La croissance économique suffit-elle à assurer le développement d''un pays africain ? »
+
+## Corrigé de la première partie
+
+a) Le PIB est la valeur de la production de biens et services réalisée pendant une année par les unités résidentes sur le territoire national. Trois optiques : production (somme des valeurs ajoutées plus impôts nets sur les produits), dépenses (consommation finale + FBCF + variation des stocks + exportations − importations), revenus (rémunération des salariés + excédent brut d''exploitation + impôts nets sur la production et les importations).
+
+b) Le chômage frictionnel correspond au temps nécessaire pour passer d''un emploi à un autre ou pour trouver un premier emploi ; il est court. Le chômage structurel vient d''un décalage durable entre les qualifications des travailleurs et les emplois proposés, ou de transformations profondes de l''économie.
+
+c) Quand une banque accorde un crédit, elle crée de la monnaie scripturale en créditant le compte de l''emprunteur. Le dépôt naît du crédit, et non l''inverse.
+
+d) La stabilité des prix, qui préserve le pouvoir d''achat de la monnaie commune des États de l''UEMOA.
+
+## Corrigé de la deuxième partie
+
+1) Croissance nominale = (10 815 − 10 000) / 10 000 × 100 = 8,15 %. Croissance réelle : 1,0815 / 1,03 = 1,05, soit 5 %. Sur 8,15 % de hausse en valeur, environ 3 % s''expliquent par les prix ; la production a réellement augmenté de 5 %.
+
+2) PIB par habitant en N = 10 000 milliards / 16 millions = 625 000 FCFA. En N+1 = 10 815 milliards / 16,4 millions ≈ 659 451 FCFA. Population : 16,4 / 16 = 1,025, soit +2,5 %. PIB réel par habitant : 1,05 / 1,025 ≈ 1,0244, soit une hausse d''environ 2,44 %.
+
+3) Solde en N = 2 500 − 3 400 = −900 milliards ; en N+1 = 2 700 − 3 600 = −900 milliards. Taux de couverture en N = 2 500 / 3 400 × 100 ≈ 73,53 % ; en N+1 = 2 700 / 3 600 × 100 = 75 %. Le déficit reste le même en valeur, mais la couverture des importations par les exportations s''améliore légèrement.
+
+4) Taux de chômage = 0,9 / 7,2 × 100 = 12,5 %.
+
+5) Commentaire : le pays B connaît une croissance réelle solide (5 %), mais la forte croissance démographique (2,5 %) réduit de moitié environ le gain par habitant. La balance commerciale reste déficitaire, signe d''une dépendance aux importations. Le chômage, à 12,5 %, montre que la croissance ne crée pas assez d''emplois.
+
+## Corrigé de la troisième partie (plan détaillé)
+
+Introduction : accroche sur les fortes croissances observées dans plusieurs pays africains depuis les années 2000, sans recul équivalent de la pauvreté. Définitions : la croissance est l''augmentation durable de la production réelle ; le développement est l''amélioration durable des conditions de vie de toute la population. Problématique : la croissance est-elle une condition suffisante, ou seulement nécessaire, du développement ? Annonce du plan.
+
+I. La croissance est une condition nécessaire du développement.
+
+- Elle augmente les revenus et permet aux ménages de mieux se nourrir, se soigner, se loger.
+- Elle accroît les recettes fiscales et finance écoles, hôpitaux, routes, électricité.
+- Elle crée des emplois quand elle s''appuie sur l''agriculture, l''industrie de transformation et les services.
+
+II. Mais elle ne suffit pas.
+
+- La croissance peut être concentrée : rente pétrolière ou minière qui profite à peu de personnes.
+- Une croissance démographique rapide peut absorber les gains (exercice précédent).
+- Une croissance sans emplois laisse les jeunes dans le chômage ou l''informel.
+- Une croissance qui détruit l''environnement compromet l''avenir (développement durable).
+
+III. Les conditions pour transformer la croissance en développement.
+
+- Investir dans le capital humain : éducation, formation professionnelle, santé.
+- Transformer localement les matières premières (arachide, phosphates, produits de la pêche) pour créer de la valeur ajoutée.
+- Bonne gouvernance des ressources et redistribution par le budget de l''État.
+- Intégration régionale (UEMOA, CEDEAO, ZLECAf) pour élargir les marchés.
+
+Conclusion : la croissance est nécessaire mais insuffisante ; tout dépend de son contenu en emplois, de sa répartition et de sa durabilité. Ouverture : le défi des ressources pétrolières et gazières récentes du Sénégal sera justement de les transformer en développement.
+
+## Conseils du correcteur
+
+- Dans l''exercice chiffré, écrivez toujours la formule, puis le calcul, puis une phrase d''interprétation.
+- Divisez les coefficients pour passer du nominal au réel ; ne soustrayez pas les taux.
+- Dans la réflexion, chaque argument doit contenir une explication et un exemple.
+- N''inventez aucun chiffre officiel : raisonnez sur les données fournies.
+
+## Exercices pratiques
+
+1. Reprenez la question 1 si l''indice des prix était de 106 en N+1.
+2. Calculez le taux d''activité du pays B si la population en âge de travailler est de 10 millions en N+1.
+3. Si les importations du pays B augmentaient de 10 % en N+2, quel niveau d''exportations faudrait-il atteindre pour obtenir un taux de couverture de 80 % ?
+4. Rédigez l''introduction complète de la troisième partie.
+5. Proposez un argument supplémentaire pour la partie II, avec un exemple.
+
+## Corrigé
+
+1. 1,0815 / 1,06 ≈ 1,0203 : croissance réelle d''environ 2,03 %.
+
+2. 7,2 / 10 × 100 = 72 %.
+
+3. Importations en N+2 = 3 600 × 1,10 = 3 960 milliards. Exportations nécessaires = 0,80 × 3 960 = 3 168 milliards de FCFA.
+
+4. Exemple : « Depuis le début des années 2000, plusieurs économies africaines ont connu des taux de croissance élevés, sans que la pauvreté et le chômage des jeunes reculent autant. La croissance désigne l''augmentation durable de la production réelle d''un pays ; le développement, l''amélioration durable des conditions de vie de l''ensemble de la population. La croissance suffit-elle à produire le développement, ou n''en est-elle qu''une condition ? Nous montrerons qu''elle est nécessaire, puis qu''elle ne suffit pas, avant de dégager les conditions d''une croissance au service du développement. »
+
+5. Exemple : la croissance peut s''accompagner d''inégalités régionales. Au Sénégal, une forte concentration des activités autour de Dakar peut faire progresser le PIB sans améliorer autant les conditions de vie dans les régions de l''intérieur.', 'texte', 75, false, 50
+from public.courses c where c.slug = 'bac-economie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive veille du Bac en Économie', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : élèves de Terminale série G à la veille de l''épreuve d''Économie du Baccalauréat.
+- Objectifs : revoir les définitions et formules essentielles, refaire des exercices chiffrés type Bac, réviser la méthode de la réflexion argumentée, apprendre à gérer son temps.
+- Matériel : tableau ou diaporama, calculatrice, fiche de formules, feuilles de brouillon.
+- Prérequis : avoir suivi les leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et règles de la séance
+
+Bonjour à toutes et à tous. Demain, c''est l''épreuve. Ce soir, pas de nouveauté : nous consolidons. La séance suit un fil simple : les formules, les notions, les exercices, la méthode, puis un quiz et une évaluation finale. Gardez votre calculatrice à portée de main. Quand je pose une question, notez votre réponse avant de regarder la correction ; c''est ainsi que l''on retient.
+
+Visuel : le plan de la séance et la règle d''or de l''épreuve, « formule, calcul, unité, interprétation ».
+
+## 05:00 – 18:00 · Les formules qui rapportent des points
+
+Première série : les outils de calcul. Taux de variation : valeur d''arrivée moins valeur de départ, divisé par la valeur de départ, fois 100. Indice : valeur de l''année divisée par la valeur de base, fois 100. Coefficient multiplicateur : 1 plus le taux divisé par 100.
+
+Le piège numéro un : les taux successifs. Une hausse de 20 % suivie d''une baisse de 20 % ne ramène pas au point de départ. On multiplie : 1,20 fois 0,80 égale 0,96. On a perdu 4 %.
+
+Le piège numéro deux : le passage du nominal au réel. On divise les coefficients. Si le PIB nominal augmente de 9 % et les prix de 4 %, le volume vaut 1,09 divisé par 1,04, soit environ 1,0481. La croissance réelle est d''environ 4,81 %, pas 5 %.
+
+Le piège numéro trois : points et pourcentages. Un taux de chômage qui passe de 8 % à 10 % augmente de 2 points, mais de 25 % en valeur relative.
+
+Question au public : un indice passe de 120 à 132. De combien de pour cent la grandeur a-t-elle augmenté ? Réponse : 12 divisé par 120, soit 10 %, et non 12 %.
+
+## 18:00 – 30:00 · Les notions de macroéconomie et de monnaie
+
+Deuxième série : les notions. La valeur ajoutée égale la production moins les consommations intermédiaires. Le PIB se calcule selon trois optiques : production, dépenses, revenus. L''optique dépenses s''écrit : consommation finale plus FBCF plus variation des stocks plus exportations moins importations.
+
+Croissance et développement : la croissance est quantitative, le développement est qualitatif, mesuré notamment par l''IDH. L''inflation est une hausse générale et durable des prix, mesurée par l''indice des prix à la consommation ; elle peut venir de la demande, des coûts, de l''extérieur ou de la monnaie. Le chômage, au sens du BIT : sans emploi, disponible, en recherche active. Taux de chômage égale chômeurs sur population active.
+
+Monnaie : trois fonctions, intermédiaire des échanges, unité de compte, réserve de valeur. Les banques créent la monnaie en accordant des crédits. Dans l''UEMOA, huit États partagent le franc CFA émis par la BCEAO, dont le siège est à Dakar, avec une parité fixe : 1 euro égale 655,957 francs CFA. L''objectif principal de la BCEAO est la stabilité des prix.
+
+Visuel : une carte de l''UEMOA avec les huit États et Dakar signalé.
+
+## 30:00 – 42:00 · Commerce international et finances publiques
+
+Troisième série. Adam Smith : avantage absolu. David Ricardo : avantage comparatif, avec son exemple du drap et du vin entre l''Angleterre et le Portugal. Retenez la méthode : on compare les coûts relatifs, c''est-à-dire ce que coûte un produit exprimé en quantité de l''autre produit.
+
+Taux de couverture : exportations sur importations, fois 100. Termes de l''échange : indice des prix à l''exportation sur indice des prix à l''importation, fois 100. Si les termes de l''échange baissent, il faut exporter plus pour importer autant.
+
+Finances publiques : le solde budgétaire égale recettes moins dépenses. Un solde négatif est un déficit, financé par l''emprunt, et l''accumulation des déficits forme la dette. Les impôts directs sont supportés par celui qui les paie ; les impôts indirects, comme la TVA, sont répercutés sur le consommateur final. Multiplicateur keynésien : k égale 1 sur 1 moins c. Avec c égal à 0,8, k égale 5.
+
+Question au public : pourquoi le multiplicateur réel est-il plus faible dans une économie qui importe beaucoup ? Réponse : parce qu''une partie du revenu supplémentaire sert à acheter des produits étrangers et ne relance pas la production nationale.
+
+## 42:00 – 50:00 · Pause active et quiz de mi-parcours
+
+Deux minutes de pause, puis cinq questions éclair. Répondez par écrit.
+
+- Question 1 : que vaut le coefficient multiplicateur d''une baisse de 15 % ? Réponse : 0,85.
+- Question 2 : une entreprise produit pour 50 millions avec 32 millions de consommations intermédiaires. Quelle est sa valeur ajoutée ? Réponse : 18 millions.
+- Question 3 : quelles sont les trois fonctions de la monnaie ? Réponse : intermédiaire des échanges, unité de compte, réserve de valeur.
+- Question 4 : exportations 1 800, importations 2 400. Quel est le taux de couverture ? Réponse : 75 %.
+- Question 5 : quelle formule donne le seuil de rentabilité ? Réponse : coûts fixes divisés par le taux de marge sur coût variable.
+
+Quatre ou cinq bonnes réponses : bravo. Moins de trois : relisez ce soir votre fiche de formules, rien d''autre.
+
+## 50:00 – 65:00 · Correction commentée d''un exercice type Bac
+
+Énoncé : une coopérative de transformation de mangues à Ziguinchor vend 40 000 pots de confiture à 750 FCFA. Le coût variable unitaire est de 450 FCFA. Les coûts fixes annuels s''élèvent à 7 200 000 FCFA. Calculez le chiffre d''affaires, la marge sur coût variable, le résultat, le seuil de rentabilité en valeur et en quantité, et la date d''atteinte du seuil si les ventes sont régulières sur douze mois.
+
+Correction. Chiffre d''affaires : 40 000 fois 750 égale 30 000 000 FCFA. Coûts variables : 40 000 fois 450 égale 18 000 000 FCFA. Marge sur coût variable : 12 000 000 FCFA, soit un taux de 40 %. Résultat : 12 000 000 moins 7 200 000 égale 4 800 000 FCFA de bénéfice. Seuil de rentabilité : 7 200 000 divisé par 0,40 égale 18 000 000 FCFA. En quantité : 18 000 000 divisé par 750 égale 24 000 pots. Vérification : la marge unitaire est de 300 FCFA, et 7 200 000 divisé par 300 donne bien 24 000. Date : 18 divisé par 30, fois 12, égale 7,2 mois, soit environ début août si l''exercice commence le 1er janvier.
+
+Commentaire du correcteur : beaucoup de candidats oublient la vérification ou la phrase d''interprétation. Écrivez par exemple : « La coopérative couvre ses coûts fixes après environ 7,2 mois ; au-delà, chaque pot vendu rapporte 300 FCFA de bénéfice. »
+
+## 65:00 – 77:00 · Méthode de la réflexion argumentée
+
+Sujet type : « Faut-il protéger l''économie nationale de la concurrence étrangère ? » Étape un : définir. Le protectionnisme est l''ensemble des mesures qui limitent les importations ; le libre-échange est la libre circulation des marchandises. Étape deux : problématiser. Le protectionnisme protège-t-il durablement l''économie, ou freine-t-il son efficacité ? Étape trois : construire le plan.
+
+Première partie : les arguments en faveur d''une protection. Protéger les industries naissantes, c''est l''idée du protectionnisme éducateur de Friedrich List ; préserver des emplois ; assurer la sécurité alimentaire, par exemple en soutenant la production locale de riz ou d''oignons.
+
+Deuxième partie : les limites. Hausse des prix pour les consommateurs, risque de représailles des partenaires, entreprises moins incitées à innover.
+
+Troisième partie : une protection ciblée et temporaire, combinée à l''intégration régionale, comme avec le tarif extérieur commun de la CEDEAO et la ZLECAf qui élargit les marchés africains.
+
+Rappel : chaque argument contient une idée, une explication et un exemple, de préférence africain ou sénégalais.
+
+## 77:00 – 82:00 · Gestion du temps le jour de l''épreuve
+
+Lisez tout le sujet avant de commencer. Commencez par la partie où vous êtes le plus sûr, souvent l''exercice chiffré. Réservez un temps de préparation au brouillon pour la réflexion, puis rédigez directement au propre. Gardez les dernières minutes pour vérifier les calculs, les unités et les phrases d''interprétation. Indiquez clairement le numéro de chaque question.
+
+## 82:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : les formules (taux, indices, coefficients, réel et nominal), les agrégats, l''inflation et le chômage, la monnaie et la BCEAO, le commerce international, les finances publiques, l''entreprise et le marché. Et toujours la règle d''or : formule, calcul, unité, interprétation.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : le PIB nominal augmente de 6 % et les prix de 2 %. Quelle est la croissance réelle ? Réponse : 1,06 divisé par 1,02 égale environ 1,0392, soit environ 3,92 %.
+- Question 2 : population active de 5 millions, dont 400 000 chômeurs. Quel est le taux de chômage ? Réponse : 8 %.
+- Question 3 : convertissez 2 000 euros en francs CFA. Réponse : 2 000 fois 655,957 égale 1 311 914 FCFA.
+- Question 4 : la propension marginale à consommer vaut 0,6. Quel est le multiplicateur ? Réponse : 1 divisé par 0,4, soit 2,5.
+- Question 5 : demande Qd égale 600 moins 3P, offre Qo égale 2P moins 100. Quel est l''équilibre ? Réponse : 600 moins 3P égale 2P moins 100, donc 5P égale 700, P égale 140 et Q égale 180.
+
+Mot de la fin : dormez suffisamment, préparez votre calculatrice et vos stylos ce soir, et faites confiance à votre méthode. Bonne chance à toutes et à tous.', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-economie'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive veille du Bac en Économie');
+
+-- Cours : Anglais : réussir l'épreuve du Bac
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'bac-anglais', (select id from public.levels where name = 'Terminale'), null, 'Anglais (toutes séries)', 'Anglais : réussir l''épreuve du Bac', 'Ce cours prépare les élèves de Terminale de toutes les séries (L, S, G) à l''épreuve d''Anglais du Baccalauréat : compréhension et analyse de texte, grammaire (temps, passif, discours indirect, conditionnels, relatives, mots de liaison), vocabulaire thématique et expression écrite (essay argumentatif, lettre, résumé). Les explications sont en français, les exemples et les exercices en anglais, avec des corrigés complets et un sujet d''entraînement. Prérequis : les bases de l''anglais du collège.', true, 209
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
+
+- Comprendre ce que l''épreuve d''Anglais du Baccalauréat attend de vous.
+- Connaître les trois grandes parties habituelles : compréhension du texte, langue (grammaire et vocabulaire), expression écrite.
+- Repérer les erreurs qui coûtent le plus de points.
+- Organiser ses révisions sur dix semaines.
+
+## À qui s''adresse ce cours ?
+
+Ce cours s''adresse aux élèves de Terminale de toutes les séries (L, S et G). Le niveau d''exigence, la durée et le coefficient de l''épreuve varient selon les séries et sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement. Les explications sont données en français ; les exemples et les exercices sont en anglais, comme le jour de l''examen.
+
+## Ce que l''épreuve évalue
+
+Le sujet d''anglais se construit en général autour d''un texte de quelques paragraphes sur un thème d''actualité : mondialisation, environnement, technologie, éducation, santé, place des femmes, migrations. À partir de ce texte, on vérifie trois compétences.
+
+- Comprendre : saisir l''idée générale et les détails, retrouver une information, expliquer un mot.
+- Maîtriser la langue : conjuguer, transformer des phrases, employer le bon mot de liaison.
+- S''exprimer : rédiger un texte personnel, organisé et correct (essay, lettre, résumé).
+
+## Partie 1 : reading comprehension
+
+Les questions les plus fréquentes :
+
+- True or false? Justify with a sentence from the text. Il faut répondre « True » ou « False », puis recopier entre guillemets la phrase exacte qui le prouve.
+- Answer the questions. Répondez par une phrase complète, avec vos propres mots quand c''est possible.
+- Find in the text words or expressions that mean… Recherche de synonymes ou de définitions.
+- Who or what do the underlined words refer to? Il s''agit de retrouver ce que remplace un pronom (it, they, which, this).
+- Give a title to the text. Le titre doit résumer l''idée principale en quelques mots.
+
+Méthode : lisez d''abord le titre, la source et les questions ; lisez ensuite le texte une première fois pour l''idée générale, puis une seconde fois en soulignant les passages utiles. Les questions suivent souvent l''ordre du texte.
+
+Exemple. Text: "Many young Senegalese now use their phones to learn. Online courses, which were rare ten years ago, are becoming common." Question: True or false? Online courses have always been common. Answer: False. "Online courses, which were rare ten years ago, are becoming common."
+
+## Partie 2 : grammar and vocabulary
+
+Les exercices classiques : mettre les verbes entre parenthèses au bon temps ; passer de l''actif au passif ; transformer au discours indirect ; compléter avec un pronom relatif ; relier deux phrases avec un mot de liaison ; former des mots (noun, adjective, adverb) ; compléter un texte à trous. Ces exercices sont mécaniques : avec des règles sûres, ce sont des points garantis. Les leçons 2 et 3 les révisent en détail.
+
+## Partie 3 : writing
+
+On vous demande en général un texte d''une longueur indiquée (par exemple « about 150 words ») : un essay argumentatif, une lettre ou un résumé. Le correcteur regarde le respect de la consigne, l''organisation (introduction, développement, conclusion), la richesse du vocabulaire et la correction grammaticale. Respectez la longueur demandée : trop court comme trop long fait perdre des points.
+
+## Gérer le temps
+
+Lisez tout le sujet d''abord. Commencez par la partie où vous êtes le plus à l''aise. Préparez l''expression écrite au brouillon par un plan rapide, mais ne rédigez pas tout au brouillon. Gardez quelques minutes pour vous relire en cherchant vos erreurs habituelles.
+
+## Les erreurs les plus fréquentes
+
+- Oublier le -s de la troisième personne au présent : "She works", pas "She work".
+- Mettre un -s aux adjectifs : "important problems", pas "importants problems".
+- Confondre "since" et "for" : "since 2020" (point de départ), "for three years" (durée).
+- Traduire mot à mot du français : "I have 18 years" au lieu de "I am 18 years old".
+- Recopier des phrases entières du texte dans l''expression écrite.
+- Répondre « True » sans justification.
+- Oublier le sujet de la phrase : "It is important", pas "Is important".
+
+## Plan de révision sur dix semaines
+
+- Semaine 1 : méthode et lecture de textes courts chaque jour.
+- Semaine 2 : les temps (présent, passé, present perfect, futur).
+- Semaine 3 : le passif et le discours indirect.
+- Semaine 4 : les conditionnels et les relatives.
+- Semaine 5 : les mots de liaison et la formation des mots.
+- Semaine 6 : vocabulaire de la mondialisation et de l''environnement.
+- Semaine 7 : vocabulaire de la technologie, de l''éducation et de la santé.
+- Semaine 8 : l''essay argumentatif, la lettre et le résumé.
+- Semaine 9 : sujets d''entraînement complets en temps limité.
+- Semaine 10 : fiches de grammaire, liste d''erreurs personnelles, repos la veille.
+
+Conseil : tenez un carnet de vocabulaire par thème, avec dix mots par semaine et une phrase d''exemple pour chacun.
+
+## Points clés
+
+- Justifiez toujours un « True or false » par une citation exacte.
+- Les exercices de grammaire sont des points sûrs : révisez les règles.
+- En expression écrite, respectez la consigne et la longueur.
+- Relisez-vous en traquant vos erreurs habituelles.
+
+## Exercices pratiques
+
+Text: "Dakar is growing fast. Every year, thousands of young people leave rural areas to look for jobs in the capital. However, many of them end up working in the informal sector, where wages are low and jobs are not secure. The government has launched training programmes to help them."
+
+1. Give a title to the text.
+2. True or false? Justify. a) Dakar''s population is decreasing. b) Jobs in the informal sector are well paid.
+3. Find in the text words that mean: a) countryside; b) salaries; c) started.
+4. What does "them" refer to in "to help them"?
+5. Correct the mistakes: a) "He go to school every day." b) "They are livings in Thiès since five years."
+6. Answer the question with a full sentence: Why do young people move to Dakar?
+
+## Corrigé
+
+1. Possible titles: "Rural Exodus to Dakar" or "Young People and Jobs in Dakar".
+
+2. a) False. "Dakar is growing fast." b) False. "wages are low and jobs are not secure."
+
+3. a) rural areas; b) wages; c) launched.
+
+4. "them" refers to the young people who leave rural areas (many of them working in the informal sector).
+
+5. a) "He goes to school every day." b) "They have been living in Thiès for five years." Explication : action commencée dans le passé et qui continue, donc present perfect continuous ; "for" introduit une durée.
+
+6. Young people move to Dakar because they are looking for jobs.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'bac-anglais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Grammaire (1) : les temps, le passif et le discours indirect', '## Objectifs de la leçon
+
+- Choisir le bon temps en anglais (présent, passé, present perfect, past perfect, futur).
+- Passer de la voix active à la voix passive à tous les temps.
+- Transformer une phrase au discours indirect (reported speech).
+- Réussir les exercices de transformation du Bac.
+
+## Fiche 1 : les temps du présent
+
+Le présent simple exprime une habitude, une vérité générale ou un fait permanent : "The sun rises in the east." "My father works in Kaolack." Attention au -s à la troisième personne du singulier : he works, she goes, it watches.
+
+Le présent continu (be + V-ing) exprime une action en cours ou temporaire : "Look! It is raining." "I am revising for the Bac this month." Certains verbes d''état ne se mettent pas normalement à la forme continue : know, like, want, believe, understand. On dit "I know", pas "I am knowing".
+
+## Fiche 2 : les temps du passé
+
+Le prétérit simple (V-ed ou forme irrégulière) exprime une action terminée, à un moment précis du passé : "Senegal became independent in 1960." "I visited Saint-Louis last year." Indices : yesterday, last week, ago, in 2010.
+
+Le prétérit continu (was / were + V-ing) exprime une action en cours dans le passé, souvent interrompue : "I was reading when the electricity went off."
+
+Le past perfect (had + participe passé) exprime une action antérieure à une autre action passée : "When we arrived at the station, the bus had already left."
+
+## Fiche 3 : le present perfect
+
+Le present perfect (have / has + participe passé) relie le passé au présent. Il s''emploie pour une action passée dont le résultat compte maintenant, ou pour une situation qui dure jusqu''à aujourd''hui.
+
+- "I have lost my key." (je n''ai toujours pas ma clé)
+- "She has lived in Ziguinchor since 2019." (elle y vit encore)
+- "They have worked here for ten years."
+- "Have you ever seen the Pink Lake?"
+
+Since + point de départ (since 2019, since Monday) ; for + durée (for ten years, for two weeks). Le present perfect ne s''emploie jamais avec une date passée précise : on dit "I saw him yesterday", pas "I have seen him yesterday".
+
+Le present perfect continuous (have been + V-ing) insiste sur la durée d''une action qui continue : "It has been raining for three hours."
+
+## Fiche 4 : l''expression du futur
+
+- will + base verbale : prédiction, décision prise sur le moment. "I think it will rain." "I''ll help you."
+- be going to + base verbale : intention ou conséquence visible. "I am going to study medicine." "Look at those clouds: it''s going to rain."
+- présent continu : rendez-vous prévu. "We are meeting the teacher tomorrow."
+- Après when, as soon as, if, on utilise le présent et non will : "I will call you when I arrive."
+
+## Fiche 5 : la voix passive
+
+Formation : be (au temps de la phrase active) + participe passé. Le complément d''objet de la phrase active devient sujet ; le sujet actif devient complément introduit par "by", que l''on peut supprimer s''il n''est pas important.
+
+- Présent : "Farmers grow rice in the Senegal River valley." → "Rice is grown in the Senegal River valley (by farmers)."
+- Prétérit : "The government built the new bridge." → "The new bridge was built by the government."
+- Present perfect : "They have opened a new hospital." → "A new hospital has been opened."
+- Futur : "The school will organise a debate." → "A debate will be organised by the school."
+- Modal : "You must protect the environment." → "The environment must be protected."
+- Forme continue : "They are repairing the road." → "The road is being repaired."
+
+Astuce : le temps est porté par "be". Vérifiez que le passif est au même temps que la phrase active.
+
+## Fiche 6 : le discours indirect
+
+On rapporte les paroles de quelqu''un. Après un verbe introducteur au passé (said, told, asked), les temps reculent d''un cran.
+
+- présent simple → prétérit : "I am tired." → She said (that) she was tired.
+- présent continu → prétérit continu : "I am working." → He said he was working.
+- prétérit ou present perfect → past perfect : "I saw the film." → He said he had seen the film.
+- will → would ; can → could ; must → had to.
+
+Les repères de temps et de lieu changent aussi : now → then ; today → that day ; tomorrow → the next day (the following day) ; yesterday → the day before (the previous day) ; here → there ; this → that.
+
+Les questions perdent l''inversion et le point d''interrogation. Questions fermées : if / whether. Questions ouvertes : le mot interrogatif.
+
+- "Do you like football?" → He asked me if I liked football.
+- "Where do you live?" → She asked me where I lived.
+
+Ordres et conseils : verbe + to / not to + base verbale. "Close the door." → He told me to close the door. "Don''t be late." → She told us not to be late.
+
+Say ou tell ? "say something", "tell somebody something" : He said that…, He told me that…
+
+## Points clés
+
+- since + point de départ, for + durée ; pas de present perfect avec une date passée.
+- Passif = be au bon temps + participe passé.
+- Discours indirect : recul des temps et changement des repères.
+- Après when, as soon as, if : présent, pas will.
+
+## Exercices pratiques
+
+1. Put the verbs in brackets in the correct tense: a) Awa (live) in Thiès since 2015. b) Yesterday, we (visit) Gorée Island. c) Listen! The children (sing). d) When I arrived, the film (already / start).
+2. Choose since or for: a) I have known him … primary school. b) She has been waiting … two hours.
+3. Turn into the passive: a) The students clean the classroom every Friday. b) A storm destroyed many houses. c) They will build a new university.
+4. Turn into the passive: a) Someone has stolen my phone. b) The workers are painting the school.
+5. Turn into reported speech: a) Moussa said, "I am preparing for the Bac." b) The teacher said, "You must work harder."
+6. Turn into reported speech: a) She asked me, "Did you see the match yesterday?" b) My mother told me, "Don''t go out tonight."
+7. Correct the mistakes: a) "I have seen him last week." b) "I will call you when I will arrive." c) "He said me that he was sick."
+
+## Corrigé
+
+1. a) has lived (ou has been living) ; b) visited ; c) are singing ; d) had already started.
+
+2. a) since ; b) for.
+
+3. a) The classroom is cleaned by the students every Friday. b) Many houses were destroyed by a storm. c) A new university will be built.
+
+4. a) My phone has been stolen. ("by someone" est supprimé, car l''agent est inconnu.) b) The school is being painted by the workers.
+
+5. a) Moussa said (that) he was preparing for the Bac. b) The teacher said (that) we had to work harder (ou they had to, selon les personnes à qui il parlait).
+
+6. a) She asked me if (whether) I had seen the match the day before. b) My mother told me not to go out that night.
+
+7. a) "I saw him last week." (date passée précise, donc prétérit) b) "I will call you when I arrive." c) "He told me that he was sick." ou "He said that he was sick."', 'texte', 60, false, 20
+from public.courses c where c.slug = 'bac-anglais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire (1) : les temps, le passif et le discours indirect');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Grammaire (2) : conditionnels, relatives, mots de liaison et formation des mots', '## Objectifs de la leçon
+
+- Maîtriser les trois types de phrases conditionnelles (et le type zéro).
+- Employer correctement les pronoms relatifs.
+- Relier les idées avec les bons mots de liaison.
+- Former des mots à partir d''un radical (noun, adjective, adverb, contraire).
+
+## Fiche 1 : les conditionnels
+
+Une phrase conditionnelle comporte deux propositions : la condition (if-clause) et la conséquence (main clause). La virgule s''emploie quand la proposition en "if" vient en premier.
+
+- Type 0, vérité générale : if + présent, présent. "If you heat water to 100 °C, it boils."
+- Type 1, situation réelle ou probable : if + présent, will + base verbale. "If it rains tomorrow, we will stay at home."
+- Type 2, situation imaginaire ou peu probable dans le présent ou le futur : if + prétérit, would + base verbale. "If I had more money, I would buy a computer." Avec "be", on emploie souvent "were" à toutes les personnes : "If I were the President, I would build more schools."
+- Type 3, situation imaginaire dans le passé (regret) : if + past perfect, would have + participe passé. "If he had worked harder, he would have passed his exam."
+
+Règle d''or : jamais de "will" ou de "would" dans la proposition en "if". On dit "If I had time", pas "If I would have time".
+
+Unless signifie "if… not" : "You will fail unless you revise." = "You will fail if you don''t revise."
+
+Transformation type Bac : "I don''t have a car, so I can''t drive you to the airport." → "If I had a car, I could drive you to the airport." On inverse les formes : la phrase de départ est négative, la conditionnelle est affirmative.
+
+## Fiche 2 : les relatives
+
+Le pronom relatif relie une proposition à un nom qu''elle précise.
+
+- who : pour une personne, sujet. "The teacher who teaches us English is from Kolda."
+- which : pour une chose ou un animal. "The book which I bought is interesting."
+- that : pour une personne ou une chose, seulement dans les relatives déterminatives (sans virgules).
+- whose : pour la possession. "The girl whose father is a doctor is my friend."
+- whom : pour une personne complément, dans un style soutenu, surtout après une préposition. "The man to whom I spoke was kind."
+- where : pour un lieu ; when : pour un moment. "This is the village where I was born." "I remember the day when we met."
+
+Relative déterminative (sans virgules) : elle est indispensable pour identifier le nom. "Students who work hard succeed." Relative explicative (entre virgules) : elle apporte une information supplémentaire. "Dakar, which is the capital of Senegal, is on the Cap-Vert peninsula." Dans une relative explicative, "that" est interdit.
+
+On peut supprimer le pronom quand il est complément dans une relative déterminative : "The book (which) I bought is interesting."
+
+Exercice type : relier deux phrases. "I met a woman. Her son plays for the national team." → "I met a woman whose son plays for the national team."
+
+## Fiche 3 : les mots de liaison
+
+Ils organisent le texte et sont très valorisés dans l''expression écrite.
+
+- Addition : and, moreover, furthermore, in addition, besides, also.
+- Opposition, concession : but, however, yet, although / though + proposition, despite / in spite of + nom ou V-ing, whereas, on the other hand, nevertheless.
+- Cause : because + proposition, because of + nom, since, as, due to.
+- Conséquence : so, therefore, as a result, consequently, that is why.
+- But : to, in order to, so as to + base verbale ; so that + proposition.
+- Exemple : for example, for instance, such as.
+- Conclusion : to conclude, in conclusion, to sum up, all in all.
+
+Attention à la construction : "Although it was raining, we went out." / "Despite the rain, we went out." / "In spite of being tired, she kept studying." Jamais "despite of".
+
+"Because" introduit une proposition (sujet + verbe) ; "because of" introduit un nom : "He stayed home because he was sick." / "He stayed home because of his illness."
+
+## Fiche 4 : la formation des mots
+
+- Noms : -tion (pollute → pollution), -ment (develop → development), -ness (happy → happiness), -ity (able → ability), -er / -or (teach → teacher, act → actor).
+- Adjectifs : -ful (use → useful), -less (hope → hopeless), -able (afford → affordable), -al (nation → national), -ous (danger → dangerous), -ive (effect → effective).
+- Adverbes : adjectif + -ly (careful → carefully, easy → easily).
+- Contraires : un- (unemployed), in- / im- / il- / ir- (independent, impossible, illegal, irregular), dis- (disagree).
+
+Exemple de consigne : "Give the noun of: educate, poor, grow." Réponses : education, poverty, growth.
+
+## Points clés
+
+- Jamais de will ou would après if.
+- Type 2 : prétérit / would ; type 3 : past perfect / would have + participe passé.
+- that interdit entre virgules ; whose pour la possession.
+- although + proposition, despite + nom ; because + proposition, because of + nom.
+
+## Exercices pratiques
+
+1. Put the verbs in brackets in the correct form: a) If you (study) hard, you will pass. b) If I (be) rich, I would help my village. c) If she had taken the bus, she (not / miss) the meeting.
+2. Rewrite using "if": a) I don''t speak Chinese, so I can''t work in Beijing. b) He didn''t wear a helmet, so he was badly injured.
+3. Rewrite using "unless": "If you don''t drink clean water, you will get sick."
+4. Join the sentences with a relative pronoun: a) This is the hospital. My mother works there. b) I have a friend. His sister is an engineer. c) The man is my uncle. He is talking to the teacher.
+5. Fill in with the right linking word (although, because of, however, in order to, therefore): a) … the traffic, I arrived late. b) She works hard … succeed. c) … he is poor, he is generous. d) The roads are bad. …, trade is difficult. e) Prices have risen. …, salaries have not changed.
+6. Give the word asked for: a) noun of "pollute"; b) adjective of "danger"; c) opposite of "employed"; d) adverb of "careful"; e) noun of "poor".
+7. Correct the mistakes: a) "If I would have money, I would travel." b) "Despite of the rain, we played." c) "Dakar, that is the capital, is crowded."
+
+## Corrigé
+
+1. a) study ; b) were (ou was en anglais familier) ; c) would not have missed.
+
+2. a) If I spoke Chinese, I could (ou would be able to) work in Beijing. b) If he had worn a helmet, he would not have been badly injured.
+
+3. Unless you drink clean water, you will get sick.
+
+4. a) This is the hospital where my mother works. b) I have a friend whose sister is an engineer. c) The man who (ou that) is talking to the teacher is my uncle.
+
+5. a) Because of ; b) in order to ; c) Although ; d) Therefore ; e) However.
+
+6. a) pollution ; b) dangerous ; c) unemployed ; d) carefully ; e) poverty.
+
+7. a) "If I had money, I would travel." b) "Despite the rain, we played." ou "In spite of the rain, we played." c) "Dakar, which is the capital, is crowded."', 'texte', 60, false, 30
+from public.courses c where c.slug = 'bac-anglais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire (2) : conditionnels, relatives, mots de liaison et formation des mots');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Vocabulaire thématique et expression écrite : essay, lettre, résumé', '## Objectifs de la leçon
+
+- Acquérir le vocabulaire des cinq grands thèmes du Bac : mondialisation, environnement, technologie, éducation, santé.
+- Rédiger un essay argumentatif organisé.
+- Rédiger une lettre formelle ou informelle.
+- Résumer un texte en anglais.
+
+## Fiche 1 : vocabulary themes
+
+Globalization : trade (le commerce), goods (les marchandises), a multinational company, to export / to import, a market, competition, the global village, outsourcing (la délocalisation), migration, a migrant, remittances (les envois de fonds des migrants), inequality, developing countries, developed countries.
+
+Environment : climate change, global warming, greenhouse gases, pollution, waste (les déchets), plastic bags, deforestation, desertification, drought (la sécheresse), flooding (les inondations), coastal erosion, renewable energy, solar power, to recycle, to protect, sustainable development.
+
+Technology : the Internet, a smartphone, social media / social networks, an app, to download, online, artificial intelligence, mobile money, cybercrime, fake news, addiction, screen time, digital skills.
+
+Education : school enrolment (la scolarisation), a dropout (un élève qui abandonne), literacy / illiteracy (l''alphabétisation / l''analphabétisme), to attend school, a degree (un diplôme universitaire), vocational training (la formation professionnelle), girls'' education, a scholarship (une bourse), to graduate.
+
+Health : a disease, malaria, a vaccine, to vaccinate, a mosquito net, healthcare, a health centre, a nurse, malnutrition, a balanced diet, hygiene, clean water, to prevent / prevention, an epidemic.
+
+Conseil : apprenez les mots dans une phrase. "Coastal erosion threatens many houses in Saint-Louis." "Mobile money has made payments easier in West Africa." "A mosquito net helps to prevent malaria."
+
+## Fiche 2 : l''essay argumentatif
+
+Sujet type : "Some people think that social media do more harm than good to young people. Do you agree? (about 150 words)"
+
+Plan en quatre paragraphes :
+
+- Introduction : présenter le sujet en une ou deux phrases et annoncer votre position ou le débat.
+- Paragraphe 1 : premier point de vue, avec deux arguments et un exemple.
+- Paragraphe 2 : point de vue opposé, ou suite de votre argumentation.
+- Conclusion : votre opinion nuancée, éventuellement une recommandation.
+
+Expressions utiles : "In my opinion…", "I strongly believe that…", "On the one hand… On the other hand…", "Some people argue that…", "It is true that…, but…", "To conclude…".
+
+Modèle :
+
+"Nowadays, almost every teenager has a smartphone and uses social media every day. Are these networks a danger or an opportunity for young people?
+
+On the one hand, social media can be harmful. Many students spend hours online instead of revising, and some become addicted. Moreover, fake news and cyberbullying spread very quickly on these platforms.
+
+On the other hand, social networks are useful tools. They allow young people to keep in touch with relatives abroad, to share information and even to learn: many students watch free lessons online to prepare for their exams.
+
+To conclude, I believe that social media are neither good nor bad in themselves. What matters is how we use them. Parents and teachers should help young people to use them responsibly."
+
+Ce modèle compte environ 130 mots ; pour atteindre 150 mots, ajoutez un exemple précis dans chaque paragraphe. Remarquez les mots de liaison (On the one hand, Moreover, On the other hand, To conclude) et le vocabulaire thématique.
+
+## Fiche 3 : la lettre
+
+Lettre informelle (à un ami, un correspondant) : adresse de l''expéditeur et date en haut à droite ; "Dear Fatou," ; un paragraphe d''ouverture amical ("Thank you for your letter. I was happy to hear from you.") ; le corps de la lettre ; une formule de fin ("Write back soon." "Best wishes," ou "Love,") ; le prénom.
+
+Lettre formelle (à un directeur, un maire, un journal) : "Dear Sir or Madam," si l''on ne connaît pas le nom, et alors "Yours faithfully," ; "Dear Mr Diop," si l''on connaît le nom, et alors "Yours sincerely," ; un premier paragraphe qui annonce l''objet ("I am writing to complain about…", "I am writing to apply for…") ; un ton poli, pas de contractions (I am, not I''m) ; le nom complet à la fin.
+
+Exemple d''ouverture formelle : "Dear Sir or Madam, I am writing to draw your attention to the problem of plastic waste in our neighbourhood."
+
+## Fiche 4 : le résumé
+
+Le résumé (summary) consiste à réduire un texte à ses idées essentielles, en un nombre de mots indiqué.
+
+- Lisez le texte et repérez l''idée principale de chaque paragraphe.
+- Supprimez les exemples, les détails, les chiffres secondaires et les répétitions.
+- Reformulez avec vos propres mots ; ne recopiez pas des phrases entières.
+- Respectez l''ordre des idées du texte et le nombre de mots demandé.
+- Écrivez au présent et à la troisième personne : "The author explains that…", "The text shows that…".
+- N''ajoutez jamais votre opinion.
+
+## Points clés
+
+- Un carnet de vocabulaire par thème, avec des phrases d''exemple.
+- Essay : introduction, deux paragraphes argumentés, conclusion, mots de liaison.
+- Lettre formelle : Yours faithfully (nom inconnu) ou Yours sincerely (nom connu).
+- Résumé : idées essentielles, propres mots, aucune opinion.
+
+## Exercices pratiques
+
+1. Translate into English: a) la sécheresse ; b) les énergies renouvelables ; c) l''analphabétisme ; d) un vaccin ; e) les envois de fonds des migrants.
+2. Complete with a word from Fiche 1: a) Many trees are cut down: this is called … . b) Students who leave school early are called … . c) Sleeping under a … protects you against mosquitoes.
+3. Write the first paragraph of a formal letter to the mayor of your town about the lack of street lights.
+4. Write three arguments for and three arguments against this statement: "Every student should study online."
+5. Summarize this text in about 30 words: "Plastic bags are cheap and practical, so people use them every day. But after use, many of them are thrown away in streets, fields and the sea. They take hundreds of years to break down. Animals eat them and die. Several African countries have decided to ban or limit them, and people are encouraged to use cloth or paper bags instead."
+6. Write an essay of about 150 words: "Girls'' education is the key to development. Discuss."
+
+## Corrigé
+
+1. a) drought ; b) renewable energy (renewable energies) ; c) illiteracy ; d) a vaccine ; e) remittances.
+
+2. a) deforestation ; b) dropouts ; c) mosquito net.
+
+3. Model: "Dear Mr Mayor, I am writing on behalf of the young people of our neighbourhood to draw your attention to the lack of street lights in our area. At night, the streets are completely dark, which makes them dangerous for pedestrians, especially for students coming back from evening classes." (Formule de fin : "Yours sincerely," si l''on s''adresse au maire par son titre ou son nom.)
+
+4. For: students can learn at their own pace; online courses are often cheaper; they can access lessons from anywhere. Against: not everyone has a good Internet connection or a computer; students may lack motivation without a teacher; online learning reduces contact with classmates.
+
+5. Model (about 30 words): "Plastic bags are widely used because they are cheap, but they pollute the environment for centuries and kill animals. Therefore, some African countries limit them and promote alternative bags."
+
+6. Model: "Education is a fundamental right, but in many countries girls still go to school less than boys. Is girls'' education really the key to development? First, educated girls have better jobs and higher incomes, so they can support their families and contribute to the economy. Moreover, an educated mother usually takes better care of her children''s health and education. In addition, education helps women to take part in political and social decisions. However, girls'' education alone is not enough. Countries also need good infrastructure, healthcare and jobs for everybody. Besides, some families still face poverty, early marriage or long distances to school, which keep girls at home. To conclude, girls'' education is not the only condition for development, but it is one of the most powerful. Governments, parents and communities should work together to keep girls in school."', 'texte', 60, false, 40
+from public.courses c where c.slug = 'bac-anglais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Vocabulaire thématique et expression écrite : essay, lettre, résumé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen : entraînement corrigé', '## Présentation
+
+Ce sujet est un sujet d''entraînement rédigé pour ce cours ; ce n''est pas un sujet officiel du Baccalauréat. Le texte a été écrit spécialement pour l''exercice. Il reprend la structure habituelle de l''épreuve : compréhension, langue, expression écrite. La répartition des points est indicative et non officielle ; la durée et le coefficient réels sont fixés selon les textes officiels en vigueur. Travaillez en temps limité, sans dictionnaire, puis comparez avec le corrigé.
+
+## Le texte
+
+"The Sea Is Coming
+
+In many coastal towns of West Africa, the sea is slowly eating the land. In Saint-Louis, in the north of Senegal, some families have already lost their houses. Fishermen who have lived on the Langue de Barbarie for generations now see the waves reach places that were dry when they were children.
+
+Scientists explain that coastal erosion has several causes. Global warming makes sea levels rise, and storms are becoming stronger. But human activities also play a role: sand is taken from beaches to build houses, and mangroves, which protect the coast, are cut down.
+
+Governments and international partners have started to react. Walls have been built in some places, and families have been moved to safer areas. However, many of these people are worried. ''If we leave the coast, how will we fish?'' asks one of them.
+
+Experts believe that the solution must combine several actions: planting mangroves again, stopping illegal sand extraction and helping communities to adapt. If nothing is done, thousands of people could lose their homes in the coming decades."
+
+## Le sujet d''entraînement
+
+Part A. Reading comprehension (8 points, indicatif).
+
+- 1. Give a suitable title to the text other than the original one.
+- 2. True or false? Justify with a sentence from the text. a) Coastal erosion only has natural causes. b) Mangroves help to protect the coast. c) All the families are happy to move.
+- 3. Answer the questions: a) Which town in Senegal is mentioned? b) Name two human activities that make erosion worse. c) What are governments doing?
+- 4. Find in the text words or expressions that mean: a) slowly destroying; b) for a very long time (paragraph 1); c) more powerful.
+- 5. What do these words refer to? "which" (paragraph 2); "them" (paragraph 3).
+
+Part B. Language (6 points, indicatif).
+
+- 1. Turn into the active voice: "Walls have been built in some places."
+- 2. Turn into reported speech: One fisherman asks, "If we leave the coast, how will we fish?" Begin: One fisherman asked…
+- 3. Complete: If nothing is done, thousands of people (lose) … their homes. Then rewrite the sentence as a type 2 conditional.
+- 4. Join with a relative pronoun: "Fishermen live on the Langue de Barbarie. They are worried."
+- 5. Give the noun of: protect, erode, extract.
+
+Part C. Writing (6 points, indicatif). Choose one topic (about 150 words).
+
+- Topic 1: Write a letter to the mayor of a coastal town to suggest three actions against coastal erosion.
+- Topic 2: "Protecting the environment is the responsibility of governments, not of ordinary citizens." Do you agree?
+
+## Corrigé de la partie A
+
+1. Possible titles: "Coastal Erosion in West Africa", "When the Sea Eats the Land", "Saint-Louis Threatened by the Sea".
+
+2. a) False. "But human activities also play a role." b) True. "mangroves, which protect the coast, are cut down." c) False. "However, many of these people are worried."
+
+3. a) Saint-Louis. b) Taking sand from beaches to build houses and cutting down mangroves. c) They have built walls in some places and moved families to safer areas.
+
+4. a) eating (the land) ; b) for generations ; c) stronger.
+
+5. "which" refers to the mangroves ; "them" refers to the people (the families) who have been moved.
+
+## Corrigé de la partie B
+
+1. Someone (ou The authorities) has built walls in some places. Explication : "have been built" est un present perfect passif ; à l''actif on garde le present perfect, et le sujet singulier "someone" impose "has".
+
+2. One fisherman asked how they would fish if they left the coast. Les temps reculent (leave → left, will → would) et l''inversion de la question disparaît.
+
+3. Type 1 : If nothing is done, thousands of people will lose their homes. Type 2 : If nothing were done, thousands of people would lose their homes.
+
+4. The fishermen who live on the Langue de Barbarie are worried.
+
+5. protection ; erosion ; extraction.
+
+## Corrigé de la partie C (modèles)
+
+Topic 1 (letter): "Dear Mr Mayor, I am writing to suggest some actions against coastal erosion, which threatens many families in our town. First, I suggest that the town hall organise campaigns to plant mangroves along the coast, with the help of schools and associations. Second, illegal sand extraction from beaches should be stopped and controlled more strictly. Finally, people living very close to the sea should receive help to move to safer areas while keeping access to the beach for fishing. I am convinced that these measures, if they are carried out together, will protect our town and the jobs of its inhabitants. Thank you for your attention. Yours sincerely, Mariama Fall."
+
+Topic 2 (essay): plan conseillé. Introduction : présenter le débat. Paragraphe 1 : le rôle des gouvernements (lois, contrôle de l''extraction de sable, financement des digues, accords internationaux). Paragraphe 2 : le rôle des citoyens (ne pas jeter de déchets, recycler, économiser l''eau et l''énergie, planter des arbres, s''engager dans des associations). Conclusion : la protection de l''environnement est une responsabilité partagée.
+
+## Conseils du correcteur
+
+- En compréhension, recopiez la justification entre guillemets, exactement comme dans le texte.
+- En grammaire, vérifiez le temps et l''accord du sujet et du verbe.
+- En expression écrite, respectez la forme demandée (lettre ou essay) et la longueur.
+- Réservez du temps pour la relecture : -s de la troisième personne, accords, orthographe.
+
+## Exercices pratiques
+
+1. Find in the text a word that means "coastal forests of trees that grow in salty water".
+2. Turn into the passive: "Human activities destroy mangroves."
+3. Turn into reported speech: The expert said, "We must stop illegal sand extraction."
+4. Rewrite as a type 3 conditional: "They didn''t protect the mangroves, so the coast was destroyed."
+5. Write a summary of the text in about 40 words.
+
+## Corrigé
+
+1. mangroves (paragraph 2).
+
+2. Mangroves are destroyed by human activities.
+
+3. The expert said (that) they had to stop illegal sand extraction.
+
+4. If they had protected the mangroves, the coast would not have been destroyed.
+
+5. Model: "In West Africa, especially in Saint-Louis, the sea is destroying the coast. Erosion is caused by global warming and human activities. Some actions have started, but experts say mangroves, controls and help for communities are needed."', 'texte', 75, false, 50
+from public.courses c where c.slug = 'bac-anglais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : entraînement corrigé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : révision intensive veille du Bac en Anglais', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : élèves de Terminale de toutes les séries (L, S, G) à la veille de l''épreuve d''Anglais du Baccalauréat.
+- Objectifs : revoir les règles de grammaire les plus rentables, réactiver le vocabulaire thématique, corriger ensemble des exercices type Bac, réviser la méthode de l''expression écrite et de la gestion du temps.
+- Matériel : tableau ou diaporama, un texte court imprimé ou projeté, feuilles de brouillon.
+- Prérequis : avoir suivi les leçons 1 à 5 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Welcome: objectifs de la séance
+
+Bonjour à toutes et à tous, good evening everybody! Demain, c''est l''épreuve d''anglais. Ce soir, nous n''apprenons rien de nouveau : nous consolidons les points qui rapportent le plus. Pendant une heure et demie, nous allons revoir les temps, le passif, le discours indirect, les conditionnels, les relatives et les mots de liaison, puis le vocabulaire et l''expression écrite. Je vous poserai des questions : répondez sur votre feuille avant de regarder la correction.
+
+Visuel : le plan de la séance en sept étapes, avec en bas de l''écran la devise du soir : "Accuracy first."
+
+## 05:00 – 18:00 · Tenses: les temps en douze minutes
+
+Commençons par les temps. Le présent simple pour les habitudes et les vérités générales : "She works in a bank." N''oubliez jamais le -s de la troisième personne. Le présent continu pour l''action en cours : "They are watching the match now."
+
+Le prétérit pour une action terminée à un moment précis du passé : "We moved to Thiès in 2018." Le present perfect pour un lien entre passé et présent : "I have lived here since 2018." Retenez la règle d''or : since + point de départ, for + durée, et jamais de present perfect avec "yesterday", "last year" ou "in 2018".
+
+Le past perfect pour l''antériorité dans le passé : "When I arrived, the lesson had started." Le futur : will pour une prédiction ou une décision immédiate, be going to pour une intention. Et après when, as soon as, if : le présent. "I will call you when I get home."
+
+Question au public : corrigez "I am living in Kaolack since three years." Réponse : "I have been living in Kaolack for three years."
+
+Visuel : une frise avec les temps placés sur la ligne du passé, du présent et du futur.
+
+## 18:00 – 30:00 · Passive and reported speech
+
+Le passif : be au même temps que la phrase active, puis le participe passé. "The pupils plant trees." devient "Trees are planted by the pupils." "They built the bridge in 2020." devient "The bridge was built in 2020." "They have closed the road." devient "The road has been closed." Le complément d''agent avec "by" disparaît quand l''agent est inconnu ou évident.
+
+Le discours indirect : les temps reculent d''un cran. Présent devient prétérit, prétérit et present perfect deviennent past perfect, will devient would, can devient could, must devient had to. Les repères changent : now devient then, today devient that day, tomorrow devient the next day, yesterday devient the day before, here devient there.
+
+Pour les questions : if ou whether pour une question fermée, le mot interrogatif pour une question ouverte, et surtout pas d''inversion. "Where do you live?" devient "He asked me where I lived." Pour les ordres : told + to ou not to. "Don''t shout!" devient "She told them not to shout."
+
+Question au public : mettez au discours indirect "I will help you tomorrow," said Awa. Réponse : Awa said she would help me the next day.
+
+## 30:00 – 42:00 · Conditionals, relatives and linking words
+
+Les conditionnels. Type 1 : if + présent, will. "If you revise, you will pass." Type 2 : if + prétérit, would. "If I were a minister, I would build more schools." Type 3 : if + past perfect, would have + participe passé. "If she had left earlier, she would not have missed the bus." Jamais de will ou would après if.
+
+Les relatives : who pour les personnes, which pour les choses, whose pour la possession, where pour les lieux. Entre virgules, "that" est interdit. "Saint-Louis, which was the capital of French West Africa, is a historic city."
+
+Les mots de liaison : however, moreover, therefore, although, despite, because of, in order to. Rappelez-vous les constructions : although + proposition, despite + nom ; because + proposition, because of + nom.
+
+Question au public : reliez "The boy is my cousin. His bicycle was stolen." Réponse : "The boy whose bicycle was stolen is my cousin."
+
+## 42:00 – 50:00 · Quiz time: pause active
+
+Deux minutes de pause, puis cinq questions éclair. Écrivez vos réponses.
+
+- Question 1 : since ou for ? "I have known her … ten years." Réponse : for.
+- Question 2 : mettez au passif "Somebody cleans the office every day." Réponse : The office is cleaned every day.
+- Question 3 : complétez "If I … (have) a car, I would drive you." Réponse : had.
+- Question 4 : traduisez « la sécheresse ». Réponse : drought.
+- Question 5 : quelle formule de fin pour une lettre formelle commençant par "Dear Sir or Madam" ? Réponse : Yours faithfully.
+
+Quatre ou cinq bonnes réponses : très bien. Moins de trois : relisez ce soir votre fiche de règles, rien d''autre.
+
+## 50:00 – 62:00 · Vocabulary: les cinq thèmes
+
+Revoyons rapidement les mots les plus utiles. Globalization : trade, goods, multinational company, competition, migration, remittances, inequality. Environment : climate change, global warming, pollution, waste, drought, flooding, coastal erosion, renewable energy, sustainable development. Technology : social media, smartphone, online, artificial intelligence, mobile money, fake news, addiction. Education : school enrolment, dropout, literacy, vocational training, scholarship, girls'' education. Health : disease, malaria, vaccine, mosquito net, healthcare, malnutrition, clean water, prevention.
+
+Exercice oral : je dis une phrase en français, vous la dites en anglais. « Le paiement par téléphone mobile a facilité la vie des commerçants. » Réponse possible : "Mobile money has made life easier for traders." « Beaucoup d''élèves abandonnent l''école à cause de la pauvreté. » Réponse possible : "Many pupils drop out of school because of poverty."
+
+Visuel : un tableau à cinq colonnes, une par thème.
+
+## 62:00 – 75:00 · Correction commentée d''un exercice de compréhension et d''un essay
+
+Texte projeté : "Many young Africans dream of going abroad. However, some of them are now creating businesses at home, thanks to mobile phones and the Internet. In Dakar, for example, young entrepreneurs sell clothes and food online."
+
+Question 1 : True or false? All young Africans want to go abroad. Une copie fictive répond : "False." C''est insuffisant : il manque la justification. Correction : False. "However, some of them are now creating businesses at home."
+
+Question 2 : Find a word meaning "people who start a business". Réponse : entrepreneurs.
+
+Passons à l''expression écrite. Sujet : "Should young Africans stay in their countries to build their future?" Une introduction faible : "Yes, they should stay. It is good." Pourquoi est-ce faible ? Pas de présentation du sujet, pas de nuance, vocabulaire pauvre. Introduction améliorée : "Every year, many young Africans leave their countries to look for better opportunities abroad. Should they stay at home to build their future, or is migration a reasonable choice?" Ensuite, un paragraphe "On the one hand", un paragraphe "On the other hand", et une conclusion nuancée qui commence par "To conclude".
+
+## 75:00 – 82:00 · Gestion du temps et relecture
+
+Le jour de l''épreuve : lisez tout le sujet, y compris les consignes d''expression écrite, avant de commencer. Faites d''abord la partie que vous maîtrisez le mieux. Pour l''expression écrite, préparez un plan au brouillon en quelques lignes, puis rédigez directement au propre. Gardez cinq à dix minutes pour la relecture, avec une liste de contrôle : -s de la troisième personne, temps des verbes, accord sujet-verbe, absence de -s aux adjectifs, majuscules aux noms de pays et de langues, nombre de mots.
+
+## 82:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : en compréhension, justifiez toujours par une citation exacte ; en langue, appliquez les règles sans improviser ; en expression écrite, respectez la forme, la longueur et l''organisation, avec des mots de liaison et du vocabulaire thématique.
+
+Évaluation finale, cinq questions :
+
+- Question 1 : corrigez "He don''t like maths." Réponse : "He doesn''t like maths."
+- Question 2 : mettez au passif "The company will hire twenty workers." Réponse : Twenty workers will be hired by the company.
+- Question 3 : mettez au discours indirect : She said, "I am tired today." Réponse : She said (that) she was tired that day.
+- Question 4 : réécrivez au type 3 : "He didn''t revise, so he failed." Réponse : If he had revised, he would not have failed.
+- Question 5 : complétez avec although ou despite : "… the heat, the students kept working." Réponse : Despite.
+
+Mot de la fin : sleep well, have a good breakfast, and trust your preparation. Lisez calmement, écrivez clairement. Good luck to all of you!', 'video', 90, false, 60
+from public.courses c where c.slug = 'bac-anglais'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive veille du Bac en Anglais');
+
 -- Cours : Espagnol LV2 : réussir l'épreuve du Bac
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'bac-espagnol', (select id from public.levels where name = 'Terminale'), null, 'Espagnol (LV2)', 'Espagnol LV2 : réussir l''épreuve du Bac', 'Ce cours d''examen prépare l''épreuve d''espagnol LV2 du Baccalauréat : méthode de compréhension écrite et d''analyse de texte, grammaire du Bac (subjonctif présent et imparfait, concordance des temps, conditionnel et hypothèse, ser et estar, por et para, discours indirect), expression écrite (essai argumenté, lettre) et repères de civilisation hispanique (Espagne, Amérique latine, liens avec l''Afrique). Il s''adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l''espagnol en LV2. Les explications sont en français et les exemples en espagnol. Prérequis : les acquis d''espagnol de la Seconde et de la Première.', true, 210
@@ -1620,658 +3407,3 @@ Visuel : une grille de relecture en cinq points (plan, connecteurs, subjonctif, 
 « Synthèse : subjonctif bien formé, concordance respectée, jamais de conditionnel après "si", ser pour définir et estar pour situer, por pour la cause et para pour le but. Vous avez travaillé, vous êtes prêts. ¡Mucha suerte mañana y hasta pronto! »', 'video', 90, false, 60
 from public.courses c where c.slug = 'bac-espagnol'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille du Bac » en espagnol');
-
--- Cours : Arabe LV2 : réussir l'épreuve du Bac
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'bac-arabe', (select id from public.levels where name = 'Terminale'), null, 'Arabe (LV2)', 'Arabe LV2 : réussir l''épreuve du Bac', 'Ce cours d''examen prépare l''épreuve d''arabe LV2 du Baccalauréat : lecture et analyse d''un texte, grammaire du Bac (cas et déclinaison, phrase nominale et phrase verbale, verbes dérivés usuels, nombres, relatifs, phrase conditionnelle), vocabulaire thématique (éducation, société, environnement) et expression écrite (essai court, lettre). Il s''adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l''arabe en LV2. Les explications sont en français, les exemples en arabe vocalisé avec translittération et traduction. Prérequis : lire couramment l''arabe et maîtriser les bases du collège et de la Seconde.', true, 211
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Comprendre l''épreuve et méthode de travail', '## Objectifs de la leçon
-
-- Savoir comment se présente l''épreuve d''arabe LV2 du Bac et ce que le correcteur attend.
-- Connaître une méthode pour chaque type d''exercice.
-- Repérer les erreurs les plus fréquentes et apprendre à les éviter.
-- Organiser tes révisions sur 10 semaines.
-
-## À qui s''adresse ce cours
-
-Ce cours s''adresse d''abord aux élèves de Terminale des séries L, et plus largement à tout candidat qui présente l''arabe en deuxième langue vivante, quelle que soit sa série (L, S ou G), selon les options prévues par les textes officiels en vigueur. La durée de l''épreuve, son coefficient et son barème sont fixés par ces textes : renseigne-toi auprès de ton établissement. La méthode présentée ici reste valable dans tous les cas.
-
-Le programme révisé couvre le lycée : la Seconde (phrase nominale, phrase verbale, accompli et inaccompli), la Première (cas et déclinaison, كَانَ et إِنَّ, nombres) et la Terminale (verbes dérivés, relatifs, phrase conditionnelle, expression écrite argumentée).
-
-Dans ce cours, chaque exemple arabe est vocalisé, suivi de sa translittération entre parenthèses et de sa traduction. Les lettres particulières sont notées ainsi : ʿ pour ع, ʾ pour la hamza ء, ḥ pour ح, kh pour خ, dh pour ذ, sh pour ش, ṣ pour ص, ḍ pour ض, ṭ pour ط, ẓ pour ظ, gh pour غ ; les voyelles longues sont ā, ī, ū.
-
-## Comment se présente l''épreuve
-
-L''épreuve repose en général sur un texte en arabe moderne : récit, article, lettre ou dialogue, souvent sur un thème de société (éducation, famille, jeunesse, environnement, santé, solidarité). On y trouve habituellement trois familles d''exercices.
-
-- Compréhension : questions sur le texte, vrai ou faux, recherche de synonymes ou de contraires, titre à proposer.
-- Langue : analyse grammaticale de mots (cas, fonction), transformations (pluriel, négation, ajout de كَانَ ou de إِنَّ), conjugaison, nombres, dérivés.
-- Expression écrite : un paragraphe ou un court essai, ou une lettre, en lien avec le thème du texte.
-
-La présentation exacte varie : lis toutes les consignes avant de commencer.
-
-## Comprendre les consignes en arabe
-
-Les consignes sont souvent rédigées en arabe. Apprends-les par cœur.
-
-- أَجِبْ عَنِ الْأَسْئِلَةِ (ajib ʿani l-asʾilati) : réponds aux questions.
-- ضَعْ عُنْوَانًا مُنَاسِبًا لِلنَّصِّ (ḍaʿ ʿunwānan munāsiban li-n-naṣṣi) : donne un titre approprié au texte.
-- اِشْرَحِ الْكَلِمَاتِ التَّالِيَةَ (ishraḥi l-kalimāti t-tāliyata) : explique les mots suivants.
-- هَاتِ ضِدَّ (hāti ḍidda) : donne le contraire de.
-- هَاتِ جَمْعَ (hāti jamʿa) : donne le pluriel de ; هَاتِ مُفْرَدَ (hāti mufrada) : donne le singulier de.
-- أَعْرِبْ (aʿrib) : fais l''analyse grammaticale.
-- صَحِيحٌ أَمْ خَطَأٌ (ṣaḥīḥun am khaṭaʾun) : vrai ou faux.
-
-Et les mots interrogatifs : مَنْ (man, qui), مَاذَا (mādhā, que, quoi), أَيْنَ (ayna, où), مَتَى (matā, quand), كَيْفَ (kayfa, comment), لِمَاذَا (limādhā, pourquoi), كَمْ (kam, combien).
-
-## Méthode pour la compréhension
-
-Lis le texte une première fois en entier pour saisir le thème. À la deuxième lecture, souligne les personnages, les lieux, les mots de liaison et les verbes principaux. Pour répondre, reprends les mots de la question et complète avec l''information du texte. À la question أَيْنَ تَعِيشُ فَاطِمَةُ؟ (ayna taʿīshu Fāṭimatu? : où vit Fatima ?), on répond : تَعِيشُ فَاطِمَةُ فِي قَرْيَةٍ صَغِيرَةٍ (taʿīshu Fāṭimatu fī qaryatin ṣaghīratin : Fatima vit dans un petit village). Pour un vrai ou faux, justifie toujours par une courte citation du texte.
-
-## Méthode pour la langue
-
-Avant de répondre, demande-toi trois choses : quel est le type de phrase (nominale ou verbale) ? Quelle est la fonction du mot ? Quel cas ou quel mode en découle ? Écris ensuite la voyelle finale clairement : c''est elle que le correcteur regarde.
-
-## Méthode pour l''expression écrite
-
-Fais un plan au brouillon : une introduction d''une ou deux phrases, deux idées illustrées par un exemple, une conclusion. Écris des phrases courtes et correctes, vocalise les fins de mots dont tu es sûr, et réutilise le vocabulaire du texte. Garde du temps pour relire l''orthographe et les accords.
-
-## Organiser son temps
-
-Répartition indicative, à adapter à la durée officielle de ton épreuve : environ 15 % pour la lecture, 35 % pour la compréhension, 25 % pour la langue, 20 % pour l''expression et 5 % pour la relecture.
-
-## Les erreurs fréquentes
-
-- Accorder au pluriel un verbe placé avant son sujet : on écrit ذَهَبَ الطُّلَّابُ (dhahaba ṭ-ṭullābu : les étudiants sont partis), et non ذَهَبُوا الطُّلَّابُ.
-- Oublier qu''un pluriel de non-humains s''accorde au féminin singulier : الْكُتُبُ مُفِيدَةٌ (al-kutubu mufīdatun : les livres sont utiles).
-- Se tromper de démonstratif : هَذَا الْكِتَابُ (hādhā l-kitābu : ce livre), mais هَذِهِ الْمَدْرَسَةُ (hādhihi l-madrasatu : cette école).
-- Mettre la terminaison -a au lieu de -i après une préposition : فِي الْمَدْرَسَةِ (fī l-madrasati), avec une kasra.
-- Confondre la tāʾ marbūṭa ة et le hāʾ ه, ou le yāʾ ي et l''alif maqṣūra ى (عَلَى s''écrit avec ى).
-- Mal accorder les nombres de 3 à 10 : on écrit ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin : trois livres), et non ثَلَاثُ كُتُبٍ.
-
-## Plan de révision sur 10 semaines
-
-- Semaine 1 : diagnostic sur un sujet complet, lecture de cette leçon, carnet de vocabulaire.
-- Semaine 2 : lecture et analyse de texte, consignes en arabe (leçon 2).
-- Semaine 3 : vocabulaire thématique et expression écrite (leçon 2).
-- Semaine 4 : cas et déclinaison (leçon 3).
-- Semaine 5 : phrase nominale, phrase verbale, كَانَ et إِنَّ, modes du verbe (leçon 3).
-- Semaine 6 : verbes dérivés et nombres (leçon 4).
-- Semaine 7 : relatifs et phrase conditionnelle (leçon 4).
-- Semaine 8 : sujet type en temps limité (leçon 5).
-- Semaine 9 : deuxième sujet blanc et fiche d''erreurs personnelles.
-- Semaine 10 : révision légère et cours vidéo « veille du Bac ».
-
-Chaque jour, lis au moins un court paragraphe en arabe à voix haute et apprends cinq mots nouveaux.
-
-## Points clés
-
-- Apprends les consignes et les mots interrogatifs : ils rapportent des points faciles.
-- Réponds en phrases complètes en reprenant les mots de la question.
-- Vérifie la fonction du mot avant d''écrire sa voyelle finale.
-- La régularité compte plus que le volume.
-
-## Exercices pratiques
-
-Exercice 1. Traduis les consignes : أَجِبْ عَنِ الْأَسْئِلَةِ ; هَاتِ ضِدَّ ; أَعْرِبْ.
-
-Exercice 2. Associe chaque mot interrogatif à son sens : مَتَى ، كَيْفَ ، لِمَاذَا.
-
-Exercice 3. Corrige : ذَهَبُوا الطُّلَّابُ إِلَى الْمَلْعَبِ.
-
-Exercice 4. Corrige : هَذَا الْمَدْرَسَةُ كَبِيرَةٌ.
-
-Exercice 5. Réponds par une phrase complète : أَيْنَ يَسْكُنُ عَلِيٌّ؟ (Ali habite à Touba.)
-
-Exercice 6. Ton épreuve dure, par hypothèse, 2 heures. Calcule le temps de chaque partie selon la répartition indicative.
-
-## Corrigé
-
-Exercice 1. « Réponds aux questions » ; « donne le contraire de » ; « fais l''analyse grammaticale ».
-
-Exercice 2. مَتَى (matā) : quand ; كَيْفَ (kayfa) : comment ; لِمَاذَا (limādhā) : pourquoi.
-
-Exercice 3. ذَهَبَ الطُّلَّابُ إِلَى الْمَلْعَبِ (dhahaba ṭ-ṭullābu ilā l-malʿabi : les étudiants sont allés au stade). Le verbe placé avant le sujet reste au singulier.
-
-Exercice 4. هَذِهِ الْمَدْرَسَةُ كَبِيرَةٌ (hādhihi l-madrasatu kabīratun : cette école est grande). مَدْرَسَةٌ est féminin, donc démonstratif féminin.
-
-Exercice 5. يَسْكُنُ عَلِيٌّ فِي طُوبَى (yaskunu ʿAliyyun fī Ṭūbā : Ali habite à Touba).
-
-Exercice 6. 2 heures = 120 minutes. Lecture : 15 % = 18 min ; compréhension : 35 % = 42 min ; langue : 25 % = 30 min ; expression : 20 % = 24 min ; relecture : 5 % = 6 min. Total : 18 + 42 + 30 + 24 + 6 = 120 min.', 'texte', 50, true, 10
-from public.courses c where c.slug = 'bac-arabe'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comprendre l''épreuve et méthode de travail');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Lecture, analyse de texte, vocabulaire thématique et expression écrite', '## Objectifs de la leçon
-
-- Lire et analyser un texte en arabe avec méthode.
-- Maîtriser le vocabulaire des thèmes du Bac : éducation, société, environnement.
-- Rédiger un court essai et une lettre en arabe.
-
-## Texte d''étude
-
-Texte d''entraînement rédigé pour ce cours.
-
-تَعِيشُ فَاطِمَةُ فِي قَرْيَةٍ صَغِيرَةٍ قُرْبَ مَدِينَةِ تِيَاس. فِي الْمَاضِي كَانَتِ الْأَشْجَارُ كَثِيرَةً حَوْلَ الْقَرْيَةِ، لَكِنَّ الْجَفَافَ وَقَطْعَ الْأَشْجَارِ غَيَّرَا الْمَنْظَرَ. لِذَلِكَ قَرَّرَتْ فَاطِمَةُ أَنْ تَجْمَعَ شَبَابَ الْقَرْيَةِ، وَقَالَتْ لَهُمْ: «إِذَا غَرَسْنَا الْأَشْجَارَ الْيَوْمَ، وَجَدَ أَوْلَادُنَا الظِّلَّ غَدًا». وَفِي يَوْمِ الْأَحَدِ اجْتَمَعَ الشَّبَابُ وَغَرَسُوا مِائَةَ شَجَرَةٍ. وَالْآنَ يَسْقِيهَا التَّلَامِيذُ بَعْدَ الدُّرُوسِ.
-
-Translittération : taʿīshu Fāṭimatu fī qaryatin ṣaghīratin qurba madīnati Tiyās. fī l-māḍī kānati l-ashjāru kathīratan ḥawla l-qaryati, lākinna l-jafāfa wa-qaṭʿa l-ashjāri ghayyarā l-manẓara. li-dhālika qarrarat Fāṭimatu an tajmaʿa shabāba l-qaryati, wa-qālat lahum : « idhā gharasnā l-ashjāra l-yawma, wajada awlādunā ẓ-ẓilla ghadan ». wa-fī yawmi l-aḥadi jtamaʿa sh-shabābu wa-gharasū miʾata shajaratin. wa-l-āna yasqīhā t-talāmīdhu baʿda d-durūsi.
-
-Traduction : Fatima vit dans un petit village près de la ville de Thiès. Autrefois, les arbres étaient nombreux autour du village, mais la sécheresse et la coupe des arbres ont changé le paysage. C''est pourquoi Fatima a décidé de réunir les jeunes du village et leur a dit : « Si nous plantons des arbres aujourd''hui, nos enfants trouveront de l''ombre demain. » Le dimanche, les jeunes se sont réunis et ont planté cent arbres. Maintenant, les élèves les arrosent après les cours.
-
-## Méthode d''analyse en quatre étapes
-
-- Étape 1, la situation : qui ? Fatima et les jeunes. Où ? Un village près de Thiès. Quand ? Autrefois, puis aujourd''hui.
-- Étape 2, le problème : la sécheresse et la coupe des arbres ont changé le paysage.
-- Étape 3, la solution : Fatima mobilise les jeunes, qui plantent cent arbres.
-- Étape 4, le message : chacun peut agir pour l''environnement, et l''effort d''aujourd''hui profite aux générations futures.
-
-Repère aussi les mots de liaison, qui révèlent la structure : لَكِنَّ (lākinna, mais) annonce le problème, لِذَلِكَ (li-dhālika, c''est pourquoi) annonce la réaction.
-
-## Le vocabulaire de l''analyse
-
-- النَّصُّ (an-naṣṣu) : le texte ; الْعُنْوَانُ (al-ʿunwānu) : le titre.
-- الْكَاتِبُ (al-kātibu) : l''auteur ; الشَّخْصِيَّاتُ (ash-shakhṣiyyātu) : les personnages.
-- الْفِكْرَةُ الرَّئِيسِيَّةُ (al-fikratu r-raʾīsiyyatu) : l''idée principale.
-- يَتَحَدَّثُ النَّصُّ عَنْ... (yataḥaddathu n-naṣṣu ʿan...) : le texte parle de...
-
-## Vocabulaire thématique : l''éducation
-
-- التَّعْلِيمُ (at-taʿlīmu) : l''enseignement.
-- الْمَدْرَسَةُ (al-madrasatu), pluriel الْمَدَارِسُ (al-madārisu) : l''école, les écoles.
-- الْجَامِعَةُ (al-jāmiʿatu) : l''université.
-- الِامْتِحَانُ (al-imtiḥānu) : l''examen ; النَّجَاحُ (an-najāḥu) : la réussite.
-- الْأُمِّيَّةُ (al-ummiyyatu) : l''analphabétisme ; مَحْوُ الْأُمِّيَّةِ (maḥwu l-ummiyyati) : l''alphabétisation.
-- الْمَعْرِفَةُ (al-maʿrifatu) : la connaissance.
-
-## Vocabulaire thématique : la société
-
-- الْمُجْتَمَعُ (al-mujtamaʿu) : la société ; الْأُسْرَةُ (al-usratu) : la famille.
-- الشَّبَابُ (ash-shabābu) : les jeunes, la jeunesse.
-- الْبَطَالَةُ (al-baṭālatu) : le chômage ; الْهِجْرَةُ (al-hijratu) : l''émigration.
-- التَّضَامُنُ (at-taḍāmunu) : la solidarité.
-- الْحُقُوقُ وَالْوَاجِبَاتُ (al-ḥuqūqu wa-l-wājibātu) : les droits et les devoirs.
-
-## Vocabulaire thématique : l''environnement
-
-- الْبِيئَةُ (al-bīʾatu) : l''environnement ; التَّلَوُّثُ (at-talawwuthu) : la pollution.
-- النُّفَايَاتُ (an-nufāyātu) : les déchets.
-- الْجَفَافُ (al-jafāfu) : la sécheresse ; التَّصَحُّرُ (at-taṣaḥḥuru) : la désertification.
-- الْغَابَةُ (al-ghābatu) : la forêt ; الشَّجَرَةُ (ash-shajaratu), pluriel الْأَشْجَارُ (al-ashjāru) : l''arbre, les arbres.
-- تَغَيُّرُ الْمُنَاخِ (taghayyuru l-munākhi) : le changement climatique.
-
-Contraires utiles : كَثِيرٌ (kathīrun, nombreux) et قَلِيلٌ (qalīlun, peu nombreux) ; قَرِيبٌ (qarībun, proche) et بَعِيدٌ (baʿīdun, lointain) ; أَمْسِ (amsi, hier) et غَدًا (ghadan, demain) ; النَّجَاحُ (an-najāḥu, la réussite) et الرُّسُوبُ (ar-rusūbu, l''échec à un examen).
-
-## Méthode : le court essai
-
-Un essai comprend trois parties : الْمُقَدِّمَةُ (al-muqaddimatu, l''introduction), الْعَرْضُ (al-ʿarḍu, le développement) et الْخَاتِمَةُ (al-khātimatu, la conclusion). Connecteurs : أَوَّلًا (awwalan, d''abord), ثَانِيًا (thāniyan, deuxièmement), ثُمَّ (thumma, ensuite), بِالْإِضَافَةِ إِلَى ذَلِكَ (bi-l-iḍāfati ilā dhālika, de plus), لِأَنَّ (li-anna, parce que), فِي رَأْيِي (fī raʾyī, à mon avis), وَفِي الْخِتَامِ (wa-fī l-khitāmi, en conclusion).
-
-Phrases modèles :
-
-- أَوَّلًا، يَجِبُ عَلَيْنَا أَنْ نَغْرِسَ الْأَشْجَارَ (awwalan, yajibu ʿalaynā an naghrisa l-ashjāra) : d''abord, nous devons planter des arbres.
-- ثَانِيًا، لَا تَرْمُوا النُّفَايَاتِ فِي الشَّارِعِ (thāniyan, lā tarmū n-nufāyāti fī sh-shāriʿi) : ensuite, ne jetez pas les déchets dans la rue.
-- فِي رَأْيِي، التَّعْلِيمُ مِفْتَاحُ التَّنْمِيَةِ (fī raʾyī, at-taʿlīmu miftāḥu t-tanmiyati) : à mon avis, l''enseignement est la clé du développement.
-- وَفِي الْخِتَامِ، حِمَايَةُ الْبِيئَةِ مَسْؤُولِيَّةُ الْجَمِيعِ (wa-fī l-khitāmi, ḥimāyatu l-bīʾati masʾūliyyatu l-jamīʿi) : en conclusion, protéger l''environnement est la responsabilité de tous.
-
-## Méthode : la lettre
-
-- Lieu et date en haut : دَاكَار، فِي 15 مَارِس 2026 (Dākār, fī 15 māris 2026).
-- Lettre amicale : عَزِيزِي عُمَر (ʿazīzī ʿUmar : cher Omar), puis السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ (as-salāmu ʿalaykum wa-raḥmatu llāhi wa-barakātuhu).
-- Prise de nouvelles : أَرْجُو أَنْ تَكُونَ فِي صِحَّةٍ جَيِّدَةٍ (arjū an takūna fī ṣiḥḥatin jayyidatin : j''espère que tu es en bonne santé).
-- Objet : أَكْتُبُ إِلَيْكَ لِأُخْبِرَكَ بِنَجَاحِي فِي الِامْتِحَانِ (aktubu ilayka li-ukhbiraka bi-najāḥī fī l-imtiḥāni : je t''écris pour t''annoncer ma réussite à l''examen).
-- Fin : أَبْلِغْ سَلَامِي إِلَى أُسْرَتِكَ (abligh salāmī ilā usratika : transmets mes salutations à ta famille), puis صَدِيقُكَ الْمُخْلِصُ (ṣadīquka l-mukhliṣu : ton ami fidèle).
-- Lettre officielle : حَضْرَةَ السَّيِّدِ الْمُدِيرِ الْمُحْتَرَمِ (ḥaḍrata s-sayyidi l-mudīri l-muḥtarami : Monsieur le Directeur), تَحِيَّةً طَيِّبَةً، وَبَعْدُ (taḥiyyatan ṭayyibatan, wa-baʿdu : salutations, et ensuite), et pour finir وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الِاحْتِرَامِ (wa-tafaḍḍalū bi-qabūli fāʾiqi l-iḥtirāmi : veuillez agréer l''expression de mon profond respect).
-
-## Points clés
-
-- Situation, problème, solution, message : quatre étapes pour analyser un texte.
-- Apprends le vocabulaire par thème, avec les pluriels et les contraires.
-- Un essai : introduction, deux idées avec exemples, conclusion, connecteurs.
-- Une lettre : lieu et date, formule d''appel, objet, formule finale adaptée.
-
-## Exercices pratiques
-
-Exercice 1. أَيْنَ تَعِيشُ فَاطِمَةُ؟ (Où vit Fatima ?) Réponds en arabe.
-
-Exercice 2. مَا الَّذِي غَيَّرَ مَنْظَرَ الْقَرْيَةِ؟ (mā lladhī ghayyara manẓara l-qaryati? : qu''est-ce qui a changé le paysage du village ?) Réponds en arabe.
-
-Exercice 3. صَحِيحٌ أَمْ خَطَأٌ : كَانَتِ الْأَشْجَارُ قَلِيلَةً فِي الْمَاضِي. Justifie.
-
-Exercice 4. كَمْ شَجَرَةً غَرَسَ الشَّبَابُ؟ (kam shajaratan gharasa sh-shabābu? : combien d''arbres les jeunes ont-ils plantés ?)
-
-Exercice 5. هَاتِ مِنَ النَّصِّ ضِدَّ : قَلِيلَةً ، أَمْسِ.
-
-Exercice 6. Propose un titre en arabe pour le texte.
-
-Exercice 7. Écris en arabe trois phrases d''un essai sur la protection de l''environnement, avec أَوَّلًا, ثَانِيًا et وَفِي الْخِتَامِ.
-
-## Corrigé
-
-Exercice 1. تَعِيشُ فَاطِمَةُ فِي قَرْيَةٍ صَغِيرَةٍ قُرْبَ مَدِينَةِ تِيَاس (taʿīshu Fāṭimatu fī qaryatin ṣaghīratin qurba madīnati Tiyās).
-
-Exercice 2. غَيَّرَ الْجَفَافُ وَقَطْعُ الْأَشْجَارِ مَنْظَرَ الْقَرْيَةِ (ghayyara l-jafāfu wa-qaṭʿu l-ashjāri manẓara l-qaryati : la sécheresse et la coupe des arbres ont changé le paysage du village). Le verbe placé avant le sujet reste au singulier.
-
-Exercice 3. خَطَأٌ (khaṭaʾun : faux), لِأَنَّ النَّصَّ يَقُولُ (li-anna n-naṣṣa yaqūlu : parce que le texte dit) : « كَانَتِ الْأَشْجَارُ كَثِيرَةً ».
-
-Exercice 4. غَرَسَ الشَّبَابُ مِائَةَ شَجَرَةٍ (gharasa sh-shabābu miʾata shajaratin : les jeunes ont planté cent arbres). Remarque : après كَمْ interrogatif, le nom est au singulier et au cas direct (شَجَرَةً).
-
-Exercice 5. Contraire de قَلِيلَةً : كَثِيرَةً (kathīratan). Contraire de أَمْسِ : غَدًا (ghadan).
-
-Exercice 6. Exemples : الشَّبَابُ وَالْبِيئَةُ (ash-shabābu wa-l-bīʾatu : les jeunes et l''environnement) ; شَجَرَةٌ لِلْمُسْتَقْبَلِ (shajaratun li-l-mustaqbali : un arbre pour l''avenir).
-
-Exercice 7. Exemple : أَوَّلًا، يَجِبُ عَلَيْنَا أَنْ نَغْرِسَ الْأَشْجَارَ. ثَانِيًا، لَا تَرْمُوا النُّفَايَاتِ فِي الشَّارِعِ. وَفِي الْخِتَامِ، حِمَايَةُ الْبِيئَةِ مَسْؤُولِيَّةُ الْجَمِيعِ. Toute production correcte reprenant les trois connecteurs est acceptée.', 'texte', 60, false, 20
-from public.courses c where c.slug = 'bac-arabe'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Lecture, analyse de texte, vocabulaire thématique et expression écrite');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Grammaire du Bac 1 : cas et déclinaison, phrase nominale et phrase verbale', '## Objectifs de la leçon
-
-- Connaître les trois cas du nom et leurs marques.
-- Décliner le duel, les pluriels, les « cinq noms » et les diptotes.
-- Construire et analyser la phrase nominale (avec كَانَ et إِنَّ) et la phrase verbale.
-- Employer les modes de l''inaccompli après لَنْ, لَمْ et أَنْ.
-
-## Fiche 1 : les trois cas (الْإِعْرَابُ, al-iʿrāb)
-
-Le nom arabe change de voyelle finale selon sa fonction.
-
-- Cas sujet, الرَّفْعُ (ar-rafʿ), marque : ḍamma (-u). Exemple : جَاءَ الْمُعَلِّمُ (jāʾa l-muʿallimu : l''enseignant est venu).
-- Cas direct, النَّصْبُ (an-naṣb), marque : fatḥa (-a). Exemple : رَأَيْتُ الْمُعَلِّمَ (raʾaytu l-muʿallima : j''ai vu l''enseignant).
-- Cas indirect, الْجَرُّ (al-jarr), marque : kasra (-i). Exemple : سَلَّمْتُ عَلَى الْمُعَلِّمِ (sallamtu ʿalā l-muʿallimi : j''ai salué l''enseignant).
-
-Le nom indéterminé porte le tanwīn : هَذَا كِتَابٌ (hādhā kitābun : ceci est un livre) ; قَرَأْتُ كِتَابًا (qaraʾtu kitāban : j''ai lu un livre) ; نَظَرْتُ إِلَى كِتَابٍ (naẓartu ilā kitābin : j''ai regardé un livre).
-
-Le cas indirect s''emploie après une préposition (فِي, مِنْ, إِلَى, عَلَى, عَنْ, بِـ, لِـ) et pour le complément de nom.
-
-## Fiche 2 : l''annexion (الْإِضَافَةُ, al-iḍāfa)
-
-Dans كِتَابُ التِّلْمِيذِ (kitābu t-tilmīdhi : le livre de l''élève), le premier terme n''a ni article ni tanwīn, et le second est toujours au cas indirect. Le premier terme prend le cas de sa fonction : قَرَأْتُ كِتَابَ التِّلْمِيذِ (qaraʾtu kitāba t-tilmīdhi : j''ai lu le livre de l''élève).
-
-## Fiche 3 : l''adjectif
-
-L''adjectif suit le nom et s''accorde en cas, en genre, en nombre et en détermination : قَرَأْتُ كِتَابًا مُفِيدًا (qaraʾtu kitāban mufīdan : j''ai lu un livre utile) ; فِي الْمَدْرَسَةِ الْجَدِيدَةِ (fī l-madrasati l-jadīdati : dans la nouvelle école). Règle essentielle : le pluriel d''un nom non humain s''accorde au féminin singulier : الْأَشْجَارُ الْكَبِيرَةُ (al-ashjāru l-kabīratu : les grands arbres).
-
-## Fiche 4 : duel, pluriels, cinq noms et diptotes
-
-- Duel : -āni au cas sujet, -ayni aux deux autres cas. جَاءَ الْمُعَلِّمَانِ (jāʾa l-muʿallimāni : les deux enseignants sont venus) ; رَأَيْتُ الْمُعَلِّمَيْنِ (raʾaytu l-muʿallimayni : j''ai vu les deux enseignants).
-- Pluriel masculin régulier : -ūna au cas sujet, -īna aux deux autres cas. جَاءَ الْمُعَلِّمُونَ (jāʾa l-muʿallimūna) ; رَأَيْتُ الْمُعَلِّمِينَ (raʾaytu l-muʿallimīna).
-- Pluriel féminin régulier : -u au cas sujet, -i aux deux autres cas, même au cas direct. جَاءَتِ الْمُعَلِّمَاتُ (jāʾati l-muʿallimātu) ; رَأَيْتُ الْمُعَلِّمَاتِ (raʾaytu l-muʿallimāti).
-- Les « cinq noms » (أَبٌ, أَخٌ...) suivis d''un complément allongent leur voyelle : جَاءَ أَبُوكَ (jāʾa abūka : ton père est venu) ; رَأَيْتُ أَبَاكَ (raʾaytu abāka) ; سَلَّمْتُ عَلَى أَبِيكَ (sallamtu ʿalā abīka).
-- Les diptotes (الْمَمْنُوعُ مِنَ الصَّرْفِ) n''ont pas de tanwīn et, sans article ni annexion, prennent -a au cas indirect : دَرَسْتُ فِي مَدَارِسَ كَثِيرَةٍ (darastu fī madārisa kathīratin : j''ai étudié dans de nombreuses écoles) ; سَلَّمْتُ عَلَى أَحْمَدَ (sallamtu ʿalā Aḥmada : j''ai salué Ahmed).
-
-## Fiche 5 : la phrase nominale
-
-Elle comprend un sujet, الْمُبْتَدَأُ (al-mubtadaʾ), et un prédicat, الْخَبَرُ (al-khabar), tous deux au cas sujet : الْعِلْمُ نُورٌ (al-ʿilmu nūrun : la science est lumière). Si le sujet est indéterminé, le prédicat (un complément de lieu) passe devant : فِي الْقِسْمِ سَبُّورَةٌ (fī l-qismi sabbūratun : il y a un tableau dans la classe).
-
-كَانَ et ses sœurs (أَصْبَحَ, صَارَ, لَيْسَ, مَا زَالَ) : le sujet reste au cas sujet, le prédicat passe au cas direct.
-
-- كَانَ الْجَوُّ حَارًّا (kāna l-jawwu ḥārran) : le temps était chaud.
-- أَصْبَحَ الشَّارِعُ نَظِيفًا (aṣbaḥa sh-shāriʿu naẓīfan) : la rue est devenue propre.
-- لَيْسَ الدَّرْسُ صَعْبًا (laysa d-darsu ṣaʿban) : la leçon n''est pas difficile.
-
-إِنَّ et ses sœurs (أَنَّ, لَكِنَّ, لَعَلَّ, لَيْتَ, كَأَنَّ) : le sujet passe au cas direct, le prédicat reste au cas sujet.
-
-- إِنَّ الْعِلْمَ نَافِعٌ (inna l-ʿilma nāfiʿun) : certes, la science est utile.
-- لَكِنَّ الطَّرِيقَ طَوِيلٌ (lākinna ṭ-ṭarīqa ṭawīlun) : mais la route est longue.
-
-## Fiche 6 : la phrase verbale
-
-Ordre habituel : verbe, sujet الْفَاعِلُ (al-fāʿil, au cas sujet), complément d''objet الْمَفْعُولُ بِهِ (al-mafʿūl bihi, au cas direct).
-
-- كَتَبَ الطَّالِبُ رِسَالَةً (kataba ṭ-ṭālibu risālatan) : l''étudiant a écrit une lettre.
-- كَتَبَتِ الطَّالِبَةُ رِسَالَةً (katabati ṭ-ṭālibatu risālatan) : l''étudiante a écrit une lettre.
-
-Accord : placé avant le sujet, le verbe s''accorde en genre mais reste au singulier : حَضَرَ الْمُعَلِّمُونَ (ḥaḍara l-muʿallimūna : les enseignants sont venus). Placé après, il s''accorde complètement : الْمُعَلِّمُونَ حَضَرُوا (al-muʿallimūna ḥaḍarū).
-
-## Fiche 7 : les modes de l''inaccompli
-
-- Indicatif (مَرْفُوعٌ) : يَدْرُسُ (yadrusu : il étudie).
-- Subjonctif (مَنْصُوبٌ) après أَنْ, لَنْ, لِـ, كَيْ, حَتَّى : لَنْ يَدْرُسَ (lan yadrusa : il n''étudiera pas).
-- Apocopé (مَجْزُومٌ) après لَمْ, لَا de l''interdiction, إِنْ conditionnel : لَمْ يَدْرُسْ (lam yadrus : il n''a pas étudié) ; لَا تَكْتُبْ (lā taktub : n''écris pas).
-
-Les formes en -ūna, -īna, -āni perdent leur nūn au subjonctif et à l''apocopé : يَدْرُسُونَ devient لَنْ يَدْرُسُوا (lan yadrusū) et لَمْ يَدْرُسُوا (lam yadrusū).
-
-## Points clés
-
-- -u sujet, -a complément direct, -i après préposition et en annexion.
-- كَانَ : prédicat au cas direct ; إِنَّ : sujet au cas direct.
-- Verbe avant un sujet pluriel : singulier.
-- لَنْ + subjonctif ; لَمْ + apocopé.
-
-## Exercices pratiques
-
-Exercice 1. Vocalise la fin du mot entre parenthèses selon sa fonction : a) قَرَأَ الْوَلَدُ (الْقِصَّة). b) ذَهَبْتُ إِلَى (السُّوق). c) (الْجَوّ) جَمِيلٌ.
-
-Exercice 2. Mets le mot entre parenthèses au bon cas : رَأَيْتُ (الْمُهَنْدِسُونَ).
-
-Exercice 3. Ajoute كَانَ : الْجَوُّ بَارِدٌ.
-
-Exercice 4. Ajoute إِنَّ : الْبِيئَةُ نَظِيفَةٌ.
-
-Exercice 5. Mets le sujet au pluriel : كَتَبَ الْمُهَنْدِسُ تَقْرِيرًا ; puis : الْمُهَنْدِسُ مَاهِرٌ.
-
-Exercice 6. Mets à la forme négative avec لَمْ, puis avec لَنْ : يَذْهَبُ التِّلْمِيذُ إِلَى الْمَدْرَسَةِ.
-
-Exercice 7. Corrige : الْكُتُبُ مُفِيدُونَ.
-
-## Corrigé
-
-Exercice 1. a) الْقِصَّةَ (al-qiṣṣata) : complément d''objet, cas direct. b) السُّوقِ (as-sūqi) : après إِلَى, cas indirect. c) الْجَوُّ (al-jawwu) : sujet d''une phrase nominale, cas sujet.
-
-Exercice 2. رَأَيْتُ الْمُهَنْدِسِينَ (raʾaytu l-muhandisīna : j''ai vu les ingénieurs).
-
-Exercice 3. كَانَ الْجَوُّ بَارِدًا (kāna l-jawwu bāridan : il faisait froid).
-
-Exercice 4. إِنَّ الْبِيئَةَ نَظِيفَةٌ (inna l-bīʾata naẓīfatun : certes, l''environnement est propre).
-
-Exercice 5. كَتَبَ الْمُهَنْدِسُونَ تَقْرِيرًا (kataba l-muhandisūna taqrīran) : le verbe reste au singulier. الْمُهَنْدِسُونَ مَاهِرُونَ (al-muhandisūna māhirūna) : l''adjectif d''un pluriel humain se met au pluriel.
-
-Exercice 6. لَمْ يَذْهَبِ التِّلْمِيذُ إِلَى الْمَدْرَسَةِ (lam yadhhabi t-tilmīdhu ilā l-madrasati : l''élève n''est pas allé à l''école) ; la kasra sur le bāʾ évite la rencontre de deux sukūn. لَنْ يَذْهَبَ التِّلْمِيذُ إِلَى الْمَدْرَسَةِ (lan yadhhaba t-tilmīdhu ilā l-madrasati : l''élève n''ira pas à l''école).
-
-Exercice 7. الْكُتُبُ مُفِيدَةٌ (al-kutubu mufīdatun) : pluriel non humain, donc féminin singulier.', 'texte', 60, false, 30
-from public.courses c where c.slug = 'bac-arabe'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire du Bac 1 : cas et déclinaison, phrase nominale et phrase verbale');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Grammaire du Bac 2 : verbes dérivés, nombres, relatifs et phrase conditionnelle', '## Objectifs de la leçon
-
-- Reconnaître et conjuguer les formes dérivées usuelles du verbe, avec leurs noms d''action.
-- Écrire et accorder les nombres.
-- Employer les pronoms relatifs.
-- Construire une phrase conditionnelle simple avec إِذَا, إِنْ, مَنْ et لَوْ.
-
-## Fiche 1 : les verbes dérivés
-
-À partir d''une racine de trois lettres, l''arabe forme des verbes dérivés selon des schèmes. Pour chaque forme : accompli, inaccompli, nom d''action (maṣdar), sens.
-
-- Forme II, فَعَّلَ : عَلَّمَ (ʿallama), يُعَلِّمُ (yuʿallimu), تَعْلِيمٌ (taʿlīmun) : enseigner.
-- Forme III, فَاعَلَ : سَاعَدَ (sāʿada), يُسَاعِدُ (yusāʿidu), مُسَاعَدَةٌ (musāʿadatun) : aider.
-- Forme IV, أَفْعَلَ : أَرْسَلَ (arsala), يُرْسِلُ (yursilu), إِرْسَالٌ (irsālun) : envoyer.
-- Forme V, تَفَعَّلَ : تَعَلَّمَ (taʿallama), يَتَعَلَّمُ (yataʿallamu), تَعَلُّمٌ (taʿallumun) : apprendre.
-- Forme VI, تَفَاعَلَ : تَعَاوَنَ (taʿāwana), يَتَعَاوَنُ (yataʿāwanu), تَعَاوُنٌ (taʿāwunun) : coopérer.
-- Forme VII, اِنْفَعَلَ : اِنْطَلَقَ (inṭalaqa), يَنْطَلِقُ (yanṭaliqu), اِنْطِلَاقٌ (inṭilāqun) : partir, démarrer.
-- Forme VIII, اِفْتَعَلَ : اِجْتَمَعَ (ijtamaʿa), يَجْتَمِعُ (yajtamiʿu), اِجْتِمَاعٌ (ijtimāʿun) : se réunir.
-- Forme X, اِسْتَفْعَلَ : اِسْتَخْدَمَ (istakhdama), يَسْتَخْدِمُ (yastakhdimu), اِسْتِخْدَامٌ (istikhdāmun) : utiliser.
-
-Astuce : à l''inaccompli, les formes II, III et IV ont un préfixe en u (يُـ) ; les autres ont un préfixe en a (يَـ). La forme V marque souvent le réfléchi de la forme II (enseigner, apprendre), la forme VI la réciprocité.
-
-Beaucoup de mots courants sont des participes de formes dérivées : مُعَلِّمٌ (muʿallimun, enseignant, forme II) ; مُتَعَلِّمٌ (mutaʿallimun, apprenant, forme V) ; مُجْتَمَعٌ (mujtamaʿun, société, forme VIII) ; مُسْتَقْبَلٌ (mustaqbalun, avenir, forme X).
-
-Exemples :
-
-- يُعَلِّمُ الْأُسْتَاذُ التَّلَامِيذَ الْقِرَاءَةَ (yuʿallimu l-ustādhu t-talāmīdha l-qirāʾata) : le professeur enseigne la lecture aux élèves.
-- تَتَعَاوَنُ الْأُسَرُ فِي الْحَيِّ (tataʿāwanu l-usaru fī l-ḥayyi) : les familles coopèrent dans le quartier.
-- يَسْتَخْدِمُ الشَّبَابُ الْهَاتِفَ كَثِيرًا (yastakhdimu sh-shabābu l-hātifa kathīran) : les jeunes utilisent beaucoup le téléphone.
-
-## Fiche 2 : les nombres
-
-- 1 et 2 se placent après le nom comme des adjectifs et s''accordent : كِتَابٌ وَاحِدٌ (kitābun wāḥidun : un seul livre) ; on emploie le plus souvent le duel seul : كِتَابَانِ (kitābāni : deux livres).
-- De 3 à 10, le nombre prend le genre inverse du singulier du nom, et le nom se met au pluriel, au cas indirect : ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin : trois livres, car كِتَابٌ est masculin) ; ثَلَاثُ بَنَاتٍ (thalāthu banātin : trois filles, car بِنْتٌ est féminin) ; خَمْسَةُ أَطْفَالٍ (khamsatu aṭfālin : cinq enfants).
-- De 11 à 99, le nom se met au singulier, au cas direct : أَحَدَ عَشَرَ تِلْمِيذًا (aḥada ʿashara tilmīdhan : onze élèves) ; خَمْسَ عَشْرَةَ تِلْمِيذَةً (khamsa ʿashrata tilmīdhatan : quinze élèves filles) ; عِشْرُونَ طَالِبًا (ʿishrūna ṭāliban : vingt étudiants) ; خَمْسَةٌ وَعِشْرُونَ تِلْمِيذًا (khamsatun wa-ʿishrūna tilmīdhan : vingt-cinq élèves).
-- 100 et 1000 sont suivis du nom au singulier, au cas indirect : مِائَةُ شَجَرَةٍ (miʾatu shajaratin : cent arbres) ; أَلْفُ كِتَابٍ (alfu kitābin : mille livres). مِائَةٌ s''écrit aussi مِئَةٌ.
-- Les dizaines 20 à 90 se déclinent comme un pluriel masculin : فِي الْقِسْمِ ثَلَاثُونَ تِلْمِيذًا (fī l-qismi thalāthūna tilmīdhan : il y a trente élèves dans la classe) ; رَأَيْتُ ثَلَاثِينَ تِلْمِيذًا (raʾaytu thalāthīna tilmīdhan).
-- Ordinaux, accordés comme des adjectifs : الدَّرْسُ الثَّالِثُ (ad-darsu th-thālithu : la troisième leçon) ; السَّنَةُ الْأُولَى (as-sanatu l-ūlā : la première année).
-
-## Fiche 3 : les relatifs
-
-Le relatif s''emploie seulement après un nom déterminé. Il s''accorde avec ce nom.
-
-- الَّذِي (alladhī) : masculin singulier. الْكِتَابُ الَّذِي قَرَأْتُهُ مُفِيدٌ (al-kitābu lladhī qaraʾtuhu mufīdun : le livre que j''ai lu est utile).
-- الَّتِي (allatī) : féminin singulier. الْمَدْرَسَةُ الَّتِي أَدْرُسُ فِيهَا قَرِيبَةٌ (al-madrasatu llatī adrusu fīhā qarībatun : l''école où j''étudie est proche).
-- الَّذِينَ (alladhīna) : masculin pluriel. نَجَحَ التَّلَامِيذُ الَّذِينَ اجْتَهَدُوا (najaḥa t-talāmīdhu lladhīna jtahadū : les élèves qui ont travaillé ont réussi).
-- اللَّوَاتِي ou اللَّاتِي (allawātī, allātī) : féminin pluriel. الْبَنَاتُ اللَّوَاتِي يَدْرُسْنَ (al-banātu llawātī yadrusna : les filles qui étudient).
-- Duel : اللَّذَانِ et اللَّتَانِ au cas sujet, اللَّذَيْنِ et اللَّتَيْنِ aux autres cas.
-
-Le pronom de rappel (الْعَائِدُ) renvoie au nom : le هُ de قَرَأْتُهُ, le هَا de فِيهَا. Avec un nom indéterminé, pas de relatif : قَرَأْتُ كِتَابًا مُفِيدًا (qaraʾtu kitāban mufīdan) ; هَذَا كِتَابٌ اشْتَرَيْتُهُ (hādhā kitābuni shtaraytuhu : voici un livre que j''ai acheté).
-
-مَنْ (man, celui qui, pour les personnes) et مَا (mā, ce que, pour les choses) : أُحِبُّ مَنْ يَحْتَرِمُ النَّاسَ (uḥibbu man yaḥtarimu n-nāsa : j''aime celui qui respecte les gens) ; اِفْهَمْ مَا تَقْرَأُ (ifham mā taqraʾu : comprends ce que tu lis).
-
-## Fiche 4 : la phrase conditionnelle
-
-- إِذَا (idhā) + accompli, pour une condition probable : إِذَا اجْتَهَدْتَ نَجَحْتَ (idhā jtahadta najaḥta : si tu travailles, tu réussiras). Le sens est futur malgré l''accompli.
-- La réponse prend فَـ si elle commence par سَـ, par un impératif, par لَنْ ou par une phrase nominale : إِذَا اجْتَهَدْتَ فَسَتَنْجَحُ (idhā jtahadta fa-satanjaḥu) ; إِذَا رَأَيْتَ النُّفَايَاتِ فَاجْمَعْهَا (idhā raʾayta n-nufāyāti fa-jmaʿhā : si tu vois des déchets, ramasse-les).
-- إِنْ (in) + deux verbes à l''apocopé : إِنْ تَدْرُسْ تَنْجَحْ (in tadrus tanjaḥ : si tu étudies, tu réussis) ; إِنْ تَزْرَعُوا تَحْصُدُوا (in tazraʿū taḥṣudū : si vous semez, vous récolterez).
-- مَنْ (man, quiconque) : مَنْ جَدَّ وَجَدَ (man jadda wajada : qui s''efforce trouve), proverbe très connu.
-- لَوْ (law) + accompli, puis لَـ, pour l''irréel : لَوْ دَرَسْتَ لَنَجَحْتَ (law darasta la-najaḥta : si tu avais étudié, tu aurais réussi).
-
-## Points clés
-
-- Inaccompli en yu- pour les formes II, III et IV.
-- 3 à 10 : genre inverse et pluriel au cas indirect ; 11 à 99 : singulier au cas direct ; 100 et 1000 : singulier au cas indirect.
-- Relatif seulement après un nom déterminé, avec pronom de rappel.
-- إِنْ : deux apocopés ; لَوْ : irréel avec لَـ.
-
-## Exercices pratiques
-
-Exercice 1. Donne la forme et le nom d''action : يُسَاعِدُ ; يَتَعَلَّمُ ; يَسْتَخْدِمُ.
-
-Exercice 2. Écris en lettres : 3 (أَطْفَال) ; 4 (بَنَات).
-
-Exercice 3. Écris en lettres : 12 تِلْمِيذ (masculin) ; 20 طَبِيب ; 100 شَجَرَة.
-
-Exercice 4. Complète avec le relatif : a) الطَّبِيبَةُ ... تَعْمَلُ فِي الْقَرْيَةِ نَشِيطَةٌ. b) الْمُعَلِّمُونَ ... حَضَرُوا مِنْ دَاكَار.
-
-Exercice 5. Corrige : قَرَأْتُ كِتَابًا الَّذِي اشْتَرَيْتُهُ.
-
-Exercice 6. Transforme avec إِنْ : إِذَا دَرَسْتَ نَجَحْتَ.
-
-Exercice 7. Transforme en irréel avec لَوْ : إِذَا اجْتَهَدْتَ نَجَحْتَ. Traduis.
-
-## Corrigé
-
-Exercice 1. يُسَاعِدُ : forme III, nom d''action مُسَاعَدَةٌ (musāʿadatun). يَتَعَلَّمُ : forme V, تَعَلُّمٌ (taʿallumun). يَسْتَخْدِمُ : forme X, اِسْتِخْدَامٌ (istikhdāmun).
-
-Exercice 2. ثَلَاثَةُ أَطْفَالٍ (thalāthatu aṭfālin), car طِفْلٌ est masculin. أَرْبَعُ بَنَاتٍ (arbaʿu banātin), car بِنْتٌ est féminin.
-
-Exercice 3. اِثْنَا عَشَرَ تِلْمِيذًا (ithnā ʿashara tilmīdhan) ; عِشْرُونَ طَبِيبًا (ʿishrūna ṭabīban) ; مِائَةُ شَجَرَةٍ (miʾatu shajaratin).
-
-Exercice 4. a) الَّتِي : الطَّبِيبَةُ الَّتِي تَعْمَلُ فِي الْقَرْيَةِ نَشِيطَةٌ (aṭ-ṭabībatu llatī taʿmalu fī l-qaryati nashīṭatun : la médecin qui travaille au village est dynamique). b) الَّذِينَ : الْمُعَلِّمُونَ الَّذِينَ حَضَرُوا مِنْ دَاكَار (al-muʿallimūna lladhīna ḥaḍarū min Dākār : les enseignants qui sont venus de Dakar).
-
-Exercice 5. Deux corrections possibles : قَرَأْتُ الْكِتَابَ الَّذِي اشْتَرَيْتُهُ (qaraʾtu l-kitāba lladhī shtaraytuhu : j''ai lu le livre que j''ai acheté) ou قَرَأْتُ كِتَابًا اشْتَرَيْتُهُ (qaraʾtu kitābani shtaraytuhu : j''ai lu un livre que j''ai acheté).
-
-Exercice 6. إِنْ تَدْرُسْ تَنْجَحْ (in tadrus tanjaḥ).
-
-Exercice 7. لَوِ اجْتَهَدْتَ لَنَجَحْتَ (lawi jtahadta la-najaḥta : si tu avais travaillé, tu aurais réussi). La kasra sur لَوِ permet la liaison avec l''alif de اجْتَهَدْتَ.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'bac-arabe'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire du Bac 2 : verbes dérivés, nombres, relatifs et phrase conditionnelle');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen : sujet d''entraînement corrigé', '## Présentation
-
-Voici un sujet complet d''entraînement conçu pour ce cours. Ce n''est pas un sujet officiel du Bac. La répartition des points est indicative et non officielle. Fais-le en temps limité, puis compare avec le corrigé.
-
-## Texte
-
-نَشَأَ مُصْطَفَى فِي قَرْيَةٍ بَعِيدَةٍ عَنِ الْمَدِينَةِ. كَانَتِ الْمَدْرَسَةُ بَعِيدَةً عَنْ بَيْتِهِ، فَكَانَ يَمْشِي كُلَّ صَبَاحٍ سَاعَةً كَامِلَةً. وَرَغْمَ التَّعَبِ لَمْ يَتْرُكِ الدِّرَاسَةَ، وَكَانَ يَقُولُ لِأَصْدِقَائِهِ: «مَنْ جَدَّ وَجَدَ». وَبَعْدَ سَنَوَاتٍ نَجَحَ فِي امْتِحَانِ الْبَكَالُورِيَا، ثُمَّ دَرَسَ الطِّبَّ فِي الْجَامِعَةِ. وَالْيَوْمَ يَعْمَلُ مُصْطَفَى طَبِيبًا فِي قَرْيَتِهِ، وَيُسَاعِدُ الْأَطْفَالَ الَّذِينَ يُرِيدُونَ أَنْ يَتَعَلَّمُوا. يَقُولُ مُصْطَفَى: «التَّعْلِيمُ مِفْتَاحُ الْمُسْتَقْبَلِ».
-
-Translittération : nashaʾa Muṣṭafā fī qaryatin baʿīdatin ʿani l-madīnati. kānati l-madrasatu baʿīdatan ʿan baytihi, fa-kāna yamshī kulla ṣabāḥin sāʿatan kāmilatan. wa-raghma t-taʿabi lam yatruki d-dirāsata, wa-kāna yaqūlu li-aṣdiqāʾihi : « man jadda wajada ». wa-baʿda sanawātin najaḥa fī mtiḥāni l-bakālūriyā, thumma darasa ṭ-ṭibba fī l-jāmiʿati. wa-l-yawma yaʿmalu Muṣṭafā ṭabīban fī qaryatihi, wa-yusāʿidu l-aṭfāla lladhīna yurīdūna an yataʿallamū. yaqūlu Muṣṭafā : « at-taʿlīmu miftāḥu l-mustaqbali ».
-
-Traduction : Moustapha a grandi dans un village éloigné de la ville. L''école était loin de sa maison : il marchait donc chaque matin une heure entière. Malgré la fatigue, il n''a pas abandonné les études, et il disait à ses amis : « Qui s''efforce trouve. » Quelques années plus tard, il a réussi l''examen du baccalauréat, puis il a étudié la médecine à l''université. Aujourd''hui, Moustapha travaille comme médecin dans son village et aide les enfants qui veulent apprendre. Il dit : « L''enseignement est la clé de l''avenir. »
-
-(Au jour de l''examen, le texte n''est évidemment pas traduit.)
-
-## Partie I : compréhension (8 points, indicatif)
-
-1. أَيْنَ نَشَأَ مُصْطَفَى؟ (2 pts)
-2. صَحِيحٌ أَمْ خَطَأٌ ؟ a) كَانَتِ الْمَدْرَسَةُ قَرِيبَةً مِنْ بَيْتِهِ. b) دَرَسَ مُصْطَفَى الطِّبَّ. (2 pts)
-3. هَاتِ مِنَ النَّصِّ ضِدَّ : قَرِيبَةٍ ، الرَّاحَةِ. (1 pt)
-4. مَاذَا يَعْمَلُ مُصْطَفَى الْيَوْمَ؟ (1 pt)
-5. Explique en français le proverbe « مَنْ جَدَّ وَجَدَ » et son lien avec l''histoire de Moustapha. (2 pts)
-
-## Partie II : langue (6 points, indicatif)
-
-1. أَعْرِبْ : الْمَدْرَسَةُ et بَعِيدَةً (dans كَانَتِ الْمَدْرَسَةُ بَعِيدَةً) ; الدِّرَاسَةَ (dans لَمْ يَتْرُكِ الدِّرَاسَةَ). (2 pts)
-2. Donne la forme dérivée et le nom d''action de يُسَاعِدُ et de يَتَعَلَّمُوا. (1 pt)
-3. Écris en lettres : 3 أَطْفَال ; 20 طَبِيب. (1 pt)
-4. Transforme en irréel avec لَوْ : إِذَا دَرَسْتَ نَجَحْتَ. (1 pt)
-5. Complète avec le relatif : الطَّبِيبَةُ ... تَعْمَلُ مَعَ مُصْطَفَى نَشِيطَةٌ. (1 pt)
-
-## Partie III : expression écrite (6 points, indicatif)
-
-Traite un sujet au choix (8 à 10 lignes).
-
-- Sujet A : essai court : « التَّعْلِيمُ مِفْتَاحُ الْمُسْتَقْبَلِ » (l''enseignement est la clé de l''avenir). Es-tu d''accord ?
-- Sujet B : écris une lettre à un ami qui veut abandonner ses études pour l''encourager à continuer.
-
-## Corrigé de la partie I
-
-1. نَشَأَ مُصْطَفَى فِي قَرْيَةٍ بَعِيدَةٍ عَنِ الْمَدِينَةِ (nashaʾa Muṣṭafā fī qaryatin baʿīdatin ʿani l-madīnati : Moustapha a grandi dans un village éloigné de la ville).
-
-2. a) خَطَأٌ (faux) : « كَانَتِ الْمَدْرَسَةُ بَعِيدَةً عَنْ بَيْتِهِ ». b) صَحِيحٌ (vrai) : « ثُمَّ دَرَسَ الطِّبَّ فِي الْجَامِعَةِ ».
-
-3. Contraire de قَرِيبَةٍ : بَعِيدَةٍ (baʿīdatin). Contraire de الرَّاحَةِ (ar-rāḥati, le repos) : التَّعَبِ (at-taʿabi, la fatigue).
-
-4. يَعْمَلُ مُصْطَفَى طَبِيبًا فِي قَرْيَتِهِ (yaʿmalu Muṣṭafā ṭabīban fī qaryatihi : Moustapha travaille comme médecin dans son village).
-
-5. Le proverbe signifie que celui qui fait des efforts obtient un résultat. Moustapha l''illustre : malgré la distance et la fatigue, il a persévéré, il a réussi le baccalauréat puis il est devenu médecin.
-
-## Corrigé de la partie II
-
-1. الْمَدْرَسَةُ : sujet (اِسْمُ كَانَ), au cas sujet, marque ḍamma. بَعِيدَةً : prédicat de كَانَ (خَبَرُ كَانَ), au cas direct, marque fatḥa avec tanwīn. الدِّرَاسَةَ : complément d''objet (مَفْعُولٌ بِهِ), au cas direct, marque fatḥa.
-
-2. يُسَاعِدُ : forme III, nom d''action مُسَاعَدَةٌ. يَتَعَلَّمُوا : forme V, nom d''action تَعَلُّمٌ ; ce verbe est au subjonctif après أَنْ, d''où la chute du nūn.
-
-3. ثَلَاثَةُ أَطْفَالٍ (thalāthatu aṭfālin) ; عِشْرُونَ طَبِيبًا (ʿishrūna ṭabīban).
-
-4. لَوْ دَرَسْتَ لَنَجَحْتَ (law darasta la-najaḥta : si tu avais étudié, tu aurais réussi).
-
-5. الطَّبِيبَةُ الَّتِي تَعْمَلُ مَعَ مُصْطَفَى نَشِيطَةٌ (aṭ-ṭabībatu llatī taʿmalu maʿa Muṣṭafā nashīṭatun : la médecin qui travaille avec Moustapha est dynamique).
-
-## Corrigé de la partie III : exemple pour le sujet A
-
-يَحْتَلُّ التَّعْلِيمُ مَكَانَةً كَبِيرَةً فِي حَيَاةِ الْإِنْسَانِ (yaḥtallu t-taʿlīmu makānatan kabīratan fī ḥayāti l-insāni : l''enseignement occupe une grande place dans la vie de l''homme). أَوَّلًا، يُسَاعِدُ التَّعْلِيمُ الشَّبَابَ عَلَى إِيجَادِ عَمَلٍ (awwalan, yusāʿidu t-taʿlīmu sh-shabāba ʿalā ījādi ʿamalin : d''abord, l''enseignement aide les jeunes à trouver un emploi). ثَانِيًا، يَجْعَلُ التَّعْلِيمُ الْمُوَاطِنَ وَاعِيًا بِحُقُوقِهِ وَوَاجِبَاتِهِ (thāniyan, yajʿalu t-taʿlīmu l-muwāṭina wāʿiyan bi-ḥuqūqihi wa-wājibātihi : ensuite, l''enseignement rend le citoyen conscient de ses droits et de ses devoirs). وَمِثَالُ ذَلِكَ مُصْطَفَى الَّذِي أَصْبَحَ طَبِيبًا بِفَضْلِ الدِّرَاسَةِ (wa-mithālu dhālika Muṣṭafā lladhī aṣbaḥa ṭabīban bi-faḍli d-dirāsati : l''exemple en est Moustapha, devenu médecin grâce aux études). وَفِي الْخِتَامِ، يَجِبُ عَلَيْنَا جَمِيعًا أَنْ نَهْتَمَّ بِتَعْلِيمِ الْأَطْفَالِ (wa-fī l-khitāmi, yajibu ʿalaynā jamīʿan an nahtamma bi-taʿlīmi l-aṭfāli : en conclusion, nous devons tous prendre soin de l''éducation des enfants).
-
-## Corrigé de la partie III : exemple pour le sujet B
-
-دَاكَار، فِي 20 أَبْرِيل 2026. عَزِيزِي إِبْرَاهِيم، السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ. أَرْجُو أَنْ تَكُونَ فِي صِحَّةٍ جَيِّدَةٍ. أَكْتُبُ إِلَيْكَ لِأُشَجِّعَكَ عَلَى مُوَاصَلَةِ الدِّرَاسَةِ (aktubu ilayka li-ushajjiʿaka ʿalā muwāṣalati d-dirāsati : je t''écris pour t''encourager à poursuivre tes études). إِنَّ الدِّرَاسَةَ طَرِيقُ النَّجَاحِ (inna d-dirāsata ṭarīqu n-najāḥi : les études sont le chemin de la réussite). أَبْلِغْ سَلَامِي إِلَى أُسْرَتِكَ. صَدِيقُكَ الْمُخْلِصُ.
-
-## Conseils du correcteur
-
-- En langue, une voyelle finale juste, justifiée par la fonction, rapporte des points sûrs.
-- En expression, mieux vaut huit phrases simples et correctes que quinze phrases fautives.
-- Réutilise le vocabulaire du texte sans le recopier mot pour mot.
-
-## Exercices pratiques
-
-Exercice 1. Relève dans le texte une phrase conditionnelle et indique l''outil employé.
-
-Exercice 2. Relève un verbe à l''apocopé et justifie.
-
-Exercice 3. Relève un relatif et le nom auquel il renvoie.
-
-Exercice 4. Calcule ta note sur 20 si tu obtiens 6/8, 4/6 et 3,5/6.
-
-Exercice 5. Mets au pluriel masculin : يَعْمَلُ الطَّبِيبُ فِي الْقَرْيَةِ.
-
-## Corrigé
-
-Exercice 1. مَنْ جَدَّ وَجَدَ : condition avec مَنْ ; les deux verbes sont à l''accompli.
-
-Exercice 2. يَتْرُكِ après لَمْ : apocopé (sukūn remplacé par une kasra de liaison devant l''article).
-
-Exercice 3. الَّذِينَ renvoie à الْأَطْفَالَ (masculin pluriel, êtres humains).
-
-Exercice 4. 6 + 4 + 3,5 = 13,5. Ta note est 13,5/20.
-
-Exercice 5. يَعْمَلُ الْأَطِبَّاءُ فِي الْقَرْيَةِ (yaʿmalu l-aṭibbāʾu fī l-qaryati : les médecins travaillent au village). Le verbe placé avant reste au singulier ; أَطِبَّاءُ est un pluriel brisé.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'bac-arabe'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen : sujet d''entraînement corrigé');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : révision intensive « veille du Bac » en arabe', '## Fiche du cours vidéo
-
-- Durée : 1h30.
-- Thème : séance de révision intensive la veille de l''épreuve d''arabe LV2 du Bac.
-- Objectifs : réactiver les règles clés (cas, phrase nominale et verbale, كَانَ et إِنَّ, dérivés, nombres, relatifs, conditionnel), corriger des exercices de type Bac, revoir la gestion du temps et la méthode d''expression écrite.
-- Matériel : tableau ou diaporama, fiches de révision, un texte court imprimé et vocalisé, brouillon.
-- Prérequis : leçons 1 à 5 de ce cours. Les exercices sont des exercices d''entraînement, pas des sujets officiels.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Accueil et objectifs
-
-« السَّلَامُ عَلَيْكُمْ (as-salāmu ʿalaykum) à toutes et à tous. Demain, c''est l''épreuve d''arabe. Ce soir, aucune notion nouvelle : nous consolidons. Nous reverrons les règles qui rapportent le plus de points, nous corrigerons ensemble des exercices type Bac, puis nous parlerons du temps et de l''expression écrite. Au milieu, un quiz ; à la fin, une évaluation de cinq questions. Prenez une feuille. »
-
-Visuel : le plan de la séance en six étapes.
-
-## 05:00 – 15:00 · Rappel 1 : les trois cas
-
-« Une règle simple vaut beaucoup de points : -u pour le sujet, -a pour le complément d''objet, -i après une préposition et pour le complément de nom. جَاءَ الْمُعَلِّمُ (jāʾa l-muʿallimu), رَأَيْتُ الْمُعَلِّمَ (raʾaytu l-muʿallima), سَلَّمْتُ عَلَى الْمُعَلِّمِ (sallamtu ʿalā l-muʿallimi). Au duel, -āni puis -ayni ; au pluriel masculin, -ūna puis -īna ; au pluriel féminin, attention : رَأَيْتُ الْمُعَلِّمَاتِ (raʾaytu l-muʿallimāti), avec un -i même au cas direct. Et les diptotes, comme مَدَارِسُ, n''ont jamais de tanwīn. »
-
-Visuel : tableau de déclinaison à trois colonnes. Question : « Quel est le cas après فِي ? » Réponse attendue : le cas indirect, avec kasra.
-
-Exercice flash à faire au tableau avec les élèves : analyser les deux mots de بَابُ الْمَدْرَسَةِ (bābu l-madrasati : la porte de l''école). بَابُ est le premier terme de l''annexion : pas d''article, pas de tanwīn, et son cas dépend de sa fonction dans la phrase. الْمَدْرَسَةِ est le complément de nom : toujours au cas indirect. Puis ajouter un adjectif : فِي الْمَدْرَسَةِ الْجَدِيدَةِ (fī l-madrasati l-jadīdati : dans la nouvelle école). L''adjectif copie tout : le cas indirect, le féminin, le singulier et l''article. Rappeler enfin le piège des pluriels de choses : الْأَشْجَارُ الْكَبِيرَةُ (al-ashjāru l-kabīratu : les grands arbres), avec un adjectif au féminin singulier.
-
-## 15:00 – 25:00 · Rappel 2 : phrase nominale, كَانَ et إِنَّ, phrase verbale
-
-« Dans la phrase nominale, tout est au cas sujet : الْعِلْمُ نُورٌ (al-ʿilmu nūrun). Avec كَانَ, le prédicat passe au cas direct : كَانَ الْجَوُّ حَارًّا (kāna l-jawwu ḥārran). Avec إِنَّ, c''est le sujet qui passe au cas direct : إِنَّ الْعِلْمَ نَافِعٌ (inna l-ʿilma nāfiʿun). Retenez : كَانَ agit sur le prédicat, إِنَّ agit sur le sujet.
-
-Dans la phrase verbale, le verbe placé avant un sujet pluriel reste au singulier : حَضَرَ الْمُعَلِّمُونَ (ḥaḍara l-muʿallimūna). Et un pluriel de non-humains s''accorde au féminin singulier : الْكُتُبُ مُفِيدَةٌ. »
-
-Visuel : deux flèches, l''une de كَانَ vers le prédicat, l''autre de إِنَّ vers le sujet.
-
-## 25:00 – 35:00 · Rappel 3 : dérivés, nombres, relatifs, conditionnel
-
-« Les formes dérivées : عَلَّمَ يُعَلِّمُ تَعْلِيمٌ, تَعَلَّمَ يَتَعَلَّمُ تَعَلُّمٌ, اِجْتَمَعَ يَجْتَمِعُ اِجْتِمَاعٌ, اِسْتَخْدَمَ يَسْتَخْدِمُ اِسْتِخْدَامٌ. Les formes II, III et IV ont un inaccompli en yu-.
-
-Les nombres : de 3 à 10, genre inverse et pluriel au cas indirect, ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin) ; de 11 à 99, singulier au cas direct, عِشْرُونَ طَالِبًا (ʿishrūna ṭāliban) ; 100 et 1000, singulier au cas indirect, مِائَةُ شَجَرَةٍ (miʾatu shajaratin).
-
-Les relatifs seulement après un nom déterminé : الْكِتَابُ الَّذِي قَرَأْتُهُ (al-kitābu lladhī qaraʾtuhu). Le conditionnel : إِذَا + accompli, إِنْ + deux apocopés, لَوْ pour l''irréel avec لَـ. »
-
-Questions à poser à la classe, avec un temps de réflexion de trente secondes : « Quel est l''inaccompli de أَرْسَلَ ? » Réponse : يُرْسِلُ (yursilu), avec un préfixe en u car c''est la forme IV. « Comment écrire quinze élèves garçons ? » Réponse : خَمْسَةَ عَشَرَ تِلْمِيذًا (khamsata ʿashara tilmīdhan) : le nom est au singulier et au cas direct. « Quel relatif après الطُّلَّابُ ? » Réponse : الَّذِينَ (alladhīna), car ce sont des êtres humains au masculin pluriel.
-
-Visuel : un tableau récapitulatif des nombres, avec trois lignes (3 à 10, 11 à 99, 100 et 1000) et un exemple par ligne.
-
-## 35:00 – 45:00 · Correction commentée : exercice de langue type Bac
-
-Énoncé projeté : « 1) Ajoute إِنَّ : الطَّرِيقُ طَوِيلٌ. 2) Négation avec لَمْ : يَكْتُبُ الطُّلَّابُ الدَّرْسَ. 3) Écris en lettres : 5 كُتُب. 4) Transforme avec إِنْ : إِذَا قَرَأْتَ فَهِمْتَ. »
-
-« Corrigeons. Un : إِنَّ الطَّرِيقَ طَوِيلٌ (inna ṭ-ṭarīqa ṭawīlun). Deux : لَمْ يَكْتُبِ الطُّلَّابُ الدَّرْسَ (lam yaktubi ṭ-ṭullābu d-darsa) : apocopé, avec une kasra de liaison devant l''article. Trois : خَمْسَةُ كُتُبٍ (khamsatu kutubin), car كِتَابٌ est masculin. Quatre : إِنْ تَقْرَأْ تَفْهَمْ (in taqraʾ tafham : si tu lis, tu comprends). Quatre bonnes réponses ? Excellent. Sinon, notez la règle sur votre fiche d''erreurs. »
-
-## 45:00 – 50:00 · Pause active : quiz éclair
-
-« Cinq questions, dix secondes chacune. »
-
-- Pluriel de مَدْرَسَةٌ : مَدَارِسُ (madārisu).
-- Contraire de قَرِيبٌ : بَعِيدٌ (baʿīdun).
-- Nom d''action de سَاعَدَ : مُسَاعَدَةٌ (musāʿadatun).
-- Relatif pour الْبِنْتُ : الَّتِي (allatī).
-- Sens de مَنْ جَدَّ وَجَدَ : qui s''efforce trouve.
-
-« Quatre ou cinq : vous êtes prêts. Moins de trois : relisez vos fiches ce soir, sans paniquer. »
-
-## 50:00 – 1:05:00 · Correction commentée : compréhension d''un texte court
-
-Texte projeté : تَعْمَلُ عَائِشَةُ مُعَلِّمَةً فِي مَدْرَسَةٍ بِمَدِينَةِ كَوْلَخ. تُعَلِّمُ الْأَطْفَالَ الْقِرَاءَةَ وَالْكِتَابَةَ، وَتُشَجِّعُهُمْ عَلَى حِمَايَةِ الْبِيئَةِ. (taʿmalu ʿĀʾishatu muʿallimatan fī madrasatin bi-madīnati Kawlakh. tuʿallimu l-aṭfāla l-qirāʾata wa-l-kitābata, wa-tushajjiʿuhum ʿalā ḥimāyati l-bīʾati : Aïcha travaille comme enseignante dans une école de la ville de Kaolack. Elle enseigne aux enfants la lecture et l''écriture, et les encourage à protéger l''environnement.)
-
-« Question 1 : مَاذَا تَعْمَلُ عَائِشَةُ؟ Réponse : تَعْمَلُ عَائِشَةُ مُعَلِّمَةً (taʿmalu ʿĀʾishatu muʿallimatan). Question 2 : relevez un verbe dérivé. تُعَلِّمُ, forme II, ou تُشَجِّعُ, forme II aussi. Question 3 : analysez الْأَطْفَالَ : complément d''objet, cas direct. Remarquez que عَائِشَةُ n''a pas de tanwīn : c''est un nom propre féminin, donc diptote.
-
-Question 4 : ajoutez كَانَ à la phrase عَائِشَةُ مُعَلِّمَةٌ. Réponse : كَانَتْ عَائِشَةُ مُعَلِّمَةً (kānat ʿĀʾishatu muʿallimatan : Aïcha était enseignante). Le verbe se met au féminin, et le prédicat passe au cas direct. Question 5 : donnez le pluriel de مُعَلِّمَةٌ. Réponse : مُعَلِّمَاتٌ (muʿallimātun), pluriel féminin régulier. Question 6 : proposez un titre. Par exemple : الْمُعَلِّمَةُ وَالْبِيئَةُ (al-muʿallimatu wa-l-bīʾatu : l''enseignante et l''environnement). Un bon titre est court et reprend l''idée principale. »
-
-Visuel : le texte vocalisé avec les mots clés surlignés.
-
-## 1:05:00 – 1:15:00 · Méthode express de l''expression écrite
-
-« Pour l''essai : une phrase d''introduction, deux idées avec أَوَّلًا et ثَانِيًا, un exemple, une conclusion avec وَفِي الْخِتَامِ. Pour la lettre : lieu et date, عَزِيزِي pour un ami ou حَضْرَةَ السَّيِّدِ pour un responsable, l''objet de la lettre, la formule finale. Phrases courtes, vocabulaire du texte, accords vérifiés. Placez une phrase avec كَانَ ou إِنَّ bien vocalisée, et une phrase conditionnelle correcte : c''est votre signature de Terminale. »
-
-Lecture d''un début et d''une fin d''essai modèles sur le chômage des jeunes :
-
-- Introduction : الْبَطَالَةُ مُشْكِلَةٌ كَبِيرَةٌ فِي مُجْتَمَعِنَا. فَمَا أَسْبَابُهَا؟ وَمَا الْحُلُولُ؟ (al-baṭālatu mushkilatun kabīratun fī mujtamaʿinā. fa-mā asbābuhā? wa-mā l-ḥulūlu? : le chômage est un grand problème dans notre société. Quelles en sont les causes ? Et quelles sont les solutions ?)
-- Conclusion : وَفِي الْخِتَامِ، إِذَا تَعَاوَنَتِ الدَّوْلَةُ وَالشَّبَابُ قَلَّتِ الْبَطَالَةُ. (wa-fī l-khitāmi, idhā taʿāwanati d-dawlatu wa-sh-shabābu qallati l-baṭālatu : en conclusion, si l''État et les jeunes coopèrent, le chômage diminuera.)
-
-« Regardez la conclusion : en une seule phrase, elle contient un verbe dérivé de forme VI, تَعَاوَنَ, et une phrase conditionnelle avec إِذَا. Voilà comment montrer votre niveau sans prendre de risque. »
-
-Visuel : grille de relecture en cinq points (plan, connecteurs, accords, voyelles finales, orthographe de ة et ى).
-
-## 1:15:00 – 1:22:00 · Gestion du temps et du stress
-
-« Demain, lisez d''abord tout le sujet. Répartition indicative : lecture, un peu moins d''un cinquième ; compréhension, environ un tiers ; langue, un quart ; expression, un cinquième ; et quelques minutes de relecture. Vérifiez la durée officielle sur votre convocation. Si une question bloque, passez et revenez. Ce soir, préparez stylos, convocation et pièce d''identité, puis dormez. »
-
-## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
-
-« Cinq dernières questions. Notez, puis corrigeons. »
-
-- Question 1 : Ajoute كَانَ : الْجَوُّ بَارِدٌ. Réponse : كَانَ الْجَوُّ بَارِدًا (kāna l-jawwu bāridan).
-- Question 2 : Mets au bon cas : رَأَيْتُ (الْمُعَلِّمُونَ). Réponse : رَأَيْتُ الْمُعَلِّمِينَ (raʾaytu l-muʿallimīna).
-- Question 3 : Écris en lettres : 3 بَنَات. Réponse : ثَلَاثُ بَنَاتٍ (thalāthu banātin).
-- Question 4 : Donne la forme et le nom d''action de اِسْتَخْدَمَ. Réponse : forme X, اِسْتِخْدَامٌ (istikhdāmun).
-- Question 5 : Traduis لَوْ دَرَسْتَ لَنَجَحْتَ. Réponse : si tu avais étudié, tu aurais réussi.
-
-« Synthèse : -u, -a, -i selon la fonction ; كَانَ sur le prédicat, إِنَّ sur le sujet ; verbe singulier devant un sujet pluriel ; nombres de 3 à 10 au genre inverse ; relatif après un nom déterminé. Vous avez travaillé : faites-vous confiance. بِالتَّوْفِيقِ (bi-t-tawfīqi : bonne chance) et à bientôt ! »', 'video', 90, false, 60
-from public.courses c where c.slug = 'bac-arabe'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille du Bac » en arabe');
