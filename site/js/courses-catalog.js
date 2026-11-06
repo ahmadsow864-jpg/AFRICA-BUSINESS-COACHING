@@ -3336,5 +3336,185 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "lic-mkt-l1",
+  "level": "Licence 1",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Licence 1 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de première année de Licence en marketing et commerce (universités et écoles du Sénégal et de l'espace UEMOA, système LMD). Le cours couvre trois matières clés : les fondamentaux du marketing (besoins, marché, segmentation-ciblage-positionnement, mix 4P/7P), le comportement du consommateur et les techniques de vente et de négociation commerciale. Fiches de cours, cas d'entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : niveau Baccalauréat et aisance avec les pourcentages.",
+  "sort": 381,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 1 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre comment est organisée la première année de Licence dans le système LMD.\n- Identifier les trois matières clés de l'année en marketing et commerce et ce que les correcteurs attendent.\n- Connaître les différents types d'épreuves et la bonne manière d'y répondre.\n- Construire un plan de révision réaliste sur six semaines.\n\n## 1. La Licence 1 dans le système LMD\n\nLes universités publiques et les écoles de commerce du Sénégal, comme celles des autres pays de l'espace UEMOA, appliquent le système LMD : Licence, Master, Doctorat. La Licence se déroule en trois années, soit six semestres. Chaque semestre regroupe des unités d'enseignement (UE), et chaque UE contient une ou plusieurs matières, appelées aussi éléments constitutifs (EC).\n\nChaque UE donne droit à des crédits lorsqu'elle est validée. Les crédits mesurent la charge de travail de l'étudiant : cours, travaux dirigés, travail personnel. Le nombre de crédits par UE, les coefficients, les règles de compensation entre matières et les conditions de passage en deuxième année varient d'un établissement à l'autre. Votre premier réflexe doit donc être de lire le règlement des études et la maquette de votre filière, disponibles auprès de la scolarité ou du département.\n\nEn général, la note d'une matière combine un contrôle continu (devoirs, exposés, travaux dirigés, participation) et un examen de fin de semestre. Une session de rattrapage est souvent prévue pour les UE non validées. Retenez une règle simple : une note faible dans une matière peut parfois être compensée par d'autres notes de la même UE, mais une absence à un examen ne se compense presque jamais.\n\n## 2. Les matières clés de l'année\n\nLa première année installe le vocabulaire et les raisonnements de base du marketing et de la vente. Ce cours se concentre sur trois matières qui pèsent lourd dans la plupart des maquettes :\n\n- Fondamentaux du marketing : besoins et demande, notion de marché, part de marché, segmentation, ciblage, positionnement, et marketing-mix (4P puis 7P pour les services).\n- Comportement du consommateur : motivations, processus de décision d'achat, facteurs d'influence, attitudes, fidélité.\n- Techniques de vente et négociation commerciale : étapes de l'entretien de vente, découverte des besoins, argumentation, traitement des objections, conclusion, préparation d'une négociation et calcul de l'impact d'une remise.\n\nSelon les établissements, l'année comprend aussi l'économie générale, la comptabilité générale, les mathématiques et statistiques, l'expression écrite et orale, l'informatique et l'anglais commercial.\n\n## 3. Les types d'épreuves et ce qu'on attend de vous\n\n- La question de cours : définir une notion et l'illustrer. Exemple : « Définissez la segmentation et donnez trois critères. » Le correcteur attend une définition précise, une structure et un exemple concret.\n- Le QCM ou le vrai-faux : il teste la précision du vocabulaire. Lisez chaque proposition jusqu'au bout ; un seul mot change souvent le sens.\n- L'exercice chiffré : part de marché, taux de pénétration, score d'attitude, taux de transformation, impact d'une remise sur la marge. Écrivez toujours la formule, puis le calcul, puis le résultat avec son unité, puis une phrase d'interprétation.\n- Le cas pratique : une entreprise, souvent sénégalaise, avec un problème. Il faut faire un diagnostic court, proposer des actions justifiées et rester réaliste au regard du contexte (budget, circuits de distribution, habitudes des clients).\n- La dissertation ou question de réflexion : par exemple « Le marketing crée-t-il des besoins ? ». On attend une introduction avec définition des termes et problématique, un plan en deux ou trois parties, des exemples, une conclusion.\n- Le projet ou le dossier en groupe : étude d'un produit, plan de lancement, jeu de rôle de vente filmé. La forme compte : rapport structuré, sources citées, répartition des tâches.\n\n## 4. La méthode de révision\n\nRéviser le marketing, ce n'est pas réciter des définitions. Il faut savoir les appliquer à un cas. Voici une méthode en quatre temps.\n\n- Fiche : pour chaque chapitre, une page maximum avec les définitions, les formules et un schéma décrit avec vos mots.\n- Exemples : associez à chaque notion un exemple sénégalais tiré de votre quotidien (boutique de quartier, marché Sandaga, vendeur de crédit téléphonique, restaurant de dibiterie).\n- Entraînement : refaites les exercices de TD sans regarder le corrigé, puis comparez.\n- Oral : expliquez une notion à un camarade en deux minutes. Si vous n'y arrivez pas, vous ne la maîtrisez pas encore.\n\nExemple de mini-fiche. Part de marché en valeur = chiffre d'affaires de l'entreprise / chiffre d'affaires total du marché × 100. Si une laiterie fictive de Thiès réalise 360 000 000 FCFA sur un marché de 2 400 000 000 FCFA, sa part de marché est de 15 %. Une ligne d'interprétation : l'entreprise est un acteur moyen, loin d'un leader qui détiendrait 35 %.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan. Rassemblez cours, TD et anciens sujets. Listez les chapitres et notez pour chacun votre niveau (acquis, fragile, non vu).\n- Semaine 2 : fondamentaux du marketing. Fiches sur le marché, les indicateurs, la démarche segmentation-ciblage-positionnement et le mix. Exercices de part de marché.\n- Semaine 3 : comportement du consommateur. Fiches sur les motivations, le processus d'achat, les influences et les attitudes. Exercices de score multi-attributs.\n- Semaine 4 : techniques de vente et négociation. Fiches sur les étapes de la vente, la méthode SONCAS, la reformulation, les objections. Jeux de rôle à deux et calculs de remise.\n- Semaine 5 : sujets types en temps limité. Un sujet complet par séance de trois heures, puis correction sérieuse.\n- Semaine 6 : consolidation. Relecture des fiches, reprise des erreurs fréquentes, repos la veille de l'épreuve.\n\nPrévoyez des séances courtes et régulières, par exemple deux heures par jour, plutôt que des nuits blanches. Travaillez en petit groupe une fois par semaine pour les jeux de rôle de vente : c'est la meilleure préparation aux oraux.\n\n## Points clés\n\n- Lisez le règlement des études de votre établissement : crédits, coefficients et compensation y sont fixés.\n- Trois matières clés cette année : fondamentaux du marketing, comportement du consommateur, vente et négociation.\n- Pour chaque calcul : formule, application, résultat avec unité, interprétation.\n- Six semaines suffisent si le travail est régulier et tourné vers l'application.\n\n## Exercices pratiques\n\n- Exercice 1. Citez quatre types d'épreuves que vous pouvez rencontrer en Licence 1 et, pour chacune, une erreur à éviter.\n- Exercice 2. Une boutique fictive de cosmétiques de la Médina réalise 54 000 000 FCFA de ventes annuelles sur un marché local estimé à 360 000 000 FCFA. Calculez sa part de marché en valeur et interprétez-la.\n- Exercice 3. Rédigez une mini-fiche (cinq lignes maximum) sur la notion de besoin.\n- Exercice 4. Cas pratique. Awa, étudiante en Licence 1, révise uniquement en relisant ses cours la nuit précédant chaque examen. Ses notes en exercices chiffrés sont faibles. Diagnostiquez ses erreurs de méthode et proposez-lui trois changements concrets.\n\n## Corrigé\n\n- Exercice 1. Question de cours : éviter la définition approximative sans exemple. QCM : éviter de répondre sans lire chaque proposition en entier. Exercice chiffré : ne pas oublier la formule et l'interprétation. Cas pratique : ne pas proposer d'actions déconnectées du budget et de la cible. Dissertation : ne pas écrire sans problématique ni plan.\n- Exercice 2. Part de marché = 54 000 000 / 360 000 000 × 100 = 15 %. La boutique détient près d'un sixième du marché local : c'est un acteur significatif mais pas dominant ; il faut connaître la part des concurrents pour savoir si elle est leader.\n- Exercice 3. Exemple : « Le besoin est un sentiment de manque ressenti par une personne (avoir faim, se protéger, être reconnu). Il existe avant le marketing. Le désir est la forme que prend la réponse au besoin selon la culture (manger un thiéboudienne). La demande est un désir accompagné d'un pouvoir d'achat. Le marketing agit surtout sur les désirs et la demande. »\n- Exercice 4. Diagnostic : révision tardive, passive (relecture) et sans entraînement aux calculs, plus le manque de sommeil. Propositions : réviser dès six semaines avant l'examen, deux heures par jour ; refaire les exercices de TD sans corrigé ; rédiger des fiches avec formules et exemples ; faire un sujet complet chronométré par semaine ; dormir la veille de l'épreuve."
+   },
+   {
+    "title": "Fondamentaux du marketing : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Comportement du consommateur : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Techniques de vente et négociation commerciale : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 1 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Fondamentaux du marketing",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Comportement du consommateur",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Techniques de vente et négociation commerciale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-mkt-l2",
+  "level": "Licence 2",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Licence 2 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de deuxième année de Licence en marketing et commerce (Sénégal, espace UEMOA, système LMD). Trois matières clés : les études de marché (questionnaire, échantillonnage, analyse chiffrée des résultats), le marketing opérationnel (prix, marges, seuil de rentabilité, distribution, communication) et le marketing digital (réseaux sociaux, référencement, indicateurs de performance, mobile money et e-commerce en Afrique). Fiches, cas d'entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : les fondamentaux du marketing de Licence 1.",
+  "sort": 382,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 2 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la deuxième année de Licence dans le parcours LMD et comprendre ce qui change par rapport à la première année.\n- Identifier les trois matières clés de l'année et leurs exigences.\n- Adapter sa méthode aux épreuves de Licence 2, plus chiffrées et plus appliquées.\n- Organiser six semaines de révision efficaces.\n\n## 1. La Licence 2 dans le système LMD\n\nLa Licence 2 correspond aux semestres 3 et 4 de la Licence. Comme en première année, chaque semestre regroupe des unités d'enseignement (UE) composées de matières, et chaque UE validée apporte des crédits. Le nombre de crédits, les coefficients, la place du contrôle continu et les règles de compensation et de rattrapage sont fixés par chaque établissement : consultez la maquette de votre filière et le règlement des études.\n\nCe qui change en Licence 2, c'est le niveau d'exigence. En première année, on vérifiait que vous connaissiez le vocabulaire : marché, segmentation, mix. En deuxième année, on vous demande de produire des outils : un questionnaire, un plan d'échantillonnage, un prix calculé, un seuil de rentabilité, un tableau de bord de campagne digitale. Les copies qui récitent sans calculer ni justifier plafonnent vite.\n\n## 2. Les matières clés de l'année\n\n- Études de marché : objectifs d'une étude, études documentaires, qualitatives et quantitatives, rédaction d'un questionnaire, méthodes d'échantillonnage, taille d'échantillon, analyse des résultats (tri à plat, tri croisé, moyenne, écart-type, intervalle de confiance, test du khi-deux).\n- Marketing opérationnel : politique de prix (coûts, marges, coefficient multiplicateur, seuil de rentabilité, élasticité), politique de distribution (canaux, circuits, marges des intermédiaires), politique de communication (cibles, messages, médias, budget, coût pour mille contacts).\n- Marketing digital : présence sur les réseaux sociaux, référencement naturel et payant, indicateurs de performance (taux de clic, taux de conversion, coût par clic, coût d'acquisition, retour sur dépenses publicitaires), mobile money et e-commerce en Afrique.\n\nD'autres matières figurent souvent au programme : statistiques, comptabilité analytique, droit commercial, communication écrite, anglais des affaires, informatique de gestion. Elles sont utiles ici, notamment les statistiques pour les études de marché et les coûts pour la fixation des prix.\n\n## 3. Les épreuves de Licence 2\n\n- Exercice chiffré : taille d'échantillon, intervalle de confiance, prix de vente à partir d'un taux de marque, seuil de rentabilité, indicateurs digitaux. Présentez toujours : formule, application numérique, résultat avec unité, interprétation.\n- Rédaction d'outil : écrire cinq questions d'un questionnaire, construire un plan de quotas, rédiger un brief de campagne.\n- Cas pratique : une entreprise fictive souhaite lancer un produit ; vous devez proposer une étude, puis un mix chiffré.\n- Questions de réflexion : « Les réseaux sociaux remplacent-ils la publicité traditionnelle ? » Introduction, problématique, plan, exemples.\n- Dossier ou projet : réalisation d'une petite enquête de terrain en groupe, avec rapport et soutenance.\n\n## 4. Méthode de travail\n\n- Construisez un formulaire unique d'une ou deux pages avec toutes les formules de l'année : taille d'échantillon, intervalle de confiance, khi-deux, taux de marge et de marque, seuil de rentabilité, élasticité, coût pour mille, taux de clic, taux de conversion, coût d'acquisition, retour sur dépenses publicitaires.\n- Pour chaque formule, inventez un exemple en FCFA et refaites-le de tête une semaine plus tard.\n- Entraînez-vous à rédiger : un bon questionnaire ne s'improvise pas le jour de l'examen.\n- Observez votre environnement : affiches, promotions dans les boutiques, publications sponsorisées sur votre téléphone. Ce sont des exemples réels à analyser (sans citer les marques comme modèles à copier).\n\nExemple de ligne de formulaire. Seuil de rentabilité en valeur = charges fixes / taux de marge sur coûts variables. Une entreprise fictive avec 36 000 000 FCFA de charges fixes et un taux de marge sur coûts variables d'un tiers doit réaliser 36 000 000 / (1/3) = 108 000 000 FCFA de chiffre d'affaires pour ne pas perdre d'argent.\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan des cours et TD, constitution du formulaire, repérage des chapitres fragiles.\n- Semaine 2 : études de marché. Questionnaire, échantillonnage, taille d'échantillon, traitement des résultats.\n- Semaine 3 : marketing opérationnel, partie prix et seuil de rentabilité ; puis distribution.\n- Semaine 4 : communication et marketing digital : indicateurs, campagnes, mobile money, e-commerce.\n- Semaine 5 : deux sujets complets en temps limité, avec correction.\n- Semaine 6 : reprise des erreurs, révision du formulaire, repos avant les épreuves.\n\n## Points clés\n\n- En Licence 2, on attend des outils et des calculs, pas seulement des définitions.\n- Trois matières clés : études de marché, marketing opérationnel, marketing digital.\n- Un formulaire personnel et des exemples en FCFA sont vos meilleurs alliés.\n- Chaque calcul se termine par une phrase d'interprétation et, si possible, une décision.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez en trois phrases la différence d'exigence entre la Licence 1 et la Licence 2.\n- Exercice 2. Une entreprise fictive a 18 000 000 FCFA de charges fixes et un taux de marge sur coûts variables de 30 %. Calculez son seuil de rentabilité en valeur.\n- Exercice 3. Listez six formules que doit contenir votre formulaire et précisez la matière de chacune.\n- Exercice 4. Cas pratique. Moussa, étudiant en Licence 2, connaît ses définitions mais perd des points sur les calculs et les cas. Il dispose de six semaines et peut travailler deux heures par jour en semaine. Proposez-lui un plan de travail détaillé.\n- Exercice 5. Donnez un exemple d'action de marketing digital que vous avez observée au Sénégal (sans citer de marque) et analysez sa cible et son objectif.\n\n## Corrigé\n\n- Exercice 1. En Licence 1, on attend surtout la maîtrise du vocabulaire et des démarches de base. En Licence 2, on attend la production d'outils (questionnaire, plan de quotas, prix, budget) et des calculs exacts. La justification des choix et l'interprétation des résultats deviennent décisives.\n- Exercice 2. Seuil de rentabilité = 18 000 000 / 0,30 = 60 000 000 FCFA de chiffre d'affaires.\n- Exercice 3. Exemples : taille d'échantillon n = z² × p × (1 − p) / e² (études de marché) ; intervalle de confiance d'une proportion (études de marché) ; taux de marque = marge / prix de vente HT (marketing opérationnel) ; seuil de rentabilité = charges fixes / taux de marge sur coûts variables (marketing opérationnel) ; taux de clic = clics / impressions (marketing digital) ; coût d'acquisition = dépense / nombre de conversions (marketing digital).\n- Exercice 4. Semaine 1 : formulaire et liste des exercices de TD ratés. Semaines 2 à 4 : chaque jour, trente minutes de fiche puis une heure trente d'exercices chiffrés, en suivant l'ordre études, prix et distribution, communication et digital. Le samedi, un cas pratique complet. Semaine 5 : deux sujets types chronométrés. Semaine 6 : reprise des erreurs et révision du formulaire. Il doit rédiger chaque calcul avec formule et interprétation.\n- Exercice 5. Exemple : une pâtisserie de quartier publie des vidéos courtes de ses gâteaux le vendredi avec un numéro de commande par messagerie. Cible : familles et jeunes actifs du quartier qui préparent les fêtes du week-end. Objectif : générer des commandes directes et fidéliser. Indicateurs utiles : nombre de messages reçus, commandes, panier moyen."
+   },
+   {
+    "title": "Études de marché : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Marketing opérationnel : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Marketing digital : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 2 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Études de marché",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing opérationnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing digital",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "lic-mkt-l3",
+  "level": "Licence 3",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Licence 3 : réussir ses examens",
+  "description": "Préparation aux partiels et examens semestriels de troisième année de Licence en marketing et commerce (Sénégal, espace UEMOA/OHADA, système LMD). Trois matières clés : le marketing stratégique (diagnostic, matrices BCG et Ansoff, plan marketing), la gestion de la relation client et de la force de vente (CRM, valeur client, dimensionnement, animation et rémunération des vendeurs) et le commerce international (principes des incoterms, techniques d'export, paiement international). Fiches, cas d'entreprises sénégalaises fictives, exercices corrigés aux calculs vérifiés, sujet type et trois cours vidéo de 1h30. Prérequis : Licence 2 en marketing ou gestion.",
+  "sort": 383,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Situer la troisième année dans le parcours LMD et comprendre ses enjeux (diplôme, poursuite en Master, insertion).\n- Identifier les trois matières clés de l'année et leurs attentes.\n- Maîtriser les épreuves de synthèse : cas d'entreprise, plan marketing, note de recommandation.\n- Planifier six semaines de révision en tenant compte du stage ou du mémoire.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6 et clôt le premier cycle. Sa validation donne le diplôme de Licence. Comme les années précédentes, elle est organisée en unités d'enseignement qui apportent des crédits ; le nombre de crédits, les coefficients, les règles de compensation, le poids du stage et du rapport de stage ou du mémoire sont propres à chaque établissement. Vérifiez la maquette et le règlement des études, en particulier les conditions d'admission en Master si vous visez une poursuite d'études.\n\nLa Licence 3 est une année de synthèse. Les correcteurs n'attendent plus seulement des calculs justes : ils veulent un raisonnement de décideur. Un diagnostic, des options, un choix argumenté, un plan d'action chiffré.\n\n## 2. Les matières clés de l'année\n\n- Marketing stratégique : diagnostic externe (PESTEL, forces concurrentielles) et interne (ressources, compétences), synthèse SWOT, segmentation stratégique en domaines d'activité, matrices de portefeuille (BCG), choix de développement (Ansoff), stratégies concurrentielles, plan marketing.\n- Gestion de la relation client et de la force de vente : CRM et base de données clients, segmentation RFM, valeur vie client, fidélisation, satisfaction ; dimensionnement, organisation, animation, rémunération et contrôle des vendeurs.\n- Commerce international : choix des marchés, modes d'entrée, techniques d'export, documents, principes des incoterms, calcul d'un prix export, moyens de paiement et gestion du risque de change.\n\nSelon les établissements, l'année comporte aussi le marketing des services, le droit des contrats et de la concurrence dans l'espace OHADA et UEMOA, la gestion de projet, le management, l'anglais des affaires et la méthodologie du mémoire.\n\n## 3. Les épreuves de Licence 3\n\n- Cas d'entreprise de synthèse (trois ou quatre heures) : un dossier de plusieurs pages sur une entreprise fictive, souvent avec annexes chiffrées. On attend un diagnostic structuré, des calculs (portefeuille BCG, valeur client, prix export) et des recommandations.\n- Plan marketing ou note de recommandation : rédaction professionnelle, destinée à un dirigeant.\n- Questions de réflexion : « La fidélisation coûte-t-elle moins cher que la conquête ? », « Une PME sénégalaise doit-elle exporter ? ».\n- Exercices techniques : choix d'un incoterm, calcul d'un prix CIF, rémunération d'un vendeur, taille de la force de vente.\n- Soutenance de stage ou de projet : présentation orale, questions du jury.\n\n## 4. Méthode : raisonner comme un décideur\n\nPour tout cas, appliquez la démarche suivante :\n\n- Lire les questions avant le dossier, puis lire le dossier en annotant les chiffres.\n- Diagnostiquer : opportunités et menaces de l'environnement, forces et faiblesses de l'entreprise.\n- Calculer ce qui est demandé, proprement, avec formules et interprétation.\n- Recommander : objectifs, stratégie, actions, budget, calendrier, indicateurs de suivi.\n- Vérifier la cohérence : chaque action répond à un problème du diagnostic.\n\nExemple de phrase de recommandation : « Le DAS jus est un dilemme (part de marché relative de 0,5, croissance de 15 %). Nous recommandons d'investir pendant deux ans pour devenir leader sur la région de Dakar, financé par les liquidités du DAS huile, vache à lait. »\n\n## 5. Plan de révision sur six semaines\n\n- Semaine 1 : bilan, fiches de méthode (diagnostic, BCG, Ansoff, plan marketing, valeur client, prix export).\n- Semaine 2 : marketing stratégique. Deux cas de diagnostic et un plan marketing complet.\n- Semaine 3 : relation client et force de vente. Calculs de valeur client, d'attrition, de taille de force de vente, de rémunération.\n- Semaine 4 : commerce international. Incoterms, prix export, crédit documentaire, risque de change.\n- Semaine 5 : deux cas de synthèse chronométrés, corrigés en groupe.\n- Semaine 6 : reprise des erreurs, préparation des oraux, repos.\n\nSi vous êtes en stage, réservez au moins une heure chaque soir et une demi-journée le week-end. Utilisez votre entreprise d'accueil comme terrain d'exemples, en respectant la confidentialité.\n\n## Points clés\n\n- Licence 3 : année de synthèse, raisonnement de décideur.\n- Trois matières clés : marketing stratégique, relation client et force de vente, commerce international.\n- Démarche : diagnostic, calculs, recommandations chiffrées, cohérence.\n- Révisions organisées autour de cas complets.\n\n## Exercices pratiques\n\n- Exercice 1. Expliquez la différence entre un diagnostic et une recommandation.\n- Exercice 2. Citez trois types d'épreuves de Licence 3 et une attente du correcteur pour chacune.\n- Exercice 3. Rédigez la structure (titres seulement) d'une note de recommandation de deux pages adressée au directeur commercial d'une PME.\n- Exercice 4. Cas pratique. Khady, en stage dans une entreprise de distribution à Dakar, a six semaines avant ses examens et ne peut réviser que le soir. Proposez-lui un planning et deux façons d'utiliser son stage pour réviser.\n- Exercice 5. Donnez deux arguments pour et deux arguments contre l'idée qu'une PME sénégalaise devrait exporter dans la sous-région.\n\n## Corrigé\n\n- Exercice 1. Le diagnostic décrit et analyse la situation (environnement, forces, faiblesses) sans prendre de décision. La recommandation propose des choix et des actions justifiés par le diagnostic, avec moyens, calendrier et indicateurs.\n- Exercice 2. Cas de synthèse : un diagnostic structuré et des recommandations cohérentes. Exercice technique : des calculs justes et interprétés. Question de réflexion : une problématique, un plan, des exemples.\n- Exercice 3. Objet et contexte ; constat et diagnostic ; options envisagées ; recommandation ; plan d'action (actions, responsables, calendrier, budget) ; indicateurs de suivi ; conclusion.\n- Exercice 4. Lundi à jeudi : une heure de fiche et d'exercices sur la matière de la semaine (stratégie, puis relation client, puis international). Samedi : un cas complet de trois heures. Semaine 5 : deux sujets chronométrés. Semaine 6 : reprise des erreurs. Utiliser le stage : observer la segmentation des clients de l'entreprise et la rémunération des commerciaux, et analyser un dossier d'importation pour comprendre incoterms et paiements.\n- Exercice 5. Pour : marché sous-régional plus large que le marché national ; libre circulation des produits originaires au sein de l'UEMOA et monnaie commune avec les pays de l'Union, qui supprime le risque de change dans cette zone. Contre : coûts logistiques et de prospection élevés ; concurrence de produits importés et besoin d'adapter l'offre aux goûts locaux."
+   },
+   {
+    "title": "Marketing stratégique : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion de la relation client et force de vente : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Commerce international : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing stratégique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion de la relation client et force de vente",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Commerce international",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];
