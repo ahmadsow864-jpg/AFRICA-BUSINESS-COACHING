@@ -1,0 +1,24 @@
+# Vérifie les règles de sécurité de la base et la cohérence des contenus.
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cours valides
+        run: python3 tools/check-courses.py
+      - name: Fichiers générés à jour (seed, catalogue)
+        run: node tools/generate-seed.mjs && git add -N . && git diff --exit-code supabase/ site/js/courses-catalog.js
+      - name: Syntaxe JavaScript
+        run: for f in site/js/*.js site/admin/*.js; do node --check "$f"; done
+      - name: Tests de sécurité (RLS) sur PostgreSQL
+        run: bash supabase/tests/run.sh | tee rls.log && grep -q "TOUS LES TESTS RLS SONT PASSÉS" rls.log

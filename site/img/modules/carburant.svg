@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="carburant-title">
+  <title id="carburant-title">Illustration Gestion du carburant</title>
+  <defs>
+    <linearGradient id="carburant-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6ee"/><stop offset="1" stop-color="#ffe6d3"/></linearGradient>
+    <linearGradient id="carburant-can" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5a50"/><stop offset="1" stop-color="#c5121a"/></linearGradient>
+    <linearGradient id="carburant-noz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00a04c"/><stop offset="1" stop-color="#006830"/></linearGradient>
+    <linearGradient id="carburant-drop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdef42"/><stop offset="1" stop-color="#f5a400"/></linearGradient>
+    <linearGradient id="carburant-gauge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00853f"/><stop offset=".5" stop-color="#f5c400"/><stop offset="1" stop-color="#e31b23"/></linearGradient>
+    <path id="carburant-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
+  </defs>
+  <circle cx="110" cy="110" r="76" fill="#ffd9bd" opacity=".6"/>
+  <circle cx="720" cy="430" r="80" fill="#ffd9bd" opacity=".6"/>
+  <g fill="#ff8a3d" opacity=".3"><circle cx="370" cy="420" r="4"/><circle cx="390" cy="420" r="4"/><circle cx="410" cy="420" r="4"/><circle cx="370" cy="440" r="4"/><circle cx="390" cy="440" r="4"/><circle cx="410" cy="440" r="4"/></g>
+  <!-- jerrican -->
+  <ellipse cx="240" cy="424" rx="120" ry="14" fill="#7a2a10" opacity=".15"/>
+  <path d="M150 170h48l18-24h72a24 24 0 0 1 24 24v222a24 24 0 0 1-24 24H150a24 24 0 0 1-24-24V194a24 24 0 0 1 24-24Z" fill="url(#carburant-can)"/>
+  <rect x="152" y="132" width="54" height="40" rx="10" fill="none" stroke="#c5121a" stroke-width="12"/>
+  <rect x="264" y="122" width="34" height="30" rx="7" fill="#1a2433"/>
+  <rect x="270" y="116" width="22" height="10" rx="4" fill="#3b4c69"/>
+  <rect x="150" y="206" width="138" height="186" rx="16" fill="none" stroke="#fff" stroke-width="5" opacity=".35"/>
+  <path d="M160 216L278 382M278 216L160 382" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".3"/>
+  <path d="M138 200v170" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".35"/>
+  <!-- nozzle + hose -->
+  <path d="M468 160C520 160 540 220 520 280S470 380 520 430" fill="none" stroke="#1a2433" stroke-width="16" stroke-linecap="round"/>
+  <path d="M332 128H390" stroke="#8a98ab" stroke-width="16" stroke-linecap="round"/>
+  <path d="M340 128Q326 128 322 146L318 160" fill="none" stroke="#8a98ab" stroke-width="14" stroke-linecap="round"/>
+  <rect x="380" y="100" width="100" height="54" rx="18" fill="url(#carburant-noz)"/>
+  <rect x="392" y="110" width="50" height="10" rx="5" fill="#fff" opacity=".35"/>
+  <path d="M404 154l6 50q2 12 14 12h28q10 0 10-12l-4-50" fill="#1a2433"/>
+  <path d="M420 166q6 22 26 18" fill="none" stroke="#3b4c69" stroke-width="6" stroke-linecap="round"/>
+  <!-- drops -->
+  <path transform="translate(316 200)" d="M0-26C10-12 18-2 18 8A18 18 0 0 1-18 8C-18-2-10-12 0-26Z" fill="url(#carburant-drop)"/>
+  <path transform="translate(316 200)" d="M-8 6a8 8 0 0 0 6 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  <path transform="translate(342 252) scale(.6)" d="M0-26C10-12 18-2 18 8A18 18 0 0 1-18 8C-18-2-10-12 0-26Z" fill="url(#carburant-drop)"/>
+  <!-- gauge card -->
+  <rect x="566" y="96" width="186" height="268" rx="22" fill="#7a2a10" opacity=".1" transform="translate(8 10)"/>
+  <rect x="566" y="96" width="186" height="268" rx="22" fill="#fff"/>
+  <path d="M600 200A59 59 0 0 1 718 200" fill="none" stroke="#eef1f5" stroke-width="16" stroke-linecap="round"/>
+  <path d="M600 200A59 59 0 0 1 718 200" fill="none" stroke="url(#carburant-gauge)" stroke-width="16" stroke-linecap="round" stroke-dasharray="150 200"/>
+  <path d="M659 200L692 162" stroke="#1a2433" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="659" cy="200" r="10" fill="#1a2433"/><circle cx="659" cy="200" r="4" fill="#fff"/>
+  <rect x="590" y="222" width="138" height="1.5" fill="#e3e8ee"/>
+  <g>
+    <rect x="596" y="300" width="16" height="40" rx="5" fill="#ffd1ad"/>
+    <rect x="620" y="278" width="16" height="62" rx="5" fill="#ff8a3d"/>
+    <rect x="644" y="290" width="16" height="50" rx="5" fill="#ffd1ad"/>
+    <rect x="668" y="262" width="16" height="78" rx="5" fill="#00853f"/>
+    <rect x="692" y="282" width="16" height="58" rx="5" fill="#ffd1ad"/>
+    <rect x="716" y="296" width="16" height="44" rx="5" fill="#ffd1ad"/>
+  </g>
+  <path d="M604 266L628 248L652 258L676 236L700 250L724 244" fill="none" stroke="#2f6fde" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="676" cy="236" r="5" fill="#2f6fde"/>
+  <!-- small tag -->
+  <rect x="520" y="56" width="92" height="40" rx="20" fill="#00853f"/>
+  <path transform="translate(546 76) scale(.42)" d="M0-26C10-12 18-2 18 8A18 18 0 0 1-18 8C-18-2-10-12 0-26Z" fill="#fdef42"/>
+  <rect x="562" y="72" width="34" height="8" rx="4" fill="#fff" opacity=".85"/>
+  <use href="#carburant-spark" x="90" y="300" fill="#f5c400"/>
+  <use href="#carburant-spark" x="460" y="320" fill="#e31b23"/>
+  <use href="#carburant-spark" x="740" y="60" fill="#2f6fde"/>
+  <circle cx="380" cy="300" r="5" fill="#00853f" opacity=".5"/><circle cx="60" cy="230" r="5" fill="#ff8a3d" opacity=".6"/>
+</svg>

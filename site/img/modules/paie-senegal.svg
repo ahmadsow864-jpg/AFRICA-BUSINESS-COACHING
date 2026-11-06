@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="paie-senegal-title">
+  <title id="paie-senegal-title">Illustration Paie et RH Sénégal</title>
+  <defs>
+    <linearGradient id="paie-senegal-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2fbf5"/><stop offset="1" stop-color="#dcf0e3"/></linearGradient>
+    <linearGradient id="paie-senegal-head" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00a04c"/><stop offset="1" stop-color="#006830"/></linearGradient>
+    <linearGradient id="paie-senegal-coin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fdef42"/><stop offset="1" stop-color="#f5c400"/></linearGradient>
+    <linearGradient id="paie-senegal-calc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3b55"/><stop offset="1" stop-color="#1a2433"/></linearGradient>
+    <linearGradient id="paie-senegal-paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f3f6f9"/></linearGradient>
+    <path id="paie-senegal-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
+  </defs>
+  <circle cx="690" cy="96" r="78" fill="#c6e8d3" opacity=".55"/>
+  <circle cx="96" cy="420" r="96" fill="#c6e8d3" opacity=".5"/>
+  <circle cx="610" cy="440" r="40" fill="#fdef42" opacity=".25"/>
+  <g fill="#00853f" opacity=".25"><circle cx="60" cy="70" r="4"/><circle cx="80" cy="70" r="4"/><circle cx="100" cy="70" r="4"/><circle cx="60" cy="90" r="4"/><circle cx="80" cy="90" r="4"/><circle cx="100" cy="90" r="4"/><circle cx="60" cy="110" r="4"/><circle cx="80" cy="110" r="4"/><circle cx="100" cy="110" r="4"/></g>
+  <ellipse cx="420" cy="430" rx="300" ry="20" fill="#006830" opacity=".12"/>
+  <!-- flag -->
+  <rect x="106" y="120" width="8" height="300" rx="4" fill="#1a2433"/>
+  <circle cx="110" cy="116" r="8" fill="#f5c400"/>
+  <ellipse cx="110" cy="422" rx="26" ry="7" fill="#1a2433" opacity=".25"/>
+  <g transform="translate(114 132)">
+    <path d="M0 0H36V78H0Z" fill="#00853f"/>
+    <path d="M36 0H72V78H36Z" fill="#fdef42"/>
+    <path d="M72 0H108V78H72Z" fill="#e31b23"/>
+    <path transform="translate(54 39) scale(14)" d="M0-1L.224-.309L.951-.309L.363 .118L.588 .809L0 .382L-.588 .809L-.363 .118L-.951-.309L-.224-.309Z" fill="#00853f"/>
+    <path d="M0 0H108V10H0Z" fill="#fff" opacity=".18"/>
+  </g>
+  <!-- payslip -->
+  <rect x="262" y="92" width="250" height="330" rx="20" fill="#006830" opacity=".12"/>
+  <rect x="250" y="78" width="250" height="330" rx="20" fill="url(#paie-senegal-paper)"/>
+  <path d="M250 98a20 20 0 0 1 20-20h210a20 20 0 0 1 20 20v52H250Z" fill="url(#paie-senegal-head)"/>
+  <circle cx="292" cy="114" r="22" fill="#fff" opacity=".95"/>
+  <circle cx="292" cy="108" r="9" fill="#7a4a2a"/>
+  <path d="M276 128a16 12 0 0 1 32 0Z" fill="#7a4a2a"/>
+  <rect x="326" y="100" width="120" height="11" rx="5.5" fill="#fff" opacity=".9"/>
+  <rect x="326" y="120" width="76" height="9" rx="4.5" fill="#fdef42"/>
+  <g fill="#dfe6ee"><rect x="276" y="176" width="96" height="10" rx="5"/><rect x="276" y="204" width="76" height="10" rx="5"/><rect x="276" y="232" width="104" height="10" rx="5"/><rect x="276" y="260" width="84" height="10" rx="5"/></g>
+  <g fill="#b6c3d1"><rect x="410" y="176" width="64" height="10" rx="5"/><rect x="420" y="204" width="54" height="10" rx="5"/><rect x="404" y="232" width="70" height="10" rx="5"/><rect x="426" y="260" width="48" height="10" rx="5"/></g>
+  <circle cx="400" cy="181" r="4" fill="#00853f"/><circle cx="400" cy="209" r="4" fill="#00853f"/><circle cx="392" cy="237" r="4" fill="#e31b23"/><circle cx="410" cy="265" r="4" fill="#00853f"/>
+  <path d="M276 294H474" stroke="#c9d3de" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="276" y="310" width="198" height="44" rx="12" fill="#e6f5ec"/>
+  <rect x="292" y="327" width="66" height="11" rx="5.5" fill="#00853f"/>
+  <rect x="392" y="322" width="66" height="20" rx="10" fill="url(#paie-senegal-coin)"/>
+  <path d="M300 384q14-18 24 0t22-4 20 2" fill="none" stroke="#2f6fde" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="452" cy="380" r="14" fill="none" stroke="#e31b23" stroke-width="3" opacity=".7"/>
+  <!-- coins -->
+  <g>
+    <ellipse cx="548" cy="412" rx="50" ry="10" fill="#006830" opacity=".15"/>
+    <g id="paie-senegal-c">
+      <ellipse cx="540" cy="400" rx="38" ry="11" fill="#d9a800"/>
+      <rect x="502" y="386" width="76" height="14" fill="url(#paie-senegal-coin)"/>
+      <ellipse cx="540" cy="386" rx="38" ry="11" fill="#fdef42" stroke="#e8b800" stroke-width="2"/>
+    </g>
+    <use href="#paie-senegal-c" y="-16"/>
+    <use href="#paie-senegal-c" y="-32"/>
+    <use href="#paie-senegal-c" y="-48"/>
+    <use href="#paie-senegal-c" y="-64"/>
+    <ellipse cx="540" cy="322" rx="22" ry="5.5" fill="none" stroke="#e8b800" stroke-width="2"/>
+  </g>
+  <!-- calculator -->
+  <ellipse cx="660" cy="414" rx="70" ry="10" fill="#006830" opacity=".15"/>
+  <rect x="598" y="196" width="128" height="212" rx="20" fill="url(#paie-senegal-calc)"/>
+  <rect x="614" y="214" width="96" height="44" rx="10" fill="#c6ecd5"/>
+  <rect x="660" y="230" width="38" height="12" rx="4" fill="#00853f" opacity=".55"/>
+  <rect x="626" y="230" width="26" height="12" rx="4" fill="#00853f" opacity=".3"/>
+  <g fill="#3b4c69">
+    <rect x="614" y="274" width="26" height="24" rx="7"/><rect x="649" y="274" width="26" height="24" rx="7"/>
+    <rect x="614" y="306" width="26" height="24" rx="7"/><rect x="649" y="306" width="26" height="24" rx="7"/>
+    <rect x="614" y="338" width="26" height="24" rx="7"/><rect x="649" y="338" width="26" height="24" rx="7"/>
+    <rect x="614" y="370" width="61" height="24" rx="7"/>
+  </g>
+  <rect x="684" y="274" width="26" height="24" rx="7" fill="#e31b23"/>
+  <rect x="684" y="306" width="26" height="24" rx="7" fill="#f5c400"/>
+  <rect x="684" y="338" width="26" height="56" rx="7" fill="#00853f"/>
+  <!-- sparkles -->
+  <use href="#paie-senegal-spark" x="560" y="140" fill="#f5c400"/>
+  <use href="#paie-senegal-spark" x="740" y="170" fill="#00853f" transform="translate(740 170) scale(.6) translate(-740 -170)"/>
+  <use href="#paie-senegal-spark" x="220" y="70" fill="#e31b23" transform="translate(220 70) scale(.7) translate(-220 -70)"/>
+  <circle cx="540" cy="260" r="5" fill="#2f6fde" opacity=".5"/>
+  <circle cx="210" cy="250" r="6" fill="#f5c400" opacity=".7"/>
+</svg>

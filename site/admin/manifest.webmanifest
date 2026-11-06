@@ -1,0 +1,15 @@
+{
+  "name": "ABDC Administration",
+  "short_name": "ABDC Admin",
+  "description": "Espace administrateur Africa Business Development Consulting",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1a2433",
+  "theme_color": "#1a2433",
+  "icons": [
+    { "src": "../img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "../img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

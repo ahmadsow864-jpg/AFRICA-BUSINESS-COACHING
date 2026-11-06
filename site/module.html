@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Module — Africa Business Development Consulting</title>
+  <meta name="description" content="Découvrez les modules de gestion Africa Business Development Consulting pour les entreprises de la francophonie.">
+  <meta name="theme-color" content="#00853f">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">ABDC</span>
+        <span class="logo__text">Africa Business Development Consulting</span>
+      </a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#francophonie">Francophonie</a>
+        <a href="education/index.html">Éducation</a>
+        <a href="index.html#contact" class="btn btn--small">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="module-hero">
+      <div class="container module-hero__grid">
+        <div>
+          <a href="index.html#services" class="back">← Tous les services</a>
+          <p class="module-hero__pole" id="m-pole"></p>
+          <h1 id="m-title">Chargement…</h1>
+          <p class="service__brand" id="m-badge"></p>
+          <p class="module-hero__lead" id="m-desc"></p>
+          <div class="hero__actions">
+            <a href="index.html#contact" class="btn" id="m-cta">Demander une démonstration</a>
+          </div>
+          <div id="m-course"></div>
+        </div>
+        <div class="module-hero__visual" id="m-visual"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section__title--left">Fonctionnalités</h2>
+        <ul class="features features--cards" id="m-features"></ul>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title section__title--left">Autres modules</h2>
+        <div class="grid grid--mini" id="m-others"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Africa Business Development Consulting — Amadou Sow · Thiès, Sénégal</p>
+    </div>
+  </footer>
+
+  <script src="js/vendor/supabase-2.109.0.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/courses-catalog.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/module.js"></script>
+</body>
+</html>

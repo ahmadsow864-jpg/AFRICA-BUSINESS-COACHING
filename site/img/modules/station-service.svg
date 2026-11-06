@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="station-service-title">
+  <title id="station-service-title">Illustration Station-service</title>
+  <defs>
+    <linearGradient id="station-service-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#effaf3"/><stop offset="1" stop-color="#d9f0e2"/></linearGradient>
+    <linearGradient id="station-service-roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00a04c"/><stop offset="1" stop-color="#006830"/></linearGradient>
+    <linearGradient id="station-service-pump" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe6ee"/></linearGradient>
+    <linearGradient id="station-service-car" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8bf0"/><stop offset="1" stop-color="#1f56c2"/></linearGradient>
+    <radialGradient id="station-service-bubble" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#d8ecff" stop-opacity=".8"/><stop offset="1" stop-color="#9cc3ff" stop-opacity=".6"/></radialGradient>
+    <g id="station-service-p">
+      <rect x="-32" y="0" width="64" height="130" rx="12" fill="url(#station-service-pump)"/>
+      <rect x="-32" y="0" width="64" height="22" rx="10" fill="#e31b23"/>
+      <rect x="-22" y="32" width="44" height="30" rx="6" fill="#1a2433"/>
+      <rect x="-16" y="40" width="26" height="6" rx="3" fill="#2fc06f"/><rect x="-16" y="50" width="16" height="5" rx="2.5" fill="#2fc06f" opacity=".6"/>
+      <rect x="-22" y="72" width="44" height="8" rx="4" fill="#fdef42"/>
+      <rect x="-36" y="124" width="72" height="12" rx="5" fill="#9aa7b8"/>
+      <path d="M32 40h10v50q0 14-12 14" fill="none" stroke="#1a2433" stroke-width="6" stroke-linecap="round"/>
+      <rect x="34" y="28" width="12" height="20" rx="4" fill="#1a2433"/>
+    </g>
+    <path id="station-service-spark" d="M0-12Q0 0 12 0Q0 0 0 12Q0 0-12 0Q0 0 0-12Z"/>
+  </defs>
+  <circle cx="700" cy="90" r="60" fill="#fdef42" opacity=".4"/>
+  <circle cx="90" cy="430" r="80" fill="#c6e8d3" opacity=".6"/>
+  <g fill="#00853f" opacity=".22"><circle cx="60" cy="60" r="4"/><circle cx="80" cy="60" r="4"/><circle cx="100" cy="60" r="4"/><circle cx="60" cy="80" r="4"/><circle cx="80" cy="80" r="4"/><circle cx="100" cy="80" r="4"/></g>
+  <!-- ground -->
+  <rect x="0" y="396" width="800" height="104" fill="#b9cbc0"/>
+  <rect x="0" y="396" width="800" height="10" fill="#9fb5a8"/>
+  <!-- shop -->
+  <ellipse cx="640" cy="402" rx="120" ry="8" fill="#1a2433" opacity=".18"/>
+  <rect x="530" y="210" width="220" height="190" rx="10" fill="#fff"/>
+  <rect x="520" y="196" width="240" height="22" rx="8" fill="#1a2433"/>
+  <g><path d="M530 218h30v26a15 15 0 0 1-30 0Z" fill="#e31b23"/><path d="M560 218h30v26a15 15 0 0 1-30 0Z" fill="#fff"/><path d="M590 218h30v26a15 15 0 0 1-30 0Z" fill="#e31b23"/><path d="M620 218h30v26a15 15 0 0 1-30 0Z" fill="#fff"/><path d="M650 218h30v26a15 15 0 0 1-30 0Z" fill="#e31b23"/><path d="M680 218h30v26a15 15 0 0 1-30 0Z" fill="#fff"/><path d="M710 218h30v26a15 15 0 0 1-30 0Z" fill="#e31b23"/></g>
+  <rect x="548" y="276" width="104" height="70" rx="8" fill="#9cc3ff"/>
+  <path d="M560 336l30-50M584 336l24-40" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".5"/>
+  <rect x="670" y="276" width="62" height="124" rx="6" fill="#2d3a4f"/>
+  <rect x="676" y="282" width="50" height="60" rx="4" fill="#9cc3ff"/>
+  <circle cx="718" cy="350" r="4" fill="#fdef42"/>
+  <rect x="548" y="354" width="104" height="10" rx="5" fill="#00853f"/>
+  <!-- canopy -->
+  <ellipse cx="290" cy="402" rx="230" ry="10" fill="#1a2433" opacity=".2"/>
+  <rect x="140" y="140" width="16" height="258" fill="#dfe6ee"/>
+  <rect x="424" y="140" width="16" height="258" fill="#dfe6ee"/>
+  <path d="M60 118a20 20 0 0 1 20-20h420a20 20 0 0 1 20 20v28H60Z" fill="url(#station-service-roof)"/>
+  <rect x="60" y="146" width="460" height="14" fill="#fdef42"/>
+  <rect x="60" y="160" width="460" height="6" fill="#e31b23"/>
+  <rect x="90" y="110" width="160" height="10" rx="5" fill="#fff" opacity=".25"/>
+  <g fill="#fff" opacity=".9"><rect x="180" y="168" width="40" height="6" rx="3"/><rect x="360" y="168" width="40" height="6" rx="3"/></g>
+  <!-- pumps -->
+  <use href="#station-service-p" x="110" y="262"/>
+  <use href="#station-service-p" x="470" y="262"/>
+  <!-- car -->
+  <g transform="translate(184 300)">
+    <path d="M0 62q0-20 20-24l34-30q10-8 24-8h70q14 0 24 10l26 28q30 4 30 26v20q0 8-8 8H8q-8 0-8-8Z" fill="url(#station-service-car)"/>
+    <path d="M60 10h32v28H34ZM100 10h38q8 0 14 6l20 22H100Z" fill="#dfeaff"/>
+    <rect x="8" y="58" width="20" height="10" rx="4" fill="#e31b23"/><rect x="212" y="58" width="16" height="10" rx="4" fill="#fdef42"/>
+    <circle cx="50" cy="94" r="18" fill="#1a2433"/><circle cx="50" cy="94" r="7" fill="#b6c3d1"/>
+    <circle cx="180" cy="94" r="18" fill="#1a2433"/><circle cx="180" cy="94" r="7" fill="#b6c3d1"/>
+    <path d="M20 50h190" stroke="#fff" stroke-width="3" opacity=".3"/>
+  </g>
+  <!-- bubbles -->
+  <g fill="url(#station-service-bubble)" stroke="#9cc3ff" stroke-width="1.5">
+    <circle cx="230" cy="290" r="18"/><circle cx="262" cy="270" r="12"/><circle cx="300" cy="284" r="22"/>
+    <circle cx="340" cy="262" r="10"/><circle cx="372" cy="288" r="16"/><circle cx="286" cy="240" r="9"/>
+    <circle cx="350" cy="226" r="7"/><circle cx="236" cy="246" r="6"/><circle cx="404" cy="260" r="8"/>
+  </g>
+  <use href="#station-service-spark" x="580" y="120" fill="#f5c400"/>
+  <use href="#station-service-spark" x="40" y="240" fill="#e31b23"/>
+  <use href="#station-service-spark" x="760" y="250" fill="#00853f"/>
+  <circle cx="320" cy="60" r="5" fill="#2f6fde" opacity=".5"/><circle cx="480" cy="70" r="5" fill="#ff8a3d" opacity=".6"/>
+</svg>
