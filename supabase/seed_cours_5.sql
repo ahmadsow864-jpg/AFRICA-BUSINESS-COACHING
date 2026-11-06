@@ -1395,6 +1395,18 @@ Astuce : les deux groupes comptent chacun 14 lettres.
 - مَا اسْمُكَ؟ (mā smuka? : comment t''appelles-tu ?) ; اِسْمِي ... (ismī ... : je m''appelle ...).
 - شُكْرًا (shukran) : merci ; مَعَ السَّلَامَةِ (maʿa s-salāmati) : au revoir.
 
+## Fiche 4 : les prépositions utiles pour comprendre un texte
+
+Après une préposition, le nom se met au cas indirect (terminaison -i ou -in) :
+- فِي (fī) : dans, à : فِي الْبَيْتِ (fī l-bayti : dans la maison).
+- إِلَى (ilā) : vers, à : إِلَى السُّوقِ (ilā s-sūqi : au marché).
+- مِنْ (min) : de, depuis ; devant l''article, on lit مِنَ (mina) : مِنَ الْمَدْرَسَةِ (mina l-madrasati : de l''école).
+- عَلَى (ʿalā) : sur : عَلَى الطَّاوِلَةِ (ʿalā ṭ-ṭāwilati : sur la table).
+- مَعَ (maʿa) : avec : مَعَ أُسْرَتِي (maʿa usratī : avec ma famille).
+- قَبْلَ (qabla) : avant ; بَعْدَ (baʿda) : après ; أَمَامَ (amāma) : devant.
+
+Ces petits mots indiquent souvent le lieu ou le moment : ils aident à répondre aux questions أَيْنَ (où ?) et مَتَى (quand ?).
+
 ## Texte d''entraînement
 
 اِسْمِي عُمَرُ. أَسْكُنُ فِي مَدِينَةِ دَاكَار مَعَ أُسْرَتِي. أَبِي تَاجِرٌ فِي السُّوقِ، وَأُمِّي مُمَرِّضَةٌ فِي الْمُسْتَشْفَى. لِي أَخٌ وَاحِدٌ وَأُخْتَانِ. أَذْهَبُ إِلَى الْمَدْرَسَةِ كُلَّ يَوْمٍ مَعَ أَخِي. أُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ وَالرِّيَاضِيَّاتِ. فِي يَوْمِ الْجُمُعَةِ أَذْهَبُ مَعَ أَبِي إِلَى الْمَسْجِدِ. بَعْدَ الدِّرَاسَةِ أُسَاعِدُ أُمِّي فِي الْبَيْتِ.
@@ -1717,6 +1729,8 @@ Traduction : J''habite dans un grand quartier. Dans notre quartier, il y a un ma
 - En langue, les correcteurs vérifient la terminaison exacte : يَحْمِلُونَ et non يَحْمِلُ pour هُمْ.
 - En production écrite, ils regardent généralement le respect du sujet, la correction de la langue (accords, orthographe, points), la richesse du vocabulaire et l''enchaînement des idées. Mieux vaut six phrases justes que dix phrases fautives.
 - Une écriture lisible, avec les points bien placés, évite des pertes de points inutiles.
+- Pour la traduction, rends le sens en bon français plutôt que mot à mot : « أَمَانَةٌ فِي أَيْدِينَا » se traduit mieux par « une responsabilité entre nos mains » que par une suite de mots juxtaposés.
+- Si tu ne connais pas un mot du texte, cherche son sens grâce au contexte et aux mots voisins avant d''abandonner la question.
 
 ## Exercices pratiques
 
@@ -1768,6 +1782,8 @@ Visuel : le plan : lecture, consignes, pronoms, phrase nominale et verbale, conj
 
 Question à poser : « Comment lit-on السُّوقُ ? » Réponse : as-sūqu, car س est une lettre solaire.
 
+« Révisons aussi les mots interrogatifs, car ils commandent la réponse. مَنْ, man, qui ? On attend une personne. أَيْنَ, ayna, où ? On attend un lieu, souvent avec فِي ou إِلَى. مَتَى, matā, quand ? On attend un moment : يَوْمَ الْجُمُعَةِ, le vendredi ; كُلَّ صَبَاحٍ, chaque matin. كَمْ, kam, combien ? On attend un nombre. لِمَاذَا, limādhā, pourquoi ? On répond avec لِأَنَّ, li-anna, parce que. Soulignez le mot interrogatif dans chaque question avant de chercher dans le texte. »
+
 ## 15:00 – 27:00 · Pronoms et phrase nominale
 
 « Les pronoms : أَنَا anā, je ; أَنْتَ anta, tu au masculin ; أَنْتِ anti, tu au féminin ; هُوَ huwa, il ; هِيَ hiya, elle ; نَحْنُ naḥnu, nous ; هُمْ hum, ils. Les suffixes : كِتَابِي, kitābī, mon livre ; كِتَابُهُ, kitābuhu, son livre à lui ; كِتَابُهَا, kitābuhā, son livre à elle. »
@@ -1805,6 +1821,8 @@ Question à poser : « Comment lit-on السُّوقُ ? » Réponse : as-sūqu,
 
 « Pause. Écrivez « trois stylos ». Correction : ثَلَاثَةُ أَقْلَامٍ, thalāthatu aqlāmin. قَلَم est masculin, donc le nombre a la forme en ة. »
 
+« Un rappel de vocabulaire, thème par thème, en une minute chacun. La famille : أَبٌ, أُمٌّ, أَخٌ, أُخْتٌ, جَدٌّ, جَدَّةٌ. L''école : مُعَلِّمٌ, تِلْمِيذٌ, كِتَابٌ, قَلَمٌ, دَفْتَرٌ, دَرْسٌ. La ville : شَارِعٌ, سُوقٌ, مَسْجِدٌ, حَيٌّ. La santé : طَبِيبٌ, مَرِيضٌ, دَوَاءٌ, مُسْتَشْفَى. L''environnement : شَجَرَةٌ, مَاءٌ, نَظِيفٌ, أَوْسَاخٌ. Dites chaque mot à voix haute, puis donnez son sens en français. Si vous hésitez sur un mot, notez-le sur votre fiche du soir. »
+
 ## 1:00:00 – 1:10:00 · Compréhension commentée
 
 Visuel : texte court. « أَسْكُنُ فِي قَرْيَةٍ صَغِيرَةٍ. أَبِي فَلَّاحٌ. يَذْهَبُ إِلَى الْحَقْلِ كُلَّ صَبَاحٍ. » (askunu fī qaryatin ṣaghīratin. abī fallāḥun. yadhhabu ilā l-ḥaqli kulla ṣabāḥin : j''habite dans un petit village. Mon père est cultivateur. Il va au champ chaque matin.)
@@ -1816,6 +1834,14 @@ Visuel : texte court. « أَسْكُنُ فِي قَرْيَةٍ صَغِيرَ
 « Pour la production écrite, préparez quelques phrases sûres : اِسْمِي ... ; عُمْرِي أَرْبَعَ عَشْرَةَ سَنَةً ; أَسْكُنُ فِي ... ; أُحِبُّ ... ; فِي الْمُسْتَقْبَلِ أُرِيدُ أَنْ أَكُونَ ... . Reliez les idées avec وَ, ثُمَّ, لَكِنَّ, لِأَنَّ. Pour parler de l''environnement : يَجِبُ أَنْ نُحَافِظَ عَلَى نَظَافَةِ الْحَيِّ, il faut préserver la propreté du quartier. »
 
 « Gestion du temps : lisez tout le sujet, faites d''abord la compréhension, puis la langue, puis la production écrite. Gardez au moins un quart du temps pour écrire, et cinq minutes pour relire : points sur les lettres, ة du féminin, accords, article. Écrivez lisiblement : une lettre mal formée peut être comptée comme une faute. »
+
+« Voici un modèle court sur le thème de l''école, à adapter demain si le sujet s''y prête : »
+
+مَدْرَسَتِي كَبِيرَةٌ وَنَظِيفَةٌ. فِيهَا فُصُولٌ كَثِيرَةٌ وَسَاحَةٌ وَاسِعَةٌ. أُسْتَاذُ اللُّغَةِ الْعَرَبِيَّةِ نَشِيطٌ. أَدْرُسُ مَعَ أَصْدِقَائِي، ثُمَّ نَلْعَبُ فِي السَّاحَةِ. أُحِبُّ مَدْرَسَتِي لِأَنَّهَا جَمِيلَةٌ.
+
+Translittération : madrasatī kabīratun wa-naẓīfatun. fīhā fuṣūlun kathīratun wa-sāḥatun wāsiʿatun. ustādhu l-lughati l-ʿarabiyyati nashīṭun. adrusu maʿa aṣdiqāʾī, thumma nalʿabu fī s-sāḥati. uḥibbu madrasatī li-annahā jamīlatun. (Mon école est grande et propre. Elle a beaucoup de classes et une vaste cour. Le professeur d''arabe est dynamique. J''étudie avec mes amis, puis nous jouons dans la cour. J''aime mon école parce qu''elle est belle.)
+
+« Observez : فُصُولٌ كَثِيرَةٌ, un pluriel de choses avec un adjectif au féminin singulier ; لِأَنَّهَا, parce qu''elle, avec le suffixe هَا. Ce sont des phrases simples, mais chacune est correcte : c''est exactement ce que le correcteur veut lire. »
 
 « Ce soir : préparez vos stylos, relisez vos fiches une dernière fois et dormez tôt. »
 
