@@ -113,7 +113,7 @@
           c.subject ? h("span", { class: "card__pole card__pole--static", text: c.subject }) : null,
           h("h3", { text: c.title }),
           h("p", { text: (c.description || "").slice(0, 220) }),
-          ls.length ? h("p", { class: "course-meta", text: ls.length + " leçons · " + duration(mins) + (ls.some(function (l) { return l.kind === "video"; }) ? " · 🎬 cours vidéo 1h30" : "") }) : null,
+          ls.length ? h("p", { class: "course-meta", text: ls.length + " leçons · " + duration(mins) + (function (n) { return n ? " · 🎬 " + (n > 1 ? n + " cours vidéo de 1h30" : "cours vidéo 1h30") : ""; })(ls.filter(function (l) { return l.kind === "video"; }).length) }) : null,
           h("span", { class: "card__more", text: "Ouvrir le cours →" })
         ));
       });
