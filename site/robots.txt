@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /education/espace.html
 
-Sitemap: https://ahmadsow864-jpg.github.io/AFRICA-BUSINESS-COACHING/sitemap.xml
+Sitemap: https://www.votre-domaine.com/sitemap.xml
