@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 18/19). À exécuter après seed.sql.
+-- Cours (partie 18/20). À exécuter après seed.sql.
 
 -- Cours : Logistique et transport Master 1 : reussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1000,687 +1000,689 @@ Cinq questions pour conclure ce module de Master 2 dans son ensemble. Question 1
 from public.courses c where c.slug = 'mas-log-m2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours video (1h30) : Atelier methodologie - construire et defendre son memoire professionnel');
 
--- Cours : Doctorat Contrôle de gestion : réussir l'examen de qualification doctorale
+-- Cours : Doctorat Ressources humaines : préparer l'examen de qualification doctorale
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'doc-cg', (select id from public.levels where name = 'Doctorat'), null, 'Contrôle de gestion', 'Doctorat Contrôle de gestion : réussir l''examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale en contrôle de gestion : l''opposition entre l''approche cybernétique et rationnelle du contrôle et les approches socio-organisationnelles, le débat budget traditionnel contre beyond budgeting, les méthodes de recherche du champ (étude de cas clinique, recherche-intervention, enquêtes quantitatives) et une simulation complète de soutenance. Public : doctorants en sciences de gestion ayant déjà une formation de niveau Master en contrôle de gestion.', true, 804
+select 'doc-rh', (select id from public.levels where name = 'Doctorat'), null, 'Ressources humaines', 'Doctorat Ressources humaines : préparer l''examen de qualification doctorale', 'Cours de Doctorat destiné aux doctorants en Ressources humaines qui préparent l''examen de qualification doctorale (comprehensive exam). Il couvre deux grands débats théoriques du champ (école des relations humaines contre gestion stratégique des ressources humaines ; approche universaliste contre approche contingente et configurationnelle), les méthodes de recherche propres à la discipline, et s''entraîne sur une épreuve type ainsi qu''une simulation complète de soutenance devant un jury.', true, 801
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir son examen de qualification doctorale en contrôle de gestion', 'L''examen de qualification doctorale en contrôle de gestion n''est pas un contrôle de connaissances au sens scolaire du terme. C''est une épreuve de passage, souvent appelée comprehensive exam ou examen de synthèse selon les programmes, qui vérifie qu''un doctorant maîtrise suffisamment l''état de l''art de son champ pour s''engager, en toute autonomie intellectuelle, dans la rédaction d''une thèse. Avant cette épreuve, on est étudiant qui apprend une discipline ; après, on est censé être un chercheur qui peut la faire avancer. Comprendre cette bascule est la première clé de la réussite.
+select c.id, 'Réussir son examen de qualification doctorale en Ressources humaines', '## Objectifs de la leçon
 
-## Nature de l''épreuve
+- Comprendre la nature exacte de l''examen de qualification doctorale (comprehensive exam) en Ressources humaines.
+- Identifier ce qu''un jury doctoral attend réellement d''un candidat à ce stade.
+- Se doter d''une méthode de travail (fiches de lecture, cartographie des courants, note de synthèse).
+- Construire un plan de travail réaliste sur 8 semaines.
 
-Dans la plupart des programmes doctoraux en sciences de gestion, l''examen de qualification en contrôle de gestion comporte deux volets qui se répondent.
+## 1. Ce qu''est l''examen de qualification doctorale
 
-Le premier est une synthèse écrite de la littérature. Le candidat doit produire un document qui démontre qu''il connaît les grands courants théoriques du contrôle de gestion, qu''il peut les situer historiquement les uns par rapport aux autres, qu''il perçoit leurs tensions et leurs complémentarités, et qu''il est capable d''en tirer un positionnement pour son propre projet de thèse. Ce n''est pas un résumé juxtaposé d''auteurs : c''est une mise en intrigue de la littérature, organisée autour de débats (par exemple l''opposition entre une vision cybernétique du contrôle, héritée des travaux fondateurs sur la planification-contrôle, et une vision socio-organisationnelle qui voit le contrôle comme une construction sociale traversée par des jeux d''acteurs).
+L''examen de qualification, appelé aussi examen de synthèse ou comprehensive exam selon les programmes, est l''étape qui sépare la formation doctorale initiale (séminaires, cours avancés) de la phase de thèse proprement dite. Il ne porte pas sur un sujet de recherche étroit : il porte sur le champ scientifique tout entier dans lequel le doctorant va inscrire sa thèse, ici les Ressources humaines (RH) comme discipline de gestion.
 
-Le second volet est une soutenance orale devant un jury, généralement composé de trois à cinq enseignants-chercheurs du département, parfois complété par un spécialiste extérieur. Le candidat y présente d''abord brièvement son positionnement théorique et l''esquisse de son projet de thèse, puis répond à des questions qui testent la profondeur de sa compréhension : peut-il expliquer pourquoi un courant a émergé en réaction à un autre ? Peut-il discuter les limites d''une méthode de recherche qu''il envisage d''utiliser ? Peut-il relier un phénomène de terrain qu''il a observé à un concept théorique précis ?
+Concrètement, l''épreuve combine en général deux volets. D''abord une synthèse écrite ou une note de lecture critique qui démontre la maîtrise des grands courants théoriques du champ, de leurs auteurs fondateurs et de leurs débats non résolus. Ensuite une soutenance orale devant un jury de plusieurs professeurs, au cours de laquelle le candidat présente son positionnement et répond à des questions qui testent la profondeur de sa culture disciplinaire, sa capacité à argumenter et sa cohérence intellectuelle plus que sa mémoire.
 
-## Ce qu''attend un jury doctoral
+Ce n''est donc pas un examen de connaissances encyclopédiques : c''est un examen de maturité scientifique. Le jury veut vérifier qu''un futur chercheur en RH sait situer n''importe quel article récent par rapport aux grands débats du champ (relations humaines contre gestion stratégique, universalisme contre contingence, capital humain contre compétences, etc.), qu''il connaît les méthodes de recherche propres à la discipline, et qu''il est capable de défendre un projet de thèse face à la critique.
 
-Un jury de qualification n''attend pas l''exhaustivité, il attend la maîtrise. Un candidat qui cite vingt auteurs sans jamais les faire dialoguer entre eux inquiète davantage un jury qu''un candidat qui structure sa pensée autour de trois ou quatre débats solides, qu''il explique avec précision et qu''il relie explicitement à son projet.
+## 2. Ce qu''attend un jury doctoral
 
-Trois qualités sont systématiquement recherchées. La rigueur conceptuelle, d''abord : les termes du champ (contrôle de gestion, pilotage, planification, budget, tableau de bord, contrôle organisationnel) doivent être employés avec la précision qu''exige la discipline, et non comme des synonymes interchangeables. La distance critique, ensuite : un bon candidat ne récite pas une théorie, il sait dire dans quel contexte elle s''applique bien, dans quel contexte elle a été critiquée, et par qui. La capacité de positionnement, enfin : le candidat doit montrer qu''il sait où se situe son propre projet de recherche dans cette cartographie théorique, et pourquoi ce positionnement est pertinent et original.
+Un jury de qualification sanctionne rarement l''ignorance d''un détail précis. Il sanctionne en revanche quatre faiblesses récurrentes, qu''il faut avoir en tête dès le début de la préparation.
 
-Un jury sanctionne en revanche très sévèrement trois défauts récurrents : la paraphrase sans recul (répéter ce que dit un auteur sans jamais le discuter), l''anachronisme théorique (utiliser un cadre d''analyse hors de son contexte d''émergence sans le justifier), et l''approximation historique (confondre l''ordre d''apparition des courants, ce qui trahit une connaissance livresque et non digérée).
+- L''absence de recul critique : réciter un courant théorique sans en connaître les limites, c''est montrer qu''on l''a lu mais pas compris.
+- L''incapacité à comparer : un bon candidat doit pouvoir dire en quoi deux courants théoriques s''opposent, se complètent ou se succèdent historiquement, pas seulement les définir côte à côte.
+- La confusion entre théorie et méthode : connaître un courant (ce que l''on pense du monde) ne dit rien sur la façon de l''étudier empiriquement (comment on observe le monde). Le jury teste souvent les deux séparément.
+- Le flou du projet de thèse : à ce stade, le candidat doit pouvoir dire, en quelques phrases, quelle question il pose, pourquoi elle est nouvelle, et avec quelle méthode il compte y répondre, même si tout n''est pas encore figé.
 
-## Méthode de travail recommandée
+## 3. Une méthode de travail en trois outils
 
-La préparation d''un examen de qualification s''étale typiquement sur plusieurs mois et repose sur trois outils complémentaires.
+La préparation efficace à cet examen repose sur trois outils complémentaires, à construire progressivement pendant les semaines de révision.
 
-Les fiches de lecture sont le socle. Pour chaque texte ou chaque courant important, une fiche synthétique doit répondre à des questions stables : quelle est la question de recherche ou le problème pratique à l''origine de ce courant ? Quels sont les concepts clés qu''il mobilise ? Quelles hypothèses sur l''organisation et sur l''acteur humain sous-tend-il ? Quelles critiques lui ont été adressées, et par quels courants concurrents ? Quels usages empiriques en a-t-on faits ?
+Le premier outil est la fiche de lecture structurée. Pour chaque texte fondateur ou chaque article de synthèse (review), une fiche doit répondre à cinq questions fixes : quelle est la question posée par l''auteur, quel cadre théorique mobilise-t-il, quelle méthode utilise-t-il, quel est le résultat principal, et quelle critique peut-on lui adresser. Une fiche de lecture qui ne répond pas à la cinquième question reste inutile le jour de l''oral.
 
-La cartographie des courants vient ensuite. Il s''agit de construire, au fil de la lecture, une représentation visuelle (un tableau à double entrée, une frise chronologique, un schéma de filiations) qui situe les courants les uns par rapport aux autres : qui critique qui, qui prolonge qui, quels courants partagent des présupposés malgré des vocabulaires différents. Cette cartographie est l''outil qui permet, le jour de l''oral, de répondre avec aisance à une question inattendue en resituant immédiatement l''enjeu dans l''ensemble du champ.
+Le deuxième outil est la cartographie des courants, une sorte de carte mentale qui place les grands courants théoriques du champ sur un même schéma : qui s''oppose à qui, qui a précédé qui, quels auteurs appartiennent à quelle école. Cette carte, mise à jour tout au long de la préparation, devient le squelette de la note de synthèse finale et le meilleur outil de révision rapide avant l''oral.
 
-La note de synthèse, enfin, est l''aboutissement écrit : un document structuré de quelques dizaines de pages qui expose la cartographie sous forme de texte argumenté, conclut sur les zones encore peu explorées de la littérature (les « trous » dans lesquels une thèse peut s''insérer utilement), et propose un positionnement théorique et méthodologique pour le projet de thèse du candidat.
+Le troisième outil est la note de synthèse thématique, un document d''une à trois pages par grand thème (motivation, performance, stratégie RH, méthodes), rédigé en prose, qui force à formuler des phrases complètes plutôt que des listes de mots-clés. C''est cette compétence de synthèse rédigée, et non la liste de lectures, que le jury vient évaluer à l''oral.
 
-## Plan de travail sur huit semaines
+## 4. Un plan de travail sur 8 semaines
 
-Un calendrier de préparation réaliste peut s''organiser ainsi. Les deux premières semaines sont consacrées à la relecture des textes fondateurs du champ et à l''ouverture des fiches de lecture ; l''objectif est de couvrir large avant d''aller en profondeur. Les semaines trois et quatre approfondissent les deux ou trois grands débats théoriques jugés les plus structurants pour le projet de thèse, avec un effort particulier sur les critiques croisées entre courants. La semaine cinq est consacrée aux méthodes de recherche du champ : il faut être capable de discuter, pour chaque grande méthode, ses forces, ses limites, et les débats épistémologiques qu''elle soulève. La semaine six est celle de la rédaction de la note de synthèse. La semaine sept est consacrée à des simulations d''oral, idéalement devant des pairs doctorants ou un directeur de thèse, qui posent des questions déstabilisantes. La semaine huit, enfin, est une semaine de consolidation : relecture de la cartographie, révision des points faibles identifiés lors des simulations, et repos la veille de l''épreuve, car un jury perçoit immédiatement la fatigue intellectuelle d''un candidat.
+Un plan de travail raisonnable pour préparer cet examen peut s''organiser ainsi, en l''adaptant au calendrier réel fixé par le programme doctoral.
 
-Ce cours vous accompagne dans cette préparation en se concentrant sur le contrôle de gestion : ses grands débats théoriques, ses méthodes de recherche spécifiques, et un exercice type d''examen de qualification entièrement corrigé.
+- Semaines 1 et 2 : lecture des textes fondateurs du premier grand courant théorique du champ et rédaction des premières fiches de lecture.
+- Semaines 3 et 4 : lecture des textes fondateurs du second grand courant, en construisant en parallèle la cartographie comparative des deux courants.
+- Semaine 5 : approfondissement des méthodes de recherche du champ (études de cas, enquêtes par questionnaire, méthodes mixtes, recherche-action) et lecture d''articles méthodologiques de référence.
+- Semaine 6 : rédaction des notes de synthèse thématiques et premier jet du positionnement du projet de thèse par rapport aux courants étudiés.
+- Semaine 7 : simulation d''oral avec un pair ou un directeur de thèse, sur la base de questions type ; correction des points faibles identifiés.
+- Semaine 8 : révision finale, relecture de la cartographie, consolidation des réponses aux questions les plus probables, repos la veille de l''épreuve.
 
-## Exercices pratiques
+## Points clés
 
-1. Construisez le squelette d''une fiche de lecture type (rubriques et questions) que vous utiliserez pour chaque courant théorique étudié dans ce cours.
-
-2. Esquissez une première version de votre cartographie des courants en contrôle de gestion, même incomplète : placez au moins quatre courants ou auteurs que vous connaissez déjà et tracez les relations (filiation, critique, complémentarité) que vous pressentez entre eux.
-
-3. Identifiez, dans votre propre projet de thèse (même à l''état d''ébauche), la question pratique de contrôle de gestion à laquelle il cherche à répondre. Reformulez-la en une phrase qui pourrait ouvrir votre note de synthèse.
-
-4. Rédigez un calendrier de préparation sur huit semaines adapté à votre situation (temps disponible, accès aux textes, disponibilité d''un directeur de thèse pour les simulations d''oral).
-
-5. Listez trois questions que vous redoutez qu''un jury vous pose sur votre projet de thèse, et pour chacune, notez en une phrase l''angle par lequel vous pourriez commencer à y répondre.
-
-## Corrigé
-
-1. Une fiche de lecture robuste comporte au minimum les rubriques suivantes : référence complète du texte ou identification du courant ; problème pratique ou question de recherche à l''origine ; concepts clés et leur définition précise ; hypothèses implicites sur l''organisation et sur l''acteur ; principaux apports ; principales critiques reçues, avec le nom des courants ou auteurs critiques ; usages empiriques connus ; liens possibles avec votre propre projet de thèse.
-
-2. Il n''y a pas de corrigé unique : l''exercice vise à vous faire prendre conscience, dès le début de la préparation, de l''état réel de vos connaissances et de leurs lacunes. Une cartographie satisfaisante à ce stade montre au moins une opposition claire (par exemple une approche qui insiste sur la rationalité des dispositifs de contrôle face à une approche qui insiste sur leur dimension sociale et politique) et une filiation claire (par exemple un courant qui prolonge et complexifie un modèle plus ancien).
-
-3. L''exercice est individuel, mais une bonne reformulation évite deux pièges : elle n''est pas purement théorique et déconnectée du terrain (« étudier le contrôle de gestion dans les PME »), et elle n''est pas purement opérationnelle sans portée théorique (« aider une entreprise à construire son budget »). Une formulation réussie relie un phénomène observable à une question conceptuelle non résolue dans la littérature.
-
-4. Le calendrier proposé dans la leçon est un gabarit ; l''essentiel est de vérifier qu''il réserve du temps explicite à quatre activités distinctes : lecture large, approfondissement des débats structurants, travail sur les méthodes, et entraînement oral — cette dernière étant souvent négligée par les candidats qui sur-investissent la seule lecture.
-
-5. Il n''y a pas de bonne ou de mauvaise question redoutée : l''intérêt de l''exercice est de la nommer explicitement plutôt que de l''éviter, et de commencer, même modestement, à y préparer une réponse structurée plutôt que de compter sur l''improvisation le jour de l''oral.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en contrôle de gestion');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique 1 : l''approche cybernétique et rationnelle du contrôle de gestion', 'Le premier grand courant que doit maîtriser tout candidat à l''examen de qualification en contrôle de gestion est ce que l''on appelle, par commodité, l''approche cybernétique ou rationnelle du contrôle. Elle constitue le socle historique de la discipline et reste, aujourd''hui encore, le cadre implicite de la plupart des dispositifs de gestion observés dans les organisations.
-
-## Définition et logique d''ensemble
-
-Dans cette approche, le contrôle de gestion est pensé comme un processus de régulation : on fixe des objectifs, on alloue des ressources pour les atteindre, on mesure les résultats obtenus, on compare ces résultats aux objectifs, et on corrige l''action en consé­quence. Cette boucle (objectif, action, mesure, écart, correction) est directement inspirée de la cybernétique, c''est-à-dire de la science du pilotage des systèmes par rétroaction, dont les principes ont été formulés dans les travaux fondateurs sur la théorie des systèmes et des mécanismes de régulation au milieu du vingtième siècle. Appliquée à l''organisation, cette logique traite l''entreprise comme un système que l''on peut piloter rationnellement, à condition de disposer des bons instruments de mesure et de la bonne architecture de responsabilités.
-
-Le contrôle de gestion y est donc défini comme le processus par lequel les dirigeants s''assurent que les ressources sont obtenues et utilisées avec efficacité et efficience pour atteindre les objectifs de l''organisation. Cette définition, devenue classique dans la discipline, insiste sur trois idées : le contrôle sert la stratégie (il n''est pas une fin en soi), il porte sur l''utilisation des ressources (il est donc étroitement lié à la comptabilité de gestion), et il est distinct à la fois de la planification stratégique, qui fixe les grandes orientations à long terme, et du contrôle d''exécution, qui porte sur des tâches programmables et répétitives à très court terme.
-
-## Auteurs fondateurs et apports
-
-L''auteur le plus structurant de ce courant est le chercheur américain à l''origine, dans les années 1960 et 1970, du modèle dit de la planification-contrôle, qui distingue trois niveaux de pilotage dans l''organisation. Le niveau de la planification stratégique définit les finalités et les grandes orientations, sur un horizon long et dans un contexte d''incertitude élevée. Le niveau du contrôle de gestion (management control) organise la mise en œuvre de la stratégie à moyen terme, notamment par les budgets, les centres de responsabilité et les tableaux de bord : c''est un processus qui engage un dialogue entre dirigeants et responsables opérationnels. Le niveau du contrôle d''exécution (ou contrôle opérationnel) assure, à très court terme, que des tâches bien définies sont exécutées efficacement, souvent par des règles et des procédures plutôt que par un dialogue managérial.
-
-Cette architecture à trois niveaux a eu une influence considérable : elle a fourni le vocabulaire encore utilisé aujourd''hui (centres de coûts, centres de profit, centres d''investissement, prix de cession interne) et elle a légitimé le contrôle de gestion comme fonction managériale distincte de la comptabilité générale, orientée vers l''aide à la décision plutôt que vers la seule production d''états financiers.
-
-D''autres apports ont enrichi ce socle. Les travaux sur la comptabilité de gestion et les coûts de production, antérieurs et postérieurs, ont fourni les outils de calcul (coûts complets, coûts variables, coûts standards, analyse des écarts) qui permettent de rendre opérationnelle la logique de comparaison entre prévision et réalisation. Les travaux sur la théorie de l''agence, développés en économie des organisations, ont ensuite donné un fondement microéconomique à cette approche : si les intérêts des dirigeants et des actionnaires, ou des responsables opérationnels et de la direction générale, peuvent diverger, les dispositifs de contrôle (budgets, indicateurs, systèmes d''incitation) servent à aligner ces intérêts et à réduire les asymétries d''information.
-
-## Évolution historique
-
-Ce courant naît dans un contexte précis : celui des grandes entreprises industrielles américaines de la première moitié du vingtième siècle, confrontées au problème de la décentralisation. Comment une direction générale peut-elle déléguer des responsabilités à des directions de division tout en gardant une vision d''ensemble de la performance ? La réponse apportée est celle des centres de responsabilité budgétaire : on découpe l''organisation en unités dont on peut mesurer la performance de façon homogène (coûts, profit ou rentabilité des capitaux investis selon le périmètre de responsabilité confié), et on pilote l''ensemble par un système de reporting périodique.
-
-Cette logique s''est ensuite diffusée largement, y compris dans des organisations non marchandes, avec l''idée que tout système organisé peut bénéficier d''un pilotage par objectifs et indicateurs, pour peu que l''on adapte les outils de mesure à la nature de son activité.
-
-## Limites et critiques
-
-Ce courant a fait l''objet de critiques convergentes, qui ont ouvert la voie aux approches concurrentes étudiées dans la leçon suivante. Une première limite porte sur l''hypothèse de rationalité : le modèle suppose des acteurs qui réagissent de façon prévisible aux objectifs et aux mesures, alors que les comportements réels face aux budgets (négociation à la baisse des objectifs, constitution de « coussins » budgétaires, manipulation des indicateurs en fin de période) montrent que les acteurs interprètent et s''approprient stratégiquement les dispositifs de contrôle.
-
-Une deuxième limite porte sur le réductionnisme de la mesure : tout ce qui compte vraiment dans une organisation (la qualité de service, la coopération entre équipes, l''innovation) n''est pas toujours mesurable facilement, et un pilotage trop centré sur quelques indicateurs quantitatifs financiers risque de détourner l''attention des acteurs vers ce qui est mesuré au détriment de ce qui ne l''est pas.
-
-Une troisième limite porte sur la rigidité face à l''incertitude : le modèle de la planification-contrôle a été pensé pour des environnements relativement stables, où l''on peut fixer des objectifs annuels pertinents sur toute la période. Dans des environnements plus volatils, le cycle budgétaire annuel devient rapidement obsolète, ce qui a nourri, bien plus tard, le débat sur le « beyond budgeting » étudié en leçon quatre.
-
-Malgré ces critiques, l''approche cybernétique reste la grammaire de base du contrôle de gestion : même les auteurs qui la critiquent le plus vivement s''y réfèrent, explicitement ou implicitement, comme le point de départ de leur propre construction théorique.
+- L''examen de qualification teste la maturité scientifique, pas la mémoire encyclopédique.
+- Le jury cherche du recul critique, de la comparaison entre courants, une distinction claire théorie/méthode, et un projet de thèse qui se positionne.
+- Trois outils structurent la préparation : fiche de lecture, cartographie des courants, note de synthèse rédigée.
+- Un plan sur 8 semaines permet de couvrir théorie, méthode et simulation d''oral sans se disperser.
 
 ## Exercices pratiques
 
-1. Expliquez, avec vos propres mots, la différence entre contrôle de gestion et contrôle d''exécution selon le modèle de la planification-contrôle. Donnez un exemple pour chaque niveau dans une entreprise de distribution.
-
-2. Pourquoi la théorie de l''agence est-elle considérée comme un fondement complémentaire de l''approche cybernétique plutôt que comme un courant concurrent ?
-
-3. Un directeur financier affirme : « Tant que nos indicateurs sont dans le vert, l''organisation fonctionne bien. » Discutez cette affirmation à la lumière des limites du courant cybernétique.
-
-4. En quoi le découpage d''une organisation en centres de responsabilité peut-il créer des comportements non prévus par les concepteurs du système de contrôle ? Donnez deux exemples.
-
-5. Dans quel type de contexte organisationnel (stabilité, prévisibilité, nature de l''activité) l''approche cybernétique vous semble-t-elle la plus pertinente ? Justifiez.
+1. Rédigez en dix lignes la différence entre « connaître un courant théorique » et « savoir le mobiliser de façon critique » dans une soutenance.
+2. Construisez le squelette (titres et sous-titres uniquement) d''une cartographie comparative de deux courants théoriques en RH.
+3. Listez les cinq questions fixes d''une fiche de lecture et appliquez-les à un article de votre choix sur la gestion des ressources humaines.
+4. Formulez en deux phrases la question de recherche provisoire de votre projet de thèse en RH.
+5. Identifiez, dans votre plan de travail personnel, la semaine la plus à risque de retard et proposez une mesure corrective.
+6. Expliquez pourquoi un jury doctoral préfère souvent un candidat qui critique une théorie à un candidat qui la récite parfaitement.
 
 ## Corrigé
 
-1. Le contrôle de gestion organise, à moyen terme, le dialogue entre la direction générale et les responsables d''unités autour d''objectifs négociés (budgets, plans d''action) : il laisse une marge d''appréciation aux responsables sur la façon d''atteindre l''objectif. Le contrôle d''exécution porte sur des tâches très cadrées, à très court terme, où la marge d''appréciation est faible et où des règles ou procédures suffisent : par exemple, dans une enseigne de distribution, la définition des objectifs de chiffre d''affaires et de marge d''un directeur de magasin relève du contrôle de gestion, tandis que le respect d''une procédure d''encaissement en caisse relève du contrôle d''exécution.
+1. Connaître un courant, c''est pouvoir le définir, citer ses auteurs et résumer ses idées. Le mobiliser de façon critique, c''est en plus être capable de dire dans quel contexte il s''applique, quelles sont ses limites empiriques ou conceptuelles, et comment un autre courant permettrait de combler ces limites. C''est cette seconde capacité que le jury évalue.
 
-2. Parce qu''elle ne propose pas un modèle alternatif de pilotage de l''organisation, mais un fondement théorique qui explique pourquoi les dispositifs de contrôle (budgets, indicateurs, incitations) sont nécessaires : elle justifie, en termes d''intérêts divergents et d''asymétrie d''information entre dirigeants et subordonnés, la logique même de surveillance et de mesure que l''approche cybernétique met en œuvre.
+2. Un squelette possible : (1) Définition et postulats de chaque courant ; (2) Auteurs fondateurs et contexte d''émergence ; (3) Apports respectifs ; (4) Points de tension ou d''opposition ; (5) Tentatives de synthèse ou de dépassement dans la littérature récente ; (6) Implications pour un projet de thèse personnel.
 
-3. L''affirmation traduit un réductionnisme typique de la mesure : elle suppose que les indicateurs choisis captent l''essentiel de la performance de l''organisation, alors que des dimensions importantes (qualité perçue par les clients, climat social, capacité d''innovation) peuvent se détériorer sans que les indicateurs financiers s''en trouvent immédiatement affectés. Une bonne réponse doit nuancer : les indicateurs sont utiles mais insuffisants seuls, et leur interprétation doit être complétée par d''autres sources d''information.
+3. Les cinq questions : quelle question pose l''auteur, quel cadre théorique mobilise-t-il, quelle méthode utilise-t-il, quel est le résultat principal, quelle critique peut-on lui adresser. Appliquées à un article réel, elles doivent tenir en une demi-page maximum pour rester exploitables en révision.
 
-4. Le découpage en centres de responsabilité peut inciter un responsable à optimiser son propre indicateur au détriment de la performance globale (par exemple refuser une commande urgente qui dégraderait son taux d''utilisation des capacités, alors qu''elle serait bénéfique pour l''entreprise dans son ensemble), ou à retarder artificiellement des charges d''une période sur l''autre pour présenter un résultat conforme à l''objectif du centre, sans que cela corresponde à une amélioration réelle de la gestion.
+4. Exemple de formulation : « Cette thèse examine comment les pratiques de gestion des ressources humaines des petites entreprises sénégalaises articulent logiques informelles et logiques formalisées de gestion du personnel, et avec quels effets sur la fidélisation des salariés. »
 
-5. L''approche cybernétique est la plus pertinente dans des contextes où l''activité est relativement stable et répétitive, où les relations de cause à effet entre actions et résultats sont bien connues, et où les objectifs peuvent être fixés avec un horizon de douze mois sans devenir rapidement caducs : c''est typiquement le cas d''activités industrielles ou de services standardisés dans un environnement concurrentiel prévisible. Elle est moins adaptée dans des environnements très incertains ou dans des organisations dont la performance repose largement sur des dimensions difficiles à mesurer, comme l''innovation ou la créativité.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 1 : l''approche cybernétique et rationnelle du contrôle de gestion');
+5. Les semaines 3-4 et 7 sont souvent les plus à risque : la semaine 3-4 parce qu''elle demande d''assimiler un second corpus théorique alors que le premier n''est pas encore stabilisé, la semaine 7 parce que la simulation d''oral révèle souvent des lacunes qui demandent un retour en arrière. Une mesure corrective simple consiste à réserver dès le départ une semaine tampon non affectée, placée juste avant la semaine 8.
+
+6. Parce qu''une thèse de doctorat est une contribution originale à la connaissance : elle suppose de savoir repérer les limites de ce qui existe déjà. Un candidat qui ne voit aucune limite à une théorie montre qu''il n''a pas encore le regard d''un chercheur autonome, même s''il connaît parfaitement le contenu de cette théorie.', 'texte', 55, true, 10
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en Ressources humaines');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique 2 : les approches socio-organisationnelles du contrôle', 'Face au courant cybernétique présenté dans la leçon précédente, un ensemble de travaux, regroupés ici sous le terme d''approches socio-organisationnelles du contrôle, proposent une lecture radicalement différente : le contrôle de gestion n''y est plus seulement un instrument de régulation rationnelle, mais une construction sociale, traversée par des jeux d''acteurs, des rapports de pouvoir et des significations qui se négocient dans l''organisation.
+select c.id, 'L''école des relations humaines face à la gestion stratégique des ressources humaines', '## Objectifs de la leçon
 
-## Définition et logique d''ensemble
+- Définir l''école des relations humaines et la gestion stratégique des ressources humaines (Strategic Human Resource Management, SHRM).
+- Situer ces deux courants dans leur contexte historique d''émergence.
+- Identifier les auteurs fondateurs de chaque courant et leur apport.
+- Comparer de façon critique leurs postulats, leurs limites et leurs points de passage.
 
-L''idée centrale de ce courant est que les dispositifs de contrôle (budgets, indicateurs, tableaux de bord, procédures) ne produisent jamais mécaniquement les effets prévus par leurs concepteurs. Entre la conception d''un outil de gestion et son usage effectif sur le terrain s''interposent des acteurs qui l''interprètent, le détournent, le contournent, ou au contraire s''en saisissent pour défendre leurs propres intérêts, leur position dans l''organisation, ou leur conception légitime du métier. Le contrôle de gestion devient alors un objet d''analyse sociologique autant qu''un objet de gestion technique.
+## 1. L''école des relations humaines : définition et postulats
 
-Ce courant s''appuie sur une hypothèse différente de celle du modèle cybernétique quant à la nature de l''acteur organisationnel : l''acteur n''est pas seulement un agent qui réagit à des incitations financières, il est un acteur stratégique, doté d''une rationalité limitée mais réelle, qui cherche à préserver ou à étendre ses marges de liberté (ses « zones d''incertitude ») dans un système d''action concret. Il en résulte que tout dispositif de contrôle, aussi bien conçu soit-il techniquement, est en réalité le produit (et l''enjeu) d''un jeu de pouvoir entre les acteurs qui le construisent, ceux qui doivent l''appliquer, et ceux qui en subissent les effets.
+L''école des relations humaines naît dans l''entre-deux-guerres, en réaction à l''organisation scientifique du travail qui réduisait l''ouvrier à un exécutant interchangeable, motivé uniquement par le salaire. Son postulat central est que la performance au travail dépend d''abord de facteurs psychologiques et sociaux : le sentiment d''appartenance à un groupe, la reconnaissance, la qualité des relations avec la hiérarchie, l''intérêt porté au travail lui-même.
 
-## Apports fondateurs
+Les expériences menées à l''usine Hawthorne de la Western Electric, dans les années 1920 et 1930, sont le point de départ le plus souvent cité de ce courant. En faisant varier l''éclairage et les conditions matérielles d''un atelier, les chercheurs s''attendaient à mesurer un lien mécanique entre conditions physiques et productivité. Ils ont observé un résultat inattendu : la productivité augmentait quelles que soient les conditions, du simple fait que les ouvrières se sentaient observées, écoutées et valorisées. Ce résultat, connu comme « l''effet Hawthorne », a déplacé l''attention de la gestion du travail vers la dimension humaine et relationnelle de l''organisation.
 
-Plusieurs lignées de travaux nourrissent ce courant. La sociologie des organisations, en France notamment, a développé l''analyse stratégique des organisations : toute organisation est un système d''action concret, structuré par des jeux de pouvoir autour de zones d''incertitude que chaque acteur cherche à contrôler pour négocier en position favorable. Appliquée au contrôle de gestion, cette grille de lecture montre que les responsables budgétaires, par exemple, ne se contentent pas d''exécuter des directives : ils négocient les objectifs qui leur sont fixés, retiennent stratégiquement de l''information sur leurs marges de manœuvre réelles, et utilisent leur connaissance fine du terrain comme une ressource de pouvoir face à la direction générale.
+À partir de ce socle empirique, plusieurs auteurs ont construit des théories plus générales de la motivation et du management qui prolongent cette intuition. On retient généralement l''apport d''Abraham Maslow sur la hiérarchie des besoins humains, qui situe les besoins sociaux et de reconnaissance au-dessus des besoins matériels de base ; l''apport de Frederick Herzberg, qui distingue les facteurs d''hygiène (conditions de travail, salaire) des facteurs de motivation proprement dits (reconnaissance, contenu du travail, responsabilité) ; et l''apport de Douglas McGregor, qui oppose une vision pessimiste de l''employé (théorie X, supposé paresseux et devant être contrôlé) à une vision plus optimiste (théorie Y, supposé capable d''autonomie si l''organisation lui fait confiance).
 
-Une deuxième lignée, issue des études critiques en comptabilité (critical accounting studies), analyse les dispositifs comptables et budgétaires comme des technologies de pouvoir : loin d''être neutres, ils rendent visibles certains phénomènes et invisibles d''autres, ils légitiment certaines catégories d''acteurs (les gestionnaires, les financiers) au détriment d''autres (les métiers opérationnels, les corps de métier traditionnels), et ils participent ainsi à façonner les rapports de force dans l''organisation autant qu''ils les mesurent.
+## 2. La gestion stratégique des ressources humaines (SHRM)
 
-Une troisième lignée s''appuie sur les théories de l''institutionnalisation et de la construction sociale des pratiques de gestion : les outils de contrôle se diffusent dans les organisations non pas uniquement parce qu''ils sont techniquement supérieurs, mais parce qu''ils deviennent des normes socialement attendues, des signes de légitimité et de modernité organisationnelle, que les dirigeants adoptent parfois davantage pour se conformer à ce qui est considéré comme une « bonne pratique » du secteur que pour leur efficacité intrinsèque démontrée.
+La gestion stratégique des ressources humaines émerge plus tardivement, à partir des années 1980, dans un contexte de concurrence internationale accrue et de recherche d''avantage compétitif durable. Son postulat central diffère nettement de celui des relations humaines : il ne s''agit plus seulement de comprendre ce qui motive un individu, mais de concevoir les pratiques de gestion du personnel comme un levier de performance organisationnelle au même titre que la stratégie financière ou commerciale.
 
-## Évolution historique
+Le SHRM repose sur l''idée que les ressources humaines, lorsqu''elles sont gérées de façon cohérente avec la stratégie globale de l''entreprise, peuvent constituer un avantage concurrentiel difficile à imiter par les concurrents, contrairement à une technologie ou à un produit. Cette idée doit beaucoup à la théorie de la firme fondée sur les ressources (resource-based view), qui soutient qu''un avantage durable vient des ressources rares, précieuses et difficiles à copier, dont le capital humain et les pratiques organisationnelles font partie.
 
-Ces approches se développent à partir des années 1970-1980, en réaction aux limites perçues du modèle cybernétique : les chercheurs en sociologie des organisations et en comptabilité critique observent, sur le terrain, des écarts considérables entre le fonctionnement théorique des dispositifs de contrôle et leurs usages réels. Le courant se nourrit également de la montée, dans les sciences sociales, d''une attention plus générale portée aux dimensions symboliques, politiques et discursives des phénomènes organisationnels, par contraste avec des approches plus fonctionnalistes qui dominaient auparavant.
+Parmi les auteurs associés à la structuration de ce champ, on cite généralement les travaux de Patrick Wright et Gary McMahan sur les fondements théoriques du SHRM, les travaux de Peter Boxall et John Purcell sur l''articulation entre stratégie d''entreprise et stratégie RH, ainsi que les travaux de Dave Ulrich sur les rôles multiples de la fonction RH dans l''organisation (partenaire stratégique, expert administratif, champion des employés, agent de changement). Le SHRM insiste sur l''alignement : les pratiques de recrutement, de formation, de rémunération et d''évaluation doivent former un ensemble cohérent entre elles et cohérent avec les objectifs stratégiques de l''entreprise, et non une collection de pratiques isolées.
 
-Ce courant a progressivement gagné en influence dans la recherche académique en contrôle de gestion, notamment via le développement de la méthode de l''étude de cas clinique et de la recherche-intervention (présentées en leçon quatre), qui permettent précisément de documenter finement ces jeux d''acteurs autour des dispositifs de contrôle, alors que les méthodes quantitatives à grande échelle les rendent plus difficiles à observer.
+## 3. Deux logiques en tension
 
-## Limites et critiques
+La comparaison des deux courants révèle une tension de fond sur la finalité même de la gestion du personnel. L''école des relations humaines part du bien-être et de l''épanouissement de l''individu au travail, et suppose qu''une meilleure performance en découlera presque naturellement. Le SHRM part au contraire de la performance et de la stratégie de l''organisation, et considère la gestion des personnes comme un moyen au service de cette performance, le bien-être individuel n''étant recherché que dans la mesure où il y contribue.
 
-Ce courant a lui-même été critiqué, notamment par les tenants de l''approche cybernétique et par certains chercheurs en gestion plus appliquée. Une première critique porte sur l''opérationnalité : en insistant sur la complexité des jeux d''acteurs et sur l''imprévisibilité des usages des outils, ce courant offre parfois peu de prescriptions concrètes aux praticiens qui doivent, malgré tout, concevoir et faire vivre des systèmes de contrôle dans leurs organisations.
+Cette différence de point de départ a des conséquences pratiques importantes. Une politique RH inspirée des relations humaines valorisera prioritairement l''écoute, la participation, le climat social et la reconnaissance individuelle. Une politique RH inspirée du SHRM valorisera prioritairement l''alignement des pratiques sur les priorités stratégiques, la mesure de la contribution des RH à la performance de l''entreprise, et la différenciation des pratiques selon les catégories de personnel jugées stratégiques.
 
-Une deuxième critique porte sur un risque de relativisme excessif : si tout dispositif de contrôle n''est qu''un enjeu de pouvoir sans portée technique propre, on perd de vue que certains outils de mesure sont, de fait, plus pertinents que d''autres pour éclairer une décision économique, et que la dimension sociale du contrôle n''épuise pas entièrement sa dimension instrumentale.
+## 4. Limites et critiques de chaque courant
 
-Une troisième critique, plus méthodologique, porte sur la généralisation : les études de cas qualitatives qui nourrissent ce courant, riches et détaillées, se prêtent plus difficilement à des conclusions généralisables à un grand nombre d''organisations que les enquêtes quantitatives privilégiées par l''approche cybernétique.
+L''école des relations humaines a été critiquée pour son relatif optimisme sur la convergence spontanée entre bien-être individuel et intérêts de l''organisation, qui occulte les rapports de pouvoir et les conflits d''intérêts réels entre employeurs et salariés. Certains auteurs ont également souligné que l''effet Hawthorne lui-même a fait l''objet de réinterprétations méthodologiques, qui invitent à la prudence sur la portée exacte des résultats expérimentaux d''origine.
 
-## Tension et complémentarité avec le courant cybernétique
+Le SHRM, de son côté, a été critiqué pour sa difficulté à démontrer empiriquement, de façon incontestable, un lien de causalité clair entre pratiques RH et performance financière de l''entreprise, les deux pouvant s''influencer dans les deux sens ou être le produit d''une troisième variable commune. Il a aussi été critiqué pour sa tendance à instrumentaliser l''humain, en réduisant parfois les salariés à une simple « ressource » parmi d''autres, ce qui rejoint en creux l''avertissement initial de l''école des relations humaines.
 
-La tension entre les deux courants n''est pas seulement académique : elle structure directement la pratique du contrôle de gestion. Un contrôleur de gestion qui ignore la dimension sociale et politique des dispositifs qu''il conçoit risque de produire des outils techniquement irréprochables mais massivement contournés ou vidés de leur sens sur le terrain. Inversement, un contrôleur de gestion qui négligerait entièrement la dimension instrumentale (la qualité du calcul de coût, la pertinence d''un indicateur) au profit d''une lecture uniquement politique perdrait la capacité de produire une information de gestion fiable. Les recherches les plus récentes en contrôle de gestion tendent d''ailleurs à articuler les deux lectures plutôt qu''à les opposer frontalement, en étudiant comment la dimension technique et la dimension sociale des dispositifs de contrôle s''influencent mutuellement dans le temps.
+## 5. Un dialogue plutôt qu''une rupture complète
+
+Dans la littérature contemporaine, ces deux courants ne s''excluent pas nécessairement : de nombreux travaux du SHRM intègrent désormais des variables issues des relations humaines, comme la perception de soutien organisationnel ou le sentiment de justice, pour expliquer pourquoi certaines pratiques stratégiques produisent ou non les effets attendus. Connaître cette évolution historique est un socle indispensable pour situer tout travail doctoral en gestion des ressources humaines.
+
+## Points clés
+
+- L''école des relations humaines place le bien-être et la dimension psychosociale de l''individu au centre de la performance au travail.
+- Le SHRM place la performance stratégique de l''organisation au centre, et traite les RH comme un levier d''avantage concurrentiel.
+- Les deux courants s''opposent sur leur point de départ (l''individu contre l''organisation) mais se rejoignent de plus en plus dans la recherche contemporaine.
+- Chaque courant a ses limites propres : optimisme sur la convergence des intérêts pour l''un, difficulté de preuve causale et risque d''instrumentalisation pour l''autre.
 
 ## Exercices pratiques
 
-1. Expliquez la notion de « zone d''incertitude » et montrez, par un exemple, comment un responsable opérationnel peut en tirer un pouvoir de négociation face à la direction financière lors de l''élaboration du budget.
-
-2. En quoi les dispositifs comptables peuvent-ils être qualifiés de « technologies de pouvoir » plutôt que de simples outils de mesure neutre ? Donnez un exemple concret.
-
-3. Comparez, sur le plan des hypothèses sur l''acteur organisationnel, le courant cybernétique et le courant socio-organisationnel.
-
-4. Un chercheur affirme que les approches socio-organisationnelles rendent le contrôle de gestion « illisible » pour les praticiens. Discutez cette critique en identifiant ses limites.
-
-5. Dans votre propre projet de thèse, identifiez un phénomène de terrain qui relèverait davantage d''une lecture socio-organisationnelle que d''une lecture cybernétique, et expliquez pourquoi.
+1. Expliquez en quoi l''effet Hawthorne a modifié la conception de la performance au travail par rapport à l''organisation scientifique du travail.
+2. Comparez, en un tableau de deux colonnes, les postulats de l''école des relations humaines et ceux du SHRM.
+3. Discutez la critique selon laquelle le SHRM « instrumentalise » les ressources humaines : est-elle selon vous justifiée, nuancée ou excessive ?
+4. Donnez un exemple fictif de pratique RH dans une entreprise sénégalaise qui illustrerait la logique des relations humaines, puis reformulez-la selon la logique du SHRM.
+5. Pourquoi la théorie des ressources (resource-based view) a-t-elle été un soutien théorique important pour l''émergence du SHRM ?
+6. Identifiez une limite méthodologique du SHRM qu''un jury pourrait vous demander de discuter à l''oral, et préparez une réponse en cinq phrases.
 
 ## Corrigé
 
-1. Une zone d''incertitude est une portion d''information ou de compétence que seul un acteur maîtrise réellement, ce qui lui donne un pouvoir de négociation face aux autres acteurs qui en dépendent. Par exemple, un chef d''atelier qui connaît seul les capacités réelles de production (au-delà des chiffres officiels) peut, lors de la négociation budgétaire, sous-estimer stratégiquement ces capacités pour obtenir un objectif plus facile à atteindre, la direction financière ne disposant pas des moyens de vérifier cette information de façon indépendante.
+1. L''organisation scientifique du travail supposait que la productivité découlait uniquement de l''organisation technique des tâches et de l''incitation salariale. L''effet Hawthorne a montré qu''un facteur purement relationnel, le sentiment d''être observé et valorisé, pouvait faire varier la productivité indépendamment des conditions matérielles, ouvrant la voie à une conception psychosociale de la performance.
 
-2. Un dispositif comptable n''est pas neutre parce qu''il choisit ce qui est mesuré (donc rendu visible et légitime) et ce qui ne l''est pas (donc rendu invisible). Par exemple, un système de coûts qui valorise fortement la productivité horaire d''une chaîne de production, sans mesurer la qualité perçue par le client final, oriente implicitement les comportements des opérateurs vers la vitesse au détriment de la qualité, tout en donnant l''apparence d''une mesure purement technique et objective.
+2. Relations humaines : point de départ = l''individu et ses besoins ; finalité = le bien-être, supposé générer la performance ; outils = écoute, reconnaissance, climat social. SHRM : point de départ = la stratégie et la performance de l''organisation ; finalité = l''avantage concurrentiel ; outils = alignement des pratiques RH, différenciation selon les catégories stratégiques de personnel.
 
-3. Le courant cybernétique suppose un acteur qui réagit de façon relativement prévisible aux incitations et aux objectifs fixés, dans une logique proche de l''agent rationnel de la théorie économique. Le courant socio-organisationnel suppose un acteur stratégique, doté d''une rationalité limitée, qui interprète activement les dispositifs de contrôle, cherche à préserver ses marges de liberté, et peut détourner un dispositif de ses objectifs initiaux pour servir ses propres intérêts ou sa conception du métier.
+3. Une réponse nuancée reconnaît que le risque existe dès que les personnes sont pensées uniquement comme un facteur de performance, mais note que les auteurs du SHRM eux-mêmes (par exemple Ulrich) insistent aussi sur le rôle de « champion des employés » de la fonction RH, ce qui limite partiellement cette critique si les pratiques sont correctement mises en œuvre.
 
-4. La critique a une part de vérité : une lecture purement sociologique et politique, sans traduction opérationnelle, peut effectivement laisser le praticien démuni face à la question concrète « que dois-je faire demain matin pour améliorer mon système de contrôle ? ». Mais la limite de la critique est qu''elle sous-estime l''utilité pratique de comprendre les jeux d''acteurs : un contrôleur de gestion averti de ces mécanismes peut anticiper les détournements probables d''un outil et concevoir des dispositifs plus robustes socialement, ce qui est en soi une forme d''opérationnalité, différente mais non inférieure à celle du courant cybernétique.
+4. Logique relations humaines : une entreprise textile de Thiès organise des réunions d''équipe hebdomadaires où chaque salarié peut exprimer ses difficultés, dans le but d''améliorer le climat social. Reformulation SHRM : la même entreprise documenterait l''effet de ces réunions sur un indicateur de performance (taux de rebut, ponctualité) pour justifier leur maintien dans le cadre de sa stratégie de compétitivité.
 
-5. Il n''y a pas de réponse unique : un exemple type serait l''observation que des responsables intermédiaires parviennent à neutraliser un nouvel outil de pilotage imposé par le siège d''un groupe, non par refus ouvert, mais par une application purement formelle qui en vide le contenu, ce qui ne peut s''expliquer par le seul design technique de l''outil et appelle une lecture en termes de jeux de pouvoir et de défense de l''autonomie professionnelle.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 2 : les approches socio-organisationnelles du contrôle');
+5. Parce que la resource-based view fournit un cadre théorique pour expliquer pourquoi des ressources internes, et non seulement la position sur le marché, peuvent fonder un avantage durable : elle légitime scientifiquement l''idée que des pratiques RH bien conçues, rares et difficiles à imiter, contribuent à la compétitivité de l''entreprise.
+
+6. Limite possible : la difficulté à isoler le sens de la causalité entre pratiques RH et performance (de bonnes pratiques RH améliorent-elles la performance, ou les entreprises déjà performantes investissent-elles davantage dans leurs RH ?). Réponse possible : cette critique est fondée ; la plupart des études sur ce lien sont transversales, ce qui limite les conclusions causales ; des études longitudinales répondent partiellement à ce problème mais restent coûteuses sur le terrain ; un projet de thèse peut en tenir compte en privilégiant, si possible, plusieurs vagues de collecte.', 'texte', 55, false, 20
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'L''école des relations humaines face à la gestion stratégique des ressources humaines');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Les méthodes de recherche en contrôle de gestion', 'Un candidat à l''examen de qualification doit non seulement connaître les grands courants théoriques du contrôle de gestion, mais aussi maîtriser les méthodes de recherche propres au champ, c''est-à-dire savoir comment la discipline produit ses connaissances, avec quels outils, et avec quelles limites. Cette leçon présente trois grandes familles de méthodes : l''étude de cas clinique, la recherche-intervention, et les enquêtes quantitatives sur les pratiques de contrôle.
+select c.id, 'Universalisme et contingence en GRH : le débat des « best practices » contre le « best fit »', '## Objectifs de la leçon
 
-## L''étude de cas clinique en contrôle de gestion
+- Définir l''approche universaliste et l''approche contingente/configurationnelle en gestion des ressources humaines.
+- Relier ce débat à celui, très proche, des « best practices » contre le « best fit ».
+- Identifier les auteurs et travaux qui structurent chaque position.
+- Évaluer la portée et les limites de chaque approche pour un projet de recherche doctoral.
 
-L''étude de cas clinique consiste à observer en profondeur, sur une durée généralement longue, le fonctionnement réel des dispositifs de contrôle dans une ou plusieurs organisations, en combinant entretiens avec les acteurs, observation directe de réunions ou de processus budgétaires, et analyse de documents internes (budgets, tableaux de bord, comptes rendus). Le terme « clinique » souligne que le chercheur adopte une posture proche de celle d''un clinicien : il s''intéresse au fonctionnement singulier d''un cas, dans toute sa complexité, plutôt qu''à la vérification d''une loi générale sur un grand échantillon.
+## 1. L''approche universaliste et les « best practices »
 
-Cette méthode est particulièrement adaptée pour étudier les phénomènes mis en avant par les approches socio-organisationnelles : elle permet de documenter finement comment un outil de contrôle est effectivement interprété, négocié ou détourné par les acteurs, ce qu''une enquête quantitative ne peut généralement pas saisir avec la même profondeur. Elle permet aussi d''observer des processus dans leur déroulement temporel, ce qui est précieux pour comprendre la dynamique de construction d''un dispositif, pas seulement son état à un instant donné.
+L''approche universaliste part d''un postulat fort : il existerait un ensemble de pratiques de gestion des ressources humaines qui améliorent la performance organisationnelle quel que soit le contexte, le secteur d''activité ou la stratégie de l''entreprise qui les adopte. Ces pratiques, souvent appelées « meilleures pratiques » (best practices), formeraient une sorte de recette universelle de la bonne gestion des personnes.
 
-Ses limites sont bien identifiées : la difficulté de généraliser les résultats d''un ou quelques cas à toute une population d''organisations, le risque d''un biais d''interprétation du chercheur impliqué longuement sur le terrain, et l''exigence méthodologique d''un protocole de collecte explicite, d''une triangulation des sources, et d''une transparence sur les critères de choix des cas étudiés.
+Les travaux les plus cités dans cette veine sont ceux de Jeffrey Pfeffer, qui a dressé une liste de pratiques jugées universellement bénéfiques : sécurité de l''emploi, recrutement sélectif, rémunération incitative liée à la performance, partage de l''information, formation et développement des compétences, réduction des différences de statut entre catégories de personnel. Les travaux empiriques de Mark Huselid, sur de larges échantillons d''entreprises américaines, ont par ailleurs montré une association statistique entre l''adoption de systèmes de pratiques RH dites « à haute performance » et des indicateurs de performance organisationnelle, ce qui a renforcé l''attrait de cette thèse universaliste dans la recherche et chez les praticiens.
 
-## La recherche-intervention
+L''intérêt de cette approche est sa simplicité normative : elle propose aux dirigeants et aux responsables RH une liste d''actions à privilégier, indépendamment des particularités de leur organisation. C''est aussi sa principale fragilité théorique, que la deuxième approche va directement contester.
 
-La recherche-intervention va plus loin que l''étude de cas en ce que le chercheur n''observe pas seulement l''organisation de l''extérieur, mais y intervient activement, généralement en accompagnant un changement organisationnel (par exemple la conception ou la refonte d''un système de contrôle de gestion), tout en produisant simultanément une connaissance scientifique sur ce processus de changement. Le chercheur occupe alors une double posture, à la fois acteur du changement (parfois rémunéré comme consultant) et observateur scientifique de ce même changement, ce qui exige une vigilance méthodologique particulière pour distinguer ce qui relève de l''action du chercheur et ce qui relève du phénomène qu''il étudie.
+## 2. L''approche contingente et configurationnelle, et le « best fit »
 
-Cette méthode est très présente en contrôle de gestion parce que la discipline a, historiquement, des liens étroits avec la pratique managériale : de nombreux dispositifs étudiés par la recherche ont d''abord été conçus en partenariat avec des organisations. Les tenants de cette méthode soutiennent qu''elle seule permet d''accéder à certaines connaissances : on ne comprend vraiment la dynamique de résistance à un nouvel outil de contrôle qu''en participant à sa mise en œuvre, non en l''observant de l''extérieur a posteriori.
+L''approche contingente part d''un postulat inverse : l''efficacité d''une pratique RH dépend du contexte dans lequel elle est mise en œuvre, en particulier de la stratégie concurrentielle de l''entreprise, de son secteur, de sa taille, de sa culture nationale ou de la nature de ses emplois. Il n''existerait donc pas de « meilleure pratique » en soi, mais seulement des pratiques plus ou moins adaptées (best fit) à une situation donnée.
 
-Sa limite principale tient à la validité scientifique : comment s''assurer que les conclusions ne reflètent pas simplement les intérêts du chercheur-intervenant, qui a par construction intérêt à ce que son intervention soit perçue comme réussie ? La discipline y répond par l''explicitation de la posture du chercheur, la validation croisée avec d''autres acteurs, et la publication de protocoles détaillés — un débat méthodologique qui reste permanent dans le champ.
+Les travaux de Randall Schuler et Susan Jackson illustrent bien cette logique : ils montrent que des stratégies concurrentielles différentes (innovation, qualité, réduction des coûts) appellent des comportements attendus des salariés très différents, et donc des pratiques RH de recrutement, d''évaluation et de rémunération elles-mêmes différentes. Une entreprise qui concurrence par l''innovation a intérêt à encourager la prise de risque et la créativité individuelle ; une entreprise qui concurrence par les coûts a plutôt intérêt à standardiser les tâches et à contrôler strictement les coûts salariaux.
 
-## Les enquêtes quantitatives sur les pratiques de contrôle
+L''approche configurationnelle, portée notamment par les travaux de James Delery et D. Harold Doty, ajoute une nuance importante à cette logique contingente simple : ce n''est pas seulement l''ajustement d''une pratique isolée au contexte qui compte, mais la cohérence interne entre plusieurs pratiques RH combinées en « configurations » ou « bouquets » cohérents (bundles). Deux configurations différentes de pratiques peuvent être également performantes, à condition que chacune soit interne cohérente et adaptée à son propre contexte stratégique, ce qui introduit une logique de cohérence qui dépasse la simple addition de bonnes pratiques isolées.
 
-À l''inverse de ces deux méthodes qualitatives, les enquêtes quantitatives consistent à administrer des questionnaires structurés à un grand nombre d''organisations ou de responsables de contrôle de gestion, afin de mesurer statistiquement des relations entre variables : par exemple, la relation entre le degré de turbulence de l''environnement d''une entreprise et le degré de flexibilité de son système budgétaire, ou entre la taille d''une organisation et la sophistication de ses outils de pilotage.
+## 3. Un débat profond sur la nature même de la connaissance en gestion des RH
 
-Cette méthode permet des résultats généralisables, avec des tests statistiques explicites de la robustesse des relations observées, ce qui répond à la principale limite des méthodes qualitatives. Elle s''inscrit dans la continuité du courant cybernétique, qui postule des relations relativement stables et mesurables entre caractéristiques organisationnelles et pratiques de contrôle.
+Au-delà de leur contenu respectif, ces deux approches posent une question épistémologique de fond : la gestion des ressources humaines peut-elle produire des lois générales valables partout, comme le suggère l''approche universaliste, ou doit-elle au contraire renoncer à toute généralisation et se limiter à des explications propres à chaque contexte, comme le suggère l''approche contingente la plus radicale ?
 
-Ses limites sont, en miroir, celles des méthodes qualitatives : la perte de profondeur (un questionnaire standardisé capture mal les jeux d''acteurs autour d''un dispositif), le risque que les répondants déclarent des pratiques officielles qui ne correspondent pas aux usages réels, et la difficulté de mesurer fiablement des phénomènes par nature qualitatifs, comme le degré de « jeu politique » autour d''un budget.
+L''approche configurationnelle propose une voie intermédiaire : elle accepte l''idée qu''il existe plusieurs modèles cohérents possibles (ce qui limite le nombre de configurations possibles, contrairement à un contingentisme pur qui admettrait une infinité de cas particuliers), tout en refusant l''idée d''une seule recette universelle. C''est cette position intermédiaire qui domine largement la recherche contemporaine en SHRM.
 
-## Choisir sa méthode selon sa question de recherche
+## 4. Limites et critiques de chaque position
 
-Un doctorant doit justifier le choix d''une méthode par cohérence avec sa question de recherche, non par préférence personnelle. Mesurer l''ampleur d''un phénomène dans une population d''organisations appelle une enquête quantitative ; comprendre un mécanisme fin de construction sociale d''un dispositif appelle une étude de cas clinique ; produire une connaissance tout en accompagnant un changement concret appelle une recherche-intervention.
+L''approche universaliste a été critiquée pour la fragilité méthodologique de nombreuses études qui l''ont étayée : les listes de « meilleures pratiques » varient sensiblement d''un auteur à l''autre, ce qui interroge leur caractère réellement universel, et les corrélations statistiques observées entre pratiques RH et performance restent difficiles à interpréter de façon causale, comme signalé dans la leçon précédente. Elle a aussi été critiquée pour son relatif silence sur le contexte culturel : des pratiques jugées universellement efficaces dans des études majoritairement nord-américaines ne produisent pas nécessairement les mêmes effets dans d''autres environnements institutionnels et culturels.
 
-## Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
+L''approche contingente et configurationnelle, de son côté, a été critiquée pour sa plus grande difficulté opérationnelle : elle offre moins de recommandations pratiques directement actionnables, puisque chaque organisation doit en principe identifier elle-même la configuration adaptée à sa situation, ce qui demande une capacité d''analyse stratégique et RH que toutes les organisations ne possèdent pas au même degré, en particulier les petites et moyennes entreprises.
 
-Prenons un projet de thèse fictif sur l''introduction de démarches de pilotage inspirées du beyond budgeting dans des PME agro-industrielles de la région de Thiès. Le protocole pourrait combiner les trois méthodes. Une phase quantitative, par questionnaire auprès d''un échantillon de PME du secteur, mesurerait la diffusion des pratiques budgétaires traditionnelles et alternatives, et leur association avec la taille de l''entreprise ou le degré de concurrence perçu. Une phase de recherche-intervention accompagnerait une ou deux PME volontaires dans la refonte de leur système de pilotage, en documentant les résistances et les apprentissages observés. Une phase d''étude de cas clinique a posteriori analyserait, un an après, comment le nouveau dispositif est réellement utilisé au quotidien, au-delà de son fonctionnement officiel initial.
+## 5. Portée pour un contexte africain et sénégalais
 
-Pour illustrer concrètement le type de calcul que ce terrain pourrait mobiliser, prenons l''exemple d''une unité de transformation agro-alimentaire fictive. Son budget initial prévoyait un volume de 10 000 unités vendues à un prix unitaire de 2 500 francs CFA (valeur fictive pour l''exemple), pour un coût variable unitaire budgété de 1 500 francs CFA et des charges fixes budgétées de 8 000 000 francs CFA. Le résultat budgété est donc de (2 500 moins 1 500) multiplié par 10 000, soit 10 000 000 francs CFA de marge sur coût variable, moins 8 000 000 de charges fixes, soit un résultat budgété de 2 000 000 francs CFA.
+Ce débat prend un relief particulier dans des contextes comme celui du Sénégal, où coexistent de grandes entreprises formalisées, souvent influencées par des standards internationaux proches des « best practices », et un tissu dense de petites et moyennes entreprises informelles ou semi-formelles, dont les pratiques de gestion du personnel s''écartent fortement des recommandations universalistes sans que leur performance en soit nécessairement affectée. Un projet de thèse qui s''intéresse à ce terrain gagne à mobiliser explicitement l''approche contingente ou configurationnelle, plus à même de rendre compte de cette diversité de contextes organisationnels que l''approche universaliste.
 
-En réalité, l''entreprise a vendu 11 200 unités, mais à un prix unitaire moyen de seulement 2 400 francs CFA (pression concurrentielle plus forte que prévu), avec un coût variable unitaire réel de 1 600 francs CFA (hausse du coût des intrants) et des charges fixes réelles de 8 300 000 francs CFA. Le résultat réel est de (2 400 moins 1 600) multiplié par 11 200, soit 8 960 000 francs CFA de marge sur coût variable, moins 8 300 000 de charges fixes, soit un résultat réel de 660 000 francs CFA.
+## Points clés
 
-L''écart total entre le résultat réel et le résultat budgété est donc de 660 000 moins 2 000 000, soit moins 1 340 000 francs CFA. L''analyse des écarts, vérifiée par un calcul informatique, permet de décomposer cet écart total en quatre effets : un effet volume favorable de 1 200 000 francs CFA (l''entreprise a vendu plus que prévu), un effet prix de vente défavorable de 1 120 000 francs CFA (le prix réel est inférieur au prix budgété sur le volume réellement vendu), un effet coût variable défavorable de 1 120 000 francs CFA (le coût unitaire réel est supérieur au coût budgété sur le volume réellement vendu), et un effet charges fixes défavorable de 300 000 francs CFA. La somme de ces quatre effets (1 200 000 moins 1 120 000 moins 1 120 000 moins 300 000) redonne bien moins 1 340 000 francs CFA, ce qui confirme la cohérence de la décomposition.
-
-Ce calcul, technique en apparence, illustre le débat entre les deux courants : le courant cybernétique y voit un diagnostic rationnel des causes de la sous-performance, tandis que le courant socio-organisationnel invite à se demander comment les acteurs interprètent ou contestent cette décomposition — par exemple si le responsable commercial conteste que l''effet prix lui soit attribué, alors que la baisse résultait d''une décision collective de la direction face à la concurrence.
+- L''approche universaliste (best practices) postule l''existence de pratiques RH bénéfiques dans tous les contextes.
+- L''approche contingente (best fit) postule que l''efficacité d''une pratique dépend du contexte stratégique et organisationnel.
+- L''approche configurationnelle ajoute une exigence de cohérence interne entre plusieurs pratiques combinées en configurations.
+- Le débat porte en réalité sur la possibilité même de généraliser en gestion des ressources humaines, question particulièrement pertinente pour des contextes organisationnels diversifiés comme celui du Sénégal.
 
 ## Exercices pratiques
 
-1. Un doctorant souhaite étudier comment des contrôleurs de gestion de grandes entreprises sénégalaises perçoivent la légitimité de leur fonction face aux directions opérationnelles. Quelle méthode lui recommanderiez-vous en priorité, et pourquoi ?
-
-2. Expliquez la différence essentielle entre une étude de cas clinique et une recherche-intervention.
-
-3. Quelle est la principale difficulté méthodologique propre à la recherche-intervention, et comment la discipline tente-t-elle d''y répondre ?
-
-4. Reprenez l''exemple chiffré de la leçon : si le volume réel avait été de 9 000 unités au lieu de 11 200 (toutes choses égales par ailleurs), l''effet volume aurait-il été favorable ou défavorable ? Justifiez sans recalculer précisément le montant.
-
-5. Proposez, pour votre propre projet de thèse, la méthode de recherche qui vous semble la plus cohérente avec votre question de recherche, en justifiant ce choix en trois phrases.
+1. Résumez en cinq lignes la différence entre « best practices » et « best fit ».
+2. Expliquez pourquoi l''approche configurationnelle n''est ni purement universaliste ni purement contingente.
+3. Discutez la critique culturelle adressée à l''approche universaliste : en quoi un contexte institutionnel différent peut-il changer l''effet d''une pratique RH ?
+4. Donnez un exemple fictif de deux entreprises sénégalaises de secteurs différents qui adopteraient des configurations RH différentes mais également cohérentes.
+5. Un jury vous demande : « Ces deux approches sont-elles vraiment incompatibles ? » Préparez une réponse argumentée en cinq phrases.
+6. En quoi ce débat éclaire-t-il la façon de formuler une question de recherche doctorale sur les pratiques RH en Afrique de l''Ouest ?
 
 ## Corrigé
 
-1. L''étude de cas clinique est la plus adaptée : la question porte sur des perceptions fines et potentiellement contradictoires entre acteurs, qu''un questionnaire standardisé capturerait mal ; des entretiens approfondis, combinés à l''observation de situations de travail réelles, permettent de documenter cette légitimité perçue dans toute sa complexité.
+1. « Best practices » suppose qu''un ensemble fixe de pratiques RH améliore la performance quel que soit le contexte. « Best fit » suppose au contraire que l''efficacité d''une pratique dépend de son adéquation avec la stratégie et le contexte propres de chaque organisation ; il n''existe donc pas de recette universelle, seulement des choix mieux ou moins bien ajustés.
 
-2. Dans l''étude de cas clinique, le chercheur observe un phénomène existant sans chercher à le modifier ; dans la recherche-intervention, il participe activement à la transformation de l''organisation, ce qui exige une vigilance supplémentaire sur la distinction entre son rôle d''acteur et son rôle d''observateur.
+2. Parce qu''elle admet, comme l''universalisme, qu''il existe un nombre limité de modèles cohérents repérables (et non une infinité de cas particuliers uniques), mais elle refuse, comme le contingentisme, l''idée d''un seul modèle valable partout : plusieurs configurations différentes peuvent être également performantes si chacune est adaptée à son propre contexte.
 
-3. La principale difficulté est le risque de biais lié à l''intérêt du chercheur-intervenant à ce que son intervention soit perçue comme réussie. La discipline y répond par l''explicitation de sa posture, la validation croisée auprès d''autres acteurs, et la publication de protocoles détaillés.
+3. Une pratique comme l''individualisation forte de la rémunération à la performance peut être perçue comme motivante dans un contexte institutionnel qui valorise la compétition individuelle, et au contraire démobilisante ou génératrice de tensions dans un contexte où les normes sociales valorisent davantage la solidarité collective et l''équité perçue entre collègues.
 
-4. Avec un volume réel de 9 000 unités, inférieur au volume budgété de 10 000, l''effet volume serait défavorable : vendre moins que prévu réduit mécaniquement la marge réalisée par rapport à celle qui aurait résulté du volume budgété, toutes choses égales par ailleurs.
+4. Exemple fictif : une entreprise minière formalisée de la région de Kédougou, en concurrence par la technicité et la sécurité, adopte une configuration fondée sur une sélection rigoureuse, une formation technique intensive et une rémunération liée à des indicateurs de sécurité. Une entreprise familiale de transformation agroalimentaire à Fatick, en concurrence par la flexibilité et les coûts, adopte une configuration fondée sur la polyvalence des postes, l''apprentissage sur le tas et une rémunération en partie liée aux résultats saisonniers de l''activité. Les deux configurations sont internement cohérentes bien que très différentes.
 
-5. Il n''y a pas de réponse unique : une justification satisfaisante relie la nature de la question de recherche au type de connaissance que la méthode choisie permet de produire, en écartant explicitement au moins une autre méthode jugée moins adaptée.', 'texte', 45, false, 40
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en contrôle de gestion');
+5. Réponse possible : « Ces deux approches ne sont pas totalement incompatibles. L''universalisme met en évidence des régularités statistiques utiles comme point de départ. Le contingentisme rappelle que ces régularités ne se vérifient pas identiquement partout. L''approche configurationnelle peut être vue comme une tentative de synthèse, qui admet des régularités mais à l''intérieur de modèles contextualisés. Dans mon projet de thèse, je mobiliserai donc plutôt une grille configurationnelle que l''une ou l''autre position prise isolément. »
+
+6. Ce débat invite à ne pas chercher à démontrer qu''une pratique RH serait « bonne » ou « mauvaise » en soi dans le contexte ouest-africain, mais plutôt à identifier quelles configurations de pratiques sont cohérentes avec quels types de stratégies et de contextes organisationnels locaux, ce qui conduit à des questions de recherche plus fines et mieux ancrées empiriquement que des questions normatives générales.', 'texte', 55, false, 30
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Universalisme et contingence en GRH : le débat des « best practices » contre le « best fit »');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Épreuve type d''examen de qualification : budget traditionnel et beyond budgeting', 'Cette leçon propose un exercice type d''examen de qualification doctorale en contrôle de gestion (non officiel, construit pour l''entraînement), avec un plan de réponse détaillé et corrigé. L''objectif est de vous montrer, sur un cas concret, comment mobiliser ensemble les deux courants théoriques et les méthodes de recherche étudiés dans les leçons précédentes.
+select c.id, 'Les méthodes de recherche en gestion des ressources humaines', '## Objectifs de la leçon
 
-## La question type
+- Connaître les grandes méthodes de recherche mobilisées en gestion des ressources humaines.
+- Distinguer études de cas, enquêtes quantitatives par questionnaire validé, méthodes mixtes et recherche-action.
+- Comprendre les critères de qualité propres à chaque méthode (validité, fiabilité, saturation théorique).
+- Construire un exemple de protocole de recherche appliqué à un contexte sénégalais fictif.
 
-Voici une question de synthèse représentative du type d''épreuve que peut poser un jury de qualification : « Dans quelle mesure le débat entre le contrôle budgétaire traditionnel et les démarches dites de "beyond budgeting" renouvelle-t-il, ou prolonge-t-il, l''opposition entre une conception cybernétique et une conception socio-organisationnelle du contrôle de gestion ? Vous illustrerez votre propos en indiquant comment vous mobiliseriez une méthode de recherche pour instruire empiriquement cette question dans un contexte d''entreprises africaines. »
+## 1. L''étude de cas en gestion des ressources humaines
 
-Cette question est typique à plusieurs égards : elle demande de maîtriser un débat contemporain spécifique du champ (budget traditionnel contre beyond budgeting), elle demande de le relier aux grands courants théoriques structurants de la discipline, et elle demande une mise en œuvre méthodologique concrète. C''est exactement l''articulation que teste un jury : connaissances théoriques, capacité de mise en relation, et sens pratique de la recherche.
+L''étude de cas consiste à analyser en profondeur un ou plusieurs contextes organisationnels précis (une entreprise, un service, un dispositif RH) afin de comprendre comment un phénomène se déploie réellement, avec ses mécanismes et ses interactions. En gestion des ressources humaines, cette méthode est particulièrement adaptée lorsque le phénomène étudié est complexe, peu documenté, ou qu''il s''agit de comprendre le « comment » et le « pourquoi » plutôt que de mesurer un lien statistique entre variables.
 
-## Présentation du débat budget traditionnel contre beyond budgeting
+Les travaux de Robert Yin sur la méthodologie des études de cas en sciences sociales en ont précisé les exigences de rigueur : définir clairement l''unité d''analyse (un individu, une équipe, une organisation), trianguler plusieurs sources de données (entretiens, documents internes, observation), et, lorsque plusieurs cas sont étudiés, choisir une logique de réplication (cas similaires pour confirmer un résultat, ou cas contrastés pour en explorer les limites) plutôt qu''une logique d''échantillonnage statistique, qui n''a pas de sens pour un petit nombre de cas étudiés en profondeur.
 
-Avant de construire le plan de réponse, il faut maîtriser le contenu de ce débat, qui prolonge directement les deux courants étudiés en leçons 2 et 3.
+La principale force de l''étude de cas est sa capacité à restituer la complexité et le contexte d''un phénomène RH, par exemple la mise en œuvre réelle d''une réforme de l''évaluation du personnel dans une organisation donnée. Sa principale limite est la généralisation : les résultats obtenus sur un ou quelques cas ne peuvent pas être étendus statistiquement à une population plus large, même s''ils peuvent être généralisés de façon théorique, en enrichissant ou en nuançant un cadre conceptuel existant.
 
-Le contrôle budgétaire traditionnel, héritier direct de l''approche cybernétique, repose sur un cycle annuel : négociation des objectifs, allocation de ressources, suivi mensuel des écarts, actions correctives. Ses défenseurs soulignent qu''il reste, malgré ses défauts, un outil puissant de coordination entre unités, de responsabilisation des managers, et de discipline financière, en particulier dans des organisations de grande taille où il faut synchroniser des centaines de décisions décentralisées.
+## 2. L''enquête quantitative par questionnaire validé
 
-Le mouvement dit du « beyond budgeting », apparu à la fin des années 1990 dans la littérature professionnelle et académique, critique le cycle budgétaire annuel pour son incapacité à s''adapter à des environnements changeant plus vite qu''un an, pour le temps et les ressources considérables qu''il consomme (la préparation du budget annuel mobilise souvent plusieurs mois de l''année dans les grandes organisations), et pour les comportements pervers qu''il engendre : négociation stratégique des objectifs à la baisse, dépenses de fin d''année pour « consommer » une enveloppe budgétaire avant qu''elle ne soit perdue, ou focalisation sur l''atteinte d''un chiffre au détriment de la création de valeur réelle pour les clients. Les démarches alternatives proposées remplacent le budget annuel fixe par des prévisions glissantes révisées plus fréquemment, des objectifs relatifs (comparés à des concurrents ou à des unités comparables plutôt qu''à un chiffre absolu fixé un an à l''avance), et une décentralisation plus large des décisions vers les équipes opérationnelles, combinée à un pilotage par des indicateurs de performance globale plutôt que par le seul respect d''une enveloppe budgétaire.
+L''enquête quantitative par questionnaire reste la méthode la plus fréquente en recherche RH pour tester des hypothèses sur de grands échantillons, par exemple le lien entre perception de justice organisationnelle et intention de quitter l''entreprise. Elle repose sur l''utilisation d''échelles de mesure déjà validées dans la littérature (par exemple des échelles de type Likert à 5 ou 7 points, mesurant l''accord avec une série d''énoncés), plutôt que sur des questions improvisées, afin de garantir la comparabilité avec d''autres études et la qualité psychométrique des mesures.
 
-Le point essentiel pour un candidat au doctorat est de percevoir que ce débat contemporain n''est pas purement technique : il rejoue, sous un vocabulaire différent, l''opposition entre les deux courants fondamentaux du champ. Le camp qui défend le contrôle budgétaire traditionnel reste largement dans une logique cybernétique : on peut améliorer le dispositif (le rendre plus flexible, plus réactif) sans remettre en cause l''idée qu''un bon système d''objectifs et de mesures, bien conçu, pilote rationnellement l''organisation. Le camp qui défend le beyond budgeting, en revanche, mobilise souvent, explicitement ou implicitement, des arguments proches du courant socio-organisationnel : il met en avant les effets pervers du budget sur les comportements des acteurs, la nécessité de faire confiance aux équipes plutôt que de les contraindre par des chiffres négociés sous contrainte hiérarchique, et l''idée que la performance d''une organisation dépend autant de sa capacité d''adaptation collective que de la rigueur de son calcul budgétaire.
+Deux critères de qualité sont centraux dans cette méthode. La fiabilité (reliability) mesure la cohérence interne d''une échelle, c''est-à-dire si les différents items censés mesurer un même concept varient effectivement ensemble ; elle s''évalue souvent par un indicateur statistique tel que l''alpha de Cronbach. La validité (validity) mesure si l''échelle mesure effectivement ce qu''elle prétend mesurer, et non un autre concept proche ; elle se décline en validité de contenu (les items couvrent-ils bien toutes les dimensions du concept), validité convergente (l''échelle est-elle corrélée à d''autres mesures du même concept) et validité discriminante (l''échelle se distingue-t-elle bien de mesures de concepts différents).
 
-## Plan de réponse détaillé
+L''enquête quantitative permet de tester des hypothèses de façon généralisable statistiquement, à condition que l''échantillon soit suffisamment grand et représentatif de la population étudiée. Sa limite principale est qu''elle capture mal les mécanismes fins et les logiques d''acteurs qu''une étude de cas peut révéler : elle dit souvent « que » deux variables sont liées, sans toujours expliquer en profondeur « pourquoi » et « comment ».
 
-Une introduction efficace rappellerait d''abord les deux grands courants théoriques du contrôle de gestion (brièvement, sans développer : ce n''est pas l''objet principal de la question), puis annoncerait le fil directeur : le débat budget traditionnel contre beyond budgeting n''est pas un simple débat d''outils, mais la reformulation contemporaine de l''opposition théorique fondamentale du champ, enrichie par des considérations propres au contexte économique actuel (incertitude accrue, digitalisation, attentes de décentralisation).
+## 3. Les méthodes mixtes
 
-Une première partie montrerait que le contrôle budgétaire traditionnel prolonge directement la logique cybernétique : elle rappellerait les fondements du modèle de planification-contrôle, puis montrerait comment le cycle budgétaire annuel en est une application directe, avant de reconnaître les limites de ce modèle déjà identifiées par la littérature (rigidité face à l''incertitude, comportements de négociation stratégique des objectifs).
+Les méthodes mixtes combinent, au sein d''un même projet de recherche, des données qualitatives et quantitatives, dans le but de compenser les limites propres à chaque approche. Plusieurs designs sont possibles : un design séquentiel exploratoire, où une phase qualitative initiale (entretiens exploratoires) permet de construire ou d''adapter un questionnaire ensuite administré à grande échelle ; un design séquentiel explicatif, où une enquête quantitative initiale est suivie d''entretiens qualitatifs pour expliquer en profondeur des résultats statistiques surprenants ou ambigus ; ou un design convergent, où les deux types de données sont collectés en parallèle puis comparés.
 
-Une deuxième partie montrerait que le beyond budgeting, sans être une pure application du courant socio-organisationnel, en reprend des intuitions centrales : la défiance envers un pilotage centralisé et chiffré qui ignore les jeux d''acteurs, l''attention portée aux effets pervers des dispositifs de mesure sur les comportements, et une préférence pour des mécanismes de coordination qui laissent plus de place à l''autonomie et à la négociation locale des équipes. Cette partie nuancerait cependant : le beyond budgeting reste, lui aussi, un dispositif de pilotage par indicateurs (relatifs plutôt qu''absolus), ce qui montre qu''aucun des deux camps ne sort complètement de la logique de mesure, et que l''opposition entre les deux courants théoriques est une opposition de degré et d''accent plus qu''une rupture totale.
+En gestion des ressources humaines, les méthodes mixtes sont de plus en plus valorisées parce qu''elles permettent à la fois de tester des hypothèses de façon rigoureuse et de comprendre les mécanismes sous-jacents, ce qui répond directement aux limites respectives des études de cas et des enquêtes quantitatives présentées plus haut. Leur principale exigence est méthodologique : il faut justifier explicitement le design mixte choisi et la façon dont les deux types de résultats seront intégrés, et non simplement juxtaposés sans articulation claire.
 
-Une troisième partie proposerait une mise en œuvre méthodologique : elle justifierait, par exemple, une recherche-intervention auprès de quelques entreprises sénégalaises ou ouest-africaines engagées dans une transition de leur système budgétaire, complétée par une enquête quantitative plus large pour mesurer l''ampleur de la diffusion de ces pratiques dans le tissu économique régional, en expliquant pourquoi une étude de cas clinique seule ne suffirait pas à mesurer cette diffusion, et pourquoi une enquête quantitative seule ne suffirait pas à comprendre les mécanismes fins de résistance ou d''appropriation de ces nouvelles pratiques par les acteurs.
+## 4. La recherche-action en entreprise
 
-Une conclusion rappellerait que ce débat contemporain illustre bien la nécessité, pour un chercheur en contrôle de gestion, de maîtriser les deux grandes lectures théoriques du champ : ni l''une ni l''autre, prise isolément, n''épuise la compréhension d''un phénomène de gestion aussi central que le pilotage budgétaire des organisations, et un bon positionnement de thèse sait souvent se situer à l''articulation des deux plutôt que dans l''adhésion exclusive à l''une.
+La recherche-action se distingue des méthodes précédentes par la posture du chercheur : celui-ci n''observe pas seulement un phénomène RH de l''extérieur, il intervient activement, en collaboration avec les acteurs de l''organisation, pour résoudre un problème concret tout en produisant simultanément une connaissance scientifique généralisable sur ce problème. Le chercheur devient en partie acteur du changement qu''il étudie.
 
-## Ce que le jury évaluerait dans cette réponse
+Ce type de recherche convient particulièrement bien à des problématiques RH appliquées, comme la conception et l''accompagnement d''un nouveau dispositif de gestion des compétences, ou la mise en place d''un processus de dialogue social dans une organisation. Sa rigueur repose sur un cycle itératif explicite, généralement décrit en plusieurs étapes : diagnostic partagé de la situation, planification conjointe d''une action, mise en œuvre, observation systématique des effets, puis réflexion critique qui nourrit un nouveau cycle. La principale difficulté de cette méthode est de préserver une distance critique suffisante malgré l''implication du chercheur, ce qui exige une explicitation rigoureuse de sa posture et de ses choix méthodologiques.
 
-Un jury évaluerait, dans l''ordre d''importance, la capacité à relier explicitement le débat contemporain aux courants théoriques fondamentaux (et non à les traiter comme deux sujets séparés), la nuance apportée (éviter de caricaturer un camp comme purement rationnel et l''autre comme purement social), la justification méthodologique concrète et argumentée, et enfin la clarté de l''articulation entre les trois parties de la réponse.
+## 5. Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
+
+Prenons un exemple fictif de protocole de recherche doctorale, construit pour illustrer l''articulation de ces méthodes. Question de recherche fictive : « Comment les pratiques de gestion des compétences évoluent-elles dans les petites et moyennes entreprises agroalimentaires de la région de Thiès, et avec quels effets perçus sur la fidélisation du personnel qualifié ? »
+
+Un protocole en méthodes mixtes séquentielles pourrait se construire en trois phases. Phase 1, qualitative exploratoire : une dizaine d''études de cas d''entreprises contrastées par taille et ancienneté, fondées sur des entretiens semi-directifs avec dirigeants et responsables du personnel, pour identifier les principales dimensions locales de la gestion des compétences (recrutement, transmission des savoir-faire, reconnaissance informelle). Phase 2, quantitative confirmatoire : un questionnaire construit à partir de ces dimensions, utilisant si possible des échelles déjà validées dans la littérature internationale et adaptées au vocabulaire local, administré à un échantillon plus large, pour tester statistiquement le lien entre maturité des pratiques de gestion des compétences et intention de rester des salariés qualifiés. Phase 3, recherche-action complémentaire : un accompagnement de deux ou trois entreprises volontaires dans la formalisation progressive d''un dispositif simple de gestion des compétences, avec un suivi des effets sur plusieurs mois.
+
+Ce protocole fictif illustre comment une même question de recherche peut mobiliser successivement une étude de cas exploratoire, une enquête quantitative par questionnaire validé et adapté, puis une recherche-action, chaque méthode répondant à une limite de la précédente.
+
+## Points clés
+
+- L''étude de cas éclaire le « comment » et le « pourquoi » d''un phénomène RH en profondeur, au prix d''une généralisation statistique limitée.
+- L''enquête quantitative par questionnaire validé permet de tester des hypothèses sur de grands échantillons, à condition de garantir la fiabilité et la validité des échelles utilisées.
+- Les méthodes mixtes combinent qualitatif et quantitatif pour compenser les limites respectives de chaque approche, selon un design explicite (séquentiel exploratoire, séquentiel explicatif ou convergent).
+- La recherche-action implique le chercheur dans la résolution d''un problème RH concret, selon un cycle itératif de diagnostic, action, observation et réflexion.
 
 ## Exercices pratiques
 
-1. Reformulez, en une phrase, le lien que vous établiriez entre le contrôle budgétaire traditionnel et l''approche cybernétique du contrôle.
-
-2. Identifiez une limite du beyond budgeting qui n''est pas mentionnée dans cette leçon, et expliquez à quel courant théorique elle pourrait, selon vous, se rattacher.
-
-3. Un candidat répond à la question type en se limitant à une description technique des deux systèmes budgétaires, sans les relier aux courants théoriques. Quel serait le principal défaut de cette réponse selon les critères d''évaluation d''un jury ?
-
-4. Proposez une question d''examen de qualification alternative, sur un autre thème du contrôle de gestion, qui obligerait également à mobiliser les deux courants théoriques.
-
-5. En vous appuyant sur le plan de réponse de cette leçon, rédigez l''introduction complète (4 à 6 phrases) que vous donneriez à l''oral si cette question vous était posée.
+1. Expliquez pourquoi l''échantillonnage statistique classique n''a pas de sens dans une étude de cas à trois organisations.
+2. Définissez, en vos propres mots, la différence entre fiabilité et validité d''une échelle de mesure.
+3. Proposez un design mixte (séquentiel exploratoire, séquentiel explicatif ou convergent) adapté à une question de recherche sur la perception de l''évaluation annuelle du personnel, et justifiez votre choix.
+4. Décrivez les quatre étapes d''un cycle de recherche-action et donnez un exemple fictif pour chacune, appliqué à un dispositif RH.
+5. Dans le protocole fictif présenté en section 5, identifiez quelle phase répond à quelle limite de la phase précédente.
+6. Un jury vous demande pourquoi vous n''avez pas choisi une enquête quantitative unique pour votre projet de thèse. Préparez une réponse argumentée en cinq phrases.
 
 ## Corrigé
 
-1. Le contrôle budgétaire traditionnel applique directement la logique du modèle de planification-contrôle : il suppose qu''un cycle d''objectifs, de mesures et de corrections, correctement conçu, pilote rationnellement l''organisation vers ses finalités stratégiques, dans la continuité de l''approche cybernétique.
+1. L''échantillonnage statistique vise à représenter une population plus large à partir d''un échantillon suffisamment nombreux et aléatoire. Avec trois cas choisis pour leur intérêt théorique (contraste, richesse d''information), la logique n''est pas représentative mais analytique : chaque cas est choisi pour ce qu''il peut révéler théoriquement, pas pour sa fréquence statistique dans la population.
 
-2. Une limite possible, non développée dans la leçon, est la difficulté du beyond budgeting à maintenir une cohérence financière globale lorsque les objectifs deviennent relatifs et négociés localement plutôt que fixés centralement : cette limite se rattacherait plutôt au courant cybernétique, qui valorise la cohérence d''ensemble et la comparabilité des performances entre unités, menacée par une décentralisation trop poussée.
+2. La fiabilité porte sur la cohérence interne d''une mesure : si l''on pose plusieurs fois, sous des formes légèrement différentes, une question sur un même concept, les réponses doivent varier ensemble de façon cohérente. La validité porte sur l''exactitude de la mesure : l''échelle mesure-t-elle réellement le concept visé, et pas un concept voisin différent.
 
-3. Le principal défaut serait de traiter la question comme une simple comparaison technique d''outils de gestion, sans démontrer la compréhension du débat théorique sous-jacent que la question appelle explicitement : un jury y verrait un candidat capable de décrire des pratiques mais pas encore capable de les analyser comme chercheur, ce qui est précisément ce que l''examen de qualification doit vérifier.
+3. Un design séquentiel explicatif semble adapté : une enquête quantitative initiale mesurerait le niveau moyen de satisfaction envers l''évaluation annuelle et ses corrélats, puis des entretiens qualitatifs permettraient de comprendre en profondeur les raisons des scores les plus faibles ou les plus surprenants, qu''une enquête seule ne peut pas expliquer.
 
-4. Une question alternative pourrait être : « Dans quelle mesure l''introduction des tableaux de bord de type "balanced scorecard" dans les organisations africaines relève-t-elle d''une logique de pilotage rationnel de la performance, ou d''un phénomène d''imitation institutionnelle sans appropriation réelle par les acteurs de terrain ? » Cette question oblige également à articuler la logique cybernétique (le tableau de bord comme instrument rationnel de pilotage multidimensionnel) et la logique socio-organisationnelle et institutionnelle (la diffusion d''un outil comme phénomène social de légitimation plutôt que comme choix purement technique).
+4. Diagnostic partagé : le chercheur et les responsables RH d''une entreprise identifient ensemble que la transmission des compétences entre anciens et nouveaux salariés est mal organisée. Planification conjointe : ils conçoivent ensemble un dispositif simple de tutorat interne. Mise en œuvre : le dispositif est testé pendant plusieurs mois dans un service pilote. Observation : le chercheur documente systématiquement les effets perçus par les tuteurs et les nouveaux salariés. Réflexion : les résultats nourrissent un ajustement du dispositif avant un éventuel déploiement plus large.
 
-5. Une introduction satisfaisante rappellerait brièvement les deux courants théoriques fondamentaux du contrôle de gestion, annoncerait que le débat budget traditionnel contre beyond budgeting en constitue une reformulation contemporaine, préciserait que la réponse montrera d''abord la filiation du contrôle traditionnel avec le courant cybernétique, puis la proximité du beyond budgeting avec le courant socio-organisationnel, nuancerait en annonçant qu''aucun des deux dispositifs ne sort complètement de la logique de mesure, et annoncerait enfin la proposition méthodologique qui clôturera la démonstration.', 'texte', 45, false, 50
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification : budget traditionnel et beyond budgeting');
+5. La phase 2 (quantitative) répond à la limite de généralisation de la phase 1 (étude de cas qualitative), en testant sur un échantillon plus large les dimensions identifiées localement. La phase 3 (recherche-action) répond à la limite explicative de la phase 2 (l''enquête quantitative mesure un lien statistique mais n''intervient pas sur le terrain) en accompagnant concrètement la mise en œuvre d''un dispositif et en observant ses effets réels.
+
+6. Réponse possible : « Une enquête quantitative unique aurait permis de tester un lien statistique, mais le phénomène étudié est encore peu documenté dans ce contexte précis, ce qui rend risqué de construire d''emblée un questionnaire fermé sans exploration préalable. Une phase qualitative initiale permet d''ancrer les dimensions mesurées dans la réalité du terrain. La méthode mixte permet ensuite de généraliser statistiquement ces dimensions tout en gardant la possibilité d''approfondir certains résultats par une démarche plus impliquée. Ce choix méthodologique est donc justifié par l''état encore exploratoire des connaissances sur ce terrain précis. »', 'texte', 60, false, 40
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en gestion des ressources humaines');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : l''approche cybernétique et rationnelle du contrôle de gestion', '## Fiche du cours vidéo
+select c.id, 'Épreuve type d''examen de qualification en Ressources humaines', '## Objectifs de la leçon
 
-Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser en profondeur l''approche cybernétique et rationnelle du contrôle de gestion, savoir la restituer oralement devant un jury avec precision terminologique, et savoir en discuter les limites de façon critique. Matériel : tableau ou diaporama avec le schéma du modèle de planification-contrôle à trois niveaux, prérequis : avoir lu la leçon 2 de ce cours.
+- S''entraîner sur une question de synthèse typique d''un examen de qualification doctorale en Ressources humaines.
+- Mobiliser conjointement les deux courants théoriques étudiés et une méthode de recherche appropriée.
+- Construire un plan de réponse structuré, argumenté et critique, tel qu''attendu par un jury.
+- Identifier les critères d''évaluation qu''un correcteur appliquerait à une telle réponse.
+
+## 1. La question de synthèse (non officielle, à titre d''entraînement)
+
+« Dans quelle mesure les débats théoriques qui opposent l''école des relations humaines à la gestion stratégique des ressources humaines, d''une part, et l''approche universaliste à l''approche contingente/configurationnelle, d''autre part, permettent-ils d''éclairer la diversité des pratiques de gestion du personnel observée dans les petites et moyennes entreprises africaines ? Vous proposerez également une méthode de recherche adaptée pour étudier empiriquement cette question. »
+
+Une question de ce type est volontairement large : elle demande au candidat de mobiliser deux corpus théoriques distincts, de les articuler entre eux plutôt que de les traiter séparément, et de montrer une capacité à les opérationnaliser méthodologiquement. C''est exactement le type de question qu''un jury de qualification pose pour vérifier la maturité scientifique d''un candidat, plus que sa mémoire.
+
+## 2. Analyse de la question avant de répondre
+
+Avant de rédiger, un candidat doit décomposer la question en ses éléments constitutifs. Ici, trois exigences sont imbriquées : d''abord, resituer chaque débat théorique séparément de façon rigoureuse (définitions, auteurs, évolution) ; ensuite, les articuler entre eux, ce qui suppose de comprendre qu''ils ne portent pas exactement sur la même chose (l''un sur la finalité de la gestion du personnel, l''autre sur la possibilité de généraliser les pratiques) mais qu''ils se combinent utilement pour analyser un même terrain empirique ; enfin, proposer une méthode cohérente avec le type de terrain évoqué (PME africaines, contextes très divers).
+
+Un candidat qui se contente de résumer les deux débats l''un après l''autre, sans les relier explicitement à la question posée sur la diversité des pratiques dans les PME africaines, perdrait l''essentiel des points, même avec un résumé théorique par ailleurs correct.
+
+## 3. Plan de réponse détaillé
+
+## Introduction (du plan de réponse)
+Poser le problème : la diversité observée des pratiques RH dans les PME africaines (certaines proches de modèles internationaux dits « modernes », d''autres très informelles) pose la question de savoir si cette diversité doit être lue comme un écart par rapport à une norme universelle (optique relations humaines/universalisme) ou comme une adaptation légitime à des contextes stratégiques et institutionnels divers (optique SHRM/contingence). Annoncer le plan.
+
+## I. Deux lectures théoriques possibles de la diversité observée
+Présenter d''abord la lecture « relations humaines » : les pratiques informelles de nombreuses PME africaines (relations personnalisées, reconnaissance informelle, gestion orale plutôt qu''écrite) peuvent être lues comme proches, dans leur esprit, des intuitions fondatrices de ce courant sur l''importance du lien social et de la reconnaissance, sans pour autant relever d''une démarche RH structurée. Présenter ensuite la lecture SHRM/universaliste : certaines grandes PME, en croissance ou connectées à des marchés internationaux, tendent à adopter des pratiques plus proches des « meilleures pratiques » recensées par la littérature, en particulier lorsqu''elles cherchent un avantage concurrentiel sur des marchés exigeants.
+
+## II. L''apport décisif de l''approche contingente et configurationnelle
+Montrer que l''opposition entre ces deux lectures reste insuffisante : elle les range sur un même continuum (du moins formalisé au plus formalisé) sans expliquer pourquoi certaines configurations informelles sont elles-mêmes performantes dans leur contexte. Mobiliser ici l''approche contingente et configurationnelle pour soutenir que les PME africaines peuvent développer des configurations de pratiques RH cohérentes avec leur propre stratégie concurrentielle (flexibilité, proximité, coûts maîtrisés), sans que ces configurations doivent être jugées à l''aune d''une norme universaliste construite dans d''autres contextes économiques et institutionnels.
+
+## III. Une proposition méthodologique cohérente avec cette lecture théorique
+Proposer un design en méthodes mixtes séquentielles : une phase qualitative exploratoire par études de cas contrastées (PME de secteurs et de tailles différents), pour identifier empiriquement les configurations de pratiques réellement à l''œuvre, suivie d''une enquête quantitative par questionnaire, construite à partir de cette phase exploratoire et appuyée sur des échelles validées lorsque c''est possible, pour tester si ces configurations sont associées à des indicateurs de performance ou de fidélisation du personnel. Justifier ce choix par la nécessité de ne pas présupposer, avant l''enquête quantitative, quelles dimensions de pratiques RH sont pertinentes dans ce contexte précis, d''où l''utilité d''une phase qualitative initiale.
+
+## Conclusion (du plan de réponse)
+Rappeler que les deux débats théoriques étudiés ne s''opposent pas terme à terme mais éclairent des dimensions différentes et complémentaires de la même diversité empirique, et que l''approche configurationnelle, couplée à un design méthodologique mixte, offre un cadre plus fin que l''opposition binaire pour l''étudier. Ouvrir, en une phrase, sur une limite assumée : la difficulté à généraliser au-delà des contextes étudiés, qui invite à la prudence sur la portée des conclusions.
+
+## 4. Critères d''évaluation d''une telle réponse
+
+Un correcteur évaluerait vraisemblablement cinq critères. La justesse et la richesse du rappel théorique de chaque courant, sans erreur ni confusion entre les auteurs. La capacité à articuler explicitement les deux débats entre eux plutôt que les traiter côte à côte. La pertinence et la cohérence interne de la méthode proposée par rapport au terrain évoqué. La présence d''une posture critique assumée, notamment sur les limites de l''approche choisie. Enfin, la clarté et la progressivité du plan, qui doit se lire comme une démonstration construite et non comme une accumulation de connaissances.
+
+## Exercices pratiques
+
+1. Identifiez, dans le plan de réponse ci-dessus, la phrase exacte qui articule explicitement les deux débats théoriques entre eux.
+2. Rédigez, en cinq lignes, l''introduction d''une réponse à une question de synthèse qui porterait uniquement sur le débat universaliste/contingent, appliqué cette fois à la rémunération.
+3. Un jury vous reproche d''avoir traité les deux courants « côte à côte » sans les articuler. Reformulez en trois phrases une transition qui corrige ce défaut.
+4. Proposez une limite supplémentaire, non mentionnée dans la conclusion ci-dessus, à la méthode mixte proposée en partie III.
+5. Construisez une question de synthèse alternative, qui mobiliserait cette fois l''école des relations humaines et la méthode de la recherche-action.
+6. Expliquez en quoi la partie II du plan constitue le véritable cœur argumentatif de la réponse, plus que les parties I et III.
+
+## Corrigé
+
+1. La phrase : « Mobiliser ici l''approche contingente et configurationnelle pour soutenir que les PME africaines peuvent développer des configurations de pratiques RH cohérentes avec leur propre stratégie concurrentielle […], sans que ces configurations doivent être jugées à l''aune d''une norme universaliste construite dans d''autres contextes. » Cette phrase relie explicitement le second débat théorique à la discussion du premier et à la question posée.
+
+2. Exemple d''introduction : « La diversité des politiques de rémunération observée entre entreprises d''un même secteur peut être interprétée de deux façons opposées : soit comme un écart plus ou moins grand par rapport à des pratiques de rémunération jugées universellement incitatives, soit comme une adaptation légitime à des stratégies concurrentielles différentes. Cette tension structure l''ensemble du débat entre approche universaliste et approche contingente, que nous proposons d''examiner ici à partir du cas de la rémunération. »
+
+3. Transition corrigée : « Ces deux lectures théoriques, prises séparément, ne permettent cependant pas d''expliquer pourquoi des pratiques très informelles peuvent être, dans leur propre contexte, tout aussi performantes que des pratiques formalisées proches des standards internationaux. C''est précisément cette question que l''approche configurationnelle permet d''éclairer, en proposant de juger chaque configuration de pratiques RH à l''aune de sa cohérence interne plutôt que d''une norme externe unique. Nous mobilisons donc cette approche pour dépasser l''opposition binaire posée en première partie. »
+
+4. Limite supplémentaire possible : la phase qualitative exploratoire, menée sur un petit nombre de cas, peut elle-même être biaisée par le choix des entreprises acceptant de participer à l''étude, qui ne sont pas nécessairement représentatives de l''ensemble du tissu de PME, y compris les plus informelles ou les plus réticentes à l''enquête.
+
+5. Exemple de question alternative : « En quoi la recherche-action permet-elle de tester, sur le terrain, les intuitions de l''école des relations humaines sur le lien entre reconnaissance au travail et engagement des salariés, dans une petite entreprise qui souhaite améliorer son climat social ? »
+
+6. Parce que c''est cette partie qui dépasse la simple opposition entre les deux lectures théoriques présentées en partie I, en proposant un cadre d''analyse qui explique la diversité empirique plutôt que de la constater : c''est elle qui transforme un exposé de connaissances en une véritable démonstration, ce qui correspond exactement à ce qu''un jury doctoral évalue en priorité.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification en Ressources humaines');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : école des relations humaines et gestion stratégique des ressources humaines', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants en spécialité Ressources humaines préparant l''examen de qualification doctorale. Objectifs : maîtriser l''opposition et le dialogue entre l''école des relations humaines et la gestion stratégique des ressources humaines (SHRM), connaître les auteurs fondateurs de chaque courant, être capable de défendre une position critique argumentée à l''oral. Matériel : diaporama avec la cartographie des deux courants, tableau pour construire en direct un tableau comparatif, extraits résumés (non cités textuellement) des travaux de Mayo, Maslow, Herzberg, McGregor, Wright et McMahan, Boxall et Purcell, Ulrich. Prérequis : avoir lu la leçon texte correspondante et préparé une fiche de lecture par auteur cité.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Introduction et enjeux de la séance
+## 00:00 – 05:00 · Ouverture et enjeux de la séance
 
-Bonjour à toutes et à tous. Cette séance vidéo reprend et approfondit l''un des deux grands courants théoriques que vous devez absolument maîtriser pour votre examen de qualification : l''approche cybernétique et rationnelle du contrôle de gestion. Je vous propose de commencer par une question simple, que vous devez être capable de traiter à l''oral sans hésitation : qu''est-ce que le contrôle de gestion, au sens où ce courant le définit ? Prenez trente secondes pour formuler mentalement votre réponse avant que je ne poursuive. Cette discipline de la reformulation rapide est précisément ce qu''un jury testera le jour de votre soutenance : il ne vous laissera jamais le temps de consulter vos notes pour une définition de base.
+Bonjour à toutes et à tous. Dans cette séance, nous allons travailler un couple théorique absolument central pour votre examen de qualification en Ressources humaines : l''école des relations humaines, d''un côté, et la gestion stratégique des ressources humaines, de l''autre. Ce n''est pas un couple que l''on choisit par hasard : c''est probablement le débat le plus structurant de toute l''histoire de notre discipline, parce qu''il pose une question simple et redoutable, à laquelle vous devrez savoir répondre devant un jury : à quoi sert, au fond, la gestion des personnes dans une organisation ? Sert-elle d''abord l''individu, ou sert-elle d''abord la stratégie de l''entreprise ? Gardez cette question en tête pendant toute la séance, elle reviendra à plusieurs reprises.
 
-## 05:00 – 20:00 · Les fondements de la logique cybernétique
+Je vous propose de procéder en trois temps. D''abord, nous reconstruirons ensemble l''école des relations humaines, ses origines expérimentales et ses auteurs. Ensuite, nous ferons la même chose pour la gestion stratégique des ressources humaines. Enfin, nous mettrons les deux en tension, nous discuterons leurs limites respectives, et nous verrons comment la recherche contemporaine tente de les faire dialoguer.
 
-Le mot cybernétique vient d''un champ scientifique plus large que le contrôle de gestion : c''est la science du pilotage des systèmes par rétroaction, formulée au milieu du vingtième siècle. L''idée clé, que je veux que vous puissiez expliquer avec vos propres mots, est la boucle de régulation : on fixe un objectif, on agit, on mesure le résultat obtenu, on calcule l''écart entre le résultat et l''objectif, et on utilise cet écart pour corriger l''action future. Cette boucle s''applique à un thermostat qui régule une température, à un système de navigation qui corrige une trajectoire, et, par transposition, à une organisation que l''on souhaite piloter vers ses objectifs stratégiques.
+## 05:00 – 20:00 · L''école des relations humaines : de l''expérience de Hawthorne aux théories de la motivation
 
-Visuel à montrer : un schéma simple avec quatre cases reliées en boucle (Objectif, Action, Mesure, Écart et correction). Je vous invite à le redessiner vous-même, de mémoire, après cette séance : c''est un excellent test de votre compréhension réelle, au-delà de la récitation.
+Revenons d''abord au contexte d''émergence de ce courant. Dans les premières décennies du vingtième siècle, l''organisation scientifique du travail dominait la pensée managériale : on découpait les tâches, on chronométrait les gestes, on supposait que l''ouvrier était motivé uniquement par son salaire. C''est dans ce contexte que des chercheurs vont mener, à l''usine Hawthorne de la Western Electric, une série d''expériences qui vont bouleverser cette vision.
 
-Appliquée à l''entreprise, cette logique suppose que l''organisation peut être pilotée rationnellement si l''on dispose de bons instruments de mesure et d''une architecture claire de responsabilités. C''est tout l''enjeu du modèle que nous allons détailler maintenant.
+L''idée de départ était simple : on voulait mesurer l''effet de l''éclairage sur la productivité d''un atelier. Mais les chercheurs ont observé un résultat étrange : la productivité augmentait, que l''éclairage soit renforcé ou diminué. Pourquoi ? Parce que les ouvrières de l''atelier se sentaient observées, écoutées, et donc valorisées. On a appelé ce phénomène « l''effet Hawthorne », et il a ouvert une brèche immense : la performance au travail ne dépend pas seulement de l''organisation technique des tâches, elle dépend aussi, et peut-être surtout, de facteurs psychologiques et relationnels.
 
-## 20:00 – 40:00 · Le modèle de planification-contrôle à trois niveaux
+À partir de cette intuition expérimentale, plusieurs auteurs vont construire des théories plus générales. Abraham Maslow propose une hiérarchie des besoins humains : les besoins physiologiques et de sécurité à la base, puis les besoins sociaux d''appartenance, puis les besoins d''estime et de reconnaissance, puis, au sommet, le besoin d''accomplissement de soi. Son apport pour notre discipline, c''est l''idée que l''on ne peut pas motiver durablement un salarié uniquement par le salaire : une fois les besoins de base satisfaits, ce sont les besoins sociaux et de reconnaissance qui deviennent déterminants.
 
-Le modèle fondateur de ce courant distingue trois niveaux de pilotage dans l''organisation, et je veux que vous puissiez les distinguer sans la moindre hésitation à l''oral, car c''est l''une des questions les plus fréquemment posées lors des épreuves de qualification.
+Frederick Herzberg va plus loin en distinguant deux catégories de facteurs : les facteurs d''hygiène, comme le salaire ou les conditions de travail, dont l''absence provoque de l''insatisfaction mais dont la présence ne suffit pas à motiver ; et les facteurs de motivation proprement dits, comme la reconnaissance, le contenu du travail ou la responsabilité, qui sont les seuls capables de produire un engagement réel. C''est une distinction que vous devez absolument maîtriser, parce qu''elle est souvent mal comprise : beaucoup de gens pensent qu''augmenter le salaire motive, alors que pour Herzberg, cela retire seulement une source d''insatisfaction.
 
-Le premier niveau est la planification stratégique : elle définit les finalités de l''organisation, ses grandes orientations, sur un horizon long, dans un contexte d''incertitude généralement élevée. C''est le niveau de la direction générale et, le cas échéant, du conseil d''administration.
+Enfin, Douglas McGregor propose une opposition devenue classique entre la théorie X, qui suppose que l''employé est naturellement paresseux et doit être contrôlé de près, et la théorie Y, qui suppose au contraire que l''employé peut être autonome, créatif, et engagé si l''organisation lui fait confiance. Cette opposition, vous le verrez, préfigure déjà certains débats du management contemporain sur l''autonomie au travail.
 
-Le deuxième niveau est le contrôle de gestion proprement dit, ce que l''on appelle en anglais le management control : il organise la mise en œuvre de la stratégie à moyen terme, typiquement sur un horizon annuel, par des outils comme les budgets, les centres de responsabilité, les tableaux de bord et les prix de cession interne entre unités. Ce niveau engage un dialogue, une négociation, entre la direction générale et les responsables opérationnels : ce n''est pas une simple transmission mécanique d''ordres.
+## 20:00 – 35:00 · La gestion stratégique des ressources humaines : de la fonction administrative au levier stratégique
 
-Le troisième niveau est le contrôle d''exécution, ou contrôle opérationnel : il porte sur des tâches très cadrées, répétitives, à très court terme, où la marge d''appréciation du responsable est faible, et où des règles et procédures bien définies suffisent généralement à garantir la bonne exécution.
+Changeons maintenant complètement de registre. Nous sommes dans les années 1980, le contexte économique a changé : la concurrence internationale s''intensifie, les entreprises cherchent des avantages compétitifs durables, et la fonction ressources humaines, jusque-là perçue comme une fonction administrative de gestion du personnel, commence à être repensée comme un levier stratégique.
 
-Visuel à montrer : le schéma pyramidal à trois niveaux, avec, pour chaque niveau, un exemple concret tiré d''une entreprise de distribution de produits alimentaires au Sénégal (stratégie d''expansion géographique du groupe au niveau un, budget annuel négocié avec chaque directeur régional au niveau deux, procédure de contrôle des caisses en magasin au niveau trois).
+L''idée centrale du SHRM, c''est que les ressources humaines, si elles sont gérées de façon cohérente avec la stratégie de l''entreprise, peuvent constituer un avantage concurrentiel difficile à copier. Pourquoi difficile à copier ? Parce qu''un concurrent peut acheter la même machine que vous, mais il ne peut pas acheter facilement votre culture d''entreprise, vos compétences collectives, votre façon propre de recruter et de faire grandir les gens. C''est l''apport de la théorie de la firme fondée sur les ressources, qui soutient qu''un avantage durable vient de ressources rares, précieuses et difficiles à imiter.
 
-Question à poser aux apprenants : pourquoi est-il essentiel de distinguer le contrôle de gestion du contrôle d''exécution, et quelles conséquences pratiques cette distinction a-t-elle sur le type d''indicateurs à utiliser à chaque niveau ?
+Patrick Wright et Gary McMahan ont posé les fondements théoriques de ce champ, en formalisant les conditions sous lesquelles les ressources humaines peuvent effectivement constituer un tel avantage. Peter Boxall et John Purcell ont, eux, travaillé sur l''articulation concrète entre la stratégie d''entreprise et la stratégie RH : comment traduire, en pratiques de recrutement, de formation et de rémunération, les priorités stratégiques de l''organisation.
 
-## 40:00 – 45:00 · Pause et quiz interactif
+Et puis il y a Dave Ulrich, dont le modèle des rôles de la fonction RH est probablement l''un des plus cités dans le monde professionnel autant qu''académique. Il identifie quatre rôles que la fonction RH doit jouer simultanément : partenaire stratégique, qui aligne les RH sur la stratégie de l''entreprise ; expert administratif, qui gère efficacement les processus RH du quotidien ; champion des employés, qui défend les intérêts et l''engagement des salariés ; et agent de changement, qui accompagne les transformations organisationnelles. Remarquez que le rôle de « champion des employés » rapproche, d''une certaine façon, le SHRM des préoccupations de l''école des relations humaines, ce qui annonce la suite de notre discussion.
 
-Nous faisons une courte pause. Je vous propose un quiz en quatre questions pour vérifier votre compréhension à ce stade de la séance.
+## 35:00 – 45:00 · Mettre les deux courants en tension
 
-Première question : le contrôle de gestion, dans ce modèle, se situe-t-il à l''horizon court terme, moyen terme ou long terme ? Réponse : moyen terme, typiquement annuel.
+Nous avons maintenant les deux blocs théoriques. Construisons ensemble, au tableau, la tension qui les oppose. L''école des relations humaines part de l''individu : son bien-être, ses besoins psychosociaux, et suppose que la performance organisationnelle en découlera. Le SHRM part de l''organisation : sa stratégie, sa compétitivité, et traite les personnes comme une ressource au service de cette compétitivité.
 
-Deuxième question : quel est le mot-clé qui distingue le contrôle de gestion du contrôle d''exécution sur le plan de la relation managériale ? Réponse : le dialogue, ou la négociation, qui caractérise le contrôle de gestion, par opposition à l''application de règles qui caractérise le contrôle d''exécution.
+Cette différence n''est pas seulement académique, elle a des conséquences très concrètes sur le terrain. Une politique RH inspirée des relations humaines va privilégier l''écoute individuelle, la qualité du climat social, la reconnaissance informelle. Une politique RH inspirée du SHRM va privilégier l''alignement des pratiques sur les priorités stratégiques, et acceptera, si nécessaire, de différencier fortement les pratiques selon que telle catégorie de personnel est jugée stratégique ou non.
 
-Troisième question : d''où vient le terme cybernétique appliqué au contrôle de gestion ? Réponse : de la science du pilotage des systèmes par rétroaction, développée au milieu du vingtième siècle, puis transposée à l''organisation.
+## 45:00 – 50:00 · Pause quiz interactif
 
-Quatrième question : citez un outil typique du niveau du contrôle de gestion. Réponse possible : le budget, le tableau de bord, le centre de responsabilité, le prix de cession interne.
+Prenons une pause de cinq minutes pour un quiz rapide, à faire individuellement avant de regarder la correction. Question 1 : l''effet Hawthorne a-t-il d''abord démontré l''importance des conditions matérielles de travail, ou l''importance du sentiment d''être observé et valorisé ? Question 2 : selon Herzberg, une augmentation de salaire motive-t-elle durablement un salarié, oui ou non ? Question 3 : citez les quatre rôles du modèle d''Ulrich. Question 4 : le SHRM considère-t-il les ressources humaines comme une fonction administrative ou comme un levier stratégique ? Réponses : 1, le sentiment d''être observé et valorisé, pas les conditions matérielles elles-mêmes. 2, non, selon Herzberg le salaire est un facteur d''hygiène, pas un facteur de motivation durable. 3, partenaire stratégique, expert administratif, champion des employés, agent de changement. 4, un levier stratégique.
 
-Si vous avez répondu correctement à au moins trois de ces quatre questions, vous maîtrisez les bases de ce courant ; sinon, je vous invite à revoir la séquence précédente avant de poursuivre.
+## 50:00 – 65:00 · Limites et critiques croisées
 
-## 45:00 – 60:00 · Les apports complémentaires : théorie de l''agence et calcul des coûts
+Reprenons maintenant notre analyse critique, qui est la partie la plus importante pour votre oral. L''école des relations humaines a été critiquée pour son optimisme : elle suppose une convergence presque naturelle entre le bien-être de l''individu et les intérêts de l''organisation, ce qui occulte les rapports de pouvoir réels et les conflits d''intérêts qui peuvent exister entre employeurs et salariés. Certains commentateurs ont aussi réexaminé, avec le recul, les conditions expérimentales exactes de l''étude Hawthorne, invitant à une certaine prudence sur la portée de ses conclusions d''origine.
 
-Au-delà du modèle à trois niveaux, deux familles de travaux viennent enrichir ce courant et vous devez pouvoir les mobiliser à l''oral. La théorie de l''agence, développée en économie des organisations, apporte un fondement microéconomique : lorsque les intérêts d''un dirigeant et d''un actionnaire, ou d''un responsable opérationnel et de la direction générale, peuvent diverger, les dispositifs de contrôle (budgets, indicateurs, systèmes d''incitation) servent à réduire ces divergences et les asymétries d''information entre les parties.
+Le SHRM, de son côté, souffre d''une difficulté empirique majeure : de nombreuses études peinent à démontrer de façon incontestable un lien de causalité clair entre pratiques RH et performance financière. Est-ce que de bonnes pratiques RH créent la performance, ou est-ce que les entreprises déjà performantes ont simplement plus de moyens à investir dans leurs RH ? Cette question reste largement ouverte dans la littérature. Et puis il y a cette critique plus philosophique : en traitant les personnes comme une « ressource » parmi d''autres, le SHRM risque, si l''on n''y prend pas garde, de les instrumentaliser.
 
-La comptabilité de gestion, de son côté, fournit l''instrumentation technique nécessaire : coûts complets, coûts variables, coûts standards, analyse des écarts. C''est cette instrumentation qui rend concrètement possible la comparaison entre prévision et réalisation, pierre angulaire de la logique cybernétique.
+## 65:00 – 75:00 · Vers un dialogue entre les deux courants
 
-Visuel à montrer : un tableau à deux colonnes opposant, pour chaque outil (budget, tableau de bord, coût standard), sa fonction de pilotage rationnel (colonne de gauche) et la justification qu''en donne la théorie de l''agence en termes de réduction des asymétries d''information (colonne de droite).
+La bonne nouvelle, pour votre thèse, c''est que la recherche contemporaine ne voit plus ces deux courants comme irréconciliables. De nombreux travaux récents en SHRM intègrent désormais des variables issues directement de la tradition des relations humaines : la perception de soutien organisationnel par le salarié, son sentiment de justice, sa perception d''être reconnu. Ces variables permettent justement d''expliquer pourquoi certaines pratiques « stratégiquement alignées » produisent, ou non, les effets attendus sur le terrain : une pratique peut être parfaitement alignée sur la stratégie et pourtant mal vécue par les salariés, ce qui en annule les effets positifs attendus.
 
-## 60:00 – 75:00 · Les limites et critiques du courant
+## 75:00 – 85:00 · Application à un cas fictif et discussion
 
-Un bon candidat doit pouvoir exposer spontanément trois limites de ce courant, sans attendre qu''on les lui demande. Première limite : l''hypothèse de rationalité des acteurs est contestée par l''observation empirique de comportements de négociation stratégique des objectifs budgétaires, de constitution de coussins budgétaires, ou de manipulation des indicateurs en fin de période. Deuxième limite : le réductionnisme de la mesure, c''est-à-dire le risque qu''un pilotage centré sur quelques indicateurs financiers détourne l''attention des acteurs vers ce qui est mesuré, au détriment de dimensions importantes mais difficiles à quantifier, comme la qualité de service ou la coopération entre équipes. Troisième limite : la rigidité face à l''incertitude, le cycle budgétaire annuel devenant rapidement obsolète dans des environnements très changeants, ce qui a nourri, plus récemment, le débat sur le beyond budgeting que nous étudierons dans une séance ultérieure.
-
-Je vous invite ici à un exercice de nuance essentiel pour l''oral : ne présentez jamais ces limites comme une invalidation totale du courant, mais comme des angles morts identifiés par la littérature, qui ont nourri le développement de courants complémentaires, notamment le courant socio-organisationnel que nous étudierons dans la prochaine vidéo.
-
-## 75:00 – 85:00 · Mise en situation : simuler une question de jury
-
-Je vais maintenant vous poser, comme le ferait un membre de jury, une question difficile, et vous laisser le temps d''y réfléchir avant de vous proposer une structure de réponse. Question : « Si l''approche cybernétique est si critiquée, pourquoi reste-t-elle, selon vous, la grammaire de base implicite de la plupart des dispositifs de contrôle observés dans les organisations ? »
-
-Une bonne structure de réponse commencerait par reconnaître la prémisse de la question (oui, les critiques sont fondées et largement documentées), puis apporterait trois éléments de réponse : la robustesse opérationnelle du modèle dans des environnements relativement stables, la facilité de diffusion d''un vocabulaire commun (centres de coûts, centres de profit) qui permet la comparaison entre unités et organisations, et le fait que même les courants critiques s''y réfèrent, explicitement ou implicitement, comme point de départ, ce qui en fait un socle conceptuel difficile à remplacer entièrement plutôt qu''à seulement contester.
+Prenons un cas fictif pour fixer ces idées. Imaginez une entreprise sénégalaise de services qui décide d''individualiser fortement la rémunération de ses commerciaux pour les aligner sur sa stratégie de croissance commerciale, une décision typiquement SHRM. Si cette individualisation est perçue comme injuste par les équipes, parce qu''elle casse une solidarité de groupe jusque-là valorisée, l''école des relations humaines prédirait une baisse de l''engagement malgré l''alignement stratégique apparent de la mesure. Un bon candidat à l''oral doit être capable de construire ce genre de scénario, et de montrer comment les deux cadres théoriques, combinés, expliquent mieux la réalité que chacun pris isolément.
 
 ## 85:00 – 90:00 · Synthèse et évaluation finale
 
-Pour conclure cette séance, rappelons les trois points essentiels : le modèle de planification-contrôle à trois niveaux, les apports complémentaires de la théorie de l''agence et de la comptabilité de gestion, et les trois grandes limites du courant.
+Pour conclure, retenez ceci : l''école des relations humaines et le SHRM ne répondent pas à la même question. La première demande ce qui rend un individu engagé et satisfait au travail. La seconde demande comment transformer la gestion des personnes en avantage concurrentiel pour l''organisation. Les opposer frontalement serait une erreur à l''oral ; les articuler, en montrant leurs complémentarités et leurs tensions, est exactement ce qu''un jury attend de vous.
 
-Évaluation finale, cinq questions :
+Évaluation finale, cinq questions. Un, quel événement expérimental est à l''origine de l''école des relations humaines ? Deux, quelle distinction propose Herzberg entre facteurs d''hygiène et facteurs de motivation ? Trois, sur quelle théorie économique le SHRM s''appuie-t-il pour justifier qu''un avantage concurrentiel durable puisse venir des ressources humaines ? Quatre, quels sont les quatre rôles du modèle d''Ulrich ? Cinq, citez une critique majeure adressée à chacun des deux courants.
 
-Un, quels sont les trois niveaux du modèle de planification-contrôle ? Réponse : planification stratégique, contrôle de gestion, contrôle d''exécution.
-
-Deux, quel horizon temporel caractérise typiquement le niveau du contrôle de gestion ? Réponse : le moyen terme, généralement annuel.
-
-Trois, quelle théorie économique apporte un fondement microéconomique à ce courant ? Réponse : la théorie de l''agence.
-
-Quatre, citez une des trois limites majeures de ce courant discutées dans cette séance. Réponse possible : l''hypothèse de rationalité des acteurs contestée par l''observation empirique, le réductionnisme de la mesure, ou la rigidité face à l''incertitude.
-
-Cinq, pourquoi ce courant reste-t-il, malgré ses critiques, un socle conceptuel difficile à remplacer ? Réponse : parce qu''il reste robuste dans des environnements stables, qu''il fournit un vocabulaire commun de comparaison entre unités, et que même les courants critiques s''y réfèrent comme point de départ.', 'video', 90, false, 60
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : l''approche cybernétique et rationnelle du contrôle de gestion');
+Réponses. Un, l''expérience menée à l''usine Hawthorne de la Western Electric, qui a révélé « l''effet Hawthorne ». Deux, les facteurs d''hygiène (salaire, conditions de travail) évitent l''insatisfaction mais ne motivent pas durablement ; seuls les facteurs de motivation (reconnaissance, contenu du travail, responsabilité) produisent un engagement réel. Trois, la théorie de la firme fondée sur les ressources (resource-based view), qui explique qu''un avantage durable vient de ressources rares et difficiles à imiter. Quatre, partenaire stratégique, expert administratif, champion des employés, agent de changement. Cinq, pour les relations humaines, l''optimisme sur la convergence spontanée des intérêts individuels et organisationnels ; pour le SHRM, la difficulté à prouver empiriquement un lien causal clair entre pratiques RH et performance, et le risque d''instrumentalisation des personnes.', 'video', 90, false, 60
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : école des relations humaines et gestion stratégique des ressources humaines');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : les approches socio-organisationnelles du contrôle', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : universalisme contre contingence en GRH', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser les approches socio-organisationnelles du contrôle, savoir les opposer et les articuler avec l''approche cybernétique étudiée dans la séance précédente, et savoir illustrer ces concepts par des exemples de terrain. Matériel : tableau ou diaporama, schéma des jeux d''acteurs autour d''un dispositif de contrôle. Prérequis : avoir suivi la vidéo précédente et lu la leçon 3.
+Durée : 1h30. Public : doctorants en spécialité Ressources humaines préparant l''examen de qualification doctorale. Objectifs : maîtriser le débat entre approche universaliste et approche contingente/configurationnelle en GRH, savoir le relier au débat « best practices » contre « best fit », et savoir le mobiliser pour analyser un terrain organisationnel concret. Matériel : diaporama, tableau comparatif à construire en direct, résumés non cités textuellement des travaux de Pfeffer, Huselid, Schuler et Jackson, Delery et Doty. Prérequis : lecture de la leçon texte correspondante.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Introduction : un changement de regard
+## 00:00 – 05:00 · Ouverture et enjeux de la séance
 
-Dans la séance précédente, nous avons vu le contrôle de gestion comme un dispositif de pilotage rationnel. Aujourd''hui, je vous propose de changer complètement de regard : nous allons voir le contrôle de gestion comme un phénomène social, traversé par des rapports de pouvoir, des interprétations divergentes, et des stratégies d''acteurs. Cette bascule de regard est exactement ce qu''un jury testera lorsqu''il vous demandera de comparer les deux courants : il voudra voir que vous savez changer de lunettes théoriques selon la question posée, et non que vous récitez un seul cadre d''analyse appliqué partout.
+Bienvenue dans cette séance consacrée à l''un des débats les plus structurants de la recherche en gestion des ressources humaines : celui qui oppose, ou plutôt qui met en tension, l''approche universaliste et l''approche contingente ou configurationnelle. Ce débat se formule souvent de façon plus imagée dans la littérature : existe-t-il de « meilleures pratiques » RH, valables partout, ou seulement des pratiques « les mieux adaptées » à un contexte donné ? Vous devez être capable, à l''oral, de passer sans hésitation d''une formulation à l''autre, parce que les jurys utilisent indifféremment les deux vocabulaires.
 
-## 05:00 – 15:00 · L''idée centrale : le contrôle comme construction sociale
+Nous allons procéder ainsi : d''abord l''approche universaliste et les travaux qui la soutiennent, ensuite l''approche contingente, puis l''apport spécifique de l''approche configurationnelle, et enfin une discussion critique appliquée à un contexte africain.
 
-L''idée centrale de ce courant est qu''un dispositif de contrôle (un budget, un indicateur, un tableau de bord) ne produit jamais mécaniquement les effets prévus par ses concepteurs. Entre la conception d''un outil et son usage réel sur le terrain s''interposent des acteurs qui l''interprètent, le négocient, le détournent, ou s''en saisissent pour défendre leur position. Le contrôle de gestion devient alors autant un objet d''analyse sociologique qu''un objet de gestion technique.
+## 05:00 – 20:00 · L''approche universaliste : une recette de la bonne gestion des personnes ?
 
-Visuel à montrer : un schéma en deux colonnes opposant « ce que prévoit le concepteur du dispositif » et « ce qui se passe réellement sur le terrain », avec des flèches représentant les interprétations, négociations et détournements possibles.
+L''approche universaliste repose sur un postulat fort, et je veux que vous puissiez le reformuler sans notes : il existerait un ensemble de pratiques de gestion des ressources humaines qui améliorent la performance organisationnelle, quels que soient le secteur, la taille ou la stratégie de l''entreprise qui les adopte.
 
-Je vous invite à un exercice simple : pensez à un outil de gestion que vous avez vu fonctionner différemment, dans la réalité, de ce que prévoyait son manuel d''utilisation officiel. Cette expérience, même anecdotique, est exactement le type d''intuition que ce courant théorise.
+Jeffrey Pfeffer est l''auteur le plus associé à cette position. Il a dressé une liste de pratiques jugées universellement bénéfiques : la sécurité de l''emploi, un recrutement sélectif et rigoureux, une rémunération incitative liée à la performance, le partage large de l''information dans l''organisation, un effort soutenu de formation, et la réduction des différences de statut entre catégories de personnel. Mark Huselid a, lui, cherché à tester empiriquement cette idée, sur de larges échantillons d''entreprises, en montrant une association statistique entre l''adoption de systèmes dits « à haute performance » et des indicateurs de performance organisationnelle.
 
-## 15:00 – 30:00 · Les trois lignées fondatrices
+L''intérêt pratique de cette approche est évident : elle donne aux dirigeants une checklist actionnable, indépendamment des spécificités de leur organisation. Mais c''est précisément cette simplicité qui va être contestée par le courant suivant.
 
-Trois lignées de travaux nourrissent ce courant, et vous devez pouvoir les distinguer clairement à l''oral.
+## 20:00 – 35:00 · L''approche contingente et configurationnelle : il n''existe pas de recette unique
 
-La première est l''analyse stratégique des organisations, issue de la sociologie des organisations : toute organisation est un système d''action concret, structuré par des jeux de pouvoir autour de zones d''incertitude que chaque acteur cherche à contrôler. Appliquée au budget, cette grille montre que les responsables négocient leurs objectifs, retiennent stratégiquement de l''information, et utilisent leur connaissance fine du terrain comme ressource de pouvoir.
+L''approche contingente renverse le postulat de départ : l''efficacité d''une pratique RH dépendrait du contexte dans lequel elle est appliquée, en particulier de la stratégie concurrentielle de l''entreprise. Randall Schuler et Susan Jackson ont montré que des stratégies concurrentielles différentes appellent des comportements attendus très différents chez les salariés, et donc des pratiques RH différentes : une entreprise qui concurrence par l''innovation veut encourager la prise de risque et la créativité ; une entreprise qui concurrence par les coûts veut au contraire standardiser les tâches et maîtriser la masse salariale. Il n''y a donc pas, dans cette logique, de « bonne » pratique en soi, seulement des pratiques plus ou moins « ajustées » (best fit) à une stratégie donnée.
 
-La deuxième est la comptabilité critique, qui analyse les dispositifs comptables comme des technologies de pouvoir : ils rendent visibles certains phénomènes et invisibles d''autres, et légitiment certains acteurs (les gestionnaires) au détriment d''autres (les métiers opérationnels).
+L''approche configurationnelle, portée par James Delery et D. Harold Doty, ajoute une nuance décisive que vous devez absolument maîtriser pour l''oral : ce n''est pas l''ajustement d''une pratique isolée qui compte, mais la cohérence interne entre plusieurs pratiques combinées en « configurations » ou « bouquets » (bundles). Deux configurations différentes peuvent être également performantes, à condition que chacune soit cohérente en elle-même et adaptée à son propre contexte. C''est une idée plus subtile que le simple contingentisme : elle n''affirme pas qu''il existe une infinité de cas uniques, mais qu''il existe un nombre limité de modèles cohérents repérables.
 
-La troisième est la théorie de l''institutionnalisation, qui montre que les outils de gestion se diffusent parfois davantage parce qu''ils sont devenus des normes socialement attendues, des signes de légitimité et de modernité, que pour leur efficacité intrinsèque démontrée.
+## 35:00 – 45:00 · La question épistémologique de fond
 
-Visuel à montrer : un tableau à trois colonnes, une par lignée, avec pour chacune le concept clé, un exemple d''application au contrôle de gestion, et le nom du champ disciplinaire d''origine (sociologie des organisations, comptabilité critique, théorie des organisations).
+Prenons un peu de hauteur. Ce débat, au-delà de son contenu, pose une question bien plus large sur la nature de la connaissance en gestion : peut-on produire des lois générales valables partout, comme le suggère l''universalisme, ou doit-on renoncer à toute généralisation, comme le suggérerait un contingentisme radical ? L''approche configurationnelle, en acceptant l''idée d''un nombre limité de modèles cohérents sans aller jusqu''à une loi unique universelle, propose une voie intermédiaire qui domine aujourd''hui une grande partie de la recherche en SHRM. Retenez bien cette position intermédiaire : c''est souvent elle que les jurys attendent comme réponse la plus mature.
 
-## 30:00 – 45:00 · La notion de zone d''incertitude et de jeu de pouvoir
+## 45:00 – 50:00 · Pause quiz interactif
 
-Arrêtons-nous en détail sur la notion de zone d''incertitude, car c''est l''une des notions les plus fréquemment demandées à l''oral. Une zone d''incertitude est une portion d''information ou de compétence que seul un acteur maîtrise réellement : par exemple, un chef d''atelier qui connaît seul les capacités réelles de production, au-delà des chiffres officiels. Cette maîtrise lui donne un pouvoir de négociation face aux autres acteurs qui en dépendent, par exemple lors de l''élaboration du budget annuel.
+Petit quiz de cinq minutes. Question 1 : selon Pfeffer, la sécurité de l''emploi fait-elle partie des pratiques jugées universellement bénéfiques ? Question 2 : l''approche contingente affirme-t-elle qu''il existe une seule bonne pratique RH, ou que l''efficacité d''une pratique dépend du contexte ? Question 3 : qu''ajoute l''approche configurationnelle par rapport à une approche contingente simple ? Question 4 : l''approche configurationnelle admet-elle un nombre illimité de configurations possibles ? Réponses : 1, oui. 2, que l''efficacité dépend du contexte, en particulier de la stratégie concurrentielle. 3, l''exigence de cohérence interne entre plusieurs pratiques combinées en configurations, et non la simple adéquation d''une pratique isolée. 4, non, elle suppose un nombre limité de configurations cohérentes repérables, pas une infinité de cas uniques.
 
-Question à poser aux apprenants : si un responsable opérationnel sait que la direction financière ne peut pas vérifier indépendamment ses déclarations sur ses capacités réelles, quel comportement stratégique pourrait-il adopter lors de la négociation budgétaire, et quel est le risque pour l''organisation dans son ensemble si ce comportement se généralise ?
+## 50:00 – 65:00 · Limites et critiques de chaque position
 
-Cette notion permet de comprendre pourquoi les budgets négociés aboutissent souvent à des objectifs qui ne reflètent pas fidèlement les capacités réelles de l''organisation : ce n''est pas un défaut de conception technique du budget, c''est la conséquence logique des jeux de pouvoir qui l''entourent.
+Reprenons l''analyse critique, indispensable pour votre oral. L''approche universaliste souffre d''une fragilité méthodologique réelle : les listes de « meilleures pratiques » varient sensiblement d''un auteur à l''autre, ce qui interroge leur caractère réellement universel. Les corrélations statistiques entre pratiques RH et performance, par ailleurs, restent difficiles à interpréter de façon causale, un problème déjà rencontré dans notre séance précédente sur le SHRM. Enfin, ces listes ont été construites majoritairement à partir d''études nord-américaines, ce qui interroge leur validité dans des environnements institutionnels et culturels très différents.
 
-## 45:00 – 50:00 · Pause et quiz interactif
+L''approche contingente et configurationnelle, de son côté, est critiquée pour sa plus faible opérationnalité : elle n''offre pas de recommandations toutes faites, puisque chaque organisation doit en principe identifier elle-même la configuration adaptée à sa situation, ce qui demande une capacité d''analyse stratégique que toutes les organisations, en particulier les plus petites, ne possèdent pas forcément.
 
-Petite pause avec un quiz en quatre questions. Première question : qu''est-ce qu''une zone d''incertitude ? Réponse : une portion d''information ou de compétence que seul un acteur maîtrise, qui lui donne un pouvoir de négociation. Deuxième question : citez les trois lignées fondatrices de ce courant. Réponse : l''analyse stratégique des organisations, la comptabilité critique, la théorie de l''institutionnalisation. Troisième question : qu''entend-on par « technologie de pouvoir » appliquée à un dispositif comptable ? Réponse : l''idée qu''il rend visibles certaines réalités et invisibles d''autres, et légitime certains acteurs plutôt que d''autres. Quatrième question : pourquoi un outil de gestion peut-il se diffuser sans être le plus efficace techniquement ? Réponse : parce qu''il devient une norme socialement attendue, un signe de légitimité et de modernité organisationnelle.
+## 65:00 – 75:00 · Portée pour un contexte africain
 
-## 50:00 – 65:00 · Limites du courant et débat avec l''approche cybernétique
+Ce débat prend un relief particulier dans un contexte comme celui du Sénégal, où coexistent de grandes entreprises formalisées, parfois proches de standards internationaux assimilables aux « best practices », et un tissu dense de petites et moyennes entreprises informelles ou semi-formelles, dont les pratiques s''écartent fortement de ces recommandations sans que leur performance en soit nécessairement affectée. Un candidat qui étudierait ce terrain a tout intérêt à mobiliser l''approche configurationnelle plutôt que l''universalisme : elle permet de reconnaître la cohérence propre de pratiques très diverses, sans les juger à l''aune d''une norme unique construite ailleurs.
 
-Ce courant a lui-même reçu des critiques que vous devez pouvoir exposer avec nuance. Première critique : un déficit d''opérationnalité, le courant offrant parfois peu de prescriptions concrètes aux praticiens qui doivent, malgré tout, concevoir des systèmes de contrôle qui fonctionnent. Deuxième critique : un risque de relativisme excessif, qui ferait perdre de vue que certains outils de mesure sont, de fait, plus pertinents que d''autres pour éclairer une décision économique. Troisième critique, méthodologique : la difficulté à généraliser des études de cas qualitatives riches à un grand nombre d''organisations.
+## 75:00 – 85:00 · Application orale : répondre à une objection de jury
 
-Visuel à montrer : un schéma en double colonne comparant explicitement, point par point, les critiques adressées à l''approche cybernétique (vues dans la séance précédente) et les critiques adressées à l''approche socio-organisationnelle, pour que les apprenants visualisent la symétrie du débat.
+Imaginons qu''un membre du jury vous objecte : « Mais alors, ces deux approches sont-elles vraiment incompatibles ? » Une bonne réponse orale pourrait se construire ainsi : reconnaître d''abord que l''universalisme met en évidence des régularités statistiques utiles comme point de départ de la réflexion ; rappeler ensuite que le contingentisme montre que ces régularités ne se vérifient pas identiquement partout ; conclure que l''approche configurationnelle peut être vue comme une tentative de synthèse, qui admet des régularités mais à l''intérieur de modèles contextualisés, et que c''est cette dernière position que vous mobiliseriez dans votre propre travail de thèse.
 
-Je veux insister ici sur un point de nuance essentiel pour votre oral : les recherches les plus récentes tendent à articuler les deux lectures plutôt qu''à les opposer frontalement. Un contrôleur de gestion qui ignore la dimension sociale produit des outils contournés ; un contrôleur qui ignore la dimension technique perd la capacité de produire une information fiable. Les deux dimensions s''influencent mutuellement dans le temps.
+## 85:00 – 90:00 · Synthèse et évaluation finale
 
-## 65:00 – 80:00 · Mise en situation : analyser un cas fictif
+Pour résumer : l''universalisme cherche des pratiques bonnes partout, le contingentisme cherche des pratiques adaptées à chaque contexte, et le configurationnisme cherche des combinaisons de pratiques cohérentes entre elles, en nombre limité. Ce débat n''est pas un simple exercice académique : il conditionne directement la façon dont vous formulerez votre propre question de recherche doctorale sur les pratiques RH.
 
-Je vous propose maintenant un cas fictif à analyser avec les outils de cette séance. Une entreprise sénégalaise de distribution impose à ses directeurs régionaux un nouveau tableau de bord mensuel, conçu par le siège, avec quinze indicateurs. Six mois après son déploiement, le siège constate que les directeurs régionaux remplissent bien le tableau de bord, mais que leurs décisions quotidiennes semblent inchangées : le dispositif paraît purement formel.
+Évaluation finale, cinq questions. Un, citez trois pratiques de la liste de Pfeffer. Deux, quel facteur, selon Schuler et Jackson, explique que des entreprises adoptent des pratiques RH différentes ? Trois, qu''apporte l''approche configurationnelle que n''apporte pas une approche contingente simple ? Quatre, quelle critique méthodologique commune touche à la fois l''universalisme et le SHRM étudié dans la séance précédente ? Cinq, pourquoi l''approche configurationnelle est-elle particulièrement adaptée à l''analyse d''un tissu économique diversifié comme celui du Sénégal ?
 
-Avec les concepts de cette séance, comment analyseriez-vous cette situation ? Une bonne analyse mobiliserait la notion de zone d''incertitude (les directeurs régionaux conservent leur connaissance fine du terrain, que le tableau de bord ne capture pas entièrement, et continuent donc à décider sur cette base), la notion de technologie de pouvoir (le tableau de bord légitime le siège comme détenteur de l''information de pilotage, ce qui peut être perçu comme une remise en cause de l''autonomie historique des directeurs régionaux), et la notion d''institutionnalisation (le tableau de bord a peut-être été adopté par le siège davantage comme signe de modernité managériale que pour une utilité opérationnelle clairement établie en amont).
+Réponses. Un, par exemple la sécurité de l''emploi, le recrutement sélectif, la rémunération incitative liée à la performance (d''autres réponses parmi la liste présentée sont acceptées). Deux, la stratégie concurrentielle de l''entreprise, qui appelle des comportements attendus différents chez les salariés. Trois, l''exigence de cohérence interne entre plusieurs pratiques combinées, plutôt que la simple adéquation d''une pratique isolée au contexte. Quatre, la difficulté à établir un lien de causalité clair, et non seulement une corrélation, entre pratiques RH et performance organisationnelle. Cinq, parce qu''elle permet de reconnaître la cohérence propre de configurations de pratiques très différentes (grandes entreprises formalisées, PME informelles) sans les juger à l''aune d''une seule norme universelle qui ne correspondrait qu''à une partie de ce tissu économique.', 'video', 90, false, 70
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : universalisme contre contingence en GRH');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en Ressources humaines', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants en spécialité Ressources humaines préparant l''examen de qualification doctorale. Objectifs : maîtriser les quatre grandes méthodes de recherche du champ RH (étude de cas, enquête quantitative par questionnaire validé, méthodes mixtes, recherche-action), connaître leurs critères de qualité respectifs, être capable de défendre le choix méthodologique d''un projet de thèse. Matériel : diaporama, grille comparative des méthodes, exemple de protocole fictif appliqué à un contexte sénégalais. Prérequis : lecture de la leçon texte correspondante.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et enjeux de la séance
+
+Bienvenue dans cette séance consacrée aux méthodes de recherche propres à la gestion des ressources humaines. C''est un point sur lequel les jurys sont souvent redoutables, parce qu''un candidat peut parfaitement connaître les théories du champ sans jamais avoir réfléchi sérieusement à la façon de les étudier empiriquement. Or une thèse n''est pas qu''une discussion théorique : c''est, le plus souvent, une démonstration empirique construite avec une méthode rigoureuse et justifiée. Nous allons donc passer en revue quatre grandes méthodes, leurs forces, leurs limites, et terminer par un exemple de protocole complet appliqué à un contexte sénégalais fictif.
+
+## 05:00 – 20:00 · L''étude de cas : comprendre en profondeur
+
+L''étude de cas consiste à analyser en profondeur un ou plusieurs contextes organisationnels précis, pour comprendre comment un phénomène se déploie réellement. Elle est particulièrement adaptée quand le phénomène étudié est complexe ou peu documenté, ou qu''il s''agit de comprendre un « comment » et un « pourquoi » plutôt que de mesurer un simple lien statistique.
+
+Robert Yin a précisé les exigences de rigueur de cette méthode : définir clairement l''unité d''analyse étudiée, trianguler plusieurs sources de données, comme des entretiens, des documents internes et de l''observation, et, lorsque plusieurs cas sont étudiés, choisir une logique de réplication plutôt qu''une logique d''échantillonnage statistique, qui n''a pas de sens pour un petit nombre de cas. Retenez bien cette distinction, c''est un piège classique à l''oral : on ne choisit pas des cas d''étude « au hasard » pour qu''ils soient représentatifs, on les choisit pour leur intérêt théorique, parce qu''ils sont similaires (pour confirmer un résultat) ou contrastés (pour en tester les limites).
+
+La force de cette méthode, c''est la richesse et la profondeur du phénomène restitué. Sa limite, c''est l''impossibilité de généraliser statistiquement les résultats à une population plus large, même si une généralisation théorique reste possible, en enrichissant un cadre conceptuel existant.
+
+## 20:00 – 35:00 · L''enquête quantitative par questionnaire validé
+
+L''enquête quantitative reste la méthode la plus fréquente pour tester des hypothèses sur de grands échantillons. Elle repose sur l''utilisation d''échelles de mesure déjà validées dans la littérature, par exemple des échelles de type Likert, plutôt que sur des questions improvisées, pour garantir la comparabilité avec d''autres études et la qualité psychométrique des mesures.
+
+Deux critères sont ici absolument centraux, et vous devez pouvoir les définir sans hésitation à l''oral. La fiabilité mesure la cohérence interne d''une échelle : les différents items censés mesurer un même concept varient-ils effectivement ensemble ? On l''évalue souvent par l''alpha de Cronbach. La validité mesure si l''échelle mesure réellement ce qu''elle prétend mesurer. Elle se décline en validité de contenu, qui vérifie que les items couvrent bien toutes les dimensions du concept ; en validité convergente, qui vérifie que l''échelle est corrélée à d''autres mesures du même concept ; et en validité discriminante, qui vérifie qu''elle se distingue bien de mesures de concepts différents.
+
+La force de cette méthode est la généralisation statistique, si l''échantillon est suffisamment grand et représentatif. Sa limite est qu''elle explique mal les mécanismes fins : elle montre souvent « que » deux variables sont liées, sans toujours dire « pourquoi » et « comment ».
+
+## 35:00 – 45:00 · Les méthodes mixtes : combiner pour compenser les limites
+
+Les méthodes mixtes combinent, dans un même projet, des données qualitatives et quantitatives. Trois designs principaux existent. Le design séquentiel exploratoire part d''une phase qualitative, par exemple des entretiens exploratoires, qui permet de construire ou d''adapter un questionnaire ensuite administré à grande échelle. Le design séquentiel explicatif part au contraire d''une enquête quantitative, suivie d''entretiens qualitatifs pour expliquer en profondeur des résultats statistiques surprenants. Le design convergent collecte les deux types de données en parallèle, puis les compare.
+
+L''exigence méthodologique centrale, ici, est de justifier explicitement le design choisi et la façon dont les deux types de résultats seront intégrés, et non simplement juxtaposés sans articulation claire. C''est précisément ce point que les jurys interrogent le plus souvent quand un candidat propose une méthode mixte pour son projet de thèse.
+
+## 45:00 – 50:00 · Pause quiz interactif
+
+Petit quiz de cinq minutes. Question 1 : dans une étude de cas à trois organisations, cherche-t-on la représentativité statistique ou l''intérêt théorique des cas choisis ? Question 2 : que mesure la fiabilité d''une échelle, par opposition à sa validité ? Question 3 : dans un design séquentiel exploratoire, quelle phase vient en premier, la qualitative ou la quantitative ? Réponses : 1, l''intérêt théorique des cas, pas leur représentativité statistique. 2, la fiabilité mesure la cohérence interne de la mesure, la validité mesure si elle capte réellement le concept visé. 3, la phase qualitative vient en premier, elle sert à construire ou adapter l''outil quantitatif utilisé ensuite.
+
+## 50:00 – 65:00 · La recherche-action en entreprise
+
+La recherche-action se distingue par la posture du chercheur, qui n''observe pas seulement de l''extérieur, mais intervient activement, en collaboration avec les acteurs de l''organisation, pour résoudre un problème concret tout en produisant une connaissance scientifique généralisable. Cette méthode convient bien à des problématiques appliquées, comme la conception d''un nouveau dispositif de gestion des compétences.
+
+Sa rigueur repose sur un cycle itératif en quatre étapes : diagnostic partagé de la situation, planification conjointe d''une action, mise en œuvre, observation systématique des effets, puis réflexion critique qui nourrit un nouveau cycle. La principale difficulté est de préserver une distance critique suffisante malgré l''implication directe du chercheur, ce qui exige d''expliciter très clairement sa posture et ses choix méthodologiques dans le manuscrit de thèse.
+
+## 65:00 – 75:00 · Construire un protocole complet sur un terrain sénégalais fictif
+
+Prenons un exemple fictif pour fixer ces idées. Question de recherche : comment les pratiques de gestion des compétences évoluent-elles dans les petites et moyennes entreprises agroalimentaires de la région de Thiès, et avec quels effets perçus sur la fidélisation du personnel qualifié ? Un protocole en méthodes mixtes séquentielles pourrait se construire en trois phases : une phase qualitative exploratoire par études de cas contrastées, pour identifier les dimensions locales de la gestion des compétences ; une phase quantitative confirmatoire, par questionnaire construit à partir de ces dimensions et si possible adossé à des échelles déjà validées, pour tester statistiquement le lien avec la fidélisation ; et une phase de recherche-action complémentaire, en accompagnant deux ou trois entreprises volontaires dans la formalisation progressive d''un dispositif de gestion des compétences, avec un suivi des effets sur plusieurs mois.
+
+## 75:00 – 85:00 · Défendre son choix méthodologique à l''oral
+
+Imaginons qu''un membre du jury vous demande : pourquoi ne pas avoir choisi une simple enquête quantitative, plus rapide à mettre en œuvre ? Une bonne réponse orale rappelle que le phénomène étudié est encore peu documenté dans ce contexte précis, ce qui rend risqué de construire d''emblée un questionnaire fermé sans exploration préalable du terrain ; qu''une phase qualitative initiale permet d''ancrer les dimensions mesurées dans la réalité locale plutôt que d''importer des dimensions construites ailleurs ; et que la méthode mixte permet ensuite de généraliser statistiquement ces dimensions tout en gardant la possibilité d''approfondir certains résultats par une démarche plus impliquée sur le terrain.
+
+## 85:00 – 90:00 · Synthèse et évaluation finale
+
+Pour résumer : l''étude de cas éclaire en profondeur un phénomène complexe, l''enquête quantitative teste des hypothèses sur de grands échantillons à condition de garantir fiabilité et validité, les méthodes mixtes combinent les deux pour compenser leurs limites respectives, et la recherche-action implique directement le chercheur dans la résolution d''un problème concret selon un cycle itératif rigoureux.
+
+Évaluation finale, cinq questions. Un, quelle est la différence entre une logique d''échantillonnage statistique et une logique de réplication théorique dans une étude de cas ? Deux, définissez la fiabilité et la validité d''une échelle de mesure. Trois, citez les trois designs principaux de méthodes mixtes. Quatre, quelles sont les quatre étapes du cycle de recherche-action ? Cinq, dans le protocole fictif présenté, pourquoi la phase qualitative précède-t-elle la phase quantitative ?
+
+Réponses. Un, l''échantillonnage statistique vise la représentativité d''une population ; la réplication théorique choisit des cas pour leur intérêt analytique, qu''ils soient similaires ou contrastés, sans viser une représentativité statistique. Deux, la fiabilité mesure la cohérence interne d''une mesure ; la validité mesure si elle capte réellement le concept qu''elle prétend mesurer. Trois, le design séquentiel exploratoire, le design séquentiel explicatif, et le design convergent. Quatre, diagnostic partagé, planification conjointe, mise en œuvre et observation, puis réflexion critique qui nourrit un nouveau cycle. Cinq, parce que le phénomène étudié est peu documenté localement : la phase qualitative permet d''identifier les dimensions pertinentes du terrain avant de construire un outil quantitatif fiable et adapté à ce contexte précis.', 'video', 90, false, 80
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en Ressources humaines');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : entraînement à une épreuve type de qualification doctorale', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants en spécialité Ressources humaines préparant l''examen de qualification doctorale. Objectifs : s''entraîner en conditions réelles sur une question de synthèse typique, construire à l''oral un plan de réponse structuré mobilisant deux courants théoriques et une méthode de recherche, anticiper les objections d''un jury. Matériel : diaporama avec la question de synthèse projetée, tableau pour construire le plan en direct. Prérequis : lecture de la leçon texte correspondante et des quatre leçons précédentes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture et enjeux de la séance
+
+Bienvenue dans cette séance d''entraînement, la plus proche de ce que vous vivrez réellement le jour de votre examen de qualification. Nous allons travailler une question de synthèse type, non officielle, qui mobilise simultanément les deux débats théoriques étudiés dans nos séances précédentes et une méthode de recherche appropriée. L''objectif n''est pas de mémoriser ce plan précis, qui ne sera jamais la question exacte posée le jour de votre épreuve, mais de vous entraîner au raisonnement qui permet de construire ce type de plan face à n''importe quelle question de synthèse comparable.
+
+## 05:00 – 15:00 · Présentation de la question et premières réactions
+
+Voici la question que nous allons traiter : dans quelle mesure les débats théoriques qui opposent l''école des relations humaines à la gestion stratégique des ressources humaines, d''une part, et l''approche universaliste à l''approche contingente et configurationnelle, d''autre part, permettent-ils d''éclairer la diversité des pratiques de gestion du personnel observée dans les petites et moyennes entreprises africaines ? Vous proposerez également une méthode de recherche adaptée pour étudier empiriquement cette question.
+
+Remarquez d''abord la structure de la question : elle convoque explicitement deux débats théoriques distincts, elle les applique à un terrain empirique précis, et elle demande en plus une proposition méthodologique. C''est exactement la structure que vous devez apprendre à repérer immédiatement, en quelques secondes, avant même de commencer à répondre.
+
+## 15:00 – 25:00 · Décomposer la question avant de répondre
+
+Avant de rédiger quoi que ce soit, décomposons la question en ses éléments constitutifs. Trois exigences sont imbriquées. D''abord, resituer chaque débat théorique séparément, de façon rigoureuse, avec définitions et auteurs. Ensuite, et c''est le point le plus souvent manqué par les candidats, les articuler entre eux : comprendre qu''ils ne portent pas sur la même chose, l''un sur la finalité de la gestion du personnel, l''autre sur la possibilité de généraliser les pratiques, mais qu''ils se combinent utilement pour analyser un même terrain. Enfin, proposer une méthode cohérente avec le type de terrain évoqué, ici des PME africaines très diverses.
+
+## 25:00 – 40:00 · Construire le plan en direct, partie I et II
+
+Construisons l''introduction d''abord : nous posons le problème en soulignant que la diversité observée des pratiques RH dans les PME africaines pose la question de savoir si cette diversité doit être lue comme un écart par rapport à une norme universelle, ou comme une adaptation légitime à des contextes divers.
+
+Première partie : nous présentons deux lectures théoriques possibles de cette diversité. La lecture « relations humaines » peut voir dans les pratiques informelles de nombreuses PME, relations personnalisées, reconnaissance informelle, gestion orale plutôt qu''écrite, un écho des intuitions fondatrices de ce courant sur l''importance du lien social. La lecture SHRM ou universaliste peut voir, à l''inverse, dans les grandes PME en croissance ou connectées à des marchés internationaux, une adoption progressive de pratiques proches des « meilleures pratiques » recensées par la littérature.
+
+Deuxième partie, qui est le cœur de la démonstration : nous montrons que cette opposition reste insuffisante, parce qu''elle range les deux types d''entreprises sur un même continuum, du moins formalisé au plus formalisé, sans expliquer pourquoi certaines configurations informelles sont elles-mêmes performantes dans leur propre contexte. C''est ici que nous mobilisons l''approche contingente et configurationnelle, pour soutenir que les PME africaines peuvent développer des configurations de pratiques RH cohérentes avec leur propre stratégie, sans que ces configurations doivent être jugées à l''aune d''une norme universaliste construite ailleurs.
+
+## 40:00 – 50:00 · Construire le plan en direct, partie III et conclusion
+
+Troisième partie : nous proposons un design en méthodes mixtes séquentielles, avec une phase qualitative exploratoire par études de cas contrastées, pour identifier empiriquement les configurations réellement à l''œuvre, suivie d''une enquête quantitative par questionnaire construit à partir de cette phase exploratoire, pour tester si ces configurations sont associées à des indicateurs de performance ou de fidélisation. Nous justifions ce choix par la nécessité de ne pas présupposer, avant l''enquête, quelles dimensions sont pertinentes dans ce contexte précis.
+
+Conclusion : nous rappelons que les deux débats théoriques ne s''opposent pas terme à terme mais éclairent des dimensions complémentaires de la même diversité empirique, et que l''approche configurationnelle, couplée à un design méthodologique mixte, offre un cadre plus fin que l''opposition binaire pour l''étudier. Nous ouvrons, en une phrase, sur une limite assumée concernant la généralisation des conclusions.
+
+## 50:00 – 55:00 · Pause quiz interactif
+
+Petit quiz de cinq minutes. Question 1 : la question de synthèse mobilise-t-elle un seul débat théorique ou deux ? Question 2 : quelle partie du plan constitue, selon nous, le cœur argumentatif de la démonstration ? Question 3 : quel type de design méthodologique a été proposé dans la troisième partie ? Réponses : 1, deux débats théoriques, qu''il faut explicitement articuler entre eux. 2, la deuxième partie, qui dépasse l''opposition binaire initiale grâce à l''approche configurationnelle. 3, un design en méthodes mixtes séquentielles, qualitatif exploratoire puis quantitatif confirmatoire.
+
+## 55:00 – 70:00 · Les critères d''évaluation d''un correcteur
+
+Reprenons maintenant, comme si nous étions le jury, les critères d''évaluation d''une telle réponse. Premier critère : la justesse et la richesse du rappel théorique de chaque courant, sans erreur ni confusion entre les auteurs. Deuxième critère : la capacité à articuler explicitement les deux débats entre eux plutôt que de les traiter côte à côte, ce qui est, je le répète, le piège le plus fréquent chez les candidats. Troisième critère : la pertinence et la cohérence interne de la méthode proposée par rapport au terrain évoqué. Quatrième critère : la présence d''une posture critique assumée, notamment sur les limites de l''approche choisie. Cinquième critère : la clarté et la progressivité du plan, qui doit se lire comme une démonstration construite, et non comme une accumulation de connaissances juxtaposées.
+
+## 70:00 – 80:00 · Simulation d''objections de jury
+
+Simulons maintenant quelques objections typiques. Un jury pourrait demander : « Pourquoi ne pas avoir choisi l''approche universaliste, plus simple à mobiliser ? » Réponse : l''approche universaliste, en jugeant les pratiques informelles comme un simple écart par rapport à une norme, ne permet pas d''expliquer leur performance propre dans leur contexte, ce que l''approche configurationnelle permet au contraire de faire. Un jury pourrait aussi demander : « Votre méthode n''est-elle pas trop lourde pour une seule thèse ? » Réponse : chaque phase peut être calibrée en fonction du temps disponible, et la phase de recherche-action, en particulier, peut être limitée à un nombre restreint d''entreprises volontaires sans remettre en cause la cohérence globale du design.
 
 ## 80:00 – 90:00 · Synthèse et évaluation finale
 
-Pour conclure, retenez trois points : l''idée que le contrôle de gestion est une construction sociale et non un mécanisme neutre, les trois lignées fondatrices (analyse stratégique des organisations, comptabilité critique, institutionnalisation), et la nécessité d''articuler ce courant avec le courant cybernétique plutôt que de les opposer de façon binaire.
+Pour conclure cette séance : une bonne réponse à une question de synthèse ne consiste jamais à exposer deux blocs théoriques l''un après l''autre, mais à les faire dialoguer explicitement autour d''un terrain empirique précis, puis à proposer une méthode cohérente avec cette articulation théorique. C''est cette compétence de construction argumentative, plus que la mémorisation des contenus, qui sera jugée le jour de votre examen.
 
-Évaluation finale, cinq questions :
+Évaluation finale, cinq questions. Un, quelles sont les trois exigences imbriquées dans la question de synthèse traitée aujourd''hui ? Deux, pourquoi l''opposition entre les deux lectures théoriques présentées en partie I est-elle jugée insuffisante ? Trois, quel design méthodologique a été proposé, et pourquoi commence-t-il par une phase qualitative ? Quatre, citez deux des cinq critères d''évaluation d''un correcteur. Cinq, comment répondriez-vous à l''objection « votre méthode est trop lourde » ?
 
-Un, définissez en une phrase l''idée centrale du courant socio-organisationnel. Réponse : un dispositif de contrôle ne produit jamais mécaniquement les effets prévus par ses concepteurs, car les acteurs l''interprètent, le négocient ou le détournent.
-
-Deux, qu''est-ce qu''une zone d''incertitude ? Réponse : une portion d''information ou de compétence que seul un acteur maîtrise réellement, source de pouvoir de négociation.
-
-Trois, citez une critique adressée à ce courant. Réponse possible : déficit d''opérationnalité, risque de relativisme excessif, ou difficulté de généralisation des études de cas.
-
-Quatre, pourquoi un dispositif de contrôle peut-il être qualifié de technologie de pouvoir ? Réponse : parce qu''il rend visibles certaines réalités et invisibles d''autres, et légitime certains acteurs au détriment d''autres.
-
-Cinq, comment les recherches récentes tendent-elles à articuler ce courant avec le courant cybernétique ? Réponse : en étudiant comment la dimension technique et la dimension sociale des dispositifs de contrôle s''influencent mutuellement dans le temps, plutôt qu''en choisissant exclusivement l''une ou l''autre lecture.', 'video', 90, false, 70
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les approches socio-organisationnelles du contrôle');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en contrôle de gestion', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser les trois grandes méthodes de recherche du champ (étude de cas clinique, recherche-intervention, enquête quantitative), savoir justifier le choix d''une méthode selon une question de recherche, et savoir présenter et vérifier un calcul d''écart budgétaire. Matériel : tableau ou diaporama, calculatrice ou tableur pour la démonstration chiffrée. Prérequis : avoir lu la leçon 4 de ce cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction : pourquoi les méthodes comptent autant que les théories
-
-Un jury de qualification ne vous demandera pas seulement ce que vous savez sur le contrôle de gestion, mais comment vous comptez produire de la connaissance nouvelle sur votre sujet de thèse. Cette séance vous donne les trois grandes familles de méthodes du champ, avec leurs forces et leurs limites, pour que vous puissiez défendre un choix méthodologique de façon argumentée.
-
-## 05:00 – 20:00 · L''étude de cas clinique
-
-L''étude de cas clinique consiste à observer en profondeur, sur une durée longue, le fonctionnement réel des dispositifs de contrôle dans une ou plusieurs organisations, en combinant entretiens, observation directe et analyse de documents internes. Le terme « clinique » souligne une posture proche de celle d''un clinicien : s''intéresser au fonctionnement singulier d''un cas dans toute sa complexité, plutôt qu''à la vérification d''une loi générale sur un grand échantillon.
-
-Visuel à montrer : un schéma représentant les trois sources de données typiques d''une étude de cas (entretiens, observation, documents) convergeant vers une interprétation triangulée.
-
-Cette méthode est particulièrement adaptée pour documenter les phénomènes du courant socio-organisationnel : interprétation, négociation, détournement d''un outil de contrôle par les acteurs. Ses limites : la difficulté de généraliser les résultats, le risque de biais d''interprétation du chercheur impliqué longuement sur le terrain, et l''exigence d''un protocole rigoureux (triangulation des sources, transparence sur le choix des cas).
-
-## 20:00 – 35:00 · La recherche-intervention
-
-La recherche-intervention va plus loin : le chercheur n''observe pas seulement, il intervient activement dans l''organisation, généralement en accompagnant un changement (par exemple la refonte d''un système de contrôle), tout en produisant une connaissance scientifique sur ce processus. Le chercheur occupe une double posture, acteur et observateur, ce qui exige une vigilance méthodologique particulière.
-
-Question à poser aux apprenants : si vous étiez rémunéré comme consultant par l''entreprise que vous étudiez en recherche-intervention, quel risque cela crée-t-il pour la validité scientifique de vos conclusions, et comment pourriez-vous y répondre méthodologiquement ?
-
-Réponse attendue : le risque est que vos conclusions reflètent vos propres intérêts (montrer que votre intervention a réussi) plutôt que la réalité observée ; on y répond par l''explicitation systématique de sa posture, la validation croisée avec d''autres acteurs de l''organisation non impliqués dans la rémunération, et la publication d''un protocole de recherche détaillé et vérifiable.
-
-Visuel à montrer : un schéma en double cercle représentant le chercheur à l''intersection du rôle d''acteur du changement et du rôle d''observateur scientifique.
-
-## 35:00 – 45:00 · Les enquêtes quantitatives sur les pratiques de contrôle
-
-À l''inverse des deux méthodes précédentes, les enquêtes quantitatives administrent des questionnaires structurés à un grand nombre d''organisations, pour mesurer statistiquement des relations entre variables : par exemple la relation entre la turbulence de l''environnement d''une entreprise et la flexibilité de son système budgétaire, ou entre la taille d''une organisation et la sophistication de ses outils de pilotage. Cette méthode permet des résultats généralisables, avec des tests statistiques explicites de la robustesse des relations observées, ce qui répond directement à la principale limite des deux méthodes qualitatives présentées précédemment.
-
-Elle s''inscrit naturellement dans la continuité du courant cybernétique, qui postule des relations relativement stables et mesurables entre caractéristiques organisationnelles et pratiques de contrôle. Mais elle perd en profondeur et en contexte : un questionnaire standardisé capture mal la complexité des jeux d''acteurs autour d''un dispositif, et elle dépend de la sincérité déclarative des répondants, qui peuvent décrire des pratiques officielles plutôt que des usages réels du terrain.
-
-Visuel à montrer : un tableau récapitulatif à trois colonnes (étude de cas clinique, recherche-intervention, enquête quantitative) avec, pour chacune, le type de question de recherche à laquelle elle répond le mieux, sa principale force, et sa principale limite.
-
-## 45:00 – 50:00 · Pause et quiz interactif
-
-Quiz en quatre questions. Un, quelle méthode privilégier pour comprendre un mécanisme social fin de détournement d''un outil de gestion ? Réponse : l''étude de cas clinique. Deux, quelle méthode implique une double posture d''acteur et d''observateur ? Réponse : la recherche-intervention. Trois, quelle méthode permet la généralisation statistique à une population d''organisations ? Réponse : l''enquête quantitative. Quatre, quelle est la limite commune aux deux méthodes qualitatives face à l''enquête quantitative ? Réponse : la difficulté à généraliser les résultats obtenus sur un nombre restreint de cas.
-
-## 50:00 – 70:00 · Démonstration chiffrée : l''analyse des écarts budgétaires
-
-Je vous propose maintenant une démonstration chiffrée, vérifiée informatiquement, qui illustre comment un calcul technique peut nourrir une question de recherche. Prenons une unité de transformation agro-alimentaire fictive. Le budget initial prévoyait 10 000 unités vendues à un prix unitaire de 2 500 francs CFA, valeur fictive pour l''exemple, avec un coût variable unitaire budgété de 1 500 francs CFA et des charges fixes budgétées de 8 000 000 francs CFA.
-
-Visuel à montrer : un tableau à deux colonnes, budget initial et réalisé, avec les quatre lignes volume, prix unitaire, coût variable unitaire, charges fixes.
-
-Calculons le résultat budgété : la marge sur coût variable est de 2 500 moins 1 500, soit 1 000 francs CFA par unité, multipliée par 10 000 unités, soit 10 000 000 francs CFA ; moins 8 000 000 de charges fixes, le résultat budgété est de 2 000 000 francs CFA.
-
-En réalité, l''entreprise a vendu 11 200 unités, à un prix unitaire moyen de 2 400 francs CFA, avec un coût variable unitaire réel de 1 600 francs CFA et des charges fixes réelles de 8 300 000 francs CFA. Le résultat réel est de (2 400 moins 1 600) multiplié par 11 200, soit 8 960 000 francs CFA de marge, moins 8 300 000 de charges fixes, soit un résultat réel de 660 000 francs CFA.
-
-L''écart total est de 660 000 moins 2 000 000, soit moins 1 340 000 francs CFA. Décomposons-le en quatre effets, vérifiés par calcul : un effet volume favorable de 1 200 000 francs CFA (plus d''unités vendues que prévu), un effet prix défavorable de 1 120 000 francs CFA (prix réel inférieur au prix budgété, sur le volume réel), un effet coût variable défavorable de 1 120 000 francs CFA (coût réel supérieur au coût budgété, sur le volume réel), et un effet charges fixes défavorable de 300 000 francs CFA. La somme de ces quatre effets redonne exactement moins 1 340 000 francs CFA, ce qui confirme la cohérence de la décomposition.
-
-Question à poser aux apprenants : si cette entreprise avait vendu seulement 9 000 unités au lieu de 11 200, toutes choses égales par ailleurs sur le prix et le coût unitaire, l''effet volume aurait-il été favorable ou défavorable, et pourquoi ?
-
-## 70:00 – 85:00 · Articuler calcul technique et question de recherche
-
-Ce calcul, purement technique en apparence, est un excellent point d''appui pour illustrer le débat entre les deux courants théoriques. Le courant cybernétique y voit un diagnostic rationnel et objectif des causes de la sous-performance. Le courant socio-organisationnel invite à se demander comment les acteurs de l''entreprise interprètent ou contestent cette décomposition : le responsable commercial pourrait contester que l''effet prix lui soit attribué, si la baisse de prix résultait d''une décision collective de la direction face à la concurrence, et non d''une défaillance de sa propre action commerciale.
-
-C''est exactement ce type d''articulation entre rigueur technique et analyse critique que vous devez montrer à l''oral : ne jamais présenter un calcul comme neutre sans interroger la façon dont les acteurs se l''approprient ou le contestent dans l''organisation réelle.
-
-## 85:00 – 90:00 · Synthèse et évaluation finale
-
-Pour conclure, retenez les trois méthodes et leur domaine de pertinence respectif, ainsi que la démarche de vérification systématique d''un calcul d''écart budgétaire par décomposition en effets qui doivent se recomposer exactement.
-
-Évaluation finale, cinq questions :
-
-Un, quelle méthode choisiriez-vous pour mesurer l''ampleur de la diffusion d''une pratique de gestion dans une population d''entreprises ? Réponse : l''enquête quantitative.
-
-Deux, quelle est la principale limite méthodologique de la recherche-intervention ? Réponse : le risque de biais lié à l''intérêt du chercheur-intervenant à voir son intervention perçue comme réussie.
-
-Trois, dans l''exemple chiffré, quel est le montant de l''effet volume ? Réponse : 1 200 000 francs CFA, favorable.
-
-Quatre, pourquoi la somme des quatre effets doit-elle être strictement égale à l''écart total ? Réponse : parce que la décomposition en effets est une recomposition exacte et non une approximation de l''écart global entre résultat réel et résultat budgété.
-
-Cinq, comment le courant socio-organisationnel enrichit-il la lecture d''un calcul d''écart budgétaire a priori purement technique ? Réponse : en interrogeant la façon dont les acteurs interprètent, négocient ou contestent l''attribution de chaque effet, au-delà de sa validité arithmétique.', 'video', 90, false, 80
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en contrôle de gestion');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : budget traditionnel et beyond budgeting, un débat théorique renouvelé', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser le débat entre contrôle budgétaire traditionnel et beyond budgeting, savoir le relier aux deux courants théoriques fondamentaux du champ, et savoir construire à l''oral un plan de réponse structuré à une question de synthèse. Matériel : tableau ou diaporama. Prérequis : avoir suivi les deux vidéos précédentes et lu la leçon 5.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction : un débat contemporain, un débat ancien
-
-Cette séance traite d''un débat très actuel en contrôle de gestion, celui du contrôle budgétaire traditionnel face aux démarches de beyond budgeting. Mon objectif est de vous montrer que ce débat contemporain, loin d''être un sujet isolé, est la reformulation actuelle de l''opposition théorique fondamentale que vous avez étudiée dans les deux séances précédentes : l''approche cybernétique contre l''approche socio-organisationnelle. Savoir faire ce lien est précisément ce qui distingue, à l''oral, un candidat qui connaît sa discipline en profondeur d''un candidat qui empile des connaissances sans les articuler.
-
-## 05:00 – 20:00 · Le contrôle budgétaire traditionnel et ses justifications
-
-Le contrôle budgétaire traditionnel repose sur un cycle annuel : négociation des objectifs, allocation de ressources, suivi mensuel des écarts, actions correctives. C''est l''héritier direct du modèle de planification-contrôle étudié dans notre première vidéo. Ses défenseurs soulignent qu''il reste un outil puissant de coordination entre unités, de responsabilisation des managers, et de discipline financière, en particulier dans les grandes organisations où il faut synchroniser des centaines de décisions décentralisées.
-
-Visuel à montrer : le schéma du cycle budgétaire annuel (fixation des objectifs, mise en œuvre, suivi des écarts, actions correctives), avec, en regard, un rappel du schéma de la boucle cybernétique vu en première vidéo, pour souligner visuellement la filiation directe entre les deux.
-
-## 20:00 – 35:00 · Les critiques du beyond budgeting
-
-Le mouvement du beyond budgeting, apparu à la fin des années 1990, critique le cycle budgétaire annuel pour trois raisons principales. D''abord, son incapacité à s''adapter à des environnements changeant plus vite qu''un an. Ensuite, le temps et les ressources considérables qu''il consomme, la préparation budgétaire mobilisant souvent plusieurs mois dans les grandes organisations. Enfin, les comportements pervers qu''il engendre : négociation stratégique des objectifs à la baisse, dépenses de fin d''année pour consommer une enveloppe avant qu''elle ne soit perdue, ou focalisation sur l''atteinte d''un chiffre au détriment de la création de valeur réelle.
-
-Les démarches alternatives remplacent le budget annuel fixe par des prévisions glissantes révisées plus fréquemment, des objectifs relatifs plutôt qu''absolus, et une décentralisation plus large des décisions vers les équipes opérationnelles.
-
-Question à poser aux apprenants : en quoi la critique du beyond budgeting sur les comportements pervers du budget rejoint-elle les intuitions du courant socio-organisationnel étudiées dans notre deuxième vidéo ?
-
-## 35:00 – 40:00 · Pause et quiz interactif
-
-Quatre questions. Un, sur quel cycle repose le contrôle budgétaire traditionnel ? Réponse : un cycle annuel de fixation d''objectifs, allocation, suivi des écarts, actions correctives. Deux, citez une critique du beyond budgeting envers le budget traditionnel. Réponse possible : rigidité face à l''incertitude, coût élevé en temps et ressources, ou comportements pervers. Trois, par quoi le beyond budgeting remplace-t-il le budget annuel fixe ? Réponse : des prévisions glissantes et des objectifs relatifs. Quatre, le beyond budgeting élimine-t-il toute forme de mesure de la performance ? Réponse : non, il la déplace vers des indicateurs relatifs et une décentralisation plus large, mais ne sort pas de la logique de mesure.
-
-## 40:00 – 60:00 · L''articulation avec les deux courants théoriques
-
-Voici le cœur de cette séance, le point que vous devez absolument savoir exposer à l''oral. Le camp qui défend le contrôle budgétaire traditionnel reste largement dans une logique cybernétique : on peut améliorer le dispositif, le rendre plus flexible, sans remettre en cause l''idée qu''un bon système d''objectifs et de mesures pilote rationnellement l''organisation. Le camp qui défend le beyond budgeting mobilise, souvent implicitement, des arguments proches du courant socio-organisationnel : les effets pervers du budget sur les comportements des acteurs, la nécessité de faire confiance aux équipes plutôt que de les contraindre par des chiffres négociés sous contrainte hiérarchique.
-
-Mais attention à la nuance essentielle que j''attends de vous à l''oral : le beyond budgeting reste, lui aussi, un dispositif de pilotage par indicateurs, relatifs plutôt qu''absolus. Aucun des deux camps ne sort complètement de la logique de mesure. L''opposition entre les deux courants théoriques est donc une opposition de degré et d''accent, plus qu''une rupture totale entre un monde purement rationnel et un monde purement social.
-
-Visuel à montrer : un schéma à double flèche, avec à une extrémité « logique cybernétique pure » et à l''autre « logique socio-organisationnelle pure », sur lequel on positionne le budget traditionnel plutôt vers la première extrémité et le beyond budgeting plutôt vers la seconde, sans jamais les placer aux extrêmes absolus.
-
-## 60:00 – 75:00 · Construire un plan de réponse à l''oral
-
-Reprenons maintenant la question type : « Dans quelle mesure le débat entre le contrôle budgétaire traditionnel et les démarches de beyond budgeting renouvelle-t-il, ou prolonge-t-il, l''opposition entre une conception cybernétique et une conception socio-organisationnelle du contrôle de gestion ? » Un bon plan comporterait une introduction qui rappelle brièvement les deux courants et annonce le fil directeur, une première partie sur la filiation du budget traditionnel avec la logique cybernétique, une deuxième partie sur la proximité du beyond budgeting avec la logique socio-organisationnelle (nuancée par le fait qu''aucun des deux camps ne sort de la logique de mesure), une troisième partie proposant une mise en œuvre méthodologique concrète (par exemple une recherche-intervention combinée à une enquête quantitative dans un contexte d''entreprises ouest-africaines), et une conclusion qui rappelle la nécessité d''articuler les deux lectures théoriques plutôt que d''en choisir une exclusivement.
-
-Je vous invite à vous entraîner maintenant : prenez deux minutes pour formuler oralement, à voix haute si possible, l''introduction de cette réponse, avant que je ne vous propose une version possible dans la synthèse finale.
-
-## 75:00 – 85:00 · Ce qu''un jury évalue dans ce type de réponse
-
-Un jury évalue, dans l''ordre d''importance, la capacité à relier explicitement le débat contemporain aux courants théoriques fondamentaux, la nuance apportée (éviter de caricaturer un camp comme purement rationnel et l''autre comme purement social), la justification méthodologique concrète, et la clarté de l''articulation entre les parties de la réponse. Un candidat qui se limite à une description technique des deux systèmes budgétaires, sans les relier à la théorie, montrera qu''il connaît la pratique mais pas encore qu''il sait l''analyser comme chercheur, ce qui est précisément ce que l''examen de qualification doit vérifier.
-
-Un autre piège fréquent, que j''ai vu commettre par des candidats par ailleurs bien préparés, est de présenter le beyond budgeting comme une solution définitive qui aurait remplacé le budget traditionnel dans la pratique des organisations. Ce n''est factuellement pas le cas : la grande majorité des organisations, y compris de grande taille, continuent d''utiliser un cycle budgétaire annuel, parfois assoupli par des éléments empruntés au beyond budgeting (prévisions glissantes partielles, objectifs relatifs sur certains indicateurs) sans abandonner totalement la logique budgétaire classique. Un bon candidat signale cette coexistence plutôt que de présenter une rupture totale et généralisée qui ne correspond pas à la réalité observée du terrain.
-
-## 85:00 – 90:00 · Synthèse et évaluation finale
-
-Pour conclure, une introduction possible à la question type serait la suivante : le contrôle de gestion s''est historiquement construit autour de deux grandes lectures, cybernétique et socio-organisationnelle ; le débat entre budget traditionnel et beyond budgeting en constitue une reformulation contemporaine, le premier restant fidèle à la logique de pilotage rationnel, le second reprenant des intuitions proches du courant socio-organisationnel sans pour autant sortir entièrement de la logique de mesure ; nous montrerons cette filiation avant de proposer une mise en œuvre méthodologique adaptée à un contexte d''entreprises africaines.
-
-Évaluation finale, cinq questions :
-
-Un, à quelle logique théorique le contrôle budgétaire traditionnel reste-t-il fidèle ? Réponse : la logique cybernétique et rationnelle.
-
-Deux, quelles intuitions du courant socio-organisationnel le beyond budgeting reprend-il ? Réponse : la défiance envers un pilotage centralisé et chiffré ignorant les jeux d''acteurs, et l''attention aux effets pervers des dispositifs de mesure sur les comportements.
-
-Trois, pourquoi faut-il nuancer une opposition trop binaire entre les deux dispositifs ? Réponse : parce que le beyond budgeting reste lui-même un dispositif de pilotage par indicateurs, relatifs plutôt qu''absolus, et ne sort donc pas complètement de la logique de mesure.
-
-Quatre, quelles méthodes de recherche combineriez-vous pour étudier ce débat empiriquement dans un contexte africain ? Réponse possible : une recherche-intervention auprès de quelques entreprises en transition, complétée par une enquête quantitative pour mesurer l''ampleur de la diffusion de ces pratiques.
-
-Cinq, que doit viser en priorité l''introduction d''une réponse à ce type de question de synthèse ? Réponse : annoncer explicitement le lien entre le débat contemporain et les courants théoriques fondamentaux du champ, pour montrer d''emblée au jury la structure argumentative de la réponse.', 'video', 90, false, 90
-from public.courses c where c.slug = 'doc-cg'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : budget traditionnel et beyond budgeting, un débat théorique renouvelé');
+Réponses. Un, resituer chaque débat théorique séparément, les articuler entre eux, et proposer une méthode cohérente avec le terrain évoqué. Deux, parce qu''elle range les pratiques sur un même continuum du moins au plus formalisé sans expliquer la performance propre de configurations informelles dans leur contexte. Trois, un design mixte séquentiel exploratoire puis confirmatoire ; il commence par le qualitatif pour identifier les dimensions pertinentes d''un terrain encore peu documenté avant de les tester quantitativement. Quatre, par exemple la justesse du rappel théorique et la capacité à articuler explicitement les deux débats entre eux. Cinq, en expliquant que chaque phase peut être calibrée selon le temps disponible et que la phase la plus lourde, la recherche-action, peut être limitée à un nombre restreint de cas volontaires sans remettre en cause la cohérence du design global.', 'video', 90, false, 90
+from public.courses c where c.slug = 'doc-rh'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : entraînement à une épreuve type de qualification doctorale');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
 select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion, en fin de préparation. Objectifs : vivre une simulation complète de soutenance de qualification doctorale, de la présentation initiale aux questions de jury, et savoir s''auto-évaluer avec une grille structurée. Matériel : tableau ou diaporama, chronomètre. Prérequis : avoir suivi l''ensemble des leçons et vidéos précédentes de ce cours.
+Durée : 1h30. Public : doctorants en spécialité Ressources humaines, en fin de préparation à l''examen de qualification doctorale. Objectifs : vivre une simulation complète de soutenance de qualification, de la présentation initiale du champ et d''un projet de thèse fictif jusqu''aux questions de jury, puis s''auto-évaluer avec une grille structurée. Matériel : diaporama de présentation (15 minutes), liste de questions de jury type, grille d''auto-évaluation finale. Prérequis : avoir suivi les quatre vidéos précédentes de ce cours.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Introduction : le format de la soutenance simulée
+## 00:00 – 05:00 · Ouverture et mode d''emploi de la simulation
 
-Cette dernière séance simule intégralement une soutenance de qualification doctorale en contrôle de gestion. Je vais jouer, tour à tour, le rôle du candidat qui présente son champ et son projet de thèse fictif, puis le rôle du jury qui pose des questions. Je vous invite à vous mettre réellement à la place du candidat : notez vos propres réponses aux questions du jury avant d''écouter la réponse modèle que je proposerai, car c''est cet entraînement actif, et non l''écoute passive, qui vous préparera efficacement.
+Bienvenue dans cette dernière séance, qui est la plus importante de tout ce cours : une simulation complète de soutenance de qualification doctorale en Ressources humaines. Nous allons procéder exactement comme le jour de l''examen réel. D''abord, une présentation de quinze minutes, où un candidat fictif présente son champ disciplinaire et un projet de thèse fictif. Ensuite, une série de huit à dix questions de jury type, avec chaque fois la structure d''une bonne réponse. Enfin, une grille d''auto-évaluation que vous utiliserez pour juger votre propre prestation lorsque vous vous entraînerez à votre tour.
 
-## 05:00 – 20:00 · Présentation du champ et du projet de thèse fictif (15 minutes)
+Gardez un carnet à portée de main : notez, pendant toute la simulation, les formulations qui vous semblent particulièrement efficaces, celles que vous pourrez réemployer, adaptées à votre propre spécialité et à votre propre projet.
 
-Voici la présentation introductive que ferait un candidat type, d''une durée de quinze minutes, que nous allons dérouler intégralement.
+## 05:00 – 20:00 · Présentation du candidat fictif (15 minutes, texte intégral)
 
-« Mesdames et messieurs les membres du jury, le contrôle de gestion, en tant que champ de recherche, s''est structuré historiquement autour d''une approche cybernétique et rationnelle, héritée du modèle de la planification-contrôle, qui pense le pilotage de l''organisation comme une boucle de régulation par objectifs, mesures et corrections. Cette approche a été enrichie, puis fortement questionnée, par des travaux qui montrent que le contrôle de gestion est aussi, et peut-être avant tout, une construction sociale, traversée par des jeux de pouvoir entre acteurs, où les dispositifs de mesure ne produisent jamais mécaniquement les effets prévus par leurs concepteurs.
+Voici la présentation que livrerait un candidat fictif, préparant une thèse sur la gestion des compétences dans les PME agroalimentaires sénégalaises. « Mesdames et Messieurs les membres du jury, je vous remercie de votre attention. Mon champ disciplinaire est la gestion des ressources humaines, et plus précisément l''étude des pratiques de gestion des personnes dans les organisations. Ce champ s''est structuré autour de plusieurs grands débats théoriques dont je souhaite vous présenter les deux qui structurent mon propre projet.
 
-Mon projet de thèse, encore à l''état de proposition, s''inscrit précisément à l''articulation de ces deux lectures. Il porte sur l''introduction de démarches de pilotage inspirées du beyond budgeting dans des petites et moyennes entreprises agro-industrielles de la région de Thiès, au Sénégal. Ma question de recherche est la suivante : comment des PME familiales, habituées à un pilotage budgétaire informel ou récemment formalisé, s''approprient-elles, négocient-elles, ou résistent-elles à l''introduction d''outils de pilotage par indicateurs relatifs et par prévisions glissantes, portés par des organismes d''accompagnement ou des investisseurs extérieurs ?
+Le premier débat oppose l''école des relations humaines, née des expériences de l''usine Hawthorne dans les années 1920 et 1930 et prolongée par les théories de la motivation de Maslow, Herzberg et McGregor, à la gestion stratégique des ressources humaines, apparue dans les années 1980 avec les travaux de Wright, McMahan, Boxall, Purcell et Ulrich. Le premier courant place le bien-être psychosocial de l''individu au centre de la performance ; le second place la stratégie et la compétitivité de l''organisation au centre, et traite les ressources humaines comme un levier d''avantage concurrentiel.
 
-Sur le plan théorique, je mobiliserai le cadre de l''analyse stratégique des organisations pour comprendre les jeux de pouvoir entre le dirigeant propriétaire, souvent détenteur de zones d''incertitude considérables sur le fonctionnement réel de son entreprise, et les acteurs extérieurs qui portent ces nouveaux outils. Sur le plan méthodologique, je propose un protocole en trois phases : une enquête quantitative exploratoire pour mesurer la diffusion actuelle des pratiques budgétaires dans un échantillon de PME agro-industrielles de la région, une recherche-intervention auprès de deux ou trois PME volontaires pour accompagner et documenter finement un processus de changement, et un retour d''étude de cas clinique un an après l''intervention pour observer les usages réels, au-delà du fonctionnement officiel du dispositif au moment de sa conception.
+Le second débat oppose l''approche universaliste, incarnée par les travaux de Pfeffer et Huselid sur les « meilleures pratiques », à l''approche contingente et configurationnelle, incarnée par les travaux de Schuler, Jackson, Delery et Doty, qui soutiennent que l''efficacité d''une pratique dépend du contexte stratégique, et que ce sont des configurations cohérentes de pratiques, plutôt que des pratiques isolées, qui déterminent la performance.
 
-Ma contribution attendue est double : sur le plan théorique, mieux comprendre comment les outils de pilotage de la performance globale, conçus initialement dans de grandes entreprises occidentales, sont réappropriés dans un contexte de PME familiales africaines, où les zones d''incertitude et les rapports de pouvoir prennent des formes spécifiques liées à la structure de propriété et de gouvernance de ces entreprises ; sur le plan pratique, produire des recommandations pour les organismes d''accompagnement qui promeuvent ces outils, afin qu''ils tiennent mieux compte des jeux d''acteurs réels plutôt que de supposer une adoption purement technique et rationnelle. »
+Mon projet de thèse se situe précisément à l''intersection de ces deux débats. Je m''intéresse à la façon dont les petites et moyennes entreprises agroalimentaires de la région de Thiès gèrent les compétences de leur personnel, et aux effets perçus de ces pratiques sur la fidélisation des salariés qualifiés. Ma question de recherche est la suivante : comment les configurations de pratiques de gestion des compétences, dans ces PME, articulent-elles logiques informelles et logiques plus formalisées, et avec quels effets sur la fidélisation du personnel qualifié ?
 
-Visuel à montrer : le plan de la présentation affiché à l''écran (champ théorique, question de recherche, cadre théorique mobilisé, protocole méthodologique en trois phases, contribution attendue), pour que les apprenants voient la structure même pendant qu''ils l''écoutent.
+Je mobilise l''approche configurationnelle plutôt que l''approche universaliste, parce qu''elle me permet de reconnaître la cohérence propre de pratiques très diverses, sans les juger à l''aune d''une norme unique construite dans des contextes économiques différents du contexte sénégalais. Je mobilise également les apports de l''école des relations humaines pour comprendre comment ces configurations sont vécues et perçues par les salariés eux-mêmes, au-delà de leur seule cohérence stratégique apparente.
 
-## 20:00 – 25:00 · Pause et quiz interactif
+Sur le plan méthodologique, je propose un design en méthodes mixtes séquentielles : une première phase qualitative exploratoire, par études de cas contrastées, pour identifier empiriquement les configurations de pratiques réellement à l''œuvre sur ce terrain encore peu documenté ; une seconde phase quantitative confirmatoire, par questionnaire construit à partir des dimensions identifiées en phase 1 et adossé, dans la mesure du possible, à des échelles déjà validées dans la littérature internationale, pour tester statistiquement le lien entre ces configurations et la fidélisation perçue du personnel qualifié.
 
-Avant de passer aux questions du jury, un quiz rapide en quatre questions sur la présentation que vous venez d''entendre. Un, à quels deux courants théoriques le projet de thèse présenté se réfère-t-il explicitement ? Réponse : l''approche cybernétique et rationnelle, et l''approche socio-organisationnelle (via l''analyse stratégique des organisations). Deux, combien de phases comporte le protocole méthodologique proposé, et lesquelles ? Réponse : trois phases, une enquête quantitative exploratoire, une recherche-intervention, et un retour d''étude de cas clinique. Trois, quelle notion du courant socio-organisationnel est mobilisée pour analyser le dirigeant propriétaire de PME ? Réponse : la zone d''incertitude. Quatre, quelle est la double nature de la contribution attendue annoncée par le candidat ? Réponse : une contribution théorique et une contribution pratique.
+Je suis consciente des limites de ce projet : la généralisation de mes résultats au-delà des entreprises étudiées devra rester prudente, et je devrai être attentive, lors de la phase qualitative, à la diversité des entreprises acceptant de participer à l''étude. Je vous remercie de votre attention et reste à votre disposition pour vos questions. »
 
-## 25:00 – 70:00 · Les questions de jury type (8 à 10 questions) et la structure d''une bonne réponse
+## 20:00 – 25:00 · Transition et consignes pour la suite
 
-Question 1 du jury : « Vous présentez votre projet comme se situant à l''articulation des deux courants théoriques. N''est-ce pas une façon de refuser de trancher, plutôt qu''un véritable positionnement ? » Structure d''une bonne réponse : reconnaître la légitimité de la question, puis expliquer que l''articulation n''est pas une absence de choix mais un choix argumenté, cohérent avec l''état actuel du débat académique où les recherches les plus récentes articulent justement les deux lectures plutôt que de les opposer, et préciser à quel endroit précis de l''analyse chaque cadre théorique sera mobilisé.
+Observez bien la structure de cette présentation : elle part du champ disciplinaire général, passe par les deux débats théoriques choisis, arrive au projet de thèse précis, justifie le choix théorique et méthodologique, et se termine par des limites assumées. C''est exactement cette progression que vous devez reproduire dans votre propre présentation de quinze minutes, quel que soit votre sujet précis.
 
-Question 2 : « Comment allez-vous gérer, sur le plan méthodologique, le fait d''être à la fois chercheur et possible intervenant rémunéré dans les PME de votre recherche-intervention ? » Réponse attendue : expliciter systématiquement sa posture dans les publications, prévoir une validation croisée des observations avec des acteurs non directement impliqués dans la relation contractuelle, et documenter un protocole détaillé permettant d''évaluer la rigueur de la démarche.
+## 25:00 – 65:00 · Questions de jury type et structure des bonnes réponses
 
-Question 3 : « Pourquoi ne pas vous contenter d''une enquête quantitative à grande échelle, qui serait plus rapide et plus généralisable ? » Réponse attendue : une enquête quantitative seule ne permettrait pas de comprendre les mécanismes fins d''appropriation ou de résistance aux outils de pilotage, qui sont précisément l''objet central de la question de recherche ; elle est donc complémentaire, non substituable, aux deux autres méthodes.
+Passons maintenant aux questions de jury. Pour chacune, je vous donne la structure attendue d''une bonne réponse, sans la rédiger intégralement, afin que vous vous entraîniez vous-même à la formuler.
 
-Question 4 : « En quoi votre terrain sénégalais apporte-t-il une contribution originale par rapport à la littérature existante, majoritairement produite sur des contextes occidentaux ? » Réponse attendue : souligner que les structures de propriété et de gouvernance des PME familiales étudiées diffèrent souvent significativement des grandes entreprises occidentales sur lesquelles le beyond budgeting a été initialement théorisé, ce qui permet de tester la portée et les limites de ce cadre théorique dans un contexte différent, sans prétendre que « le contexte africain » serait homogène ou uniformément différent.
+Question 1. « Pourquoi avez-vous choisi l''approche configurationnelle plutôt que l''approche universaliste, qui est pourtant plus simple à opérationnaliser ? » Structure attendue : rappeler la limite principale de l''universalisme dans ce contexte précis, rappeler l''apport spécifique de la configuration, conclure sur l''adéquation avec le terrain étudié.
 
-Question 5 : « Quelle est la principale limite de votre protocole méthodologique en trois phases ? » Réponse attendue : reconnaître une limite réelle, par exemple la difficulté de recruter des PME volontaires pour la phase de recherche-intervention, ou le risque que les deux ou trois PME étudiées en profondeur ne soient pas représentatives de l''échantillon plus large mesuré par l''enquête quantitative, et indiquer comment cette limite sera explicitement discutée dans la thèse plutôt que dissimulée.
+Question 2. « En quoi votre travail dialogue-t-il avec l''école des relations humaines, alors que votre cadre principal est plutôt stratégique et configurationnel ? » Structure attendue : rappeler que les configurations de pratiques ne produisent leurs effets que si elles sont perçues positivement par les salariés, ce qui justifie d''intégrer des variables issues des relations humaines, comme la perception de justice ou de reconnaissance.
 
-Question 6 : « Si vos résultats montraient que les PME étudiées résistent massivement à ces nouveaux outils sans jamais les adopter réellement, cela invaliderait-il votre projet de thèse ? » Réponse attendue : non, un résultat de résistance massive serait en soi un résultat de recherche intéressant et interprétable à la lumière du cadre théorique mobilisé (il confirmerait, par exemple, l''importance des zones d''incertitude et des jeux de pouvoir), ce qui montre la nécessité de ne jamais présupposer, avant l''enquête, le résultat que l''on souhaiterait obtenir.
+Question 3. « Comment allez-vous choisir vos cas pour la phase qualitative ? » Structure attendue : expliquer la logique de réplication théorique, cas similaires ou contrastés, plutôt qu''une logique d''échantillonnage statistique, et préciser les critères de contraste retenus, par exemple la taille et l''ancienneté des entreprises.
 
-Question 7 : « Comment définiriez-vous, en une phrase, la différence entre le contrôle de gestion et le pilotage de la performance globale que vous évoquez ? » Réponse attendue : le contrôle de gestion, dans son acception la plus classique, se concentre sur le pilotage des ressources financières et opérationnelles au regard d''objectifs budgétaires, tandis que le pilotage de la performance globale élargit cette logique à des dimensions non strictement financières (sociale, environnementale, relationnelle) et à des indicateurs relatifs plutôt qu''absolus.
+Question 4. « Vos échelles quantitatives seront-elles entièrement nouvelles ou reprendront-elles des échelles existantes ? » Structure attendue : privilégier la réutilisation d''échelles déjà validées dans la littérature internationale, en les adaptant prudemment au vocabulaire et au contexte local, et justifier tout ajout d''item nouveau par les résultats de la phase qualitative.
 
-Question 8 : « Votre projet mobilise-t-il des auteurs ou des travaux issus du continent africain sur le contrôle de gestion ? » Réponse attendue : un candidat honnête reconnaît l''état réel de ses lectures sur ce point précis plutôt que de citer des noms par complaisance ; si la littérature spécifiquement africaine sur le contrôle de gestion en PME reste encore peu développée par rapport à d''autres champs des sciences sociales, le candidat peut légitimement annoncer que sa thèse contribuera à combler, même modestement, ce manque, sans jamais inventer une filiation académique qu''il ne maîtrise pas réellement.
+Question 5. « Comment comptez-vous garantir la fiabilité et la validité de votre questionnaire ? » Structure attendue : mentionner le calcul de la cohérence interne des échelles, un pré-test du questionnaire avant son administration à grande échelle, et la vérification de la validité convergente et discriminante si plusieurs concepts proches sont mesurés.
+
+Question 6. « Votre projet ne risque-t-il pas d''instrumentaliser les personnes en traitant la fidélisation uniquement comme un objectif stratégique de l''entreprise ? » Structure attendue : reconnaître la pertinence de la critique adressée au SHRM, préciser que l''étude s''intéresse aussi aux effets perçus par les salariés eux-mêmes, et non seulement aux indicateurs de l''entreprise, ce qui nuance le risque signalé.
+
+Question 7. « Quelle est la principale limite de votre méthodologie ? » Structure attendue : assumer clairement une limite réelle, par exemple la difficulté à généraliser au-delà des entreprises volontaires, sans minimiser cette limite ni paraître déstabilisé par la question.
+
+Question 8. « En quoi votre thèse apporte-t-elle une contribution originale, et pas seulement une application locale de théories déjà connues ? » Structure attendue : préciser que la contribution porte sur la mise en évidence de configurations spécifiques à ce contexte économique et institutionnel, qui n''ont pas encore été documentées dans la littérature existante, ce qui constitue un apport empirique et potentiellement conceptuel nouveau.
+
+Question 9. « Comment articulerez-vous vos résultats qualitatifs et quantitatifs dans la rédaction finale de votre thèse ? » Structure attendue : préciser le design mixte retenu (ici séquentiel exploratoire) et expliquer que les résultats quantitatifs seront présentés comme un test des configurations identifiées qualitativement, avec un retour explicite sur les cas qualitatifs pour interpréter les résultats statistiques.
+
+Question 10. « Si vos résultats quantitatifs contredisaient vos observations qualitatives initiales, que feriez-vous ? » Structure attendue : indiquer que cette situation serait traitée comme un résultat à part entière, nécessitant un retour qualitatif complémentaire pour comprendre l''écart, plutôt que comme un échec du projet.
+
+## 65:00 – 70:00 · Pause quiz interactif
+
+Petit quiz de cinq minutes sur ce que nous venons de voir. Question 1 : la présentation du candidat fictif a-t-elle commencé par le projet de thèse précis ou par le champ disciplinaire général ? Question 2 : à quelle question de jury correspond la structure « reconnaître la critique, nuancer par les effets perçus par les salariés » ? Réponses : 1, par le champ disciplinaire général, avant de descendre progressivement vers le projet précis. 2, la question 6, sur le risque d''instrumentalisation des personnes.
 
 ## 70:00 – 85:00 · Débriefing de la simulation
 
-Reprenons maintenant, à froid, les points clés de cette simulation. Le candidat a montré une capacité constante à relier chaque réponse aux deux courants théoriques fondamentaux du champ, sans jamais s''en écarter durablement. Il a su reconnaître les limites réelles de son protocole plutôt que de les nier, ce qui renforce sa crédibilité plutôt que de l''affaiblir. Il a su rester prudent sur les points où ses connaissances étaient incertaines, notamment sur la littérature africaine spécifique du champ, plutôt que de prendre le risque d''une affirmation non vérifiée devant un jury qui pourrait la contester immédiatement.
-
-Visuel à montrer : la liste des huit questions de jury posées pendant la séquence précédente, pour que les apprenants puissent les reprendre et s''exercer eux-mêmes à y répondre après la séance, avec leur propre projet de thèse.
+Revenons sur l''ensemble de cette simulation. Ce qui caractérise une bonne prestation, ce n''est pas l''absence de limites dans le projet présenté, mais la capacité à les assumer sans se déstabiliser. Ce n''est pas non plus la récitation exhaustive de toute la littérature du champ, mais la capacité à mobiliser, au bon moment, exactement les éléments théoriques et méthodologiques pertinents pour répondre précisément à la question posée. Enfin, remarquez que plusieurs questions du jury reviennent, sous des angles différents, sur l''articulation entre les deux débats théoriques présentés en introduction : c''est le signe que cette articulation est le véritable enjeu scientifique de la soutenance, bien plus que chaque courant pris isolément.
 
 ## 85:00 – 90:00 · Grille d''auto-évaluation de la soutenance simulée
 
-Cette dernière vidéo ne se conclut pas par une évaluation à cinq questions avec réponses, mais par une grille d''auto-évaluation que vous utiliserez pour préparer votre propre soutenance. Notez-vous, sur une échelle de un à quatre, pour chacun des six critères suivants, en étant honnête plutôt que complaisant avec vous-même.
+Pour conclure ce cours, voici la grille d''auto-évaluation que vous utiliserez après chacun de vos propres entraînements oraux, en vous notant honnêtement de 1 (insuffisant) à 4 (excellent) sur chacun des points suivants.
 
-Premier critère : la présentation initiale relie-t-elle explicitement le champ théorique, la question de recherche, le cadre mobilisé et la méthodologie, sans rupture logique entre ces éléments ?
+- Clarté de la présentation du champ disciplinaire en quinze minutes, sans digression ni surcharge de détails.
+- Précision et exactitude du rappel des courants théoriques mobilisés, auteurs et apports correctement attribués.
+- Capacité à articuler explicitement les courants théoriques entre eux plutôt que les juxtaposer.
+- Cohérence entre le projet de thèse présenté et les cadres théoriques choisis pour le soutenir.
+- Justification claire et argumentée du choix méthodologique retenu.
+- Capacité à assumer et formuler clairement les limites du projet sans se déstabiliser.
+- Qualité des réponses aux questions imprévues, en particulier la capacité à reformuler la structure d''une réponse avant de la développer.
+- Maîtrise du temps de parole, ni trop bref ni trop long, pour chaque question posée.
 
-Deuxième critère : chaque réponse à une question de jury commence-t-elle par reconnaître explicitement la légitimité ou la difficulté de la question posée, plutôt que de l''éluder ?
-
-Troisième critère : les limites du projet sont-elles reconnues spontanément, sans attendre d''y être acculé par le jury ?
-
-Quatrième critère : le candidat évite-t-il toute affirmation non vérifiable, notamment sur des auteurs, des chiffres ou des filiations académiques qu''il ne maîtrise pas réellement ?
-
-Cinquième critère : le candidat sait-il articuler les deux grands courants théoriques du champ plutôt que de n''en mobiliser qu''un seul de façon rigide ?
-
-Sixième critère : la justification méthodologique est-elle argumentée en fonction de la question de recherche, et non présentée comme un choix arbitraire ou de pure convenance ?
-
-Un score global de dix-huit sur vingt-quatre ou plus indique une préparation solide ; un score inférieur signale les critères sur lesquels concentrer vos dernières semaines de préparation avant l''épreuve réelle. Je vous souhaite une excellente soutenance.', 'video', 90, false, 100
-from public.courses c where c.slug = 'doc-cg'
+Un score global inférieur à 20 sur 32 signale un besoin de reprendre en priorité les leçons théoriques correspondantes. Un score entre 20 et 26 signale une préparation satisfaisante mais encore à consolider, notamment sur l''articulation entre courants théoriques. Un score supérieur à 26 signale une préparation proche du niveau attendu pour l''examen réel. Je vous souhaite une excellente réussite pour votre examen de qualification doctorale.', 'video', 90, false, 100
+from public.courses c where c.slug = 'doc-rh'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');

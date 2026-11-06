@@ -1,5 +1,690 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 19/19). À exécuter après seed.sql.
+-- Cours (partie 19/20). À exécuter après seed.sql.
+
+-- Cours : Doctorat Contrôle de gestion : réussir l'examen de qualification doctorale
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'doc-cg', (select id from public.levels where name = 'Doctorat'), null, 'Contrôle de gestion', 'Doctorat Contrôle de gestion : réussir l''examen de qualification doctorale', 'Préparation à l''examen de qualification doctorale en contrôle de gestion : l''opposition entre l''approche cybernétique et rationnelle du contrôle et les approches socio-organisationnelles, le débat budget traditionnel contre beyond budgeting, les méthodes de recherche du champ (étude de cas clinique, recherche-intervention, enquêtes quantitatives) et une simulation complète de soutenance. Public : doctorants en sciences de gestion ayant déjà une formation de niveau Master en contrôle de gestion.', true, 804
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir son examen de qualification doctorale en contrôle de gestion', 'L''examen de qualification doctorale en contrôle de gestion n''est pas un contrôle de connaissances au sens scolaire du terme. C''est une épreuve de passage, souvent appelée comprehensive exam ou examen de synthèse selon les programmes, qui vérifie qu''un doctorant maîtrise suffisamment l''état de l''art de son champ pour s''engager, en toute autonomie intellectuelle, dans la rédaction d''une thèse. Avant cette épreuve, on est étudiant qui apprend une discipline ; après, on est censé être un chercheur qui peut la faire avancer. Comprendre cette bascule est la première clé de la réussite.
+
+## Nature de l''épreuve
+
+Dans la plupart des programmes doctoraux en sciences de gestion, l''examen de qualification en contrôle de gestion comporte deux volets qui se répondent.
+
+Le premier est une synthèse écrite de la littérature. Le candidat doit produire un document qui démontre qu''il connaît les grands courants théoriques du contrôle de gestion, qu''il peut les situer historiquement les uns par rapport aux autres, qu''il perçoit leurs tensions et leurs complémentarités, et qu''il est capable d''en tirer un positionnement pour son propre projet de thèse. Ce n''est pas un résumé juxtaposé d''auteurs : c''est une mise en intrigue de la littérature, organisée autour de débats (par exemple l''opposition entre une vision cybernétique du contrôle, héritée des travaux fondateurs sur la planification-contrôle, et une vision socio-organisationnelle qui voit le contrôle comme une construction sociale traversée par des jeux d''acteurs).
+
+Le second volet est une soutenance orale devant un jury, généralement composé de trois à cinq enseignants-chercheurs du département, parfois complété par un spécialiste extérieur. Le candidat y présente d''abord brièvement son positionnement théorique et l''esquisse de son projet de thèse, puis répond à des questions qui testent la profondeur de sa compréhension : peut-il expliquer pourquoi un courant a émergé en réaction à un autre ? Peut-il discuter les limites d''une méthode de recherche qu''il envisage d''utiliser ? Peut-il relier un phénomène de terrain qu''il a observé à un concept théorique précis ?
+
+## Ce qu''attend un jury doctoral
+
+Un jury de qualification n''attend pas l''exhaustivité, il attend la maîtrise. Un candidat qui cite vingt auteurs sans jamais les faire dialoguer entre eux inquiète davantage un jury qu''un candidat qui structure sa pensée autour de trois ou quatre débats solides, qu''il explique avec précision et qu''il relie explicitement à son projet.
+
+Trois qualités sont systématiquement recherchées. La rigueur conceptuelle, d''abord : les termes du champ (contrôle de gestion, pilotage, planification, budget, tableau de bord, contrôle organisationnel) doivent être employés avec la précision qu''exige la discipline, et non comme des synonymes interchangeables. La distance critique, ensuite : un bon candidat ne récite pas une théorie, il sait dire dans quel contexte elle s''applique bien, dans quel contexte elle a été critiquée, et par qui. La capacité de positionnement, enfin : le candidat doit montrer qu''il sait où se situe son propre projet de recherche dans cette cartographie théorique, et pourquoi ce positionnement est pertinent et original.
+
+Un jury sanctionne en revanche très sévèrement trois défauts récurrents : la paraphrase sans recul (répéter ce que dit un auteur sans jamais le discuter), l''anachronisme théorique (utiliser un cadre d''analyse hors de son contexte d''émergence sans le justifier), et l''approximation historique (confondre l''ordre d''apparition des courants, ce qui trahit une connaissance livresque et non digérée).
+
+## Méthode de travail recommandée
+
+La préparation d''un examen de qualification s''étale typiquement sur plusieurs mois et repose sur trois outils complémentaires.
+
+Les fiches de lecture sont le socle. Pour chaque texte ou chaque courant important, une fiche synthétique doit répondre à des questions stables : quelle est la question de recherche ou le problème pratique à l''origine de ce courant ? Quels sont les concepts clés qu''il mobilise ? Quelles hypothèses sur l''organisation et sur l''acteur humain sous-tend-il ? Quelles critiques lui ont été adressées, et par quels courants concurrents ? Quels usages empiriques en a-t-on faits ?
+
+La cartographie des courants vient ensuite. Il s''agit de construire, au fil de la lecture, une représentation visuelle (un tableau à double entrée, une frise chronologique, un schéma de filiations) qui situe les courants les uns par rapport aux autres : qui critique qui, qui prolonge qui, quels courants partagent des présupposés malgré des vocabulaires différents. Cette cartographie est l''outil qui permet, le jour de l''oral, de répondre avec aisance à une question inattendue en resituant immédiatement l''enjeu dans l''ensemble du champ.
+
+La note de synthèse, enfin, est l''aboutissement écrit : un document structuré de quelques dizaines de pages qui expose la cartographie sous forme de texte argumenté, conclut sur les zones encore peu explorées de la littérature (les « trous » dans lesquels une thèse peut s''insérer utilement), et propose un positionnement théorique et méthodologique pour le projet de thèse du candidat.
+
+## Plan de travail sur huit semaines
+
+Un calendrier de préparation réaliste peut s''organiser ainsi. Les deux premières semaines sont consacrées à la relecture des textes fondateurs du champ et à l''ouverture des fiches de lecture ; l''objectif est de couvrir large avant d''aller en profondeur. Les semaines trois et quatre approfondissent les deux ou trois grands débats théoriques jugés les plus structurants pour le projet de thèse, avec un effort particulier sur les critiques croisées entre courants. La semaine cinq est consacrée aux méthodes de recherche du champ : il faut être capable de discuter, pour chaque grande méthode, ses forces, ses limites, et les débats épistémologiques qu''elle soulève. La semaine six est celle de la rédaction de la note de synthèse. La semaine sept est consacrée à des simulations d''oral, idéalement devant des pairs doctorants ou un directeur de thèse, qui posent des questions déstabilisantes. La semaine huit, enfin, est une semaine de consolidation : relecture de la cartographie, révision des points faibles identifiés lors des simulations, et repos la veille de l''épreuve, car un jury perçoit immédiatement la fatigue intellectuelle d''un candidat.
+
+Ce cours vous accompagne dans cette préparation en se concentrant sur le contrôle de gestion : ses grands débats théoriques, ses méthodes de recherche spécifiques, et un exercice type d''examen de qualification entièrement corrigé.
+
+## Exercices pratiques
+
+1. Construisez le squelette d''une fiche de lecture type (rubriques et questions) que vous utiliserez pour chaque courant théorique étudié dans ce cours.
+
+2. Esquissez une première version de votre cartographie des courants en contrôle de gestion, même incomplète : placez au moins quatre courants ou auteurs que vous connaissez déjà et tracez les relations (filiation, critique, complémentarité) que vous pressentez entre eux.
+
+3. Identifiez, dans votre propre projet de thèse (même à l''état d''ébauche), la question pratique de contrôle de gestion à laquelle il cherche à répondre. Reformulez-la en une phrase qui pourrait ouvrir votre note de synthèse.
+
+4. Rédigez un calendrier de préparation sur huit semaines adapté à votre situation (temps disponible, accès aux textes, disponibilité d''un directeur de thèse pour les simulations d''oral).
+
+5. Listez trois questions que vous redoutez qu''un jury vous pose sur votre projet de thèse, et pour chacune, notez en une phrase l''angle par lequel vous pourriez commencer à y répondre.
+
+## Corrigé
+
+1. Une fiche de lecture robuste comporte au minimum les rubriques suivantes : référence complète du texte ou identification du courant ; problème pratique ou question de recherche à l''origine ; concepts clés et leur définition précise ; hypothèses implicites sur l''organisation et sur l''acteur ; principaux apports ; principales critiques reçues, avec le nom des courants ou auteurs critiques ; usages empiriques connus ; liens possibles avec votre propre projet de thèse.
+
+2. Il n''y a pas de corrigé unique : l''exercice vise à vous faire prendre conscience, dès le début de la préparation, de l''état réel de vos connaissances et de leurs lacunes. Une cartographie satisfaisante à ce stade montre au moins une opposition claire (par exemple une approche qui insiste sur la rationalité des dispositifs de contrôle face à une approche qui insiste sur leur dimension sociale et politique) et une filiation claire (par exemple un courant qui prolonge et complexifie un modèle plus ancien).
+
+3. L''exercice est individuel, mais une bonne reformulation évite deux pièges : elle n''est pas purement théorique et déconnectée du terrain (« étudier le contrôle de gestion dans les PME »), et elle n''est pas purement opérationnelle sans portée théorique (« aider une entreprise à construire son budget »). Une formulation réussie relie un phénomène observable à une question conceptuelle non résolue dans la littérature.
+
+4. Le calendrier proposé dans la leçon est un gabarit ; l''essentiel est de vérifier qu''il réserve du temps explicite à quatre activités distinctes : lecture large, approfondissement des débats structurants, travail sur les méthodes, et entraînement oral — cette dernière étant souvent négligée par les candidats qui sur-investissent la seule lecture.
+
+5. Il n''y a pas de bonne ou de mauvaise question redoutée : l''intérêt de l''exercice est de la nommer explicitement plutôt que de l''éviter, et de commencer, même modestement, à y préparer une réponse structurée plutôt que de compter sur l''improvisation le jour de l''oral.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Courant théorique 1 : l''approche cybernétique et rationnelle du contrôle de gestion', 'Le premier grand courant que doit maîtriser tout candidat à l''examen de qualification en contrôle de gestion est ce que l''on appelle, par commodité, l''approche cybernétique ou rationnelle du contrôle. Elle constitue le socle historique de la discipline et reste, aujourd''hui encore, le cadre implicite de la plupart des dispositifs de gestion observés dans les organisations.
+
+## Définition et logique d''ensemble
+
+Dans cette approche, le contrôle de gestion est pensé comme un processus de régulation : on fixe des objectifs, on alloue des ressources pour les atteindre, on mesure les résultats obtenus, on compare ces résultats aux objectifs, et on corrige l''action en consé­quence. Cette boucle (objectif, action, mesure, écart, correction) est directement inspirée de la cybernétique, c''est-à-dire de la science du pilotage des systèmes par rétroaction, dont les principes ont été formulés dans les travaux fondateurs sur la théorie des systèmes et des mécanismes de régulation au milieu du vingtième siècle. Appliquée à l''organisation, cette logique traite l''entreprise comme un système que l''on peut piloter rationnellement, à condition de disposer des bons instruments de mesure et de la bonne architecture de responsabilités.
+
+Le contrôle de gestion y est donc défini comme le processus par lequel les dirigeants s''assurent que les ressources sont obtenues et utilisées avec efficacité et efficience pour atteindre les objectifs de l''organisation. Cette définition, devenue classique dans la discipline, insiste sur trois idées : le contrôle sert la stratégie (il n''est pas une fin en soi), il porte sur l''utilisation des ressources (il est donc étroitement lié à la comptabilité de gestion), et il est distinct à la fois de la planification stratégique, qui fixe les grandes orientations à long terme, et du contrôle d''exécution, qui porte sur des tâches programmables et répétitives à très court terme.
+
+## Auteurs fondateurs et apports
+
+L''auteur le plus structurant de ce courant est le chercheur américain à l''origine, dans les années 1960 et 1970, du modèle dit de la planification-contrôle, qui distingue trois niveaux de pilotage dans l''organisation. Le niveau de la planification stratégique définit les finalités et les grandes orientations, sur un horizon long et dans un contexte d''incertitude élevée. Le niveau du contrôle de gestion (management control) organise la mise en œuvre de la stratégie à moyen terme, notamment par les budgets, les centres de responsabilité et les tableaux de bord : c''est un processus qui engage un dialogue entre dirigeants et responsables opérationnels. Le niveau du contrôle d''exécution (ou contrôle opérationnel) assure, à très court terme, que des tâches bien définies sont exécutées efficacement, souvent par des règles et des procédures plutôt que par un dialogue managérial.
+
+Cette architecture à trois niveaux a eu une influence considérable : elle a fourni le vocabulaire encore utilisé aujourd''hui (centres de coûts, centres de profit, centres d''investissement, prix de cession interne) et elle a légitimé le contrôle de gestion comme fonction managériale distincte de la comptabilité générale, orientée vers l''aide à la décision plutôt que vers la seule production d''états financiers.
+
+D''autres apports ont enrichi ce socle. Les travaux sur la comptabilité de gestion et les coûts de production, antérieurs et postérieurs, ont fourni les outils de calcul (coûts complets, coûts variables, coûts standards, analyse des écarts) qui permettent de rendre opérationnelle la logique de comparaison entre prévision et réalisation. Les travaux sur la théorie de l''agence, développés en économie des organisations, ont ensuite donné un fondement microéconomique à cette approche : si les intérêts des dirigeants et des actionnaires, ou des responsables opérationnels et de la direction générale, peuvent diverger, les dispositifs de contrôle (budgets, indicateurs, systèmes d''incitation) servent à aligner ces intérêts et à réduire les asymétries d''information.
+
+## Évolution historique
+
+Ce courant naît dans un contexte précis : celui des grandes entreprises industrielles américaines de la première moitié du vingtième siècle, confrontées au problème de la décentralisation. Comment une direction générale peut-elle déléguer des responsabilités à des directions de division tout en gardant une vision d''ensemble de la performance ? La réponse apportée est celle des centres de responsabilité budgétaire : on découpe l''organisation en unités dont on peut mesurer la performance de façon homogène (coûts, profit ou rentabilité des capitaux investis selon le périmètre de responsabilité confié), et on pilote l''ensemble par un système de reporting périodique.
+
+Cette logique s''est ensuite diffusée largement, y compris dans des organisations non marchandes, avec l''idée que tout système organisé peut bénéficier d''un pilotage par objectifs et indicateurs, pour peu que l''on adapte les outils de mesure à la nature de son activité.
+
+## Limites et critiques
+
+Ce courant a fait l''objet de critiques convergentes, qui ont ouvert la voie aux approches concurrentes étudiées dans la leçon suivante. Une première limite porte sur l''hypothèse de rationalité : le modèle suppose des acteurs qui réagissent de façon prévisible aux objectifs et aux mesures, alors que les comportements réels face aux budgets (négociation à la baisse des objectifs, constitution de « coussins » budgétaires, manipulation des indicateurs en fin de période) montrent que les acteurs interprètent et s''approprient stratégiquement les dispositifs de contrôle.
+
+Une deuxième limite porte sur le réductionnisme de la mesure : tout ce qui compte vraiment dans une organisation (la qualité de service, la coopération entre équipes, l''innovation) n''est pas toujours mesurable facilement, et un pilotage trop centré sur quelques indicateurs quantitatifs financiers risque de détourner l''attention des acteurs vers ce qui est mesuré au détriment de ce qui ne l''est pas.
+
+Une troisième limite porte sur la rigidité face à l''incertitude : le modèle de la planification-contrôle a été pensé pour des environnements relativement stables, où l''on peut fixer des objectifs annuels pertinents sur toute la période. Dans des environnements plus volatils, le cycle budgétaire annuel devient rapidement obsolète, ce qui a nourri, bien plus tard, le débat sur le « beyond budgeting » étudié en leçon quatre.
+
+Malgré ces critiques, l''approche cybernétique reste la grammaire de base du contrôle de gestion : même les auteurs qui la critiquent le plus vivement s''y réfèrent, explicitement ou implicitement, comme le point de départ de leur propre construction théorique.
+
+## Exercices pratiques
+
+1. Expliquez, avec vos propres mots, la différence entre contrôle de gestion et contrôle d''exécution selon le modèle de la planification-contrôle. Donnez un exemple pour chaque niveau dans une entreprise de distribution.
+
+2. Pourquoi la théorie de l''agence est-elle considérée comme un fondement complémentaire de l''approche cybernétique plutôt que comme un courant concurrent ?
+
+3. Un directeur financier affirme : « Tant que nos indicateurs sont dans le vert, l''organisation fonctionne bien. » Discutez cette affirmation à la lumière des limites du courant cybernétique.
+
+4. En quoi le découpage d''une organisation en centres de responsabilité peut-il créer des comportements non prévus par les concepteurs du système de contrôle ? Donnez deux exemples.
+
+5. Dans quel type de contexte organisationnel (stabilité, prévisibilité, nature de l''activité) l''approche cybernétique vous semble-t-elle la plus pertinente ? Justifiez.
+
+## Corrigé
+
+1. Le contrôle de gestion organise, à moyen terme, le dialogue entre la direction générale et les responsables d''unités autour d''objectifs négociés (budgets, plans d''action) : il laisse une marge d''appréciation aux responsables sur la façon d''atteindre l''objectif. Le contrôle d''exécution porte sur des tâches très cadrées, à très court terme, où la marge d''appréciation est faible et où des règles ou procédures suffisent : par exemple, dans une enseigne de distribution, la définition des objectifs de chiffre d''affaires et de marge d''un directeur de magasin relève du contrôle de gestion, tandis que le respect d''une procédure d''encaissement en caisse relève du contrôle d''exécution.
+
+2. Parce qu''elle ne propose pas un modèle alternatif de pilotage de l''organisation, mais un fondement théorique qui explique pourquoi les dispositifs de contrôle (budgets, indicateurs, incitations) sont nécessaires : elle justifie, en termes d''intérêts divergents et d''asymétrie d''information entre dirigeants et subordonnés, la logique même de surveillance et de mesure que l''approche cybernétique met en œuvre.
+
+3. L''affirmation traduit un réductionnisme typique de la mesure : elle suppose que les indicateurs choisis captent l''essentiel de la performance de l''organisation, alors que des dimensions importantes (qualité perçue par les clients, climat social, capacité d''innovation) peuvent se détériorer sans que les indicateurs financiers s''en trouvent immédiatement affectés. Une bonne réponse doit nuancer : les indicateurs sont utiles mais insuffisants seuls, et leur interprétation doit être complétée par d''autres sources d''information.
+
+4. Le découpage en centres de responsabilité peut inciter un responsable à optimiser son propre indicateur au détriment de la performance globale (par exemple refuser une commande urgente qui dégraderait son taux d''utilisation des capacités, alors qu''elle serait bénéfique pour l''entreprise dans son ensemble), ou à retarder artificiellement des charges d''une période sur l''autre pour présenter un résultat conforme à l''objectif du centre, sans que cela corresponde à une amélioration réelle de la gestion.
+
+5. L''approche cybernétique est la plus pertinente dans des contextes où l''activité est relativement stable et répétitive, où les relations de cause à effet entre actions et résultats sont bien connues, et où les objectifs peuvent être fixés avec un horizon de douze mois sans devenir rapidement caducs : c''est typiquement le cas d''activités industrielles ou de services standardisés dans un environnement concurrentiel prévisible. Elle est moins adaptée dans des environnements très incertains ou dans des organisations dont la performance repose largement sur des dimensions difficiles à mesurer, comme l''innovation ou la créativité.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 1 : l''approche cybernétique et rationnelle du contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Courant théorique 2 : les approches socio-organisationnelles du contrôle', 'Face au courant cybernétique présenté dans la leçon précédente, un ensemble de travaux, regroupés ici sous le terme d''approches socio-organisationnelles du contrôle, proposent une lecture radicalement différente : le contrôle de gestion n''y est plus seulement un instrument de régulation rationnelle, mais une construction sociale, traversée par des jeux d''acteurs, des rapports de pouvoir et des significations qui se négocient dans l''organisation.
+
+## Définition et logique d''ensemble
+
+L''idée centrale de ce courant est que les dispositifs de contrôle (budgets, indicateurs, tableaux de bord, procédures) ne produisent jamais mécaniquement les effets prévus par leurs concepteurs. Entre la conception d''un outil de gestion et son usage effectif sur le terrain s''interposent des acteurs qui l''interprètent, le détournent, le contournent, ou au contraire s''en saisissent pour défendre leurs propres intérêts, leur position dans l''organisation, ou leur conception légitime du métier. Le contrôle de gestion devient alors un objet d''analyse sociologique autant qu''un objet de gestion technique.
+
+Ce courant s''appuie sur une hypothèse différente de celle du modèle cybernétique quant à la nature de l''acteur organisationnel : l''acteur n''est pas seulement un agent qui réagit à des incitations financières, il est un acteur stratégique, doté d''une rationalité limitée mais réelle, qui cherche à préserver ou à étendre ses marges de liberté (ses « zones d''incertitude ») dans un système d''action concret. Il en résulte que tout dispositif de contrôle, aussi bien conçu soit-il techniquement, est en réalité le produit (et l''enjeu) d''un jeu de pouvoir entre les acteurs qui le construisent, ceux qui doivent l''appliquer, et ceux qui en subissent les effets.
+
+## Apports fondateurs
+
+Plusieurs lignées de travaux nourrissent ce courant. La sociologie des organisations, en France notamment, a développé l''analyse stratégique des organisations : toute organisation est un système d''action concret, structuré par des jeux de pouvoir autour de zones d''incertitude que chaque acteur cherche à contrôler pour négocier en position favorable. Appliquée au contrôle de gestion, cette grille de lecture montre que les responsables budgétaires, par exemple, ne se contentent pas d''exécuter des directives : ils négocient les objectifs qui leur sont fixés, retiennent stratégiquement de l''information sur leurs marges de manœuvre réelles, et utilisent leur connaissance fine du terrain comme une ressource de pouvoir face à la direction générale.
+
+Une deuxième lignée, issue des études critiques en comptabilité (critical accounting studies), analyse les dispositifs comptables et budgétaires comme des technologies de pouvoir : loin d''être neutres, ils rendent visibles certains phénomènes et invisibles d''autres, ils légitiment certaines catégories d''acteurs (les gestionnaires, les financiers) au détriment d''autres (les métiers opérationnels, les corps de métier traditionnels), et ils participent ainsi à façonner les rapports de force dans l''organisation autant qu''ils les mesurent.
+
+Une troisième lignée s''appuie sur les théories de l''institutionnalisation et de la construction sociale des pratiques de gestion : les outils de contrôle se diffusent dans les organisations non pas uniquement parce qu''ils sont techniquement supérieurs, mais parce qu''ils deviennent des normes socialement attendues, des signes de légitimité et de modernité organisationnelle, que les dirigeants adoptent parfois davantage pour se conformer à ce qui est considéré comme une « bonne pratique » du secteur que pour leur efficacité intrinsèque démontrée.
+
+## Évolution historique
+
+Ces approches se développent à partir des années 1970-1980, en réaction aux limites perçues du modèle cybernétique : les chercheurs en sociologie des organisations et en comptabilité critique observent, sur le terrain, des écarts considérables entre le fonctionnement théorique des dispositifs de contrôle et leurs usages réels. Le courant se nourrit également de la montée, dans les sciences sociales, d''une attention plus générale portée aux dimensions symboliques, politiques et discursives des phénomènes organisationnels, par contraste avec des approches plus fonctionnalistes qui dominaient auparavant.
+
+Ce courant a progressivement gagné en influence dans la recherche académique en contrôle de gestion, notamment via le développement de la méthode de l''étude de cas clinique et de la recherche-intervention (présentées en leçon quatre), qui permettent précisément de documenter finement ces jeux d''acteurs autour des dispositifs de contrôle, alors que les méthodes quantitatives à grande échelle les rendent plus difficiles à observer.
+
+## Limites et critiques
+
+Ce courant a lui-même été critiqué, notamment par les tenants de l''approche cybernétique et par certains chercheurs en gestion plus appliquée. Une première critique porte sur l''opérationnalité : en insistant sur la complexité des jeux d''acteurs et sur l''imprévisibilité des usages des outils, ce courant offre parfois peu de prescriptions concrètes aux praticiens qui doivent, malgré tout, concevoir et faire vivre des systèmes de contrôle dans leurs organisations.
+
+Une deuxième critique porte sur un risque de relativisme excessif : si tout dispositif de contrôle n''est qu''un enjeu de pouvoir sans portée technique propre, on perd de vue que certains outils de mesure sont, de fait, plus pertinents que d''autres pour éclairer une décision économique, et que la dimension sociale du contrôle n''épuise pas entièrement sa dimension instrumentale.
+
+Une troisième critique, plus méthodologique, porte sur la généralisation : les études de cas qualitatives qui nourrissent ce courant, riches et détaillées, se prêtent plus difficilement à des conclusions généralisables à un grand nombre d''organisations que les enquêtes quantitatives privilégiées par l''approche cybernétique.
+
+## Tension et complémentarité avec le courant cybernétique
+
+La tension entre les deux courants n''est pas seulement académique : elle structure directement la pratique du contrôle de gestion. Un contrôleur de gestion qui ignore la dimension sociale et politique des dispositifs qu''il conçoit risque de produire des outils techniquement irréprochables mais massivement contournés ou vidés de leur sens sur le terrain. Inversement, un contrôleur de gestion qui négligerait entièrement la dimension instrumentale (la qualité du calcul de coût, la pertinence d''un indicateur) au profit d''une lecture uniquement politique perdrait la capacité de produire une information de gestion fiable. Les recherches les plus récentes en contrôle de gestion tendent d''ailleurs à articuler les deux lectures plutôt qu''à les opposer frontalement, en étudiant comment la dimension technique et la dimension sociale des dispositifs de contrôle s''influencent mutuellement dans le temps.
+
+## Exercices pratiques
+
+1. Expliquez la notion de « zone d''incertitude » et montrez, par un exemple, comment un responsable opérationnel peut en tirer un pouvoir de négociation face à la direction financière lors de l''élaboration du budget.
+
+2. En quoi les dispositifs comptables peuvent-ils être qualifiés de « technologies de pouvoir » plutôt que de simples outils de mesure neutre ? Donnez un exemple concret.
+
+3. Comparez, sur le plan des hypothèses sur l''acteur organisationnel, le courant cybernétique et le courant socio-organisationnel.
+
+4. Un chercheur affirme que les approches socio-organisationnelles rendent le contrôle de gestion « illisible » pour les praticiens. Discutez cette critique en identifiant ses limites.
+
+5. Dans votre propre projet de thèse, identifiez un phénomène de terrain qui relèverait davantage d''une lecture socio-organisationnelle que d''une lecture cybernétique, et expliquez pourquoi.
+
+## Corrigé
+
+1. Une zone d''incertitude est une portion d''information ou de compétence que seul un acteur maîtrise réellement, ce qui lui donne un pouvoir de négociation face aux autres acteurs qui en dépendent. Par exemple, un chef d''atelier qui connaît seul les capacités réelles de production (au-delà des chiffres officiels) peut, lors de la négociation budgétaire, sous-estimer stratégiquement ces capacités pour obtenir un objectif plus facile à atteindre, la direction financière ne disposant pas des moyens de vérifier cette information de façon indépendante.
+
+2. Un dispositif comptable n''est pas neutre parce qu''il choisit ce qui est mesuré (donc rendu visible et légitime) et ce qui ne l''est pas (donc rendu invisible). Par exemple, un système de coûts qui valorise fortement la productivité horaire d''une chaîne de production, sans mesurer la qualité perçue par le client final, oriente implicitement les comportements des opérateurs vers la vitesse au détriment de la qualité, tout en donnant l''apparence d''une mesure purement technique et objective.
+
+3. Le courant cybernétique suppose un acteur qui réagit de façon relativement prévisible aux incitations et aux objectifs fixés, dans une logique proche de l''agent rationnel de la théorie économique. Le courant socio-organisationnel suppose un acteur stratégique, doté d''une rationalité limitée, qui interprète activement les dispositifs de contrôle, cherche à préserver ses marges de liberté, et peut détourner un dispositif de ses objectifs initiaux pour servir ses propres intérêts ou sa conception du métier.
+
+4. La critique a une part de vérité : une lecture purement sociologique et politique, sans traduction opérationnelle, peut effectivement laisser le praticien démuni face à la question concrète « que dois-je faire demain matin pour améliorer mon système de contrôle ? ». Mais la limite de la critique est qu''elle sous-estime l''utilité pratique de comprendre les jeux d''acteurs : un contrôleur de gestion averti de ces mécanismes peut anticiper les détournements probables d''un outil et concevoir des dispositifs plus robustes socialement, ce qui est en soi une forme d''opérationnalité, différente mais non inférieure à celle du courant cybernétique.
+
+5. Il n''y a pas de réponse unique : un exemple type serait l''observation que des responsables intermédiaires parviennent à neutraliser un nouvel outil de pilotage imposé par le siège d''un groupe, non par refus ouvert, mais par une application purement formelle qui en vide le contenu, ce qui ne peut s''expliquer par le seul design technique de l''outil et appelle une lecture en termes de jeux de pouvoir et de défense de l''autonomie professionnelle.', 'texte', 45, false, 30
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique 2 : les approches socio-organisationnelles du contrôle');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Les méthodes de recherche en contrôle de gestion', 'Un candidat à l''examen de qualification doit non seulement connaître les grands courants théoriques du contrôle de gestion, mais aussi maîtriser les méthodes de recherche propres au champ, c''est-à-dire savoir comment la discipline produit ses connaissances, avec quels outils, et avec quelles limites. Cette leçon présente trois grandes familles de méthodes : l''étude de cas clinique, la recherche-intervention, et les enquêtes quantitatives sur les pratiques de contrôle.
+
+## L''étude de cas clinique en contrôle de gestion
+
+L''étude de cas clinique consiste à observer en profondeur, sur une durée généralement longue, le fonctionnement réel des dispositifs de contrôle dans une ou plusieurs organisations, en combinant entretiens avec les acteurs, observation directe de réunions ou de processus budgétaires, et analyse de documents internes (budgets, tableaux de bord, comptes rendus). Le terme « clinique » souligne que le chercheur adopte une posture proche de celle d''un clinicien : il s''intéresse au fonctionnement singulier d''un cas, dans toute sa complexité, plutôt qu''à la vérification d''une loi générale sur un grand échantillon.
+
+Cette méthode est particulièrement adaptée pour étudier les phénomènes mis en avant par les approches socio-organisationnelles : elle permet de documenter finement comment un outil de contrôle est effectivement interprété, négocié ou détourné par les acteurs, ce qu''une enquête quantitative ne peut généralement pas saisir avec la même profondeur. Elle permet aussi d''observer des processus dans leur déroulement temporel, ce qui est précieux pour comprendre la dynamique de construction d''un dispositif, pas seulement son état à un instant donné.
+
+Ses limites sont bien identifiées : la difficulté de généraliser les résultats d''un ou quelques cas à toute une population d''organisations, le risque d''un biais d''interprétation du chercheur impliqué longuement sur le terrain, et l''exigence méthodologique d''un protocole de collecte explicite, d''une triangulation des sources, et d''une transparence sur les critères de choix des cas étudiés.
+
+## La recherche-intervention
+
+La recherche-intervention va plus loin que l''étude de cas en ce que le chercheur n''observe pas seulement l''organisation de l''extérieur, mais y intervient activement, généralement en accompagnant un changement organisationnel (par exemple la conception ou la refonte d''un système de contrôle de gestion), tout en produisant simultanément une connaissance scientifique sur ce processus de changement. Le chercheur occupe alors une double posture, à la fois acteur du changement (parfois rémunéré comme consultant) et observateur scientifique de ce même changement, ce qui exige une vigilance méthodologique particulière pour distinguer ce qui relève de l''action du chercheur et ce qui relève du phénomène qu''il étudie.
+
+Cette méthode est très présente en contrôle de gestion parce que la discipline a, historiquement, des liens étroits avec la pratique managériale : de nombreux dispositifs étudiés par la recherche ont d''abord été conçus en partenariat avec des organisations. Les tenants de cette méthode soutiennent qu''elle seule permet d''accéder à certaines connaissances : on ne comprend vraiment la dynamique de résistance à un nouvel outil de contrôle qu''en participant à sa mise en œuvre, non en l''observant de l''extérieur a posteriori.
+
+Sa limite principale tient à la validité scientifique : comment s''assurer que les conclusions ne reflètent pas simplement les intérêts du chercheur-intervenant, qui a par construction intérêt à ce que son intervention soit perçue comme réussie ? La discipline y répond par l''explicitation de la posture du chercheur, la validation croisée avec d''autres acteurs, et la publication de protocoles détaillés — un débat méthodologique qui reste permanent dans le champ.
+
+## Les enquêtes quantitatives sur les pratiques de contrôle
+
+À l''inverse de ces deux méthodes qualitatives, les enquêtes quantitatives consistent à administrer des questionnaires structurés à un grand nombre d''organisations ou de responsables de contrôle de gestion, afin de mesurer statistiquement des relations entre variables : par exemple, la relation entre le degré de turbulence de l''environnement d''une entreprise et le degré de flexibilité de son système budgétaire, ou entre la taille d''une organisation et la sophistication de ses outils de pilotage.
+
+Cette méthode permet des résultats généralisables, avec des tests statistiques explicites de la robustesse des relations observées, ce qui répond à la principale limite des méthodes qualitatives. Elle s''inscrit dans la continuité du courant cybernétique, qui postule des relations relativement stables et mesurables entre caractéristiques organisationnelles et pratiques de contrôle.
+
+Ses limites sont, en miroir, celles des méthodes qualitatives : la perte de profondeur (un questionnaire standardisé capture mal les jeux d''acteurs autour d''un dispositif), le risque que les répondants déclarent des pratiques officielles qui ne correspondent pas aux usages réels, et la difficulté de mesurer fiablement des phénomènes par nature qualitatifs, comme le degré de « jeu politique » autour d''un budget.
+
+## Choisir sa méthode selon sa question de recherche
+
+Un doctorant doit justifier le choix d''une méthode par cohérence avec sa question de recherche, non par préférence personnelle. Mesurer l''ampleur d''un phénomène dans une population d''organisations appelle une enquête quantitative ; comprendre un mécanisme fin de construction sociale d''un dispositif appelle une étude de cas clinique ; produire une connaissance tout en accompagnant un changement concret appelle une recherche-intervention.
+
+## Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
+
+Prenons un projet de thèse fictif sur l''introduction de démarches de pilotage inspirées du beyond budgeting dans des PME agro-industrielles de la région de Thiès. Le protocole pourrait combiner les trois méthodes. Une phase quantitative, par questionnaire auprès d''un échantillon de PME du secteur, mesurerait la diffusion des pratiques budgétaires traditionnelles et alternatives, et leur association avec la taille de l''entreprise ou le degré de concurrence perçu. Une phase de recherche-intervention accompagnerait une ou deux PME volontaires dans la refonte de leur système de pilotage, en documentant les résistances et les apprentissages observés. Une phase d''étude de cas clinique a posteriori analyserait, un an après, comment le nouveau dispositif est réellement utilisé au quotidien, au-delà de son fonctionnement officiel initial.
+
+Pour illustrer concrètement le type de calcul que ce terrain pourrait mobiliser, prenons l''exemple d''une unité de transformation agro-alimentaire fictive. Son budget initial prévoyait un volume de 10 000 unités vendues à un prix unitaire de 2 500 francs CFA (valeur fictive pour l''exemple), pour un coût variable unitaire budgété de 1 500 francs CFA et des charges fixes budgétées de 8 000 000 francs CFA. Le résultat budgété est donc de (2 500 moins 1 500) multiplié par 10 000, soit 10 000 000 francs CFA de marge sur coût variable, moins 8 000 000 de charges fixes, soit un résultat budgété de 2 000 000 francs CFA.
+
+En réalité, l''entreprise a vendu 11 200 unités, mais à un prix unitaire moyen de seulement 2 400 francs CFA (pression concurrentielle plus forte que prévu), avec un coût variable unitaire réel de 1 600 francs CFA (hausse du coût des intrants) et des charges fixes réelles de 8 300 000 francs CFA. Le résultat réel est de (2 400 moins 1 600) multiplié par 11 200, soit 8 960 000 francs CFA de marge sur coût variable, moins 8 300 000 de charges fixes, soit un résultat réel de 660 000 francs CFA.
+
+L''écart total entre le résultat réel et le résultat budgété est donc de 660 000 moins 2 000 000, soit moins 1 340 000 francs CFA. L''analyse des écarts, vérifiée par un calcul informatique, permet de décomposer cet écart total en quatre effets : un effet volume favorable de 1 200 000 francs CFA (l''entreprise a vendu plus que prévu), un effet prix de vente défavorable de 1 120 000 francs CFA (le prix réel est inférieur au prix budgété sur le volume réellement vendu), un effet coût variable défavorable de 1 120 000 francs CFA (le coût unitaire réel est supérieur au coût budgété sur le volume réellement vendu), et un effet charges fixes défavorable de 300 000 francs CFA. La somme de ces quatre effets (1 200 000 moins 1 120 000 moins 1 120 000 moins 300 000) redonne bien moins 1 340 000 francs CFA, ce qui confirme la cohérence de la décomposition.
+
+Ce calcul, technique en apparence, illustre le débat entre les deux courants : le courant cybernétique y voit un diagnostic rationnel des causes de la sous-performance, tandis que le courant socio-organisationnel invite à se demander comment les acteurs interprètent ou contestent cette décomposition — par exemple si le responsable commercial conteste que l''effet prix lui soit attribué, alors que la baisse résultait d''une décision collective de la direction face à la concurrence.
+
+## Exercices pratiques
+
+1. Un doctorant souhaite étudier comment des contrôleurs de gestion de grandes entreprises sénégalaises perçoivent la légitimité de leur fonction face aux directions opérationnelles. Quelle méthode lui recommanderiez-vous en priorité, et pourquoi ?
+
+2. Expliquez la différence essentielle entre une étude de cas clinique et une recherche-intervention.
+
+3. Quelle est la principale difficulté méthodologique propre à la recherche-intervention, et comment la discipline tente-t-elle d''y répondre ?
+
+4. Reprenez l''exemple chiffré de la leçon : si le volume réel avait été de 9 000 unités au lieu de 11 200 (toutes choses égales par ailleurs), l''effet volume aurait-il été favorable ou défavorable ? Justifiez sans recalculer précisément le montant.
+
+5. Proposez, pour votre propre projet de thèse, la méthode de recherche qui vous semble la plus cohérente avec votre question de recherche, en justifiant ce choix en trois phrases.
+
+## Corrigé
+
+1. L''étude de cas clinique est la plus adaptée : la question porte sur des perceptions fines et potentiellement contradictoires entre acteurs, qu''un questionnaire standardisé capturerait mal ; des entretiens approfondis, combinés à l''observation de situations de travail réelles, permettent de documenter cette légitimité perçue dans toute sa complexité.
+
+2. Dans l''étude de cas clinique, le chercheur observe un phénomène existant sans chercher à le modifier ; dans la recherche-intervention, il participe activement à la transformation de l''organisation, ce qui exige une vigilance supplémentaire sur la distinction entre son rôle d''acteur et son rôle d''observateur.
+
+3. La principale difficulté est le risque de biais lié à l''intérêt du chercheur-intervenant à ce que son intervention soit perçue comme réussie. La discipline y répond par l''explicitation de sa posture, la validation croisée auprès d''autres acteurs, et la publication de protocoles détaillés.
+
+4. Avec un volume réel de 9 000 unités, inférieur au volume budgété de 10 000, l''effet volume serait défavorable : vendre moins que prévu réduit mécaniquement la marge réalisée par rapport à celle qui aurait résulté du volume budgété, toutes choses égales par ailleurs.
+
+5. Il n''y a pas de réponse unique : une justification satisfaisante relie la nature de la question de recherche au type de connaissance que la méthode choisie permet de produire, en écartant explicitement au moins une autre méthode jugée moins adaptée.', 'texte', 45, false, 40
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Épreuve type d''examen de qualification : budget traditionnel et beyond budgeting', 'Cette leçon propose un exercice type d''examen de qualification doctorale en contrôle de gestion (non officiel, construit pour l''entraînement), avec un plan de réponse détaillé et corrigé. L''objectif est de vous montrer, sur un cas concret, comment mobiliser ensemble les deux courants théoriques et les méthodes de recherche étudiés dans les leçons précédentes.
+
+## La question type
+
+Voici une question de synthèse représentative du type d''épreuve que peut poser un jury de qualification : « Dans quelle mesure le débat entre le contrôle budgétaire traditionnel et les démarches dites de "beyond budgeting" renouvelle-t-il, ou prolonge-t-il, l''opposition entre une conception cybernétique et une conception socio-organisationnelle du contrôle de gestion ? Vous illustrerez votre propos en indiquant comment vous mobiliseriez une méthode de recherche pour instruire empiriquement cette question dans un contexte d''entreprises africaines. »
+
+Cette question est typique à plusieurs égards : elle demande de maîtriser un débat contemporain spécifique du champ (budget traditionnel contre beyond budgeting), elle demande de le relier aux grands courants théoriques structurants de la discipline, et elle demande une mise en œuvre méthodologique concrète. C''est exactement l''articulation que teste un jury : connaissances théoriques, capacité de mise en relation, et sens pratique de la recherche.
+
+## Présentation du débat budget traditionnel contre beyond budgeting
+
+Avant de construire le plan de réponse, il faut maîtriser le contenu de ce débat, qui prolonge directement les deux courants étudiés en leçons 2 et 3.
+
+Le contrôle budgétaire traditionnel, héritier direct de l''approche cybernétique, repose sur un cycle annuel : négociation des objectifs, allocation de ressources, suivi mensuel des écarts, actions correctives. Ses défenseurs soulignent qu''il reste, malgré ses défauts, un outil puissant de coordination entre unités, de responsabilisation des managers, et de discipline financière, en particulier dans des organisations de grande taille où il faut synchroniser des centaines de décisions décentralisées.
+
+Le mouvement dit du « beyond budgeting », apparu à la fin des années 1990 dans la littérature professionnelle et académique, critique le cycle budgétaire annuel pour son incapacité à s''adapter à des environnements changeant plus vite qu''un an, pour le temps et les ressources considérables qu''il consomme (la préparation du budget annuel mobilise souvent plusieurs mois de l''année dans les grandes organisations), et pour les comportements pervers qu''il engendre : négociation stratégique des objectifs à la baisse, dépenses de fin d''année pour « consommer » une enveloppe budgétaire avant qu''elle ne soit perdue, ou focalisation sur l''atteinte d''un chiffre au détriment de la création de valeur réelle pour les clients. Les démarches alternatives proposées remplacent le budget annuel fixe par des prévisions glissantes révisées plus fréquemment, des objectifs relatifs (comparés à des concurrents ou à des unités comparables plutôt qu''à un chiffre absolu fixé un an à l''avance), et une décentralisation plus large des décisions vers les équipes opérationnelles, combinée à un pilotage par des indicateurs de performance globale plutôt que par le seul respect d''une enveloppe budgétaire.
+
+Le point essentiel pour un candidat au doctorat est de percevoir que ce débat contemporain n''est pas purement technique : il rejoue, sous un vocabulaire différent, l''opposition entre les deux courants fondamentaux du champ. Le camp qui défend le contrôle budgétaire traditionnel reste largement dans une logique cybernétique : on peut améliorer le dispositif (le rendre plus flexible, plus réactif) sans remettre en cause l''idée qu''un bon système d''objectifs et de mesures, bien conçu, pilote rationnellement l''organisation. Le camp qui défend le beyond budgeting, en revanche, mobilise souvent, explicitement ou implicitement, des arguments proches du courant socio-organisationnel : il met en avant les effets pervers du budget sur les comportements des acteurs, la nécessité de faire confiance aux équipes plutôt que de les contraindre par des chiffres négociés sous contrainte hiérarchique, et l''idée que la performance d''une organisation dépend autant de sa capacité d''adaptation collective que de la rigueur de son calcul budgétaire.
+
+## Plan de réponse détaillé
+
+Une introduction efficace rappellerait d''abord les deux grands courants théoriques du contrôle de gestion (brièvement, sans développer : ce n''est pas l''objet principal de la question), puis annoncerait le fil directeur : le débat budget traditionnel contre beyond budgeting n''est pas un simple débat d''outils, mais la reformulation contemporaine de l''opposition théorique fondamentale du champ, enrichie par des considérations propres au contexte économique actuel (incertitude accrue, digitalisation, attentes de décentralisation).
+
+Une première partie montrerait que le contrôle budgétaire traditionnel prolonge directement la logique cybernétique : elle rappellerait les fondements du modèle de planification-contrôle, puis montrerait comment le cycle budgétaire annuel en est une application directe, avant de reconnaître les limites de ce modèle déjà identifiées par la littérature (rigidité face à l''incertitude, comportements de négociation stratégique des objectifs).
+
+Une deuxième partie montrerait que le beyond budgeting, sans être une pure application du courant socio-organisationnel, en reprend des intuitions centrales : la défiance envers un pilotage centralisé et chiffré qui ignore les jeux d''acteurs, l''attention portée aux effets pervers des dispositifs de mesure sur les comportements, et une préférence pour des mécanismes de coordination qui laissent plus de place à l''autonomie et à la négociation locale des équipes. Cette partie nuancerait cependant : le beyond budgeting reste, lui aussi, un dispositif de pilotage par indicateurs (relatifs plutôt qu''absolus), ce qui montre qu''aucun des deux camps ne sort complètement de la logique de mesure, et que l''opposition entre les deux courants théoriques est une opposition de degré et d''accent plus qu''une rupture totale.
+
+Une troisième partie proposerait une mise en œuvre méthodologique : elle justifierait, par exemple, une recherche-intervention auprès de quelques entreprises sénégalaises ou ouest-africaines engagées dans une transition de leur système budgétaire, complétée par une enquête quantitative plus large pour mesurer l''ampleur de la diffusion de ces pratiques dans le tissu économique régional, en expliquant pourquoi une étude de cas clinique seule ne suffirait pas à mesurer cette diffusion, et pourquoi une enquête quantitative seule ne suffirait pas à comprendre les mécanismes fins de résistance ou d''appropriation de ces nouvelles pratiques par les acteurs.
+
+Une conclusion rappellerait que ce débat contemporain illustre bien la nécessité, pour un chercheur en contrôle de gestion, de maîtriser les deux grandes lectures théoriques du champ : ni l''une ni l''autre, prise isolément, n''épuise la compréhension d''un phénomène de gestion aussi central que le pilotage budgétaire des organisations, et un bon positionnement de thèse sait souvent se situer à l''articulation des deux plutôt que dans l''adhésion exclusive à l''une.
+
+## Ce que le jury évaluerait dans cette réponse
+
+Un jury évaluerait, dans l''ordre d''importance, la capacité à relier explicitement le débat contemporain aux courants théoriques fondamentaux (et non à les traiter comme deux sujets séparés), la nuance apportée (éviter de caricaturer un camp comme purement rationnel et l''autre comme purement social), la justification méthodologique concrète et argumentée, et enfin la clarté de l''articulation entre les trois parties de la réponse.
+
+## Exercices pratiques
+
+1. Reformulez, en une phrase, le lien que vous établiriez entre le contrôle budgétaire traditionnel et l''approche cybernétique du contrôle.
+
+2. Identifiez une limite du beyond budgeting qui n''est pas mentionnée dans cette leçon, et expliquez à quel courant théorique elle pourrait, selon vous, se rattacher.
+
+3. Un candidat répond à la question type en se limitant à une description technique des deux systèmes budgétaires, sans les relier aux courants théoriques. Quel serait le principal défaut de cette réponse selon les critères d''évaluation d''un jury ?
+
+4. Proposez une question d''examen de qualification alternative, sur un autre thème du contrôle de gestion, qui obligerait également à mobiliser les deux courants théoriques.
+
+5. En vous appuyant sur le plan de réponse de cette leçon, rédigez l''introduction complète (4 à 6 phrases) que vous donneriez à l''oral si cette question vous était posée.
+
+## Corrigé
+
+1. Le contrôle budgétaire traditionnel applique directement la logique du modèle de planification-contrôle : il suppose qu''un cycle d''objectifs, de mesures et de corrections, correctement conçu, pilote rationnellement l''organisation vers ses finalités stratégiques, dans la continuité de l''approche cybernétique.
+
+2. Une limite possible, non développée dans la leçon, est la difficulté du beyond budgeting à maintenir une cohérence financière globale lorsque les objectifs deviennent relatifs et négociés localement plutôt que fixés centralement : cette limite se rattacherait plutôt au courant cybernétique, qui valorise la cohérence d''ensemble et la comparabilité des performances entre unités, menacée par une décentralisation trop poussée.
+
+3. Le principal défaut serait de traiter la question comme une simple comparaison technique d''outils de gestion, sans démontrer la compréhension du débat théorique sous-jacent que la question appelle explicitement : un jury y verrait un candidat capable de décrire des pratiques mais pas encore capable de les analyser comme chercheur, ce qui est précisément ce que l''examen de qualification doit vérifier.
+
+4. Une question alternative pourrait être : « Dans quelle mesure l''introduction des tableaux de bord de type "balanced scorecard" dans les organisations africaines relève-t-elle d''une logique de pilotage rationnel de la performance, ou d''un phénomène d''imitation institutionnelle sans appropriation réelle par les acteurs de terrain ? » Cette question oblige également à articuler la logique cybernétique (le tableau de bord comme instrument rationnel de pilotage multidimensionnel) et la logique socio-organisationnelle et institutionnelle (la diffusion d''un outil comme phénomène social de légitimation plutôt que comme choix purement technique).
+
+5. Une introduction satisfaisante rappellerait brièvement les deux courants théoriques fondamentaux du contrôle de gestion, annoncerait que le débat budget traditionnel contre beyond budgeting en constitue une reformulation contemporaine, préciserait que la réponse montrera d''abord la filiation du contrôle traditionnel avec le courant cybernétique, puis la proximité du beyond budgeting avec le courant socio-organisationnel, nuancerait en annonçant qu''aucun des deux dispositifs ne sort complètement de la logique de mesure, et annoncerait enfin la proposition méthodologique qui clôturera la démonstration.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification : budget traditionnel et beyond budgeting');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : l''approche cybernétique et rationnelle du contrôle de gestion', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser en profondeur l''approche cybernétique et rationnelle du contrôle de gestion, savoir la restituer oralement devant un jury avec precision terminologique, et savoir en discuter les limites de façon critique. Matériel : tableau ou diaporama avec le schéma du modèle de planification-contrôle à trois niveaux, prérequis : avoir lu la leçon 2 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et enjeux de la séance
+
+Bonjour à toutes et à tous. Cette séance vidéo reprend et approfondit l''un des deux grands courants théoriques que vous devez absolument maîtriser pour votre examen de qualification : l''approche cybernétique et rationnelle du contrôle de gestion. Je vous propose de commencer par une question simple, que vous devez être capable de traiter à l''oral sans hésitation : qu''est-ce que le contrôle de gestion, au sens où ce courant le définit ? Prenez trente secondes pour formuler mentalement votre réponse avant que je ne poursuive. Cette discipline de la reformulation rapide est précisément ce qu''un jury testera le jour de votre soutenance : il ne vous laissera jamais le temps de consulter vos notes pour une définition de base.
+
+## 05:00 – 20:00 · Les fondements de la logique cybernétique
+
+Le mot cybernétique vient d''un champ scientifique plus large que le contrôle de gestion : c''est la science du pilotage des systèmes par rétroaction, formulée au milieu du vingtième siècle. L''idée clé, que je veux que vous puissiez expliquer avec vos propres mots, est la boucle de régulation : on fixe un objectif, on agit, on mesure le résultat obtenu, on calcule l''écart entre le résultat et l''objectif, et on utilise cet écart pour corriger l''action future. Cette boucle s''applique à un thermostat qui régule une température, à un système de navigation qui corrige une trajectoire, et, par transposition, à une organisation que l''on souhaite piloter vers ses objectifs stratégiques.
+
+Visuel à montrer : un schéma simple avec quatre cases reliées en boucle (Objectif, Action, Mesure, Écart et correction). Je vous invite à le redessiner vous-même, de mémoire, après cette séance : c''est un excellent test de votre compréhension réelle, au-delà de la récitation.
+
+Appliquée à l''entreprise, cette logique suppose que l''organisation peut être pilotée rationnellement si l''on dispose de bons instruments de mesure et d''une architecture claire de responsabilités. C''est tout l''enjeu du modèle que nous allons détailler maintenant.
+
+## 20:00 – 40:00 · Le modèle de planification-contrôle à trois niveaux
+
+Le modèle fondateur de ce courant distingue trois niveaux de pilotage dans l''organisation, et je veux que vous puissiez les distinguer sans la moindre hésitation à l''oral, car c''est l''une des questions les plus fréquemment posées lors des épreuves de qualification.
+
+Le premier niveau est la planification stratégique : elle définit les finalités de l''organisation, ses grandes orientations, sur un horizon long, dans un contexte d''incertitude généralement élevée. C''est le niveau de la direction générale et, le cas échéant, du conseil d''administration.
+
+Le deuxième niveau est le contrôle de gestion proprement dit, ce que l''on appelle en anglais le management control : il organise la mise en œuvre de la stratégie à moyen terme, typiquement sur un horizon annuel, par des outils comme les budgets, les centres de responsabilité, les tableaux de bord et les prix de cession interne entre unités. Ce niveau engage un dialogue, une négociation, entre la direction générale et les responsables opérationnels : ce n''est pas une simple transmission mécanique d''ordres.
+
+Le troisième niveau est le contrôle d''exécution, ou contrôle opérationnel : il porte sur des tâches très cadrées, répétitives, à très court terme, où la marge d''appréciation du responsable est faible, et où des règles et procédures bien définies suffisent généralement à garantir la bonne exécution.
+
+Visuel à montrer : le schéma pyramidal à trois niveaux, avec, pour chaque niveau, un exemple concret tiré d''une entreprise de distribution de produits alimentaires au Sénégal (stratégie d''expansion géographique du groupe au niveau un, budget annuel négocié avec chaque directeur régional au niveau deux, procédure de contrôle des caisses en magasin au niveau trois).
+
+Question à poser aux apprenants : pourquoi est-il essentiel de distinguer le contrôle de gestion du contrôle d''exécution, et quelles conséquences pratiques cette distinction a-t-elle sur le type d''indicateurs à utiliser à chaque niveau ?
+
+## 40:00 – 45:00 · Pause et quiz interactif
+
+Nous faisons une courte pause. Je vous propose un quiz en quatre questions pour vérifier votre compréhension à ce stade de la séance.
+
+Première question : le contrôle de gestion, dans ce modèle, se situe-t-il à l''horizon court terme, moyen terme ou long terme ? Réponse : moyen terme, typiquement annuel.
+
+Deuxième question : quel est le mot-clé qui distingue le contrôle de gestion du contrôle d''exécution sur le plan de la relation managériale ? Réponse : le dialogue, ou la négociation, qui caractérise le contrôle de gestion, par opposition à l''application de règles qui caractérise le contrôle d''exécution.
+
+Troisième question : d''où vient le terme cybernétique appliqué au contrôle de gestion ? Réponse : de la science du pilotage des systèmes par rétroaction, développée au milieu du vingtième siècle, puis transposée à l''organisation.
+
+Quatrième question : citez un outil typique du niveau du contrôle de gestion. Réponse possible : le budget, le tableau de bord, le centre de responsabilité, le prix de cession interne.
+
+Si vous avez répondu correctement à au moins trois de ces quatre questions, vous maîtrisez les bases de ce courant ; sinon, je vous invite à revoir la séquence précédente avant de poursuivre.
+
+## 45:00 – 60:00 · Les apports complémentaires : théorie de l''agence et calcul des coûts
+
+Au-delà du modèle à trois niveaux, deux familles de travaux viennent enrichir ce courant et vous devez pouvoir les mobiliser à l''oral. La théorie de l''agence, développée en économie des organisations, apporte un fondement microéconomique : lorsque les intérêts d''un dirigeant et d''un actionnaire, ou d''un responsable opérationnel et de la direction générale, peuvent diverger, les dispositifs de contrôle (budgets, indicateurs, systèmes d''incitation) servent à réduire ces divergences et les asymétries d''information entre les parties.
+
+La comptabilité de gestion, de son côté, fournit l''instrumentation technique nécessaire : coûts complets, coûts variables, coûts standards, analyse des écarts. C''est cette instrumentation qui rend concrètement possible la comparaison entre prévision et réalisation, pierre angulaire de la logique cybernétique.
+
+Visuel à montrer : un tableau à deux colonnes opposant, pour chaque outil (budget, tableau de bord, coût standard), sa fonction de pilotage rationnel (colonne de gauche) et la justification qu''en donne la théorie de l''agence en termes de réduction des asymétries d''information (colonne de droite).
+
+## 60:00 – 75:00 · Les limites et critiques du courant
+
+Un bon candidat doit pouvoir exposer spontanément trois limites de ce courant, sans attendre qu''on les lui demande. Première limite : l''hypothèse de rationalité des acteurs est contestée par l''observation empirique de comportements de négociation stratégique des objectifs budgétaires, de constitution de coussins budgétaires, ou de manipulation des indicateurs en fin de période. Deuxième limite : le réductionnisme de la mesure, c''est-à-dire le risque qu''un pilotage centré sur quelques indicateurs financiers détourne l''attention des acteurs vers ce qui est mesuré, au détriment de dimensions importantes mais difficiles à quantifier, comme la qualité de service ou la coopération entre équipes. Troisième limite : la rigidité face à l''incertitude, le cycle budgétaire annuel devenant rapidement obsolète dans des environnements très changeants, ce qui a nourri, plus récemment, le débat sur le beyond budgeting que nous étudierons dans une séance ultérieure.
+
+Je vous invite ici à un exercice de nuance essentiel pour l''oral : ne présentez jamais ces limites comme une invalidation totale du courant, mais comme des angles morts identifiés par la littérature, qui ont nourri le développement de courants complémentaires, notamment le courant socio-organisationnel que nous étudierons dans la prochaine vidéo.
+
+## 75:00 – 85:00 · Mise en situation : simuler une question de jury
+
+Je vais maintenant vous poser, comme le ferait un membre de jury, une question difficile, et vous laisser le temps d''y réfléchir avant de vous proposer une structure de réponse. Question : « Si l''approche cybernétique est si critiquée, pourquoi reste-t-elle, selon vous, la grammaire de base implicite de la plupart des dispositifs de contrôle observés dans les organisations ? »
+
+Une bonne structure de réponse commencerait par reconnaître la prémisse de la question (oui, les critiques sont fondées et largement documentées), puis apporterait trois éléments de réponse : la robustesse opérationnelle du modèle dans des environnements relativement stables, la facilité de diffusion d''un vocabulaire commun (centres de coûts, centres de profit) qui permet la comparaison entre unités et organisations, et le fait que même les courants critiques s''y réfèrent, explicitement ou implicitement, comme point de départ, ce qui en fait un socle conceptuel difficile à remplacer entièrement plutôt qu''à seulement contester.
+
+## 85:00 – 90:00 · Synthèse et évaluation finale
+
+Pour conclure cette séance, rappelons les trois points essentiels : le modèle de planification-contrôle à trois niveaux, les apports complémentaires de la théorie de l''agence et de la comptabilité de gestion, et les trois grandes limites du courant.
+
+Évaluation finale, cinq questions :
+
+Un, quels sont les trois niveaux du modèle de planification-contrôle ? Réponse : planification stratégique, contrôle de gestion, contrôle d''exécution.
+
+Deux, quel horizon temporel caractérise typiquement le niveau du contrôle de gestion ? Réponse : le moyen terme, généralement annuel.
+
+Trois, quelle théorie économique apporte un fondement microéconomique à ce courant ? Réponse : la théorie de l''agence.
+
+Quatre, citez une des trois limites majeures de ce courant discutées dans cette séance. Réponse possible : l''hypothèse de rationalité des acteurs contestée par l''observation empirique, le réductionnisme de la mesure, ou la rigidité face à l''incertitude.
+
+Cinq, pourquoi ce courant reste-t-il, malgré ses critiques, un socle conceptuel difficile à remplacer ? Réponse : parce qu''il reste robuste dans des environnements stables, qu''il fournit un vocabulaire commun de comparaison entre unités, et que même les courants critiques s''y réfèrent comme point de départ.', 'video', 90, false, 60
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : l''approche cybernétique et rationnelle du contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : les approches socio-organisationnelles du contrôle', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser les approches socio-organisationnelles du contrôle, savoir les opposer et les articuler avec l''approche cybernétique étudiée dans la séance précédente, et savoir illustrer ces concepts par des exemples de terrain. Matériel : tableau ou diaporama, schéma des jeux d''acteurs autour d''un dispositif de contrôle. Prérequis : avoir suivi la vidéo précédente et lu la leçon 3.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction : un changement de regard
+
+Dans la séance précédente, nous avons vu le contrôle de gestion comme un dispositif de pilotage rationnel. Aujourd''hui, je vous propose de changer complètement de regard : nous allons voir le contrôle de gestion comme un phénomène social, traversé par des rapports de pouvoir, des interprétations divergentes, et des stratégies d''acteurs. Cette bascule de regard est exactement ce qu''un jury testera lorsqu''il vous demandera de comparer les deux courants : il voudra voir que vous savez changer de lunettes théoriques selon la question posée, et non que vous récitez un seul cadre d''analyse appliqué partout.
+
+## 05:00 – 15:00 · L''idée centrale : le contrôle comme construction sociale
+
+L''idée centrale de ce courant est qu''un dispositif de contrôle (un budget, un indicateur, un tableau de bord) ne produit jamais mécaniquement les effets prévus par ses concepteurs. Entre la conception d''un outil et son usage réel sur le terrain s''interposent des acteurs qui l''interprètent, le négocient, le détournent, ou s''en saisissent pour défendre leur position. Le contrôle de gestion devient alors autant un objet d''analyse sociologique qu''un objet de gestion technique.
+
+Visuel à montrer : un schéma en deux colonnes opposant « ce que prévoit le concepteur du dispositif » et « ce qui se passe réellement sur le terrain », avec des flèches représentant les interprétations, négociations et détournements possibles.
+
+Je vous invite à un exercice simple : pensez à un outil de gestion que vous avez vu fonctionner différemment, dans la réalité, de ce que prévoyait son manuel d''utilisation officiel. Cette expérience, même anecdotique, est exactement le type d''intuition que ce courant théorise.
+
+## 15:00 – 30:00 · Les trois lignées fondatrices
+
+Trois lignées de travaux nourrissent ce courant, et vous devez pouvoir les distinguer clairement à l''oral.
+
+La première est l''analyse stratégique des organisations, issue de la sociologie des organisations : toute organisation est un système d''action concret, structuré par des jeux de pouvoir autour de zones d''incertitude que chaque acteur cherche à contrôler. Appliquée au budget, cette grille montre que les responsables négocient leurs objectifs, retiennent stratégiquement de l''information, et utilisent leur connaissance fine du terrain comme ressource de pouvoir.
+
+La deuxième est la comptabilité critique, qui analyse les dispositifs comptables comme des technologies de pouvoir : ils rendent visibles certains phénomènes et invisibles d''autres, et légitiment certains acteurs (les gestionnaires) au détriment d''autres (les métiers opérationnels).
+
+La troisième est la théorie de l''institutionnalisation, qui montre que les outils de gestion se diffusent parfois davantage parce qu''ils sont devenus des normes socialement attendues, des signes de légitimité et de modernité, que pour leur efficacité intrinsèque démontrée.
+
+Visuel à montrer : un tableau à trois colonnes, une par lignée, avec pour chacune le concept clé, un exemple d''application au contrôle de gestion, et le nom du champ disciplinaire d''origine (sociologie des organisations, comptabilité critique, théorie des organisations).
+
+## 30:00 – 45:00 · La notion de zone d''incertitude et de jeu de pouvoir
+
+Arrêtons-nous en détail sur la notion de zone d''incertitude, car c''est l''une des notions les plus fréquemment demandées à l''oral. Une zone d''incertitude est une portion d''information ou de compétence que seul un acteur maîtrise réellement : par exemple, un chef d''atelier qui connaît seul les capacités réelles de production, au-delà des chiffres officiels. Cette maîtrise lui donne un pouvoir de négociation face aux autres acteurs qui en dépendent, par exemple lors de l''élaboration du budget annuel.
+
+Question à poser aux apprenants : si un responsable opérationnel sait que la direction financière ne peut pas vérifier indépendamment ses déclarations sur ses capacités réelles, quel comportement stratégique pourrait-il adopter lors de la négociation budgétaire, et quel est le risque pour l''organisation dans son ensemble si ce comportement se généralise ?
+
+Cette notion permet de comprendre pourquoi les budgets négociés aboutissent souvent à des objectifs qui ne reflètent pas fidèlement les capacités réelles de l''organisation : ce n''est pas un défaut de conception technique du budget, c''est la conséquence logique des jeux de pouvoir qui l''entourent.
+
+## 45:00 – 50:00 · Pause et quiz interactif
+
+Petite pause avec un quiz en quatre questions. Première question : qu''est-ce qu''une zone d''incertitude ? Réponse : une portion d''information ou de compétence que seul un acteur maîtrise, qui lui donne un pouvoir de négociation. Deuxième question : citez les trois lignées fondatrices de ce courant. Réponse : l''analyse stratégique des organisations, la comptabilité critique, la théorie de l''institutionnalisation. Troisième question : qu''entend-on par « technologie de pouvoir » appliquée à un dispositif comptable ? Réponse : l''idée qu''il rend visibles certaines réalités et invisibles d''autres, et légitime certains acteurs plutôt que d''autres. Quatrième question : pourquoi un outil de gestion peut-il se diffuser sans être le plus efficace techniquement ? Réponse : parce qu''il devient une norme socialement attendue, un signe de légitimité et de modernité organisationnelle.
+
+## 50:00 – 65:00 · Limites du courant et débat avec l''approche cybernétique
+
+Ce courant a lui-même reçu des critiques que vous devez pouvoir exposer avec nuance. Première critique : un déficit d''opérationnalité, le courant offrant parfois peu de prescriptions concrètes aux praticiens qui doivent, malgré tout, concevoir des systèmes de contrôle qui fonctionnent. Deuxième critique : un risque de relativisme excessif, qui ferait perdre de vue que certains outils de mesure sont, de fait, plus pertinents que d''autres pour éclairer une décision économique. Troisième critique, méthodologique : la difficulté à généraliser des études de cas qualitatives riches à un grand nombre d''organisations.
+
+Visuel à montrer : un schéma en double colonne comparant explicitement, point par point, les critiques adressées à l''approche cybernétique (vues dans la séance précédente) et les critiques adressées à l''approche socio-organisationnelle, pour que les apprenants visualisent la symétrie du débat.
+
+Je veux insister ici sur un point de nuance essentiel pour votre oral : les recherches les plus récentes tendent à articuler les deux lectures plutôt qu''à les opposer frontalement. Un contrôleur de gestion qui ignore la dimension sociale produit des outils contournés ; un contrôleur qui ignore la dimension technique perd la capacité de produire une information fiable. Les deux dimensions s''influencent mutuellement dans le temps.
+
+## 65:00 – 80:00 · Mise en situation : analyser un cas fictif
+
+Je vous propose maintenant un cas fictif à analyser avec les outils de cette séance. Une entreprise sénégalaise de distribution impose à ses directeurs régionaux un nouveau tableau de bord mensuel, conçu par le siège, avec quinze indicateurs. Six mois après son déploiement, le siège constate que les directeurs régionaux remplissent bien le tableau de bord, mais que leurs décisions quotidiennes semblent inchangées : le dispositif paraît purement formel.
+
+Avec les concepts de cette séance, comment analyseriez-vous cette situation ? Une bonne analyse mobiliserait la notion de zone d''incertitude (les directeurs régionaux conservent leur connaissance fine du terrain, que le tableau de bord ne capture pas entièrement, et continuent donc à décider sur cette base), la notion de technologie de pouvoir (le tableau de bord légitime le siège comme détenteur de l''information de pilotage, ce qui peut être perçu comme une remise en cause de l''autonomie historique des directeurs régionaux), et la notion d''institutionnalisation (le tableau de bord a peut-être été adopté par le siège davantage comme signe de modernité managériale que pour une utilité opérationnelle clairement établie en amont).
+
+## 80:00 – 90:00 · Synthèse et évaluation finale
+
+Pour conclure, retenez trois points : l''idée que le contrôle de gestion est une construction sociale et non un mécanisme neutre, les trois lignées fondatrices (analyse stratégique des organisations, comptabilité critique, institutionnalisation), et la nécessité d''articuler ce courant avec le courant cybernétique plutôt que de les opposer de façon binaire.
+
+Évaluation finale, cinq questions :
+
+Un, définissez en une phrase l''idée centrale du courant socio-organisationnel. Réponse : un dispositif de contrôle ne produit jamais mécaniquement les effets prévus par ses concepteurs, car les acteurs l''interprètent, le négocient ou le détournent.
+
+Deux, qu''est-ce qu''une zone d''incertitude ? Réponse : une portion d''information ou de compétence que seul un acteur maîtrise réellement, source de pouvoir de négociation.
+
+Trois, citez une critique adressée à ce courant. Réponse possible : déficit d''opérationnalité, risque de relativisme excessif, ou difficulté de généralisation des études de cas.
+
+Quatre, pourquoi un dispositif de contrôle peut-il être qualifié de technologie de pouvoir ? Réponse : parce qu''il rend visibles certaines réalités et invisibles d''autres, et légitime certains acteurs au détriment d''autres.
+
+Cinq, comment les recherches récentes tendent-elles à articuler ce courant avec le courant cybernétique ? Réponse : en étudiant comment la dimension technique et la dimension sociale des dispositifs de contrôle s''influencent mutuellement dans le temps, plutôt qu''en choisissant exclusivement l''une ou l''autre lecture.', 'video', 90, false, 70
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les approches socio-organisationnelles du contrôle');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en contrôle de gestion', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser les trois grandes méthodes de recherche du champ (étude de cas clinique, recherche-intervention, enquête quantitative), savoir justifier le choix d''une méthode selon une question de recherche, et savoir présenter et vérifier un calcul d''écart budgétaire. Matériel : tableau ou diaporama, calculatrice ou tableur pour la démonstration chiffrée. Prérequis : avoir lu la leçon 4 de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction : pourquoi les méthodes comptent autant que les théories
+
+Un jury de qualification ne vous demandera pas seulement ce que vous savez sur le contrôle de gestion, mais comment vous comptez produire de la connaissance nouvelle sur votre sujet de thèse. Cette séance vous donne les trois grandes familles de méthodes du champ, avec leurs forces et leurs limites, pour que vous puissiez défendre un choix méthodologique de façon argumentée.
+
+## 05:00 – 20:00 · L''étude de cas clinique
+
+L''étude de cas clinique consiste à observer en profondeur, sur une durée longue, le fonctionnement réel des dispositifs de contrôle dans une ou plusieurs organisations, en combinant entretiens, observation directe et analyse de documents internes. Le terme « clinique » souligne une posture proche de celle d''un clinicien : s''intéresser au fonctionnement singulier d''un cas dans toute sa complexité, plutôt qu''à la vérification d''une loi générale sur un grand échantillon.
+
+Visuel à montrer : un schéma représentant les trois sources de données typiques d''une étude de cas (entretiens, observation, documents) convergeant vers une interprétation triangulée.
+
+Cette méthode est particulièrement adaptée pour documenter les phénomènes du courant socio-organisationnel : interprétation, négociation, détournement d''un outil de contrôle par les acteurs. Ses limites : la difficulté de généraliser les résultats, le risque de biais d''interprétation du chercheur impliqué longuement sur le terrain, et l''exigence d''un protocole rigoureux (triangulation des sources, transparence sur le choix des cas).
+
+## 20:00 – 35:00 · La recherche-intervention
+
+La recherche-intervention va plus loin : le chercheur n''observe pas seulement, il intervient activement dans l''organisation, généralement en accompagnant un changement (par exemple la refonte d''un système de contrôle), tout en produisant une connaissance scientifique sur ce processus. Le chercheur occupe une double posture, acteur et observateur, ce qui exige une vigilance méthodologique particulière.
+
+Question à poser aux apprenants : si vous étiez rémunéré comme consultant par l''entreprise que vous étudiez en recherche-intervention, quel risque cela crée-t-il pour la validité scientifique de vos conclusions, et comment pourriez-vous y répondre méthodologiquement ?
+
+Réponse attendue : le risque est que vos conclusions reflètent vos propres intérêts (montrer que votre intervention a réussi) plutôt que la réalité observée ; on y répond par l''explicitation systématique de sa posture, la validation croisée avec d''autres acteurs de l''organisation non impliqués dans la rémunération, et la publication d''un protocole de recherche détaillé et vérifiable.
+
+Visuel à montrer : un schéma en double cercle représentant le chercheur à l''intersection du rôle d''acteur du changement et du rôle d''observateur scientifique.
+
+## 35:00 – 45:00 · Les enquêtes quantitatives sur les pratiques de contrôle
+
+À l''inverse des deux méthodes précédentes, les enquêtes quantitatives administrent des questionnaires structurés à un grand nombre d''organisations, pour mesurer statistiquement des relations entre variables : par exemple la relation entre la turbulence de l''environnement d''une entreprise et la flexibilité de son système budgétaire, ou entre la taille d''une organisation et la sophistication de ses outils de pilotage. Cette méthode permet des résultats généralisables, avec des tests statistiques explicites de la robustesse des relations observées, ce qui répond directement à la principale limite des deux méthodes qualitatives présentées précédemment.
+
+Elle s''inscrit naturellement dans la continuité du courant cybernétique, qui postule des relations relativement stables et mesurables entre caractéristiques organisationnelles et pratiques de contrôle. Mais elle perd en profondeur et en contexte : un questionnaire standardisé capture mal la complexité des jeux d''acteurs autour d''un dispositif, et elle dépend de la sincérité déclarative des répondants, qui peuvent décrire des pratiques officielles plutôt que des usages réels du terrain.
+
+Visuel à montrer : un tableau récapitulatif à trois colonnes (étude de cas clinique, recherche-intervention, enquête quantitative) avec, pour chacune, le type de question de recherche à laquelle elle répond le mieux, sa principale force, et sa principale limite.
+
+## 45:00 – 50:00 · Pause et quiz interactif
+
+Quiz en quatre questions. Un, quelle méthode privilégier pour comprendre un mécanisme social fin de détournement d''un outil de gestion ? Réponse : l''étude de cas clinique. Deux, quelle méthode implique une double posture d''acteur et d''observateur ? Réponse : la recherche-intervention. Trois, quelle méthode permet la généralisation statistique à une population d''organisations ? Réponse : l''enquête quantitative. Quatre, quelle est la limite commune aux deux méthodes qualitatives face à l''enquête quantitative ? Réponse : la difficulté à généraliser les résultats obtenus sur un nombre restreint de cas.
+
+## 50:00 – 70:00 · Démonstration chiffrée : l''analyse des écarts budgétaires
+
+Je vous propose maintenant une démonstration chiffrée, vérifiée informatiquement, qui illustre comment un calcul technique peut nourrir une question de recherche. Prenons une unité de transformation agro-alimentaire fictive. Le budget initial prévoyait 10 000 unités vendues à un prix unitaire de 2 500 francs CFA, valeur fictive pour l''exemple, avec un coût variable unitaire budgété de 1 500 francs CFA et des charges fixes budgétées de 8 000 000 francs CFA.
+
+Visuel à montrer : un tableau à deux colonnes, budget initial et réalisé, avec les quatre lignes volume, prix unitaire, coût variable unitaire, charges fixes.
+
+Calculons le résultat budgété : la marge sur coût variable est de 2 500 moins 1 500, soit 1 000 francs CFA par unité, multipliée par 10 000 unités, soit 10 000 000 francs CFA ; moins 8 000 000 de charges fixes, le résultat budgété est de 2 000 000 francs CFA.
+
+En réalité, l''entreprise a vendu 11 200 unités, à un prix unitaire moyen de 2 400 francs CFA, avec un coût variable unitaire réel de 1 600 francs CFA et des charges fixes réelles de 8 300 000 francs CFA. Le résultat réel est de (2 400 moins 1 600) multiplié par 11 200, soit 8 960 000 francs CFA de marge, moins 8 300 000 de charges fixes, soit un résultat réel de 660 000 francs CFA.
+
+L''écart total est de 660 000 moins 2 000 000, soit moins 1 340 000 francs CFA. Décomposons-le en quatre effets, vérifiés par calcul : un effet volume favorable de 1 200 000 francs CFA (plus d''unités vendues que prévu), un effet prix défavorable de 1 120 000 francs CFA (prix réel inférieur au prix budgété, sur le volume réel), un effet coût variable défavorable de 1 120 000 francs CFA (coût réel supérieur au coût budgété, sur le volume réel), et un effet charges fixes défavorable de 300 000 francs CFA. La somme de ces quatre effets redonne exactement moins 1 340 000 francs CFA, ce qui confirme la cohérence de la décomposition.
+
+Question à poser aux apprenants : si cette entreprise avait vendu seulement 9 000 unités au lieu de 11 200, toutes choses égales par ailleurs sur le prix et le coût unitaire, l''effet volume aurait-il été favorable ou défavorable, et pourquoi ?
+
+## 70:00 – 85:00 · Articuler calcul technique et question de recherche
+
+Ce calcul, purement technique en apparence, est un excellent point d''appui pour illustrer le débat entre les deux courants théoriques. Le courant cybernétique y voit un diagnostic rationnel et objectif des causes de la sous-performance. Le courant socio-organisationnel invite à se demander comment les acteurs de l''entreprise interprètent ou contestent cette décomposition : le responsable commercial pourrait contester que l''effet prix lui soit attribué, si la baisse de prix résultait d''une décision collective de la direction face à la concurrence, et non d''une défaillance de sa propre action commerciale.
+
+C''est exactement ce type d''articulation entre rigueur technique et analyse critique que vous devez montrer à l''oral : ne jamais présenter un calcul comme neutre sans interroger la façon dont les acteurs se l''approprient ou le contestent dans l''organisation réelle.
+
+## 85:00 – 90:00 · Synthèse et évaluation finale
+
+Pour conclure, retenez les trois méthodes et leur domaine de pertinence respectif, ainsi que la démarche de vérification systématique d''un calcul d''écart budgétaire par décomposition en effets qui doivent se recomposer exactement.
+
+Évaluation finale, cinq questions :
+
+Un, quelle méthode choisiriez-vous pour mesurer l''ampleur de la diffusion d''une pratique de gestion dans une population d''entreprises ? Réponse : l''enquête quantitative.
+
+Deux, quelle est la principale limite méthodologique de la recherche-intervention ? Réponse : le risque de biais lié à l''intérêt du chercheur-intervenant à voir son intervention perçue comme réussie.
+
+Trois, dans l''exemple chiffré, quel est le montant de l''effet volume ? Réponse : 1 200 000 francs CFA, favorable.
+
+Quatre, pourquoi la somme des quatre effets doit-elle être strictement égale à l''écart total ? Réponse : parce que la décomposition en effets est une recomposition exacte et non une approximation de l''écart global entre résultat réel et résultat budgété.
+
+Cinq, comment le courant socio-organisationnel enrichit-il la lecture d''un calcul d''écart budgétaire a priori purement technique ? Réponse : en interrogeant la façon dont les acteurs interprètent, négocient ou contestent l''attribution de chaque effet, au-delà de sa validité arithmétique.', 'video', 90, false, 80
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : budget traditionnel et beyond budgeting, un débat théorique renouvelé', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion. Objectifs : maîtriser le débat entre contrôle budgétaire traditionnel et beyond budgeting, savoir le relier aux deux courants théoriques fondamentaux du champ, et savoir construire à l''oral un plan de réponse structuré à une question de synthèse. Matériel : tableau ou diaporama. Prérequis : avoir suivi les deux vidéos précédentes et lu la leçon 5.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction : un débat contemporain, un débat ancien
+
+Cette séance traite d''un débat très actuel en contrôle de gestion, celui du contrôle budgétaire traditionnel face aux démarches de beyond budgeting. Mon objectif est de vous montrer que ce débat contemporain, loin d''être un sujet isolé, est la reformulation actuelle de l''opposition théorique fondamentale que vous avez étudiée dans les deux séances précédentes : l''approche cybernétique contre l''approche socio-organisationnelle. Savoir faire ce lien est précisément ce qui distingue, à l''oral, un candidat qui connaît sa discipline en profondeur d''un candidat qui empile des connaissances sans les articuler.
+
+## 05:00 – 20:00 · Le contrôle budgétaire traditionnel et ses justifications
+
+Le contrôle budgétaire traditionnel repose sur un cycle annuel : négociation des objectifs, allocation de ressources, suivi mensuel des écarts, actions correctives. C''est l''héritier direct du modèle de planification-contrôle étudié dans notre première vidéo. Ses défenseurs soulignent qu''il reste un outil puissant de coordination entre unités, de responsabilisation des managers, et de discipline financière, en particulier dans les grandes organisations où il faut synchroniser des centaines de décisions décentralisées.
+
+Visuel à montrer : le schéma du cycle budgétaire annuel (fixation des objectifs, mise en œuvre, suivi des écarts, actions correctives), avec, en regard, un rappel du schéma de la boucle cybernétique vu en première vidéo, pour souligner visuellement la filiation directe entre les deux.
+
+## 20:00 – 35:00 · Les critiques du beyond budgeting
+
+Le mouvement du beyond budgeting, apparu à la fin des années 1990, critique le cycle budgétaire annuel pour trois raisons principales. D''abord, son incapacité à s''adapter à des environnements changeant plus vite qu''un an. Ensuite, le temps et les ressources considérables qu''il consomme, la préparation budgétaire mobilisant souvent plusieurs mois dans les grandes organisations. Enfin, les comportements pervers qu''il engendre : négociation stratégique des objectifs à la baisse, dépenses de fin d''année pour consommer une enveloppe avant qu''elle ne soit perdue, ou focalisation sur l''atteinte d''un chiffre au détriment de la création de valeur réelle.
+
+Les démarches alternatives remplacent le budget annuel fixe par des prévisions glissantes révisées plus fréquemment, des objectifs relatifs plutôt qu''absolus, et une décentralisation plus large des décisions vers les équipes opérationnelles.
+
+Question à poser aux apprenants : en quoi la critique du beyond budgeting sur les comportements pervers du budget rejoint-elle les intuitions du courant socio-organisationnel étudiées dans notre deuxième vidéo ?
+
+## 35:00 – 40:00 · Pause et quiz interactif
+
+Quatre questions. Un, sur quel cycle repose le contrôle budgétaire traditionnel ? Réponse : un cycle annuel de fixation d''objectifs, allocation, suivi des écarts, actions correctives. Deux, citez une critique du beyond budgeting envers le budget traditionnel. Réponse possible : rigidité face à l''incertitude, coût élevé en temps et ressources, ou comportements pervers. Trois, par quoi le beyond budgeting remplace-t-il le budget annuel fixe ? Réponse : des prévisions glissantes et des objectifs relatifs. Quatre, le beyond budgeting élimine-t-il toute forme de mesure de la performance ? Réponse : non, il la déplace vers des indicateurs relatifs et une décentralisation plus large, mais ne sort pas de la logique de mesure.
+
+## 40:00 – 60:00 · L''articulation avec les deux courants théoriques
+
+Voici le cœur de cette séance, le point que vous devez absolument savoir exposer à l''oral. Le camp qui défend le contrôle budgétaire traditionnel reste largement dans une logique cybernétique : on peut améliorer le dispositif, le rendre plus flexible, sans remettre en cause l''idée qu''un bon système d''objectifs et de mesures pilote rationnellement l''organisation. Le camp qui défend le beyond budgeting mobilise, souvent implicitement, des arguments proches du courant socio-organisationnel : les effets pervers du budget sur les comportements des acteurs, la nécessité de faire confiance aux équipes plutôt que de les contraindre par des chiffres négociés sous contrainte hiérarchique.
+
+Mais attention à la nuance essentielle que j''attends de vous à l''oral : le beyond budgeting reste, lui aussi, un dispositif de pilotage par indicateurs, relatifs plutôt qu''absolus. Aucun des deux camps ne sort complètement de la logique de mesure. L''opposition entre les deux courants théoriques est donc une opposition de degré et d''accent, plus qu''une rupture totale entre un monde purement rationnel et un monde purement social.
+
+Visuel à montrer : un schéma à double flèche, avec à une extrémité « logique cybernétique pure » et à l''autre « logique socio-organisationnelle pure », sur lequel on positionne le budget traditionnel plutôt vers la première extrémité et le beyond budgeting plutôt vers la seconde, sans jamais les placer aux extrêmes absolus.
+
+## 60:00 – 75:00 · Construire un plan de réponse à l''oral
+
+Reprenons maintenant la question type : « Dans quelle mesure le débat entre le contrôle budgétaire traditionnel et les démarches de beyond budgeting renouvelle-t-il, ou prolonge-t-il, l''opposition entre une conception cybernétique et une conception socio-organisationnelle du contrôle de gestion ? » Un bon plan comporterait une introduction qui rappelle brièvement les deux courants et annonce le fil directeur, une première partie sur la filiation du budget traditionnel avec la logique cybernétique, une deuxième partie sur la proximité du beyond budgeting avec la logique socio-organisationnelle (nuancée par le fait qu''aucun des deux camps ne sort de la logique de mesure), une troisième partie proposant une mise en œuvre méthodologique concrète (par exemple une recherche-intervention combinée à une enquête quantitative dans un contexte d''entreprises ouest-africaines), et une conclusion qui rappelle la nécessité d''articuler les deux lectures théoriques plutôt que d''en choisir une exclusivement.
+
+Je vous invite à vous entraîner maintenant : prenez deux minutes pour formuler oralement, à voix haute si possible, l''introduction de cette réponse, avant que je ne vous propose une version possible dans la synthèse finale.
+
+## 75:00 – 85:00 · Ce qu''un jury évalue dans ce type de réponse
+
+Un jury évalue, dans l''ordre d''importance, la capacité à relier explicitement le débat contemporain aux courants théoriques fondamentaux, la nuance apportée (éviter de caricaturer un camp comme purement rationnel et l''autre comme purement social), la justification méthodologique concrète, et la clarté de l''articulation entre les parties de la réponse. Un candidat qui se limite à une description technique des deux systèmes budgétaires, sans les relier à la théorie, montrera qu''il connaît la pratique mais pas encore qu''il sait l''analyser comme chercheur, ce qui est précisément ce que l''examen de qualification doit vérifier.
+
+Un autre piège fréquent, que j''ai vu commettre par des candidats par ailleurs bien préparés, est de présenter le beyond budgeting comme une solution définitive qui aurait remplacé le budget traditionnel dans la pratique des organisations. Ce n''est factuellement pas le cas : la grande majorité des organisations, y compris de grande taille, continuent d''utiliser un cycle budgétaire annuel, parfois assoupli par des éléments empruntés au beyond budgeting (prévisions glissantes partielles, objectifs relatifs sur certains indicateurs) sans abandonner totalement la logique budgétaire classique. Un bon candidat signale cette coexistence plutôt que de présenter une rupture totale et généralisée qui ne correspond pas à la réalité observée du terrain.
+
+## 85:00 – 90:00 · Synthèse et évaluation finale
+
+Pour conclure, une introduction possible à la question type serait la suivante : le contrôle de gestion s''est historiquement construit autour de deux grandes lectures, cybernétique et socio-organisationnelle ; le débat entre budget traditionnel et beyond budgeting en constitue une reformulation contemporaine, le premier restant fidèle à la logique de pilotage rationnel, le second reprenant des intuitions proches du courant socio-organisationnel sans pour autant sortir entièrement de la logique de mesure ; nous montrerons cette filiation avant de proposer une mise en œuvre méthodologique adaptée à un contexte d''entreprises africaines.
+
+Évaluation finale, cinq questions :
+
+Un, à quelle logique théorique le contrôle budgétaire traditionnel reste-t-il fidèle ? Réponse : la logique cybernétique et rationnelle.
+
+Deux, quelles intuitions du courant socio-organisationnel le beyond budgeting reprend-il ? Réponse : la défiance envers un pilotage centralisé et chiffré ignorant les jeux d''acteurs, et l''attention aux effets pervers des dispositifs de mesure sur les comportements.
+
+Trois, pourquoi faut-il nuancer une opposition trop binaire entre les deux dispositifs ? Réponse : parce que le beyond budgeting reste lui-même un dispositif de pilotage par indicateurs, relatifs plutôt qu''absolus, et ne sort donc pas complètement de la logique de mesure.
+
+Quatre, quelles méthodes de recherche combineriez-vous pour étudier ce débat empiriquement dans un contexte africain ? Réponse possible : une recherche-intervention auprès de quelques entreprises en transition, complétée par une enquête quantitative pour mesurer l''ampleur de la diffusion de ces pratiques.
+
+Cinq, que doit viser en priorité l''introduction d''une réponse à ce type de question de synthèse ? Réponse : annoncer explicitement le lien entre le débat contemporain et les courants théoriques fondamentaux du champ, pour montrer d''emblée au jury la structure argumentative de la réponse.', 'video', 90, false, 90
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : budget traditionnel et beyond budgeting, un débat théorique renouvelé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : doctorants préparant leur examen de qualification en contrôle de gestion, en fin de préparation. Objectifs : vivre une simulation complète de soutenance de qualification doctorale, de la présentation initiale aux questions de jury, et savoir s''auto-évaluer avec une grille structurée. Matériel : tableau ou diaporama, chronomètre. Prérequis : avoir suivi l''ensemble des leçons et vidéos précédentes de ce cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction : le format de la soutenance simulée
+
+Cette dernière séance simule intégralement une soutenance de qualification doctorale en contrôle de gestion. Je vais jouer, tour à tour, le rôle du candidat qui présente son champ et son projet de thèse fictif, puis le rôle du jury qui pose des questions. Je vous invite à vous mettre réellement à la place du candidat : notez vos propres réponses aux questions du jury avant d''écouter la réponse modèle que je proposerai, car c''est cet entraînement actif, et non l''écoute passive, qui vous préparera efficacement.
+
+## 05:00 – 20:00 · Présentation du champ et du projet de thèse fictif (15 minutes)
+
+Voici la présentation introductive que ferait un candidat type, d''une durée de quinze minutes, que nous allons dérouler intégralement.
+
+« Mesdames et messieurs les membres du jury, le contrôle de gestion, en tant que champ de recherche, s''est structuré historiquement autour d''une approche cybernétique et rationnelle, héritée du modèle de la planification-contrôle, qui pense le pilotage de l''organisation comme une boucle de régulation par objectifs, mesures et corrections. Cette approche a été enrichie, puis fortement questionnée, par des travaux qui montrent que le contrôle de gestion est aussi, et peut-être avant tout, une construction sociale, traversée par des jeux de pouvoir entre acteurs, où les dispositifs de mesure ne produisent jamais mécaniquement les effets prévus par leurs concepteurs.
+
+Mon projet de thèse, encore à l''état de proposition, s''inscrit précisément à l''articulation de ces deux lectures. Il porte sur l''introduction de démarches de pilotage inspirées du beyond budgeting dans des petites et moyennes entreprises agro-industrielles de la région de Thiès, au Sénégal. Ma question de recherche est la suivante : comment des PME familiales, habituées à un pilotage budgétaire informel ou récemment formalisé, s''approprient-elles, négocient-elles, ou résistent-elles à l''introduction d''outils de pilotage par indicateurs relatifs et par prévisions glissantes, portés par des organismes d''accompagnement ou des investisseurs extérieurs ?
+
+Sur le plan théorique, je mobiliserai le cadre de l''analyse stratégique des organisations pour comprendre les jeux de pouvoir entre le dirigeant propriétaire, souvent détenteur de zones d''incertitude considérables sur le fonctionnement réel de son entreprise, et les acteurs extérieurs qui portent ces nouveaux outils. Sur le plan méthodologique, je propose un protocole en trois phases : une enquête quantitative exploratoire pour mesurer la diffusion actuelle des pratiques budgétaires dans un échantillon de PME agro-industrielles de la région, une recherche-intervention auprès de deux ou trois PME volontaires pour accompagner et documenter finement un processus de changement, et un retour d''étude de cas clinique un an après l''intervention pour observer les usages réels, au-delà du fonctionnement officiel du dispositif au moment de sa conception.
+
+Ma contribution attendue est double : sur le plan théorique, mieux comprendre comment les outils de pilotage de la performance globale, conçus initialement dans de grandes entreprises occidentales, sont réappropriés dans un contexte de PME familiales africaines, où les zones d''incertitude et les rapports de pouvoir prennent des formes spécifiques liées à la structure de propriété et de gouvernance de ces entreprises ; sur le plan pratique, produire des recommandations pour les organismes d''accompagnement qui promeuvent ces outils, afin qu''ils tiennent mieux compte des jeux d''acteurs réels plutôt que de supposer une adoption purement technique et rationnelle. »
+
+Visuel à montrer : le plan de la présentation affiché à l''écran (champ théorique, question de recherche, cadre théorique mobilisé, protocole méthodologique en trois phases, contribution attendue), pour que les apprenants voient la structure même pendant qu''ils l''écoutent.
+
+## 20:00 – 25:00 · Pause et quiz interactif
+
+Avant de passer aux questions du jury, un quiz rapide en quatre questions sur la présentation que vous venez d''entendre. Un, à quels deux courants théoriques le projet de thèse présenté se réfère-t-il explicitement ? Réponse : l''approche cybernétique et rationnelle, et l''approche socio-organisationnelle (via l''analyse stratégique des organisations). Deux, combien de phases comporte le protocole méthodologique proposé, et lesquelles ? Réponse : trois phases, une enquête quantitative exploratoire, une recherche-intervention, et un retour d''étude de cas clinique. Trois, quelle notion du courant socio-organisationnel est mobilisée pour analyser le dirigeant propriétaire de PME ? Réponse : la zone d''incertitude. Quatre, quelle est la double nature de la contribution attendue annoncée par le candidat ? Réponse : une contribution théorique et une contribution pratique.
+
+## 25:00 – 70:00 · Les questions de jury type (8 à 10 questions) et la structure d''une bonne réponse
+
+Question 1 du jury : « Vous présentez votre projet comme se situant à l''articulation des deux courants théoriques. N''est-ce pas une façon de refuser de trancher, plutôt qu''un véritable positionnement ? » Structure d''une bonne réponse : reconnaître la légitimité de la question, puis expliquer que l''articulation n''est pas une absence de choix mais un choix argumenté, cohérent avec l''état actuel du débat académique où les recherches les plus récentes articulent justement les deux lectures plutôt que de les opposer, et préciser à quel endroit précis de l''analyse chaque cadre théorique sera mobilisé.
+
+Question 2 : « Comment allez-vous gérer, sur le plan méthodologique, le fait d''être à la fois chercheur et possible intervenant rémunéré dans les PME de votre recherche-intervention ? » Réponse attendue : expliciter systématiquement sa posture dans les publications, prévoir une validation croisée des observations avec des acteurs non directement impliqués dans la relation contractuelle, et documenter un protocole détaillé permettant d''évaluer la rigueur de la démarche.
+
+Question 3 : « Pourquoi ne pas vous contenter d''une enquête quantitative à grande échelle, qui serait plus rapide et plus généralisable ? » Réponse attendue : une enquête quantitative seule ne permettrait pas de comprendre les mécanismes fins d''appropriation ou de résistance aux outils de pilotage, qui sont précisément l''objet central de la question de recherche ; elle est donc complémentaire, non substituable, aux deux autres méthodes.
+
+Question 4 : « En quoi votre terrain sénégalais apporte-t-il une contribution originale par rapport à la littérature existante, majoritairement produite sur des contextes occidentaux ? » Réponse attendue : souligner que les structures de propriété et de gouvernance des PME familiales étudiées diffèrent souvent significativement des grandes entreprises occidentales sur lesquelles le beyond budgeting a été initialement théorisé, ce qui permet de tester la portée et les limites de ce cadre théorique dans un contexte différent, sans prétendre que « le contexte africain » serait homogène ou uniformément différent.
+
+Question 5 : « Quelle est la principale limite de votre protocole méthodologique en trois phases ? » Réponse attendue : reconnaître une limite réelle, par exemple la difficulté de recruter des PME volontaires pour la phase de recherche-intervention, ou le risque que les deux ou trois PME étudiées en profondeur ne soient pas représentatives de l''échantillon plus large mesuré par l''enquête quantitative, et indiquer comment cette limite sera explicitement discutée dans la thèse plutôt que dissimulée.
+
+Question 6 : « Si vos résultats montraient que les PME étudiées résistent massivement à ces nouveaux outils sans jamais les adopter réellement, cela invaliderait-il votre projet de thèse ? » Réponse attendue : non, un résultat de résistance massive serait en soi un résultat de recherche intéressant et interprétable à la lumière du cadre théorique mobilisé (il confirmerait, par exemple, l''importance des zones d''incertitude et des jeux de pouvoir), ce qui montre la nécessité de ne jamais présupposer, avant l''enquête, le résultat que l''on souhaiterait obtenir.
+
+Question 7 : « Comment définiriez-vous, en une phrase, la différence entre le contrôle de gestion et le pilotage de la performance globale que vous évoquez ? » Réponse attendue : le contrôle de gestion, dans son acception la plus classique, se concentre sur le pilotage des ressources financières et opérationnelles au regard d''objectifs budgétaires, tandis que le pilotage de la performance globale élargit cette logique à des dimensions non strictement financières (sociale, environnementale, relationnelle) et à des indicateurs relatifs plutôt qu''absolus.
+
+Question 8 : « Votre projet mobilise-t-il des auteurs ou des travaux issus du continent africain sur le contrôle de gestion ? » Réponse attendue : un candidat honnête reconnaît l''état réel de ses lectures sur ce point précis plutôt que de citer des noms par complaisance ; si la littérature spécifiquement africaine sur le contrôle de gestion en PME reste encore peu développée par rapport à d''autres champs des sciences sociales, le candidat peut légitimement annoncer que sa thèse contribuera à combler, même modestement, ce manque, sans jamais inventer une filiation académique qu''il ne maîtrise pas réellement.
+
+## 70:00 – 85:00 · Débriefing de la simulation
+
+Reprenons maintenant, à froid, les points clés de cette simulation. Le candidat a montré une capacité constante à relier chaque réponse aux deux courants théoriques fondamentaux du champ, sans jamais s''en écarter durablement. Il a su reconnaître les limites réelles de son protocole plutôt que de les nier, ce qui renforce sa crédibilité plutôt que de l''affaiblir. Il a su rester prudent sur les points où ses connaissances étaient incertaines, notamment sur la littérature africaine spécifique du champ, plutôt que de prendre le risque d''une affirmation non vérifiée devant un jury qui pourrait la contester immédiatement.
+
+Visuel à montrer : la liste des huit questions de jury posées pendant la séquence précédente, pour que les apprenants puissent les reprendre et s''exercer eux-mêmes à y répondre après la séance, avec leur propre projet de thèse.
+
+## 85:00 – 90:00 · Grille d''auto-évaluation de la soutenance simulée
+
+Cette dernière vidéo ne se conclut pas par une évaluation à cinq questions avec réponses, mais par une grille d''auto-évaluation que vous utiliserez pour préparer votre propre soutenance. Notez-vous, sur une échelle de un à quatre, pour chacun des six critères suivants, en étant honnête plutôt que complaisant avec vous-même.
+
+Premier critère : la présentation initiale relie-t-elle explicitement le champ théorique, la question de recherche, le cadre mobilisé et la méthodologie, sans rupture logique entre ces éléments ?
+
+Deuxième critère : chaque réponse à une question de jury commence-t-elle par reconnaître explicitement la légitimité ou la difficulté de la question posée, plutôt que de l''éluder ?
+
+Troisième critère : les limites du projet sont-elles reconnues spontanément, sans attendre d''y être acculé par le jury ?
+
+Quatrième critère : le candidat évite-t-il toute affirmation non vérifiable, notamment sur des auteurs, des chiffres ou des filiations académiques qu''il ne maîtrise pas réellement ?
+
+Cinquième critère : le candidat sait-il articuler les deux grands courants théoriques du champ plutôt que de n''en mobiliser qu''un seul de façon rigide ?
+
+Sixième critère : la justification méthodologique est-elle argumentée en fonction de la question de recherche, et non présentée comme un choix arbitraire ou de pure convenance ?
+
+Un score global de dix-huit sur vingt-quatre ou plus indique une préparation solide ; un score inférieur signale les critères sur lesquels concentrer vos dernières semaines de préparation avant l''épreuve réelle. Je vous souhaite une excellente soutenance.', 'video', 90, false, 100
+from public.courses c where c.slug = 'doc-cg'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale');
 
 -- Cours : Doctorat Comptabilité : réussir l'examen de qualification doctorale
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1151,736 +1836,3 @@ Cette dernière vidéo se termine, non par une évaluation à cinq questions ave
 Faites le total sur 32 points. Un score supérieur à 26 traduit une préparation solide ; entre 18 et 26, continuez à retravailler les points les plus faibles identifiés ; en dessous de 18, reprenez les quatre premières vidéos de ce cours avant de retenter une simulation complète. Cette grille, répétée à intervalles réguliers durant vos huit semaines de préparation, est l''outil le plus efficace pour transformer une connaissance théorique en une performance orale maîtrisée devant un jury réel.', 'video', 90, false, 100
 from public.courses c where c.slug = 'doc-fin'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale en Finance');
-
--- Cours : Doctorat Marketing et commerce : préparer l'examen de qualification doctorale
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'doc-mkt', (select id from public.levels where name = 'Doctorat'), null, 'Marketing et commerce', 'Doctorat Marketing et commerce : préparer l''examen de qualification doctorale', 'Cours de préparation à l''examen de qualification doctorale en marketing et commerce : grands courants théoriques (marketing mix vs marketing relationnel et dominante service), débat standardisation/adaptation culturelle en Afrique, méthodes de recherche du champ (expérimentation, enquête, qualitatif) et simulation de soutenance devant jury.', true, 809
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir son examen de qualification doctorale en Marketing et commerce', '## Objectifs de la leçon
-
-Cette première leçon pose le cadre de l''examen de qualification doctorale (comprehensive exam) en marketing et commerce. Elle décrit la nature de l''épreuve, les attentes d''un jury doctoral, une méthode de travail éprouvée et un plan de travail réaliste sur huit semaines. L''objectif n''est pas de refaire un cours de méthodologie générale, mais de donner au doctorant les repères spécifiques à son champ : quelles lectures sont incontournables, comment organiser une cartographie des courants du marketing, et comment transformer des mois de lecture en une note de synthèse défendable à l''oral.
-
-## Nature de l''épreuve de qualification
-
-L''examen de qualification doctorale n''est pas un examen de cours. Il vise à vérifier qu''un doctorant possède une vue d''ensemble critique de son champ avant de se consacrer pleinement à sa thèse. Dans la plupart des programmes doctoraux, l''épreuve comporte deux volets complémentaires. Le premier est une production écrite : une synthèse de la littérature (literature review) qui retrace les grands courants théoriques du marketing, leurs tensions, leurs auteurs fondateurs et leurs prolongements récents. Le second est une soutenance orale devant un jury de professeurs, au cours de laquelle le doctorant présente cette synthèse, expose le positionnement théorique envisagé pour sa future thèse, puis répond à des questions qui testent à la fois l''étendue de ses connaissances et sa capacité à raisonner en temps réel.
-
-Ce qui distingue cette épreuve d''un examen de master, c''est le niveau d''exigence attendu sur la maîtrise des débats théoriques. Un étudiant de master doit savoir appliquer un modèle à un cas d''entreprise. Un doctorant doit savoir d''où vient ce modèle, pourquoi il a été contesté, par qui, et ce qui lui a succédé ou ce qui le complète. Le jury ne demande pas « comment appliquer les 4P à cette entreprise », il demande « en quoi le marketing mix transactionnel est-il aujourd''hui discuté par la logique de dominante service, et que change ce déplacement pour la recherche en marketing ».
-
-## Ce qu''attend un jury doctoral
-
-Un jury de qualification évalue trois choses. D''abord, la rigueur conceptuelle : le doctorant doit employer les termes du champ avec précision, distinguer par exemple un paradigme d''une théorie, un courant d''une méthode, un concept d''un construit mesurable. Ensuite, l''esprit critique : il ne s''agit pas de réciter des courants côte à côte, mais de les mettre en tension, de montrer leurs limites respectives et d''argumenter un positionnement personnel, même provisoire. Enfin, la capacité à situer un projet de thèse dans cette littérature : un doctorant qui ne peut pas expliquer en quoi son sujet dialogue avec les débats existants du champ n''est pas prêt à soutenir son projet.
-
-Les jurys sanctionnent fréquemment trois défauts. Le premier est l''énumération sans articulation : citer de nombreux auteurs et courants sans jamais les relier entre eux ni à une problématique. Le deuxième est l''anachronisme théorique : présenter un courant ancien comme s''il était la dernière frontière du champ, ou l''inverse, ignorer qu''un courant plus récent répond directement aux limites d''un courant plus ancien. Le troisième est l''absence de recul critique sur les méthodes : savoir qu''un plan factoriel existe ne suffit pas, il faut savoir en discuter la pertinence et les limites pour une question de recherche donnée.
-
-## Méthode de travail pour préparer l''épreuve
-
-Trois outils structurent une préparation efficace. Le premier est la fiche de lecture standardisée : pour chaque texte ou chaque courant étudié, une fiche courte qui résume la thèse principale, le contexte d''émergence, les concepts clés, les critiques reçues et les prolongements. Cette discipline évite l''écueil classique du doctorant qui a « beaucoup lu » mais ne retrouve plus, sous la pression de l''oral, l''argument précis d''un auteur.
-
-Le deuxième outil est la cartographie des courants, c''est-à-dire une représentation visuelle (tableau ou schéma) qui place les grands paradigmes du marketing sur une ligne du temps et les relie par des flèches de continuité, de rupture ou de complémentarité. Pour le marketing, une cartographie utile oppose, par exemple, l''axe transactionnel centré sur l''échange ponctuel et le marketing mix, à l''axe relationnel centré sur la durée, la confiance et la coproduction de valeur avec le client. Une bonne cartographie fait aussi apparaître les débats transversaux, comme celui de la standardisation versus l''adaptation culturelle des stratégies marketing dans des contextes émergents.
-
-Le troisième outil est la note de synthèse rédigée, de cinq à dix pages, qui simule l''écrit de l''épreuve. Rédiger cette note force le doctorant à choisir un plan, à hiérarchiser les courants et à formuler une problématique de recherche personnelle, exercice bien plus exigeant que la simple lecture passive.
-
-## Plan de travail sur huit semaines
-
-Un plan de travail réaliste répartit l''effort en quatre phases de deux semaines chacune. Les semaines 1 et 2 sont consacrées à la cartographie générale du champ : identifier les grands paradigmes (marketing mix, marketing relationnel, dominante service, comportement du consommateur, marketing international) et lister, pour chacun, trois à cinq références structurantes. Les semaines 3 et 4 approfondissent deux courants prioritaires, choisis pour leur pertinence par rapport au projet de thèse envisagé, avec fiches de lecture détaillées et premières mises en tension critique.
-
-Les semaines 5 et 6 sont dédiées aux méthodes de recherche : revoir les logiques de l''expérimentation, de l''enquête par questionnaire et des méthodes qualitatives, et surtout savoir argumenter le choix d''une méthode pour une question donnée plutôt que simplement la décrire. Les semaines 7 et 8 servent à la rédaction de la note de synthèse écrite et à la simulation orale, idéalement devant un collègue ou un directeur de recherche qui joue le rôle du jury et pose des questions imprévues. Ce calendrier n''est qu''un repère : il doit être adapté au temps réellement disponible et au nombre de courants exigés par le programme doctoral concerné.
-
-## Points clés à retenir
-
-L''examen de qualification doctorale en marketing teste une maîtrise critique du champ, pas une application de modèle à un cas d''entreprise. Le jury valorise la mise en tension des courants, la précision conceptuelle et la capacité à situer un projet de thèse dans la littérature existante. Une préparation efficace repose sur des fiches de lecture rigoureuses, une cartographie visuelle des courants et une note de synthèse rédigée à l''avance, le tout organisé sur un calendrier de plusieurs semaines qui laisse du temps à la simulation orale.
-
-## Exercices pratiques
-
-1. Construisez votre propre cartographie des courants du marketing, sous forme de tableau à trois colonnes (courant, période d''émergence, idée centrale), en plaçant au moins cinq courants ou paradigmes du champ.
-
-2. Rédigez, en dix lignes maximum, une définition rigoureuse de ce que le jury attend quand il demande de « mettre en tension deux courants théoriques », en donnant un exemple concret au marketing.
-
-3. Identifiez trois défauts fréquents (parmi ceux mentionnés dans la leçon) que vous pensez être le plus exposé à commettre à l''oral, et proposez pour chacun une action corrective précise.
-
-4. Esquissez, en une phrase, le lien possible entre votre futur projet de thèse (réel ou fictif) et le débat standardisation versus adaptation culturelle en marketing.
-
-5. Proposez un calendrier de préparation personnalisé sur huit semaines, adapté à votre situation (temps disponible, nombre de courants exigés par votre programme).
-
-## Corrigé
-
-1. Il n''existe pas de corrigé unique : l''évaluation porte sur la cohérence interne du tableau. Un bon tableau situe correctement, par exemple, le marketing mix transactionnel dans les années 1960, le marketing relationnel à partir des années 1980-1990, la logique de dominante service (service-dominant logic) au milieu des années 2000, et peut ajouter le marketing international/interculturel et le comportement du consommateur comme courants transversaux.
-
-2. Une définition acceptable : mettre en tension deux courants signifie montrer en quoi le second répond, prolonge ou contredit les limites du premier, sans se contenter de les décrire côte à côte. Exemple : le marketing relationnel met en tension le marketing mix transactionnel en déplaçant l''attention de la transaction unique vers la relation durable et la valeur coproduite avec le client, ce qui remet en cause la vision du client comme simple récepteur passif de l''offre.
-
-3. Réponse ouverte ; l''essentiel est que l''action corrective soit concrète (par exemple : pour l''énumération sans articulation, s''imposer systématiquement une phrase de lien entre deux auteurs cités dans la même réponse).
-
-4. Réponse ouverte ; l''essentiel est d''établir un lien plausible et explicite, par exemple un projet de thèse sur l''adaptation des stratégies de marque de distributeurs internationaux sur les marchés ouest-africains, qui s''inscrit directement dans ce débat.
-
-5. Réponse ouverte ; un calendrier acceptable respecte globalement la logique proposée dans la leçon (cartographie générale, puis approfondissement ciblé, puis méthodes, puis rédaction et simulation), même si la répartition en semaines diffère.', 'texte', 60, true, 10
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir son examen de qualification doctorale en Marketing et commerce');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique n°1 : du marketing mix transactionnel au marketing relationnel et à la dominante service', '## Objectifs de la leçon
-
-Cette leçon traite le premier grand débat théorique du champ : l''opposition, puis la mise en tension progressive, entre le paradigme transactionnel du marketing mix (les « 4P ») et le paradigme relationnel prolongé par la logique de dominante service (service-dominant logic) et la notion de co-création de valeur. Ce débat est central pour l''examen de qualification car il structure l''histoire récente de la discipline et conditionne le choix des méthodes de recherche appropriées à chaque paradigme.
-
-## Le paradigme transactionnel et le marketing mix
-
-Le marketing, formalisé comme discipline de gestion à partir du milieu du vingtième siècle, s''est d''abord construit autour d''une vision transactionnelle de l''échange économique. Dans cette vision, l''entreprise définit une offre (produit, prix, distribution, communication) et la propose à un marché de consommateurs considérés comme des récepteurs relativement passifs, que l''on cherche à convaincre puis à faire acheter. Le modèle le plus connu de cette période est le marketing mix, généralement résumé par les « 4P » : produit, prix, place (distribution) et promotion (communication). Ce cadre a eu un apport considérable : il a donné aux praticiens un outil opérationnel simple pour organiser les décisions marketing et il a permis de penser le marketing comme un ensemble de leviers combinables, plutôt que comme une suite d''actions isolées.
-
-La vision transactionnelle met l''accent sur l''échange ponctuel : chaque transaction est optimisée pour elle-même, l''objectif premier étant de conclure la vente. La relation entre l''entreprise et le client n''est pas niée, mais elle n''est pas le cœur de l''analyse : ce qui compte, c''est la bonne combinaison des variables du mix pour maximiser les ventes ou la part de marché sur une période donnée. Ce paradigme a dominé l''enseignement et la pratique du marketing pendant plusieurs décennies et reste aujourd''hui un socle pédagogique incontournable, notamment en marketing de grande consommation.
-
-## Les limites du paradigme transactionnel
-
-À partir des années 1980, plusieurs limites du paradigme transactionnel ont été mises en évidence par des chercheurs travaillant notamment sur le marketing des services et le marketing industriel (business to business). Première limite : le modèle du mix traite mal les situations où le produit vendu n''est pas un bien tangible mais un service, c''est-à-dire une prestation souvent coproduite avec le client, difficile à standardiser, et dont la qualité perçue dépend fortement de l''interaction humaine au moment de la prestation. Deuxième limite : dans de nombreux marchés, en particulier entre entreprises, la valeur ne se crée pas lors d''une transaction isolée mais au fil d''une relation de long terme, faite d''échanges répétés, d''ajustements mutuels et de confiance accumulée ; un modèle centré sur la transaction unique ne rend pas compte de cette dynamique. Troisième limite : le marketing mix traite le client comme une cible à atteindre plutôt que comme un acteur qui participe à la définition de la valeur, ce qui devient difficile à soutenir à mesure que les entreprises sollicitent davantage leurs clients dans la conception de l''offre.
-
-## L''émergence du marketing relationnel
-
-En réponse à ces limites, un courant relationnel se développe progressivement, en particulier dans les travaux sur le marketing des services et le marketing industriel. L''idée centrale est de déplacer l''objectif du marketing : non plus seulement conclure une transaction, mais construire, entretenir et développer une relation durable et mutuellement profitable avec le client. Le marketing relationnel s''intéresse à des notions nouvelles par rapport au cadre transactionnel : la confiance, l''engagement, la satisfaction cumulée, la fidélité, et la valeur du client sur l''ensemble de sa relation avec l''entreprise plutôt que sur un seul achat.
-
-Ce déplacement a des conséquences concrètes pour la recherche en marketing. Les variables d''intérêt changent : on ne mesure plus seulement un acte d''achat ponctuel, mais des construits comme la confiance perçue, l''engagement affectif envers une marque ou un prestataire, ou l''intention de rester client sur plusieurs années. Les méthodes de recherche s''adaptent en conséquence, avec un recours accru aux enquêtes longitudinales et aux échelles de mesure validées de ces construits relationnels.
-
-## La logique de dominante service et la co-création de valeur
-
-Au milieu des années 2000, un courant plus radical encore prolonge cette évolution : la logique de dominante service (service-dominant logic), qui propose de renverser la hiérarchie implicite du marketing traditionnel entre biens et services. Dans cette perspective, ce n''est pas le service qui est un cas particulier de produit à commercialiser ; c''est au contraire l''échange de service, entendu comme l''application de compétences et de ressources au bénéfice d''un bénéficiaire, qui constitue le fondement de tout échange économique, y compris quand un bien tangible sert de support à ce service.
-
-Cette logique introduit un concept central pour l''examen : la co-création de valeur. Dans la vision transactionnelle classique, l''entreprise crée la valeur (en fabriquant un produit) et le client se contente de la détruire en la consommant. Dans la logique de dominante service, la valeur n''est jamais créée unilatéralement par l''entreprise : elle est toujours co-créée dans l''usage, au moment où le client mobilise l''offre de l''entreprise avec ses propres ressources, son contexte et ses compétences. L''entreprise ne propose donc pas de la valeur « finie », mais une proposition de valeur que le client doit activer et adapter à sa situation pour qu''elle devienne effective. Cette distinction a des implications fortes pour la recherche : elle invite à étudier non plus seulement l''offre de l''entreprise, mais les pratiques d''usage des clients, leurs compétences, et les interactions au sein d''écosystèmes de services qui dépassent la seule relation bilatérale entre une entreprise et son client.
-
-## Continuité, rupture et complémentarité entre les trois courants
-
-Un point souvent mal maîtrisé par les candidats à l''oral est la nature exacte de la relation entre ces trois courants. Il serait inexact de présenter la dominante service comme un simple raffinement du marketing mix : il s''agit d''un changement de paradigme qui redéfinit ce qu''est la valeur et qui crée la valeur. Il serait également inexact de considérer que le marketing mix a disparu de la pratique : il reste un outil opérationnel utile pour organiser des décisions tactiques, même dans une entreprise qui adopte par ailleurs une philosophie relationnelle ou orientée service. La position la plus défendable devant un jury consiste à dire que ces trois courants ne sont pas simplement successifs mais coexistent dans la pratique actuelle, à des niveaux différents : le mix reste un outil tactique utile, le relationnel oriente la stratégie de gestion de la clientèle, et la dominante service propose un cadre conceptuel plus large pour repenser la nature même de l''échange économique, particulièrement pertinent pour l''économie des services, des plateformes numériques et des écosystèmes d''affaires.
-
-## Points clés à retenir
-
-Le marketing mix transactionnel structure l''échange autour de la transaction ponctuelle et des quatre leviers classiques (produit, prix, distribution, communication). Ses limites, mises en évidence notamment par la recherche sur les services et le marketing industriel, ont nourri l''émergence du marketing relationnel, centré sur la durée, la confiance et la valeur client dans le temps. La logique de dominante service radicalise ce déplacement en posant que toute valeur est co-créée dans l''usage, jamais livrée « finie » par l''entreprise. Ces trois courants ne s''excluent pas mais se superposent dans la pratique contemporaine, à des niveaux d''analyse différents.
-
-## Exercices pratiques
-
-1. Expliquez, en cinq phrases, pourquoi le marketing des services a joué un rôle déclencheur dans la remise en cause du paradigme transactionnel.
-
-2. Distinguez précisément « valeur créée par l''entreprise » et « valeur co-créée dans l''usage » à l''aide d''un exemple de votre choix (bien ou service).
-
-3. Un jury vous demande : « Le marketing mix est-il devenu obsolète ? » Rédigez un plan de réponse en trois points qui évite le piège du simple rejet ou de la simple défense du modèle.
-
-4. Montrez en quoi le passage du marketing transactionnel au marketing relationnel modifie la nature des variables que la recherche doit mesurer (donnez deux exemples de construits relationnels).
-
-5. Identifiez une critique possible adressée à la logique de dominante service elle-même (ses limites ou ses difficultés d''application empirique).
-
-6. Proposez, en deux ou trois phrases, une question de thèse fictive qui se positionnerait explicitement à la frontière entre marketing relationnel et logique de dominante service.
-
-## Corrigé
-
-1. Le marketing des services a joué un rôle déclencheur car un service n''est pas stockable, est souvent produit et consommé simultanément, et dépend fortement de l''interaction humaine entre le prestataire et le client au moment de la prestation. Ces caractéristiques rendent difficile l''application directe du modèle du mix, pensé pour des biens tangibles standardisables. Les chercheurs ont donc dû élargir le cadre d''analyse pour intégrer la relation et l''interaction comme objets d''étude centraux. Cette extension a ouvert la voie à une réflexion plus large sur la relation client, au-delà du seul secteur des services. Elle a ainsi préparé le terrain conceptuel pour le marketing relationnel puis pour la dominante service.
-
-2. La valeur créée par l''entreprise correspond à ce que l''organisation produit et met à disposition : par exemple, un fabricant de matériel de cuisine conçoit et fabrique un robot culinaire. La valeur co-créée dans l''usage correspond à ce qui se passe réellement quand le client utilise cet objet avec ses propres compétences, ses recettes, son contexte familial : le même robot culinaire « vaut » différemment selon que l''utilisateur sait l''exploiter pleinement ou l''utilise de façon minimale. La logique de dominante service insiste sur le fait que la véritable valeur économique se réalise à ce second moment, pas uniquement à la fabrication.
-
-3. Plan recommandé : (a) non, le mix n''est pas obsolète comme outil opérationnel de pilotage tactique des décisions marketing courantes ; (b) oui, il est largement dépassé comme cadre conceptuel unique pour comprendre la création de valeur dans les économies de services et de plateformes ; (c) la position la plus juste est la coexistence à des niveaux différents : outil tactique d''un côté, cadre stratégique et conceptuel plus large de l''autre.
-
-4. Dans le paradigme transactionnel, la variable centrale est l''acte d''achat ou la part de marché sur une période. Dans le paradigme relationnel, les construits mesurés incluent par exemple la confiance envers le prestataire (perception de sa fiabilité et de sa bienveillance) et l''engagement envers la marque ou l''enseigne (attachement affectif qui prédit la fidélité future), deux construits qui nécessitent des échelles de mesure validées et non une simple observation de l''acte d''achat.
-
-5. Une critique courante porte sur la difficulté opérationnelle du concept : s''il est vrai que « toute valeur est co-créée », le concept perd en pouvoir explicatif différenciant s''il s''applique à n''importe quelle situation sans distinction ; certains chercheurs demandent donc des critères plus précis pour identifier quand la co-création est réellement observable et mesurable empiriquement, plutôt qu''affirmée comme principe général.
-
-6. Exemple de question de thèse fictive : « Comment les pratiques de co-création de valeur avec des clients fidèles de longue date diffèrent-elles de celles observées avec des clients récents, dans le secteur des services financiers mobiles en Afrique de l''Ouest ? » Cette question mobilise à la fois le marketing relationnel (ancienneté de la relation, fidélité) et la dominante service (pratiques de co-création).', 'texte', 60, false, 20
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique n°1 : du marketing mix transactionnel au marketing relationnel et à la dominante service');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Courant théorique n°2 : standardisation versus adaptation culturelle du marketing dans les marchés africains émergents', '## Objectifs de la leçon
-
-Cette leçon traite le second grand débat théorique attendu à l''examen de qualification : la tension, en marketing international et interculturel, entre les stratégies de standardisation (une offre et une communication globalement uniformes) et les stratégies d''adaptation culturelle (une offre ajustée aux spécificités locales), appliquée en particulier aux marchés africains émergents. Ce débat complète le précédent : il montre qu''au-delà de la question « que crée-t-on comme valeur », se pose la question « pour quel marché, et avec quel degré d''uniformité, cette valeur est-elle proposée ».
-
-## Les termes du débat
-
-Le débat standardisation/adaptation est ancien dans la recherche en marketing international. La thèse de la standardisation soutient qu''une entreprise opérant sur plusieurs marchés devrait, autant que possible, proposer une offre et une communication uniformes, pour deux raisons principales : des économies d''échelle importantes (un seul produit, une seule campagne de communication, conçus une fois et déployés partout) et une image de marque cohérente au niveau mondial. Cette thèse s''appuie sur l''idée, discutée depuis plusieurs décennies, d''une convergence progressive des goûts des consommateurs à l''échelle mondiale, portée par les médias globaux, les voyages et plus récemment par le numérique et les réseaux sociaux.
-
-La thèse de l''adaptation culturelle soutient à l''inverse que les besoins, les codes de communication, les habitudes de consommation et les structures de distribution varient suffisamment d''un marché à l''autre pour qu''une offre uniforme soit sous-optimale, voire contre-productive. Elle s''appuie sur des travaux montrant la persistance de différences culturelles profondes (rapport au temps, à l''autorité, à la famille, au collectif, modes de négociation, langues, pratiques religieuses) qui influencent directement la perception d''un produit, le choix d''un canal de distribution ou l''efficacité d''un message publicitaire.
-
-Entre ces deux positions extrêmes, la recherche contemporaine privilégie largement une position intermédiaire, parfois appelée « glocalisation » : standardiser ce qui peut l''être sans perte d''efficacité (certains attributs fonctionnels du produit, l''identité visuelle de marque, certains principes de positionnement), et adapter ce qui doit l''être pour rester pertinent localement (le packaging, le prix, les canaux de distribution, le ton et les références culturelles de la communication, parfois certaines caractéristiques du produit lui-même).
-
-## Spécificités des marchés africains émergents dans ce débat
-
-Les marchés africains, et notamment les marchés ouest-africains comme le Sénégal, présentent des caractéristiques qui rendent ce débat particulièrement vif et qui nourrissent des travaux de recherche spécifiques. Premièrement, la diversité linguistique et culturelle à l''intérieur même d''un seul pays ou d''une seule zone régionale (par exemple l''espace UEMOA) est souvent plus marquée que dans des marchés occidentaux de taille comparable, ce qui complique l''idée d''une adaptation « nationale » unique : une communication adaptée à Dakar ne l''est pas nécessairement de la même façon dans d''autres zones du pays ou de la sous-région.
-
-Deuxièmement, la coexistence de circuits de distribution très différents (commerce formel moderne, grande distribution naissante, mais aussi un commerce informel et de proximité qui reste central dans beaucoup de catégories de produits de grande consommation) oblige les entreprises internationales à repenser la variable « distribution » du mix de façon beaucoup plus locale que dans des marchés où la grande distribution moderne domine largement.
-
-Troisièmement, le pouvoir d''achat et les structures de prix très différenciées dans la population imposent souvent des stratégies de conditionnement et de tarification spécifiques (par exemple des formats de vente plus petits et plus nombreux, adaptés à une fréquence d''achat élevée mais à un pouvoir d''achat limité par transaction), ce qui constitue une adaptation produit au sens strict, pas seulement une adaptation de communication.
-
-Quatrièmement, l''essor rapide des usages numériques et du mobile (paiement mobile, réseaux sociaux, commerce en ligne naissant) crée des opportunités à la fois de standardisation (des plateformes numériques globales utilisées localement) et d''adaptation (des usages spécifiques du mobile, par exemple pour le paiement, qui diffèrent sensiblement de ceux observés dans d''autres régions du monde), ce qui enrichit le débat plutôt que de le trancher dans un sens univoque.
-
-## Lecture critique du débat pour l''examen de qualification
-
-Un jury attend du candidat qu''il ne prenne pas parti de façon binaire mais qu''il sache articuler ce débat à plusieurs niveaux d''analyse. Au niveau du produit, l''adaptation peut être limitée à des éléments superficiels (packaging, nom local) ou aller jusqu''à une reconception substantielle. Au niveau de la communication, le débat porte sur la standardisation du message central de marque versus l''adaptation des exécutions créatives, des porte-parole, des références culturelles et des canaux médiatiques. Au niveau de la distribution et du prix, les marges de standardisation sont généralement les plus faibles, car ces variables dépendent le plus directement des structures économiques et commerciales locales.
-
-Un autre point attendu est la prudence vis-à-vis d''une lecture essentialiste de la « culture africaine », qui gommerait la diversité interne du continent et des pays qui le composent. La recherche sérieuse en marketing interculturel évite de traiter l''Afrique comme un bloc culturel homogène ; elle privilégie des analyses situées, par pays, par région, voire par segment de consommateurs à l''intérieur d''un même pays, en croisant les variables culturelles avec des variables socio-économiques (urbain/rural, génération, niveau d''éducation, exposition aux médias internationaux).
-
-Enfin, un bon candidat relie ce débat au précédent (transactionnel/relationnel/dominante service) : une stratégie d''adaptation culturelle poussée s''accorde souvent mieux avec une logique relationnelle ou de co-création, puisqu''elle suppose d''écouter et d''intégrer les pratiques et préférences locales des clients dans la définition même de l''offre, plutôt que de leur imposer une offre standardisée pensée ailleurs.
-
-## Un exemple d''illustration (fictif, à but pédagogique)
-
-Pour fixer les idées sans invoquer de marque réelle, on peut imaginer un fabricant international de boissons qui envisage d''entrer sur le marché sénégalais. Une stratégie entièrement standardisée reprendrait la même recette, le même format de conditionnement, le même positionnement prix et la même campagne publicitaire que sur son marché d''origine. Une stratégie entièrement adaptée repenserait la recette selon les préférences gustatives locales, proposerait des formats de vente plus petits adaptés à des achats fréquents et à faible montant unitaire, choisirait des canaux de distribution incluant le commerce de proximité informel, et construirait une communication en langues locales mobilisant des références culturelles sénégalaises. Dans la pratique, une entreprise raisonnable adopterait une position intermédiaire : conserver l''identité visuelle et le positionnement de marque globalement reconnaissables (standardisation du capital de marque), tout en adaptant fortement le format, le prix et les canaux de distribution (adaptation des variables opérationnelles), ce qui illustre concrètement la logique de « glocalisation » évoquée plus haut.
-
-## Points clés à retenir
-
-Le débat standardisation/adaptation oppose les économies d''échelle et la cohérence globale de marque à la pertinence locale et à l''efficacité commerciale sur un marché donné. Les marchés africains émergents, par leur diversité linguistique et culturelle interne, la coexistence de circuits de distribution formels et informels, et des structures de pouvoir d''achat différenciées, rendent ce débat particulièrement riche empiriquement. La position intermédiaire de « glocalisation » domine la recherche contemporaine, avec une analyse différenciée selon la variable du mix considérée (produit, prix, distribution, communication) plutôt qu''un choix global unique. Toute analyse doit éviter de traiter l''Afrique ou un pays africain comme un bloc culturel homogène.
-
-## Exercices pratiques
-
-1. Résumez en cinq phrases les arguments respectifs de la standardisation et de l''adaptation culturelle en marketing international.
-
-2. Expliquez pourquoi les marges de standardisation sont généralement plus faibles pour la distribution et le prix que pour l''identité de marque.
-
-3. Discutez le risque d''une lecture essentialiste de la « culture africaine » en recherche marketing, et proposez une façon plus rigoureuse de traiter la diversité culturelle dans une étude.
-
-4. Montrez, à l''aide de l''exemple fictif de la boisson, en quoi une stratégie de « glocalisation » diffère à la fois d''une standardisation pure et d''une adaptation pure.
-
-5. Reliez ce débat à celui de la leçon précédente (transactionnel/relationnel/dominante service) : en quoi une stratégie d''adaptation culturelle poussée se rapproche-t-elle d''une logique relationnelle ou de co-création ?
-
-6. Formulez une question de thèse fictive qui porterait spécifiquement sur l''arbitrage standardisation/adaptation dans un secteur de votre choix en Afrique de l''Ouest.
-
-## Corrigé
-
-1. La standardisation met en avant les économies d''échelle, la cohérence de l''image de marque mondiale et l''idée d''une convergence progressive des goûts des consommateurs à l''échelle internationale. L''adaptation met en avant la persistance de différences culturelles substantielles (rapport au temps, à l''autorité, codes de communication, structures familiales) qui influencent la perception de l''offre. Elle s''appuie aussi sur des différences structurelles de distribution et de pouvoir d''achat selon les marchés. Entre ces deux positions, la recherche contemporaine retient le plus souvent une position intermédiaire différenciée selon la variable considérée. Aucune des deux thèses extrêmes n''est généralement défendue de façon absolue dans la littérature récente.
-
-2. La distribution et le prix dépendent directement de structures économiques et commerciales locales difficilement contournables (réseaux de distributeurs existants, pouvoir d''achat réel de la population, réglementation locale, fiscalité), alors que l''identité visuelle et le positionnement de marque relèvent davantage d''un choix de l''entreprise elle-même, plus facilement transposable d''un marché à l''autre sans contrainte structurelle externe aussi forte.
-
-3. Une lecture essentialiste traiterait « la culture africaine » comme un bloc homogène et statique, ce qui ignore la diversité linguistique, religieuse, générationnelle et socio-économique à l''intérieur même d''un seul pays. Une approche plus rigoureuse segmente l''analyse par pays, par région, voire par profil socio-économique de consommateurs, et croise systématiquement les variables culturelles avec des variables comme l''urbanité, l''âge ou le niveau d''éducation, plutôt que de supposer une réaction culturelle unique et uniforme.
-
-4. Une standardisation pure garderait recette, format, prix et communication identiques au marché d''origine. Une adaptation pure repenserait tout, y compris la recette. La « glocalisation » conserve l''identité de marque et le positionnement global (éléments standardisés, porteurs d''économies d''échelle et de cohérence), tout en adaptant fortement le format, le prix et les canaux de distribution (éléments adaptés, porteurs de pertinence locale), ce qui illustre un arbitrage différencié variable par variable plutôt qu''un choix global unique.
-
-5. Une adaptation culturelle poussée suppose d''écouter les pratiques, les préférences et le contexte réel des clients locaux pour ajuster l''offre, ce qui se rapproche de la logique relationnelle (construire une relation ajustée aux attentes réelles du client) et de la co-création de valeur (la valeur de l''offre se définit en partie avec le client et son contexte, pas uniquement par l''entreprise en amont), plutôt que de la logique transactionnelle qui imposerait une offre standardisée sans écoute particulière du marché local.
-
-6. Exemple de question de thèse fictive : « Dans quelle mesure les opérateurs de services financiers mobiles présents dans plusieurs pays d''Afrique de l''Ouest adaptent-ils leurs interfaces et leurs canaux de communication aux spécificités linguistiques locales, et quel est l''effet perçu de cette adaptation sur la confiance des utilisateurs ? » Cette question mobilise directement le débat standardisation/adaptation tout en le reliant à un construit relationnel (la confiance).', 'texte', 60, false, 30
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Courant théorique n°2 : standardisation versus adaptation culturelle du marketing dans les marchés africains émergents');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Les méthodes de recherche en marketing : expérimentation, enquête par questionnaire et approches qualitatives', '## Objectifs de la leçon
-
-Cette leçon présente les trois grandes familles de méthodes de recherche mobilisées en marketing : l''expérimentation (en particulier les plans factoriels), l''enquête par questionnaire appuyée sur des échelles de mesure validées, et les méthodes qualitatives (entretiens et ethnographie du consommateur). Pour chacune, on précise la logique scientifique, les conditions de validité et les limites. La leçon se termine par un exemple détaillé de protocole de recherche mixte appliqué à un contexte sénégalais fictif, avec des calculs vérifiés.
-
-## L''expérimentation en marketing
-
-L''expérimentation vise à établir une relation de causalité entre une ou plusieurs variables que le chercheur manipule (les variables indépendantes, par exemple le prix affiché, la présence ou non d''une promotion, la couleur d''un emballage) et une variable qu''il observe (la variable dépendante, par exemple l''intention d''achat ou le choix effectif). Pour établir une causalité convaincante, l''expérimentation repose sur deux principes clés : la manipulation contrôlée de la ou des variables indépendantes, et la comparaison entre des groupes de répondants exposés à des conditions différentes, idéalement constitués par assignation aléatoire pour neutraliser l''influence de caractéristiques individuelles non contrôlées.
-
-Le plan factoriel est la méthode la plus rigoureuse pour étudier simultanément l''effet de plusieurs facteurs et de leurs interactions. Dans un plan factoriel, chaque facteur (par exemple le prix) est décliné en plusieurs niveaux (par exemple prix bas et prix élevé), et l''on construit une condition expérimentale pour chaque combinaison possible de niveaux de tous les facteurs étudiés. Un plan factoriel à trois facteurs, chacun à deux niveaux, noté 2×2×2 ou 2³, génère ainsi 2³, soit 8 conditions expérimentales distinctes. L''intérêt majeur du plan factoriel, par rapport à une série d''expériences séparées, est qu''il permet de détecter non seulement l''effet de chaque facteur pris isolément (effet principal), mais aussi les effets d''interaction, c''est-à-dire les cas où l''effet d''un facteur dépend du niveau d''un autre facteur (par exemple, une promotion peut être efficace à prix bas mais inefficace, voire contre-productive, à prix élevé).
-
-L''expérimentation présente des atouts et des limites qu''un candidat doit savoir discuter. Son principal atout est la validité interne : bien conduite, elle permet d''affirmer qu''une variable cause effectivement un effet observé, ce qu''une enquête corrélationnelle ne permet pas de faire avec la même certitude. Sa principale limite est la validité externe, c''est-à-dire la capacité à généraliser les résultats obtenus en laboratoire ou en situation contrôlée à des comportements réels de marché, souvent plus complexes et soumis à davantage de facteurs non contrôlés.
-
-## L''enquête par questionnaire et les échelles de mesure validées
-
-L''enquête par questionnaire reste la méthode quantitative la plus répandue en marketing pour étudier des construits comme les attitudes, les perceptions, les intentions ou la satisfaction, auprès d''un échantillon représentatif d''une population de consommateurs. Sa rigueur scientifique dépend fortement de la qualité des échelles de mesure utilisées. Une échelle de mesure validée est un ensemble d''items (questions ou affirmations, généralement notées sur une échelle de type Likert en plusieurs points) dont les propriétés psychométriques ont été testées et publiées dans la littérature de recherche : elle doit présenter une bonne fiabilité (cohérence interne des items qui mesurent le même construit) et une bonne validité (elle mesure effectivement le construit visé, et pas un autre construit proche).
-
-La fiabilité d''une échelle se mesure couramment par le coefficient alpha de Cronbach, qui évalue la cohérence interne entre les items d''une même échelle : plus les items censés mesurer le même construit varient de façon cohérente entre les répondants, plus l''alpha est élevé. Un alpha supérieur à environ 0,70 est généralement considéré comme acceptable dans la recherche en gestion, bien que ce seuil doive être interprété avec prudence selon le nombre d''items et le contexte. Une seconde question centrale est la taille de l''échantillon nécessaire pour obtenir des résultats statistiquement fiables : elle dépend du niveau de confiance souhaité, de la marge d''erreur acceptée et, dans certains cas, de la taille de la population étudiée.
-
-Au-delà des aspects techniques, le candidat doit savoir discuter les limites de l''enquête par questionnaire : biais de désirabilité sociale (le répondant répond ce qu''il pense être attendu plutôt que sa véritable opinion), biais de rappel (difficulté à se souvenir précisément de comportements passés), et écart entre intention déclarée et comportement réel, bien documenté en marketing (une intention d''achat élevée ne se traduit pas toujours par un achat effectif).
-
-## Les méthodes qualitatives : entretiens et ethnographie du consommateur
-
-Les méthodes qualitatives visent moins à mesurer l''ampleur d''un phénomène qu''à en comprendre le sens, les mécanismes et le contexte, souvent en amont d''une étude quantitative (pour générer des hypothèses) ou en complément (pour interpréter des résultats quantitatifs surprenants). L''entretien individuel semi-directif est la méthode qualitative la plus utilisée : le chercheur dispose d''un guide thématique mais laisse le répondant développer librement sa pensée, ce qui permet de faire émerger des significations, des logiques d''usage ou des freins à la consommation que des questions fermées de questionnaire n''auraient pas anticipés.
-
-L''ethnographie du consommateur va plus loin : elle consiste à observer, parfois en immersion prolongée, les pratiques réelles de consommation dans leur contexte naturel (au domicile, sur le lieu de vente, dans la rue), plutôt que de se fier uniquement au discours que les personnes tiennent sur leurs pratiques. Cette méthode est particulièrement précieuse en marketing lorsque l''on étudie des comportements que les répondants ont du mal à verbaliser avec précision, ou lorsqu''un écart important est suspecté entre ce que les consommateurs disent faire et ce qu''ils font réellement. Sur les marchés africains, l''ethnographie du consommateur est fréquemment mobilisée pour étudier des pratiques de consommation dans le commerce informel ou de proximité, où les logiques d''achat (fréquence, négociation du prix, rôle du vendeur) sont difficiles à saisir par un simple questionnaire.
-
-La principale limite des méthodes qualitatives, souvent soulignée à l''oral, est l''absence de représentativité statistique : les résultats obtenus auprès d''un nombre restreint de répondants ou de situations observées ne peuvent pas être généralisés à l''ensemble d''une population avec la même assurance qu''une enquête quantitative sur un large échantillon. Leur force réside en contrepartie dans la profondeur et la richesse contextuelle de la compréhension produite.
-
-## Méthodes mixtes et logique de triangulation
-
-Une réponse de bon niveau à l''oral évite d''opposer ces méthodes comme s''il fallait choisir définitivement l''une contre les autres. La recherche en marketing contemporaine recourt fréquemment à des méthodes mixtes, qui combinent, par exemple, une phase qualitative exploratoire (entretiens) pour identifier les dimensions pertinentes d''un phénomène encore peu connu, suivie d''une phase quantitative (enquête par questionnaire, voire expérimentation) pour tester et généraliser les relations identifiées. Cette combinaison, parfois appelée triangulation méthodologique, renforce la validité globale d''une recherche en compensant les limites propres à chaque méthode prise isolément.
-
-## Exemple de protocole de recherche appliqué à un contexte sénégalais fictif
-
-Supposons un projet de thèse fictif qui étudie l''effet du prix et de la présence d''un argumentaire de confiance (par exemple une garantie explicite) sur l''intention d''achat de services financiers mobiles auprès de commerçants de marchés urbains sénégalais. Un protocole de recherche rigoureux combinerait trois étapes.
-
-Étape 1, qualitative exploratoire : conduire une série d''entretiens semi-directifs avec des commerçants, complétés par une observation ethnographique de courte durée sur un marché, afin d''identifier les dimensions de confiance et de prix réellement pertinentes dans ce contexte précis, avant de construire le questionnaire.
-
-Étape 2, expérimentale : construire un plan factoriel à deux facteurs, chacun à deux niveaux : le prix du service (bas ou élevé) et la présence ou l''absence d''un argumentaire de confiance explicite dans la présentation du service. Ce plan 2×2 génère quatre conditions expérimentales. En recrutant par exemple 25 commerçants par condition, on obtiendrait un échantillon expérimental total de 100 répondants, réparti de façon égale entre les quatre groupes, permettant de tester à la fois l''effet principal du prix, l''effet principal de l''argumentaire de confiance, et leur éventuelle interaction (un vérification Python confirme que 4 conditions multipliées par 25 répondants donnent bien 100 participants).
-
-Étape 3, enquête par questionnaire à grande échelle : pour généraliser les résultats expérimentaux à la population des commerçants d''une zone urbaine donnée, on administre un questionnaire plus large utilisant des échelles de mesure validées de la confiance et de l''intention d''adoption. Pour une population de commerçants estimée, à titre d''exemple fictif, à 5 000 personnes dans la zone étudiée, et en visant un niveau de confiance de 95 % avec une marge d''erreur de 5 %, un calcul standard (vérifié en Python) donne une taille d''échantillon minimale théorique d''environ 385 répondants pour une population infinie, ramenée à environ 357 répondants une fois appliquée la correction pour population finie. Si l''on souhaite une marge d''erreur plus exigeante de 3 % (toujours à titre d''exemple fictif, sans qu''il s''agisse d''une norme officielle), la taille d''échantillon nécessaire grimperait à environ 1 068 répondants pour une population infinie, ce qui illustre concrètement le coût, en taille d''échantillon, d''une exigence de précision accrue.
-
-Pour la fiabilité des échelles de confiance utilisées en étape 3, un calcul illustratif et volontairement simplifié sur trois items fictifs notés de 1 à 5 auprès de cinq répondants (exemple strictement pédagogique, bien en dessous de la taille réelle requise pour un calcul valide) donne, une fois vérifié en Python, un coefficient alpha de Cronbach d''environ 0,77, ce qui serait considéré comme une cohérence interne acceptable si ce résultat se confirmait sur un échantillon réel de taille suffisante.
-
-## Points clés à retenir
-
-L''expérimentation, en particulier le plan factoriel, permet d''établir une causalité rigoureuse entre des variables manipulées et un comportement observé, au prix d''une validité externe parfois limitée. L''enquête par questionnaire, appuyée sur des échelles de mesure validées et une taille d''échantillon calculée (fiabilité évaluée par l''alpha de Cronbach, taille d''échantillon dépendant du niveau de confiance et de la marge d''erreur visés), permet de généraliser des relations à une population. Les méthodes qualitatives (entretiens, ethnographie du consommateur) apportent une compréhension fine du sens et du contexte, utile en amont ou en complément du quantitatif. La combinaison mixte de ces méthodes, par triangulation, constitue souvent la réponse méthodologique la plus solide pour une question de recherche en marketing.
-
-## Exercices pratiques
-
-1. Expliquez la différence entre un effet principal et un effet d''interaction dans un plan factoriel, à l''aide d''un exemple marketing de votre choix.
-
-2. Pourquoi la validité externe est-elle souvent présentée comme la principale limite de l''expérimentation en marketing ?
-
-3. Qu''est-ce qu''une échelle de mesure validée, et pourquoi un chercheur devrait-il éviter de créer ses propres items de questionnaire sans justification théorique ni test préalable ?
-
-4. Dans quelles situations l''ethnographie du consommateur apporte-t-elle une information que l''entretien seul ne pourrait pas apporter ?
-
-5. Décrivez en quoi consiste la triangulation méthodologique et donnez un exemple de séquence (qualitatif puis quantitatif, ou l''inverse) adaptée à une question de recherche de votre choix.
-
-6. Reprenez l''exemple du protocole sénégalais fictif de la leçon et proposez une modification pertinente d''un des trois facteurs ou variables étudiés, en justifiant votre choix.
-
-## Corrigé
-
-1. Un effet principal est l''effet d''un facteur pris isolément, indépendamment des autres facteurs : par exemple, un prix plus bas augmente en moyenne l''intention d''achat, quel que soit l''argumentaire de confiance présenté. Un effet d''interaction se produit quand l''effet d''un facteur dépend du niveau d''un autre facteur : par exemple, l''argumentaire de confiance pourrait fortement augmenter l''intention d''achat à prix élevé, mais n''avoir presque aucun effet supplémentaire à prix bas, parce que le prix bas lève déjà une partie de l''hésitation du client. Seul un plan factoriel permet de détecter ce type d''effet croisé, qu''une série d''expériences séparées sur chaque facteur manquerait.
-
-2. La validité externe est limitée parce que l''expérimentation se déroule souvent dans un cadre contrôlé et simplifié (laboratoire, situation artificielle, échantillon restreint de participants volontaires), qui peut différer significativement des conditions réelles d''achat (influence de l''entourage, contraintes budgétaires réelles, environnement de point de vente complet), ce qui rend la généralisation des résultats au marché réel incertaine sans vérification complémentaire.
-
-3. Une échelle de mesure validée a été testée empiriquement sur un ou plusieurs échantillons et a démontré de bonnes propriétés de fiabilité (cohérence interne, souvent mesurée par l''alpha de Cronbach) et de validité (elle mesure réellement le construit visé). Créer ses propres items sans justification ni test expose à mesurer en réalité un autre construit que celui visé, ou à obtenir des résultats peu fiables et difficilement comparables à la littérature existante, ce qui fragilise fortement la crédibilité scientifique d''une recherche.
-
-4. L''ethnographie apporte une information supplémentaire quand il existe un écart probable entre le discours du consommateur sur ses pratiques et ses pratiques réelles, ou quand le consommateur a du mal à verbaliser certains aspects automatiques ou tacites de son comportement (gestes, négociations informelles, usages détournés d''un produit) : l''observation directe en contexte réel révèle alors des éléments que l''entretien seul, fondé sur le discours, ne peut pas capter.
-
-5. La triangulation méthodologique consiste à combiner plusieurs méthodes pour renforcer la validité globale d''une recherche, en compensant les limites propres à chaque méthode. Exemple de séquence : conduire d''abord des entretiens qualitatifs avec des clients d''un service pour identifier les freins perçus à l''adoption, puis construire, à partir de ces freins identifiés, un questionnaire quantitatif à grande échelle utilisant des échelles validées pour mesurer l''importance relative de chaque frein dans la population cible, et enfin tester expérimentalement l''effet d''une action corrective (par exemple un message rassurant) sur le frein identifié comme le plus important.
-
-6. Réponse ouverte ; une modification plausible consisterait, par exemple, à remplacer le facteur « présence d''un argumentaire de confiance » par « source de l''argumentaire de confiance » (recommandation d''un pair commerçant versus communication officielle de l''entreprise), ce qui permettrait de tester si la source de l''information de confiance, et pas seulement sa présence, influence l''intention d''adoption dans ce contexte.', 'texte', 60, false, 40
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Les méthodes de recherche en marketing : expérimentation, enquête par questionnaire et approches qualitatives');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Épreuve type d''examen de qualification : question de synthèse, plan de réponse et corrigé', '## Objectifs de la leçon
-
-Cette dernière leçon texte propose une épreuve type, non officielle, représentative de ce qui pourrait être demandé à l''écrit ou à l''oral d''un examen de qualification doctorale en marketing et commerce. Elle mobilise simultanément les deux courants théoriques étudiés (transactionnel/relationnel/dominante service ; standardisation/adaptation culturelle) et une méthode de recherche (méthodes mixtes). L''objectif est de montrer, par l''exemple, comment construire un plan de réponse complet, argumenté et critique, puis de fournir un corrigé détaillé qui peut servir de modèle d''entraînement.
-
-## Énoncé de la question de synthèse (exemple non officiel)
-
-« Dans quelle mesure les débats théoriques du marketing sur la création de valeur (du marketing mix transactionnel à la logique de dominante service) éclairent-ils la question de l''adaptation culturelle des stratégies marketing sur les marchés africains émergents ? Vous développerez une réponse structurée mobilisant les courants théoriques pertinents, et vous proposerez un protocole de recherche permettant d''étudier empiriquement cette question dans un contexte sénégalais de votre choix. »
-
-Cette question est délibérément construite pour obliger le candidat à relier les deux grands courants du cours plutôt que de les traiter séparément, et à prolonger la réflexion théorique par une proposition méthodologique concrète, exactement comme un jury doctoral le ferait.
-
-## Méthode pour construire le plan de réponse
-
-Face à une question de synthèse qui croise plusieurs courants, la méthode la plus sûre consiste à procéder en quatre temps. Premier temps : reformuler la question pour s''assurer de sa bonne compréhension et identifier explicitement les concepts clés à mobiliser (ici : création de valeur, paradigmes marketing, adaptation culturelle, marchés africains émergents). Deuxième temps : construire un plan qui ne traite pas les courants côte à côte mais qui les articule autour d''une problématique commune. Troisième temps : illustrer chaque articulation théorique par un exemple concret, idéalement situé dans le contexte sénégalais ou ouest-africain pour ancrer la réponse. Quatrième temps : proposer une ouverture méthodologique qui montre comment la question pourrait être étudiée empiriquement, ce qui distingue une réponse de niveau doctoral d''une réponse purement descriptive.
-
-## Plan de réponse détaillé
-
-Introduction : poser que la question de la création de valeur et celle de l''adaptation culturelle, bien qu''issues de débats historiquement distincts en marketing, se rejoignent sur un point central : plus on conçoit la valeur comme co-créée avec le client plutôt que livrée de façon standardisée par l''entreprise, plus l''attention portée au contexte culturel et local du client devient théoriquement incontournable.
-
-Première partie : montrer que le paradigme transactionnel du marketing mix, en traitant le client comme un récepteur relativement passif d''une offre définie en amont par l''entreprise, est structurellement compatible avec une stratégie de standardisation poussée : si la valeur est essentiellement déterminée par l''entreprise au moment de la conception du produit, l''adaptation au contexte local n''est perçue que comme un ajustement secondaire, principalement tactique (traduction, packaging), sans remettre en cause la conception centrale de l''offre.
-
-Deuxième partie : montrer que le passage au marketing relationnel, puis à la logique de dominante service et à la co-création de valeur, change la nature du problème. Si la valeur se réalise dans l''usage, au contact des ressources et du contexte propres du client, alors le contexte culturel local n''est plus un simple facteur d''ajustement périphérique : il devient une composante constitutive de la valeur elle-même. Un service financier mobile, par exemple, n''a pas la même valeur d''usage selon les pratiques locales de gestion de l''argent, les structures familiales d''entraide financière, ou le rôle social du commerce de proximité, qui diffèrent sensiblement entre contextes. Cette partie doit citer explicitement, sans invoquer de marque réelle, un exemple de ce type pour illustrer le propos.
-
-Troisième partie : nuancer en montrant que cette logique n''impose pas un relativisme culturel total ni un rejet de toute standardisation. Certains éléments de l''offre (l''identité de marque globale, certains standards de qualité ou de sécurité) peuvent rester standardisés sans contredire la logique de co-création, tant que les éléments réellement mobilisés dans l''usage quotidien (prix, format, canaux de distribution, communication) sont, eux, adaptés au contexte local. La position de « glocalisation » différenciée, variable par variable, reste donc pertinente même dans une perspective de dominante service.
-
-Quatrième partie : proposer un protocole de recherche mixte pour étudier empiriquement cette question dans un contexte sénégalais, par exemple celui du commerce de détail urbain équipé progressivement de solutions de paiement mobile. Ce protocole combinerait une phase qualitative exploratoire (entretiens avec des commerçants et ethnographie de courte durée sur un marché, pour identifier les pratiques locales de gestion de l''argent et de confiance), une phase expérimentale (un plan factoriel testant par exemple l''effet du degré d''adaptation de l''interface du service, standardisée versus adaptée aux pratiques locales identifiées, sur l''intention d''adoption), et une phase quantitative de généralisation par enquête par questionnaire auprès d''un échantillon calculé selon le niveau de confiance et la marge d''erreur visés, utilisant des échelles de mesure validées de la confiance et de l''intention d''adoption.
-
-Conclusion : rappeler que les deux courants théoriques mobilisés dans cette question ne sont pas de simples débats parallèles du champ marketing, mais qu''ils s''articulent logiquement : plus la conception théorique de la valeur se déplace vers la co-création, plus la question de l''adaptation culturelle cesse d''être un détail opérationnel pour devenir un enjeu théorique central, ce qui justifie de la traiter avec les méthodes de recherche les plus robustes possibles, idéalement mixtes.
-
-## Points de vigilance pour l''oral
-
-Lors de la soutenance de cette réponse, un jury pourrait demander au candidat de préciser en quoi, concrètement, un protocole purement quantitatif aurait été insuffisant pour cette question (réponse attendue : parce que les dimensions culturelles pertinentes à opérationnaliser dans le questionnaire ne peuvent être identifiées correctement sans une phase qualitative préalable, propre au terrain étudié). Le jury pourrait également demander de discuter la généralisabilité des résultats obtenus dans un seul contexte sénégalais à l''ensemble des marchés africains émergents (réponse attendue : prudence méthodologique, en rappelant la diversité interne du continent soulignée dans la leçon précédente, et la nécessité de répliquer l''étude dans d''autres contextes avant toute généralisation).
-
-## Points clés à retenir
-
-Une bonne réponse de synthèse ne traite jamais deux courants théoriques côte à côte : elle les articule autour d''une problématique commune, ici le lien entre conception de la valeur et nécessité de l''adaptation culturelle. L''illustration par un exemple contextualisé (sénégalais ou ouest-africain) et la proposition d''un protocole de recherche concret distinguent une réponse de niveau doctoral d''une réponse purement théorique ou purement descriptive. Le candidat doit anticiper les questions de approfondissement du jury, notamment sur la justification méthodologique et la généralisabilité des résultats.
-
-## Exercices pratiques
-
-1. Reformulez, en vos propres mots, la question de synthèse de cette leçon en identifiant explicitement les quatre concepts clés qu''elle mobilise.
-
-2. Rédigez, en cinq phrases, l''argument central de la première partie du plan de réponse (compatibilité entre marketing mix et standardisation).
-
-3. Rédigez, en cinq phrases, l''argument central de la deuxième partie du plan de réponse (dominante service et nécessité de l''adaptation).
-
-4. Un membre du jury vous objecte que votre protocole de recherche proposé est trop coûteux et trop long à mettre en œuvre pour une thèse. Rédigez une réponse de trois phrases qui défend la pertinence du protocole tout en proposant une version allégée.
-
-5. Proposez, en guise d''entraînement personnel, une question de synthèse alternative qui croiserait les deux mêmes courants théoriques mais appliquée à un secteur différent de celui utilisé dans cette leçon.
-
-## Corrigé
-
-1. Les quatre concepts clés sont : la création de valeur en marketing (du mix transactionnel à la dominante service), les paradigmes théoriques correspondants, l''adaptation culturelle des stratégies marketing, et les marchés africains émergents comme terrain d''application empirique. La question demande de montrer comment le premier ensemble de concepts (théorie de la valeur) permet de mieux comprendre le second (nécessité ou non de l''adaptation).
-
-2. Le marketing mix transactionnel conçoit la valeur comme déterminée essentiellement par l''entreprise au moment de la conception de l''offre, le client étant un récepteur relativement passif de cette offre. Dans cette logique, l''adaptation au contexte local n''est qu''un ajustement secondaire, de nature surtout tactique, comme la traduction d''un message ou la modification d''un packaging. L''essentiel de la valeur proposée reste pensé de façon centralisée, souvent au siège international de l''entreprise. Cette conception est donc structurellement compatible avec une stratégie de forte standardisation. Elle n''exclut pas toute adaptation, mais elle la relègue à un rôle périphérique.
-
-3. La logique de dominante service affirme que la valeur ne se réalise jamais unilatéralement par l''entreprise mais se co-crée dans l''usage, au contact des ressources et du contexte réel du client. Si la valeur dépend ainsi fondamentalement du contexte d''usage, alors les pratiques culturelles locales de consommation, de gestion de l''argent ou d''interaction sociale deviennent une composante constitutive de la valeur elle-même, et non un simple détail d''exécution. L''adaptation culturelle cesse donc d''être secondaire : elle devient une condition nécessaire pour qu''une offre produise effectivement de la valeur pour le client. Cette perspective justifie théoriquement un investissement de recherche important dans la compréhension fine des contextes locaux. Elle explique aussi pourquoi les entreprises orientées service investissent souvent davantage dans la connaissance qualitative de leurs marchés locaux que les entreprises purement transactionnelles.
-
-4. Réponse possible : « Le protocole complet reste la démarche la plus rigoureuse pour établir à la fois la pertinence qualitative des dimensions culturelles et leur généralisabilité quantitative, mais il peut être phasé dans le temps, par exemple en consacrant la première année de thèse à la phase qualitative et expérimentale, et une seconde étude, éventuellement hors du cadre strict de la thèse, à la généralisation quantitative à grande échelle. Une version allégée pourrait aussi se concentrer sur un seul facteur expérimental plutôt que plusieurs, et réduire la taille de l''échantillon quantitatif en acceptant une marge d''erreur plus large, au prix d''une précision statistique moindre mais clairement assumée et justifiée dans la thèse. »
-
-5. Réponse ouverte ; exemple possible : « Dans quelle mesure les débats théoriques sur la création de valeur en marketing éclairent-ils la question de l''adaptation culturelle des stratégies de distribution alimentaire en ligne dans les grandes villes ouest-africaines ? », qui applique la même articulation théorique à un secteur différent (distribution alimentaire en ligne plutôt que services financiers mobiles).', 'texte', 60, false, 50
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Épreuve type d''examen de qualification : question de synthèse, plan de réponse et corrigé');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : le débat marketing transactionnel versus marketing relationnel et dominante service', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant l''examen de qualification en marketing et commerce. Objectifs : maîtriser l''opposition et l''articulation entre le paradigme transactionnel (marketing mix), le marketing relationnel et la logique de dominante service (co-création de valeur), et savoir restituer ce débat de façon critique à l''oral. Matériel : diaporama de synthèse, tableau comparatif des trois courants, extraits de cas fictifs pour illustration. Prérequis : avoir lu la leçon texte correspondante de ce cours et tenté les exercices.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux de la séance
-
-Bonjour à toutes et à tous, et bienvenue dans cette séance consacrée à l''un des débats théoriques les plus structurants du marketing contemporain : le passage du paradigme transactionnel au paradigme relationnel, puis à la logique de dominante service. Avant de nous plonger dans la matière, je veux vous dire pourquoi ce débat occupe une place aussi centrale dans un examen de qualification doctorale. Ce n''est pas seulement une question d''histoire de la discipline : c''est une question qui détermine directement la façon dont vous allez concevoir vos propres recherches, quel que soit le sujet précis de votre thèse en marketing. Si vous concevez le client comme un simple récepteur d''une offre, vous poserez certaines questions de recherche. Si vous le concevez comme un co-créateur actif de la valeur, vous en poserez d''autres, radicalement différentes. Nous allons donc consacrer cette heure et demie à bien comprendre ce basculement, ses causes, ses limites, et la façon dont un jury doctoral attend que vous en parliez.
-
-Je vous propose le déroulé suivant : nous commencerons par le paradigme transactionnel et le marketing mix, puis nous verrons les limites qui ont conduit à l''émergence du marketing relationnel, puis nous approfondirons la logique de dominante service et le concept de co-création de valeur, avant de nous arrêter sur un petit quiz pour vérifier votre compréhension à mi-parcours. Nous terminerons par la question délicate de l''articulation entre ces trois courants, par des conseils pratiques pour l''oral, et par une évaluation finale de cinq questions.
-
-## 05:00 – 20:00 · Le paradigme transactionnel et le marketing mix
-
-Commençons par les bases. Le marketing, tel qu''il s''est formalisé comme discipline de gestion, s''est d''abord construit autour d''une vision transactionnelle de l''échange. Regardez le schéma à l''écran : d''un côté, l''entreprise, qui définit une offre à partir de quatre leviers principaux, le produit, le prix, la distribution — appelée aussi « place » — et la communication, appelée aussi « promotion ». De l''autre côté, un marché de consommateurs considéré comme relativement homogène et plutôt passif, que l''on cherche à convaincre d''acheter.
-
-Ce modèle du marketing mix, résumé par l''acronyme des « 4P », a eu un apport considérable pour la pratique : il a donné aux gestionnaires un outil simple, opérationnel, pour organiser leurs décisions. Avant ce cadre, les décisions marketing étaient souvent prises de façon dispersée. Avec le mix, on peut raisonner de façon systématique : quel produit, à quel prix, par quel canal, avec quelle communication. Posons-nous la question : pourquoi ce modèle a-t-il autant duré, et pourquoi reste-t-il enseigné aujourd''hui ? Parce qu''il reste un outil tactique redoutablement efficace pour structurer des décisions opérationnelles, en particulier dans des marchés de grande consommation où les produits sont relativement standardisés.
-
-Mais la vision implicite de ce modèle est celle de la transaction ponctuelle : on optimise chaque vente pour elle-même. La relation entre l''entreprise et le client, si elle existe, n''est pas au cœur de l''analyse. Ce qui compte, c''est la combinaison optimale des quatre leviers pour maximiser les ventes sur une période donnée. Gardez cette idée en tête, elle va être directement contestée dans la partie suivante.
-
-## 20:00 – 35:00 · Les limites du modèle transactionnel et l''émergence du marketing relationnel
-
-À partir des années 1980, plusieurs limites de ce modèle ont été mises en évidence, notamment par des chercheurs travaillant sur le marketing des services et le marketing industriel, c''est-à-dire le marketing entre entreprises. Je vous propose trois limites essentielles à retenir, car elles sont très souvent demandées à l''oral sous forme de question directe : « Quelles sont les limites du marketing mix ? »
-
-Première limite : le modèle du mix a été pensé pour des biens tangibles standardisables, mais il s''applique mal aux services, qui sont souvent coproduits avec le client au moment même de la prestation, et dont la qualité dépend fortement de l''interaction humaine. Deuxième limite : dans de nombreux marchés, en particulier entre entreprises, la valeur ne se crée pas lors d''une transaction isolée mais au fil d''une relation de long terme faite d''échanges répétés et de confiance accumulée ; un modèle centré sur la transaction unique ne rend pas compte de cette dynamique. Troisième limite : le marketing mix traite le client comme une cible à atteindre plutôt que comme un acteur qui participe à la définition de la valeur.
-
-En réponse à ces limites, le marketing relationnel se développe : son objectif n''est plus seulement de conclure une transaction, mais de construire une relation durable et mutuellement profitable avec le client. Les notions centrales changent : on parle désormais de confiance, d''engagement, de satisfaction cumulée, de fidélité, et de la valeur du client sur l''ensemble de sa relation avec l''entreprise, et non plus sur un seul achat. Pour la recherche, cela signifie des variables d''étude nouvelles : on ne mesure plus un acte d''achat ponctuel, mais des construits comme la confiance perçue envers un prestataire, qui nécessitent des échelles de mesure validées, sujet que nous approfondirons dans la leçon vidéo consacrée aux méthodes.
-
-## 35:00 – 50:00 · La logique de dominante service et la co-création de valeur
-
-Nous arrivons maintenant au prolongement le plus récent et le plus exigeant de ce débat : la logique de dominante service, ou service-dominant logic, apparue au milieu des années 2000. Cette approche propose quelque chose d''assez radical : renverser la hiérarchie implicite entre biens et services. Dans la vision classique, le service est souvent traité comme un cas particulier, moins « noble » ou moins central, que le produit physique. La logique de dominante service inverse cette hiérarchie : elle affirme que c''est l''échange de service — entendu comme l''application de compétences au bénéfice d''un bénéficiaire — qui constitue le fondement de tout échange économique, y compris lorsqu''un bien tangible n''est qu''un support à ce service.
-
-Le concept central à retenir absolument pour l''examen est celui de la co-création de valeur. Dans la vision transactionnelle classique, l''entreprise crée la valeur en fabriquant un produit, et le client se contente de la consommer, presque de la « détruire » en l''utilisant. Dans la logique de dominante service, ce schéma est faux : la valeur n''est jamais créée unilatéralement par l''entreprise. Elle est toujours co-créée dans l''usage, au moment où le client mobilise l''offre avec ses propres ressources, son contexte, ses compétences. Prenons un exemple fictif pour fixer les idées : un robot culinaire n''a pas la même valeur selon que l''utilisateur sait l''exploiter pleinement avec ses propres recettes et son savoir-faire culinaire, ou l''utilise de façon minimale. La valeur véritable se réalise à cet instant d''usage, pas uniquement à la fabrication.
-
-Cette idée a des implications méthodologiques fortes, que nous détaillerons plus tard dans ce cours : elle invite à étudier non plus seulement l''offre de l''entreprise, mais les pratiques réelles d''usage des clients, ce qui justifie, entre autres, le recours à des méthodes qualitatives comme l''ethnographie du consommateur.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Nous allons maintenant faire une courte pause avec un quiz interactif pour vérifier votre compréhension à ce stade. Je vous pose trois questions ; prenez le temps d''y réfléchir avant d''entendre la réponse.
-
-Question 1 : Dans le paradigme transactionnel, qui crée la valeur, selon le schéma implicite du modèle ? Réponse : l''entreprise seule, au moment de la conception et de la fabrication de l''offre ; le client est perçu comme un récepteur relativement passif.
-
-Question 2 : Citez deux limites du marketing mix qui ont motivé l''émergence du marketing relationnel. Réponse possible : la difficulté à traiter les services coproduits avec le client, et l''incapacité à rendre compte des relations d''échange répétées et de confiance dans la durée, en particulier en marketing industriel.
-
-Question 3 : Que signifie « co-création de valeur » dans la logique de dominante service ? Réponse : la valeur ne se réalise jamais unilatéralement par l''entreprise ; elle se construit au moment de l''usage, lorsque le client mobilise l''offre avec ses propres ressources et son contexte, ce qui rend le client coproducteur de la valeur et non simple consommateur final.
-
-Si vous avez bien répondu à ces trois questions, vous êtes prêts pour la suite. Si ce n''est pas le cas, je vous invite à revenir en arrière dans la vidéo avant de continuer.
-
-## 55:00 – 1:10:00 · Continuité, rupture et complémentarité entre les trois courants
-
-Abordons maintenant le point le plus délicat, et le plus souvent mal traité par les candidats à l''oral : quelle est la relation exacte entre ces trois courants ? Beaucoup de candidats commettent une erreur en présentant la dominante service comme un simple raffinement du marketing mix, ou à l''inverse en affirmant que le marketing mix a complètement disparu de la pratique actuelle. Les deux affirmations sont inexactes et seront sanctionnées par un jury attentif.
-
-La position la plus défendable, et celle que je vous recommande de défendre à l''oral, est celle de la coexistence à des niveaux d''analyse différents. Le marketing mix reste un outil tactique utile pour organiser des décisions opérationnelles courantes, même dans une entreprise qui adopte par ailleurs une philosophie relationnelle ou orientée service. Le marketing relationnel oriente la stratégie globale de gestion de la clientèle, au-dessus du niveau tactique. La dominante service propose un cadre conceptuel encore plus large, qui redéfinit la nature même de la valeur et de l''échange économique, particulièrement pertinent pour comprendre les économies de services, les plateformes numériques et les écosystèmes d''affaires contemporains.
-
-Un conseil pratique pour l''oral : quand un membre du jury vous demande « le marketing mix est-il obsolète ? », ne répondez jamais par un simple oui ou un simple non. Répondez en trois temps : non, il n''est pas obsolète comme outil tactique ; oui, il est largement dépassé comme cadre conceptuel unique pour penser la création de valeur dans de nombreux secteurs actuels ; et la position la plus juste est celle d''une coexistence à des niveaux différents, ce qui montre au jury que vous maîtrisez la nuance plutôt que l''opposition binaire.
-
-## 1:10:00 – 1:25:00 · Application à un contexte africain et liens avec la recherche doctorale
-
-Terminons par une application concrète. Imaginez un projet de thèse fictif portant sur l''adoption de services financiers mobiles par des commerçants de marchés urbains en Afrique de l''Ouest. Si vous adoptez une perspective transactionnelle, vous allez probablement vous intéresser aux variables classiques du mix : le prix du service, les canaux de distribution de l''offre, la communication commerciale autour du produit. Ce sont des questions de recherche légitimes, mais elles resteront centrées sur l''entreprise et son offre.
-
-Si vous adoptez une perspective relationnelle, vous allez vous intéresser à la confiance progressive que les commerçants développent envers l''opérateur, à leur engagement dans la durée, à la fidélité d''usage au fil du temps. Si vous adoptez une perspective de dominante service, vous allez vous intéresser aux pratiques réelles d''usage du service par les commerçants, à la façon dont ils l''intègrent dans leurs pratiques existantes de gestion de l''argent, à la manière dont la valeur du service dépend de leur contexte et de leurs compétences propres, ce qui vous poussera probablement vers des méthodes qualitatives comme l''entretien ou l''ethnographie, en complément d''une enquête quantitative.
-
-Ce petit exercice de projection montre bien pourquoi ce débat théorique n''est pas qu''une question d''histoire de la discipline : il détermine directement le type de questions de recherche que vous allez poser, et donc le type de méthodes que vous allez devoir mobiliser, ce qui fait le lien avec notre prochaine leçon vidéo sur les méthodes de recherche.
-
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour synthétiser cette séance : le marketing mix transactionnel structure l''échange autour de la transaction ponctuelle et de quatre leviers opérationnels. Ses limites, mises en évidence par la recherche sur les services et le marketing industriel, ont nourri l''émergence du marketing relationnel, centré sur la confiance et la valeur client dans la durée. La logique de dominante service radicalise ce déplacement avec le concept de co-création de valeur, qui affirme que la valeur se réalise toujours dans l''usage, jamais livrée « finie » par l''entreprise seule. Ces trois courants coexistent dans la pratique actuelle à des niveaux d''analyse différents.
-
-Voici l''évaluation finale de cette séance, cinq questions avec leurs réponses.
-
-Question 1 : Quels sont les quatre leviers du marketing mix traditionnel ? Réponse : le produit, le prix, la distribution (« place ») et la communication (« promotion »).
-
-Question 2 : Pourquoi le marketing des services a-t-il joué un rôle déclencheur dans la remise en cause du paradigme transactionnel ? Réponse : parce qu''un service est souvent coproduit avec le client au moment de la prestation, difficile à standardiser, et dépend fortement de l''interaction humaine, ce qui rendait le modèle du mix, pensé pour des biens tangibles, insuffisant pour en rendre compte.
-
-Question 3 : Quelles notions centrales introduit le marketing relationnel par rapport au marketing transactionnel ? Réponse : la confiance, l''engagement, la satisfaction cumulée, la fidélité, et la valeur du client appréciée sur l''ensemble de sa relation avec l''entreprise, plutôt que sur une seule transaction.
-
-Question 4 : Expliquez en une phrase le concept de co-création de valeur dans la logique de dominante service. Réponse : la valeur économique ne se réalise jamais unilatéralement par l''entreprise mais se construit toujours au moment où le client mobilise l''offre avec ses propres ressources, son contexte et ses compétences.
-
-Question 5 : Quelle est la position la plus défendable à l''oral concernant la relation entre ces trois courants ? Réponse : la coexistence à des niveaux d''analyse différents, le marketing mix restant un outil tactique utile, le marketing relationnel orientant la stratégie de gestion de la clientèle, et la dominante service offrant un cadre conceptuel plus large pour repenser la nature de l''échange économique.
-
-Merci pour votre attention, et rendez-vous dans la prochaine vidéo pour le second grand débat de ce cours, consacré à la standardisation et à l''adaptation culturelle du marketing sur les marchés africains émergents.', 'video', 90, false, 60
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : le débat marketing transactionnel versus marketing relationnel et dominante service');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : standardisation versus adaptation culturelle sur les marchés africains émergents', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant l''examen de qualification en marketing et commerce. Objectifs : maîtriser le débat standardisation versus adaptation culturelle en marketing international, et savoir l''appliquer de façon critique et nuancée aux marchés africains émergents. Matériel : diaporama comparatif, carte des spécificités de marchés ouest-africains, exemple fictif filé tout au long de la séance. Prérequis : avoir lu la leçon texte correspondante de ce cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et annonce du plan
-
-Bienvenue dans cette deuxième vidéo de notre cours de qualification doctorale en marketing. Nous allons traiter aujourd''hui un débat différent du précédent, mais qui s''y articule étroitement : celui de la standardisation versus l''adaptation culturelle des stratégies marketing, en particulier sur les marchés africains émergents. Ce débat appartient au champ du marketing international et interculturel, et il est régulièrement posé lors des oraux de qualification, souvent sous la forme « faut-il standardiser ou adapter une stratégie marketing dans un marché émergent, et pourquoi ? »
-
-Notre plan pour cette heure et demie : d''abord les termes classiques du débat et la position intermédiaire de « glocalisation » qui domine la recherche contemporaine ; ensuite les spécificités propres aux marchés africains émergents qui rendent ce débat particulièrement riche ; un quiz à mi-parcours ; puis une discussion critique sur les pièges d''une lecture essentialiste de la culture africaine ; et enfin le lien avec le courant théorique vu dans la vidéo précédente, avant l''évaluation finale.
-
-## 05:00 – 20:00 · Les termes classiques du débat standardisation/adaptation
-
-Commençons par poser clairement les deux thèses en présence. La thèse de la standardisation soutient qu''une entreprise opérant sur plusieurs marchés devrait proposer une offre et une communication aussi uniformes que possible. Deux arguments soutiennent cette thèse : d''abord des économies d''échelle considérables, puisqu''un seul produit et une seule campagne conçus une fois peuvent être déployés partout ; ensuite une cohérence d''image de marque au niveau mondial, ce qui facilite la reconnaissance et la confiance des consommateurs qui voyagent ou qui sont exposés à des médias internationaux.
-
-La thèse de l''adaptation culturelle soutient à l''inverse que les besoins, les codes de communication, les habitudes de consommation et les structures de distribution varient suffisamment d''un marché à l''autre pour qu''une offre uniforme devienne sous-optimale, voire contre-productive. Cette thèse s''appuie sur des travaux montrant la persistance de différences culturelles profondes : le rapport au temps, à l''autorité, à la famille, les modes de négociation commerciale, les pratiques religieuses, qui influencent directement la perception d''un produit ou l''efficacité d''un message publicitaire.
-
-Entre ces deux extrêmes, la recherche contemporaine retient largement une position intermédiaire, que l''on appelle parfois « glocalisation » : standardiser ce qui peut l''être sans perte d''efficacité, comme certains attributs fonctionnels ou l''identité visuelle de marque, et adapter ce qui doit l''être pour rester pertinent localement, comme le packaging, le prix, les canaux de distribution, et le ton de la communication. Retenez bien cette idée, car un bon candidat à l''oral ne choisit jamais un camp unique entre standardisation et adaptation : il montre comment arbitrer, variable par variable.
-
-## 20:00 – 40:00 · Spécificités des marchés africains émergents
-
-Venons-en maintenant à ce qui rend ce débat particulièrement vif sur les marchés africains, et notamment ouest-africains comme le Sénégal. Je vous propose quatre spécificités à retenir.
-
-Première spécificité : la diversité linguistique et culturelle interne, souvent plus marquée que dans des marchés occidentaux de taille comparable. Une communication adaptée à une grande ville n''est pas nécessairement adaptée à d''autres zones du même pays ou de la même région. Cela complique sérieusement l''idée d''une adaptation « nationale » simple et unique.
-
-Deuxième spécificité : la coexistence de circuits de distribution très différents. Le commerce formel moderne se développe, mais le commerce informel et de proximité reste central dans de nombreuses catégories de produits de grande consommation. Les entreprises internationales doivent donc repenser la variable distribution de façon beaucoup plus locale que sur des marchés où la grande distribution moderne domine largement.
-
-Troisième spécificité : des structures de pouvoir d''achat très différenciées, qui imposent souvent des stratégies de conditionnement et de tarification spécifiques, par exemple des formats de vente plus petits et plus nombreux, adaptés à une fréquence d''achat élevée mais à un pouvoir d''achat limité par transaction. Ce n''est pas seulement une adaptation de communication, c''est une adaptation produit au sens strict.
-
-Quatrième spécificité : l''essor rapide des usages numériques et mobiles, en particulier le paiement mobile, qui crée à la fois des opportunités de standardisation, via des plateformes globales utilisées localement, et des opportunités d''adaptation, via des usages spécifiques du mobile qui diffèrent sensiblement d''autres régions du monde.
-
-## 40:00 – 45:00 · Pause et quiz interactif
-
-Prenons une pause avec un quiz à trois questions.
-
-Question 1 : Quels sont les deux arguments principaux en faveur de la standardisation ? Réponse : les économies d''échelle et la cohérence de l''image de marque au niveau mondial.
-
-Question 2 : Qu''est-ce que la « glocalisation » ? Réponse : une position intermédiaire qui consiste à standardiser certains éléments de l''offre, comme l''identité de marque, tout en adaptant d''autres éléments, comme le prix, le format ou la distribution, selon le contexte local.
-
-Question 3 : Citez deux spécificités des marchés africains émergents qui rendent le débat standardisation/adaptation particulièrement pertinent. Réponse possible : la diversité linguistique et culturelle interne importante, et la coexistence de circuits de distribution formels et informels.
-
-## 45:00 – 1:05:00 · Le piège de l''essentialisme culturel et la lecture critique du débat
-
-Abordons maintenant un point d''une importance capitale pour l''examen : la prudence méthodologique à adopter face à la notion de « culture africaine ». Un jury doctoral sera très attentif à ce que vous évitiez une lecture essentialiste, c''est-à-dire une lecture qui traiterait l''Afrique, ou même un seul pays africain, comme un bloc culturel homogène et figé.
-
-Pourquoi ce piège est-il si fréquent ? Parce qu''il est tentant, pour simplifier une analyse marketing, de résumer un marché entier à quelques traits culturels supposés généraux. Mais la recherche sérieuse en marketing interculturel évite cette simplification. Elle privilégie des analyses situées : par pays, par région à l''intérieur d''un pays, voire par segment de consommateurs à l''intérieur d''une même ville, en croisant systématiquement les variables culturelles avec des variables socio-économiques comme le milieu urbain ou rural, la génération, le niveau d''éducation, ou l''exposition aux médias internationaux.
-
-Illustrons ce point avec notre exemple filé de la boisson internationale fictive qui envisage d''entrer sur le marché sénégalais. Une analyse essentialiste dirait simplement « les consommateurs sénégalais préfèrent telle saveur », sans plus de précision. Une analyse rigoureuse segmenterait l''étude : peut-être que les préférences diffèrent sensiblement entre consommateurs urbains et ruraux, entre générations, ou selon l''exposition à d''autres marchés via les médias ou les réseaux sociaux. C''est cette rigueur de segmentation que le jury attend de vous.
-
-Revenons maintenant au niveau d''analyse par variable du mix. Au niveau du produit, l''adaptation peut rester superficielle, comme un nom local, ou aller jusqu''à une reconception substantielle, comme une recette différente. Au niveau de la communication, le débat porte sur la standardisation du message central de marque versus l''adaptation des exécutions créatives et des canaux médiatiques. Au niveau de la distribution et du prix, les marges de standardisation sont généralement les plus faibles, car ces variables dépendent le plus directement des structures économiques et commerciales locales, comme nous l''avons vu avec l''exemple du commerce informel.
-
-## 1:05:00 – 1:25:00 · Articulation avec le débat théorique précédent et exemple complet
-
-Terminons par l''articulation entre ce débat et celui vu dans la vidéo précédente, consacré au passage du marketing transactionnel au marketing relationnel et à la dominante service. C''est un lien que les jurys apprécient particulièrement de voir établi spontanément par un candidat, car il montre une compréhension transversale du champ plutôt qu''une connaissance compartimentée.
-
-Une stratégie d''adaptation culturelle poussée s''accorde en effet mieux avec une logique relationnelle ou de co-création : elle suppose d''écouter et d''intégrer les pratiques et préférences locales des clients dans la définition même de l''offre, plutôt que de leur imposer une offre standardisée pensée ailleurs. À l''inverse, une stratégie de standardisation poussée s''accorde plus naturellement avec une logique transactionnelle, où l''offre est définie en amont par l''entreprise et proposée telle quelle à l''ensemble des marchés.
-
-Reprenons notre exemple fictif de la boisson internationale. Une stratégie entièrement standardisée reprendrait la même recette, le même conditionnement, le même prix et la même publicité que sur le marché d''origine : c''est une logique transactionnelle appliquée au marketing international. Une stratégie de « glocalisation » réellement orientée service irait plus loin que l''adaptation tactique classique : elle impliquerait d''écouter en amont, par des méthodes qualitatives comme l''entretien ou l''ethnographie, les pratiques réelles de consommation locales, puis d''ajuster conjointement le format, le prix, les canaux de distribution et certains aspects du produit lui-même, en coopération continue avec les retours du marché local, ce qui se rapproche d''une logique de co-création plutôt que d''une simple adaptation descendante décidée une fois pour toutes au siège de l''entreprise.
-
-Cette articulation doit vous servir de modèle : chaque fois qu''un jury vous pose une question sur l''un des deux courants de ce cours, essayez, quand c''est pertinent, de montrer spontanément le lien avec l''autre courant. C''est souvent ce geste intellectuel, plus que la seule exactitude factuelle, qui distingue une excellente réponse d''une réponse simplement correcte.
-
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour synthétiser : le débat standardisation/adaptation oppose les économies d''échelle et la cohérence globale de marque à la pertinence locale et à l''efficacité commerciale sur un marché donné. Les marchés africains émergents, par leur diversité interne, la coexistence de circuits formels et informels, et des structures de pouvoir d''achat différenciées, rendent ce débat particulièrement riche empiriquement. La position de « glocalisation », différenciée variable par variable, domine la recherche contemporaine, et doit toujours s''accompagner d''une vigilance contre toute lecture essentialiste de la culture africaine.
-
-Voici l''évaluation finale de cette séance, cinq questions avec leurs réponses.
-
-Question 1 : Quels sont les deux arguments principaux en faveur de l''adaptation culturelle en marketing international ? Réponse : la persistance de différences culturelles profondes qui influencent la perception de l''offre, et les différences structurelles de distribution et de pouvoir d''achat selon les marchés.
-
-Question 2 : Qu''est-ce qu''une lecture essentialiste de la culture, et pourquoi doit-elle être évitée en recherche marketing ? Réponse : c''est une lecture qui traite une culture, par exemple « la culture africaine », comme un bloc homogène et figé ; elle doit être évitée car elle ignore la diversité réelle, linguistique, générationnelle et socio-économique, à l''intérieur même d''un seul pays ou d''une seule ville, ce qui fausse l''analyse marketing.
-
-Question 3 : Pour quelle(s) variable(s) du mix les marges de standardisation sont-elles généralement les plus faibles, et pourquoi ? Réponse : la distribution et le prix, car elles dépendent le plus directement des structures économiques et commerciales locales, difficilement contournables par une entreprise internationale.
-
-Question 4 : En quoi une stratégie d''adaptation culturelle poussée se rapproche-t-elle d''une logique relationnelle ou de co-création de valeur ? Réponse : parce qu''elle suppose d''écouter et d''intégrer les pratiques et préférences réelles des clients locaux dans la définition même de l''offre, plutôt que d''imposer une offre standardisée décidée en amont, ce qui correspond à l''esprit de la co-création plutôt qu''à celui du marketing transactionnel.
-
-Question 5 : Donnez un exemple de question de recherche doctorale qui combinerait ce débat avec celui de la vidéo précédente. Réponse possible : étudier comment le degré d''adaptation culturelle d''un service numérique influence la confiance perçue et l''intention d''adoption des utilisateurs dans un contexte ouest-africain donné.
-
-Merci pour votre attention. Dans la prochaine vidéo, nous passerons aux méthodes de recherche propres au marketing, avec un protocole complet appliqué à un contexte sénégalais fictif.', 'video', 90, false, 70
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : standardisation versus adaptation culturelle sur les marchés africains émergents');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : les méthodes de recherche en marketing (expérimentation, enquête, qualitatif)', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant l''examen de qualification en marketing et commerce. Objectifs : maîtriser les logiques de l''expérimentation (plans factoriels), de l''enquête par questionnaire (échelles de mesure validées), et des méthodes qualitatives (entretiens, ethnographie), et savoir construire et défendre un protocole de recherche mixte. Matériel : diaporama avec calculs vérifiés, tableau comparatif des méthodes, exemple filé d''un protocole sénégalais fictif. Prérequis : avoir lu la leçon texte correspondante de ce cours et disposer de notions de base en statistiques descriptives.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux méthodologiques
-
-Bienvenue dans cette troisième vidéo de notre cours de qualification doctorale en marketing. Nous avons vu, dans les deux vidéos précédentes, les grands débats théoriques du champ. Nous allons maintenant voir comment la recherche en marketing étudie empiriquement ces débats, c''est-à-dire les méthodes de recherche propres à la discipline. C''est un point crucial pour l''examen : un jury ne se contente jamais d''une bonne connaissance théorique, il veut vérifier que vous savez aussi comment on produit de la connaissance scientifique vérifiable en marketing.
-
-Notre plan : d''abord l''expérimentation et les plans factoriels, avec un calcul vérifié ; ensuite l''enquête par questionnaire et les échelles de mesure validées, avec des calculs de taille d''échantillon et de fiabilité ; un quiz à mi-parcours ; puis les méthodes qualitatives, entretiens et ethnographie du consommateur ; et enfin un protocole de recherche mixte complet appliqué à un contexte sénégalais fictif, avant l''évaluation finale.
-
-## 05:00 – 20:00 · L''expérimentation et les plans factoriels
-
-L''expérimentation vise à établir une relation de causalité entre une variable que le chercheur manipule et une variable qu''il observe. Par exemple, on manipule le prix affiché d''un produit, et on observe l''intention d''achat des répondants. Pour établir une causalité convaincante, deux principes sont essentiels : la manipulation contrôlée de la variable indépendante, et la comparaison entre des groupes de répondants exposés à des conditions différentes, idéalement constitués par assignation aléatoire pour neutraliser l''influence de caractéristiques individuelles non contrôlées.
-
-Le plan factoriel permet d''étudier simultanément plusieurs facteurs et leurs interactions. Prenons un exemple concret : supposons que l''on étudie l''effet de trois facteurs sur l''intention d''achat d''un service, chaque facteur ayant deux niveaux. On note ce plan 2 fois 2 fois 2, ou 2 puissance 3. Combien de conditions expérimentales ce plan génère-t-il ? Le calcul est simple : 2 multiplié par 2 multiplié par 2, soit 8 conditions distinctes, chacune correspondant à une combinaison unique des niveaux des trois facteurs. J''ai vérifié ce calcul avec un petit script Python avant cette séance, qui confirme bien que trois facteurs à deux niveaux chacun donnent 8 cellules expérimentales.
-
-Pourquoi est-ce si important, par rapport à une série d''expériences séparées sur chaque facteur ? Parce que le plan factoriel permet de détecter non seulement l''effet de chaque facteur pris isolément, appelé effet principal, mais aussi les effets d''interaction, c''est-à-dire les cas où l''effet d''un facteur dépend du niveau d''un autre facteur. Par exemple, une promotion peut être efficace à prix bas mais inefficace, voire contre-productive, à prix élevé : seul un plan factoriel permet de détecter ce type d''effet croisé.
-
-Deux limites à toujours mentionner à l''oral : la validité interne de l''expérimentation est généralement forte, ce qui permet d''affirmer une causalité ; mais sa validité externe est souvent plus faible, car les conditions contrôlées de l''expérience peuvent différer des comportements réels de marché, plus complexes et soumis à davantage de facteurs non contrôlés.
-
-## 20:00 – 40:00 · L''enquête par questionnaire et les échelles de mesure validées
-
-Passons maintenant à l''enquête par questionnaire, la méthode quantitative la plus répandue pour étudier des construits comme les attitudes, les perceptions ou les intentions d''achat auprès d''un échantillon de consommateurs. La rigueur de cette méthode dépend fortement de la qualité des échelles de mesure employées. Une échelle validée est un ensemble d''items dont les propriétés psychométriques ont été testées et publiées : elle doit présenter une bonne fiabilité, c''est-à-dire une cohérence interne entre les items qui mesurent le même construit, et une bonne validité, c''est-à-dire qu''elle mesure effectivement le construit visé.
-
-La fiabilité se mesure couramment par le coefficient alpha de Cronbach. J''ai préparé un exemple illustratif et volontairement simplifié, calculé et vérifié en Python : sur trois items fictifs notés de 1 à 5 auprès de cinq répondants, le calcul donne un alpha de Cronbach d''environ 0,77. Rappelons qu''un alpha supérieur à environ 0,70 est généralement considéré comme acceptable en recherche en gestion, bien que cet exemple soit construit à but pédagogique sur un échantillon bien trop petit pour être réellement interprétable en recherche.
-
-Deuxième question technique essentielle : la taille d''échantillon nécessaire pour une enquête. Elle dépend du niveau de confiance souhaité et de la marge d''erreur acceptée. J''ai vérifié en Python le calcul suivant, avec la formule statistique classique : pour un niveau de confiance de 95 % et une marge d''erreur de 5 %, la taille d''échantillon minimale théorique est d''environ 385 répondants, pour une population supposée infinie. Si l''on connaît la taille réelle de la population étudiée, on peut appliquer une correction dite de population finie : pour une population de 5 000 personnes, par exemple 5 000 commerçants dans une zone urbaine donnée, cette correction ramène la taille d''échantillon nécessaire à environ 357 répondants, ce qui reste proche du chiffre de 385 car la population reste très supérieure à l''échantillon. En revanche, si l''on exige une marge d''erreur plus stricte de 3 % plutôt que 5 %, toujours à titre d''exemple fictif et non d''une norme officielle, la taille d''échantillon nécessaire grimpe fortement, à environ 1 068 répondants pour une population infinie, ce qui illustre bien le coût, en taille d''échantillon, d''une exigence de précision statistique accrue.
-
-N''oublions pas les limites classiques de l''enquête par questionnaire : le biais de désirabilité sociale, où le répondant répond ce qu''il pense être attendu plutôt que sa véritable opinion, le biais de rappel pour les comportements passés, et l''écart bien documenté en marketing entre intention déclarée et comportement réel d''achat.
-
-## 40:00 – 45:00 · Pause et quiz interactif
-
-Faisons une pause avec un quiz à trois questions.
-
-Question 1 : Combien de conditions expérimentales génère un plan factoriel à trois facteurs, chacun à deux niveaux ? Réponse : 8 conditions, puisque 2 multiplié par 2 multiplié par 2 égale 8.
-
-Question 2 : Que mesure le coefficient alpha de Cronbach ? Réponse : la fiabilité d''une échelle de mesure, c''est-à-dire la cohérence interne entre les items qui sont censés mesurer le même construit.
-
-Question 3 : Si l''on exige une marge d''erreur plus stricte dans une enquête, que se passe-t-il pour la taille d''échantillon nécessaire ? Réponse : elle augmente fortement ; par exemple, passer d''une marge de 5 % à 3 % fait passer la taille d''échantillon nécessaire théorique d''environ 385 à environ 1 068 répondants pour une population infinie.
-
-## 45:00 – 1:05:00 · Les méthodes qualitatives : entretiens et ethnographie du consommateur
-
-Passons maintenant aux méthodes qualitatives, qui visent moins à mesurer l''ampleur d''un phénomène qu''à en comprendre le sens et le contexte. L''entretien individuel semi-directif est la méthode la plus utilisée : le chercheur dispose d''un guide thématique, mais laisse le répondant développer librement sa pensée, ce qui permet de faire émerger des significations ou des logiques d''usage que des questions fermées de questionnaire n''auraient pas anticipées.
-
-L''ethnographie du consommateur va plus loin : elle consiste à observer, parfois en immersion prolongée, les pratiques réelles de consommation dans leur contexte naturel, au domicile, sur le lieu de vente, dans la rue, plutôt que de se fier uniquement au discours que les personnes tiennent sur leurs pratiques. Cette méthode est précieuse lorsqu''on étudie des comportements difficiles à verbaliser, ou lorsqu''un écart important est suspecté entre ce que les consommateurs disent faire et ce qu''ils font réellement. Sur les marchés africains, l''ethnographie est fréquemment mobilisée pour étudier le commerce informel ou de proximité, où les logiques d''achat, la fréquence, la négociation du prix, le rôle du vendeur, sont difficiles à saisir par un simple questionnaire.
-
-La limite principale des méthodes qualitatives, souvent soulignée à l''oral, est l''absence de représentativité statistique : on ne peut pas généraliser les résultats obtenus auprès d''un nombre restreint de répondants à l''ensemble d''une population avec la même assurance qu''une enquête quantitative sur un large échantillon. Leur force réside en contrepartie dans la profondeur et la richesse contextuelle de la compréhension produite, souvent indispensable pour construire correctement un questionnaire quantitatif pertinent en amont.
-
-## 1:05:00 – 1:25:00 · Construction d''un protocole de recherche mixte complet (contexte sénégalais fictif)
-
-Terminons par la construction complète d''un protocole de recherche mixte, appliqué à un projet de thèse fictif étudiant l''effet du prix et de la présence d''un argumentaire de confiance sur l''intention d''achat de services financiers mobiles, auprès de commerçants de marchés urbains sénégalais.
-
-Étape 1, qualitative exploratoire : on conduit une série d''entretiens semi-directifs avec des commerçants, complétés par une observation ethnographique de courte durée sur un marché, afin d''identifier les dimensions de confiance et de prix réellement pertinentes avant de construire le questionnaire. Cette étape est indispensable pour éviter de construire un questionnaire basé sur des hypothèses théoriques générales mal adaptées au terrain spécifique étudié.
-
-Étape 2, expérimentale : on construit un plan factoriel à deux facteurs, chacun à deux niveaux, le prix du service et la présence ou l''absence d''un argumentaire de confiance explicite. Ce plan 2 fois 2 génère quatre conditions expérimentales. En recrutant 25 commerçants par condition, on obtient un échantillon expérimental total de 100 répondants, chiffre que j''ai vérifié en Python : 4 conditions multipliées par 25 répondants donnent bien 100 participants, répartis de façon égale entre les quatre groupes.
-
-Étape 3, enquête par questionnaire à grande échelle : pour généraliser les résultats expérimentaux à la population des commerçants de la zone étudiée, on administre un questionnaire plus large, utilisant des échelles de mesure validées de la confiance et de l''intention d''adoption. Pour une population fictive de 5 000 commerçants et un niveau de confiance de 95 % avec une marge d''erreur de 5 %, on vise, comme calculé plus tôt, un échantillon d''environ 357 répondants après correction de population finie.
-
-Ce protocole en trois étapes illustre la logique de triangulation méthodologique : la phase qualitative identifie les bonnes dimensions à étudier, la phase expérimentale établit une causalité rigoureuse sur un facteur précis, et la phase quantitative généralise les résultats à une population plus large. C''est exactement ce type de raisonnement en plusieurs étapes, articulées logiquement, qu''un jury doctoral attend d''un candidat capable de concevoir sa propre recherche.
-
-## 1:25:00 – 1:30:00 · Synthèse et évaluation finale
-
-Pour synthétiser : l''expérimentation, en particulier le plan factoriel, établit une causalité rigoureuse au prix d''une validité externe parfois limitée. L''enquête par questionnaire, appuyée sur des échelles validées et une taille d''échantillon correctement calculée, permet de généraliser des relations à une population. Les méthodes qualitatives apportent une compréhension fine du sens et du contexte, souvent indispensable en amont du quantitatif. La combinaison mixte de ces méthodes, par triangulation, constitue souvent la réponse méthodologique la plus solide.
-
-Voici l''évaluation finale de cette séance, cinq questions avec leurs réponses.
-
-Question 1 : Qu''est-ce qu''un effet d''interaction dans un plan factoriel ? Réponse : c''est le cas où l''effet d''un facteur sur la variable observée dépend du niveau d''un autre facteur, par exemple quand une promotion est efficace à prix bas mais pas à prix élevé.
-
-Question 2 : Quelle est la principale limite de l''expérimentation en marketing ? Réponse : la validité externe souvent limitée, c''est-à-dire la difficulté à généraliser les résultats obtenus en conditions contrôlées aux comportements réels de marché.
-
-Question 3 : Que faut-il vérifier avant d''utiliser une échelle de mesure dans un questionnaire ? Réponse : qu''il s''agit d''une échelle déjà validée dans la littérature, avec une bonne fiabilité, mesurée par exemple par l''alpha de Cronbach, et une bonne validité, c''est-à-dire qu''elle mesure réellement le construit visé.
-
-Question 4 : Dans quelle situation l''ethnographie du consommateur apporte-t-elle une information que l''entretien seul ne pourrait pas apporter ? Réponse : quand il existe un écart probable entre le discours du consommateur et ses pratiques réelles, ou quand certains aspects du comportement sont difficiles à verbaliser.
-
-Question 5 : Pourquoi recommande-t-on souvent de commencer un protocole de recherche par une phase qualitative avant la phase quantitative ? Réponse : parce que la phase qualitative permet d''identifier les dimensions réellement pertinentes du phénomène étudié dans le contexte spécifique, ce qui évite de construire un questionnaire quantitatif basé sur des hypothèses théoriques génériques mal adaptées au terrain.
-
-Merci pour votre attention. Dans la dernière vidéo de ce cours, nous passerons à l''épreuve type de synthèse, avec un plan de réponse complet mobilisant tout ce que nous avons vu jusqu''ici.', 'video', 90, false, 80
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : les méthodes de recherche en marketing (expérimentation, enquête, qualitatif)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : épreuve type de synthèse, plan de réponse détaillé et corrigé commenté', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant l''examen de qualification en marketing et commerce. Objectifs : s''entraîner à construire et défendre, en temps limité, un plan de réponse à une question de synthèse mobilisant plusieurs courants théoriques et une méthode de recherche. Matériel : énoncé de la question type, grille de construction de plan, corrigé commenté. Prérequis : avoir suivi les quatre leçons précédentes de ce cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction et enjeux de l''épreuve de synthèse
-
-Bienvenue dans cette dernière vidéo consacrée à une leçon disciplinaire de notre cours de qualification doctorale en marketing. Nous avons vu, dans les vidéos précédentes, deux grands débats théoriques du champ et les principales méthodes de recherche. Aujourd''hui, nous allons nous entraîner à l''exercice le plus redouté de l''examen : la question de synthèse qui vous oblige à croiser plusieurs de ces éléments en temps limité, exactement comme un jury pourrait vous le demander à l''oral ou à l''écrit.
-
-Notre objectif n''est pas seulement de connaître la bonne réponse à une question précise, mais de maîtriser la méthode qui permet de construire une bonne réponse à n''importe quelle question de ce type, même une question jamais rencontrée auparavant. C''est cette méthode, plus que le contenu mémorisé, qui fera la différence le jour de votre examen réel.
-
-## 05:00 – 15:00 · Présentation de la question type et reformulation
-
-Voici la question type, non officielle, que nous allons traiter aujourd''hui : « Dans quelle mesure les débats théoriques du marketing sur la création de valeur, du marketing mix transactionnel à la logique de dominante service, éclairent-ils la question de l''adaptation culturelle des stratégies marketing sur les marchés africains émergents ? Vous développerez une réponse structurée mobilisant les courants théoriques pertinents, et vous proposerez un protocole de recherche permettant d''étudier empiriquement cette question dans un contexte sénégalais de votre choix. »
-
-Remarquez la construction de cette question : elle combine explicitement les deux grands débats théoriques de ce cours et demande en plus une ouverture méthodologique. C''est typique du niveau d''exigence d''un examen de qualification doctorale : jamais un seul courant isolé, presque toujours une articulation entre plusieurs éléments du programme, et presque toujours une exigence de débouché méthodologique concret.
-
-La première étape, cruciale et souvent négligée sous la pression du temps, consiste à reformuler la question pour identifier précisément les concepts clés à mobiliser. Ici, nous identifions quatre éléments : la théorie de la création de valeur en marketing, l''adaptation culturelle des stratégies marketing, les marchés africains émergents comme terrain d''application, et une proposition méthodologique. Ne sautez jamais cette étape de reformulation, même sous la pression du temps : elle vous évite de partir dans une mauvaise direction dès les premières minutes de votre réponse.
-
-## 15:00 – 40:00 · Construction du plan de réponse, partie théorique
-
-Construisons maintenant le plan en quatre temps que je vous recommande pour ce type de question. Premier temps, l''introduction : nous posons d''emblée le lien entre les deux débats, en affirmant que plus on conçoit la valeur comme co-créée avec le client plutôt que livrée de façon standardisée par l''entreprise, plus l''attention portée au contexte culturel et local du client devient théoriquement incontournable. Cette phrase d''ouverture montre immédiatement au jury que vous avez compris l''articulation demandée par la question, plutôt que de traiter les deux débats côte à côte.
-
-Deuxième temps, la première partie du développement : nous montrons que le paradigme transactionnel du marketing mix, en traitant le client comme un récepteur relativement passif d''une offre définie en amont, est structurellement compatible avec une stratégie de standardisation poussée. Si la valeur est essentiellement déterminée par l''entreprise au moment de la conception du produit, l''adaptation au contexte local n''est perçue que comme un ajustement secondaire, principalement tactique, sans remettre en cause la conception centrale de l''offre.
-
-Troisième temps, la deuxième partie du développement, le cœur de l''argumentation : nous montrons que le passage au marketing relationnel, puis à la dominante service et à la co-création de valeur, change la nature du problème. Si la valeur se réalise dans l''usage, au contact des ressources et du contexte propres du client, alors le contexte culturel local devient une composante constitutive de la valeur elle-même, et non un simple facteur d''ajustement périphérique. Illustrons avec un exemple fictif, sans invoquer de marque réelle : un service financier mobile n''a pas la même valeur d''usage selon les pratiques locales de gestion de l''argent, les structures familiales d''entraide financière, ou le rôle social du commerce de proximité, qui diffèrent sensiblement entre contextes. C''est précisément ce type d''exemple contextualisé que vous devez préparer à l''avance pour chaque grand débat théorique de votre programme doctoral.
-
-## 40:00 – 45:00 · Pause et quiz interactif
-
-Faisons une pause avec un quiz à trois questions sur la construction du plan.
-
-Question 1 : Pourquoi faut-il toujours reformuler une question de synthèse avant de commencer à y répondre ? Réponse : pour identifier précisément les concepts clés attendus et éviter de partir dans une mauvaise direction, surtout sous la pression du temps.
-
-Question 2 : Dans notre plan, pourquoi le marketing mix transactionnel est-il présenté comme compatible avec la standardisation ? Réponse : parce qu''il conçoit la valeur comme déterminée essentiellement par l''entreprise en amont, ce qui relègue l''adaptation locale à un rôle secondaire et tactique.
-
-Question 3 : Pourquoi la logique de dominante service rend-elle l''adaptation culturelle théoriquement plus incontournable ? Réponse : parce que si la valeur se réalise dans l''usage, au contact du contexte réel du client, alors ce contexte culturel devient une composante constitutive de la valeur elle-même, et non plus un simple ajustement périphérique.
-
-## 45:00 – 1:05:00 · Construction du plan de réponse, nuance et protocole méthodologique
-
-Quatrième temps, la troisième partie du développement : la nuance, toujours essentielle pour éviter une réponse binaire. Nous montrons que cette logique n''impose pas un relativisme culturel total : certains éléments de l''offre, comme l''identité de marque globale ou certains standards de qualité, peuvent rester standardisés sans contredire la logique de co-création, tant que les éléments réellement mobilisés dans l''usage quotidien, comme le prix, le format, les canaux de distribution et la communication, sont, eux, adaptés au contexte local. La position de « glocalisation » différenciée variable par variable reste donc pertinente même dans une perspective de dominante service.
-
-Cinquième temps, la quatrième partie du développement, l''ouverture méthodologique, souvent le point le plus discriminant entre un bon candidat et un excellent candidat : nous proposons un protocole de recherche mixte pour étudier empiriquement cette question dans un contexte sénégalais, par exemple le commerce de détail urbain équipé progressivement de solutions de paiement mobile. Ce protocole combine une phase qualitative exploratoire, entretiens et ethnographie de courte durée pour identifier les pratiques locales de gestion de l''argent et de confiance, une phase expérimentale testant par exemple l''effet du degré d''adaptation de l''interface du service sur l''intention d''adoption, et une phase quantitative de généralisation par enquête, utilisant des échelles de mesure validées et une taille d''échantillon calculée selon le niveau de confiance et la marge d''erreur visés.
-
-Sixième temps, la conclusion : nous rappelons que les deux débats théoriques mobilisés ne sont pas de simples débats parallèles du champ marketing, mais qu''ils s''articulent logiquement, ce qui justifie de traiter la question avec les méthodes de recherche les plus robustes possibles, idéalement mixtes.
-
-## 1:05:00 – 1:20:00 · Anticiper les questions de rebond du jury
-
-Un point essentiel pour l''oral : le jury ne se contente jamais d''écouter votre exposé initial, il va presque toujours vous poser des questions de rebond pour tester la robustesse de votre raisonnement. Anticipons deux questions typiques.
-
-Première question possible du jury : « En quoi, concrètement, un protocole purement quantitatif aurait-il été insuffisant pour cette question ? » La réponse attendue est que les dimensions culturelles pertinentes à opérationnaliser dans le questionnaire ne peuvent pas être identifiées correctement sans une phase qualitative préalable, propre au terrain étudié. Un questionnaire construit directement à partir d''hypothèses théoriques génériques, sans exploration qualitative préalable, risquerait de mesurer des dimensions peu pertinentes dans le contexte spécifique étudié.
-
-Seconde question possible du jury : « Vos résultats obtenus dans un seul contexte sénégalais peuvent-ils être généralisés à l''ensemble des marchés africains émergents ? » La réponse attendue est une réponse prudente : non, pas directement, en raison de la diversité interne importante du continent et de chaque pays qui le compose, comme nous l''avons vu dans la vidéo sur la standardisation et l''adaptation culturelle. Une généralisation prudente nécessiterait de répliquer l''étude dans d''autres contextes avant toute affirmation plus large, ce qui constitue d''ailleurs une piste naturelle pour des recherches futures au-delà de la thèse elle-même.
-
-Cette capacité à anticiper et à répondre avec nuance aux questions de rebond, plutôt qu''à défendre votre position initiale de façon rigide, est précisément ce qui distingue, aux yeux d''un jury expérimenté, un candidat qui a mémorisé une réponse d''un candidat qui maîtrise réellement son sujet.
-
-## 1:20:00 – 1:30:00 · Synthèse finale et conseils pour le jour de l''examen
-
-Pour conclure cette séance et ce cours disciplinaire : une bonne réponse de synthèse articule toujours plusieurs courants théoriques autour d''une problématique commune, plutôt que de les juxtaposer. Elle illustre systématiquement les arguments par des exemples contextualisés, idéalement ancrés dans votre zone géographique d''intérêt. Elle débouche toujours sur une proposition méthodologique concrète et justifiée. Et elle anticipe les questions de rebond du jury plutôt que de les subir.
-
-Quelques derniers conseils pratiques pour le jour de l''examen. Préparez à l''avance, pour chaque grand débat de votre programme, deux ou trois exemples contextualisés que vous maîtrisez parfaitement, plutôt que d''essayer d''en improviser le jour même. Entraînez-vous à systématiquement relier spontanément les différents courants de votre programme entre eux, même quand la question ne le demande pas explicitement : c''est souvent ce geste qui distingue les meilleures prestations. Enfin, acceptez qu''un bon candidat ne connaît pas toutes les réponses par cœur, mais sait raisonner en temps réel à partir de ce qu''il maîtrise : un jury valorise presque toujours un raisonnement honnête et nuancé, construit en direct, plutôt qu''une récitation parfaite mais rigide.
-
-Cette leçon disciplinaire achève notre série de quatre vidéos consacrées au contenu du programme de qualification en marketing. La cinquième et dernière vidéo de ce cours sera consacrée à une simulation complète de soutenance de qualification doctorale, avec présentation d''un projet de thèse fictif et questions de jury type. Je vous y attends pour mettre en pratique, en conditions proches du réel, tout ce que nous avons vu dans ces quatre premières vidéos.
-
-Cette vidéo ne comporte pas d''évaluation finale classique de cinq questions comme les précédentes, puisque l''intégralité de la séance a constitué, de fait, un entraînement détaillé et commenté à l''exercice de synthèse lui-même ; je vous invite plutôt, comme exercice personnel, à reprendre dès maintenant la grille de construction de plan présentée aujourd''hui et à l''appliquer à une question de synthèse différente de votre choix, dans votre futur domaine de thèse.', 'video', 90, false, 90
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : épreuve type de synthèse, plan de réponse détaillé et corrigé commenté');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale en marketing', '## Fiche du cours vidéo
-
-Durée : 1h30. Public : doctorants préparant l''examen de qualification en marketing et commerce. Objectifs : vivre une simulation complète et réaliste d''une soutenance de qualification doctorale, de la présentation initiale aux questions de jury, et s''auto-évaluer avec une grille structurée. Matériel : support de présentation de 15 minutes, liste de questions de jury type, grille d''auto-évaluation finale. Prérequis : avoir suivi l''ensemble des leçons précédentes de ce cours.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction à la simulation
-
-Bienvenue dans cette cinquième et dernière vidéo de notre cours de qualification doctorale en marketing et commerce. Après avoir vu les deux grands débats théoriques du champ et les méthodes de recherche propres à la discipline, nous allons maintenant vivre ensemble une simulation complète de soutenance de qualification, telle qu''elle pourrait se dérouler devant un jury doctoral réel. Je vais d''abord jouer le rôle du candidat qui présente son champ et un projet de thèse fictif pendant quinze minutes, puis nous passerons à une série de huit à dix questions de jury type, avec chaque fois la structure d''une bonne réponse. Nous terminerons par une grille d''auto-évaluation que vous pourrez réutiliser pour vos propres simulations.
-
-Gardez à l''esprit que cette simulation est un exercice pédagogique : le projet de thèse présenté est entièrement fictif, construit uniquement pour illustrer la méthode, et ne constitue en aucun cas un modèle de sujet de thèse à reproduire tel quel.
-
-## 05:00 – 20:00 · Présentation du champ et du projet de thèse fictif (15 minutes)
-
-Mesdames et messieurs les membres du jury, je vous remercie de votre attention. Je vais vous présenter, en quinze minutes, une synthèse de mon positionnement dans le champ du marketing, puis mon projet de thèse.
-
-Le champ du marketing a connu, au cours des dernières décennies, un déplacement théorique majeur : du paradigme transactionnel centré sur le marketing mix et l''échange ponctuel, vers un paradigme relationnel puis vers la logique de dominante service, qui place la co-création de valeur au centre de l''analyse. Ce déplacement n''est pas qu''une évolution académique abstraite : il transforme directement la façon dont on peut étudier des phénomènes marketing concrets, en particulier dans des contextes de marchés émergents où la question de l''adaptation culturelle des stratégies marketing reste vivement débattue, entre les tenants d''une standardisation porteuse d''économies d''échelle et les tenants d''une adaptation locale porteuse de pertinence commerciale, la recherche contemporaine privilégiant une position intermédiaire de glocalisation différenciée variable par variable.
-
-Mon projet de thèse, encore fictif à ce stade, se positionne précisément à la croisée de ces deux débats. Je propose d''étudier comment le degré d''adaptation culturelle des services financiers mobiles, destinés aux commerçants de marchés urbains ouest-africains, influence la confiance perçue envers ces services et, in fine, leur adoption durable. Ce sujet s''inscrit dans la logique de dominante service, car il part du principe que la valeur de ces services ne se réalise pleinement que dans leur usage réel, au contact des pratiques locales de gestion de l''argent, et non dans leur seule conception technique par l''opérateur.
-
-Pour étudier cette question, je propose un protocole de recherche mixte en trois phases. Une première phase qualitative, par entretiens semi-directifs et une courte observation ethnographique sur un marché urbain, permettra d''identifier les dimensions de confiance et d''adaptation réellement pertinentes dans ce contexte précis. Une deuxième phase expérimentale, construite sur un plan factoriel, permettra de tester rigoureusement l''effet causal du degré d''adaptation de l''interface du service sur l''intention d''adoption, en isolant ce facteur d''autres facteurs comme le prix. Une troisième phase, par enquête quantitative à grande échelle utilisant des échelles de mesure validées de la confiance et de l''intention d''adoption, permettra de généraliser les résultats à une population plus large de commerçants, avec une taille d''échantillon calculée selon les exigences de confiance et de précision statistique retenues.
-
-Ce projet se situe ainsi explicitement à la croisée des deux grands débats théoriques de mon champ, et mobilise les trois grandes familles de méthodes de recherche du marketing de façon complémentaire plutôt que concurrente. Je vous remercie de votre attention et reste à votre disposition pour vos questions.
-
-## 20:00 – 55:00 · Questions de jury type et structure de bonne réponse (partie 1)
-
-Passons maintenant aux questions du jury. Je vais formuler chaque question comme le ferait un membre de jury, puis donner la structure d''une bonne réponse, sans réciter une réponse figée, pour que vous compreniez la logique de construction plutôt qu''un contenu à apprendre par cœur.
-
-Question 1 du jury : « Vous présentez votre sujet comme relevant de la dominante service. Pourquoi pas simplement du marketing relationnel, qui semble déjà couvrir la dimension de confiance que vous évoquez ? » Structure de bonne réponse : reconnaître que le marketing relationnel couvre effectivement la dimension de confiance et de relation dans la durée, mais préciser que la dominante service apporte un élément supplémentaire essentiel pour ce sujet, à savoir le fait que la valeur du service dépend structurellement des pratiques d''usage locales du client, ce qui justifie l''attention méthodologique portée aux pratiques réelles via l''ethnographie, au-delà de la seule mesure de la confiance relationnelle.
-
-Question 2 du jury : « Votre protocole est ambitieux. N''est-il pas excessif pour une seule thèse ? » Structure de bonne réponse : reconnaître honnêtement l''ambition du protocole complet, puis proposer une hiérarchisation réaliste dans le temps, par exemple en consacrant la première année à la phase qualitative et à la conception de la phase expérimentale, et en assumant que la généralisation quantitative à grande échelle pourrait être partiellement réduite en échantillon ou reportée en fin de thèse, tout en justifiant explicitement ce choix de priorisation plutôt que de le présenter comme une simple contrainte.
-
-Question 3 du jury : « Comment choisirez-vous le ou les facteurs de votre plan factoriel ? » Structure de bonne réponse : expliquer que les facteurs seront déterminés à partir des résultats de la phase qualitative préalable, et non fixés a priori par la seule théorie, ce qui garantit que l''expérimentation testera des dimensions réellement identifiées comme pertinentes sur le terrain étudié, plutôt que des dimensions supposées pertinentes de façon purement théorique.
-
-Question 4 du jury : « Que ferez-vous si vos résultats qualitatifs contredisent les attentes théoriques tirées de la littérature sur la dominante service ? » Structure de bonne réponse : affirmer qu''un résultat qualitatif contredisant la théorie n''est pas un échec mais une opportunité de contribution théorique, et expliquer que la démarche consisterait alors à documenter précisément cet écart, à chercher des explications contextuelles plausibles, et à discuter si cet écart remet en cause la théorie elle-même dans ce contexte précis ou révèle plutôt une spécificité locale à approfondir.
-
-## 55:00 – 1:05:00 · Pause et quiz interactif
-
-Prenons une courte pause avec un quiz à trois questions sur la simulation que nous venons de voir.
-
-Question 1 : Pourquoi le candidat justifie-t-il le choix de la dominante service plutôt que du seul marketing relationnel pour son sujet ? Réponse : parce que la dominante service met l''accent sur la dépendance de la valeur du service aux pratiques d''usage locales du client, ce qui justifie le recours à des méthodes qualitatives comme l''ethnographie, au-delà de la seule mesure de la confiance relationnelle.
-
-Question 2 : Comment le candidat répond-il à l''objection sur l''ambition excessive de son protocole ? Réponse : en reconnaissant honnêtement l''ambition du protocole, puis en proposant une hiérarchisation réaliste dans le temps et une priorisation justifiée plutôt qu''en défendant rigidement le protocole complet sans aucune concession.
-
-Question 3 : Comment le candidat réagit-il face à l''hypothèse d''un résultat qualitatif contredisant la théorie ? Réponse : il présente cela comme une opportunité de contribution théorique plutôt qu''un échec, en proposant de documenter l''écart et d''en chercher les explications contextuelles.
-
-## 1:05:00 – 1:25:00 · Questions de jury type et structure de bonne réponse (partie 2)
-
-Continuons avec quatre autres questions typiques d''un jury doctoral.
-
-Question 5 du jury : « En quoi votre recherche contribue-t-elle à la littérature existante, au-delà de son application à un contexte particulier ? » Structure de bonne réponse : distinguer la contribution empirique, qui enrichit la connaissance d''un contexte encore peu étudié, de la contribution théorique potentielle, qui pourrait consister à préciser les conditions et limites d''application de la logique de dominante service dans des contextes de marchés émergents à forte hétérogénéité culturelle interne, un point encore peu développé dans la littérature existante.
-
-Question 6 du jury : « Comment garantirez-vous que votre échantillon qualitatif n''est pas biaisé, par exemple en n''interrogeant que des commerçants déjà favorables à l''innovation technologique ? » Structure de bonne réponse : reconnaître ce risque de biais de sélection comme réel, et proposer une stratégie d''échantillonnage qualitatif diversifiée, incluant des profils variés en termes d''âge, d''ancienneté dans le commerce, et de degré d''adoption déjà observé des outils numériques, afin de capturer une diversité de points de vue plutôt qu''une seule catégorie de répondants déjà convaincus.
-
-Question 7 du jury : « Votre question de recherche est-elle réellement nouvelle, ou reformule-t-elle simplement des travaux déjà existants sur l''adoption de la technologie ? » Structure de bonne réponse : reconnaître honnêtement les points de continuité avec les modèles d''adoption de la technologie déjà existants dans la littérature, tout en précisant l''apport spécifique du positionnement choisi, à savoir l''articulation explicite entre adaptation culturelle et logique de co-création de valeur, moins souvent traitée conjointement dans ce contexte précis.
-
-Question 8 du jury : « Comment vos résultats pourraient-ils être utiles concrètement aux opérateurs de services financiers mobiles, au-delà de leur intérêt académique ? » Structure de bonne réponse : expliquer que les résultats pourraient aider les opérateurs à mieux calibrer le degré d''adaptation nécessaire de leurs interfaces et de leur communication selon les profils de commerçants identifiés, tout en rappelant avec prudence qu''une thèse de doctorat vise avant tout une contribution scientifique, les implications managériales restant une conséquence seconde et non l''objectif premier de la recherche.
-
-## 1:25:00 – 1:30:00 · Clôture et grille d''auto-évaluation de la soutenance simulée
-
-Nous arrivons à la fin de cette simulation et de ce cours disciplinaire complet. Je vous propose, pour conclure, une grille d''auto-évaluation que vous pourrez utiliser après chacune de vos propres simulations de soutenance, seul ou avec un collègue qui joue le rôle du jury.
-
-Grille d''auto-évaluation de la soutenance simulée, en six critères, chacun à évaluer de façon honnête sur une échelle qualitative allant de « à retravailler » à « maîtrisé » :
-
-- Clarté et structuration de la présentation initiale de quinze minutes : le positionnement théorique et le projet de thèse sont-ils présentés de façon logique, sans confusion entre les courants théoriques mobilisés ?
-
-- Précision conceptuelle : les termes techniques du champ (paradigme transactionnel, marketing relationnel, dominante service, co-création de valeur, standardisation, adaptation culturelle, plan factoriel, échelle validée) sont-ils employés avec exactitude et sans confusion entre eux ?
-
-- Capacité à mettre en tension plutôt qu''à juxtaposer : les courants théoriques sont-ils reliés entre eux et discutés de façon critique, plutôt que simplement énumérés les uns après les autres ?
-
-- Justification méthodologique : le choix des méthodes de recherche proposées est-il explicitement justifié par rapport à la question de recherche, plutôt que simplement mentionné ?
-
-- Qualité des réponses aux questions de rebond : les objections et questions difficiles du jury sont-elles accueillies avec honnêteté et nuance, plutôt qu''avec une défense rigide de la position initiale ?
-
-- Ancrage contextuel : le projet et les exemples mobilisés sont-ils ancrés dans des exemples concrets et plausibles, sans généralisation abusive ni lecture essentialiste d''un contexte culturel ?
-
-Pour chacun de ces six critères, notez honnêtement votre propre performance lors de vos simulations d''entraînement, identifiez les deux ou trois critères les plus faibles, et concentrez vos prochaines séances de préparation sur ces points précis plutôt que de reviser uniformément l''ensemble du programme. C''est avec cette méthode d''auto-évaluation ciblée, répétée plusieurs fois dans les semaines précédant l''examen réel, que vous maximiserez vos chances de réussite le jour de votre soutenance de qualification doctorale. Je vous souhaite beaucoup de succès dans cette préparation, et dans la suite de votre parcours doctoral.', 'video', 90, false, 100
-from public.courses c where c.slug = 'doc-mkt'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : simulation complète d''une soutenance de qualification doctorale en marketing');

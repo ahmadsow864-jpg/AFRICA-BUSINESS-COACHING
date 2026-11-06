@@ -5378,6 +5378,78 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "doc-rh",
+  "level": "Doctorat",
+  "subject": "Ressources humaines",
+  "module": null,
+  "title": "Doctorat Ressources humaines : préparer l'examen de qualification doctorale",
+  "description": "Cours de Doctorat destiné aux doctorants en Ressources humaines qui préparent l'examen de qualification doctorale (comprehensive exam). Il couvre deux grands débats théoriques du champ (école des relations humaines contre gestion stratégique des ressources humaines ; approche universaliste contre approche contingente et configurationnelle), les méthodes de recherche propres à la discipline, et s'entraîne sur une épreuve type ainsi qu'une simulation complète de soutenance devant un jury.",
+  "sort": 801,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en Ressources humaines",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 55,
+    "content": "## Objectifs de la leçon\n\n- Comprendre la nature exacte de l'examen de qualification doctorale (comprehensive exam) en Ressources humaines.\n- Identifier ce qu'un jury doctoral attend réellement d'un candidat à ce stade.\n- Se doter d'une méthode de travail (fiches de lecture, cartographie des courants, note de synthèse).\n- Construire un plan de travail réaliste sur 8 semaines.\n\n## 1. Ce qu'est l'examen de qualification doctorale\n\nL'examen de qualification, appelé aussi examen de synthèse ou comprehensive exam selon les programmes, est l'étape qui sépare la formation doctorale initiale (séminaires, cours avancés) de la phase de thèse proprement dite. Il ne porte pas sur un sujet de recherche étroit : il porte sur le champ scientifique tout entier dans lequel le doctorant va inscrire sa thèse, ici les Ressources humaines (RH) comme discipline de gestion.\n\nConcrètement, l'épreuve combine en général deux volets. D'abord une synthèse écrite ou une note de lecture critique qui démontre la maîtrise des grands courants théoriques du champ, de leurs auteurs fondateurs et de leurs débats non résolus. Ensuite une soutenance orale devant un jury de plusieurs professeurs, au cours de laquelle le candidat présente son positionnement et répond à des questions qui testent la profondeur de sa culture disciplinaire, sa capacité à argumenter et sa cohérence intellectuelle plus que sa mémoire.\n\nCe n'est donc pas un examen de connaissances encyclopédiques : c'est un examen de maturité scientifique. Le jury veut vérifier qu'un futur chercheur en RH sait situer n'importe quel article récent par rapport aux grands débats du champ (relations humaines contre gestion stratégique, universalisme contre contingence, capital humain contre compétences, etc.), qu'il connaît les méthodes de recherche propres à la discipline, et qu'il est capable de défendre un projet de thèse face à la critique.\n\n## 2. Ce qu'attend un jury doctoral\n\nUn jury de qualification sanctionne rarement l'ignorance d'un détail précis. Il sanctionne en revanche quatre faiblesses récurrentes, qu'il faut avoir en tête dès le début de la préparation.\n\n- L'absence de recul critique : réciter un courant théorique sans en connaître les limites, c'est montrer qu'on l'a lu mais pas compris.\n- L'incapacité à comparer : un bon candidat doit pouvoir dire en quoi deux courants théoriques s'opposent, se complètent ou se succèdent historiquement, pas seulement les définir côte à côte.\n- La confusion entre théorie et méthode : connaître un courant (ce que l'on pense du monde) ne dit rien sur la façon de l'étudier empiriquement (comment on observe le monde). Le jury teste souvent les deux séparément.\n- Le flou du projet de thèse : à ce stade, le candidat doit pouvoir dire, en quelques phrases, quelle question il pose, pourquoi elle est nouvelle, et avec quelle méthode il compte y répondre, même si tout n'est pas encore figé.\n\n## 3. Une méthode de travail en trois outils\n\nLa préparation efficace à cet examen repose sur trois outils complémentaires, à construire progressivement pendant les semaines de révision.\n\nLe premier outil est la fiche de lecture structurée. Pour chaque texte fondateur ou chaque article de synthèse (review), une fiche doit répondre à cinq questions fixes : quelle est la question posée par l'auteur, quel cadre théorique mobilise-t-il, quelle méthode utilise-t-il, quel est le résultat principal, et quelle critique peut-on lui adresser. Une fiche de lecture qui ne répond pas à la cinquième question reste inutile le jour de l'oral.\n\nLe deuxième outil est la cartographie des courants, une sorte de carte mentale qui place les grands courants théoriques du champ sur un même schéma : qui s'oppose à qui, qui a précédé qui, quels auteurs appartiennent à quelle école. Cette carte, mise à jour tout au long de la préparation, devient le squelette de la note de synthèse finale et le meilleur outil de révision rapide avant l'oral.\n\nLe troisième outil est la note de synthèse thématique, un document d'une à trois pages par grand thème (motivation, performance, stratégie RH, méthodes), rédigé en prose, qui force à formuler des phrases complètes plutôt que des listes de mots-clés. C'est cette compétence de synthèse rédigée, et non la liste de lectures, que le jury vient évaluer à l'oral.\n\n## 4. Un plan de travail sur 8 semaines\n\nUn plan de travail raisonnable pour préparer cet examen peut s'organiser ainsi, en l'adaptant au calendrier réel fixé par le programme doctoral.\n\n- Semaines 1 et 2 : lecture des textes fondateurs du premier grand courant théorique du champ et rédaction des premières fiches de lecture.\n- Semaines 3 et 4 : lecture des textes fondateurs du second grand courant, en construisant en parallèle la cartographie comparative des deux courants.\n- Semaine 5 : approfondissement des méthodes de recherche du champ (études de cas, enquêtes par questionnaire, méthodes mixtes, recherche-action) et lecture d'articles méthodologiques de référence.\n- Semaine 6 : rédaction des notes de synthèse thématiques et premier jet du positionnement du projet de thèse par rapport aux courants étudiés.\n- Semaine 7 : simulation d'oral avec un pair ou un directeur de thèse, sur la base de questions type ; correction des points faibles identifiés.\n- Semaine 8 : révision finale, relecture de la cartographie, consolidation des réponses aux questions les plus probables, repos la veille de l'épreuve.\n\n## Points clés\n\n- L'examen de qualification teste la maturité scientifique, pas la mémoire encyclopédique.\n- Le jury cherche du recul critique, de la comparaison entre courants, une distinction claire théorie/méthode, et un projet de thèse qui se positionne.\n- Trois outils structurent la préparation : fiche de lecture, cartographie des courants, note de synthèse rédigée.\n- Un plan sur 8 semaines permet de couvrir théorie, méthode et simulation d'oral sans se disperser.\n\n## Exercices pratiques\n\n1. Rédigez en dix lignes la différence entre « connaître un courant théorique » et « savoir le mobiliser de façon critique » dans une soutenance.\n2. Construisez le squelette (titres et sous-titres uniquement) d'une cartographie comparative de deux courants théoriques en RH.\n3. Listez les cinq questions fixes d'une fiche de lecture et appliquez-les à un article de votre choix sur la gestion des ressources humaines.\n4. Formulez en deux phrases la question de recherche provisoire de votre projet de thèse en RH.\n5. Identifiez, dans votre plan de travail personnel, la semaine la plus à risque de retard et proposez une mesure corrective.\n6. Expliquez pourquoi un jury doctoral préfère souvent un candidat qui critique une théorie à un candidat qui la récite parfaitement.\n\n## Corrigé\n\n1. Connaître un courant, c'est pouvoir le définir, citer ses auteurs et résumer ses idées. Le mobiliser de façon critique, c'est en plus être capable de dire dans quel contexte il s'applique, quelles sont ses limites empiriques ou conceptuelles, et comment un autre courant permettrait de combler ces limites. C'est cette seconde capacité que le jury évalue.\n\n2. Un squelette possible : (1) Définition et postulats de chaque courant ; (2) Auteurs fondateurs et contexte d'émergence ; (3) Apports respectifs ; (4) Points de tension ou d'opposition ; (5) Tentatives de synthèse ou de dépassement dans la littérature récente ; (6) Implications pour un projet de thèse personnel.\n\n3. Les cinq questions : quelle question pose l'auteur, quel cadre théorique mobilise-t-il, quelle méthode utilise-t-il, quel est le résultat principal, quelle critique peut-on lui adresser. Appliquées à un article réel, elles doivent tenir en une demi-page maximum pour rester exploitables en révision.\n\n4. Exemple de formulation : « Cette thèse examine comment les pratiques de gestion des ressources humaines des petites entreprises sénégalaises articulent logiques informelles et logiques formalisées de gestion du personnel, et avec quels effets sur la fidélisation des salariés. »\n\n5. Les semaines 3-4 et 7 sont souvent les plus à risque : la semaine 3-4 parce qu'elle demande d'assimiler un second corpus théorique alors que le premier n'est pas encore stabilisé, la semaine 7 parce que la simulation d'oral révèle souvent des lacunes qui demandent un retour en arrière. Une mesure corrective simple consiste à réserver dès le départ une semaine tampon non affectée, placée juste avant la semaine 8.\n\n6. Parce qu'une thèse de doctorat est une contribution originale à la connaissance : elle suppose de savoir repérer les limites de ce qui existe déjà. Un candidat qui ne voit aucune limite à une théorie montre qu'il n'a pas encore le regard d'un chercheur autonome, même s'il connaît parfaitement le contenu de cette théorie."
+   },
+   {
+    "title": "L'école des relations humaines face à la gestion stratégique des ressources humaines",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Universalisme et contingence en GRH : le débat des « best practices » contre le « best fit »",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les méthodes de recherche en gestion des ressources humaines",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Épreuve type d'examen de qualification en Ressources humaines",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : école des relations humaines et gestion stratégique des ressources humaines",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : universalisme contre contingence en GRH",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les méthodes de recherche en Ressources humaines",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : entraînement à une épreuve type de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "doc-cg",
   "level": "Doctorat",
   "subject": "Contrôle de gestion",
@@ -5587,6 +5659,78 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale en Finance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "doc-droit",
+  "level": "Doctorat",
+  "subject": "Droit des affaires",
+  "module": null,
+  "title": "Doctorat Droit des affaires : examen de qualification doctorale",
+  "description": "Préparation à l'examen de qualification doctorale en droit des affaires : maîtrise des grands courants théoriques (positivisme juridique, analyse économique du droit, réalisme juridique), du débat sur l'harmonisation régionale du droit des affaires face à la diversité des traditions juridiques et au droit international des investissements, et des méthodes de recherche du champ (dogmatique, droit comparé, méthode empirique). Public : doctorants en droit des affaires préparant leur soutenance de qualification. Prérequis : Master en droit des affaires.",
+  "sort": 808,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en droit des affaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "L'examen de qualification doctorale en droit des affaires n'est pas un contrôle de connaissances comme un autre. Il marque le moment où un doctorant doit prouver à un jury qu'il maîtrise suffisamment l'état de l'art de sa discipline pour être autorisé à se consacrer, presque sans filet, à la rédaction de sa thèse. Cette leçon pose le cadre de l'épreuve, les attentes du jury et une méthode de travail pour s'y préparer sur plusieurs semaines.\n\n## La nature de l'épreuve\n\nSelon les établissements, l'examen de qualification doctorale en droit des affaires combine presque toujours trois dimensions. D'abord, une synthèse de la littérature : le candidat montre qu'il connaît les grands courants théoriques qui structurent le champ, qu'il sait les situer historiquement et qu'il perçoit leurs tensions internes. Ensuite, une soutenance orale devant un jury de professeurs, organisée comme un mini-colloque où chaque question appelle une réponse structurée et argumentée, non une récitation. Enfin, une défense de projet de thèse : relier ce que l'on sait de la littérature à l'objet précis que l'on compte étudier, et justifier pourquoi ce sujet est pertinent, original et faisable.\n\nCet examen n'est pas un remake du mémoire de master. Au master, on apprend à résoudre un cas, à appliquer une règle à une situation. Au doctorat, on est évalué sur la capacité à prendre du recul sur les règles elles-mêmes, à les interroger comme objets de connaissance, à comparer les écoles de pensée qui expliquent pourquoi le droit des affaires est fait comme il est fait, et à proposer une contribution nouvelle. Le jury ne demande pas « que dit le texte ? » mais « quelles explications concurrentes existent pour comprendre ce que fait le droit des affaires, et laquelle vous semble la plus féconde pour votre objet de thèse ? ».\n\n## Ce qu'un jury doctoral évalue réellement\n\nUn jury de qualification doctorale vérifie plusieurs qualités. La première est la maîtrise cartographique du champ : savoir nommer les grands courants (positivisme juridique, approches économiques du droit, réalisme juridique, débats sur l'harmonisation régionale) et les situer les uns par rapport aux autres, sans les confondre. La deuxième est l'esprit critique : ne jamais présenter un courant comme une vérité acquise, mais rappeler ses apports et ses limites, et montrer qu'on sait pourquoi d'autres chercheurs l'ont contesté. La troisième est la rigueur méthodologique : distinguer une analyse dogmatique (qui commente et systématise les textes), une analyse comparative (qui met en regard plusieurs systèmes juridiques) et une analyse empirique (qui observe comment le droit est réellement appliqué, notamment à travers la jurisprudence). La quatrième est la capacité à argumenter à l'oral, en structurant sa pensée plutôt qu'en l'énumérant.\n\nUn bon candidat ne cherche pas à « tout savoir », ce qui est impossible, mais à construire une grille de lecture claire du champ, mobilisable pour répondre à des questions variées. C'est cette grille qui doit être travaillée pendant la préparation.\n\n## Méthode de travail recommandée\n\nLa préparation repose sur trois outils complémentaires. Le premier est la fiche de lecture : pour chaque courant ou débat, une fiche courte résume l'idée centrale, les auteurs ou traditions associés (par leur apport général, sans citation textuelle précise non vérifiée), le contexte d'émergence, les critiques majeures, et un exemple d'application au droit des affaires africain. Le deuxième est la cartographie des courants : un tableau qui place les écoles de pensée les unes par rapport aux autres, en indiquant ce qui les oppose (par exemple une lecture qui privilégie la cohérence formelle des textes face à une lecture qui privilégie l'efficacité économique des règles) et ce qui peut les rendre complémentaires. Le troisième est la note de synthèse : un exercice limité à deux ou trois pages, qui répond à une question transversale en mobilisant plusieurs courants et méthodes. C'est le format que l'on retrouvera dans l'épreuve type présentée en fin de cours.\n\nIl est également recommandé de préparer, en parallèle, un bref exposé de son propre projet de thèse, capable de tenir en quinze minutes, et de l'articuler explicitement avec les débats théoriques du champ : pourquoi ce sujet, quel courant mobiliser pour l'éclairer, quelle méthode pour l'étudier.\n\n## Un plan de travail sur huit semaines\n\nUn calendrier réaliste peut s'organiser ainsi. Les deux premières semaines : cartographie générale du champ, identification des grands courants et débats, construction du tableau comparatif. Les semaines trois et quatre : approfondissement du premier grand débat théorique, avec ses auteurs, son histoire et ses critiques. Les semaines cinq et six : même travail pour le second grand débat, en identifiant systématiquement les points de tension et de complémentarité avec le premier. La semaine sept : méthodes de recherche propres au champ, avec la construction d'un protocole d'étude appliqué à un cas africain fictif. La semaine huit : entraînement actif, rédaction de notes de synthèse chronométrées, simulation de questions de jury, répétition de l'exposé du projet de thèse, relecture des fiches.\n\nCe rythme laisse volontairement du temps pour revenir sur les points faibles identifiés en cours de route. Il vaut mieux consolider trois courants théoriques bien compris et bien articulés que de survoler dix courants sans pouvoir les comparer sérieusement à l'oral.\n\n## Points clés à retenir\n\n- L'examen de qualification doctorale évalue la maîtrise des courants théoriques, la capacité de comparaison critique et la connaissance des méthodes de recherche du champ, pas la résolution d'un cas pratique.\n- Le jury attend une pensée structurée et nuancée, jamais une récitation ni une vérité présentée sans contradicteur.\n- Trois outils de préparation sont essentiels : fiches de lecture, cartographie des courants, notes de synthèse chronométrées.\n- Le projet de thèse doit être relié explicitement aux débats théoriques et aux méthodes du champ.\n- Un plan de travail sur huit semaines permet de couvrir le champ sans le survoler.\n\n## Exercices pratiques\n\n1. Rédigez en dix lignes la différence entre ce qu'évalue un mémoire de master en droit des affaires et ce qu'évalue un examen de qualification doctorale dans la même discipline.\n2. Dressez la liste des trois à quatre grands courants ou débats théoriques que vous pensez devoir maîtriser pour votre propre spécialité, même si vous ne les connaissez encore que de nom.\n3. Construisez le squelette d'une fiche de lecture type (rubriques, sans contenu) que vous utiliserez pour chaque courant étudié dans ce cours.\n4. Proposez un calendrier de révision sur huit semaines adapté à votre emploi du temps réel, en identifiant les deux semaines où vous serez le moins disponible et comment vous les compenserez.\n5. Formulez, en trois phrases, une présentation provisoire de votre projet de thèse telle que vous pourriez la donner aujourd'hui à un jury, en identifiant ce qui vous semble le plus fragile dans cette présentation.\n\n## Corrigé\n\n1. Le mémoire de master demande d'appliquer une règle de droit des affaires à une situation donnée (un cas d'entreprise, un contrat, un litige) pour produire une solution opérationnelle. L'examen de qualification doctorale demande de prendre du recul sur les règles elles-mêmes : comprendre pourquoi elles existent, quelles théories expliquent leur fonction et leur évolution, comment les chercheurs les étudient, et comment ces débats éclairent un projet de recherche original. Le premier exercice est tourné vers la solution d'un problème concret ; le second est tourné vers la connaissance du champ comme objet d'étude.\n\n2. Une liste plausible pour le droit des affaires comprend : le débat positivisme juridique / analyse économique du droit et réalisme juridique ; le débat sur l'harmonisation régionale du droit des affaires (droit OHADA) face à la diversité des traditions juridiques nationales et à l'articulation avec le droit international des investissements ; éventuellement un troisième débat plus spécifique (par exemple sur le rôle du droit souple ou sur l'effectivité du droit). L'essentiel est de ne pas se contenter d'un seul courant et de pouvoir nommer au moins une tension entre deux approches.\n\n3. Une fiche de lecture type peut comporter les rubriques suivantes : nom du courant ou du débat ; idée centrale en une phrase ; contexte d'émergence (sans date précise si elle n'est pas certaine) ; auteurs ou traditions associés et nature de leur apport (jamais de citation textuelle exacte non vérifiée) ; principales critiques adressées au courant ; un exemple d'application possible au contexte africain ou sénégalais ; une phrase reliant le courant à votre propre projet de thèse.\n\n4. Un calendrier correct respecte la logique proposée : cartographie générale (semaines 1-2), premier débat (semaines 3-4), second débat (semaines 5-6), méthodes de recherche et protocole appliqué (semaine 7), entraînement actif et simulation (semaine 8). La qualité de la réponse se juge sur la capacité à anticiper les semaines creuses et à prévoir une marge de rattrapage, plutôt que sur le respect mécanique du découpage.\n\n5. Il n'existe pas de bonne réponse unique : l'évaluation porte sur la clarté de l'articulation entre le sujet de thèse et au moins un courant théorique du champ, et sur l'honnêteté de l'auto-critique (un point réellement fragile, comme un manque de précision sur la méthode ou sur la portée du terrain d'étude, plutôt qu'une fausse modestie générale)."
+   },
+   {
+    "title": "Le positivisme juridique face à l'analyse économique du droit et au réalisme juridique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Harmonisation régionale du droit des affaires (droit OHADA), diversité des traditions juridiques et droit international des investissements",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Les méthodes de recherche en droit des affaires : dogmatique, droit comparé, méthode empirique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Épreuve type d'examen de qualification : question de synthèse et corrigé détaillé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : positivisme juridique, analyse économique du droit et réalisme juridique",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : harmonisation régionale (droit OHADA), diversité des traditions juridiques et droit international des investissements",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : méthodes de recherche en droit des affaires et protocole appliqué",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : s'entraîner en direct sur une question de synthèse type",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
