@@ -5376,5 +5376,149 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "doc-fin",
+  "level": "Doctorat",
+  "subject": "Finance",
+  "module": null,
+  "title": "Doctorat Finance : préparer l'examen de qualification doctorale",
+  "description": "Préparation à l'examen de qualification doctorale en Finance : hypothèse d'efficience des marchés face à la finance comportementale, théorème de Modigliani-Miller et ses extensions sur la structure de financement, méthodes de recherche du champ (études d'événements, économétrie financière, enquêtes de dirigeants) et application critique aux marchés financiers en développement d'Afrique de l'Ouest. Public : doctorants en finance préparant leur soutenance de qualification. Prérequis : Master en finance ou en gestion financière.",
+  "sort": 806,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "La thèse de doctorat en finance se prépare par étapes, et l'une des premières, souvent la plus redoutée, est l'examen de qualification doctorale (comprehensive exam). Cette leçon pose le cadre de cette épreuve et donne une méthode de travail pour s'y préparer sur plusieurs semaines, avant d'entrer dans le détail des courants théoriques et des méthodes propres au champ de la finance.\n\n## Nature de l'épreuve\n\nL'examen de qualification n'est pas un examen de cours comme en Master : il vérifie que le doctorant maîtrise l'état de l'art de la discipline financière, qu'il est capable de situer n'importe quelle question dans les grands débats théoriques (efficience des marchés, structure de financement, gouvernance, risque), et qu'il peut déjà esquisser une problématique de thèse cohérente avec cette littérature. Trois formats se combinent, selon les établissements : une épreuve écrite de synthèse (répondre à une ou plusieurs questions larges du champ, en mobilisant plusieurs courants et auteurs), une soutenance orale devant un jury de 3 à 5 enseignants-chercheurs, et la défense d'un pré-projet de thèse (problématique, revue de littérature initiale, méthode envisagée). Le jury n'attend pas une récitation de cours : il juge la capacité à comparer des cadres théoriques concurrents (par exemple l'hypothèse d'efficience des marchés face à la finance comportementale), à discuter leurs limites empiriques, et à argumenter pourquoi telle méthode de recherche convient à telle question.\n\n## Attentes d'un jury doctoral en finance\n\nUn jury de qualification en finance évalue généralement cinq points : la maîtrise des grands courants théoriques et de leur généalogie (qui a proposé quoi, et pourquoi, sans réciter des citations exactes non vérifiées) ; la capacité à articuler théorie et méthode (quelle méthode d'investigation permet de tester telle hypothèse théorique) ; l'esprit critique (savoir citer les limites d'un courant, les anomalies empiriques qui le contestent, les extensions qui l'ont enrichi) ; la capacité à transposer une théorie construite sur des marchés financiers profonds (Bourses de New York, Paris, Londres) à un contexte de marché financier peu profond, comme celui de l'Afrique de l'Ouest (BRVM) ; et enfin la clarté de l'expression, à l'écrit comme à l'oral, qui est elle-même jugée comme une compétence de chercheur.\n\n## Méthode de travail recommandée\n\nTrois outils structurent une préparation efficace. D'abord, la fiche de lecture : pour chaque article ou ouvrage fondateur, noter en une page la question posée, l'hypothèse testée, la méthode employée, le résultat principal et sa limite ; cette fiche doit pouvoir se relire en moins de deux minutes la veille de l'oral. Ensuite, la cartographie des courants : un schéma (sur une feuille ou un tableau) qui place chaque courant théorique en vis-à-vis de ceux qui le prolongent ou le contestent, avec les dates approximatives et les grandes idées, pas les équations complètes. Enfin, la note de synthèse : un document de quelques pages qui résume, pour chaque grand débat du programme (ici : efficience des marchés contre finance comportementale ; structure de financement et théorème de Modigliani-Miller), les positions en présence, les preuves empiriques de part et d'autre, et une appréciation personnelle argumentée — c'est cette capacité à prendre position avec nuance qui distingue un candidat brillant d'un candidat qui récite.\n\n## Plan de travail sur 8 semaines\n\nUne préparation réaliste s'étale sur huit semaines, avec un rythme hebdomadaire tenable pour un doctorant qui avance aussi sur sa thèse.\n\n- Semaines 1-2 : relecture des bases de la théorie financière (valeur, risque, rendement, marchés) et premières fiches de lecture sur l'hypothèse d'efficience des marchés.\n- Semaines 3-4 : approfondissement de la finance comportementale et des anomalies de marché ; début de la cartographie comparant les deux courants.\n- Semaines 5-6 : théorème de Modigliani-Miller et ses extensions (fiscalité, coûts de faillite, asymétrie d'information) ; lecture sur les marchés financiers en développement (cas de la BRVM en Afrique de l'Ouest).\n- Semaine 7 : méthodes de recherche en finance (études d'événements, modélisation économétrique de séries financières, enquêtes auprès de dirigeants financiers) ; rédaction des notes de synthèse.\n- Semaine 8 : simulation d'oral avec un collègue ou un encadrant, révision des fiches, relecture du pré-projet de thèse.\n\n## Points clés à retenir\n\n- L'examen de qualification teste la maîtrise du champ, pas la restitution d'un cours : il faut comparer, critiquer, articuler théorie et méthode.\n- Trois outils de travail : fiche de lecture, cartographie des courants, note de synthèse.\n- La préparation se répartit sur 8 semaines, avec une place centrale pour la confrontation efficience/finance comportementale et pour le débat sur la structure de financement.\n- Toujours savoir transposer un cadre théorique construit sur des marchés développés à un contexte de marché financier en développement, comme celui de l'Afrique de l'Ouest.\n\n## Exercices pratiques\n\n1. Rédigez en une page la fiche de lecture type que vous utiliseriez pour un article fondateur de l'hypothèse d'efficience des marchés (sans citer le contenu exact de l'article, en décrivant la structure attendue de votre fiche).\n2. Construisez le squelette d'une cartographie des courants opposant l'hypothèse d'efficience des marchés et la finance comportementale : quelles entrées (auteurs, dates, idées, critiques) feriez-vous figurer ?\n3. Proposez un plan de travail hebdomadaire alternatif sur 8 semaines si vous disposiez de deux fois moins de temps (4 semaines) : que garderiez-vous, que sacrifieriez-vous ?\n4. Un jury vous demande : « Pourquoi la finance comportementale ne remplace-t-elle pas simplement l'hypothèse d'efficience des marchés ? » Esquissez en 10 lignes les grandes lignes d'une réponse nuancée.\n5. Expliquez en quoi la défense d'un pré-projet de thèse diffère d'une restitution de cours de Master en finance d'entreprise.\n\n## Corrigé\n\n1. Une fiche de lecture de qualification doit comporter : la question de recherche posée par l'article, l'hypothèse testée, le contexte de marché étudié (pays, période, type d'actifs), la méthode empirique utilisée, le résultat principal reformulé avec ses propres mots, et une limite ou une critique identifiée dans la littérature postérieure. Elle ne doit jamais comporter de citation textuelle exacte non vérifiée, mais une reformulation fidèle de l'apport.\n\n2. Une cartographie utile distingue au moins quatre colonnes : la période approximative d'émergence de l'idée, les grandes hypothèses du courant (marchés efficients : prix reflètent toute l'information disponible ; finance comportementale : biais cognitifs des investisseurs, anomalies de marché), les preuves empiriques mobilisées de part et d'autre, et les prolongements ou critiques qui relient les deux courants (par exemple les modèles qui intègrent des agents partiellement rationnels).\n\n3. Avec 4 semaines, il faut fusionner les étapes : semaine 1 pour les deux courants théoriques en parallèle (efficience et finance comportementale), semaine 2 pour Modigliani-Miller et ses extensions avec le contexte des marchés en développement, semaine 3 pour les méthodes de recherche condensées, semaine 4 pour la simulation d'oral et la révision. On sacrifie la profondeur de lecture (moins d'articles par courant) mais on conserve la structure comparative, qui est ce que le jury évalue réellement.\n\n4. Une réponse nuancée rappellerait que l'hypothèse d'efficience des marchés reste un point de référence utile (elle explique pourquoi il est difficile de « battre le marché » de façon régulière), que la finance comportementale documente des anomalies récurrentes (sous-réaction ou surréaction à l'information, biais de confiance excessive) sans pour autant proposer un cadre prédictif unifié aussi simple, et que la recherche actuelle tend à combiner les deux approches plutôt qu'à les opposer frontalement : les marchés seraient efficients « en moyenne » avec des écarts transitoires exploitables sous certaines conditions.\n\n5. En Master, l'étudiant résout un cas d'entreprise avec les outils déjà établis du champ (il applique une méthode connue à une situation donnée). En doctorat, le pré-projet de thèse doit identifier un vide ou une tension dans la littérature existante (par exemple : la théorie de Modigliani-Miller a-t-elle été testée sur un marché financier peu profond comme celui de l'Afrique de l'Ouest ?), formuler une question de recherche originale, et proposer une méthode pour y répondre — l'enjeu n'est plus d'appliquer un savoir mais d'en produire."
+   },
+   {
+    "title": "Courant théorique 1 : l'hypothèse d'efficience des marchés face à la finance comportementale",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Courant théorique 2 : la structure de financement, de Modigliani-Miller à ses extensions",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Les méthodes de recherche en finance : études d'événements, économétrie financière et enquêtes de terrain",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Épreuve type d'examen de qualification en Finance : question de synthèse et plan de réponse corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : l'hypothèse d'efficience des marchés face à la finance comportementale",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : la structure de financement, de Modigliani-Miller à ses extensions",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les méthodes de recherche en finance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : traiter une question de synthèse d'examen de qualification en Finance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale en Finance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "doc-mkt",
+  "level": "Doctorat",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Doctorat Marketing et commerce : préparer l'examen de qualification doctorale",
+  "description": "Cours de préparation à l'examen de qualification doctorale en marketing et commerce : grands courants théoriques (marketing mix vs marketing relationnel et dominante service), débat standardisation/adaptation culturelle en Afrique, méthodes de recherche du champ (expérimentation, enquête, qualitatif) et simulation de soutenance devant jury.",
+  "sort": 809,
+  "lessons": [
+   {
+    "title": "Réussir son examen de qualification doctorale en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\nCette première leçon pose le cadre de l'examen de qualification doctorale (comprehensive exam) en marketing et commerce. Elle décrit la nature de l'épreuve, les attentes d'un jury doctoral, une méthode de travail éprouvée et un plan de travail réaliste sur huit semaines. L'objectif n'est pas de refaire un cours de méthodologie générale, mais de donner au doctorant les repères spécifiques à son champ : quelles lectures sont incontournables, comment organiser une cartographie des courants du marketing, et comment transformer des mois de lecture en une note de synthèse défendable à l'oral.\n\n## Nature de l'épreuve de qualification\n\nL'examen de qualification doctorale n'est pas un examen de cours. Il vise à vérifier qu'un doctorant possède une vue d'ensemble critique de son champ avant de se consacrer pleinement à sa thèse. Dans la plupart des programmes doctoraux, l'épreuve comporte deux volets complémentaires. Le premier est une production écrite : une synthèse de la littérature (literature review) qui retrace les grands courants théoriques du marketing, leurs tensions, leurs auteurs fondateurs et leurs prolongements récents. Le second est une soutenance orale devant un jury de professeurs, au cours de laquelle le doctorant présente cette synthèse, expose le positionnement théorique envisagé pour sa future thèse, puis répond à des questions qui testent à la fois l'étendue de ses connaissances et sa capacité à raisonner en temps réel.\n\nCe qui distingue cette épreuve d'un examen de master, c'est le niveau d'exigence attendu sur la maîtrise des débats théoriques. Un étudiant de master doit savoir appliquer un modèle à un cas d'entreprise. Un doctorant doit savoir d'où vient ce modèle, pourquoi il a été contesté, par qui, et ce qui lui a succédé ou ce qui le complète. Le jury ne demande pas « comment appliquer les 4P à cette entreprise », il demande « en quoi le marketing mix transactionnel est-il aujourd'hui discuté par la logique de dominante service, et que change ce déplacement pour la recherche en marketing ».\n\n## Ce qu'attend un jury doctoral\n\nUn jury de qualification évalue trois choses. D'abord, la rigueur conceptuelle : le doctorant doit employer les termes du champ avec précision, distinguer par exemple un paradigme d'une théorie, un courant d'une méthode, un concept d'un construit mesurable. Ensuite, l'esprit critique : il ne s'agit pas de réciter des courants côte à côte, mais de les mettre en tension, de montrer leurs limites respectives et d'argumenter un positionnement personnel, même provisoire. Enfin, la capacité à situer un projet de thèse dans cette littérature : un doctorant qui ne peut pas expliquer en quoi son sujet dialogue avec les débats existants du champ n'est pas prêt à soutenir son projet.\n\nLes jurys sanctionnent fréquemment trois défauts. Le premier est l'énumération sans articulation : citer de nombreux auteurs et courants sans jamais les relier entre eux ni à une problématique. Le deuxième est l'anachronisme théorique : présenter un courant ancien comme s'il était la dernière frontière du champ, ou l'inverse, ignorer qu'un courant plus récent répond directement aux limites d'un courant plus ancien. Le troisième est l'absence de recul critique sur les méthodes : savoir qu'un plan factoriel existe ne suffit pas, il faut savoir en discuter la pertinence et les limites pour une question de recherche donnée.\n\n## Méthode de travail pour préparer l'épreuve\n\nTrois outils structurent une préparation efficace. Le premier est la fiche de lecture standardisée : pour chaque texte ou chaque courant étudié, une fiche courte qui résume la thèse principale, le contexte d'émergence, les concepts clés, les critiques reçues et les prolongements. Cette discipline évite l'écueil classique du doctorant qui a « beaucoup lu » mais ne retrouve plus, sous la pression de l'oral, l'argument précis d'un auteur.\n\nLe deuxième outil est la cartographie des courants, c'est-à-dire une représentation visuelle (tableau ou schéma) qui place les grands paradigmes du marketing sur une ligne du temps et les relie par des flèches de continuité, de rupture ou de complémentarité. Pour le marketing, une cartographie utile oppose, par exemple, l'axe transactionnel centré sur l'échange ponctuel et le marketing mix, à l'axe relationnel centré sur la durée, la confiance et la coproduction de valeur avec le client. Une bonne cartographie fait aussi apparaître les débats transversaux, comme celui de la standardisation versus l'adaptation culturelle des stratégies marketing dans des contextes émergents.\n\nLe troisième outil est la note de synthèse rédigée, de cinq à dix pages, qui simule l'écrit de l'épreuve. Rédiger cette note force le doctorant à choisir un plan, à hiérarchiser les courants et à formuler une problématique de recherche personnelle, exercice bien plus exigeant que la simple lecture passive.\n\n## Plan de travail sur huit semaines\n\nUn plan de travail réaliste répartit l'effort en quatre phases de deux semaines chacune. Les semaines 1 et 2 sont consacrées à la cartographie générale du champ : identifier les grands paradigmes (marketing mix, marketing relationnel, dominante service, comportement du consommateur, marketing international) et lister, pour chacun, trois à cinq références structurantes. Les semaines 3 et 4 approfondissent deux courants prioritaires, choisis pour leur pertinence par rapport au projet de thèse envisagé, avec fiches de lecture détaillées et premières mises en tension critique.\n\nLes semaines 5 et 6 sont dédiées aux méthodes de recherche : revoir les logiques de l'expérimentation, de l'enquête par questionnaire et des méthodes qualitatives, et surtout savoir argumenter le choix d'une méthode pour une question donnée plutôt que simplement la décrire. Les semaines 7 et 8 servent à la rédaction de la note de synthèse écrite et à la simulation orale, idéalement devant un collègue ou un directeur de recherche qui joue le rôle du jury et pose des questions imprévues. Ce calendrier n'est qu'un repère : il doit être adapté au temps réellement disponible et au nombre de courants exigés par le programme doctoral concerné.\n\n## Points clés à retenir\n\nL'examen de qualification doctorale en marketing teste une maîtrise critique du champ, pas une application de modèle à un cas d'entreprise. Le jury valorise la mise en tension des courants, la précision conceptuelle et la capacité à situer un projet de thèse dans la littérature existante. Une préparation efficace repose sur des fiches de lecture rigoureuses, une cartographie visuelle des courants et une note de synthèse rédigée à l'avance, le tout organisé sur un calendrier de plusieurs semaines qui laisse du temps à la simulation orale.\n\n## Exercices pratiques\n\n1. Construisez votre propre cartographie des courants du marketing, sous forme de tableau à trois colonnes (courant, période d'émergence, idée centrale), en plaçant au moins cinq courants ou paradigmes du champ.\n\n2. Rédigez, en dix lignes maximum, une définition rigoureuse de ce que le jury attend quand il demande de « mettre en tension deux courants théoriques », en donnant un exemple concret au marketing.\n\n3. Identifiez trois défauts fréquents (parmi ceux mentionnés dans la leçon) que vous pensez être le plus exposé à commettre à l'oral, et proposez pour chacun une action corrective précise.\n\n4. Esquissez, en une phrase, le lien possible entre votre futur projet de thèse (réel ou fictif) et le débat standardisation versus adaptation culturelle en marketing.\n\n5. Proposez un calendrier de préparation personnalisé sur huit semaines, adapté à votre situation (temps disponible, nombre de courants exigés par votre programme).\n\n## Corrigé\n\n1. Il n'existe pas de corrigé unique : l'évaluation porte sur la cohérence interne du tableau. Un bon tableau situe correctement, par exemple, le marketing mix transactionnel dans les années 1960, le marketing relationnel à partir des années 1980-1990, la logique de dominante service (service-dominant logic) au milieu des années 2000, et peut ajouter le marketing international/interculturel et le comportement du consommateur comme courants transversaux.\n\n2. Une définition acceptable : mettre en tension deux courants signifie montrer en quoi le second répond, prolonge ou contredit les limites du premier, sans se contenter de les décrire côte à côte. Exemple : le marketing relationnel met en tension le marketing mix transactionnel en déplaçant l'attention de la transaction unique vers la relation durable et la valeur coproduite avec le client, ce qui remet en cause la vision du client comme simple récepteur passif de l'offre.\n\n3. Réponse ouverte ; l'essentiel est que l'action corrective soit concrète (par exemple : pour l'énumération sans articulation, s'imposer systématiquement une phrase de lien entre deux auteurs cités dans la même réponse).\n\n4. Réponse ouverte ; l'essentiel est d'établir un lien plausible et explicite, par exemple un projet de thèse sur l'adaptation des stratégies de marque de distributeurs internationaux sur les marchés ouest-africains, qui s'inscrit directement dans ce débat.\n\n5. Réponse ouverte ; un calendrier acceptable respecte globalement la logique proposée dans la leçon (cartographie générale, puis approfondissement ciblé, puis méthodes, puis rédaction et simulation), même si la répartition en semaines diffère."
+   },
+   {
+    "title": "Courant théorique n°1 : du marketing mix transactionnel au marketing relationnel et à la dominante service",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Courant théorique n°2 : standardisation versus adaptation culturelle du marketing dans les marchés africains émergents",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Les méthodes de recherche en marketing : expérimentation, enquête par questionnaire et approches qualitatives",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Épreuve type d'examen de qualification : question de synthèse, plan de réponse et corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : le débat marketing transactionnel versus marketing relationnel et dominante service",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : standardisation versus adaptation culturelle sur les marchés africains émergents",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : les méthodes de recherche en marketing (expérimentation, enquête, qualitatif)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : épreuve type de synthèse, plan de réponse détaillé et corrigé commenté",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : simulation complète d'une soutenance de qualification doctorale en marketing",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];
