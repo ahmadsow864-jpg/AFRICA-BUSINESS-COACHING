@@ -2328,20 +2328,18 @@ Cas : Afrik Emballages conçoit un sac biodégradable. L''étude de marché indi
 ## Exercices pratiques
 
 - Exercice 1 : l''activité « réception des marchandises » coûte 2 400 000 FCFA pour 160 réceptions. Calculez le coût de l''inducteur et le coût imputé à un produit nécessitant 25 réceptions.
-- Exercice 2 : citez trois inducteurs possibles pour les activités d''une banque (ouverture de compte, octroi de crédit, gestion des réclamations).
-- Exercice 3 : dans le cas Afrik Emballages, quel prix de P permettrait une marge de 10 % du prix en ABC ?
-- Exercice 4 : le nombre de lots de P passe de 70 à 40 grâce à des commandes groupées, et le coût de l''activité réglage baisse en proportion du nombre total de lots. Calculez le nouveau coût ABC unitaire de P.
-- Exercice 5 : un produit a un prix de marché de 15 000 FCFA ; marge cible 20 % ; coût estimé 13 200 FCFA. Calculez le coût cible et l''effort de réduction.
-- Exercice 6 (cas pratique) : rédigez une note au directeur d''Afrik Emballages présentant les résultats ABC et trois recommandations.
+- Exercice 2 : dans le cas Afrik Emballages, quel prix de P permettrait une marge de 10 % du prix en ABC ?
+- Exercice 3 : le nombre de lots de P passe de 70 à 40 grâce à des commandes groupées, et le coût de l''activité réglage baisse en proportion du nombre total de lots. Calculez le nouveau coût ABC unitaire de P.
+- Exercice 4 : un produit a un prix de marché de 15 000 FCFA ; marge cible 20 % ; coût estimé 13 200 FCFA. Calculez le coût cible et l''effort de réduction.
+- Exercice 5 (cas pratique) : rédigez une note au directeur d''Afrik Emballages présentant les résultats ABC et trois recommandations.
 
 ## Corrigé
 
 - Exercice 1 : 2 400 000 / 160 = 15 000 FCFA par réception ; 25 × 15 000 = 375 000 FCFA.
-- Exercice 2 : nombre de comptes ouverts ; nombre de dossiers de crédit ; nombre de réclamations traitées.
-- Exercice 3 : prix p tel que p − 1 380 = 0,10 p, soit p = 1 380 / 0,9 ≈ 1 533 FCFA.
-- Exercice 4 : total des lots 60 ; coût de l''activité = 9 000 000 × 60 / 90 = 6 000 000 FCFA, toujours 100 000 FCFA par lot ; P reçoit 40 × 100 000 = 4 000 000 au lieu de 7 000 000 ; charges ABC de P = 15 600 000 FCFA, soit 780 FCFA par sac ; coût complet 1 230 FCFA. P redevient rentable à 1 200 FCFA.
-- Exercice 5 : coût cible = 15 000 × 0,8 = 12 000 FCFA ; effort = 1 200 FCFA, soit 9,1 % du coût estimé.
-- Exercice 6 : constat (P déficitaire de 3 600 000 FCFA, S bénéficiaire de 13 600 000 FCFA en ABC) ; causes (forte consommation de réglages, de commandes et de contrôles par P) ; recommandations (prix de P ou facturation des petites commandes, réduction des temps de réglage, quantité minimale de commande).', 'texte', 60, false, 20
+- Exercice 2 : prix p tel que p − 1 380 = 0,10 p, soit p = 1 380 / 0,9 ≈ 1 533 FCFA.
+- Exercice 3 : total des lots 60 ; coût de l''activité = 9 000 000 × 60 / 90 = 6 000 000 FCFA, toujours 100 000 FCFA par lot ; P reçoit 40 × 100 000 = 4 000 000 au lieu de 7 000 000 ; charges ABC de P = 15 600 000 FCFA, soit 780 FCFA par sac ; coût complet 1 230 FCFA. P redevient rentable à 1 200 FCFA.
+- Exercice 4 : coût cible = 15 000 × 0,8 = 12 000 FCFA ; effort = 1 200 FCFA, soit 9,1 % du coût estimé.
+- Exercice 5 : constat (P déficitaire de 3 600 000 FCFA, S bénéficiaire de 13 600 000 FCFA en ABC) ; causes (forte consommation de réglages, de commandes et de contrôles par P) ; recommandations (prix de P ou facturation des petites commandes, réduction des temps de réglage, quantité minimale de commande).', 'texte', 60, false, 20
 from public.courses c where c.slug = 'lic-cg-l3'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthode ABC et coût cible : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
@@ -2419,7 +2417,7 @@ Le balanced scorecard peut devenir une usine à gaz (trop d''indicateurs), les r
 
 - Exercice 1 : le tableau de bord sert au pilotage par le responsable lui-même, avec des indicateurs variés et rapides ; le reporting remonte vers la hiérarchie des informations surtout financières pour rendre compte.
 - Exercice 2 : clients ; apprentissage ; processus internes ; financier.
-- Exercice 3 : réalisation = 1 240 / 1 300 = 95,4 %, orange (écart de 4,6 %) ; retard = 62 / 1 240 = 5,0 %, orange (écart relatif de 25,0 % par rapport à 4 %).
+- Exercice 3 : réalisation = 1 240 / 1 300 = 95,4 %, feu orange (écart relatif de 4,6 %) ; retard = 62 / 1 240 = 5,0 %, feu rouge : l''écart n''est que d''un point, mais il représente 25 % de l''objectif de 4 %.
 - Exercice 4 : taux de réservation à 30 jours ; note de satisfaction des clients en cours de séjour.
 - Exercice 5 : financier, rentabilité (marge par patient) ; clients, satisfaction des patients (taux de satisfaction en enquête de sortie) ; processus, réduire l''attente (délai moyen avant consultation) ; apprentissage, compétences du personnel (heures de formation par soignant).', 'texte', 60, false, 30
 from public.courses c where c.slug = 'lic-cg-l3'
@@ -2436,7 +2434,7 @@ select c.id, 'Contrôle de gestion des PME et du secteur public, prix de cession
 
 Les PME, majoritaires dans le tissu économique sénégalais, ont des caractéristiques propres : rôle central du dirigeant, peu de cadres fonctionnels, information souvent informelle, comptabilité parfois externalisée, forte sensibilité à la trésorerie. Le contrôle de gestion doit y être simple, rapide et orienté vers l''action.
 
-Outils adaptés : un tableau de bord de cinq à huit indicateurs (chiffre d''affaires, marge, trésorerie, créances clients, stock, carnet de commandes), un budget de trésorerie glissant, un calcul de coût de revient par produit ou par chantier, le seuil de rentabilité. Le tableur suffit souvent ; un logiciel de gestion intégré se justifie quand l''activité se développe.
+Outils adaptés : un tableau de bord de cinq à huit indicateurs (chiffre d''affaires, marge, trésorerie, créances clients, stock, carnet de commandes), un budget de trésorerie glissant, un calcul de coût de revient par produit ou par chantier, le seuil de rentabilité. Le tableur suffit souvent.
 
 Exemple d''analyse simple et puissante : la concentration du chiffre d''affaires (loi de Pareto). Une PME de Kaolack réalise 100 millions de FCFA avec cinq clients :
 
@@ -2491,7 +2489,6 @@ Le résultat du groupe (210 000 000 FCFA) ne dépend pas du PCI. Au coût variab
 - PME : peu d''outils, simples, centrés sur la trésorerie et la marge.
 - Secteur public : budget-programme, performance en efficacité, qualité, efficience.
 - PCI : neutre pour le groupe, décisif pour les divisions ; fourchette entre plancher et plafond.
-- Le résultat résiduel corrige les effets pervers du ROI.
 
 ## Exercices pratiques
 
@@ -2637,7 +2634,7 @@ Coûts complets ABC : S 414, P 1 380. Avec des prix de 550 et 1 200 FCFA, S gagn
 
 Calculer ne suffit pas : il faut agir. C''est la gestion par les activités, l''ABM. Trois leviers pour Afrik Emballages. Agir sur le prix : facturer la personnalisation, ou appliquer un supplément pour les petites commandes. Agir sur le volume d''inducteurs : regrouper les commandes en lots plus importants ; si P passe de 70 à 40 lots, son coût unitaire tombe à 1 230 FCFA et il redevient rentable. Agir sur le coût de l''inducteur : former les régleurs, adopter des outillages à changement rapide.
 
-Attention aux limites : coût de mise en place, rattachements parfois subjectifs, charges de structure (direction générale) difficiles à rattacher à une activité. Certaines entreprises utilisent une version simplifiée, fondée sur les temps, plus légère à maintenir.
+Attention aux limites : coût de mise en place, rattachements parfois subjectifs, charges de structure (direction générale) difficiles à rattacher à une activité. Certaines entreprises utilisent une version simplifiée, fondée sur les temps, plus légère à maintenir. Dans une copie, une bonne réponse sur les limites de l''ABC présente aussi la question de la capacité inutilisée : si l''activité réglage est dimensionnée pour 120 lots et n''en traite que 90, faut-il imputer tout son coût aux produits, ou isoler le coût de la capacité inutilisée, comme on le fait en imputation rationnelle ? Les versions récentes de la méthode recommandent de l''isoler.
 
 ## 58:00 – 72:00 · Le coût cible : correction commentée
 
@@ -2653,7 +2650,11 @@ Comment combler l''écart ? Par l''analyse de la valeur. On liste les fonctions 
 
 Correction : coût cible 15 000 × 0,8 = 12 000 FCFA ; effort de 1 200 FCFA, soit 9,1 % du coût estimé. Si l''équipe réduit la matière de 700 FCFA et la fabrication de 300 FCFA, il reste 200 FCFA à trouver : simplification de l''emballage, ou renégociation de la distribution. Si l''écart reste irréductible, la direction peut accepter une marge plus faible pour un produit stratégique, ou renoncer au lancement.
 
-## 82:00 – 90:00 · Synthèse et évaluation finale
+## 82:00 – 86:00 · Et dans les services ?
+
+La méthode ABC est particulièrement utile dans les services, où presque tous les coûts sont indirects. Prenons une banque fictive de Dakar. Ses activités : ouvrir des comptes, instruire des crédits, traiter des opérations au guichet, gérer des réclamations. Les inducteurs : nombre de comptes ouverts, nombre de dossiers de crédit, nombre d''opérations, nombre de réclamations. En calculant le coût de chaque inducteur, la banque découvre par exemple qu''un client qui effectue beaucoup d''opérations au guichet pour de petits montants lui coûte plus qu''il ne rapporte. Elle peut alors orienter ces clients vers le mobile banking, moins coûteux, ou adapter sa tarification. Même logique dans un hôpital : coût d''une admission, d''une journée d''hospitalisation, d''un examen de laboratoire. L''ABC devient un outil de dialogue entre la direction financière et les opérationnels, parce qu''il parle leur langage : des activités, pas des comptes de charges.
+
+## 86:00 – 90:00 · Synthèse et évaluation finale
 
 Synthèse : l''ABC suit la causalité des coûts indirects ; il révèle les subventions croisées ; l''ABM transforme le calcul en actions ; le coût cible part du marché pour piloter la conception.
 
@@ -2687,11 +2688,11 @@ Trois outils sont souvent confondus. Le budget fixe des objectifs chiffrés pour
 
 Les qualités d''un bon tableau de bord : peu d''indicateurs, une dizaine au plus ; une présentation visuelle ; une comparaison avec une cible ; un lien direct avec les leviers d''action du responsable.
 
-## 15:00 – 27:00 · Choisir les indicateurs
+## 15:00 – 27:00 · Choisir les indicateurs : une démarche en quatre étapes
 
 Visuel : une grille avec en colonnes les objectifs et en lignes les indicateurs candidats.
 
-On part toujours des objectifs, jamais des données disponibles. Pour l''objectif « livrer à l''heure », l''indicateur est le taux de livraisons à l''heure. Pour « réduire la casse », le taux de casse. Vérifiez la méthode SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini.
+Une démarche simple, proche de la méthode OVAR enseignée dans de nombreuses écoles de gestion, comporte quatre étapes : définir les objectifs du responsable ; identifier les variables d''action, c''est-à-dire les leviers qu''il maîtrise ; choisir pour chaque objectif et chaque levier un indicateur ; préciser qui est responsable de chaque indicateur. On part toujours des objectifs, jamais des données disponibles. Pour l''objectif « livrer à l''heure », l''indicateur est le taux de livraisons à l''heure. Pour « réduire la casse », le taux de casse. Vérifiez la méthode SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini.
 
 Distinguez les indicateurs de résultat, qui constatent après coup, comme le chiffre d''affaires, et les indicateurs avancés, qui annoncent l''avenir, comme le taux de livraisons à l''heure, qui prépare la fidélité des clients. Un bon tableau de bord mélange les deux.
 
@@ -2729,7 +2730,11 @@ Lecture transversale : l''absentéisme élevé oblige à recourir à des livreur
 
 Énoncé : une agence fictive de microfinance visait 1 300 crédits et en a accordé 1 240 ; 62 sont en retard de plus de 30 jours ; objectif de retard au plus 4 %.
 
-Correction : réalisation 95,4 %, orange. Taux de retard 62 / 1 240 = 5,0 %, orange car l''écart relatif est de 25 % ? Attention, calculons bien : 5 % contre 4 %, l''écart relatif est de 1 point sur 4, soit 25 %. Selon notre règle, c''est donc rouge, pas orange. Je corrige : le feu est rouge. Ce petit piège montre l''importance de définir clairement la règle des feux : écart en points ou écart relatif ? Il faut l''écrire en tête du tableau de bord. Dans la leçon écrite, l''exercice retient l''écart relatif : faites le calcul vous-même et vérifiez.
+Correction. Réalisation : 1 240 sur 1 300, soit 95,4 % ; écart relatif de 4,6 %, feu orange. Taux de retard : 62 sur 1 240, soit 5,0 %. L''écart avec l''objectif n''est que d''un point, mais il représente 25 % de l''objectif de 4 % : feu rouge.
+
+Ce cas montre un piège fréquent : un écart d''un point paraît faible, mais rapporté à un objectif bas, il est considérable. Il faut donc écrire clairement en tête du tableau de bord si les seuils s''apprécient en points ou en écart relatif. Pour un taux de retard de remboursement, beaucoup d''institutions préfèrent d''ailleurs des seuils absolus fixés par la politique de risque.
+
+Interprétation : l''agence a presque atteint son objectif de volume, mais la qualité du portefeuille se dégrade. Ces deux indicateurs doivent être lus ensemble : courir après le volume peut conduire à prêter à des emprunteurs plus fragiles.
 
 ## 76:00 – 84:00 · Limites et effets pervers
 
@@ -2807,11 +2812,17 @@ Au prix du marché, capitaux de 600 000 000 pour l''Huilerie et 400 000 000 pour
 
 Un projet de 50 000 000 FCFA est proposé au Conditionnement, avec 10 000 000 FCFA de résultat annuel, soit 20 %. C''est plus que les 12 % exigés par le groupe : le projet crée de la valeur. Mais le ROI de la division passerait de 30 % à 28,9 % : un responsable jugé sur son ROI serait tenté de refuser. Le résultat résiduel, lui, augmente de 4 000 000 FCFA. Voilà pourquoi beaucoup de groupes complètent le ROI par le résultat résiduel.
 
-## 78:00 – 84:00 · Méthode pour la dissertation
+## 78:00 – 82:00 · Exercice corrigé : faut-il acheter dehors ?
 
-Sujet possible : « Le prix de cession interne est-il un outil de coordination ou de conflit ? » Plan : I. Un outil de coordination et d''évaluation des divisions ; II. Une source de conflits et de comportements opportunistes, que l''on limite par la négociation encadrée, le prix de marché et l''arbitrage de la direction générale. Exemples : le groupe agroalimentaire du cours, un groupe industriel à plusieurs filiales dans l''UEMOA. Précisez que, entre sociétés de pays différents, les prix de transfert sont aussi encadrés par les règles fiscales, sujet à vérifier dans les textes en vigueur.
+Le responsable du Conditionnement annonce qu''un fournisseur extérieur lui propose de l''huile en vrac à 820 FCFA le litre, moins cher que le prix du marché de 850. Il veut acheter dehors. L''Huilerie, non saturée, ne pourrait pas vendre davantage à l''extérieur.
 
-## 84:00 – 90:00 · Synthèse et évaluation finale
+Raisonnons pour le groupe. Si le Conditionnement achète dehors, le groupe paie 820 FCFA par litre. S''il achète à l''Huilerie, le groupe ne supporte que le coût variable, 600 FCFA, puisque les charges fixes de l''Huilerie existent de toute façon. Perte pour le groupe : 220 FCFA par litre, soit 132 000 000 FCFA sur 600 000 litres. Solution : aligner le PCI sur l''offre extérieure, à 820 FCFA au plus, ou laisser la direction générale arbitrer. Retenez la règle : la décision d''achat externe est bonne pour le groupe seulement si le prix extérieur est inférieur au coût variable interne, augmenté du coût d''opportunité de la capacité.
+
+## 82:00 – 85:00 · Méthode pour la dissertation
+
+Sujet possible : « Le prix de cession interne est-il un outil de coordination ou de conflit ? » Plan : I. Un outil de coordination et d''évaluation des divisions ; II. Une source de conflits et de comportements opportunistes, que l''on limite par la négociation encadrée, le prix de marché et l''arbitrage de la direction générale. Exemples : le groupe agroalimentaire du cours, un groupe industriel à plusieurs filiales dans l''UEMOA. Précisez que, entre sociétés de pays différents, les prix de transfert sont aussi encadrés par les règles fiscales, à vérifier dans les textes en vigueur.
+
+## 85:00 – 90:00 · Synthèse et évaluation finale
 
 - Question 1 : citez deux outils prioritaires du contrôle de gestion d''une PME. Réponse : budget de trésorerie, tableau de bord simplifié.
 - Question 2 : quels sont les trois points de vue de la performance publique ? Réponse : citoyen, usager, contribuable.

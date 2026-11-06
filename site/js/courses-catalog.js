@@ -3276,5 +3276,65 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "lic-fin-l3",
+  "level": "Licence 3",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance Licence 3 : réussir les examens de troisième année",
+  "description": "Ce cours prépare aux examens de troisième année de Licence en finance : décisions d'investissement (VAN, TRI, indice de profitabilité, délai de récupération, avenir risqué), décisions de financement et coût du capital (CMPC, effet de levier, politique de dividende) et gestion des risques financiers de change et de taux. Il s'adresse aux étudiants de Licence 3 du Sénégal et de l'espace UEMOA. Prérequis : analyse financière, mathématiques financières et notions de marchés financiers des deux premières années.",
+  "sort": 353,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Licence 3 en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\n- Situer la Licence 3 dans le parcours LMD et mesurer ses enjeux (diplôme, accès au Master, insertion).\n- Connaître les trois matières de finance de l'année et leur logique commune : la création de valeur.\n- Préparer les épreuves typiques de Licence 3, en particulier le cas de synthèse investissement-financement.\n- Suivre un plan de révision sur six semaines.\n\n## 1. La Licence 3 dans le système LMD\n\nLa Licence 3 correspond aux semestres 5 et 6, qui terminent le cycle de Licence. Comme les années précédentes, elle est organisée en unités d'enseignement (UE) créditées, évaluées par contrôle continu et examen terminal, avec une session de rattrapage. Le nombre de crédits, les coefficients, les règles de compensation, l'existence éventuelle d'un stage ou d'un mémoire de fin de cycle et les conditions d'obtention du diplôme dépendent de chaque établissement : le règlement des études et la maquette de la filière font foi.\n\nEnjeu particulier : les résultats de Licence 3 pèsent souvent dans l'admission en Master et dans les premières candidatures (banques, cabinets, directions financières, institutions de microfinance). Viser la mention est un objectif raisonnable si vous travaillez avec méthode.\n\n## 2. Les matières de finance de la Licence 3\n\nLes trois matières de ce cours répondent à une même question : comment l'entreprise crée-t-elle de la valeur pour ceux qui la financent ?\n\n- Décisions d'investissement : flux de trésorerie d'un projet, valeur actuelle nette (VAN), taux de rentabilité interne (TRI), indice de profitabilité (IP), délai de récupération simple et actualisé, comparaison de projets, choix en avenir risqué simple (espérance et écart-type de la VAN, scénarios).\n- Décisions de financement et coût du capital : coût des capitaux propres (modèle de Gordon-Shapiro, MEDAF), coût de la dette après impôt, coût moyen pondéré du capital (CMPC), effet de levier financier, politique de dividende, choix entre sources de financement.\n- Gestion des risques financiers : risque de change (expositions, couverture à terme, options simples, techniques internes), risque de taux (emprunts à taux variable, effet des taux sur le prix des obligations, swap et FRA dans leur principe).\n\nLe lien entre les trois : un projet n'est intéressant que si sa rentabilité dépasse le coût des ressources qui le financent (le CMPC sert de taux d'actualisation), et cette rentabilité peut être menacée par des risques de change ou de taux qu'il faut identifier et couvrir.\n\nCes matières mobilisent tout ce qui précède : mathématiques financières et statistiques (Licence 1), analyse financière, trésorerie et marchés financiers (Licence 2).\n\n## 3. Les types d'épreuves\n\n- Le cas de synthèse : un projet d'investissement d'une entreprise fictive, avec calcul des flux, VAN, TRI, puis choix d'un mode de financement et calcul du CMPC. C'est l'épreuve la plus fréquente et la plus longue.\n- L'exercice de couverture : un importateur ou un exportateur exposé au dollar ; on compare l'absence de couverture, la couverture à terme et l'option.\n- Les questions de réflexion : « Une entreprise doit-elle s'endetter pour améliorer la rentabilité de ses actionnaires ? », « La politique de dividende influence-t-elle la valeur de l'entreprise ? ». On attend une argumentation théorique et chiffrée.\n- Le QCM : définitions précises (TRI, CMPC, effet de massue, cours à terme, prime d'option).\n- Le dossier ou l'exposé : par exemple, analyser le financement d'un projet d'infrastructure en partenariat public-privé à partir de documents publics.\n\n## 4. Les erreurs fréquentes\n\n- Inclure les frais financiers dans les flux d'un projet : ils sont déjà pris en compte par le taux d'actualisation.\n- Oublier l'économie d'impôt sur les amortissements, le BFR initial ou sa récupération finale, la valeur résiduelle nette d'impôt.\n- Calculer le coût de la dette avant impôt dans le CMPC.\n- Pondérer le CMPC avec des valeurs comptables quand l'énoncé donne des valeurs de marché.\n- Conclure sur le TRI seul quand les projets sont de tailles différentes.\n- Oublier qu'entre le franc CFA et l'euro la parité est fixe (1 euro = 655,957 FCFA) : le risque de change d'une entreprise de l'UEMOA porte surtout sur les autres devises (dollar, yuan, livre, naira…).\n- Utiliser de mémoire des taux réels : dans ce cours, tous les taux d'intérêt, d'impôt et de marché sont fictifs pour l'exemple.\n\n## 5. Méthode de révision\n\n- Fiche « flux d'un projet » : investissement, BFR, flux d'exploitation après impôt, valeur résiduelle, récupération du BFR.\n- Fiche « coût du capital » : formules du coût des fonds propres, coût de la dette après impôt, CMPC, formule de l'effet de levier.\n- Fiche « couverture » : tableau comparatif des résultats selon le cours futur (sans couverture, à terme, option).\n- Entraînement chronométré : un cas de synthèse doit être traité en 1h30 à 2h.\n\n## 6. Plan de révision sur six semaines\n\n- Semaine 1 : flux de trésorerie d'un projet, VAN, IP, délais de récupération.\n- Semaine 2 : TRI, conflits de critères, avenir risqué (espérance, écart-type, scénarios).\n- Semaine 3 : coût des fonds propres, coût de la dette, CMPC.\n- Semaine 4 : effet de levier, politique de dividende, choix de financement.\n- Semaine 5 : risque de change et risque de taux, couvertures.\n- Semaine 6 : deux sujets complets (leçon 5) en conditions d'examen, correction et relecture des fiches.\n\n## Points clés\n\n- Le fil rouge de l'année : créer de la valeur en investissant à une rentabilité supérieure au coût du capital, en maîtrisant les risques.\n- Le cas de synthèse investissement-financement est l'épreuve reine.\n- Les flux d'un projet excluent les frais financiers.\n\n## Exercices pratiques\n\n- Exercice 1 : expliquez en trois phrases le lien entre VAN, CMPC et création de valeur.\n- Exercice 2 : listez les éléments qui composent les flux de trésorerie d'un projet d'investissement.\n- Exercice 3 : vrai ou faux : « Une entreprise sénégalaise qui importe des machines facturées en euros supporte un risque de change important. » Justifiez.\n- Exercice 4 (cas pratique) : Mariama, étudiante en Licence 3 à Dakar, a un stage de fin d'études qui se termine deux semaines avant les examens. Construisez son plan de révision.\n\n## Corrigé\n\n- Exercice 1 : le CMPC mesure le coût moyen des ressources (fonds propres et dettes) de l'entreprise. On actualise les flux d'un projet à ce taux : si la VAN est positive, le projet rapporte plus que ce qu'il coûte à financer. Il crée alors de la valeur pour les apporteurs de capitaux.\n- Exercice 2 : investissement initial (prix, frais d'installation), BFR initial et ses variations, flux d'exploitation après impôt (EBE moins impôt, ou résultat net d'exploitation plus dotations), valeur résiduelle nette d'impôt, récupération du BFR en fin de projet. Les frais financiers sont exclus.\n- Exercice 3 : faux. La parité entre le franc CFA de l'UEMOA et l'euro est fixe (1 euro = 655,957 FCFA). Le risque de change sur l'euro est donc très limité tant que cette parité est maintenue ; il est plus important pour une facturation en dollars ou en autres devises.\n- Exercice 4 : pendant le stage (4 semaines) : 1h30 par soir sur les fiches et exercices courts (semaine 1 investissement, semaine 2 financement, semaine 3 risques, semaine 4 révision des fiches) et un cas complet chaque samedi ; les deux dernières semaines, à temps plein : un sujet complet tous les deux jours, correction le lendemain, reprise des points faibles."
+   },
+   {
+    "title": "Décisions d'investissement : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Décisions de financement et coût du capital : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Gestion des risques financiers : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen de Licence 3 Finance (entraînement corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : Décisions d'investissement",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Décisions de financement et coût du capital",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des risques financiers",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];

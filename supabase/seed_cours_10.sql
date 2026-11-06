@@ -2726,3 +2726,659 @@ Exercice corrigé en direct : « Une obligation de nominal 10 000, coupon 500, �
 « Merci. Pour vous entraîner, recalculez le prix de l''obligation à 5,75 % de coupon pour un taux de marché de 5 %, puis expliquez en deux phrases pourquoi le prix dépasse le pair. »', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-fin-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Marchés financiers 1');
+
+-- Cours : Finance Licence 3 : réussir les examens de troisième année
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-fin-l3', (select id from public.levels where name = 'Licence 3'), null, 'Finance', 'Finance Licence 3 : réussir les examens de troisième année', 'Ce cours prépare aux examens de troisième année de Licence en finance : décisions d''investissement (VAN, TRI, indice de profitabilité, délai de récupération, avenir risqué), décisions de financement et coût du capital (CMPC, effet de levier, politique de dividende) et gestion des risques financiers de change et de taux. Il s''adresse aux étudiants de Licence 3 du Sénégal et de l''espace UEMOA. Prérequis : analyse financière, mathématiques financières et notions de marchés financiers des deux premières années.', true, 353
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 3 en Finance', '## Objectifs de la leçon
+
+- Situer la Licence 3 dans le parcours LMD et mesurer ses enjeux (diplôme, accès au Master, insertion).
+- Connaître les trois matières de finance de l''année et leur logique commune : la création de valeur.
+- Préparer les épreuves typiques de Licence 3, en particulier le cas de synthèse investissement-financement.
+- Suivre un plan de révision sur six semaines.
+
+## 1. La Licence 3 dans le système LMD
+
+La Licence 3 correspond aux semestres 5 et 6, qui terminent le cycle de Licence. Comme les années précédentes, elle est organisée en unités d''enseignement (UE) créditées, évaluées par contrôle continu et examen terminal, avec une session de rattrapage. Le nombre de crédits, les coefficients, les règles de compensation, l''existence éventuelle d''un stage ou d''un mémoire de fin de cycle et les conditions d''obtention du diplôme dépendent de chaque établissement : le règlement des études et la maquette de la filière font foi.
+
+Enjeu particulier : les résultats de Licence 3 pèsent souvent dans l''admission en Master et dans les premières candidatures (banques, cabinets, directions financières, institutions de microfinance). Viser la mention est un objectif raisonnable si vous travaillez avec méthode.
+
+## 2. Les matières de finance de la Licence 3
+
+Les trois matières de ce cours répondent à une même question : comment l''entreprise crée-t-elle de la valeur pour ceux qui la financent ?
+
+- Décisions d''investissement : flux de trésorerie d''un projet, valeur actuelle nette (VAN), taux de rentabilité interne (TRI), indice de profitabilité (IP), délai de récupération simple et actualisé, comparaison de projets, choix en avenir risqué simple (espérance et écart-type de la VAN, scénarios).
+- Décisions de financement et coût du capital : coût des capitaux propres (modèle de Gordon-Shapiro, MEDAF), coût de la dette après impôt, coût moyen pondéré du capital (CMPC), effet de levier financier, politique de dividende, choix entre sources de financement.
+- Gestion des risques financiers : risque de change (expositions, couverture à terme, options simples, techniques internes), risque de taux (emprunts à taux variable, effet des taux sur le prix des obligations, swap et FRA dans leur principe).
+
+Le lien entre les trois : un projet n''est intéressant que si sa rentabilité dépasse le coût des ressources qui le financent (le CMPC sert de taux d''actualisation), et cette rentabilité peut être menacée par des risques de change ou de taux qu''il faut identifier et couvrir.
+
+Ces matières mobilisent tout ce qui précède : mathématiques financières et statistiques (Licence 1), analyse financière, trésorerie et marchés financiers (Licence 2).
+
+## 3. Les types d''épreuves
+
+- Le cas de synthèse : un projet d''investissement d''une entreprise fictive, avec calcul des flux, VAN, TRI, puis choix d''un mode de financement et calcul du CMPC. C''est l''épreuve la plus fréquente et la plus longue.
+- L''exercice de couverture : un importateur ou un exportateur exposé au dollar ; on compare l''absence de couverture, la couverture à terme et l''option.
+- Les questions de réflexion : « Une entreprise doit-elle s''endetter pour améliorer la rentabilité de ses actionnaires ? », « La politique de dividende influence-t-elle la valeur de l''entreprise ? ». On attend une argumentation théorique et chiffrée.
+- Le QCM : définitions précises (TRI, CMPC, effet de massue, cours à terme, prime d''option).
+- Le dossier ou l''exposé : par exemple, analyser le financement d''un projet d''infrastructure en partenariat public-privé à partir de documents publics.
+
+## 4. Les erreurs fréquentes
+
+- Inclure les frais financiers dans les flux d''un projet : ils sont déjà pris en compte par le taux d''actualisation.
+- Oublier l''économie d''impôt sur les amortissements, le BFR initial ou sa récupération finale, la valeur résiduelle nette d''impôt.
+- Calculer le coût de la dette avant impôt dans le CMPC.
+- Pondérer le CMPC avec des valeurs comptables quand l''énoncé donne des valeurs de marché.
+- Conclure sur le TRI seul quand les projets sont de tailles différentes.
+- Oublier qu''entre le franc CFA et l''euro la parité est fixe (1 euro = 655,957 FCFA) : le risque de change d''une entreprise de l''UEMOA porte surtout sur les autres devises (dollar, yuan, livre, naira…).
+- Utiliser de mémoire des taux réels : dans ce cours, tous les taux d''intérêt, d''impôt et de marché sont fictifs pour l''exemple.
+
+## 5. Méthode de révision
+
+- Fiche « flux d''un projet » : investissement, BFR, flux d''exploitation après impôt, valeur résiduelle, récupération du BFR.
+- Fiche « coût du capital » : formules du coût des fonds propres, coût de la dette après impôt, CMPC, formule de l''effet de levier.
+- Fiche « couverture » : tableau comparatif des résultats selon le cours futur (sans couverture, à terme, option).
+- Entraînement chronométré : un cas de synthèse doit être traité en 1h30 à 2h.
+
+## 6. Plan de révision sur six semaines
+
+- Semaine 1 : flux de trésorerie d''un projet, VAN, IP, délais de récupération.
+- Semaine 2 : TRI, conflits de critères, avenir risqué (espérance, écart-type, scénarios).
+- Semaine 3 : coût des fonds propres, coût de la dette, CMPC.
+- Semaine 4 : effet de levier, politique de dividende, choix de financement.
+- Semaine 5 : risque de change et risque de taux, couvertures.
+- Semaine 6 : deux sujets complets (leçon 5) en conditions d''examen, correction et relecture des fiches.
+
+## Points clés
+
+- Le fil rouge de l''année : créer de la valeur en investissant à une rentabilité supérieure au coût du capital, en maîtrisant les risques.
+- Le cas de synthèse investissement-financement est l''épreuve reine.
+- Les flux d''un projet excluent les frais financiers.
+
+## Exercices pratiques
+
+- Exercice 1 : expliquez en trois phrases le lien entre VAN, CMPC et création de valeur.
+- Exercice 2 : listez les éléments qui composent les flux de trésorerie d''un projet d''investissement.
+- Exercice 3 : vrai ou faux : « Une entreprise sénégalaise qui importe des machines facturées en euros supporte un risque de change important. » Justifiez.
+- Exercice 4 (cas pratique) : Mariama, étudiante en Licence 3 à Dakar, a un stage de fin d''études qui se termine deux semaines avant les examens. Construisez son plan de révision.
+
+## Corrigé
+
+- Exercice 1 : le CMPC mesure le coût moyen des ressources (fonds propres et dettes) de l''entreprise. On actualise les flux d''un projet à ce taux : si la VAN est positive, le projet rapporte plus que ce qu''il coûte à financer. Il crée alors de la valeur pour les apporteurs de capitaux.
+- Exercice 2 : investissement initial (prix, frais d''installation), BFR initial et ses variations, flux d''exploitation après impôt (EBE moins impôt, ou résultat net d''exploitation plus dotations), valeur résiduelle nette d''impôt, récupération du BFR en fin de projet. Les frais financiers sont exclus.
+- Exercice 3 : faux. La parité entre le franc CFA de l''UEMOA et l''euro est fixe (1 euro = 655,957 FCFA). Le risque de change sur l''euro est donc très limité tant que cette parité est maintenue ; il est plus important pour une facturation en dollars ou en autres devises.
+- Exercice 4 : pendant le stage (4 semaines) : 1h30 par soir sur les fiches et exercices courts (semaine 1 investissement, semaine 2 financement, semaine 3 risques, semaine 4 révision des fiches) et un cas complet chaque samedi ; les deux dernières semaines, à temps plein : un sujet complet tous les deux jours, correction le lendemain, reprise des points faibles.', 'texte', 60, true, 10
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 3 en Finance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Décisions d''investissement : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Déterminer les flux de trésorerie d''un projet d''investissement.
+- Calculer et interpréter la VAN, le TRI, l''indice de profitabilité et les délais de récupération.
+- Choisir entre plusieurs projets et traiter un avenir risqué simple.
+
+Montants en millions de FCFA. Le taux d''impôt de 30 % et le taux d''actualisation de 10 % sont fictifs pour l''exemple.
+
+## Fiche 1 : les flux de trésorerie d''un projet
+
+Un investissement est une dépense immédiate en vue de flux futurs. On raisonne en flux de trésorerie différentiels (ce que le projet ajoute), après impôt, et hors frais financiers (le coût du financement est pris en compte par le taux d''actualisation).
+
+- Flux initial (année 0) : prix d''acquisition, frais d''installation, BFR initial.
+- Flux d''exploitation : EBE × (1 − t) + dotations aux amortissements × t, ou, ce qui revient au même, résultat d''exploitation après impôt + dotations. Le terme dotations × t est l''économie d''impôt liée à l''amortissement.
+- Flux de fin de projet : valeur résiduelle nette d''impôt, récupération du BFR.
+
+Cas : Sénégal Lait SA, entreprise fictive de Kaolack, étudie une ligne de yaourts. Machine : 50, amortie linéairement sur 5 ans (dotation 10 par an). BFR initial : 5, récupéré en fin d''année 5. Valeur résiduelle de la machine en fin d''année 5 : 4, entièrement imposable car totalement amortie, soit 4 × 0,7 = 2,8 net d''impôt. EBE prévisionnels : 18 ; 20 ; 22 ; 22 ; 20.
+
+- Année 0 : −50 − 5 = −55.
+- Année 1 : 18 × 0,7 + 10 × 0,3 = 12,6 + 3 = 15,6.
+- Année 2 : 20 × 0,7 + 3 = 17,0.
+- Année 3 : 22 × 0,7 + 3 = 18,4.
+- Année 4 : 18,4.
+- Année 5 : 20 × 0,7 + 3 + 2,8 + 5 = 24,8.
+
+## Fiche 2 : la valeur actuelle nette
+
+VAN = −I0 + Σ Ft × (1 + k)^−t, avec k le taux d''actualisation (en général le CMPC de l''entreprise, ou un taux exigé pour ce type de risque).
+
+Valeurs actuelles à 10 % : 14,18 ; 14,05 ; 13,82 ; 12,57 ; 15,40 ; total ≈ 70,02. VAN = 70,02 − 55 ≈ 15,02.
+
+Règle : on retient un projet si sa VAN est positive. Ici, le projet rapporte la rentabilité exigée de 10 % et crée en plus environ 15 millions de valeur.
+
+## Fiche 3 : le TRI, l''indice de profitabilité, les délais
+
+- TRI : taux qui annule la VAN. On le cherche par essais et interpolation. Ici, TRI ≈ 19,5 %. Règle : TRI > taux exigé, le projet est acceptable.
+- Indice de profitabilité : IP = valeur actuelle des flux / investissement = 70,02 / 55 ≈ 1,27. Chaque franc investi rapporte 1,27 franc en valeur actuelle. Règle : IP > 1.
+- Délai de récupération simple : flux cumulés 15,6 ; 32,6 ; 51,0 ; 69,4. Après 3 ans, il manque 4,0, récupérés en 4 / 18,4 × 12 ≈ 2,6 mois : environ 3 ans et 3 mois.
+- Délai de récupération actualisé : valeurs actuelles cumulées 14,18 ; 28,23 ; 42,06 ; 54,62 ; 70,02. Après 4 ans, il manque 0,38, récupérés en 0,38 / 15,40 × 12 ≈ 0,3 mois : un peu plus de 4 ans.
+
+Le délai est un critère de liquidité et de prudence, mais il ignore les flux postérieurs : il ne remplace pas la VAN.
+
+## Fiche 4 : comparer des projets
+
+Quand les projets sont indépendants, on retient tous ceux dont la VAN est positive. Quand ils sont mutuellement exclusifs, les critères peuvent se contredire, notamment si les tailles ou les profils de flux diffèrent. La VAN mesure la richesse créée en valeur absolue ; le TRI et l''IP mesurent une rentabilité relative. Sans contrainte de capital, la VAN est le critère de référence. Avec un budget limité, on classe les projets selon l''IP.
+
+## Fiche 5 : l''avenir risqué
+
+Trois scénarios pour Sénégal Lait :
+
+- Pessimiste (probabilité 0,25) : flux d''exploitation inférieurs de 30 % ; VAN ≈ −4,53.
+- Probable (0,50) : VAN ≈ 15,02.
+- Optimiste (0,25) : flux d''exploitation supérieurs de 20 % ; VAN ≈ 28,06.
+
+Espérance : E(VAN) = 0,25 × (−4,53) + 0,5 × 15,02 + 0,25 × 28,06 ≈ 13,39. Écart-type : σ(VAN) = √[Σ pi × (VANi − E)²] ≈ 11,64. Le projet est intéressant en moyenne, avec une probabilité de 25 % de détruire de la valeur. Un décideur prudent comparera ce risque à celui d''autres projets (coefficient de variation σ / E ≈ 0,87) ou exigera un taux d''actualisation plus élevé.
+
+## Points clés
+
+- Flux = EBE × (1 − t) + dotations × t ; sans frais financiers ; avec BFR et valeur résiduelle nette.
+- VAN > 0, TRI > k, IP > 1 : projet acceptable.
+- Projets exclusifs : la VAN prime, sauf rationnement du capital (IP).
+- Avenir risqué : espérance et écart-type de la VAN.
+
+## Exercices pratiques
+
+- Exercice 1 : EBE annuel 30, dotation 12, impôt 30 %. Calculez le flux d''exploitation par les deux méthodes.
+- Exercice 2 : un projet coûte 200 et rapporte 60 par an pendant 5 ans. Calculez sa VAN à 12 %. Le TRI est-il supérieur à 12 % ?
+- Exercice 3 : projets exclusifs à 10 %. A : −100 ; 30 ; 40 ; 50 ; 20. B : −60 ; 25 ; 25 ; 25 ; 10. Calculez VAN, IP, et indiquez les TRI (A ≈ 15,3 %, B ≈ 17,5 %). Lequel choisir ?
+- Exercice 4 : calculez le délai de récupération simple du projet A.
+- Exercice 5 : VAN de −10, 20 et 50 avec des probabilités 0,3 ; 0,4 ; 0,3. Calculez l''espérance et l''écart-type.
+- Exercice 6 (cas pratique) : une boulangerie industrielle de Thiès hésite à remplacer un four. Listez les flux à prendre en compte et ceux à exclure.
+
+## Corrigé
+
+- Exercice 1 : 30 × 0,7 + 12 × 0,3 = 21 + 3,6 = 24,6. Autre méthode : résultat = 30 − 12 = 18 ; après impôt 12,6 ; + 12 de dotations = 24,6.
+- Exercice 2 : VAN = −200 + 60 × (1 − 1,12^−5) / 0,12 ≈ −200 + 216,29 = 16,29. VAN positive à 12 %, donc TRI > 12 % (il vaut environ 15,2 %).
+- Exercice 3 : VAN A ≈ 11,56 ; IP A ≈ 1,12. VAN B ≈ 9,00 ; IP B ≈ 1,15. B a le meilleur TRI et le meilleur IP, mais A crée plus de valeur. Sans contrainte de capital, on choisit A.
+- Exercice 4 : cumuls 30 ; 70 ; il manque 30 sur 50 en année 3 : 0,6 année, soit environ 2 ans et 7 mois.
+- Exercice 5 : E = 0,3 × (−10) + 0,4 × 20 + 0,3 × 50 = 20. Variance = 0,3 × 900 + 0,4 × 0 + 0,3 × 900 = 540 ; écart-type ≈ 23,2.
+- Exercice 6 : à inclure : prix et installation du nouveau four, prix de revente net d''impôt de l''ancien, économies d''énergie et de maintenance, hausse de production, variation du BFR, économies d''impôt sur amortissements. À exclure : frais financiers, coûts déjà engagés (étude réalisée l''an dernier), charges de structure inchangées.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Décisions d''investissement : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Décisions de financement et coût du capital : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Présenter les sources de financement à long terme et leurs critères de choix.
+- Calculer le coût des fonds propres, le coût de la dette après impôt et le CMPC.
+- Analyser l''effet de levier financier.
+- Expliquer les enjeux de la politique de dividende.
+
+Tous les taux (impôt, intérêt, rentabilités de marché) sont fictifs pour l''exemple.
+
+## Fiche 1 : les sources de financement
+
+- Fonds propres internes : l''autofinancement (CAF moins dividendes). Il ne coûte rien en apparence, mais il a un coût d''opportunité : celui exigé par les actionnaires.
+- Fonds propres externes : augmentation de capital (auprès des associés, d''un fonds d''investissement ou, pour une grande société anonyme, par appel public à l''épargne sur le marché régional).
+- Dettes financières : emprunt bancaire, emprunt obligataire (réservé aux grandes entreprises et aux États), crédit-bail (location avec option d''achat, qui finance un bien sans apport).
+- Quasi-fonds propres et aides : comptes courants d''associés bloqués, subventions d''investissement, prêts participatifs.
+
+Critères de choix : coût, effet sur le contrôle (une augmentation de capital peut diluer le pouvoir des associés), capacité d''endettement (ratios bancaires, garanties), adéquation de la durée au besoin, risque.
+
+## Fiche 2 : le coût des fonds propres
+
+Les actionnaires supportent le risque le plus élevé : ils exigent la rentabilité la plus forte.
+
+- Modèle de Gordon-Shapiro : ke = D1 / P0 + g. Exemple : Teranga Logistique SA, société fictive cotée, doit verser un dividende de 120 FCFA ; son cours est de 1 500 FCFA ; le dividende croît de 5 % par an. ke = 120 / 1 500 + 5 % = 8 % + 5 % = 13 %.
+- MEDAF (modèle d''équilibre des actifs financiers) : ke = rf + β × (E(Rm) − rf), où rf est le taux sans risque, β la sensibilité du titre au marché et E(Rm) − rf la prime de risque du marché. Avec rf = 6 %, β = 1,2 et une prime de 7 % : ke = 6 % + 1,2 × 7 % = 14,4 %.
+
+Les deux méthodes donnent des estimations différentes : c''est normal, ce sont des modèles. À l''examen, on applique celle que l''énoncé demande.
+
+## Fiche 3 : le coût de la dette et le CMPC
+
+Les intérêts sont déductibles du résultat imposable : le coût de la dette après impôt vaut kd × (1 − t). Avec un emprunt à 8 % et un impôt de 30 % : 8 % × 0,7 = 5,6 %.
+
+S''il existe des frais d''émission ou de dossier, le coût exact est le taux actuariel qui égalise le montant net reçu et les décaissements futurs après impôt.
+
+Le coût moyen pondéré du capital (CMPC) pondère chaque coût par la part de la ressource, de préférence en valeurs de marché : CMPC = ke × CP / (CP + D) + kd × (1 − t) × D / (CP + D).
+
+Teranga Logistique : capitaux propres 600 millions (valeur de marché), dettes 400 millions. CMPC = 14,4 % × 0,6 + 5,6 % × 0,4 = 8,64 % + 2,24 % = 10,88 %.
+
+Le CMPC est le taux minimum de rentabilité que doivent atteindre les investissements de risque comparable à l''entreprise : c''est le taux d''actualisation de la leçon précédente.
+
+## Fiche 4 : l''effet de levier financier
+
+La rentabilité économique (après impôt) mesure la performance de l''actif : Re = résultat d''exploitation × (1 − t) / actif économique. La rentabilité financière mesure celle des capitaux propres : Rf = résultat net / capitaux propres.
+
+Formule du levier : Rf = Re + [Re − i × (1 − t)] × D / CP.
+
+Exemple : actif économique 1 000 millions, financé par 600 de capitaux propres et 400 de dettes à 8 % ; résultat d''exploitation 150 ; impôt 30 %.
+
+- Re = 150 × 0,7 / 1 000 = 10,5 %.
+- Coût de la dette après impôt : 5,6 %.
+- Rf = 10,5 % + (10,5 % − 5,6 %) × 400 / 600 ≈ 13,77 %.
+- Vérification : résultat net = (150 − 32) × 0,7 = 82,6 ; 82,6 / 600 ≈ 13,77 %.
+
+Sans dette, Rf serait égale à Re, soit 10,5 %. L''endettement a donc augmenté la rentabilité des actionnaires : effet de levier positif, car Re > i × (1 − t).
+
+Mais le levier joue dans les deux sens. Si le résultat d''exploitation tombe à 60 : Re = 4,2 % < 5,6 % ; Rf = (60 − 32) × 0,7 / 600 ≈ 3,27 %, inférieure à Re : c''est l''effet de massue. L''endettement accroît le risque supporté par les actionnaires.
+
+## Fiche 5 : la politique de dividende
+
+Le taux de distribution est la part du bénéfice versée en dividendes. Le reste est mis en réserve et finance la croissance. Si l''entreprise réinvestit une part b de son bénéfice à une rentabilité ROE, le dividende croît de g = b × ROE.
+
+Exemple : BPA 300 FCFA, taux de distribution 40 % (D1 = 120 FCFA), ROE 15 % : g = 0,6 × 15 % = 9 %. Avec ke = 14 %, P0 = 120 / (0,14 − 0,09) = 2 400 FCFA.
+
+Débat théorique : dans des marchés parfaits (sans impôts, sans coûts de transaction, information complète), Modigliani et Miller montrent que la politique de dividende n''affecte pas la valeur de l''entreprise. En pratique, elle compte : le dividende est un signal envoyé au marché, certains actionnaires préfèrent un revenu régulier, la fiscalité des dividendes et des plus-values peut différer, et verser des dividendes discipline les dirigeants. Distribuer trop peut aussi priver l''entreprise de financement interne.
+
+## Points clés
+
+- ke par Gordon (D1 / P0 + g) ou par le MEDAF (rf + β × prime).
+- kd après impôt = kd × (1 − t) ; CMPC pondéré en valeurs de marché.
+- Rf = Re + (Re − i(1 − t)) × D / CP : levier si Re > i(1 − t), massue sinon.
+- g = b × ROE ; dividende : signal, clientèle, fiscalité, financement interne.
+
+## Exercices pratiques
+
+- Exercice 1 : rf = 5 %, β = 0,9, prime de marché 8 %. Calculez ke.
+- Exercice 2 : avec ke de l''exercice 1, fonds propres 70 % et dettes 30 % à 9 % avant impôt (impôt 30 %), calculez le CMPC.
+- Exercice 3 : actif 800, capitaux propres 400, dettes 400 à 7 %, résultat d''exploitation 120, impôt 30 %. Calculez Re et Rf, puis vérifiez.
+- Exercice 4 : BPA 500 FCFA, taux de distribution 50 %, ROE 12 %, ke 11 %. Calculez g et la valeur de l''action.
+- Exercice 5 (cas pratique) : une PME familiale de Saint-Louis veut financer une extension. Le fondateur refuse d''ouvrir son capital. Quelles sources lui proposer et quels risques signaler ?
+
+## Corrigé
+
+- Exercice 1 : ke = 5 % + 0,9 × 8 % = 12,2 %.
+- Exercice 2 : CMPC = 0,7 × 12,2 % + 0,3 × 9 % × 0,7 = 8,54 % + 1,89 % = 10,43 %.
+- Exercice 3 : Re = 120 × 0,7 / 800 = 10,5 % ; Rf = 10,5 % + (10,5 % − 4,9 %) × 1 = 16,1 %. Vérification : (120 − 28) × 0,7 / 400 = 64,4 / 400 = 16,1 %.
+- Exercice 4 : g = 0,5 × 12 % = 6 % ; D1 = 250 FCFA ; P0 = 250 / (0,11 − 0,06) = 5 000 FCFA.
+- Exercice 5 : autofinancement (réduire les dividendes), comptes courants d''associés, emprunt bancaire à moyen terme, crédit-bail pour les équipements, subventions éventuelles. Risques : endettement accru (effet de massue si l''activité baisse), garanties personnelles demandées par la banque, charge de remboursement à intégrer dans le plan de trésorerie.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Décisions de financement et coût du capital : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Gestion des risques financiers : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Identifier et mesurer une exposition au risque de change et au risque de taux.
+- Calculer un cours à terme par la parité des taux d''intérêt et comparer les couvertures (à terme, option).
+- Comprendre le principe du swap de taux et du FRA, et l''effet des taux sur le prix des obligations.
+
+Tous les cours de change (sauf la parité officielle euro-FCFA) et tous les taux sont fictifs pour l''exemple.
+
+## Fiche 1 : qu''est-ce qu''un risque financier ?
+
+Un risque financier est la possibilité qu''une variation de prix de marché (cours d''une devise, taux d''intérêt, cours d''une action, prix d''une matière première) réduise le résultat ou la valeur de l''entreprise. Gérer un risque, c''est : l''identifier, le mesurer (montant exposé, sens, échéance), décider de le couvrir ou non, choisir l''instrument.
+
+## Fiche 2 : le risque de change dans l''UEMOA
+
+Le franc CFA de l''UEMOA est lié à l''euro par une parité fixe : 1 euro = 655,957 FCFA. Un paiement de 50 000 euros coûte donc 50 000 × 655,957 = 32 797 850 FCFA, quel que soit le moment, tant que la parité est maintenue. Le risque de change porte sur les autres devises, au premier rang le dollar, dont le cours en FCFA varie avec le cours euro-dollar.
+
+- Un importateur qui paie en dollars craint une hausse du dollar.
+- Un exportateur qui encaisse des dollars craint une baisse du dollar.
+
+## Fiche 3 : couvrir une dette en dollars
+
+Cas : Dakar Pièces Auto SARL, importateur fictif, doit payer 100 000 USD dans 90 jours. Cours au comptant : 1 USD = 600 FCFA. Taux d''intérêt à 90 jours : 6 % sur le FCFA, 4 % sur le dollar (fictifs).
+
+Couverture à terme : la banque garantit aujourd''hui un cours pour livraison dans 90 jours. Par la parité des taux d''intérêt : F = S × (1 + iFCFA × 90 / 360) / (1 + iUSD × 90 / 360) = 600 × 1,015 / 1,01 ≈ 602,97 FCFA. Le dollar est plus cher à terme qu''au comptant (report), car le taux FCFA est supérieur au taux dollar. Coût garanti : 100 000 × 602,97 ≈ 60 297 030 FCFA.
+
+Couverture par option : l''importateur achète une option d''achat (call) de dollars au prix d''exercice de 605 FCFA, moyennant une prime de 8 FCFA par dollar, payée d''avance. Il exercera l''option si le dollar dépasse 605 ; sinon, il l''abandonne et achète au comptant.
+
+Résultats selon le cours dans 90 jours :
+
+- Si le dollar vaut 630 : sans couverture, 63 000 000 FCFA ; à terme, 60 297 030 ; avec l''option, (605 + 8) × 100 000 = 61 300 000.
+- Si le dollar vaut 580 : sans couverture, 58 000 000 ; à terme, 60 297 030 ; avec l''option, (580 + 8) × 100 000 = 58 800 000.
+
+Lecture : le terme supprime tout risque, mais aussi tout gain ; l''option protège contre la hausse tout en laissant profiter de la baisse, contre le paiement d''une prime (on néglige ici le coût de financement de la prime). C''est une assurance.
+
+## Fiche 4 : les techniques internes
+
+Avant de payer une banque, l''entreprise peut réduire son exposition :
+
+- Facturer en FCFA ou en euros quand le partenaire l''accepte.
+- Compenser (netting) les dettes et créances dans la même devise.
+- Termaillage : avancer ou retarder un paiement selon les anticipations (technique risquée si l''anticipation est fausse).
+- Adosser : financer un actif en dollars par une dette en dollars.
+
+## Fiche 5 : le risque de taux
+
+Une entreprise endettée à taux variable craint une hausse des taux ; un prêteur ou un détenteur de placements à taux variable craint une baisse ; un détenteur d''obligations à taux fixe craint une hausse, qui fait baisser leur prix.
+
+Effet sur une obligation : nominal 10 000 FCFA, coupon 7 %, 5 ans, au pair quand le marché est à 7 %. Si les taux passent à 8 %, le prix tombe à environ 9 601 FCFA, soit une baisse d''environ 4 %. Pour une obligation de 2 ans, la baisse serait d''environ 1,8 % : plus l''échéance est longue, plus le risque de taux est fort.
+
+Mesure simple de l''exposition (impasse) : actifs sensibles au taux − passifs sensibles. Avec 300 millions d''actifs et 500 millions de dettes à taux variable, une hausse de 1 point coûte environ (300 − 500) × 1 % = −2 millions par an.
+
+## Fiche 6 : swap et FRA, les principes
+
+Swap de taux : deux parties échangent des flux d''intérêts calculés sur un même montant notionnel, sans échanger le capital. Teranga Logistique a un emprunt de 500 millions au taux de référence + 2 %. Elle conclut un swap où elle paie un taux fixe de 7 % et reçoit le taux de référence. Coût net : référence + 2 % − référence + 7 % = 9 %, soit 45 millions par an quel que soit le taux de référence. Sans swap : 35 millions si la référence est à 5 %, 42,5 si elle est à 6,5 %, 50 si elle est à 8 %. L''entreprise renonce à une éventuelle baisse pour se protéger d''une hausse.
+
+FRA (accord de taux futur) : il fixe aujourd''hui le taux d''un emprunt futur. Un FRA à 7 % sur 1 milliard pour 90 jours : si le taux de référence est de 7,5 % à la date prévue, la banque verse à l''entreprise environ (7,5 % − 7 %) × 90 / 360 × 1 milliard = 1 250 000 FCFA (montant actualisé en pratique s''il est réglé en début de période), qui compense le surcoût de l''emprunt.
+
+## Points clés
+
+- Parité fixe avec l''euro : le risque de change porte sur les autres devises.
+- Cours à terme : F = S × (1 + i domestique × n / 360) / (1 + i étranger × n / 360).
+- Terme : certitude ; option : assurance contre une prime.
+- Risque de taux : taux variable, prix des obligations ; swap et FRA pour le figer.
+
+## Exercices pratiques
+
+- Exercice 1 : une entreprise de Dakar doit payer 80 000 euros. Combien en FCFA ? Y a-t-il un risque de change ?
+- Exercice 2 : un exportateur de noix de cajou encaissera 200 000 USD dans 60 jours. Cours au comptant 595 FCFA ; taux à 60 jours : 6 % FCFA, 5 % USD. Calculez le cours à terme et le montant garanti.
+- Exercice 3 : il peut aussi acheter une option de vente (put) au prix d''exercice de 590 FCFA, prime 6 FCFA. Calculez le montant net encaissé si le dollar vaut 580 puis 620.
+- Exercice 4 : actifs à taux variable 200 millions, dettes à taux variable 450 millions. Effet d''une hausse de 2 points ?
+- Exercice 5 (cas pratique) : une clinique de Dakar a emprunté 300 millions à taux variable pour 7 ans. Son directeur financier craint une hausse des taux. Que lui proposer ?
+
+## Corrigé
+
+- Exercice 1 : 80 000 × 655,957 = 52 476 560 FCFA. Pas de risque de change tant que la parité fixe est maintenue.
+- Exercice 2 : F = 595 × (1 + 0,06 × 60 / 360) / (1 + 0,05 × 60 / 360) = 595 × 1,01 / 1,008333 ≈ 595,98 FCFA ; montant garanti ≈ 119 196 694 FCFA.
+- Exercice 3 : à 580 : exercice du put, (590 − 6) × 200 000 = 116 800 000 FCFA. À 620 : abandon, vente au comptant, (620 − 6) × 200 000 = 122 800 000 FCFA. L''option garantit un minimum de 584 FCFA par dollar tout en laissant profiter de la hausse.
+- Exercice 4 : (200 − 450) × 2 % = −5 millions par an.
+- Exercice 5 : un swap payeur de taux fixe (elle paie un taux fixe, reçoit le variable) pour figer le coût sur la durée ; ou des FRA pour les prochaines périodes ; ou une renégociation à taux fixe. Il faut comparer le coût de chaque solution à la marge de sécurité de la clinique.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion des risques financiers : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 3 Finance (entraînement corrigé)', '## Présentation
+
+Sujet d''entraînement conçu pour ce cours, et non sujet officiel. Durée conseillée : 3 heures. Barème indicatif, non officiel : dossier 1 sur 8 points, dossier 2 sur 7 points, dossier 3 sur 5 points. Montants en millions de FCFA sauf indication. Tous les taux et cours de change sont fictifs pour l''exemple.
+
+## Dossier 1 : décision d''investissement (8 points)
+
+Casamance Solaire SA, entreprise fictive de Ziguinchor, envisage d''installer une unité d''assemblage de kits solaires. Investissement : 120, amorti linéairement sur 4 ans. BFR de 10 constitué au départ et récupéré en fin d''année 4. EBE annuel prévu : 45 pendant 4 ans. Valeur résiduelle nulle. Impôt : 30 %. Taux d''actualisation : 10 % (voir dossier 2).
+
+- 1.1 (2 points) : calculez les flux de trésorerie du projet.
+- 1.2 (3 points) : calculez la VAN, l''indice de profitabilité et le délai de récupération simple. Le TRI est d''environ 11,8 % : vérifiez sa cohérence avec la VAN.
+- 1.3 (3 points) : si l''EBE était inférieur de 10 % aux prévisions, la VAN serait d''environ −4,8. Calculez le nouveau flux annuel et commentez la sensibilité du projet.
+
+## Dossier 2 : coût du capital et levier (7 points)
+
+La société est financée, en valeurs de marché, par 500 de capitaux propres et 500 de dettes au taux de 10 %. Taux sans risque : 4 % ; bêta : 1,5 ; prime de risque du marché : 6 %. Actif économique : 1 000 ; résultat d''exploitation courant : 140.
+
+- 2.1 (3 points) : calculez le coût des fonds propres par le MEDAF, le coût de la dette après impôt et le CMPC.
+- 2.2 (3 points) : calculez la rentabilité économique après impôt et la rentabilité financière par la formule du levier ; vérifiez.
+- 2.3 (1 point) : à partir de quel niveau de rentabilité économique l''endettement deviendrait-il défavorable aux actionnaires ?
+
+## Dossier 3 : risque de change (5 points)
+
+Pour importer des panneaux, Casamance Solaire doit payer 150 000 USD dans 180 jours. Cours au comptant : 610 FCFA. Taux à 180 jours : 6 % sur le FCFA, 3 % sur le dollar. Une option d''achat de dollars est disponible au prix d''exercice de 615 FCFA, prime 10 FCFA par dollar.
+
+- 3.1 (2 points) : calculez le cours à terme et le coût garanti.
+- 3.2 (2 points) : comparez les trois stratégies (aucune couverture, terme, option) si le dollar vaut 650 puis 590 à l''échéance.
+- 3.3 (1 point) : les panneaux pourraient être achetés en Europe en euros. Quel avantage en matière de risque ?
+
+## Corrigé du dossier 1
+
+1.1. Dotation = 120 / 4 = 30. Flux d''exploitation = 45 × 0,7 + 30 × 0,3 = 31,5 + 9 = 40,5. Année 0 : −120 − 10 = −130. Années 1 à 3 : 40,5. Année 4 : 40,5 + 10 = 50,5.
+
+1.2. Valeurs actuelles à 10 % : 36,82 ; 33,47 ; 30,43 ; 34,49 ; somme ≈ 135,21. VAN ≈ 135,21 − 130 = 5,21. IP ≈ 135,21 / 130 ≈ 1,04. Délai simple : cumuls 40,5 ; 81 ; 121,5 ; il manque 8,5 sur 50,5 en année 4, soit environ 0,17 an : un peu plus de 3 ans et 2 mois. Le TRI de 11,8 % est supérieur au taux de 10 %, ce qui est cohérent avec une VAN positive. Le projet est acceptable.
+
+1.3. Nouvel EBE : 40,5 ; flux = 40,5 × 0,7 + 9 = 37,35 (47,35 en année 4). La VAN devient négative (environ −4,8) : une baisse de 10 % de l''EBE suffit à rendre le projet destructeur de valeur. Le seuil d''EBE qui annule la VAN est d''environ 42,7, soit seulement 5 % sous la prévision. Le projet est rentable mais fragile : il faut fiabiliser les prévisions de ventes et de coûts, ou négocier un prix d''achat plus bas, avant de décider.
+
+## Corrigé du dossier 2
+
+2.1. ke = 4 % + 1,5 × 6 % = 13 %. kd après impôt = 10 % × 0,7 = 7 %. CMPC = 0,5 × 13 % + 0,5 × 7 % = 10 %. C''est le taux utilisé au dossier 1.
+
+2.2. Re = 140 × 0,7 / 1 000 = 9,8 %. Rf = 9,8 % + (9,8 % − 7 %) × 500 / 500 = 12,6 %. Vérification : intérêts = 50 ; résultat net = (140 − 50) × 0,7 = 63 ; 63 / 500 = 12,6 %.
+
+2.3. L''effet de levier devient négatif (effet de massue) dès que la rentabilité économique après impôt passe sous le coût de la dette après impôt, soit 7 % (résultat d''exploitation inférieur à 100).
+
+## Corrigé du dossier 3
+
+3.1. F = 610 × (1 + 0,06 × 180 / 360) / (1 + 0,03 × 180 / 360) = 610 × 1,03 / 1,015 ≈ 619,01 FCFA. Coût garanti ≈ 150 000 × 619,01 ≈ 92 852 217 FCFA.
+
+3.2. Si le dollar vaut 650 : sans couverture, 97 500 000 ; terme, 92 852 217 ; option, (615 + 10) × 150 000 = 93 750 000. Si le dollar vaut 590 : sans couverture, 88 500 000 ; terme, 92 852 217 ; option, (590 + 10) × 150 000 = 90 000 000. Le terme est le meilleur en cas de hausse, l''option protège en cas de hausse tout en laissant profiter de la baisse. Un dirigeant prudent qui ne veut pas parier choisira le terme ou l''option selon son anticipation et le coût de la prime.
+
+3.3. Avec la parité fixe 1 euro = 655,957 FCFA, un achat en euros élimine le risque de change tant que cette parité est maintenue. Il faut néanmoins comparer les prix et les délais de livraison des fournisseurs.
+
+## Exercices pratiques
+
+- Exercice 1 : pourquoi exclut-on les frais financiers des flux du projet du dossier 1 ?
+- Exercice 2 : quel serait le CMPC si la société était financée à 70 % par capitaux propres et 30 % par dettes, coûts inchangés ?
+- Exercice 3 : vrai ou faux : « Une option de change est gratuite. »
+- Exercice 4 : citez deux limites du délai de récupération.
+- Exercice 5 : un swap permet-il de transformer une dette à taux variable en dette à taux fixe ?
+
+## Corrigé
+
+- Exercice 1 : le coût du financement est déjà pris en compte dans le taux d''actualisation (CMPC) ; inclure les intérêts dans les flux le compterait deux fois.
+- Exercice 2 : 0,7 × 13 % + 0,3 × 7 % = 9,1 % + 2,1 % = 11,2 % (en pratique, ke changerait aussi avec l''endettement).
+- Exercice 3 : faux. L''acheteur paie une prime, perdue si l''option n''est pas exercée.
+- Exercice 4 : il ignore les flux postérieurs au délai ; il ne mesure pas la création de valeur (et, dans sa version simple, ignore l''actualisation).
+- Exercice 5 : oui. L''entreprise conclut un swap où elle paie un taux fixe et reçoit le taux variable, qui compense celui de sa dette.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 3 Finance (entraînement corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Décisions d''investissement', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 Finance, Banque, Contrôle de gestion.
+- Objectifs : construire les flux d''un projet avec BFR variable et valeur résiduelle, calculer VAN, TRI (par interpolation), IP et délais de récupération, raisonner en avenir risqué.
+- Matériel : tableau blanc, diaporama avec le tableau des flux à compléter, calculatrice.
+- Prérequis : actualisation (Licence 1), CAF et BFR (Licence 2), leçon 2 du cours.
+- Montants en millions de FCFA ; impôt de 30 % et taux d''actualisation de 11 % fictifs pour l''exemple.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Le dossier du jour
+
+« Bonjour. Nous sommes au service financier de Thiès Céramique SA, entreprise fictive qui fabrique des carreaux. La direction veut lancer une nouvelle ligne de production. Le directeur général nous pose une seule question : faut-il investir ? Notre réponse devra être chiffrée et argumentée, comme dans un cas d''examen. Nous suivrons toujours le même ordre : flux, VAN, TRI, indice, délais, risque, puis recommandation. Gardez cet ordre en tête : il structure aussi votre copie. »
+
+Visuel : les données. Machine : 80, amortie linéairement sur 5 ans. Chiffre d''affaires prévu : 100 ; 120 ; 130 ; 130 ; 120. EBE : 30 % du chiffre d''affaires. BFR : 10 % du chiffre d''affaires de l''année, constitué en début d''année. Valeur résiduelle de la machine en fin d''année 5 : 6, entièrement imposable. Taux d''actualisation : 11 %.
+
+## 05:00 – 20:00 · Construire les flux d''exploitation
+
+« Première étape : l''EBE. 30 % de 100, 120, 130, 130, 120 donne 30 ; 36 ; 39 ; 39 ; 36. Deuxième étape : la dotation, 80 / 5 = 16 par an. Troisième étape : le flux d''exploitation après impôt, EBE × 0,7 + dotation × 0,3. Année 1 : 21 + 4,8 = 25,8. Année 2 : 25,2 + 4,8 = 30. Années 3 et 4 : 27,3 + 4,8 = 32,1. Année 5 : 30. »
+
+« Pourquoi ajouter dotation × 0,3 ? Parce que l''amortissement réduit l''impôt sans être décaissé. C''est l''économie d''impôt. Et pourquoi n''y a-t-il pas d''intérêts d''emprunt ? Parce que le coût du financement est déjà dans le taux de 11 %. Les compter dans les flux, ce serait les compter deux fois. »
+
+## 20:00 – 32:00 · Le BFR et les flux de fin de projet
+
+« Le BFR suit l''activité : 10 ; 12 ; 13 ; 13 ; 12. Il faut le constituer en début d''année. En année 0, on décaisse 10. Fin d''année 1, il faut 2 de plus pour l''année 2. Fin d''année 2, 1 de plus. Fin d''année 3, rien. Fin d''année 4, le BFR baisse de 1 : on récupère 1. Fin d''année 5, on récupère tout le BFR restant, 12. »
+
+« Valeur résiduelle : 6, imposable car la machine est totalement amortie, soit 6 × 0,7 = 4,2. »
+
+« Flux nets : année 0 : −80 − 10 = −90. Année 1 : 25,8 − 2 = 23,8. Année 2 : 30 − 1 = 29. Année 3 : 32,1. Année 4 : 32,1 + 1 = 33,1. Année 5 : 30 + 12 + 4,2 = 46,2. »
+
+Question à poser : « Un étudiant oublie la récupération du BFR. Son erreur gonfle-t-elle ou réduit-elle la VAN ? » Réponse : elle la réduit ; il sous-estime le dernier flux de 12.
+
+## 32:00 – 45:00 · VAN et indice de profitabilité
+
+« Actualisons à 11 %. 23,8 / 1,11 ≈ 21,44. 29 / 1,11² ≈ 23,54. 32,1 / 1,11³ ≈ 23,47. 33,1 / 1,11⁴ ≈ 21,80. 46,2 / 1,11⁵ ≈ 27,42. Somme ≈ 117,67. VAN ≈ 117,67 − 90 = 27,67. »
+
+« Interprétation : le projet rembourse l''investissement, rémunère les financeurs au taux de 11 %, et crée en plus 27,67 millions de valeur. IP = 117,67 / 90 ≈ 1,31 : chaque franc investi rapporte 1,31 franc en valeur actuelle. »
+
+## 45:00 – 52:00 · Pause interactive et quiz
+
+- Question 1 : un projet a une VAN de −3 à 10 %. Son TRI est-il supérieur ou inférieur à 10 % ? Réponse : inférieur.
+- Question 2 : où se place la récupération du BFR ? Réponse : dans le dernier flux du projet.
+- Question 3 : EBE 50, dotation 20, impôt 30 %. Flux d''exploitation ? Réponse : 35 + 6 = 41.
+- Question 4 : vrai ou faux, on inclut les frais financiers dans les flux. Réponse : faux.
+- Question 5 : IP de 0,95, que conclure ? Réponse : la VAN est négative, on rejette le projet.
+
+## 52:00 – 1:05:00 · Le TRI par interpolation et les délais
+
+« Le TRI annule la VAN. Essayons 20 % : VAN ≈ 3,08. Essayons 25 % : VAN ≈ −7,27. Le TRI est entre les deux. Interpolation linéaire : TRI ≈ 20 % + 3,08 / (3,08 + 7,27) × 5 % ≈ 21,5 %. Le calcul exact donne environ 21,4 % : l''interpolation surestime légèrement, car la VAN n''est pas une droite. À l''examen, choisissez deux taux proches pour limiter l''erreur. »
+
+« Délai de récupération simple : cumuls 23,8 ; 52,8 ; 84,9 ; 118. Après 3 ans, il manque 5,1 sur 33,1, soit environ 1,8 mois : 3 ans et 2 mois environ. Délai actualisé : cumuls actualisés 21,44 ; 44,98 ; 68,45 ; 90,25. Après 4 ans, l''investissement de 90 est juste couvert : environ 3 ans et 11 mois (il manquait 21,55 au bout de 3 ans, récupérés en 21,55 / 21,80 × 12 ≈ 11,9 mois). »
+
+Exercice corrigé en direct : « Un projet coûte 50 et rapporte 15 par an pendant 5 ans. VAN à 11 % ? » Correction : 15 × (1 − 1,11^−5) / 0,11 ≈ 55,44 ; VAN ≈ 5,44.
+
+## 1:05:00 – 1:18:00 · L''avenir risqué
+
+« Les prévisions de chiffre d''affaires sont incertaines. Construisons trois scénarios. Pessimiste, probabilité 0,3 : chiffre d''affaires inférieur de 15 % ; VAN ≈ 14,56. Central, probabilité 0,5 : VAN ≈ 27,67. Optimiste, probabilité 0,2 : chiffre d''affaires supérieur de 10 % ; VAN ≈ 36,42. »
+
+« Espérance : 0,3 × 14,56 + 0,5 × 27,67 + 0,2 × 36,42 ≈ 25,49. Écart-type : √[0,3 × (14,56 − 25,49)² + 0,5 × (27,67 − 25,49)² + 0,2 × (36,42 − 25,49)²] ≈ 7,88. Même dans le scénario pessimiste, la VAN reste positive : le projet est robuste. »
+
+« Autres outils, à citer dans une copie : l''analyse de sensibilité (de combien le chiffre d''affaires peut-il baisser avant que la VAN devienne nulle ?), le seuil de rentabilité, l''ajout d''une prime de risque au taux d''actualisation. Ici, une analyse de sensibilité montre que la VAN ne s''annule que si le chiffre d''affaires est inférieur d''environ 32 % aux prévisions sur toute la durée du projet. La marge de sécurité est confortable. »
+
+« Attention à une confusion fréquente : un écart-type élevé ne signifie pas que le projet est mauvais, mais que son résultat est incertain. Pour comparer deux projets d''espérances différentes, on utilise le coefficient de variation, écart-type divisé par espérance : ici, 7,88 / 25,49 ≈ 0,31. Un décideur qui n''aime pas le risque préfère, à espérance égale, le projet au coefficient le plus faible. »
+
+## 1:18:00 – 1:24:00 · Synthèse et recommandation
+
+« Recommandation au directeur général : investir. VAN de 27,7 millions à 11 %, TRI d''environ 21 %, IP de 1,31, récupération actualisée en moins de 4 ans, et VAN positive même dans le scénario pessimiste. Points de vigilance : maîtriser le BFR, qui pèse 10 % du chiffre d''affaires, et sécuriser les débouchés de la première année. »
+
+## 1:24:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : VAN = −100 + 60 / 1,1 + 60 / 1,1². Calculez. Réponse : ≈ −100 + 54,55 + 49,59 = 4,13.
+- Question 2 : pourquoi l''économie d''impôt sur amortissement augmente-t-elle les flux ? Réponse : la dotation réduit le résultat imposable donc l''impôt payé, sans être un décaissement.
+- Question 3 : deux projets exclusifs : A (VAN 20, TRI 15 %), B (VAN 12, TRI 22 %). Sans contrainte de capital, lequel choisir ? Réponse : A, car il crée le plus de valeur.
+- Question 4 : VAN de 10 et de −5 à 12 % et 16 %. TRI approché ? Réponse : 12 % + 10 / 15 × 4 % ≈ 14,7 %.
+- Question 5 : que mesure l''écart-type de la VAN ? Réponse : la dispersion des résultats possibles, donc le risque du projet.
+
+« Merci. Pour vous entraîner, refaites le cas avec un taux d''actualisation de 14 % : vous devez trouver une VAN d''environ 18,45, toujours positive, donc une décision inchangée. Puis rédigez vous-même la recommandation au directeur général en dix lignes maximum, en citant au moins trois critères chiffrés et un point de vigilance. »', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Décisions d''investissement');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Décisions de financement et coût du capital', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 Finance, Banque, Gestion.
+- Objectifs : estimer le coût des fonds propres et de la dette, calculer le CMPC, analyser l''effet de levier, choisir entre augmentation de capital et emprunt, discuter la politique de dividende.
+- Matériel : tableau blanc, diaporama du cas, calculatrice.
+- Prérequis : marchés financiers de Licence 2 (Gordon-Shapiro), leçon 3 du cours.
+- Montants en millions de FCFA sauf indication ; tous les taux sont fictifs pour l''exemple, impôt de 30 %.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · La question du financement
+
+« Bonjour. Lors de la séance précédente, nous avons appris à décider si un projet vaut la peine. Aujourd''hui, deux questions complémentaires : quel taux d''actualisation utiliser, et comment financer le projet ? Notre cas : Sahel Télécom Services SA, société fictive cotée, qui installe des pylônes pour les opérateurs. Elle compte 1 000 000 d''actions cotées 2 000 francs et 1 000 millions de dettes au taux de 9 %. »
+
+## 05:00 – 18:00 · Le coût des fonds propres
+
+« Les actionnaires ne signent pas de contrat de rémunération, mais ils ont des exigences : s''ils n''obtiennent pas une rentabilité suffisante, ils vendent, le cours baisse, et l''entreprise aura du mal à lever des fonds. Comment mesurer cette exigence ? »
+
+« Première méthode, Gordon-Shapiro : ke = D1 / P0 + g. Le dividende attendu est 180 francs, le cours 2 000 francs, la croissance 4 %. ke = 9 % + 4 % = 13 %. Deuxième méthode, le MEDAF : ke = rf + β × prime de marché. Avec un taux sans risque de 5,5 %, un bêta de 1,25 et une prime de 6 % : ke = 5,5 % + 7,5 % = 13 %. Les deux méthodes concordent ici, ce qui est rare en pratique. »
+
+« Le bêta mesure la sensibilité du titre aux mouvements du marché. Un bêta de 1,25 signifie que si le marché monte de 10 %, le titre tend à monter de 12,5 %, et à baisser d''autant en sens inverse. Plus le bêta est élevé, plus l''actionnaire exige une prime. »
+
+## 18:00 – 28:00 · Le coût de la dette et le CMPC
+
+« La dette coûte 9 % avant impôt. Mais les intérêts sont déductibles : chaque franc d''intérêt réduit l''impôt de 0,30 franc. Coût après impôt : 9 % × 0,7 = 6,3 %. »
+
+« Le CMPC pondère les coûts par les valeurs de marché. Capitaux propres : 1 000 000 × 2 000 francs = 2 000 millions. Dettes : 1 000 millions. Total : 3 000. CMPC = 2 / 3 × 13 % + 1 / 3 × 6,3 % ≈ 8,67 % + 2,10 % ≈ 10,77 %. C''est le taux minimal que doit rapporter un investissement de risque comparable. »
+
+Question à poser : « Pourquoi ne pas financer tout par dette, puisque la dette coûte moins cher ? » Réponse attendue : plus l''endettement augmente, plus le risque des actionnaires et des prêteurs augmente : ke et kd montent, et le risque de faillite apparaît.
+
+## 28:00 – 42:00 · L''effet de levier
+
+« L''actif économique vaut 3 000 et dégage un résultat d''exploitation de 420. Rentabilité économique après impôt : Re = 420 × 0,7 / 3 000 = 9,8 %. Rentabilité financière par la formule : Rf = Re + (Re − i(1 − t)) × D / CP = 9,8 % + (9,8 % − 6,3 %) × 1 000 / 2 000 = 11,55 %. Vérification : intérêts 90 ; résultat net = (420 − 90) × 0,7 = 231 ; 231 / 2 000 = 11,55 %. »
+
+« L''endettement fait gagner 1,75 point aux actionnaires, car l''actif rapporte 9,8 % alors que la dette coûte 6,3 % après impôt. Mais si le résultat d''exploitation tombait à 270, Re vaudrait 6,3 % : le levier serait nul. En dessous, effet de massue. Le levier amplifie les bonnes comme les mauvaises années : c''est un risque financier qui s''ajoute au risque d''exploitation. »
+
+## 42:00 – 50:00 · Pause interactive et quiz
+
+- Question 1 : D1 = 100, P0 = 1 250, g = 3 %. ke ? Réponse : 8 % + 3 % = 11 %.
+- Question 2 : rf = 6 %, β = 0,8, prime 5 %. ke ? Réponse : 10 %.
+- Question 3 : kd = 10 %, impôt 30 %. Coût après impôt ? Réponse : 7 %.
+- Question 4 : 60 % de fonds propres à 12 %, 40 % de dettes à 8 % avant impôt (impôt 30 %). CMPC ? Réponse : 7,2 % + 2,24 % = 9,44 %.
+- Question 5 : Re = 5 %, coût de la dette après impôt 6 %. Effet ? Réponse : effet de massue.
+
+## 50:00 – 1:05:00 · Choisir entre augmentation de capital et emprunt
+
+« Sahel Télécom doit financer un projet de 500. Option A : augmentation de capital à 1 900 francs par action, soit environ 263 158 actions nouvelles. Option B : emprunt de 500 à 9 %. Après le projet, le résultat d''exploitation prévu est de 500. »
+
+« Option A : intérêts inchangés 90 ; résultat net = (500 − 90) × 0,7 = 287 ; nombre d''actions ≈ 1 263 158 ; BPA ≈ 227 francs. Option B : intérêts 90 + 45 = 135 ; résultat net = (500 − 135) × 0,7 = 255,5 ; 1 000 000 d''actions ; BPA ≈ 255,5 francs. L''emprunt donne un meilleur bénéfice par action. »
+
+« Mais jusqu''à quel niveau de résultat ? Le point d''indifférence est le résultat d''exploitation pour lequel les deux BPA sont égaux : (R − 90) × 0,7 / 1 263 158 = (R − 135) × 0,7 / 1 000 000. On trouve R ≈ 306 ; le BPA vaut alors environ 119,7 francs dans les deux cas. Au-dessus de 306, l''emprunt est préférable pour les actionnaires ; en dessous, l''augmentation de capital. »
+
+« Autres critères : l''emprunt augmente le risque et nécessite des garanties ; l''augmentation de capital dilue le contrôle des actionnaires actuels. La décision combine chiffres et stratégie. »
+
+Exercice corrigé en direct : « Avec un résultat d''exploitation de 250, quelle option donne le meilleur BPA ? » Correction : A : (250 − 90) × 0,7 / 1,263158 ≈ 88,7 francs ; B : (250 − 135) × 0,7 = 80,5 francs. L''augmentation de capital est préférable, conformément au point d''indifférence.
+
+## 1:05:00 – 1:17:00 · La politique de dividende
+
+« Sahel Télécom a réalisé un résultat net de 231, soit 231 francs par action. Si elle distribue 50 %, le dividende est de 115,5 francs et le rendement de 115,5 / 2 000 ≈ 5,8 %. Le reste, 115,5 millions, est réinvesti. »
+
+« La théorie de Modigliani et Miller dit qu''en marchés parfaits, la politique de dividende ne change pas la valeur : ce que l''actionnaire ne reçoit pas en dividende, il le retrouve en plus-value. Mais dans la réalité, plusieurs imperfections comptent. Le signal : une hausse du dividende indique que la direction a confiance. La clientèle : les caisses de retraite et de nombreux épargnants préfèrent un revenu régulier. La fiscalité : selon les règles en vigueur, dividendes et plus-values peuvent être imposés différemment ; vérifiez toujours le texte fiscal applicable. Les coûts d''agence : verser un dividende limite les fonds laissés à la discrétion des dirigeants. Enfin, le financement : distribuer trop oblige à emprunter ou à émettre des actions, ce qui coûte. »
+
+« Une politique raisonnable : un dividende stable et prévisible, qui augmente avec les bénéfices durables, tout en préservant l''autofinancement des projets à VAN positive. »
+
+## 1:17:00 – 1:23:00 · Synthèse
+
+« Retenez : ke par Gordon ou MEDAF ; kd après impôt ; CMPC en valeurs de marché ; levier si Re > i(1 − t) ; point d''indifférence pour choisir entre capital et dette ; politique de dividende entre signal, clientèle, fiscalité et besoins de financement. »
+
+## 1:23:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : P0 = 4 000, D1 = 240, g = 5 %. ke ? Réponse : 6 % + 5 % = 11 %.
+- Question 2 : CP 300 à 14 %, D 200 à 10 % avant impôt, impôt 30 %. CMPC ? Réponse : 0,6 × 14 % + 0,4 × 7 % = 8,4 % + 2,8 % = 11,2 %.
+- Question 3 : Re = 12 %, i(1 − t) = 7 %, D / CP = 0,5. Rf ? Réponse : 12 % + 5 % × 0,5 = 14,5 %.
+- Question 4 : qu''est-ce que le point d''indifférence ? Réponse : le résultat d''exploitation pour lequel deux modes de financement donnent le même BPA.
+- Question 5 : citez deux arguments en faveur d''un dividende régulier. Réponse : signal de confiance envoyé au marché ; attentes des actionnaires qui recherchent un revenu.
+
+« Merci. Pour la prochaine séance, recalculez le point d''indifférence si l''augmentation de capital se faisait à 2 000 francs par action. »', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Décisions de financement et coût du capital');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Gestion des risques financiers', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 3 Finance, Banque, Commerce international.
+- Objectifs : identifier une exposition de change ou de taux, calculer un cours à terme, comparer couverture à terme et option, comprendre le swap de taux et le FRA, mesurer l''effet des taux sur une obligation.
+- Matériel : tableau blanc, diaporama avec un tableau comparatif des stratégies, calculatrice.
+- Prérequis : intérêts simples, prix d''une obligation (Licence 2), leçon 4 du cours.
+- Tous les cours de change (sauf la parité officielle euro-FCFA) et tous les taux sont fictifs pour l''exemple.
+
+## Déroulé minuté
+
+## 00:00 – 06:00 · Pourquoi gérer les risques
+
+« Bonjour. Kayar Export SA, entreprise fictive, vend du poisson congelé en Asie, facturé en dollars. Elle achète aussi des emballages aux États-Unis. Elle a emprunté 800 millions de francs à taux variable pour moderniser sa chambre froide. Son directeur financier dort mal : si le dollar baisse, ses ventes rapportent moins de francs ; si les taux montent, ses intérêts explosent. Aujourd''hui, nous allons l''aider. Méthode en quatre temps : identifier, mesurer, décider, couvrir. »
+
+## 06:00 – 16:00 · Identifier et mesurer l''exposition de change
+
+« Premier réflexe dans l''UEMOA : distinguer l''euro des autres devises. La parité est fixe : 1 euro = 655,957 francs. Une facture de 30 000 euros vaut 30 000 × 655,957 = 19 678 710 francs, sans incertitude tant que la parité tient. En revanche, le dollar fluctue. »
+
+« Kayar Export encaissera 250 000 dollars dans 90 jours et doit payer 100 000 dollars d''emballages à la même date. Avant tout produit bancaire, utilisons une technique interne : la compensation. Les 100 000 dollars reçus serviront à payer le fournisseur. L''exposition nette est de 150 000 dollars à recevoir. Le risque : une baisse du dollar. »
+
+« Autres techniques internes : facturer en francs ou en euros si le client l''accepte, adosser un emprunt en dollars à des créances en dollars, ou le termaillage, c''est-à-dire avancer ou retarder un paiement selon ce qu''on anticipe, ce qui revient à spéculer si l''anticipation est fausse. »
+
+## 16:00 – 30:00 · La couverture à terme
+
+« Le cours au comptant est de 605 francs. Taux à 90 jours : 5,5 % pour le franc, 4,5 % pour le dollar. La banque calcule le cours à terme par la parité des taux d''intérêt : F = 605 × (1 + 0,055 × 90 / 360) / (1 + 0,045 × 90 / 360) ≈ 606,50 francs. Pourquoi plus élevé que le comptant ? Parce que la banque, pour livrer des dollars à terme, emprunte des francs à 5,5 % et place des dollars à 4,5 % : elle répercute l''écart. »
+
+« En vendant à terme ses 150 000 dollars nets, Kayar Export s''assure 150 000 × 606,50 ≈ 90 974 351 francs, quel que soit le cours dans 90 jours. Si elle n''avait pas compensé et couvrait les 250 000 dollars, elle encaisserait environ 151 623 918 francs, mais elle resterait exposée sur le paiement fournisseur. »
+
+Question à poser : « Si le dollar remonte à 640 dans 90 jours, la couverture à terme est-elle une erreur ? » Réponse attendue : non, la couverture vise la certitude, pas le gain ; on a renoncé à un gain possible pour éliminer une perte possible.
+
+## 30:00 – 42:00 · La couverture par option
+
+« Alternative : acheter une option de vente de dollars, un put, au prix d''exercice de 600 francs, prime 7 francs par dollar. Comparons sur 150 000 dollars. »
+
+- Si le dollar tombe à 570 : sans couverture, 85 500 000 ; à terme, environ 90 974 351 ; avec l''option, on exerce : (600 − 7) × 150 000 = 88 950 000.
+- Si le dollar monte à 640 : sans couverture, 96 000 000 ; à terme, environ 90 974 351 ; avec l''option, on abandonne et on vend au comptant : (640 − 7) × 150 000 = 94 950 000.
+
+« L''option fonctionne comme une assurance : un plancher de 593 francs nets par dollar, et la possibilité de profiter d''une hausse. Son prix est la prime, payée d''avance et perdue si l''option n''est pas exercée. Le terme est gratuit en apparence, mais il fait renoncer aux gains. Le choix dépend de l''aversion au risque de l''entreprise et de ses anticipations. »
+
+## 42:00 – 49:00 · Pause interactive et quiz
+
+- Question 1 : un importateur sénégalais qui paie en euros a-t-il un risque de change ? Réponse : non, tant que la parité fixe est maintenue.
+- Question 2 : un exportateur payé en dollars craint quoi ? Réponse : une baisse du dollar.
+- Question 3 : S = 600, taux FCFA 5 %, taux USD 2 %, 180 jours. Cours à terme ? Réponse : 600 × 1,025 / 1,01 ≈ 608,91.
+- Question 4 : quel instrument protège tout en laissant profiter d''une évolution favorable ? Réponse : l''option.
+- Question 5 : qu''est-ce que la compensation ? Réponse : utiliser les recettes dans une devise pour régler les dettes dans cette même devise, afin de ne couvrir que le solde.
+
+## 49:00 – 1:02:00 · Le risque de taux et le swap
+
+« Deuxième souci : l''emprunt de 800 millions au taux de référence + 1,5 %. Si la référence est à 4 %, Kayar paie 5,5 %, soit 44 millions par an. Si elle grimpe à 7 %, 8,5 %, soit 68 millions. »
+
+« Solution : un swap de taux. Kayar paie à la banque un taux fixe de 6,5 % et reçoit le taux de référence, sur un notionnel de 800 millions. Ses flux : elle paie référence + 1,5 % au prêteur, reçoit référence de la banque, paie 6,5 % à la banque. Le taux de référence s''annule : coût net 8 %, soit 64 millions par an, quoi qu''il arrive. Comparaison : avec la référence à 4 %, sans swap 44, avec swap 64 ; avec la référence à 7 %, sans swap 68, avec swap 64. Le swap a un coût d''opportunité si les taux baissent, mais il rend la charge prévisible. »
+
+« Important : dans un swap, on n''échange pas le capital, seulement les flux d''intérêts. »
+
+## 1:02:00 – 1:12:00 · Le FRA et l''impasse de taux
+
+« Si Kayar prévoit d''emprunter 600 millions dans six mois pour 180 jours, elle peut fixer le taux dès aujourd''hui avec un FRA à 6 %. Si le taux de référence est de 6,8 % au moment de l''emprunt, la banque verse le différentiel : (6,8 % − 6 %) × 180 / 360 × 600 millions = 2 400 000 francs (montant actualisé en pratique quand le règlement intervient en début de période). Kayar emprunte au marché à 6,8 %, mais l''indemnité ramène son coût à environ 6 %. Si le taux tombe à 5,5 %, c''est Kayar qui verse le différentiel. »
+
+« Pour mesurer globalement l''exposition, on calcule l''impasse : actifs à taux variable moins passifs à taux variable. Kayar a 100 millions de placements à taux variable et 800 millions de dettes à taux variable : impasse de −700 millions. Une hausse de 1 point coûte environ 7 millions par an. »
+
+## 1:12:00 – 1:20:00 · Le risque de taux sur les obligations
+
+« Kayar place une partie de sa trésorerie en obligations d''État de nominal 10 000 francs, coupon 6 %, échéance 3 ans, achetées au pair quand les taux sont à 6 %. Si les taux montent à 7 %, le prix tombe à environ 9 738 francs ; s''ils baissent à 5 %, il monte à environ 10 272 francs. Si Kayar conserve les titres jusqu''à l''échéance, elle touchera bien ses coupons et son nominal : le risque de prix ne se matérialise que si elle vend avant. Plus l''échéance est longue, plus la variation de prix est forte. »
+
+Exercice corrigé en direct : « Variation en % du prix si les taux passent de 6 à 7 % ? » Correction : (9 738 − 10 000) / 10 000 ≈ −2,6 %.
+
+## 1:20:00 – 1:25:00 · Synthèse
+
+« Retenez : identifier, mesurer, décider, couvrir. Change : distinguer l''euro (parité fixe) des autres devises ; compenser d''abord ; terme pour la certitude, option pour l''assurance. Taux : impasse pour mesurer ; swap pour transformer du variable en fixe ; FRA pour fixer un taux futur ; prix des obligations en sens inverse des taux. Et toujours : un instrument de couverture a un coût, explicite (prime, commissions) ou implicite (gain auquel on renonce). »
+
+## 1:25:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : 120 000 euros en francs CFA ? Réponse : 120 000 × 655,957 = 78 714 840 francs.
+- Question 2 : un importateur doit payer 50 000 dollars et a acheté un call à 610, prime 9. Coût par dollar si le comptant est à 640 ? Réponse : 610 + 9 = 619 francs.
+- Question 3 : même importateur, comptant à 590 ? Réponse : il abandonne l''option : 590 + 9 = 599 francs.
+- Question 4 : dette de 400 millions à référence + 2 %, swap payeur fixe à 6 %. Coût net ? Réponse : 8 %, soit 32 millions par an.
+- Question 5 : une banque a 900 millions d''actifs et 600 millions de passifs à taux variable. Effet d''une baisse de 1 point ? Réponse : impasse de +300 millions, perte d''environ 3 millions par an.
+
+« Merci. Refaites le tableau comparatif des stratégies pour un dollar à 600 francs à l''échéance. »', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-fin-l3'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gestion des risques financiers');
