@@ -1667,6 +1667,578 @@ Pourcentage : « Le prix d''un sac de riz de 25 kg passe de 12 000 FCFA à 13 20
 from public.courses c where c.slug = 'maths-6e'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision guidée du programme de 6e');
 
+-- Cours : Français 5e : grammaire, lecture et écriture du récit
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'francais-5e', (select id from public.levels where name = '5e'), null, 'Français', 'Français 5e : grammaire, lecture et écriture du récit', 'Ce cours de français de 5e consolide la grammaire (nature et fonction), la conjugaison des temps du récit et l''orthographe, puis entraîne à la lecture méthodique et à la rédaction d''un récit. Il s''adresse aux élèves de 5e et à ceux qui veulent consolider leurs bases. Prérequis : savoir lire couramment et connaître les notions de 6e (classes de mots, présent).', true, 20
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Grammaire : nature et fonction des mots', '## Objectifs de la leçon
+
+- Identifier la nature (classe grammaticale) des mots d''une phrase.
+- Identifier la fonction des mots et des groupes de mots.
+- Ne plus confondre nature et fonction.
+
+## Nature et fonction : la différence
+
+La nature d''un mot, c''est ce qu''il est, sa « carte d''identité ». Elle ne change pas, quelle que soit la phrase : on la trouve dans le dictionnaire. Le mot « baobab » est toujours un nom commun.
+
+La fonction d''un mot, c''est le rôle qu''il joue dans une phrase donnée. Elle change selon la phrase. Dans « Le baobab domine le village », « le baobab » est sujet ; dans « Les enfants admirent le baobab », il est complément d''objet direct.
+
+Image utile : une personne est toujours la même personne (nature), mais elle peut être tour à tour élève, capitaine de l''équipe ou grand frère (fonctions).
+
+## Les principales natures
+
+Les mots variables (ils changent de forme) :
+- Le nom : commun (marché, pirogue) ou propre (Ziguinchor, Aminata).
+- Le déterminant : article (le, une, des), possessif (mon, leur), démonstratif (ce, cette), indéfini (quelques, chaque), numéral (deux, cent), interrogatif (quel).
+- L''adjectif qualificatif : il précise le nom (une pirogue colorée).
+- Le pronom : il remplace un nom ou un groupe nominal : personnel (il, les, lui), possessif (le mien), démonstratif (celui-ci), relatif (qui, que, dont, où).
+- Le verbe : il exprime une action ou un état et se conjugue.
+
+Les mots invariables :
+- L''adverbe : il modifie le sens d''un verbe, d''un adjectif ou d''un autre adverbe (vite, très, hier, ne… pas).
+- La préposition : à, de, pour, avec, sans, dans, sur, par, vers.
+- La conjonction de coordination : mais, ou, et, donc, or, ni, car.
+- La conjonction de subordination : que, quand, comme, si, lorsque, parce que.
+- L''interjection : ah ! oh ! hélas !
+
+## Les principales fonctions
+
+Autour du verbe :
+- Le sujet : il fait ou subit l''action et commande l''accord du verbe. On le trouve avec la question « Qui est-ce qui ? » ou « Qu''est-ce qui ? » posée avant le verbe.
+- Le complément d''objet direct (COD) : construit sans préposition. Question : verbe + « qui ? » ou « quoi ? ». Exemple : Le pêcheur répare son filet.
+- Le complément d''objet indirect (COI) : introduit par une préposition (à, de). Exemple : Il parle à son fils.
+- L''attribut du sujet : après un verbe d''état (être, paraître, sembler, devenir, demeurer, rester, avoir l''air). Exemple : La mer semble calme.
+- Les compléments circonstanciels (CC) : ils indiquent le lieu, le temps, la manière, la cause, le but… On peut souvent les déplacer ou les supprimer. Exemple : Ce matin, à Mbour, les pirogues sont rentrées rapidement.
+
+Autour du nom :
+- L''épithète : adjectif placé directement à côté du nom (une pirogue neuve).
+- Le complément du nom : groupe introduit par une préposition qui complète un nom (le filet du pêcheur).
+- L''apposition : mot ou groupe séparé du nom par une virgule (Dakar, capitale du Sénégal, est une presqu''île).
+
+## Méthode d''analyse
+
+Pour analyser un mot, on donne toujours sa nature puis sa fonction.
+- Trouver le verbe conjugué et son sujet.
+- Poser les questions « quoi ? », « à qui ? », « de quoi ? » pour les compléments d''objet.
+- Tester la suppression et le déplacement pour les compléments circonstanciels.
+- Repérer les adjectifs et les compléments du nom autour de chaque nom.
+
+## Exemple d''analyse complète
+
+Phrase : « Hier, la vieille Coumba racontait une histoire merveilleuse aux enfants du quartier. »
+
+- « Hier » : adverbe, complément circonstanciel de temps.
+- « la vieille Coumba » : groupe nominal, sujet du verbe « racontait ».
+- « vieille » : adjectif qualificatif, épithète du nom Coumba.
+- « racontait » : verbe raconter à l''imparfait de l''indicatif.
+- « une histoire merveilleuse » : groupe nominal, COD du verbe « racontait ».
+- « merveilleuse » : adjectif qualificatif, épithète de « histoire ».
+- « aux enfants du quartier » : groupe nominal prépositionnel, COI (complément d''objet second) du verbe « racontait ».
+- « du quartier » : groupe nominal prépositionnel, complément du nom « enfants ».
+
+## Points clés
+
+- Nature = identité fixe ; fonction = rôle variable dans la phrase.
+- Le sujet commande l''accord du verbe.
+- COD sans préposition ; COI avec préposition.
+- L''attribut suit un verbe d''état ; l''épithète est collée au nom.
+- Le CC se déplace et se supprime souvent.
+
+## Exercices
+
+Exercice 1 : Donner la nature des mots élèves, studieux, réussissent, souvent et leurs dans la phrase : « Les élèves studieux réussissent souvent leurs examens. ».
+
+Exercice 2 : Donner la fonction des groupes : « Le soir, mon grand-père écoute la radio dans la cour. »
+
+Exercice 3 : Dans les phrases suivantes, « calme » est-il épithète ou attribut ? a) La mer est calme. b) Nous aimons cette mer calme.
+
+Exercice 4 : Souligner le COD ou le COI : a) Awa téléphone à sa tante. b) Le commerçant vend des tissus. c) Je me souviens de cette fête.
+
+Exercice 5 : Analyser (nature et fonction) le mot « Thiès » dans : a) Thiès est une ville du Sénégal. b) Nous visitons Thiès.
+
+## Corrigé
+
+Exercice 1 : élèves : nom commun ; studieux : adjectif qualificatif ; réussissent : verbe ; souvent : adverbe ; leurs : déterminant possessif.
+
+Exercice 2 : « Le soir » : CC de temps ; « mon grand-père » : sujet du verbe écoute ; « la radio » : COD du verbe écoute ; « dans la cour » : CC de lieu.
+
+Exercice 3 : a) attribut du sujet « la mer » (après le verbe d''état être). b) épithète du nom « mer ».
+
+Exercice 4 : a) « à sa tante » : COI. b) « des tissus » : COD. c) « de cette fête » : COI (se souvenir de quelque chose).
+
+Exercice 5 : a) nom propre, sujet du verbe « est ». b) nom propre, COD du verbe « visitons ». La nature ne change pas, la fonction change.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'francais-5e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Grammaire : nature et fonction des mots');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Conjugaison : les temps de l''indicatif et du récit', '## Objectifs de la leçon
+
+- Identifier le radical et la terminaison d''un verbe.
+- Conjuguer au présent, à l''imparfait, au passé simple, au futur et au passé composé de l''indicatif.
+- Choisir le bon temps dans un récit.
+
+## Rappels : les trois groupes
+
+- 1er groupe : verbes en -er (sauf aller) : chanter, danser, pêcher.
+- 2e groupe : verbes en -ir qui font -issons à la 1re personne du pluriel du présent : finir (nous finissons), grandir, choisir.
+- 3e groupe : tous les autres : aller, prendre, venir, voir, faire, partir (nous partons), dormir…
+
+Un verbe conjugué comprend un radical (qui porte le sens) et une terminaison (qui indique la personne, le temps et le mode). Dans « nous chantions », le radical est « chant- » et la terminaison « -ions ».
+
+## Le présent de l''indicatif
+
+- 1er groupe : -e, -es, -e, -ons, -ez, -ent. Je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent.
+- 2e groupe : -is, -is, -it, -issons, -issez, -issent. Je finis… nous finissons, ils finissent.
+- 3e groupe : souvent -s, -s, -t (ou -d), -ons, -ez, -ent. Je prends, tu prends, il prend, nous prenons, vous prenez, ils prennent.
+
+Verbes à connaître par cœur : être (je suis, nous sommes, ils sont), avoir (j''ai, nous avons, ils ont), aller (je vais, nous allons, ils vont), faire (je fais, vous faites, ils font).
+
+## L''imparfait
+
+Formation : radical de la 1re personne du pluriel du présent + -ais, -ais, -ait, -ions, -iez, -aient. Nous finissons → je finissais. Nous faisons → je faisais. Seule exception : être → j''étais.
+
+Emplois : description, décor, action habituelle ou qui dure dans le passé. « Chaque soir, les femmes pilaient le mil. »
+
+## Le passé simple
+
+C''est le temps des actions de premier plan dans un récit écrit : actions ponctuelles, qui se succèdent.
+
+- 1er groupe : -ai, -as, -a, -âmes, -âtes, -èrent. Il chanta, ils chantèrent.
+- 2e groupe : -is, -is, -it, -îmes, -îtes, -irent. Il finit, nous finîmes.
+- 3e groupe : en -is (prendre : il prit ; faire : il fit ; voir : il vit), en -us (être : il fut ; avoir : il eut ; vouloir : il voulut), ou en -ins (venir : il vint ; tenir : il tint).
+
+Attention : à la 3e personne du singulier, le 1er groupe s''écrit sans -t (il chanta), alors que les autres groupes ont un -t (il finit, il prit, il vint).
+
+## Le futur simple
+
+Formation : infinitif + -ai, -as, -a, -ons, -ez, -ont. Je chanterai, tu finiras. Pour les verbes en -re, on enlève le e : prendre → je prendrai.
+
+Futurs irréguliers : être → je serai ; avoir → j''aurai ; aller → j''irai ; faire → je ferai ; venir → je viendrai ; voir → je verrai ; pouvoir → je pourrai ; vouloir → je voudrai.
+
+## Le passé composé
+
+Formation : auxiliaire avoir ou être au présent + participe passé. J''ai mangé ; elle est partie ; nous avons pris.
+
+On emploie être avec la plupart des verbes de mouvement ou de changement d''état (aller, venir, partir, arriver, entrer, sortir, naître, mourir, rester, tomber…) et avec les verbes pronominaux. Le passé composé s''utilise surtout à l''oral, dans les dialogues et les textes au présent.
+
+## Méthode : choisir le temps dans un récit au passé
+
+- Le décor, les descriptions, les habitudes : imparfait.
+- Les actions principales qui font avancer l''histoire : passé simple.
+- Les paroles rapportées au style direct : présent, passé composé, futur.
+
+Exemple : « Le soleil se couchait sur le fleuve. Les pêcheurs rentraient lentement. Soudain, un cri retentit : une pirogue chavira près de la rive. » Les verbes « se couchait » et « rentraient » posent le décor (imparfait) ; « retentit » et « chavira » sont des actions soudaines (passé simple).
+
+## Points clés
+
+- Imparfait : -ais, -ais, -ait, -ions, -iez, -aient pour tous les verbes.
+- Passé simple du 1er groupe : -ai, -as, -a, -âmes, -âtes, -èrent.
+- Futur : on entend presque toujours le r de l''infinitif.
+- Récit : imparfait pour l''arrière-plan, passé simple pour le premier plan.
+
+## Exercices
+
+Exercice 1 : Conjuguer à l''imparfait : nous (finir), ils (être), tu (manger), vous (faire).
+
+Exercice 2 : Conjuguer au passé simple à la 3e personne du singulier puis du pluriel : marcher, prendre, venir, avoir.
+
+Exercice 3 : Conjuguer au futur à la personne indiquée : je (aller), nous (voir), elle (faire), vous (pouvoir).
+
+Exercice 4 : Mettre les verbes entre parenthèses au temps qui convient (imparfait ou passé simple) : « Il (faire) chaud. Les enfants (jouer) sous le manguier. Tout à coup, un orage (éclater). »
+
+Exercice 5 : Mettre au passé composé : a) Elles (arriver) hier. b) Nous (prendre) le car rapide.
+
+## Corrigé
+
+Exercice 1 : nous finissions ; ils étaient ; tu mangeais (on garde le e pour conserver le son « j ») ; vous faisiez.
+
+Exercice 2 : il marcha / ils marchèrent ; il prit / ils prirent ; il vint / ils vinrent ; il eut / ils eurent.
+
+Exercice 3 : j''irai ; nous verrons ; elle fera ; vous pourrez.
+
+Exercice 4 : « Il faisait chaud. Les enfants jouaient sous le manguier. Tout à coup, un orage éclata. » Les deux premiers verbes décrivent le décor (imparfait) ; « éclata » est une action soudaine (passé simple).
+
+Exercice 5 : a) Elles sont arrivées hier (auxiliaire être, accord avec le sujet). b) Nous avons pris le car rapide.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'francais-5e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Conjugaison : les temps de l''indicatif et du récit');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Orthographe : accords et homophones', '## Objectifs de la leçon
+
+- Réaliser les accords dans le groupe nominal et entre le sujet et le verbe.
+- Accorder le participe passé employé avec être et avec avoir.
+- Distinguer les principaux homophones grammaticaux.
+
+## Les accords dans le groupe nominal
+
+Le déterminant et l''adjectif s''accordent en genre et en nombre avec le nom.
+
+- Pluriel en -s : un pagne neuf → des pagnes neufs.
+- Noms et adjectifs en -al : -aux (un journal national → des journaux nationaux), sauf bal, carnaval, festival, chacal, récital… (des festivals).
+- Noms en -eau, -au, -eu : -x (des bateaux, des feux), sauf pneu, bleu (des pneus).
+- Noms en -ou : -s, sauf bijou, caillou, chou, genou, hibou, joujou, pou qui prennent -x.
+- Féminin des adjectifs : on ajoute souvent -e (grand → grande), mais attention : beau → belle, vieux → vieille, blanc → blanche, heureux → heureuse, neuf → neuve.
+
+Quand un adjectif se rapporte à plusieurs noms dont l''un est masculin, il se met au masculin pluriel : une chemise et un pantalon blancs.
+
+## L''accord sujet-verbe
+
+Le verbe s''accorde avec son sujet, même quand celui-ci est éloigné ou placé après le verbe.
+
+- « Les femmes du village préparent la fête » : le sujet est « les femmes », pas « village ».
+- « Dans la cour jouent les enfants » : sujet inversé « les enfants ».
+- « Ma sœur et moi partons » : deux sujets dont « moi » → 1re personne du pluriel.
+
+## L''accord du participe passé
+
+Avec l''auxiliaire être, le participe passé s''accorde avec le sujet : « Les filles sont parties. » « La porte est fermée. »
+
+Avec l''auxiliaire avoir, le participe passé ne s''accorde jamais avec le sujet. Il s''accorde avec le COD seulement si celui-ci est placé avant le verbe.
+- « Elles ont mangé du riz » : pas d''accord (COD après le verbe).
+- « Les mangues que j''ai achetées sont mûres » : le COD « que » (mis pour « les mangues ») est placé avant, donc accord au féminin pluriel.
+- « Ces lettres, je les ai lues » : COD « les » avant le verbe, accord.
+
+Astuce pour savoir si on écrit -é ou -er : on remplace par un verbe du 3e groupe comme « vendre / vendu ». « Il a (mangé/manger) » → « il a vendu » → participe passé, donc mangé. « Il va (mangé/manger) » → « il va vendre » → infinitif, donc manger.
+
+## Les homophones grammaticaux
+
+Ce sont des mots qui se prononcent de la même façon mais s''écrivent différemment. On les distingue par un test de remplacement.
+
+- a / à : « a » est le verbe avoir (on peut dire « avait »). « Il a faim » → « il avait faim ». « à » est une préposition : « Il va à Dakar ».
+- et / est : « est » est le verbe être (remplaçable par « était »). « et » est une conjonction (remplaçable par « et puis »).
+- son / sont : « sont » = verbe être (« étaient ») ; « son » = déterminant possessif (« mon »).
+- ou / où : « ou » = « ou bien » ; « où » indique le lieu ou le temps.
+- ces / ses / c''est / s''est : « ces » = démonstratif (« ces maisons-là ») ; « ses » = possessif (« les siens ») ; « c''est » = « cela est » ; « s''est » = devant un participe passé d''un verbe pronominal (« il s''est levé »).
+- on / ont : « ont » = verbe avoir (« avaient ») ; « on » = pronom (remplaçable par « il »).
+- leur / leurs : devant un verbe, « leur » est pronom et ne prend jamais de s (« je leur parle ») ; devant un nom, c''est un déterminant qui s''accorde (« leurs cahiers »).
+
+## Méthode de relecture
+
+Après avoir écrit, relisez votre texte trois fois avec un objectif à chaque lecture :
+- 1re lecture : les accords sujet-verbe (entourer chaque verbe, flécher vers son sujet).
+- 2e lecture : les accords dans les groupes nominaux et les participes passés.
+- 3e lecture : les homophones et la ponctuation.
+
+## Points clés
+
+- Déterminant, nom et adjectif s''accordent ensemble.
+- Participe passé avec être : accord avec le sujet. Avec avoir : accord avec le COD placé avant.
+- Pour les homophones, toujours faire le test de remplacement.
+
+## Exercices
+
+Exercice 1 : Mettre au pluriel : un cheval rapide ; un beau bijou ; un festival national.
+
+Exercice 2 : Compléter par a ou à, et ou est : « Fatou … partie … Kaolack … elle … emporté ses bagages. »
+
+Exercice 3 : Accorder les participes passés : a) Les invités sont (arrivé). b) Les poissons que nous avons (pêché) sont frais. c) Mes cousines ont (préparé) le repas.
+
+Exercice 4 : Choisir entre ces / ses / c''est / s''est : « Moussa … levé tôt. Il a pris … outils. … une belle journée pour travailler dans … champs-là. »
+
+Exercice 5 : Écrire -é ou -er : « Nous allons visit… le musée. Hier, nous avons visit… la maison des esclaves à Gorée. »
+
+## Corrigé
+
+Exercice 1 : des chevaux rapides ; de beaux bijoux (devant un adjectif au pluriel, « des » devient souvent « de ») ; des festivals nationaux.
+
+Exercice 2 : « Fatou est partie à Kaolack et elle a emporté ses bagages. » Tests : était partie ; avait emporté ; et puis elle…
+
+Exercice 3 : a) arrivés (être, accord avec « les invités »). b) pêchés (COD « que » mis pour « les poissons », placé avant). c) préparé (COD « le repas » placé après : pas d''accord).
+
+Exercice 4 : « Moussa s''est levé tôt. Il a pris ses outils. C''est une belle journée pour travailler dans ces champs-là. »
+
+Exercice 5 : « Nous allons visiter (= vendre) le musée. Hier, nous avons visité (= vendu) la maison des esclaves à Gorée. »', 'texte', 45, false, 30
+from public.courses c where c.slug = 'francais-5e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Orthographe : accords et homophones');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La lecture méthodique d''un texte', '## Objectifs de la leçon
+
+- Connaître les étapes de la lecture méthodique.
+- Repérer les indices du texte (énonciation, champs lexicaux, figures de style, temps).
+- Construire une interprétation organisée autour d''axes de lecture.
+
+## Qu''est-ce que la lecture méthodique ?
+
+La lecture méthodique est une lecture attentive et organisée d''un texte court. Elle ne consiste pas à raconter le texte, mais à montrer comment il fonctionne et ce qu''il veut produire chez le lecteur. Elle s''appuie toujours sur des indices précis relevés dans le texte.
+
+## Les étapes
+
+Étape 1 : la situation du texte. Qui est l''auteur ? De quelle œuvre est tiré l''extrait ? Quel est son genre (roman, conte, poème, théâtre) ? Où se place-t-il dans l''œuvre ?
+
+Étape 2 : les observations. On relève des indices :
+- l''énonciation : qui parle ? à qui ? (pronoms je, tu, nous, il) ;
+- le type de texte : narratif, descriptif, argumentatif, explicatif ;
+- les temps verbaux ;
+- les champs lexicaux : ensemble de mots qui se rapportent à un même thème (champ lexical de la mer : vague, pirogue, filet, rive, écume) ;
+- les figures de style : comparaison (avec un outil : comme, tel que), métaphore (sans outil), personnification (une chose agit comme un humain), énumération, hyperbole (exagération), répétition ;
+- la ponctuation et la structure des phrases.
+
+Étape 3 : les hypothèses de lecture. À partir des indices, on formule une ou deux idées générales sur le sens du texte : ce sont les axes de lecture.
+
+Étape 4 : l''interprétation. Pour chaque axe, on présente les indices et on explique ce qu''ils produisent : émotion, critique, portrait…
+
+Étape 5 : la conclusion. On résume les axes et on donne un avis personnel argumenté ou une ouverture.
+
+## Exemple de texte (texte rédigé pour cette leçon)
+
+« Le fleuve dormait encore lorsque Demba poussa la pirogue dans l''eau grise. Autour de lui, le village se taisait ; seuls les coqs, comme des sentinelles fidèles, saluaient l''aube. Demba pensait à son père, parti un matin semblable et jamais revenu. La peur lui serrait le ventre, mais il pagaya avec force. Le fleuve, ce vieux compagnon, ce voleur d''hommes, l''emporta lentement vers le large. »
+
+## Application de la méthode
+
+Situation : extrait d''un récit à la 3e personne, au passé ; le personnage principal est un jeune pêcheur.
+
+Observations :
+- Temps : imparfait pour le décor (dormait, se taisait, pensait, serrait) ; passé simple pour les actions (poussa, pagaya, emporta).
+- Personnification : « Le fleuve dormait », « le village se taisait ». La nature semble vivante.
+- Comparaison : « les coqs, comme des sentinelles fidèles ».
+- Métaphores en apposition : « ce vieux compagnon, ce voleur d''hommes » : le fleuve est à la fois ami et ennemi.
+- Champ lexical de la peur et du deuil : peur, serrait, jamais revenu.
+- Opposition introduite par « mais » : la peur / le courage.
+
+Axes de lecture :
+- Axe 1 : un décor vivant et ambigu. Les personnifications et les métaphores font du fleuve un véritable personnage, qui nourrit et qui tue.
+- Axe 2 : le portrait d''un jeune homme courageux. Malgré le souvenir douloureux du père, Demba agit : le passé simple « pagaya avec force » montre sa détermination.
+
+Conclusion possible : ce court passage met en scène le courage face à la peur héritée du passé. On peut le rapprocher des récits de pêcheurs de la Langue de Barbarie ou des contes où l''eau est une puissance mystérieuse.
+
+## Conseils
+
+- Toujours citer le texte entre guillemets.
+- Ne jamais relever une figure de style sans expliquer son effet.
+- Organiser l''interprétation en paragraphes : une idée, des citations, une explication.
+- Utiliser des verbes précis : le texte « suggère », « souligne », « oppose », « met en valeur ».
+
+## Points clés
+
+- Situer, observer, formuler des axes, interpréter, conclure.
+- Un indice n''a de valeur que s''il est expliqué.
+- Les temps, l''énonciation, les champs lexicaux et les figures de style sont les principaux indices.
+
+## Exercices
+
+Exercice 1 : Relever dans le texte de Demba deux personnifications et expliquer leur effet.
+
+Exercice 2 : Quelle est la différence entre une comparaison et une métaphore ? Donner un exemple de chaque tiré du texte.
+
+Exercice 3 : Relever trois mots du champ lexical de l''eau dans le texte.
+
+Exercice 4 : Pourquoi l''auteur utilise-t-il l''imparfait dans les deux premières phrases ?
+
+Exercice 5 : Proposer un titre pour ce texte et le justifier en une phrase.
+
+## Corrigé
+
+Exercice 1 : « Le fleuve dormait » et « le village se taisait ». Ces personnifications créent une atmosphère calme et silencieuse, presque inquiétante, et donnent l''impression que la nature observe Demba.
+
+Exercice 2 : La comparaison rapproche deux éléments à l''aide d''un outil (comme) : « les coqs, comme des sentinelles fidèles ». La métaphore les rapproche sans outil : « ce voleur d''hommes » désigne le fleuve.
+
+Exercice 3 : fleuve, eau, pirogue, pagaya, large (pirogue et pagaya appartiennent au champ lexical de la navigation, lié à l''eau).
+
+Exercice 4 : L''imparfait installe le décor et la situation de départ, qui servent d''arrière-plan aux actions racontées au passé simple.
+
+Exercice 5 : Exemple : « Le courage de Demba », car le texte montre un jeune homme qui surmonte sa peur pour partir sur le fleuve. D''autres titres sont acceptés s''ils sont justifiés.', 'texte', 50, false, 40
+from public.courses c where c.slug = 'francais-5e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La lecture méthodique d''un texte');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Expression écrite : rédiger un récit', '## Objectifs de la leçon
+
+- Connaître le schéma narratif et les éléments d''un récit.
+- Construire un récit cohérent à partir d''un sujet.
+- Insérer une description et un dialogue correctement ponctués.
+
+## Les éléments d''un récit
+
+Un récit raconte une histoire. Il comporte :
+- un narrateur : interne (« je », il participe à l''histoire) ou externe (« il », il raconte de l''extérieur) ;
+- des personnages : principal (le héros), secondaires, adjuvants (qui aident), opposants (qui gênent) ;
+- un cadre spatio-temporel : où et quand se passe l''histoire ;
+- une intrigue organisée selon le schéma narratif.
+
+## Le schéma narratif
+
+- Situation initiale : présentation des personnages, du lieu, du moment. Temps : imparfait.
+- Élément perturbateur (ou déclencheur) : un événement rompt l''équilibre. Souvent introduit par « un jour », « soudain ». Temps : passé simple.
+- Péripéties : actions et rebondissements par lesquels le héros tente de résoudre le problème.
+- Élément de résolution : l''événement qui met fin aux difficultés.
+- Situation finale : nouvel équilibre, heureux ou malheureux. Parfois une morale, surtout dans le conte.
+
+Exemple sur un conte : Situation initiale : Leuk le lièvre vivait en paix dans la brousse. Élément perturbateur : un jour, Bouki l''hyène lui vola sa réserve de mil. Péripéties : Leuk chercha des témoins, demanda conseil à la tortue, tendit un piège. Résolution : Bouki tomba dans le piège devant tous les animaux. Situation finale : Bouki fut chassée de l''assemblée et Leuk récupéra son mil. Morale : la ruse vient à bout de la force.
+
+## Méthode pour rédiger un récit
+
+1. Analyser le sujet : souligner les mots-clés ; repérer la personne imposée (je ou il), le temps (passé), le type d''histoire.
+2. Chercher des idées au brouillon : qui ? où ? quand ? quel problème ? comment se termine l''histoire ?
+3. Faire un plan en suivant le schéma narratif : une à deux phrases par étape.
+4. Rédiger : un paragraphe par étape, avec des connecteurs temporels (d''abord, ensuite, puis, soudain, alors, enfin, le lendemain).
+5. Relire : cohérence des temps, accords, ponctuation, homophones.
+
+## Insérer une description
+
+Une courte description rend le récit vivant. On utilise l''imparfait, des adjectifs précis, des comparaisons, et on fait appel aux cinq sens.
+
+Exemple : « Le marché de Tilène bourdonnait comme une ruche. L''odeur du poisson séché se mêlait à celle des épices, et les cris des vendeuses couvraient le klaxon des cars. »
+
+## Insérer un dialogue
+
+Règles de présentation :
+- ouvrir les guillemets au début du dialogue et les fermer à la fin ;
+- aller à la ligne et mettre un tiret à chaque changement d''interlocuteur ;
+- utiliser des verbes de parole variés : demander, répondre, s''écrier, murmurer, protester.
+
+Exemple :
+« Où étais-tu ? demanda la mère.
+- Au terrain de foot, répondit Ousmane en baissant les yeux.
+- Et tes devoirs ? »
+
+## Exemple de sujet traité
+
+Sujet : « Racontez une journée où vous avez aidé quelqu''un en difficulté. » (narrateur interne, au passé).
+
+Plan :
+- Situation initiale : un samedi matin, je me rendais au marché pour ma mère.
+- Élément perturbateur : soudain, une vieille femme tomba en traversant la route.
+- Péripéties : je l''aidai à se relever, ramassai ses légumes, arrêtai un taxi ; elle n''avait pas d''argent.
+- Résolution : un commerçant que je connaissais paya la course.
+- Situation finale : le lendemain, la vieille femme vint remercier ma mère ; j''avais compris la valeur de l''entraide.
+
+## Points clés
+
+- Cinq étapes : situation initiale, élément perturbateur, péripéties, résolution, situation finale.
+- Imparfait pour le décor, passé simple pour les actions.
+- Connecteurs temporels, description et dialogue rendent le récit vivant.
+- Toujours faire un plan au brouillon.
+
+## Exercices
+
+Exercice 1 : Remettre dans l''ordre du schéma narratif : a) Enfin, le pêcheur retrouva son village. b) Un jour, une tempête emporta sa pirogue. c) Il y avait une fois un pêcheur très habile. d) Il nagea pendant des heures, lutta contre les vagues. e) Un bateau le recueillit au petit matin.
+
+Exercice 2 : Le narrateur de la phrase « Je sentis mon cœur battre très fort » est-il interne ou externe ? Pourquoi ?
+
+Exercice 3 : Ponctuer ce dialogue : Tu viens demanda Aïda Oui j''arrive répondit Lamine
+
+Exercice 4 : Écrire une description de trois phrases d''une gare routière en utilisant au moins deux sens.
+
+Exercice 5 : Rédiger le plan (cinq étapes) d''un récit sur le sujet : « Un objet perdu ».
+
+## Corrigé
+
+Exercice 1 : c (situation initiale) – b (élément perturbateur) – d (péripéties) – e (résolution) – a (situation finale).
+
+Exercice 2 : Interne, car il utilise « je » et participe à l''histoire : il raconte ce qu''il ressent.
+
+Exercice 3 :
+« Tu viens ? demanda Aïda.
+- Oui, j''arrive ! répondit Lamine. »
+
+Exercice 4 : Exemple : « La gare routière grouillait de monde. Les apprentis criaient les destinations de leurs cars, et une forte odeur de carburant flottait dans l''air chaud. Sous un abri de tôle, des vendeuses proposaient des beignets encore tièdes. » (ouïe : criaient ; odorat : odeur ; toucher : air chaud, tièdes).
+
+Exercice 5 : Exemple : Situation initiale : je rentrais de l''école avec ma montre neuve. Élément perturbateur : arrivé à la maison, je découvris qu''elle avait disparu. Péripéties : je refis le chemin, interrogeai le boutiquier et mes camarades. Résolution : le gardien de l''école l''avait trouvée et me la rendit. Situation finale : je promis d''être plus attentif et j''offris un cadeau au gardien.', 'texte', 50, false, 50
+from public.courses c where c.slug = 'francais-5e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Expression écrite : rédiger un récit');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : lire et écrire un conte', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : lire et écrire un conte, de la grammaire à la rédaction.
+- Objectifs : réviser nature et fonction, utiliser les temps du récit, appliquer la lecture méthodique à un conte, rédiger un récit court sans fautes d''accord.
+- Matériel : tableau ou diaporama, texte du conte projeté, cahier de brouillon, stylos de deux couleurs.
+- Prérequis : leçons 1 à 5 du cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+« Bonjour à tous ! Aujourd''hui, nous allons travailler comme de véritables écrivains. Nous allons lire un conte, l''analyser, puis vous écrirez vous-mêmes un petit récit. Tout au long de la séance, nous réviserons la grammaire, la conjugaison et l''orthographe, car on n''écrit bien que si l''on maîtrise la langue. Préparez deux stylos de couleurs différentes : un pour écrire, un pour corriger. »
+
+Visuel : le plan de la séance : 1. Lecture du conte. 2. Grammaire. 3. Temps du récit. 4. Pause-quiz. 5. Lecture méthodique. 6. Atelier d''écriture. 7. Orthographe. 8. Évaluation.
+
+## 05:00 – 15:00 · Lecture du conte
+
+Le formateur lit à voix haute le conte projeté (texte rédigé pour ce cours) :
+
+« Il était une fois, dans un village du Saloum, une jeune fille nommée Penda qui gardait les chèvres de son père. Chaque jour, elle les menait près d''un grand baobab. Un matin, une chèvre disparut. Penda chercha partout, appela, pleura. Alors une voix grave sortit du baobab : “Si tu me donnes ta plus belle chanson, je te rendrai ta chèvre.” Penda chanta si joliment que les oiseaux se turent pour l''écouter. Le baobab ouvrit son tronc et la chèvre en sortit en bêlant. Depuis ce jour, on dit au village que celui qui partage ce qu''il a de plus beau ne perd jamais rien. »
+
+« Première question, à l''oral : quel est le personnage principal ? Où se passe l''histoire ? Quel est le problème ? » Réponses attendues : Penda ; un village du Saloum, près d''un baobab ; la disparition d''une chèvre.
+
+## 15:00 – 27:00 · Grammaire : nature et fonction dans le conte
+
+« Prenons la phrase : “Chaque jour, elle les menait près d''un grand baobab.” Analysons-la ensemble. »
+
+- « Chaque jour » : groupe nominal, complément circonstanciel de temps.
+- « elle » : pronom personnel, sujet du verbe « menait ».
+- « les » : pronom personnel, COD du verbe « menait » ; il remplace « les chèvres ».
+- « près d''un grand baobab » : groupe prépositionnel, complément circonstanciel de lieu.
+- « grand » : adjectif qualificatif, épithète de « baobab ».
+
+« Remarquez que le mot “les” n''est pas un déterminant ici, puisqu''il est placé devant un verbe : c''est un pronom. C''est exactement la différence entre nature et fonction : il faut regarder le mot dans sa phrase. »
+
+Question à poser : « Dans “Penda chanta si joliment”, quelle est la nature de “joliment” ? » Réponse : adverbe, il modifie le verbe chanta.
+
+## 27:00 – 40:00 · Les temps du récit
+
+« Relisez le conte et relevez les verbes. Mettez la vidéo en pause deux minutes. »
+
+Correction projetée en deux colonnes. Imparfait : gardait, menait. Passé simple : disparut, chercha, appela, pleura, sortit, chanta, se turent, ouvrit, sortit. Présent : dit, partage, perd (morale, vérité générale). Futur : rendrai (paroles du baobab).
+
+« Que remarquez-vous ? L''imparfait sert à la situation initiale et aux habitudes : “chaque jour, elle les menait”. Le passé simple fait avancer l''histoire. Le présent final exprime une vérité générale, la morale. Et dans les paroles du baobab, on trouve le présent et le futur, parce que ce sont des paroles rapportées. »
+
+Exercice flash : conjuguer au passé simple à la 3e personne : prendre (il prit), venir (il vint), aller (il alla), finir (il finit), se taire (il se tut).
+
+## 40:00 – 48:00 · Pause et quiz interactif
+
+« Petite pause ! Buvez un peu d''eau, puis répondez à ce quiz. »
+
+- Question 1 : « Les élèves ont (fini/finis) leurs devoirs. » Réponse : fini (auxiliaire avoir, COD placé après).
+- Question 2 : « Elle … partie. » est ou et ? Réponse : est (était partie).
+- Question 3 : Quel est le futur de « voir » à la 1re personne du singulier ? Réponse : je verrai.
+- Question 4 : « La mer est calme » : fonction de « calme » ? Réponse : attribut du sujet.
+- Question 5 : Quelle étape du schéma narratif commence souvent par « un jour » ? Réponse : l''élément perturbateur.
+
+## 48:00 – 60:00 · Lecture méthodique du conte
+
+« Appliquons maintenant la méthode de lecture méthodique. D''abord, la situation : c''est un conte, il commence par la formule “Il était une fois” et se termine par une morale. »
+
+Observations au tableau :
+- Le merveilleux : un baobab qui parle et qui ouvre son tronc.
+- La personnification : le baobab est un personnage, il parle et négocie.
+- L''hyperbole : « si joliment que les oiseaux se turent ».
+- Le schéma narratif complet en quelques lignes.
+
+« Quels axes de lecture pouvons-nous proposer ? Premier axe : un conte merveilleux, où la nature est vivante et magique. Deuxième axe : une leçon de générosité, exprimée dans la morale finale. Pour chaque axe, je cite le texte et j''explique l''effet produit. »
+
+Question : « Pourquoi le baobab demande-t-il une chanson et pas de l''argent ? » Réponse attendue : le conte valorise ce qui vient du cœur, le talent et le partage, plutôt que la richesse matérielle.
+
+## 1:00:00 – 1:15:00 · Atelier d''écriture
+
+« À vous ! Sujet : “Imaginez la suite : un an plus tard, le baobab demande un nouveau service à Penda.” Vous avez dix minutes. Consignes : narrateur externe, récit au passé, au moins un dialogue correctement ponctué, une courte description du village. »
+
+Le formateur montre le plan au tableau : situation initiale (Penda a grandi), élément perturbateur (la sécheresse frappe le village), péripéties (le baobab demande qu''on plante dix jeunes arbres ; les villageois hésitent), résolution (Penda convainc les anciens), situation finale (la pluie revient ; le village prend soin des arbres).
+
+Il lit ensuite un exemple de début : « Une année passa. La saison sèche durait plus longtemps que d''habitude, et la terre craquait sous les pieds. Un soir, Penda entendit de nouveau la voix grave : “Petite, j''ai besoin de toi.” »
+
+« Observez ce début. La première phrase, très courte, marque le passage du temps. Les deux verbes à l''imparfait, “durait” et “craquait”, installent le décor de la sécheresse ; c''est une petite description qui fait appel au toucher : on sent la terre sèche sous les pieds. Puis “un soir” introduit l''élément perturbateur au passé simple : “entendit”. Enfin, les paroles du baobab sont au présent, entre guillemets, car ce sont des paroles rapportées. Vous voyez que tout ce que nous avons révisé aujourd''hui sert directement à écrire. »
+
+Pendant que les élèves écrivent, le formateur affiche une liste d''aide : connecteurs temporels (d''abord, ensuite, soudain, alors, le lendemain, finalement), verbes de parole (demander, répondre, s''écrier, murmurer, supplier), et rappelle de prévoir une phrase finale qui exprime une morale ou un sentiment.
+
+## 1:15:00 – 1:22:00 · Relecture et orthographe
+
+« Prenez votre stylo de correction. Relisez votre texte trois fois. Première lecture : flèche de chaque verbe vers son sujet. Deuxième lecture : accords des groupes nominaux et des participes passés. Troisième lecture : homophones a/à, et/est, son/sont, ces/ses. »
+
+Exemple corrigé au tableau : « Les villageois a plantés les arbres » devient « Les villageois ont planté les arbres » : le verbe s''accorde avec « les villageois » et le participe passé avec avoir ne s''accorde pas avec le sujet.
+
+## 1:22:00 – 1:30:00 · Synthèse et évaluation finale
+
+« Retenons l''essentiel : la nature d''un mot est fixe, sa fonction dépend de la phrase ; le récit au passé alterne imparfait et passé simple ; la lecture méthodique s''appuie sur des indices expliqués ; un bon récit suit le schéma narratif et se relit. Voici votre évaluation finale. »
+
+- Question 1 : Nature et fonction de « vieux » dans « Le vieux pêcheur rentre ». Réponse : adjectif qualificatif, épithète de « pêcheur ».
+- Question 2 : Conjuguer « faire » à l''imparfait, 2e personne du pluriel. Réponse : vous faisiez.
+- Question 3 : Accorder : « Les chansons qu''elle a (chanté) ». Réponse : chantées (COD « qu'' » mis pour « les chansons », placé avant).
+- Question 4 : Quelle figure de style dans « le fleuve, ce voleur d''hommes » ? Réponse : une métaphore.
+- Question 5 : Citer les cinq étapes du schéma narratif. Réponse : situation initiale, élément perturbateur, péripéties, élément de résolution, situation finale.
+
+« Merci pour votre attention. Terminez votre récit à la maison, recopiez-le proprement et relisez-le une dernière fois à voix haute. Bon travail ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'francais-5e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : lire et écrire un conte');
+
 -- Cours : Transport et logistique : de la commande à la livraison
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-transport-logistique', (select id from public.levels where name = 'Formation professionnelle'), 'transport-logistique', 'Transport et logistique', 'Transport et logistique : de la commande à la livraison', 'Cette formation professionnelle couvre toute la chaîne logistique : flux et coûts, entreposage et gestion des stocks (méthode ABC, FIFO, inventaires), planification des tournées, documents de transport et principes des incoterms, puis indicateurs de performance. Elle s''adresse aux gérants de PME, magasiniers, responsables de parc et logisticiens d''Afrique francophone. Aucun prérequis autre que les quatre opérations et l''usage des pourcentages.', true, 30

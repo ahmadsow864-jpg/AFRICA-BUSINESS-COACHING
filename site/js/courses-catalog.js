@@ -146,6 +146,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "francais-5e",
+  "level": "5e",
+  "subject": "Français",
+  "module": null,
+  "title": "Français 5e : grammaire, lecture et écriture du récit",
+  "description": "Ce cours de français de 5e consolide la grammaire (nature et fonction), la conjugaison des temps du récit et l'orthographe, puis entraîne à la lecture méthodique et à la rédaction d'un récit. Il s'adresse aux élèves de 5e et à ceux qui veulent consolider leurs bases. Prérequis : savoir lire couramment et connaître les notions de 6e (classes de mots, présent).",
+  "sort": 20,
+  "lessons": [
+   {
+    "title": "Grammaire : nature et fonction des mots",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Identifier la nature (classe grammaticale) des mots d'une phrase.\n- Identifier la fonction des mots et des groupes de mots.\n- Ne plus confondre nature et fonction.\n\n## Nature et fonction : la différence\n\nLa nature d'un mot, c'est ce qu'il est, sa « carte d'identité ». Elle ne change pas, quelle que soit la phrase : on la trouve dans le dictionnaire. Le mot « baobab » est toujours un nom commun.\n\nLa fonction d'un mot, c'est le rôle qu'il joue dans une phrase donnée. Elle change selon la phrase. Dans « Le baobab domine le village », « le baobab » est sujet ; dans « Les enfants admirent le baobab », il est complément d'objet direct.\n\nImage utile : une personne est toujours la même personne (nature), mais elle peut être tour à tour élève, capitaine de l'équipe ou grand frère (fonctions).\n\n## Les principales natures\n\nLes mots variables (ils changent de forme) :\n- Le nom : commun (marché, pirogue) ou propre (Ziguinchor, Aminata).\n- Le déterminant : article (le, une, des), possessif (mon, leur), démonstratif (ce, cette), indéfini (quelques, chaque), numéral (deux, cent), interrogatif (quel).\n- L'adjectif qualificatif : il précise le nom (une pirogue colorée).\n- Le pronom : il remplace un nom ou un groupe nominal : personnel (il, les, lui), possessif (le mien), démonstratif (celui-ci), relatif (qui, que, dont, où).\n- Le verbe : il exprime une action ou un état et se conjugue.\n\nLes mots invariables :\n- L'adverbe : il modifie le sens d'un verbe, d'un adjectif ou d'un autre adverbe (vite, très, hier, ne… pas).\n- La préposition : à, de, pour, avec, sans, dans, sur, par, vers.\n- La conjonction de coordination : mais, ou, et, donc, or, ni, car.\n- La conjonction de subordination : que, quand, comme, si, lorsque, parce que.\n- L'interjection : ah ! oh ! hélas !\n\n## Les principales fonctions\n\nAutour du verbe :\n- Le sujet : il fait ou subit l'action et commande l'accord du verbe. On le trouve avec la question « Qui est-ce qui ? » ou « Qu'est-ce qui ? » posée avant le verbe.\n- Le complément d'objet direct (COD) : construit sans préposition. Question : verbe + « qui ? » ou « quoi ? ». Exemple : Le pêcheur répare son filet.\n- Le complément d'objet indirect (COI) : introduit par une préposition (à, de). Exemple : Il parle à son fils.\n- L'attribut du sujet : après un verbe d'état (être, paraître, sembler, devenir, demeurer, rester, avoir l'air). Exemple : La mer semble calme.\n- Les compléments circonstanciels (CC) : ils indiquent le lieu, le temps, la manière, la cause, le but… On peut souvent les déplacer ou les supprimer. Exemple : Ce matin, à Mbour, les pirogues sont rentrées rapidement.\n\nAutour du nom :\n- L'épithète : adjectif placé directement à côté du nom (une pirogue neuve).\n- Le complément du nom : groupe introduit par une préposition qui complète un nom (le filet du pêcheur).\n- L'apposition : mot ou groupe séparé du nom par une virgule (Dakar, capitale du Sénégal, est une presqu'île).\n\n## Méthode d'analyse\n\nPour analyser un mot, on donne toujours sa nature puis sa fonction.\n- Trouver le verbe conjugué et son sujet.\n- Poser les questions « quoi ? », « à qui ? », « de quoi ? » pour les compléments d'objet.\n- Tester la suppression et le déplacement pour les compléments circonstanciels.\n- Repérer les adjectifs et les compléments du nom autour de chaque nom.\n\n## Exemple d'analyse complète\n\nPhrase : « Hier, la vieille Coumba racontait une histoire merveilleuse aux enfants du quartier. »\n\n- « Hier » : adverbe, complément circonstanciel de temps.\n- « la vieille Coumba » : groupe nominal, sujet du verbe « racontait ».\n- « vieille » : adjectif qualificatif, épithète du nom Coumba.\n- « racontait » : verbe raconter à l'imparfait de l'indicatif.\n- « une histoire merveilleuse » : groupe nominal, COD du verbe « racontait ».\n- « merveilleuse » : adjectif qualificatif, épithète de « histoire ».\n- « aux enfants du quartier » : groupe nominal prépositionnel, COI (complément d'objet second) du verbe « racontait ».\n- « du quartier » : groupe nominal prépositionnel, complément du nom « enfants ».\n\n## Points clés\n\n- Nature = identité fixe ; fonction = rôle variable dans la phrase.\n- Le sujet commande l'accord du verbe.\n- COD sans préposition ; COI avec préposition.\n- L'attribut suit un verbe d'état ; l'épithète est collée au nom.\n- Le CC se déplace et se supprime souvent.\n\n## Exercices\n\nExercice 1 : Donner la nature des mots élèves, studieux, réussissent, souvent et leurs dans la phrase : « Les élèves studieux réussissent souvent leurs examens. ».\n\nExercice 2 : Donner la fonction des groupes : « Le soir, mon grand-père écoute la radio dans la cour. »\n\nExercice 3 : Dans les phrases suivantes, « calme » est-il épithète ou attribut ? a) La mer est calme. b) Nous aimons cette mer calme.\n\nExercice 4 : Souligner le COD ou le COI : a) Awa téléphone à sa tante. b) Le commerçant vend des tissus. c) Je me souviens de cette fête.\n\nExercice 5 : Analyser (nature et fonction) le mot « Thiès » dans : a) Thiès est une ville du Sénégal. b) Nous visitons Thiès.\n\n## Corrigé\n\nExercice 1 : élèves : nom commun ; studieux : adjectif qualificatif ; réussissent : verbe ; souvent : adverbe ; leurs : déterminant possessif.\n\nExercice 2 : « Le soir » : CC de temps ; « mon grand-père » : sujet du verbe écoute ; « la radio » : COD du verbe écoute ; « dans la cour » : CC de lieu.\n\nExercice 3 : a) attribut du sujet « la mer » (après le verbe d'état être). b) épithète du nom « mer ».\n\nExercice 4 : a) « à sa tante » : COI. b) « des tissus » : COD. c) « de cette fête » : COI (se souvenir de quelque chose).\n\nExercice 5 : a) nom propre, sujet du verbe « est ». b) nom propre, COD du verbe « visitons ». La nature ne change pas, la fonction change."
+   },
+   {
+    "title": "Conjugaison : les temps de l'indicatif et du récit",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Orthographe : accords et homophones",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "La lecture méthodique d'un texte",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Expression écrite : rédiger un récit",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : lire et écrire un conte",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-transport-logistique",
   "level": "Formation professionnelle",
   "subject": "Transport et logistique",
