@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 17/18). À exécuter après seed.sql.
+-- Cours (partie 17/21). À exécuter après seed.sql.
 
 -- Cours : Droit des affaires Master 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

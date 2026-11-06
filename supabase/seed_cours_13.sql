@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 13/18). À exécuter après seed.sql.
+-- Cours (partie 13/21). À exécuter après seed.sql.
 
 -- Cours : Logistique et transport Licence 2 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

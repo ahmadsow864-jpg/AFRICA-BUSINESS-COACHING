@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 2/18). À exécuter après seed.sql.
+-- Cours (partie 2/21). À exécuter après seed.sql.
 
 -- Cours : Mathématiques 3e : préparer le BFEM
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
