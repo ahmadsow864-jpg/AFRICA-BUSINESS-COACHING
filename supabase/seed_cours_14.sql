@@ -1728,7 +1728,7 @@ actions immédiates, comment informer les clients) même simple, plutôt que de 
    vulnérabilité rare mais catastrophique ?
 5. Citez deux éléments d''une gouvernance de la sécurité des systèmes d''information qui ne relèvent pas
    directement de la technique.
-6. Cas pratique complet : une plateforme fictive de paiement mobile, "Wave Teranga Pay", découvre que son
+6. Cas pratique complet : une plateforme fictive de paiement mobile, "Teranga Pay", découvre que son
    application envoie certaines données de connexion sans chiffrement et que plusieurs employés utilisent le
    même mot de passe pour des comptes différents. Proposez une hiérarchisation des deux problèmes et une
    recommandation concrète pour chacun, en expliquant votre raisonnement.

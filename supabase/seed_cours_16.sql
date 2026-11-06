@@ -1,6 +1,635 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
 -- Cours (partie 16/17). À exécuter après seed.sql.
 
+-- Cours : Finance Master 2 : risques avancés, finance internationale et mémoire professionnel
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-fin-m2', (select id from public.levels where name = 'Master 2'), null, 'Finance', 'Finance Master 2 : risques avancés, finance internationale et mémoire professionnel', 'Cours de préparation aux examens de Master 2 Finance : gestion des risques financiers avancée (VaR, options, swaps), finance internationale et financement de projets (project finance, microfinance, marchés régionaux africains), méthodologie du mémoire professionnel et soutenance. Pour étudiants de Master 2 ayant déjà validé les bases du Master 1 Finance. Cas d''entreprise sénégalais fictifs chiffrés et vérifiés.', true, 752
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 2 en Finance', '## Objectifs de la leçon
+
+- Comprendre les enjeux spécifiques de l''année de Master 2 : approfondissement des risques financiers, ouverture internationale, et préparation du mémoire professionnel et de sa soutenance.
+- Identifier les trois matières avancées du programme et leur lien avec les examens et le mémoire.
+- Construire un plan de révision sur six semaines qui intègre la préparation du mémoire.
+
+## Le Master 2 Finance : l''année de la spécialisation et de la soutenance
+
+Le Master 2 est l''année charnière entre la formation académique et l''entrée dans la vie professionnelle. Deux évolutions majeures distinguent le M2 du M1.
+
+- La sophistication des outils de gestion des risques et d''ouverture internationale : vous allez manier des notions que la plupart des praticiens de terrain connaissent sans les avoir formalisées (value at risk, produits dérivés, financement de projet), ce qui vous donne un avantage réel sur le marché du travail.
+- Le mémoire professionnel ou de recherche et sa soutenance orale deviennent l''aboutissement de l''année, souvent couplés à un stage long en entreprise, en banque, en cabinet ou en société de gestion. La soutenance n''est pas un simple exposé : c''est un exercice de défense argumentée devant un jury qui connaît le sujet et qui testera votre capacité à justifier vos choix méthodologiques.
+
+Contrairement au M1, où l''on apprenait encore à combiner les méthodes, le M2 demande une capacité de jugement en situation d''incertitude radicale : un marché financier régional peu liquide, un risque de change sur un financement international, une donnée incomplète dans un dossier de project finance. Il n''existe pas toujours de réponse unique et le correcteur évalue la qualité du raisonnement autant que le résultat chiffré.
+
+## Les trois matières avancées de l''année
+
+- Gestion des risques financiers avancée : la mesure du risque de marché par la value at risk simplifiée, et les produits dérivés (options et swaps) comme outils de couverture ou de spéculation. Ces outils sont devenus incontournables dans toute direction financière, banque ou société de gestion exposée aux marchés.
+- Finance internationale et financement de projets : le financement de projet (project finance), la microfinance comme source alternative de financement en zone UEMOA, et une vue d''ensemble des marchés financiers régionaux africains, indispensables pour comprendre comment une entreprise ou un État lève des capitaux au-delà du financement bancaire classique.
+- Méthodologie du mémoire professionnel et soutenance : comment construire une problématique, mener une revue de littérature, choisir une méthodologie de collecte de données, rédiger en respectant les normes académiques, et se préparer à la soutenance orale devant jury.
+
+Ces trois blocs ne sont pas indépendants du mémoire : beaucoup d''étudiants choisissent un thème de mémoire lié à la gestion des risques (par exemple la couverture du risque de change d''une entreprise exportatrice) ou à la finance internationale (par exemple le financement d''une infrastructure par project finance), ce qui permet de préparer les examens et le mémoire en même temps plutôt que comme deux charges de travail séparées.
+
+## Le mémoire professionnel : ce qu''on attend réellement
+
+Le mémoire de Master 2 n''est pas une dissertation théorique : c''est un travail appliqué qui part d''une situation réelle ou réaliste (une entreprise, un secteur, une politique financière) et qui mobilise les outils du Master pour l''analyser.
+
+- Une problématique précise et délimitée vaut mieux qu''un sujet vaste et flou : « comment une PME exportatrice sénégalaise peut-elle se couvrir contre le risque de change sur ses ventes en devises » est préférable à « la gestion des risques financiers en Afrique ».
+- Une méthodologie clairement explicitée : étude de cas unique approfondie, comparaison de plusieurs entreprises, entretiens avec des praticiens, ou analyse de données financières publiques ; chaque choix doit être justifié, pas seulement décrit.
+- Une revue de littérature qui situe le travail par rapport à ce qui a déjà été écrit sur le sujet, sans invention de sources ni de chiffres qui ne pourraient être vérifiés.
+- Une conclusion qui répond explicitement à la problématique posée en introduction, avec les limites du travail honnêtement reconnues.
+
+La soutenance, elle, teste votre capacité à défendre ces choix à l''oral : pourquoi cette méthodologie et pas une autre, pourquoi ce choix de cas d''étude, que feriez-vous différemment avec plus de temps. Nous consacrerons une leçon et un atelier vidéo entiers à cette préparation.
+
+## Plan de révision sur six semaines
+
+- Semaines 1 et 2 : gestion des risques financiers avancée. Reprenez le calcul de la value at risk paramétrique, les mécanismes des options (payoff, valeur intrinsèque, valeur temps) et des swaps de taux.
+- Semaines 3 et 4 : finance internationale et financement de projets. Entraînez-vous sur les ratios de couverture du service de la dette (DSCR) dans un montage de project finance, et sur les indicateurs clés de la microfinance.
+- Semaine 5 : méthodologie du mémoire. Relisez votre plan de mémoire, vérifiez la cohérence entre problématique, méthodologie et conclusion provisoire, et préparez une version orale de dix minutes de présentation.
+- Semaine 6 : entraînement croisé sur des sujets type combinant les trois matières, et simulation de soutenance avec un camarade ou un proche jouant le rôle du jury.
+
+Chaque semaine, terminez par un exercice chronométré et un corrigé détaillé, et notez les points à retravailler avant l''examen final.
+
+## Points clés
+
+- Le Master 2 approfondit la gestion des risques, ouvre vers l''international, et aboutit souvent au mémoire professionnel et à sa soutenance.
+- Trois matières structurent l''année : gestion des risques financiers avancée, finance internationale et financement de projets, méthodologie du mémoire et soutenance.
+- Un bon mémoire part d''une problématique précise, explicite sa méthodologie, et conclut en répondant réellement à la question posée.
+- La révision doit intégrer la préparation de la soutenance orale, pas seulement les examens écrits.
+
+## Exercices
+
+1. Expliquez la différence entre le niveau d''incertitude attendu en M1 et celui attendu en M2 dans le traitement d''un cas.
+2. Citez les trois matières avancées du programme de M2 Finance présentées dans cette leçon.
+3. Pourquoi une problématique de mémoire trop vaste est-elle un problème méthodologique ?
+4. Proposez un découpage de six semaines de révision qui intègre à la fois les examens et la préparation d''une soutenance de mémoire.
+5. Donnez un exemple de problématique de mémoire qui combinerait la gestion des risques financiers et la finance internationale.
+
+## Corrigé
+
+1. En M1, on combine des méthodes déjà connues et on compare leurs résultats pour construire une fourchette argumentée ; en M2, l''incertitude porte souvent sur des données elles-mêmes incomplètes ou des marchés peu liquides, et il faut construire un jugement professionnel sans réponse unique disponible, en justifiant les hypothèses retenues.
+2. Gestion des risques financiers avancée ; finance internationale et financement de projets ; méthodologie du mémoire professionnel et soutenance.
+3. Un sujet trop vaste ne permet pas de collecter des données suffisamment précises ni de proposer une méthodologie rigoureuse ; le travail risque de rester descriptif et superficiel, sans réelle valeur ajoutée, et sera difficile à défendre avec précision devant un jury qui posera des questions ciblées.
+4. Réponse libre ; un bon plan conserve la progression proposée (risques, puis finance internationale, puis méthodologie du mémoire, puis entraînement croisé et simulation de soutenance) en consacrant une session hebdomadaire à l''avancement concret du mémoire.
+5. Exemple possible : « Le financement de projets d''infrastructure énergétique en zone UEMOA face au risque de change : étude de cas d''un montage de project finance », qui combine finance internationale (project finance, monnaie régionale) et gestion des risques financiers (couverture du risque de change).', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en Finance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Gestion des risques financiers avancée : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Calculer une value at risk (VaR) paramétrique simple et l''interpréter correctement.
+- Comprendre le mécanisme d''une option (call et put) et évaluer son prix par un modèle binomial à une période.
+- Comprendre le fonctionnement d''un swap de taux d''intérêt et calculer ses flux nets.
+
+Tous les taux, volatilités et paramètres de marché de cette leçon sont fictifs pour l''exemple.
+
+## Fiche 1 : la value at risk (VaR) paramétrique
+
+La VaR répond à une question précise : quelle est la perte maximale que peut subir une position, avec un niveau de confiance donné, sur un horizon de temps donné, en excluant les scénarios extrêmes au-delà de ce niveau de confiance.
+
+- VaR paramétrique = position × z × σ, où z est le coefficient associé au niveau de confiance (environ 1,645 pour 95 %, environ 2,33 pour 99 %, sous hypothèse de distribution normale des rendements) et σ la volatilité (écart-type) du rendement sur l''horizon considéré.
+- Pour passer d''un horizon d''un jour à un horizon de n jours, on utilise la règle de la racine du temps : VaR(n jours) = VaR(1 jour) × racine de n, sous hypothèse de rendements indépendants dans le temps.
+- La VaR a des limites connues : elle suppose une distribution normale des rendements, souvent fausse en période de crise (queues de distribution plus épaisses que la loi normale), et elle ne dit rien de l''ampleur de la perte au-delà du seuil choisi.
+
+Cas : une direction financière détient un portefeuille obligataire fictif de 500 millions de FCFA, avec une volatilité journalière estimée à 1,2 %. La VaR à 95 % sur un jour est 500 000 000 × 1,645 × 0,012 = 9 870 000 FCFA : il y a 95 % de chances que la perte sur un jour ne dépasse pas environ 9,87 millions de FCFA. La VaR à 99 % sur un jour est 500 000 000 × 2,33 × 0,012 = 13 980 000 FCFA. Sur dix jours, la VaR à 95 % devient 9 870 000 × racine de 10, soit environ 31 211 681 FCFA.
+
+## Fiche 2 : les options, mécanisme et évaluation simplifiée
+
+Une option donne le droit, sans obligation, d''acheter (option d''achat ou call) ou de vendre (option de vente ou put) un actif sous-jacent à un prix fixé à l''avance, le prix d''exercice ou strike, à ou avant une échéance donnée.
+
+- Valeur intrinsèque d''un call : maximum entre (cours du sous-jacent moins strike) et zéro. Pour un put : maximum entre (strike moins cours du sous-jacent) et zéro.
+- Le modèle binomial à une période évalue l''option en supposant que le cours du sous-jacent ne peut prendre que deux valeurs à l''échéance, une hausse (facteur u) ou une baisse (facteur d), et en construisant un portefeuille de réplication sans risque d''arbitrage.
+- Probabilité risque-neutre : p = (1 + r − d) / (u − d), où r est le taux sans risque sur la période. La valeur de l''option est alors l''espérance actualisée de ses payoffs sous cette probabilité : C0 = [p × Cu + (1 − p) × Cd] / (1 + r).
+
+Cas : une action fictive cote 2 000 FCFA, avec un facteur de hausse de 1,15 et un facteur de baisse de 0,90 sur la période, et un taux sans risque de la période de 5 %. Un call au prix d''exercice de 2 000 FCFA a pour payoffs : en hausse, le cours atteint 2 300 FCFA, soit un payoff de 300 ; en baisse, le cours atteint 1 800 FCFA, soit un payoff de 0 (l''option n''est pas exercée). La probabilité risque-neutre est p = (1 + 0,05 − 0,90) / (1,15 − 0,90) = 0,60. La valeur du call est [0,60 × 300 + 0,40 × 0] / 1,05 = 171,43 FCFA.
+
+Pour le put de même strike : payoff en hausse = 0, payoff en baisse = 2 000 − 1 800 = 200. Valeur du put = [0,60 × 0 + 0,40 × 200] / 1,05 = 76,19 FCFA. On vérifie la relation de parité call-put : C − P doit égaler S0 − strike actualisé, soit 2 000 − 2 000/1,05 = 95,24 FCFA, exactement l''écart obtenu entre 171,43 et 76,19.
+
+## Fiche 3 : les swaps de taux d''intérêt
+
+Un swap de taux d''intérêt est un contrat par lequel deux contreparties échangent des flux d''intérêts sur un même notionnel, l''une payant un taux fixe, l''autre un taux variable (indexé sur un taux de référence du marché).
+
+- Utilité principale : transformer la nature d''une dette ou d''un placement sans toucher au principal, par exemple une entreprise endettée à taux variable qui veut sécuriser ses charges financières en les transformant en taux fixe via un swap.
+- À chaque période, seul le flux net (différence entre les deux jambes) est généralement échangé, ce qui réduit le risque de contrepartie par rapport à un échange des deux flux bruts.
+
+Cas : un notionnel fictif de 1 milliard de FCFA, un payeur de taux fixe à 7 %, receveur de taux variable estimé successivement à 6,5 %, 6,8 %, 7,2 % et 7,5 % sur quatre périodes. Le flux fixe payé est chaque période de 1 000 000 000 × 7 % = 70 000 000 FCFA. Les flux variables reçus sont 65, 68, 72 et 75 millions. Les flux nets pour le payeur de taux fixe sont donc : période 1, −5 millions (il paie plus qu''il ne reçoit) ; période 2, −2 millions ; période 3, +2 millions ; période 4, +5 millions. Ce swap devient favorable au payeur de taux fixe lorsque les taux de marché montent au-delà de 7 %, ce qui illustre sa fonction de couverture contre une hausse des taux.
+
+## Exercices pratiques
+
+1. Un portefeuille de 300 millions de FCFA a une volatilité journalière de 1,5 %. Calculez la VaR à 95 % sur un jour et sur cinq jours.
+2. Expliquez pourquoi la VaR ne dit rien de l''ampleur de la perte au-delà du seuil de confiance choisi.
+3. Une action cote 1 500 FCFA, avec u = 1,20, d = 0,85 et un taux sans risque de période de 4 %. Calculez la probabilité risque-neutre et la valeur d''un call au strike de 1 500 FCFA.
+4. Pourquoi une entreprise endettée à taux variable peut-elle vouloir conclure un swap où elle paie un taux fixe ?
+5. Cas pratique : un portefeuille actions fictif de 800 millions de FCFA a une volatilité journalière de 1,8 %. Calculez la VaR à 99 % sur un jour, puis sur vingt jours. Une action sous-jacente cote 1 000 FCFA avec u = 1,10, d = 0,92 et un taux sans risque de période de 3 % ; calculez la valeur d''un put au strike de 1 000 FCFA.
+
+## Corrigé
+
+1. VaR 95 % 1 jour : 300 000 000 × 1,645 × 0,015 = 7 402 500 FCFA. Sur 5 jours : 7 402 500 × racine de 5 ≈ 16 552 493 FCFA.
+2. La VaR fixe un seuil de perte qui ne doit pas être dépassé avec une probabilité donnée, mais elle ne précise pas la perte moyenne ou maximale dans les scénarios situés au-delà de ce seuil ; deux positions peuvent avoir la même VaR à 95 % alors que l''une a des pertes extrêmes bien plus catastrophiques que l''autre dans les 5 % de cas restants.
+3. Cours en hausse : 1 500 × 1,20 = 1 800, payoff call = 300. Cours en baisse : 1 500 × 0,85 = 1 275, payoff call = 0. Probabilité risque-neutre : (1,04 − 0,85)/(1,20 − 0,85) = 0,543. Valeur du call : (0,543 × 300 + 0,457 × 0)/1,04 ≈ 156,6 FCFA.
+4. Parce que le swap fixe à l''avance ses charges d''intérêts futures, la protégeant d''une hausse des taux de marché qui augmenterait sa charge financière réelle si elle restait exposée au taux variable ; elle échange un risque incertain contre une charge connue.
+5. VaR 99 % 1 jour : 800 000 000 × 2,33 × 0,018 = 33 552 000 FCFA. Sur 20 jours : 33 552 000 × racine de 20 ≈ 150 049 106 FCFA. Pour le put : cours en hausse 1 100, payoff put = 0 ; cours en baisse 920, payoff put = 80. Probabilité risque-neutre : (1,03 − 0,92)/(1,10 − 0,92) = 0,611. Valeur du put : (0,611 × 0 + 0,389 × 80)/1,03 ≈ 30,2 FCFA.', 'texte', 50, false, 20
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion des risques financiers avancée : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Finance internationale et financement de projets : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Comprendre la logique du financement de projet (project finance) et calculer un ratio de couverture du service de la dette (DSCR).
+- Connaître les principaux indicateurs de la microfinance comme source de financement alternative.
+- Décrire en termes généraux le rôle des marchés financiers régionaux africains dans le financement des entreprises et des États.
+
+Tous les montants, ratios et taux de cette leçon sont fictifs pour l''exemple.
+
+## Fiche 1 : le financement de projet (project finance)
+
+Le financement de projet consiste à financer un actif ou une infrastructure (centrale électrique, route à péage, port) par une société ad hoc, le véhicule de projet, dont la dette est remboursée uniquement par les flux de trésorerie générés par le projet lui-même, sans recours (ou avec un recours limité) au patrimoine des actionnaires sponsors.
+
+- Le véhicule de projet isole le risque : les créanciers du projet ne peuvent pas, en principe, se retourner contre les actifs des sponsors en cas de défaillance du projet.
+- La structure de financement combine une dette senior importante (souvent 60 à 80 % du coût total), remboursée en priorité, et des fonds propres des sponsors, plus risqués mais aussi plus rémunérés en cas de succès.
+- L''indicateur central de la solidité du montage est le ratio de couverture du service de la dette, DSCR : DSCR = flux de trésorerie disponible pour le service de la dette (CFADS) / service de la dette de la période (capital plus intérêts). Les banques exigent généralement un DSCR moyen et un DSCR minimum au-dessus d''un seuil contractuel, qui doit être vérifié chaque année.
+
+Cas : le projet fictif « Soleil du Sahel », une centrale solaire de 30 MW, coûte 18 000 millions de FCFA, financés à 70 % par une dette senior, soit 12 600 millions, et 30 % par des fonds propres des sponsors, soit 5 400 millions. Sur huit années de remboursement, le CFADS prévisionnel varie entre 2 500 et 2 720 millions de FCFA selon l''année, avec une annuité de dette constante fictive de 1 900 millions. Le DSCR annuel varie alors entre 1,32 et 1,43, avec un DSCR moyen de 1,38. Un DSCR minimum de 1,32, supérieur à 1, signifie que même dans l''année la plus défavorable, le projet génère 32 % de flux supplémentaire au-delà du service de la dette : c''est une marge de sécurité que les prêteurs examinent attentivement avant d''accorder le financement.
+
+## Fiche 2 : la microfinance comme financement alternatif
+
+La microfinance regroupe les institutions qui octroient des crédits de faible montant, souvent sans garantie classique, à des populations ou des très petites entreprises exclues du système bancaire traditionnel. Elle joue un rôle significatif de financement alternatif en zone UEMOA, en complément du financement bancaire et des marchés financiers.
+
+- Taux de remboursement : proportion des prêts remboursés dans les délais prévus, indicateur de la qualité du portefeuille de crédit.
+- Portefeuille à risque à 30 jours, PAR30 : proportion de l''encours de crédit dont au moins une échéance est en retard de plus de 30 jours, rapportée à l''encours total. C''est l''indicateur de référence pour mesurer la qualité du portefeuille d''une institution de microfinance.
+
+Cas : une institution de microfinance fictive a un encours total de 850 millions de FCFA, dont 42,5 millions présentent un retard de plus de 30 jours : le PAR30 est 42 500 000 / 850 000 000 = 5,0 %, à comparer à des seuils prudentiels que l''institution se fixe en interne (souvent sous les 5 à 10 % selon les pratiques du secteur, à vérifier auprès des régulateurs compétents). Sur 1 200 prêts décaissés, 1 140 ont été remboursés à temps, soit un taux de remboursement de 95,0 %.
+
+## Fiche 3 : les marchés financiers régionaux africains, vue d''ensemble
+
+Les marchés financiers régionaux africains, comme les marchés boursiers et obligataires organisés au sein de certaines zones monétaires d''Afrique de l''Ouest et d''Afrique centrale, permettent aux entreprises et aux États de lever des capitaux directement auprès des investisseurs, en complément du crédit bancaire.
+
+- Marché des actions : permet aux entreprises cotées de lever des fonds propres sans recourir à l''endettement, mais la profondeur du marché (nombre d''entreprises cotées, volumes échangés) reste généralement limitée par rapport aux grandes places financières internationales.
+- Marché obligataire régional : les États et certaines grandes entreprises émettent des titres de dette pour financer des projets d''infrastructure ou des besoins budgétaires, souscrits par des investisseurs institutionnels régionaux (banques, assurances, caisses de retraite, fonds).
+- Rôle pour une entreprise en croissance : le marché financier régional offre une alternative de financement à moyen et long terme, utile pour diversifier les sources de financement au-delà du seul crédit bancaire, mais suppose une taille et une transparence financière suffisantes de l''entreprise émettrice.
+
+Pour toute donnée précise sur un marché financier régional particulier (indices, capitalisation, nombre de sociétés cotées), il convient de se référer aux publications officielles de l''autorité de régulation ou de la bourse concernée plutôt qu''à des chiffres mémorisés, qui évoluent rapidement.
+
+## Exercices pratiques
+
+1. Expliquez pourquoi le financement de projet repose sur un véhicule ad hoc plutôt que sur le bilan direct des sponsors.
+2. Un projet a un CFADS de 1 800 millions de FCFA et un service de la dette de 1 300 millions sur la période. Calculez le DSCR et commentez.
+3. Une institution de microfinance a un encours total de 600 millions de FCFA, dont 18 millions en retard de plus de 30 jours. Calculez le PAR30.
+4. Pourquoi la profondeur limitée d''un marché financier régional complique-t-elle l''usage des méthodes d''évaluation par les multiples de comparables, vues dans le cours de Master 1 ?
+5. Cas pratique : un projet routier à péage fictif coûte 25 000 millions de FCFA, financé à 75 % par dette senior. Le CFADS prévisionnel est de 2 100 millions par an sur dix ans, avec une annuité de dette constante de 1 650 millions. Calculez le montant de la dette senior, le DSCR annuel, et commentez la marge de sécurité du montage.
+
+## Corrigé
+
+1. Le véhicule ad hoc isole juridiquement et financièrement le risque du projet : en cas de défaillance, les créanciers ne peuvent se retourner, en principe, que sur les actifs et les flux du projet lui-même, pas sur le patrimoine des sponsors, ce qui permet à ces derniers de financer des projets ambitieux sans engager l''intégralité de leur bilan.
+2. DSCR = 1 800 / 1 300 ≈ 1,38, ce qui signifie que le projet génère 38 % de flux disponible au-delà du service de la dette, une marge de sécurité jugée confortable par la plupart des prêteurs de ce type de financement.
+3. PAR30 = 18 000 000 / 600 000 000 = 3,0 %, un niveau généralement considéré comme sain pour un portefeuille de microcrédit, sous réserve des seuils prudentiels propres à chaque institution et à son régulateur.
+4. Avec peu d''entreprises cotées comparables dans un même secteur sur un marché régional, il devient difficile de constituer un échantillon de comparables suffisamment homogène et liquide ; les multiples obtenus sont alors moins fiables, ce qui renforce l''intérêt de croiser systématiquement cette méthode avec le DCF et l''approche patrimoniale.
+5. Dette senior : 25 000 × 0,75 = 18 750 millions. DSCR = 2 100 / 1 650 ≈ 1,27 : la marge de sécurité est positive mais plus réduite que dans l''exemple de la centrale solaire (DSCR moyen de 1,38), ce qui pourrait conduire les prêteurs à demander des garanties supplémentaires ou un ratio de couverture plus élevé avant de finaliser le financement.', 'texte', 50, false, 30
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Finance internationale et financement de projets : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Méthodologie du mémoire professionnel et soutenance : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Construire une problématique de mémoire précise et une méthodologie cohérente avec elle.
+- Structurer un mémoire professionnel en finance : revue de littérature, méthodologie, résultats, discussion, conclusion.
+- Préparer une soutenance orale efficace : plan de présentation, anticipation des questions du jury, gestion du temps.
+
+## Fiche 1 : choisir et formuler une problématique
+
+La problématique est la question centrale à laquelle le mémoire répond. Elle doit être précise, délimitée dans le temps, l''espace et le périmètre d''entreprise ou de secteur étudié, et répondre à un enjeu réel, pas seulement académique.
+
+- Une bonne problématique relie un phénomène observé (par exemple, la difficulté des PME sénégalaises à accéder au crédit bancaire classique) à un cadre d''analyse du Master (par exemple, les critères de notation du risque de crédit, ou les alternatives de financement comme la microfinance ou le crédit-bail).
+- Elle se formule le plus souvent comme une question ouverte suivie d''une délimitation : « Dans quelle mesure le financement de projet constitue-t-il une alternative crédible au crédit bancaire classique pour les PME agro-industrielles sénégalaises, à partir de l''étude d''un cas fictif de centrale solaire ? » plutôt qu''une question fermée appelant un simple oui ou non.
+- Évitez les sujets trop vastes (« la finance en Afrique ») et les sujets trop étroits ne laissant aucune place à l''analyse (« le calcul du DSCR d''un seul projet », sans mise en perspective).
+
+## Fiche 2 : construire une méthodologie cohérente
+
+La méthodologie décrit comment vous allez répondre à la problématique, et doit être choisie en fonction de la nature de la question posée, pas par facilité.
+
+- Étude de cas unique approfondie : pertinente quand on veut comprendre en détail un mécanisme ou une décision dans un contexte précis (par exemple, le montage financier d''un projet d''infrastructure).
+- Étude comparative de plusieurs entreprises ou projets : pertinente quand on veut identifier des facteurs communs ou des différences entre plusieurs situations.
+- Entretiens avec des praticiens (banquiers, directeurs financiers, gérants de fonds) : utiles pour recueillir des informations qualitatives non disponibles dans les documents publics, à condition de présenter une grille d''entretien claire et de respecter l''anonymat si nécessaire.
+- Analyse de données financières publiques (rapports annuels, données de marché) : pertinente pour des analyses quantitatives, à condition de citer précisément les sources et de ne jamais inventer un chiffre non vérifiable.
+
+Chaque choix méthodologique doit être justifié dans le mémoire lui-même : pourquoi cette méthode plutôt qu''une autre, quelles sont ses limites, comment elles ont été atténuées autant que possible.
+
+## Fiche 3 : la structure attendue d''un mémoire professionnel
+
+- Introduction : contexte, problématique, annonce du plan.
+- Revue de littérature ou cadre théorique : présentation des concepts et travaux existants mobilisés, sans invention de sources ni de citations qui ne pourraient être retrouvées et vérifiées.
+- Méthodologie : présentation détaillée et justifiée de la démarche suivie.
+- Résultats ou analyse du cas : présentation factuelle des données et calculs, avec les hypothèses toujours explicitées, notamment lorsque des taux fictifs sont utilisés à des fins pédagogiques dans un exercice ; dans un mémoire réel, seules des données vérifiables et sourcées doivent être utilisées.
+- Discussion : interprétation des résultats, mise en perspective avec la littérature, limites du travail.
+- Conclusion : réponse explicite à la problématique posée en introduction, et pistes pour des travaux futurs.
+- Bibliographie et annexes : toutes les sources citées doivent être réelles, vérifiables et correctement référencées ; le plagiat, y compris la paraphrase non attribuée, est une faute grave sanctionnée par les établissements.
+
+## Fiche 4 : préparer la soutenance orale
+
+La soutenance dure généralement entre vingt et quarante-cinq minutes selon les établissements, dont une présentation orale de dix à vingt minutes suivie de questions du jury.
+
+- Structurez votre présentation autour de la problématique, de la méthodologie, des principaux résultats et de la conclusion : ne répétez pas l''intégralité du mémoire, mettez en avant ce qui a le plus de valeur ajoutée.
+- Préparez des diapositives sobres, avec des graphiques ou tableaux clés plutôt que des pavés de texte ; le jury a déjà lu le mémoire, il attend une synthèse, pas une lecture.
+- Anticipez les questions classiques d''un jury : pourquoi ce choix méthodologique, quelles sont les limites de votre étude, que feriez-vous différemment avec plus de temps ou de données, quelle est la portée pratique de vos conclusions pour une entreprise ou un décideur réel.
+- Entraînez-vous à voix haute, chronométré, devant un public même informel (camarades, famille) ; la fluidité orale compte autant que le contenu pour la note finale.
+- Gardez une posture de recul critique sur votre propre travail : un jury valorise davantage un candidat qui reconnaît honnêtement les limites de son étude qu''un candidat qui surestime la portée de ses conclusions.
+
+## Exercices pratiques
+
+1. Reformulez cette problématique trop vaste : « La gestion des risques financiers des entreprises africaines ». Proposez une version précise et délimitée.
+2. Pourquoi le choix de la méthodologie doit-il être justifié dans le mémoire, et pas seulement décrit ?
+3. Citez les six grandes parties attendues dans la structure d''un mémoire professionnel.
+4. Quelles sont les trois questions de jury les plus fréquentes à anticiper en soutenance ?
+5. Expliquez pourquoi la paraphrase non attribuée constitue une forme de plagiat, même sans copier-coller exact.
+
+## Corrigé
+
+1. Exemple de reformulation : « Dans quelle mesure une entreprise exportatrice sénégalaise de produits halieutiques peut-elle réduire son exposition au risque de change par des instruments de couverture accessibles sur le marché régional, à partir d''une étude de cas fictive ? » ; la version révisée précise le secteur, le pays, le type de risque et le périmètre d''étude.
+2. Parce qu''une méthodologie non justifiée laisse penser qu''elle a été choisie par facilité ou par défaut, alors qu''un jury attend de comprendre pourquoi cette démarche était la plus pertinente pour répondre à la problématique posée, et quelles limites elle comporte par rapport à d''autres approches possibles.
+3. Introduction ; revue de littérature ou cadre théorique ; méthodologie ; résultats ou analyse du cas ; discussion ; conclusion (avec bibliographie et annexes en complément).
+4. Pourquoi ce choix méthodologique plutôt qu''un autre ; quelles sont les limites de l''étude ; quelle est la portée pratique des conclusions pour une entreprise ou un décideur réel.
+5. Parce que reformuler les idées ou l''analyse d''un auteur avec d''autres mots, sans les attribuer explicitement par une citation ou une référence, fait croire au lecteur que ce raisonnement est originel au candidat, alors qu''il provient d''une source tierce ; seule la citation explicite avec référence précise permet de distinguer ce qui appartient à l''auteur du mémoire de ce qui est repris d''un travail existant.', 'texte', 50, false, 40
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire professionnel et soutenance : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 2 Finance (entraînement corrigé)', '## Avertissement
+
+Ce sujet est un entraînement non officiel construit pour ce cours, avec un barème indicatif. Il ne remplace pas les annales de votre établissement mais mobilise les matières avancées du programme de Master 2 Finance.
+
+## Sujet type d''examen de Master 2 Finance (3 heures, barème indicatif sur 20)
+
+Cas d''entreprise : Sine-Saloum Énergie SA, société de projet fictive, développe une mini-centrale hydroélectrique de 15 MW dans la région du Sine-Saloum, financée par un montage de financement de projet, et une direction financière d''un groupe exportateur, Delta Riz SA, souhaite couvrir son exposition au risque de change.
+
+## Partie 1 : financement de projet (7 points)
+
+Données : coût total du projet 9 000 millions de FCFA, financé à 65 % par dette senior. Le CFADS prévisionnel est de 1 350 millions par an sur sept ans, avec une annuité de dette constante de 980 millions.
+
+1. Calculez le montant de la dette senior et des fonds propres des sponsors.
+2. Calculez le DSCR annuel et commentez la marge de sécurité du montage.
+3. Expliquez pourquoi les créanciers de ce projet n''ont, en principe, pas de recours direct sur le patrimoine personnel des sponsors.
+
+## Partie 2 : gestion des risques financiers (8 points)
+
+Données : Delta Riz SA détient une position de change de 400 millions de FCFA équivalents en devises à encaisser dans trois mois, avec une volatilité journalière estimée du taux de change de 0,9 %.
+
+4. Calculez la VaR à 95 % sur un jour de cette position, puis sur dix jours.
+5. Delta Riz envisage un swap de taux pour une autre dette à taux variable de notionnel 600 millions de FCFA : taux fixe proposé 6,5 %, taux variable estimé successivement à 6,0 %, 6,3 %, 6,8 % sur trois périodes. Calculez les flux nets pour l''entreprise si elle paie le taux fixe, et indiquez dans quel cas ce choix se révèle favorable.
+6. Expliquez la différence entre couverture par un instrument dérivé et simple acceptation du risque de change, en termes de coût et de certitude du résultat.
+
+## Partie 3 : méthodologie du mémoire (5 points)
+
+7. Un étudiant propose la problématique suivante : « Le financement des entreprises en Afrique ». Critiquez cette formulation et proposez une version améliorée en lien avec le cas Sine-Saloum Énergie.
+8. Citez trois questions qu''un jury pourrait poser en soutenance sur un mémoire consacré au financement de projet de cette centrale.
+
+## Exercices pratiques (entraînement complémentaire)
+
+1. Pourquoi le DSCR minimum sur toute la durée du financement est-il plus important pour les prêteurs que le DSCR moyen ?
+2. Dans quel cas précis un swap où l''entreprise paie un taux fixe devient-il défavorable par rapport à rester en taux variable ?
+3. Pourquoi un mémoire sur un projet de financement doit-il explicitement reconnaître les limites des données disponibles, notamment lorsque certains chiffres sont fictifs ou estimés ?
+
+## Corrigé
+
+1. Dette senior : 9 000 × 0,65 = 5 850 millions. Fonds propres des sponsors : 9 000 − 5 850 = 3 150 millions.
+2. DSCR = 1 350 / 980 ≈ 1,38 chaque année (CFADS et annuité constants dans cet énoncé simplifié) : une marge de sécurité de 38 % au-delà du service de la dette, jugée confortable, à condition que les prévisions de CFADS restent fiables sur toute la durée du financement.
+3. Parce que la dette est logée dans le véhicule de projet, juridiquement distinct des sponsors, et structurée sans recours ou à recours limité : en cas de défaillance du projet, les créanciers se remboursent sur les actifs et les flux du projet lui-même, pas sur le patrimoine personnel ou le bilan global des sponsors, ce qui limite le risque pris par ces derniers.
+4. VaR 95 % 1 jour : 400 000 000 × 1,645 × 0,009 = 5 922 000 FCFA. Sur 10 jours : 5 922 000 × racine de 10 ≈ 18 727 008 FCFA.
+5. Flux fixe payé chaque période : 600 000 000 × 6,5 % = 39 000 000 FCFA. Flux variables reçus : 36, 37,8 et 40,8 millions. Flux nets pour l''entreprise : période 1, −3 millions ; période 2, −1,2 million ; période 3, +1,8 million. Ce choix devient favorable lorsque le taux variable de marché dépasse 6,5 %, comme en période 3.
+6. La couverture par un dérivé a un coût (prime d''option, ou écart potentiellement défavorable sur un swap) mais fixe ou plafonne le résultat financier futur, réduisant l''incertitude ; l''acceptation du risque ne coûte rien immédiatement mais expose l''entreprise à une variabilité totale de son résultat selon l''évolution réelle du taux de change, favorable ou défavorable.
+7. La problématique est trop vaste, sans délimitation géographique précise, sectorielle ni méthodologique. Version améliorée : « Dans quelle mesure le financement de projet permet-il de sécuriser le financement d''une infrastructure énergétique régionale face au risque de construction et d''exploitation, à partir de l''étude d''un cas fictif de mini-centrale hydroélectrique au Sine-Saloum ? »
+8. Exemples de questions : pourquoi avoir choisi une étude de cas unique plutôt qu''une comparaison de plusieurs projets ; comment avez-vous validé la fiabilité des hypothèses de CFADS utilisées dans le montage ; quelles seraient les conséquences pour les sponsors et les créanciers si le DSCR minimum tombait sous le seuil contractuel pendant une année difficile.
+Exercices complémentaires : 1. Parce que le DSCR minimum identifie l''année la plus fragile du montage, celle où le risque de défaut est le plus élevé ; un DSCR moyen confortable peut masquer une année isolée où la marge de sécurité devient dangereusement faible. 2. Quand le taux variable de marché reste durablement inférieur au taux fixe convenu : l''entreprise paie alors plus qu''elle n''aurait payé en restant à taux variable, le swap devient un coût net plutôt qu''une protection utile. 3. Parce que la crédibilité d''un mémoire professionnel repose sur la transparence de ses sources et de ses hypothèses ; reconnaître explicitement qu''un chiffre est estimé ou fictif, et pourquoi, renforce la rigueur perçue du travail, alors que le dissimuler expose le candidat à une perte de crédibilité en soutenance si le jury le découvre.', 'texte', 55, false, 50
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 Finance (entraînement corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Gestion des risques financiers avancée (VaR, options, swaps)', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 2 Finance.
+Objectifs : calculer une VaR paramétrique et en discuter les limites, évaluer une option par le modèle binomial, calculer les flux nets d''un swap de taux.
+Matériel : tableau ou diaporama, calculatrice.
+Prérequis : actualisation, notions de probabilité et de variance.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Cette séance porte sur la gestion des risques financiers avancée : trois outils que toute direction financière ou salle des marchés utilise au quotidien pour mesurer et couvrir ses risques. Nous allons calculer une value at risk, évaluer une option par un modèle simple, et comprendre comment un swap de taux transforme une exposition financière. Gardez votre calculatrice à portée de main, nous allons refaire chaque calcul ensemble.
+
+Visuel : diapositive de titre avec les trois outils annoncés.
+
+## 05:00 – 20:00 · Partie 1 : la value at risk paramétrique
+
+La VaR répond à une question très concrète : quelle est la perte maximale que je risque de subir, avec un niveau de confiance donné, sur un horizon donné. C''est l''indicateur de risque de marché le plus utilisé dans les salles de marché et les directions financières, malgré ses limites que nous allons discuter.
+
+La formule paramétrique est simple : VaR égale la position, multipliée par un coefficient z associé au niveau de confiance, multipliée par la volatilité. Pour un niveau de confiance de 95 %, sous hypothèse de distribution normale, z vaut environ 1,645. Pour 99 %, z vaut environ 2,33.
+
+Prenons un exemple concret : une direction financière détient un portefeuille obligataire de 500 millions de FCFA, avec une volatilité journalière estimée à 1,2 %. La VaR à 95 % sur un jour est 500 millions fois 1,645 fois 0,012, soit 9 870 000 FCFA. Cela signifie qu''il y a 95 % de chances que la perte sur une seule journée ne dépasse pas environ 9,87 millions de FCFA. À 99 %, la VaR monte à 500 millions fois 2,33 fois 0,012, soit 13 980 000 FCFA : plus on exige un niveau de confiance élevé, plus la VaR augmente, car on veut couvrir des scénarios plus rares et plus extrêmes.
+
+Pour passer à un horizon plus long, on utilise la règle de la racine du temps, sous hypothèse d''indépendance des rendements journaliers : la VaR sur dix jours égale la VaR sur un jour multipliée par la racine de dix. Ici, 9 870 000 fois racine de 10, soit environ 31 211 681 FCFA.
+
+Visuel : courbe de distribution normale avec la zone de 5 % de queue gauche hachurée, le seuil de VaR indiqué par une ligne verticale.
+
+Discussion essentielle, à toujours mentionner en examen : la VaR suppose une distribution normale des rendements. En période de crise financière, les marchés présentent des queues de distribution plus épaisses que la loi normale ne le prévoit : les pertes extrêmes sont plus fréquentes que le modèle ne le suggère. De plus, la VaR ne dit absolument rien de l''ampleur de la perte au-delà du seuil choisi : deux portefeuilles peuvent avoir exactement la même VaR à 95 % alors que l''un a des pertes catastrophiques dans les 5 % de cas restants et l''autre non.
+
+## 20:00 – 35:00 · Partie 2 : évaluer une option par le modèle binomial
+
+Passons aux options. Une option donne le droit, sans obligation, d''acheter (call) ou de vendre (put) un actif à un prix fixé d''avance, le strike. Le modèle binomial à une période est la façon la plus pédagogique de comprendre comment on évalue une option sans recourir à des formules fermées complexes.
+
+On suppose que le cours du sous-jacent ne peut prendre que deux valeurs à l''échéance : une valeur haute, obtenue en multipliant le cours initial par un facteur u, et une valeur basse, obtenue en multipliant par un facteur d. L''idée clé du modèle est de construire un portefeuille de réplication, combinant l''actif sous-jacent et un prêt ou un emprunt sans risque, qui reproduit exactement les payoffs de l''option dans les deux scénarios. Cela permet de calculer une probabilité dite risque-neutre, qui n''est pas la vraie probabilité de hausse ou de baisse, mais un outil mathématique qui permet d''actualiser correctement les payoffs futurs.
+
+Prenons un exemple : une action cote 2 000 FCFA, avec un facteur de hausse u de 1,15 et un facteur de baisse d de 0,90, et un taux sans risque de la période de 5 %. En hausse, le cours atteint 2 300 FCFA ; en baisse, 1 800 FCFA. Pour un call au strike de 2 000 FCFA, le payoff en hausse est 300, le payoff en baisse est 0, puisque l''option ne serait pas exercée si le cours est inférieur au strike.
+
+La probabilité risque-neutre est p égale (1 plus le taux sans risque moins d) divisé par (u moins d), soit (1,05 moins 0,90) divisé par (1,15 moins 0,90), soit 0,60. La valeur du call est l''espérance actualisée des payoffs sous cette probabilité : [0,60 fois 300 plus 0,40 fois 0] divisé par 1,05, soit 171,43 FCFA.
+
+Visuel : arbre binomial à une période dessiné au tableau, avec les deux branches et les payoffs indiqués.
+
+Faisons le même calcul pour le put correspondant, même strike de 2 000 FCFA : payoff en hausse égal à 0, payoff en baisse égal à 2 000 moins 1 800, soit 200. La valeur du put est [0,60 fois 0 plus 0,40 fois 200] divisé par 1,05, soit 76,19 FCFA. Vérifions la relation de parité call-put, qui doit toujours être respectée sans opportunité d''arbitrage : C moins P doit égaler S0 moins le strike actualisé, soit 2 000 moins 2 000 divisé par 1,05, soit 95,24 FCFA. Et effectivement, 171,43 moins 76,19 égale 95,24. Cette vérification est un excellent réflexe à montrer à l''examen : elle prouve que vos deux calculs sont cohérents entre eux.
+
+## 35:00 – 50:00 · Partie 3 : les swaps de taux d''intérêt
+
+Troisième outil : le swap de taux d''intérêt. Un swap est un contrat par lequel deux contreparties échangent des flux d''intérêts calculés sur un même notionnel, l''une payant un taux fixe, l''autre un taux variable indexé sur un taux de référence du marché. Le principal n''est jamais échangé, seul le flux d''intérêt net est généralement réglé à chaque période.
+
+Pourquoi une entreprise utiliserait-elle un swap ? Imaginez une entreprise endettée à taux variable, qui craint une hausse des taux de marché dans les prochaines années. Elle peut conclure un swap où elle paie un taux fixe et reçoit un taux variable : le taux variable reçu compense exactement le taux variable qu''elle paie sur sa dette d''origine, et il ne lui reste plus, économiquement, qu''à payer le taux fixe du swap. Elle a transformé sa dette à taux variable en dette synthétique à taux fixe, sans renégocier le contrat de prêt d''origine.
+
+Prenons un exemple : un notionnel de 1 milliard de FCFA, un taux fixe payé de 7 %, et des taux variables reçus estimés successivement à 6,5 %, 6,8 %, 7,2 % et 7,5 % sur quatre périodes. Le flux fixe payé chaque période est 1 milliard fois 7 %, soit 70 millions. Les flux variables reçus sont 65, 68, 72 et 75 millions. Les flux nets pour le payeur de taux fixe sont donc : période 1, moins 5 millions ; période 2, moins 2 millions ; période 3, plus 2 millions ; période 4, plus 5 millions.
+
+Visuel : tableau des quatre périodes avec flux fixe, flux variable et flux net, en couleur selon le signe.
+
+Observez la logique : quand les taux de marché montent au-delà du taux fixe de 7 %, le swap devient favorable au payeur de taux fixe, puisqu''il reçoit alors plus qu''il ne paie. C''est exactement ce qui se passe en période 3 et 4 dans notre exemple. Le swap a bien joué son rôle de couverture contre la hausse des taux.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions de vérification.
+
+- Question 1 : que signifie une VaR à 95 % sur un jour de 10 millions de FCFA ? Réponse : il y a 95 % de chances que la perte sur cette position ne dépasse pas 10 millions de FCFA sur une seule journée, sous les hypothèses du modèle.
+- Question 2 : à quoi sert la probabilité risque-neutre dans le modèle binomial d''évaluation d''option ? Réponse : à actualiser correctement l''espérance des payoffs futurs de l''option, en s''appuyant sur un portefeuille de réplication sans opportunité d''arbitrage, plutôt que sur la vraie probabilité de hausse ou de baisse du marché.
+- Question 3 : comment un swap de taux permet-il de transformer une dette à taux variable en dette synthétique à taux fixe ? Réponse : en recevant un flux variable qui compense exactement le taux variable payé sur la dette d''origine, ne laissant à l''entreprise que le paiement du taux fixe du swap.
+
+## 55:00 – 70:00 · Partie 4 : combiner les outils dans une politique de gestion des risques
+
+Dans la pratique, une direction financière ne choisit pas un seul outil : elle combine mesure du risque et instruments de couverture. La VaR permet de quantifier et de suivre l''exposition globale de l''entreprise aux marchés. Les options offrent une couverture asymétrique : elles protègent contre un mouvement défavorable tout en conservant le bénéfice d''un mouvement favorable, au prix d''une prime payée d''avance. Les swaps offrent une couverture symétrique, souvent sans paiement initial de prime, mais sans possibilité de bénéficier d''un mouvement favorable une fois le contrat conclu.
+
+Le choix entre option et swap dépend donc de l''appétit au risque de l''entreprise et du coût relatif des deux instruments sur le marché à un instant donné. Une entreprise exportatrice qui craint une baisse de la devise dans laquelle elle facture peut acheter un put sur cette devise pour se protéger tout en gardant la possibilité de profiter d''une hausse, ou conclure un contrat à terme, plus proche d''un swap, qui fixe le taux de change futur sans paiement de prime mais sans possibilité de gain si la devise s''apprécie.
+
+Visuel : tableau comparatif option versus swap, sur les critères coût initial, symétrie de la protection, flexibilité.
+
+## 70:00 – 80:00 · Cas pratique approfondi : stress test simplifié
+
+Terminons par un exercice de stress test, complément essentiel à la VaR. Reprenons le portefeuille obligataire de 500 millions de FCFA. La VaR à 99 % sur un jour nous donnait 13 980 000 FCFA, en supposant une distribution normale. Mais que se passerait-il si la volatilité journalière, habituellement de 1,2 %, triplait soudainement à 3,6 % lors d''une crise de marché, un scénario que la VaR historique n''aurait peut-être pas anticipé ? La perte potentielle sur un jour deviendrait alors 500 millions fois 2,33 fois 0,036, soit environ 41 940 000 FCFA, trois fois plus que la VaR calculée en conditions normales.
+
+C''est pourquoi les bonnes pratiques de gestion des risques exigent de compléter la VaR par des scénarios de stress, qui testent des conditions de marché extrêmes mais plausibles. La VaR mesure le risque en conditions normales ; le stress test mesure la résistance en conditions de crise.
+
+## 80:00 – 85:00 · Synthèse générale
+
+Pour résumer cette séance : la VaR quantifie un risque de marché sous hypothèse de distribution normale, avec des limites bien identifiées qu''il faut toujours savoir discuter ; les options offrent une couverture asymétrique évaluée par un modèle de réplication sans arbitrage ; les swaps transforment la nature d''une exposition financière à coût généralement nul au départ. Une politique de gestion des risques robuste combine ces outils de mesure et de couverture, complétés par des scénarios de stress.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Quelle est la formule de la VaR paramétrique à un jour ? Réponse : position multipliée par le coefficient z associé au niveau de confiance, multipliée par la volatilité journalière.
+2. Pourquoi la VaR est-elle limitée en période de crise financière ? Réponse : parce qu''elle suppose une distribution normale des rendements, alors que les marchés en crise présentent des pertes extrêmes plus fréquentes que ce que cette distribution prévoit.
+3. Dans le modèle binomial, à quoi correspond la probabilité risque-neutre p ? Réponse : à (1 plus le taux sans risque moins le facteur de baisse d), divisé par (le facteur de hausse u moins le facteur de baisse d), utilisée pour actualiser l''espérance des payoffs de l''option.
+4. Quelle relation doit toujours être vérifiée entre la valeur d''un call et celle d''un put de même strike et même échéance ? Réponse : la relation de parité call-put, C moins P égale le cours actuel du sous-jacent moins le strike actualisé au taux sans risque.
+5. Pourquoi un swap de taux ne comporte-t-il généralement pas de prime initiale, contrairement à une option ? Réponse : parce que les conditions du swap, notionnel et taux fixe, sont fixées de telle sorte que la valeur actuelle des deux jambes de flux soit égale à l''origine du contrat, alors qu''une option offre un droit asymétrique qui doit être rémunéré par une prime pour compenser l''absence d''obligation de l''acheteur.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gestion des risques financiers avancée (VaR, options, swaps)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Finance internationale et financement de projets', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 2 Finance.
+Objectifs : construire un montage de financement de projet et calculer le DSCR, connaître les indicateurs clés de la microfinance, situer le rôle des marchés financiers régionaux africains.
+Matériel : tableau ou diaporama, calculatrice.
+Prérequis : actualisation, lecture d''un plan de financement.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Cette séance porte sur la finance internationale et le financement de projets : comment une infrastructure, une centrale électrique ou une route à péage, se finance par un montage spécifique où la dette est remboursée par les flux du projet lui-même ; comment la microfinance complète le financement bancaire classique ; et quel rôle jouent les marchés financiers régionaux africains. Nous allons suivre le cas fictif de la centrale solaire « Soleil du Sahel » tout au long de la séance.
+
+Visuel : diapositive de titre avec une photo schématique de centrale solaire et les trois thèmes annoncés.
+
+## 05:00 – 20:00 · Partie 1 : la logique du financement de projet
+
+Le financement de projet, ou project finance, répond à un besoin précis : financer un actif coûteux et de longue durée de vie, sans faire peser l''intégralité du risque sur le bilan des entreprises qui portent le projet, appelées les sponsors.
+
+Le mécanisme central est la création d''un véhicule de projet, une société ad hoc dédiée uniquement à ce projet. Cette société emprunte auprès des banques, construit et exploite l''actif, et rembourse sa dette exclusivement avec les flux de trésorerie générés par l''exploitation, sans recours ou avec un recours limité au patrimoine des sponsors. C''est la différence fondamentale avec un financement d''entreprise classique, où le prêteur peut se retourner sur l''ensemble du bilan de l''emprunteur.
+
+Prenons notre cas : « Soleil du Sahel », une centrale solaire fictive de 30 mégawatts, coûte 18 000 millions de FCFA. Elle est financée à 70 % par une dette senior, soit 12 600 millions, et à 30 % par des fonds propres des sponsors, soit 5 400 millions. Cette répartition, typique du secteur de l''énergie, reflète le fait que les flux futurs du projet, très prévisibles une fois le contrat de vente d''électricité signé, permettent aux banques d''accepter un niveau d''endettement élevé.
+
+Visuel : schéma du montage avec le véhicule de projet au centre, les sponsors à gauche, les banques à droite, et les flèches de flux de trésorerie vers les prêteurs.
+
+## 20:00 – 35:00 · Partie 2 : calculer et interpréter le DSCR
+
+L''indicateur central de la solidité d''un montage de financement de projet est le ratio de couverture du service de la dette, le DSCR : DSCR égale le flux de trésorerie disponible pour le service de la dette, qu''on appelle CFADS, divisé par le service de la dette de la période, c''est-à-dire la somme du capital remboursé et des intérêts payés.
+
+Pour « Soleil du Sahel », sur huit années de remboursement, le CFADS prévisionnel varie entre 2 500 et 2 720 millions de FCFA selon l''année, avec une annuité de dette constante de 1 900 millions. Calculons le DSCR de la première année : 2 600 divisé par 1 900, soit environ 1,37. Sur l''ensemble des huit années, le DSCR varie entre 1,32 et 1,43, avec une moyenne de 1,38.
+
+Que signifie un DSCR de 1,32 dans l''année la plus défavorable ? Cela signifie que même cette année-là, le projet génère 32 % de flux de trésorerie supplémentaire au-delà de ce qui est strictement nécessaire pour payer la dette. C''est cette marge de sécurité, et plus précisément le DSCR minimum sur toute la durée du financement, que les banques examinent en priorité avant d''accorder leur financement, car c''est l''année la plus fragile qui détermine le risque réel de défaut.
+
+Visuel : graphique en barres du DSCR année par année, avec une ligne horizontale représentant le seuil contractuel minimum exigé par les prêteurs, par exemple 1,20 dans cet exemple fictif.
+
+Mettez en pause et réfléchissez : si une année de maintenance exceptionnelle réduisait le CFADS de cette année-là à 2 200 millions au lieu de 2 600, que deviendrait le DSCR cette année, et quelles conséquences cela aurait-il potentiellement sur le respect des engagements contractuels envers les prêteurs ? Le DSCR tomberait à 2 200 divisé par 1 900, soit environ 1,16, probablement sous le seuil contractuel minimum, ce qui déclencherait une discussion avec les prêteurs, voire des mesures correctives prévues au contrat de financement.
+
+## 35:00 – 50:00 · Partie 3 : la microfinance comme financement alternatif
+
+Changeons d''échelle. Toutes les entreprises n''ont pas accès au financement bancaire classique ni aux marchés financiers. La microfinance s''est développée pour répondre aux besoins de financement de petite taille, souvent sans garantie classique, pour des populations ou de très petites entreprises exclues du système bancaire traditionnel.
+
+Deux indicateurs structurent le pilotage du risque de crédit dans une institution de microfinance. Le taux de remboursement, qui mesure la proportion de prêts remboursés dans les délais prévus. Et le portefeuille à risque à 30 jours, le PAR30, qui mesure la proportion de l''encours total présentant au moins une échéance en retard de plus de 30 jours.
+
+Pour une institution fictive avec un encours total de 850 millions de FCFA, dont 42,5 millions en retard de plus de 30 jours, le PAR30 est 42,5 divisé par 850, soit 5,0 %. Sur 1 200 prêts décaissés, 1 140 ont été remboursés à temps, soit un taux de remboursement de 95,0 %.
+
+Visuel : jauge visuelle du PAR30 avec des zones de couleur verte, jaune et rouge selon le niveau, à titre pédagogique uniquement, les seuils réels dépendant de chaque régulateur et institution.
+
+Pourquoi ces indicateurs sont-ils essentiels en finance internationale et en financement de projets ? Parce que de plus en plus de montages combinent financement bancaire classique, financement de projet et microfinance, notamment pour des projets d''électrification rurale décentralisée où les utilisateurs finaux sont eux-mêmes financés par microcrédit pour payer leurs raccordements ou leurs équipements.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions de vérification.
+
+- Question 1 : pourquoi le DSCR minimum importe-t-il davantage que le DSCR moyen pour un prêteur ? Réponse : parce qu''il identifie l''année la plus fragile du montage, celle où le risque de défaut est le plus élevé, alors qu''une moyenne confortable peut masquer une année isolée dangereusement faible.
+- Question 2 : que mesure le PAR30 dans une institution de microfinance ? Réponse : la proportion de l''encours total de crédit présentant au moins une échéance en retard de plus de 30 jours, indicateur de la qualité du portefeuille.
+- Question 3 : pourquoi le financement de projet permet-il à des sponsors de porter des projets plus ambitieux que leur bilan ne le permettrait seul ? Réponse : parce que la dette est logée dans un véhicule ad hoc, remboursée par les flux du projet, sans engager l''intégralité du patrimoine ou du bilan global des sponsors.
+
+## 55:00 – 70:00 · Partie 4 : les marchés financiers régionaux africains
+
+Troisième thème de cette séance : le rôle des marchés financiers régionaux africains dans le financement des entreprises et des États. Au-delà du crédit bancaire et de la microfinance, certaines zones monétaires d''Afrique de l''Ouest et d''Afrique centrale disposent de marchés boursiers et obligataires organisés, qui permettent de lever des capitaux directement auprès d''investisseurs.
+
+Sur le marché des actions, une entreprise cotée peut lever des fonds propres sans recourir à l''endettement, mais la profondeur de ces marchés, en nombre d''entreprises cotées et en volumes échangés, reste généralement limitée par rapport aux grandes places financières internationales. Sur le marché obligataire régional, les États et certaines grandes entreprises émettent des titres de dette pour financer des projets d''infrastructure ou des besoins budgétaires, souscrits par des investisseurs institutionnels régionaux, banques, assurances, caisses de retraite.
+
+Pour une entreprise comme les sponsors de « Soleil du Sahel », le marché financier régional pourrait, à terme, offrir une source de financement complémentaire au financement bancaire et au financement de projet, par exemple via une émission obligataire adossée aux revenus futurs de plusieurs centrales similaires, à condition d''atteindre une taille et une transparence financière suffisantes.
+
+Visuel : schéma des trois sources de financement, crédit bancaire, financement de projet, marché financier régional, avec leurs caractéristiques respectives de coût, de risque et d''accessibilité.
+
+Point de méthode important : pour toute donnée précise sur un marché financier régional particulier, indices, capitalisation, nombre de sociétés cotées, il faut toujours se référer aux publications officielles de l''autorité de régulation ou de la bourse concernée, et jamais à des chiffres mémorisés qui évoluent rapidement et peuvent être obsolètes.
+
+## 70:00 – 80:00 · Cas pratique approfondi : construire un plan de financement combiné
+
+Imaginons un projet plus modeste que « Soleil du Sahel » : l''électrification d''un village par mini-réseau solaire, pour un coût total de 400 millions de FCFA. Le porteur de projet envisage trois sources : une dette de financement de projet auprès d''une banque de développement pour 60 % du coût, soit 240 millions, des fonds propres des sponsors pour 25 %, soit 100 millions, et une subvention ou garantie partielle appuyée par de la microfinance pour faciliter les raccordements des ménages pour les 15 % restants, soit 60 millions.
+
+Ce type de montage hybride, combinant financement de projet classique et dispositifs de microfinance pour les utilisateurs finaux, est aujourd''hui une pratique courante pour les projets d''accès à l''énergie en zone rurale africaine. Le DSCR du projet se calculerait de la même façon que pour « Soleil du Sahel », en rapportant les flux de trésorerie disponibles du mini-réseau au service de la dette de financement de projet uniquement, les 60 millions liés aux dispositifs de microfinance des ménages n''entrant pas dans ce calcul puisqu''ils concernent une dette distincte, portée par les utilisateurs finaux et non par le véhicule de projet lui-même.
+
+## 80:00 – 85:00 · Synthèse générale
+
+Pour résumer cette séance : le financement de projet isole le risque d''une infrastructure dans un véhicule dédié, remboursé par ses propres flux, mesuré par le DSCR dont le minimum sur la durée est l''indicateur le plus surveillé par les prêteurs. La microfinance complète ce paysage pour les acteurs exclus du financement classique, mesurée par le taux de remboursement et le PAR30. Les marchés financiers régionaux africains, encore de profondeur limitée, offrent une troisième voie de financement en développement, à ne jamais confondre avec les grandes places financières internationales en termes de liquidité.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Comment calcule-t-on le DSCR d''un projet financé par financement de projet ? Réponse : flux de trésorerie disponible pour le service de la dette, CFADS, divisé par le service de la dette de la période, capital plus intérêts.
+2. Pourquoi le DSCR minimum sur la durée du financement est-il l''indicateur le plus surveillé par les prêteurs ? Réponse : parce qu''il identifie l''année la plus fragile du montage, celle qui présente le risque de défaut le plus élevé, information qu''une moyenne confortable pourrait masquer.
+3. Que mesure le PAR30 en microfinance ? Réponse : la proportion de l''encours total de crédit présentant au moins une échéance en retard de plus de 30 jours.
+4. Pourquoi la profondeur des marchés financiers régionaux africains reste-t-elle généralement limitée ? Réponse : parce que le nombre d''entreprises cotées et les volumes échangés y sont en général plus restreints que sur les grandes places financières internationales, ce qui réduit la liquidité et la facilité de lever des capitaux importants.
+5. Pourquoi le financement de projet permet-il à des sponsors de porter un projet au-delà de leur capacité de bilan habituelle ? Réponse : parce que la dette est logée dans un véhicule de projet distinct, remboursée par les flux propres du projet, sans engager l''intégralité du bilan ou du patrimoine des sponsors en cas de défaillance.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Finance internationale et financement de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et soutenance', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 2 Finance.
+Objectifs : construire une problématique et une méthodologie de mémoire cohérentes, structurer un mémoire professionnel en finance, préparer une soutenance orale efficace.
+Matériel : tableau ou diaporama, votre propre plan de mémoire si vous en avez déjà un.
+Prérequis : avoir réfléchi à un thème ou domaine d''intérêt pour votre mémoire.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Cette séance est consacrée à la méthodologie du mémoire professionnel et à sa soutenance, l''aboutissement de votre année de Master 2. Beaucoup d''étudiants excellents sur le plan technique perdent des points inutilement parce qu''ils n''ont pas structuré leur réflexion méthodologique ou n''ont pas préparé leur oral. Nous allons construire ensemble, étape par étape, un mémoire fictif sur le financement de projet pour illustrer chaque principe.
+
+Visuel : diapositive de titre avec le plan de la séance.
+
+## 05:00 – 20:00 · Partie 1 : formuler une problématique précise
+
+Tout commence par la problématique, la question centrale à laquelle votre mémoire va répondre. C''est l''erreur numéro un des étudiants : choisir un sujet trop vaste. « La finance en Afrique », « les risques financiers des entreprises », ce sont des thèmes, pas des problématiques. Une problématique doit être une question précise, délimitée dans le temps, l''espace, et le périmètre d''entreprise ou de secteur étudié.
+
+Prenons un exemple de transformation. Thème initial, trop vaste : « le financement des entreprises en Afrique ». Première délimitation : on choisit un secteur, l''énergie, et une zone géographique, le Sénégal. Deuxième délimitation : on choisit un outil de financement précis, le financement de projet. Troisième délimitation : on choisit un angle d''analyse, par exemple le risque de construction et d''exploitation. On obtient alors : « Dans quelle mesure le financement de projet permet-il de sécuriser le financement d''une infrastructure énergétique au Sénégal face au risque de construction et d''exploitation, à partir de l''étude d''un cas fictif de mini-centrale solaire ? »
+
+Visuel : schéma en entonnoir montrant les trois délimitations successives, du thème vague à la problématique précise.
+
+Remarquez que cette problématique répond à un enjeu réel : un décideur, un bailleur de fonds, une banque de développement, pourrait vouloir connaître la réponse à cette question pour décider d''un financement futur. C''est ce critère d''utilité pratique qui distingue un bon mémoire professionnel d''un exercice purement académique.
+
+## 20:00 – 35:00 · Partie 2 : choisir une méthodologie cohérente
+
+Une fois la problématique posée, il faut choisir comment vous allez y répondre. Quatre grandes familles de méthodologie s''offrent à vous en finance.
+
+L''étude de cas unique approfondie convient quand vous voulez comprendre en détail un mécanisme dans un contexte précis, par exemple le montage financier complet d''un projet d''infrastructure, avec son plan de financement, son DSCR, ses garanties. L''étude comparative de plusieurs entreprises ou projets convient quand vous voulez identifier des facteurs communs ou des différences, par exemple comparer plusieurs montages de project finance dans des secteurs différents. Les entretiens avec des praticiens, banquiers, directeurs financiers, apportent une information qualitative précieuse, à condition de présenter une grille d''entretien claire. L''analyse de données financières publiques permet des analyses quantitatives, à condition de citer précisément vos sources et de ne jamais inventer un chiffre non vérifiable.
+
+Pour notre exemple sur le financement de projet énergétique, l''étude de cas unique approfondie, éventuellement complétée par deux ou trois entretiens avec des professionnels du secteur, serait la méthodologie la plus cohérente avec la problématique posée, car elle permet d''entrer dans le détail du montage financier et des mécanismes de couverture du risque.
+
+Visuel : tableau comparatif des quatre méthodologies avec leurs usages typiques et leurs limites.
+
+Point essentiel pour la soutenance : chaque choix méthodologique doit être justifié dans le mémoire, pas seulement décrit. Expliquez pourquoi cette méthode, et pas une autre, était la plus pertinente pour répondre à votre problématique précise.
+
+## 35:00 – 50:00 · Partie 3 : structurer le mémoire
+
+La structure attendue d''un mémoire professionnel en finance suit généralement six grandes parties. L''introduction pose le contexte, la problématique et annonce le plan. La revue de littérature ou cadre théorique présente les concepts et travaux mobilisés, sans invention de sources. La méthodologie justifie la démarche suivie. Les résultats ou l''analyse du cas présentent les données et calculs de façon factuelle, avec toutes les hypothèses explicitées. La discussion interprète ces résultats, les met en perspective avec la littérature, et reconnaît les limites du travail. La conclusion répond explicitement à la problématique posée en introduction.
+
+Pour notre mémoire fictif, la partie résultats présenterait le montage de la mini-centrale solaire, son plan de financement, le calcul du DSCR année par année, et une analyse de sensibilité en cas de dégradation du CFADS. La partie discussion mettrait ces résultats en perspective avec la littérature sur le financement de projet énergétique en Afrique, et reconnaîtrait les limites : un seul cas étudié, des hypothèses de flux nécessairement incertaines sur une infrastructure qui n''existe pas encore réellement si le mémoire est prospectif.
+
+Visuel : plan détaillé du mémoire fictif projeté au tableau, avec le nombre de pages indicatif pour chaque partie.
+
+N''oubliez jamais la bibliographie : toutes les sources citées doivent être réelles, vérifiables et correctement référencées. Le plagiat, y compris la paraphrase non attribuée d''un auteur, est une faute grave, sanctionnée lourdement par les établissements et par les jurys.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions de vérification.
+
+- Question 1 : pourquoi une problématique trop vaste est-elle un problème méthodologique ? Réponse : parce qu''elle empêche de collecter des données suffisamment précises et de proposer une méthodologie rigoureuse, ce qui rend le travail descriptif et difficile à défendre devant un jury.
+- Question 2 : citez deux des quatre grandes familles de méthodologie présentées. Réponse possible : étude de cas unique approfondie, et étude comparative de plusieurs entreprises ou projets (ou entretiens avec des praticiens, ou analyse de données financières publiques).
+- Question 3 : qu''est-ce que la paraphrase non attribuée et pourquoi est-elle une forme de plagiat ? Réponse : reformuler les idées d''un auteur avec d''autres mots sans les attribuer explicitement par une citation, ce qui fait croire au lecteur que ce raisonnement est originel au candidat alors qu''il provient d''une source tierce.
+
+## 55:00 – 70:00 · Partie 4 : préparer la présentation orale de soutenance
+
+Passons maintenant à la soutenance elle-même. Elle dure généralement entre vingt et quarante-cinq minutes selon les établissements, avec une présentation orale de dix à vingt minutes suivie de questions du jury. Votre présentation ne doit pas répéter l''intégralité du mémoire : le jury l''a déjà lu. Elle doit mettre en valeur la problématique, la méthodologie, les résultats clés et la conclusion, en dix à quinze diapositives sobres.
+
+Structurez vos diapositives autour de graphiques et de tableaux clés plutôt que de longs paragraphes : pour notre mémoire fictif, une diapositive montrant le graphique du DSCR année par année avec le seuil contractuel minimum est beaucoup plus efficace qu''un paragraphe décrivant les mêmes chiffres. Entraînez-vous à voix haute, chronométré, devant un public même informel : la fluidité orale et la gestion du temps comptent autant que le contenu dans la note finale.
+
+Visuel : exemple de diapositive de synthèse bien construite, avec titre clair, un graphique, et trois points clés en liste à puces.
+
+## 70:00 – 80:00 · Cas pratique approfondi : anticiper les questions du jury
+
+Un jury pose presque toujours trois types de questions. D''abord sur la méthodologie : pourquoi ce choix, et pas un autre ? Pour notre cas, une question possible serait : « Pourquoi avez-vous étudié un seul cas de mini-centrale solaire plutôt que de comparer plusieurs projets d''infrastructures énergétiques ? » Réponse attendue : l''étude de cas unique permet d''entrer dans le détail du montage financier et du calcul du DSCR, ce qu''une comparaison superficielle de plusieurs projets n''aurait pas permis avec la même profondeur, au prix, reconnu comme limite, d''une généralisation plus incertaine des conclusions.
+
+Ensuite sur les limites : « Comment avez-vous validé la fiabilité de vos hypothèses de CFADS ? » Réponse attendue : reconnaître que, dans un cas fictif ou prospectif, ces hypothèses reposent sur des données de projets comparables et des taux marqués comme fictifs pour l''exercice, et qu''une étude réelle nécessiterait des données vérifiées auprès du porteur de projet et des études techniques d''ingénierie.
+
+Enfin sur la portée pratique : « Quelles conséquences concrètes pour un décideur ou un bailleur de fonds ? » Réponse attendue : relier la conclusion du mémoire à une recommandation opérationnelle, par exemple sur le niveau de DSCR minimum à exiger contractuellement, ou sur l''intérêt de combiner financement de projet et dispositifs de microfinance pour les utilisateurs finaux.
+
+## 80:00 – 85:00 · Synthèse générale
+
+Pour résumer cette séance : une problématique précise et délimitée est la base de tout mémoire réussi. La méthodologie doit être choisie et justifiée en cohérence avec cette problématique, pas par facilité. La structure en six parties, de l''introduction à la conclusion, avec une bibliographie rigoureuse, est attendue par tous les jurys de Master 2. La soutenance orale se prépare comme un exercice à part entière, en anticipant les questions sur la méthodologie, les limites et la portée pratique.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Quelles sont les trois dimensions à délimiter pour transformer un thème vague en problématique précise ? Réponse : le temps, l''espace géographique, et le périmètre d''entreprise ou de secteur étudié (ainsi que l''angle d''analyse précis retenu).
+2. Pourquoi faut-il justifier son choix méthodologique dans le mémoire, et pas seulement le décrire ? Réponse : parce qu''un jury attend de comprendre pourquoi cette démarche était la plus pertinente pour répondre à la problématique, et quelles limites elle comporte par rapport à d''autres approches possibles.
+3. Citez les six grandes parties attendues dans la structure d''un mémoire professionnel. Réponse : introduction, revue de littérature ou cadre théorique, méthodologie, résultats ou analyse du cas, discussion, conclusion.
+4. Pourquoi la paraphrase non attribuée est-elle considérée comme une forme de plagiat ? Réponse : parce qu''elle fait croire au lecteur que le raisonnement est originel au candidat, alors qu''il provient d''une source tierce non citée explicitement.
+5. Quels sont les trois types de questions qu''un jury pose presque toujours en soutenance ? Réponse : des questions sur la méthodologie et ses choix, des questions sur les limites du travail, et des questions sur la portée pratique des conclusions pour un décideur réel.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire professionnel et soutenance');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier méthodologie - simulation de soutenance et cas transversal', '## Fiche du cours vidéo
+
+Durée : 1h30. Niveau : Master 2 Finance.
+Objectifs : s''entraîner en conditions réelles à la soutenance d''un mémoire professionnel, à travers un cas transversal mobilisant la gestion des risques et la finance internationale.
+Matériel : tableau ou diaporama, votre propre plan de mémoire si possible.
+Prérequis : les trois leçons et vidéos précédentes de ce cours.
+
+## 00:00 – 05:00 · Introduction et enjeux
+
+Bonjour. Cette dernière séance vidéo est un atelier pratique : nous allons simuler une soutenance complète sur un mémoire fictif qui combine gestion des risques financiers et finance internationale, afin que vous repartiez avec une méthode concrète applicable à votre propre mémoire, quel que soit son sujet. Nous suivrons le dossier « La couverture du risque de change dans le financement international d''un projet énergétique sénégalais : étude de cas fictive ».
+
+Visuel : diapositive de titre avec le sujet de mémoire simulé.
+
+## 05:00 – 20:00 · Partie 1 : présenter la problématique et la méthodologie en cinq minutes
+
+Premier exercice de l''atelier : présenter sa problématique et sa méthodologie en cinq minutes maximum, un format resserré qui force à aller à l''essentiel. Voici un exemple de présentation orale type.
+
+« Mon mémoire porte sur le financement international d''un projet d''infrastructure énergétique au Sénégal, à travers le cas fictif de la centrale solaire Soleil du Sahel, financée en partie par une dette libellée en devise étrangère. La problématique est la suivante : dans quelle mesure une couverture par swap de taux permet-elle de sécuriser le service de la dette d''un tel projet face à la double exposition au risque de taux et au risque de change ? J''ai choisi une étude de cas unique approfondie, complétée par deux entretiens avec des professionnels du financement de projet, car cette méthodologie permet d''entrer dans le détail du montage financier et des mécanismes de couverture réellement envisageables, au prix d''une généralisation plus limitée qu''une étude comparative de plusieurs projets. »
+
+Visuel : chronomètre affiché à l''écran pendant la lecture de cet exemple, pour matérialiser la contrainte de temps.
+
+Remarquez la structure : contexte en une phrase, problématique précise en une phrase, méthodologie justifiée en une à deux phrases, avec la limite reconnue immédiatement. C''est exactement ce niveau de densité que votre introduction orale de soutenance doit atteindre.
+
+## 20:00 – 35:00 · Partie 2 : défendre un résultat chiffré devant le jury
+
+Deuxième exercice : défendre un résultat chiffré. Imaginons que le mémoire présente le calcul suivant. Le projet « Soleil du Sahel » porte une dette senior de 12 600 millions de FCFA à taux variable. Pour se couvrir, les sponsors envisagent un swap de taux fixe à 7,5 % contre le taux variable actuel, estimé fictivement à 6,8 %, 7,1 %, 7,6 % et 8,0 % sur quatre périodes futures. Calculons les flux nets pour le projet s''il paie le taux fixe du swap : flux fixe chaque période, 12 600 fois 7,5 %, soit 945 millions. Flux variables reçus : 856,8 ; 894,6 ; 957,6 ; 1 008 millions. Flux nets : période 1, moins 88,2 millions ; période 2, moins 50,4 millions ; période 3, plus 12,6 millions ; période 4, plus 63 millions.
+
+Un membre du jury pourrait demander : « Pourquoi recommander ce swap si les deux premières périodes sont défavorables au projet ? » Voici la réponse attendue dans une soutenance réussie : le swap n''est pas souscrit pour maximiser le résultat à court terme, mais pour réduire l''incertitude sur le service de la dette sur toute la durée du financement ; les flux négatifs des deux premières périodes sont le coût de cette certitude, comparable à une prime d''assurance, et le mémoire devrait démontrer, par une analyse de scénarios, que ce coût reste inférieur au risque d''un dérapage du DSCR en cas de forte hausse des taux non couverte.
+
+Visuel : tableau des quatre flux nets, avec le commentaire du jury affiché en incrustation.
+
+## 35:00 – 50:00 · Partie 3 : répondre à une question sur les limites de l''étude
+
+Troisième exercice : répondre à une question sur les limites, souvent la plus redoutée par les étudiants. Question type : « Vos hypothèses de taux variable futur reposent sur quelles données, et que se passerait-il si la réalité s''en écartait fortement ? »
+
+Mauvaise réponse, à éviter absolument : rester vague ou minimiser la question, en affirmant que les hypothèses sont fiables sans le démontrer. Bonne réponse, à construire systématiquement en trois temps : premièrement, reconnaître honnêtement l''origine et la nature des hypothèses, par exemple des scénarios de taux fictifs construits pour l''exercice, ou dans un mémoire réel, des prévisions de marché à une date donnée nécessairement incertaines à plusieurs années. Deuxièmement, montrer que vous avez anticipé cette limite en présentant, si possible, une analyse de sensibilité dans le mémoire lui-même, par exemple en recalculant les flux nets du swap avec des taux variables plus élevés de un point sur toute la période. Troisièmement, indiquer ce qu''une étude complémentaire pourrait apporter, par exemple une analyse de plusieurs scénarios macroéconomiques réalisée par des économistes spécialisés.
+
+Visuel : les trois temps de la réponse affichés comme une checklist, à mémoriser pour toute question de limite en soutenance.
+
+## 50:00 – 55:00 · Pause et quiz interactif
+
+Trois questions de vérification avant la suite de l''atelier.
+
+- Question 1 : dans l''exemple du swap, pourquoi les deux premières périodes sont-elles défavorables au projet ? Réponse : parce que le taux fixe payé, 7,5 %, est supérieur aux taux variables reçus de 6,8 % et 7,1 % sur ces deux périodes, créant un flux net négatif pour le payeur de taux fixe.
+- Question 2 : quelle est la structure en trois temps pour répondre à une question de jury sur les limites d''une étude ? Réponse : reconnaître honnêtement l''origine des hypothèses, montrer que la limite a été anticipée par exemple via une analyse de sensibilité, indiquer ce qu''une étude complémentaire pourrait apporter.
+- Question 3 : pourquoi un swap peut-il rester recommandé même s''il génère des flux négatifs sur certaines périodes ? Réponse : parce qu''il réduit l''incertitude globale sur le service de la dette, et ce coût ponctuel doit être comparé au risque évité d''un dérapage du DSCR en cas de forte hausse des taux non couverte.
+
+## 55:00 – 70:00 · Partie 4 : simulation complète chronométrée
+
+Passons à la simulation complète. Je vais jouer le rôle du candidat pendant deux minutes, puis vous jouerez le rôle du jury en formulant mentalement vos propres questions, avant que je ne reprenne pour donner un exemple de bonnes réponses.
+
+« Pour conclure, mon étude montre que la couverture par swap de taux permet de stabiliser le DSCR du projet Soleil du Sahel dans une fourchette resserrée, même en cas de hausse des taux de marché, au prix d''un coût certain sur les premières années si les taux restent bas. La limite principale de mon travail est le caractère fictif des scénarios de taux utilisés, qui devrait être remplacé, dans une mise en œuvre réelle, par des prévisions de marché validées par la banque arrangeuse du financement. Je recommande néanmoins, sur la base de cette analyse, que les sponsors intègrent une clause de couverture obligatoire dès la signature du contrat de financement, plutôt que d''attendre une dégradation déjà amorcée des taux. »
+
+Visuel : minuteur affiché, puis liste de questions possibles du jury pour la suite de l''entraînement (à utiliser avec un camarade après la vidéo) : pourquoi un swap et pas une option de couverture, quel serait le coût d''une option de couverture équivalente, cette recommandation s''applique-t-elle à tous les projets de la même taille.
+
+## 70:00 – 80:00 · Entraînement : variante chiffrée
+
+Variante pour vous entraîner seul après la séance : si le taux fixe négocié du swap passe de 7,5 % à 7,2 %, recalculez les quatre flux nets pour le projet, toutes choses égales par ailleurs sur les taux variables reçus. Vous devez retrouver un flux fixe de 907,2 millions par période, et des flux nets de moins 50,4 ; moins 12,6 ; plus 50,4 ; plus 100,8 millions sur les quatre périodes. Cet exercice illustre qu''un taux fixe négocié plus bas rend le swap favorable plus rapidement, dès la troisième période au lieu de la troisième période dans l''exemple initial à 7,5 %, ce qui montre l''importance de la négociation du taux fixe dans la qualité finale de la couverture.
+
+## 80:00 – 85:00 · Synthèse générale du cours
+
+Ce cours de Master 2 vous a donné les outils pour mesurer et couvrir les risques financiers avancés, pour structurer un financement international ou de projet, et pour construire et défendre un mémoire professionnel jusqu''à sa soutenance. La compétence commune à ces trois blocs est la même que celle recherchée par tout recruteur ou tout jury : savoir reconnaître l''incertitude, la mesurer avec les bons outils, proposer une réponse argumentée, et en assumer les limites avec honnêteté plutôt que de les dissimuler.
+
+## 85:00 – 90:00 · Évaluation finale
+
+1. Dans la simulation de soutenance, quelle est la bonne structure pour répondre à une question sur les limites d''une étude ? Réponse : reconnaître l''origine des hypothèses, montrer qu''une analyse de sensibilité a anticipé la limite, indiquer ce qu''une étude complémentaire pourrait apporter.
+2. Pourquoi un swap de couverture peut-il rester recommandé malgré des flux négatifs sur certaines périodes ? Réponse : parce qu''il réduit l''incertitude globale sur le service de la dette du projet, ce coût ponctuel étant comparé au risque plus grave d''un dérapage du DSCR en cas de forte hausse des taux non couverte.
+3. Dans l''exercice chiffré, à partir de quelle période le swap devient-il favorable au projet quand le taux fixe est de 7,5 % ? Réponse : à partir de la troisième période, lorsque le taux variable reçu dépasse le taux fixe payé.
+4. Quelle est la durée typique d''une soutenance de mémoire professionnel de Master 2 ? Réponse : généralement entre vingt et quarante-cinq minutes selon les établissements, dont une présentation orale de dix à vingt minutes suivie de questions du jury.
+5. Quelle est la compétence commune recherchée par un jury à travers les questions de méthodologie, de limites et de portée pratique ? Réponse : la capacité à reconnaître l''incertitude du travail réalisé, à la mesurer avec les bons outils, et à en assumer honnêtement les limites plutôt qu''à les dissimuler, tout en proposant une conclusion opérationnelle utile.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-fin-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie - simulation de soutenance et cas transversal');
+
 -- Cours : Économie Master 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'mas-eco-m1', (select id from public.levels where name = 'Master 1'), null, 'Économie', 'Économie Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en Économie : économétrie appliquée, économie industrielle et organisation des marchés, politiques économiques en macroéconomie ouverte. Pour étudiants ayant validé une Licence en Économie (micro/macro, maths, statistiques, économie du développement, monétaire et internationale, publique). Fiches avancées, cas d''entreprise sénégalais/africains fictifs, exercices corrigés, sujet type d''examen et quatre cours vidéo de 1h30.', true, 761
@@ -1807,471 +2436,3 @@ Pour conclure cette année de Master 1 en droit des affaires, retenez la méthod
 Cinq questions d''évaluation finale pour clore l''année. Question 1 : quelle est la différence entre un contrôle de droit et un contrôle de fait, illustrée par le cas Sine Agro ? Réponse : le contrôle de droit (75 % sur Sine Agro Production SARL) résulte de la majorité du capital ; le contrôle de fait (40 % sur Sine Agro Export SARL avec majorité systématique en assemblée) résulte d''une influence déterminante sans majorité formelle. Question 2 : quel est le taux de majoration du contrat d''emballage par rapport au prix de marché dans le cas Sine Agro ? Réponse : environ 33,3 %, calculé comme 9 000 000 divisé par 27 000 000. Question 3 : citez les trois facteurs d''analyse d''un risque anticoncurrentiel appliqués au cas de l''exclusivité logistique. Réponse : la position de marché, l''ampleur et la systématicité de la pratique, et la durée associée à la justification économique. Question 4 : quelle est la conséquence procédurale générale d''une saisine d''un tribunal étatique en violation d''une clause compromissoire, si l''autre partie soulève l''exception d''incompétence ? Réponse : le tribunal étatique devrait se déclarer incompétent au profit de l''arbitrage convenu. Question 5 : quelle est la compétence transversale centrale que ce cycle de Master 1 a cherché à développer ? Réponse : la capacité à analyser un ensemble de faits d''entreprise en mobilisant simultanément plusieurs branches du droit des affaires (gouvernance, contrats et concurrence, résolution des litiges), avec une méthode fondée sur la comparaison à des références objectives plutôt que sur des réponses automatiques. Merci à toutes et à tous pour votre travail cette année ; bon courage pour vos examens de Master 1.', 'video', 90, false, 90
 from public.courses c where c.slug = 'mas-droit-m1'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Synthèse transversale et atelier cas pratique (groupe Sine Agro)');
-
--- Cours : Droit des affaires Master 2 : réussir ses examens et sa soutenance
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-droit-m2', (select id from public.levels where name = 'Master 2'), null, 'Droit des affaires', 'Droit des affaires Master 2 : réussir ses examens et sa soutenance', 'Préparation aux examens de Master 2 en droit des affaires : investissements et contrats internationaux, fiscalité approfondie des groupes (prix de transfert, conventions fiscales), méthodologie du mémoire de recherche ou professionnel et de la soutenance. Public : étudiants de Master 2 ayant validé le Master 1 en droit des affaires.', true, 772
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 2 en droit des affaires', '## Objectifs de la leçon
-
-Le Master 2 est la dernière année avant l''entrée dans la vie professionnelle ou la recherche. Au-delà des matières avancées, cette année est marquée par la préparation d''un mémoire (de recherche ou professionnel, selon la filière) et par sa soutenance orale. Cette leçon présente les spécificités du Master 2, les matières de l''année, la méthode de travail attendue, et un plan de révision sur six semaines qui intègre la préparation du mémoire en parallèle des révisions de matières.
-
-## Ce qui change par rapport au Master 1
-
-En Master 1, vous avez travaillé la gouvernance des groupes, les contrats d''affaires et la concurrence, et l''arbitrage. En Master 2, l''horizon s''élargit à l''international : les investissements étrangers, les contrats internationaux, et la fiscalité des groupes qui opèrent dans plusieurs pays. Vous devez aussi, pour la première fois, produire un travail de recherche personnel et long (le mémoire), puis le défendre oralement devant un jury (la soutenance). C''est une compétence différente de la dissertation ou du cas pratique : il s''agit de choisir un sujet, de construire une problématique, de mener une recherche documentée, et de savoir répondre à des questions improvisées sur votre propre travail.
-
-## Les matières de l''année
-
-- Droit des investissements et contrats internationaux : protection des investissements étrangers, grandes clauses des contrats internationaux d''affaires, articulation avec le droit interne.
-- Droit fiscal approfondi des groupes : prix de transfert entre sociétés liées, logique générale des conventions fiscales internationales, risques de double imposition.
-- Méthodologie du mémoire de recherche ou professionnel et soutenance : choix du sujet, construction de la problématique, plan, soutenance orale.
-
-## Méthode de travail avancée
-
-- L''étude de cas complexe internationale : un scénario mêlant une entreprise sénégalaise ou ouest-africaine et un partenaire étranger, avec des enjeux d''investissement, de fiscalité et de résolution des litiges.
-- Le business case : évaluer une décision d''implantation internationale ou de restructuration fiscale en croisant l''angle juridique et l''angle économique, sans jamais utiliser de taux officiels non vérifiés.
-- La revue de littérature : situer votre mémoire dans les débats existants, sans inventer de référence précise, et construire une problématique originale plutôt que descriptive.
-
-## Plan de révision sur six semaines
-
-- Semaines 1 et 2 : droit des investissements et contrats internationaux.
-- Semaines 3 et 4 : droit fiscal approfondi des groupes, avec vérification systématique de tous les calculs.
-- Semaine 5 : méthodologie du mémoire et simulation de soutenance.
-- Semaine 6 : entraînement sur sujets types et finalisation du mémoire, avec au moins une simulation complète de soutenance devant un public (camarades, famille).
-
-Contrairement au Master 1, le Master 2 demande de mener deux travaux en parallèle : les révisions de matières pour les examens écrits, et l''avancement du mémoire. Un planning réaliste doit réserver des plages dédiées à chacun, sans sacrifier l''un pour l''autre dans les dernières semaines. Beaucoup d''étudiants commettent l''erreur de repousser le mémoire après les examens, pensant gagner du temps ; en pratique, un mémoire commencé tardivement laisse trop peu de temps pour la relecture, la correction des défauts méthodologiques, et la préparation sérieuse de la soutenance, qui est elle-même une épreuve distincte des examens écrits et requiert un entraînement spécifique à l''oral.
-
-## Le lien entre mémoire et matières de l''année
-
-Il est vivement conseillé, lorsque cela est possible, de choisir un sujet de mémoire en lien avec l''une des trois matières avancées de l''année : cela permet de mutualiser les révisions et la recherche, et de présenter à l''oral un travail qui démontre une maîtrise approfondie d''une matière du programme. Un mémoire sur les prix de transfert, par exemple, consolide à la fois votre préparation à l''examen de droit fiscal approfondi des groupes et votre travail de recherche personnel, à condition de bien distinguer l''exercice de restitution attendu à l''examen (qui reste encadré par le temps limité et le barème) de l''exercice de recherche personnelle attendu dans le mémoire (qui suppose une problématique originale et une discussion argumentée, non une simple présentation descriptive du sujet).
-
-## Points clés à retenir
-
-- Le Master 2 ajoute une dimension internationale (investissements, contrats, fiscalité des groupes) aux matières déjà vues.
-- La méthodologie du mémoire et la soutenance sont une compétence à part, à travailler dès le début de l''année, pas seulement avant la soutenance.
-- Aucun taux fiscal ou seuil officiel ne doit être mémorisé comme certain sans vérification du texte en vigueur : ce cours illustre les mécanismes avec des valeurs fictives.
-
-## Exercices pratiques
-
-1. Citez les trois matières avancées du programme de Master 2 en droit des affaires.
-2. En quoi la compétence évaluée lors de la soutenance d''un mémoire diffère-t-elle de celle évaluée lors d''un examen écrit classique ?
-3. Pourquoi un planning de révision de Master 2 doit-il réserver des plages séparées pour les matières et pour le mémoire ?
-4. Proposez deux sujets de mémoire possibles (titres uniquement) en lien avec les matières de l''année.
-5. Expliquez pourquoi la dimension internationale est centrale en Master 2 alors qu''elle était peu présente en Master 1.
-
-## Corrigé
-
-1. Droit des investissements et contrats internationaux ; droit fiscal approfondi des groupes ; méthodologie du mémoire et soutenance.
-2. L''examen écrit évalue la restitution et l''application de connaissances à un cas donné en temps limité ; la soutenance évalue la capacité à défendre oralement un travail de recherche personnel, à répondre à des questions improvisées, et à démontrer une maîtrise critique de son propre sujet.
-3. Parce que les deux travaux (révisions et mémoire) sont cumulatifs et non substituables : négliger l''un pour l''autre dans les dernières semaines expose à un échec soit aux examens, soit à la soutenance, les deux étant généralement nécessaires à la validation de l''année.
-4. Exemples possibles : « Les garanties contractuelles dans les contrats internationaux d''approvisionnement agricole en Afrique de l''Ouest » ou « Les prix de transfert dans les groupes agro-industriels ouest-africains : enjeux et limites du contrôle fiscal ».
-5. Parce que le Master 2 prépare à une pratique professionnelle qui, dans le droit des affaires, implique de plus en plus des relations transfrontalières : investisseurs étrangers, groupes multinationaux, contrats avec des partenaires situés dans d''autres pays, ce qui nécessite des compétences spécifiques que le Master 1 n''abordait pas encore.', 'texte', 40, true, 10
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en droit des affaires');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Droit des investissements et contrats internationaux', '## Objectifs de la leçon
-
-Cette leçon présente le droit des investissements et les grandes clauses des contrats internationaux d''affaires, sans entrer dans le détail d''un traité ou d''une convention précise, qu''il faut toujours vérifier dans son texte en vigueur.
-
-## La protection des investissements étrangers
-
-Un investisseur étranger qui implante une activité dans un pays différent du sien s''expose à des risques spécifiques : changement de réglementation, expropriation, restrictions de change, instabilité politique. Les mécanismes généraux de protection, que l''on retrouve dans de nombreux cadres juridiques (droit interne, traités bilatéraux, conventions régionales), reposent sur quelques principes communs :
-
-- Le traitement juste et équitable : l''État d''accueil s''engage à ne pas traiter l''investisseur de façon arbitraire ou discriminatoire.
-- La protection contre l''expropriation sans indemnisation : une expropriation peut être licite dans l''intérêt public, mais doit généralement donner lieu à une indemnisation juste.
-- La liberté de transfert des capitaux et des revenus : possibilité de rapatrier les bénéfices, sous réserve des règles de change applicables.
-- Le règlement des différends : de nombreux cadres prévoient un recours à l''arbitrage international pour les litiges entre un investisseur et l''État d''accueil, distinct de l''arbitrage commercial entre entreprises privées étudié en Master 1.
-
-Illustration (cas fictif pour l''exemple) : une entreprise sénégalaise, Teranga Agro-Export SA, investit dans une unité de transformation dans un pays voisin. Si ce pays modifie brutalement sa réglementation douanière de façon à rendre l''activité non viable, sans justification d''intérêt général proportionnée, l''investisseur pourrait invoquer une atteinte au traitement juste et équitable, selon les mécanismes de protection applicables entre les deux pays, qu''il convient de vérifier au cas par cas.
-
-## Les grandes clauses des contrats internationaux d''affaires
-
-Au-delà des clauses complexes déjà étudiées (exclusivité, hardship, limitation de responsabilité), les contrats internationaux comportent des clauses spécifiques à leur dimension transfrontalière :
-
-- La clause de choix de loi : les parties désignent le droit national applicable au contrat, qui peut être différent de la loi de chacune des parties. Ce choix est généralement respecté entre professionnels, sauf règles impératives contraires.
-- La clause attributive de juridiction ou la clause compromissoire internationale : les parties désignent la juridiction ou le tribunal arbitral compétent en cas de litige, selon la même logique que celle étudiée en Master 1 pour l''arbitrage interne, mais avec une attention accrue à l''exécution transfrontalière de la décision.
-- La clause de monnaie de paiement et de risque de change : essentielle lorsque les parties opèrent dans des zones monétaires différentes, pour répartir le risque lié aux fluctuations de change.
-- La clause de force majeure adaptée au contexte international : elle doit anticiper des événements spécifiques (instabilité politique, fermeture de frontières, sanctions internationales) au-delà des cas classiques.
-- La clause de conformité réglementaire (compliance) : engagement des parties à respecter les réglementations applicables dans chaque pays concerné, notamment en matière de lutte contre la corruption.
-
-## Cas d''entreprise : contrat d''approvisionnement Teranga Agro-Export
-
-Teranga Agro-Export SA conclut avec un acheteur européen un contrat de fourniture d''arachides transformées sur cinq ans, pour un montant annuel de base de 300 000 000 FCFA, payable en euros au cours du jour de facturation. Le contrat désigne le droit sénégalais comme loi applicable, et un arbitrage international (siège à Paris, règlement d''une institution d''arbitrage international) en cas de litige. Une clause de risque de change limite la variation prise en charge par Teranga Agro-Export SA à 5 % par rapport au cours de référence fixé à la signature (1 euro = 655,957 FCFA, taux fixe réel rappelé ici), au-delà de quoi le prix est ajusté.
-
-Analyse : la combinaison du choix de la loi sénégalaise au fond et d''un arbitrage international à Paris illustre une pratique fréquente dans les contrats internationaux, qui dissocie le droit applicable au fond (souvent lié au lieu d''exécution principal du contrat) et le siège de l''arbitrage (souvent choisi pour sa neutralité et sa tradition arbitrale). La clause de risque de change protège Teranga Agro-Export SA contre une dépréciation excessive, tout en acceptant une marge de fluctuation limitée à 5 %, ce qui répartit raisonnablement le risque entre les parties plutôt que de le faire peser entièrement sur l''une d''elles.
-
-## Points clés à retenir
-
-- La protection des investissements repose sur des principes communs (traitement juste et équitable, protection contre l''expropriation, liberté de transfert, règlement des différends), dont le contenu précis dépend toujours du cadre juridique applicable entre les pays concernés.
-- Les contrats internationaux ajoutent aux clauses complexes classiques des clauses spécifiques à leur dimension transfrontalière : choix de loi, juridiction ou arbitrage international, risque de change, force majeure adaptée, conformité réglementaire.
-- Le choix de la loi applicable au fond et le choix du siège de l''arbitrage sont deux décisions distinctes, qui peuvent être dissociées selon la stratégie des parties.
-- 1 euro = 655,957 FCFA est un taux fixe réel (parité officielle), utilisable sans réserve ; tout autre taux ou seuil cité dans ce cours est fictif pour l''exemple.
-
-## Exercices pratiques
-
-1. Citez trois mécanismes généraux de protection des investissements étrangers.
-2. Pourquoi une entreprise choisirait-elle de dissocier le droit applicable au fond et le siège de l''arbitrage dans un contrat international ?
-3. Expliquez l''intérêt d''une clause de risque de change plafonné pour un exportateur qui facture en devise étrangère.
-4. Cas pratique : un contrat international prévoit un prix de base de 500 000 000 FCFA payable en euros, avec une clause de risque de change limitant la variation prise en charge par le vendeur à 4 %. Si le cours varie de 6 % par rapport au cours de référence, quelle est la part de variation répercutée sur l''acheteur ?
-5. Qu''est-ce qui distingue une clause de force majeure adaptée au contexte international d''une clause de force majeure classique ?
-6. Dans le cas Teranga Agro-Export, pourquoi le choix du droit sénégalais au fond est-il cohérent avec l''activité de l''entreprise, malgré l''arbitrage international à Paris ?
-
-## Corrigé
-
-1. Le traitement juste et équitable, la protection contre l''expropriation sans indemnisation, et la liberté de transfert des capitaux et des revenus (on pouvait aussi citer le règlement des différends par arbitrage international).
-2. Pour combiner la familiarité ou la pertinence du droit applicable au fond (souvent lié au lieu d''exécution) avec la neutralité et la tradition arbitrale d''un siège reconnu, sans que les deux choix soient nécessairement liés.
-3. Elle protège l''exportateur contre une dépréciation excessive de la devise de facturation par rapport à sa propre monnaie, tout en acceptant une marge de fluctuation limitée, ce qui répartit le risque plutôt que de le faire peser entièrement sur une seule partie.
-4. La variation prise en charge par le vendeur est plafonnée à 4 % ; la part excédentaire, soit 6 % − 4 % = 2 %, est répercutée sur l''acheteur selon le mécanisme contractuel prévu.
-5. Elle doit anticiper des événements spécifiques au contexte international (instabilité politique, fermeture de frontières, sanctions internationales) qui ne figurent généralement pas dans une clause de force majeure classique limitée aux événements naturels ou techniques.
-6. Parce que l''activité de production et de transformation de Teranga Agro-Export SA se déroule au Sénégal : le droit sénégalais est donc le droit le plus pertinent pour régir les obligations liées à l''exécution du contrat, alors que le siège de l''arbitrage à Paris est choisi pour sa neutralité procédurale, indépendamment du lieu d''exécution.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit des investissements et contrats internationaux');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Droit fiscal approfondi des groupes : prix de transfert et conventions fiscales internationales', '## Objectifs de la leçon
-
-Cette leçon présente la fiscalité des groupes de sociétés dans sa dimension internationale, en particulier les prix de transfert, et la logique générale des conventions fiscales internationales, sans invoquer de taux ou de barème officiel précis, qu''il faut toujours vérifier dans le texte en vigueur.
-
-## Les prix de transfert : logique générale
-
-Lorsque des sociétés d''un même groupe, situées dans des pays différents, effectuent des transactions entre elles (vente de biens, prestations de services, prêts intra-groupe, redevances de licence), le prix de ces transactions s''appelle un prix de transfert. Ce prix a un impact direct sur la répartition du bénéfice imposable entre les pays concernés : un prix de transfert artificiellement bas pour une vente d''une filiale à sa société mère, par exemple, transfère du bénéfice vers le pays de la mère, au détriment du pays de la filiale.
-
-Le principe de pleine concurrence (arm''s length principle), reconnu de façon générale dans la plupart des cadres fiscaux internationaux, exige que les prix pratiqués entre sociétés liées soient comparables à ceux qui auraient été pratiqués entre entreprises indépendantes dans des conditions comparables. C''est l''équivalent, en matière fiscale, de la comparaison au prix de marché déjà étudiée en Master 1 pour les conventions réglementées : la méthode est transversale, seul l''enjeu change (gouvernance d''un côté, répartition de l''assiette fiscale entre pays de l''autre).
-
-Illustration chiffrée (fictive pour l''exemple) : une filiale sénégalaise de transformation vend sa production à sa société mère basée dans un autre pays, pour 20 000 000 FCFA, alors que le prix qu''une entreprise indépendante comparable facturerait pour une transaction similaire serait de 32 000 000 FCFA. L''écart de 12 000 000 FCFA constitue un indice fort de prix de transfert non conforme au principe de pleine concurrence, qui pourrait conduire l''administration fiscale sénégalaise à réintégrer ce montant dans le bénéfice imposable de la filiale, augmentant d''autant sa base taxable locale.
-
-## Les méthodes générales de détermination des prix de transfert
-
-Sans entrer dans le détail technique précis, qui relève d''un enseignement spécialisé de fiscalité internationale, il convient de connaître l''existence de plusieurs grandes familles de méthodes, dont le choix dépend de la nature de la transaction :
-
-- Les méthodes fondées sur la comparaison directe des prix pratiqués pour des transactions comparables entre entreprises indépendantes.
-- Les méthodes fondées sur les marges pratiquées (marge brute, marge nette) par des entreprises comparables exerçant une activité similaire.
-- Les méthodes fondées sur le partage des bénéfices entre les entités liées, lorsque la transaction est trop spécifique pour trouver un comparable direct.
-
-L''administration fiscale, dans la plupart des cadres nationaux, peut demander à l''entreprise de documenter sa politique de prix de transfert et de justifier que les prix pratiqués respectent le principe de pleine concurrence, la charge de la preuve pouvant, selon les textes, être partagée entre l''entreprise et l''administration.
-
-## Les conventions fiscales internationales : logique générale
-
-Lorsqu''une même opération économique pourrait être imposée dans deux pays différents (le pays de résidence de l''entreprise et le pays source du revenu), un risque de double imposition apparaît. Les conventions fiscales internationales, conclues entre deux États, visent précisément à éliminer ou atténuer ce risque, selon des mécanismes généraux à connaître sans détail d''une convention précise :
-
-- La répartition du droit d''imposer certains revenus entre l''État de résidence et l''État source, selon la nature du revenu (bénéfices d''entreprise, dividendes, intérêts, redevances).
-- Les mécanismes d''élimination de la double imposition, le plus souvent un crédit d''impôt accordé par l''État de résidence pour l''impôt déjà payé dans l''État source, ou une exonération dans l''un des deux États.
-- Des clauses anti-abus, destinées à éviter qu''une entreprise n''utilise artificiellement une convention favorable sans lien économique réel avec le pays concerné (pratique parfois appelée « chalandage fiscal »).
-
-## Cas d''entreprise : groupe Siné Industries
-
-Siné Industries SA, basée à Dakar, détient une filiale de distribution dans un pays voisin. La filiale réalise un chiffre d''affaires de 150 000 000 FCFA en revendant des produits achetés à la société mère pour 130 000 000 FCFA, soit une marge brute de 20 000 000 FCFA (13,3 % du prix d''achat). Une étude de comparables indépendants dans le même secteur de distribution montre une marge brute habituelle de 25 % du prix d''achat pour des fonctions comparables.
-
-Analyse : si la marge pratiquée par la filiale (13,3 %) est significativement inférieure à la marge de pleine concurrence observée chez des distributeurs indépendants comparables (25 %), cela peut indiquer que le prix d''achat facturé par la société mère est surévalué, transférant artificiellement du bénéfice vers la société mère au détriment de la filiale et du pays où elle est imposée. Une marge de pleine concurrence de 25 % appliquée au prix d''achat de 130 000 000 FCFA donnerait une marge attendue de 130 000 000 × 25 % = 32 500 000 FCFA, soit un écart de 32 500 000 − 20 000 000 = 12 500 000 FCFA par rapport à la marge effectivement réalisée, que l''administration fiscale du pays de la filiale pourrait chercher à réintégrer dans son bénéfice imposable.
-
-## Points clés à retenir
-
-- Le prix de transfert est le prix des transactions entre sociétés liées situées dans des pays différents ; il doit respecter le principe de pleine concurrence.
-- La comparaison à des entreprises indépendantes comparables (prix ou marges) est l''outil méthodologique central, identique dans sa logique à la comparaison au prix de marché des conventions réglementées.
-- Les conventions fiscales internationales répartissent le droit d''imposer entre États et organisent l''élimination de la double imposition, avec des clauses anti-abus contre le chalandage fiscal.
-- Aucun taux d''imposition, aucun pourcentage de marge de référence, aucune règle précise de convention fiscale ne doit être mémorisé comme officiel sans vérification du texte applicable : les chiffres de ce cours sont fictifs pour l''exemple.
-
-## Exercices pratiques
-
-1. Définissez le principe de pleine concurrence et expliquez son lien méthodologique avec la notion de convention réglementée étudiée en Master 1.
-2. Pourquoi un prix de transfert artificiellement bas pour une vente d''une filiale à sa mère réduit-il la base taxable locale de la filiale ?
-3. Citez les trois grandes familles de méthodes générales de détermination des prix de transfert.
-4. Qu''est-ce que le chalandage fiscal, et pourquoi les conventions fiscales prévoient-elles des clauses anti-abus contre cette pratique ?
-5. Cas pratique chiffré : une filiale achète à sa société mère des matières premières pour 80 000 000 FCFA et les revend pour 92 000 000 FCFA, soit une marge brute de 15 % du prix d''achat. Des comparables indépendants montrent une marge habituelle de 22 %. Calculez la marge attendue selon le principe de pleine concurrence et l''écart par rapport à la marge effective.
-6. En reprenant le cas Siné Industries, quelle serait la conséquence pratique si l''administration fiscale du pays de la filiale décidait de réintégrer l''écart identifié dans le bénéfice imposable de la filiale ?
-
-## Corrigé
-
-1. Le principe de pleine concurrence exige que les transactions entre sociétés liées soient conclues à des conditions comparables à celles pratiquées entre entreprises indépendantes. Il repose sur la même logique méthodologique que la convention réglementée : la comparaison au marché pour déterminer si un lien d''intérêt se traduit par un avantage anormal.
-2. Parce qu''un prix de vente artificiellement bas réduit le chiffre d''affaires, et donc le bénéfice imposable, enregistré par la filiale dans son pays, ce bénéfice étant en réalité transféré vers la société mère qui achète à ce prix réduit.
-3. Les méthodes fondées sur la comparaison directe des prix, les méthodes fondées sur les marges pratiquées, et les méthodes fondées sur le partage des bénéfices.
-4. Le chalandage fiscal consiste à utiliser artificiellement une convention fiscale favorable sans lien économique réel avec le pays concerné, par exemple via une société-écran. Les clauses anti-abus visent à réserver le bénéfice de la convention aux opérations ayant une substance économique réelle.
-5. La marge attendue selon le principe de pleine concurrence est de 80 000 000 × 22 % = 17 600 000 FCFA. La marge effective est de 92 000 000 − 80 000 000 = 12 000 000 FCFA, soit 15 % du prix d''achat. L''écart est de 17 600 000 − 12 000 000 = 5 600 000 FCFA.
-6. L''administration fiscale pourrait réintégrer l''écart de 12 500 000 FCFA dans le bénéfice imposable de la filiale, augmentant d''autant l''impôt dû localement, sans préjudice d''un éventuel ajustement corrélatif dans le pays de la société mère pour éviter une double imposition économique du même montant, selon les mécanismes prévus par la convention fiscale applicable entre les deux pays.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit fiscal approfondi des groupes : prix de transfert et conventions fiscales internationales');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Méthodologie du mémoire de recherche ou professionnel et de la soutenance', '## Objectifs de la leçon
-
-Cette leçon présente la méthodologie du mémoire de recherche ou professionnel et de sa soutenance orale, étape centrale et spécifique du Master 2. Elle couvre le choix du sujet, la construction de la problématique, le plan, la rédaction, et la préparation de la soutenance.
-
-## Choisir son sujet de mémoire
-
-Un bon sujet de mémoire en droit des affaires répond à trois critères cumulatifs : il doit être suffisamment précis pour être traité en profondeur dans le volume imposé (généralement entre 40 et 80 pages selon les établissements, à vérifier auprès de votre encadrant), suffisamment documenté pour permettre une recherche sérieuse (textes, doctrine, pratique professionnelle), et porteur d''un intérêt réel, qu''il soit théorique (une question juridique encore débattue) ou pratique (un problème rencontré par les entreprises).
-
-Un sujet trop large (« le droit des sociétés en Afrique ») ne permet pas une analyse approfondie ; un sujet trop étroit ou purement descriptif (« présentation du contrat de vente ») ne permet pas de construire une véritable problématique. L''exercice de cadrage initial consiste à partir d''un thème large, puis à le restreindre progressivement jusqu''à une question précise à laquelle le mémoire va répondre.
-
-## Construire la problématique
-
-La problématique est la question centrale que le mémoire se propose de résoudre. Elle ne doit pas être une simple question fermée (« les prix de transfert sont-ils réglementés ? »), mais une question qui appelle une discussion, une mise en tension d''arguments, une prise de position argumentée. Exemple de cheminement : du thème large « les prix de transfert dans les groupes agro-industriels », on peut arriver à la problématique « dans quelle mesure le principe de pleine concurrence permet-il un contrôle effectif des prix de transfert dans les groupes agro-industriels ouest-africains, compte tenu des difficultés pratiques d''accès à des données de comparables fiables ? ». Cette formulation annonce une tension (le principe existe, mais son application pratique est limitée) que le mémoire va explorer et documenter.
-
-## Construire le plan
-
-Le plan d''un mémoire juridique en droit des affaires suit généralement une logique en deux parties, chacune subdivisée, qui organise la démonstration de façon progressive : une première partie qui pose le cadre et les règles applicables (ce qui existe, ce qui est prévu), une seconde partie qui analyse les difficultés, les limites ou les évolutions (ce qui pose problème, ce qui pourrait changer). Le plan n''est pas un sommaire de connaissances juxtaposées : chaque partie et chaque sous-partie doit apporter un élément de réponse à la problématique, dans un ordre qui construit progressivement l''argumentation jusqu''à la conclusion.
-
-## La soutenance orale
-
-La soutenance est un exercice oral devant un jury, généralement composé de votre encadrant et d''un ou plusieurs autres enseignants ou professionnels. Elle comprend typiquement une présentation orale de quelques minutes (souvent 10 à 15 minutes, à vérifier selon les modalités de votre établissement), suivie d''une série de questions du jury. Plusieurs principes généraux doivent guider votre préparation :
-
-- La présentation orale ne doit pas être une lecture du mémoire, mais une synthèse qui met en valeur votre problématique, votre démarche, et vos conclusions principales, en donnant envie au jury d''approfondir certains points par ses questions.
-- Les supports visuels (diaporama), lorsqu''ils sont autorisés, doivent être sobres et servir la présentation orale, pas la remplacer : peu de texte, des schémas clairs, pas de paragraphes entiers lus à l''écran.
-- Les questions du jury portent souvent sur les limites de votre travail, les choix méthodologiques que vous avez faits, ou des approfondissements possibles : il faut savoir reconnaître honnêtement les limites de votre travail plutôt que de les nier, ce qui est généralement mieux perçu par un jury qu''une défense rigide.
-- Un entraînement oral devant un public (camarades, famille), avec simulation de questions, est la meilleure préparation : la maîtrise orale d''un sujet que l''on connaît par écrit n''est pas automatique et doit être pratiquée.
-
-## Cas d''entreprise : préparation d''une soutenance
-
-Un étudiant a rédigé un mémoire sur la problématique suivante : « dans quelle mesure l''arbitrage CCJA constitue-t-il un mode de résolution des litiges adapté aux petites et moyennes entreprises ouest-africaines ? ». Lors de sa simulation de soutenance, un camarade lui pose la question suivante : « votre mémoire conclut que l''arbitrage CCJA est peu adapté aux PME en raison de son coût ; mais n''auriez-vous pas dû étudier plus précisément les montants de litiges concernés, pour étayer cette conclusion avec des exemples chiffrés ? ».
-
-Analyse : cette question pointe une limite méthodologique réelle du mémoire (l''absence d''exemples chiffrés précis), que l''étudiant doit savoir reconnaître sans se déstabiliser. Une bonne réponse reconnaîtrait la limite identifiée, expliquerait pourquoi elle existe (difficulté d''accès à des données réelles et confidentielles sur les montants de litiges arbitraux), et proposerait une piste pour la dépasser dans une recherche future (par exemple des entretiens avec des praticiens pour obtenir des ordres de grandeur, même non officiels). Cette façon de répondre — reconnaître, expliquer, proposer une piste — est une méthode transférable à la plupart des questions de soutenance portant sur les limites d''un travail.
-
-## Points clés à retenir
-
-- Un bon sujet de mémoire est précis, documenté, et porteur d''un intérêt théorique ou pratique réel ; ni trop large, ni purement descriptif.
-- La problématique est une question qui appelle une discussion argumentée, pas une question fermée.
-- Le plan organise progressivement la démonstration vers la réponse à la problématique, il n''est pas un sommaire de connaissances juxtaposées.
-- La soutenance évalue la capacité à synthétiser oralement son travail et à répondre aux questions du jury, notamment sur les limites de la recherche, qu''il vaut mieux reconnaître honnêtement que nier.
-
-## Exercices pratiques
-
-1. Transformez le thème large « le droit fiscal des groupes » en une problématique précise, en au moins deux étapes de restriction.
-2. Pourquoi une problématique formulée comme une question fermée (oui/non) est-elle généralement insuffisante pour un mémoire ?
-3. Expliquez la logique générale du plan en deux parties d''un mémoire juridique (cadre, puis difficultés ou évolutions).
-4. Citez trois principes à respecter pour une présentation orale efficace lors d''une soutenance.
-5. Un membre du jury vous signale une limite méthodologique de votre mémoire que vous n''aviez pas anticipée. Décrivez, en trois étapes, une méthode de réponse appropriée.
-6. Pourquoi un entraînement oral devant un public est-il recommandé, alors que vous maîtrisez déjà le contenu écrit de votre mémoire ?
-
-## Corrigé
-
-1. Exemple de cheminement : thème large « le droit fiscal des groupes » ; restriction 1, « les prix de transfert dans les groupes agro-industriels » ; restriction 2 (problématique), « dans quelle mesure le principe de pleine concurrence permet-il un contrôle effectif des prix de transfert dans les groupes agro-industriels ouest-africains ? ».
-2. Parce qu''elle n''appelle qu''une réponse binaire et ne permet pas de construire une démonstration progressive ni une discussion argumentée, qui sont les deux éléments attendus d''un mémoire de Master.
-3. La première partie pose le cadre et les règles applicables (ce qui existe juridiquement) ; la seconde partie analyse les difficultés pratiques, les limites du cadre existant, ou les évolutions possibles, chaque partie apportant un élément de réponse à la problématique.
-4. Par exemple : ne pas lire le mémoire mot pour mot, utiliser des supports visuels sobres qui servent la présentation sans la remplacer, et anticiper les questions probables du jury (on pouvait aussi citer l''entraînement devant un public).
-5. Reconnaître honnêtement la limite identifiée sans se déstabiliser, expliquer pourquoi elle existe (contrainte méthodologique, accès aux données, délai), puis proposer une piste pour la dépasser dans une recherche future.
-6. Parce que la maîtrise orale d''un sujet, en particulier sous la pression d''un jury et de questions improvisées, est une compétence distincte de la maîtrise écrite, qui ne s''acquiert que par la pratique répétée de l''exercice oral.', 'texte', 45, false, 40
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire de recherche ou professionnel et de la soutenance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 2 en droit des affaires (entraînement, corrigé détaillé)', '## Sujet type d''examen de Master 2 en droit des affaires (entraînement non officiel, barème indicatif)
-
-Durée indicative : 3 heures. Ce sujet est un entraînement pédagogique, non un sujet officiel ; le barème proposé est indicatif et peut être adapté par votre enseignant.
-
-### Énoncé
-
-Le groupe Kayor International, dont la société mère Kayor International SA est basée à Dakar, détient une filiale de production, Kayor Process SARL, et investit dans un pays voisin via une filiale de distribution, Kayor Distrib Co.
-
-Premier fait : Kayor Process SARL vend sa production transformée à Kayor Distrib Co pour 40 000 000 FCFA par trimestre, alors qu''une étude de comparables indépendants dans le même secteur montre que des entreprises comparables pratiqueraient un prix de 55 000 000 FCFA pour une transaction similaire.
-
-Deuxième fait : le contrat entre Kayor International SA et un partenaire financier international prévoit un prêt de 400 000 000 FCFA, remboursable en euros sur cinq ans, avec une clause de risque de change plafonnant à 6 % la variation prise en charge par Kayor International SA par rapport au cours de référence (1 euro = 655,957 FCFA). Le contrat désigne le droit sénégalais comme loi applicable et un arbitrage international (siège à Paris) en cas de litige.
-
-Troisième fait : dans le pays où Kayor Distrib Co est implantée, une nouvelle réglementation locale impose, sans justification d''intérêt général apparente et de façon rétroactive, une taxe exceptionnelle sur les flux de capitaux entrants, réduisant de façon significative la rentabilité de l''investissement de Kayor International SA dans ce pays.
-
-### Questions
-
-1. (8 points) Analysez le premier fait sous l''angle du principe de pleine concurrence : chiffrez l''écart et expliquez la conséquence fiscale possible.
-2. (8 points) Analysez le deuxième fait : expliquez l''intérêt de la clause de risque de change et calculez la part de variation répercutée sur le partenaire financier si le cours varie de 9 % par rapport au cours de référence.
-3. (10 points) Analysez le troisième fait au regard des mécanismes généraux de protection des investissements étrangers : quels principes Kayor International SA pourrait-elle invoquer, et pourquoi ?
-4. (4 points) Rédigez en cinq lignes une problématique de mémoire qui pourrait être construite à partir de l''un des trois faits de ce sujet.
-
-### Corrigé détaillé
-
-1. Le prix pratiqué (40 000 000 FCFA) est inférieur au prix de pleine concurrence observé chez des comparables indépendants (55 000 000 FCFA), soit un écart de 15 000 000 FCFA par trimestre. Ce prix artificiellement bas transfère du bénéfice de Kayor Process SARL (la filiale productrice, basée au Sénégal) vers Kayor Distrib Co (la filiale distributrice, basée dans le pays voisin), ce qui réduit la base taxable sénégalaise de Kayor Process SARL. L''administration fiscale sénégalaise pourrait, selon les mécanismes applicables, réintégrer cet écart dans le bénéfice imposable de Kayor Process SARL, pour un montant annuel de 15 000 000 × 4 = 60 000 000 FCFA si l''écart se répète chaque trimestre.
-
-2. La clause de risque de change protège Kayor International SA contre une dépréciation excessive du FCFA par rapport à l''euro (devise de remboursement du prêt), en plafonnant à 6 % la part du risque qu''elle supporte ; au-delà, le risque est reporté sur le partenaire financier selon le mécanisme contractuel. Si le cours varie de 9 % par rapport au cours de référence, la part prise en charge par Kayor International SA est plafonnée à 6 %, et la part répercutée sur le partenaire financier est de 9 % − 6 % = 3 %.
-
-3. Kayor International SA pourrait invoquer le principe de traitement juste et équitable, dans la mesure où la taxe exceptionnelle est instaurée sans justification d''intérêt général apparente et de façon rétroactive, ce qui peut constituer un traitement arbitraire de l''investissement déjà réalisé. Elle pourrait également invoquer, selon les mécanismes de protection applicables entre les deux pays (à vérifier au cas par cas, aucun traité précis n''étant ici invoqué), une atteinte à la liberté de transfert des capitaux et des revenus si la taxe affecte significativement sa capacité à rapatrier les bénéfices de son investissement. Une analyse complète devrait vérifier l''existence et le contenu exact d''un cadre de protection applicable entre le Sénégal et le pays d''accueil, ce qui dépasse le cadre général de ce cours.
-
-4. Exemple de problématique : « Dans quelle mesure les mécanismes généraux de protection des investissements étrangers permettent-ils à un investisseur ouest-africain de se prémunir contre une modification réglementaire rétroactive et défavorable adoptée par l''État d''accueil, compte tenu des difficultés pratiques de preuve d''une atteinte au traitement juste et équitable ? »
-
-## Exercices pratiques (questions complémentaires)
-
-1. Dans le premier fait, si l''écart de prix avait été favorable à Kayor Process SARL (prix de vente supérieur au prix de marché), quel pays verrait sa base taxable potentiellement contestée par son administration fiscale ?
-2. Proposez une mesure corrective que Kayor International SA pourrait mettre en place pour sécuriser sa politique de prix de transfert entre Kayor Process SARL et Kayor Distrib Co.
-3. Si la clause de risque de change du deuxième fait avait plafonné la variation prise en charge par Kayor International SA à 10 % au lieu de 6 %, et que le cours avait varié de 9 %, quelle aurait été la part répercutée sur le partenaire financier ?
-4. En reprenant le troisième fait, pourquoi la rétroactivité de la nouvelle taxe est-elle un élément aggravant par rapport à une taxe appliquée seulement pour l''avenir ?
-5. Résumez, en cinq lignes, le fil conducteur transversal reliant les trois faits de ce sujet (fiscalité des groupes, gestion du risque de change, protection des investissements) dans la stratégie internationale d''un groupe sénégalais.
-
-## Corrigé
-
-1. Ce serait le pays où est implantée Kayor Distrib Co (la filiale distributrice), qui verrait son administration fiscale potentiellement contester la part de bénéfice qu''elle n''aurait pas perçue du fait d''un prix d''achat trop élevé, ce prix élevé réduisant artificiellement le bénéfice imposable localement en augmentant les charges d''achat de la filiale distributrice.
-2. Par exemple, la réalisation d''une étude de comparables indépendants documentée et actualisée régulièrement, la formalisation écrite de la politique de prix de transfert du groupe, et un ajustement périodique des prix intra-groupe pour les maintenir alignés sur les prix de marché observés.
-3. La part prise en charge par Kayor International SA serait de 9 %, intégralement couverte par le plafond de 10 % ; la part répercutée sur le partenaire financier serait alors de 0 %, le plafond n''étant pas atteint.
-4. Parce qu''une mesure rétroactive s''applique à des opérations déjà réalisées sur la base d''un cadre réglementaire différent au moment de la décision d''investissement, ce qui porte atteinte à la prévisibilité sur laquelle l''investisseur s''est fondé pour engager ses capitaux, alors qu''une taxe prospective, même défavorable, laisse à l''investisseur la possibilité d''adapter ses décisions futures.
-5. Les trois faits illustrent que la stratégie internationale d''un groupe sénégalais doit anticiper simultanément plusieurs risques juridiques et financiers liés à l''implantation à l''étranger : la cohérence des prix pratiqués entre entités liées au regard des règles fiscales de chaque pays, la gestion contractuelle du risque de change sur les flux financiers transfrontaliers, et l''exposition aux décisions unilatérales de l''État d''accueil qui peuvent affecter la rentabilité de l''investissement. Une gestion rigoureuse de ces trois dimensions, documentée et anticipée contractuellement, réduit fortement l''exposition du groupe aux aléas de l''internationalisation.', 'texte', 50, false, 50
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 en droit des affaires (entraînement, corrigé détaillé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Droit des investissements et contrats internationaux', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : maîtriser les mécanismes généraux de protection des investissements étrangers et les grandes clauses spécifiques des contrats internationaux d''affaires, et savoir les mobiliser dans un cas pratique. Matériel recommandé : tableau ou diaporama, calculatrice pour les exemples de risque de change. Prérequis : droit des contrats d''affaires et de la concurrence vu en Master 1.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Nous ouvrons le cycle des trois matières de Master 2 avec le droit des investissements et les contrats internationaux. Cette matière élargit à l''international ce que vous avez appris en Master 1 sur les contrats d''affaires : les mêmes logiques de clause complexe et de gestion du risque s''appliquent, mais avec une dimension supplémentaire liée à la différence de pays, de monnaie, et de système juridique entre les parties.
-
-## 05:00 – 20:00 · La protection des investissements étrangers
-
-Un investisseur qui implante une activité à l''étranger s''expose à des risques spécifiques : changement de réglementation, expropriation, restrictions de change, instabilité politique. Les mécanismes généraux de protection, que l''on retrouve dans de nombreux cadres juridiques, reposent sur quatre principes à connaître par cœur. D''abord, le traitement juste et équitable : l''État d''accueil s''engage à ne pas traiter l''investisseur de façon arbitraire ou discriminatoire. Ensuite, la protection contre l''expropriation sans indemnisation : une expropriation peut être licite dans l''intérêt public, mais doit généralement donner lieu à une indemnisation juste. Puis, la liberté de transfert des capitaux et des revenus, c''est-à-dire la possibilité de rapatrier les bénéfices, sous réserve des règles de change applicables. Enfin, le règlement des différends, de nombreux cadres prévoyant un recours à l''arbitrage international entre investisseur et État, distinct de l''arbitrage commercial entre entreprises privées que nous avons étudié en Master 1. Prenons un exemple au tableau : une entreprise sénégalaise investit dans une unité de transformation dans un pays voisin. Si ce pays modifie brutalement sa réglementation douanière, sans justification d''intérêt général proportionnée, rendant l''activité non viable, l''investisseur pourrait invoquer une atteinte au traitement juste et équitable, selon le cadre de protection applicable entre les deux pays, qu''il faut toujours vérifier au cas par cas — je ne vous donne ici que la logique générale, pas le contenu d''un traité précis.
-
-## 20:00 – 35:00 · Les grandes clauses des contrats internationaux
-
-Passons aux clauses spécifiques des contrats internationaux, qui s''ajoutent aux clauses complexes déjà vues en Master 1. Première clause : le choix de loi. Les parties désignent le droit national applicable au contrat, qui peut être différent de la loi de chacune d''elles ; ce choix est généralement respecté entre professionnels, sauf règles impératives contraires. Deuxième clause : la clause attributive de juridiction ou la clause compromissoire internationale, qui désigne la juridiction ou le tribunal arbitral compétent, avec une attention accrue, par rapport à l''arbitrage interne, à l''exécution transfrontalière de la décision rendue. Troisième clause, essentielle et souvent sous-estimée : la clause de monnaie de paiement et de risque de change, qui répartit entre les parties le risque lié aux fluctuations entre deux devises. Quatrième clause : la force majeure adaptée au contexte international, qui doit anticiper des événements spécifiques — instabilité politique, fermeture de frontières, sanctions internationales — au-delà des cas classiques. Cinquième clause : la conformité réglementaire, ou compliance, qui engage les parties à respecter les réglementations applicables dans chaque pays concerné, notamment en matière de lutte contre la corruption, un sujet devenu central dans la pratique contractuelle internationale.
-
-## 35:00 – 40:00 · Pause active et question au groupe
-
-Cinq minutes de pause active. Question à préparer : pourquoi une entreprise pourrait-elle choisir le droit de son propre pays comme loi applicable au fond du contrat, tout en acceptant un siège d''arbitrage dans un pays tiers neutre ? Réfléchissez-y. (Réponse attendue : parce que le droit applicable au fond est souvent choisi pour sa pertinence par rapport au lieu d''exécution principal du contrat ou à la familiarité qu''en a l''une des parties, alors que le siège de l''arbitrage est choisi pour sa neutralité procédurale et sa tradition arbitrale reconnue, indépendamment du droit qui tranchera le fond du litige ; les deux choix répondent à des logiques différentes et peuvent donc être dissociés.)
-
-## 40:00 – 60:00 · Cas d''entreprise filé : Teranga Agro-Export
-
-Travaillons maintenant un cas complet. Teranga Agro-Export SA conclut avec un acheteur européen un contrat de fourniture d''arachides transformées sur cinq ans, pour 300 000 000 FCFA par an, payable en euros au cours du jour de facturation. Le contrat désigne le droit sénégalais comme loi applicable, et un arbitrage international à Paris en cas de litige. Une clause de risque de change limite à 5 % la variation prise en charge par Teranga Agro-Export SA par rapport au cours de référence, qui est le taux fixe réel de 655,957 FCFA pour un euro. Première analyse : le choix du droit sénégalais est cohérent, car l''activité de production se déroule au Sénégal, c''est donc le droit le plus pertinent pour régir l''exécution ; le siège à Paris pour l''arbitrage est, lui, choisi pour sa neutralité et sa tradition arbitrale internationale reconnue, indépendamment du lieu d''exécution. Deuxième analyse, chiffrée : si le cours de l''euro varie de 8 % par rapport au cours de référence lors d''une facturation, la part prise en charge par Teranga Agro-Export SA est plafonnée à 5 %, et la part répercutée sur l''acheteur européen est de 8 % − 5 % = 3 %. Ce mécanisme répartit raisonnablement le risque de change entre les deux parties, plutôt que de le faire peser entièrement sur l''exportateur, qui serait sinon exposé à une perte de change pouvant déséquilibrer sa rentabilité sur un contrat de cinq ans.
-
-## 60:00 – 70:00 · Approfondissement : compliance et clauses anti-corruption
-
-Un mot sur la clause de conformité réglementaire, de plus en plus centrale dans les contrats internationaux. Elle engage chaque partie à respecter les réglementations applicables dans son propre pays et dans celui de son partenaire, notamment en matière de lutte contre la corruption : interdiction de verser ou de recevoir des paiements indus pour obtenir ou conserver un contrat, obligation de mettre en place des procédures internes de vigilance, droit pour l''autre partie de résilier le contrat en cas de manquement avéré. Cette clause protège les deux parties : l''entreprise qui la respecte se protège contre le risque qu''un partenaire peu scrupuleux ne l''expose, par ricochet, à des poursuites dans son propre pays, en particulier lorsque les législations nationales ont une portée extraterritoriale sur ces sujets. Pour une entreprise sénégalaise qui contracte avec un partenaire étranger, la vigilance sur ce point n''est plus optionnelle : elle fait partie des standards attendus par les grands partenaires internationaux, notamment financiers.
-
-## 70:00 – 80:00 · Quiz interactif
-
-Cinq questions pour vérifier votre compréhension. Première question : citez les quatre principes généraux de protection des investissements étrangers. Réponse : le traitement juste et équitable, la protection contre l''expropriation sans indemnisation, la liberté de transfert des capitaux et des revenus, et le règlement des différends par arbitrage international investisseur-État. Deuxième question : dans le cas Teranga Agro-Export, si le cours varie de 3 % seulement, quelle part est répercutée sur l''acheteur ? Réponse : aucune, car 3 % est inférieur au plafond de 5 % pris en charge par le vendeur ; la totalité de la variation reste à la charge de Teranga Agro-Export SA. Troisième question : la clause de choix de loi et la clause d''arbitrage international répondent-elles à la même logique ? Réponse : non, le choix de loi vise la pertinence du droit applicable au fond, alors que le choix du siège d''arbitrage vise la neutralité procédurale ; ces choix peuvent être dissociés. Quatrième question : pourquoi la clause de force majeure doit-elle être adaptée dans un contrat international ? Réponse : parce qu''elle doit anticiper des événements spécifiques au contexte international, comme l''instabilité politique ou les sanctions, au-delà des cas classiques. Cinquième question : quel est l''objectif principal d''une clause de conformité réglementaire anti-corruption ? Réponse : protéger les deux parties contre le risque juridique et réputationnel lié à des pratiques de corruption, notamment en raison de la portée parfois extraterritoriale de certaines législations.
-
-## 80:00 – 85:00 · Synthèse et mise en perspective
-
-Pour synthétiser : la protection des investissements repose sur des principes généraux communs, dont le contenu précis dépend toujours du cadre juridique applicable entre les pays concernés, qu''il faut vérifier au cas par cas. Les contrats internationaux ajoutent aux clauses complexes déjà connues des clauses spécifiques à leur dimension transfrontalière, en particulier le choix de loi, le choix du mode de résolution des litiges, le risque de change, la force majeure adaptée, et la conformité réglementaire. La méthode à retenir est celle que nous avons appliquée au cas Teranga Agro-Export : identifier chaque clause, comprendre la logique économique qu''elle organise, et savoir chiffrer ses effets lorsque c''est pertinent.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit. Question 1 : citez les quatre principes généraux de protection des investissements étrangers. Réponse : traitement juste et équitable, protection contre l''expropriation sans indemnisation, liberté de transfert des capitaux et des revenus, règlement des différends par arbitrage investisseur-État. Question 2 : dans un contrat où le vendeur plafonne à 4 % sa prise en charge du risque de change et où le cours varie de 7 %, quelle part est répercutée sur l''acheteur ? Réponse : 7 % − 4 % = 3 %. Question 3 : quelles sont les cinq grandes clauses spécifiques des contrats internationaux étudiées aujourd''hui ? Réponse : choix de loi, juridiction ou arbitrage international, monnaie de paiement et risque de change, force majeure adaptée, conformité réglementaire. Question 4 : pourquoi le choix du droit applicable au fond et le choix du siège de l''arbitrage peuvent-ils être dissociés ? Réponse : parce qu''ils répondent à des logiques différentes, la pertinence du droit par rapport à l''exécution du contrat d''un côté, la neutralité procédurale de l''autre. Question 5 : pourquoi la clause de conformité réglementaire anti-corruption est-elle devenue centrale dans la pratique contractuelle internationale ? Réponse : en raison du risque juridique et réputationnel accru, notamment du fait de législations à portée parfois extraterritoriale, et de l''exigence croissante des grands partenaires internationaux en matière de vigilance anticorruption. Merci pour votre attention ; la prochaine séance portera sur le droit fiscal approfondi des groupes.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit des investissements et contrats internationaux');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Droit fiscal approfondi des groupes', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : maîtriser la logique générale des prix de transfert et des conventions fiscales internationales, et savoir appliquer le principe de pleine concurrence à un cas chiffré. Matériel recommandé : tableau ou diaporama, calculatrice. Prérequis : droit des investissements et contrats internationaux (séance précédente), droit fiscal des affaires vu en Licence 3.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Après les investissements et les contrats internationaux, nous abordons la fiscalité internationale des groupes, à travers deux notions : les prix de transfert et les conventions fiscales. Je rappelle d''emblée la règle de prudence : aucun taux d''imposition, aucun pourcentage de marge de référence, aucune règle précise de convention fiscale ne doit être retenu comme officiel ; nous travaillons sur la méthode et sur des valeurs explicitement fictives.
-
-## 05:00 – 20:00 · Les prix de transfert et le principe de pleine concurrence
-
-Lorsque des sociétés d''un même groupe, situées dans des pays différents, effectuent des transactions entre elles — vente de biens, prestations de services, prêts intra-groupe, redevances — le prix de ces transactions s''appelle un prix de transfert. Ce prix a un impact direct sur la répartition du bénéfice imposable entre les pays concernés. Le principe central à retenir est le principe de pleine concurrence : les prix entre sociétés liées doivent être comparables à ceux pratiqués entre entreprises indépendantes dans des conditions comparables. Je veux que vous fassiez immédiatement le lien avec une notion de Master 1 : c''est exactement la même logique méthodologique que la comparaison au prix de marché pour qualifier une convention réglementée. Seul l''enjeu change : gouvernance d''un côté, répartition de l''assiette fiscale entre pays de l''autre, mais la méthode de comparaison à une référence objective est transversale. Exemple au tableau : une filiale sénégalaise de transformation vend sa production à sa société mère étrangère pour 20 000 000 FCFA, alors qu''une entreprise indépendante comparable facturerait 32 000 000 FCFA pour une transaction similaire. L''écart de 12 000 000 FCFA est un indice fort de prix de transfert non conforme, qui pourrait conduire l''administration fiscale sénégalaise à réintégrer ce montant dans le bénéfice imposable de la filiale.
-
-## 20:00 – 30:00 · Les méthodes générales de détermination des prix de transfert
-
-Sans entrer dans le détail technique, qui relève d''un enseignement spécialisé, retenez l''existence de trois grandes familles de méthodes. Premièrement, les méthodes fondées sur la comparaison directe des prix pratiqués pour des transactions comparables entre entreprises indépendantes — c''est la méthode la plus intuitive, mais elle suppose de trouver un comparable suffisamment proche, ce qui est souvent difficile en pratique dans des marchés peu documentés. Deuxièmement, les méthodes fondées sur les marges pratiquées, brute ou nette, par des entreprises comparables exerçant une activité similaire — plus souples, car elles ne comparent pas un prix précis mais un niveau de rentabilité. Troisièmement, les méthodes fondées sur le partage des bénéfices entre entités liées, utilisées lorsque la transaction est trop spécifique pour trouver un comparable direct, par exemple pour des actifs incorporels uniques. L''administration fiscale peut demander à l''entreprise de documenter sa politique de prix de transfert et de justifier le respect du principe de pleine concurrence ; une entreprise bien gérée anticipe cette demande en formalisant sa politique par écrit, plutôt que de la justifier seulement après un contrôle.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Cinq minutes de pause active. Question à préparer : pourquoi la méthode fondée sur les marges est-elle souvent plus facile à appliquer en pratique que la méthode fondée sur la comparaison directe des prix ? Réfléchissez-y. (Réponse attendue : parce qu''il est souvent plus facile de trouver des entreprises comparables ayant un niveau de rentabilité ou de marge publié ou estimable, que de trouver une transaction strictement identique avec un prix directement comparable, notamment pour des produits ou services peu standardisés.)
-
-## 35:00 – 50:00 · Cas d''entreprise filé : groupe Siné Industries
-
-Reprenons un cas complet. Siné Industries SA, basée à Dakar, détient une filiale de distribution dans un pays voisin. La filiale réalise un chiffre d''affaires de 150 000 000 FCFA en revendant des produits achetés à la société mère pour 130 000 000 FCFA, soit une marge brute de 20 000 000 FCFA, c''est-à-dire 20 000 000 divisé par 130 000 000, soit environ 15,4 % du prix d''achat — rectifions au passage un arrondi : 20 000 000 / 130 000 000 ≈ 0,1538, donc environ 15,4 %. Une étude de comparables indépendants dans le même secteur de distribution montre une marge brute habituelle de 25 % du prix d''achat pour des fonctions comparables. Procédons étape par étape. Première étape : calculer la marge attendue selon le principe de pleine concurrence, soit 130 000 000 × 25 % = 32 500 000 FCFA. Deuxième étape : comparer à la marge effectivement réalisée, 20 000 000 FCFA. Troisième étape : calculer l''écart, 32 500 000 − 20 000 000 = 12 500 000 FCFA. Quatrième étape : conclure sur la conséquence fiscale possible — cet écart indique que le prix d''achat facturé par la société mère est probablement surévalué, ce qui transfère artificiellement du bénéfice vers la société mère au détriment de la filiale, et l''administration fiscale du pays de la filiale pourrait chercher à réintégrer cet écart dans son bénéfice imposable local.
-
-## 50:00 – 65:00 · Les conventions fiscales internationales
-
-Passons maintenant aux conventions fiscales internationales. Lorsqu''une même opération économique pourrait être imposée dans deux pays différents — le pays de résidence de l''entreprise et le pays source du revenu — un risque de double imposition apparaît. Les conventions fiscales, conclues entre deux États, visent à éliminer ou atténuer ce risque, selon trois mécanismes généraux à connaître. Premièrement, la répartition du droit d''imposer certains revenus entre l''État de résidence et l''État source, selon la nature du revenu : bénéfices d''entreprise, dividendes, intérêts, redevances. Deuxièmement, les mécanismes d''élimination de la double imposition, le plus souvent un crédit d''impôt accordé par l''État de résidence pour l''impôt déjà payé dans l''État source, ou une exonération dans l''un des deux États. Troisièmement, des clauses anti-abus, destinées à éviter qu''une entreprise n''utilise artificiellement une convention favorable sans lien économique réel avec le pays concerné, pratique parfois appelée chalandage fiscal — par exemple l''interposition d''une société-écran dans un pays tiers uniquement pour bénéficier d''une convention avantageuse, sans aucune activité économique réelle dans ce pays tiers.
-
-## 65:00 – 75:00 · Quiz interactif
-
-Cinq questions pour vérifier votre compréhension. Première question : quel est le principe central qui gouverne les prix de transfert ? Réponse : le principe de pleine concurrence, qui exige une comparabilité avec des transactions entre entreprises indépendantes. Deuxième question : dans le cas Siné Industries, quel est le montant de l''écart identifié ? Réponse : 12 500 000 FCFA. Troisième question : citez les trois grandes familles de méthodes de détermination des prix de transfert. Réponse : la comparaison directe des prix, les méthodes fondées sur les marges, et le partage des bénéfices. Quatrième question : qu''est-ce que le chalandage fiscal ? Réponse : l''utilisation artificielle d''une convention fiscale favorable sans lien économique réel avec le pays concerné. Cinquième question : quel mécanisme général permet d''éliminer la double imposition d''un même revenu dans deux pays ? Réponse : le plus souvent, un crédit d''impôt accordé par l''État de résidence pour l''impôt déjà payé dans l''État source, ou une exonération dans l''un des deux États.
-
-## 75:00 – 85:00 · Synthèse et mise en perspective
-
-Synthétisons cette séance. Le prix de transfert est le prix des transactions entre sociétés liées situées dans des pays différents, et il doit respecter le principe de pleine concurrence, vérifié par comparaison à des entreprises ou des transactions indépendantes comparables. Trois familles de méthodes existent pour cette comparaison, chacune adaptée à un type de transaction. Les conventions fiscales internationales organisent la répartition du droit d''imposer entre États et l''élimination de la double imposition, avec des garde-fous anti-abus contre le chalandage fiscal. La méthode que nous avons appliquée au cas Siné Industries — comparer, chiffrer l''écart, en tirer la conséquence fiscale — est directement transférable à tout cas pratique de cette matière, et fait écho à la méthode de la convention réglementée étudiée en Master 1 : dans les deux cas, on compare une situation liée à une référence de marché indépendante.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit. Question 1 : définissez le principe de pleine concurrence. Réponse : l''exigence que les prix pratiqués entre sociétés liées soient comparables à ceux pratiqués entre entreprises indépendantes dans des conditions comparables. Question 2 : une filiale achète à sa mère pour 100 000 000 FCFA et revend pour 118 000 000 FCFA, soit une marge de 18 %. Des comparables indépendants montrent une marge habituelle de 24 %. Calculez l''écart par rapport à la marge attendue. Réponse : marge attendue = 100 000 000 × 24 % = 24 000 000 FCFA ; marge effective = 18 000 000 FCFA ; écart = 24 000 000 − 18 000 000 = 6 000 000 FCFA. Question 3 : citez les trois familles de méthodes de détermination des prix de transfert. Réponse : comparaison directe des prix, méthodes fondées sur les marges, partage des bénéfices. Question 4 : quels sont les deux mécanismes généraux d''une convention fiscale pour traiter la double imposition ? Réponse : la répartition du droit d''imposer selon la nature du revenu, et un mécanisme d''élimination de la double imposition (crédit d''impôt ou exonération). Question 5 : pourquoi les conventions fiscales prévoient-elles des clauses anti-abus ? Réponse : pour éviter le chalandage fiscal, c''est-à-dire l''utilisation artificielle d''une convention favorable sans substance économique réelle dans le pays concerné. Merci pour votre attention ; la prochaine séance portera sur la méthodologie du mémoire et de la soutenance.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit fiscal approfondi des groupes');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire de recherche ou professionnel et soutenance', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : maîtriser la méthodologie de construction d''un mémoire de Master 2 (sujet, problématique, plan) et les principes de préparation d''une soutenance orale réussie. Matériel recommandé : tableau ou diaporama, exemples de problématiques à retravailler collectivement. Prérequis : aucun prérequis disciplinaire spécifique, mais utile après avoir déjà réfléchi à un thème de mémoire.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction
-
-Bonjour à toutes et à tous. Cette séance est différente des précédentes : nous ne travaillons pas une matière de fond, mais une compétence méthodologique transversale, indispensable au Master 2 : la construction d''un mémoire et la préparation de sa soutenance. C''est un exercice que beaucoup d''étudiants sous-estiment en début d''année, pensant qu''il suffira de « rassembler des informations » sur un thème ; en réalité, un bon mémoire se construit autour d''une problématique précise, dès les premières semaines.
-
-## 05:00 – 20:00 · Choisir son sujet et construire la problématique
-
-Commençons par le choix du sujet. Un bon sujet répond à trois critères cumulatifs : il doit être suffisamment précis pour être traité en profondeur dans le volume imposé par votre établissement (à vérifier auprès de votre encadrant), suffisamment documenté pour permettre une recherche sérieuse, et porteur d''un intérêt réel, théorique ou pratique. Un sujet trop large, comme « le droit des sociétés en Afrique », ne permet pas une analyse approfondie ; un sujet purement descriptif, comme « présentation du contrat de vente », ne permet pas de construire une véritable problématique. La méthode de cadrage consiste à partir d''un thème large, puis à le restreindre progressivement. Travaillons un exemple au tableau : partons du thème « les prix de transfert dans les groupes agro-industriels ». Première restriction : on se concentre sur les groupes agro-industriels ouest-africains spécifiquement. Deuxième restriction, qui devient la problématique : « dans quelle mesure le principe de pleine concurrence permet-il un contrôle effectif des prix de transfert dans les groupes agro-industriels ouest-africains, compte tenu des difficultés pratiques d''accès à des données de comparables fiables ? ». Remarquez la structure de cette problématique : elle annonce une tension — le principe existe en théorie, mais son application pratique est limitée — que tout le mémoire va explorer et documenter. Une problématique qui n''annonce aucune tension, aucune difficulté, n''est généralement pas une bonne problématique : elle ressemble à une question fermée plutôt qu''à un axe de recherche.
-
-## 20:00 – 30:00 · Construire le plan
-
-Le plan d''un mémoire juridique suit généralement une logique en deux parties, chacune subdivisée, qui organise une démonstration progressive. Une première partie pose le cadre et les règles applicables : ce qui existe, ce qui est prévu par les textes et la pratique. Une seconde partie analyse les difficultés, les limites, ou les évolutions : ce qui pose problème, ce qui pourrait changer. Point essentiel à retenir : le plan n''est pas un sommaire de connaissances juxtaposées, où l''on énumérerait tout ce que l''on sait sur le sujet. Chaque partie, chaque sous-partie, doit apporter un élément de réponse à la problématique, dans un ordre qui construit progressivement l''argumentation jusqu''à la conclusion. Pour notre exemple sur les prix de transfert, une première partie pourrait exposer le principe de pleine concurrence et ses méthodes de mise en œuvre ; une seconde partie pourrait analyser les difficultés pratiques de ce contrôle dans le contexte spécifique des groupes agro-industriels ouest-africains — accès aux comparables, capacités de l''administration fiscale, spécificités sectorielles.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Cinq minutes de pause active. Question à préparer : pourquoi un plan qui énumère simplement tout ce que l''on sait sur un thème, sans lien explicite avec une problématique, est-il généralement sanctionné dans un mémoire de Master ? Réfléchissez-y. (Réponse attendue : parce que le mémoire de Master évalue la capacité à construire une démonstration argumentée répondant à une question précise, pas seulement la capacité à restituer des connaissances ; un plan qui juxtapose des connaissances sans les relier à une problématique ne démontre pas cette compétence et s''apparente davantage à une fiche de révision qu''à un travail de recherche.)
-
-## 35:00 – 55:00 · La soutenance orale : principes et simulation
-
-Passons à la soutenance, l''épreuve orale qui clôt le travail de mémoire. Elle comprend typiquement une présentation orale de quelques minutes, souvent entre 10 et 15 minutes selon les modalités de votre établissement, suivie de questions du jury. Quatre principes doivent guider votre préparation. Premièrement, la présentation orale ne doit jamais être une lecture du mémoire : c''est une synthèse qui met en valeur votre problématique, votre démarche, et vos conclusions principales, en donnant envie au jury d''approfondir certains points par ses questions. Deuxièmement, les supports visuels, lorsqu''ils sont autorisés, doivent être sobres : peu de texte, des schémas clairs, jamais de paragraphes entiers lus à l''écran. Troisièmement, les questions du jury portent souvent sur les limites de votre travail, vos choix méthodologiques, ou des approfondissements possibles ; il faut savoir reconnaître honnêtement les limites de votre travail plutôt que de les nier, ce qui est généralement mieux perçu qu''une défense rigide et peu crédible. Quatrièmement, l''entraînement oral devant un public, avec simulation de questions, est la meilleure préparation, car la maîtrise orale d''un sujet que l''on connaît par écrit n''est pas automatique. Simulons maintenant une séquence de questions-réponses : un étudiant a rédigé un mémoire sur l''arbitrage CCJA et les PME ouest-africaines, concluant que l''arbitrage CCJA est peu adapté à ces entreprises en raison de son coût. Un membre du jury demande : « n''auriez-vous pas dû étudier plus précisément les montants de litiges concernés, pour étayer cette conclusion avec des exemples chiffrés ? ». La méthode de réponse à retenir comporte trois étapes : reconnaître honnêtement la limite identifiée, expliquer pourquoi elle existe (ici, la difficulté d''accès à des données réelles et confidentielles sur les montants de litiges arbitraux), puis proposer une piste pour la dépasser dans une recherche future (par exemple des entretiens avec des praticiens pour obtenir des ordres de grandeur).
-
-## 55:00 – 70:00 · Atelier pratique : retravailler une problématique faible
-
-Passons à un atelier pratique. Voici une problématique faible, soumise par un étudiant fictif : « les contrats internationaux sont-ils bien réglementés ? ». Identifions ensemble ses défauts. D''abord, c''est une question fermée, qui appelle une réponse par oui ou par non, sans tension ni discussion. Ensuite, elle est trop large : « les contrats internationaux » et « bien réglementés » ne précisent ni le type de contrat, ni le pays, ni le critère d''évaluation retenu pour juger de la qualité de la réglementation. Reformulons-la ensemble selon la méthode vue plus haut : on restreint d''abord à un type de contrat précis, par exemple les contrats internationaux d''approvisionnement agricole ; on restreint ensuite à une zone géographique, l''Afrique de l''Ouest ; on identifie enfin une tension réelle à explorer, par exemple l''écart entre la sécurité juridique recherchée par les clauses contractuelles et les difficultés pratiques d''exécution transfrontalière. On obtient une problématique reformulée : « dans quelle mesure les clauses contractuelles usuelles des contrats internationaux d''approvisionnement agricole en Afrique de l''Ouest parviennent-elles à sécuriser l''exécution transfrontalière, compte tenu des difficultés pratiques de mise en œuvre de l''arbitrage international pour des opérateurs de taille modeste ? ». Cette reformulation illustre exactement la méthode de restriction progressive que je veux que vous appliquiez à votre propre sujet dès cette semaine.
-
-## 70:00 – 80:00 · Quiz interactif
-
-Cinq questions pour vérifier votre compréhension. Première question : quels sont les trois critères d''un bon sujet de mémoire ? Réponse : précision suffisante, documentation accessible, intérêt théorique ou pratique réel. Deuxième question : pourquoi une problématique fermée est-elle généralement insuffisante ? Réponse : elle n''appelle qu''une réponse binaire et ne permet pas de construire une démonstration argumentée. Troisième question : quelle est la logique générale du plan en deux parties d''un mémoire juridique ? Réponse : une première partie qui pose le cadre existant, une seconde qui analyse les difficultés ou les évolutions, chaque partie répondant à la problématique. Quatrième question : quelle est la méthode en trois étapes pour répondre à une question de jury sur une limite de votre travail ? Réponse : reconnaître la limite, l''expliquer, proposer une piste pour la dépasser. Cinquième question : dans l''atelier de reformulation, quels étaient les deux défauts principaux de la problématique faible initiale ? Réponse : elle était fermée (réponse oui/non) et trop large (aucune précision de type de contrat, de zone géographique ou de critère d''évaluation).
-
-## 80:00 – 85:00 · Synthèse et mise en perspective
-
-Synthétisons cette séance méthodologique. Un bon sujet de mémoire est précis, documenté, et porteur d''un intérêt réel ; la problématique qui en découle doit annoncer une tension à explorer, jamais une simple question fermée. Le plan organise progressivement la démonstration vers la réponse à la problématique, en deux parties articulées, jamais en un sommaire de connaissances juxtaposées. La soutenance évalue votre capacité à synthétiser oralement votre travail et à répondre honnêtement aux questions du jury sur ses limites, selon la méthode en trois étapes que nous avons pratiquée. Ces compétences méthodologiques, que vous devez mobiliser dès les premières semaines de l''année et non dans les derniers jours avant le dépôt du mémoire, sont aussi transférables à votre future pratique professionnelle, où la capacité à poser une problématique claire et à la défendre oralement devant un client ou une direction est une compétence recherchée.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation à retravailler par écrit. Question 1 : citez les trois critères d''un bon sujet de mémoire. Réponse : précision, documentation accessible, intérêt théorique ou pratique réel. Question 2 : transformez le thème large « la fiscalité des groupes » en problématique précise, en au moins deux étapes de restriction. Réponse libre, attendue selon la méthode vue en séance (restriction à un type d''opération, puis formulation d''une tension explicite à explorer). Question 3 : pourquoi le plan d''un mémoire ne doit-il jamais être un simple sommaire de connaissances ? Réponse : parce que chaque partie doit apporter un élément de réponse argumenté à la problématique, ce qu''une simple juxtaposition de connaissances ne permet pas de démontrer. Question 4 : citez les quatre principes de préparation d''une soutenance évoqués en séance. Réponse : ne pas lire le mémoire, des supports visuels sobres, anticiper les questions sur les limites du travail, s''entraîner oralement devant un public. Question 5 : quelle est la meilleure attitude face à une question de jury révélant une limite réelle de votre mémoire ? Réponse : la reconnaître honnêtement, l''expliquer, et proposer une piste pour la dépasser, plutôt que de la nier ou de se déstabiliser. Merci à toutes et à tous ; la prochaine et dernière séance sera un atelier de simulation complète de soutenance.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire de recherche ou professionnel et soutenance');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance', '## Fiche du cours vidéo
-
-Durée : 1h30. Objectif : atelier de simulation complète de soutenance de mémoire, synthèse transversale des trois matières de Master 2 (investissements internationaux, fiscalité des groupes, méthodologie du mémoire), entraînement à la gestion du temps et du stress en conditions proches du réel. Matériel recommandé : tableau ou diaporama, chronomètre, grille d''observation de soutenance à distribuer aux participants d''une simulation entre pairs. Prérequis : les trois séances vidéo précédentes de Master 2.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Introduction à l''atelier de soutenance
-
-Bonjour à toutes et à tous. Cette séance clôt l''année de Master 2 avec un atelier pratique de simulation de soutenance, construit autour d''un mémoire fictif qui mobilise les deux matières de fond que nous avons étudiées — investissements internationaux et fiscalité des groupes — à travers l''épreuve méthodologique de la soutenance. L''objectif est de vous donner un modèle concret et transférable à votre propre soutenance, quel que soit votre sujet.
-
-## 05:00 – 15:00 · Présentation du mémoire fictif et de sa problématique
-
-Voici le mémoire que nous allons utiliser pour cet atelier. Titre : « Le contrôle des prix de transfert dans les groupes agro-industriels ouest-africains : entre principe de pleine concurrence et réalités pratiques ». Problématique : « dans quelle mesure le principe de pleine concurrence permet-il un contrôle effectif des prix de transfert dans les groupes agro-industriels ouest-africains, compte tenu des difficultés pratiques d''accès à des données de comparables fiables ? ». Plan en deux parties : la première partie expose le principe de pleine concurrence et ses méthodes générales de mise en œuvre (comparaison directe des prix, méthodes fondées sur les marges, partage des bénéfices) ; la seconde partie analyse les difficultés pratiques de ce contrôle dans le contexte spécifique des groupes agro-industriels ouest-africains, notamment l''absence de bases de données de comparables locales suffisamment développées, et propose des pistes d''amélioration, comme le recours à des comparables régionaux élargis ou à des méthodes fondées sur les marges plutôt que sur les prix directs lorsque les données manquent.
-
-## 15:00 – 30:00 · Simulation de présentation orale
-
-Je vous propose maintenant d''écouter, puis de commenter ensemble, une présentation orale type de dix minutes pour ce mémoire — je vais en dérouler la structure, que vous devez adapter à votre propre sujet. Introduction (environ deux minutes) : présenter le contexte économique (l''importance croissante des groupes agro-industriels dans la région), annoncer la problématique et son enjeu pratique, annoncer le plan en une phrase. Première partie (environ trois minutes) : présenter le principe de pleine concurrence sans le réciter mot à mot, mais en insistant sur la méthode de comparaison et les trois familles de méthodes, en illustrant par un exemple chiffré simple. Deuxième partie (environ trois minutes) : présenter les difficultés pratiques identifiées dans la recherche — ici, l''absence de données de comparables fiables et accessibles dans la région — et les pistes d''amélioration proposées. Conclusion (environ deux minutes) : rappeler la réponse apportée à la problématique, reconnaître explicitement une limite du travail (par exemple l''absence d''entretiens avec des praticiens pour vérifier empiriquement les difficultés identifiées dans la littérature), et ouvrir sur une perspective de recherche future. Remarquez la structure : chaque partie reste brève à l''oral, car le jury a déjà lu le mémoire ; l''oral doit mettre en valeur la démarche et les conclusions, pas réciter le contenu intégral.
-
-## 30:00 – 35:00 · Pause active et question au groupe
-
-Cinq minutes de pause active. Question à préparer : pourquoi la conclusion orale de la présentation doit-elle inclure une reconnaissance explicite d''une limite du travail, plutôt que de se contenter d''affirmer que la problématique a été pleinement résolue ? Réfléchissez-y. (Réponse attendue : parce qu''un mémoire de Master, par nature, ne peut pas traiter exhaustivement un sujet de recherche ; reconnaître une limite réelle démontre une maturité critique et une honnêteté intellectuelle appréciées par un jury, et désamorce par avance une partie des questions difficiles qu''il pourrait poser sur ce point, l''étudiant montrant qu''il maîtrise déjà la portée exacte de son propre travail.)
-
-## 35:00 – 55:00 · Simulation de questions du jury
-
-Passons maintenant à la simulation des questions du jury, l''étape la plus redoutée par les étudiants, mais aussi la plus importante à préparer. Je vous propose cinq questions types, avec, pour chacune, la méthode de réponse à appliquer. Première question : « vous n''avez cité aucun exemple chiffré réel de redressement fiscal lié aux prix de transfert dans la région ; votre démonstration n''est-elle pas purement théorique ? ». Méthode de réponse : reconnaître que les données publiques précises sur les redressements fiscaux sont rarement accessibles pour des raisons de confidentialité fiscale, expliquer que le mémoire s''appuie donc sur la méthode générale documentée et sur des illustrations pédagogiques explicitement présentées comme fictives, et proposer, comme piste de recherche future, des entretiens avec des praticiens du contrôle fiscal pour obtenir des ordres de grandeur, même non officiels. Deuxième question : « pourquoi n''avez-vous pas comparé votre analyse à celle d''autres régions du monde confrontées aux mêmes difficultés de comparables ? ». Méthode : reconnaître que le choix a été de concentrer l''analyse sur le contexte régional pour approfondir plutôt que de disperser l''analyse sur une comparaison internationale large, ce qui aurait dépassé le volume imposé au mémoire, tout en indiquant que cette comparaison constitue une piste naturelle d''approfondissement. Troisième question : « votre proposition de recourir à des comparables régionaux élargis est-elle vraiment opérationnelle pour une petite administration fiscale ? ». Méthode : reconnaître la difficulté pratique de mise en œuvre pour une administration aux moyens limités, nuancer la proposition en la présentant comme une piste parmi d''autres plutôt qu''une solution unique et suffisante, et suggérer une mise en œuvre progressive, par exemple en priorisant les secteurs économiques les plus significatifs. Quatrième question : « quelle est la limite méthodologique principale de votre travail ? ». Méthode : répondre directement et sans détour avec la limite déjà identifiée en conclusion, ce qui démontre une cohérence entre l''écrit et l''oral, puis reformuler brièvement la piste de dépassement déjà présentée. Cinquième question, plus générale : « en quoi votre mémoire apporte-t-il quelque chose de nouveau par rapport aux travaux déjà existants sur le sujet ? ». Méthode : identifier précisément l''angle spécifique de votre travail — ici, l''articulation entre le principe théorique de pleine concurrence et les contraintes pratiques propres au contexte agro-industriel régional — sans jamais prétendre avoir épuisé le sujet.
-
-## 55:00 – 70:00 · Grille d''auto-évaluation et conseils pratiques
-
-Je vous propose maintenant une grille d''auto-évaluation que vous pouvez utiliser lors de vos propres simulations entre pairs. Sur la présentation orale : respect du temps imparti (ni trop court, ni trop long), clarté de l''annonce de la problématique dès l''introduction, équilibre entre les deux parties du plan, qualité de la conclusion (réponse à la problématique, limite reconnue, perspective ouverte). Sur la gestion des questions : écoute complète de la question avant de répondre (ne pas répondre avant que le jury ait terminé sa phrase), reformulation brève de la question si elle est complexe pour vérifier la compréhension, réponse structurée selon la méthode reconnaître-expliquer-proposer lorsque la question porte sur une limite, et surtout absence de panique ou de silence prolongé : il est toujours préférable de répondre « je n''ai pas approfondi ce point spécifique dans mon mémoire, mais mon hypothèse serait que... » plutôt que de rester silencieux ou de bluffer une réponse non maîtrisée, qu''un jury expérimenté détecte presque toujours. Sur l''attitude générale : voix posée, contact visuel avec l''ensemble du jury et non un seul membre, gestion du stress par une respiration consciente avant de répondre à une question difficile plutôt que de répondre dans la précipitation.
-
-## 70:00 – 80:00 · Quiz interactif transversal
-
-Cinq questions qui résument l''ensemble du cycle de Master 2. Première question : quel est le principe central qui gouverne les prix de transfert ? Réponse : le principe de pleine concurrence. Deuxième question : quelles sont les quatre composantes générales de la protection des investissements étrangers étudiées en début de cycle ? Réponse : traitement juste et équitable, protection contre l''expropriation sans indemnisation, liberté de transfert des capitaux et des revenus, règlement des différends par arbitrage investisseur-État. Troisième question : quelle est la méthode en trois étapes pour répondre à une question de jury révélant une limite de votre mémoire ? Réponse : reconnaître, expliquer, proposer une piste. Quatrième question : pourquoi une problématique de mémoire doit-elle annoncer une tension plutôt qu''être une question fermée ? Réponse : parce qu''elle doit ouvrir sur une démonstration argumentée, pas sur une simple réponse binaire. Cinquième question : quelle attitude est recommandée face à une question de jury à laquelle vous n''avez pas de réponse toute prête ? Réponse : reconnaître honnêtement les limites de votre analyse sur ce point précis et proposer une hypothèse raisonnée, plutôt que de rester silencieux ou d''improviser une réponse non maîtrisée.
-
-## 80:00 – 85:00 · Synthèse générale de l''année de Master 2
-
-Pour conclure cette année de Master 2, et ce cycle complet de la Licence au Master, retenez l''idée centrale qui traverse toutes les matières étudiées : la comparaison à une référence objective, documentée et vérifiable, est l''outil méthodologique transversal du droit des affaires avancé, qu''il s''agisse de qualifier une convention réglementée, d''apprécier le risque anticoncurrentiel d''une clause d''exclusivité, de vérifier un prix de transfert, ou de construire une argumentation de mémoire face aux objections d''un jury. Cette capacité à comparer rigoureusement, à chiffrer lorsque c''est possible, et à reconnaître honnêtement les limites de son analyse, est exactement ce qui distingue un professionnel du droit des affaires compétent d''un simple connaisseur de règles.
-
-## 85:00 – 90:00 · Évaluation finale
-
-Cinq questions d''évaluation finale pour clore l''année. Question 1 : quelle est la méthode en trois étapes pour répondre à une question de jury sur une limite de votre travail ? Réponse : reconnaître la limite, l''expliquer, proposer une piste de dépassement. Question 2 : citez les trois grandes familles de méthodes de détermination des prix de transfert. Réponse : comparaison directe des prix, méthodes fondées sur les marges, partage des bénéfices. Question 3 : pourquoi faut-il éviter le silence prolongé face à une question difficile du jury ? Réponse : parce qu''il vaut mieux formuler une hypothèse raisonnée et explicitement présentée comme telle, qui montre une capacité de réflexion, plutôt que de laisser penser à une absence totale de maîtrise du sujet. Question 4 : quel est le fil méthodologique transversal reliant la qualification d''une convention réglementée, l''analyse d''un risque anticoncurrentiel, et le contrôle d''un prix de transfert ? Réponse : la comparaison systématique à une référence objective de marché ou de conditions normales, plutôt qu''un jugement fondé uniquement sur l''existence d''un lien d''intérêt ou de pouvoir économique. Question 5 : quelle compétence générale ce cycle de Master 2 a-t-il cherché à développer, au-delà des connaissances de fond en droit international des affaires et en fiscalité ? Réponse : la capacité à mener un travail de recherche personnel rigoureux, à le structurer autour d''une problématique précise, et à le défendre oralement avec honnêteté intellectuelle face à des questions critiques, ce qui constitue une compétence professionnelle transférable bien au-delà du cadre académique. Merci à toutes et à tous pour votre travail durant ces deux années de Master ; bon courage pour vos soutenances et le début de votre vie professionnelle.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-droit-m2'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie — simulation de soutenance');

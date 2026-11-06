@@ -4718,6 +4718,72 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "mas-fin-m2",
+  "level": "Master 2",
+  "subject": "Finance",
+  "module": null,
+  "title": "Finance Master 2 : risques avancés, finance internationale et mémoire professionnel",
+  "description": "Cours de préparation aux examens de Master 2 Finance : gestion des risques financiers avancée (VaR, options, swaps), finance internationale et financement de projets (project finance, microfinance, marchés régionaux africains), méthodologie du mémoire professionnel et soutenance. Pour étudiants de Master 2 ayant déjà validé les bases du Master 1 Finance. Cas d'entreprise sénégalais fictifs chiffrés et vérifiés.",
+  "sort": 752,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Finance",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les enjeux spécifiques de l'année de Master 2 : approfondissement des risques financiers, ouverture internationale, et préparation du mémoire professionnel et de sa soutenance.\n- Identifier les trois matières avancées du programme et leur lien avec les examens et le mémoire.\n- Construire un plan de révision sur six semaines qui intègre la préparation du mémoire.\n\n## Le Master 2 Finance : l'année de la spécialisation et de la soutenance\n\nLe Master 2 est l'année charnière entre la formation académique et l'entrée dans la vie professionnelle. Deux évolutions majeures distinguent le M2 du M1.\n\n- La sophistication des outils de gestion des risques et d'ouverture internationale : vous allez manier des notions que la plupart des praticiens de terrain connaissent sans les avoir formalisées (value at risk, produits dérivés, financement de projet), ce qui vous donne un avantage réel sur le marché du travail.\n- Le mémoire professionnel ou de recherche et sa soutenance orale deviennent l'aboutissement de l'année, souvent couplés à un stage long en entreprise, en banque, en cabinet ou en société de gestion. La soutenance n'est pas un simple exposé : c'est un exercice de défense argumentée devant un jury qui connaît le sujet et qui testera votre capacité à justifier vos choix méthodologiques.\n\nContrairement au M1, où l'on apprenait encore à combiner les méthodes, le M2 demande une capacité de jugement en situation d'incertitude radicale : un marché financier régional peu liquide, un risque de change sur un financement international, une donnée incomplète dans un dossier de project finance. Il n'existe pas toujours de réponse unique et le correcteur évalue la qualité du raisonnement autant que le résultat chiffré.\n\n## Les trois matières avancées de l'année\n\n- Gestion des risques financiers avancée : la mesure du risque de marché par la value at risk simplifiée, et les produits dérivés (options et swaps) comme outils de couverture ou de spéculation. Ces outils sont devenus incontournables dans toute direction financière, banque ou société de gestion exposée aux marchés.\n- Finance internationale et financement de projets : le financement de projet (project finance), la microfinance comme source alternative de financement en zone UEMOA, et une vue d'ensemble des marchés financiers régionaux africains, indispensables pour comprendre comment une entreprise ou un État lève des capitaux au-delà du financement bancaire classique.\n- Méthodologie du mémoire professionnel et soutenance : comment construire une problématique, mener une revue de littérature, choisir une méthodologie de collecte de données, rédiger en respectant les normes académiques, et se préparer à la soutenance orale devant jury.\n\nCes trois blocs ne sont pas indépendants du mémoire : beaucoup d'étudiants choisissent un thème de mémoire lié à la gestion des risques (par exemple la couverture du risque de change d'une entreprise exportatrice) ou à la finance internationale (par exemple le financement d'une infrastructure par project finance), ce qui permet de préparer les examens et le mémoire en même temps plutôt que comme deux charges de travail séparées.\n\n## Le mémoire professionnel : ce qu'on attend réellement\n\nLe mémoire de Master 2 n'est pas une dissertation théorique : c'est un travail appliqué qui part d'une situation réelle ou réaliste (une entreprise, un secteur, une politique financière) et qui mobilise les outils du Master pour l'analyser.\n\n- Une problématique précise et délimitée vaut mieux qu'un sujet vaste et flou : « comment une PME exportatrice sénégalaise peut-elle se couvrir contre le risque de change sur ses ventes en devises » est préférable à « la gestion des risques financiers en Afrique ».\n- Une méthodologie clairement explicitée : étude de cas unique approfondie, comparaison de plusieurs entreprises, entretiens avec des praticiens, ou analyse de données financières publiques ; chaque choix doit être justifié, pas seulement décrit.\n- Une revue de littérature qui situe le travail par rapport à ce qui a déjà été écrit sur le sujet, sans invention de sources ni de chiffres qui ne pourraient être vérifiés.\n- Une conclusion qui répond explicitement à la problématique posée en introduction, avec les limites du travail honnêtement reconnues.\n\nLa soutenance, elle, teste votre capacité à défendre ces choix à l'oral : pourquoi cette méthodologie et pas une autre, pourquoi ce choix de cas d'étude, que feriez-vous différemment avec plus de temps. Nous consacrerons une leçon et un atelier vidéo entiers à cette préparation.\n\n## Plan de révision sur six semaines\n\n- Semaines 1 et 2 : gestion des risques financiers avancée. Reprenez le calcul de la value at risk paramétrique, les mécanismes des options (payoff, valeur intrinsèque, valeur temps) et des swaps de taux.\n- Semaines 3 et 4 : finance internationale et financement de projets. Entraînez-vous sur les ratios de couverture du service de la dette (DSCR) dans un montage de project finance, et sur les indicateurs clés de la microfinance.\n- Semaine 5 : méthodologie du mémoire. Relisez votre plan de mémoire, vérifiez la cohérence entre problématique, méthodologie et conclusion provisoire, et préparez une version orale de dix minutes de présentation.\n- Semaine 6 : entraînement croisé sur des sujets type combinant les trois matières, et simulation de soutenance avec un camarade ou un proche jouant le rôle du jury.\n\nChaque semaine, terminez par un exercice chronométré et un corrigé détaillé, et notez les points à retravailler avant l'examen final.\n\n## Points clés\n\n- Le Master 2 approfondit la gestion des risques, ouvre vers l'international, et aboutit souvent au mémoire professionnel et à sa soutenance.\n- Trois matières structurent l'année : gestion des risques financiers avancée, finance internationale et financement de projets, méthodologie du mémoire et soutenance.\n- Un bon mémoire part d'une problématique précise, explicite sa méthodologie, et conclut en répondant réellement à la question posée.\n- La révision doit intégrer la préparation de la soutenance orale, pas seulement les examens écrits.\n\n## Exercices\n\n1. Expliquez la différence entre le niveau d'incertitude attendu en M1 et celui attendu en M2 dans le traitement d'un cas.\n2. Citez les trois matières avancées du programme de M2 Finance présentées dans cette leçon.\n3. Pourquoi une problématique de mémoire trop vaste est-elle un problème méthodologique ?\n4. Proposez un découpage de six semaines de révision qui intègre à la fois les examens et la préparation d'une soutenance de mémoire.\n5. Donnez un exemple de problématique de mémoire qui combinerait la gestion des risques financiers et la finance internationale.\n\n## Corrigé\n\n1. En M1, on combine des méthodes déjà connues et on compare leurs résultats pour construire une fourchette argumentée ; en M2, l'incertitude porte souvent sur des données elles-mêmes incomplètes ou des marchés peu liquides, et il faut construire un jugement professionnel sans réponse unique disponible, en justifiant les hypothèses retenues.\n2. Gestion des risques financiers avancée ; finance internationale et financement de projets ; méthodologie du mémoire professionnel et soutenance.\n3. Un sujet trop vaste ne permet pas de collecter des données suffisamment précises ni de proposer une méthodologie rigoureuse ; le travail risque de rester descriptif et superficiel, sans réelle valeur ajoutée, et sera difficile à défendre avec précision devant un jury qui posera des questions ciblées.\n4. Réponse libre ; un bon plan conserve la progression proposée (risques, puis finance internationale, puis méthodologie du mémoire, puis entraînement croisé et simulation de soutenance) en consacrant une session hebdomadaire à l'avancement concret du mémoire.\n5. Exemple possible : « Le financement de projets d'infrastructure énergétique en zone UEMOA face au risque de change : étude de cas d'un montage de project finance », qui combine finance internationale (project finance, monnaie régionale) et gestion des risques financiers (couverture du risque de change)."
+   },
+   {
+    "title": "Gestion des risques financiers avancée : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Finance internationale et financement de projets : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Méthodologie du mémoire professionnel et soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 Finance (entraînement corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gestion des risques financiers avancée (VaR, options, swaps)",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Finance internationale et financement de projets",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire professionnel et soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie - simulation de soutenance et cas transversal",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "mas-eco-m1",
   "level": "Master 1",
   "subject": "Économie",
