@@ -146,6 +146,102 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "comptabilite-generale-l1",
+  "level": "Licence 1",
+  "subject": "Comptabilité",
+  "module": null,
+  "title": "Comptabilité générale L1 : les bases du SYSCOHADA révisé",
+  "description": "Ce cours présente les principes de la comptabilité générale dans le cadre du SYSCOHADA révisé : bilan, compte de résultat, partie double, écritures courantes, mécanisme de la TVA et travaux d'inventaire. Il s'adresse aux étudiants de première année et aux futurs collaborateurs comptables. Aucun prérequis comptable n'est exigé, seulement l'aisance avec les pourcentages.",
+  "sort": 20,
+  "lessons": [
+   {
+    "title": "Introduction à la comptabilité, SYSCOHADA révisé et principes comptables",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre le rôle de la comptabilité générale dans l'entreprise.\n- Situer le SYSCOHADA révisé dans le droit OHADA.\n- Connaître les principes comptables fondamentaux.\n- Se repérer dans les classes du plan de comptes.\n\n## 1. À quoi sert la comptabilité ?\n\nLa comptabilité générale est un système d'organisation de l'information financière qui permet de saisir, classer et enregistrer des données chiffrées, puis de présenter des états financiers donnant une image fidèle du patrimoine, de la situation financière et du résultat de l'entité.\n\nElle répond à plusieurs besoins : pour le dirigeant, piloter l'activité ; pour les associés, connaître la rentabilité de leurs apports ; pour la banque ou l'institution de microfinance, apprécier la capacité de remboursement ; pour l'administration fiscale, calculer l'impôt ; pour les salariés et les partenaires, évaluer la solidité de l'entreprise.\n\n## 2. Le cadre OHADA et le SYSCOHADA révisé\n\nL'Organisation pour l'harmonisation en Afrique du droit des affaires (OHADA) regroupe dix-sept États, dont le Sénégal et l'ensemble des pays de l'UEMOA. Elle adopte des Actes uniformes directement applicables dans les États membres. En matière comptable, l'Acte uniforme relatif au droit comptable et à l'information financière (AUDCIF), adopté en 2017, a institué le SYSCOHADA révisé, entré en vigueur pour les comptes personnels des entités à partir de 2018. Il rapproche le référentiel des normes internationales tout en restant adapté aux réalités africaines.\n\nLe SYSCOHADA prévoit deux systèmes selon la taille de l'entité : le système normal pour la plupart des entreprises et le système minimal de trésorerie (SMT) pour les très petites entités, qui tiennent une comptabilité simplifiée basée sur les recettes et les dépenses. Les seuils d'application sont fixés par les textes : il faut les vérifier dans la version en vigueur.\n\n## 3. Les principes comptables\n\nLes principes garantissent la fiabilité et la comparabilité des comptes :\n\n- Prudence : on ne comptabilise pas un gain probable, mais on tient compte des pertes probables (dépréciations, provisions).\n- Continuité d'exploitation : les comptes sont établis en supposant que l'entreprise poursuivra son activité.\n- Permanence des méthodes : on applique les mêmes méthodes d'un exercice à l'autre, sauf changement justifié et expliqué.\n- Coût historique : les biens sont enregistrés à leur coût d'acquisition ou de production.\n- Spécialisation (indépendance) des exercices : on rattache à chaque exercice les charges et produits qui le concernent, quelle que soit la date de paiement.\n- Intangibilité du bilan d'ouverture : le bilan d'ouverture d'un exercice est identique au bilan de clôture du précédent.\n- Non-compensation : on ne compense pas une dette et une créance, ni une charge et un produit.\n- Importance significative : toute information susceptible d'influencer le jugement des utilisateurs doit être fournie.\n- Transparence et prééminence de la réalité sur l'apparence : l'information traduit la réalité économique des opérations.\n\n## 4. Le plan de comptes\n\nLe plan de comptes SYSCOHADA classe les comptes en neuf classes, chaque compte étant identifié par un numéro dont le premier chiffre indique la classe :\n\n- Classe 1 : comptes de ressources durables (capital, réserves, emprunts).\n- Classe 2 : comptes d'actif immobilisé (terrains, bâtiments, matériel).\n- Classe 3 : comptes de stocks.\n- Classe 4 : comptes de tiers (fournisseurs, clients, personnel, État).\n- Classe 5 : comptes de trésorerie (banques, caisse).\n- Classe 6 : comptes de charges des activités ordinaires.\n- Classe 7 : comptes de produits des activités ordinaires.\n- Classe 8 : comptes des autres charges et des autres produits (notamment hors activités ordinaires, HAO).\n- Classe 9 : comptes des engagements hors bilan et comptabilité analytique de gestion.\n\nLes classes 1 à 5 sont des comptes de bilan ; les classes 6 à 8 des comptes de gestion qui servent à calculer le résultat.\n\n## 5. Méthode : identifier le bon compte\n\nFace à une opération, posez trois questions : 1) s'agit-il d'un élément de patrimoine (bilan) ou d'un flux de l'exercice (gestion) ? 2) si c'est un bien, va-t-il servir durablement (immobilisation, classe 2) ou être consommé ou revendu (charge ou stock) ? 3) qui est le tiers concerné (classe 4) et comment paie-t-on (classe 5) ?\n\nExemple : une boutique de Ziguinchor achète un réfrigérateur pour conserver les boissons qu'elle vend : c'est du matériel qui servira plusieurs années, donc une immobilisation (classe 2). Les boissons achetées pour être revendues sont des achats de marchandises (classe 6). Le loyer du local est une charge (classe 6). Le paiement par virement concerne la classe 5.\n\n## Points clés\n\n- La comptabilité produit une information fiable pour de nombreux utilisateurs.\n- Le SYSCOHADA révisé, issu de l'AUDCIF, s'applique dans les États OHADA.\n- Les principes comptables (prudence, permanence, coût historique…) encadrent les enregistrements.\n- Les classes 1 à 5 relèvent du bilan, 6 à 8 de la gestion.\n\n## Exercices\n\n- Exercice 1 : Citez quatre utilisateurs de l'information comptable et leur besoin principal.\n- Exercice 2 : Indiquez la classe de chacun des comptes suivants : capital, clients, caisse, achats de marchandises, matériel de transport, ventes de marchandises, stocks de marchandises.\n- Exercice 3 : Quel principe est en jeu ? a) Un litige risque de coûter 2 millions de FCFA à l'entreprise : on constate une provision. b) L'entreprise change chaque année de méthode d'évaluation des stocks sans explication.\n- Exercice 4 : Le loyer de janvier N+1 est payé le 28 décembre N. À quel exercice faut-il rattacher cette charge ? Quel principe s'applique ?\n\n## Corrigé\n\n- Exercice 1 : Le dirigeant (pilotage et décisions), les associés (rentabilité), la banque (solvabilité et capacité de remboursement), l'administration fiscale (calcul de l'impôt). On peut aussi citer les fournisseurs, les salariés ou les investisseurs.\n- Exercice 2 : Capital : classe 1 ; clients : classe 4 ; caisse : classe 5 ; achats de marchandises : classe 6 ; matériel de transport : classe 2 ; ventes de marchandises : classe 7 ; stocks de marchandises : classe 3.\n- Exercice 3 : a) Prudence : on tient compte d'une perte probable. b) Violation de la permanence des méthodes : les comptes ne sont plus comparables.\n- Exercice 4 : À l'exercice N+1, car le loyer concerne janvier N+1. C'est le principe de spécialisation des exercices ; le paiement anticipé sera traité comme une charge constatée d'avance à l'inventaire de N."
+   },
+   {
+    "title": "Le bilan et le compte de résultat",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "La partie double : journal, grand livre et balance",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Écritures courantes : achats, ventes, règlements et TVA",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Les travaux d'inventaire : amortissements, dépréciations, stocks et régularisations",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : tenir la comptabilité d'un exercice complet",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-paie-uemoa",
+  "level": "Formation professionnelle",
+  "subject": "Paie et ressources humaines",
+  "module": "paie-uemoa",
+  "title": "Paie et RH multi-pays UEMOA / CEDEAO",
+  "description": "Cette formation prépare les responsables paie, RH et finance à gérer le personnel d'une entreprise présente dans plusieurs pays d'Afrique de l'Ouest. Elle couvre le rôle de l'UEMOA, de la CEDEAO, de l'OHADA et de la CIPRES, la comparaison des référentiels nationaux, le paramétrage d'un logiciel multi-pays à règles versionnées, la mobilité des salariés et le reporting RH consolidé. Prérequis : connaître les bases de la paie dans au moins un pays (par exemple la formation « Gérer la paie et les RH au Sénégal »). Les taux utilisés dans les exemples sont fictifs et signalés comme tels.",
+  "sort": 20,
+  "lessons": [
+   {
+    "title": "Les institutions régionales : UEMOA, CEDEAO, OHADA, CIPRES",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Connaître le rôle de l'UEMOA, de la CEDEAO, de l'OHADA et de la CIPRES pour un responsable paie et RH.\n- Comprendre pourquoi le droit du travail et la sécurité sociale restent essentiellement nationaux.\n- Savoir quelles règles régionales peuvent malgré tout influencer la gestion du personnel.\n\n## Pourquoi un responsable paie doit connaître les institutions régionales\n\nDe nombreuses entreprises sénégalaises se développent dans la sous-région : un groupe agroalimentaire de Dakar ouvre une filiale à Abidjan, une société de services informatiques recrute des consultants à Bamako et à Lomé, un cabinet envoie un auditeur en mission à Cotonou. Le responsable paie se retrouve alors à gérer plusieurs législations. Il doit savoir ce qui relève d'une règle commune et ce qui relève de chaque pays.\n\n## L'UEMOA : une union économique et monétaire\n\nL'Union économique et monétaire ouest-africaine regroupe huit États : Bénin, Burkina Faso, Côte d'Ivoire, Guinée-Bissau, Mali, Niger, Sénégal et Togo. Ses membres partagent le franc CFA émis par la BCEAO, dont le siège est à Dakar. L'Union a harmonisé de nombreux domaines économiques : marché commun, tarif extérieur commun, réglementation bancaire, certaines règles de fiscalité indirecte.\n\nConséquences pour la paie :\n\n- La monnaie commune simplifie la consolidation : un salaire versé à Dakar ou à Ouagadougou s'exprime dans la même devise.\n- Les règles bancaires et de change communes facilitent les virements de salaires entre pays membres.\n- En revanche, les taux de cotisations, les impôts sur salaires, les salaires minimaux et le droit du travail restent fixés par chaque État.\n\n## La CEDEAO : libre circulation et coopération\n\nLa Communauté économique des États de l'Afrique de l'Ouest, créée en 1975, a une couverture plus large que l'UEMOA, avec des pays anglophones et lusophones et plusieurs monnaies. Elle a adopté des protocoles sur la libre circulation des personnes et le droit de résidence et d'établissement. Le paysage institutionnel évolue : le Burkina Faso, le Mali et le Niger se sont retirés de la CEDEAO en 2025 pour former l'Alliance des États du Sahel, tout en restant membres de l'UEMOA. Avant toute mobilité, vérifiez donc les règles applicables entre les deux pays concernés.\n\nPour la sécurité sociale, une convention générale de sécurité sociale a été adoptée au niveau de la CEDEAO pour faciliter la coordination des droits des travailleurs migrants (totalisation des périodes, maintien des droits acquis). Son application concrète dépend des ratifications et des arrangements administratifs entre organismes : il faut vérifier, pays par pays, si elle est effectivement opérationnelle.\n\n## L'OHADA : le droit des affaires, pas (encore) le droit du travail\n\nL'Organisation pour l'harmonisation en Afrique du droit des affaires regroupe dix-sept États et adopte des Actes uniformes directement applicables : droit commercial général, sociétés commerciales, sûretés, procédures collectives, comptabilité (le système comptable SYSCOHADA), arbitrage, etc.\n\nPour la paie, l'apport principal de l'OHADA est comptable : le SYSCOHADA fixe les comptes dans lesquels on enregistre les charges de personnel et les dettes sociales, ce qui facilite la consolidation d'un groupe. Un projet d'Acte uniforme sur le droit du travail a fait l'objet de travaux, mais il n'a pas été adopté : le droit du travail reste national.\n\n## La CIPRES : la supervision de la prévoyance sociale\n\nLa Conférence interafricaine de la prévoyance sociale regroupe des États d'Afrique de l'Ouest et du Centre. Sa mission principale est de contrôler et d'améliorer la gestion des organismes nationaux de prévoyance sociale (comme l'IPRES et la CSS au Sénégal ou les caisses nationales dans d'autres pays), d'harmoniser certaines règles de gestion et de favoriser la coordination. Elle a également élaboré un cadre de convention multilatérale de sécurité sociale. La CIPRES ne fixe pas, en règle générale, les taux de cotisation : ceux-ci restent nationaux.\n\n## Méthode : la grille « régional ou national ? »\n\nFace à une question de paie multi-pays, posez-vous successivement :\n\n- Est-ce une question de monnaie, de banque ou de comptabilité ? Les règles communes (BCEAO, SYSCOHADA) jouent un rôle important.\n- Est-ce une question de droit du travail (contrat, durée, congés, rupture) ? C'est la loi et la convention collective du pays d'exécution du travail.\n- Est-ce une question de cotisations sociales ? En principe le pays d'activité, sauf convention de sécurité sociale (détachement, coordination).\n- Est-ce une question d'impôt sur le salaire ? Le droit fiscal national et, le cas échéant, une convention fiscale entre les deux pays.\n\n## Exemple\n\nUne société de Thiès détache un ingénieur pendant quatre mois sur un chantier à Niamey. Monnaie : pas de change, tous deux utilisent le FCFA. Droit du travail : le contrat sénégalais continue, mais certaines règles impératives du Niger (sécurité, durée du travail) peuvent s'imposer sur place. Sécurité sociale : il faut vérifier si une convention permet le maintien au régime sénégalais. Impôt : il faut analyser la résidence fiscale et l'éventuelle convention fiscale. On voit que quatre questions appellent quatre réponses différentes.\n\n## Points clés\n\n- UEMOA : monnaie et économie communes, mais paie nationale.\n- CEDEAO : libre circulation et coordination, paysage institutionnel en évolution depuis 2025.\n- OHADA : droit des affaires et comptabilité harmonisés ; pas d'Acte uniforme du travail adopté.\n- CIPRES : supervision des organismes de prévoyance sociale.\n- Toujours se demander si une règle est régionale ou nationale.\n\n## Exercices\n\n- Exercice 1 : Citez les huit États membres de l'UEMOA.\n- Exercice 2 : Un dirigeant affirme : « Comme nous sommes dans l'UEMOA, les cotisations sont les mêmes à Dakar et à Abidjan. » Corrigez-le.\n- Exercice 3 : Quel est l'apport principal de l'OHADA pour le service paie ?\n- Exercice 4 : Quel est le rôle principal de la CIPRES ?\n\n## Corrigé\n\n- Exercice 1 : Bénin, Burkina Faso, Côte d'Ivoire, Guinée-Bissau, Mali, Niger, Sénégal, Togo.\n- Exercice 2 : L'UEMOA harmonise la monnaie et de nombreuses règles économiques, mais pas les cotisations sociales ni le droit du travail. Chaque pays a ses organismes (IPRES et CSS au Sénégal, CNPS en Côte d'Ivoire), ses taux et ses plafonds.\n- Exercice 3 : Le SYSCOHADA, qui harmonise l'enregistrement comptable des charges de personnel et des dettes sociales, ce qui facilite la consolidation. Les procédures collectives règlent aussi le rang des créances salariales.\n- Exercice 4 : Contrôler et améliorer la gestion des organismes nationaux de prévoyance sociale, harmoniser certaines règles de gestion et favoriser la coordination entre États."
+   },
+   {
+    "title": "Comparer les référentiels nationaux de paie",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Paramétrer un logiciel de paie multi-pays : le moteur de règles versionné",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Mobilité internationale : missions, détachement et expatriation",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Consolidation et reporting RH multi-pays",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : piloter la paie d'un groupe dans trois pays de l'UEMOA",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "francais-5e",
   "level": "5e",
   "subject": "Français",
@@ -242,6 +338,198 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "informatique-programmation-l1",
+  "level": "Licence 1",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique L1 : algorithmique, programmation Python et bases de données",
+  "description": "Ce cours initie à la pensée algorithmique et à la programmation en Python : variables, conditions, boucles, fonctions et listes, avec des exemples tirés de la vie économique locale. Il se termine par une introduction aux bases de données relationnelles et au langage SQL. Il s'adresse aux étudiants de première année, sans prérequis en informatique.",
+  "sort": 30,
+  "lessons": [
+   {
+    "title": "Algorithmique et premiers pas en Python : variables, types et entrées-sorties",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Définir un algorithme et savoir l'écrire en pseudo-code.\n- Comprendre les notions de variable, de type et d'affectation.\n- Écrire ses premiers programmes Python avec entrées et sorties.\n\n## 1. Qu'est-ce qu'un algorithme ?\n\nUn algorithme est une suite finie et non ambiguë d'instructions qui permet de résoudre un problème ou d'obtenir un résultat à partir de données. Une recette de thiéboudienne, un itinéraire pour aller de la gare routière au campus, la procédure pour envoyer de l'argent par téléphone mobile sont des algorithmes de la vie courante.\n\nUn bon algorithme possède quatre qualités : il se termine (nombre fini d'étapes), il est précis (chaque instruction a un seul sens), il est correct (il donne le bon résultat pour toutes les données prévues) et il est, autant que possible, efficace (il utilise peu de temps et de mémoire).\n\nOn écrit d'abord l'algorithme en pseudo-code, un langage intermédiaire entre le français et le langage de programmation, puis on le traduit dans un langage comme Python.\n\n## 2. Les variables et les types\n\nUne variable est un emplacement mémoire désigné par un nom, qui contient une valeur pouvant changer au cours du programme. Chaque valeur a un type :\n\n- Entier (int) : 25, −3, 150000.\n- Réel ou flottant (float) : 3.14, 655.957 (en programmation, on utilise le point décimal).\n- Chaîne de caractères (str) : \"Dakar\", \"Bonjour\".\n- Booléen (bool) : True ou False.\n\nL'affectation donne une valeur à une variable. En pseudo-code, on écrit prix ← 500 ; en Python, prix = 500. Attention : en programmation, le signe = n'est pas une égalité mathématique mais une affectation. L'instruction compteur = compteur + 1 signifie « prendre la valeur actuelle de compteur, lui ajouter 1 et ranger le résultat dans compteur ».\n\nRègles de nommage en Python : commencer par une lettre ou un tiret bas, pas d'espace ni d'accent recommandé, respecter la casse (Prix et prix sont deux variables différentes).\n\n## 3. Les opérations\n\n- Arithmétiques : + (addition), − (en Python le signe moins du clavier), * (multiplication), / (division réelle), // (division entière), % (reste de la division entière), pow(a, b) ou l'opérateur formé de deux étoiles (puissance a^b).\n- Comparaisons : ==, !=, <, <=, >, >= ; elles donnent un booléen.\n- Logiques : and, or, not.\n\nExemples : 17 // 5 vaut 3 et 17 % 5 vaut 2, car 17 = 5 × 3 + 2. Le reste sert souvent à tester la parité : un nombre n est pair si n % 2 == 0.\n\n## 4. Entrées et sorties en Python\n\nLa fonction print affiche un résultat ; la fonction input lit une saisie au clavier, toujours sous forme de chaîne. Il faut donc la convertir avec int() ou float() si l'on attend un nombre.\n\nPremier programme : conversion d'euros en francs CFA à la parité fixe.\n\ntaux = 655.957\neuros = float(input(\"Montant en euros : \"))\nfcfa = euros * taux\nprint(\"Montant en FCFA :\", round(fcfa))\n\nSi l'utilisateur saisit 100, le programme affiche 65596, car 100 × 655,957 = 65 595,7, arrondi à 65 596.\n\n## 5. Méthode : de l'énoncé au programme\n\n- Identifier les données d'entrée (ce que l'on connaît).\n- Identifier le résultat attendu (la sortie).\n- Décrire le traitement qui transforme les entrées en sortie.\n- Écrire le pseudo-code, puis le traduire.\n- Tester avec des valeurs simples dont on connaît le résultat, puis avec des cas limites (zéro, valeur négative).\n\n## Exemple : facture d'un cybercafé\n\nÉnoncé : un cybercafé facture 300 FCFA par tranche de 30 minutes commencée. Écrire un algorithme qui calcule le montant à payer pour une durée donnée en minutes.\n\nAnalyse : entrée : la durée d en minutes. Sortie : le montant. Traitement : nombre de tranches = partie entière de (d + 29) / 30, ce qui arrondit à la tranche supérieure ; montant = tranches × 300.\n\nPseudo-code :\n\nLire d\ntranches ← (d + 29) div 30\nmontant ← tranches × 300\nAfficher montant\n\nPython :\n\nd = int(input(\"Durée en minutes : \"))\ntranches = (d + 29) // 30\nprint(\"À payer :\", tranches * 300, \"FCFA\")\n\nTests : d = 30 donne 59 // 30 = 1 tranche, soit 300 FCFA ; d = 31 donne 60 // 30 = 2 tranches, soit 600 FCFA ; d = 75 donne 104 // 30 = 3 tranches, soit 900 FCFA. Le résultat est conforme : 75 minutes correspondent bien à trois tranches commencées.\n\n## Points clés\n\n- Un algorithme est une suite finie et précise d'instructions.\n- Une variable a un nom, un type et une valeur ; l'affectation se note = en Python.\n- input renvoie une chaîne : il faut la convertir pour calculer.\n- // donne le quotient entier, % le reste.\n\n## Exercices\n\n- Exercice 1 : Quelle est la valeur de a et b après les instructions suivantes ? a = 5 ; b = 3 ; a = a + b ; b = a − b ; a = a − b.\n- Exercice 2 : Écrivez un programme Python qui lit un prix hors taxes et un taux de TVA (en %) et affiche le prix TTC.\n- Exercice 3 : Calculez 47 // 6 et 47 % 6. Vérifiez par une égalité.\n- Exercice 4 : Écrivez un programme qui convertit une durée donnée en secondes en heures, minutes et secondes.\n\n## Corrigé\n\n- Exercice 1 : Après a = a + b : a = 8, b = 3. Après b = a − b : b = 5. Après a = a − b : a = 3. Les valeurs ont été échangées : a = 3, b = 5.\n- Exercice 2 : ht = float(input(\"Prix HT : \")) ; taux = float(input(\"Taux de TVA en % : \")) ; ttc = ht * (1 + taux / 100) ; print(\"Prix TTC :\", ttc). Par exemple, avec 1000 et 20 (taux fictif), le programme affiche 1200.0.\n- Exercice 3 : 47 // 6 = 7 et 47 % 6 = 5, car 6 × 7 + 5 = 47.\n- Exercice 4 : s = int(input(\"Secondes : \")) ; h = s // 3600 ; m = (s % 3600) // 60 ; r = s % 60 ; print(h, \"h\", m, \"min\", r, \"s\"). Pour 3725 secondes : h = 1, m = 125 // 60 = 2, r = 5, soit 1 h 2 min 5 s."
+   },
+   {
+    "title": "Conditions et boucles",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Les fonctions : structurer et réutiliser son code",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Listes, algorithmes classiques et dictionnaires",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Bases de données relationnelles et langage SQL",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Cours vidéo (1h30) : du problème au programme et à la base de données",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "maths-3e",
+  "level": "3e",
+  "subject": "Mathématiques",
+  "module": null,
+  "title": "Mathématiques 3e : préparer le BFEM",
+  "description": "Ce cours reprend les grands chapitres du programme de 3e : calcul littéral et identités remarquables, équations, inéquations et systèmes, théorèmes de Pythagore et de Thalès, trigonométrie, statistiques. Il vise la réussite au BFEM grâce à des méthodes de rédaction et un sujet type commenté. Prérequis : programme de 4e (calcul sur les relatifs et les fractions, puissances, triangle rectangle).",
+  "sort": 30,
+  "lessons": [
+   {
+    "title": "Calcul littéral et identités remarquables",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Développer et réduire une expression littérale.\n- Connaître et utiliser les trois identités remarquables.\n- Factoriser une expression (facteur commun, identités remarquables).\n\n## Vocabulaire\n\nUne expression littérale contient des lettres qui représentent des nombres. Développer, c'est transformer un produit en somme. Factoriser, c'est l'inverse : transformer une somme en produit. Réduire, c'est regrouper les termes de même nature (les x², les x, les constantes).\n\n## La distributivité\n\n- Simple distributivité : k(a + b) = ka + kb.\n- Double distributivité : (a + b)(c + d) = ac + ad + bc + bd.\n\nExemple : (2x + 3)(x − 4) = 2x × x + 2x × (−4) + 3 × x + 3 × (−4) = 2x² − 8x + 3x − 12 = 2x² − 5x − 12.\n\nAttention aux signes devant une parenthèse : −(x − 5) = −x + 5. Quand on soustrait un produit, on le développe d'abord entre crochets, puis on change tous les signes.\n\n## Les identités remarquables\n\nPour tous nombres a et b :\n- (a + b)² = a² + 2ab + b²\n- (a − b)² = a² − 2ab + b²\n- (a + b)(a − b) = a² − b²\n\nExemples de développement :\n- (x + 4)² = x² + 2 × x × 4 + 4² = x² + 8x + 16.\n- (3x − 2)² = (3x)² − 2 × 3x × 2 + 2² = 9x² − 12x + 4.\n- (5 + 2x)(5 − 2x) = 25 − 4x².\n\nErreur très fréquente : (a + b)² n'est pas égal à a² + b². On oublie le « double produit » 2ab. Vérification avec a = 3 et b = 4 : (3 + 4)² = 49, alors que 3² + 4² = 25.\n\nCalcul mental grâce aux identités : 51² = (50 + 1)² = 2 500 + 100 + 1 = 2 601. 49 × 51 = (50 − 1)(50 + 1) = 2 500 − 1 = 2 499.\n\n## Factoriser\n\nMéthode 1, le facteur commun : ka + kb = k(a + b).\nExemple : (x + 1)(2x − 5) + (x + 1)(x + 3). Le facteur commun est (x + 1). On obtient (x + 1)[(2x − 5) + (x + 3)] = (x + 1)(3x − 2).\n\nMéthode 2, reconnaître une identité remarquable :\n- x² − 25 = x² − 5² = (x − 5)(x + 5).\n- 9x² + 6x + 1 = (3x)² + 2 × 3x × 1 + 1² = (3x + 1)².\n- 4x² − 20x + 25 = (2x − 5)².\n- (x + 2)² − 9 = (x + 2 − 3)(x + 2 + 3) = (x − 1)(x + 5).\n\nPour reconnaître a² + 2ab + b², on cherche deux carrés, puis on vérifie que le terme restant est bien le double produit.\n\n## Méthode générale pour un exercice de type BFEM\n\nOn donne souvent une expression E et on demande : développer et réduire E ; factoriser E ; calculer E pour une valeur ; résoudre E = 0.\n- Pour calculer E pour une valeur, choisir la forme la plus pratique (souvent la forme factorisée).\n- Vérifier une factorisation en la redéveloppant.\n\n## Exemple concret\n\nUn terrain carré de côté x mètres à Diamniadio est agrandi de 3 m sur chaque dimension. Sa nouvelle aire est (x + 3)² = x² + 6x + 9. L'augmentation d'aire est donc 6x + 9 m². Pour x = 20 m, l'aire passe de 400 m² à 529 m², soit 129 m² de plus (6 × 20 + 9 = 129).\n\n## Points clés\n\n- Développer : produit → somme. Factoriser : somme → produit.\n- (a + b)² = a² + 2ab + b² ; (a − b)² = a² − 2ab + b² ; (a + b)(a − b) = a² − b².\n- Ne jamais oublier le double produit.\n- Toujours vérifier une factorisation en redéveloppant.\n\n## Exercices\n\nExercice 1 : Développer et réduire : a) (x + 5)² ; b) (2x − 3)² ; c) (3x + 1)(3x − 1).\n\nExercice 2 : Factoriser : a) x² − 49 ; b) 4x² + 12x + 9 ; c) (x + 2)(3x − 1) + (x + 2)(x + 4).\n\nExercice 3 : Calculer mentalement en utilisant une identité : a) 101² ; b) 99 × 101.\n\nExercice 4 : On donne E = (2x + 1)² − (x − 3)(2x + 1). a) Développer et réduire E. b) Factoriser E. c) Calculer E pour x = −1/2.\n\nExercice 5 : Un champ rectangulaire mesure (x + 6) m de long et (x − 6) m de large. Exprimer son aire en fonction de x, puis la calculer pour x = 30.\n\n## Corrigé\n\nExercice 1 : a) x² + 10x + 25. b) 4x² − 12x + 9. c) 9x² − 1.\n\nExercice 2 : a) (x − 7)(x + 7). b) (2x + 3)², car 4x² = (2x)², 9 = 3² et 12x = 2 × 2x × 3. c) (x + 2)[(3x − 1) + (x + 4)] = (x + 2)(4x + 3).\n\nExercice 3 : a) 101² = (100 + 1)² = 10 000 + 200 + 1 = 10 201. b) 99 × 101 = (100 − 1)(100 + 1) = 10 000 − 1 = 9 999.\n\nExercice 4 : a) (2x + 1)² = 4x² + 4x + 1 ; (x − 3)(2x + 1) = 2x² + x − 6x − 3 = 2x² − 5x − 3. E = 4x² + 4x + 1 − 2x² + 5x + 3 = 2x² + 9x + 4. b) E = (2x + 1)[(2x + 1) − (x − 3)] = (2x + 1)(x + 4). Vérification : (2x + 1)(x + 4) = 2x² + 8x + x + 4 = 2x² + 9x + 4. c) Pour x = −1/2, 2x + 1 = 0, donc E = 0.\n\nExercice 5 : Aire = (x + 6)(x − 6) = x² − 36. Pour x = 30 : 900 − 36 = 864 m² (vérification : 36 × 24 = 864)."
+   },
+   {
+    "title": "Équations, inéquations et systèmes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Théorèmes de Pythagore et de Thalès",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Trigonométrie dans le triangle rectangle",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Statistiques et méthode pour le BFEM",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : sujet type de BFEM commenté",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-carburant",
+  "level": "Formation professionnelle",
+  "subject": "Gestion du carburant",
+  "module": "carburant",
+  "title": "Maîtriser les dépenses de carburant",
+  "description": "Cette formation apprend à mesurer la consommation (L/100 km), organiser les bons et cartes carburant, détecter les fraudes et anomalies, bâtir un budget, déployer l'éco-conduite et suivre un tableau de bord. Elle s'adresse aux responsables de flotte, gestionnaires administratifs et financiers, chefs de parc et dirigeants de PME. Prérequis : savoir calculer un pourcentage et utiliser un tableur simple.",
+  "sort": 40,
+  "lessons": [
+   {
+    "title": "Mesurer la consommation : le L/100 km et ses facteurs",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\nSavoir calculer la consommation d'un véhicule en litres aux 100 km par la méthode du « plein à plein », calculer la consommation horaire d'un engin, transformer une consommation en coût au kilomètre et identifier les facteurs qui font varier la consommation.\n\n## Pourquoi mesurer d'abord ?\n\nDans beaucoup d'entreprises, le carburant est l'un des premiers postes de dépenses de la flotte, et souvent le moins bien suivi. On connaît le montant total payé à la station, mais pas la consommation réelle de chaque véhicule. Sans mesure, impossible de savoir si un véhicule consomme trop, si un chauffeur gaspille ou si des litres disparaissent. La première étape de toute maîtrise des dépenses est donc la mesure fiable.\n\n## La consommation aux 100 km\n\nLa consommation s'exprime en litres aux 100 kilomètres (L/100 km) :\n\nConsommation = litres consommés / kilomètres parcourus × 100.\n\nExemple : un véhicule a consommé 66 litres pour parcourir 600 km. Consommation = 66 / 600 × 100 = 11 L/100 km.\n\n## La méthode du plein à plein\n\nC'est la méthode la plus fiable sans équipement électronique.\n\n- Étape 1 : faire le plein complet et noter le kilométrage au compteur (par exemple 45 230 km).\n- Étape 2 : utiliser normalement le véhicule, en notant chaque ravitaillement intermédiaire (litres et kilométrage).\n- Étape 3 : refaire le plein complet et noter le kilométrage (par exemple 45 830 km) et les litres servis.\n- Étape 4 : additionner les litres servis depuis le premier plein (exclu) jusqu'au dernier plein (inclus), et diviser par la distance.\n\nExemple : entre 45 230 km et 45 830 km, on a parcouru 600 km. Un ravitaillement intermédiaire de 30 L, puis un plein final de 36 L : total 66 L. Consommation : 11 L/100 km.\n\nLe piège principal : un kilométrage mal noté. Une erreur de 100 km sur 600 km fausse le résultat d'environ 17 %. Il faut donc exiger le relevé du compteur à chaque ravitaillement, idéalement vérifié par une personne autre que le chauffeur.\n\n## Les engins et groupes électrogènes : la consommation horaire\n\nPour un groupe électrogène, une pelleteuse ou un chariot élévateur, on raisonne en litres par heure de fonctionnement :\n\nConsommation horaire = litres consommés / heures de fonctionnement (lues sur le compteur horaire).\n\nExemple : un groupe électrogène d'un hôtel de Saly a consommé 540 L pendant 120 heures de marche. Consommation = 540 / 120 = 4,5 L/h.\n\n## Du litre au coût au kilomètre\n\nCoût carburant au km = consommation (L/100 km) / 100 × prix du litre.\n\nExemple avec un prix de 800 FCFA par litre (prix fictif pour l'exemple ; les prix à la pompe sont fixés par les autorités et évoluent, il faut utiliser le prix en vigueur) : 11 / 100 × 800 = 88 FCFA par km. Un véhicule qui roule 3 000 km par mois coûte donc 264 000 FCFA de carburant par mois.\n\n## Les facteurs qui font varier la consommation\n\n- Le véhicule : type, motorisation, âge, état d'entretien (filtres, injecteurs, réglages).\n- Les pneus : sous-gonflés, ils augmentent la résistance au roulement.\n- La charge : un camion chargé consomme plus qu'à vide ; la surcharge augmente encore la consommation et l'usure.\n- L'itinéraire : embouteillages urbains, pistes, relief, routes dégradées en saison des pluies.\n- La conduite : accélérations brutales, vitesse élevée, freinages tardifs, moteur au ralenti à l'arrêt.\n- La climatisation et les équipements consommateurs.\n\nC'est pourquoi il faut comparer chaque véhicule à une consommation de référence établie pour sa catégorie et son type de mission (urbain, interurbain, chantier), à partir de l'historique de l'entreprise et des données du constructeur, plutôt qu'à un chiffre unique pour toute la flotte.\n\n## Points clés\n\n- Consommation = litres / km × 100.\n- La méthode du plein à plein donne une mesure fiable à condition que les kilométrages soient exacts.\n- Pour les engins et groupes : litres par heure.\n- Coût au km = L/100 km / 100 × prix du litre.\n- Chaque véhicule se compare à une référence adaptée à sa catégorie et à sa mission.\n\n## Exercices\n\nExercice 1. Un pick-up est passé de 12 400 km à 13 150 km. Les litres servis depuis le premier plein (exclu) jusqu'au dernier plein (inclus) sont 40 L puis 50 L. Calculez sa consommation.\n\nExercice 2. Avec un prix fictif de 800 FCFA par litre, calculez le coût carburant au km de ce pick-up, puis le coût pour 2 500 km par mois.\n\nExercice 3. Un groupe électrogène a tourné 200 heures et consommé 1 000 L. Calculez sa consommation horaire.\n\nExercice 4. Un chauffeur a noté 13 050 km au lieu de 13 150 km au dernier plein de l'exercice 1. Quelle consommation aurait-on calculée ? Commentez.\n\n## Corrigé\n\nExercice 1. Distance : 13 150 − 12 400 = 750 km. Litres : 40 + 50 = 90 L. Consommation : 90 / 750 × 100 = 12 L/100 km.\n\nExercice 2. Coût au km : 12 / 100 × 800 = 96 FCFA. Pour 2 500 km : 2 500 × 96 = 240 000 FCFA par mois.\n\nExercice 3. 1 000 / 200 = 5 L/h.\n\nExercice 4. Distance erronée : 13 050 − 12 400 = 650 km. Consommation : 90 / 650 × 100 ≈ 13,8 L/100 km. Une simple erreur de relevé fait apparaître une surconsommation d'environ 15 % qui n'existe pas. Le contrôle des kilométrages est donc indispensable avant toute conclusion."
+   },
+   {
+    "title": "Bons, cartes carburant et procédures d'approvisionnement",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Contrôler et détecter les fraudes et anomalies",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Construire un budget carburant et déployer l'éco-conduite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Piloter avec un tableau de bord carburant",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : reprendre le contrôle des dépenses de carburant",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-gestion-transport",
+  "level": "Formation professionnelle",
+  "subject": "Transport de voyageurs",
+  "module": "transport",
+  "title": "Organiser un service de transport de voyageurs et du personnel",
+  "description": "Cette formation montre comment concevoir des lignes et des horaires, affecter chauffeurs et véhicules, organiser la billetterie et le contrôle des recettes, piloter la sécurité routière et la qualité de service, et calculer la rentabilité d'une ligne. Elle s'adresse aux exploitants de transport urbain et interurbain, aux responsables du transport du personnel et aux gestionnaires de flotte. Prérequis : aisance avec les calculs de base et les pourcentages.",
+  "sort": 50,
+  "lessons": [
+   {
+    "title": "Concevoir les lignes et les horaires",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 60,
+    "content": "## Objectifs de la leçon\n\nSavoir décrire une ligne de transport, calculer son temps de rotation, déterminer la fréquence nécessaire à partir de la demande, calculer le nombre de véhicules à mobiliser et construire une grille horaire, pour une ligne ouverte au public comme pour un circuit de transport du personnel.\n\n## Les notions de base\n\n- Une ligne est un itinéraire fixe entre deux terminus, desservant des arrêts.\n- Le temps de parcours est la durée d'un trajet d'un terminus à l'autre, arrêts compris.\n- Le battement (ou temps de terminus) est la pause au terminus avant le départ suivant : il sert à absorber les retards, à laisser souffler le chauffeur et à embarquer les passagers.\n- Le temps de rotation (ou temps de cycle) est la durée d'un aller-retour complet : aller + battement + retour + battement.\n- L'intervalle est le temps qui sépare deux départs successifs dans le même sens. La fréquence est le nombre de départs par heure : fréquence = 60 / intervalle (en minutes).\n\n## Calculer le nombre de véhicules\n\nNombre de véhicules nécessaires = temps de rotation / intervalle, arrondi à l'entier supérieur.\n\nExemple : une ligne urbaine de 18 km. Aller : 50 minutes. Retour : 50 minutes. Battement : 10 minutes à chaque terminus. Temps de rotation : 50 + 10 + 50 + 10 = 120 minutes. Si l'on veut un départ toutes les 15 minutes, il faut 120 / 15 = 8 véhicules en ligne. Si l'intervalle voulu était de 14 minutes, on aurait 120 / 14 ≈ 8,6, soit 9 véhicules.\n\n## Déterminer l'intervalle à partir de la demande\n\nOn part de la demande à l'heure de pointe, dans le sens le plus chargé, au point le plus chargé de la ligne.\n\nNombre de passages nécessaires par heure = demande horaire / capacité utile d'un véhicule.\n\nLa capacité utile est le nombre de places que l'on accepte d'occuper, compte tenu du confort et des règles de sécurité. On ne planifie jamais en surcharge.\n\nExemple : 480 voyageurs par heure dans le sens le plus chargé, véhicules de 60 places. Il faut 480 / 60 = 8 passages par heure, soit un intervalle de 60 / 8 = 7,5 minutes. En heures creuses, si la demande tombe à 180 voyageurs par heure, 3 passages suffisent, soit un intervalle de 20 minutes.\n\nModuler l'intervalle selon les heures permet de ne pas faire rouler des véhicules vides en milieu de journée.\n\n## Construire la grille horaire\n\nMéthode :\n\n- fixer l'heure du premier et du dernier départ en fonction des besoins (début des cours, des marchés, des prises de poste) ;\n- découper la journée en périodes (pointe du matin, creuse, pointe du soir) avec un intervalle pour chacune ;\n- calculer les heures de passage à chaque arrêt principal en ajoutant les temps de parcours partiels ;\n- vérifier que le nombre de véhicules disponibles permet de tenir l'intervalle de pointe ;\n- afficher la grille aux arrêts et la communiquer (affichage, messagerie, radio locale).\n\nExemple : premier départ 6 h 00, intervalle de 15 minutes jusqu'à 9 h 00 : 6 h 00, 6 h 15, 6 h 30, 6 h 45, 7 h 00, et ainsi de suite.\n\n## Le transport du personnel\n\nPour une usine, une zone industrielle ou un grand hôtel, on organise des circuits de ramassage. La logique est différente :\n\n- les horaires sont dictés par les prises et fins de poste (par exemple équipes de 6 h, 14 h et 22 h) ;\n- on recense les adresses des employés et on les regroupe par quartiers ;\n- chaque circuit part du quartier le plus éloigné et arrive sur le site un peu avant la prise de poste, pour laisser le temps de se changer ;\n- la capacité est connue à l'avance : on dimensionne exactement.\n\nExemple : une usine de Diamniadio emploie 210 personnes sur l'équipe du matin. Avec des minibus de 30 places, il faut au moins 210 / 30 = 7 circuits. Si les employés viennent de quatre zones (Rufisque, Keur Massar, Pikine, Bargny), on répartit les 7 minibus selon les effectifs de chaque zone.\n\n## Points clés\n\n- Temps de rotation = aller + retour + battements.\n- Nombre de véhicules = rotation / intervalle, arrondi au supérieur.\n- L'intervalle se déduit de la demande au point le plus chargé et de la capacité utile.\n- La grille horaire varie selon les périodes de la journée.\n- Le transport du personnel suit les horaires d'équipe et les lieux de résidence.\n\n## Exercices\n\nExercice 1. Une ligne a un aller de 35 minutes, un retour de 35 minutes et un battement de 5 minutes à chaque terminus. Calculez le temps de rotation et le nombre de véhicules nécessaires pour un intervalle de 20 minutes.\n\nExercice 2. La demande de pointe est de 300 voyageurs par heure, avec des véhicules de 50 places. Calculez le nombre de passages par heure et l'intervalle.\n\nExercice 3. Écrivez la grille des départs de 6 h 00 à 7 h 00 avec un intervalle de 20 minutes.\n\nExercice 4. Une entreprise doit transporter 95 agents avec des minibus de 25 places. Combien de minibus faut-il au minimum ?\n\n## Corrigé\n\nExercice 1. Rotation : 35 + 5 + 35 + 5 = 80 minutes. Véhicules : 80 / 20 = 4 véhicules.\n\nExercice 2. Passages : 300 / 50 = 6 par heure. Intervalle : 60 / 6 = 10 minutes.\n\nExercice 3. 6 h 00, 6 h 20, 6 h 40, 7 h 00.\n\nExercice 4. 95 / 25 = 3,8, arrondi au supérieur : 4 minibus."
+   },
+   {
+    "title": "Affecter les chauffeurs et les véhicules",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Billetterie et contrôle des recettes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sécurité routière et qualité de service",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Calculer la rentabilité d'une ligne",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : organiser et rentabiliser un service de transport de voyageurs",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-parking-entreprise",
   "level": "Formation professionnelle",
   "subject": "Gestion des parkings",
@@ -283,6 +571,150 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : piloter le parking d'une entreprise de A à Z",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-parking-public",
+  "level": "Formation professionnelle",
+  "subject": "Gestion des parkings",
+  "module": "parking-public",
+  "title": "Exploiter un parking public ou privé",
+  "description": "Cette formation prépare à exploiter un parking ouvert au public, en gestion propre ou déléguée : modèle économique, construction d'une grille tarifaire horaire et d'abonnements avec calculs de rentabilité, caisse et contrôle des recettes, pilotage de plusieurs sites par indicateurs. Elle s'adresse aux exploitants, investisseurs, chefs de parking, caissiers principaux et agents des collectivités. Les calculs utilisent les quatre opérations et les pourcentages ; un tableur est recommandé.",
+  "sort": 70,
+  "lessons": [
+   {
+    "title": "Le métier d'exploitant et le modèle économique d'un parking",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Comprendre les différentes formes d'exploitation d'un parking.\n- Identifier les sources de recettes et les postes de charges.\n- Calculer un résultat prévisionnel et un seuil de rentabilité.\n\n## Le métier d'exploitant\n\nExploiter un parking, c'est vendre du temps de stationnement sur un espace limité. Le produit paraît simple, mais l'activité combine de l'immobilier (un terrain ou un ouvrage), du service (accueil, sécurité, propreté), de la gestion d'encaissements souvent en espèces, et du marketing (attirer les automobilistes et les abonnés). Dans les villes d'Afrique de l'Ouest où la voirie est saturée, comme Dakar, Abidjan ou Bamako, les parkings organisés répondent à une vraie demande autour des quartiers d'affaires, des marchés, des hôpitaux, des gares et des aéroports.\n\n## Les modes d'exploitation\n\n- Le propriétaire-exploitant : il possède le terrain ou l'ouvrage et l'exploite lui-même. Il garde toute la marge mais supporte tous les risques.\n- Le locataire-exploitant : il loue le terrain et paie un loyer fixe ; tout ce qui dépasse le loyer et les charges constitue sa marge.\n- Le concessionnaire ou délégataire : une collectivité confie l'exploitation d'un parking public pour une durée définie, contre une redevance (fixe, variable ou mixte) et des obligations de service (horaires, tarifs encadrés, entretien). Les conditions sont fixées par le contrat.\n- Le gestionnaire pour compte : il exploite pour le compte d'un propriétaire et perçoit une rémunération (forfait ou pourcentage). Le résultat appartient au propriétaire.\n\nChaque mode répartit différemment le risque : plus l'exploitant prend de risque (loyer fixe, investissement), plus il attend une marge élevée.\n\n## Les recettes\n\n- Recettes horaires : payées par les usagers occasionnels selon la durée.\n- Abonnements : forfaits mensuels pour les salariés du quartier, les résidents, les entreprises.\n- Services annexes : lavage, petit entretien, recharge de véhicules électriques, consigne, publicité sur les murs et les tickets.\n- Recettes exceptionnelles : événements, foires, locations de zone pour un tournage ou un salon.\n\n## Les charges\n\nLes charges fixes ne varient pas avec la fréquentation : loyer ou redevance fixe, salaires des agents et caissiers, gardiennage de nuit, électricité de base, maintenance des barrières et caisses, assurance, amortissement des équipements.\n\nLes charges variables évoluent avec l'activité : commissions sur paiements électroniques, consommables (tickets, papier), redevance variable éventuelle, usure des équipements.\n\n## Les grandeurs de base\n\nL'offre se mesure en places-heures : nombre de places × nombre d'heures d'ouverture. Un parking de 150 places ouvert 14 heures offre 150 × 14 = 2 100 places-heures par jour.\n\nLe taux d'occupation est le pourcentage de places-heures vendues.\n\nLe revenu moyen par place-heure occupée est la recette horaire divisée par les places-heures occupées. Il dépend de la grille tarifaire et des durées de stationnement.\n\n## Méthode : construire un compte prévisionnel mensuel\n\n- Calculer les places-heures offertes par jour.\n- Appliquer un taux d'occupation prudent, fondé sur des comptages ou une étude de marché.\n- Multiplier par le revenu moyen par place-heure occupée.\n- Multiplier par le nombre de jours d'ouverture du mois.\n- Retrancher les charges variables, puis les charges fixes.\n\n## Exemple chiffré : un parking près du marché de Sandaga\n\nUn exploitant étudie un parking de 150 places ouvert de 7 h à 21 h (14 heures), 30 jours par mois. Hypothèses : occupation moyenne 60 %, revenu moyen 220 FCFA par place-heure occupée, charges fixes 5 500 000 FCFA par mois, charges variables égales à 8 % des recettes.\n\n- Places-heures offertes par jour : 150 × 14 = 2 100.\n- Places-heures occupées : 2 100 × 0,60 = 1 260.\n- Recette par jour : 1 260 × 220 = 277 200 FCFA.\n- Recette mensuelle : 277 200 × 30 = 8 316 000 FCFA.\n- Charges variables : 8 % × 8 316 000 = 665 280 FCFA.\n- Marge sur coûts variables : 8 316 000 - 665 280 = 7 650 720 FCFA.\n- Résultat : 7 650 720 - 5 500 000 = 2 150 720 FCFA par mois.\n\nLe seuil de rentabilité est la recette qui couvre exactement toutes les charges. La marge sur coûts variables représente 92 % des recettes, donc : seuil = charges fixes / 0,92 = 5 500 000 / 0,92 ≈ 5 978 261 FCFA. En recette maximale théorique (100 % d'occupation), le parking ferait 2 100 × 220 × 30 = 13 860 000 FCFA. Le seuil correspond donc à une occupation d'environ 5 978 261 / 13 860 000 ≈ 43 %. En dessous de ce taux, l'exploitant perd de l'argent.\n\n## Points clés\n\n- Le mode d'exploitation détermine qui porte le risque et qui garde la marge.\n- On raisonne en places-heures offertes, occupées et en revenu moyen par place-heure.\n- Charges fixes et variables se séparent pour calculer le seuil de rentabilité.\n- Le taux d'occupation de seuil est un repère essentiel avant d'investir.\n\n## Exercices\n\n- Exercice 1 : citez quatre modes d'exploitation et indiquez qui garde le résultat dans chacun.\n- Exercice 2 : un parking de 80 places est ouvert 12 heures par jour. Combien de places-heures offre-t-il par jour ?\n- Exercice 3 : avec 55 % d'occupation et 250 FCFA par place-heure occupée, quelle est la recette journalière du parking de l'exercice 2 ? Et sur 30 jours ?\n- Exercice 4 : charges fixes 2 700 000 FCFA par mois, charges variables 10 % des recettes. Calculez le seuil de rentabilité mensuel.\n\n## Corrigé\n\nExercice 1 : propriétaire-exploitant (il garde le résultat) ; locataire-exploitant (il garde le résultat après loyer) ; concessionnaire ou délégataire (il garde le résultat après redevance, dans le cadre du contrat) ; gestionnaire pour compte (le résultat revient au propriétaire, le gestionnaire perçoit sa rémunération).\n\nExercice 2 : 80 × 12 = 960 places-heures par jour.\n\nExercice 3 : places-heures occupées = 960 × 0,55 = 528 ; recette = 528 × 250 = 132 000 FCFA par jour ; sur 30 jours : 3 960 000 FCFA.\n\nExercice 4 : la marge sur coûts variables est de 90 % des recettes ; seuil = 2 700 000 / 0,90 = 3 000 000 FCFA par mois."
+   },
+   {
+    "title": "Construire une grille tarifaire horaire",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Abonnements et rentabilité : dimensionner et chiffrer l'offre",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Caisse, encaissement et contrôle des recettes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Piloter un ou plusieurs sites avec des indicateurs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : exploiter un parking rentable, du tarif au tableau de bord",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-gestion-flotte",
+  "level": "Formation professionnelle",
+  "subject": "Gestion de flotte",
+  "module": "flotte",
+  "title": "Gestion de flotte automobile",
+  "description": "Cette formation donne les méthodes pour gérer un parc de véhicules d'entreprise ou d'administration : inventaire et dossier véhicule, maintenance préventive et curative, pneumatiques, assurances et échéances administratives, calcul du coût total de possession (TCO) et politique conducteurs. Elle s'adresse aux gestionnaires de flotte, chefs de parc, responsables des services généraux et dirigeants de PME. Prérequis : calculs de base, pourcentages et usage d'un tableur.",
+  "sort": 90,
+  "lessons": [
+   {
+    "title": "Organiser la gestion de flotte : inventaire et dossier véhicule",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre le rôle du gestionnaire de flotte.\n- Construire l'inventaire du parc et le dossier de chaque véhicule.\n- Mettre en place les outils de suivi de base.\n\n## Qu'est-ce que la gestion de flotte ?\n\nUne flotte automobile est l'ensemble des véhicules qu'une organisation possède, loue ou met à disposition de ses salariés : voitures de direction, véhicules commerciaux, pick-up de chantier, camionnettes de livraison, motos de coursiers, minibus de transport du personnel. Pour une entreprise de distribution, une ONG ou un projet de développement au Sénégal, la flotte représente souvent l'un des premiers postes de dépenses après les salaires.\n\nGérer une flotte, c'est garantir que les bons véhicules sont disponibles au bon moment, en bon état, en règle avec la réglementation, conduits par des personnes autorisées, au coût le plus juste. Le gestionnaire de flotte coordonne l'achat ou la location, l'affectation, l'entretien, les assurances, le carburant, les sinistres et la revente.\n\n## Les missions du gestionnaire\n\n- Tenir l'inventaire du parc et les dossiers véhicules.\n- Planifier et suivre la maintenance.\n- Gérer les échéances administratives : assurances, visites techniques, taxes.\n- Contrôler les dépenses : carburant, réparations, pneus, péages.\n- Gérer les conducteurs : autorisations, règles, sinistres, amendes.\n- Analyser les coûts et proposer le renouvellement des véhicules.\n\n## L'inventaire du parc\n\nL'inventaire est la liste exhaustive des véhicules, mise à jour à chaque entrée ou sortie. Chaque véhicule reçoit un code interne unique (par exemple VL-012 pour un véhicule léger, PL-003 pour un poids lourd). L'inventaire comporte au minimum :\n\n- Le code interne et l'immatriculation.\n- La marque, le modèle, la version, la motorisation et le type de carburant.\n- Le numéro de châssis (numéro d'identification du véhicule).\n- La date de mise en circulation et la date d'entrée dans le parc.\n- Le mode de détention : achat, crédit, location longue durée, mise à disposition.\n- La valeur d'achat ou le loyer.\n- Le service et le conducteur affectés.\n- Le kilométrage à date.\n- L'état général (bon, moyen, à réformer).\n\nOn recommande de faire chaque année un inventaire physique : on vérifie que chaque véhicule existe, qu'il est au bon endroit, que le kilométrage déclaré est exact et que les documents sont à bord.\n\n## Le dossier véhicule\n\nChaque véhicule a un dossier, papier et numérique, qui suit le véhicule toute sa vie dans l'entreprise. Il contient :\n\n- Les documents d'identité du véhicule : carte grise (certificat d'immatriculation), facture d'achat ou contrat de location, certificat de dédouanement le cas échéant.\n- Les documents de conformité : attestation d'assurance, procès-verbal de visite technique, justificatifs de taxes.\n- Le carnet d'entretien et l'historique des interventions avec les factures.\n- Les fiches de sinistres et les constats.\n- Les procès-verbaux de remise du véhicule aux conducteurs successifs, avec l'état des lieux et le kilométrage.\n\nLes originaux sont conservés au bureau ; des copies certifiées ou les documents exigés sont placés à bord, selon la réglementation et les recommandations de l'assureur.\n\n## Les outils de suivi\n\nPour une petite flotte, un tableur bien structuré suffit : un onglet inventaire, un onglet échéances, un onglet interventions, un onglet carburant. Au-delà d'une trentaine de véhicules, un logiciel de gestion de flotte devient utile : alertes automatiques, saisie des pleins, tableaux de bord, lien avec la géolocalisation.\n\nL'information de base qui alimente tout le système est le kilométrage. Il est relevé régulièrement (à chaque plein, chaque semaine ou par le traceur GPS) et sert à planifier l'entretien et à calculer les coûts au kilomètre.\n\n## Exemple : une ONG à Kaolack\n\nUne ONG de santé basée à Kaolack possède 18 véhicules, dont 10 pick-up utilisés pour les tournées dans les villages. Lors de la prise de poste du nouveau gestionnaire, aucun inventaire n'existait. Il a réalisé en deux semaines : la liste complète avec les codes VL-001 à VL-018, la vérification physique de chaque véhicule, et un dossier par véhicule. Il a découvert deux véhicules dont l'assurance avait expiré, un pick-up immobilisé depuis quatre mois dans un garage en attente d'une pièce, et un écart de 12 000 km entre le kilométrage déclaré et le compteur réel d'un véhicule. Ces constats ont justifié la mise en place d'un suivi mensuel.\n\n## Points clés\n\n- La flotte est un poste de dépenses majeur qu'il faut gérer comme un actif.\n- L'inventaire est exhaustif, codifié, et vérifié physiquement chaque année.\n- Chaque véhicule a un dossier complet qui le suit toute sa vie.\n- Le kilométrage est l'information de base de tout le suivi.\n\n## Exercices\n\n- Exercice 1 : citez six informations obligatoires de l'inventaire d'un véhicule.\n- Exercice 2 : quels documents mettez-vous dans le dossier d'un véhicule acheté neuf ?\n- Exercice 3 : un pick-up affiche 86 400 km au 1er janvier et 113 400 km au 31 décembre. Calculez son kilométrage annuel et mensuel moyen.\n- Exercice 4 : pourquoi faut-il un procès-verbal de remise à chaque changement de conducteur ?\n\n## Corrigé\n\nExercice 1 : par exemple code interne, immatriculation, marque et modèle, numéro de châssis, date de mise en circulation, mode de détention, conducteur affecté, kilométrage.\n\nExercice 2 : la carte grise, la facture d'achat, l'attestation d'assurance, le carnet d'entretien et la garantie constructeur, le procès-verbal de remise au premier conducteur ; puis, au fil du temps, les visites techniques, factures d'entretien et fiches de sinistres.\n\nExercice 3 : kilométrage annuel = 113 400 - 86 400 = 27 000 km ; mensuel moyen = 27 000 / 12 = 2 250 km.\n\nExercice 4 : il établit l'état du véhicule, le kilométrage et les équipements au moment de la remise. En cas de dommage, de pièce manquante ou d'écart de kilométrage, on sait à quelle période et à quel conducteur l'attribuer."
+   },
+   {
+    "title": "Maintenance préventive et curative",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Gérer les pneumatiques de la flotte",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Assurances, échéances et politique conducteurs",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 55
+   },
+   {
+    "title": "Calculer le coût total de possession (TCO)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : piloter une flotte automobile, de l'inventaire au TCO",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "formation-education-numerique",
+  "level": "Formation professionnelle",
+  "subject": "Éducation et compétences numériques",
+  "module": "education",
+  "title": "Apprendre et enseigner en ligne efficacement",
+  "description": "Cette formation donne aux étudiants, enseignants et formateurs les méthodes pour réussir l'apprentissage et l'enseignement en ligne : mémorisation par répétition espacée, prise de notes, organisation du travail, conception d'un cours en ligne de qualité, évaluation et sécurité numérique. Les exemples sont adaptés aux réalités de l'Afrique de l'Ouest, notamment au coût de la connexion et à l'usage du téléphone. Aucun prérequis n'est demandé, en dehors d'une pratique de base du téléphone ou de l'ordinateur.",
+  "sort": 120,
+  "lessons": [
+   {
+    "title": "Comment on apprend : mémoire, récupération active et répétition espacée",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre comment la mémoire fonctionne et pourquoi on oublie.\n- Utiliser la récupération active et la répétition espacée pour retenir durablement.\n- Construire un plan de révision personnel adapté aux études ou à une formation professionnelle.\n\n## Apprendre, c'est d'abord retenir et comprendre\n\nBeaucoup d'élèves et d'étudiants relisent leurs cours plusieurs fois, surlignent, recopient, et sont surpris d'avoir tout oublié le jour de l'examen. Ce n'est pas un manque d'intelligence : c'est une mauvaise méthode. Les recherches en psychologie cognitive ont montré depuis longtemps que certaines stratégies sont beaucoup plus efficaces que d'autres. La bonne nouvelle : elles ne demandent ni matériel coûteux ni connexion permanente.\n\n## Les notions clés\n\nLa mémoire de travail : c'est l'espace mental où l'on manipule les informations en ce moment. Elle est très limitée : on ne peut y garder que quelques éléments à la fois. Un cours trop dense, une vidéo trop rapide ou un environnement bruyant la saturent.\n\nLa mémoire à long terme : c'est le stockage durable. Pour qu'une information y entre et puisse en ressortir, il faut la relier à ce que l'on sait déjà et la réactiver régulièrement.\n\nLa courbe de l'oubli : le psychologue Hermann Ebbinghaus a montré, à la fin du XIXe siècle, que l'on oublie très vite après un premier apprentissage, puis plus lentement. Chaque révision bien placée ralentit l'oubli.\n\nLa récupération active : se tester, c'est-à-dire essayer de retrouver une information sans regarder ses notes, renforce la mémoire bien plus que relire. On parle d'« effet de test ».\n\nLa répétition espacée : répartir les révisions dans le temps, avec des intervalles croissants, est plus efficace que tout réviser la veille.\n\nL'entrelacement : alterner des types d'exercices (par exemple des problèmes de pourcentages, de proportionnalité et d'équations) oblige le cerveau à choisir la bonne méthode, ce qui prépare mieux à l'examen.\n\n## Méthode : les fiches question-réponse et les boîtes de révision\n\n- Étape 1 : après chaque cours, transformez l'essentiel en questions. Au recto : « Qu'est-ce que la BCEAO ? » ; au verso : la réponse courte.\n- Étape 2 : rangez les fiches dans des boîtes numérotées (système de Leitner). Boîte 1 : à revoir chaque jour ; boîte 2 : tous les 2 jours ; boîte 3 : tous les 4 jours ; boîte 4 : chaque semaine ; boîte 5 : avant l'examen.\n- Étape 3 : quand vous répondez juste, la fiche avance d'une boîte ; quand vous vous trompez, elle revient en boîte 1.\n- Étape 4 : chaque jour, ne révisez que les boîtes prévues. Dix à vingt minutes suffisent.\n\nCe système fonctionne sur papier (cartons découpés, enveloppes) ou sur téléphone avec une application de cartes de révision fonctionnant hors ligne, ce qui est précieux quand la connexion est chère ou instable.\n\n## Autres techniques efficaces\n\n- L'auto-explication : expliquer à voix haute, ou à un camarade, pourquoi une solution est juste.\n- La pratique de rappel libre : sur une feuille blanche, écrire tout ce dont on se souvient d'un chapitre, puis comparer avec le cours.\n- Le double codage : associer un texte à un schéma, une carte ou un tableau.\n- Les exemples concrets : relier une notion abstraite à une situation connue (le prix du riz au marché pour l'inflation, le budget de la famille pour les pourcentages).\n\nÀ l'inverse, le surlignage massif, la relecture passive et le « bachotage » de la dernière nuit donnent une impression de maîtrise mais produisent peu de mémorisation durable.\n\n## Exemple : le plan de révision de Mariama\n\nMariama prépare un BTS en comptabilité à Dakar et a un examen dans six semaines. Elle a 8 chapitres. Son plan :\n\n- Chaque soir, 20 minutes de fiches question-réponse selon ses boîtes.\n- Chaque samedi, un rappel libre sur deux chapitres et une série d'exercices mélangés.\n- Une semaine avant l'examen, un sujet blanc en conditions réelles.\n\nEn répartissant ainsi 20 minutes par jour sur 42 jours, elle consacre 840 minutes, soit 14 heures, aux révisions espacées, sans nuit blanche.\n\n## Points clés\n\n- On oublie vite, mais chaque révision espacée ralentit l'oubli.\n- Se tester est plus efficace que relire.\n- Espacer, alterner, expliquer et illustrer.\n- Un petit temps quotidien vaut mieux qu'une longue séance de dernière minute.\n\n## Exercices\n\n- Exercice 1 : Expliquez la différence entre mémoire de travail et mémoire à long terme.\n- Exercice 2 : Transformez ce passage en trois fiches question-réponse : « L'UEMOA regroupe huit États qui utilisent le franc CFA émis par la BCEAO, dont le siège est à Dakar. »\n- Exercice 3 : Une fiche est en boîte 3. Vous vous trompez. Où va-t-elle ? Et si vous aviez répondu juste ?\n- Exercice 4 : Un étudiant révise 30 minutes par jour pendant 5 semaines. Combien d'heures cela représente-t-il ?\n\n## Corrigé\n\n- Exercice 1 : La mémoire de travail traite les informations du moment ; elle est très limitée et se sature vite. La mémoire à long terme stocke durablement les connaissances ; on y fait entrer une information en la reliant à ce que l'on sait et en la réactivant.\n- Exercice 2 : Par exemple : « Combien d'États compte l'UEMOA ? » : huit. « Quelle monnaie utilisent-ils ? » : le franc CFA. « Quelle institution l'émet et où est son siège ? » : la BCEAO, à Dakar.\n- Exercice 3 : En cas d'erreur, elle revient en boîte 1. En cas de bonne réponse, elle passe en boîte 4.\n- Exercice 4 : 5 semaines = 35 jours ; 35 × 30 = 1 050 minutes = 17 heures 30 minutes."
+   },
+   {
+    "title": "Prendre des notes et organiser son travail d'étudiant",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Créer un cours en ligne de qualité (pour les formateurs)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Évaluer les apprentissages en ligne",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Outils numériques et bonnes pratiques de sécurité",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : apprendre à apprendre et concevoir une séquence en ligne",
     "kind": "video",
     "is_free": false,
     "duration_min": 90
