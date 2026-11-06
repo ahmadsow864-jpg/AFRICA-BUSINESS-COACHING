@@ -83,13 +83,13 @@ insert into public.lessons (course_id, title, content, kind, duration_min, is_fr
 select c.id, 'Comptabilité analytique 2 (coûts partiels, seuil, imputation rationnelle) : l''essentiel pour l''examen', '## Objectifs de la leçon
 
 - Construire un compte de résultat différentiel et calculer la marge sur coût variable.
-- Calculer seuil de rentabilité, point mort, marge et indice de sécurité, levier opérationnel.
+- Calculer seuil de rentabilité, point mort, indice de sécurité et levier opérationnel.
 - Utiliser les coûts spécifiques pour décider du maintien d''un produit.
 - Appliquer l''imputation rationnelle des charges fixes.
 
 ## 1. Charges variables et charges fixes
 
-Une charge variable évolue avec le volume d''activité (matières, commissions, énergie de production). Une charge fixe, ou de structure, est indépendante du volume à court terme et dans une plage d''activité donnée (loyer, amortissements, salaires de l''encadrement). Les charges semi-variables se décomposent en une partie fixe et une partie variable, par exemple avec l''ajustement par les moindres carrés vu en Licence 1.
+Une charge variable évolue avec le volume (matières, commissions). Une charge fixe, ou de structure, en est indépendante à court terme, dans une plage d''activité donnée (loyer, amortissements). Les charges semi-variables se décomposent, par exemple par les moindres carrés vus en Licence 1.
 
 ## 2. Le compte de résultat différentiel
 
@@ -141,32 +141,25 @@ Atelier fictif : charges fixes 12 000 000 FCFA par mois, activité normale 2 000
 - Charges fixes imputées = 12 000 000 × 0,9 = 10 800 000 FCFA ; différence d''incorporation = 1 200 000 FCFA, coût de sous-activité (on parle de boni de suractivité dans le cas inverse).
 - Coût unitaire complet réel = 2 000 + 12 000 000 / 9 000 ≈ 3 333,33 FCFA ; coût unitaire en imputation rationnelle = 2 000 + 10 800 000 / 9 000 = 3 200 FCFA, identique au coût en activité normale.
 
-Intérêt : le coût de production n''est pas pollué par les variations d''activité, et le coût de la sous-activité est isolé et chiffré.
+Intérêt : le coût unitaire ne dépend plus du niveau d''activité, et le coût de la sous-activité est isolé.
 
 ## Points clés
 
-- SR = CF / taux de MCV ; point mort = SR / CA × 12 (activité régulière).
-- LO = MCV / résultat = 1 / indice de sécurité.
-- Décider d''un abandon sur la marge sur coût spécifique.
-- Imputation rationnelle : CF × activité réelle / activité normale.
+- SR = CF / taux de MCV ; LO = MCV / résultat ; décision d''abandon sur la MCS ; CF imputées = CF × activité réelle / activité normale.
 
 ## Exercices pratiques
 
-- Exercice 1 : CA 80 000 000, charges variables 56 000 000, charges fixes 18 000 000 FCFA. Calculez MCV, taux, résultat, SR, marge de sécurité et levier.
-- Exercice 2 : avec les données de l''exercice 1, quel CA faut-il pour obtenir un résultat de 9 000 000 FCFA ?
-- Exercice 3 : un hôtel fictif de Saly réalise un CA trimestriel de 40, 20, 15 et 45 millions de FCFA (T1 à T4), avec un taux de MCV de 30 % et 45 000 000 FCFA de charges fixes. Calculez le SR et la date du point mort (CA régulier à l''intérieur de chaque trimestre).
-- Exercice 4 : charges fixes 4 800 000 FCFA, activité normale 1 200 h, activité réelle 1 320 h. Calculez les charges imputées et la différence d''incorporation.
-- Exercice 5 : dans le cas des trois gammes, le directeur propose d''abandonner Y et Z. Calculez le résultat et concluez.
-- Exercice 6 (cas pratique) : Keur Briques peut automatiser sa production : charges fixes +20 000 000 FCFA, coût variable unitaire ramené à 250 FCFA. Calculez le nouveau résultat, le nouveau SR et le nouveau levier. Conseillez la direction.
+- Exercice 1 : CA 80 000 000, charges variables 56 000 000, charges fixes 18 000 000 FCFA. Calculez MCV, taux, résultat, SR, marge de sécurité et levier. Quel CA donnerait un résultat de 9 000 000 FCFA ?
+- Exercice 2 : un hôtel fictif de Saly réalise un CA trimestriel de 40, 20, 15 et 45 millions de FCFA (T1 à T4), avec un taux de MCV de 30 % et 45 000 000 FCFA de charges fixes. Calculez le SR et la date du point mort (CA régulier à l''intérieur de chaque trimestre).
+- Exercice 3 : dans le cas des trois gammes, le directeur propose d''abandonner Y et Z. Calculez le résultat et concluez.
+- Exercice 4 (cas pratique) : Keur Briques peut automatiser sa production : charges fixes +20 000 000 FCFA, coût variable unitaire ramené à 250 FCFA. Calculez le nouveau résultat, le nouveau SR et le nouveau levier. Conseillez la direction.
 
 ## Corrigé
 
-- Exercice 1 : MCV 24 000 000 ; taux 30 % ; résultat 6 000 000 ; SR = 18 000 000 / 0,30 = 60 000 000 ; marge de sécurité 20 000 000 ; LO = 24 000 000 / 6 000 000 = 4.
-- Exercice 2 : CA = (CF + résultat) / taux = 27 000 000 / 0,30 = 90 000 000 FCFA.
-- Exercice 3 : SR = 45 000 000 / 0,30 = 112 500 000 FCFA. Cumuls : 40 000 000, 60 000 000, 75 000 000, 120 000 000. Fin septembre, il manque 37 500 000 FCFA ; le T4 rapporte 15 000 000 FCFA par mois : le seuil est atteint fin octobre.
-- Exercice 4 : charges imputées = 4 800 000 × 1 320 / 1 200 = 5 280 000 FCFA ; boni de suractivité 480 000 FCFA.
-- Exercice 5 : il ne reste que X : 17 000 000 − 15 000 000 = 2 000 000 FCFA, contre 4 000 000 aujourd''hui. Il faut abandonner Z seulement (résultat 5 000 000 FCFA) et garder Y.
-- Exercice 6 : MCV = 400 000 × 250 = 100 000 000 ; CF = 80 000 000 ; résultat 20 000 000 FCFA, identique à la situation actuelle ; taux de MCV 50 % ; SR = 160 000 000 FCFA (contre 150 000 000) ; LO = 100 000 000 / 20 000 000 = 5. Point d''indifférence : 200 q − 60 000 000 = 250 q − 80 000 000, d''où q = 400 000 parpaings, exactement le volume actuel. Conseil : l''automatisation n''améliore le résultat que si les ventes dépassent 400 000 parpaings ; en dessous, elle le dégrade et elle accroît le risque d''exploitation (seuil plus élevé, levier de 5 au lieu de 4). À recommander seulement si la direction anticipe une croissance durable de la demande.', 'texte', 60, false, 20
+- Exercice 1 : MCV 24 000 000 ; taux 30 % ; résultat 6 000 000 ; SR = 18 000 000 / 0,30 = 60 000 000 ; marge de sécurité 20 000 000 ; LO = 24 000 000 / 6 000 000 = 4 ; CA visé = (18 000 000 + 9 000 000) / 0,30 = 90 000 000 FCFA.
+- Exercice 2 : SR = 45 000 000 / 0,30 = 112 500 000 FCFA. Cumuls : 40 000 000, 60 000 000, 75 000 000, 120 000 000. Fin septembre, il manque 37 500 000 FCFA ; le T4 rapporte 15 000 000 FCFA par mois : le seuil est atteint fin octobre.
+- Exercice 3 : il ne reste que X : 17 000 000 − 15 000 000 = 2 000 000 FCFA, contre 4 000 000 aujourd''hui. Il faut abandonner Z seulement (résultat 5 000 000 FCFA) et garder Y.
+- Exercice 4 : MCV = 400 000 × 250 = 100 000 000 ; CF = 80 000 000 ; résultat 20 000 000 FCFA, identique à la situation actuelle ; taux de MCV 50 % ; SR = 160 000 000 FCFA (contre 150 000 000) ; LO = 100 000 000 / 20 000 000 = 5. Point d''indifférence : 200 q − 60 000 000 = 250 q − 80 000 000, d''où q = 400 000 parpaings, le volume actuel. L''automatisation n''est gagnante qu''au-delà de ce volume et accroît le risque d''exploitation (seuil plus élevé, levier 5 au lieu de 4) : à recommander seulement si une croissance durable de la demande est attendue.', 'texte', 60, false, 20
 from public.courses c where c.slug = 'lic-cg-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comptabilité analytique 2 (coûts partiels, seuil, imputation rationnelle) : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
@@ -183,7 +176,7 @@ Le budget est la traduction chiffrée, à court terme (en général l''année, d
 
 Les budgets s''enchaînent selon une hiérarchie. Schéma décrit : en tête, le budget des ventes ; il commande le budget de production, qui commande les budgets des approvisionnements, de main-d''œuvre et des charges des centres ; à côté, les budgets des frais commerciaux, des frais généraux et des investissements ; tous se déversent dans le budget de trésorerie, puis dans le compte de résultat et le bilan prévisionnels.
 
-La procédure peut être descendante (la direction impose), ascendante (les services proposent) ou, le plus souvent, itérative (navettes entre direction et services). Une procédure participative favorise l''adhésion mais demande du temps et expose au risque de « slack budgétaire », c''est-à-dire de marges de sécurité cachées dans les prévisions.
+La procédure peut être descendante, ascendante ou, le plus souvent, itérative (navettes entre direction et services). La participation favorise l''adhésion mais expose au « slack budgétaire » : des marges de sécurité cachées dans les prévisions.
 
 ## 2. Le budget des ventes
 
@@ -229,7 +222,7 @@ Données du premier trimestre de Dakar Bissap Industries (ventes du T1 = 36 000 
 - Février : encaissements 12 200 000 ; décaissements 20 000 000 (fournisseurs 5 000 000, salaires 4 200 000, autres charges 1 800 000, investissement 9 000 000) ; solde du mois −7 800 000 ; trésorerie de fin −1 600 000 FCFA.
 - Mars : encaissements 11 400 000 ; décaissements 13 000 000 (fournisseurs 4 500 000, salaires 4 200 000, autres charges 1 800 000, échéance d''emprunt 2 500 000) ; solde du mois −1 600 000 ; trésorerie de fin −3 200 000 FCFA.
 
-Lecture : la trésorerie devient négative en février (−1 600 000) à cause de l''investissement, et le déficit s''aggrave en mars (−3 200 000). Solutions : financer la machine par un emprunt ou un crédit-bail plutôt que sur fonds propres ; négocier un découvert ou une facilité de caisse ; obtenir un délai fournisseur plus long ; accélérer le recouvrement clients. Au bilan prévisionnel du 31 mars figureront des créances clients de 7 200 000 FCFA et des dettes fournisseurs de 4 800 000 FCFA.
+Lecture : la trésorerie devient négative en février (−1 600 000) à cause de l''investissement, et le déficit s''aggrave en mars (−3 200 000). Solutions : financer la machine par un emprunt ou un crédit-bail ; négocier une facilité de caisse ; allonger le crédit fournisseur ; accélérer le recouvrement. Au bilan prévisionnel du 31 mars figureront des créances clients de 7 200 000 FCFA et des dettes fournisseurs de 4 800 000 FCFA.
 
 ## Points clés
 
@@ -243,16 +236,14 @@ Lecture : la trésorerie devient négative en février (−1 600 000) à cause d
 - Exercice 1 : avec des ventes annuelles de 60 000 unités et les mêmes coefficients saisonniers, calculez les ventes trimestrielles.
 - Exercice 2 : ventes T1 8 000 ; T2 10 000 ; stock initial 1 500 ; stock final souhaité = 25 % des ventes du trimestre suivant. Production du T1 ?
 - Exercice 3 : ventes d''avril, mai et juin : 20 000 000, 25 000 000, 30 000 000 FCFA ; 30 % au comptant, 50 % à 30 jours, 20 % à 60 jours. Encaissements de juin ?
-- Exercice 4 : citez trois limites de la gestion budgétaire.
-- Exercice 5 (cas pratique) : Dakar Bissap Industries finance la machine par un emprunt de 9 000 000 FCFA encaissé en février, remboursable à partir d''avril. Recalculez la trésorerie de fin février et de fin mars et concluez.
+- Exercice 4 (cas pratique) : Dakar Bissap Industries finance la machine par un emprunt de 9 000 000 FCFA encaissé en février, remboursable à partir d''avril. Recalculez la trésorerie de fin février et de fin mars et concluez.
 
 ## Corrigé
 
 - Exercice 1 : 15 000 × 1,2 = 18 000 ; 15 000 × 0,8 = 12 000 ; 15 000 × 0,7 = 10 500 ; 15 000 × 1,3 = 19 500 (total 60 000).
 - Exercice 2 : 8 000 + 0,25 × 10 000 − 1 500 = 9 000 unités.
 - Exercice 3 : 30 % × 30 000 000 + 50 % × 25 000 000 + 20 % × 20 000 000 = 9 000 000 + 12 500 000 + 4 000 000 = 25 500 000 FCFA.
-- Exercice 4 : rigidité face à un environnement instable ; risque de slack budgétaire ; coût et lourdeur de la procédure ; focalisation sur le court terme et les chiffres financiers.
-- Exercice 5 : fin février 7 400 000 FCFA ; fin mars 5 800 000 FCFA. La trésorerie reste positive sur le trimestre : le déficit venait du financement de l''investissement sur la trésorerie d''exploitation. Il faudra vérifier que les remboursements à partir d''avril restent supportables.', 'texte', 60, false, 30
+- Exercice 4 : fin février 7 400 000 FCFA ; fin mars 5 800 000 FCFA. La trésorerie reste positive sur le trimestre : le déficit venait du financement de l''investissement sur la trésorerie d''exploitation. Il faudra vérifier que les remboursements à partir d''avril restent supportables.', 'texte', 60, false, 30
 from public.courses c where c.slug = 'lic-cg-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion budgétaire (ventes, production, trésorerie) : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
@@ -490,7 +481,7 @@ Synthèse : MCV, seuil, point mort, sécurité, levier, coûts spécifiques, imp
 - Question 4 : charges fixes 6 millions, activité normale 1 000 h, réelle 1 200 h ; charges imputées ? Réponse : 7,2 millions, boni de 1,2 million.
 - Question 5 : que signifie un indice de sécurité de 10 % ? Réponse : une baisse de 10 % des ventes suffit à annuler le résultat.
 
-Merci, et à la prochaine séance consacrée à la gestion budgétaire.', 'video', 90, false, 60
+Merci à toutes et à tous. Pour la prochaine séance, consacrée à la gestion budgétaire, refaites le cas Keur Briques sans vos notes, puis l''exercice des trois gammes.', 'video', 90, false, 60
 from public.courses c where c.slug = 'lic-cg-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Comptabilité analytique 2 (coûts partiels)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
@@ -512,7 +503,7 @@ Bonjour à toutes et à tous. Un dirigeant qui ne prévoit pas subit. La gestion
 
 Visuel : pyramide des budgets. En haut, le budget des ventes ; au milieu, production, approvisionnements, main-d''œuvre, frais ; en bas, investissements et trésorerie ; à la sortie, compte de résultat et bilan prévisionnels.
 
-Pourquoi le budget des ventes en premier ? Parce que, sauf contrainte de capacité, c''est le marché qui fixe le niveau d''activité. La procédure de construction peut être descendante, ascendante ou itérative. La forme itérative, faite de navettes, est la plus courante. Elle implique les responsables mais crée un risque : le slack budgétaire. Un chef des ventes qui prévoit volontairement bas pour être sûr de dépasser son objectif fausse tout le système.
+Pourquoi le budget des ventes en premier ? Parce que, sauf contrainte de capacité, c''est le marché qui fixe le niveau d''activité. Si la capacité de production est le facteur limitant, comme pour une usine saturée, c''est au contraire le budget de production qui encadre les ventes possibles. Repérez toujours le facteur limitant avant de construire la chaîne des budgets. Dans une entreprise de services, comme un cabinet de conseil de Dakar, le facteur limitant est souvent le nombre d''heures facturables des consultants. La procédure de construction peut être descendante, ascendante ou itérative. La forme itérative, faite de navettes, est la plus courante. Elle implique les responsables mais crée un risque : le slack budgétaire. Un chef des ventes qui prévoit volontairement bas pour être sûr de dépasser son objectif fausse tout le système.
 
 Question au public : quelles sont les trois phases de la gestion budgétaire ? Réponse : prévision, budgétisation, contrôle budgétaire.
 
@@ -522,7 +513,7 @@ L''entreprise prévoit 48 000 cartons sur l''année. Les ventes ne sont pas rég
 
 Trimestre moyen : 12 000 cartons. T1 : 14 400 ; T2 : 9 600 ; T3 : 8 400 ; T4 : 15 600. Total : 48 000. Avec un prix de 2 500 FCFA, le CA du T1 vaut 36 000 000 FCFA.
 
-Comment obtient-on ces coefficients ? En rapportant, sur plusieurs années, les ventes de chaque trimestre à la tendance ou à la moyenne trimestrielle, puis en faisant la moyenne de ces rapports.
+Comment obtient-on ces coefficients ? En rapportant, sur plusieurs années, les ventes de chaque trimestre à la tendance ou à la moyenne trimestrielle, puis en faisant la moyenne de ces rapports. Exemple simple : si, sur trois ans, les ventes du premier trimestre ont représenté 1,18, 1,22 et 1,20 fois la moyenne trimestrielle de l''année, on retient un coefficient de 1,20. Si la somme des quatre coefficients obtenus n''est pas exactement 4, on les corrige proportionnellement. On peut ensuite combiner la tendance, estimée par les moindres carrés, et les coefficients : prévision du trimestre = valeur de tendance × coefficient saisonnier.
 
 ## 27:00 – 42:00 · Budget de production et lissage : correction commentée
 
@@ -550,7 +541,11 @@ Trésorerie : départ 2 000 000. Fin janvier : 6 200 000. Fin février : −1 60
 
 Diagnostic : l''entreprise n''a pas un problème de rentabilité mais de financement. Elle a payé une machine de 9 000 000 FCFA, un bien durable, avec sa trésorerie courante. Règle de l''équilibre financier : un besoin durable se finance par une ressource durable. Solution : emprunt ou crédit-bail. Avec un emprunt de 9 000 000 encaissé en février, la trésorerie serait de 7 400 000 fin février et 5 800 000 fin mars. Pour un déficit ponctuel, en revanche, une facilité de caisse suffit.
 
-## 68:00 – 78:00 · Du budget de trésorerie au bilan prévisionnel
+## 68:00 – 72:00 · Erreurs fréquentes dans les budgets de trésorerie
+
+Quatre erreurs reviennent dans les copies. Première erreur : inscrire les ventes du mois au lieu des encaissements du mois. Deuxième : oublier les créances et les dettes du début de période, qui sont encaissées ou payées dans les premiers mois. Troisième : intégrer des charges calculées, comme les dotations aux amortissements ou aux provisions, qui ne donnent lieu à aucun décaissement. Quatrième : enregistrer un emprunt pour son montant total en décaissement, alors qu''on encaisse le capital emprunté et qu''on décaisse ensuite les échéances. Pour vous protéger, vérifiez toujours que la variation de trésorerie de la période égale le total des encaissements moins le total des décaissements : ici, 37 800 000 moins 43 000 000, soit −5 200 000 FCFA, ce qui fait bien passer la trésorerie de 2 000 000 à −3 200 000 FCFA.
+
+## 72:00 – 78:00 · Du budget de trésorerie au bilan prévisionnel
 
 Le budget de trésorerie alimente le bilan prévisionnel. Au 31 mars, il reste à encaisser 60 % des ventes de mars, soit 7 200 000 FCFA de créances clients, et à payer les achats de mars, soit 4 800 000 FCFA de dettes fournisseurs. La machine apparaît à l''actif immobilisé. Ce raccordement est un excellent moyen de contrôler la cohérence de votre travail : chaque montant non encaissé ou non décaissé doit se retrouver au bilan.
 
@@ -606,7 +601,7 @@ Pourquoi le prix standard pour l''écart sur quantité ? Pour que le chef de pro
 
 Réel : 5 000 heures à 2 500. Standard : 4 800 heures à 2 400. Écart sur taux : (2 500 − 2 400) × 5 000 = 500 000 FCFA défavorable. Écart sur rendement : (5 000 − 4 800) × 2 400 = 480 000 FCFA défavorable. Total 980 000 FCFA défavorable.
 
-Causes possibles du taux : heures supplémentaires majorées, recours à des ouvriers plus qualifiés, revalorisation salariale. Causes du rendement : pannes, matière difficile à travailler, nouveaux ouvriers en formation.
+Causes possibles du taux : heures supplémentaires majorées, recours à des ouvriers plus qualifiés, revalorisation salariale. Causes du rendement : pannes, matière difficile à travailler, nouveaux ouvriers en formation. Remarquez le lien possible avec l''écart sur quantité de matière : une matière moins chère, donc de qualité inférieure, peut à la fois être surconsommée et ralentir les ouvriers. L''acheteur affiche un écart favorable, la production deux écarts défavorables. Au total, l''entreprise a perdu de l''argent. C''est pourquoi on ne juge jamais un écart isolément : on cherche les interactions avant de féliciter ou de blâmer.
 
 ## 38:00 – 44:00 · Pause et quiz
 
@@ -636,11 +631,17 @@ Décomposition. Écart sur prix : 200 FCFA de plus sur 9 600 pots, 1 920 000 FCF
 
 Pourquoi valoriser au coût standard ? Pour ne pas faire porter au commercial les dérives de la production. Rapprochement final : résultat réel 36 810 000, résultat prévu 39 520 000, différence −2 710 000 = écart sur marge −1 120 000 moins écart sur coûts 1 590 000.
 
-## 74:00 – 82:00 · Du calcul à l''action
+## 74:00 – 78:00 · Un mot sur l''écart de composition
+
+Quand une entreprise vend plusieurs produits, l''écart sur quantité peut lui-même se décomposer. Imaginez que Sénégal Peinture vende des pots de 5 litres, très rentables, et des pots de 1 litre, moins rentables. Si le volume total est conforme au budget mais que la part des pots de 1 litre augmente, la marge baisse : c''est un écart de composition, ou écart de mix. Il se calcule en comparant la marge des quantités réelles avec la marge qu''auraient données ces mêmes quantités totales réparties selon la composition prévue. Ce raffinement est surtout traité en Licence 3 ou en Master, mais il est utile d''en connaître le principe pour une question de réflexion.
+
+## 78:00 – 84:00 · Du calcul à l''action
 
 Le contrôleur ne s''arrête pas aux chiffres. Visuel : tableau responsable / écart / action. Production : surconsommation de matière et heures en trop, action sur les réglages et la formation. Achats : bon prix, mais vérifier la qualité de la matière. Ressources humaines : taux horaire en hausse, vérifier les heures supplémentaires. Commercial : prix plus élevé mais volumes en baisse, mesurer l''élasticité. Un écart significatif se signale vite, avec un seuil d''alerte, par exemple 5 % du standard : c''est la gestion par exception.
 
-## 82:00 – 90:00 · Synthèse et évaluation finale
+## 84:00 – 90:00 · Synthèse et évaluation finale
+
+Synthèse : un écart global se décompose toujours en écarts élémentaires dont la somme doit redonner le total. Matières et main-d''œuvre : prix ou taux, puis quantité ou rendement. Charges indirectes : budget, activité, rendement. Commercial : prix et quantité. Et chaque écart a un responsable.
 
 - Question 1 : quel coût compare-t-on au coût réel ? Réponse : le coût standard de la production réelle.
 - Question 2 : prix réel 1 200, standard 1 250, 3 000 kg réels ; écart sur prix ? Réponse : 150 000 favorable.
@@ -648,7 +649,7 @@ Le contrôleur ne s''arrête pas aux chiffres. Visuel : tableau responsable / é
 - Question 4 : prix de vente réel 1 000, prévu 950, 2 000 unités vendues ; écart sur prix de vente ? Réponse : 100 000 favorable.
 - Question 5 : qui est responsable de l''écart sur quantité de matière ? Réponse : en principe le responsable de production.
 
-Merci à tous. Refaites le cas Sénégal Peinture en 40 minutes, sans notes.', 'video', 90, false, 80
+Merci à tous. Refaites le cas Sénégal Peinture en 40 minutes, sans notes, puis rédigez la note au directeur demandée dans la leçon : c''est souvent la question qui fait la différence entre une copie moyenne et une très bonne copie.', 'video', 90, false, 80
 from public.courses c where c.slug = 'lic-cg-l2'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Analyse des écarts');
 
