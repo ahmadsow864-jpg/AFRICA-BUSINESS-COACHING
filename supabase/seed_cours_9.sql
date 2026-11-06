@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 9/16). À exécuter après seed.sql.
+-- Cours (partie 9/17). À exécuter après seed.sql.
 
 -- Cours : Informatique Licence 3 : réussir ses examens (génie logiciel, web et API, sécurité)
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

@@ -4388,6 +4388,72 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "mas-info-m2",
+  "level": "Master 2",
+  "subject": "Informatique",
+  "module": null,
+  "title": "Informatique Master 2 : réussir ses examens (intelligence artificielle, gouvernance IT, mémoire et soutenance)",
+  "description": "Préparation aux examens de Master 2 en Informatique : intelligence artificielle et data science, gouvernance IT et gestion de projets informatiques, méthodologie du mémoire de recherche ou du projet tutoré et de la soutenance. Cas d'entreprise sénégalais fictifs, exemples chiffrés vérifiés, exercices corrigés et quatre cours vidéo de 1h30, dont un atelier pratique de préparation à la soutenance. Public : étudiants de Master 2 Informatique ayant validé le Master 1.",
+  "sort": 722,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Informatique",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\nCette leçon pose le cadre du Master 2 en Informatique, dernière année avant l'entrée dans la vie professionnelle\nou la poursuite en doctorat. Elle prolonge le Master 1 (architectures et microservices, bases de données\navancées et Big Data, cybersécurité avancée) vers trois nouvelles matières : l'intelligence artificielle et la\ndata science, la gouvernance IT et la gestion de projets informatiques, et la méthodologie du mémoire de\nrecherche ou du projet tutoré, qui se conclut par une soutenance.\n\n## Ce qui change en Master 2 : le mémoire et la soutenance\n\nEn Master 2, le travail personnel prend une place centrale et devient souvent le cœur de l'évaluation de\nl'année : un mémoire de recherche (avec une problématique, une revue de littérature, une méthodologie et des\nrésultats), ou un projet tutoré professionnel approfondi (souvent lié à un stage long), défendu devant un jury\nlors d'une soutenance orale. Ce n'est plus un exercice annexe à côté des examens : c'est un travail de plusieurs\nmois qui démontre la capacité à mener une recherche ou un projet de bout en bout, de façon autonome, avec un\nencadrement ponctuel plutôt qu'un cours classique.\n\nLes examens de Master 2 évaluent donc deux choses complémentaires : la maîtrise de matières avancées (comme en\nMaster 1, mais avec un niveau d'exigence plus élevé sur l'analyse critique et la prise de décision en\nincertitude), et la capacité à produire et défendre un travail personnel structuré.\n\n## Les trois matières avancées de l'année\n\nIntelligence artificielle et data science : les notions de base de l'apprentissage automatique, la différence\nentre régression et classification, et la capacité à construire et interpréter un modèle simple sur des\ndonnées vérifiées, sans nécessairement maîtriser les architectures les plus complexes (qui relèvent d'une\nspécialisation plus poussée).\n\nGouvernance IT et gestion de projets informatiques : comment organiser la production et la maintenance des\nsystèmes d'information à l'échelle d'une entreprise, en s'appuyant sur des référentiels reconnus comme ITIL\n(en principe, pour la gestion des services informatiques) et sur les méthodes DevOps (en principe, pour\nrapprocher le développement et l'exploitation des systèmes), et comment piloter un projet informatique du\ncadrage à la livraison.\n\nMéthodologie du mémoire de recherche ou du projet tutoré et de la soutenance : comment structurer un mémoire\n(problématique, revue de littérature, méthodologie, résultats, discussion), comment organiser son temps de\nrédaction sur plusieurs mois, et comment préparer une soutenance orale convaincante devant un jury.\n\n## Méthode de travail avancée pour cette année\n\nLe Master 2 demande de mener en parallèle la préparation des examens et l'avancement du mémoire ou du projet\ntutoré, ce qui exige une organisation plus rigoureuse qu'en Master 1. Trois habitudes aident à tenir sur la\ndurée : fixer des jalons intermédiaires pour le mémoire (par exemple, une problématique validée à telle date,\nun premier chapitre rédigé à telle autre date) plutôt que d'attendre la dernière semaine ; relier, quand c'est\npossible, les révisions d'examen et le travail de mémoire, par exemple en utilisant une notion de data science\nvue en cours pour analyser des données réelles de son propre projet ; et s'entraîner à l'oral de soutenance bien\navant la date réelle, devant un petit groupe ou même seul face à une caméra, car la gestion du stress et du\ntemps de parole se travaille comme une compétence à part.\n\n## Plan de révision sur six semaines\n\nSemaine 1 et 2 : intelligence artificielle et data science. Revoir les notions de base (apprentissage supervisé,\nrégression, classification), savoir interpréter un résultat chiffré simple (une erreur de prédiction, un taux\nde bonne classification) et comprendre ses limites, sans chercher à maîtriser des modèles trop complexes pour\nle niveau de l'examen.\n\nSemaine 3 et 4 : gouvernance IT et gestion de projets informatiques. Revoir les grands principes d'ITIL et de\nDevOps au niveau des concepts, et les méthodes de pilotage de projet (cadrage, planification, suivi, clôture),\nen s'entraînant sur des cas d'entreprise chiffrés (budget, délais, ressources).\n\nSemaine 5 : méthodologie du mémoire et de la soutenance. Revoir la structure attendue d'un mémoire, les règles\nde citation et de sourcing, et préparer un plan de soutenance de dix minutes avec les réponses aux questions les\nplus prévisibles du jury.\n\nSemaine 6 : entraînement transversal. Traiter au moins deux sujets type combinant les trois matières, relire ses\nfiches de synthèse, et faire une répétition complète de sa soutenance si la date approche, en minutant\nprécisément son intervention.\n\n## Points clés à retenir\n\n- Le Master 2 évalue à la fois la maîtrise de matières avancées et la capacité à produire et défendre un travail\n  personnel structuré, mémoire ou projet tutoré, lors d'une soutenance.\n- Trois matières avancées structurent l'année : intelligence artificielle et data science, gouvernance IT et\n  gestion de projets informatiques, méthodologie du mémoire et de la soutenance.\n- Une organisation par jalons intermédiaires, plutôt qu'un travail de dernière minute, est indispensable pour\n  mener de front examens et mémoire.\n- S'entraîner à l'oral de soutenance bien avant la date réelle développe une compétence distincte de la\n  maîtrise du contenu.\n\n## Exercices pratiques\n\n1. Expliquez en quelques lignes ce qui change entre l'évaluation du Master 1 et celle du Master 2 en\n   Informatique.\n2. Citez les trois matières avancées de ce programme de Master 2 et donnez, pour chacune, un exemple concret\n   d'application professionnelle.\n3. Pourquoi est-il préférable de fixer des jalons intermédiaires pour la rédaction d'un mémoire plutôt que\n   d'attendre la dernière semaine avant la date de remise ?\n4. Proposez deux questions qu'un jury pourrait poser à la fin d'une soutenance de mémoire ou de projet tutoré en\n   Informatique, et expliquez pourquoi un étudiant doit s'y préparer à l'avance.\n5. Construisez votre propre planning de révision sur six semaines en reprenant la structure proposée.\n6. En quoi la préparation d'une soutenance orale est-elle une compétence distincte de la simple maîtrise du\n   contenu du mémoire ?\n7. Pourquoi peut-il être utile de relier les révisions d'examen (par exemple en data science) au travail de\n   mémoire plutôt que de les traiter comme deux activités totalement séparées ?\n\n## Corrigé\n\n1. En Master 1, l'évaluation porte sur la maîtrise de matières avancées appliquées à des cas ouverts. En Master\n   2, elle ajoute la production et la défense d'un travail personnel long (mémoire ou projet tutoré) devant un\n   jury, ce qui exige une autonomie et une organisation plus poussées sur plusieurs mois.\n2. Intelligence artificielle et data science : par exemple, analyser les ventes passées d'une entreprise pour\n   anticiper la demande future. Gouvernance IT et gestion de projets informatiques : par exemple, organiser la\n   maintenance d'un parc applicatif selon des processus clairs, ou piloter un projet de refonte d'un système\n   avec un budget et un délai fixés. Méthodologie du mémoire : par exemple, structurer un mémoire sur l'adoption\n   du paiement mobile dans une région donnée, avec une problématique claire et une méthode de collecte de\n   données adaptée.\n3. Parce qu'un mémoire est un travail long qui ne se rattrape pas en quelques jours ; des jalons intermédiaires\n   permettent de détecter tôt un retard ou un problème de méthode, et de corriger le cap avant qu'il ne soit\n   trop tard.\n4. Par exemple : \"Pourquoi avez-vous choisi cette méthode plutôt qu'une autre ?\" et \"Quelles sont les limites de\n   votre travail ?\" ; un étudiant doit s'y préparer car ces questions demandent une réflexion critique sur son\n   propre travail, qui ne s'improvise pas facilement devant un jury.\n5. Réponse libre : un planning concret sur six semaines, respectant la progression proposée (intelligence\n   artificielle et data science, puis gouvernance IT et gestion de projets, puis méthodologie et soutenance,\n   puis entraînement transversal).\n6. Parce qu'elle mobilise des compétences de communication orale, de gestion du temps de parole et de gestion du\n   stress, qui sont indépendantes de la qualité du contenu écrit ; un mémoire excellent mal défendu à l'oral\n   peut donner une impression moins convaincante qu'il ne le devrait.\n7. Parce que cela renforce les deux apprentissages à la fois : appliquer une notion de cours à son propre projet\n   aide à mieux la comprendre pour l'examen, et enrichit en même temps le mémoire d'une analyse plus solide,\n   plutôt que de traiter les deux comme des charges de travail totalement indépendantes.\n"
+   },
+   {
+    "title": "Intelligence artificielle et data science : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Gouvernance IT et gestion de projets informatiques : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Méthodologie du mémoire de recherche ou du projet tutoré et de la soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 Informatique (corrigé détaillé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Cours vidéo (1h30) : Intelligence artificielle et data science",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Gouvernance IT et gestion de projets informatiques",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire et de la soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier méthodologie — préparer et réussir sa soutenance",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "mas-cg-m1",
   "level": "Master 1",
   "subject": "Contrôle de gestion",
@@ -4909,6 +4975,72 @@ window.ABC_CATALOG = [
    },
    {
     "title": "Cours vidéo (1h30) : Atelier cas pratique transversal — branding, export et distribution",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "mas-mkt-m2",
+  "level": "Master 2",
+  "subject": "Marketing et commerce",
+  "module": null,
+  "title": "Marketing et commerce Master 2 : réussir ses examens",
+  "description": "Préparation aux examens de Master 2 en Marketing et commerce : marketing digital avancé et data marketing, innovation et développement de nouveaux produits, méthodologie du mémoire professionnel et soutenance. Études de cas d'entreprises sénégalaises fictives, calculs chiffrés vérifiés, sujet type, atelier de préparation à la soutenance et quatre cours vidéo de 1h30. Public : étudiants de Master 2 ayant validé un Master 1 en marketing et commerce.",
+  "sort": 782,
+  "lessons": [
+   {
+    "title": "Réussir ses examens de Master 2 en Marketing et commerce",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 40,
+    "content": "Le Master 2 en Marketing et commerce est l'année de la spécialisation la plus poussée et de la\nprofessionnalisation finale. Contrairement au M1, où l'on consolide encore des méthodes, le M2 vous prépare\ndirectement à l'emploi ou à la poursuite en doctorat : les examens y combinent des cas d'entreprise à très forte\ncomposante data et digitale, de l'innovation produit, et surtout la soutenance d'un mémoire professionnel, souvent\nadossé à un stage ou une mission en entreprise.\n\n## Les trois matières avancées de l'année\n\nCe cours d'examen couvre trois matières clés du M2 Marketing et commerce :\n\n- Le marketing digital avancé et le data marketing : indicateurs de performance (CAC, LTV, ROAS), principes du\n  marketing automation.\n- L'innovation et le développement de nouveaux produits : processus structuré d'innovation, test de concept,\n  seuil de rentabilité d'un lancement.\n- La méthodologie du mémoire professionnel et la soutenance : structuration d'un mémoire, préparation argumentée\n  de la soutenance orale devant un jury.\n\nCes trois matières ne sont pas indépendantes dans la réalité professionnelle : un mémoire de M2 porte souvent sur\nune problématique digitale ou d'innovation vécue en entreprise. Mais pour les examens, chacune est évaluée\nséparément par une épreuve dédiée, avant une épreuve de synthèse multi-matières.\n\n## La spécificité du mémoire professionnel en M2\n\nLe mémoire professionnel de M2 diffère du mémoire de recherche académique par son objectif : il s'agit de traiter\nune problématique réelle rencontrée en stage ou en mission, à l'aide des concepts et méthodes du marketing, pour en\ntirer des recommandations opérationnelles pour l'entreprise d'accueil. Il comprend classiquement une introduction\nposant la problématique, une revue de littérature courte situant deux ou trois concepts mobilisés, une partie\nméthodologique expliquant comment les données ont été recueillies (entretiens, données internes, observation), une\npartie résultats et analyse, et une partie recommandations opérationnelles. La soutenance orale, devant un jury\ncomposé d'enseignants et souvent d'un professionnel, dure généralement entre trente et quarante-cinq minutes :\nune présentation de quinze à vingt minutes suivie d'un échange de questions.\n\n## La méthode de travail attendue en M2\n\n- L'étude de cas digitale et chiffrée : en M2, les cas intègrent des données d'analytics et de performance\n  (nombre de clics, taux de conversion, coût par acquisition) que vous devez savoir transformer en indicateurs de\n  décision (rentabilité d'une campagne, valeur d'un client dans le temps), pas seulement décrire.\n- Le processus d'innovation structuré : face à un cas de nouveau produit, suivez toujours les étapes du processus\n  (idéation, filtrage, test de concept, analyse économique, développement, test, lancement) plutôt que de sauter\n  directement à une recommandation de lancement non argumentée par les étapes précédentes.\n- La rigueur méthodologique du mémoire : toute affirmation dans un mémoire doit être reliée soit à une donnée\n  recueillie sur le terrain, soit à un concept ou un auteur de référence correctement cité, jamais à une impression\n  personnelle non étayée. N'inventez jamais une citation ou une référence précise que vous ne maîtrisez pas : il\n  vaut mieux évoquer sobrement un courant théorique (par exemple le débat sur la standardisation/adaptation) sans\n  attribution précise que de citer un auteur et une date inexacts.\n\n## Plan de révision sur six semaines\n\n- Semaines 1 et 2 : marketing digital avancé et data marketing (leçon 2), avec les formules de CAC, LTV et ROAS à\n  maîtriser par cœur et à savoir appliquer sur un cas chiffré.\n- Semaines 3 et 4 : innovation et développement de nouveaux produits (leçon 3), avec le processus structuré en\n  étapes et le calcul de seuil de rentabilité d'un lancement.\n- Semaine 5 : méthodologie du mémoire professionnel et soutenance (leçon 4), en retravaillant votre propre plan de\n  mémoire si vous êtes déjà en train de le rédiger, à partir de la structure type présentée.\n- Semaine 6 : sujet type d'examen (leçon 5) en conditions chronométrées, puis les quatre cours vidéo d'1h30,\n  en portant une attention particulière au dernier, consacré à l'atelier de préparation à la soutenance.\n\n## Points de vigilance pour l'examen\n\n- Un indicateur digital calculé sans comparaison à un repère ou à un objectif n'a pas de valeur décisionnelle :\n  toujours commenter si le chiffre obtenu est satisfaisant ou non pour l'entreprise du cas.\n- Un test de concept positif ne garantit jamais mécaniquement la réussite commerciale : il faut toujours\n  confronter l'intention d'achat déclarée à une analyse économique de rentabilité du lancement envisagé.\n- Pour la soutenance, la forme compte autant que le fond : un jury valorise une présentation structurée, un\n  minutage respecté, et une capacité à répondre avec nuance plutôt qu'avec de l'improvisation non maîtrisée aux\n  questions posées.\n\n## Exercices pratiques\n\n1. Listez les trois matières avancées de ce cours de M2 et expliquez en une phrase pourquoi chacune prolonge,\n   sans la répéter, une matière vue en Licence de Marketing et commerce.\n2. Pourquoi le mémoire professionnel de M2 se distingue-t-il d'un mémoire de recherche académique classique ?\n3. Construisez votre propre planning de révision sur six semaines en reprenant la trame proposée.\n4. Expliquez pourquoi un test de concept positif ne garantit pas, seul, la réussite commerciale d'un nouveau\n   produit.\n\n## Corrigé\n\n1. Marketing digital avancé et data marketing : prolonge le marketing digital de base vu en Licence en introduisant\n   des indicateurs de performance avancés (CAC, LTV, ROAS) et les principes du marketing automation, non traités\n   en Licence. Innovation et développement de nouveaux produits : prolonge le marketing opérationnel de Licence en\n   se concentrant sur le processus structuré de création d'une offre nouvelle, absent du programme de Licence.\n   Méthodologie du mémoire professionnel et soutenance : matière entièrement nouvelle en M2, propre à la\n   professionnalisation de fin de cursus.\n2. Il se distingue parce qu'il part d'une problématique réelle rencontrée en stage ou en mission, et vise des\n   recommandations opérationnelles directement utilisables par l'entreprise d'accueil, plutôt qu'une contribution\n   théorique généralisable comme dans un mémoire de recherche académique.\n3. Réponse libre : l'essentiel est de retrouver les six blocs proposés (deux semaines de digital et data marketing,\n   deux semaines d'innovation produit, une semaine de méthodologie du mémoire, une semaine de sujet type et de\n   révision vidéo), avec des jours et créneaux réalistes.\n4. Parce qu'une intention d'achat déclarée dans une enquête surestime presque toujours le comportement d'achat\n   réel : un consommateur peut dire qu'il achèterait un produit sans le faire réellement une fois le produit\n   disponible. Il faut donc toujours pondérer cette intention déclarée par un facteur de prudence avant de\n   construire une prévision de volume, puis vérifier que le volume ainsi estimé permet d'atteindre le seuil de\n   rentabilité du lancement envisagé."
+   },
+   {
+    "title": "Marketing digital avancé et data marketing : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Innovation et développement de nouveaux produits : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Méthodologie du mémoire professionnel et soutenance : l'essentiel pour l'examen",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Sujet type d'examen de Master 2 en Marketing et commerce (corrigé)",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : Marketing digital avancé et data marketing",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Innovation et développement de nouveaux produits",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Méthodologie du mémoire professionnel",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : Atelier — préparer sa soutenance de mémoire",
     "kind": "video",
     "is_free": false,
     "duration_min": 90

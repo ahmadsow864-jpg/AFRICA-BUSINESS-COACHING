@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 11/16). À exécuter après seed.sql.
+-- Cours (partie 11/17). À exécuter après seed.sql.
 
 -- Cours : Économie Licence 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)

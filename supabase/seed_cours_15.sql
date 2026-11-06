@@ -1,5 +1,624 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 15/16). À exécuter après seed.sql.
+-- Cours (partie 15/17). À exécuter après seed.sql.
+
+-- Cours : Contrôle de gestion Master 1 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'mas-cg-m1', (select id from public.levels where name = 'Master 1'), null, 'Contrôle de gestion', 'Contrôle de gestion Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en Contrôle de gestion : pilotage de la performance globale (RSE, triple bottom line), gestion par centres de responsabilité et prix de cession interne avancé, systèmes d''information décisionnels (ERP, reporting consolidé). Études de cas d''entreprise sénégalaises et africaines fictives, calculs vérifiés, sujet type d''examen corrigé et quatre cours vidéo de 1h30.', true, 731
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Master 1 en Contrôle de gestion', 'Le Master 1 en Contrôle de gestion marque une rupture nette avec la Licence. Les examens ne se limitent plus au calcul correct d''un coût ou d''un écart : ils évaluent votre capacité à analyser une situation de gestion complexe, à articuler plusieurs outils entre eux, à argumenter un choix de méthode et à vous situer dans la stratégie globale de l''entreprise ou du groupe. Le correcteur attend un raisonnement de contrôleur de gestion senior, pas seulement un technicien du calcul.
+
+## Ce qui change par rapport à la Licence
+
+En Licence, vous avez appris à calculer : coûts complets, coûts partiels, écarts budgétaires, coûts ABC, indicateurs de tableau de bord. En Master 1, ces outils deviennent des briques que vous devez combiner pour répondre à des problématiques de pilotage : comment faire converger la performance économique, sociale et environnementale d''un groupe ? Comment fixer un prix de cession interne qui soit à la fois équitable entre filiales et cohérent avec la stratégie du groupe ? Comment un système d''information décisionnel fiabilise-t-il le reporting consolidé mensuel ?
+
+Les études de cas d''examen portent sur des groupes ou des entreprises de taille significative, souvent multi-activités ou multi-sites, confrontés à des arbitrages réels : investir ou non dans une nouvelle unité, déléguer ou centraliser une décision, choisir entre plusieurs scénarios de performance globale. Vous devez mobiliser une analyse critique : discuter les limites d''un indicateur, les biais d''une méthode de cession interne, les risques d''un système d''information mal paramétré.
+
+## Les trois matières avancées de l''année
+
+- Contrôle de gestion stratégique et pilotage de la performance globale : relier le contrôle de gestion à la stratégie de l''entreprise, intégrer la responsabilité sociétale des entreprises (RSE) et la logique de triple bottom line (performance économique, sociale, environnementale) dans les outils de pilotage.
+- Gestion de la performance par centres de responsabilité et prix de cession interne avancé : construire une organisation en centres de responsabilité (coût, profit, investissement), évaluer leur performance par le ROI et l''EVA, et maîtriser les méthodes avancées de fixation des prix de cession interne entre filiales d''un même groupe.
+- Systèmes d''information décisionnels (ERP, reporting consolidé) : comprendre le rôle d''un ERP et des outils de Business Intelligence dans la production d''un reporting de gestion fiable, rapide et consolidé à l''échelle d''un groupe.
+
+## Méthode de travail au niveau Master
+
+Le travail attendu change de nature. Une étude de cas complexe ne se résout pas en appliquant une formule : il faut d''abord qualifier le problème (quel est l''enjeu de pilotage réel ?), choisir les outils pertinents parmi ceux que vous connaissez, les mettre en œuvre avec rigueur numérique, puis discuter les résultats (que signifient-ils pour le dirigeant ? quelles sont les limites de l''analyse ?). Beaucoup d''étudiants perdent des points non pas sur le calcul, mais sur l''absence de discussion critique en fin de réponse.
+
+La revue de littérature courte devient un réflexe : quand une question porte sur un concept (RSE, EVA, prix de cession interne), rappelez en deux ou trois phrases le cadre théorique avant de l''appliquer au cas. Cela montre au correcteur que vous maîtrisez le concept et pas seulement la formule.
+
+Enfin, les cas d''entreprise de Master mêlent souvent plusieurs filiales ou plusieurs centres de responsabilité : prenez l''habitude de schématiser l''organisation (qui vend à qui, qui décide de quoi) avant de calculer, pour ne pas vous perdre dans les flux internes.
+
+## Plan de révision sur 6 semaines
+
+- Semaine 1 : contrôle de gestion stratégique, RSE et triple bottom line ; relire les notions de Licence sur le tableau de bord prospectif pour bien voir la progression.
+- Semaine 2 : exercices chiffrés sur le tableau de bord RSE et la construction d''indicateurs de performance globale pondérés.
+- Semaine 3 : centres de responsabilité, ROI, EVA ; cas d''entreprise sur l''évaluation de filiales.
+- Semaine 4 : prix de cession interne avancé (méthodes du coût, du marché, négociée) ; exercices sur l''impact de chaque méthode sur la marge des filiales et sur le résultat consolidé.
+- Semaine 5 : systèmes d''information décisionnels, ERP, reporting consolidé ; qualité des données et délais de clôture.
+- Semaine 6 : sujet type complet en conditions chronométrées, puis révision ciblée des points faibles identifiés.
+
+## Points clés à retenir
+
+- Le Master 1 exige d''articuler plusieurs outils de contrôle de gestion pour répondre à une problématique de pilotage, pas seulement de calculer juste.
+- La RSE et la triple bottom line transforment le tableau de bord classique en un outil de pilotage de la performance globale.
+- Le prix de cession interne n''a pas d''effet sur le résultat consolidé du groupe, mais il redistribue la performance entre filiales : c''est un enjeu d''évaluation et de motivation des responsables.
+- La qualité et la rapidité du reporting consolidé dépendent directement de la fiabilité du système d''information décisionnel.
+
+## Exercices pratiques
+
+1. Expliquez en cinq lignes en quoi la logique de triple bottom line modifie la définition même de la performance d''une entreprise par rapport à une approche strictement financière.
+2. Citez trois méthodes de fixation d''un prix de cession interne et donnez, pour chacune, un avantage et une limite.
+3. Un centre de profit dégage un résultat d''exploitation de 245 100 000 FCFA avec des capitaux investis de 1 200 000 000 FCFA. Calculez son ROI.
+4. Pourquoi un prix de cession interne différent ne change-t-il pas le résultat consolidé du groupe, alors qu''il change le résultat de chaque filiale prise séparément ?
+5. Citez deux risques liés à un ERP mal paramétré pour la production d''un reporting consolidé mensuel.
+6. Un groupe veut mettre en place un tableau de bord RSE. Proposez un indicateur simple pour chacun des trois axes (économique, social, environnemental).
+
+## Corrigé
+
+1. La triple bottom line (« triple résultat ») affirme qu''une entreprise performante doit créer de la valeur sur trois dimensions simultanées : économique (rentabilité, création de valeur financière), sociale (conditions de travail, emploi local, formation) et environnementale (empreinte carbone, gestion des ressources, déchets). Une entreprise très rentable financièrement mais dégradant fortement son environnement ou ses conditions sociales n''est plus considérée comme pleinement performante. Le contrôle de gestion doit donc produire des indicateurs sur les trois axes et pas seulement des indicateurs financiers.
+2. Méthode du coût complet majoré d''une marge : avantage, simple à mettre en œuvre et traçable ; limite, elle peut intégrer l''inefficience du centre vendeur dans le prix. Méthode du prix du marché ajusté des économies internes : avantage, elle rapproche le prix d''une référence externe objective ; limite, elle suppose l''existence d''un marché externe comparable, ce qui n''est pas toujours le cas. Méthode du prix négocié entre responsables : avantage, elle respecte l''autonomie des centres de responsabilité ; limite, elle peut être longue à négocier et source de conflits internes.
+3. ROI = résultat d''exploitation / capitaux investis = 245 100 000 / 1 200 000 000 = 0,2042, soit environ 20,4 %.
+4. Le prix de cession interne est une opération intragroupe : ce que le centre vendeur gagne en plus, le centre acheteur le paie en plus, et inversement. Au niveau consolidé, cette opération s''élimine : seule compte la marge réalisée avec un client final extérieur au groupe. Le prix de cession interne est donc un outil de répartition interne de la performance, pas un levier de création de valeur pour le groupe dans son ensemble.
+5. Un ERP mal paramétré peut produire des doublons ou des pertes de données lors de la consolidation de plusieurs filiales (incohérence des référentiels comptables), et peut allonger fortement les délais de clôture si les interfaces entre modules ne sont pas fiabilisées, retardant le reporting de gestion au moment où les décideurs en ont le plus besoin.
+6. Exemples possibles : axe économique, taux de marge opérationnelle ou ROI ; axe social, taux de formation du personnel ou taux d''accidents du travail ; axe environnemental, volume de déchets rapporté à la production ou consommation d''énergie par unité produite. D''autres indicateurs pertinents et correctement justifiés sont acceptés.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en Contrôle de gestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Contrôle de gestion stratégique et pilotage de la performance globale (RSE, triple bottom line) : l''essentiel pour l''examen', 'Le contrôle de gestion stratégique prolonge le contrôle de gestion opérationnel que vous avez étudié en Licence : il ne s''agit plus seulement de maîtriser des coûts ou des écarts à court terme, mais de piloter la mise en œuvre de la stratégie de l''entreprise sur le moyen et le long terme, en intégrant des dimensions qui dépassent la seule performance financière.
+
+## De la performance financière à la performance globale
+
+Pendant longtemps, le contrôle de gestion s''est concentré sur des indicateurs financiers : chiffre d''affaires, marge, résultat, rentabilité des capitaux investis. Cette approche reste nécessaire mais elle est jugée insuffisante, pour trois raisons : elle ne capture pas la création de valeur future (innovation, satisfaction client), ce que le tableau de bord prospectif étudié en Licence corrigeait déjà en ajoutant les axes clients, processus internes et apprentissage ; elle ignore les impacts sociaux (conditions de travail, emploi local) ; et elle ignore les impacts environnementaux (ressources, émissions, déchets), qui deviennent des risques financiers directs : réglementation plus stricte, coût de l''énergie, exigences des bailleurs de fonds et des clients internationaux.
+
+La notion de performance globale réunit ces trois dimensions, en s''appuyant sur le concept de triple bottom line : une organisation durable doit produire simultanément un résultat économique (profit), un résultat social (people) et un résultat environnemental (planet). Le contrôle de gestion stratégique construit les outils qui mesurent, suivent et pilotent ces trois résultats en cohérence avec la stratégie.
+
+## La responsabilité sociétale des entreprises (RSE) comme cadre de pilotage
+
+La RSE désigne l''intégration volontaire, par l''entreprise, de préoccupations sociales et environnementales dans ses activités et ses relations avec ses parties prenantes (salariés, clients, fournisseurs, communautés locales, État). Pour le contrôleur de gestion, la RSE n''est pas qu''une politique de communication : c''est un domaine à piloter avec les mêmes exigences de rigueur que le contrôle budgétaire, avec des indicateurs mesurables et suivis dans le temps (taux de formation, taux de fréquence des accidents du travail, part des achats auprès de fournisseurs locaux, consommation d''eau ou d''énergie par unité produite, volume de déchets valorisés).
+
+Ces indicateurs doivent être intégrés au tableau de bord courant au même titre que les indicateurs financiers, avec des cibles et des seuils d''alerte. Un tableau de bord qui isole la RSE dans un rapport annuel séparé ne remplit pas sa fonction de pilotage stratégique.
+
+## Construire un indice de performance globale pondéré
+
+Une pratique courante en contrôle de gestion stratégique consiste à agréger plusieurs indicateurs, parfois hétérogènes, en un indice de synthèse pondéré, pour faciliter la communication avec la direction générale et le conseil d''administration.
+
+Prenons l''exemple du Groupe Teranga Agro-Industries, un groupe sénégalais fictif actif dans la transformation et la distribution de produits céréaliers. Sa direction générale souhaite disposer d''un indice de performance globale sur 20, construit à partir de trois scores (chacun noté sur 20 par un comité de pilotage, sur la base d''indicateurs objectifs) :
+
+- Axe économique (poids 40 %) : score de 16/20, fondé sur la marge opérationnelle et le ROI des filiales.
+- Axe social (poids 30 %) : score de 13/20, fondé sur le taux de formation, le taux d''accidents du travail et le taux de rétention du personnel.
+- Axe environnemental (poids 30 %) : score de 11/20, fondé sur la consommation d''énergie par tonne produite et le taux de déchets valorisés.
+
+L''indice de performance globale se calcule ainsi :
+Indice = (16 × 0,40) + (13 × 0,30) + (11 × 0,30) = 6,4 + 3,9 + 3,3 = 13,6/20.
+
+Ce résultat de 13,6/20 montre une performance économique solide, mais un retard net sur l''axe environnemental, qui tire l''indice global vers le bas. Le rôle du contrôleur de gestion n''est pas de s''arrêter au chiffre : il doit analyser la composition de l''indice pour identifier le levier d''action prioritaire. Ici, un plan d''action ciblé sur la réduction de la consommation d''énergie ou l''amélioration du taux de valorisation des déchets aurait un effet plus rapide sur l''indice global qu''un effort supplémentaire sur l''axe économique, déjà bien noté.
+
+## Les limites de la pondération et la vigilance du contrôleur de gestion
+
+La construction d''un indice pondéré pose deux problèmes méthodologiques fréquemment testés à l''examen. Premièrement, le choix des poids reste en partie arbitraire et reflète les priorités de la direction : un changement de pondération peut faire basculer l''appréciation globale sans que rien n''ait changé dans la réalité de l''entreprise. Deuxièmement, agréger des scores en un seul chiffre peut masquer une situation critique sur un sous-indicateur isolé (par exemple un taux d''accidents du travail en forte hausse) noyé dans une moyenne globalement satisfaisante. Un bon dispositif de pilotage conserve donc toujours, en complément de l''indice de synthèse, le détail des indicateurs avec leurs seuils d''alerte propres.
+
+## Le contrôle de gestion stratégique face à la décision d''investissement durable
+
+Le contrôle de gestion stratégique intervient aussi dans l''évaluation des choix d''investissement à dimension durable : un investissement dans une technologie moins polluante mais plus coûteuse à court terme doit être évalué non seulement sur sa rentabilité financière, mais aussi sur sa contribution aux objectifs RSE et sur les risques évités (réglementaires, réputationnels, d''approvisionnement). Cela conduit à des méthodes d''évaluation multicritères, où la rentabilité financière reste nécessaire mais n''est plus l''unique critère de décision.
+
+## Points clés à retenir
+
+- La performance globale réunit les dimensions économique, sociale et environnementale (triple bottom line) et dépasse la seule performance financière.
+- La RSE doit être pilotée avec des indicateurs mesurables, intégrés au tableau de bord courant, et non reléguée à un rapport annuel isolé.
+- Un indice de performance globale pondéré facilite la communication avec la direction, mais ses limites (arbitraire des poids, effet de masquage) doivent être connues et discutées.
+- Les décisions d''investissement durable doivent être évaluées avec des critères multiples, pas seulement financiers.
+
+## Exercices pratiques
+
+1. Définissez la notion de triple bottom line et expliquez pourquoi elle élargit la définition traditionnelle de la performance d''entreprise.
+2. Le comité de pilotage du Groupe Teranga Agro-Industries révise ses pondérations : axe économique 35 %, axe social 25 %, axe environnemental 40 %, avec les mêmes scores (16, 13, 11). Recalculez l''indice de performance globale.
+3. Comparez le résultat obtenu à la question 2 avec l''indice initial de 13,6/20 et commentez l''effet du changement de pondération sur l''appréciation de la performance du groupe.
+4. Proposez deux indicateurs RSE supplémentaires pertinents pour une entreprise agro-industrielle sénégalaise, en justifiant votre choix.
+5. Expliquez pourquoi un indice de synthèse pondéré peut masquer une dégradation grave sur un indicateur isolé, et proposez une solution de pilotage pour éviter ce risque.
+6. Cas pratique complet : la filiale Teranga Distribution envisage d''investir dans une flotte de camions plus propres, pour un surcoût de 120 000 000 FCFA par rapport à une flotte classique, avec une économie de carburant estimée à 18 000 000 FCFA par an sur 10 ans, et une réduction estimée des émissions de CO2 de 25 % sur le périmètre logistique. En tant que contrôleur de gestion stratégique, rédigez en huit à dix lignes une recommandation à la direction générale, en mobilisant à la fois un critère financier simple et un critère de performance globale.
+
+## Corrigé
+
+1. La triple bottom line postule qu''une organisation durablement performante doit produire simultanément trois résultats : un résultat économique (profit, création de valeur financière), un résultat social (conditions de travail, emploi, formation, équité) et un résultat environnemental (gestion des ressources, émissions, déchets). Elle élargit la définition traditionnelle de la performance, centrée sur le seul résultat financier, en intégrant des impacts qui deviennent progressivement des facteurs de risque et de création de valeur à part entière (réglementation, réputation, accès au financement).
+2. Nouvel indice = (16 × 0,35) + (13 × 0,25) + (11 × 0,40) = 5,6 + 3,25 + 4,4 = 13,25/20.
+3. L''indice passe de 13,6/20 à 13,25/20, soit une baisse de 0,35 point, alors qu''aucun des trois scores sous-jacents n''a changé. Cette baisse s''explique uniquement par le renforcement du poids de l''axe environnemental (le plus faible score, 11/20), au détriment de l''axe économique (le plus fort score, 16/20). Cela illustre la limite méthodologique de la pondération : le choix des poids, qui relève d''une décision de la direction, influence directement le résultat affiché, indépendamment de toute évolution réelle de la performance de l''entreprise.
+4. Exemples acceptés : le taux de fournisseurs locaux dans les achats (indicateur social et économique, pertinent pour une agro-industrie qui structure une filière locale) ; le taux de valorisation ou de recyclage des sous-produits agricoles (indicateur environnemental directement lié à l''activité de transformation de céréales). D''autres indicateurs cohérents avec le secteur et correctement justifiés sont acceptés.
+5. Un indice pondéré additionne des scores qui peuvent évoluer en sens contraire : une forte amélioration sur l''axe économique peut compenser statistiquement une dégradation sévère sur un indicateur social isolé (par exemple une hausse du taux d''accidents du travail), sans que l''indice global ne baisse de façon visible. La solution de pilotage consiste à conserver, en parallèle de l''indice de synthèse, un tableau de bord détaillé par indicateur avec des seuils d''alerte individuels, de sorte qu''une dégradation critique sur un seul indicateur déclenche une alerte même si l''indice global reste satisfaisant.
+6. Sur le plan financier, l''investissement dégage une économie de carburant de 18 000 000 FCFA par an, soit 180 000 000 FCFA sur 10 ans, supérieure au surcoût initial de 120 000 000 FCFA : l''investissement est donc rentable en valeur brute non actualisée, et le serait probablement aussi en valeur actualisée compte tenu de l''écart important entre le gain cumulé et le surcoût. Sur le plan de la performance globale, la réduction de 25 % des émissions de CO2 sur le périmètre logistique améliore directement le score de l''axe environnemental du tableau de bord RSE du groupe, et réduit un risque réglementaire et réputationnel croissant. La recommandation est donc favorable à l''investissement, en soulignant qu''il combine un retour financier positif et une contribution mesurable à la performance globale du groupe, ce qui renforce la cohérence stratégique de la décision.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Contrôle de gestion stratégique et pilotage de la performance globale (RSE, triple bottom line) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Gestion de la performance par centres de responsabilité et prix de cession interne avancé : l''essentiel pour l''examen', 'La gestion de la performance par centres de responsabilité prolonge et approfondit ce que vous avez vu en Licence sur les tableaux de bord et le prix de cession interne appliqué aux PME et au secteur public. Au niveau Master, l''enjeu est de construire une organisation complète en centres de responsabilité, d''évaluer rigoureusement leur performance, et de maîtriser les méthodes avancées de prix de cession interne dans un groupe à plusieurs filiales.
+
+## Les quatre types de centres de responsabilité
+
+Un centre de responsabilité est une unité de l''organisation (direction, filiale, usine, service) dont le responsable dispose d''une autonomie de décision sur des ressources, et qui est évalué sur des indicateurs correspondant exactement à son périmètre de décision. On distingue classiquement quatre types : le centre de coût, responsable de la maîtrise de ses charges pour un niveau d''activité donné, sans maîtrise directe sur le chiffre d''affaires (exemple : un atelier de production) ; le centre de recettes, responsable du chiffre d''affaires généré, sans maîtrise directe sur les coûts (exemple : une force de vente) ; le centre de profit, responsable à la fois des coûts et des recettes de son périmètre, et donc de son résultat (exemple : une filiale commerciale) ; et le centre d''investissement, dont le responsable décide aussi des investissements et des capitaux engagés, et doit être évalué sur la rentabilité de ces capitaux, pas seulement sur le résultat en valeur absolue.
+
+Le principe de contrôlabilité est essentiel : un responsable ne doit être évalué que sur ce qu''il contrôle réellement. Évaluer un directeur d''usine (centre de coût) sur le chiffre d''affaires de l''entreprise viole ce principe et produit des indicateurs de pilotage inopérants, voire démotivants.
+
+## Évaluer un centre d''investissement : le ROI et ses limites
+
+Le retour sur investissement (ROI, Return on Investment) est l''indicateur le plus utilisé pour évaluer un centre d''investissement : ROI = Résultat d''exploitation du centre / Capitaux investis dans le centre. Il permet de comparer des centres de taille différente, puisqu''il s''exprime en pourcentage. Mais il présente une limite majeure : un responsable évalué sur son ROI peut être incité à refuser un projet rentable pour le groupe (rentabilité supérieure au coût du capital) mais qui ferait baisser le ROI moyen actuel de son centre. C''est le classique problème de sous-investissement induit par le pilotage au ROI.
+
+## L''EVA, un indicateur complémentaire
+
+La valeur ajoutée économique (EVA, Economic Value Added) corrige cette limite en mesurant la création de valeur réelle, au-delà de la simple rémunération du capital au coût exigé par les actionnaires ou le groupe : EVA = Résultat opérationnel net après impôt (NOPAT) − (Capitaux investis × Coût moyen pondéré du capital, CMPC). Une EVA positive signifie que le centre crée de la valeur au-delà du coût de son financement ; une EVA négative signifie qu''il détruit de la valeur, même si son résultat comptable reste positif. Contrairement au ROI, l''EVA n''incite pas à refuser un projet rentable qui dépasse le coût du capital, même s''il fait baisser le ROI moyen du centre.
+
+Illustrons avec Teranga Céréales, filiale du Groupe Teranga Agro-Industries, centre d''investissement avec un résultat d''exploitation total de 245 100 000 FCFA pour des capitaux investis de 1 200 000 000 FCFA, soit un ROI de 20,4 %. Avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %, le NOPAT est de 245 100 000 × 0,70 = 171 570 000 FCFA, et la charge de capital de 1 200 000 000 × 0,12 = 144 000 000 FCFA. L''EVA est donc de 27 570 000 FCFA : la filiale crée de la valeur, mais bien moins que ne le suggère son ROI apparent.
+
+## Les méthodes avancées de prix de cession interne
+
+Le prix de cession interne (PCI) est le prix auquel un centre vend un bien ou un service à un autre centre du même groupe. Il mesure la performance de chaque centre séparément et oriente les décisions des responsables (achat interne ou externe). Trois méthodes principales existent : la méthode du coût (coût complet ou marginal, éventuellement majoré d''une marge négociée) ; la méthode du prix de marché, qui s''appuie sur un bien comparable échangé entre entreprises indépendantes, ajusté des économies internes (coûts commerciaux évités, par exemple) ; et la méthode du prix négocié, qui laisse les deux responsables fixer un prix d''accord commun dans une fourchette encadrée par la direction générale, ce qui respecte leur autonomie mais demande un arbitrage en cas de désaccord.
+
+Reprenons Teranga Céréales, qui cède du mil transformé à Teranga Distribution. Son coût complet unitaire est de 225 000 FCFA la tonne (coût variable 180 000 FCFA plus charges fixes unitaires de 45 000 FCFA, pour une activité normale de 10 000 tonnes). Le prix de marché d''un produit comparable est de 260 000 FCFA la tonne. Méthode du coût, marge négociée de 10 % : 225 000 × 1,10 = 247 500 FCFA. Méthode du marché, économie commerciale évitée de 8 % : 260 000 × 0,92 = 239 200 FCFA. Méthode du prix négocié, moyenne des deux bornes : (247 500 + 239 200) / 2 = 243 350 FCFA.
+
+## L''effet du prix de cession interne sur la performance des filiales
+
+Sur un volume cédé de 6 000 tonnes, avec un coût variable de distribution de 15 000 FCFA la tonne chez Teranga Distribution et un prix de revente externe de 300 000 FCFA la tonne, les trois méthodes donnent des marges différentes par filiale, mais une marge groupe identique : au prix négocié de 243 350 FCFA, Teranga Céréales dégage 110 100 000 FCFA et Teranga Distribution 249 900 000 FCFA, soit 360 000 000 FCFA au total. À la méthode du coût (247 500 FCFA), Teranga Céréales gagnerait 135 000 000 FCFA et Teranga Distribution 225 000 000 FCFA, toujours 360 000 000 FCFA au total. Le choix de méthode déplace la performance affichée entre filiales sans jamais modifier la création de valeur du groupe : la direction générale doit donc l''arbitrer avec soin, car il affecte l''évaluation et la rémunération variable des responsables.
+
+## Points clés à retenir
+
+- Le principe de contrôlabilité impose d''évaluer un responsable uniquement sur ce qu''il contrôle réellement.
+- Le ROI peut inciter à refuser des investissements pourtant rentables pour le groupe ; l''EVA corrige ce biais en mesurant la création de valeur au-delà du coût du capital.
+- Les trois méthodes de prix de cession interne (coût, marché, négocié) produisent des prix différents et donc des performances différentes par filiale, sans jamais changer le résultat consolidé du groupe.
+- Le choix de la méthode de cession interne est un enjeu de gouvernance et de motivation, pas seulement un enjeu de calcul.
+
+## Exercices pratiques
+
+1. Expliquez le principe de contrôlabilité et donnez un exemple d''indicateur mal choisi qui le violerait.
+2. Teranga Distribution (centre d''investissement) dégage un résultat d''exploitation de 249 900 000 FCFA pour des capitaux investis de 800 000 000 FCFA. Calculez son ROI, puis son EVA avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %.
+3. Comparez les ROI de Teranga Céréales (20,4 %) et de Teranga Distribution calculé à la question 2. Cette comparaison suffit-elle à conclure sur la performance respective des deux centres pour le groupe ?
+4. Pourquoi un responsable de centre d''investissement évalué uniquement sur le ROI peut-il être incité à refuser un projet d''investissement rentable pour le groupe ?
+5. Expliquez pourquoi le choix entre méthode du coût et méthode du marché n''a aucun effet sur le résultat consolidé du groupe, mais un effet direct sur la rémunération variable de chaque responsable de filiale si celle-ci dépend du résultat de sa propre entité.
+6. Cas pratique : une troisième filiale, Teranga Export, pourrait acheter la même qualité de mil auprès d''un fournisseur étranger indépendant à 230 000 FCFA la tonne, mais la direction générale lui impose de s''approvisionner chez Teranga Céréales au prix négocié de 243 350 FCFA. En six à huit lignes, analysez la tension entre la performance affichée de Teranga Export et l''intérêt du groupe, et proposez un ajustement.
+
+## Corrigé
+
+1. Le principe de contrôlabilité impose d''évaluer un responsable uniquement sur les éléments qu''il maîtrise par ses décisions. Exemple de violation : évaluer le responsable d''un atelier de production (centre de coût) sur l''évolution du chiffre d''affaires, qui dépend de décisions commerciales qui ne relèvent pas de lui.
+2. ROI = 249 900 000 / 800 000 000 = 0,3124, soit 31,24 %. NOPAT = 249 900 000 × 0,70 = 174 930 000 FCFA. Charge de capital = 800 000 000 × 0,12 = 96 000 000 FCFA. EVA = 174 930 000 − 96 000 000 = 78 930 000 FCFA.
+3. Non : le ROI ne tient pas compte de la taille des capitaux investis. Teranga Céréales mobilise bien plus de capitaux (1 200 000 000 contre 800 000 000 FCFA) ; ici son EVA (27 570 000 FCFA) reste aussi inférieure à celle de Teranga Distribution (78 930 000 FCFA), mais ce ne serait pas systématique : un centre à fort ROI et faibles capitaux peut créer moins de valeur en montant absolu qu''un centre à ROI plus modeste mais à capitaux bien plus importants.
+4. Si le ROI moyen actuel d''un centre est de 20 %, un nouveau projet rentable à 15 %, pourtant supérieur au coût du capital de 12 %, ferait baisser son ROI moyen. Un responsable évalué sur ce ROI peut donc refuser ce projet, alors qu''il créerait de la valeur pour le groupe. L''EVA, qui compare la rentabilité au coût du capital plutôt qu''au ROI moyen du centre, évite ce biais.
+5. Le prix de cession interne est une transaction intragroupe : la marge gagnée en plus par le vendeur est exactement la marge perdue par l''acheteur, et leur somme reste inchangée. Le résultat consolidé est donc invariant. Mais si la rémunération de chaque responsable dépend du résultat de sa seule entité, le choix de méthode redistribue concrètement cette rémunération, ce qui explique les négociations entre centres de profit.
+6. Teranga Export paie 13 350 FCFA de plus par tonne en achetant en interne, ce qui dégrade sa marge sans que cela résulte d''une décision qu''elle contrôle : c''est une violation du principe de contrôlabilité. L''achat interne peut se justifier si Teranga Céréales a besoin de ce débouché, ou pour la fiabilité d''approvisionnement. Un ajustement raisonnable consiste à aligner la cession sur le prix de marché externe (230 000 FCFA), ou à évaluer Teranga Export sur un résultat retraité à ce prix.', 'texte', 45, false, 30
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion de la performance par centres de responsabilité et prix de cession interne avancé : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Systèmes d''information décisionnels (ERP, reporting consolidé) : l''essentiel pour l''examen', 'Un système d''information décisionnel (SID) est l''ensemble des outils, des bases de données et des processus qui permettent de collecter, structurer et restituer l''information de gestion nécessaire au pilotage de l''entreprise ou du groupe. Pour le contrôleur de gestion de Master, maîtriser le fonctionnement et les limites de ces systèmes est devenu aussi important que maîtriser les méthodes de calcul elles-mêmes : un indicateur parfaitement construit sur le plan théorique ne vaut rien s''il repose sur des données fausses, incomplètes ou produites trop tard.
+
+## Le rôle de l''ERP dans la chaîne d''information de gestion
+
+Un ERP (Enterprise Resource Planning, ou progiciel de gestion intégré) est un logiciel qui centralise dans une base de données unique les informations de plusieurs fonctions de l''entreprise (comptabilité, ventes, achats, production, ressources humaines, stocks). Avant la généralisation des ERP, chaque fonction gérait souvent ses propres fichiers, ce qui multipliait les ressaisies, les incohérences et les délais.
+
+L''intérêt principal d''un ERP pour le contrôle de gestion est la cohérence et la traçabilité des données : une vente enregistrée dans le module commercial met automatiquement à jour le stock, génère l''écriture comptable correspondante et alimente en temps réel les tableaux de bord, sans ressaisie manuelle. Cela réduit les erreurs, accélère la production des informations de gestion et permet un suivi plus fréquent (hebdomadaire voire quotidien) plutôt que purement mensuel.
+
+Mais un ERP mal paramétré peut produire l''effet inverse. Si les référentiels (plan de comptes, codification des centres de coûts, nomenclatures produits) ne sont pas harmonisés entre les filiales d''un groupe, la consolidation devient source d''erreurs : une même catégorie de charge peut être enregistrée différemment selon les filiales, rendant les agrégations peu fiables. Le paramétrage initial d''un ERP, notamment l''harmonisation des référentiels au niveau groupe, est donc un enjeu de contrôle de gestion à part entière, pas seulement informatique.
+
+## Du système transactionnel au reporting de gestion
+
+Un ERP enregistre des transactions (une vente, un achat, une sortie de stock) : c''est un système transactionnel. Le reporting de gestion a besoin d''une vision agrégée et analytique de ces transactions : marge par produit, par client, par filiale, évolution dans le temps, comparaison au budget. Cette transformation est assurée par des outils de Business Intelligence (BI), qui extraient les données de l''ERP, les structurent dans un entrepôt de données, puis les restituent sous forme de tableaux de bord.
+
+Le contrôleur de gestion occupe une position charnière : il ne construit généralement pas lui-même l''ERP ou l''outil de BI, mais il définit les règles de gestion qui doivent y être codées (définition de la marge opérationnelle, périmètre d''un centre de coût, fréquence de mise à jour), et il reste responsable de la qualité des indicateurs restitués aux décideurs.
+
+## Le reporting consolidé : un enjeu de délai et de qualité des données
+
+Dans un groupe à plusieurs filiales, le reporting consolidé agrège les données de chaque entité pour donner une vision globale de la performance. Deux critères mesurent la qualité d''un dispositif de reporting consolidé : le délai de production (combien de jours ouvrés après la clôture du mois le reporting est-il disponible ?) et la fiabilité des données agrégées.
+
+Illustrons avec le Groupe Teranga Agro-Industries. Avant l''ERP intégré, le reporting consolidé mensuel nécessitait 12 jours ouvrés (collecte manuelle, retraitements, consolidation sur tableur). Après l''intégration d''un ERP commun avec des référentiels harmonisés, ce délai est ramené à 5 jours ouvrés, soit un gain de (12 − 5) / 12 = 0,583, soit 58,3 %. La direction générale dispose donc de l''information près de deux semaines plus tôt, ce qui lui permet de réagir à un écart défavorable avant la fin du trimestre plutôt que de le constater trop tard.
+
+## Mesurer la qualité des données consolidées
+
+Un indice de qualité des données peut être construit comme l''indice de performance globale, en pondérant plusieurs critères notés sur 100 : exhaustivité 92 (poids 30 %), exactitude 88 (poids 35 %), cohérence inter-filiales 80 (poids 20 %), délai de saisie 75 (poids 15 %). L''indice se calcule ainsi : (92 × 0,30) + (88 × 0,35) + (80 × 0,20) + (75 × 0,15) = 27,6 + 30,8 + 16 + 11,25 = 85,65, soit environ 85,6 sur 100. Ce résultat montre une qualité globale satisfaisante, avec un point de vigilance clair sur le délai de saisie (75/100), le critère le moins bien noté, qui mérite une action corrective prioritaire, par exemple un rappel des échéances ou une automatisation renforcée de la collecte.
+
+## Les risques spécifiques du reporting consolidé en environnement multi-ERP
+
+De nombreux groupes, notamment issus de croissance externe (acquisition de filiales), fonctionnent encore avec plusieurs ERP différents selon les filiales, faute d''avoir harmonisé leurs systèmes d''information. La consolidation nécessite alors des interfaces ou des retraitements manuels, ce qui réintroduit les risques d''erreur et de délai que l''ERP intégré est censé éliminer. Le contrôleur de gestion doit documenter les règles de passage entre référentiels (table de correspondance des comptes, des centres de coûts) et mettre en place des contrôles de cohérence automatisés, par exemple un contrôle qui vérifie que le total des ventes intragroupe déclarées par le vendeur correspond au total des achats intragroupe déclarés par l''acheteur, avant toute élimination en consolidation.
+
+## Points clés à retenir
+
+- Un ERP centralise l''information de gestion mais sa fiabilité dépend d''un paramétrage initial rigoureux, en particulier l''harmonisation des référentiels entre filiales d''un groupe.
+- Le reporting de gestion transforme la donnée transactionnelle de l''ERP en information de pilotage grâce aux outils de Business Intelligence ; le contrôleur de gestion définit les règles de gestion à y intégrer.
+- La qualité d''un reporting consolidé se mesure à la fois par son délai de production et par la fiabilité des données agrégées (exhaustivité, exactitude, cohérence, respect des délais de saisie).
+- En environnement multi-ERP, des contrôles de cohérence automatisés sont indispensables pour fiabiliser la consolidation.
+
+## Exercices pratiques
+
+1. Expliquez la différence entre un système transactionnel (ERP) et un outil de Business Intelligence (BI), et précisez le rôle du contrôleur de gestion dans leur articulation.
+2. Pourquoi l''harmonisation des référentiels (plan de comptes, centres de coûts) entre filiales est-elle une condition nécessaire à la fiabilité d''un reporting consolidé ?
+3. Un groupe réduit son délai de clôture consolidée de 18 jours ouvrés à 9 jours ouvrés grâce à un nouvel ERP intégré. Calculez le gain de délai en pourcentage.
+4. Un comité qualité évalue les données consolidées d''un autre groupe sur les mêmes quatre critères que Teranga Agro-Industries, avec les scores suivants : exhaustivité 95 (poids 30 %), exactitude 90 (poids 35 %), cohérence inter-filiales 70 (poids 20 %), délai de saisie 85 (poids 15 %). Calculez l''indice de qualité des données.
+5. Identifiez, dans le résultat de la question 4, le critère le plus faible et proposez une action corrective concrète.
+6. Expliquez pourquoi un contrôle de cohérence automatisé entre ventes intragroupe déclarées par le vendeur et achats intragroupe déclarés par l''acheteur est particulièrement utile avant l''étape d''élimination en consolidation.
+7. Cas pratique : le Groupe Teranga Agro-Industries envisage de remplacer ses deux ERP distincts (issus d''une acquisition récente) par un ERP unique, pour un coût de 400 000 000 FCFA sur 18 mois, qui réduirait le délai de clôture de 15 à 6 jours ouvrés et améliorerait l''indice de qualité des données de 78 à 90. Rédigez, en six à huit lignes, une note identifiant les bénéfices attendus et les principaux risques du projet (hors coût financier).
+
+## Corrigé
+
+1. Un système transactionnel comme l''ERP enregistre et stocke les opérations élémentaires de l''entreprise (une vente, un achat, un mouvement de stock) au moment où elles se produisent. Un outil de Business Intelligence extrait ces données, les agrège et les restitue sous une forme analytique utile à la décision (marge par produit, écarts au budget, évolution dans le temps). Le contrôleur de gestion n''intervient généralement pas dans la programmation technique de ces outils, mais il définit les règles de gestion à y intégrer (périmètre des centres de coûts, définition des indicateurs, fréquence de mise à jour) et il est responsable de la pertinence et de la fiabilité des informations finalement restituées aux décideurs.
+2. Si chaque filiale utilise des définitions différentes pour une même notion (par exemple, un centre de coût ou une catégorie de charge codée différemment), l''agrégation des données au niveau groupe additionne des éléments qui ne sont pas réellement comparables, ce qui fausse les indicateurs consolidés (une charge peut être comptée dans une catégorie dans une filiale et dans une autre catégorie dans une autre filiale, rendant la lecture par nature de charge non fiable au niveau groupe). L''harmonisation des référentiels est donc une condition de fond, pas seulement technique, de la fiabilité du reporting consolidé.
+3. Gain de délai = (18 − 9) / 18 = 0,50, soit 50 %.
+4. Indice de qualité = (95 × 0,30) + (90 × 0,35) + (70 × 0,20) + (85 × 0,15) = 28,5 + 31,5 + 14 + 12,75 = 86,75, soit environ 86,8 sur 100.
+5. Le critère le plus faible est la cohérence inter-filiales (70/100). Une action corrective concrète consiste à lancer un chantier d''harmonisation du plan de comptes analytique et des référentiels de centres de coûts entre toutes les filiales, avec une table de correspondance documentée et validée, avant la prochaine clôture consolidée.
+6. Ce contrôle permet de détecter une incohérence (erreur de saisie, décalage de période, erreur d''affectation) avant l''étape d''élimination des opérations intragroupe en consolidation. Si les montants déclarés par le vendeur et par l''acheteur ne correspondent pas exactement, l''élimination produira un résultat consolidé erroné (une partie de la marge interne ne sera pas correctement neutralisée), sans que l''erreur soit nécessairement visible dans les comptes consolidés finaux. Un contrôle de cohérence systématique en amont évite ce risque et accélère la clôture, car les écarts sont corrigés à la source plutôt que découverts tardivement par la direction financière.
+7. Deux bénéfices majeurs : un gain de délai de clôture de (15 − 6) / 15 = 60 %, pour un pilotage plus réactif en cas de dérive budgétaire ; une amélioration de l''indice de qualité de 78 à 90 sur 100, qui renforce la fiabilité des décisions (ROI, EVA, prix de cession interne, qui dépendent de données homogènes entre filiales). Risques hors coût financier : rupture opérationnelle pendant les 18 mois de migration, résistance au changement des équipes, et risque qu''un référentiel commun mal validé par le contrôle de gestion reproduise les mêmes problèmes de cohérence que le projet cherche à résoudre.', 'texte', 45, false, 40
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Systèmes d''information décisionnels (ERP, reporting consolidé) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 1 en Contrôle de gestion (corrigé)', 'Ce sujet type regroupe les trois matières avancées du Master 1 en Contrôle de gestion : le contrôle de gestion stratégique et la performance globale, la gestion par centres de responsabilité et le prix de cession interne, et les systèmes d''information décisionnels. Il n''a pas de valeur officielle et le barème indiqué est purement indicatif, pour vous aider à répartir votre temps de révision. Traitez-le en conditions d''examen (durée conseillée : 3 heures) avant de consulter le corrigé.
+
+## Présentation du cas
+
+Le Groupe Sahel Industries (groupe fictif sénégalais) regroupe deux filiales : Sahel Minoterie (transformation de céréales, centre d''investissement) et Sahel Agro-Export (distribution et exportation régionale, centre d''investissement). Sahel Minoterie cède une partie de sa production à Sahel Agro-Export, qui la revend sur le marché régional. Le groupe a par ailleurs engagé un chantier de refonte de son système d''information et souhaite renforcer sa démarche RSE.
+
+Données disponibles pour Sahel Minoterie : coût variable unitaire de 95 000 FCFA la tonne ; charges fixes annuelles totales de 300 000 000 FCFA pour une activité normale de 7 500 tonnes ; capitaux investis de 950 000 000 FCFA. Un produit comparable se vend sur le marché régional à 155 000 FCFA la tonne entre entreprises indépendantes. La marge négociée retenue en méthode du coût est de 8 %, et l''économie commerciale évitée en méthode du marché est de 10 %. Le volume cédé à Sahel Agro-Export est de 4 200 tonnes.
+
+Le comité de pilotage du groupe évalue sa performance globale sur trois axes (notés sur 20) : axe économique 15, axe social 12, axe environnemental 10, avec des pondérations respectives de 45 %, 25 % et 30 %.
+
+Un comité qualité évalue le système d''information décisionnel du groupe sur quatre critères (notés sur 100) : exhaustivité 90 (poids 30 %), exactitude 85 (poids 35 %), cohérence inter-filiales 72 (poids 20 %), délai de saisie 80 (poids 15 %).
+
+## Questions (barème indicatif sur 20)
+
+1. (3 points) Calculez le coût complet unitaire de Sahel Minoterie, puis le prix de cession interne selon la méthode du coût (coût complet majoré de la marge négociée) et selon la méthode du marché (prix de marché diminué de l''économie commerciale évitée).
+2. (2 points) Proposez un prix de cession interne négocié et calculez-le.
+3. (3 points) Sahel Minoterie dégage, par ailleurs, un résultat sur ses ventes externes de 80 000 000 FCFA, en plus de la marge réalisée sur la cession interne au prix négocié. Calculez le résultat d''exploitation total de Sahel Minoterie, puis son ROI, avec des capitaux investis de 950 000 000 FCFA.
+4. (2 points) Avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %, calculez l''EVA de Sahel Minoterie.
+5. (3 points) Calculez l''indice de performance globale du Groupe Sahel Industries.
+6. (3 points) Calculez l''indice de qualité des données du système d''information décisionnel du groupe.
+7. (4 points) En mobilisant les résultats des questions précédentes, rédigez une synthèse argumentée (dix à quinze lignes) qui identifie le principal point fort et le principal point de vigilance du groupe sur les trois matières étudiées, et proposez une action prioritaire pour la direction générale.
+
+## Corrigé détaillé
+
+1. Charges fixes unitaires = 300 000 000 / 7 500 = 40 000 FCFA la tonne. Coût complet unitaire = 95 000 + 40 000 = 135 000 FCFA. Méthode du coût : 135 000 × (1 + 0,08) = 145 800 FCFA. Méthode du marché : 155 000 × (1 − 0,10) = 139 500 FCFA.
+2. Le prix négocié peut raisonnablement être fixé comme la moyenne des deux bornes : (145 800 + 139 500) / 2 = 142 650 FCFA. Toute autre valeur comprise entre les deux bornes et correctement justifiée est acceptée.
+3. Marge sur cession interne = (142 650 − 135 000) × 4 200 = 32 130 000 FCFA. Résultat d''exploitation total = 32 130 000 + 80 000 000 = 112 130 000 FCFA. ROI = 112 130 000 / 950 000 000 = 0,118, soit environ 11,8 %.
+4. NOPAT = 112 130 000 × (1 − 0,30) = 78 491 000 FCFA. Charge de capital = 950 000 000 × 0,12 = 114 000 000 FCFA. EVA = 78 491 000 − 114 000 000 = −35 509 000 FCFA. L''EVA est négative : malgré un ROI positif de 11,8 %, Sahel Minoterie détruit de la valeur, car sa rentabilité est inférieure au coût du capital exigé par le groupe (12 %).
+5. Indice de performance globale = (15 × 0,45) + (12 × 0,25) + (10 × 0,30) = 6,75 + 3 + 3 = 12,75/20.
+6. Indice de qualité des données = (90 × 0,30) + (85 × 0,35) + (72 × 0,20) + (80 × 0,15) = 27 + 29,75 + 14,4 + 12 = 83,15, soit environ 83,2 sur 100.
+7. Synthèse attendue : le principal point fort du groupe est la performance économique relative de ses deux filiales considérées isolément (axe économique noté 15/20, le plus élevé des trois axes de performance globale) et un système d''information globalement fiable (indice de qualité de 83,2/100). Le principal point de vigilance est double et doit être relié : d''une part, la performance environnementale (10/20, le plus faible des trois axes), qui tire l''indice global à 12,75/20 et appelle une action corrective ciblée ; d''autre part, et surtout, l''EVA négative de Sahel Minoterie (−35 509 000 FCFA) révèle que la filiale, malgré un ROI positif, détruit de la valeur au regard du coût du capital du groupe, ce qui doit alerter la direction générale au-delà du seul indicateur de rentabilité comptable. L''action prioritaire recommandée est de conduire un diagnostic approfondi des capitaux investis et de la structure de coûts de Sahel Minoterie (plutôt que de se satisfaire du ROI positif), en parallèle d''un plan d''action ciblé sur l''axe environnemental, ces deux chantiers pouvant d''ailleurs converger si une partie de la destruction de valeur provient d''investissements environnementaux coûteux mais encore peu valorisés dans le résultat d''exploitation.
+
+## Exercices pratiques complémentaires
+
+1. Pourquoi est-il important de calculer à la fois le ROI et l''EVA d''un centre d''investissement avant de conclure sur sa performance, comme l''illustre le cas de Sahel Minoterie ?
+2. Si la direction générale du Groupe Sahel Industries retenait la méthode du coût (145 800 FCFA) plutôt que le prix négocié (142 650 FCFA) pour la cession interne, quel serait l''effet sur le résultat consolidé du groupe ? Justifiez sans recalculer.
+3. Proposez une action corrective concrète pour améliorer le critère le plus faible de l''indice de qualité des données du groupe (cohérence inter-filiales, 72/100).
+
+## Corrigé
+
+1. Le ROI seul peut donner une image trompeuse de la performance : un ROI positif, comme celui de Sahel Minoterie (11,8 %), peut masquer le fait que cette rentabilité reste inférieure au coût du capital exigé par le groupe. L''EVA complète l''analyse en comparant directement la rentabilité au coût du capital, révélant ici une destruction de valeur (EVA négative) malgré un résultat comptable positif. Conclure sur la seule base du ROI aurait conduit la direction générale à sous-estimer gravement la situation réelle de la filiale.
+2. Le résultat consolidé du groupe resterait strictement identique, car le prix de cession interne est une opération intragroupe qui s''élimine en consolidation : ce que Sahel Minoterie gagnerait en plus serait exactement ce que Sahel Agro-Export paierait en plus, sans effet sur la marge globale du groupe avec le client final.
+3. Une action corrective concrète consiste à établir une table de correspondance unique entre les référentiels analytiques de Sahel Minoterie et de Sahel Agro-Export (plan de comptes, codification des centres de coûts), validée par le contrôle de gestion groupe, et à imposer son utilisation uniforme avant la prochaine clôture consolidée, avec un contrôle de cohérence automatisé entre les montants déclarés par chaque filiale.', 'texte', 45, false, 50
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 en Contrôle de gestion (corrigé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Contrôle de gestion stratégique et pilotage de la performance globale', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : savoir construire un tableau de bord de performance globale intégrant la RSE et la triple bottom line, savoir calculer et interpréter un indice de performance pondéré, savoir discuter les limites méthodologiques de cette approche face à un cas d''entreprise. Prérequis : tableau de bord prospectif (balanced scorecard) vu en Licence 3. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et mise en perspective
+
+Bonjour à toutes et à tous. Nous commençons aujourd''hui le premier des trois cours vidéo consacrés aux matières avancées du Master 1 en Contrôle de gestion. Cette séance porte sur le contrôle de gestion stratégique et le pilotage de la performance globale, avec un accent particulier sur la responsabilité sociétale des entreprises et la triple bottom line.
+
+Avant de commencer, je veux que vous ayez bien en tête où se situe cette matière dans votre parcours. En Licence 3, vous avez étudié le tableau de bord prospectif, le balanced scorecard, qui articule déjà quatre axes : financier, client, processus internes, apprentissage organisationnel. Ce que nous allons voir aujourd''hui n''est pas un nouvel outil isolé, mais un approfondissement et un élargissement de cette logique, en intégrant explicitement les dimensions sociale et environnementale de la performance, dans un cadre que l''on appelle la triple bottom line.
+
+Notez au tableau le plan de la séance : d''abord, pourquoi la performance financière seule ne suffit plus ; ensuite, comment construire un indice de performance globale pondéré ; puis, les limites méthodologiques de cette approche, illustrées sur un cas d''entreprise complet ; enfin, un quiz, un exercice de synthèse, et l''évaluation finale.
+
+## 05:00 – 20:00 · De la performance financière à la performance globale
+
+Pourquoi parle-t-on aujourd''hui de performance globale plutôt que de simple performance financière ? Trois raisons principales. La première est économique : les investisseurs, les bailleurs de fonds internationaux, mais aussi de plus en plus les clients grands comptes, exigent des garanties sur les pratiques sociales et environnementales des entreprises avec lesquelles ils travaillent. Une entreprise qui néglige ces dimensions prend un risque financier direct, par exemple en perdant un marché ou un financement. La deuxième raison est réglementaire : les exigences en matière de reporting extra-financier se renforcent progressivement, y compris dans l''espace UEMOA, même si le cadre réglementaire précis varie selon les pays et continue d''évoluer, donc je vous invite à toujours vérifier la réglementation en vigueur plutôt que de vous fier à une règle apprise par cœur. La troisième raison est stratégique : une entreprise qui anticipe ces exigences plutôt que de les subir se donne un avantage concurrentiel durable.
+
+La triple bottom line, formalisée à la fin des années 1990, résume cette idée en trois mots : profit, people, planet. Une organisation durablement performante doit produire un résultat économique, un résultat social et un résultat environnemental. Le rôle du contrôle de gestion stratégique est de construire les outils de mesure et de pilotage qui rendent ces trois résultats aussi suivis et aussi rigoureux que le résultat financier classique.
+
+Prenons un exemple concret pour fixer les idées. Un groupe agro-industriel peut avoir une marge opérationnelle excellente, mais un taux d''accidents du travail en forte hausse, ou une consommation d''eau par tonne produite qui dépasse largement les standards du secteur. Dans une logique de triple bottom line, cette entreprise n''est pas pleinement performante, même si son résultat financier est excellent, car elle accumule des risques sociaux et environnementaux qui finiront, à plus ou moins long terme, par se traduire en coûts financiers : turnover, conflits sociaux, durcissement réglementaire, perte de clients exigeants sur ces critères.
+
+## 20:00 – 35:00 · Construire un indice de performance globale pondéré
+
+Passons maintenant à la construction pratique d''un indice de performance globale. La méthode la plus courante consiste à noter l''entreprise sur chacun des trois axes (économique, social, environnemental), généralement sur une échelle de 0 à 20 ou de 0 à 100, à partir d''indicateurs objectifs suivis dans le temps, puis à pondérer ces trois notes pour obtenir un indice de synthèse.
+
+Reprenons le cas du Groupe Teranga Agro-Industries, que vous connaissez déjà par les leçons texte de ce cours. Le comité de pilotage retient les pondérations suivantes : axe économique 40 %, axe social 30 %, axe environnemental 30 %. Les scores obtenus sont 16/20 pour l''axe économique, 13/20 pour l''axe social, et 11/20 pour l''axe environnemental.
+
+Je vous laisse trente secondes pour calculer l''indice de performance globale sur votre feuille, avant que je ne fasse le calcul au tableau.
+
+Voici le calcul : (16 × 0,40) + (13 × 0,30) + (11 × 0,30). Premier terme : 16 fois 0,40 égale 6,4. Deuxième terme : 13 fois 0,30 égale 3,9. Troisième terme : 11 fois 0,30 égale 3,3. La somme est 6,4 plus 3,9 plus 3,3, soit 13,6 sur 20.
+
+Qu''est-ce que ce résultat nous dit ? D''abord, un niveau global plutôt moyen, ni franchement mauvais ni réellement satisfaisant. Ensuite, et c''est le point le plus important pour vous en tant que futurs contrôleurs de gestion, ce chiffre global ne doit jamais être votre seule conclusion. Vous devez systématiquement décomposer l''indice pour identifier quel axe tire la performance vers le bas. Ici, c''est clairement l''axe environnemental, avec son score de 11/20, le plus faible des trois, qui pèse sur l''indice global malgré son poids identique à l''axe social.
+
+## 35:00 – 45:00 · Les limites méthodologiques de la pondération
+
+Arrêtons-nous maintenant sur un point que l''examen vous demandera très probablement de discuter : les limites de cette approche par indice pondéré.
+
+Première limite : le choix des pondérations est en grande partie arbitraire, et reflète les priorités de la direction plutôt qu''une vérité objective. Si le comité de pilotage de Teranga Agro-Industries décidait de repondérer ses trois axes à 35 %, 25 % et 40 % au lieu de 40 %, 30 % et 30 %, avec exactement les mêmes scores de 16, 13 et 11, l''indice recalculé serait : (16 × 0,35) + (13 × 0,25) + (11 × 0,40), soit 5,6 plus 3,25 plus 4,4, soit 13,25 sur 20. L''indice baisse de 13,6 à 13,25, soit 0,35 point, sans que la réalité de l''entreprise n''ait changé d''un iota. C''est un point essentiel à retenir : derrière un chiffre unique qui paraît objectif se cache toujours un choix de pondération qui, lui, ne l''est pas.
+
+Deuxième limite : l''effet de masquage. Une moyenne pondérée peut dissimuler une dégradation grave sur un sous-indicateur isolé. Imaginez que, dans le score social de 13/20, le taux d''accidents du travail se soit brutalement détérioré, alors que le taux de formation s''est amélioré en compensation : le score global de 13 pourrait rester stable ou même progresser, alors qu''un problème de sécurité au travail s''aggrave dangereusement et devrait déclencher une alerte immédiate. C''est pourquoi un dispositif de pilotage rigoureux ne doit jamais se limiter à l''indice de synthèse : il doit toujours conserver, en parallèle, le détail de chaque indicateur avec ses propres seuils d''alerte.
+
+## 45:00 – 50:00 · Pause active et quiz interactif
+
+Nous faisons maintenant une pause active avec un quiz pour vérifier que les notions sont bien installées. Je vous pose trois questions, prenez quelques secondes pour répondre avant que je ne donne la réponse.
+
+Première question : que signifient les trois lettres de la triple bottom line ? Réponse : profit, people, planet, soit les résultats économique, social et environnemental.
+
+Deuxième question : si l''on augmente le poids de l''axe le moins bien noté dans un indice pondéré, sans changer aucun score, l''indice global augmente-t-il ou diminue-t-il ? Réponse : il diminue, puisque l''on donne plus de poids relatif au score le plus faible, comme nous l''avons vu avec l''exemple du passage de 13,6 à 13,25 sur 20.
+
+Troisième question : pourquoi un dispositif de pilotage ne doit-il jamais se limiter au seul indice de synthèse ? Réponse : parce qu''une moyenne pondérée peut masquer une dégradation grave sur un indicateur isolé, qui doit pourtant déclencher une alerte indépendamment de l''évolution de l''indice global.
+
+## 50:00 – 1:05:00 · Application complète sur un cas d''entreprise
+
+Reprenons maintenant un cas complet, un peu différent de celui déjà vu dans les leçons texte, pour vous entraîner à une situation nouvelle. Le Groupe Casamance Fruits, une coopérative fictive de transformation de fruits tropicaux dans le sud du Sénégal, évalue sa performance globale avec les pondérations suivantes : axe économique 50 %, axe social 20 %, axe environnemental 30 %. Les scores obtenus sont de 14/20 pour l''économique, 16/20 pour le social, et 9/20 pour l''environnemental.
+
+Calculons ensemble. Premier terme : 14 fois 0,50 égale 7. Deuxième terme : 16 fois 0,20 égale 3,2. Troisième terme : 9 fois 0,30 égale 2,7. La somme est 7 plus 3,2 plus 2,7, soit 12,9 sur 20.
+
+Que pouvons-nous dire de ce résultat ? L''indice global de 12,9/20 est inférieur à celui de Teranga Agro-Industries (13,6/20), malgré un score social nettement meilleur (16 contre 13). L''explication se trouve dans deux éléments combinés : un score environnemental très faible (9/20, le plus bas des deux cas étudiés aujourd''hui), et un poids économique élevé (50 %) qui, ici, ne compense pas suffisamment la faiblesse environnementale parce que le score économique lui-même (14/20) reste inférieur à celui de Teranga (16/20). La recommandation pour la direction de Casamance Fruits est donc double : traiter en priorité la faiblesse environnementale, probablement liée à la gestion des déchets de transformation de fruits, et chercher à consolider la performance économique, qui reste perfectible malgré un poids élevé dans l''indice.
+
+## 1:05:00 – 1:20:00 · Les décisions d''investissement durable et synthèse
+
+Terminons par un point que vous retrouverez souvent en examen : comment le contrôle de gestion stratégique évalue-t-il une décision d''investissement à dimension durable ? La règle est simple à énoncer mais essentielle : la rentabilité financière reste un critère nécessaire, mais elle ne doit plus être le seul critère de décision. Un bon raisonnement d''examen combine toujours un critère financier chiffré (gain net, économie annuelle, retour sur investissement) et un critère de performance globale (effet attendu sur l''indice RSE, réduction de risque réglementaire ou réputationnel).
+
+Pour synthétiser toute la séance : la performance globale élargit la définition de la performance au-delà du seul résultat financier, en intégrant les dimensions sociale et environnementale selon la logique de la triple bottom line. La construction d''un indice pondéré facilite le pilotage et la communication avec la direction générale, mais elle comporte deux limites qu''il faut systématiquement savoir discuter à l''examen : l''arbitraire du choix des pondérations, et le risque de masquage d''une dégradation isolée par une moyenne globalement satisfaisante. Enfin, les décisions d''investissement durable doivent toujours être évaluées sur des critères multiples, financiers et extra-financiers.
+
+## 1:20:00 – 1:30:00 · Évaluation finale
+
+Voici cinq questions pour conclure cette séance. Prenez le temps d''y répondre avant d''écouter les réponses.
+
+Première question : citez les trois dimensions de la triple bottom line. Réponse : économique, sociale et environnementale (profit, people, planet).
+
+Deuxième question : le Groupe Casamance Fruits obtient un indice de performance globale de 12,9/20 avec des poids de 50 %, 20 % et 30 % et des scores de 14, 16 et 9. Si le poids de l''axe environnemental passait à 40 % au détriment de l''axe économique (ramené à 40 %), quel serait le nouvel indice ? Réponse : (14 × 0,40) + (16 × 0,20) + (9 × 0,40) = 5,6 + 3,2 + 3,6 = 12,4 sur 20, soit une baisse de 0,5 point liée uniquement au changement de pondération.
+
+Troisième question : pourquoi un dirigeant pourrait-il être tenté de choisir des pondérations qui avantagent artificiellement l''image de son entreprise ? Réponse : parce que le choix des poids reste en grande partie discrétionnaire et peut être orienté pour afficher un indice plus favorable sans que la réalité opérationnelle ne change, ce qui justifie une vigilance critique du contrôleur de gestion et, idéalement, une validation des pondérations par un comité indépendant de la seule direction générale.
+
+Quatrième question : quel type de décision d''investissement doit systématiquement être évalué à la fois sur un critère financier et sur un critère de performance globale ? Réponse : tout investissement présentant une dimension durable, par exemple une technologie moins polluante mais plus coûteuse à court terme, où la rentabilité financière seule ne suffit pas à rendre compte de la contribution à la stratégie RSE de l''entreprise.
+
+Cinquième question : quelle est la principale limite de l''indice de performance globale pondéré que nous avons identifiée aujourd''hui concernant le risque de masquage ? Réponse : une moyenne pondérée peut dissimuler une dégradation grave sur un indicateur isolé si elle est compensée statistiquement par de bons résultats sur d''autres indicateurs, ce qui impose de toujours conserver un suivi détaillé par indicateur en complément de l''indice de synthèse.
+
+Merci pour votre attention. Je vous retrouve dans le prochain cours vidéo pour la gestion de la performance par centres de responsabilité et le prix de cession interne avancé.', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Contrôle de gestion stratégique et pilotage de la performance globale');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Centres de responsabilité et prix de cession interne avancé', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : savoir construire une organisation en centres de responsabilité, calculer et interpréter le ROI et l''EVA d''un centre d''investissement, maîtriser les trois méthodes avancées de prix de cession interne et leurs effets sur la performance des filiales. Prérequis : prix de cession interne de base vu en Licence 3, calcul de coût complet. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs de la séance
+
+Bonjour à toutes et à tous. Nous poursuivons notre série de cours vidéo du Master 1 avec une matière centrale du contrôle de gestion avancé : la gestion de la performance par centres de responsabilité et le prix de cession interne. Vous avez déjà rencontré une première approche du prix de cession interne en Licence 3, appliquée aux PME et au secteur public. Aujourd''hui, nous allons beaucoup plus loin : nous allons construire une organisation complète en centres de responsabilité, apprendre à évaluer un centre d''investissement avec deux indicateurs complémentaires, le ROI et l''EVA, puis maîtriser les trois méthodes avancées de fixation du prix de cession interne et leurs conséquences sur la performance affichée de chaque filiale.
+
+Le plan de la séance : d''abord, les quatre types de centres de responsabilité et le principe de contrôlabilité ; ensuite, le ROI et ses limites ; puis l''EVA comme indicateur correctif ; un quiz à mi-séance ; puis les trois méthodes de prix de cession interne appliquées à un cas complet ; et enfin l''évaluation finale.
+
+## 05:00 – 18:00 · Les quatre types de centres de responsabilité
+
+Commençons par la notion de centre de responsabilité. C''est une unité de l''organisation, par exemple une direction, une filiale, une usine, un service, dont le responsable dispose d''une autonomie de décision sur un périmètre de ressources, et qui doit être évalué sur des indicateurs correspondant exactement à ce périmètre de décision, ni plus, ni moins.
+
+On distingue classiquement quatre types de centres. Notez-les au tableau avec moi. Le centre de coût : son responsable maîtrise les charges pour un niveau d''activité donné, mais ne maîtrise pas le chiffre d''affaires. Exemple typique : un atelier de production, ou un service support comme la comptabilité. Le centre de recettes : son responsable maîtrise le chiffre d''affaires généré, sans maîtriser directement les coûts de production du bien vendu. Exemple typique : une force de vente. Le centre de profit : son responsable maîtrise à la fois les coûts et les recettes de son périmètre, et donc le résultat qui en découle. Exemple typique : une filiale commerciale autonome. Le centre d''investissement : c''est le niveau le plus élevé d''autonomie, son responsable décide aussi des investissements et des capitaux engagés dans son périmètre.
+
+Le principe qui sous-tend toute cette typologie est le principe de contrôlabilité : un responsable ne doit être évalué que sur ce qu''il contrôle réellement par ses décisions. C''est un principe simple à énoncer, mais souvent violé dans la pratique des entreprises, et l''examen vous demandera régulièrement d''identifier ce type de violation sur un cas donné. Par exemple, évaluer un directeur d''usine, qui est un centre de coût, sur l''évolution du chiffre d''affaires de l''entreprise, viole ce principe, car le chiffre d''affaires dépend de décisions commerciales qui ne relèvent pas de lui.
+
+## 18:00 – 35:00 · Évaluer un centre d''investissement : ROI et sa limite majeure
+
+Pour un centre d''investissement, l''indicateur le plus utilisé est le retour sur investissement, le ROI. Sa formule : ROI égale résultat d''exploitation du centre, divisé par capitaux investis dans le centre. C''est un indicateur simple, exprimé en pourcentage, qui permet de comparer des centres de taille très différente.
+
+Mais le ROI a une limite majeure que vous devez absolument connaître pour l''examen : il peut inciter un responsable à refuser un investissement pourtant rentable pour le groupe. Voici le mécanisme. Imaginez un centre dont le ROI actuel est de 20 %. On lui propose un nouveau projet rentable à 15 %. Ce taux de 15 % est largement supérieur au coût du capital exigé par le groupe, disons 12 %. Ce projet crée donc de la valeur pour le groupe. Mais si le responsable est évalué et rémunéré sur le maintien ou l''amélioration de son ROI moyen, intégrer ce nouveau projet à 15 % va faire baisser son ROI moyen actuel de 20 % vers quelque chose d''inférieur. Le responsable, rationnellement de son point de vue personnel, peut donc être incité à refuser ce projet, alors qu''il serait bénéfique pour le groupe dans son ensemble. C''est ce qu''on appelle le problème du sous-investissement induit par le pilotage au seul ROI.
+
+## 35:00 – 50:00 · L''EVA comme indicateur correctif
+
+Pour corriger ce biais, le contrôle de gestion avancé utilise un second indicateur : la valeur ajoutée économique, l''EVA, Economic Value Added. Sa formule : EVA égale le résultat opérationnel net après impôt, qu''on appelle le NOPAT, moins les capitaux investis multipliés par le coût moyen pondéré du capital, le CMPC.
+
+L''idée centrale de l''EVA est de comparer directement la rentabilité du centre au coût réel de son financement, plutôt qu''à son propre ROI moyen historique. Avec l''EVA, le responsable n''a plus d''incitation perverse à refuser un projet rentable à 15 % si le coût du capital du groupe est de 12 %, car ce projet améliorera son EVA, même s''il fait baisser son ROI moyen apparent.
+
+Faisons le calcul ensemble sur le cas de Teranga Céréales, filiale du Groupe Teranga Agro-Industries. Son résultat d''exploitation total est de 245 100 000 FCFA, pour des capitaux investis de 1 200 000 000 FCFA. Son ROI est donc de 245 100 000 divisé par 1 200 000 000, soit 0,2042, soit 20,42 %. Avec un taux d''impôt fictif pour l''exemple de 30 % et un CMPC fictif pour l''exemple de 12 %, calculons le NOPAT : 245 100 000 fois (1 moins 0,30), soit 245 100 000 fois 0,70, soit 171 570 000 FCFA. Calculons maintenant la charge de capital : 1 200 000 000 fois 0,12, soit 144 000 000 FCFA. L''EVA est donc de 171 570 000 moins 144 000 000, soit 27 570 000 FCFA.
+
+Que nous dit ce résultat ? L''EVA est positive, la filiale crée donc bien de la valeur, mais dans une proportion nettement plus modeste que ce que suggérait le ROI de 20,42 %, qui paraissait très confortable. C''est précisément l''intérêt de calculer systématiquement les deux indicateurs : le ROI donne une image rapide et comparable entre centres, l''EVA corrige cette image en la rapportant au coût réel du capital.
+
+## 50:00 – 55:00 · Pause active et quiz interactif
+
+Petit quiz pour vérifier vos acquis avant la deuxième partie de la séance, consacrée au prix de cession interne.
+
+Première question : quel principe impose d''évaluer un responsable uniquement sur ce qu''il contrôle réellement ? Réponse : le principe de contrôlabilité.
+
+Deuxième question : pourquoi un responsable évalué uniquement sur son ROI peut-il refuser un projet rentable pour le groupe ? Réponse : parce qu''un projet dont la rentabilité est inférieure au ROI moyen actuel du centre, mais supérieure au coût du capital du groupe, ferait baisser son ROI moyen, même s''il crée de la valeur pour le groupe.
+
+Troisième question : quelle est la formule de l''EVA ? Réponse : NOPAT moins capitaux investis multipliés par le coût moyen pondéré du capital.
+
+## 55:00 – 1:15:00 · Les trois méthodes de prix de cession interne et leurs effets
+
+Passons maintenant au prix de cession interne, le PCI. C''est le prix auquel un centre vend un bien ou un service à un autre centre du même groupe. Trois méthodes principales existent, notez-les.
+
+La méthode du coût : on fixe le prix à partir du coût complet (ou parfois du coût marginal) du centre vendeur, éventuellement majoré d''une marge négociée. La méthode du marché : on s''appuie sur le prix observé pour un bien comparable échangé entre entreprises indépendantes, ajusté le cas échéant des économies réalisées en interne, par exemple des frais commerciaux évités. La méthode du prix négocié : les deux responsables fixent un prix d''accord commun, dans une fourchette encadrée par la direction générale.
+
+Appliquons ces trois méthodes au cas de Teranga Céréales, qui cède du mil transformé à Teranga Distribution. Le coût variable unitaire de Teranga Céréales est de 180 000 FCFA la tonne. Les charges fixes annuelles sont de 450 000 000 FCFA pour une activité normale de 10 000 tonnes, soit des charges fixes unitaires de 45 000 FCFA la tonne. Le coût complet unitaire est donc de 180 000 plus 45 000, soit 225 000 FCFA.
+
+Méthode du coût, avec une marge négociée de 10 % : 225 000 fois 1,10, soit 247 500 FCFA. Méthode du marché : un produit comparable se vend à 260 000 FCFA la tonne entre entreprises indépendantes, avec une économie commerciale évitée de 8 % en vente interne. Le calcul est 260 000 fois (1 moins 0,08), soit 260 000 fois 0,92, soit 239 200 FCFA. Méthode du prix négocié, prise comme moyenne des deux bornes : (247 500 plus 239 200) divisé par 2, soit 243 350 FCFA.
+
+Regardons maintenant l''effet de ces trois méthodes sur la performance de chaque filiale, pour un volume cédé de 6 000 tonnes, avec un coût variable de distribution de 15 000 FCFA la tonne chez Teranga Distribution, et un prix de revente externe de 300 000 FCFA la tonne. Avec le prix négocié de 243 350 FCFA : la marge de Teranga Céréales est de (243 350 moins 225 000) fois 6 000, soit 110 100 000 FCFA. La marge de Teranga Distribution est de (300 000 moins 243 350 moins 15 000) fois 6 000, soit 249 900 000 FCFA. La marge groupe consolidée est donc de 110 100 000 plus 249 900 000, soit 360 000 000 FCFA.
+
+Faisons maintenant le même calcul avec la méthode du coût, à 247 500 FCFA. Marge de Teranga Céréales : (247 500 moins 225 000) fois 6 000, soit 135 000 000 FCFA. Marge de Teranga Distribution : (300 000 moins 247 500 moins 15 000) fois 6 000, soit 225 000 000 FCFA. La marge groupe est de 135 000 000 plus 225 000 000, soit à nouveau 360 000 000 FCFA, strictement identique.
+
+Ce résultat est fondamental et vous devez le retenir pour l''examen : quelle que soit la méthode de prix de cession interne retenue, la marge groupe consolidée reste rigoureusement identique, car il s''agit d''une opération intragroupe qui s''élimine en consolidation. Seule la répartition de cette marge entre les deux filiales change. C''est pourquoi le choix de la méthode est avant tout un enjeu de gouvernance, d''évaluation et de motivation des responsables de filiale, et non un levier de création de valeur pour le groupe.
+
+## 1:15:00 – 1:20:00 · Synthèse de la séance
+
+Récapitulons les points essentiels. Premièrement, un centre de responsabilité ne doit être évalué que sur ce qu''il contrôle, selon le principe de contrôlabilité. Deuxièmement, le ROI est utile pour comparer des centres entre eux mais peut induire un sous-investissement si on l''utilise seul ; l''EVA corrige ce biais en comparant la rentabilité au coût réel du capital. Troisièmement, les trois méthodes de prix de cession interne (coût, marché, négocié) donnent des prix différents et donc des performances différentes par filiale, mais ne changent jamais le résultat consolidé du groupe, car l''opération s''élimine en consolidation.
+
+## 1:20:00 – 1:30:00 · Évaluation finale
+
+Cinq questions pour conclure.
+
+Première question : citez les quatre types de centres de responsabilité. Réponse : centre de coût, centre de recettes, centre de profit, centre d''investissement.
+
+Deuxième question : un centre d''investissement dégage un résultat d''exploitation de 174 930 000 FCFA après impôt théorique n''étant pas encore appliqué, avec un résultat avant impôt de 249 900 000 FCFA et des capitaux investis de 800 000 000 FCFA. Calculez son ROI. Réponse : ROI égale 249 900 000 divisé par 800 000 000, soit 0,3124, soit 31,24 %.
+
+Troisième question : avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %, calculez l''EVA de ce même centre. Réponse : NOPAT égale 249 900 000 fois 0,70, soit 174 930 000 FCFA. Charge de capital égale 800 000 000 fois 0,12, soit 96 000 000 FCFA. EVA égale 174 930 000 moins 96 000 000, soit 78 930 000 FCFA.
+
+Quatrième question : pourquoi le choix d''une méthode de prix de cession interne plutôt qu''une autre ne change-t-il jamais le résultat consolidé du groupe ? Réponse : parce que la cession interne est une opération entre deux entités du même groupe, et que ce que l''une gagne en plus est exactement ce que l''autre paie en plus ; cette opération s''élimine donc intégralement lors de la consolidation, et seule compte la marge réalisée avec un client final extérieur au groupe.
+
+Cinquième question : pourquoi ce même choix de méthode peut-il néanmoins créer des tensions internes entre responsables de filiale ? Réponse : parce que si la rémunération variable de chaque responsable dépend du résultat de sa propre entité, le choix de la méthode redistribue concrètement cette rémunération entre les responsables, même si la création de valeur globale du groupe reste inchangée, ce qui explique que ce choix fasse souvent l''objet de négociations, voire de conflits, entre centres de profit.
+
+Merci pour votre attention, je vous retrouve pour le prochain cours vidéo consacré aux systèmes d''information décisionnels.', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Centres de responsabilité et prix de cession interne avancé');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Systèmes d''information décisionnels', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : comprendre le rôle d''un ERP et des outils de Business Intelligence dans la production du reporting de gestion, savoir calculer et interpréter un gain de délai de clôture et un indice de qualité des données, identifier les risques d''un reporting consolidé multi-filiales. Prérequis : notions de base sur les systèmes d''information de gestion. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et enjeux de la séance
+
+Bonjour à toutes et à tous. Ce troisième cours vidéo du Master 1 porte sur les systèmes d''information décisionnels, les ERP et le reporting consolidé. C''est une matière qui peut sembler plus technique que les deux précédentes, mais elle est en réalité tout aussi stratégique pour le contrôleur de gestion : un indicateur parfaitement construit sur le plan théorique, un prix de cession interne savamment calculé, un indice RSE bien pensé, tout cela ne vaut rien si les données sous-jacentes sont fausses, incomplètes, ou produites trop tard pour être utiles à la décision.
+
+Plan de la séance : d''abord, le rôle de l''ERP et son articulation avec les outils de Business Intelligence ; ensuite, comment mesurer le délai et la qualité d''un reporting consolidé, avec des calculs chiffrés ; un quiz à mi-parcours ; puis les risques spécifiques du reporting en environnement multi-ERP, avec un cas pratique complet ; et l''évaluation finale.
+
+## 05:00 – 20:00 · Le rôle de l''ERP dans la chaîne d''information de gestion
+
+Un ERP, Enterprise Resource Planning, ou progiciel de gestion intégré, est un logiciel qui centralise dans une base de données unique les informations de plusieurs fonctions de l''entreprise : comptabilité, ventes, achats, production, ressources humaines, gestion des stocks. Avant la généralisation des ERP, chaque fonction gérait souvent ses propres fichiers séparés, ce qui multipliait les ressaisies manuelles, les incohérences entre services, et les délais de production de l''information.
+
+L''intérêt principal d''un ERP pour le contrôle de gestion, c''est la cohérence et la traçabilité des données. Une vente enregistrée dans le module commercial met automatiquement à jour le stock, génère l''écriture comptable correspondante, et alimente en temps réel les tableaux de bord de suivi d''activité, sans aucune ressaisie manuelle. Cela réduit les erreurs, accélère considérablement la production de l''information de gestion, et permet un suivi plus fréquent, hebdomadaire voire quotidien, plutôt que purement mensuel comme c''était souvent le cas auparavant.
+
+Mais attention, un point que l''examen adore tester : un ERP mal paramétré peut produire l''effet exactement inverse de celui recherché. Si les référentiels, c''est-à-dire le plan de comptes, la codification des centres de coûts, les nomenclatures de produits, ne sont pas harmonisés entre les différentes filiales d''un groupe, la consolidation des données devient source d''erreurs majeures. Une même catégorie de charge peut être enregistrée différemment selon les filiales, ce qui rend les comparaisons et les agrégations peu fiables, voire trompeuses. Retenez bien ceci : le paramétrage initial d''un ERP, et en particulier la définition commune des référentiels pour l''ensemble du groupe, est un enjeu de contrôle de gestion à part entière, pas seulement un enjeu informatique que l''on pourrait déléguer entièrement à la direction des systèmes d''information.
+
+## 20:00 – 32:00 · Du système transactionnel au reporting de gestion
+
+Distinguons maintenant deux notions que l''on confond souvent. Un ERP enregistre des transactions : une vente, un achat, une sortie de stock. C''est ce qu''on appelle un système transactionnel. Le reporting de gestion, en revanche, a besoin d''une vision agrégée et analytique de ces transactions : la marge par produit, par client, par filiale, l''évolution dans le temps, la comparaison au budget. Cette transformation de la donnée transactionnelle en information de pilotage est assurée par des outils de Business Intelligence, qui extraient les données de l''ERP, les structurent dans un entrepôt de données, puis les restituent sous forme de tableaux de bord.
+
+Quelle est la place du contrôleur de gestion dans cette chaîne ? Il ne construit généralement pas lui-même l''ERP ni l''outil de Business Intelligence, cela reste le métier de la direction des systèmes d''information. Mais il définit les règles de gestion qui doivent y être codées : quelle définition retenir pour la marge opérationnelle, quel périmètre exact pour un centre de coût, quelle fréquence de mise à jour des tableaux de bord. Et surtout, il reste responsable de la qualité et de la pertinence des indicateurs finalement restitués aux décideurs, même si la technique informatique est assurée par d''autres équipes.
+
+## 32:00 – 50:00 · Mesurer le délai et la qualité du reporting consolidé : calculs chiffrés
+
+Deux critères permettent de mesurer la qualité d''un dispositif de reporting consolidé dans un groupe à plusieurs filiales : le délai de production, c''est-à-dire combien de jours ouvrés après la clôture du mois le reporting est-il disponible, et la fiabilité des données agrégées.
+
+Prenons le cas du Groupe Teranga Agro-Industries. Avant la mise en place d''un ERP intégré entre ses filiales, le reporting consolidé mensuel nécessitait 12 jours ouvrés, avec une collecte manuelle des fichiers de chaque filiale et des retraitements sur tableur. Après l''intégration d''un ERP commun avec des référentiels harmonisés, ce délai est ramené à 5 jours ouvrés. Calculons le gain de délai ensemble : (12 moins 5) divisé par 12, soit 7 divisé par 12, soit 0,583, soit un gain de 58,3 %.
+
+Qu''est-ce que cela signifie concrètement pour la direction générale ? Elle dispose de l''information de gestion près de deux semaines plus tôt qu''auparavant, ce qui lui permet de réagir à un écart défavorable avant la fin du trimestre, plutôt que de le découvrir trop tard pour agir efficacement.
+
+Passons maintenant à la qualité des données. Un indice de qualité peut être construit en pondérant plusieurs critères, exactement comme nous l''avons fait pour l''indice de performance globale dans le cours précédent. Pour Teranga Agro-Industries, un comité qualité évalue sur 100 quatre critères : l''exhaustivité des données, notée 92, pondérée à 30 % ; l''exactitude, notée 88, pondérée à 35 % ; la cohérence inter-filiales, notée 80, pondérée à 20 % ; le délai de saisie, noté 75, pondéré à 15 %.
+
+Calculons l''indice ensemble : 92 fois 0,30, cela donne 27,6. 88 fois 0,35, cela donne 30,8. 80 fois 0,20, cela donne 16. 75 fois 0,15, cela donne 11,25. La somme de ces quatre termes est 27,6 plus 30,8 plus 16 plus 11,25, soit 85,65, que l''on arrondit à 85,6 sur 100.
+
+Ce résultat montre une qualité globale satisfaisante, mais avec un point de vigilance clair sur le délai de saisie, à 75 sur 100, le critère le moins bien noté des quatre, qui mérite une action corrective prioritaire, par exemple un rappel systématique des échéances aux filiales ou une automatisation renforcée de la collecte des données à la source.
+
+## 50:00 – 55:00 · Pause active et quiz interactif
+
+Quiz de mi-séance. Première question : quelle est la différence entre un système transactionnel et un outil de Business Intelligence ? Réponse : le système transactionnel, comme l''ERP, enregistre les opérations élémentaires au moment où elles se produisent ; l''outil de Business Intelligence extrait, agrège et restitue ces données sous une forme analytique utile à la décision.
+
+Deuxième question : pourquoi l''harmonisation des référentiels entre filiales est-elle indispensable à la fiabilité d''un reporting consolidé ? Réponse : parce que sans référentiels communs, une même catégorie de charge ou de produit peut être enregistrée différemment selon les filiales, ce qui fausse les agrégations au niveau du groupe.
+
+Troisième question : un groupe réduit son délai de clôture consolidée de 20 jours ouvrés à 8 jours ouvrés. Quel est le gain de délai en pourcentage ? Réponse : (20 moins 8) divisé par 20, soit 12 divisé par 20, soit 0,60, soit 60 %.
+
+## 55:00 – 1:18:00 · Les risques du reporting en environnement multi-ERP : cas pratique
+
+De nombreux groupes, en particulier lorsqu''ils résultent d''une croissance externe par acquisition de filiales, fonctionnent encore avec plusieurs ERP différents selon les filiales, faute d''avoir harmonisé leurs systèmes d''information dès le départ. Dans cette situation, la consolidation nécessite des interfaces ou des retraitements manuels entre systèmes, ce qui réintroduit exactement les risques d''erreur et de délai que l''ERP intégré est censé éliminer.
+
+Prenons un cas pratique complet. Le Groupe Teranga Agro-Industries, qui a récemment acquis Teranga Distribution, fonctionne encore avec deux ERP distincts, l''un pour Teranga Céréales, l''autre pour Teranga Distribution, issu de l''ERP que cette filiale utilisait avant son acquisition. La direction financière envisage un projet de remplacement par un ERP unique pour tout le groupe, pour un coût d''implémentation de 400 000 000 FCFA sur 18 mois, avec deux bénéfices attendus : une réduction du délai de clôture consolidée de 15 à 6 jours ouvrés, et une amélioration de l''indice de qualité des données de 78 à 90 sur 100.
+
+Que devez-vous faire face à ce type de cas à l''examen ? D''abord, chiffrer les bénéfices : le gain de délai est de (15 moins 6) divisé par 15, soit 9 divisé par 15, soit 0,60, soit 60 %, un gain très significatif pour la réactivité du pilotage. Ensuite, qualifier les risques du projet au-delà du seul coût financier : le risque de rupture opérationnelle pendant la période de migration de 18 mois, durant laquelle la fiabilité du reporting peut temporairement se dégrader avant de s''améliorer ; le risque de résistance au changement des équipes de chaque filiale, habituées à leur ancien système ; et le risque, souvent sous-estimé, que le nouveau référentiel commun ne soit pas correctement validé par le contrôle de gestion avant le déploiement, ce qui reproduirait à terme les mêmes problèmes de cohérence que le projet cherche justement à résoudre.
+
+La leçon méthodologique à retenir pour l''examen : face à un projet de système d''information, ne vous contentez jamais de recopier les bénéfices chiffrés annoncés par la direction financière. Mobilisez systématiquement, en contrôleur de gestion, une analyse des risques opérationnels et organisationnels du projet, qui sont tout aussi déterminants que le gain financier brut pour juger de la réussite réelle du projet.
+
+## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
+
+Récapitulons les points essentiels de cette séance. Un ERP centralise l''information de gestion, mais sa fiabilité dépend d''un paramétrage initial rigoureux, en particulier l''harmonisation des référentiels entre filiales. Les outils de Business Intelligence transforment la donnée transactionnelle en information de pilotage, et le contrôleur de gestion en définit les règles de gestion. La qualité d''un reporting consolidé se mesure à la fois par son délai de production et par la fiabilité des données agrégées. En environnement multi-ERP, des contrôles de cohérence automatisés sont indispensables pour fiabiliser la consolidation.
+
+Cinq questions pour l''évaluation finale.
+
+Première question : citez deux fonctions de l''entreprise que centralise typiquement un ERP. Réponse : par exemple la comptabilité et les ventes, ou les achats et la gestion des stocks ; toute paire de fonctions parmi comptabilité, ventes, achats, production, ressources humaines, stocks est acceptée.
+
+Deuxième question : un groupe réduit son délai de clôture consolidée de 10 à 4 jours ouvrés. Calculez le gain de délai en pourcentage. Réponse : (10 moins 4) divisé par 10, soit 6 divisé par 10, soit 0,60, soit 60 %.
+
+Troisième question : un comité qualité note les données consolidées d''un groupe sur les critères suivants : exhaustivité 85 (poids 25 %), exactitude 90 (poids 40 %), cohérence inter-filiales 75 (poids 20 %), délai de saisie 70 (poids 15 %). Calculez l''indice de qualité des données. Réponse : (85 fois 0,25) plus (90 fois 0,40) plus (75 fois 0,20) plus (70 fois 0,15), soit 21,25 plus 36 plus 15 plus 10,5, soit 82,75, arrondi à 82,8 sur 100.
+
+Quatrième question : pourquoi un contrôle de cohérence automatisé entre ventes intragroupe déclarées par le vendeur et achats intragroupe déclarés par l''acheteur est-il particulièrement utile avant la consolidation ? Réponse : parce qu''il permet de détecter une incohérence avant l''étape d''élimination des opérations intragroupe, évitant qu''une erreur de saisie ou d''affectation ne fausse silencieusement le résultat consolidé final.
+
+Cinquième question : citez un risque organisationnel, autre que financier, d''un projet de remplacement d''ERP dans un groupe multi-filiales. Réponse : par exemple le risque de rupture opérationnelle pendant la période de migration, le risque de résistance au changement des équipes, ou le risque qu''un référentiel commun mal validé reproduise les mêmes incohérences que l''ancien système ; toute réponse pertinente et justifiée est acceptée.
+
+Merci pour votre attention. Je vous retrouve dans le dernier cours vidéo de ce Master 1, consacré à un atelier transversal qui combine les trois matières que nous venons d''étudier sur un cas d''entreprise filé.', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Systèmes d''information décisionnels');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Atelier transversal — synthèse du Master 1 en Contrôle de gestion', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : mobiliser simultanément les trois matières avancées de l''année (performance globale, centres de responsabilité et prix de cession interne, systèmes d''information décisionnels) sur un cas d''entreprise transversal filé, dans des conditions proches de l''examen. Prérequis : les trois cours vidéo précédents de ce Master 1. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Sahel Industries.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs de l''atelier
+
+Bonjour à toutes et à tous. Ce quatrième et dernier cours vidéo du Master 1 est un atelier de synthèse. Nous n''allons pas introduire de nouvelle notion théorique : nous allons mobiliser ensemble, sur un seul cas d''entreprise filé du début à la fin de la séance, les trois matières que vous avez étudiées cette année. C''est exactement le type d''exercice que vous rencontrerez à l''examen, où un même cas mêle souvent plusieurs matières dans une seule étude.
+
+Le cas que nous allons traiter aujourd''hui est celui du Groupe Sahel Industries, que vous avez peut-être déjà croisé dans le sujet type de la leçon 5. Nous allons le reprendre intégralement, en détaillant chaque étape du raisonnement, comme si nous étions en situation d''examen.
+
+## 05:00 – 10:00 · Présentation du cas transversal
+
+Le Groupe Sahel Industries regroupe deux filiales : Sahel Minoterie, qui transforme des céréales, et Sahel Agro-Export, qui distribue et exporte la production sur le marché régional. Sahel Minoterie cède une partie de sa production à Sahel Agro-Export. Les deux filiales sont des centres d''investissement. Le groupe a par ailleurs engagé un chantier de refonte de son système d''information et souhaite renforcer sa démarche RSE.
+
+Voici les données. Pour Sahel Minoterie : coût variable unitaire de 95 000 FCFA la tonne, charges fixes annuelles totales de 300 000 000 FCFA pour une activité normale de 7 500 tonnes, capitaux investis de 950 000 000 FCFA. Un produit comparable se vend à 155 000 FCFA la tonne entre entreprises indépendantes. La marge négociée retenue en méthode du coût est de 8 %, et l''économie commerciale évitée en méthode du marché est de 10 %. Le volume cédé à Sahel Agro-Export est de 4 200 tonnes. Notez bien toutes ces données, nous allons les utiliser pas à pas.
+
+## 10:00 – 30:00 · Étape 1 : le prix de cession interne
+
+Commençons par le prix de cession interne. Première étape : le coût complet unitaire de Sahel Minoterie. Les charges fixes unitaires sont de 300 000 000 divisé par 7 500, soit 40 000 FCFA la tonne. Le coût complet unitaire est donc de 95 000 plus 40 000, soit 135 000 FCFA.
+
+Calculons maintenant les deux méthodes de référence. Méthode du coût, avec une marge négociée de 8 % : 135 000 fois 1,08, soit 145 800 FCFA. Méthode du marché, avec une économie commerciale évitée de 10 % sur un prix de marché de 155 000 FCFA : 155 000 fois (1 moins 0,10), soit 155 000 fois 0,90, soit 139 500 FCFA.
+
+Retenons un prix négocié comme moyenne de ces deux bornes : (145 800 plus 139 500) divisé par 2, soit 142 650 FCFA. C''est ce prix que nous utiliserons pour la suite de l''atelier, mais rappelez-vous que tout autre prix situé entre les deux bornes et correctement justifié serait également accepté à l''examen.
+
+## 30:00 – 45:00 · Étape 2 : ROI et EVA de Sahel Minoterie
+
+Sahel Minoterie dégage, par ailleurs, un résultat sur ses ventes externes de 80 000 000 FCFA, en plus de la marge réalisée sur la cession interne. Calculons cette marge sur cession interne : (142 650 moins 135 000) fois 4 200, soit 7 650 fois 4 200, soit 32 130 000 FCFA.
+
+Le résultat d''exploitation total de Sahel Minoterie est donc de 32 130 000 plus 80 000 000, soit 112 130 000 FCFA. Avec des capitaux investis de 950 000 000 FCFA, son ROI est de 112 130 000 divisé par 950 000 000, soit 0,118, soit environ 11,8 %.
+
+Calculons maintenant l''EVA, avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %. Le NOPAT est de 112 130 000 fois 0,70, soit 78 491 000 FCFA. La charge de capital est de 950 000 000 fois 0,12, soit 114 000 000 FCFA. L''EVA est donc de 78 491 000 moins 114 000 000, soit moins 35 509 000 FCFA.
+
+Arrêtons-nous sur ce résultat, car c''est le cœur pédagogique de cet atelier : l''EVA est négative, alors que le ROI est positif à 11,8 %. Si vous vous étiez arrêtés au seul ROI, vous auriez conclu, à tort, que Sahel Minoterie est une filiale performante. L''EVA révèle que sa rentabilité réelle, 11,8 %, est inférieure au coût du capital exigé par le groupe, 12 %, et que la filiale détruit donc de la valeur économique, même si son résultat comptable reste positif. C''est exactement le type de piège que l''examen de Master cherche à tester : ne jamais conclure sur un seul indicateur de performance.
+
+## 45:00 – 50:00 · Pause active et quiz interactif
+
+Première question du quiz : quel est le coût complet unitaire de Sahel Minoterie ? Réponse : 135 000 FCFA la tonne.
+
+Deuxième question : pourquoi l''EVA de Sahel Minoterie est-elle négative alors que son ROI est positif ? Réponse : parce que sa rentabilité réelle de 11,8 % reste inférieure au coût du capital exigé par le groupe, fixé à 12 % dans cet exemple ; l''EVA compare directement la rentabilité au coût du capital, ce que le ROI seul ne fait pas.
+
+Troisième question : le résultat consolidé du groupe serait-il différent si l''on avait retenu le prix de cession interne de 145 800 FCFA (méthode du coût) plutôt que 142 650 FCFA (prix négocié) ? Réponse : non, car l''opération de cession interne s''élimine en consolidation ; seule la répartition de la marge entre les deux filiales changerait.
+
+## 50:00 – 1:05:00 · Étape 3 : performance globale et système d''information
+
+Poursuivons le cas. Le comité de pilotage du Groupe Sahel Industries évalue sa performance globale sur trois axes notés sur 20 : axe économique 15, axe social 12, axe environnemental 10, avec des pondérations respectives de 45 %, 25 % et 30 %.
+
+Calculons l''indice de performance globale : (15 fois 0,45) plus (12 fois 0,25) plus (10 fois 0,30), soit 6,75 plus 3 plus 3, soit 12,75 sur 20.
+
+Passons maintenant au système d''information. Un comité qualité évalue les données du groupe sur quatre critères notés sur 100 : exhaustivité 90 (poids 30 %), exactitude 85 (poids 35 %), cohérence inter-filiales 72 (poids 20 %), délai de saisie 80 (poids 15 %).
+
+Calculons l''indice de qualité des données : (90 fois 0,30) plus (85 fois 0,35) plus (72 fois 0,20) plus (80 fois 0,15), soit 27 plus 29,75 plus 14,4 plus 12, soit 83,15, arrondi à 83,2 sur 100.
+
+## 1:05:00 – 1:22:00 · Étape 4 : synthèse argumentée, l''exercice le plus difficile
+
+Nous arrivons maintenant à l''exercice le plus exigeant, celui qui rapporte le plus de points à l''examen et qui différencie vraiment les bonnes copies : la synthèse argumentée qui relie tous les résultats calculés.
+
+Reprenons tout ce que nous avons calculé. Le point fort apparent du groupe est sa performance économique relative, avec un axe économique noté 15 sur 20, le plus élevé des trois axes de performance globale, et un système d''information globalement fiable, avec un indice de qualité de 83,2 sur 100. Mais ce point fort doit être immédiatement nuancé par deux éléments de vigilance que nous avons mis en évidence.
+
+D''une part, l''axe environnemental, noté seulement 10 sur 20, le plus faible des trois, qui tire l''indice de performance globale à 12,75 sur 20, un niveau moyen qui appelle une action corrective ciblée. D''autre part, et c''est le point le plus important à souligner dans votre copie, l''EVA négative de Sahel Minoterie, moins 35 509 000 FCFA, révèle que la filiale, malgré un ROI positif de 11,8 %, détruit de la valeur au regard du coût du capital du groupe. C''est une alerte bien plus sérieuse que le seul score environnemental, car elle concerne directement la rentabilité économique de la filiale, et elle doit être signalée à la direction générale au-delà du seul indicateur de rentabilité comptable habituellement regardé.
+
+L''action prioritaire que nous recommandons à la direction générale est donc double et, idéalement, convergente : conduire un diagnostic approfondi des capitaux investis et de la structure de coûts de Sahel Minoterie, plutôt que de se satisfaire de son ROI positif, en parallèle d''un plan d''action ciblé sur l''axe environnemental ; ces deux chantiers peuvent d''ailleurs converger si une partie de la destruction de valeur de Sahel Minoterie provient précisément d''investissements environnementaux coûteux mais encore peu valorisés dans son résultat d''exploitation actuel.
+
+Ce qu''il faut retenir de cette démonstration : à l''examen de Master, les meilleures copies ne se contentent jamais d''empiler des calculs indépendants matière par matière. Elles tissent des liens explicites entre les résultats des différentes matières pour construire un diagnostic global cohérent, exactement comme nous venons de le faire entre l''EVA de la filiale et le score environnemental du groupe.
+
+## 1:22:00 – 1:30:00 · Synthèse finale et évaluation
+
+Pour conclure cet atelier et ce Master 1, retenez la méthode suivante face à un cas d''entreprise de Master : qualifiez d''abord le problème de pilotage posé, identifiez les outils pertinents parmi ceux que vous maîtrisez, menez les calculs avec une rigueur numérique totale, puis reliez systématiquement les résultats entre eux pour produire un diagnostic global argumenté, et non une simple succession de réponses isolées.
+
+Cinq questions pour l''évaluation finale de ce cours vidéo et de ce Master 1.
+
+Première question : quel est le résultat d''exploitation total de Sahel Minoterie dans ce cas ? Réponse : 112 130 000 FCFA.
+
+Deuxième question : l''EVA de Sahel Minoterie est-elle positive ou négative, et que signifie ce résultat ? Réponse : elle est négative, à moins 35 509 000 FCFA, ce qui signifie que la filiale détruit de la valeur économique malgré un résultat comptable et un ROI positifs, car sa rentabilité reste inférieure au coût du capital exigé par le groupe.
+
+Troisième question : quel est l''indice de performance globale du Groupe Sahel Industries ? Réponse : 12,75 sur 20.
+
+Quatrième question : quel est l''indice de qualité des données du système d''information du groupe ? Réponse : environ 83,2 sur 100.
+
+Cinquième question : pourquoi est-il essentiel, dans une synthèse de Master, de relier les résultats de plusieurs matières plutôt que de les présenter séparément ? Réponse : parce qu''un diagnostic global cohérent, qui met en évidence des liens entre les points de vigilance de différentes matières, par exemple entre la destruction de valeur économique d''une filiale et son retard environnemental, a une valeur de pilotage bien supérieure à une simple liste de calculs isolés, et c''est précisément ce que recherchent les correcteurs au niveau Master.
+
+Merci à toutes et à tous pour votre participation à ce Master 1 en Contrôle de gestion. Bon courage pour vos examens, et à bientôt pour le Master 2.', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-cg-m1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — synthèse du Master 1 en Contrôle de gestion');
 
 -- Cours : Contrôle de gestion Master 2 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1947,677 +2566,3 @@ Ce cours de Master 1 vous a donné trois blocs d''outils qui se combinent dans l
 5. Quels sont les quatre blocs attendus dans une recommandation finale de dossier de fusion-acquisition ? Réponse : la valeur de la cible avec ses hypothèses, les conditions de l''opération et leur effet sur le BPA, l''impact pour un investisseur minoritaire via le CAPM, et une conclusion argumentée qui tranche sur l''opportunité de l''opération.', 'video', 90, false, 90
 from public.courses c where c.slug = 'mas-fin-m1'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier cas pratique transversal - évaluation et montage d''une opération de croissance externe');
-
--- Cours : Économie Master 1 : réussir ses examens
-insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-eco-m1', (select id from public.levels where name = 'Master 1'), null, 'Économie', 'Économie Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en Économie : économétrie appliquée, économie industrielle et organisation des marchés, politiques économiques en macroéconomie ouverte. Pour étudiants ayant validé une Licence en Économie (micro/macro, maths, statistiques, économie du développement, monétaire et internationale, publique). Fiches avancées, cas d''entreprise sénégalais/africains fictifs, exercices corrigés, sujet type d''examen et quatre cours vidéo de 1h30.', true, 761
-on conflict (slug) do nothing;
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 1 en Économie', 'Objectifs de la leçon
-
-Cette première leçon pose le cadre de votre année de Master 1 en Économie. Elle explique ce qui change par rapport à la Licence, présente les trois matières avancées du semestre, et propose une méthode de travail et un plan de révision sur six semaines. À la fin de cette leçon, vous saurez organiser votre préparation aux examens partiels et, le cas échéant, à votre premier travail de recherche encadré (mémoire ou dossier de recherche).
-
-Ce qui change entre la Licence et le Master 1
-
-En Licence, vous avez appris les outils de base : microéconomie et macroéconomie 1 et 2, mathématiques pour économistes, une introduction aux statistiques et à l''économétrie, l''économie du développement, l''économie monétaire et internationale, l''économie publique. Le Master 1 ne répète pas ces bases : il les mobilise comme des prérequis acquis et vous demande de les combiner pour analyser des situations complexes, souvent avec des données chiffrées à traiter vous-même.
-
-Trois ruptures caractérisent le passage en Master 1 :
-- Vous ne vous contentez plus d''appliquer une formule : vous devez choisir la méthode adaptée à un problème, justifier ce choix, et discuter ses limites (validité des hypothèses, robustesse des résultats).
-- Les exercices prennent la forme de cas d''entreprise ou de politique économique complets, avec plusieurs variables en jeu, parfois des données partielles ou bruitées, comme dans la réalité professionnelle.
-- L''évaluation porte aussi sur la capacité à communiquer un résultat économique à un décideur (note de synthèse, recommandation argumentée), pas seulement à calculer un résultat.
-
-Les trois matières de ce semestre
-
-1. Économétrie appliquée. Vous allez approfondir la régression linéaire multiple : interprétation économique des coefficients, tests d''hypothèses sur un ou plusieurs paramètres, diagnostic de la qualité d''un modèle (R² ajusté, significativité globale avec le test F), et une sensibilisation aux problèmes qui biaisent les estimations (variable omise, multicolinéarité, hétéroscédasticité). L''objectif n''est pas de refaire des calculs à la main sur des données réelles complexes, mais de savoir lire, interpréter et critiquer une sortie de régression, et de construire un modèle simple vous-même sur un jeu de données réduit.
-
-2. Économie industrielle et organisation des marchés. Cette matière approfondit la concurrence imparfaite déjà vue en Licence 2 (monopole, oligopole simple) vers des structures de marché plus réalistes : oligopole avec différenciation de produit, concurrence par les quantités (Cournot) et par les prix (Bertrand), collusion et cartels, pratiques anticoncurrentielles, et le rôle de la régulation économique (autorités de la concurrence, régulation sectorielle des télécommunications, de l''énergie ou des transports en Afrique de l''Ouest).
-
-3. Politiques économiques et macroéconomie ouverte avancée. Vous retravaillez les politiques budgétaire et monétaire dans un cadre d''économie ouverte (taux de change, mobilité des capitaux, contraintes d''une union monétaire comme la zone UEMOA), avec une attention particulière à l''arbitrage entre croissance, stabilité des prix et soutenabilité de la dette publique.
-
-Méthode de travail en Master 1
-
-La méthode de travail doit évoluer vers une démarche de type recherche appliquée :
-- Lecture active d''un cas ou d''un article avant le cours : identifiez le problème économique posé, les données disponibles, la question à laquelle on cherche une réponse.
-- Formalisation : traduisez le problème en équations ou en modèle simple avant de calculer quoi que ce soit.
-- Calcul rigoureux, avec vérification (ordre de grandeur, signe attendu des coefficients, cohérence avec la théorie).
-- Discussion critique : un résultat chiffré n''a de valeur que s''il est interprété avec ses limites (échantillon petit, hypothèses du modèle, causalité versus corrélation).
-- Rédaction synthétique : vous devez être capable de résumer un résultat en cinq lignes pour un lecteur non spécialiste, compétence indispensable si vous rédigez un mémoire professionnel ou de recherche en fin de Master.
-
-Le mémoire ou le dossier de recherche
-
-Selon votre parcours, le Master 1 peut inclure un dossier de recherche encadré (parfois appelé « mémoire de M1 ») ou un stage avec rapport. Dans tous les cas, la méthode est la même : poser une question précise, mobiliser une revue de littérature courte (quelques références académiques ou institutionnelles sérieuses, jamais inventées), choisir une méthode adaptée aux données disponibles, présenter des résultats honnêtes même s''ils sont partiels, et conclure avec des limites clairement identifiées. Ne citez jamais un auteur, un chiffre officiel ou une étude que vous n''avez pas vérifiés : en cas de doute, formulez le constat en termes généraux plutôt que d''inventer une référence précise.
-
-Plan de révision sur six semaines
-
-Semaine 1 : consolidation des prérequis. Reprenez vos notes de Licence sur la régression simple, le monopole et duopole, et les mécanismes IS-LM / offre-demande globale en économie fermée. Ne commencez pas le Master 1 avec des lacunes sur ces bases.
-
-Semaine 2 : économétrie appliquée, partie 1. Régression multiple, lecture des coefficients, écart-types, tests de Student sur un coefficient.
-
-Semaine 3 : économétrie appliquée, partie 2. Test F global, R² ajusté, première sensibilisation aux biais (variable omise, multicolinéarité). Faites au moins un exercice complet avec un jeu de données simple, à la main ou avec un tableur.
-
-Semaine 4 : économie industrielle. Cournot, Bertrand, différenciation de produit, à partir d''exemples sénégalais ou ouest-africains fictifs (télécommunications, distribution, agro-industrie).
-
-Semaine 5 : politiques économiques et macroéconomie ouverte. Reprenez les mécanismes de change fixe en union monétaire, les canaux de transmission de la politique monétaire de la BCEAO en termes généraux, et les contraintes de soutenabilité de la dette.
-
-Semaine 6 : révision croisée et sujets types. Refaites les sujets d''examen type de cette série de leçons, chronométrez-vous, et identifiez vos points faibles pour les trois derniers jours avant l''examen.
-
-Points clés à retenir
-- Le Master 1 mobilise les outils de Licence pour résoudre des problèmes complexes, pas pour les refaire à l''identique.
-- L''économétrie appliquée demande de savoir interpréter et critiquer un modèle, pas seulement de connaître une formule.
-- L''économie industrielle avancée porte sur les stratégies des firmes en oligopole et le rôle de la régulation.
-- Les politiques économiques s''étudient désormais en économie ouverte, avec les contraintes de l''union monétaire.
-- Un mémoire ou un dossier de recherche doit être rigoureux : jamais de référence ou de chiffre inventé.
-
-## Exercices pratiques
-
-1. Expliquez en cinq lignes la différence entre corrélation et causalité, avec un exemple économique sénégalais fictif.
-2. Citez deux structures de marché étudiées en Licence et deux structures nouvelles étudiées en Master 1 en économie industrielle.
-3. Pourquoi un modèle de régression avec un R² très élevé n''est-il pas forcément un « bon » modèle du point de vue économique ?
-4. Dans une union monétaire comme l''UEMOA, pourquoi la politique monétaire nationale indépendante n''est-elle pas possible pour chaque État membre ?
-5. Construisez un planning de révision personnel sur six semaines en adaptant les priorités ci-dessus à votre propre emploi du temps.
-
-## Corrigé
-
-1. La corrélation signale que deux variables évoluent ensemble statistiquement ; la causalité signifie que l''une provoque l''autre. Exemple fictif : dans une région sénégalaise, le nombre d''agences bancaires et le volume des exportations locales peuvent être corrélés sans que l''un cause l''autre : tous deux peuvent dépendre d''une troisième variable, comme le dynamisme économique général de la région.
-2. Licence : monopole simple, duopole simple (type Cournot basique). Master 1 : oligopole avec différenciation de produit, concurrence à la Bertrand, collusion et cartels, régulation sectorielle.
-3. Un R² élevé peut provenir d''une corrélation fortuite, d''un échantillon trop petit, ou de variables qui bougent ensemble sans lien économique logique (par exemple deux séries qui croissent toutes deux avec le temps). Il faut aussi vérifier la significativité des coefficients, leur signe (cohérent avec la théorie économique) et la robustesse du modèle.
-4. Parce que la politique monétaire (taux directeur, masse monétaire) est décidée au niveau de la banque centrale commune (BCEAO) pour l''ensemble de la zone ; un État membre ne peut donc pas ajuster seul son taux d''intérêt ou dévaluer sa propre monnaie pour répondre à un choc spécifique à son économie.
-5. Réponse libre : l''essentiel est de répartir les six semaines entre consolidation des prérequis, les trois matières, puis la révision croisée, avec des points de contrôle (auto-évaluations) chaque semaine.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en Économie');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Économétrie appliquée : l''essentiel pour l''examen', 'Objectifs de la leçon
-
-Cette leçon approfondit l''économétrie appliquée : estimer et interpréter une régression multiple, tester des hypothèses sur les coefficients, évaluer la qualité globale du modèle, et repérer les problèmes qui biaisent une estimation. Tous les calculs ont été vérifiés avec un logiciel de calcul scientifique (Python/NumPy) ; les données sont fictives.
-
-Rappel : le modèle de régression multiple
-
-Un modèle de régression linéaire multiple s''écrit : Y = β0 + β1·X1 + β2·X2 + ... + βk·Xk + ε, où Y est la variable à expliquer, X1 à Xk les variables explicatives, β0 à βk les coefficients à estimer, et ε le terme d''erreur. La méthode des moindres carrés ordinaires (MCO) choisit les coefficients qui minimisent la somme des carrés des résidus (écarts entre valeurs observées et valeurs prédites).
-
-Étude de cas : les exportations d''une filière agro-industrielle fictive
-
-Un observatoire régional fictif étudie les exportations mensuelles d''une filière agroalimentaire dans dix zones de production comparables (données fictives) : investissement productif cumulé (X1, milliards FCFA), taux d''ouverture commerciale (X2, %), exportations (Y, milliards FCFA). Les dix observations vont de X1 = 5 à 14, X2 = 2 à 6, Y = 20 à 53, en progression régulière.
-
-En estimant Y = β0 + β1·X1 + β2·X2 + ε par MCO sur ces dix observations, on obtient (calcul vérifié) : β0 ≈ 2,00 ; β1 ≈ 3,60 ; β2 ≈ 0,05. Le modèle estimé s''écrit : Exportations estimées = 2,00 + 3,60 × Investissement + 0,05 × Taux d''ouverture.
-
-Interprétation économique des coefficients
-- β0 = 2,00 : constante, peu de sens économique direct, sert à ajuster l''ordonnée du modèle.
-- β1 = 3,60 : toutes choses égales par ailleurs, une hausse de 1 milliard de FCFA de l''investissement est associée à une hausse de 3,60 milliards de FCFA des exportations. C''est l''effet marginal de l''investissement.
-- β2 = 0,05 : toutes choses égales par ailleurs, une hausse de 1 point de taux d''ouverture est associée à seulement 0,05 milliard de FCFA d''exportations supplémentaires dans cet échantillon, un effet très faible.
-
-Les écarts-types estimés sont : SE(β1) ≈ 0,207 ; SE(β2) ≈ 0,420 (calcul vérifié à partir de la matrice de variance-covariance des estimateurs).
-
-Le test de Student sur un coefficient
-
-Pour tester si βj est significativement différent de zéro : t = βj / SE(βj). Avec n = 10 observations et k = 2 variables, les degrés de liberté du résidu sont n - k - 1 = 7.
-
-Pour β1 : t1 = 3,60 / 0,207 ≈ 17,39, bien au-delà de la valeur critique usuelle d''environ 2,36 (5 %, 7 degrés de liberté, à vérifier dans une table officielle) : on rejette β1 = 0, l''investissement a un effet significatif.
-
-Pour β2 : t2 = 0,05 / 0,420 ≈ 0,12, bien en dessous de la valeur critique : on ne peut pas rejeter β2 = 0. Cela ne signifie pas que l''ouverture commerciale n''a jamais d''effet économique, seulement que sur ces dix observations fictives précises, l''effet mesuré n''est pas distinguable de zéro.
-
-La qualité globale du modèle : R², R² ajusté et test F
-
-Le R² mesure la part de variance de Y expliquée par le modèle. Ici (calcul vérifié) : R² ≈ 0,999, soit 99,9 % de la variation expliquée. Le R² ajusté, qui pénalise l''ajout de variables, reste très élevé lui aussi. Le test F évalue la significativité globale ; ici F ≈ 5057, très supérieur à une valeur critique usuelle de quelques unités : le modèle est hautement significatif.
-
-Attention : un R² aussi proche de 1 sur seulement dix observations fictives doit être interprété avec prudence. Sur des données économiques réelles, un R² aussi élevé est rare et doit alerter sur un possible problème (échantillon trop petit, relation trop mécanique entre les variables).
-
-Les problèmes qui biaisent une estimation
-
-1. La variable omise. Si une variable qui influence réellement Y est corrélée avec une variable du modèle mais absente de celui-ci, les coefficients peuvent être biaisés. Exemple fictif : la qualité des infrastructures routières, si elle influence à la fois l''investissement et les exportations sans être incluse, peut biaiser le coefficient de l''investissement.
-
-2. La multicolinéarité. Deux variables explicatives très corrélées entre elles rendent difficile de séparer statistiquement leurs effets ; les écarts-types augmentent et les tests perdent en puissance.
-
-3. L''hétéroscédasticité. Lorsque la variance des erreurs n''est pas constante, les écarts-types usuels des coefficients MCO ne sont plus fiables, même si les coefficients restent en général non biaisés. Des écarts-types robustes permettent de corriger ce problème.
-
-Points clés à retenir
-- Un coefficient s''interprète toujours « toutes choses égales par ailleurs ».
-- Le test de Student compare t à une valeur critique de table ; au-delà, on rejette la nullité du coefficient.
-- R² et R² ajusté mesurent le pouvoir explicatif global ; le test F teste la significativité jointe.
-- Un R² très élevé sur un petit échantillon s''interprète avec prudence.
-- Variable omise, multicolinéarité, hétéroscédasticité : les trois pièges classiques de l''économétrie appliquée.
-
-## Exercices pratiques
-
-1. À partir du modèle estimé, calculez la valeur prédite des exportations pour une zone fictive avec un investissement de 10 milliards FCFA et un taux d''ouverture de 4 %.
-2. Expliquez pourquoi un coefficient non significatif (comme β2 ici) ne doit pas être automatiquement interprété comme « cette variable n''a aucune importance économique ».
-3. Un collègue vous présente un modèle avec un R² de 0,98 sur 6 observations et 4 variables explicatives. Quelle remarque méthodologique devez-vous faire ?
-4. Donnez un exemple fictif de variable omise plausible dans une étude sur les exportations d''une filière agricole ouest-africaine.
-5. Cas pratique : pour 5 entreprises fictives (effectif salarié X en dizaines ; chiffre d''affaires Y en millions FCFA) : (2,30), (3,45), (4,55), (5,70), (6,85). Calculez à la main la pente et la constante de la régression simple Y sur X, et interprétez.
-6. Pourquoi la multicolinéarité est-elle un problème surtout pour l''interprétation des coefficients individuels, et moins pour la prévision globale ?
-7. Proposez une méthode (sans calcul détaillé) pour détecter une hétéroscédasticité.
-
-## Corrigé
-
-1. Exportations prédites = 2,00 + 3,60×10 + 0,05×4 = 38,20 milliards de FCFA.
-2. Un coefficient non significatif signifie que, sur cet échantillon, l''effet mesuré n''est pas distinguable de zéro ; cela peut venir d''un échantillon trop petit, d''une multicolinéarité, ou d''une relation réellement faible. Il ne faut jamais généraliser une non-significativité statistique à une absence totale de pertinence économique.
-3. Risque de surapprentissage : avec 6 observations et 4 variables, il reste très peu de degrés de liberté (6-4-1=1), ce qui rend les résultats fragiles et peu généralisables, même avec un R² élevé.
-4. Exemple fictif : la qualité du réseau routier reliant les zones de production aux ports. Elle influence à la fois l''investissement (accès aux marchés) et directement la capacité à exporter, sans être incluse au modèle.
-5. Moyenne X=4, moyenne Y=57. Écarts X-4=(-2,-1,0,1,2), Y-57=(-27,-12,-2,13,28). Produits: somme=135. Carrés de (X-4): somme=10. Pente β1=135/10=13,5. Constante β0=57-13,5×4=3. Modèle: Y=3+13,5×X. Chaque dizaine de salariés supplémentaire est associée à 13,5 millions FCFA de chiffre d''affaires en plus.
-6. La multicolinéarité empêche de distinguer la contribution propre de chaque variable corrélée, mais n''empêche pas le modèle de bien prédire Y globalement, tant que la combinaison des variables reste stable.
-7. Représenter les résidus en fonction des valeurs prédites : si leur dispersion varie systématiquement avec le niveau de la variable, cela suggère une hétéroscédasticité. Des tests formels existent, à approfondir plus tard.', 'texte', 50, false, 20
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Économétrie appliquée : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Économie industrielle et organisation des marchés : l''essentiel pour l''examen', 'Objectifs de la leçon
-
-Cette leçon approfondit l''économie industrielle : les structures de marché en concurrence imparfaite avancée (oligopole à la Cournot, à la Bertrand, différenciation de produit, collusion), et le rôle économique de la régulation. Les exemples s''appuient sur des cas d''entreprise fictifs inspirés de secteurs ouest-africains, sans référence à une entreprise réelle.
-
-Rappel : du monopole à l''oligopole
-
-En Licence, vous avez étudié le monopole et une introduction au duopole. En Master 1, l''analyse se concentre sur l''oligopole, structure où un petit nombre de firmes interagissent stratégiquement : la décision de chaque firme dépend de ce qu''elle anticipe que feront ses concurrentes. C''est le domaine de la théorie des jeux appliquée à l''économie industrielle.
-
-Le modèle de Cournot (concurrence en quantités)
-
-Dans le modèle de Cournot, les firmes choisissent simultanément les quantités qu''elles produisent, et le prix s''ajuste à l''offre totale.
-
-Étude de cas fictive : deux opérateurs télécoms fictifs, « Teranga Télécom » et « Baobab Mobile », se partagent un marché régional fictif. La demande inverse est P = 100 - Q, Q = q1 + q2, coût marginal commun c = 10. La solution classique du duopole de Cournot symétrique avec demande linéaire P = a - Q donne qi* = (a - c)/3.
-
-Calcul vérifié : qi* = (100-10)/3 = 30. Q* = 60, P* = 100-60 = 40. Profit de chaque firme : (P*-c)×qi* = (40-10)×30 = 900.
-
-Comparaison : en monopole, qm* = (a-c)/2 = 45, prix 100-45 = 55, supérieur au prix de Cournot. En concurrence pure (prix = coût marginal), le prix serait de 10, inférieur. L''oligopole de Cournot se situe donc, comme attendu, entre le monopole et la concurrence pure.
-
-Le modèle de Bertrand (concurrence en prix)
-
-Dans le modèle de Bertrand, les firmes choisissent leur prix pour un produit homogène. Résultat classique : avec deux firmes seulement, produit homogène et coûts identiques, la concurrence en prix ramène le prix au coût marginal (P = c), comme en concurrence parfaite. C''est le « paradoxe de Bertrand » : très peu de concurrents suffisent à éliminer tout profit si le produit est homogène.
-
-Dans l''exemple fictif, un produit strictement identique avec coût marginal 10 donnerait un prix d''équilibre de Bertrand de 10, bien inférieur au prix de Cournot (40). Ce résultat explique pourquoi les entreprises cherchent presque toujours à différencier leur produit plutôt qu''une concurrence frontale par les prix.
-
-La différenciation de produit
-
-Lorsque les produits ne sont pas parfaitement substituables (marque, qualité de service, réseau), chaque firme conserve un pouvoir de marché car une partie de sa clientèle reste fidèle malgré un prix légèrement supérieur. Exemple fictif : une meilleure couverture réseau en zone rurale permet de maintenir un prix plus élevé sans perdre immédiatement ses clients. La différenciation atténue la pression sur les prix, au bénéfice des marges, mais potentiellement au détriment du pouvoir d''achat si elle n''est pas encadrée.
-
-La collusion et les cartels
-
-La collusion se produit lorsque des firmes s''entendent, explicitement ou tacitement, pour limiter la concurrence afin d''augmenter leurs profits conjoints au détriment des consommateurs. Un cartel est une collusion explicite et organisée.
-
-Calcul illustratif : en monopole conjoint, les deux firmes produiraient Q = 45 au prix de 55, profit joint (55-10)×45 = 2025, contre 900+900 = 1800 en Cournot. La collusion est donc plus profitable pour les firmes (2025 > 1800), mais elle réduit la quantité offerte et augmente le prix payé par les consommateurs.
-
-Les cartels sont généralement instables sans mécanisme de surveillance, car chaque membre a individuellement intérêt à produire davantage que sa part convenue (incitation à « tricher »), objet d''étude de la théorie des jeux répétés.
-
-Le rôle économique de la régulation
-
-Face aux risques de pouvoir de marché excessif et de collusion, la régulation vise à préserver une concurrence suffisante et à encadrer les secteurs où la concurrence pure n''est pas naturellement possible (monopoles naturels). En Afrique de l''Ouest, des autorités nationales et régionales de la concurrence sanctionnent les pratiques anticoncurrentielles, et des régulateurs sectoriels (télécommunications, énergie, transports) encadrent les tarifs et l''accès aux infrastructures. Les règles précises diffèrent selon les pays et évoluent ; en cas de doute, il convient toujours de vérifier le texte officiel en vigueur plutôt que d''affirmer un taux ou un seuil non vérifié.
-
-Points clés à retenir
-- Cournot (concurrence en quantités) donne un prix entre celui du monopole et celui de la concurrence pure.
-- Bertrand (concurrence en prix, produit homogène) peut ramener le prix au niveau du coût marginal même avec peu de concurrents : c''est le paradoxe de Bertrand.
-- La différenciation de produit permet aux firmes de conserver un pouvoir de marché malgré la présence de concurrents.
-- La collusion augmente le profit joint des firmes mais réduit le bien-être des consommateurs ; elle reste fragile sans mécanisme de surveillance.
-- La régulation économique (autorités de la concurrence, régulateurs sectoriels) vise à limiter les effets négatifs du pouvoir de marché, notamment en présence de monopoles naturels.
-
-## Exercices pratiques
-
-1. Dans Cournot avec n firmes symétriques, qi* = (a-c)/(n+1). Calculez le prix d''équilibre pour a=100, c=10, n=3.
-2. Expliquez en quoi le paradoxe de Bertrand est contre-intuitif.
-3. Pourquoi une firme a-t-elle intérêt à différencier son produit plutôt que de concurrencer frontalement ses rivales sur les prix ?
-4. Dans l''exemple du cartel fictif, calculez le profit individuel si les firmes se répartissent équitablement le profit joint de collusion, et comparez-le au profit de Cournot.
-5. Pourquoi un monopole naturel justifie-t-il une régulation plutôt qu''une ouverture à la concurrence par les infrastructures ?
-6. Cas pratique : un régulateur observe deux opérateurs fictifs à parts de marché stables à 50 % depuis cinq ans, prix très proches, hausses simultanées. Citez au moins trois indices pouvant justifier une enquête pour collusion tacite.
-7. Pourquoi la théorie des jeux répétés explique-t-elle mieux la stabilité d''un cartel que la théorie des jeux à un coup ?
-
-## Corrigé
-
-1. qi* = (100-10)/4 = 22,5. Q* = 67,5. P* = 100-67,5 = 32,5. Plus il y a de firmes, plus le prix se rapproche du coût marginal (10), confirmant que Cournot converge vers la concurrence pure.
-2. Le paradoxe de Bertrand montre qu''avec un produit homogène, deux concurrents suffisent déjà à ramener le prix au coût marginal : chaque firme a intérêt à baisser légèrement son prix pour capter toute la demande, jusqu''à ce qu''aucune marge ne soit plus possible.
-3. La différenciation réduit la substituabilité parfaite : les clients ne changent plus de fournisseur pour un petit écart de prix, ce qui permet de conserver une marge, alors qu''en produit homogène la moindre différence de prix fait basculer toute la demande vers le moins cher.
-4. Profit individuel en collusion = 2025/2 = 1012,5, contre 900 en Cournot. Chaque firme gagne davantage (1012,5>900), ce qui explique l''incitation à s''entendre, mais aussi l''incitation à « tricher » en produisant plus pour un gain immédiat supérieur, d''où la fragilité de l''accord.
-5. Dupliquer l''infrastructure serait extrêmement coûteux et inefficace (coûts fixes énormes, fortes économies d''échelle) : un seul réseau régulé (tarifs encadrés, obligations d''accès) est plus efficace que plusieurs réseaux concurrents sous-utilisés.
-6. Parts de marché anormalement stables sans gagnant ni perdant ; hausses de prix simultanées de montant proche malgré des coûts potentiellement différents ; absence de guerre des prix malgré seulement deux acteurs (attendue en Bertrand). Ces indices ne prouvent pas une entente mais peuvent justifier une enquête.
-7. Dans un jeu à un coup, chaque firme a toujours intérêt à tricher, sans conséquence future. Dans un jeu répété, une triche aujourd''hui peut entraîner une rétorsion future : la menace crédible de punition peut rendre la collusion stable, tant que les gains futurs de coopération dépassent le gain immédiat de la triche.', 'texte', 50, false, 30
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Économie industrielle et organisation des marchés : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Politiques économiques et macroéconomie ouverte avancée : l''essentiel pour l''examen', 'Objectifs de la leçon
-
-Cette leçon traite des politiques économiques en économie ouverte : les canaux de la politique budgétaire et monétaire lorsque l''économie commerce avec le reste du monde, les contraintes propres à une union monétaire comme l''UEMOA, et la soutenabilité de la dette publique.
-
-De l''économie fermée à l''économie ouverte
-
-En Licence, le modèle IS-LM a été étudié surtout en économie fermée. En Master 1, on introduit explicitement le compte extérieur : exportations, importations, taux de change, mobilité des capitaux. Le modèle de référence, souvent appelé IS-LM-BP (Mundell-Fleming), ajoute une courbe BP représentant l''équilibre de la balance des paiements.
-
-Le trilemme de Mundell
-
-Un résultat central de l''économie ouverte : un pays ne peut pas avoir simultanément (1) un taux de change fixe, (2) une parfaite mobilité des capitaux, et (3) une politique monétaire pleinement autonome. Il doit renoncer à l''un des trois.
-
-Application à l''UEMOA (en termes généraux, sans taux précis) : les pays membres partagent une monnaie commune avec une parité fixe historique à l''euro, et une relative ouverture aux mouvements de capitaux. Conséquence directe du trilemme : chaque État membre renonce à une politique monétaire nationale autonome, décidée au niveau de la banque centrale commune. C''est le prix de la stabilité du taux de change offerte par l''union.
-
-Politique budgétaire en économie ouverte avec change fixe
-
-Avec un change fixe et une mobilité des capitaux élevée, la politique budgétaire devient l''instrument principal dont dispose un État membre pour agir sur son activité nationale, la politique monétaire ne lui appartenant plus en propre. Une relance budgétaire a, en théorie, un effet multiplicateur plus important dans ce cadre qu''en change flexible, car elle n''est pas « absorbée » par une appréciation automatique du taux de change pénalisant les exportations.
-
-Cette dépendance renforcée à la politique budgétaire explique pourquoi la discipline budgétaire est sensible dans une union monétaire : un déficit mal maîtrisé dans un État membre peut peser sur la crédibilité de l''ensemble de la zone, même si chaque État reste en principe responsable de ses propres finances.
-
-La soutenabilité de la dette publique
-
-La dette publique est soutenable si l''État peut, durablement, honorer ses engagements sans ajustement brutal. Une approche simplifiée compare le taux de croissance (g) et le taux d''intérêt réel moyen de la dette (r).
-
-Règle simplifiée (à utiliser avec prudence) : si g > r et que le solde primaire n''est pas trop négatif, le ratio dette/PIB tend à se stabiliser ou diminuer ; si r > g durablement, le ratio dette/PIB tend à augmenter mécaniquement, même sans nouveau déficit, par effet « boule de neige ».
-
-Exemple numérique fictif (calcul vérifié) : ratio dette/PIB de 60 %, croissance réelle 5 %, taux d''intérêt réel 3 %, solde primaire nul. Formule : Δ(dette/PIB) ≈ (r-g)×(dette/PIB) - solde primaire/PIB. Calcul : (0,03-0,05)×0,60 - 0 = -0,012, soit une baisse d''environ 1,2 point, grâce à une croissance supérieure au taux d''intérêt.
-
-Contre-exemple fictif : si la croissance chute à 1 % (r inchangé à 3 %) : (0,03-0,01)×0,60 = +0,012, soit une hausse d''environ 1,2 point. Ce basculement illustre que la croissance est une variable clé de la soutenabilité de la dette, au même titre que le déficit.
-
-Attention : cette formule est une approximation pédagogique. Les seuils réellement utilisés par les institutions (critères de convergence UEMOA notamment) sont des valeurs officielles précises, à vérifier auprès des textes en vigueur ; aucun seuil officiel n''est affirmé ici.
-
-Les canaux de la politique monétaire commune
-
-Dans l''UEMOA, la politique monétaire commune agit en principe par plusieurs canaux généraux, sans taux précis non vérifié : le canal du taux d''intérêt (coût du crédit), le canal du crédit bancaire (disponibilité du financement), et le canal des anticipations (confiance dans la stabilité des prix et de la monnaie commune). La coordination entre politique monétaire commune et politiques budgétaires nationales est centrale dans la gouvernance économique régionale.
-
-Points clés à retenir
-- Le trilemme de Mundell explique pourquoi une union monétaire à change fixe implique de renoncer à une politique monétaire nationale autonome.
-- En change fixe, la politique budgétaire devient l''instrument national principal de régulation de l''activité économique.
-- La soutenabilité de la dette dépend de l''écart entre le taux de croissance et le taux d''intérêt réel, et du solde budgétaire primaire.
-- Quand la croissance dépasse le taux d''intérêt réel, le ratio dette/PIB tend mécaniquement à diminuer, même sans excédent primaire.
-- Aucun taux officiel, seuil réglementaire ou critère de convergence précis ne doit être affirmé sans vérification du texte officiel en vigueur.
-
-## Exercices pratiques
-
-1. Énoncez le trilemme de Mundell et expliquez ce qu''une union monétaire à change fixe doit sacrifier.
-2. Pourquoi la politique budgétaire est-elle particulièrement importante pour un État membre d''une union monétaire par rapport à un pays à change flexible et politique monétaire autonome ?
-3. Un pays fictif a un ratio dette/PIB de 50 %, une croissance réelle de 2 %, un taux d''intérêt réel de 4 %, un solde primaire de -1 % du PIB. Calculez la variation du ratio dette/PIB avec la formule du cours.
-4. Expliquez, sans chiffre précis, pourquoi la discipline budgétaire d''un État membre peut affecter la crédibilité de toute une union monétaire.
-5. Cas pratique : un gouvernement fictif envisage une relance budgétaire après un choc externe. Discutez, avec le trilemme et la soutenabilité de la dette, les avantages et risques de cette relance en union monétaire à change fixe.
-6. Qu''est-ce que l''effet « boule de neige » de la dette, et dans quelles conditions (r vs g) se produit-il ?
-7. Pourquoi faut-il être prudent avant d''affirmer un seuil officiel précis de dette/PIB dans un devoir ?
-
-## Corrigé
-
-1. Le trilemme énonce qu''un pays ne peut pas avoir simultanément change fixe, mobilité parfaite des capitaux et politique monétaire autonome. En acceptant un change fixe commun et une certaine ouverture financière, les États membres renoncent à fixer eux-mêmes leur politique monétaire, déléguée à la banque centrale commune.
-2. Parce que la politique monétaire n''est plus un levier national : l''État ne peut pas seul baisser son taux ou dévaluer pour répondre à un choc spécifique. Il ne lui reste que la politique budgétaire comme instrument national de stabilisation, d''où son importance accrue.
-3. Δ(dette/PIB) ≈ (0,04-0,02)×0,50-(-0,01) = 0,01+0,01 = 0,02, soit une hausse d''environ 2 points, résultant d''un taux d''intérêt supérieur à la croissance et d''un déficit primaire.
-4. Si un État membre accumule une dette jugée non soutenable, les marchés peuvent réévaluer le risque perçu pour l''ensemble de la zone (contagion de la confiance), même si chaque État reste en théorie responsable de ses propres finances.
-5. Avantages : la relance budgétaire reste l''instrument national disponible (conforme au trilemme) ; en change fixe, son effet n''est pas atténué par une appréciation automatique de la monnaie. Risques : si r > g, le ratio dette/PIB peut se dégrader durablement (boule de neige), pesant à terme sur la crédibilité du pays et de la zone ; une réponse équilibrée combine relance ciblée et trajectoire de dette soutenable à moyen terme.
-6. Il se produit lorsque r est durablement supérieur à g : la charge d''intérêt croît plus vite que la capacité de l''économie à la rembourser, augmentant mécaniquement le ratio dette/PIB même sans nouveau déficit primaire.
-7. Parce que ces seuils sont fixés par des textes officiels précis, révisables dans le temps ; il faut toujours renvoyer au texte en vigueur plutôt que d''inventer ou de se fier à un chiffre non vérifié.', 'texte', 50, false, 40
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Politiques économiques et macroéconomie ouverte avancée : l''essentiel pour l''examen');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 1 Économie (entraînement, corrigé détaillé)', '## Fiche du sujet type
-
-Ce sujet type d''examen de Master 1 en Économie couvre les trois matières avancées du semestre : économétrie appliquée, économie industrielle et organisation des marchés, et politiques économiques en économie ouverte. Il s''agit d''un sujet NON OFFICIEL construit pour l''entraînement, avec un barème indicatif sur 20 points. Durée indicative : 3 heures.
-
-## Sujet
-
-Partie 1 — Économétrie appliquée (7 points)
-
-Une cellule d''analyse fictive étudie la relation entre le chiffre d''affaires mensuel (Y, en millions de FCFA) de dix commerces fictifs d''un même quartier et deux variables : la surface de vente (X1, en dizaines de m²) et le nombre d''employés (X2). L''estimation par MCO donne le modèle suivant (coefficients fournis, calculs déjà vérifiés par l''énoncé) :
-
-Y_estimé = 5 + 4,2 × X1 + 1,8 × X2
-
-avec les écarts-types suivants : SE(β1) = 0,6 et SE(β2) = 1,5, sur un échantillon de n = 10 observations avec k = 2 variables explicatives.
-
-1.1. (2 points) Interprétez économiquement les coefficients β1 = 4,2 et β2 = 1,8.
-1.2. (3 points) Calculez les statistiques de Student pour β1 et β2. En utilisant une valeur critique de table d''environ 2,36 (5 %, 7 degrés de liberté), concluez sur la significativité de chaque coefficient.
-1.3. (2 points) Le R² du modèle est de 0,95. Que signifie cette valeur ? Citez un facteur de prudence à garder en tête avant de conclure trop vite à la qualité du modèle.
-
-Partie 2 — Économie industrielle (7 points)
-
-Deux brasseries fictives, « Lion d''Or » et « Teranga Brew », sont en situation de duopole de Cournot sur un marché régional fictif. La demande inverse est P = 120 - Q, avec Q = q1 + q2, et le coût marginal commun est c = 20.
-
-2.1. (3 points) Calculez la quantité produite par chaque firme à l''équilibre de Cournot, le prix de marché, et le profit de chaque firme.
-2.2. (2 points) Si les deux brasseries décidaient de s''entendre pour produire comme un monopole conjoint, calculez la quantité totale de monopole, le prix, et le profit joint. Comparez ce profit joint au profit joint obtenu en situation de Cournot.
-2.3. (2 points) Expliquez pourquoi un tel accord, bien que plus profitable pour les deux firmes, reste fragile sans mécanisme de surveillance, et pourquoi une autorité de la concurrence s''y intéresserait.
-
-Partie 3 — Politiques économiques en économie ouverte (6 points)
-
-Un pays fictif, membre d''une union monétaire à change fixe, a un ratio dette publique/PIB de 55 % en début d''année, une croissance réelle anticipée de 4 %, un taux d''intérêt réel moyen de 2 % sur sa dette, et un solde primaire de +0,5 % du PIB (léger excédent primaire).
-
-3.1. (2 points) Rappelez le trilemme de Mundell et expliquez ce que ce pays a dû accepter de sacrifier en adhérant à une union monétaire à change fixe.
-3.2. (2 points) Calculez la variation approximative du ratio dette/PIB sur l''année, avec la formule simplifiée Δ(dette/PIB) ≈ (r - g) × (dette/PIB) - solde primaire/PIB.
-3.3. (2 points) Le pays subit un choc externe qui fait chuter sa croissance réelle à 1 % sans changer le taux d''intérêt réel ni le solde primaire. Recalculez la variation du ratio dette/PIB et commentez l''évolution par rapport à la question précédente.
-
-## Corrigé détaillé
-
-1.1. β1 = 4,2 : toutes choses égales par ailleurs (nombre d''employés constant), chaque dizaine de m² supplémentaire de surface de vente est associée à une hausse moyenne de 4,2 millions de FCFA de chiffre d''affaires mensuel dans cet échantillon. β2 = 1,8 : toutes choses égales par ailleurs (surface constante), chaque employé supplémentaire est associé à une hausse moyenne de 1,8 million de FCFA de chiffre d''affaires mensuel.
-
-1.2. t(β1) = 4,2 / 0,6 = 7,0. t(β2) = 1,8 / 1,5 = 1,2. Avec une valeur critique d''environ 2,36 : t(β1) = 7,0 > 2,36, donc β1 est statistiquement significatif, on rejette l''hypothèse β1 = 0. t(β2) = 1,2 < 2,36, donc β2 n''est pas statistiquement significatif à ce seuil sur cet échantillon : on ne peut pas rejeter l''hypothèse β2 = 0 avec confiance.
-
-1.3. Un R² de 0,95 signifie que 95 % de la variation du chiffre d''affaires observé dans l''échantillon est expliquée par les deux variables du modèle (surface et nombre d''employés). Facteur de prudence : l''échantillon est petit (seulement 10 observations), ce qui rend le résultat statistiquement fragile et peu généralisable à d''autres commerces ou d''autres périodes ; un R² élevé ne garantit pas non plus une relation causale, seulement une forte association statistique dans cet échantillon précis.
-
-2.1. Formule du duopole de Cournot symétrique : qi* = (a-c)/3 = (120-20)/3 = 100/3 ≈ 33,33. Q* = 66,67. P* = 120 - 66,67 = 53,33. Profit de chaque firme : (P*-c) × qi* = (53,33-20) × 33,33 ≈ 33,33 × 33,33 ≈ 1111,1 (unités fictives de profit, calcul vérifié : (100/3)² = 10000/9 ≈ 1111,11).
-
-2.2. Quantité de monopole : qm* = (a-c)/2 = 100/2 = 50. Prix de monopole : Pm = 120 - 50 = 70. Profit joint de monopole : (70-20) × 50 = 50 × 50 = 2500. Profit joint de Cournot : 2 × 1111,11 ≈ 2222,2. On observe que 2500 > 2222,2 : la collusion en monopole conjoint est plus profitable pour les deux firmes réunies que la concurrence de Cournot.
-
-2.3. L''accord est fragile car chaque firme a individuellement intérêt à produire davantage que sa part convenue pour capter un profit immédiat supérieur ; sans mécanisme crédible de surveillance et de sanction, l''accord tend à se rompre. Une autorité de la concurrence s''y intéresse parce qu''un tel accord, même tacite, réduit la quantité offerte et augmente le prix payé par les consommateurs, un préjudice économique pour le marché.
-
-3.1. Le trilemme de Mundell énonce qu''un pays ne peut pas combiner simultanément taux de change fixe, mobilité parfaite des capitaux et politique monétaire nationale autonome. En adhérant à une union monétaire à change fixe avec une certaine ouverture financière, ce pays a dû accepter de renoncer à une politique monétaire nationale indépendante : les décisions de taux d''intérêt et de masse monétaire sont prises au niveau de la banque centrale commune, pas au niveau national.
-
-3.2. Δ(dette/PIB) ≈ (0,02 - 0,04) × 0,55 - 0,005 = (-0,02) × 0,55 - 0,005 = -0,011 - 0,005 = -0,016, soit une baisse d''environ 1,6 point de pourcentage du ratio dette/PIB sur l''année, résultant à la fois d''une croissance supérieure au taux d''intérêt réel et d''un léger excédent primaire.
-
-3.3. Avec une croissance tombée à 1 % : Δ(dette/PIB) ≈ (0,02-0,01)×0,55-0,005 = 0,0055-0,005 = 0,0005, variation quasi nulle, contre une baisse de 1,6 point initialement. Le choc de croissance fait basculer la trajectoire de la dette, malgré le maintien d''un excédent primaire.
-
-## Exercices pratiques
-
-1. Dans la partie 1 de ce sujet, si le nombre d''observations était de 30 au lieu de 10 (toutes choses égales par ailleurs sur les coefficients et écarts-types), quel effet attendu cela aurait-il généralement sur la fiabilité statistique du modèle ?
-2. Dans la partie 2, si le coût marginal des deux brasseries augmentait à 30 (au lieu de 20), recalculez la quantité individuelle et le prix d''équilibre de Cournot.
-3. Dans la partie 3, expliquez pourquoi un excédent primaire ne suffit pas toujours à garantir une baisse du ratio dette/PIB.
-
-## Corrigé
-
-1. Avec un échantillon plus grand, les degrés de liberté augmentent, ce qui réduit en général les écarts-types et augmente la puissance des tests : un coefficient proche de la significativité avec un petit échantillon peut devenir clairement significatif, et les résultats sont plus robustes.
-2. qi* = (120-30)/3 = 30. Q* = 60. P* = 120-60 = 60. Le prix augmente par rapport au cas précédent (53,33 à 60), cohérent avec la hausse du coût marginal.
-3. Parce que la variation dépend aussi de l''écart (r-g) : si r est durablement supérieur à g, l''effet boule de neige peut dépasser l''effet favorable d''un excédent primaire modeste, comme en 3.3 où un excédent de 0,5 % du PIB n''a presque plus suffi à stabiliser la dette une fois la croissance tombée à 1 %.', 'texte', 60, false, 50
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 Économie (entraînement, corrigé détaillé)');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Économétrie appliquée', '## Fiche du cours vidéo
-
-Durée : 1h30 (90 minutes). Sujet : Économétrie appliquée — construire, tester et interpréter un modèle de régression multiple.
-Objectifs : à la fin de la séance, l''étudiant sait estimer une régression multiple, interpréter chaque coefficient, réaliser un test de Student et un test F, et discuter les limites du modèle (variable omise, multicolinéarité, hétéroscédasticité).
-Matériel : tableau ou diaporama, calculatrice ou tableur, le jeu de données fictif de l''étude de cas (exportations d''une filière agro-industrielle).
-Prérequis : régression simple (Licence 2), notions de moyenne, variance, écart-type.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Accueil et objectifs de la séance
-
-Bonjour à toutes et à tous. Bienvenue dans ce cours vidéo consacré à l''économétrie appliquée, la première des trois matières avancées de votre semestre de Master 1 en Économie. Aujourd''hui, nous allons passer de la théorie vue en cours à la pratique : vous allez apprendre à construire un modèle de régression multiple, à l''estimer, à tester la significativité de ses coefficients, et surtout à l''interpréter comme un économiste, pas seulement comme un calculateur. L''objectif de cette séance n''est pas de vous transformer en statisticien pur, mais de vous donner les réflexes méthodologiques qui vous serviront aussi bien pour vos examens que pour votre mémoire de recherche ou votre futur travail en entreprise ou en administration. Nous travaillerons sur un exemple fictif, construit spécialement pour cette séance, dont tous les calculs ont été vérifiés.
-
-## 05:00 – 20:00 · Rappel du modèle et présentation du cas d''étude
-
-Commençons par rappeler la structure d''un modèle de régression linéaire multiple : Y égale bêta zéro, plus bêta un fois X un, plus bêta deux fois X deux, plus epsilon, le terme d''erreur. Y est la variable que l''on cherche à expliquer, les X sont les variables explicatives, et les bêta sont les coefficients que la méthode des moindres carrés ordinaires va estimer en minimisant la somme des carrés des écarts entre les valeurs observées et les valeurs prédites par le modèle.
-
-Notre étude de cas : un observatoire régional fictif étudie les exportations mensuelles d''une filière de transformation agroalimentaire dans dix zones de production comparables. Nous disposons de deux variables explicatives : l''investissement productif cumulé, en milliards de FCFA, et le taux d''ouverture commerciale de chaque zone, en pourcentage. La variable à expliquer est le niveau d''exportations, en milliards de FCFA.
-
-Je vous invite à noter les dix observations au tableau ou sur votre support : l''investissement va de 5 à 14 milliards FCFA, le taux d''ouverture de 2 à 6 %, et les exportations de 20 à 53 milliards FCFA, en progression régulière d''une zone à l''autre. Prenez un instant pour observer ces chiffres : on voit déjà, à l''œil, que les exportations augmentent globalement avec l''investissement. C''est précisément ce que la régression va quantifier de façon rigoureuse.
-
-Question à la classe : avant même de calculer quoi que ce soit, à votre avis, laquelle des deux variables explicatives aura le coefficient le plus élevé en valeur absolue, et pourquoi ? Prenez trente secondes pour y réfléchir avant que nous passions au calcul.
-
-## 20:00 – 35:00 · Estimation du modèle et lecture des coefficients
-
-Le calcul, réalisé avec un outil de calcul scientifique vérifié, donne les résultats suivants : bêta zéro, la constante, est d''environ 2,00 ; bêta un, le coefficient de l''investissement, est d''environ 3,60 ; bêta deux, le coefficient du taux d''ouverture, est d''environ 0,05.
-
-Le modèle estimé s''écrit donc : exportations estimées égale 2,00, plus 3,60 fois l''investissement, plus 0,05 fois le taux d''ouverture.
-
-Interprétons chaque coefficient, et c''est ici que se joue la vraie compétence d''économiste. Le coefficient de 3,60 signifie que, toutes choses égales par ailleurs — c''est-à-dire en maintenant le taux d''ouverture constant — une augmentation d''un milliard de FCFA de l''investissement productif est associée à une augmentation de 3,60 milliards de FCFA des exportations. C''est un effet marginal important.
-
-Le coefficient de 0,05, en revanche, est très faible : toutes choses égales par ailleurs, une hausse d''un point de pourcentage du taux d''ouverture n''est associée qu''à 0,05 milliard de FCFA d''exportations supplémentaires. C''est un effet quasiment négligeable dans cet échantillon précis. Retenez bien cette phrase : « toutes choses égales par ailleurs ». C''est la clé de toute interprétation économétrique correcte, et c''est souvent ce qui manque dans les copies d''examen qui se contentent de recopier un chiffre sans l''interpréter.
-
-## 35:00 – 50:00 · Le test de Student sur les coefficients
-
-Comment savoir si un coefficient est statistiquement fiable, ou s''il pourrait être dû au hasard de l''échantillon ? C''est le rôle du test de Student. La formule est simple : t égale le coefficient divisé par son écart-type estimé.
-
-Dans notre exemple, l''écart-type de bêta un est d''environ 0,207, et celui de bêta deux est d''environ 0,420. Calculons : t un égale 3,60 divisé par 0,207, ce qui donne environ 17,39. C''est une valeur très élevée. Avec dix observations et deux variables explicatives, nous avons sept degrés de liberté, et la valeur critique usuelle à 5 % est d''environ 2,36 — valeur à toujours vérifier dans une table de Student officielle. Puisque 17,39 est largement supérieur à 2,36, nous rejetons l''hypothèse selon laquelle bêta un serait nul : l''investissement a un effet statistiquement significatif.
-
-Pour bêta deux : t deux égale 0,05 divisé par 0,420, ce qui donne environ 0,12. Cette valeur est bien inférieure à 2,36 : nous ne pouvons pas rejeter l''hypothèse que bêta deux est nul. Attention à la formulation correcte : cela ne veut pas dire que le taux d''ouverture commerciale n''a aucun effet économique sur les exportations en général. Cela signifie seulement que, sur cet échantillon fictif précis de dix observations, l''effet mesuré n''est pas statistiquement distinguable de zéro.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Nous allons marquer une pause de cinq minutes. Avant cela, un petit quiz pour vérifier votre compréhension. Première question : si la statistique de Student d''un coefficient est de 1,5 et que la valeur critique est de 2,36, que concluez-vous ? Deuxième question : que signifie l''expression « toutes choses égales par ailleurs » dans l''interprétation d''un coefficient de régression ? Troisième question : pourquoi faut-il sept degrés de liberté dans notre exemple et pas dix ? Réfléchissez à ces trois questions pendant la pause ; nous les corrigerons ensemble à notre retour.
-
-Correction du quiz : premièrement, avec un t de 1,5 inférieur à 2,36, on ne peut pas rejeter l''hypothèse de nullité du coefficient, celui-ci n''est pas statistiquement significatif à ce seuil. Deuxièmement, cela signifie que l''on étudie l''effet d''une variable en maintenant toutes les autres variables du modèle constantes, pour isoler sa contribution propre. Troisièmement, les degrés de liberté sont égaux au nombre d''observations moins le nombre de variables explicatives moins un (pour la constante), soit dix moins deux moins un, égal sept.
-
-## 55:00 – 1:10:00 · Qualité globale du modèle et pièges à éviter
-
-Passons maintenant à l''évaluation globale du modèle. Le R² mesure la part de la variance de la variable expliquée qui est captée par le modèle. Dans notre exemple, le R² est d''environ 0,999, soit 99,9 % de la variation des exportations expliquée par nos deux variables. Le R² ajusté, qui pénalise l''ajout de variables supplémentaires, reste également très élevé. Le test F, qui évalue la significativité globale du modèle, donne ici une valeur d''environ 5057, largement supérieure à la valeur critique usuelle : le modèle, dans son ensemble, est hautement significatif.
-
-Mais attention, et c''est un point méthodologique essentiel que je veux que vous reteniez durablement : un R² aussi proche de 1 sur seulement dix observations fictives doit vous rendre prudents, pas satisfaits. Dans la réalité professionnelle, avec des données économiques réelles, un R² aussi élevé est rare et doit alerter sur un possible problème : échantillon trop petit, relation trop mécanique entre les variables construites pour l''exercice, ou données trop lissées.
-
-Trois pièges classiques à toujours mentionner dans une analyse économétrique appliquée, même sans les calculer en détail à ce niveau. Premièrement, la variable omise : si une variable qui influence réellement la variable expliquée est corrélée avec une variable du modèle mais n''y figure pas, les coefficients estimés peuvent être biaisés. Deuxièmement, la multicolinéarité : quand deux variables explicatives sont très corrélées entre elles, il devient difficile de distinguer statistiquement leurs effets respectifs. Troisièmement, l''hétéroscédasticité : quand la variance des erreurs n''est pas constante, les écarts-types usuels des coefficients ne sont plus fiables, même si les coefficients eux-mêmes restent souvent corrects.
-
-## 1:10:00 – 1:25:00 · Application guidée et synthèse
-
-Reprenons un exercice guidé ensemble. Imaginez une nouvelle zone fictive avec un investissement de 10 milliards de FCFA et un taux d''ouverture de 4 %. Quelle est l''exportation prédite par notre modèle ? Calculons ensemble : 2,00, plus 3,60 fois 10, plus 0,05 fois 4, soit 2,00 plus 36,00 plus 0,20, égal 38,20 milliards de FCFA. Vous voyez que le calcul lui-même est simple ; la vraie difficulté, et ce sur quoi portera votre examen, c''est de savoir interpréter ce chiffre avec ses limites : un modèle estimé sur dix observations fictives, avec un coefficient de taux d''ouverture non significatif, ne doit pas être présenté comme une vérité absolue, mais comme une estimation à discuter.
-
-Synthétisons les points essentiels de cette séance : un modèle de régression multiple s''interprète coefficient par coefficient, toujours « toutes choses égales par ailleurs » ; le test de Student permet de juger la significativité individuelle de chaque coefficient par comparaison à une valeur critique de table ; le R² et le test F évaluent la qualité globale du modèle, mais un R² très élevé sur un petit échantillon appelle la prudence plutôt que la satisfaction ; enfin, variable omise, multicolinéarité et hétéroscédasticité sont les trois limites méthodologiques à toujours savoir mentionner dans une copie d''examen ou un mémoire de recherche.
-
-## 1:25:00 – 1:30:00 · Évaluation finale
-
-Pour clore cette séance, voici cinq questions d''évaluation finale.
-
-Question 1 : Dans un modèle Y = β0 + β1·X1 + β2·X2 + ε avec n = 20 observations, combien de degrés de liberté a le résidu ?
-Réponse : n - k - 1 = 20 - 2 - 1 = 17 degrés de liberté.
-
-Question 2 : Un coefficient β1 = 2,5 a un écart-type de 0,5. Quelle est sa statistique de Student ?
-Réponse : t = 2,5 / 0,5 = 5,0, une valeur fortement significative dans la plupart des configurations usuelles.
-
-Question 3 : Que mesure le R² d''un modèle de régression ?
-Réponse : la part de la variance de la variable expliquée qui est captée par le modèle, entre 0 (aucune variance expliquée) et 1 (toute la variance expliquée).
-
-Question 4 : Citez les trois problèmes classiques qui peuvent biaiser ou fragiliser une estimation par les moindres carrés ordinaires.
-Réponse : la variable omise, la multicolinéarité, et l''hétéroscédasticité.
-
-Question 5 : Pourquoi un R² extrêmement élevé sur un très petit échantillon doit-il être interprété avec prudence ?
-Réponse : parce qu''avec peu d''observations, le résultat est statistiquement fragile, peu généralisable, et peut refléter une relation trop mécanique entre les variables plutôt qu''une véritable régularité économique robuste.
-
-Merci à toutes et à tous pour votre attention. Révisez bien cette méthode : elle reviendra systématiquement dans vos examens d''économétrie appliquée et dans tout travail de recherche appliquée que vous mènerez cette année. À la prochaine séance.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Économétrie appliquée');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Économie industrielle et organisation des marchés', '## Fiche du cours vidéo
-
-Durée : 1h30 (90 minutes). Sujet : Économie industrielle — Cournot, Bertrand, différenciation, collusion et régulation.
-Objectifs : savoir résoudre un duopole de Cournot et un duopole de Bertrand, comprendre l''effet de la différenciation de produit, analyser la logique économique de la collusion et le rôle de la régulation.
-Matériel : tableau ou diaporama, calculatrice.
-Prérequis : monopole et notions de base de duopole (Licence 2).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Accueil et mise en contexte
-
-Bonjour et bienvenue dans ce deuxième cours vidéo de votre Master 1 en Économie, consacré à l''économie industrielle avancée. En Licence, vous avez étudié le monopole et une introduction au duopole. Aujourd''hui, nous allons formaliser rigoureusement deux modèles classiques d''oligopole, le modèle de Cournot et le modèle de Bertrand, puis nous verrons pourquoi les entreprises différencient leurs produits, comment fonctionne la collusion, et pourquoi la régulation économique intervient sur ces marchés. Tous nos exemples utiliseront des entreprises fictives, construites pour l''exercice, inspirées de secteurs ouest-africains sans référence à une entreprise réelle.
-
-## 05:00 – 20:00 · Le modèle de Cournot : concurrence en quantités
-
-Dans le modèle de Cournot, chaque firme choisit simultanément la quantité qu''elle va produire, sans connaître la décision exacte de l''autre, mais en anticipant correctement son comportement à l''équilibre. Prenons notre cas fictif : deux opérateurs de télécommunications, que nous appellerons Firme A et Firme B, se partagent un marché régional. La demande inverse du marché est P égale 100 moins Q, où Q est la quantité totale produite par les deux firmes, et P le prix unitaire. Le coût marginal est identique pour les deux : 10.
-
-La solution classique du duopole de Cournot symétrique, avec une demande linéaire P égale a moins Q et un coût marginal constant c, donne pour chaque firme : qi étoile égale a moins c, divisé par trois. Faisons le calcul ensemble : 100 moins 10, divisé par 3, égale 90 divisé par 3, égale 30. Chaque firme produit donc 30 unités, la quantité totale est de 60, et le prix d''équilibre est de 100 moins 60, soit 40.
-
-Le profit de chaque firme, hors coûts fixes, est le prix moins le coût marginal, multiplié par la quantité : 40 moins 10, soit 30, multiplié par 30, soit 900 unités fictives de profit.
-
-Comparons maintenant à deux cas de référence. En situation de monopole, la quantité optimale serait a moins c divisé par deux, soit 45, avec un prix de 100 moins 45, soit 55 — un prix supérieur à celui de Cournot. En concurrence pure, où le prix égale le coût marginal, le prix serait de 10 — un prix inférieur à celui de Cournot. L''oligopole de Cournot se situe donc exactement où la théorie le prédit : entre le monopole et la concurrence pure.
-
-## 20:00 – 35:00 · Le modèle de Bertrand et le paradoxe de Bertrand
-
-Changeons maintenant de variable stratégique : au lieu de choisir des quantités, les firmes choisissent leur prix, pour un produit parfaitement homogène, c''est-à-dire identique du point de vue du client. C''est le modèle de Bertrand.
-
-Le résultat théorique est saisissant, et je veux que vous le reteniez précisément : avec seulement deux firmes, un produit homogène, et des coûts marginaux identiques, la concurrence en prix conduit le prix d''équilibre au niveau du coût marginal, exactement comme en concurrence parfaite, et cela avec seulement deux concurrents. C''est ce qu''on appelle le paradoxe de Bertrand.
-
-Pourquoi ce résultat ? Parce que si une firme fixe un prix supérieur au coût marginal, l''autre a toujours intérêt à fixer un prix légèrement inférieur pour capter toute la demande du marché, et ce processus se répète jusqu''à ce que le prix atteigne le coût marginal, où plus aucune marge positive n''est possible pour inciter à baisser davantage.
-
-Dans notre exemple fictif, si Firme A et Firme B vendaient un service de télécommunication strictement identique avec un coût marginal de 10, le modèle de Bertrand prédirait un prix d''équilibre de 10 — bien inférieur au prix de Cournot que nous avons calculé, qui était de 40. C''est une différence considérable, et elle explique un comportement stratégique essentiel des entreprises dans la réalité : pourquoi, à votre avis, les entreprises évitent-elles généralement de vendre un produit parfaitement homogène face à leurs concurrents ? Réfléchissez trente secondes.
-
-La réponse, bien sûr : pour échapper au paradoxe de Bertrand et à l''anéantissement de leurs marges, les entreprises différencient leur offre.
-
-## 35:00 – 50:00 · Différenciation de produit et pouvoir de marché
-
-Lorsque les produits ne sont pas parfaitement substituables — par la marque, la qualité perçue, le réseau de distribution, le service après-vente — chaque firme conserve un pouvoir de marché même en présence de concurrents directs, car une partie de sa clientèle reste fidèle malgré un prix légèrement supérieur à celui du concurrent.
-
-Reprenons notre exemple : si Firme A différencie son offre par une meilleure couverture réseau dans certaines zones rurales, elle peut maintenir un prix plus élevé que Firme B sans perdre immédiatement tous ses clients dans ces zones, parce que ces clients valorisent la qualité de couverture au-delà du simple prix. La différenciation atténue donc mécaniquement la pression concurrentielle sur les prix.
-
-Du point de vue du bien-être économique, cet effet est ambigu : il profite aux marges des entreprises, ce qui peut financer l''innovation et l''investissement, mais il peut aussi, si la différenciation devient excessive ou artificielle, réduire le pouvoir d''achat des consommateurs par rapport à une situation de concurrence plus frontale. C''est un arbitrage que les économistes et les régulateurs doivent évaluer au cas par cas.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Prenons une pause de cinq minutes avec un quiz. Premièrement : dans le modèle de Cournot avec n firmes symétriques, la formule générale est qi étoile égale a moins c, divisé par n plus un. Si n passe de 2 à 10, que devient le prix d''équilibre, intuitivement ? Deuxièmement : pourquoi le paradoxe de Bertrand ne se vérifie-t-il presque jamais exactement dans la réalité ? Troisièmement : citez un exemple fictif de différenciation de produit dans un secteur de votre choix.
-
-Correction : premièrement, quand n augmente, le prix d''équilibre de Cournot se rapproche progressivement du coût marginal, convergeant vers la concurrence pure — c''est une propriété importante du modèle. Deuxièmement, en réalité, les produits sont presque toujours différenciés d''une manière ou d''une autre, et l''information des consommateurs n''est jamais parfaite, ce qui atténue la pression extrême du paradoxe de Bertrand. Troisièmement, toute réponse pertinente est acceptée, par exemple une enseigne de distribution qui se différencie par la proximité de ses points de vente plutôt que par le prix.
-
-## 55:00 – 1:10:00 · Collusion, cartels et instabilité
-
-Étudions maintenant la collusion : une situation où des firmes concurrentes s''entendent, explicitement ou tacitement, pour limiter la concurrence entre elles — en fixant des prix communs, en se répartissant des marchés, ou en limitant la production — afin d''augmenter leurs profits conjoints, au détriment des consommateurs. Un cartel est une collusion organisée explicitement.
-
-Calculons l''incitation à la collusion dans notre exemple. Si Firme A et Firme B s''entendaient pour se comporter comme un monopole conjoint, elles produiraient ensemble la quantité de monopole, soit 45, au prix de 55, pour un profit joint de 55 moins 10, soit 45, multiplié par 45, soit 2025. Comparons ce chiffre au profit joint obtenu en situation de Cournot : 900 plus 900, soit 1800. La collusion est donc plus profitable pour les deux firmes réunies : 2025 est supérieur à 1800.
-
-Mais, et c''est un point fondamental de la théorie des jeux, cet accord reste fragile sans mécanisme de surveillance, car chaque firme a individuellement intérêt à produire davantage que sa part convenue, pour capter un profit immédiat encore supérieur, tant que l''autre firme respecte l''accord. C''est l''incitation à « tricher ». Dans un jeu répété, cette tentation peut être contenue par la menace crédible d''une rétorsion future, comme une guerre des prix ; mais dans un jeu à un seul coup, la tentation de tricher l''emporte systématiquement.
-
-## 1:10:00 – 1:25:00 · Le rôle de la régulation économique
-
-Face à ces risques de pouvoir de marché excessif et de collusion, la régulation économique poursuit deux objectifs principaux. Premièrement, préserver une concurrence suffisante sur les marchés où elle est possible, en sanctionnant les pratiques anticoncurrentielles — ententes, abus de position dominante — par des autorités nationales et régionales de la concurrence. Deuxièmement, encadrer les secteurs où la concurrence pure n''est pas naturellement possible, notamment les monopoles naturels, où les coûts fixes très élevés rendent la duplication des infrastructures économiquement inefficace, comme certains réseaux d''énergie ou de transport.
-
-En Afrique de l''Ouest, des régulateurs sectoriels interviennent dans les télécommunications, l''énergie, les transports, pour encadrer les tarifs et les conditions d''accès aux infrastructures. Je dois insister sur un point de méthode important : les règles précises, les seuils, les taux de sanction diffèrent selon les pays et évoluent dans le temps. Dans un examen ou un mémoire, ne citez jamais un seuil réglementaire précis sans l''avoir vérifié dans le texte officiel en vigueur ; expliquez plutôt le mécanisme économique général, ce qui est toujours valorisé par un correcteur.
-
-## 1:25:00 – 1:30:00 · Évaluation finale
-
-Cinq questions pour clore cette séance.
-
-Question 1 : Dans un duopole de Cournot avec demande P = a - Q et coût marginal c, quelle est la formule de la quantité individuelle d''équilibre ?
-Réponse : qi* = (a - c) / 3.
-
-Question 2 : Que prédit le modèle de Bertrand avec un produit homogène et deux firmes aux coûts identiques ?
-Réponse : un prix d''équilibre égal au coût marginal, comme en concurrence parfaite.
-
-Question 3 : Pourquoi la différenciation de produit permet-elle à une firme de conserver un pouvoir de marché ?
-Réponse : parce qu''elle réduit la substituabilité parfaite entre les offres, fidélisant une partie de la clientèle malgré un prix plus élevé.
-
-Question 4 : Pourquoi un accord de collusion reste-t-il souvent instable sans mécanisme de surveillance ?
-Réponse : parce que chaque firme a individuellement intérêt à produire davantage que sa part convenue pour un gain immédiat supérieur, ce qui rompt l''accord.
-
-Question 5 : Quels sont les deux objectifs principaux de la régulation économique face au pouvoir de marché ?
-Réponse : préserver une concurrence suffisante en sanctionnant les pratiques anticoncurrentielles, et encadrer les secteurs de monopole naturel où la concurrence pure n''est pas réaliste.
-
-Merci de votre attention. La semaine prochaine, nous passerons aux politiques économiques en économie ouverte.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Économie industrielle et organisation des marchés');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Politiques économiques et macroéconomie ouverte avancée', '## Fiche du cours vidéo
-
-Durée : 1h30 (90 minutes). Sujet : Politiques économiques et macroéconomie ouverte avancée — trilemme de Mundell, politique budgétaire en union monétaire, soutenabilité de la dette.
-Objectifs : comprendre le trilemme de Mundell et son application à une union monétaire à change fixe, analyser le rôle renforcé de la politique budgétaire, calculer et interpréter la variation du ratio dette/PIB.
-Matériel : tableau ou diaporama, calculatrice.
-Prérequis : modèle IS-LM en économie fermée (Licence).
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Accueil et plan de la séance
-
-Bonjour et bienvenue dans ce troisième cours vidéo de votre Master 1 en Économie. Nous allons aujourd''hui passer de l''économie fermée, étudiée en Licence avec le modèle IS-LM, à l''économie ouverte, où le compte extérieur — exportations, importations, taux de change, mobilité des capitaux — joue un rôle central. Nous verrons le trilemme de Mundell, son application à une union monétaire comme l''UEMOA, le rôle renforcé de la politique budgétaire quand la politique monétaire est commune, et enfin la question cruciale de la soutenabilité de la dette publique, avec des calculs que nous vérifierons ensemble.
-
-## 05:00 – 20:00 · Le trilemme de Mundell
-
-Le résultat central de cette séance est ce qu''on appelle le trilemme, ou triangle des incompatibilités de Mundell. Il énonce qu''un pays ne peut pas avoir simultanément trois choses : un taux de change fixe, une parfaite mobilité des capitaux, et une politique monétaire nationale pleinement autonome. Il doit nécessairement renoncer à l''un des trois sommets de ce triangle.
-
-Réfléchissons ensemble à pourquoi. Si un pays fixe son taux de change et autorise les capitaux à circuler librement, alors son taux d''intérêt domestique est contraint de s''aligner sur le taux d''intérêt international, sous peine de provoquer des flux de capitaux massifs qui déstabiliseraient la parité fixe. Si les investisseurs anticipent un taux d''intérêt plus élevé chez lui, les capitaux afflueraient et menaceraient la parité à la hausse ; si le taux est plus bas, les capitaux fuiraient et menaceraient la parité à la baisse. La banque centrale perd donc la liberté de fixer son taux d''intérêt en fonction des seuls besoins de l''économie nationale.
-
-Appliquons ce trilemme à l''UEMOA, en restant en termes généraux, sans invoquer de taux ou de texte précis non vérifié. Les pays membres de l''UEMOA partagent une monnaie commune avec une parité fixe historique à l''euro, et une relative ouverture aux mouvements de capitaux régionaux et internationaux. La conséquence directe du trilemme est que chaque État membre renonce à une politique monétaire nationale autonome : les décisions de taux d''intérêt et de masse monétaire sont prises au niveau de la banque centrale commune pour l''ensemble de la zone, pas au niveau de chaque État. C''est le prix à payer pour la stabilité du taux de change que procure l''union monétaire — un choix institutionnel avec des avantages, comme la crédibilité anti-inflationniste, et des coûts, comme la perte d''un instrument d''ajustement national face à un choc spécifique.
-
-## 20:00 – 35:00 · Politique budgétaire renforcée en change fixe
-
-Puisque la politique monétaire n''est plus un levier national disponible, que reste-t-il à un État membre d''une union monétaire pour agir sur son activité économique en cas de choc ? La réponse : la politique budgétaire, c''est-à-dire les dépenses publiques et la fiscalité, devient l''instrument principal de stabilisation nationale.
-
-Il y a une subtilité théorique importante à connaître : en change fixe, une relance budgétaire a, en théorie, un effet multiplicateur plus important que dans un cadre de change flexible. Pourquoi ? Parce qu''en change flexible, une relance budgétaire tend à faire monter les taux d''intérêt domestiques, ce qui attire des capitaux étrangers et fait apprécier la monnaie nationale, ce qui pénalise à son tour les exportations et vient partiellement compenser, ou « absorber », l''effet expansionniste initial de la relance. En change fixe, ce mécanisme de compensation automatique disparaît, puisqu''il n''y a pas de monnaie nationale distincte qui s''apprécie ou se déprécie librement : l''effet multiplicateur de la politique budgétaire est donc potentiellement plus fort.
-
-Cette dépendance renforcée à la politique budgétaire explique pourquoi la discipline budgétaire est un sujet particulièrement sensible dans une union monétaire : un déficit mal maîtrisé dans un État membre peut peser sur la perception de solidité financière de l''ensemble de la zone monétaire partagée, même si, en principe, chaque État conserve la responsabilité individuelle de ses propres finances publiques. C''est un sujet de gouvernance économique régionale central dans l''actualité de l''UEMOA.
-
-## 35:00 – 50:00 · La soutenabilité de la dette publique : la méthode
-
-Un concept central de cette séance : la dette publique est dite soutenable si l''État peut, dans la durée, honorer ses engagements sans ajustement brutal — défaut de paiement, restructuration forcée, ou inflation non maîtrisée pour éroder la dette réelle. Une approche simplifiée, à utiliser avec prudence car la réalité comporte davantage de nuances, consiste à comparer le taux de croissance économique, noté g, et le taux d''intérêt réel moyen de la dette, noté r.
-
-Voici la règle simplifiée que je veux que vous reteniez : si g est supérieur à r, et que le solde primaire — c''est-à-dire les recettes moins les dépenses hors charge d''intérêt — n''est pas trop négatif, le ratio dette sur PIB tend à se stabiliser ou à diminuer dans le temps. En revanche, si r est durablement supérieur à g, le ratio dette sur PIB tend à augmenter mécaniquement, même sans nouveau déficit primaire, par un effet qu''on appelle « boule de neige » : la charge d''intérêt croît alors plus vite que la capacité de l''économie à la rembourser.
-
-La formule simplifiée que nous utiliserons est : variation du ratio dette sur PIB est environ égale à, r moins g, multiplié par le ratio dette sur PIB de départ, moins le solde primaire en pourcentage du PIB.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Avant de passer au calcul guidé, un quiz de cinq minutes. Première question : si g est supérieur à r, le ratio dette sur PIB tend-il à augmenter ou à diminuer, toutes choses égales par ailleurs ? Deuxième question : qu''est-ce que le solde primaire, précisément ? Troisième question : pourquoi dit-on que l''effet boule de neige est « mécanique » ?
-
-Correction : premièrement, si g est supérieur à r, le terme (r moins g) est négatif, donc le ratio dette sur PIB tend à diminuer, toutes choses égales par ailleurs sur le solde primaire. Deuxièmement, le solde primaire est la différence entre les recettes publiques et les dépenses publiques hors charge d''intérêt de la dette — il exclut donc le service de la dette elle-même. Troisièmement, l''effet est dit mécanique parce qu''il se produit même sans nouveau déficit primaire : la seule accumulation des intérêts sur une dette dont le coût réel dépasse la croissance de l''économie suffit à faire grossir le ratio.
-
-## 55:00 – 1:25:00 · Calcul guidé complet et discussion
-
-Reprenons notre exemple numérique fictif, dont les calculs ont été vérifiés. Un pays fictif a un ratio dette sur PIB de 60 % en début de période, une croissance réelle de 5 % par an, un taux d''intérêt réel moyen de 3 % par an, et un solde primaire nul.
-
-Calculons ensemble, étape par étape. D''abord, r moins g : 0,03 moins 0,05, égal moins 0,02. Ensuite, multiplions par le ratio dette sur PIB de départ : moins 0,02 multiplié par 0,60, égal moins 0,012. Enfin, soustrayons le solde primaire, qui est nul ici : moins 0,012 moins 0, égal moins 0,012. Résultat : une baisse d''environ 1,2 point de pourcentage du ratio dette sur PIB sur l''année, uniquement grâce à une croissance supérieure au taux d''intérêt réel, même sans excédent budgétaire primaire.
-
-Maintenant, un contre-exemple pour bien ancrer la logique. Supposons que ce même pays subisse un choc externe et voie sa croissance réelle tomber à 1 % par an, le taux d''intérêt réel restant inchangé à 3 %. Recalculons : r moins g égale 0,03 moins 0,01, égal 0,02. Multiplié par 0,60, égal 0,012. Moins le solde primaire nul : 0,012. Résultat : une hausse d''environ 1,2 point de pourcentage du ratio dette sur PIB — l''exact opposé du cas précédent, uniquement parce que la croissance a chuté.
-
-Cet exemple illustre un point fondamental pour votre compréhension des politiques économiques : la croissance économique est une variable aussi déterminante que le niveau du déficit pour la soutenabilité de la dette publique. Un gouvernement qui néglige les politiques favorisant la croissance de long terme, même en maintenant une discipline budgétaire apparente, peut voir sa trajectoire de dette se détériorer simplement parce que la croissance ralentit.
-
-Un point de méthode essentiel pour vos examens et votre mémoire : cette formule est une approximation pédagogique simplifiée. Les niveaux de taux d''intérêt, de croissance, et les seuils d''alerte réellement utilisés par les institutions, notamment les critères de convergence de l''UEMOA, sont des valeurs officielles précises qui évoluent dans le temps et doivent être vérifiées auprès des textes et publications officiels en vigueur. N''affirmez jamais un seuil officiel précis sans l''avoir vérifié récemment.
-
-## 1:25:00 – 1:30:00 · Évaluation finale
-
-Cinq questions pour conclure.
-
-Question 1 : Énoncez le trilemme de Mundell.
-Réponse : un pays ne peut pas avoir simultanément un taux de change fixe, une parfaite mobilité des capitaux, et une politique monétaire nationale pleinement autonome.
-
-Question 2 : Pourquoi la politique budgétaire a-t-elle un rôle renforcé dans une union monétaire à change fixe ?
-Réponse : parce que la politique monétaire nationale n''est plus disponible, la politique budgétaire devient le principal instrument national de stabilisation de l''activité économique.
-
-Question 3 : Donnez la formule simplifiée de la variation du ratio dette sur PIB.
-Réponse : variation ≈ (r - g) × (dette/PIB) - solde primaire/PIB.
-
-Question 4 : Qu''est-ce que l''effet boule de neige de la dette ?
-Réponse : lorsque le taux d''intérêt réel dépasse durablement la croissance, la charge d''intérêt croît plus vite que la capacité de l''économie à la rembourser, augmentant mécaniquement le ratio dette sur PIB.
-
-Question 5 : Pourquoi faut-il être prudent avant d''affirmer un seuil officiel précis de dette ou de déficit ?
-Réponse : parce que ces seuils sont fixés par des textes officiels précis, révisables dans le temps ; il faut toujours vérifier le texte en vigueur plutôt que de se fier à une valeur non vérifiée récemment.
-
-Merci pour votre attention. Notre quatrième et dernière vidéo de ce semestre sera un atelier transversal combinant les trois matières sur un cas d''entreprise complet.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Politiques économiques et macroéconomie ouverte avancée');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Atelier transversal — cas pratique filé', '## Fiche du cours vidéo
-
-Durée : 1h30 (90 minutes). Sujet : Atelier transversal — cas pratique filé combinant économétrie appliquée, économie industrielle et politiques économiques.
-Objectifs : mobiliser conjointement les trois matières du semestre sur un cas d''entreprise et de politique économique complet, comme à l''examen.
-Matériel : tableau ou diaporama, calculatrice, vos notes des trois précédentes vidéos.
-Prérequis : les trois cours vidéo précédents de ce semestre.
-
-## Déroulé minuté
-
-## 00:00 – 05:00 · Présentation du cas filé
-
-Bonjour et bienvenue dans cette quatrième et dernière vidéo de votre semestre de Master 1 en Économie. Contrairement aux trois précédentes, cette séance ne porte pas sur une matière unique : nous allons suivre un cas d''entreprise fictif complet, du début à la fin, et mobiliser successivement l''économétrie appliquée, l''économie industrielle, puis les politiques économiques, exactement comme un sujet d''examen transversal pourrait vous le demander.
-
-Notre cas fictif : une entreprise de transformation agroalimentaire, que nous appellerons « Groupe Fictif Sahel », opère dans un pays membre fictif d''une union monétaire régionale, en situation de duopole avec un concurrent direct sur son marché domestique, et exporte une partie de sa production vers les pays voisins de la zone.
-
-## 05:00 – 25:00 · Partie économétrie : estimer la demande
-
-Première étape : le service d''études du Groupe Fictif Sahel veut comprendre ce qui détermine ses ventes mensuelles dans ses dix zones de distribution. Nous reprenons exactement le jeu de données déjà vu dans notre première vidéo : investissement productif cumulé par zone (X1, de 5 à 14 milliards FCFA), taux d''ouverture commerciale de la zone (X2, de 2 à 6 %), et exportations ou ventes (Y, de 20 à 53 milliards FCFA).
-
-Rappel du modèle estimé, vérifié par le calcul : Y égale 2,00, plus 3,60 fois X1, plus 0,05 fois X2. Le test de Student donne t1 environ égal à 17,39 pour l''investissement, largement significatif, et t2 environ égal à 0,12 pour le taux d''ouverture, non significatif sur cet échantillon. Le R² est d''environ 0,999.
-
-Question d''examen typique : la direction de l''entreprise doit-elle, sur la base de ce modèle, continuer à investir dans l''ouverture commerciale de ses zones de distribution ? Discutons-en. La réponse économétrique rigoureuse est la suivante : le modèle, sur cet échantillon précis, ne montre pas d''effet statistiquement significatif du taux d''ouverture sur les ventes, une fois l''investissement pris en compte. Cela ne signifie pas que l''ouverture commerciale n''a aucun intérêt stratégique — elle peut avoir des effets à plus long terme, non captés par ce modèle statique et cet échantillon réduit — mais la direction ne peut pas s''appuyer sur ce modèle précis pour justifier un investissement massif dans l''ouverture commerciale au nom d''un effet statistique démontré, puisque cet effet n''est pas significatif ici. C''est exactement le type de nuance qu''un correcteur attend dans une copie de Master.
-
-## 25:00 – 50:00 · Partie économie industrielle : la stratégie face au concurrent
-
-Deuxième étape : le Groupe Fictif Sahel fait face à un concurrent direct, « Rival Fictif Teranga », sur son marché domestique. Les deux entreprises sont en situation d''oligopole. Reprenons les paramètres déjà étudiés : demande inverse P égale 100 moins Q, coût marginal commun c égal 10.
-
-À l''équilibre de Cournot : chaque firme produit 30 unités, le prix est de 40, et chaque firme réalise un profit de 900. Supposons maintenant que le Groupe Fictif Sahel envisage une stratégie de différenciation : en investissant dans une marque perçue comme plus qualitative, il pourrait réduire la sensibilité de ses clients au prix de son concurrent.
-
-Discutons des implications stratégiques. Si le Groupe Fictif Sahel parvient à différencier suffisamment son offre, il échappe partiellement à la pression concurrentielle qui se rapprocherait du paradoxe de Bertrand si les deux entreprises vendaient un produit strictement identique et se livraient à une concurrence frontale par les prix — rappelez-vous, dans ce cas, le prix tendrait vers le coût marginal, soit 10, bien inférieur au prix de Cournot de 40. La différenciation permet donc, en théorie, de préserver des marges plus proches, voire supérieures, à celles de l''équilibre de Cournot.
-
-Mais il existe une autre option stratégique, risquée : la collusion tacite avec « Rival Fictif Teranga ». Rappelons le calcul : en monopole conjoint, les deux entreprises produiraient 45 unités au prix de 55, pour un profit joint de 2025, contre 1800 en situation de Cournot non coopérative. La tentation de collusion est donc réelle sur le plan du profit. Mais attention, et c''est une question d''examen classique : quels sont les risques d''une telle stratégie pour le Groupe Fictif Sahel ? Premièrement, un risque juridique et réputationnel, puisque la collusion est en principe sanctionnée par les autorités de la concurrence. Deuxièmement, un risque économique intrinsèque : l''accord reste instable, car chaque firme a individuellement intérêt à tricher en produisant davantage, ce qui peut faire s''effondrer l''accord et déclencher une guerre des prix dommageable pour les deux parties.
-
-## 50:00 – 55:00 · Pause et quiz interactif
-
-Pause de cinq minutes avec un quiz transversal. Première question : pourquoi la différenciation de produit est-elle une stratégie généralement plus robuste juridiquement que la collusion, même si les deux visent à préserver des marges ? Deuxième question : dans notre modèle économétrique, pourquoi ne peut-on pas conclure que « l''ouverture commerciale n''a jamais d''effet sur les ventes » ? Troisième question : à l''équilibre de Cournot calculé, quel est le profit total du secteur (les deux firmes réunies) ?
-
-Correction : premièrement, la différenciation de produit est une stratégie légale et même souhaitable du point de vue de l''innovation et de la qualité, alors que la collusion est une pratique anticoncurrentielle sanctionnable, bien que les deux puissent chercher à limiter la pression sur les prix. Deuxièmement, parce qu''une non-significativité statistique sur un échantillon précis et réduit ne prouve pas une absence d''effet économique réel, elle montre seulement que cet effet n''est pas mesurable avec confiance sur ces données précises. Troisièmement, le profit total du secteur à l''équilibre de Cournot est 900 plus 900, soit 1800.
-
-## 55:00 – 1:25:00 · Partie politiques économiques : le contexte macroéconomique
-
-Troisième étape, celle des politiques économiques : le Groupe Fictif Sahel exporte une partie de sa production vers les pays voisins de son union monétaire régionale. Le gouvernement de son pays d''origine envisage une politique de soutien au secteur agro-industriel, dans un contexte où le pays, membre d''une union monétaire à change fixe, a un ratio dette sur PIB de 55 % en début d''année, une croissance réelle anticipée de 4 %, un taux d''intérêt réel moyen de 2 %, et un solde primaire de plus 0,5 % du PIB.
-
-Rappelons d''abord le trilemme de Mundell : ce pays, en adhérant à une union monétaire à change fixe avec une certaine ouverture financière, a renoncé à une politique monétaire nationale autonome. S''il veut soutenir le secteur agro-industriel, il ne peut pas le faire par une baisse de son taux d''intérêt national ou une dévaluation ciblée : il doit utiliser la politique budgétaire, par exemple des subventions, des investissements publics dans les infrastructures de transport reliant les zones de production aux ports d''exportation, ou des incitations fiscales.
-
-Calculons la trajectoire de la dette avant toute nouvelle dépense : variation du ratio dette sur PIB est environ égale à, r moins g, multiplié par le ratio de départ, moins le solde primaire. Soit : 0,02 moins 0,04, multiplié par 0,55, moins 0,005, égal moins 0,02 multiplié par 0,55, moins 0,005, égal moins 0,011 moins 0,005, égal moins 0,016. Le ratio dette sur PIB baisse donc d''environ 1,6 point sur l''année, avant toute nouvelle politique de soutien.
-
-Question d''examen : si le gouvernement finance un programme de soutien au secteur agro-industriel en augmentant ses dépenses publiques, par exemple en réduisant son solde primaire de 0,5 % à 0 % du PIB, quel est l''impact sur la trajectoire de la dette, toutes choses égales par ailleurs sur r et g ? Recalculons : moins 0,011, moins 0 (le nouveau solde primaire), égal moins 0,011. Le ratio dette sur PIB continuerait de baisser, mais plus modestement qu''avant, d''environ 1,1 point au lieu de 1,6 point. La politique de soutien reste donc compatible avec une trajectoire de dette toujours orientée à la baisse dans ce scénario précis, tant que la croissance reste nettement supérieure au taux d''intérêt réel.
-
-Cette conclusion illustre bien l''intérêt de l''approche transversale : une décision de politique industrielle ou sectorielle (soutenir un secteur) doit toujours être évaluée en tenant compte de ses implications macroéconomiques et budgétaires, dans le cadre institutionnel spécifique de l''union monétaire à laquelle le pays appartient.
-
-## 1:25:00 – 1:30:00 · Synthèse finale et évaluation
-
-Pour conclure ce semestre, retenez la démarche méthodologique que nous venons d''appliquer : face à un cas d''entreprise ou de politique économique complexe, identifiez d''abord les données et la question économétrique sous-jacente, puis analysez la structure de marché et les choix stratégiques des acteurs, enfin replacez l''ensemble dans le cadre macroéconomique et institutionnel pertinent. C''est cette capacité à combiner les trois niveaux d''analyse qui sera évaluée dans vos examens de fin de semestre.
-
-Question 1 : Dans notre cas filé, pourquoi la non-significativité du coefficient du taux d''ouverture ne doit-elle pas être utilisée seule pour décider d''arrêter tout investissement dans l''ouverture commerciale ?
-Réponse : parce qu''elle reflète seulement l''absence d''effet statistiquement démontré sur cet échantillon précis, pas une preuve d''absence d''effet économique réel à plus long terme.
-
-Question 2 : Pourquoi la différenciation de produit est-elle juridiquement préférable à la collusion pour préserver des marges ?
-Réponse : parce que la différenciation est une stratégie légale fondée sur l''innovation et la qualité, alors que la collusion est anticoncurrentielle et sanctionnable.
-
-Question 3 : Pourquoi ce pays fictif ne peut-il pas utiliser une baisse de son taux d''intérêt national pour soutenir son secteur agro-industriel ?
-Réponse : parce qu''il a renoncé à une politique monétaire nationale autonome en adhérant à une union monétaire à change fixe, conformément au trilemme de Mundell.
-
-Question 4 : Quel est l''effet d''une réduction du solde primaire sur la trajectoire de la dette, toutes choses égales par ailleurs sur r et g ?
-Réponse : elle détériore (rend moins favorable) la trajectoire du ratio dette sur PIB, même si celui-ci peut rester orienté à la baisse si la croissance reste nettement supérieure au taux d''intérêt réel.
-
-Question 5 : Quelle est la démarche méthodologique transversale à retenir pour un sujet d''examen combinant plusieurs matières de Master ?
-Réponse : identifier d''abord la question économétrique et les données, analyser ensuite la structure de marché et les choix stratégiques, puis replacer l''ensemble dans le cadre macroéconomique et institutionnel pertinent, en reliant toujours les trois niveaux d''analyse entre eux.
-
-Bon courage à toutes et à tous pour la suite de votre préparation et vos examens de Master 1.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-eco-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — cas pratique filé');

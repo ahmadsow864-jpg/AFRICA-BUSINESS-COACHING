@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 14/16). À exécuter après seed.sql.
+-- Cours (partie 14/17). À exécuter après seed.sql.
 
 -- Cours : Gestion de projets Master 1 : réussir ses examens
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -2424,621 +2424,1117 @@ et en vous entraînant sur le sujet type avant l''examen.
 from public.courses c where c.slug = 'mas-info-m1'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — architecture, données et sécurité (cas Agri Connect Sénégal)');
 
--- Cours : Contrôle de gestion Master 1 : réussir ses examens
+-- Cours : Informatique Master 2 : réussir ses examens (intelligence artificielle, gouvernance IT, mémoire et soutenance)
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
-select 'mas-cg-m1', (select id from public.levels where name = 'Master 1'), null, 'Contrôle de gestion', 'Contrôle de gestion Master 1 : réussir ses examens', 'Préparation aux examens de Master 1 en Contrôle de gestion : pilotage de la performance globale (RSE, triple bottom line), gestion par centres de responsabilité et prix de cession interne avancé, systèmes d''information décisionnels (ERP, reporting consolidé). Études de cas d''entreprise sénégalaises et africaines fictives, calculs vérifiés, sujet type d''examen corrigé et quatre cours vidéo de 1h30.', true, 731
+select 'mas-info-m2', (select id from public.levels where name = 'Master 2'), null, 'Informatique', 'Informatique Master 2 : réussir ses examens (intelligence artificielle, gouvernance IT, mémoire et soutenance)', 'Préparation aux examens de Master 2 en Informatique : intelligence artificielle et data science, gouvernance IT et gestion de projets informatiques, méthodologie du mémoire de recherche ou du projet tutoré et de la soutenance. Cas d''entreprise sénégalais fictifs, exemples chiffrés vérifiés, exercices corrigés et quatre cours vidéo de 1h30, dont un atelier pratique de préparation à la soutenance. Public : étudiants de Master 2 Informatique ayant validé le Master 1.', true, 722
 on conflict (slug) do nothing;
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Réussir ses examens de Master 1 en Contrôle de gestion', 'Le Master 1 en Contrôle de gestion marque une rupture nette avec la Licence. Les examens ne se limitent plus au calcul correct d''un coût ou d''un écart : ils évaluent votre capacité à analyser une situation de gestion complexe, à articuler plusieurs outils entre eux, à argumenter un choix de méthode et à vous situer dans la stratégie globale de l''entreprise ou du groupe. Le correcteur attend un raisonnement de contrôleur de gestion senior, pas seulement un technicien du calcul.
+select c.id, 'Réussir ses examens de Master 2 en Informatique', '## Objectifs de la leçon
 
-## Ce qui change par rapport à la Licence
+Cette leçon pose le cadre du Master 2 en Informatique, dernière année avant l''entrée dans la vie professionnelle
+ou la poursuite en doctorat. Elle prolonge le Master 1 (architectures et microservices, bases de données
+avancées et Big Data, cybersécurité avancée) vers trois nouvelles matières : l''intelligence artificielle et la
+data science, la gouvernance IT et la gestion de projets informatiques, et la méthodologie du mémoire de
+recherche ou du projet tutoré, qui se conclut par une soutenance.
 
-En Licence, vous avez appris à calculer : coûts complets, coûts partiels, écarts budgétaires, coûts ABC, indicateurs de tableau de bord. En Master 1, ces outils deviennent des briques que vous devez combiner pour répondre à des problématiques de pilotage : comment faire converger la performance économique, sociale et environnementale d''un groupe ? Comment fixer un prix de cession interne qui soit à la fois équitable entre filiales et cohérent avec la stratégie du groupe ? Comment un système d''information décisionnel fiabilise-t-il le reporting consolidé mensuel ?
+## Ce qui change en Master 2 : le mémoire et la soutenance
 
-Les études de cas d''examen portent sur des groupes ou des entreprises de taille significative, souvent multi-activités ou multi-sites, confrontés à des arbitrages réels : investir ou non dans une nouvelle unité, déléguer ou centraliser une décision, choisir entre plusieurs scénarios de performance globale. Vous devez mobiliser une analyse critique : discuter les limites d''un indicateur, les biais d''une méthode de cession interne, les risques d''un système d''information mal paramétré.
+En Master 2, le travail personnel prend une place centrale et devient souvent le cœur de l''évaluation de
+l''année : un mémoire de recherche (avec une problématique, une revue de littérature, une méthodologie et des
+résultats), ou un projet tutoré professionnel approfondi (souvent lié à un stage long), défendu devant un jury
+lors d''une soutenance orale. Ce n''est plus un exercice annexe à côté des examens : c''est un travail de plusieurs
+mois qui démontre la capacité à mener une recherche ou un projet de bout en bout, de façon autonome, avec un
+encadrement ponctuel plutôt qu''un cours classique.
+
+Les examens de Master 2 évaluent donc deux choses complémentaires : la maîtrise de matières avancées (comme en
+Master 1, mais avec un niveau d''exigence plus élevé sur l''analyse critique et la prise de décision en
+incertitude), et la capacité à produire et défendre un travail personnel structuré.
 
 ## Les trois matières avancées de l''année
 
-- Contrôle de gestion stratégique et pilotage de la performance globale : relier le contrôle de gestion à la stratégie de l''entreprise, intégrer la responsabilité sociétale des entreprises (RSE) et la logique de triple bottom line (performance économique, sociale, environnementale) dans les outils de pilotage.
-- Gestion de la performance par centres de responsabilité et prix de cession interne avancé : construire une organisation en centres de responsabilité (coût, profit, investissement), évaluer leur performance par le ROI et l''EVA, et maîtriser les méthodes avancées de fixation des prix de cession interne entre filiales d''un même groupe.
-- Systèmes d''information décisionnels (ERP, reporting consolidé) : comprendre le rôle d''un ERP et des outils de Business Intelligence dans la production d''un reporting de gestion fiable, rapide et consolidé à l''échelle d''un groupe.
+Intelligence artificielle et data science : les notions de base de l''apprentissage automatique, la différence
+entre régression et classification, et la capacité à construire et interpréter un modèle simple sur des
+données vérifiées, sans nécessairement maîtriser les architectures les plus complexes (qui relèvent d''une
+spécialisation plus poussée).
 
-## Méthode de travail au niveau Master
+Gouvernance IT et gestion de projets informatiques : comment organiser la production et la maintenance des
+systèmes d''information à l''échelle d''une entreprise, en s''appuyant sur des référentiels reconnus comme ITIL
+(en principe, pour la gestion des services informatiques) et sur les méthodes DevOps (en principe, pour
+rapprocher le développement et l''exploitation des systèmes), et comment piloter un projet informatique du
+cadrage à la livraison.
 
-Le travail attendu change de nature. Une étude de cas complexe ne se résout pas en appliquant une formule : il faut d''abord qualifier le problème (quel est l''enjeu de pilotage réel ?), choisir les outils pertinents parmi ceux que vous connaissez, les mettre en œuvre avec rigueur numérique, puis discuter les résultats (que signifient-ils pour le dirigeant ? quelles sont les limites de l''analyse ?). Beaucoup d''étudiants perdent des points non pas sur le calcul, mais sur l''absence de discussion critique en fin de réponse.
+Méthodologie du mémoire de recherche ou du projet tutoré et de la soutenance : comment structurer un mémoire
+(problématique, revue de littérature, méthodologie, résultats, discussion), comment organiser son temps de
+rédaction sur plusieurs mois, et comment préparer une soutenance orale convaincante devant un jury.
 
-La revue de littérature courte devient un réflexe : quand une question porte sur un concept (RSE, EVA, prix de cession interne), rappelez en deux ou trois phrases le cadre théorique avant de l''appliquer au cas. Cela montre au correcteur que vous maîtrisez le concept et pas seulement la formule.
+## Méthode de travail avancée pour cette année
 
-Enfin, les cas d''entreprise de Master mêlent souvent plusieurs filiales ou plusieurs centres de responsabilité : prenez l''habitude de schématiser l''organisation (qui vend à qui, qui décide de quoi) avant de calculer, pour ne pas vous perdre dans les flux internes.
+Le Master 2 demande de mener en parallèle la préparation des examens et l''avancement du mémoire ou du projet
+tutoré, ce qui exige une organisation plus rigoureuse qu''en Master 1. Trois habitudes aident à tenir sur la
+durée : fixer des jalons intermédiaires pour le mémoire (par exemple, une problématique validée à telle date,
+un premier chapitre rédigé à telle autre date) plutôt que d''attendre la dernière semaine ; relier, quand c''est
+possible, les révisions d''examen et le travail de mémoire, par exemple en utilisant une notion de data science
+vue en cours pour analyser des données réelles de son propre projet ; et s''entraîner à l''oral de soutenance bien
+avant la date réelle, devant un petit groupe ou même seul face à une caméra, car la gestion du stress et du
+temps de parole se travaille comme une compétence à part.
 
-## Plan de révision sur 6 semaines
+## Plan de révision sur six semaines
 
-- Semaine 1 : contrôle de gestion stratégique, RSE et triple bottom line ; relire les notions de Licence sur le tableau de bord prospectif pour bien voir la progression.
-- Semaine 2 : exercices chiffrés sur le tableau de bord RSE et la construction d''indicateurs de performance globale pondérés.
-- Semaine 3 : centres de responsabilité, ROI, EVA ; cas d''entreprise sur l''évaluation de filiales.
-- Semaine 4 : prix de cession interne avancé (méthodes du coût, du marché, négociée) ; exercices sur l''impact de chaque méthode sur la marge des filiales et sur le résultat consolidé.
-- Semaine 5 : systèmes d''information décisionnels, ERP, reporting consolidé ; qualité des données et délais de clôture.
-- Semaine 6 : sujet type complet en conditions chronométrées, puis révision ciblée des points faibles identifiés.
+Semaine 1 et 2 : intelligence artificielle et data science. Revoir les notions de base (apprentissage supervisé,
+régression, classification), savoir interpréter un résultat chiffré simple (une erreur de prédiction, un taux
+de bonne classification) et comprendre ses limites, sans chercher à maîtriser des modèles trop complexes pour
+le niveau de l''examen.
 
-## Points clés à retenir
+Semaine 3 et 4 : gouvernance IT et gestion de projets informatiques. Revoir les grands principes d''ITIL et de
+DevOps au niveau des concepts, et les méthodes de pilotage de projet (cadrage, planification, suivi, clôture),
+en s''entraînant sur des cas d''entreprise chiffrés (budget, délais, ressources).
 
-- Le Master 1 exige d''articuler plusieurs outils de contrôle de gestion pour répondre à une problématique de pilotage, pas seulement de calculer juste.
-- La RSE et la triple bottom line transforment le tableau de bord classique en un outil de pilotage de la performance globale.
-- Le prix de cession interne n''a pas d''effet sur le résultat consolidé du groupe, mais il redistribue la performance entre filiales : c''est un enjeu d''évaluation et de motivation des responsables.
-- La qualité et la rapidité du reporting consolidé dépendent directement de la fiabilité du système d''information décisionnel.
+Semaine 5 : méthodologie du mémoire et de la soutenance. Revoir la structure attendue d''un mémoire, les règles
+de citation et de sourcing, et préparer un plan de soutenance de dix minutes avec les réponses aux questions les
+plus prévisibles du jury.
 
-## Exercices pratiques
-
-1. Expliquez en cinq lignes en quoi la logique de triple bottom line modifie la définition même de la performance d''une entreprise par rapport à une approche strictement financière.
-2. Citez trois méthodes de fixation d''un prix de cession interne et donnez, pour chacune, un avantage et une limite.
-3. Un centre de profit dégage un résultat d''exploitation de 245 100 000 FCFA avec des capitaux investis de 1 200 000 000 FCFA. Calculez son ROI.
-4. Pourquoi un prix de cession interne différent ne change-t-il pas le résultat consolidé du groupe, alors qu''il change le résultat de chaque filiale prise séparément ?
-5. Citez deux risques liés à un ERP mal paramétré pour la production d''un reporting consolidé mensuel.
-6. Un groupe veut mettre en place un tableau de bord RSE. Proposez un indicateur simple pour chacun des trois axes (économique, social, environnemental).
-
-## Corrigé
-
-1. La triple bottom line (« triple résultat ») affirme qu''une entreprise performante doit créer de la valeur sur trois dimensions simultanées : économique (rentabilité, création de valeur financière), sociale (conditions de travail, emploi local, formation) et environnementale (empreinte carbone, gestion des ressources, déchets). Une entreprise très rentable financièrement mais dégradant fortement son environnement ou ses conditions sociales n''est plus considérée comme pleinement performante. Le contrôle de gestion doit donc produire des indicateurs sur les trois axes et pas seulement des indicateurs financiers.
-2. Méthode du coût complet majoré d''une marge : avantage, simple à mettre en œuvre et traçable ; limite, elle peut intégrer l''inefficience du centre vendeur dans le prix. Méthode du prix du marché ajusté des économies internes : avantage, elle rapproche le prix d''une référence externe objective ; limite, elle suppose l''existence d''un marché externe comparable, ce qui n''est pas toujours le cas. Méthode du prix négocié entre responsables : avantage, elle respecte l''autonomie des centres de responsabilité ; limite, elle peut être longue à négocier et source de conflits internes.
-3. ROI = résultat d''exploitation / capitaux investis = 245 100 000 / 1 200 000 000 = 0,2042, soit environ 20,4 %.
-4. Le prix de cession interne est une opération intragroupe : ce que le centre vendeur gagne en plus, le centre acheteur le paie en plus, et inversement. Au niveau consolidé, cette opération s''élimine : seule compte la marge réalisée avec un client final extérieur au groupe. Le prix de cession interne est donc un outil de répartition interne de la performance, pas un levier de création de valeur pour le groupe dans son ensemble.
-5. Un ERP mal paramétré peut produire des doublons ou des pertes de données lors de la consolidation de plusieurs filiales (incohérence des référentiels comptables), et peut allonger fortement les délais de clôture si les interfaces entre modules ne sont pas fiabilisées, retardant le reporting de gestion au moment où les décideurs en ont le plus besoin.
-6. Exemples possibles : axe économique, taux de marge opérationnelle ou ROI ; axe social, taux de formation du personnel ou taux d''accidents du travail ; axe environnemental, volume de déchets rapporté à la production ou consommation d''énergie par unité produite. D''autres indicateurs pertinents et correctement justifiés sont acceptés.', 'texte', 45, true, 10
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 1 en Contrôle de gestion');
-insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Contrôle de gestion stratégique et pilotage de la performance globale (RSE, triple bottom line) : l''essentiel pour l''examen', 'Le contrôle de gestion stratégique prolonge le contrôle de gestion opérationnel que vous avez étudié en Licence : il ne s''agit plus seulement de maîtriser des coûts ou des écarts à court terme, mais de piloter la mise en œuvre de la stratégie de l''entreprise sur le moyen et le long terme, en intégrant des dimensions qui dépassent la seule performance financière.
-
-## De la performance financière à la performance globale
-
-Pendant longtemps, le contrôle de gestion s''est concentré sur des indicateurs financiers : chiffre d''affaires, marge, résultat, rentabilité des capitaux investis. Cette approche reste nécessaire mais elle est jugée insuffisante, pour trois raisons : elle ne capture pas la création de valeur future (innovation, satisfaction client), ce que le tableau de bord prospectif étudié en Licence corrigeait déjà en ajoutant les axes clients, processus internes et apprentissage ; elle ignore les impacts sociaux (conditions de travail, emploi local) ; et elle ignore les impacts environnementaux (ressources, émissions, déchets), qui deviennent des risques financiers directs : réglementation plus stricte, coût de l''énergie, exigences des bailleurs de fonds et des clients internationaux.
-
-La notion de performance globale réunit ces trois dimensions, en s''appuyant sur le concept de triple bottom line : une organisation durable doit produire simultanément un résultat économique (profit), un résultat social (people) et un résultat environnemental (planet). Le contrôle de gestion stratégique construit les outils qui mesurent, suivent et pilotent ces trois résultats en cohérence avec la stratégie.
-
-## La responsabilité sociétale des entreprises (RSE) comme cadre de pilotage
-
-La RSE désigne l''intégration volontaire, par l''entreprise, de préoccupations sociales et environnementales dans ses activités et ses relations avec ses parties prenantes (salariés, clients, fournisseurs, communautés locales, État). Pour le contrôleur de gestion, la RSE n''est pas qu''une politique de communication : c''est un domaine à piloter avec les mêmes exigences de rigueur que le contrôle budgétaire, avec des indicateurs mesurables et suivis dans le temps (taux de formation, taux de fréquence des accidents du travail, part des achats auprès de fournisseurs locaux, consommation d''eau ou d''énergie par unité produite, volume de déchets valorisés).
-
-Ces indicateurs doivent être intégrés au tableau de bord courant au même titre que les indicateurs financiers, avec des cibles et des seuils d''alerte. Un tableau de bord qui isole la RSE dans un rapport annuel séparé ne remplit pas sa fonction de pilotage stratégique.
-
-## Construire un indice de performance globale pondéré
-
-Une pratique courante en contrôle de gestion stratégique consiste à agréger plusieurs indicateurs, parfois hétérogènes, en un indice de synthèse pondéré, pour faciliter la communication avec la direction générale et le conseil d''administration.
-
-Prenons l''exemple du Groupe Teranga Agro-Industries, un groupe sénégalais fictif actif dans la transformation et la distribution de produits céréaliers. Sa direction générale souhaite disposer d''un indice de performance globale sur 20, construit à partir de trois scores (chacun noté sur 20 par un comité de pilotage, sur la base d''indicateurs objectifs) :
-
-- Axe économique (poids 40 %) : score de 16/20, fondé sur la marge opérationnelle et le ROI des filiales.
-- Axe social (poids 30 %) : score de 13/20, fondé sur le taux de formation, le taux d''accidents du travail et le taux de rétention du personnel.
-- Axe environnemental (poids 30 %) : score de 11/20, fondé sur la consommation d''énergie par tonne produite et le taux de déchets valorisés.
-
-L''indice de performance globale se calcule ainsi :
-Indice = (16 × 0,40) + (13 × 0,30) + (11 × 0,30) = 6,4 + 3,9 + 3,3 = 13,6/20.
-
-Ce résultat de 13,6/20 montre une performance économique solide, mais un retard net sur l''axe environnemental, qui tire l''indice global vers le bas. Le rôle du contrôleur de gestion n''est pas de s''arrêter au chiffre : il doit analyser la composition de l''indice pour identifier le levier d''action prioritaire. Ici, un plan d''action ciblé sur la réduction de la consommation d''énergie ou l''amélioration du taux de valorisation des déchets aurait un effet plus rapide sur l''indice global qu''un effort supplémentaire sur l''axe économique, déjà bien noté.
-
-## Les limites de la pondération et la vigilance du contrôleur de gestion
-
-La construction d''un indice pondéré pose deux problèmes méthodologiques fréquemment testés à l''examen. Premièrement, le choix des poids reste en partie arbitraire et reflète les priorités de la direction : un changement de pondération peut faire basculer l''appréciation globale sans que rien n''ait changé dans la réalité de l''entreprise. Deuxièmement, agréger des scores en un seul chiffre peut masquer une situation critique sur un sous-indicateur isolé (par exemple un taux d''accidents du travail en forte hausse) noyé dans une moyenne globalement satisfaisante. Un bon dispositif de pilotage conserve donc toujours, en complément de l''indice de synthèse, le détail des indicateurs avec leurs seuils d''alerte propres.
-
-## Le contrôle de gestion stratégique face à la décision d''investissement durable
-
-Le contrôle de gestion stratégique intervient aussi dans l''évaluation des choix d''investissement à dimension durable : un investissement dans une technologie moins polluante mais plus coûteuse à court terme doit être évalué non seulement sur sa rentabilité financière, mais aussi sur sa contribution aux objectifs RSE et sur les risques évités (réglementaires, réputationnels, d''approvisionnement). Cela conduit à des méthodes d''évaluation multicritères, où la rentabilité financière reste nécessaire mais n''est plus l''unique critère de décision.
+Semaine 6 : entraînement transversal. Traiter au moins deux sujets type combinant les trois matières, relire ses
+fiches de synthèse, et faire une répétition complète de sa soutenance si la date approche, en minutant
+précisément son intervention.
 
 ## Points clés à retenir
 
-- La performance globale réunit les dimensions économique, sociale et environnementale (triple bottom line) et dépasse la seule performance financière.
-- La RSE doit être pilotée avec des indicateurs mesurables, intégrés au tableau de bord courant, et non reléguée à un rapport annuel isolé.
-- Un indice de performance globale pondéré facilite la communication avec la direction, mais ses limites (arbitraire des poids, effet de masquage) doivent être connues et discutées.
-- Les décisions d''investissement durable doivent être évaluées avec des critères multiples, pas seulement financiers.
+- Le Master 2 évalue à la fois la maîtrise de matières avancées et la capacité à produire et défendre un travail
+  personnel structuré, mémoire ou projet tutoré, lors d''une soutenance.
+- Trois matières avancées structurent l''année : intelligence artificielle et data science, gouvernance IT et
+  gestion de projets informatiques, méthodologie du mémoire et de la soutenance.
+- Une organisation par jalons intermédiaires, plutôt qu''un travail de dernière minute, est indispensable pour
+  mener de front examens et mémoire.
+- S''entraîner à l''oral de soutenance bien avant la date réelle développe une compétence distincte de la
+  maîtrise du contenu.
 
 ## Exercices pratiques
 
-1. Définissez la notion de triple bottom line et expliquez pourquoi elle élargit la définition traditionnelle de la performance d''entreprise.
-2. Le comité de pilotage du Groupe Teranga Agro-Industries révise ses pondérations : axe économique 35 %, axe social 25 %, axe environnemental 40 %, avec les mêmes scores (16, 13, 11). Recalculez l''indice de performance globale.
-3. Comparez le résultat obtenu à la question 2 avec l''indice initial de 13,6/20 et commentez l''effet du changement de pondération sur l''appréciation de la performance du groupe.
-4. Proposez deux indicateurs RSE supplémentaires pertinents pour une entreprise agro-industrielle sénégalaise, en justifiant votre choix.
-5. Expliquez pourquoi un indice de synthèse pondéré peut masquer une dégradation grave sur un indicateur isolé, et proposez une solution de pilotage pour éviter ce risque.
-6. Cas pratique complet : la filiale Teranga Distribution envisage d''investir dans une flotte de camions plus propres, pour un surcoût de 120 000 000 FCFA par rapport à une flotte classique, avec une économie de carburant estimée à 18 000 000 FCFA par an sur 10 ans, et une réduction estimée des émissions de CO2 de 25 % sur le périmètre logistique. En tant que contrôleur de gestion stratégique, rédigez en huit à dix lignes une recommandation à la direction générale, en mobilisant à la fois un critère financier simple et un critère de performance globale.
+1. Expliquez en quelques lignes ce qui change entre l''évaluation du Master 1 et celle du Master 2 en
+   Informatique.
+2. Citez les trois matières avancées de ce programme de Master 2 et donnez, pour chacune, un exemple concret
+   d''application professionnelle.
+3. Pourquoi est-il préférable de fixer des jalons intermédiaires pour la rédaction d''un mémoire plutôt que
+   d''attendre la dernière semaine avant la date de remise ?
+4. Proposez deux questions qu''un jury pourrait poser à la fin d''une soutenance de mémoire ou de projet tutoré en
+   Informatique, et expliquez pourquoi un étudiant doit s''y préparer à l''avance.
+5. Construisez votre propre planning de révision sur six semaines en reprenant la structure proposée.
+6. En quoi la préparation d''une soutenance orale est-elle une compétence distincte de la simple maîtrise du
+   contenu du mémoire ?
+7. Pourquoi peut-il être utile de relier les révisions d''examen (par exemple en data science) au travail de
+   mémoire plutôt que de les traiter comme deux activités totalement séparées ?
 
 ## Corrigé
 
-1. La triple bottom line postule qu''une organisation durablement performante doit produire simultanément trois résultats : un résultat économique (profit, création de valeur financière), un résultat social (conditions de travail, emploi, formation, équité) et un résultat environnemental (gestion des ressources, émissions, déchets). Elle élargit la définition traditionnelle de la performance, centrée sur le seul résultat financier, en intégrant des impacts qui deviennent progressivement des facteurs de risque et de création de valeur à part entière (réglementation, réputation, accès au financement).
-2. Nouvel indice = (16 × 0,35) + (13 × 0,25) + (11 × 0,40) = 5,6 + 3,25 + 4,4 = 13,25/20.
-3. L''indice passe de 13,6/20 à 13,25/20, soit une baisse de 0,35 point, alors qu''aucun des trois scores sous-jacents n''a changé. Cette baisse s''explique uniquement par le renforcement du poids de l''axe environnemental (le plus faible score, 11/20), au détriment de l''axe économique (le plus fort score, 16/20). Cela illustre la limite méthodologique de la pondération : le choix des poids, qui relève d''une décision de la direction, influence directement le résultat affiché, indépendamment de toute évolution réelle de la performance de l''entreprise.
-4. Exemples acceptés : le taux de fournisseurs locaux dans les achats (indicateur social et économique, pertinent pour une agro-industrie qui structure une filière locale) ; le taux de valorisation ou de recyclage des sous-produits agricoles (indicateur environnemental directement lié à l''activité de transformation de céréales). D''autres indicateurs cohérents avec le secteur et correctement justifiés sont acceptés.
-5. Un indice pondéré additionne des scores qui peuvent évoluer en sens contraire : une forte amélioration sur l''axe économique peut compenser statistiquement une dégradation sévère sur un indicateur social isolé (par exemple une hausse du taux d''accidents du travail), sans que l''indice global ne baisse de façon visible. La solution de pilotage consiste à conserver, en parallèle de l''indice de synthèse, un tableau de bord détaillé par indicateur avec des seuils d''alerte individuels, de sorte qu''une dégradation critique sur un seul indicateur déclenche une alerte même si l''indice global reste satisfaisant.
-6. Sur le plan financier, l''investissement dégage une économie de carburant de 18 000 000 FCFA par an, soit 180 000 000 FCFA sur 10 ans, supérieure au surcoût initial de 120 000 000 FCFA : l''investissement est donc rentable en valeur brute non actualisée, et le serait probablement aussi en valeur actualisée compte tenu de l''écart important entre le gain cumulé et le surcoût. Sur le plan de la performance globale, la réduction de 25 % des émissions de CO2 sur le périmètre logistique améliore directement le score de l''axe environnemental du tableau de bord RSE du groupe, et réduit un risque réglementaire et réputationnel croissant. La recommandation est donc favorable à l''investissement, en soulignant qu''il combine un retour financier positif et une contribution mesurable à la performance globale du groupe, ce qui renforce la cohérence stratégique de la décision.', 'texte', 45, false, 20
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Contrôle de gestion stratégique et pilotage de la performance globale (RSE, triple bottom line) : l''essentiel pour l''examen');
+1. En Master 1, l''évaluation porte sur la maîtrise de matières avancées appliquées à des cas ouverts. En Master
+   2, elle ajoute la production et la défense d''un travail personnel long (mémoire ou projet tutoré) devant un
+   jury, ce qui exige une autonomie et une organisation plus poussées sur plusieurs mois.
+2. Intelligence artificielle et data science : par exemple, analyser les ventes passées d''une entreprise pour
+   anticiper la demande future. Gouvernance IT et gestion de projets informatiques : par exemple, organiser la
+   maintenance d''un parc applicatif selon des processus clairs, ou piloter un projet de refonte d''un système
+   avec un budget et un délai fixés. Méthodologie du mémoire : par exemple, structurer un mémoire sur l''adoption
+   du paiement mobile dans une région donnée, avec une problématique claire et une méthode de collecte de
+   données adaptée.
+3. Parce qu''un mémoire est un travail long qui ne se rattrape pas en quelques jours ; des jalons intermédiaires
+   permettent de détecter tôt un retard ou un problème de méthode, et de corriger le cap avant qu''il ne soit
+   trop tard.
+4. Par exemple : "Pourquoi avez-vous choisi cette méthode plutôt qu''une autre ?" et "Quelles sont les limites de
+   votre travail ?" ; un étudiant doit s''y préparer car ces questions demandent une réflexion critique sur son
+   propre travail, qui ne s''improvise pas facilement devant un jury.
+5. Réponse libre : un planning concret sur six semaines, respectant la progression proposée (intelligence
+   artificielle et data science, puis gouvernance IT et gestion de projets, puis méthodologie et soutenance,
+   puis entraînement transversal).
+6. Parce qu''elle mobilise des compétences de communication orale, de gestion du temps de parole et de gestion du
+   stress, qui sont indépendantes de la qualité du contenu écrit ; un mémoire excellent mal défendu à l''oral
+   peut donner une impression moins convaincante qu''il ne le devrait.
+7. Parce que cela renforce les deux apprentissages à la fois : appliquer une notion de cours à son propre projet
+   aide à mieux la comprendre pour l''examen, et enrichit en même temps le mémoire d''une analyse plus solide,
+   plutôt que de traiter les deux comme des charges de travail totalement indépendantes.
+', 'texte', 45, true, 10
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Master 2 en Informatique');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Gestion de la performance par centres de responsabilité et prix de cession interne avancé : l''essentiel pour l''examen', 'La gestion de la performance par centres de responsabilité prolonge et approfondit ce que vous avez vu en Licence sur les tableaux de bord et le prix de cession interne appliqué aux PME et au secteur public. Au niveau Master, l''enjeu est de construire une organisation complète en centres de responsabilité, d''évaluer rigoureusement leur performance, et de maîtriser les méthodes avancées de prix de cession interne dans un groupe à plusieurs filiales.
+select c.id, 'Intelligence artificielle et data science : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-## Les quatre types de centres de responsabilité
+Cette leçon introduit les notions de base de l''intelligence artificielle appliquée et de la data science : la
+différence entre régression et classification, comment entraîner et évaluer un modèle simple, et comment
+interpréter ses résultats avec prudence. Tous les exemples chiffrés de cette leçon ont été calculés et vérifiés.
+On s''appuie sur le cas fictif d''une entreprise de services marketing, "Teranga Analytics", basée à Dakar.
 
-Un centre de responsabilité est une unité de l''organisation (direction, filiale, usine, service) dont le responsable dispose d''une autonomie de décision sur des ressources, et qui est évalué sur des indicateurs correspondant exactement à son périmètre de décision. On distingue classiquement quatre types : le centre de coût, responsable de la maîtrise de ses charges pour un niveau d''activité donné, sans maîtrise directe sur le chiffre d''affaires (exemple : un atelier de production) ; le centre de recettes, responsable du chiffre d''affaires généré, sans maîtrise directe sur les coûts (exemple : une force de vente) ; le centre de profit, responsable à la fois des coûts et des recettes de son périmètre, et donc de son résultat (exemple : une filiale commerciale) ; et le centre d''investissement, dont le responsable décide aussi des investissements et des capitaux engagés, et doit être évalué sur la rentabilité de ces capitaux, pas seulement sur le résultat en valeur absolue.
+## Qu''est-ce que l''apprentissage automatique, au niveau des principes
 
-Le principe de contrôlabilité est essentiel : un responsable ne doit être évalué que sur ce qu''il contrôle réellement. Évaluer un directeur d''usine (centre de coût) sur le chiffre d''affaires de l''entreprise viole ce principe et produit des indicateurs de pilotage inopérants, voire démotivants.
+L''apprentissage automatique (machine learning) consiste à construire, à partir de données passées, un modèle
+capable de faire des prédictions sur de nouvelles données, sans programmer explicitement chaque règle de
+décision. On parle d''apprentissage supervisé quand on dispose, pour chaque exemple passé, à la fois des
+variables d''entrée (par exemple le budget publicitaire d''un mois) et du résultat observé (le chiffre d''affaires
+de ce mois) : le modèle apprend la relation entre les deux. Deux grandes familles de problèmes supervisés sont
+à distinguer. La régression prédit une valeur numérique continue, par exemple un chiffre d''affaires en FCFA ou
+une température. La classification prédit une catégorie parmi un ensemble fini, par exemple "le client va
+résilier son abonnement" ou "le client ne va pas résilier", ou encore "cette demande de crédit est risquée" ou
+"elle ne l''est pas".
 
-## Évaluer un centre d''investissement : le ROI et ses limites
+## La régression linéaire simple, pas à pas
 
-Le retour sur investissement (ROI, Return on Investment) est l''indicateur le plus utilisé pour évaluer un centre d''investissement : ROI = Résultat d''exploitation du centre / Capitaux investis dans le centre. Il permet de comparer des centres de taille différente, puisqu''il s''exprime en pourcentage. Mais il présente une limite majeure : un responsable évalué sur son ROI peut être incité à refuser un projet rentable pour le groupe (rentabilité supérieure au coût du capital) mais qui ferait baisser le ROI moyen actuel de son centre. C''est le classique problème de sous-investissement induit par le pilotage au ROI.
+Prenons un exemple de régression simple, vérifié par le calcul. Teranga Analytics observe, sur huit mois, le
+budget publicitaire mensuel (en millions de FCFA fictifs) et le chiffre d''affaires du mois correspondant (en
+millions de FCFA fictifs) : pour des budgets de 2, 3, 4, 5, 6, 7, 8 et 9 millions, les chiffres d''affaires
+observés sont respectivement 15, 18, 21, 25, 26, 30, 33 et 35 millions. Une régression linéaire cherche la
+droite qui s''ajuste le mieux à ces points, de la forme chiffre d''affaires égal b0 plus b1 fois budget. Le calcul
+exact, par la méthode des moindres carrés, donne b0 environ égal à 9,46 et b1 environ égal à 2,89. Cela signifie
+que, selon ce modèle, même sans aucun budget publicitaire, l''entreprise réaliserait environ 9,46 millions de
+chiffre d''affaires (effet d''autres facteurs), et que chaque million de FCFA supplémentaire investi en publicité
+est associé en moyenne à 2,89 millions de chiffre d''affaires supplémentaire, dans la plage de budgets observée.
 
-## L''EVA, un indicateur complémentaire
+Pour un budget de 10 millions de FCFA, le modèle prédit un chiffre d''affaires d''environ 38,39 millions de FCFA
+(calcul : 9,46 plus 2,89 fois 10). On évalue la qualité du modèle avec un indicateur appelé coefficient de
+détermination, noté R carré, qui mesure la part de variation du chiffre d''affaires expliquée par le modèle : ici,
+le calcul donne un R carré d''environ 0,993, ce qui signifie que 99,3 % de la variation observée est expliquée
+par le budget publicitaire dans cet exemple, un résultat exceptionnellement élevé qui, en situation réelle,
+inviterait à vérifier qu''aucun autre facteur plus déterminant n''a été oublié.
 
-La valeur ajoutée économique (EVA, Economic Value Added) corrige cette limite en mesurant la création de valeur réelle, au-delà de la simple rémunération du capital au coût exigé par les actionnaires ou le groupe : EVA = Résultat opérationnel net après impôt (NOPAT) − (Capitaux investis × Coût moyen pondéré du capital, CMPC). Une EVA positive signifie que le centre crée de la valeur au-delà du coût de son financement ; une EVA négative signifie qu''il détruit de la valeur, même si son résultat comptable reste positif. Contrairement au ROI, l''EVA n''incite pas à refuser un projet rentable qui dépasse le coût du capital, même s''il fait baisser le ROI moyen du centre.
+## La classification et sa matrice de confusion
 
-Illustrons avec Teranga Céréales, filiale du Groupe Teranga Agro-Industries, centre d''investissement avec un résultat d''exploitation total de 245 100 000 FCFA pour des capitaux investis de 1 200 000 000 FCFA, soit un ROI de 20,4 %. Avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %, le NOPAT est de 245 100 000 × 0,70 = 171 570 000 FCFA, et la charge de capital de 1 200 000 000 × 0,12 = 144 000 000 FCFA. L''EVA est donc de 27 570 000 FCFA : la filiale crée de la valeur, mais bien moins que ne le suggère son ROI apparent.
+Passons à un exemple de classification, également vérifié par le calcul. Imaginons un modèle qui prédit si un
+dossier de microcrédit présente un risque de défaut, testé sur 200 dossiers dont on connaît le résultat réel. On
+résume les résultats dans une matrice de confusion à quatre cases : 42 vrais positifs (le modèle a prédit un
+risque, et il y avait bien un défaut), 8 faux positifs (le modèle a prédit un risque, mais il n''y a pas eu de
+défaut), 15 faux négatifs (le modèle n''a pas prédit de risque, mais il y a eu un défaut), et 135 vrais négatifs
+(le modèle n''a pas prédit de risque, et il n''y a effectivement pas eu de défaut).
 
-## Les méthodes avancées de prix de cession interne
+À partir de ces quatre nombres, on calcule plusieurs indicateurs. L''exactitude (accuracy) est la proportion de
+prédictions correctes sur l''ensemble : (42 plus 135) divisé par 200, soit 0,885, ou 88,5 %. La précision est la
+proportion de vrais défauts parmi les dossiers signalés comme risqués : 42 divisé par (42 plus 8), soit 0,84,
+ou 84 %. Le rappel (ou sensibilité) est la proportion de défauts réels correctement détectés : 42 divisé par
+(42 plus 15), soit environ 0,737, ou 73,7 %. Le score F1, qui combine précision et rappel, vaut ici environ
+0,785. Ces indicateurs racontent des histoires différentes : une exactitude de 88,5 % semble bonne, mais elle
+masque le fait que plus d''un quart des défauts réels (26,3 %) ne sont pas détectés par le modèle, ce qui peut
+être un problème sérieux selon le contexte métier, par exemple si laisser passer un défaut coûte cher à
+l''entreprise.
 
-Le prix de cession interne (PCI) est le prix auquel un centre vend un bien ou un service à un autre centre du même groupe. Il mesure la performance de chaque centre séparément et oriente les décisions des responsables (achat interne ou externe). Trois méthodes principales existent : la méthode du coût (coût complet ou marginal, éventuellement majoré d''une marge négociée) ; la méthode du prix de marché, qui s''appuie sur un bien comparable échangé entre entreprises indépendantes, ajusté des économies internes (coûts commerciaux évités, par exemple) ; et la méthode du prix négocié, qui laisse les deux responsables fixer un prix d''accord commun dans une fourchette encadrée par la direction générale, ce qui respecte leur autonomie mais demande un arbitrage en cas de désaccord.
+## Les limites à connaître absolument
 
-Reprenons Teranga Céréales, qui cède du mil transformé à Teranga Distribution. Son coût complet unitaire est de 225 000 FCFA la tonne (coût variable 180 000 FCFA plus charges fixes unitaires de 45 000 FCFA, pour une activité normale de 10 000 tonnes). Le prix de marché d''un produit comparable est de 260 000 FCFA la tonne. Méthode du coût, marge négociée de 10 % : 225 000 × 1,10 = 247 500 FCFA. Méthode du marché, économie commerciale évitée de 8 % : 260 000 × 0,92 = 239 200 FCFA. Méthode du prix négocié, moyenne des deux bornes : (247 500 + 239 200) / 2 = 243 350 FCFA.
-
-## L''effet du prix de cession interne sur la performance des filiales
-
-Sur un volume cédé de 6 000 tonnes, avec un coût variable de distribution de 15 000 FCFA la tonne chez Teranga Distribution et un prix de revente externe de 300 000 FCFA la tonne, les trois méthodes donnent des marges différentes par filiale, mais une marge groupe identique : au prix négocié de 243 350 FCFA, Teranga Céréales dégage 110 100 000 FCFA et Teranga Distribution 249 900 000 FCFA, soit 360 000 000 FCFA au total. À la méthode du coût (247 500 FCFA), Teranga Céréales gagnerait 135 000 000 FCFA et Teranga Distribution 225 000 000 FCFA, toujours 360 000 000 FCFA au total. Le choix de méthode déplace la performance affichée entre filiales sans jamais modifier la création de valeur du groupe : la direction générale doit donc l''arbitrer avec soin, car il affecte l''évaluation et la rémunération variable des responsables.
+Un modèle, même avec de bons indicateurs, ne doit jamais être présenté comme une vérité absolue. Trois limites
+sont à connaître pour un examen de Master 2. D''abord, la corrélation n''est pas la causalité : un lien statistique
+entre budget publicitaire et chiffre d''affaires ne prouve pas, à lui seul, que la publicité cause
+l''augmentation des ventes ; un facteur externe pourrait influencer les deux en même temps. Ensuite, le
+surapprentissage : un modèle trop complexe peut "apprendre par cœur" les données passées sans généraliser
+correctement à de nouvelles données, ce qui donne de très bons résultats sur les données d''entraînement mais de
+mauvais résultats en situation réelle. Enfin, le biais des données : si les données passées contiennent des
+déséquilibres (par exemple très peu de cas de défaut dans l''exemple de microcrédit), le modèle peut reproduire
+ou amplifier ces déséquilibres, ce qui pose des questions éthiques importantes, notamment pour des décisions
+sensibles comme l''octroi de crédit.
 
 ## Points clés à retenir
 
-- Le principe de contrôlabilité impose d''évaluer un responsable uniquement sur ce qu''il contrôle réellement.
-- Le ROI peut inciter à refuser des investissements pourtant rentables pour le groupe ; l''EVA corrige ce biais en mesurant la création de valeur au-delà du coût du capital.
-- Les trois méthodes de prix de cession interne (coût, marché, négocié) produisent des prix différents et donc des performances différentes par filiale, sans jamais changer le résultat consolidé du groupe.
-- Le choix de la méthode de cession interne est un enjeu de gouvernance et de motivation, pas seulement un enjeu de calcul.
+- La régression prédit une valeur numérique continue, la classification prédit une catégorie parmi un ensemble
+  fini ; reconnaître laquelle s''applique à un problème donné est la première étape de toute analyse.
+- Un modèle de régression simple se résume par ses coefficients (ordonnée à l''origine et pente) et par son
+  R carré, qui mesure la part de variation expliquée.
+- Une matrice de confusion permet de calculer exactitude, précision, rappel et score F1, des indicateurs
+  complémentaires qui ne racontent pas la même histoire.
+- Un bon modèle n''est jamais une vérité absolue : corrélation sans causalité, surapprentissage et biais des
+  données sont trois limites à vérifier systématiquement.
 
 ## Exercices pratiques
 
-1. Expliquez le principe de contrôlabilité et donnez un exemple d''indicateur mal choisi qui le violerait.
-2. Teranga Distribution (centre d''investissement) dégage un résultat d''exploitation de 249 900 000 FCFA pour des capitaux investis de 800 000 000 FCFA. Calculez son ROI, puis son EVA avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %.
-3. Comparez les ROI de Teranga Céréales (20,4 %) et de Teranga Distribution calculé à la question 2. Cette comparaison suffit-elle à conclure sur la performance respective des deux centres pour le groupe ?
-4. Pourquoi un responsable de centre d''investissement évalué uniquement sur le ROI peut-il être incité à refuser un projet d''investissement rentable pour le groupe ?
-5. Expliquez pourquoi le choix entre méthode du coût et méthode du marché n''a aucun effet sur le résultat consolidé du groupe, mais un effet direct sur la rémunération variable de chaque responsable de filiale si celle-ci dépend du résultat de sa propre entité.
-6. Cas pratique : une troisième filiale, Teranga Export, pourrait acheter la même qualité de mil auprès d''un fournisseur étranger indépendant à 230 000 FCFA la tonne, mais la direction générale lui impose de s''approvisionner chez Teranga Céréales au prix négocié de 243 350 FCFA. En six à huit lignes, analysez la tension entre la performance affichée de Teranga Export et l''intérêt du groupe, et proposez un ajustement.
+1. Expliquez la différence entre un problème de régression et un problème de classification, avec un exemple
+   de chacun dans le contexte d''une entreprise sénégalaise.
+2. Dans l''exemple de Teranga Analytics, que signifie concrètement le coefficient b1 égal à environ 2,89 dans le
+   modèle de régression ?
+3. Calculez (ou retrouvez dans la leçon) l''exactitude, la précision et le rappel du modèle de prédiction de
+   défaut de microcrédit, et expliquez en une phrase pourquoi l''exactitude seule peut être trompeuse.
+4. Qu''est-ce que le surapprentissage, et pourquoi un modèle qui obtient d''excellents résultats sur les données
+   d''entraînement peut-il être moins fiable qu''il ne le paraît ?
+5. Expliquez en une phrase la différence entre corrélation et causalité, avec un exemple autre que celui de la
+   leçon.
+6. Cas pratique complet : une coopérative agricole fictive, "Niayes Coop", dispose de dix années de données
+   sur la quantité de pluie reçue (en millimètres) et le rendement de sa récolte de légumes (en tonnes). Elle
+   veut prédire le rendement de l''année prochaine selon une estimation de pluviométrie. S''agit-il d''un problème
+   de régression ou de classification ? Pourquoi ? Quelle limite devriez-vous rappeler à la coopérative avant
+   qu''elle ne se fie entièrement à ce modèle pour ses décisions d''investissement ?
+7. Pourquoi le biais des données pose-t-il une question éthique particulièrement sensible dans le cas d''un
+   modèle de prédiction de défaut de crédit ?
 
 ## Corrigé
 
-1. Le principe de contrôlabilité impose d''évaluer un responsable uniquement sur les éléments qu''il maîtrise par ses décisions. Exemple de violation : évaluer le responsable d''un atelier de production (centre de coût) sur l''évolution du chiffre d''affaires, qui dépend de décisions commerciales qui ne relèvent pas de lui.
-2. ROI = 249 900 000 / 800 000 000 = 0,3124, soit 31,24 %. NOPAT = 249 900 000 × 0,70 = 174 930 000 FCFA. Charge de capital = 800 000 000 × 0,12 = 96 000 000 FCFA. EVA = 174 930 000 − 96 000 000 = 78 930 000 FCFA.
-3. Non : le ROI ne tient pas compte de la taille des capitaux investis. Teranga Céréales mobilise bien plus de capitaux (1 200 000 000 contre 800 000 000 FCFA) ; ici son EVA (27 570 000 FCFA) reste aussi inférieure à celle de Teranga Distribution (78 930 000 FCFA), mais ce ne serait pas systématique : un centre à fort ROI et faibles capitaux peut créer moins de valeur en montant absolu qu''un centre à ROI plus modeste mais à capitaux bien plus importants.
-4. Si le ROI moyen actuel d''un centre est de 20 %, un nouveau projet rentable à 15 %, pourtant supérieur au coût du capital de 12 %, ferait baisser son ROI moyen. Un responsable évalué sur ce ROI peut donc refuser ce projet, alors qu''il créerait de la valeur pour le groupe. L''EVA, qui compare la rentabilité au coût du capital plutôt qu''au ROI moyen du centre, évite ce biais.
-5. Le prix de cession interne est une transaction intragroupe : la marge gagnée en plus par le vendeur est exactement la marge perdue par l''acheteur, et leur somme reste inchangée. Le résultat consolidé est donc invariant. Mais si la rémunération de chaque responsable dépend du résultat de sa seule entité, le choix de méthode redistribue concrètement cette rémunération, ce qui explique les négociations entre centres de profit.
-6. Teranga Export paie 13 350 FCFA de plus par tonne en achetant en interne, ce qui dégrade sa marge sans que cela résulte d''une décision qu''elle contrôle : c''est une violation du principe de contrôlabilité. L''achat interne peut se justifier si Teranga Céréales a besoin de ce débouché, ou pour la fiabilité d''approvisionnement. Un ajustement raisonnable consiste à aligner la cession sur le prix de marché externe (230 000 FCFA), ou à évaluer Teranga Export sur un résultat retraité à ce prix.', 'texte', 45, false, 30
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion de la performance par centres de responsabilité et prix de cession interne avancé : l''essentiel pour l''examen');
+1. La régression prédit une valeur numérique continue, par exemple le chiffre d''affaires futur d''une entreprise
+   selon son budget publicitaire. La classification prédit une catégorie, par exemple si un client va résilier
+   son abonnement ou non.
+2. Cela signifie que, selon ce modèle estimé sur les données observées, chaque million de FCFA supplémentaire
+   investi en publicité est associé en moyenne à environ 2,89 millions de FCFA de chiffre d''affaires
+   supplémentaire, dans la plage de budgets observée dans les données.
+3. Exactitude environ 88,5 %, précision 84 %, rappel environ 73,7 %. L''exactitude seule peut être trompeuse car
+   elle masque que plus d''un quart des défauts réels (26,3 %) ne sont pas détectés par le modèle, un détail
+   important si laisser passer un défaut coûte cher à l''entreprise.
+4. Le surapprentissage se produit quand un modèle trop complexe mémorise les particularités des données
+   d''entraînement plutôt que d''apprendre une relation générale ; il obtient alors d''excellents résultats sur
+   ces données précises, mais se trompe davantage sur de nouvelles données qu''il n''a jamais vues, ce qui le
+   rend peu fiable en situation réelle.
+5. Une corrélation signifie que deux variables évoluent ensemble statistiquement, sans que l''une cause
+   nécessairement l''autre ; par exemple, les ventes de parapluies et les ventes de bottes augmentent souvent
+   ensemble, non pas parce que l''une cause l''autre, mais parce que les deux sont liées à la pluie.
+6. C''est un problème de régression, car on veut prédire une valeur numérique continue, le rendement en tonnes,
+   et non une catégorie. Limite à rappeler : la relation observée entre pluviométrie et rendement sur dix ans
+   peut masquer d''autres facteurs (qualité du sol, pratiques agricoles, maladies des cultures) et ne garantit
+   pas que la même relation se maintiendra à l''avenir, surtout en cas d''événement climatique inhabituel.
+7. Parce qu''un déséquilibre dans les données passées, par exemple un historique de crédits où certains profils
+   ont été systématiquement moins bien traités pour des raisons non liées au risque réel, peut amener le modèle
+   à reproduire ou amplifier ces inégalités dans ses décisions futures, ce qui pose un problème d''équité et de
+   responsabilité pour l''entreprise qui utilise ce modèle.
+', 'texte', 50, false, 20
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Intelligence artificielle et data science : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Systèmes d''information décisionnels (ERP, reporting consolidé) : l''essentiel pour l''examen', 'Un système d''information décisionnel (SID) est l''ensemble des outils, des bases de données et des processus qui permettent de collecter, structurer et restituer l''information de gestion nécessaire au pilotage de l''entreprise ou du groupe. Pour le contrôleur de gestion de Master, maîtriser le fonctionnement et les limites de ces systèmes est devenu aussi important que maîtriser les méthodes de calcul elles-mêmes : un indicateur parfaitement construit sur le plan théorique ne vaut rien s''il repose sur des données fausses, incomplètes ou produites trop tard.
+select c.id, 'Gouvernance IT et gestion de projets informatiques : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-## Le rôle de l''ERP dans la chaîne d''information de gestion
+Cette leçon traite la gouvernance des systèmes d''information et la gestion de projets informatiques : les
+grands principes d''ITIL pour organiser les services informatiques, les principes du DevOps pour rapprocher
+développement et exploitation, et la méthode de pilotage d''un projet informatique, du cadrage à la clôture. On
+s''appuie sur le cas fictif d''une entreprise de logistique, "Dakar Logistique Services", et sur des calculs de
+planification vérifiés.
 
-Un ERP (Enterprise Resource Planning, ou progiciel de gestion intégré) est un logiciel qui centralise dans une base de données unique les informations de plusieurs fonctions de l''entreprise (comptabilité, ventes, achats, production, ressources humaines, stocks). Avant la généralisation des ERP, chaque fonction gérait souvent ses propres fichiers, ce qui multipliait les ressaisies, les incohérences et les délais.
+## La gouvernance IT : organiser les services informatiques
 
-L''intérêt principal d''un ERP pour le contrôle de gestion est la cohérence et la traçabilité des données : une vente enregistrée dans le module commercial met automatiquement à jour le stock, génère l''écriture comptable correspondante et alimente en temps réel les tableaux de bord, sans ressaisie manuelle. Cela réduit les erreurs, accélère la production des informations de gestion et permet un suivi plus fréquent (hebdomadaire voire quotidien) plutôt que purement mensuel.
+La gouvernance IT, c''est l''ensemble des règles et des processus qui permettent à la direction informatique
+d''une entreprise d''aligner ses activités sur les besoins métier, de maîtriser les risques, et de rendre compte
+de la qualité de service. Un référentiel largement utilisé pour organiser les services informatiques au
+quotidien est ITIL (en principe, sans détailler ici ses processus précis en l''absence de certitude sur leur
+contenu exact dans sa version actuelle) : il structure, par exemple, la gestion des incidents (remettre en
+service rapidement une application en panne), la gestion des problèmes (analyser la cause profonde d''incidents
+récurrents pour éviter qu''ils ne se reproduisent), et la gestion des changements (encadrer toute modification
+d''un système en production pour limiter les risques d''une mise à jour mal maîtrisée).
 
-Mais un ERP mal paramétré peut produire l''effet inverse. Si les référentiels (plan de comptes, codification des centres de coûts, nomenclatures produits) ne sont pas harmonisés entre les filiales d''un groupe, la consolidation devient source d''erreurs : une même catégorie de charge peut être enregistrée différemment selon les filiales, rendant les agrégations peu fiables. Le paramétrage initial d''un ERP, notamment l''harmonisation des référentiels au niveau groupe, est donc un enjeu de contrôle de gestion à part entière, pas seulement informatique.
+Un indicateur de gouvernance couramment utilisé est la disponibilité d''un service, exprimée en pourcentage du
+temps où le service fonctionne correctement sur une période donnée. Par exemple, si une application a subi
+trois heures d''indisponibilité sur un mois de 30 jours, soit 720 heures, sa disponibilité est de (720 moins 3)
+divisé par 720, soit environ 99,58 %. Cet indicateur, souvent fixé comme objectif contractuel entre la
+direction informatique et les métiers qu''elle sert, illustre bien le rôle de la gouvernance : traduire un
+objectif de qualité de service en un chiffre mesurable et suivi dans le temps.
 
-## Du système transactionnel au reporting de gestion
+## Le DevOps : rapprocher développement et exploitation
 
-Un ERP enregistre des transactions (une vente, un achat, une sortie de stock) : c''est un système transactionnel. Le reporting de gestion a besoin d''une vision agrégée et analytique de ces transactions : marge par produit, par client, par filiale, évolution dans le temps, comparaison au budget. Cette transformation est assurée par des outils de Business Intelligence (BI), qui extraient les données de l''ERP, les structurent dans un entrepôt de données, puis les restituent sous forme de tableaux de bord.
+Le DevOps est une démarche (en principe, sans prétendre à une définition normative unique) qui vise à réduire la
+séparation historique entre les équipes qui développent les applications et celles qui les exploitent en
+production. Avant le DevOps, une équipe de développement livrait un logiciel "terminé" à une équipe
+d''exploitation, souvent avec des frictions : des délais de mise en production longs, des incompréhensions sur
+les besoins réels de l''environnement de production, et des équipes qui se renvoient la responsabilité en cas de
+panne. Le DevOps rapproche les deux équipes, voire les fusionne partiellement, autour d''objectifs communs : des
+livraisons plus fréquentes et plus petites (donc moins risquées individuellement), une automatisation des
+tests et des déploiements pour réduire les erreurs humaines répétitives, et une responsabilité partagée sur la
+fiabilité du système en production. Pour un examen, il faut retenir le principe (rapprocher développement et
+exploitation, automatiser, livrer plus souvent et par petites étapes) plutôt que la maîtrise d''un outil
+particulier.
 
-Le contrôleur de gestion occupe une position charnière : il ne construit généralement pas lui-même l''ERP ou l''outil de BI, mais il définit les règles de gestion qui doivent y être codées (définition de la marge opérationnelle, périmètre d''un centre de coût, fréquence de mise à jour), et il reste responsable de la qualité des indicateurs restitués aux décideurs.
+## Piloter un projet informatique : cadrage, planification, suivi, clôture
 
-## Le reporting consolidé : un enjeu de délai et de qualité des données
+Un projet informatique se pilote en quatre grandes phases. Le cadrage définit les objectifs du projet, son
+périmètre (ce qui est inclus et ce qui ne l''est pas), les parties prenantes et les contraintes principales
+(budget, délai, ressources disponibles). La planification découpe le projet en tâches, estime leur durée et
+leurs dépendances (certaines tâches ne peuvent commencer qu''après d''autres), et construit un calendrier
+réaliste. Le suivi compare régulièrement l''avancement réel à ce calendrier, identifie les écarts, et déclenche
+des actions correctives si nécessaire (réaffectation de ressources, révision du périmètre, négociation d''un
+délai). La clôture formalise la fin du projet, documente les résultats et les enseignements, pour que
+l''expérience serve aux projets suivants.
 
-Dans un groupe à plusieurs filiales, le reporting consolidé agrège les données de chaque entité pour donner une vision globale de la performance. Deux critères mesurent la qualité d''un dispositif de reporting consolidé : le délai de production (combien de jours ouvrés après la clôture du mois le reporting est-il disponible ?) et la fiabilité des données agrégées.
+Prenons un exemple chiffré vérifié, simplifié pour l''exercice. Un projet de refonte d''un système de suivi de
+livraisons comporte quatre tâches : analyse des besoins (10 jours), développement (25 jours), tests (12 jours),
+et déploiement (5 jours), menées dans cet ordre strict, chacune ne pouvant commencer qu''après la fin de la
+précédente. La durée totale du projet, si tout se déroule comme prévu, est de 10 plus 25 plus 12 plus 5, soit 52
+jours. Si, après trois semaines, soit 21 jours ouvrés, l''équipe constate que l''analyse des besoins a pris 14
+jours au lieu de 10 et que le développement est entamé depuis 7 jours sur les 25 prévus, le retard cumulé sur
+cette première partie du projet est de 4 jours (14 moins 10), ce qui, sans action corrective, décalerait
+d''autant la date de fin prévue, désormais estimée à 56 jours au lieu de 52.
 
-Illustrons avec le Groupe Teranga Agro-Industries. Avant l''ERP intégré, le reporting consolidé mensuel nécessitait 12 jours ouvrés (collecte manuelle, retraitements, consolidation sur tableur). Après l''intégration d''un ERP commun avec des référentiels harmonisés, ce délai est ramené à 5 jours ouvrés, soit un gain de (12 − 5) / 12 = 0,583, soit 58,3 %. La direction générale dispose donc de l''information près de deux semaines plus tôt, ce qui lui permet de réagir à un écart défavorable avant la fin du trimestre plutôt que de le constater trop tard.
+## Étude de cas : Dakar Logistique Services
 
-## Mesurer la qualité des données consolidées
+Dakar Logistique Services est une entreprise fictive qui gère le suivi de livraisons pour des commerces de la
+région de Dakar. Elle constate que son application de suivi, développée il y a deux ans, subit des pannes
+fréquentes à chaque mise à jour, car les équipes de développement livrent les nouvelles fonctionnalités sans
+prévenir l''équipe d''exploitation, qui découvre les changements au moment où ils causent un incident en
+production.
 
-Un indice de qualité des données peut être construit comme l''indice de performance globale, en pondérant plusieurs critères notés sur 100 : exhaustivité 92 (poids 30 %), exactitude 88 (poids 35 %), cohérence inter-filiales 80 (poids 20 %), délai de saisie 75 (poids 15 %). L''indice se calcule ainsi : (92 × 0,30) + (88 × 0,35) + (80 × 0,20) + (75 × 0,15) = 27,6 + 30,8 + 16 + 11,25 = 85,65, soit environ 85,6 sur 100. Ce résultat montre une qualité globale satisfaisante, avec un point de vigilance clair sur le délai de saisie (75/100), le critère le moins bien noté, qui mérite une action corrective prioritaire, par exemple un rappel des échéances ou une automatisation renforcée de la collecte.
-
-## Les risques spécifiques du reporting consolidé en environnement multi-ERP
-
-De nombreux groupes, notamment issus de croissance externe (acquisition de filiales), fonctionnent encore avec plusieurs ERP différents selon les filiales, faute d''avoir harmonisé leurs systèmes d''information. La consolidation nécessite alors des interfaces ou des retraitements manuels, ce qui réintroduit les risques d''erreur et de délai que l''ERP intégré est censé éliminer. Le contrôleur de gestion doit documenter les règles de passage entre référentiels (table de correspondance des comptes, des centres de coûts) et mettre en place des contrôles de cohérence automatisés, par exemple un contrôle qui vérifie que le total des ventes intragroupe déclarées par le vendeur correspond au total des achats intragroupe déclarés par l''acheteur, avant toute élimination en consolidation.
+Recommandation de gouvernance et de méthode : adopter une démarche DevOps en rapprochant les deux équipes,
+avec des livraisons plus petites et plus fréquentes plutôt que de grosses mises à jour rares et risquées, et une
+automatisation des tests avant chaque déploiement pour détecter les problèmes avant qu''ils n''atteignent la
+production. Sur le plan de la gouvernance, formaliser un processus de gestion des changements (toute
+modification notable est annoncée et validée avant d''être mise en production) permettrait de réduire le nombre
+d''incidents liés à des changements mal anticipés, et de suivre dans le temps l''indicateur de disponibilité de
+l''application pour mesurer l''amélioration réelle.
 
 ## Points clés à retenir
 
-- Un ERP centralise l''information de gestion mais sa fiabilité dépend d''un paramétrage initial rigoureux, en particulier l''harmonisation des référentiels entre filiales d''un groupe.
-- Le reporting de gestion transforme la donnée transactionnelle de l''ERP en information de pilotage grâce aux outils de Business Intelligence ; le contrôleur de gestion définit les règles de gestion à y intégrer.
-- La qualité d''un reporting consolidé se mesure à la fois par son délai de production et par la fiabilité des données agrégées (exhaustivité, exactitude, cohérence, respect des délais de saisie).
-- En environnement multi-ERP, des contrôles de cohérence automatisés sont indispensables pour fiabiliser la consolidation.
+- La gouvernance IT traduit des objectifs de qualité de service en règles, processus et indicateurs mesurables,
+  comme la disponibilité d''un service.
+- Le DevOps rapproche développement et exploitation autour de livraisons plus fréquentes, plus petites et
+  automatisées, pour réduire les frictions et les risques de chaque mise en production.
+- Un projet informatique se pilote en quatre phases : cadrage, planification, suivi, clôture ; un retard sur une
+  tâche se répercute sur l''ensemble du calendrier si aucune action corrective n''est prise.
+- Toute recommandation de gouvernance doit être reliée à un problème concret observé, pas présentée comme une
+  bonne pratique théorique isolée.
 
 ## Exercices pratiques
 
-1. Expliquez la différence entre un système transactionnel (ERP) et un outil de Business Intelligence (BI), et précisez le rôle du contrôleur de gestion dans leur articulation.
-2. Pourquoi l''harmonisation des référentiels (plan de comptes, centres de coûts) entre filiales est-elle une condition nécessaire à la fiabilité d''un reporting consolidé ?
-3. Un groupe réduit son délai de clôture consolidée de 18 jours ouvrés à 9 jours ouvrés grâce à un nouvel ERP intégré. Calculez le gain de délai en pourcentage.
-4. Un comité qualité évalue les données consolidées d''un autre groupe sur les mêmes quatre critères que Teranga Agro-Industries, avec les scores suivants : exhaustivité 95 (poids 30 %), exactitude 90 (poids 35 %), cohérence inter-filiales 70 (poids 20 %), délai de saisie 85 (poids 15 %). Calculez l''indice de qualité des données.
-5. Identifiez, dans le résultat de la question 4, le critère le plus faible et proposez une action corrective concrète.
-6. Expliquez pourquoi un contrôle de cohérence automatisé entre ventes intragroupe déclarées par le vendeur et achats intragroupe déclarés par l''acheteur est particulièrement utile avant l''étape d''élimination en consolidation.
-7. Cas pratique : le Groupe Teranga Agro-Industries envisage de remplacer ses deux ERP distincts (issus d''une acquisition récente) par un ERP unique, pour un coût de 400 000 000 FCFA sur 18 mois, qui réduirait le délai de clôture de 15 à 6 jours ouvrés et améliorerait l''indice de qualité des données de 78 à 90. Rédigez, en six à huit lignes, une note identifiant les bénéfices attendus et les principaux risques du projet (hors coût financier).
+1. Expliquez à quoi sert la gouvernance IT dans une entreprise, en citant un exemple d''indicateur mesurable.
+2. Quelle est la différence principale entre une organisation classique (développement puis exploitation
+   séparées) et une démarche DevOps ?
+3. Citez les quatre phases du pilotage d''un projet informatique et expliquez en une phrase le rôle de chacune.
+4. Reprenez l''exemple chiffré du projet de refonte du système de suivi de livraisons : si le retard de 4 jours
+   sur l''analyse des besoins se répète à l''identique sur chacune des trois phases suivantes, quelle serait la
+   durée totale révisée du projet ?
+5. Dans le cas de Dakar Logistique Services, pourquoi les pannes fréquentes à chaque mise à jour sont-elles un
+   symptôme d''un problème d''organisation plutôt que d''un simple problème technique ?
+6. Cas pratique complet : une entreprise fictive de téléphonie mobile, "Sahel Télécom Services", planifie un
+   projet de migration de sa facturation vers un nouveau système, avec quatre tâches successives : audit de
+   l''existant (8 jours), configuration du nouveau système (20 jours), migration des données (15 jours), tests
+   et bascule (10 jours). Calculez la durée totale prévue du projet. Après deux semaines (10 jours ouvrés),
+   l''audit a pris 12 jours au lieu de 8. Calculez le retard cumulé et la nouvelle durée totale estimée si aucune
+   action corrective n''est prise.
+7. Pourquoi la clôture d''un projet informatique, qui documente les résultats et les enseignements, est-elle
+   utile même quand le projet s''est globalement bien déroulé ?
 
 ## Corrigé
 
-1. Un système transactionnel comme l''ERP enregistre et stocke les opérations élémentaires de l''entreprise (une vente, un achat, un mouvement de stock) au moment où elles se produisent. Un outil de Business Intelligence extrait ces données, les agrège et les restitue sous une forme analytique utile à la décision (marge par produit, écarts au budget, évolution dans le temps). Le contrôleur de gestion n''intervient généralement pas dans la programmation technique de ces outils, mais il définit les règles de gestion à y intégrer (périmètre des centres de coûts, définition des indicateurs, fréquence de mise à jour) et il est responsable de la pertinence et de la fiabilité des informations finalement restituées aux décideurs.
-2. Si chaque filiale utilise des définitions différentes pour une même notion (par exemple, un centre de coût ou une catégorie de charge codée différemment), l''agrégation des données au niveau groupe additionne des éléments qui ne sont pas réellement comparables, ce qui fausse les indicateurs consolidés (une charge peut être comptée dans une catégorie dans une filiale et dans une autre catégorie dans une autre filiale, rendant la lecture par nature de charge non fiable au niveau groupe). L''harmonisation des référentiels est donc une condition de fond, pas seulement technique, de la fiabilité du reporting consolidé.
-3. Gain de délai = (18 − 9) / 18 = 0,50, soit 50 %.
-4. Indice de qualité = (95 × 0,30) + (90 × 0,35) + (70 × 0,20) + (85 × 0,15) = 28,5 + 31,5 + 14 + 12,75 = 86,75, soit environ 86,8 sur 100.
-5. Le critère le plus faible est la cohérence inter-filiales (70/100). Une action corrective concrète consiste à lancer un chantier d''harmonisation du plan de comptes analytique et des référentiels de centres de coûts entre toutes les filiales, avec une table de correspondance documentée et validée, avant la prochaine clôture consolidée.
-6. Ce contrôle permet de détecter une incohérence (erreur de saisie, décalage de période, erreur d''affectation) avant l''étape d''élimination des opérations intragroupe en consolidation. Si les montants déclarés par le vendeur et par l''acheteur ne correspondent pas exactement, l''élimination produira un résultat consolidé erroné (une partie de la marge interne ne sera pas correctement neutralisée), sans que l''erreur soit nécessairement visible dans les comptes consolidés finaux. Un contrôle de cohérence systématique en amont évite ce risque et accélère la clôture, car les écarts sont corrigés à la source plutôt que découverts tardivement par la direction financière.
-7. Deux bénéfices majeurs : un gain de délai de clôture de (15 − 6) / 15 = 60 %, pour un pilotage plus réactif en cas de dérive budgétaire ; une amélioration de l''indice de qualité de 78 à 90 sur 100, qui renforce la fiabilité des décisions (ROI, EVA, prix de cession interne, qui dépendent de données homogènes entre filiales). Risques hors coût financier : rupture opérationnelle pendant les 18 mois de migration, résistance au changement des équipes, et risque qu''un référentiel commun mal validé par le contrôle de gestion reproduise les mêmes problèmes de cohérence que le projet cherche à résoudre.', 'texte', 45, false, 40
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Systèmes d''information décisionnels (ERP, reporting consolidé) : l''essentiel pour l''examen');
+1. La gouvernance IT aligne les activités informatiques sur les besoins métier et permet de rendre compte de la
+   qualité de service ; par exemple, la disponibilité d''un service, exprimée en pourcentage du temps de bon
+   fonctionnement sur une période donnée, est un indicateur mesurable couramment utilisé.
+2. Dans une organisation classique, développement et exploitation sont séparés et se transmettent un logiciel
+   "terminé", ce qui crée des frictions ; le DevOps rapproche les deux équipes autour d''objectifs communs, avec
+   des livraisons plus fréquentes, plus petites et automatisées.
+3. Cadrage (définir objectifs, périmètre, contraintes), planification (découper en tâches et construire un
+   calendrier), suivi (comparer l''avancement réel au calendrier et corriger les écarts), clôture (documenter les
+   résultats et les enseignements).
+4. La durée totale initiale est de 52 jours. Un retard de 4 jours sur chacune des trois phases suivantes
+   (développement, tests, déploiement) ajouterait 4 fois 3, soit 12 jours supplémentaires, portant la durée
+   totale révisée à 52 plus 12, soit 64 jours.
+5. Parce que l''origine du problème n''est pas une erreur technique isolée, mais un défaut de communication
+   organisationnel : l''équipe d''exploitation n''est pas informée des changements avant leur mise en production,
+   ce qui relève d''un processus de gestion des changements absent ou mal appliqué, pas d''un bug technique précis.
+6. Durée totale prévue : 8 plus 20 plus 15 plus 10, soit 53 jours. Retard constaté sur l''audit : 12 moins 8,
+   soit 4 jours. Sans action corrective, la nouvelle durée totale estimée est de 53 plus 4, soit 57 jours.
+7. Parce que documenter ce qui a bien fonctionné, les délais réellement tenus, les méthodes efficaces, permet de
+   capitaliser ces bonnes pratiques pour les projets suivants, et pas seulement de corriger des erreurs ; un
+   projet réussi contient aussi des enseignements précieux à ne pas perdre faute de les avoir formalisés.
+', 'texte', 50, false, 30
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gouvernance IT et gestion de projets informatiques : l''essentiel pour l''examen');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Sujet type d''examen de Master 1 en Contrôle de gestion (corrigé)', 'Ce sujet type regroupe les trois matières avancées du Master 1 en Contrôle de gestion : le contrôle de gestion stratégique et la performance globale, la gestion par centres de responsabilité et le prix de cession interne, et les systèmes d''information décisionnels. Il n''a pas de valeur officielle et le barème indiqué est purement indicatif, pour vous aider à répartir votre temps de révision. Traitez-le en conditions d''examen (durée conseillée : 3 heures) avant de consulter le corrigé.
+select c.id, 'Méthodologie du mémoire de recherche ou du projet tutoré et de la soutenance : l''essentiel pour l''examen', '## Objectifs de la leçon
 
-## Présentation du cas
+Cette leçon traite la méthodologie du mémoire de recherche ou du projet tutoré, et la préparation de la
+soutenance orale qui le conclut. Elle s''appuie sur le cas fictif d''un étudiant de Master 2, Moussa, qui rédige
+un mémoire sur l''adoption du paiement mobile par les petits commerces d''une ville moyenne du Sénégal, et sur un
+planning de rédaction chiffré et vérifié.
 
-Le Groupe Sahel Industries (groupe fictif sénégalais) regroupe deux filiales : Sahel Minoterie (transformation de céréales, centre d''investissement) et Sahel Agro-Export (distribution et exportation régionale, centre d''investissement). Sahel Minoterie cède une partie de sa production à Sahel Agro-Export, qui la revend sur le marché régional. Le groupe a par ailleurs engagé un chantier de refonte de son système d''information et souhaite renforcer sa démarche RSE.
+## La structure attendue d''un mémoire
 
-Données disponibles pour Sahel Minoterie : coût variable unitaire de 95 000 FCFA la tonne ; charges fixes annuelles totales de 300 000 000 FCFA pour une activité normale de 7 500 tonnes ; capitaux investis de 950 000 000 FCFA. Un produit comparable se vend sur le marché régional à 155 000 FCFA la tonne entre entreprises indépendantes. La marge négociée retenue en méthode du coût est de 8 %, et l''économie commerciale évitée en méthode du marché est de 10 %. Le volume cédé à Sahel Agro-Export est de 4 200 tonnes.
+Un mémoire de Master suit généralement une structure proche, que les attentes précises varient selon
+l''établissement et le type de mémoire (recherche ou professionnel) : une introduction qui présente le contexte,
+la problématique (la question précise à laquelle le mémoire répond) et le plan ; une revue de littérature qui
+situe le travail par rapport à ce qui a déjà été écrit sur le sujet (études, rapports, cadres théoriques déjà
+connus) ; une partie méthodologie qui explique comment les données ont été collectées et analysées (entretiens,
+questionnaires, étude de cas, analyse de données existantes) et pourquoi cette méthode a été choisie ; une
+partie résultats qui présente ce qui a été observé, sans encore l''interpréter longuement ; une partie discussion
+qui interprète les résultats, les met en lien avec la problématique et la revue de littérature, et en reconnaît
+les limites ; et une conclusion qui résume l''apport du travail et ouvre, si pertinent, sur des pistes futures.
 
-Le comité de pilotage du groupe évalue sa performance globale sur trois axes (notés sur 20) : axe économique 15, axe social 12, axe environnemental 10, avec des pondérations respectives de 45 %, 25 % et 30 %.
+La problématique est la pièce centrale : un mémoire qui part d''une question trop large ("le paiement mobile au
+Sénégal") sera difficile à traiter sérieusement en quelques mois ; une question précise et bornée ("pourquoi
+certains petits commerces d''une ville moyenne adoptent-ils le paiement mobile plus vite que d''autres, malgré
+une offre technique équivalente ?") permet une recherche réellement menée à son terme, avec une méthode adaptée
+et des résultats interprétables.
 
-Un comité qualité évalue le système d''information décisionnel du groupe sur quatre critères (notés sur 100) : exhaustivité 90 (poids 30 %), exactitude 85 (poids 35 %), cohérence inter-filiales 72 (poids 20 %), délai de saisie 80 (poids 15 %).
+## Les règles de citation et de sourcing
 
-## Questions (barème indicatif sur 20)
+Un mémoire de Master doit distinguer clairement ce qui vient d''une source extérieure (un rapport, une étude, un
+article) de ce que l''étudiant apporte lui-même comme analyse ou résultat. Toute idée, donnée ou citation
+reprise d''une source doit être attribuée explicitement à cette source, avec une référence précise permettant de
+la retrouver. Ne jamais inventer une référence ou une citation : si un chiffre ou une étude est nécessaire pour
+appuyer un argument mais qu''on ne dispose pas d''une source fiable et vérifiée, il est préférable de formuler
+l''argument avec prudence ("on peut supposer que...", "il serait utile de vérifier si...") plutôt que d''attribuer
+une fausse source à une affirmation, ce qui constitue une faute grave en recherche et peut être sanctionné
+lourdement par un jury qui vérifierait les sources citées.
 
-1. (3 points) Calculez le coût complet unitaire de Sahel Minoterie, puis le prix de cession interne selon la méthode du coût (coût complet majoré de la marge négociée) et selon la méthode du marché (prix de marché diminué de l''économie commerciale évitée).
-2. (2 points) Proposez un prix de cession interne négocié et calculez-le.
-3. (3 points) Sahel Minoterie dégage, par ailleurs, un résultat sur ses ventes externes de 80 000 000 FCFA, en plus de la marge réalisée sur la cession interne au prix négocié. Calculez le résultat d''exploitation total de Sahel Minoterie, puis son ROI, avec des capitaux investis de 950 000 000 FCFA.
-4. (2 points) Avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %, calculez l''EVA de Sahel Minoterie.
-5. (3 points) Calculez l''indice de performance globale du Groupe Sahel Industries.
-6. (3 points) Calculez l''indice de qualité des données du système d''information décisionnel du groupe.
-7. (4 points) En mobilisant les résultats des questions précédentes, rédigez une synthèse argumentée (dix à quinze lignes) qui identifie le principal point fort et le principal point de vigilance du groupe sur les trois matières étudiées, et proposez une action prioritaire pour la direction générale.
+## Organiser son temps de rédaction
+
+Prenons l''exemple de Moussa, qui dispose de douze semaines avant la remise de son mémoire, et qui vise un
+mémoire d''environ 60 pages, soit approximativement 18 000 mots en comptant environ 300 mots par page. Un
+découpage réaliste, vérifié par le calcul, pourrait répartir ces 18 000 mots ainsi : introduction et revue de
+littérature, 5 000 mots, sur les quatre premières semaines ; méthodologie et collecte des données, 3 000 mots,
+sur les trois semaines suivantes ; résultats, 4 000 mots, sur deux semaines, une fois la collecte terminée ;
+discussion et conclusion, 4 000 mots, sur deux semaines ; et une dernière semaine réservée à la relecture
+complète, à la vérification des références et à la mise en forme finale. Le total (5 000 plus 3 000 plus 4 000
+plus 4 000, soit 16 000 mots de corps de texte) laisse une marge d''environ 2 000 mots pour l''introduction
+générale, les annexes courtes et les ajustements, ce qui correspond bien à l''objectif de 18 000 mots sur 60
+pages. Ce découpage par semaines, avec des jalons clairs, évite le piège classique de reporter toute la
+rédaction aux dernières semaines, qui est la cause la plus fréquente de mémoires rendus en retard ou de qualité
+insuffisante.
+
+## Préparer la soutenance orale
+
+La soutenance est un exercice différent de la rédaction : il s''agit de présenter oralement, en un temps limité
+(souvent entre dix et vingt minutes selon l''établissement), l''essentiel du travail, puis de répondre aux
+questions du jury. Quatre principes aident à préparer une soutenance convaincante. D''abord, ne pas chercher à
+tout dire : une soutenance réussie choisit les points essentiels (la problématique, la méthode, le résultat
+principal, une limite honnêtement reconnue) plutôt que de résumer chaque page du mémoire. Ensuite, minuter
+précisément son intervention à l''avance, en s''entraînant à voix haute, car le temps passe toujours plus vite à
+l''oral qu''on ne l''imagine en préparant ses notes. Puis anticiper les questions prévisibles du jury, notamment
+"pourquoi cette méthode plutôt qu''une autre ?" et "quelles sont les limites de votre travail ?", et préparer des
+réponses honnêtes plutôt que défensives : reconnaître une limite avec clarté est généralement mieux perçu que
+nier une faiblesse évidente du travail. Enfin, répéter la soutenance en conditions réelles, devant un public
+même restreint, car la gestion du stress et du temps de parole se travaille par la pratique, pas seulement par
+la préparation du contenu.
+
+## Points clés à retenir
+
+- Un mémoire suit une structure proche d''un établissement à l''autre : introduction et problématique, revue de
+  littérature, méthodologie, résultats, discussion, conclusion.
+- Une problématique précise et bornée permet une recherche réellement menée à son terme ; une question trop
+  large rend le travail difficile à mener sérieusement.
+- Toute source doit être attribuée explicitement ; inventer une référence ou une citation est une faute grave
+  en recherche.
+- Un planning de rédaction par jalons hebdomadaires, avec une semaine réservée à la relecture finale, évite le
+  report de tout le travail aux dernières semaines.
+- La soutenance orale se prépare comme une compétence à part : choisir l''essentiel, minuter précisément,
+  anticiper les questions, s''entraîner en conditions réelles.
+
+## Exercices pratiques
+
+1. Expliquez pourquoi une problématique trop large ("le paiement mobile au Sénégal") est difficile à traiter
+   sérieusement dans un mémoire de Master, contrairement à une question plus précise et bornée.
+2. Citez les six grandes parties d''un mémoire présentées dans cette leçon, dans l''ordre, et donnez le rôle de
+   chacune en une phrase.
+3. Pourquoi ne faut-il jamais inventer une référence ou une citation dans un mémoire, même pour appuyer un
+   argument qui semble solide ?
+4. Reprenez le planning de Moussa : si son mémoire visait 70 pages au lieu de 60, toujours à 300 mots par page,
+   combien de mots cela représenterait-il, et de combien de mots supplémentaires faudrait-il augmenter chaque
+   partie si l''on garde les mêmes proportions relatives (environ 31 %, 19 %, 25 %, 25 % du corps de texte pour
+   les quatre grandes parties) ?
+5. Citez les quatre principes de préparation d''une soutenance présentés dans cette leçon.
+6. Cas pratique complet : une étudiante de Master 2, Aïda, a sept semaines avant sa soutenance et un mémoire de
+   45 pages à finaliser, soit environ 13 500 mots à 300 mots par page. Elle a déjà rédigé 9 000 mots sur ses
+   quatre premières semaines. Calculez le nombre de mots restant à rédiger, le nombre de semaines restantes
+   avant la soutenance, et proposez une répartition réaliste de ce travail restant sur les semaines
+   disponibles, en gardant au moins une semaine pour la préparation orale de la soutenance.
+7. Pourquoi est-il généralement mieux perçu par un jury de reconnaître honnêtement une limite de son travail
+   plutôt que de la nier ou de la minimiser pendant la soutenance ?
+
+## Corrigé
+
+1. Une question trop large englobe trop de dimensions différentes pour être traitée avec une méthode unique en
+   quelques mois ; une question précise et bornée (par exemple limitée à une ville et à une comparaison entre
+   commerces) permet de choisir une méthode adaptée et d''obtenir des résultats interprétables dans le temps
+   disponible.
+2. Introduction (présenter contexte, problématique, plan), revue de littérature (situer le travail par rapport à
+   l''existant), méthodologie (expliquer comment les données ont été collectées et analysées), résultats
+   (présenter ce qui a été observé), discussion (interpréter les résultats et reconnaître les limites),
+   conclusion (résumer l''apport et ouvrir sur des pistes futures).
+3. Parce qu''une référence inventée est une fraude académique, détectable par un jury qui vérifie les sources, et
+   qui peut invalider la crédibilité de l''ensemble du mémoire ; il est toujours préférable de formuler un
+   argument avec prudence que de l''appuyer sur une fausse source.
+4. 70 pages à 300 mots donnent 21 000 mots. Avec les mêmes proportions relatives, les quatre parties
+   deviendraient environ 6 510 mots (31 % de 21 000), 3 990 mots (19 %), 5 250 mots (25 %) et 5 250 mots (25 %),
+   soit une augmentation d''environ 1 510, 990, 1 250 et 1 250 mots par rapport au planning initial de 60 pages.
+5. Choisir l''essentiel plutôt que tout dire, minuter précisément l''intervention à l''avance, anticiper les
+   questions prévisibles du jury, répéter la soutenance en conditions réelles.
+6. Mots restants : 13 500 moins 9 000, soit 4 500 mots. Semaines restantes avant la soutenance : 7 moins 4,
+   soit 3 semaines. En gardant une semaine pour la préparation orale, il reste 2 semaines pour rédiger les
+   4 500 mots restants, soit environ 2 250 mots par semaine, un rythme à vérifier comme réaliste selon la partie
+   du mémoire concernée (résultats et discussion sont souvent plus longs à rédiger que la conclusion).
+7. Parce qu''un jury évalue aussi la capacité de recul critique de l''étudiant sur son propre travail ; reconnaître
+   une limite montre une compréhension fine des enjeux méthodologiques, alors que nier une faiblesse évidente
+   peut donner l''impression inverse, un manque de recul ou une tentative de dissimulation, ce qui nuit
+   davantage à la crédibilité du candidat que la limite elle-même.
+', 'texte', 50, false, 40
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Méthodologie du mémoire de recherche ou du projet tutoré et de la soutenance : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Master 2 Informatique (corrigé détaillé)', '## Sujet type d''examen de Master 2 Informatique (non officiel, à titre d''entraînement)
+
+Durée indicative : 2 heures. Barème indicatif (non officiel) : partie 1 sur 7 points, partie 2 sur 6 points,
+partie 3 sur 7 points. Les candidats sont invités à vérifier le barème exact communiqué par leur établissement.
+
+## Énoncé
+
+Contexte : "Sahel Télécom Services" (entreprise fictive de téléphonie mobile) observe, sur dix mois, la relation
+entre son budget de fidélisation client (en millions de FCFA fictifs) et le taux de clients conservés le mois
+suivant. Par ailleurs, l''entreprise a lancé il y a six mois un projet de migration de sa facturation vers un
+nouveau système, avec des tâches successives (audit, configuration, migration des données, tests et bascule),
+mené par une équipe où développement et exploitation travaillent encore de façon séparée, ce qui a déjà causé
+plusieurs incidents lors de précédentes mises à jour. Enfin, un étudiant en projet tutoré dans cette entreprise
+doit remettre un rapport méthodologique dans quatre semaines sur l''analyse de ces données de fidélisation.
+
+Partie 1 (7 points) — Intelligence artificielle et data science. L''entreprise envisage de construire un modèle
+pour prédire si un client va résilier son abonnement le mois suivant, à partir de plusieurs variables (ancienneté,
+montant de la facture, nombre de réclamations). S''agit-il d''un problème de régression ou de classification ?
+Justifiez. Si le modèle testé sur 300 clients donne 54 vrais positifs, 16 faux positifs, 20 faux négatifs et
+210 vrais négatifs, calculez l''exactitude et le rappel du modèle, et commentez ce que le rappel révèle sur la
+capacité du modèle à détecter les résiliations réelles.
+
+Partie 2 (6 points) — Gouvernance IT et gestion de projets. Le projet de migration de la facturation a déjà
+causé des incidents lors de précédentes mises à jour, dans un contexte où développement et exploitation
+travaillent séparément. Proposez une démarche organisationnelle pour réduire ce risque, et expliquez le lien
+entre cette démarche et un indicateur de gouvernance mesurable.
+
+Partie 3 (7 points) — Méthodologie. L''étudiant en projet tutoré dispose de quatre semaines pour un rapport
+d''environ 20 pages, soit environ 6 000 mots à 300 mots par page. Proposez un découpage hebdomadaire réaliste de
+ce travail, en respectant la structure attendue d''un tel rapport, et indiquez deux questions qu''un jury pourrait
+lui poser lors d''une soutenance sur ce travail.
 
 ## Corrigé détaillé
 
-1. Charges fixes unitaires = 300 000 000 / 7 500 = 40 000 FCFA la tonne. Coût complet unitaire = 95 000 + 40 000 = 135 000 FCFA. Méthode du coût : 135 000 × (1 + 0,08) = 145 800 FCFA. Méthode du marché : 155 000 × (1 − 0,10) = 139 500 FCFA.
-2. Le prix négocié peut raisonnablement être fixé comme la moyenne des deux bornes : (145 800 + 139 500) / 2 = 142 650 FCFA. Toute autre valeur comprise entre les deux bornes et correctement justifiée est acceptée.
-3. Marge sur cession interne = (142 650 − 135 000) × 4 200 = 32 130 000 FCFA. Résultat d''exploitation total = 32 130 000 + 80 000 000 = 112 130 000 FCFA. ROI = 112 130 000 / 950 000 000 = 0,118, soit environ 11,8 %.
-4. NOPAT = 112 130 000 × (1 − 0,30) = 78 491 000 FCFA. Charge de capital = 950 000 000 × 0,12 = 114 000 000 FCFA. EVA = 78 491 000 − 114 000 000 = −35 509 000 FCFA. L''EVA est négative : malgré un ROI positif de 11,8 %, Sahel Minoterie détruit de la valeur, car sa rentabilité est inférieure au coût du capital exigé par le groupe (12 %).
-5. Indice de performance globale = (15 × 0,45) + (12 × 0,25) + (10 × 0,30) = 6,75 + 3 + 3 = 12,75/20.
-6. Indice de qualité des données = (90 × 0,30) + (85 × 0,35) + (72 × 0,20) + (80 × 0,15) = 27 + 29,75 + 14,4 + 12 = 83,15, soit environ 83,2 sur 100.
-7. Synthèse attendue : le principal point fort du groupe est la performance économique relative de ses deux filiales considérées isolément (axe économique noté 15/20, le plus élevé des trois axes de performance globale) et un système d''information globalement fiable (indice de qualité de 83,2/100). Le principal point de vigilance est double et doit être relié : d''une part, la performance environnementale (10/20, le plus faible des trois axes), qui tire l''indice global à 12,75/20 et appelle une action corrective ciblée ; d''autre part, et surtout, l''EVA négative de Sahel Minoterie (−35 509 000 FCFA) révèle que la filiale, malgré un ROI positif, détruit de la valeur au regard du coût du capital du groupe, ce qui doit alerter la direction générale au-delà du seul indicateur de rentabilité comptable. L''action prioritaire recommandée est de conduire un diagnostic approfondi des capitaux investis et de la structure de coûts de Sahel Minoterie (plutôt que de se satisfaire du ROI positif), en parallèle d''un plan d''action ciblé sur l''axe environnemental, ces deux chantiers pouvant d''ailleurs converger si une partie de la destruction de valeur provient d''investissements environnementaux coûteux mais encore peu valorisés dans le résultat d''exploitation.
+Partie 1. C''est un problème de classification, car on veut prédire une catégorie (le client résilie ou ne
+résilie pas), pas une valeur numérique continue. Calcul de l''exactitude : (54 plus 210) divisé par 300, soit
+264 divisé par 300, soit 0,88, ou 88 %. Calcul du rappel : 54 divisé par (54 plus 20), soit 54 divisé par 74,
+soit environ 0,730, ou 73 %. Commentaire : malgré une exactitude élevée de 88 %, le rappel de 73 % montre que
+le modèle ne détecte qu''environ sept résiliations réelles sur dix ; pour une entreprise qui veut agir en amont
+auprès des clients à risque, ce taux de détection incomplet peut représenter une limite importante à signaler
+avant de déployer le modèle en production. (Barème : 2 points pour l''identification du problème, 3 points pour
+les deux calculs corrects, 2 points pour le commentaire sur le rappel.)
 
-## Exercices pratiques complémentaires
+Partie 2. Démarche recommandée : adopter une approche DevOps, en rapprochant les équipes de développement et
+d''exploitation, en formalisant un processus de gestion des changements (toute modification notable du système
+de facturation est annoncée et validée avant mise en production), et en favorisant des déploiements plus petits
+et plus fréquents plutôt que de grosses mises à jour rares et risquées. Lien avec un indicateur de gouvernance :
+on peut suivre la disponibilité du service de facturation avant et après la mise en place de cette démarche
+(par exemple, le nombre d''heures d''indisponibilité par mois), ce qui permet de mesurer concrètement si la
+nouvelle organisation réduit effectivement le nombre et la durée des incidents. (Barème : 3 points pour la
+démarche organisationnelle argumentée, 3 points pour le lien avec un indicateur mesurable.)
 
-1. Pourquoi est-il important de calculer à la fois le ROI et l''EVA d''un centre d''investissement avant de conclure sur sa performance, comme l''illustre le cas de Sahel Minoterie ?
-2. Si la direction générale du Groupe Sahel Industries retenait la méthode du coût (145 800 FCFA) plutôt que le prix négocié (142 650 FCFA) pour la cession interne, quel serait l''effet sur le résultat consolidé du groupe ? Justifiez sans recalculer.
-3. Proposez une action corrective concrète pour améliorer le critère le plus faible de l''indice de qualité des données du groupe (cohérence inter-filiales, 72/100).
+Partie 3. Découpage possible sur quatre semaines, avec 6 000 mots à répartir : semaine 1, introduction,
+contexte et problématique du rapport, environ 1 200 mots ; semaine 2, méthodologie de collecte et d''analyse des
+données de fidélisation, environ 1 500 mots ; semaine 3, présentation des résultats et première discussion,
+environ 2 100 mots ; semaine 4, finalisation de la discussion, conclusion, relecture complète et préparation de
+la soutenance, environ 1 200 mots (le total, 1 200 plus 1 500 plus 2 100 plus 1 200, donne bien 6 000 mots).
+Deux questions possibles du jury : "Pourquoi avez-vous choisi d''analyser ces variables précises plutôt que
+d''autres données disponibles dans l''entreprise ?" et "Quelles limites voyez-vous à votre analyse, notamment sur
+la fiabilité des données utilisées ?". (Barème : 4 points pour le découpage réaliste et cohérent avec la
+structure attendue, 3 points pour les deux questions pertinentes et justifiées.)
+
+## Exercices pratiques
+
+1. Reprenez la partie 1 : si le modèle était retesté et donnait cette fois 60 vrais positifs et 14 faux négatifs
+   sur le même total de 74 résiliations réelles, calculez le nouveau rappel et dites s''il s''est amélioré par
+   rapport au corrigé.
+2. Pour la partie 2, pourquoi suivre un indicateur de disponibilité avant et après la mise en place d''une
+   démarche DevOps est-il plus convaincant que de simplement affirmer que la nouvelle organisation "devrait"
+   réduire les incidents ?
+3. Pour la partie 3, si l''étudiant disposait de six semaines au lieu de quatre pour le même rapport de 6 000
+   mots, proposez une répartition hebdomadaire alternative qui ajoute une semaine de collecte de données
+   supplémentaire et une semaine de répétition de la soutenance.
 
 ## Corrigé
 
-1. Le ROI seul peut donner une image trompeuse de la performance : un ROI positif, comme celui de Sahel Minoterie (11,8 %), peut masquer le fait que cette rentabilité reste inférieure au coût du capital exigé par le groupe. L''EVA complète l''analyse en comparant directement la rentabilité au coût du capital, révélant ici une destruction de valeur (EVA négative) malgré un résultat comptable positif. Conclure sur la seule base du ROI aurait conduit la direction générale à sous-estimer gravement la situation réelle de la filiale.
-2. Le résultat consolidé du groupe resterait strictement identique, car le prix de cession interne est une opération intragroupe qui s''élimine en consolidation : ce que Sahel Minoterie gagnerait en plus serait exactement ce que Sahel Agro-Export paierait en plus, sans effet sur la marge globale du groupe avec le client final.
-3. Une action corrective concrète consiste à établir une table de correspondance unique entre les référentiels analytiques de Sahel Minoterie et de Sahel Agro-Export (plan de comptes, codification des centres de coûts), validée par le contrôle de gestion groupe, et à imposer son utilisation uniforme avant la prochaine clôture consolidée, avec un contrôle de cohérence automatisé entre les montants déclarés par chaque filiale.', 'texte', 45, false, 50
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 1 en Contrôle de gestion (corrigé)');
+1. Nouveau rappel : 60 divisé par (60 plus 14), soit 60 divisé par 74, soit environ 0,811, ou 81,1 %. C''est une
+   amélioration par rapport au rappel initial d''environ 73 %, ce qui signifie que le modèle détecte désormais
+   une plus grande proportion des résiliations réelles.
+2. Parce qu''un indicateur mesurable permet de comparer objectivement la situation avant et après le changement,
+   avec des chiffres concrets (par exemple, le nombre d''heures d''indisponibilité par mois), plutôt que de se
+   fier à une impression générale ; cela permet aussi de détecter si la démarche n''apporte pas l''amélioration
+   attendue et de l''ajuster en conséquence.
+3. Répartition possible sur six semaines : semaine 1, contexte et problématique (1 000 mots) ; semaine 2,
+   collecte de données supplémentaire (sans rédaction significative, préparation du terrain) ; semaine 3,
+   méthodologie (1 300 mots) ; semaine 4, résultats (1 900 mots) ; semaine 5, discussion et conclusion
+   (1 800 mots) ; semaine 6, relecture complète et répétition de la soutenance (aucune rédaction nouvelle,
+   uniquement révision et entraînement oral).
+', 'texte', 45, false, 50
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Master 2 Informatique (corrigé détaillé)');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Contrôle de gestion stratégique et pilotage de la performance globale', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Intelligence artificielle et data science', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : savoir construire un tableau de bord de performance globale intégrant la RSE et la triple bottom line, savoir calculer et interpréter un indice de performance pondéré, savoir discuter les limites méthodologiques de cette approche face à un cas d''entreprise. Prérequis : tableau de bord prospectif (balanced scorecard) vu en Licence 3. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+Durée : 1h30. Objectif : distinguer régression et classification, construire et interpréter un modèle de
+régression linéaire simple, calculer et interpréter une matrice de confusion, et connaître les limites
+essentielles de l''apprentissage automatique. Fil conducteur : le cas fictif de Teranga Analytics. Matériel :
+tableau ou diaporama, calculatrice ou feuille pour suivre les calculs. Prérequis : mathématiques de base
+(statistiques descriptives), notions de bases de données.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et mise en perspective
+## 00:00 – 05:00 · Introduction et objectifs
 
-Bonjour à toutes et à tous. Nous commençons aujourd''hui le premier des trois cours vidéo consacrés aux matières avancées du Master 1 en Contrôle de gestion. Cette séance porte sur le contrôle de gestion stratégique et le pilotage de la performance globale, avec un accent particulier sur la responsabilité sociétale des entreprises et la triple bottom line.
+Bonjour et bienvenue dans ce cours vidéo consacré à l''intelligence artificielle et à la data science. Ce n''est
+pas un cours de programmation d''algorithmes complexes : notre objectif, au niveau Master 2, est de comprendre
+les principes, de savoir construire et interpréter des modèles simples, et surtout de connaître les limites de
+ces modèles, car c''est souvent sur ce point que se joue la différence entre un bon et un excellent candidat en
+examen. Nous suivrons le cas de Teranga Analytics, une entreprise fictive de services marketing à Dakar.
 
-Avant de commencer, je veux que vous ayez bien en tête où se situe cette matière dans votre parcours. En Licence 3, vous avez étudié le tableau de bord prospectif, le balanced scorecard, qui articule déjà quatre axes : financier, client, processus internes, apprentissage organisationnel. Ce que nous allons voir aujourd''hui n''est pas un nouvel outil isolé, mais un approfondissement et un élargissement de cette logique, en intégrant explicitement les dimensions sociale et environnementale de la performance, dans un cadre que l''on appelle la triple bottom line.
+## 05:00 – 15:00 · Régression et classification
 
-Notez au tableau le plan de la séance : d''abord, pourquoi la performance financière seule ne suffit plus ; ensuite, comment construire un indice de performance globale pondéré ; puis, les limites méthodologiques de cette approche, illustrées sur un cas d''entreprise complet ; enfin, un quiz, un exercice de synthèse, et l''évaluation finale.
+Commençons par la distinction la plus importante de cette séance. L''apprentissage supervisé construit, à
+partir de données passées où l''on connaît à la fois les entrées et le résultat observé, un modèle capable de
+prédire ce résultat sur de nouvelles données. Deux grandes familles de problèmes. La régression prédit une
+valeur numérique continue : un chiffre d''affaires, une température, un rendement agricole. La classification
+prédit une catégorie parmi un ensemble fini : un client va résilier ou non, un dossier de crédit est risqué ou
+non. Posons-nous la question, pour chaque exemple que je vais citer : régression ou classification ? Prédire le
+montant des ventes du mois prochain : régression, car c''est une valeur numérique continue. Prédire si un email
+est un courrier indésirable : classification, car c''est une catégorie parmi deux possibles. Cette distinction
+conditionne le choix des indicateurs d''évaluation, ce que nous allons voir dans les deux parties suivantes.
 
-## 05:00 – 20:00 · De la performance financière à la performance globale
+## 15:00 – 35:00 · La régression linéaire pas à pas
 
-Pourquoi parle-t-on aujourd''hui de performance globale plutôt que de simple performance financière ? Trois raisons principales. La première est économique : les investisseurs, les bailleurs de fonds internationaux, mais aussi de plus en plus les clients grands comptes, exigent des garanties sur les pratiques sociales et environnementales des entreprises avec lesquelles ils travaillent. Une entreprise qui néglige ces dimensions prend un risque financier direct, par exemple en perdant un marché ou un financement. La deuxième raison est réglementaire : les exigences en matière de reporting extra-financier se renforcent progressivement, y compris dans l''espace UEMOA, même si le cadre réglementaire précis varie selon les pays et continue d''évoluer, donc je vous invite à toujours vérifier la réglementation en vigueur plutôt que de vous fier à une règle apprise par cœur. La troisième raison est stratégique : une entreprise qui anticipe ces exigences plutôt que de les subir se donne un avantage concurrentiel durable.
+Teranga Analytics observe, sur huit mois, le budget publicitaire mensuel et le chiffre d''affaires du mois
+correspondant, en millions de FCFA fictifs : pour des budgets de 2, 3, 4, 5, 6, 7, 8 et 9, les chiffres
+d''affaires sont 15, 18, 21, 25, 26, 30, 33 et 35. Une régression linéaire cherche la droite qui s''ajuste le
+mieux à ces points. J''ai effectué le calcul par la méthode des moindres carrés, et je vous donne le résultat
+vérifié : l''ordonnée à l''origine, b0, vaut environ 9,46, et la pente, b1, vaut environ 2,89. Que signifient ces
+deux nombres ? Le b0 représente le chiffre d''affaires estimé si le budget publicitaire était nul, soit environ
+9,46 millions, ce qui capture l''effet d''autres facteurs que la publicité. Le b1 représente l''effet marginal
+d''un million de FCFA supplémentaire de budget : chaque million investi est associé en moyenne à 2,89 millions
+de chiffre d''affaires supplémentaire, dans la plage de budgets observée. Pour un budget de 10 millions, le
+modèle prédit donc 9,46 plus 2,89 fois 10, soit environ 38,39 millions de chiffre d''affaires.
 
-La triple bottom line, formalisée à la fin des années 1990, résume cette idée en trois mots : profit, people, planet. Une organisation durablement performante doit produire un résultat économique, un résultat social et un résultat environnemental. Le rôle du contrôle de gestion stratégique est de construire les outils de mesure et de pilotage qui rendent ces trois résultats aussi suivis et aussi rigoureux que le résultat financier classique.
+Comment savoir si ce modèle est bon ? On utilise le coefficient de détermination, R carré, qui mesure la part
+de variation du chiffre d''affaires expliquée par le modèle. Dans cet exemple, le calcul donne un R carré
+d''environ 0,993, soit 99,3 % de variation expliquée, un résultat exceptionnellement élevé qui, en situation
+réelle avec des données plus bruitées, inviterait à vérifier qu''aucun facteur plus déterminant n''a été oublié,
+plutôt qu''à se réjouir sans esprit critique d''un résultat aussi parfait.
 
-Prenons un exemple concret pour fixer les idées. Un groupe agro-industriel peut avoir une marge opérationnelle excellente, mais un taux d''accidents du travail en forte hausse, ou une consommation d''eau par tonne produite qui dépasse largement les standards du secteur. Dans une logique de triple bottom line, cette entreprise n''est pas pleinement performante, même si son résultat financier est excellent, car elle accumule des risques sociaux et environnementaux qui finiront, à plus ou moins long terme, par se traduire en coûts financiers : turnover, conflits sociaux, durcissement réglementaire, perte de clients exigeants sur ces critères.
+## 35:00 – 55:00 · La classification et la matrice de confusion
 
-## 20:00 – 35:00 · Construire un indice de performance globale pondéré
+Passons à un exemple de classification, un modèle qui prédit le risque de défaut sur des dossiers de
+microcrédit, testé sur 200 dossiers dont on connaît le résultat réel. Je construis avec vous la matrice de
+confusion : 42 vrais positifs, le modèle a prédit un risque et il y avait bien un défaut ; 8 faux positifs, le
+modèle a prédit un risque à tort ; 15 faux négatifs, le modèle n''a pas détecté un défaut réel ; 135 vrais
+négatifs, le modèle a correctement écarté un dossier sans défaut.
 
-Passons maintenant à la construction pratique d''un indice de performance globale. La méthode la plus courante consiste à noter l''entreprise sur chacun des trois axes (économique, social, environnemental), généralement sur une échelle de 0 à 20 ou de 0 à 100, à partir d''indicateurs objectifs suivis dans le temps, puis à pondérer ces trois notes pour obtenir un indice de synthèse.
+Calculons ensemble les indicateurs. L''exactitude : (42 plus 135) divisé par 200, soit 0,885, ou 88,5 %. Cela
+semble excellent, mais regardons plus en détail. La précision : 42 divisé par (42 plus 8), soit 0,84, ou 84 %,
+qui mesure la fiabilité des alertes données par le modèle. Le rappel : 42 divisé par (42 plus 15), soit environ
+0,737, ou 73,7 %, qui mesure la proportion de défauts réels effectivement détectés. Posons-nous la question :
+pourquoi l''exactitude de 88,5 % peut-elle être trompeuse ? Parce qu''elle masque que plus d''un quart des défauts
+réels, 26,3 %, ne sont pas détectés par le modèle, ce qui peut avoir un coût réel important pour l''entreprise
+selon le contexte. C''est exactement pour cette raison qu''un bon candidat de Master 2 ne se contente jamais d''un
+seul indicateur pour juger un modèle.
 
-Reprenons le cas du Groupe Teranga Agro-Industries, que vous connaissez déjà par les leçons texte de ce cours. Le comité de pilotage retient les pondérations suivantes : axe économique 40 %, axe social 30 %, axe environnemental 30 %. Les scores obtenus sont 16/20 pour l''axe économique, 13/20 pour l''axe social, et 11/20 pour l''axe environnemental.
+## 55:00 – 1:00:00 · Pause et quiz interactif
 
-Je vous laisse trente secondes pour calculer l''indice de performance globale sur votre feuille, avant que je ne fasse le calcul au tableau.
+Petit quiz de mi-parcours. Première question : un modèle qui prédit le prix de vente futur d''un bien immobilier
+relève-t-il de la régression ou de la classification ? Deuxième question : dans la matrice de confusion vue
+plus haut, que mesure le rappel, et en quoi diffère-t-il de la précision ? Mettez en pause, répondez, puis
+reprenez. ... Réponses : c''est un problème de régression, car le prix est une valeur numérique continue ; le
+rappel mesure la proportion de cas positifs réels correctement détectés par le modèle, alors que la précision
+mesure la proportion de détections positives qui sont effectivement correctes ; les deux indicateurs répondent
+à des questions différentes et peuvent donner des résultats très différents sur le même modèle.
 
-Voici le calcul : (16 × 0,40) + (13 × 0,30) + (11 × 0,30). Premier terme : 16 fois 0,40 égale 6,4. Deuxième terme : 13 fois 0,30 égale 3,9. Troisième terme : 11 fois 0,30 égale 3,3. La somme est 6,4 plus 3,9 plus 3,3, soit 13,6 sur 20.
+## 1:00:00 – 1:20:00 · Les limites de l''apprentissage automatique
 
-Qu''est-ce que ce résultat nous dit ? D''abord, un niveau global plutôt moyen, ni franchement mauvais ni réellement satisfaisant. Ensuite, et c''est le point le plus important pour vous en tant que futurs contrôleurs de gestion, ce chiffre global ne doit jamais être votre seule conclusion. Vous devez systématiquement décomposer l''indice pour identifier quel axe tire la performance vers le bas. Ici, c''est clairement l''axe environnemental, avec son score de 11/20, le plus faible des trois, qui pèse sur l''indice global malgré son poids identique à l''axe social.
+Terminons par les limites, essentielles à connaître pour un examen de Master 2. Première limite, la corrélation
+n''est pas la causalité : un lien statistique entre budget publicitaire et chiffre d''affaires ne prouve pas que
+la publicité, à elle seule, cause l''augmentation des ventes ; un facteur externe, par exemple une période de
+forte demande saisonnière, pourrait influencer les deux variables en même temps. Deuxième limite, le
+surapprentissage : un modèle trop complexe peut mémoriser les particularités des données d''entraînement sans
+généraliser correctement, donnant d''excellents résultats sur ces données précises mais de mauvais résultats sur
+de nouvelles données jamais vues. Troisième limite, le biais des données : si les données passées contiennent
+des déséquilibres, par exemple très peu de cas de défaut dans notre exemple de microcrédit, le modèle peut
+reproduire ou amplifier ces déséquilibres, ce qui pose des questions éthiques sérieuses pour des décisions
+sensibles comme l''octroi de crédit. Un bon candidat sait toujours rappeler au moins une de ces limites quand il
+présente un modèle, plutôt que de le présenter comme une vérité absolue.
 
-## 35:00 – 45:00 · Les limites méthodologiques de la pondération
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
 
-Arrêtons-nous maintenant sur un point que l''examen vous demandera très probablement de discuter : les limites de cette approche par indice pondéré.
+Résumons. La régression prédit une valeur numérique continue, la classification prédit une catégorie. Un modèle
+de régression se résume par ses coefficients et son R carré. Une matrice de confusion permet de calculer
+plusieurs indicateurs complémentaires, exactitude, précision, rappel, qui ne racontent pas la même histoire.
+Et aucun modèle n''est une vérité absolue : corrélation sans causalité, surapprentissage, biais des données sont
+trois limites à vérifier systématiquement.
 
-Première limite : le choix des pondérations est en grande partie arbitraire, et reflète les priorités de la direction plutôt qu''une vérité objective. Si le comité de pilotage de Teranga Agro-Industries décidait de repondérer ses trois axes à 35 %, 25 % et 40 % au lieu de 40 %, 30 % et 30 %, avec exactement les mêmes scores de 16, 13 et 11, l''indice recalculé serait : (16 × 0,35) + (13 × 0,25) + (11 × 0,40), soit 5,6 plus 3,25 plus 4,4, soit 13,25 sur 20. L''indice baisse de 13,6 à 13,25, soit 0,35 point, sans que la réalité de l''entreprise n''ait changé d''un iota. C''est un point essentiel à retenir : derrière un chiffre unique qui paraît objectif se cache toujours un choix de pondération qui, lui, ne l''est pas.
+Cinq questions d''évaluation finale. Question 1 : quelle est la différence entre régression et classification ?
+Réponse : la régression prédit une valeur numérique continue, la classification prédit une catégorie parmi un
+ensemble fini. Question 2 : dans l''exemple de Teranga Analytics, que signifie le coefficient b1 d''environ
+2,89 ? Réponse : chaque million de FCFA supplémentaire de budget publicitaire est associé en moyenne à 2,89
+millions de FCFA de chiffre d''affaires supplémentaire. Question 3 : pourquoi l''exactitude seule peut-elle être
+trompeuse pour évaluer un modèle de classification ? Réponse : parce qu''elle peut masquer un rappel faible,
+c''est-à-dire une proportion importante de cas positifs réels non détectés. Question 4 : qu''est-ce que le
+surapprentissage ? Réponse : un modèle trop complexe qui mémorise les données d''entraînement sans généraliser
+correctement à de nouvelles données. Question 5 : pourquoi le biais des données pose-t-il une question éthique
+pour un modèle de crédit ? Réponse : parce qu''un déséquilibre dans les données passées peut amener le modèle à
+reproduire ou amplifier des inégalités dans ses décisions futures.
 
-Deuxième limite : l''effet de masquage. Une moyenne pondérée peut dissimuler une dégradation grave sur un sous-indicateur isolé. Imaginez que, dans le score social de 13/20, le taux d''accidents du travail se soit brutalement détérioré, alors que le taux de formation s''est amélioré en compensation : le score global de 13 pourrait rester stable ou même progresser, alors qu''un problème de sécurité au travail s''aggrave dangereusement et devrait déclencher une alerte immédiate. C''est pourquoi un dispositif de pilotage rigoureux ne doit jamais se limiter à l''indice de synthèse : il doit toujours conserver, en parallèle, le détail de chaque indicateur avec ses propres seuils d''alerte.
+Avant de conclure, un dernier point de méthode pour l''examen : quand un sujet vous présente un cas, commencez
+toujours par identifier s''il s''agit d''un problème de régression ou de classification, car cela détermine
+directement les indicateurs à calculer et la façon de présenter vos résultats ; ensuite, calculez précisément
+les chiffres demandés, sans approximation grossière, en montrant le détail du calcul plutôt que seulement le
+résultat final ; et terminez systématiquement par un commentaire sur les limites du modèle obtenu, car c''est
+souvent ce commentaire, plus que le calcul lui-même, qui distingue une bonne réponse d''une excellente réponse
+aux yeux d''un correcteur de Master 2.
 
-## 45:00 – 50:00 · Pause active et quiz interactif
-
-Nous faisons maintenant une pause active avec un quiz pour vérifier que les notions sont bien installées. Je vous pose trois questions, prenez quelques secondes pour répondre avant que je ne donne la réponse.
-
-Première question : que signifient les trois lettres de la triple bottom line ? Réponse : profit, people, planet, soit les résultats économique, social et environnemental.
-
-Deuxième question : si l''on augmente le poids de l''axe le moins bien noté dans un indice pondéré, sans changer aucun score, l''indice global augmente-t-il ou diminue-t-il ? Réponse : il diminue, puisque l''on donne plus de poids relatif au score le plus faible, comme nous l''avons vu avec l''exemple du passage de 13,6 à 13,25 sur 20.
-
-Troisième question : pourquoi un dispositif de pilotage ne doit-il jamais se limiter au seul indice de synthèse ? Réponse : parce qu''une moyenne pondérée peut masquer une dégradation grave sur un indicateur isolé, qui doit pourtant déclencher une alerte indépendamment de l''évolution de l''indice global.
-
-## 50:00 – 1:05:00 · Application complète sur un cas d''entreprise
-
-Reprenons maintenant un cas complet, un peu différent de celui déjà vu dans les leçons texte, pour vous entraîner à une situation nouvelle. Le Groupe Casamance Fruits, une coopérative fictive de transformation de fruits tropicaux dans le sud du Sénégal, évalue sa performance globale avec les pondérations suivantes : axe économique 50 %, axe social 20 %, axe environnemental 30 %. Les scores obtenus sont de 14/20 pour l''économique, 16/20 pour le social, et 9/20 pour l''environnemental.
-
-Calculons ensemble. Premier terme : 14 fois 0,50 égale 7. Deuxième terme : 16 fois 0,20 égale 3,2. Troisième terme : 9 fois 0,30 égale 2,7. La somme est 7 plus 3,2 plus 2,7, soit 12,9 sur 20.
-
-Que pouvons-nous dire de ce résultat ? L''indice global de 12,9/20 est inférieur à celui de Teranga Agro-Industries (13,6/20), malgré un score social nettement meilleur (16 contre 13). L''explication se trouve dans deux éléments combinés : un score environnemental très faible (9/20, le plus bas des deux cas étudiés aujourd''hui), et un poids économique élevé (50 %) qui, ici, ne compense pas suffisamment la faiblesse environnementale parce que le score économique lui-même (14/20) reste inférieur à celui de Teranga (16/20). La recommandation pour la direction de Casamance Fruits est donc double : traiter en priorité la faiblesse environnementale, probablement liée à la gestion des déchets de transformation de fruits, et chercher à consolider la performance économique, qui reste perfectible malgré un poids élevé dans l''indice.
-
-## 1:05:00 – 1:20:00 · Les décisions d''investissement durable et synthèse
-
-Terminons par un point que vous retrouverez souvent en examen : comment le contrôle de gestion stratégique évalue-t-il une décision d''investissement à dimension durable ? La règle est simple à énoncer mais essentielle : la rentabilité financière reste un critère nécessaire, mais elle ne doit plus être le seul critère de décision. Un bon raisonnement d''examen combine toujours un critère financier chiffré (gain net, économie annuelle, retour sur investissement) et un critère de performance globale (effet attendu sur l''indice RSE, réduction de risque réglementaire ou réputationnel).
-
-Pour synthétiser toute la séance : la performance globale élargit la définition de la performance au-delà du seul résultat financier, en intégrant les dimensions sociale et environnementale selon la logique de la triple bottom line. La construction d''un indice pondéré facilite le pilotage et la communication avec la direction générale, mais elle comporte deux limites qu''il faut systématiquement savoir discuter à l''examen : l''arbitraire du choix des pondérations, et le risque de masquage d''une dégradation isolée par une moyenne globalement satisfaisante. Enfin, les décisions d''investissement durable doivent toujours être évaluées sur des critères multiples, financiers et extra-financiers.
-
-## 1:20:00 – 1:30:00 · Évaluation finale
-
-Voici cinq questions pour conclure cette séance. Prenez le temps d''y répondre avant d''écouter les réponses.
-
-Première question : citez les trois dimensions de la triple bottom line. Réponse : économique, sociale et environnementale (profit, people, planet).
-
-Deuxième question : le Groupe Casamance Fruits obtient un indice de performance globale de 12,9/20 avec des poids de 50 %, 20 % et 30 % et des scores de 14, 16 et 9. Si le poids de l''axe environnemental passait à 40 % au détriment de l''axe économique (ramené à 40 %), quel serait le nouvel indice ? Réponse : (14 × 0,40) + (16 × 0,20) + (9 × 0,40) = 5,6 + 3,2 + 3,6 = 12,4 sur 20, soit une baisse de 0,5 point liée uniquement au changement de pondération.
-
-Troisième question : pourquoi un dirigeant pourrait-il être tenté de choisir des pondérations qui avantagent artificiellement l''image de son entreprise ? Réponse : parce que le choix des poids reste en grande partie discrétionnaire et peut être orienté pour afficher un indice plus favorable sans que la réalité opérationnelle ne change, ce qui justifie une vigilance critique du contrôleur de gestion et, idéalement, une validation des pondérations par un comité indépendant de la seule direction générale.
-
-Quatrième question : quel type de décision d''investissement doit systématiquement être évalué à la fois sur un critère financier et sur un critère de performance globale ? Réponse : tout investissement présentant une dimension durable, par exemple une technologie moins polluante mais plus coûteuse à court terme, où la rentabilité financière seule ne suffit pas à rendre compte de la contribution à la stratégie RSE de l''entreprise.
-
-Cinquième question : quelle est la principale limite de l''indice de performance globale pondéré que nous avons identifiée aujourd''hui concernant le risque de masquage ? Réponse : une moyenne pondérée peut dissimuler une dégradation grave sur un indicateur isolé si elle est compensée statistiquement par de bons résultats sur d''autres indicateurs, ce qui impose de toujours conserver un suivi détaillé par indicateur en complément de l''indice de synthèse.
-
-Merci pour votre attention. Je vous retrouve dans le prochain cours vidéo pour la gestion de la performance par centres de responsabilité et le prix de cession interne avancé.', 'video', 90, false, 60
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Contrôle de gestion stratégique et pilotage de la performance globale');
+Merci pour votre attention et à la prochaine séance, consacrée à la gouvernance IT et à la gestion de projets.
+', 'video', 90, false, 60
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Intelligence artificielle et data science');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Centres de responsabilité et prix de cession interne avancé', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Gouvernance IT et gestion de projets informatiques', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : savoir construire une organisation en centres de responsabilité, calculer et interpréter le ROI et l''EVA d''un centre d''investissement, maîtriser les trois méthodes avancées de prix de cession interne et leurs effets sur la performance des filiales. Prérequis : prix de cession interne de base vu en Licence 3, calcul de coût complet. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+Durée : 1h30. Objectif : comprendre les principes de la gouvernance IT et d''ITIL, comprendre la démarche DevOps,
+et savoir piloter un projet informatique à travers ses quatre phases, avec des calculs de planification
+vérifiés. Fil conducteur : le cas fictif de Dakar Logistique Services. Matériel : tableau ou diaporama, feuille
+pour suivre les calculs de planning. Prérequis : notions de gestion de projet de base, vocabulaire des systèmes
+d''information.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et objectifs de la séance
+## 00:00 – 05:00 · Introduction et objectifs
 
-Bonjour à toutes et à tous. Nous poursuivons notre série de cours vidéo du Master 1 avec une matière centrale du contrôle de gestion avancé : la gestion de la performance par centres de responsabilité et le prix de cession interne. Vous avez déjà rencontré une première approche du prix de cession interne en Licence 3, appliquée aux PME et au secteur public. Aujourd''hui, nous allons beaucoup plus loin : nous allons construire une organisation complète en centres de responsabilité, apprendre à évaluer un centre d''investissement avec deux indicateurs complémentaires, le ROI et l''EVA, puis maîtriser les trois méthodes avancées de fixation du prix de cession interne et leurs conséquences sur la performance affichée de chaque filiale.
+Bonjour et bienvenue dans ce cours vidéo consacré à la gouvernance IT et à la gestion de projets informatiques.
+Dans un monde professionnel, la maîtrise technique ne suffit pas : il faut aussi savoir organiser les équipes,
+suivre la qualité de service, et piloter des projets avec des délais et des budgets. Nous suivrons le cas de
+Dakar Logistique Services, une entreprise fictive confrontée à des pannes répétées à chaque mise à jour de son
+application de suivi de livraisons.
 
-Le plan de la séance : d''abord, les quatre types de centres de responsabilité et le principe de contrôlabilité ; ensuite, le ROI et ses limites ; puis l''EVA comme indicateur correctif ; un quiz à mi-séance ; puis les trois méthodes de prix de cession interne appliquées à un cas complet ; et enfin l''évaluation finale.
+## 05:00 – 20:00 · La gouvernance IT et le principe d''ITIL
 
-## 05:00 – 18:00 · Les quatre types de centres de responsabilité
+La gouvernance IT, c''est l''ensemble des règles et processus qui permettent à la direction informatique
+d''aligner ses activités sur les besoins métier, de maîtriser les risques, et de rendre compte de la qualité de
+service. Un référentiel largement utilisé pour organiser les services informatiques est ITIL, que je cite ici
+en principe, sans en détailler les processus précis faute de certitude sur leur contenu exact dans sa version
+actuelle. Il structure, par exemple, la gestion des incidents, remettre en service rapidement une application
+en panne ; la gestion des problèmes, analyser la cause profonde d''incidents récurrents pour éviter qu''ils ne se
+reproduisent ; et la gestion des changements, encadrer toute modification d''un système en production pour
+limiter les risques d''une mise à jour mal maîtrisée.
 
-Commençons par la notion de centre de responsabilité. C''est une unité de l''organisation, par exemple une direction, une filiale, une usine, un service, dont le responsable dispose d''une autonomie de décision sur un périmètre de ressources, et qui doit être évalué sur des indicateurs correspondant exactement à ce périmètre de décision, ni plus, ni moins.
+Prenons un exemple chiffré pour illustrer un indicateur de gouvernance courant, la disponibilité d''un service.
+Si une application a subi trois heures d''indisponibilité sur un mois de 30 jours, soit 720 heures au total, sa
+disponibilité se calcule ainsi : (720 moins 3) divisé par 720, ce qui donne environ 0,9958, soit 99,58 %. Cet
+indicateur, souvent fixé comme objectif contractuel entre la direction informatique et les métiers qu''elle
+sert, illustre bien le rôle concret de la gouvernance : traduire un objectif de qualité en un chiffre mesurable
+et suivi dans le temps, plutôt qu''en une intention vague.
 
-On distingue classiquement quatre types de centres. Notez-les au tableau avec moi. Le centre de coût : son responsable maîtrise les charges pour un niveau d''activité donné, mais ne maîtrise pas le chiffre d''affaires. Exemple typique : un atelier de production, ou un service support comme la comptabilité. Le centre de recettes : son responsable maîtrise le chiffre d''affaires généré, sans maîtriser directement les coûts de production du bien vendu. Exemple typique : une force de vente. Le centre de profit : son responsable maîtrise à la fois les coûts et les recettes de son périmètre, et donc le résultat qui en découle. Exemple typique : une filiale commerciale autonome. Le centre d''investissement : c''est le niveau le plus élevé d''autonomie, son responsable décide aussi des investissements et des capitaux engagés dans son périmètre.
+## 20:00 – 35:00 · Le DevOps : rapprocher développement et exploitation
 
-Le principe qui sous-tend toute cette typologie est le principe de contrôlabilité : un responsable ne doit être évalué que sur ce qu''il contrôle réellement par ses décisions. C''est un principe simple à énoncer, mais souvent violé dans la pratique des entreprises, et l''examen vous demandera régulièrement d''identifier ce type de violation sur un cas donné. Par exemple, évaluer un directeur d''usine, qui est un centre de coût, sur l''évolution du chiffre d''affaires de l''entreprise, viole ce principe, car le chiffre d''affaires dépend de décisions commerciales qui ne relèvent pas de lui.
+Le DevOps est une démarche qui vise à réduire la séparation historique entre les équipes de développement et
+celles d''exploitation. Avant le DevOps, une équipe de développement livrait un logiciel "terminé" à une équipe
+d''exploitation, souvent avec des frictions : délais de mise en production longs, incompréhensions sur les
+besoins réels de la production, et équipes qui se renvoient la responsabilité en cas de panne. Posons-nous la
+question : que se passe-t-il concrètement quand ces deux équipes ne communiquent pas sur les changements
+prévus ? L''équipe d''exploitation découvre les nouvelles fonctionnalités au moment où elles causent un incident,
+exactement ce qui se passe chez Dakar Logistique Services. Le DevOps rapproche les deux équipes autour
+d''objectifs communs : des livraisons plus fréquentes et plus petites, donc individuellement moins risquées ;
+une automatisation des tests et des déploiements pour réduire les erreurs humaines répétitives ; et une
+responsabilité partagée sur la fiabilité du système en production. Pour l''examen, retenez le principe plutôt
+qu''un outil particulier : rapprocher, automatiser, livrer plus souvent et par petites étapes.
 
-## 18:00 – 35:00 · Évaluer un centre d''investissement : ROI et sa limite majeure
+## 35:00 – 55:00 · Piloter un projet informatique : les quatre phases
 
-Pour un centre d''investissement, l''indicateur le plus utilisé est le retour sur investissement, le ROI. Sa formule : ROI égale résultat d''exploitation du centre, divisé par capitaux investis dans le centre. C''est un indicateur simple, exprimé en pourcentage, qui permet de comparer des centres de taille très différente.
+Un projet informatique se pilote en quatre grandes phases. Le cadrage définit les objectifs, le périmètre, les
+parties prenantes et les contraintes principales, budget, délai, ressources. La planification découpe le
+projet en tâches, estime leur durée et leurs dépendances, et construit un calendrier réaliste. Le suivi compare
+régulièrement l''avancement réel à ce calendrier et déclenche des actions correctives en cas d''écart. La clôture
+formalise la fin du projet et documente les enseignements pour les projets suivants.
 
-Mais le ROI a une limite majeure que vous devez absolument connaître pour l''examen : il peut inciter un responsable à refuser un investissement pourtant rentable pour le groupe. Voici le mécanisme. Imaginez un centre dont le ROI actuel est de 20 %. On lui propose un nouveau projet rentable à 15 %. Ce taux de 15 % est largement supérieur au coût du capital exigé par le groupe, disons 12 %. Ce projet crée donc de la valeur pour le groupe. Mais si le responsable est évalué et rémunéré sur le maintien ou l''amélioration de son ROI moyen, intégrer ce nouveau projet à 15 % va faire baisser son ROI moyen actuel de 20 % vers quelque chose d''inférieur. Le responsable, rationnellement de son point de vue personnel, peut donc être incité à refuser ce projet, alors qu''il serait bénéfique pour le groupe dans son ensemble. C''est ce qu''on appelle le problème du sous-investissement induit par le pilotage au seul ROI.
+Construisons ensemble un exemple chiffré, vérifié, pour bien ancrer la méthode. Un projet de refonte d''un
+système de suivi de livraisons comporte quatre tâches successives, chacune ne pouvant commencer qu''après la
+fin de la précédente : analyse des besoins, 10 jours ; développement, 25 jours ; tests, 12 jours ; déploiement,
+5 jours. La durée totale prévue est de 10 plus 25 plus 12 plus 5, soit 52 jours. Imaginons qu''après trois
+semaines, soit 21 jours ouvrés, l''équipe constate que l''analyse des besoins a pris 14 jours au lieu de 10. Le
+retard sur cette tâche est de 4 jours, 14 moins 10, ce qui décale d''autant, sans action corrective, la date de
+fin prévue, désormais estimée à 56 jours au lieu de 52. C''est exactement ce type de calcul simple que vous devez
+savoir reproduire rapidement en examen.
 
-## 35:00 – 50:00 · L''EVA comme indicateur correctif
+## 55:00 – 1:00:00 · Pause et quiz interactif
 
-Pour corriger ce biais, le contrôle de gestion avancé utilise un second indicateur : la valeur ajoutée économique, l''EVA, Economic Value Added. Sa formule : EVA égale le résultat opérationnel net après impôt, qu''on appelle le NOPAT, moins les capitaux investis multipliés par le coût moyen pondéré du capital, le CMPC.
+Petit quiz. Première question : citez un exemple de processus structuré par ITIL. Deuxième question : quel est
+le principal objectif du DevOps ? Troisième question : citez les quatre phases du pilotage d''un projet
+informatique. Mettez en pause, répondez, puis reprenez. ... Réponses : la gestion des incidents, des problèmes
+ou des changements ; rapprocher développement et exploitation pour réduire les frictions et les risques des
+mises en production ; cadrage, planification, suivi, clôture.
 
-L''idée centrale de l''EVA est de comparer directement la rentabilité du centre au coût réel de son financement, plutôt qu''à son propre ROI moyen historique. Avec l''EVA, le responsable n''a plus d''incitation perverse à refuser un projet rentable à 15 % si le coût du capital du groupe est de 12 %, car ce projet améliorera son EVA, même s''il fait baisser son ROI moyen apparent.
+## 1:00:00 – 1:20:00 · Étude de cas complète : Dakar Logistique Services
 
-Faisons le calcul ensemble sur le cas de Teranga Céréales, filiale du Groupe Teranga Agro-Industries. Son résultat d''exploitation total est de 245 100 000 FCFA, pour des capitaux investis de 1 200 000 000 FCFA. Son ROI est donc de 245 100 000 divisé par 1 200 000 000, soit 0,2042, soit 20,42 %. Avec un taux d''impôt fictif pour l''exemple de 30 % et un CMPC fictif pour l''exemple de 12 %, calculons le NOPAT : 245 100 000 fois (1 moins 0,30), soit 245 100 000 fois 0,70, soit 171 570 000 FCFA. Calculons maintenant la charge de capital : 1 200 000 000 fois 0,12, soit 144 000 000 FCFA. L''EVA est donc de 171 570 000 moins 144 000 000, soit 27 570 000 FCFA.
+Reprenons le cas en entier. Dakar Logistique Services subit des pannes fréquentes à chaque mise à jour de son
+application de suivi, car les équipes de développement livrent sans prévenir l''équipe d''exploitation. Première
+recommandation : adopter une démarche DevOps en rapprochant les deux équipes, avec des livraisons plus petites
+et plus fréquentes, et une automatisation des tests avant chaque déploiement pour détecter les problèmes avant
+qu''ils n''atteignent la production. Deuxième recommandation, de gouvernance : formaliser un processus de gestion
+des changements, toute modification notable est annoncée et validée avant mise en production, ce qui relève
+directement du principe ITIL vu plus haut. Troisième recommandation, mesurable : suivre dans le temps
+l''indicateur de disponibilité de l''application avant et après ces changements organisationnels, pour vérifier
+objectivement si l''amélioration espérée se produit réellement, plutôt que de se contenter d''une impression
+générale d''amélioration.
 
-Que nous dit ce résultat ? L''EVA est positive, la filiale crée donc bien de la valeur, mais dans une proportion nettement plus modeste que ce que suggérait le ROI de 20,42 %, qui paraissait très confortable. C''est précisément l''intérêt de calculer systématiquement les deux indicateurs : le ROI donne une image rapide et comparable entre centres, l''EVA corrige cette image en la rapportant au coût réel du capital.
+Allons un peu plus loin sur ce dernier point, car c''est souvent ce qui distingue une bonne réponse d''une
+excellente réponse en examen. Supposons que, sur les trois mois précédant la mise en place de la démarche
+DevOps, Dakar Logistique Services ait enregistré en moyenne six heures d''indisponibilité par mois sur un mois
+de 720 heures, soit une disponibilité moyenne de (720 moins 6) divisé par 720, environ 99,17 %. Si, sur les
+trois mois suivant la mise en place des changements organisationnels, l''indisponibilité moyenne descend à deux
+heures par mois, la disponibilité moyenne devient (720 moins 2) divisé par 720, environ 99,72 %. Cette
+comparaison chiffrée, avant et après, est précisément ce qu''un bon correcteur attend : elle transforme une
+recommandation générale en une preuve mesurable de son efficacité, et permet à la direction de juger
+objectivement si l''investissement dans cette réorganisation était justifié.
 
-## 50:00 – 55:00 · Pause active et quiz interactif
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
 
-Petit quiz pour vérifier vos acquis avant la deuxième partie de la séance, consacrée au prix de cession interne.
+Résumons. La gouvernance IT traduit des objectifs de qualité de service en règles, processus et indicateurs
+mesurables comme la disponibilité. Le DevOps rapproche développement et exploitation autour de livraisons plus
+fréquentes, plus petites et automatisées. Un projet informatique se pilote en quatre phases, et un retard sur
+une tâche se répercute sur l''ensemble du calendrier sans action corrective.
 
-Première question : quel principe impose d''évaluer un responsable uniquement sur ce qu''il contrôle réellement ? Réponse : le principe de contrôlabilité.
+Cinq questions d''évaluation finale. Question 1 : à quoi sert un indicateur de disponibilité dans la
+gouvernance IT ? Réponse : à mesurer concrètement la qualité de service rendue et à fixer un objectif
+contractuel mesurable. Question 2 : quelle est la différence entre une organisation classique et une démarche
+DevOps ? Réponse : la démarche DevOps rapproche développement et exploitation autour d''objectifs communs, au
+lieu de les séparer avec des livraisons rares et risquées. Question 3 : citez les quatre phases du pilotage
+d''un projet informatique. Réponse : cadrage, planification, suivi, clôture. Question 4 : dans l''exemple chiffré
+de cette séance, quelle est la nouvelle durée totale estimée du projet après un retard de 4 jours sur l''analyse
+des besoins ? Réponse : 56 jours, au lieu des 52 jours initialement prévus. Question 5 : pourquoi les pannes
+fréquentes de Dakar Logistique Services relèvent-elles d''un problème d''organisation plutôt que d''un simple
+problème technique ? Réponse : parce que l''équipe d''exploitation n''est pas informée des changements avant leur
+mise en production, ce qui montre l''absence d''un processus de gestion des changements, pas une erreur technique
+isolée.
 
-Deuxième question : pourquoi un responsable évalué uniquement sur son ROI peut-il refuser un projet rentable pour le groupe ? Réponse : parce qu''un projet dont la rentabilité est inférieure au ROI moyen actuel du centre, mais supérieure au coût du capital du groupe, ferait baisser son ROI moyen, même s''il crée de la valeur pour le groupe.
+Un dernier conseil de méthode avant de terminer : face à un sujet d''examen de gouvernance ou de gestion de
+projet, ne vous limitez jamais à citer un principe théorique isolé, ITIL, DevOps ou une phase de projet ; reliez
+toujours la recommandation à un symptôme concret observé dans l''énoncé, et appuyez-la, chaque fois que c''est
+possible, par un indicateur chiffré avant et après, comme nous venons de le faire pour la disponibilité du
+service. C''est cette capacité à relier théorie, cas concret et preuve chiffrée qui distingue le niveau Master 2.
 
-Troisième question : quelle est la formule de l''EVA ? Réponse : NOPAT moins capitaux investis multipliés par le coût moyen pondéré du capital.
-
-## 55:00 – 1:15:00 · Les trois méthodes de prix de cession interne et leurs effets
-
-Passons maintenant au prix de cession interne, le PCI. C''est le prix auquel un centre vend un bien ou un service à un autre centre du même groupe. Trois méthodes principales existent, notez-les.
-
-La méthode du coût : on fixe le prix à partir du coût complet (ou parfois du coût marginal) du centre vendeur, éventuellement majoré d''une marge négociée. La méthode du marché : on s''appuie sur le prix observé pour un bien comparable échangé entre entreprises indépendantes, ajusté le cas échéant des économies réalisées en interne, par exemple des frais commerciaux évités. La méthode du prix négocié : les deux responsables fixent un prix d''accord commun, dans une fourchette encadrée par la direction générale.
-
-Appliquons ces trois méthodes au cas de Teranga Céréales, qui cède du mil transformé à Teranga Distribution. Le coût variable unitaire de Teranga Céréales est de 180 000 FCFA la tonne. Les charges fixes annuelles sont de 450 000 000 FCFA pour une activité normale de 10 000 tonnes, soit des charges fixes unitaires de 45 000 FCFA la tonne. Le coût complet unitaire est donc de 180 000 plus 45 000, soit 225 000 FCFA.
-
-Méthode du coût, avec une marge négociée de 10 % : 225 000 fois 1,10, soit 247 500 FCFA. Méthode du marché : un produit comparable se vend à 260 000 FCFA la tonne entre entreprises indépendantes, avec une économie commerciale évitée de 8 % en vente interne. Le calcul est 260 000 fois (1 moins 0,08), soit 260 000 fois 0,92, soit 239 200 FCFA. Méthode du prix négocié, prise comme moyenne des deux bornes : (247 500 plus 239 200) divisé par 2, soit 243 350 FCFA.
-
-Regardons maintenant l''effet de ces trois méthodes sur la performance de chaque filiale, pour un volume cédé de 6 000 tonnes, avec un coût variable de distribution de 15 000 FCFA la tonne chez Teranga Distribution, et un prix de revente externe de 300 000 FCFA la tonne. Avec le prix négocié de 243 350 FCFA : la marge de Teranga Céréales est de (243 350 moins 225 000) fois 6 000, soit 110 100 000 FCFA. La marge de Teranga Distribution est de (300 000 moins 243 350 moins 15 000) fois 6 000, soit 249 900 000 FCFA. La marge groupe consolidée est donc de 110 100 000 plus 249 900 000, soit 360 000 000 FCFA.
-
-Faisons maintenant le même calcul avec la méthode du coût, à 247 500 FCFA. Marge de Teranga Céréales : (247 500 moins 225 000) fois 6 000, soit 135 000 000 FCFA. Marge de Teranga Distribution : (300 000 moins 247 500 moins 15 000) fois 6 000, soit 225 000 000 FCFA. La marge groupe est de 135 000 000 plus 225 000 000, soit à nouveau 360 000 000 FCFA, strictement identique.
-
-Ce résultat est fondamental et vous devez le retenir pour l''examen : quelle que soit la méthode de prix de cession interne retenue, la marge groupe consolidée reste rigoureusement identique, car il s''agit d''une opération intragroupe qui s''élimine en consolidation. Seule la répartition de cette marge entre les deux filiales change. C''est pourquoi le choix de la méthode est avant tout un enjeu de gouvernance, d''évaluation et de motivation des responsables de filiale, et non un levier de création de valeur pour le groupe.
-
-## 1:15:00 – 1:20:00 · Synthèse de la séance
-
-Récapitulons les points essentiels. Premièrement, un centre de responsabilité ne doit être évalué que sur ce qu''il contrôle, selon le principe de contrôlabilité. Deuxièmement, le ROI est utile pour comparer des centres entre eux mais peut induire un sous-investissement si on l''utilise seul ; l''EVA corrige ce biais en comparant la rentabilité au coût réel du capital. Troisièmement, les trois méthodes de prix de cession interne (coût, marché, négocié) donnent des prix différents et donc des performances différentes par filiale, mais ne changent jamais le résultat consolidé du groupe, car l''opération s''élimine en consolidation.
-
-## 1:20:00 – 1:30:00 · Évaluation finale
-
-Cinq questions pour conclure.
-
-Première question : citez les quatre types de centres de responsabilité. Réponse : centre de coût, centre de recettes, centre de profit, centre d''investissement.
-
-Deuxième question : un centre d''investissement dégage un résultat d''exploitation de 174 930 000 FCFA après impôt théorique n''étant pas encore appliqué, avec un résultat avant impôt de 249 900 000 FCFA et des capitaux investis de 800 000 000 FCFA. Calculez son ROI. Réponse : ROI égale 249 900 000 divisé par 800 000 000, soit 0,3124, soit 31,24 %.
-
-Troisième question : avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %, calculez l''EVA de ce même centre. Réponse : NOPAT égale 249 900 000 fois 0,70, soit 174 930 000 FCFA. Charge de capital égale 800 000 000 fois 0,12, soit 96 000 000 FCFA. EVA égale 174 930 000 moins 96 000 000, soit 78 930 000 FCFA.
-
-Quatrième question : pourquoi le choix d''une méthode de prix de cession interne plutôt qu''une autre ne change-t-il jamais le résultat consolidé du groupe ? Réponse : parce que la cession interne est une opération entre deux entités du même groupe, et que ce que l''une gagne en plus est exactement ce que l''autre paie en plus ; cette opération s''élimine donc intégralement lors de la consolidation, et seule compte la marge réalisée avec un client final extérieur au groupe.
-
-Cinquième question : pourquoi ce même choix de méthode peut-il néanmoins créer des tensions internes entre responsables de filiale ? Réponse : parce que si la rémunération variable de chaque responsable dépend du résultat de sa propre entité, le choix de la méthode redistribue concrètement cette rémunération entre les responsables, même si la création de valeur globale du groupe reste inchangée, ce qui explique que ce choix fasse souvent l''objet de négociations, voire de conflits, entre centres de profit.
-
-Merci pour votre attention, je vous retrouve pour le prochain cours vidéo consacré aux systèmes d''information décisionnels.', 'video', 90, false, 70
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Centres de responsabilité et prix de cession interne avancé');
+Merci pour votre attention et à la prochaine séance, consacrée à la méthodologie du mémoire et de la soutenance.
+', 'video', 90, false, 70
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gouvernance IT et gestion de projets informatiques');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Systèmes d''information décisionnels', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Méthodologie du mémoire et de la soutenance', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : comprendre le rôle d''un ERP et des outils de Business Intelligence dans la production du reporting de gestion, savoir calculer et interpréter un gain de délai de clôture et un indice de qualité des données, identifier les risques d''un reporting consolidé multi-filiales. Prérequis : notions de base sur les systèmes d''information de gestion. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Teranga Agro-Industries.
+Durée : 1h30. Objectif : maîtriser la structure attendue d''un mémoire de recherche ou de projet tutoré, les
+règles de citation et de sourcing, l''organisation du temps de rédaction par jalons, et la préparation de la
+soutenance orale. Fil conducteur : le cas fictif de Moussa, étudiant de Master 2 rédigeant un mémoire sur
+l''adoption du paiement mobile. Matériel : tableau ou diaporama, feuille pour construire son propre planning.
+Prérequis : avoir déjà entamé la réflexion sur le sujet de son propre mémoire ou projet tutoré.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et enjeux de la séance
+## 00:00 – 05:00 · Introduction et objectifs
 
-Bonjour à toutes et à tous. Ce troisième cours vidéo du Master 1 porte sur les systèmes d''information décisionnels, les ERP et le reporting consolidé. C''est une matière qui peut sembler plus technique que les deux précédentes, mais elle est en réalité tout aussi stratégique pour le contrôleur de gestion : un indicateur parfaitement construit sur le plan théorique, un prix de cession interne savamment calculé, un indice RSE bien pensé, tout cela ne vaut rien si les données sous-jacentes sont fausses, incomplètes, ou produites trop tard pour être utiles à la décision.
+Bonjour et bienvenue dans ce cours vidéo consacré à la méthodologie du mémoire et de la soutenance. C''est sans
+doute la séance la plus directement utile de ce module, car elle s''applique immédiatement au travail que vous
+êtes probablement en train de mener en parallèle de vos cours. Nous allons voir comment structurer un mémoire,
+comment citer correctement vos sources, comment organiser votre temps de rédaction sans tout reporter à la
+dernière minute, et comment préparer une soutenance orale convaincante. Nous suivrons le cas de Moussa, un
+étudiant fictif qui rédige un mémoire sur l''adoption du paiement mobile par les petits commerces d''une ville
+moyenne du Sénégal.
 
-Plan de la séance : d''abord, le rôle de l''ERP et son articulation avec les outils de Business Intelligence ; ensuite, comment mesurer le délai et la qualité d''un reporting consolidé, avec des calculs chiffrés ; un quiz à mi-parcours ; puis les risques spécifiques du reporting en environnement multi-ERP, avec un cas pratique complet ; et l''évaluation finale.
+## 05:00 – 20:00 · La structure attendue d''un mémoire
 
-## 05:00 – 20:00 · Le rôle de l''ERP dans la chaîne d''information de gestion
+Un mémoire de Master suit généralement une structure proche, même si les attentes précises varient selon
+l''établissement : introduction (contexte, problématique, plan), revue de littérature (situer le travail par
+rapport à l''existant), méthodologie (expliquer comment les données ont été collectées et analysées, et
+pourquoi), résultats (présenter ce qui a été observé), discussion (interpréter les résultats et reconnaître les
+limites), conclusion (résumer l''apport et ouvrir sur des pistes futures).
 
-Un ERP, Enterprise Resource Planning, ou progiciel de gestion intégré, est un logiciel qui centralise dans une base de données unique les informations de plusieurs fonctions de l''entreprise : comptabilité, ventes, achats, production, ressources humaines, gestion des stocks. Avant la généralisation des ERP, chaque fonction gérait souvent ses propres fichiers séparés, ce qui multipliait les ressaisies manuelles, les incohérences entre services, et les délais de production de l''information.
+La problématique est la pièce centrale de tout l''édifice. Posons-nous la question : pourquoi une question comme
+"le paiement mobile au Sénégal" est-elle trop large pour un mémoire de Master ? Parce qu''elle englobe trop de
+dimensions, techniques, économiques, sociales, régionales, pour être traitée sérieusement en quelques mois avec
+une méthode unique. Une question précise et bornée, par exemple "pourquoi certains petits commerces d''une ville
+moyenne adoptent-ils le paiement mobile plus vite que d''autres, malgré une offre technique équivalente ?",
+permet une recherche réellement menée à son terme, avec une méthode adaptée et des résultats interprétables.
+Moussa, après plusieurs semaines de réflexion, a resserré son sujet initial, trop large, vers cette question
+précise, ce qui a immédiatement rendu son travail plus concret et plus réalisable.
 
-L''intérêt principal d''un ERP pour le contrôle de gestion, c''est la cohérence et la traçabilité des données. Une vente enregistrée dans le module commercial met automatiquement à jour le stock, génère l''écriture comptable correspondante, et alimente en temps réel les tableaux de bord de suivi d''activité, sans aucune ressaisie manuelle. Cela réduit les erreurs, accélère considérablement la production de l''information de gestion, et permet un suivi plus fréquent, hebdomadaire voire quotidien, plutôt que purement mensuel comme c''était souvent le cas auparavant.
+## 20:00 – 30:00 · Les règles de citation et de sourcing
 
-Mais attention, un point que l''examen adore tester : un ERP mal paramétré peut produire l''effet exactement inverse de celui recherché. Si les référentiels, c''est-à-dire le plan de comptes, la codification des centres de coûts, les nomenclatures de produits, ne sont pas harmonisés entre les différentes filiales d''un groupe, la consolidation des données devient source d''erreurs majeures. Une même catégorie de charge peut être enregistrée différemment selon les filiales, ce qui rend les comparaisons et les agrégations peu fiables, voire trompeuses. Retenez bien ceci : le paramétrage initial d''un ERP, et en particulier la définition commune des référentiels pour l''ensemble du groupe, est un enjeu de contrôle de gestion à part entière, pas seulement un enjeu informatique que l''on pourrait déléguer entièrement à la direction des systèmes d''information.
+Un mémoire doit distinguer clairement ce qui vient d''une source extérieure de ce que l''étudiant apporte comme
+analyse propre. Toute idée, donnée ou citation reprise d''ailleurs doit être attribuée explicitement, avec une
+référence précise permettant de la retrouver. Je veux insister fermement sur un point : ne jamais inventer une
+référence ou une citation. Si un chiffre semble utile pour appuyer un argument mais qu''aucune source fiable
+n''est disponible, il vaut mieux formuler l''argument avec prudence, "on peut supposer que...", "il serait utile
+de vérifier si...", plutôt que d''attribuer une fausse source à une affirmation. C''est une faute grave en
+recherche, détectable par un jury qui vérifie les sources citées, et elle peut compromettre la crédibilité de
+l''ensemble du mémoire, même si le reste du travail est de bonne qualité.
 
-## 20:00 – 32:00 · Du système transactionnel au reporting de gestion
+## 30:00 – 50:00 · Organiser son temps de rédaction
 
-Distinguons maintenant deux notions que l''on confond souvent. Un ERP enregistre des transactions : une vente, un achat, une sortie de stock. C''est ce qu''on appelle un système transactionnel. Le reporting de gestion, en revanche, a besoin d''une vision agrégée et analytique de ces transactions : la marge par produit, par client, par filiale, l''évolution dans le temps, la comparaison au budget. Cette transformation de la donnée transactionnelle en information de pilotage est assurée par des outils de Business Intelligence, qui extraient les données de l''ERP, les structurent dans un entrepôt de données, puis les restituent sous forme de tableaux de bord.
+Passons maintenant à l''organisation pratique. Moussa dispose de douze semaines avant la remise de son mémoire,
+pour un objectif d''environ 60 pages, soit approximativement 18 000 mots à 300 mots par page. Construisons
+ensemble son planning. Introduction et revue de littérature, 5 000 mots, sur les quatre premières semaines.
+Méthodologie et collecte des données, 3 000 mots, sur les trois semaines suivantes. Résultats, 4 000 mots, sur
+deux semaines, une fois la collecte terminée. Discussion et conclusion, 4 000 mots, sur deux semaines. Et une
+dernière semaine entièrement réservée à la relecture complète, à la vérification des références et à la mise en
+forme finale. Le total du corps de texte, 5 000 plus 3 000 plus 4 000 plus 4 000, donne 16 000 mots, ce qui
+laisse une marge d''environ 2 000 mots pour l''introduction générale, les annexes courtes et les ajustements,
+cohérent avec l''objectif de 18 000 mots. Ce découpage par jalons hebdomadaires évite le piège le plus fréquent :
+reporter toute la rédaction aux dernières semaines, qui est la cause la plus courante de mémoires rendus en
+retard ou de qualité insuffisante.
 
-Quelle est la place du contrôleur de gestion dans cette chaîne ? Il ne construit généralement pas lui-même l''ERP ni l''outil de Business Intelligence, cela reste le métier de la direction des systèmes d''information. Mais il définit les règles de gestion qui doivent y être codées : quelle définition retenir pour la marge opérationnelle, quel périmètre exact pour un centre de coût, quelle fréquence de mise à jour des tableaux de bord. Et surtout, il reste responsable de la qualité et de la pertinence des indicateurs finalement restitués aux décideurs, même si la technique informatique est assurée par d''autres équipes.
+## 50:00 – 55:00 · Pause et quiz interactif
 
-## 32:00 – 50:00 · Mesurer le délai et la qualité du reporting consolidé : calculs chiffrés
+Petit quiz. Première question : pourquoi une problématique trop large est-elle difficile à traiter dans un
+mémoire de Master ? Deuxième question : que faire si un chiffre serait utile pour appuyer un argument mais
+qu''aucune source fiable n''est disponible ? Troisième question : pourquoi réserver une semaine entière à la
+relecture finale dans le planning de rédaction ? Mettez en pause, répondez, puis reprenez. ... Réponses : elle
+englobe trop de dimensions pour être traitée sérieusement avec une méthode unique en quelques mois ; formuler
+l''argument avec prudence plutôt que d''inventer une fausse source ; parce que la relecture, la vérification des
+références et la mise en forme demandent un temps dédié, qui est souvent sous-estimé si on l''improvise à la
+dernière minute.
 
-Deux critères permettent de mesurer la qualité d''un dispositif de reporting consolidé dans un groupe à plusieurs filiales : le délai de production, c''est-à-dire combien de jours ouvrés après la clôture du mois le reporting est-il disponible, et la fiabilité des données agrégées.
+## 55:00 – 1:15:00 · Préparer la soutenance orale
 
-Prenons le cas du Groupe Teranga Agro-Industries. Avant la mise en place d''un ERP intégré entre ses filiales, le reporting consolidé mensuel nécessitait 12 jours ouvrés, avec une collecte manuelle des fichiers de chaque filiale et des retraitements sur tableur. Après l''intégration d''un ERP commun avec des référentiels harmonisés, ce délai est ramené à 5 jours ouvrés. Calculons le gain de délai ensemble : (12 moins 5) divisé par 12, soit 7 divisé par 12, soit 0,583, soit un gain de 58,3 %.
+La soutenance est un exercice différent de la rédaction. Il s''agit de présenter oralement, en un temps limité,
+souvent entre dix et vingt minutes selon l''établissement, l''essentiel du travail, puis de répondre aux
+questions du jury. Quatre principes à retenir. Premièrement, ne pas chercher à tout dire : choisir les points
+essentiels, la problématique, la méthode, le résultat principal, une limite honnêtement reconnue, plutôt que
+de résumer chaque page du mémoire. Deuxièmement, minuter précisément son intervention à l''avance, en
+s''entraînant à voix haute, car le temps passe toujours plus vite à l''oral qu''on ne l''imagine en préparant ses
+notes par écrit. Troisièmement, anticiper les questions prévisibles du jury, notamment "pourquoi cette méthode
+plutôt qu''une autre ?" et "quelles sont les limites de votre travail ?", et préparer des réponses honnêtes
+plutôt que défensives. Quatrièmement, répéter la soutenance en conditions réelles, devant un public même
+restreint, car la gestion du stress et du temps de parole se travaille par la pratique.
 
-Qu''est-ce que cela signifie concrètement pour la direction générale ? Elle dispose de l''information de gestion près de deux semaines plus tôt qu''auparavant, ce qui lui permet de réagir à un écart défavorable avant la fin du trimestre, plutôt que de le découvrir trop tard pour agir efficacement.
+Un point mérite d''être souligné particulièrement : reconnaître honnêtement une limite de son travail est
+généralement mieux perçu par un jury que de la nier ou de la minimiser. Un jury évalue aussi la capacité de
+recul critique de l''étudiant sur son propre travail ; reconnaître une limite montre une compréhension fine des
+enjeux méthodologiques, alors que nier une faiblesse évidente donne l''impression inverse, un manque de recul,
+ce qui nuit davantage à la crédibilité du candidat que la limite elle-même.
 
-Passons maintenant à la qualité des données. Un indice de qualité peut être construit en pondérant plusieurs critères, exactement comme nous l''avons fait pour l''indice de performance globale dans le cours précédent. Pour Teranga Agro-Industries, un comité qualité évalue sur 100 quatre critères : l''exhaustivité des données, notée 92, pondérée à 30 % ; l''exactitude, notée 88, pondérée à 35 % ; la cohérence inter-filiales, notée 80, pondérée à 20 % ; le délai de saisie, noté 75, pondéré à 15 %.
+## 1:15:00 – 1:30:00 · Synthèse et évaluation finale
 
-Calculons l''indice ensemble : 92 fois 0,30, cela donne 27,6. 88 fois 0,35, cela donne 30,8. 80 fois 0,20, cela donne 16. 75 fois 0,15, cela donne 11,25. La somme de ces quatre termes est 27,6 plus 30,8 plus 16 plus 11,25, soit 85,65, que l''on arrondit à 85,6 sur 100.
+Résumons. Un mémoire suit une structure proche d''un établissement à l''autre, avec une problématique précise et
+bornée comme pièce centrale. Toute source doit être attribuée explicitement ; inventer une référence est une
+faute grave. Un planning par jalons hebdomadaires, avec une semaine de relecture finale, évite le report de
+tout le travail à la dernière minute. Et la soutenance se prépare comme une compétence à part : choisir
+l''essentiel, minuter précisément, anticiper les questions, s''entraîner en conditions réelles.
 
-Ce résultat montre une qualité globale satisfaisante, mais avec un point de vigilance clair sur le délai de saisie, à 75 sur 100, le critère le moins bien noté des quatre, qui mérite une action corrective prioritaire, par exemple un rappel systématique des échéances aux filiales ou une automatisation renforcée de la collecte des données à la source.
+Cinq questions d''évaluation finale. Question 1 : citez les six grandes parties d''un mémoire. Réponse :
+introduction, revue de littérature, méthodologie, résultats, discussion, conclusion. Question 2 : pourquoi ne
+faut-il jamais inventer une référence dans un mémoire ? Réponse : c''est une faute grave en recherche, détectable
+par un jury, qui peut compromettre la crédibilité de l''ensemble du travail. Question 3 : dans le planning de
+Moussa, combien de mots sont prévus pour la partie résultats ? Réponse : 4 000 mots, sur deux semaines.
+Question 4 : citez les quatre principes de préparation d''une soutenance. Réponse : choisir l''essentiel, minuter
+précisément, anticiper les questions, répéter en conditions réelles. Question 5 : pourquoi est-il généralement
+préférable de reconnaître une limite de son travail plutôt que de la nier devant un jury ? Réponse : parce que
+cela montre une capacité de recul critique, alors que nier une faiblesse évidente donne une impression de
+manque de recul, plus préjudiciable que la limite elle-même.
 
-## 50:00 – 55:00 · Pause active et quiz interactif
+Un dernier conseil avant de terminer cette séance : commencez dès aujourd''hui, si vous ne l''avez pas encore
+fait, à noter sur une feuille votre propre problématique telle qu''elle se présente actuellement, même de façon
+imparfaite, puis demandez-vous si elle est aussi précise et bornée que celle de Moussa. Si elle vous semble
+encore trop large, c''est le moment de la resserrer, avant d''avoir investi plusieurs semaines de collecte de
+données sur un sujet finalement impossible à traiter sérieusement dans le temps imparti. Cette seule question,
+posée tôt, évite souvent des mois de travail mal orienté.
 
-Quiz de mi-séance. Première question : quelle est la différence entre un système transactionnel et un outil de Business Intelligence ? Réponse : le système transactionnel, comme l''ERP, enregistre les opérations élémentaires au moment où elles se produisent ; l''outil de Business Intelligence extrait, agrège et restitue ces données sous une forme analytique utile à la décision.
-
-Deuxième question : pourquoi l''harmonisation des référentiels entre filiales est-elle indispensable à la fiabilité d''un reporting consolidé ? Réponse : parce que sans référentiels communs, une même catégorie de charge ou de produit peut être enregistrée différemment selon les filiales, ce qui fausse les agrégations au niveau du groupe.
-
-Troisième question : un groupe réduit son délai de clôture consolidée de 20 jours ouvrés à 8 jours ouvrés. Quel est le gain de délai en pourcentage ? Réponse : (20 moins 8) divisé par 20, soit 12 divisé par 20, soit 0,60, soit 60 %.
-
-## 55:00 – 1:18:00 · Les risques du reporting en environnement multi-ERP : cas pratique
-
-De nombreux groupes, en particulier lorsqu''ils résultent d''une croissance externe par acquisition de filiales, fonctionnent encore avec plusieurs ERP différents selon les filiales, faute d''avoir harmonisé leurs systèmes d''information dès le départ. Dans cette situation, la consolidation nécessite des interfaces ou des retraitements manuels entre systèmes, ce qui réintroduit exactement les risques d''erreur et de délai que l''ERP intégré est censé éliminer.
-
-Prenons un cas pratique complet. Le Groupe Teranga Agro-Industries, qui a récemment acquis Teranga Distribution, fonctionne encore avec deux ERP distincts, l''un pour Teranga Céréales, l''autre pour Teranga Distribution, issu de l''ERP que cette filiale utilisait avant son acquisition. La direction financière envisage un projet de remplacement par un ERP unique pour tout le groupe, pour un coût d''implémentation de 400 000 000 FCFA sur 18 mois, avec deux bénéfices attendus : une réduction du délai de clôture consolidée de 15 à 6 jours ouvrés, et une amélioration de l''indice de qualité des données de 78 à 90 sur 100.
-
-Que devez-vous faire face à ce type de cas à l''examen ? D''abord, chiffrer les bénéfices : le gain de délai est de (15 moins 6) divisé par 15, soit 9 divisé par 15, soit 0,60, soit 60 %, un gain très significatif pour la réactivité du pilotage. Ensuite, qualifier les risques du projet au-delà du seul coût financier : le risque de rupture opérationnelle pendant la période de migration de 18 mois, durant laquelle la fiabilité du reporting peut temporairement se dégrader avant de s''améliorer ; le risque de résistance au changement des équipes de chaque filiale, habituées à leur ancien système ; et le risque, souvent sous-estimé, que le nouveau référentiel commun ne soit pas correctement validé par le contrôle de gestion avant le déploiement, ce qui reproduirait à terme les mêmes problèmes de cohérence que le projet cherche justement à résoudre.
-
-La leçon méthodologique à retenir pour l''examen : face à un projet de système d''information, ne vous contentez jamais de recopier les bénéfices chiffrés annoncés par la direction financière. Mobilisez systématiquement, en contrôleur de gestion, une analyse des risques opérationnels et organisationnels du projet, qui sont tout aussi déterminants que le gain financier brut pour juger de la réussite réelle du projet.
-
-## 1:18:00 – 1:30:00 · Synthèse et évaluation finale
-
-Récapitulons les points essentiels de cette séance. Un ERP centralise l''information de gestion, mais sa fiabilité dépend d''un paramétrage initial rigoureux, en particulier l''harmonisation des référentiels entre filiales. Les outils de Business Intelligence transforment la donnée transactionnelle en information de pilotage, et le contrôleur de gestion en définit les règles de gestion. La qualité d''un reporting consolidé se mesure à la fois par son délai de production et par la fiabilité des données agrégées. En environnement multi-ERP, des contrôles de cohérence automatisés sont indispensables pour fiabiliser la consolidation.
-
-Cinq questions pour l''évaluation finale.
-
-Première question : citez deux fonctions de l''entreprise que centralise typiquement un ERP. Réponse : par exemple la comptabilité et les ventes, ou les achats et la gestion des stocks ; toute paire de fonctions parmi comptabilité, ventes, achats, production, ressources humaines, stocks est acceptée.
-
-Deuxième question : un groupe réduit son délai de clôture consolidée de 10 à 4 jours ouvrés. Calculez le gain de délai en pourcentage. Réponse : (10 moins 4) divisé par 10, soit 6 divisé par 10, soit 0,60, soit 60 %.
-
-Troisième question : un comité qualité note les données consolidées d''un groupe sur les critères suivants : exhaustivité 85 (poids 25 %), exactitude 90 (poids 40 %), cohérence inter-filiales 75 (poids 20 %), délai de saisie 70 (poids 15 %). Calculez l''indice de qualité des données. Réponse : (85 fois 0,25) plus (90 fois 0,40) plus (75 fois 0,20) plus (70 fois 0,15), soit 21,25 plus 36 plus 15 plus 10,5, soit 82,75, arrondi à 82,8 sur 100.
-
-Quatrième question : pourquoi un contrôle de cohérence automatisé entre ventes intragroupe déclarées par le vendeur et achats intragroupe déclarés par l''acheteur est-il particulièrement utile avant la consolidation ? Réponse : parce qu''il permet de détecter une incohérence avant l''étape d''élimination des opérations intragroupe, évitant qu''une erreur de saisie ou d''affectation ne fausse silencieusement le résultat consolidé final.
-
-Cinquième question : citez un risque organisationnel, autre que financier, d''un projet de remplacement d''ERP dans un groupe multi-filiales. Réponse : par exemple le risque de rupture opérationnelle pendant la période de migration, le risque de résistance au changement des équipes, ou le risque qu''un référentiel commun mal validé reproduise les mêmes incohérences que l''ancien système ; toute réponse pertinente et justifiée est acceptée.
-
-Merci pour votre attention. Je vous retrouve dans le dernier cours vidéo de ce Master 1, consacré à un atelier transversal qui combine les trois matières que nous venons d''étudier sur un cas d''entreprise filé.', 'video', 90, false, 80
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Systèmes d''information décisionnels');
+Merci pour votre attention. La dernière vidéo de ce module sera un atelier pratique entièrement consacré à la
+préparation de votre soutenance.
+', 'video', 90, false, 80
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Méthodologie du mémoire et de la soutenance');
 insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
-select c.id, 'Cours vidéo (1h30) : Atelier transversal — synthèse du Master 1 en Contrôle de gestion', '## Fiche du cours vidéo
+select c.id, 'Cours vidéo (1h30) : Atelier méthodologie — préparer et réussir sa soutenance', '## Fiche du cours vidéo
 
-Durée : 1h30. Public : étudiants de Master 1 en Contrôle de gestion. Objectifs : mobiliser simultanément les trois matières avancées de l''année (performance globale, centres de responsabilité et prix de cession interne, systèmes d''information décisionnels) sur un cas d''entreprise transversal filé, dans des conditions proches de l''examen. Prérequis : les trois cours vidéo précédents de ce Master 1. Matériel : tableau ou diaporama, calculatrice, le cas du Groupe Sahel Industries.
+Durée : 1h30. Objectif : atelier pratique entièrement consacré à la préparation concrète de la soutenance de
+mémoire ou de projet tutoré, construit comme une simulation complète, de la préparation du plan d''intervention
+jusqu''à une séance de questions-réponses type face à un jury. Fil conducteur : la poursuite du cas de Moussa,
+qui prépare la soutenance de son mémoire sur l''adoption du paiement mobile. Matériel : tableau ou diaporama,
+chronomètre, feuille pour construire son propre plan de soutenance en parallèle. Prérequis : la séance
+précédente sur la méthodologie du mémoire, et un travail personnel déjà avancé.
 
 ## Déroulé minuté
 
-## 00:00 – 05:00 · Accueil et objectifs de l''atelier
+## 00:00 – 05:00 · Introduction et objectifs
 
-Bonjour à toutes et à tous. Ce quatrième et dernier cours vidéo du Master 1 est un atelier de synthèse. Nous n''allons pas introduire de nouvelle notion théorique : nous allons mobiliser ensemble, sur un seul cas d''entreprise filé du début à la fin de la séance, les trois matières que vous avez étudiées cette année. C''est exactement le type d''exercice que vous rencontrerez à l''examen, où un même cas mêle souvent plusieurs matières dans une seule étude.
+Bonjour et bienvenue dans cet atelier final du module, entièrement consacré à la soutenance. Ce n''est pas un
+cours théorique supplémentaire : c''est une mise en pratique complète, où nous allons construire ensemble, étape
+par étape, un plan de soutenance réaliste, minuté, et anticiper les questions d''un jury, en reprenant le cas de
+Moussa, dont nous avons suivi le mémoire sur le paiement mobile dans la séance précédente. À la fin de cette
+séance, vous devrez être capables de construire votre propre plan de soutenance, chronométré, pour votre propre
+travail.
 
-Le cas que nous allons traiter aujourd''hui est celui du Groupe Sahel Industries, que vous avez peut-être déjà croisé dans le sujet type de la leçon 5. Nous allons le reprendre intégralement, en détaillant chaque étape du raisonnement, comme si nous étions en situation d''examen.
+## 05:00 – 15:00 · Construire le plan d''intervention
 
-## 05:00 – 10:00 · Présentation du cas transversal
+Supposons que Moussa dispose de quinze minutes pour sa présentation, suivies de questions du jury. Première
+règle : ne jamais chercher à résumer chaque page du mémoire en quinze minutes, ce qui est impossible et donne
+une impression de survol précipité. Construisons plutôt un plan en cinq temps, chronométré précisément.
+Introduction et contexte, deux minutes : pourquoi ce sujet, en une ou deux phrases percutantes. Problématique et
+enjeux, deux minutes : la question précise posée et pourquoi elle mérite d''être étudiée. Méthodologie, trois
+minutes : comment les données ont été collectées, auprès de qui, et pourquoi cette méthode plutôt qu''une autre.
+Résultats principaux, cinq minutes : les deux ou trois résultats les plus importants, présentés avec des
+chiffres précis plutôt que des généralités vagues. Discussion, limites et conclusion, trois minutes : ce que
+ces résultats signifient, une limite honnêtement reconnue, et une ouverture. Le total, 2 plus 2 plus 3 plus 5
+plus 3, donne bien 15 minutes.
 
-Le Groupe Sahel Industries regroupe deux filiales : Sahel Minoterie, qui transforme des céréales, et Sahel Agro-Export, qui distribue et exporte la production sur le marché régional. Sahel Minoterie cède une partie de sa production à Sahel Agro-Export. Les deux filiales sont des centres d''investissement. Le groupe a par ailleurs engagé un chantier de refonte de son système d''information et souhaite renforcer sa démarche RSE.
+## 15:00 – 35:00 · Minuter et répéter
 
-Voici les données. Pour Sahel Minoterie : coût variable unitaire de 95 000 FCFA la tonne, charges fixes annuelles totales de 300 000 000 FCFA pour une activité normale de 7 500 tonnes, capitaux investis de 950 000 000 FCFA. Un produit comparable se vend à 155 000 FCFA la tonne entre entreprises indépendantes. La marge négociée retenue en méthode du coût est de 8 %, et l''économie commerciale évitée en méthode du marché est de 10 %. Le volume cédé à Sahel Agro-Export est de 4 200 tonnes. Notez bien toutes ces données, nous allons les utiliser pas à pas.
+Un plan sur papier n''est jamais le même qu''un plan répété à voix haute avec un chronomètre. Je vous invite,
+pendant cette séquence, à faire l''exercice vous-même en parallèle : prenez votre propre plan, même provisoire,
+et récitez-le à voix haute en chronométrant chaque partie. Posons-nous la question : que se passe-t-il
+généralement la première fois qu''on fait cet exercice ? La plupart des étudiants dépassent largement leur
+temps imparti, souvent de 50 % ou plus, parce qu''à l''écrit on sous-estime systématiquement le temps que prend
+chaque phrase à l''oral. C''est pourquoi il faut répéter plusieurs fois, en coupant progressivement les détails
+les moins essentiels, jusqu''à tenir le temps imparti avec une marge de confort, par exemple en visant 13
+minutes pour un oral de 15 minutes maximum, afin de ne pas être interrompu par le jury avant la fin de son
+propos.
 
-## 10:00 – 30:00 · Étape 1 : le prix de cession interne
+## 35:00 – 40:00 · Pause et quiz interactif
 
-Commençons par le prix de cession interne. Première étape : le coût complet unitaire de Sahel Minoterie. Les charges fixes unitaires sont de 300 000 000 divisé par 7 500, soit 40 000 FCFA la tonne. Le coût complet unitaire est donc de 95 000 plus 40 000, soit 135 000 FCFA.
+Petit quiz de mi-parcours. Première question : pourquoi est-il risqué de chercher à résumer chaque page du
+mémoire dans une soutenance de quinze minutes ? Deuxième question : pourquoi faut-il répéter son intervention à
+voix haute plutôt que de se contenter de la relire silencieusement ? Mettez en pause, répondez, puis reprenez.
+... Réponses : cela donne une impression de survol précipité et empêche de développer suffisamment les points
+réellement importants, comme les résultats et la discussion ; parce qu''on sous-estime systématiquement à
+l''écrit le temps que prend chaque phrase à l''oral, et seule la répétition à voix haute révèle le temps réel
+nécessaire.
 
-Calculons maintenant les deux méthodes de référence. Méthode du coût, avec une marge négociée de 8 % : 135 000 fois 1,08, soit 145 800 FCFA. Méthode du marché, avec une économie commerciale évitée de 10 % sur un prix de marché de 155 000 FCFA : 155 000 fois (1 moins 0,10), soit 155 000 fois 0,90, soit 139 500 FCFA.
+## 40:00 – 1:05:00 · Simulation de questions-réponses
 
-Retenons un prix négocié comme moyenne de ces deux bornes : (145 800 plus 139 500) divisé par 2, soit 142 650 FCFA. C''est ce prix que nous utiliserons pour la suite de l''atelier, mais rappelez-vous que tout autre prix situé entre les deux bornes et correctement justifié serait également accepté à l''examen.
+Passons maintenant au cœur de l''atelier : la simulation de questions du jury. Je vous propose six questions
+typiques, avec pour chacune la structure d''une bonne réponse, que vous pourrez adapter à votre propre travail.
 
-## 30:00 – 45:00 · Étape 2 : ROI et EVA de Sahel Minoterie
+Première question, "pourquoi avez-vous choisi cette méthode plutôt qu''une autre ?" Une bonne réponse rappelle
+brièvement les alternatives envisagées, puis justifie le choix retenu par rapport aux contraintes réelles du
+terrain, temps disponible, accès aux données, nature de la question posée.
 
-Sahel Minoterie dégage, par ailleurs, un résultat sur ses ventes externes de 80 000 000 FCFA, en plus de la marge réalisée sur la cession interne. Calculons cette marge sur cession interne : (142 650 moins 135 000) fois 4 200, soit 7 650 fois 4 200, soit 32 130 000 FCFA.
+Deuxième question, "quelles sont les limites de votre travail ?" Une bonne réponse reconnaît honnêtement une ou
+deux limites précises, par exemple la taille de l''échantillon ou une zone géographique restreinte, sans se
+dévaloriser excessivement ni minimiser le problème.
 
-Le résultat d''exploitation total de Sahel Minoterie est donc de 32 130 000 plus 80 000 000, soit 112 130 000 FCFA. Avec des capitaux investis de 950 000 000 FCFA, son ROI est de 112 130 000 divisé par 950 000 000, soit 0,118, soit environ 11,8 %.
+Troisième question, "en quoi votre travail apporte-t-il quelque chose de nouveau ?" Une bonne réponse relie le
+résultat obtenu à la revue de littérature, en expliquant précisément ce qui n''était pas encore établi avant ce
+travail.
 
-Calculons maintenant l''EVA, avec un taux d''impôt fictif de 30 % et un CMPC fictif de 12 %. Le NOPAT est de 112 130 000 fois 0,70, soit 78 491 000 FCFA. La charge de capital est de 950 000 000 fois 0,12, soit 114 000 000 FCFA. L''EVA est donc de 78 491 000 moins 114 000 000, soit moins 35 509 000 FCFA.
+Quatrième question, "comment avez-vous vérifié la fiabilité de vos données ?" Une bonne réponse décrit
+concrètement les précautions prises, par exemple le recoupement de plusieurs sources ou la vérification de la
+cohérence des réponses à un questionnaire.
 
-Arrêtons-nous sur ce résultat, car c''est le cœur pédagogique de cet atelier : l''EVA est négative, alors que le ROI est positif à 11,8 %. Si vous vous étiez arrêtés au seul ROI, vous auriez conclu, à tort, que Sahel Minoterie est une filiale performante. L''EVA révèle que sa rentabilité réelle, 11,8 %, est inférieure au coût du capital exigé par le groupe, 12 %, et que la filiale détruit donc de la valeur économique, même si son résultat comptable reste positif. C''est exactement le type de piège que l''examen de Master cherche à tester : ne jamais conclure sur un seul indicateur de performance.
+Cinquième question, "que feriez-vous différemment si vous recommenciez ce travail ?" Une bonne réponse montre
+un recul critique constructif, sans remettre en cause l''ensemble du travail déjà réalisé.
 
-## 45:00 – 50:00 · Pause active et quiz interactif
+Sixième question, "quelles suites donneriez-vous à ce travail ?" Une bonne réponse propose une ou deux pistes
+concrètes et réalistes, pas une liste vague de tout ce qui pourrait théoriquement être étudié.
 
-Première question du quiz : quel est le coût complet unitaire de Sahel Minoterie ? Réponse : 135 000 FCFA la tonne.
+Je vous invite à préparer par écrit, pour votre propre travail, une réponse courte à chacune de ces six
+questions avant votre propre soutenance.
 
-Deuxième question : pourquoi l''EVA de Sahel Minoterie est-elle négative alors que son ROI est positif ? Réponse : parce que sa rentabilité réelle de 11,8 % reste inférieure au coût du capital exigé par le groupe, fixé à 12 % dans cet exemple ; l''EVA compare directement la rentabilité au coût du capital, ce que le ROI seul ne fait pas.
+## 1:05:00 – 1:20:00 · Gérer le stress et le temps de parole le jour J
 
-Troisième question : le résultat consolidé du groupe serait-il différent si l''on avait retenu le prix de cession interne de 145 800 FCFA (méthode du coût) plutôt que 142 650 FCFA (prix négocié) ? Réponse : non, car l''opération de cession interne s''élimine en consolidation ; seule la répartition de la marge entre les deux filiales changerait.
+Le jour de la soutenance, deux difficultés pratiques reviennent très souvent. La première, le stress, qui peut
+faire accélérer le débit de parole ou faire oublier une partie du plan préparé. La meilleure préparation reste
+la répétition en conditions aussi réelles que possible, devant un public même restreint, famille, amis ou
+camarades de classe, car l''expérience de parler devant quelqu''un d''autre que soi-même réduit progressivement
+l''appréhension. La seconde difficulté, la gestion du temps en direct : prévoyez un repère visuel discret, par
+exemple une montre posée en vue, pour vérifier à mi-parcours de votre intervention si vous êtes dans les temps,
+sans attendre la fin pour vous en rendre compte, moment où il est trop tard pour ajuster le rythme.
 
-## 50:00 – 1:05:00 · Étape 3 : performance globale et système d''information
+## 1:20:00 – 1:30:00 · Synthèse finale et évaluation
 
-Poursuivons le cas. Le comité de pilotage du Groupe Sahel Industries évalue sa performance globale sur trois axes notés sur 20 : axe économique 15, axe social 12, axe environnemental 10, avec des pondérations respectives de 45 %, 25 % et 30 %.
+Résumons cet atelier. Une soutenance se construit comme un plan chronométré en plusieurs temps, jamais comme
+un résumé exhaustif du mémoire. La répétition à voix haute révèle le temps réel nécessaire, toujours plus long
+qu''à l''écrit. Anticiper des questions typiques, méthode, limites, apport, fiabilité des données, suites
+possibles, permet de préparer des réponses structurées plutôt que de les improviser sous le stress. Et gérer
+le temps en direct, avec un repère visuel discret, évite les mauvaises surprises de dernière minute.
 
-Calculons l''indice de performance globale : (15 fois 0,45) plus (12 fois 0,25) plus (10 fois 0,30), soit 6,75 plus 3 plus 3, soit 12,75 sur 20.
+Cinq questions d''évaluation finale pour conclure ce module de Master 2. Question 1 : pourquoi construire un
+plan de soutenance chronométré par sections plutôt que de préparer un texte continu sans repère de temps ?
+Réponse : pour s''assurer que chaque partie reçoit le temps qui lui revient et que l''intervention tient dans la
+durée imposée sans être interrompue avant la conclusion. Question 2 : pourquoi répéter son intervention à voix
+haute plutôt que de se contenter de la relire ? Réponse : parce que le temps réel à l''oral est systématiquement
+sous-estimé à l''écrit, et seule la répétition à voix haute le révèle précisément. Question 3 : que doit
+contenir une bonne réponse à la question "quelles sont les limites de votre travail ?" Réponse : une
+reconnaissance honnête d''une ou deux limites précises, sans excès de dévalorisation ni minimisation du
+problème. Question 4 : comment gérer le stress le jour de la soutenance ? Réponse : en répétant plusieurs fois
+devant un public réel avant la date, pour réduire progressivement l''appréhension par l''expérience. Question 5 :
+pourquoi prévoir un repère visuel pour vérifier le temps à mi-parcours de son intervention ? Réponse : pour
+pouvoir ajuster son rythme en direct si nécessaire, plutôt que de découvrir un dépassement de temps seulement à
+la fin, quand il est trop tard pour corriger.
 
-Passons maintenant au système d''information. Un comité qualité évalue les données du groupe sur quatre critères notés sur 100 : exhaustivité 90 (poids 30 %), exactitude 85 (poids 35 %), cohérence inter-filiales 72 (poids 20 %), délai de saisie 80 (poids 15 %).
-
-Calculons l''indice de qualité des données : (90 fois 0,30) plus (85 fois 0,35) plus (72 fois 0,20) plus (80 fois 0,15), soit 27 plus 29,75 plus 14,4 plus 12, soit 83,15, arrondi à 83,2 sur 100.
-
-## 1:05:00 – 1:22:00 · Étape 4 : synthèse argumentée, l''exercice le plus difficile
-
-Nous arrivons maintenant à l''exercice le plus exigeant, celui qui rapporte le plus de points à l''examen et qui différencie vraiment les bonnes copies : la synthèse argumentée qui relie tous les résultats calculés.
-
-Reprenons tout ce que nous avons calculé. Le point fort apparent du groupe est sa performance économique relative, avec un axe économique noté 15 sur 20, le plus élevé des trois axes de performance globale, et un système d''information globalement fiable, avec un indice de qualité de 83,2 sur 100. Mais ce point fort doit être immédiatement nuancé par deux éléments de vigilance que nous avons mis en évidence.
-
-D''une part, l''axe environnemental, noté seulement 10 sur 20, le plus faible des trois, qui tire l''indice de performance globale à 12,75 sur 20, un niveau moyen qui appelle une action corrective ciblée. D''autre part, et c''est le point le plus important à souligner dans votre copie, l''EVA négative de Sahel Minoterie, moins 35 509 000 FCFA, révèle que la filiale, malgré un ROI positif de 11,8 %, détruit de la valeur au regard du coût du capital du groupe. C''est une alerte bien plus sérieuse que le seul score environnemental, car elle concerne directement la rentabilité économique de la filiale, et elle doit être signalée à la direction générale au-delà du seul indicateur de rentabilité comptable habituellement regardé.
-
-L''action prioritaire que nous recommandons à la direction générale est donc double et, idéalement, convergente : conduire un diagnostic approfondi des capitaux investis et de la structure de coûts de Sahel Minoterie, plutôt que de se satisfaire de son ROI positif, en parallèle d''un plan d''action ciblé sur l''axe environnemental ; ces deux chantiers peuvent d''ailleurs converger si une partie de la destruction de valeur de Sahel Minoterie provient précisément d''investissements environnementaux coûteux mais encore peu valorisés dans son résultat d''exploitation actuel.
-
-Ce qu''il faut retenir de cette démonstration : à l''examen de Master, les meilleures copies ne se contentent jamais d''empiler des calculs indépendants matière par matière. Elles tissent des liens explicites entre les résultats des différentes matières pour construire un diagnostic global cohérent, exactement comme nous venons de le faire entre l''EVA de la filiale et le score environnemental du groupe.
-
-## 1:22:00 – 1:30:00 · Synthèse finale et évaluation
-
-Pour conclure cet atelier et ce Master 1, retenez la méthode suivante face à un cas d''entreprise de Master : qualifiez d''abord le problème de pilotage posé, identifiez les outils pertinents parmi ceux que vous maîtrisez, menez les calculs avec une rigueur numérique totale, puis reliez systématiquement les résultats entre eux pour produire un diagnostic global argumenté, et non une simple succession de réponses isolées.
-
-Cinq questions pour l''évaluation finale de ce cours vidéo et de ce Master 1.
-
-Première question : quel est le résultat d''exploitation total de Sahel Minoterie dans ce cas ? Réponse : 112 130 000 FCFA.
-
-Deuxième question : l''EVA de Sahel Minoterie est-elle positive ou négative, et que signifie ce résultat ? Réponse : elle est négative, à moins 35 509 000 FCFA, ce qui signifie que la filiale détruit de la valeur économique malgré un résultat comptable et un ROI positifs, car sa rentabilité reste inférieure au coût du capital exigé par le groupe.
-
-Troisième question : quel est l''indice de performance globale du Groupe Sahel Industries ? Réponse : 12,75 sur 20.
-
-Quatrième question : quel est l''indice de qualité des données du système d''information du groupe ? Réponse : environ 83,2 sur 100.
-
-Cinquième question : pourquoi est-il essentiel, dans une synthèse de Master, de relier les résultats de plusieurs matières plutôt que de les présenter séparément ? Réponse : parce qu''un diagnostic global cohérent, qui met en évidence des liens entre les points de vigilance de différentes matières, par exemple entre la destruction de valeur économique d''une filiale et son retard environnemental, a une valeur de pilotage bien supérieure à une simple liste de calculs isolés, et c''est précisément ce que recherchent les correcteurs au niveau Master.
-
-Merci à toutes et à tous pour votre participation à ce Master 1 en Contrôle de gestion. Bon courage pour vos examens, et à bientôt pour le Master 2.', 'video', 90, false, 90
-from public.courses c where c.slug = 'mas-cg-m1'
-  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier transversal — synthèse du Master 1 en Contrôle de gestion');
+Merci pour votre travail sur l''ensemble de ce module de Master 2. Bonne préparation pour vos examens, votre
+mémoire et votre soutenance.
+', 'video', 90, false, 90
+from public.courses c where c.slug = 'mas-info-m2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Atelier méthodologie — préparer et réussir sa soutenance');
