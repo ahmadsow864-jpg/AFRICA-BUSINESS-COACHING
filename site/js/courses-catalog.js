@@ -482,6 +482,54 @@ window.ABC_CATALOG = [
   ]
  },
  {
+  "slug": "svt-4e",
+  "level": "4e",
+  "subject": "SVT",
+  "module": null,
+  "title": "SVT 4e : les fonctions de nutrition, la reproduction et la santé",
+  "description": "Ce cours de Sciences de la Vie et de la Terre de 4e explique comment le corps humain se nourrit, respire, fait circuler le sang et se reproduit, puis aborde la santé : paludisme, hygiène et vaccination. Il s'appuie sur des expériences simples et des situations de la vie quotidienne en Afrique de l'Ouest. Prérequis : notions de 6e et 5e sur les êtres vivants et la cellule.",
+  "sort": 40,
+  "lessons": [
+   {
+    "title": "Nutrition et digestion",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Classer les aliments et connaître le rôle des nutriments.\n- Décrire l'appareil digestif et les transformations des aliments.\n- Expliquer l'absorption intestinale.\n- Interpréter une expérience de digestion in vitro.\n\n## Aliments et nutriments\n\nLes aliments que nous consommons (riz, mil, poisson, niébé, légumes, fruits, lait…) contiennent des substances appelées constituants alimentaires :\n- les glucides (amidon du riz et du mil, sucre) : principale source d'énergie ;\n- les lipides (huile d'arachide, beurre, graisses) : source d'énergie et de réserve ;\n- les protides ou protéines (poisson, viande, œufs, niébé, lait) : construction et réparation du corps ;\n- l'eau, les sels minéraux (calcium, fer…) et les vitamines : indispensables au bon fonctionnement de l'organisme.\n\nOn regroupe les aliments en groupes : aliments énergétiques, aliments bâtisseurs, aliments protecteurs. Une ration alimentaire équilibrée contient des aliments de chaque groupe. Un plat comme le thiéboudiène associe riz (glucides), poisson (protides), huile (lipides) et légumes (vitamines, sels minéraux).\n\nLes déséquilibres alimentaires provoquent des maladies : le manque de protéines chez le jeune enfant peut provoquer le kwashiorkor ; le manque de fer, une anémie ; l'excès de sucre et de graisses favorise l'obésité et le diabète.\n\n## L'appareil digestif\n\nLe tube digestif comprend : la bouche, le pharynx, l'œsophage, l'estomac, l'intestin grêle, le gros intestin (côlon) et le rectum, qui se termine par l'anus. Des glandes digestives y déversent leurs sucs : les glandes salivaires, les glandes de la paroi de l'estomac, le foie (qui produit la bile, stockée dans la vésicule biliaire), le pancréas et les glandes de la paroi intestinale.\n\n## Les transformations des aliments\n\nTransformations mécaniques : la mastication par les dents découpe et broie les aliments ; les contractions de l'estomac et de l'intestin les brassent et les font avancer.\n\nTransformations chimiques : les sucs digestifs contiennent des enzymes, des substances qui découpent les grosses molécules en petites molécules appelées nutriments.\n- Dans la bouche, l'amylase salivaire commence la transformation de l'amidon en maltose.\n- Dans l'estomac, la pepsine commence la digestion des protéines, dans un milieu très acide.\n- Dans l'intestin grêle, le suc pancréatique et le suc intestinal achèvent la digestion : l'amidon est transformé en glucose, les protéines en acides aminés, les lipides en acides gras et glycérol. La bile, qui ne contient pas d'enzyme, émulsionne les graisses en fines gouttelettes, ce qui facilite l'action de la lipase.\n\nLes sels minéraux, les vitamines et l'eau ne sont pas digérés : ils sont directement absorbés. Les fibres végétales ne sont pas digérées ; elles favorisent le transit.\n\n## L'expérience de digestion in vitro\n\nOn prépare deux tubes contenant de l'empois d'amidon. Dans le tube A on ajoute de la salive, dans le tube B de l'eau. On place les deux tubes au bain-marie à 37 °C pendant 15 minutes. Puis on fait deux tests :\n- l'eau iodée colore l'amidon en bleu-noir ;\n- la liqueur de Fehling, chauffée, donne un précipité rouge brique en présence de sucres réducteurs (comme le maltose ou le glucose).\n\nRésultats : tube B : bleu-noir avec l'eau iodée, pas de précipité rouge. Tube A : pas de coloration bleu-noir, précipité rouge brique. Conclusion : la salive a transformé l'amidon en sucre réducteur. Si on refait l'expérience à 0 °C ou avec de la salive bouillie, l'amidon n'est pas transformé : l'enzyme agit à la température du corps et est détruite par la chaleur.\n\n## L'absorption intestinale\n\nLes nutriments traversent la paroi de l'intestin grêle et passent dans le sang (et la lymphe) : c'est l'absorption. La paroi de l'intestin grêle est très plissée et couverte de minuscules replis, les villosités intestinales, très riches en vaisseaux sanguins. Ces replis augmentent énormément la surface d'échange. Les nutriments sont ensuite transportés par le sang vers toutes les cellules. Les résidus non absorbés passent dans le gros intestin, où l'eau est en partie réabsorbée, puis sont éliminés sous forme de selles.\n\n## Points clés\n\n- Aliments énergétiques, bâtisseurs et protecteurs : une ration équilibrée les associe.\n- Les enzymes des sucs digestifs transforment les aliments en nutriments.\n- Amidon → glucose ; protéines → acides aminés ; lipides → acides gras et glycérol.\n- Les nutriments sont absorbés au niveau des villosités de l'intestin grêle.\n\n## Exercices\n\nExercice 1 : Classer les aliments suivants selon leur constituant principal : riz, huile d'arachide, poisson, mangue, niébé, beurre de karité.\n\nExercice 2 : Citer dans l'ordre les organes traversés par les aliments, de la bouche à l'anus.\n\nExercice 3 : Pourquoi place-t-on les tubes à 37 °C dans l'expérience de digestion in vitro ? Que se passe-t-il avec de la salive bouillie ?\n\nExercice 4 : Quel est le rôle de la bile ? Contient-elle des enzymes ?\n\nExercice 5 : Expliquer pourquoi la structure de la paroi de l'intestin grêle est adaptée à l'absorption.\n\n## Corrigé\n\nExercice 1 : Glucides : riz, mangue (sucres). Lipides : huile d'arachide, beurre de karité. Protides : poisson, niébé (le niébé est aussi riche en glucides).\n\nExercice 2 : Bouche, pharynx, œsophage, estomac, intestin grêle, gros intestin (côlon), rectum, anus.\n\nExercice 3 : 37 °C est la température du corps humain, à laquelle les enzymes agissent le mieux. Avec de la salive bouillie, l'amylase est détruite par la chaleur : l'amidon n'est pas transformé et l'eau iodée donne toujours une coloration bleu-noir.\n\nExercice 4 : La bile émulsionne les lipides en fines gouttelettes, ce qui facilite l'action de la lipase pancréatique. Elle ne contient pas d'enzyme digestive.\n\nExercice 5 : La paroi est très plissée et couverte de villosités, ce qui donne une très grande surface d'échange ; elle est fine et très richement irriguée par des vaisseaux sanguins, ce qui permet un passage rapide des nutriments dans le sang."
+   },
+   {
+    "title": "La respiration",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "Le sang et la circulation",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "La reproduction humaine",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 45
+   },
+   {
+    "title": "La santé : microbes, paludisme et hygiène",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 50
+   },
+   {
+    "title": "Cours vidéo (1h30) : le voyage d'un repas, de l'assiette à la cellule",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
   "slug": "formation-gestion-transport",
   "level": "Formation professionnelle",
   "subject": "Transport de voyageurs",

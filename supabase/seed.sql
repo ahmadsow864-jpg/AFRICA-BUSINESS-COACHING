@@ -5606,6 +5606,532 @@ Texte du formateur : « Votre mission : dès demain, créez votre fichier de rav
 from public.courses c where c.slug = 'formation-carburant'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : reprendre le contrôle des dépenses de carburant');
 
+-- Cours : SVT 4e : les fonctions de nutrition, la reproduction et la santé
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'svt-4e', (select id from public.levels where name = '4e'), null, 'SVT', 'SVT 4e : les fonctions de nutrition, la reproduction et la santé', 'Ce cours de Sciences de la Vie et de la Terre de 4e explique comment le corps humain se nourrit, respire, fait circuler le sang et se reproduit, puis aborde la santé : paludisme, hygiène et vaccination. Il s''appuie sur des expériences simples et des situations de la vie quotidienne en Afrique de l''Ouest. Prérequis : notions de 6e et 5e sur les êtres vivants et la cellule.', true, 40
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Nutrition et digestion', '## Objectifs de la leçon
+
+- Classer les aliments et connaître le rôle des nutriments.
+- Décrire l''appareil digestif et les transformations des aliments.
+- Expliquer l''absorption intestinale.
+- Interpréter une expérience de digestion in vitro.
+
+## Aliments et nutriments
+
+Les aliments que nous consommons (riz, mil, poisson, niébé, légumes, fruits, lait…) contiennent des substances appelées constituants alimentaires :
+- les glucides (amidon du riz et du mil, sucre) : principale source d''énergie ;
+- les lipides (huile d''arachide, beurre, graisses) : source d''énergie et de réserve ;
+- les protides ou protéines (poisson, viande, œufs, niébé, lait) : construction et réparation du corps ;
+- l''eau, les sels minéraux (calcium, fer…) et les vitamines : indispensables au bon fonctionnement de l''organisme.
+
+On regroupe les aliments en groupes : aliments énergétiques, aliments bâtisseurs, aliments protecteurs. Une ration alimentaire équilibrée contient des aliments de chaque groupe. Un plat comme le thiéboudiène associe riz (glucides), poisson (protides), huile (lipides) et légumes (vitamines, sels minéraux).
+
+Les déséquilibres alimentaires provoquent des maladies : le manque de protéines chez le jeune enfant peut provoquer le kwashiorkor ; le manque de fer, une anémie ; l''excès de sucre et de graisses favorise l''obésité et le diabète.
+
+## L''appareil digestif
+
+Le tube digestif comprend : la bouche, le pharynx, l''œsophage, l''estomac, l''intestin grêle, le gros intestin (côlon) et le rectum, qui se termine par l''anus. Des glandes digestives y déversent leurs sucs : les glandes salivaires, les glandes de la paroi de l''estomac, le foie (qui produit la bile, stockée dans la vésicule biliaire), le pancréas et les glandes de la paroi intestinale.
+
+## Les transformations des aliments
+
+Transformations mécaniques : la mastication par les dents découpe et broie les aliments ; les contractions de l''estomac et de l''intestin les brassent et les font avancer.
+
+Transformations chimiques : les sucs digestifs contiennent des enzymes, des substances qui découpent les grosses molécules en petites molécules appelées nutriments.
+- Dans la bouche, l''amylase salivaire commence la transformation de l''amidon en maltose.
+- Dans l''estomac, la pepsine commence la digestion des protéines, dans un milieu très acide.
+- Dans l''intestin grêle, le suc pancréatique et le suc intestinal achèvent la digestion : l''amidon est transformé en glucose, les protéines en acides aminés, les lipides en acides gras et glycérol. La bile, qui ne contient pas d''enzyme, émulsionne les graisses en fines gouttelettes, ce qui facilite l''action de la lipase.
+
+Les sels minéraux, les vitamines et l''eau ne sont pas digérés : ils sont directement absorbés. Les fibres végétales ne sont pas digérées ; elles favorisent le transit.
+
+## L''expérience de digestion in vitro
+
+On prépare deux tubes contenant de l''empois d''amidon. Dans le tube A on ajoute de la salive, dans le tube B de l''eau. On place les deux tubes au bain-marie à 37 °C pendant 15 minutes. Puis on fait deux tests :
+- l''eau iodée colore l''amidon en bleu-noir ;
+- la liqueur de Fehling, chauffée, donne un précipité rouge brique en présence de sucres réducteurs (comme le maltose ou le glucose).
+
+Résultats : tube B : bleu-noir avec l''eau iodée, pas de précipité rouge. Tube A : pas de coloration bleu-noir, précipité rouge brique. Conclusion : la salive a transformé l''amidon en sucre réducteur. Si on refait l''expérience à 0 °C ou avec de la salive bouillie, l''amidon n''est pas transformé : l''enzyme agit à la température du corps et est détruite par la chaleur.
+
+## L''absorption intestinale
+
+Les nutriments traversent la paroi de l''intestin grêle et passent dans le sang (et la lymphe) : c''est l''absorption. La paroi de l''intestin grêle est très plissée et couverte de minuscules replis, les villosités intestinales, très riches en vaisseaux sanguins. Ces replis augmentent énormément la surface d''échange. Les nutriments sont ensuite transportés par le sang vers toutes les cellules. Les résidus non absorbés passent dans le gros intestin, où l''eau est en partie réabsorbée, puis sont éliminés sous forme de selles.
+
+## Points clés
+
+- Aliments énergétiques, bâtisseurs et protecteurs : une ration équilibrée les associe.
+- Les enzymes des sucs digestifs transforment les aliments en nutriments.
+- Amidon → glucose ; protéines → acides aminés ; lipides → acides gras et glycérol.
+- Les nutriments sont absorbés au niveau des villosités de l''intestin grêle.
+
+## Exercices
+
+Exercice 1 : Classer les aliments suivants selon leur constituant principal : riz, huile d''arachide, poisson, mangue, niébé, beurre de karité.
+
+Exercice 2 : Citer dans l''ordre les organes traversés par les aliments, de la bouche à l''anus.
+
+Exercice 3 : Pourquoi place-t-on les tubes à 37 °C dans l''expérience de digestion in vitro ? Que se passe-t-il avec de la salive bouillie ?
+
+Exercice 4 : Quel est le rôle de la bile ? Contient-elle des enzymes ?
+
+Exercice 5 : Expliquer pourquoi la structure de la paroi de l''intestin grêle est adaptée à l''absorption.
+
+## Corrigé
+
+Exercice 1 : Glucides : riz, mangue (sucres). Lipides : huile d''arachide, beurre de karité. Protides : poisson, niébé (le niébé est aussi riche en glucides).
+
+Exercice 2 : Bouche, pharynx, œsophage, estomac, intestin grêle, gros intestin (côlon), rectum, anus.
+
+Exercice 3 : 37 °C est la température du corps humain, à laquelle les enzymes agissent le mieux. Avec de la salive bouillie, l''amylase est détruite par la chaleur : l''amidon n''est pas transformé et l''eau iodée donne toujours une coloration bleu-noir.
+
+Exercice 4 : La bile émulsionne les lipides en fines gouttelettes, ce qui facilite l''action de la lipase pancréatique. Elle ne contient pas d''enzyme digestive.
+
+Exercice 5 : La paroi est très plissée et couverte de villosités, ce qui donne une très grande surface d''échange ; elle est fine et très richement irriguée par des vaisseaux sanguins, ce qui permet un passage rapide des nutriments dans le sang.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'svt-4e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Nutrition et digestion');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La respiration', '## Objectifs de la leçon
+
+- Décrire l''appareil respiratoire et les mouvements respiratoires.
+- Expliquer les échanges gazeux au niveau des alvéoles pulmonaires.
+- Comprendre la respiration cellulaire et l''utilisation de l''énergie.
+- Connaître les dangers du tabac et de la pollution de l''air.
+
+## L''appareil respiratoire
+
+L''air entre par les fosses nasales (où il est réchauffé, humidifié et filtré), puis passe par le pharynx, le larynx, la trachée, les deux bronches, les bronchioles, et arrive dans les alvéoles pulmonaires. Les poumons sont situés dans la cage thoracique, protégés par les côtes, et reposent sur un muscle, le diaphragme.
+
+## Les mouvements respiratoires
+
+- Inspiration : le diaphragme se contracte et s''abaisse, les muscles intercostaux soulèvent les côtes ; le volume de la cage thoracique augmente, les poumons se dilatent et l''air entre.
+- Expiration : le diaphragme se relâche et remonte, les côtes s''abaissent ; le volume diminue et l''air est chassé.
+
+Au repos, un adulte respire en moyenne une quinzaine de fois par minute ; pendant un effort, la fréquence et l''amplitude augmentent.
+
+## Comparaison de l''air inspiré et de l''air expiré
+
+Valeurs approximatives couramment retenues :
+- air inspiré : environ 21 % de dioxygène et 0,04 % de dioxyde de carbone ;
+- air expiré : environ 16 % de dioxygène et 4 % de dioxyde de carbone.
+
+L''air expiré est aussi plus chaud et plus chargé en vapeur d''eau. Expérience : si l''on souffle avec une paille dans de l''eau de chaux, elle se trouble. L''eau de chaux est le réactif du dioxyde de carbone : l''air expiré en contient beaucoup plus que l''air inspiré.
+
+## Les échanges gazeux dans les alvéoles
+
+Les alvéoles pulmonaires sont de minuscules sacs à paroi très fine, entourés d''un réseau dense de capillaires sanguins. Leur nombre est très élevé, ce qui forme une immense surface d''échange.
+
+Le dioxygène passe de l''air alvéolaire, où il est abondant, vers le sang, où il est moins concentré. Le dioxyde de carbone fait le trajet inverse, du sang vers l''alvéole. Ces passages se font par diffusion, toujours du milieu le plus concentré vers le moins concentré. Dans le sang, le dioxygène est surtout transporté par l''hémoglobine des globules rouges.
+
+Conditions qui rendent ces échanges efficaces : grande surface, paroi très mince, forte vascularisation, renouvellement permanent de l''air.
+
+## La respiration cellulaire
+
+Toutes les cellules respirent. Elles reçoivent du sang le glucose (issu de la digestion) et le dioxygène (issu des poumons). Elles les utilisent pour libérer l''énergie nécessaire à leur fonctionnement (contraction musculaire, chaleur du corps, activité du cerveau). Bilan simplifié :
+
+glucose + dioxygène → dioxyde de carbone + eau + énergie
+
+Le dioxyde de carbone produit est rejeté dans le sang, transporté jusqu''aux poumons et expiré. On comprend ainsi pourquoi, pendant un match de football, le joueur respire plus vite et son cœur bat plus fort : ses muscles consomment davantage de glucose et de dioxygène.
+
+## Hygiène respiratoire
+
+- Le tabac contient de la nicotine (qui rend dépendant), des goudrons (cancérigènes) et du monoxyde de carbone (qui se fixe sur l''hémoglobine à la place du dioxygène). Il provoque bronchites chroniques, cancers du poumon et maladies cardiaques. Le tabagisme passif est aussi dangereux.
+- La fumée de bois ou de charbon dans une cuisine mal aérée, les gaz d''échappement et la poussière irritent les voies respiratoires. Il faut aérer les pièces et éviter de brûler des déchets plastiques.
+- La tuberculose est une maladie respiratoire contagieuse causée par une bactérie ; une toux persistante doit conduire à consulter un centre de santé.
+
+## Points clés
+
+- Inspiration : contraction du diaphragme ; expiration : relâchement.
+- L''air expiré est plus pauvre en dioxygène et plus riche en dioxyde de carbone.
+- Les échanges gazeux se font par diffusion dans les alvéoles.
+- Les cellules utilisent glucose et dioxygène pour produire de l''énergie.
+
+## Exercices
+
+Exercice 1 : Citer dans l''ordre les organes traversés par l''air, des fosses nasales aux alvéoles.
+
+Exercice 2 : On souffle dans un tube d''eau de chaux qui se trouble. Que met en évidence cette expérience ?
+
+Exercice 3 : Un élève respire 15 fois par minute au repos et fait entrer 0,5 L d''air à chaque inspiration. Calculer le volume d''air inspiré en une minute, puis en une heure.
+
+Exercice 4 : Expliquer pourquoi la fumée de cigarette diminue la quantité de dioxygène transportée par le sang.
+
+Exercice 5 : Pourquoi la fréquence respiratoire augmente-t-elle pendant un effort physique ?
+
+## Corrigé
+
+Exercice 1 : Fosses nasales, pharynx, larynx, trachée, bronches, bronchioles, alvéoles pulmonaires.
+
+Exercice 2 : Elle met en évidence la présence de dioxyde de carbone dans l''air expiré.
+
+Exercice 3 : En une minute : 15 × 0,5 = 7,5 L. En une heure : 7,5 × 60 = 450 L.
+
+Exercice 4 : La fumée contient du monoxyde de carbone qui se fixe sur l''hémoglobine des globules rouges à la place du dioxygène ; le sang transporte donc moins de dioxygène vers les organes.
+
+Exercice 5 : Pendant l''effort, les muscles travaillent davantage : ils consomment plus de glucose et de dioxygène et rejettent plus de dioxyde de carbone. La respiration s''accélère pour apporter plus de dioxygène et éliminer plus de dioxyde de carbone.', 'texte', 45, false, 20
+from public.courses c where c.slug = 'svt-4e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La respiration');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Le sang et la circulation', '## Objectifs de la leçon
+
+- Connaître la composition et les rôles du sang.
+- Décrire le cœur et son fonctionnement.
+- Expliquer la double circulation sanguine.
+- Connaître quelques règles d''hygiène cardio-vasculaire.
+
+## Le sang
+
+Le sang est un liquide rouge qui circule en permanence dans les vaisseaux. Si on le laisse reposer dans un tube avec un produit anticoagulant, on observe deux parties :
+- le plasma, liquide jaunâtre composé surtout d''eau, qui transporte les nutriments, les déchets (urée, dioxyde de carbone), les hormones et les sels minéraux ;
+- les éléments figurés : les globules rouges (ou hématies), qui contiennent l''hémoglobine et transportent le dioxygène ; les globules blancs (ou leucocytes), qui défendent l''organisme contre les microbes ; les plaquettes, qui interviennent dans la coagulation et arrêtent les saignements.
+
+## Le cœur
+
+Le cœur est un muscle creux, de la taille d''un poing, situé dans la cage thoracique entre les deux poumons. Il est divisé en deux moitiés (cœur droit et cœur gauche) qui ne communiquent pas entre elles. Chaque moitié comprend une oreillette en haut et un ventricule en bas.
+
+Des valvules, sortes de clapets, obligent le sang à circuler dans un seul sens : des oreillettes vers les ventricules, puis des ventricules vers les artères.
+
+Le cœur fonctionne comme une pompe. Un battement comprend : la contraction des oreillettes, la contraction des ventricules (qui chassent le sang dans les artères), puis un temps de relâchement pendant lequel le cœur se remplit. Au repos, le cœur d''un adulte bat environ 70 fois par minute ; ce rythme augmente pendant l''effort. On peut compter les battements en prenant le pouls au poignet.
+
+## Les vaisseaux sanguins
+
+- Les artères partent du cœur et emmènent le sang vers les organes. Leur paroi est épaisse et élastique.
+- Les veines ramènent le sang des organes vers le cœur. Elles possèdent souvent des valvules.
+- Les capillaires sont de très fins vaisseaux qui relient artères et veines au niveau des organes. C''est à travers leur paroi très mince que se font les échanges entre le sang et les cellules.
+
+## La double circulation
+
+Circulation pulmonaire (petite circulation) : le ventricule droit envoie le sang pauvre en dioxygène dans l''artère pulmonaire vers les poumons ; le sang s''y enrichit en dioxygène et se débarrasse du dioxyde de carbone ; il revient par les veines pulmonaires dans l''oreillette gauche.
+
+Circulation générale (grande circulation) : le ventricule gauche envoie le sang riche en dioxygène dans l''aorte, qui se divise en artères vers tous les organes. Au niveau des capillaires, le sang cède dioxygène et nutriments aux cellules et reçoit leurs déchets. Il revient appauvri en dioxygène par les veines caves dans l''oreillette droite.
+
+Le sang ne se mélange jamais : le cœur droit contient du sang pauvre en dioxygène, le cœur gauche du sang riche en dioxygène. La paroi du ventricule gauche est plus épaisse, car il doit propulser le sang dans tout le corps.
+
+## Les échanges au niveau des organes
+
+Les cellules baignent dans un liquide, la lymphe interstitielle. Le dioxygène et les nutriments passent des capillaires vers ce liquide puis vers les cellules ; le dioxyde de carbone et les déchets font le chemin inverse. Les déchets comme l''urée sont ensuite éliminés par les reins dans l''urine.
+
+## Hygiène de l''appareil circulatoire
+
+- Pratiquer une activité physique régulière (marche, football, lutte, danse).
+- Limiter le sel, le sucre et les graisses : l''excès de sel favorise l''hypertension artérielle, une maladie fréquente qui peut provoquer des accidents vasculaires cérébraux.
+- Éviter le tabac et l''alcool.
+- Faire contrôler sa tension artérielle régulièrement à partir de l''âge adulte.
+
+## Points clés
+
+- Sang = plasma + globules rouges + globules blancs + plaquettes.
+- Le cœur est une double pompe : cœur droit (sang pauvre en dioxygène), cœur gauche (sang riche en dioxygène).
+- Petite circulation : cœur → poumons → cœur ; grande circulation : cœur → organes → cœur.
+- Les échanges avec les cellules se font au niveau des capillaires.
+
+## Exercices
+
+Exercice 1 : Associer chaque élément du sang à son rôle : globules rouges, globules blancs, plaquettes, plasma.
+
+Exercice 2 : Décrire le trajet d''un globule rouge partant de l''oreillette droite jusqu''au retour dans l''oreillette droite.
+
+Exercice 3 : Pourquoi la paroi du ventricule gauche est-elle plus épaisse que celle du ventricule droit ?
+
+Exercice 4 : Le cœur d''un adulte au repos bat 70 fois par minute et éjecte environ 70 mL de sang à chaque contraction du ventricule gauche. Calculer le volume de sang éjecté en une minute (en litres).
+
+Exercice 5 : Donner deux conseils pour prévenir l''hypertension artérielle.
+
+## Corrigé
+
+Exercice 1 : Globules rouges : transport du dioxygène. Globules blancs : défense contre les microbes. Plaquettes : coagulation. Plasma : transport des nutriments, des déchets, des hormones.
+
+Exercice 2 : Oreillette droite → ventricule droit → artère pulmonaire → capillaires des poumons → veines pulmonaires → oreillette gauche → ventricule gauche → aorte → artères → capillaires des organes → veines → veines caves → oreillette droite.
+
+Exercice 3 : Le ventricule gauche doit propulser le sang dans tout le corps (grande circulation), alors que le ventricule droit ne l''envoie qu''aux poumons, tout proches. Il a donc besoin d''un muscle plus puissant.
+
+Exercice 4 : 70 × 70 = 4 900 mL, soit 4,9 L par minute.
+
+Exercice 5 : Réduire la consommation de sel (bouillons, poissons salés, plats très assaisonnés) et pratiquer une activité physique régulière. On accepte aussi : éviter le tabac, surveiller son poids.', 'texte', 45, false, 30
+from public.courses c where c.slug = 'svt-4e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Le sang et la circulation');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La reproduction humaine', '## Objectifs de la leçon
+
+- Décrire les transformations de la puberté.
+- Connaître les appareils reproducteurs de l''homme et de la femme.
+- Comprendre le cycle menstruel, la fécondation et la grossesse.
+- Connaître les moyens de se protéger et de maîtriser sa fécondité.
+
+## La puberté
+
+La puberté est la période, généralement entre 10 et 16 ans environ, pendant laquelle le corps de l''enfant se transforme et devient capable de se reproduire. L''âge de début varie beaucoup d''une personne à l''autre, et c''est normal.
+
+Chez le garçon : croissance rapide, développement des muscles, apparition des poils, mue de la voix, développement des organes génitaux, premières éjaculations.
+
+Chez la fille : croissance rapide, développement des seins, élargissement du bassin, apparition des poils, premières règles.
+
+Ces transformations sont commandées par des hormones, des substances chimiques produites par des glandes et transportées par le sang. Elles s''accompagnent aussi de changements psychologiques : besoin d''autonomie, émotions plus fortes.
+
+## L''appareil reproducteur masculin
+
+- Les testicules, dans les bourses, produisent les spermatozoïdes (de façon continue à partir de la puberté) et une hormone, la testostérone.
+- Les spermatozoïdes passent dans les canaux déférents ; ils sont mélangés aux sécrétions des vésicules séminales et de la prostate pour former le sperme.
+- Le sperme est émis par l''urètre, qui traverse le pénis.
+
+## L''appareil reproducteur féminin
+
+- Les deux ovaires contiennent les follicules ; à partir de la puberté, ils libèrent en général un ovule par cycle et produisent des hormones (œstrogènes et progestérone).
+- Les trompes recueillent l''ovule ; c''est dans une trompe qu''a lieu la fécondation.
+- L''utérus est un organe musclé dont la paroi interne, la muqueuse utérine, accueille l''embryon.
+- Le vagin relie l''utérus à l''extérieur.
+
+## Le cycle menstruel
+
+Le cycle dure en moyenne 28 jours, mais il varie de 21 à 35 jours environ selon les femmes, et parfois d''un mois à l''autre. Par convention, le jour 1 est le premier jour des règles.
+- Les règles correspondent à l''élimination de la muqueuse utérine, accompagnée d''un saignement de quelques jours.
+- La muqueuse se reconstruit ensuite et s''épaissit.
+- L''ovulation (libération de l''ovule) a lieu environ 14 jours avant les règles suivantes, donc vers le 14e jour d''un cycle de 28 jours.
+- S''il n''y a pas de fécondation, la muqueuse est de nouveau éliminée : ce sont les règles suivantes.
+
+## Fécondation, grossesse et naissance
+
+Lors d''un rapport sexuel, des millions de spermatozoïdes sont déposés dans le vagin ; ils remontent jusqu''aux trompes. Un seul spermatozoïde pénètre dans l''ovule : c''est la fécondation, qui forme une cellule-œuf. Celle-ci se divise et devient un embryon qui descend dans l''utérus et s''implante dans la muqueuse : c''est la nidation.
+
+L''embryon puis le fœtus se développe pendant environ neuf mois. Il est relié à la mère par le placenta et le cordon ombilical : le placenta permet le passage du dioxygène et des nutriments de la mère vers le fœtus, et des déchets en sens inverse, sans que les sangs se mélangent. Certaines substances (alcool, tabac, certains médicaments, certains microbes) peuvent aussi traverser le placenta : la femme enceinte doit les éviter et suivre ses consultations prénatales.
+
+## Maîtrise de la reproduction et protection
+
+- Les méthodes contraceptives (préservatif, pilule et autres méthodes médicales) permettent d''éviter une grossesse non désirée ; elles sont prescrites et expliquées par les professionnels de santé.
+- Le préservatif est le seul moyen qui protège aussi des infections sexuellement transmissibles (IST), dont le VIH/sida.
+- Une grossesse trop précoce présente des risques importants pour la santé de la jeune fille et de l''enfant.
+- En cas de question, il faut s''adresser à un adulte de confiance, à l''infirmerie scolaire ou à un centre de santé.
+
+## Points clés
+
+- La puberté est commandée par les hormones.
+- Testicules : spermatozoïdes ; ovaires : ovules.
+- L''ovulation a lieu environ 14 jours avant les règles suivantes.
+- La fécondation a lieu dans la trompe, la nidation dans l''utérus.
+- Le préservatif protège à la fois des grossesses non désirées et des IST.
+
+## Exercices
+
+Exercice 1 : Citer trois transformations de la puberté chez la fille et trois chez le garçon.
+
+Exercice 2 : Où sont produits les spermatozoïdes ? les ovules ? Où a lieu la fécondation ?
+
+Exercice 3 : Une femme a des cycles réguliers de 30 jours. Vers quel jour du cycle a lieu l''ovulation ?
+
+Exercice 4 : Quel est le rôle du placenta ?
+
+Exercice 5 : Pourquoi une femme enceinte doit-elle éviter le tabac et l''alcool ?
+
+## Corrigé
+
+Exercice 1 : Fille : développement des seins, élargissement du bassin, premières règles (ou apparition des poils, poussée de croissance). Garçon : mue de la voix, développement des muscles, apparition de la barbe et des poils (ou premières éjaculations).
+
+Exercice 2 : Les spermatozoïdes sont produits dans les testicules, les ovules dans les ovaires. La fécondation a lieu dans une trompe.
+
+Exercice 3 : L''ovulation a lieu environ 14 jours avant les règles suivantes : 30 − 14 = 16. Elle a donc lieu vers le 16e jour du cycle (c''est une estimation, car les cycles peuvent varier).
+
+Exercice 4 : Le placenta assure les échanges entre la mère et le fœtus : il apporte dioxygène et nutriments au fœtus et élimine ses déchets (dioxyde de carbone, urée), sans mélange des deux sangs.
+
+Exercice 5 : Car des substances toxiques du tabac et l''alcool traversent le placenta et peuvent nuire au développement du fœtus (retard de croissance, malformations, naissance prématurée).', 'texte', 45, false, 40
+from public.courses c where c.slug = 'svt-4e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La reproduction humaine');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'La santé : microbes, paludisme et hygiène', '## Objectifs de la leçon
+
+- Connaître les différents types de microbes et leurs modes de transmission.
+- Décrire le paludisme : agent, vecteur, cycle, symptômes, prévention.
+- Connaître les règles d''hygiène individuelle et collective.
+- Comprendre le rôle des défenses de l''organisme et de la vaccination.
+
+## Les microbes
+
+Les microbes sont des êtres vivants microscopiques. On distingue :
+- les bactéries (exemple : la bactérie du choléra, celle de la tuberculose) ;
+- les virus, encore plus petits, qui ne peuvent se multiplier qu''à l''intérieur des cellules (rougeole, VIH, grippe) ;
+- les parasites unicellulaires (comme le plasmodium du paludisme) ou les vers (ascaris, ténia) ;
+- les champignons microscopiques (mycoses).
+
+Beaucoup de microbes sont utiles ou inoffensifs (fabrication du lait caillé, flore intestinale). Ceux qui provoquent des maladies sont dits pathogènes.
+
+Modes de transmission : par l''eau et les aliments souillés (choléra, diarrhées, fièvre typhoïde), par l''air (tuberculose, grippe), par contact, par le sang ou les rapports sexuels (VIH, hépatite B), par un animal vecteur (moustique pour le paludisme).
+
+## Le paludisme
+
+Agent : le paludisme est causé par un parasite unicellulaire, le plasmodium. L''espèce Plasmodium falciparum est la plus dangereuse.
+
+Vecteur : il est transmis par la piqûre d''un moustique femelle du genre anophèle, qui pique surtout la nuit. Les larves de ce moustique se développent dans les eaux stagnantes (flaques, pneus abandonnés, récipients non couverts), d''où une transmission plus forte pendant et après la saison des pluies (hivernage).
+
+Cycle simplifié :
+- un moustique infecté pique une personne et injecte des parasites ;
+- les parasites gagnent le foie, où ils se multiplient ;
+- ils envahissent ensuite les globules rouges, s''y multiplient et les font éclater, ce qui provoque les accès de fièvre ;
+- un moustique sain qui pique cette personne aspire des parasites ; ceux-ci se développent dans le moustique, qui pourra infecter une autre personne.
+
+Symptômes : fièvre, frissons, sueurs, maux de tête, courbatures, vomissements ; anémie due à la destruction des globules rouges. Chez l''enfant et la femme enceinte, la maladie peut devenir grave rapidement (paludisme grave, atteinte cérébrale).
+
+Diagnostic et traitement : toute fièvre doit conduire au poste ou au centre de santé, où un test de diagnostic rapide (TDR) peut confirmer le paludisme. Le traitement est prescrit par l''agent de santé (médicaments combinés) et doit être pris en entier. L''automédication est dangereuse.
+
+Prévention :
+- dormir chaque nuit sous une moustiquaire imprégnée d''insecticide ;
+- supprimer les eaux stagnantes autour des maisons, couvrir les récipients d''eau ;
+- participer aux journées de salubrité (set setal) dans le quartier ;
+- suivre les mesures de prévention proposées par les services de santé, notamment pour les femmes enceintes et les jeunes enfants.
+
+## L''hygiène
+
+Hygiène individuelle :
+- se laver les mains à l''eau et au savon avant de manger, avant de préparer les repas et après être allé aux toilettes ;
+- se brosser les dents après les repas ;
+- se laver régulièrement le corps, couper ses ongles.
+
+Hygiène de l''eau et des aliments :
+- boire une eau potable ; en cas de doute, la faire bouillir ou la traiter selon les consignes des services de santé ;
+- laver les fruits et légumes ; bien cuire la viande et le poisson ;
+- protéger les aliments des mouches.
+
+Hygiène collective : utiliser des latrines, ne pas jeter les ordures dans la rue, évacuer les eaux usées, protéger les puits.
+
+## Les défenses de l''organisme et la vaccination
+
+La peau et les muqueuses forment une première barrière. Si des microbes pénètrent, les globules blancs interviennent : certains les absorbent et les détruisent (phagocytose), d''autres produisent des anticorps spécifiques. L''organisme garde la mémoire de certains microbes.
+
+La vaccination consiste à introduire dans l''organisme un microbe tué, affaibli ou une partie de microbe, inoffensif. L''organisme fabrique alors des défenses et en garde la mémoire : s''il rencontre plus tard le vrai microbe, il réagit vite et fort. Il faut respecter le calendrier vaccinal de l''enfant fixé par les services de santé.
+
+## Points clés
+
+- Bactéries, virus, parasites, champignons : tous ne sont pas pathogènes.
+- Paludisme : plasmodium transmis par l''anophèle femelle ; prévention par la moustiquaire imprégnée et la suppression des eaux stagnantes.
+- Toute fièvre doit être testée au centre de santé.
+- Lavage des mains, eau potable et assainissement évitent de nombreuses maladies.
+- La vaccination prépare les défenses de l''organisme.
+
+## Exercices
+
+Exercice 1 : Quel est l''agent du paludisme ? Quel est son vecteur ?
+
+Exercice 2 : Pourquoi le paludisme est-il plus fréquent pendant et après l''hivernage ?
+
+Exercice 3 : Expliquer pourquoi le paludisme peut provoquer une anémie.
+
+Exercice 4 : Citer trois mesures pour éviter les maladies transmises par l''eau.
+
+Exercice 5 : Expliquer le principe de la vaccination.
+
+## Corrigé
+
+Exercice 1 : L''agent est un parasite unicellulaire, le plasmodium. Le vecteur est le moustique anophèle femelle.
+
+Exercice 2 : Les pluies créent de nombreuses eaux stagnantes dans lesquelles se développent les larves d''anophèles. Les moustiques sont donc plus nombreux et transmettent davantage le parasite.
+
+Exercice 3 : Les plasmodiums se multiplient dans les globules rouges et les font éclater. La destruction des globules rouges diminue leur nombre dans le sang : c''est l''anémie.
+
+Exercice 4 : Boire de l''eau potable (ou bouillie/traitée) ; se laver les mains au savon ; protéger les puits et évacuer les eaux usées (on accepte aussi : laver les fruits et légumes, utiliser des latrines).
+
+Exercice 5 : On introduit dans l''organisme un microbe rendu inoffensif (tué, affaibli ou une partie du microbe). L''organisme produit des défenses (anticorps, cellules mémoire) et garde la mémoire de ce microbe ; lors d''une vraie infection, il réagit rapidement et la maladie ne se développe pas ou est moins grave.', 'texte', 50, false, 50
+from public.courses c where c.slug = 'svt-4e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'La santé : microbes, paludisme et hygiène');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : le voyage d''un repas, de l''assiette à la cellule', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Thème : le voyage d''un repas, de l''assiette à la cellule, et la santé du corps.
+- Objectifs : relier digestion, respiration et circulation dans un même raisonnement ; interpréter des expériences ; appliquer les connaissances à la prévention du paludisme et à l''hygiène.
+- Matériel : tableau ou diaporama, schémas de l''appareil digestif, du cœur et des poumons, photos de moustiquaire et de larves de moustique, cahier.
+- Prérequis : leçons 1 à 5 du cours.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction : une question pour démarrer
+
+« Bonjour à toutes et à tous. Je commence par une question : ce midi, vous avez peut-être mangé un plat de riz au poisson. Comment l''énergie de ce riz va-t-elle arriver jusqu''aux muscles de vos jambes lorsque vous jouerez au football ce soir ? Gardez cette question en tête : toute la séance va y répondre. Nous allons suivre le voyage d''un grain de riz, puis celui d''une bouffée d''air, puis voir comment le sang relie tout cela. Nous terminerons par la santé : le paludisme et l''hygiène. »
+
+Visuel : un plat de riz au poisson, puis un footballeur en pleine course.
+
+## 05:00 – 18:00 · Étape 1 : la digestion du riz
+
+« Le riz contient surtout de l''amidon, une très grosse molécule. Dès la bouche, la mastication le découpe et la salive commence à le transformer grâce à une enzyme, l''amylase salivaire. »
+
+Visuel : schéma de l''appareil digestif, avec le trajet colorié.
+
+« Rappelez-vous l''expérience des deux tubes : amidon plus salive à 37 °C, et amidon plus eau. Mettez la vidéo en pause et dites-moi quels résultats on obtient avec l''eau iodée et avec la liqueur de Fehling. »
+
+« Correction : dans le tube avec salive, plus de coloration bleu-noir, mais un précipité rouge brique : l''amidon a été transformé en sucre. Dans le tube témoin avec de l''eau, coloration bleu-noir et pas de précipité. Le tube témoin sert à prouver que c''est bien la salive, et pas le temps ou la chaleur, qui a transformé l''amidon. »
+
+« La digestion de l''amidon se termine dans l''intestin grêle, grâce au suc pancréatique et au suc intestinal : le résultat est le glucose, une petite molécule. Le poisson, lui, apporte des protéines qui deviennent des acides aminés ; l''huile apporte des lipides qui deviennent acides gras et glycérol. »
+
+Question à poser : « Pourquoi faut-il transformer les aliments en petites molécules ? » Réponse : seules les petites molécules peuvent traverser la paroi intestinale et passer dans le sang.
+
+## 18:00 – 28:00 · Étape 2 : l''absorption intestinale
+
+« Le glucose arrive dans l''intestin grêle. Sa paroi est couverte de villosités. Imaginez une serviette éponge : ses petites boucles augmentent énormément la surface qui touche l''eau. Les villosités font la même chose : elles multiplient la surface d''échange. Chaque villosité contient un réseau de capillaires sanguins. Le glucose traverse la paroi très fine et passe dans le sang. »
+
+Visuel : coupe de l''intestin grêle avec un zoom sur une villosité.
+
+« Notre grain de riz, devenu glucose, voyage maintenant dans le sang. Mais pour libérer son énergie, il lui faut un partenaire : le dioxygène. Où le trouver ? »
+
+## 28:00 – 40:00 · Étape 3 : la respiration et les échanges gazeux
+
+« Le dioxygène vient de l''air. À l''inspiration, le diaphragme se contracte et descend, la cage thoracique s''agrandit et l''air entre. Il parcourt les fosses nasales, le pharynx, le larynx, la trachée, les bronches, les bronchioles, et atteint les alvéoles. »
+
+« Dans l''alvéole, l''air est riche en dioxygène ; le sang qui arrive dans les capillaires en est pauvre. Le dioxygène diffuse donc vers le sang et se fixe sur l''hémoglobine des globules rouges. Le dioxyde de carbone fait le chemin inverse. »
+
+Visuel : tableau comparatif air inspiré / air expiré (environ 21 % et 16 % de dioxygène ; environ 0,04 % et 4 % de dioxyde de carbone).
+
+Question : « Si je souffle dans de l''eau de chaux, que se passe-t-il ? Pourquoi ? » Réponse : l''eau de chaux se trouble, car l''air expiré est riche en dioxyde de carbone.
+
+## 40:00 – 48:00 · Pause et quiz interactif
+
+« Faisons une pause. Levez-vous, respirez profondément trois fois en posant la main sur le ventre : sentez-vous le diaphragme descendre ? Maintenant, le quiz. »
+
+- Question 1 : Quelle enzyme commence la digestion de l''amidon ? Réponse : l''amylase salivaire.
+- Question 2 : En quoi sont transformées les protéines ? Réponse : en acides aminés.
+- Question 3 : Où se fait l''absorption des nutriments ? Réponse : dans l''intestin grêle, au niveau des villosités.
+- Question 4 : Quel muscle se contracte à l''inspiration ? Réponse : le diaphragme.
+- Question 5 : Quel réactif met en évidence le dioxyde de carbone ? Réponse : l''eau de chaux.
+
+## 48:00 – 1:00:00 · Étape 4 : la circulation, le grand transporteur
+
+« Nous avons maintenant du glucose et du dioxygène dans le sang. Qui les transporte jusqu''aux muscles ? Le cœur et les vaisseaux. »
+
+Visuel : schéma du cœur en coupe, côté droit en bleu, côté gauche en rouge.
+
+« Le sang chargé de dioxygène quitte les poumons par les veines pulmonaires, entre dans l''oreillette gauche, passe dans le ventricule gauche, puis est propulsé dans l''aorte. Les artères le conduisent jusqu''aux muscles de vos jambes. Là, dans les capillaires, le glucose et le dioxygène passent dans les cellules musculaires. »
+
+« Dans la cellule se produit la respiration cellulaire : glucose plus dioxygène donnent dioxyde de carbone, eau et énergie. Voilà la réponse à notre question de départ : l''énergie du riz est libérée dans vos muscles grâce au dioxygène de l''air, et c''est le sang qui a tout transporté. »
+
+« Le sang appauvri en dioxygène et chargé de dioxyde de carbone revient par les veines caves dans l''oreillette droite, puis le ventricule droit l''envoie aux poumons. Et le cycle recommence. »
+
+Question : « Pourquoi le cœur bat-il plus vite pendant un match ? » Réponse : pour apporter plus vite le glucose et le dioxygène aux muscles qui en consomment davantage, et évacuer plus de dioxyde de carbone.
+
+## 1:00:00 – 1:12:00 · Étape 5 : quand un parasite s''invite, le paludisme
+
+« Le sang transporte aussi, parfois, des passagers indésirables. Le plasmodium, agent du paludisme, est injecté par la piqûre d''un moustique anophèle femelle. Il se multiplie d''abord dans le foie, puis dans les globules rouges, qu''il fait éclater. Résultat : fièvre, frissons, et anémie. Avec moins de globules rouges, le sang transporte moins de dioxygène : c''est pourquoi le malade est épuisé. »
+
+Visuel : photo d''une flaque d''eau avec des larves de moustique, puis d''une moustiquaire imprégnée.
+
+« Que faire ? Dormir sous une moustiquaire imprégnée, supprimer les eaux stagnantes, et surtout, en cas de fièvre, aller au centre de santé pour faire un test rapide. Le traitement doit être prescrit par un agent de santé et pris jusqu''au bout. »
+
+Question à poser : « Pourquoi vider les vieux pneus et les boîtes qui traînent dans la cour ? » Réponse : l''eau de pluie s''y accumule et les larves de moustiques s''y développent.
+
+## 1:12:00 – 1:20:00 · Étape 6 : l''hygiène au quotidien
+
+« Les maladies transmises par l''eau et les mains sales, comme les diarrhées ou le choléra, s''attaquent directement à notre appareil digestif. Trois gestes simples les évitent : se laver les mains au savon, boire une eau potable et protéger les aliments des mouches. La propreté du quartier, avec les journées de set setal, est une affaire collective. »
+
+Question à poser : « Une famille boit l''eau d''un puits non couvert, situé près des latrines. Quels risques court-elle et que lui conseiller ? » Réponse attendue : l''eau peut être contaminée par des microbes fécaux et provoquer diarrhées ou choléra ; il faut couvrir le puits, l''éloigner des latrines et rendre l''eau potable (ébullition ou traitement selon les consignes des services de santé).
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+« Résumons le voyage : digestion du riz en glucose, absorption dans l''intestin grêle, apport de dioxygène par les poumons, transport par le sang grâce au cœur, et libération d''énergie dans les cellules par la respiration cellulaire. Le paludisme et le manque d''hygiène perturbent ce bel équilibre. Voici l''évaluation finale. »
+
+- Question 1 : Dans l''expérience de digestion in vitro, à quoi sert le tube témoin ? Réponse : à montrer que la transformation de l''amidon est due à la salive.
+- Question 2 : Citer les trois produits de la respiration cellulaire. Réponse : dioxyde de carbone, eau et énergie.
+- Question 3 : Quel ventricule envoie le sang dans l''aorte ? Réponse : le ventricule gauche.
+- Question 4 : Pourquoi le paludisme provoque-t-il une anémie ? Réponse : le plasmodium fait éclater les globules rouges.
+- Question 5 : Citer deux moyens de prévention du paludisme. Réponse : dormir sous une moustiquaire imprégnée et supprimer les eaux stagnantes.
+
+« Merci et bravo. Pour réviser, dessinez de mémoire un grand schéma reliant intestin, poumons, cœur et muscle, avec des flèches pour le glucose, le dioxygène et le dioxyde de carbone. À bientôt ! »', 'video', 90, false, 60
+from public.courses c where c.slug = 'svt-4e'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : le voyage d''un repas, de l''assiette à la cellule');
+
 -- Cours : Organiser un service de transport de voyageurs et du personnel
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
 select 'formation-gestion-transport', (select id from public.levels where name = 'Formation professionnelle'), 'transport', 'Transport de voyageurs', 'Organiser un service de transport de voyageurs et du personnel', 'Cette formation montre comment concevoir des lignes et des horaires, affecter chauffeurs et véhicules, organiser la billetterie et le contrôle des recettes, piloter la sécurité routière et la qualité de service, et calculer la rentabilité d''une ligne. Elle s''adresse aux exploitants de transport urbain et interurbain, aux responsables du transport du personnel et aux gestionnaires de flotte. Prérequis : aisance avec les calculs de base et les pourcentages.', true, 50
