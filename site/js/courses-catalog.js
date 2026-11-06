@@ -1728,5 +1728,533 @@ window.ABC_CATALOG = [
     "duration_min": 90
    }
   ]
+ },
+ {
+  "slug": "bac-mathematiques-s",
+  "level": "Terminale",
+  "subject": "Mathématiques (série S)",
+  "module": null,
+  "title": "Mathématiques série S : réussir l'épreuve du Bac",
+  "description": "Ce cours de préparation au Baccalauréat s'adresse aux élèves de Terminale des séries scientifiques (S) du Sénégal et d'Afrique francophone. Il révise l'analyse (limites, continuité, dérivation, exponentielle et logarithme, intégrales, équations différentielles), les suites, les nombres complexes et leurs applications géométriques, ainsi que les probabilités et statistiques, avec des fiches de cours, des exercices progressifs corrigés et un sujet d'entraînement complet. Prérequis : le programme de Première S et l'essentiel du programme de Terminale S.",
+  "sort": 201,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## À qui s'adresse ce cours\n\nCe cours vise les candidats au Baccalauréat des séries scientifiques (S). Il reprend le programme du lycée, de la Seconde à la Terminale, sous l'angle de la révision, en insistant sur la Terminale. Les élèves des séries L et G trouveront des cours adaptés à leur propre épreuve sur la plateforme.\n\n## Objectifs de la leçon\n\n- Connaître la forme habituelle d'un sujet de mathématiques au Bac S et les grands types d'exercices.\n- Adopter une méthode de travail efficace pendant l'épreuve.\n- Repérer les erreurs qui coûtent le plus de points.\n- Construire un plan de révision sur 10 semaines.\n\n## Comment se présente l'épreuve\n\nLe sujet de mathématiques du Bac S comporte en général plusieurs exercices indépendants et un problème. Les exercices portent souvent sur les nombres complexes et la géométrie, sur les probabilités ou les statistiques, parfois sur les suites. Le problème est presque toujours un problème d'analyse : étude d'une fonction (souvent avec exponentielle ou logarithme), représentation graphique, calcul d'aire par une intégrale, et parfois une suite ou une équation différentielle liée à la fonction. La durée de l'épreuve, son coefficient et le barème officiel sont fixés par les textes officiels en vigueur : renseigne-toi auprès de ton établissement. Les répartitions de points données dans ce cours sont indicatives, non officielles.\n\nLes questions sont enchaînées : une partie A prépare souvent la partie B. Si tu ne réussis pas à démontrer un résultat donné dans l'énoncé (« montrer que… »), tu peux l'admettre et l'utiliser pour la suite.\n\n## Les verbes de consigne\n\n- Calculer, déterminer : donner un résultat justifié par les étapes de calcul.\n- Montrer, démontrer, justifier : raisonnement complet, propriétés citées, conclusion écrite.\n- En déduire : utiliser obligatoirement le résultat précédent.\n- Étudier les variations : calculer la dérivée, étudier son signe, dresser le tableau de variations avec les limites.\n- Interpréter graphiquement : traduire un résultat (une limite, un nombre dérivé, une intégrale) en asymptote, tangente ou aire.\n- Conjecturer : proposer un résultat à partir d'un graphique ou de calculs, sans démonstration.\n\n## La méthode pendant l'épreuve\n\n- Lire tout le sujet pendant les dix premières minutes, souligner les données et repérer les questions faciles.\n- Commencer par l'exercice où tu te sens le plus solide, mais garder du temps pour le problème, qui pèse lourd.\n- Chercher au brouillon, rédiger proprement sur la copie : une idée par ligne, les égalités alignées.\n- Encadrer les résultats et répondre par une phrase de conclusion.\n- Vérifier la cohérence : une probabilité est entre 0 et 1, une aire est positive, un module est positif, une fonction croissante ne peut pas avoir une dérivée négative.\n- Garder 10 à 15 minutes à la fin pour relire, contrôler les numéros de questions et l'orthographe des noms de théorèmes.\n\n## Les erreurs fréquentes\n\n- Oublier le domaine de définition, surtout avec ln : ln(u) n'existe que si u > 0.\n- Conclure sur une forme indéterminée (∞ − ∞, 0 × ∞, ∞/∞, 0/0) sans la lever.\n- Écrire un tableau de variations sans justifier le signe de la dérivée.\n- Confondre f(a), f'(a) et l'équation de la tangente y = f'(a)(x − a) + f(a).\n- Oublier les unités d'aire : une aire se donne en unités d'aire (u.a.), puis éventuellement en cm² selon le repère.\n- En probabilités, additionner des probabilités d'événements qui ne sont pas incompatibles.\n- Pour les complexes, donner un argument sans vérifier le quadrant (signe de la partie réelle et de la partie imaginaire).\n- Pour une récurrence, oublier l'initialisation ou écrire l'hérédité sans utiliser l'hypothèse.\n\n## La calculatrice : une alliée, pas une béquille\n\nLa calculatrice sert à vérifier une valeur, à tracer une courbe pour conjecturer, à calculer des termes de suite ou une valeur approchée. Mais une réponse sans justification ne rapporte presque rien. Écris toujours la valeur exacte (3 − 4/e, ln 2, √3) avant la valeur approchée, et précise l'arrondi demandé.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : limites, continuité, théorème des valeurs intermédiaires.\n- Semaine 2 : dérivation, tangentes, études de fonctions rationnelles et asymptotes.\n- Semaine 3 : fonction logarithme népérien.\n- Semaine 4 : fonction exponentielle et croissances comparées.\n- Semaine 5 : primitives, intégrales, calculs d'aires, intégration par parties, équations différentielles.\n- Semaine 6 : suites numériques (récurrence, convergence, suites auxiliaires).\n- Semaine 7 : nombres complexes et transformations du plan.\n- Semaine 8 : dénombrement, probabilités, loi binomiale ; statistiques à deux variables.\n- Semaine 9 : deux sujets complets en temps réel, corrigés soigneusement.\n- Semaine 10 : relecture des fiches, reprise des erreurs, un dernier sujet, repos la veille.\n\nChaque semaine, prévois trois temps : relire la fiche de cours (30 minutes), refaire les exercices corrigés sans regarder la solution, puis traiter au moins un exercice nouveau de niveau Bac. Travailler en groupe d'étude, comme cela se fait dans beaucoup de lycées de Dakar, Thiès ou Ziguinchor, est très utile : expliquer une méthode à un camarade est la meilleure façon de la maîtriser.\n\n## Exercices pratiques\n\n1. Classe les verbes suivants selon qu'ils demandent une démonstration ou un simple calcul : calculer, montrer, justifier, déterminer une valeur approchée.\n\n2. Un élève écrit : « lim (x → +∞) de (x² − x) = +∞ − ∞ = 0 ». Explique son erreur et donne la bonne limite.\n\n3. Donne l'ensemble de définition de f(x) = ln(2x − 6).\n\n4. Un élève affirme qu'une aire vaut −2,5 u.a. Que doit-il contrôler ?\n\n5. Un candidat dispose de 4 heures (durée supposée pour l'exercice) pour un sujet de trois exercices notés 4, 4 et 12 points (barème indicatif). Propose une répartition du temps.\n\n6. Rédige la structure complète d'une démonstration par récurrence de la propriété P(n) : « 2ⁿ ≥ n + 1 » pour tout entier n ≥ 0.\n\n## Corrigé\n\n1. Démonstration : montrer, justifier. Calcul : calculer, déterminer une valeur approchée (mais les étapes doivent rester visibles).\n\n2. ∞ − ∞ est une forme indéterminée, on ne peut pas conclure directement. On factorise : x² − x = x²(1 − 1/x). Comme x² tend vers +∞ et (1 − 1/x) tend vers 1, la limite est +∞.\n\n3. Il faut 2x − 6 > 0, soit x > 3. Df = ]3 ; +∞[.\n\n4. Une aire est toujours positive. S'il a calculé une intégrale sur un intervalle où la fonction est négative, l'aire est l'opposé de l'intégrale, soit 2,5 u.a. Il doit vérifier le signe de la fonction sur l'intervalle.\n\n5. Exemple : 10 minutes de lecture, environ 40 minutes pour chaque exercice de 4 points, 2 heures pour le problème de 12 points, 10 minutes de relecture. Total : 10 + 80 + 120 + 10 = 220 minutes, ce qui laisse 20 minutes de marge.\n\n6. Initialisation : pour n = 0, 2⁰ = 1 et 0 + 1 = 1, donc P(0) est vraie. Hérédité : on suppose P(n) vraie pour un entier n ≥ 0, c'est-à-dire 2ⁿ ≥ n + 1. Alors 2ⁿ⁺¹ = 2 × 2ⁿ ≥ 2(n + 1) = 2n + 2 ≥ n + 2, car n ≥ 0. Donc P(n + 1) est vraie. Conclusion : P(n) est vraie pour tout entier n ≥ 0."
+   },
+   {
+    "title": "Analyse : limites, dérivation, exp et ln, intégrales et équations différentielles",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Suites numériques, nombres complexes et géométrie",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 70
+   },
+   {
+    "title": "Probabilités et statistiques",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 65
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille du Bac",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-mathematiques-l",
+  "level": "Terminale",
+  "subject": "Mathématiques (série L)",
+  "module": null,
+  "title": "Mathématiques série L : réussir l'épreuve du Bac",
+  "description": "Ce cours de préparation au Baccalauréat s'adresse aux élèves de Terminale des séries littéraires (L) du Sénégal et d'Afrique francophone, souvent peu à l'aise avec les mathématiques. Il révise pas à pas les fonctions et leurs graphiques, les suites et les pourcentages (intérêts, croissance d'une population), les statistiques et les probabilités, ainsi que la logique et la résolution de problèmes concrets, avec des exercices corrigés et un sujet d'entraînement complet. Prérequis : les calculs de base du collège (fractions, pourcentages, équations du premier degré).",
+  "sort": 202,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## À qui s'adresse ce cours\n\nCe cours est conçu pour les candidats au Baccalauréat des séries littéraires (L). Il part du principe que tu n'aimes pas forcément les mathématiques et que tu veux surtout des méthodes claires pour gagner des points. Il reprend des notions vues depuis la Seconde, sous l'angle de la révision, en insistant sur la Terminale. Les chapitres exigés peuvent varier selon ta série exacte et les instructions en vigueur : vérifie-les avec ton professeur.\n\n## Objectifs de la leçon\n\n- Savoir comment se présente l'épreuve de mathématiques en série L.\n- Comprendre ce que le correcteur attend.\n- Éviter les erreurs les plus fréquentes.\n- Organiser ses révisions sur 10 semaines.\n\n## Comment se présente l'épreuve\n\nLe sujet comporte en général deux ou trois exercices et parfois un petit problème. Les thèmes qui reviennent le plus sont : les pourcentages et les suites (évolution d'un prix, d'un capital, d'une population), les fonctions (lecture de graphique, étude simple, problème de coût et de bénéfice), les statistiques (moyenne, médiane, écart-type) et les probabilités simples. Des questions de logique ou de raisonnement peuvent aussi apparaître. La durée, le coefficient et le barème officiel sont fixés par les textes officiels en vigueur : ne te fie pas aux rumeurs. Les points indiqués dans nos sujets d'entraînement sont indicatifs, non officiels.\n\nBonne nouvelle : en série L, les sujets sont très souvent concrets. On te parle d'une boutique, d'un champ, d'une association, d'un village. Si tu sais traduire une phrase en calcul, tu as déjà fait la moitié du travail. C'est là que tes qualités de lecteur deviennent un atout.\n\n## Ce que le correcteur attend\n\n- Des calculs posés, pas seulement des résultats.\n- Une phrase de conclusion qui répond à la question, avec l'unité (FCFA, habitants, kilogrammes).\n- Des tableaux propres quand il y a des statistiques.\n- Une justification courte quand on demande « justifier » : une propriété, un calcul ou un exemple.\n\n## La méthode en cinq étapes\n\n- Lire l'énoncé deux fois et souligner les nombres et les mots importants (« augmente de », « diminue de », « par an », « au moins »).\n- Reformuler la question avec tes mots : « On me demande combien il y aura d'habitants dans 5 ans. »\n- Écrire le calcul en entier, puis le faire à la calculatrice.\n- Vérifier si le résultat est raisonnable : un prix qui baisse ne peut pas devenir plus grand.\n- Rédiger la conclusion en une phrase.\n\n## Les erreurs fréquentes\n\n- Additionner des pourcentages successifs : une hausse de 10 % puis une hausse de 10 % ne font pas 20 %, mais 21 %.\n- Croire qu'une baisse de 20 % annule une hausse de 20 % : ce n'est pas vrai.\n- Confondre médiane et moyenne.\n- Oublier de ranger les valeurs dans l'ordre avant de chercher la médiane.\n- Donner une probabilité supérieure à 1 ou négative.\n- Confondre une implication et sa réciproque en logique.\n- Recopier un résultat de la calculatrice avec dix décimales sans arrondir correctement.\n\n## Bien utiliser sa calculatrice\n\nApprends à utiliser les touches de puissance (pour 1,05 puissance 10 par exemple), de racine carrée et, si ta calculatrice le permet, le mode statistique qui calcule la moyenne et l'écart-type. Entraîne-toi avec ta propre calculatrice, celle que tu utiliseras le jour de l'examen.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : pourcentages, coefficients multiplicateurs, évolutions successives.\n- Semaine 2 : suites arithmétiques.\n- Semaine 3 : suites géométriques, intérêts simples et composés, croissance d'une population.\n- Semaine 4 : fonctions affines et lecture graphique.\n- Semaine 5 : fonctions du second degré, dérivée et tableau de variations ; problèmes de bénéfice.\n- Semaine 6 : statistiques (moyenne, médiane, quartiles, écart-type).\n- Semaine 7 : probabilités simples et tableaux à double entrée.\n- Semaine 8 : logique et raisonnement.\n- Semaine 9 : deux sujets complets en temps limité.\n- Semaine 10 : relecture des fiches, reprise des erreurs, repos la veille.\n\nConseil pratique : 30 minutes de mathématiques par jour valent mieux que 4 heures le dimanche. Travaille avec un camarade de série S ou un grand frère ou une grande sœur : demande-lui de t'expliquer une méthode, puis réexplique-la toi-même.\n\n## Exercices pratiques\n\n1. Un article coûte 10 000 FCFA. Il augmente de 10 %, puis encore de 10 %. Quel est son nouveau prix ? Quel est le pourcentage global d'augmentation ?\n\n2. Reformule cette question avec tes mots : « Déterminer l'année à partir de laquelle la population dépassera 3 000 habitants. »\n\n3. Un élève trouve qu'une probabilité vaut 1,2. Que peut-on en conclure ?\n\n4. Range dans l'ordre et donne la médiane de la série : 12 ; 7 ; 15 ; 9 ; 10.\n\n5. Propose un emploi du temps de révision de mathématiques pour une semaine, à raison de 30 minutes par jour, pour la semaine 3 du plan.\n\n## Corrigé\n\n1. 10 000 × 1,1 = 11 000 FCFA, puis 11 000 × 1,1 = 12 100 FCFA. Coefficient global : 1,1 × 1,1 = 1,21, soit une hausse de 21 % et non de 20 %.\n\n2. « Je dois trouver la première année où le nombre d'habitants est plus grand que 3 000. » On calcule les termes successifs jusqu'à dépasser 3 000.\n\n3. Il y a une erreur : une probabilité est toujours comprise entre 0 et 1. Il faut reprendre le calcul (souvent, on a divisé dans le mauvais sens).\n\n4. Série rangée : 7 ; 9 ; 10 ; 12 ; 15. Il y a 5 valeurs : la médiane est la 3e, soit 10.\n\n5. Exemple : lundi, relire la fiche sur les suites géométriques ; mardi, deux exercices de calcul de termes ; mercredi, intérêts simples et composés ; jeudi, croissance d'une population ; vendredi, un exercice type Bac ; samedi, correction et liste des erreurs ; dimanche, repos ou quiz rapide."
+   },
+   {
+    "title": "Fonctions et graphiques : lecture, second degré, dérivée et bénéfice",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Suites et pourcentages : intérêts et croissance de population",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Statistiques, probabilités et logique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille du Bac",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-physique-chimie",
+  "level": "Terminale",
+  "subject": "Physique-Chimie (séries S)",
+  "module": null,
+  "title": "Physique-Chimie séries S : réussir l'épreuve du Bac",
+  "description": "Ce cours de préparation au Baccalauréat s'adresse aux élèves de Terminale des séries scientifiques (S) du Sénégal et d'Afrique francophone. Il révise la mécanique (cinématique, lois de Newton, mouvements dans les champs, énergie), les oscillations et les ondes, l'électricité (circuits RC, RL et LC) et la chimie (acides et bases, dosages, cinétique, alcools, acides carboxyliques et esters), avec des fiches de cours, des exercices corrigés aux calculs vérifiés et un sujet d'entraînement complet. Prérequis : le programme de Première S et les bases du calcul littéral, des dérivées et des logarithmes décimaux.",
+  "sort": 203,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## À qui s'adresse ce cours\n\nCe cours vise les candidats au Baccalauréat des séries scientifiques (S). Il reprend les notions vues depuis la Seconde, sous l'angle de la révision, en insistant sur le programme de Terminale. Selon ta série exacte, certains chapitres peuvent être plus ou moins approfondis : vérifie la liste avec ton professeur.\n\n## Objectifs de la leçon\n\n- Connaître la forme habituelle d'un sujet de Physique-Chimie au Bac S.\n- Adopter une méthode de résolution rigoureuse.\n- Maîtriser les unités, les conversions et les chiffres significatifs.\n- Organiser ses révisions sur 10 semaines.\n\n## Comment se présente l'épreuve\n\nLe sujet comporte en général plusieurs exercices indépendants, à la fois en chimie et en physique. En chimie, on retrouve souvent la chimie organique (alcools, acides carboxyliques, esters), les réactions acide-base et les dosages, la cinétique chimique. En physique, la mécanique (lois de Newton, mouvements dans les champs de pesanteur, électrique ou magnétique, satellites), les oscillations et les circuits électriques (RC, RL, LC), et parfois les ondes. La durée, le coefficient et le barème officiel sont fixés par les textes officiels en vigueur. Les points indiqués dans nos sujets d'entraînement sont indicatifs, non officiels.\n\n## La méthode de résolution en six étapes\n\n- Lire l'énoncé, relever les données avec leurs unités et faire un schéma.\n- Préciser le système étudié et le référentiel (en mécanique), ou écrire l'équation de la réaction (en chimie).\n- Faire le bilan : forces, quantités de matière, grandeurs électriques.\n- Écrire la loi ou le théorème utilisé (deuxième loi de Newton, théorème de l'énergie cinétique, loi d'additivité des tensions, relation à l'équivalence…).\n- Établir l'expression littérale, puis seulement remplacer par les valeurs numériques.\n- Donner le résultat avec l'unité et un nombre raisonnable de chiffres significatifs, puis vérifier sa vraisemblance.\n\n## Unités et conversions : le carré d'as\n\n- Toujours travailler en unités du Système international : mètre, kilogramme, seconde, ampère, kelvin, mole.\n- Préfixes : m (milli) = 10⁻³ ; µ (micro) = 10⁻⁶ ; n (nano) = 10⁻⁹ ; k (kilo) = 10³ ; M (méga) = 10⁶.\n- 1 L = 10⁻³ m³ ; 1 mL = 10⁻³ L ; 1 km/h = 1/3,6 m/s ; 1 h = 3 600 s.\n- Concentration molaire en mol/L, concentration massique en g/L, et Cm = C × M.\n- Une analyse dimensionnelle permet de vérifier une formule : RC et L/R s'expriment en secondes, √(LC) aussi.\n\n## Chiffres significatifs\n\nLe résultat ne doit pas être plus précis que la donnée la moins précise. Si les données sont fournies avec 2 ou 3 chiffres significatifs, donne le résultat avec 2 ou 3 chiffres significatifs. Exemple : 2,0 × 3,14 = 6,3 (et non 6,28).\n\n## Les erreurs fréquentes\n\n- Oublier de convertir les millilitres en litres ou les microfarads en farads.\n- Projeter une force sur un axe en se trompant de sinus ou de cosinus.\n- Écrire une équation chimique non équilibrée.\n- Confondre équivalence et neutralité : à l'équivalence d'un dosage d'acide faible par une base forte, le pH est supérieur à 7.\n- Donner un résultat sans unité, ce qui coûte des points.\n- Utiliser la calculatrice en degrés au lieu de radians pour une fonction sinusoïdale du temps.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : cinématique et lois de Newton.\n- Semaine 2 : mouvement dans le champ de pesanteur, plan incliné, frottements.\n- Semaine 3 : mouvements dans les champs électrique et magnétique, satellites.\n- Semaine 4 : travail, énergie cinétique, énergie mécanique.\n- Semaine 5 : oscillateurs mécaniques et ondes.\n- Semaine 6 : circuits RC, RL et LC.\n- Semaine 7 : acides et bases, pH, dosages.\n- Semaine 8 : cinétique chimique ; alcools, acides carboxyliques, esters.\n- Semaine 9 : deux sujets complets en temps limité.\n- Semaine 10 : relecture des fiches de formules, reprise des erreurs, repos la veille.\n\nPrépare une fiche de formules par chapitre, avec pour chaque formule les unités de chaque grandeur. Relis-les dans le car rapide ou en attendant le début des cours : la répétition fait la mémoire.\n\n## Exercices pratiques\n\n1. Convertir : 250 mL en L ; 470 µF en F ; 72 km/h en m/s ; 5,0 ms en s.\n\n2. Vérifier par les unités que le produit RC est un temps (on rappelle q = C × u et u = R × i).\n\n3. Donner le résultat avec le bon nombre de chiffres significatifs : m = 2,5 kg et a = 3,32 m/s², F = m × a.\n\n4. Un élève écrit pour la masse d'un satellite « m = 1 200 ». Qu'est-ce qui manque ?\n\n5. On dissout 5,85 g de chlorure de sodium (M = 58,5 g/mol) dans 500 mL d'eau. Calculer la concentration molaire.\n\n6. Un élève trouve qu'une voiture roule à 300 m/s sur la route de Mbour. Que doit-il vérifier ?\n\n## Corrigé\n\n1. 250 mL = 0,250 L ; 470 µF = 4,70 × 10⁻⁴ F ; 72 km/h = 72/3,6 = 20 m/s ; 5,0 ms = 5,0 × 10⁻³ s.\n\n2. R = u/i s'exprime en V/A ; C = q/u s'exprime en C/V. RC s'exprime donc en (V/A) × (C/V) = C/A. Or 1 A = 1 C/s, donc C/A = s. RC est bien un temps.\n\n3. F = 2,5 × 3,32 = 8,30, à arrondir à 2 chiffres significatifs (comme m) : F = 8,3 N.\n\n4. L'unité : il faut écrire m = 1 200 kg (ou 1,2 × 10³ kg).\n\n5. n = 5,85/58,5 = 0,100 mol ; V = 0,500 L ; C = 0,100/0,500 = 0,200 mol/L.\n\n6. 300 m/s = 1 080 km/h : c'est invraisemblable pour une voiture. Il doit vérifier ses conversions (sans doute une confusion entre km/h et m/s ou une erreur de puissance de 10)."
+   },
+   {
+    "title": "Mécanique : cinématique, lois de Newton, mouvements dans les champs et énergie",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Oscillations, ondes et électricité : circuits RC, RL et LC",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 70
+   },
+   {
+    "title": "Chimie : acides-bases et dosages, cinétique, alcools, acides carboxyliques et esters",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 70
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 90
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive de veille du Bac",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-svt",
+  "level": "Terminale",
+  "subject": "SVT (séries S)",
+  "module": null,
+  "title": "SVT Terminale S : réussir l'épreuve du Bac",
+  "description": "Cours d'examen destiné aux élèves de Terminale des séries scientifiques (S) qui préparent l'épreuve de SVT du Baccalauréat au Sénégal. Il révise l'essentiel du programme du lycée, en insistant sur la Terminale : reproduction et hérédité, immunologie, système nerveux et activité musculaire, régulations, géologie et évolution. Il entraîne aux méthodes de l'épreuve (exploitation de documents, schémas, résultats expérimentaux) avec des exercices de niveau Bac corrigés et un sujet type. Prérequis : le cours de SVT de Première S.",
+  "sort": 204,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve de SVT et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce qu'on attend de vous à l'épreuve de SVT du Bac (séries S).\n- Connaître les grands types d'exercices et la manière de les aborder.\n- Maîtriser la méthode d'exploitation d'un document (texte, graphique, tableau, schéma, résultat expérimental).\n- Éviter les erreurs qui font perdre le plus de points.\n- Organiser vos révisions sur 10 semaines.\n\nCe cours s'adresse aux élèves de Terminale des séries scientifiques (S1, S2…). La durée de l'épreuve, son coefficient et son barème sont fixés par les textes officiels en vigueur : vérifiez-les chaque année auprès de votre établissement.\n\n## Ce que l'épreuve évalue\n\nL'épreuve de SVT ne vérifie pas seulement que vous avez appris votre cours. Elle évalue trois capacités complémentaires.\n\n- Restituer des connaissances : définir un mot (méiose, anticorps, potentiel d'action), décrire un mécanisme, réaliser un schéma annoté.\n- Raisonner à partir de documents : lire un graphique, comparer des résultats expérimentaux, formuler une hypothèse et la tester.\n- Communiquer avec rigueur : un vocabulaire scientifique exact, des phrases courtes, des schémas propres avec titre et légende.\n\nEn pratique, un sujet combine en général une partie de restitution des connaissances (questions de cours, schémas, QCM) et une ou plusieurs parties de raisonnement fondées sur des documents, surtout sur les thèmes de Terminale ; les notions de Seconde et de Première servent de socle.\n\n## Les types d'exercices\n\n- La question de cours : courte, elle exige une réponse précise. Une définition doit contenir le mot clé et la caractéristique essentielle. Exemple : « La méiose est une succession de deux divisions cellulaires qui, à partir d'une cellule diploïde (2n), produit quatre cellules haploïdes (n). »\n- Le schéma : il porte un titre, des légendes alignées et reliées par des traits à la règle, et il est assez grand (au moins un tiers de page).\n- L'exploitation de documents : on vous demande d'analyser, d'interpréter, puis de conclure.\n- Le problème de génétique : à partir de croisements ou d'un arbre généalogique, vous déterminez la dominance, la localisation des gènes et les génotypes, et vous justifiez avec un échiquier de croisement.\n- La synthèse : un court texte organisé (introduction, développement, conclusion) qui relie plusieurs notions, par exemple « le rôle des lymphocytes dans la défense de l'organisme ».\n\n## Méthode d'exploitation d'un document\n\nRetenez la démarche en quatre temps : présenter, analyser, interpréter, conclure.\n\n- Présenter : une phrase qui dit ce que montre le document (« Le document 2 présente l'évolution de la glycémie d'un sujet sain après un repas, en fonction du temps »).\n- Analyser (« je constate ») : décrire les variations avec des valeurs chiffrées et des unités. Pour une courbe, découpez en phases : « de 0 à 30 min, la glycémie augmente de 0,9 g/L à 1,4 g/L ; de 30 à 120 min, elle diminue et revient à 0,9 g/L ».\n- Interpréter (« j'explique ») : donner la cause biologique en mobilisant le cours (« l'augmentation s'explique par l'absorption intestinale du glucose ; le retour à la normale traduit l'action de l'insuline »).\n- Conclure : une phrase qui répond exactement à la question posée.\n\nPour un résultat expérimental, comparez toujours l'expérience au témoin : un seul paramètre doit changer entre les deux. C'est cette comparaison qui permet de conclure sur le rôle d'un organe, d'une molécule ou d'une cellule.\n\n## Les erreurs fréquentes\n\n- Confondre analyse et interprétation : décrire une courbe en écrivant directement « grâce à l'insuline » sans avoir d'abord relevé les valeurs.\n- Oublier les unités (mV, ms, g/L) ou recopier les valeurs fausses.\n- Écrire « le gène A est dominant » sans justification. Il faut le démontrer : « la F1 est homogène et présente le phénotype [A] : l'allèle A domine l'allèle a ».\n- Confondre gène et allèle, chromosome et chromatide, haploïde et diploïde.\n- Ne pas répondre à la question posée : relisez la consigne avant de conclure.\n- Mal gérer le temps et laisser la dernière partie inachevée.\n\n## Gérer le temps le jour de l'épreuve\n\nLisez tout le sujet, répartissez le temps selon les points annoncés, commencez par la partie que vous maîtrisez le mieux et gardez dix minutes pour relire unités et conclusions.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : bases cellulaires (ADN, chromosome, mitose) et méthode d'exploitation de documents.\n- Semaine 2 : méiose et fécondation, brassages génétiques, schémas à savoir refaire.\n- Semaine 3 : génétique mendélienne (monohybridisme, dihybridisme, gènes liés, croisement-test).\n- Semaine 4 : génétique humaine (arbres généalogiques, drépanocytose, hémophilie, daltonisme).\n- Semaine 5 : immunologie (immunité innée et adaptative, lymphocytes, anticorps, VIH, vaccination).\n- Semaine 6 : système nerveux (message nerveux, synapse, réflexe myotatique) et activité musculaire.\n- Semaine 7 : régulation de la glycémie et régulations hormonales (reproduction).\n- Semaine 8 : géologie et évolution (révisions de Seconde et Première), puis bilan des points faibles.\n- Semaine 9 : deux sujets complets en temps limité, correction détaillée.\n- Semaine 10 : fiches de synthèse, schémas, définitions ; repos et sommeil la veille.\n\nChaque semaine, alternez : relire une fiche, refaire un schéma de mémoire, traiter un exercice de documents.\n\n## Points clés\n\n- Le Bac de SVT évalue connaissances, raisonnement et communication.\n- Toujours : présenter, analyser avec des valeurs, interpréter avec le cours, conclure.\n- Un résultat expérimental se compare à un témoin.\n- Un schéma a un titre et des légendes.\n- Les durées, coefficients et barèmes sont ceux des textes officiels en vigueur.\n\n## Exercices pratiques\n\nExercice 1. Définissez : gène, allèle, caryotype.\n\nExercice 2. Un élève écrit : « D'après le document, la glycémie augmente grâce au repas. » Expliquez pourquoi cette phrase mélange analyse et interprétation, puis réécrivez-la correctement.\n\nExercice 3. Le tableau suivant donne la glycémie d'un sujet à jeun puis après un repas riche en glucides (en g/L) : 0 min : 0,9 ; 30 min : 1,4 ; 60 min : 1,2 ; 90 min : 1,0 ; 120 min : 0,9. Analysez ces résultats en distinguant deux phases.\n\nExercice 4. On retire le pancréas d'un chien (expérience A) ; un autre chien subit la même anesthésie et la même incision sans ablation (expérience B). Quel est le rôle de l'expérience B ? Que permet-elle de conclure ?\n\nExercice 5. Vous disposez de 3 semaines avant l'examen et vous êtes faible en génétique et en immunologie. Proposez un programme de révision réaliste.\n\n## Corrigé\n\nExercice 1. Un gène est une portion d'ADN, située à un endroit précis d'un chromosome (le locus), qui détermine un caractère héréditaire. Un allèle est une version d'un gène : par exemple l'allèle A (hémoglobine normale) et l'allèle S (hémoglobine S) du gène de la bêta-globine. Le caryotype est la représentation ordonnée des chromosomes d'une cellule, classés par paires selon leur taille et la position du centromère ; chez l'être humain, il compte 46 chromosomes (23 paires).\n\nExercice 2. « La glycémie augmente » est un constat (analyse) ; « grâce au repas » est une explication (interprétation) qui n'est pas justifiée par des valeurs. Correction : « Après le repas, la glycémie passe de 0,9 g/L à 1,4 g/L en 30 minutes. Cette augmentation s'explique par l'absorption intestinale du glucose issu de la digestion des glucides. »\n\nExercice 3. Phase 1 (0 à 30 min) : la glycémie augmente de 0,9 à 1,4 g/L, soit une hausse de 0,5 g/L. Phase 2 (30 à 120 min) : elle diminue progressivement (1,2 puis 1,0) et retrouve sa valeur initiale de 0,9 g/L à 120 min. Conclusion : chez ce sujet, la glycémie est régulée et revient à sa valeur de référence en deux heures environ.\n\nExercice 4. L'expérience B est le témoin : elle montre que les effets observés ne sont dus ni à l'anesthésie ni à l'opération. Si seul le chien A devient hyperglycémique, on peut conclure que le pancréas intervient dans la régulation de la glycémie (hypoglycémiante).\n\nExercice 5. Exemple : semaine 1, génétique (méiose, brassages, deux exercices de croisements et un arbre généalogique par jour) ; semaine 2, immunologie (fiches sur les lymphocytes, schéma de l'anticorps, deux exercices de documents) ; semaine 3, un sujet complet en temps limité tous les deux jours, correction, révision des fiches des autres chapitres. Chaque jour, 15 minutes de définitions."
+   },
+   {
+    "title": "Reproduction et hérédité : méiose, génétique mendélienne et génétique humaine",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Immunologie, système nerveux et activité musculaire",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Régulations (glycémie, hormones), géologie et évolution",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement complet corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive la veille du Bac de SVT",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-philosophie",
+  "level": "Terminale",
+  "subject": "Philosophie (toutes séries)",
+  "module": null,
+  "title": "Philosophie au Bac : méthode, sujets et plans détaillés",
+  "description": "Cours d'examen pour tous les élèves de Terminale (séries L, S et G) qui préparent l'épreuve de philosophie du Baccalauréat au Sénégal. Complémentaire du cours « Philosophie Terminale », il approfondit la méthode de la dissertation et du commentaire de texte, puis propose des sujets traités avec plans détaillés sur les grandes notions (conscience et inconscient, liberté, vérité, travail et technique, État, morale, religion, culture). Il apprend à mobiliser avec rigueur les auteurs occidentaux et africains, sans citations inventées.",
+  "sort": 205,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve de philosophie et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce que le correcteur attend d'une copie de philosophie au Bac.\n- Reconnaître les différents types de sujets et choisir le sien en connaissance de cause.\n- Connaître les erreurs qui coûtent le plus cher.\n- Organiser ses révisions sur 10 semaines.\n\nCe cours d'examen s'adresse aux élèves de Terminale de toutes les séries (L, S et G). Il complète le cours « Philosophie Terminale », qui expose les notions : ici, l'accent est mis sur la méthode, les sujets et les plans détaillés. La durée de l'épreuve, son coefficient selon les séries et les modalités de notation sont fixés par les textes officiels en vigueur ; renseignez-vous auprès de votre établissement.\n\n## Ce que l'épreuve évalue\n\nL'épreuve de philosophie propose en général plusieurs sujets au choix : des sujets de dissertation (une question à traiter) et un texte d'auteur à commenter. Quel que soit le choix, le correcteur évalue la même chose : votre capacité à réfléchir par vous-même de façon rigoureuse. Il ne cherche pas une récitation de cours, ni une opinion personnelle affirmée sans preuve. Il attend :\n\n- une compréhension précise du sujet (le sens exact des mots, la question réellement posée) ;\n- un problème clairement formulé (la problématique) ;\n- une argumentation progressive, où chaque idée est justifiée, illustrée et discutée ;\n- des références philosophiques exactes et utilisées à bon escient ;\n- une expression claire, correcte, sans familiarité.\n\nLa philosophie n'a pas de « bonne réponse » unique. Deux copies défendant des conclusions opposées peuvent obtenir une excellente note si elles sont rigoureuses.\n\n## Les types de sujets de dissertation\n\n- La question directe sur une notion : « Qu'est-ce qu'être libre ? ». Il faut dépasser la définition du dictionnaire et construire une réflexion.\n- La question qui appelle « oui ou non » : « Le travail libère-t-il l'homme ? ». Le piège est de répondre trop vite. Il faut montrer pourquoi la question se pose, c'est-à-dire pourquoi on peut répondre oui et non.\n- La question de possibilité ou de légitimité : « Peut-on… ? », « Doit-on… ? », « A-t-on le droit de… ? ». Distinguez le fait (ce qui est possible) et le droit (ce qui est légitime).\n- La relation entre deux notions : « La technique menace-t-elle la culture ? », « Le bonheur est-il compatible avec le devoir ? ». Interrogez la nature du lien (opposition, condition, complémentarité).\n- La formule à discuter : un énoncé suivi d'une consigne (« Expliquez et discutez »). Il faut d'abord comprendre l'énoncé, puis l'examiner.\n\n## Le commentaire de texte en bref\n\nLe commentaire porte sur un extrait d'un auteur, souvent d'une quinzaine à une trentaine de lignes. On attend que vous dégagiez le thème, la thèse, le problème et la structure du texte, que vous l'expliquiez avec précision, puis que vous en évaluiez la portée. La leçon 3 détaille cette méthode.\n\n## Bien choisir son sujet\n\nPrenez cinq à dix minutes pour lire tous les sujets. Pour chacun : ai-je compris tous les mots ? vois-je au moins deux réponses possibles ? ai-je des références précises ? Le commentaire convient à ceux qui lisent attentivement : le texte fournit les idées. Ne choisissez jamais un sujet parce qu'il « ressemble » à un sujet traité en classe : une petite différence de formulation change souvent tout le problème.\n\n## Les erreurs fréquentes\n\n- Le hors-sujet : traiter la notion en général au lieu de la question posée (parler de la liberté en général pour « Peut-on être libre sans être éclairé ? »).\n- Le catalogue d'auteurs : « Descartes pense que…, Kant pense que…, Sartre pense que… » sans fil conducteur.\n- L'absence de problématique : une introduction qui répète le sujet sans montrer la difficulté.\n- Les citations inventées ou déformées : mieux vaut reformuler fidèlement une idée en citant l'auteur et l'œuvre qu'inventer une phrase entre guillemets.\n- Les exemples vagues (« de nos jours, beaucoup de gens… ») au lieu d'exemples précis et analysés.\n- Une conclusion qui ne répond pas à la question.\n- Une copie inachevée faute de gestion du temps.\n\n## Méthode de travail pendant l'année\n\n- Construire pour chaque notion une fiche de deux pages : définitions, distinctions (fait et droit, nature et culture, croire et savoir), problèmes classiques, références (auteur, œuvre, idée), exemples.\n- S'entraîner chaque semaine sur une introduction complète et un plan détaillé : c'est l'exercice le plus rentable.\n- Lire de vrais textes courts : un chapitre du Discours de la méthode de Descartes, un passage de L'existentialisme est un humanisme de Sartre, un chapitre de Peau noire, masques blancs de Fanon.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : méthode de la dissertation (analyse du sujet, problématique, plan).\n- Semaine 2 : conscience et inconscient ; une introduction rédigée.\n- Semaine 3 : liberté ; un plan détaillé.\n- Semaine 4 : vérité, raison et science ; méthode du commentaire de texte.\n- Semaine 5 : travail et technique ; un commentaire complet.\n- Semaine 6 : État et politique, justice et droit ; une dissertation complète en temps limité.\n- Semaine 7 : morale et devoir ; religion.\n- Semaine 8 : culture ; auteurs africains (Senghor, Cheikh Anta Diop, Hountondji, Fanon).\n- Semaine 9 : deux sujets complets en temps réel (une dissertation, un commentaire).\n- Semaine 10 : relecture des fiches, banque d'exemples, repos.\n\n## Points clés\n\n- On évalue une réflexion rigoureuse, pas une récitation ni une opinion.\n- Toute question cache une difficulté : il faut la faire apparaître.\n- Références exactes, reformulées fidèlement ; aucune citation inventée.\n- Une introduction et un plan détaillé par semaine.\n\n## Exercices pratiques\n\nExercice 1. Classez ces sujets selon leur type : a) « Qu'est-ce qu'une vérité ? » ; b) « Peut-on être libre dans une société ? » ; c) « La technique menace-t-elle la nature ? » ; d) « Faut-il obéir aux lois injustes ? ».\n\nExercice 2. Pour le sujet « Le travail libère-t-il l'homme ? », montrez en deux phrases qu'on peut répondre oui et en deux phrases qu'on peut répondre non.\n\nExercice 3. Distinguez le fait et le droit dans le sujet « Peut-on désobéir à l'État ? ».\n\nExercice 4. Corrigez cette phrase d'introduction : « Depuis la nuit des temps, l'homme s'est toujours posé la question de la liberté. »\n\nExercice 5. Un élève hésite entre une dissertation sur « La conscience de soi est-elle une connaissance de soi ? » et un commentaire d'un texte de Descartes. Donnez-lui trois critères pour choisir.\n\n## Corrigé\n\nExercice 1. a) question directe sur une notion ; b) question de possibilité ; c) relation entre deux notions (technique et nature) ; d) question de légitimité (droit), qui oppose l'obligation légale et l'exigence morale de justice.\n\nExercice 2. Oui : par le travail, l'homme transforme la nature et se rend moins dépendant d'elle ; en produisant des œuvres, il prend conscience de ses capacités et gagne son autonomie économique. Non : le travail est d'abord une contrainte imposée par le besoin ; dans certaines conditions (travail forcé, travail à la chaîne, exploitation), il dépossède le travailleur du fruit et du sens de son activité.\n\nExercice 3. Le fait : est-il matériellement possible de désobéir (oui, chacun peut enfreindre la loi, au risque d'une sanction) ? Le droit : est-il légitime de désobéir, et à quelles conditions (loi injuste, atteinte aux droits fondamentaux, objection de conscience) ? Le cœur du sujet est la question de droit.\n\nExercice 4. La phrase est vague et invérifiable. Mieux vaut partir d'une situation précise : « Un jeune diplômé de Thiès qui choisit librement son métier découvre vite que ce choix dépend du marché de l'emploi, de sa famille, de ses moyens : son choix était-il vraiment libre ? »\n\nExercice 5. Comprend-il précisément les mots « conscience de soi » et « connaissance de soi » et leur différence ? Voit-il au moins deux réponses argumentées ? Comprend-il le texte de Descartes à la première lecture, au point d'en dégager la thèse ? Il choisira le sujet pour lequel il répond oui au plus grand nombre de critères."
+   },
+   {
+    "title": "La dissertation en profondeur : conscience, inconscient, liberté, vérité",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Le commentaire de texte en profondeur : travail, technique et État",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Morale, religion, culture : sujets, plans détaillés et auteurs africains",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement complet corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive la veille du Bac de philosophie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-francais",
+  "level": "Terminale",
+  "subject": "Français",
+  "module": null,
+  "title": "Français au Bac : résumé-discussion, commentaire, dissertation",
+  "description": "Cours d'examen pour les élèves de Terminale (séries L, S et G) qui préparent l'épreuve de français du Baccalauréat au Sénégal. Il enseigne pas à pas les trois exercices de l'épreuve : le résumé suivi de la discussion, le commentaire composé et la dissertation littéraire. Il révise l'histoire littéraire utile au Bac (Négritude, roman africain, théâtre, poésie) en s'appuyant sur des œuvres africaines et françaises citées par titre et par thème. Prérequis : maîtrise de l'expression écrite et lecture des œuvres étudiées au lycée.",
+  "sort": 206,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve de français et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Connaître les trois exercices de l'épreuve de français et ce que chacun évalue.\n- Choisir son sujet avec méthode.\n- Repérer les erreurs les plus coûteuses.\n- Organiser ses révisions sur 10 semaines.\n\nCe cours d'examen s'adresse aux élèves de Terminale des séries L, S et G. La durée, le coefficient et les modalités exactes de l'épreuve dépendent de la série et sont fixés par les textes officiels en vigueur : vérifiez-les auprès de votre établissement.\n\n## Les trois sujets au choix\n\nL'épreuve de français propose en général trois sujets, parmi lesquels le candidat en choisit un seul.\n\n- Le résumé suivi d'une discussion : vous réduisez un texte argumentatif (souvent un texte d'idées sur un sujet de société : école, famille, ville, environnement, médias, développement) au nombre de mots demandé, puis vous discutez une idée du texte dans un développement argumenté.\n- Le commentaire composé : vous analysez un texte littéraire (poème, extrait de roman ou de pièce de théâtre) en l'organisant autour de deux ou trois axes de lecture.\n- La dissertation littéraire : vous réfléchissez à une question sur la littérature (le rôle du poète, la fonction du roman, le théâtre et la société…) en vous appuyant sur des œuvres précises.\n\nChaque exercice vérifie trois capacités : comprendre un texte ou une question, organiser sa pensée, écrire dans une langue correcte et précise. La qualité de la langue compte partout : orthographe, syntaxe, ponctuation, vocabulaire.\n\n## Ce que le correcteur attend\n\n- Pour le résumé : fidélité aux idées et à leur ordre, reformulation personnelle, respect strict du nombre de mots.\n- Pour la discussion : une thèse claire, des arguments organisés, des exemples précis tirés des lectures et de la vie.\n- Pour le commentaire : une lecture qui relie le fond (ce que dit le texte) et la forme (comment il le dit), sans paraphrase ni catalogue de procédés.\n- Pour la dissertation : une problématique, un plan logique, des exemples littéraires exacts (auteur, titre, situation).\n\n## Bien choisir son sujet\n\nLisez les trois sujets en entier. Puis posez-vous trois questions. Est-ce que je comprends parfaitement le texte ou la question ? Ai-je assez d'exemples précis (pour la discussion ou la dissertation) ? Est-ce que je maîtrise les outils d'analyse (pour le commentaire) ? Le résumé-discussion convient aux élèves rigoureux qui comptent bien leurs mots ; le commentaire à ceux qui aiment lire de près ; la dissertation à ceux qui ont beaucoup lu et retenu. Une fois votre choix fait, ne changez plus, sauf erreur manifeste dans les vingt premières minutes.\n\n## Les erreurs fréquentes\n\n- Dans le résumé : recopier des phrases du texte, écrire « l'auteur dit que », dépasser la marge de mots autorisée, oublier d'indiquer le nombre de mots.\n- Dans la discussion : réciter des généralités sans exemples, ou ne pas répondre à la question posée.\n- Dans le commentaire : paraphraser (« le poète dit que… ») ou énumérer des figures de style sans les interpréter.\n- Dans la dissertation : raconter l'histoire des œuvres au lieu d'argumenter ; citer des œuvres non lues.\n- Partout : négliger l'orthographe, ne pas relire, ne pas soigner la présentation (paragraphes, alinéas, sauts de ligne entre les parties).\n\n## Méthode de travail pendant l'année\n\n- Tenir un carnet de lecture : pour chaque œuvre, l'auteur, la date, le genre, un résumé de dix lignes, les thèmes, trois passages clés avec leur page.\n- Constituer une banque d'exemples par thème : la tradition et la modernité, la condition de la femme, la colonisation et les indépendances, la ville et l'exode rural, le pouvoir, l'engagement de l'écrivain.\n- Revoir les outils d'analyse : figures de style, versification, registres, focalisation, modalisation.\n- S'entraîner à rédiger une introduction par semaine et à résumer un article de presse.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : méthode du résumé ; deux résumés courts chronométrés.\n- Semaine 2 : méthode de la discussion ; un plan détaillé et une introduction.\n- Semaine 3 : outils d'analyse littéraire (figures, versification, registres).\n- Semaine 4 : méthode du commentaire composé ; un commentaire de poème.\n- Semaine 5 : histoire littéraire : la Négritude et la poésie africaine.\n- Semaine 6 : le roman africain et le roman français ; un commentaire d'extrait de roman.\n- Semaine 7 : le théâtre ; méthode de la dissertation.\n- Semaine 8 : une dissertation complète ; révision du carnet de lecture.\n- Semaine 9 : deux sujets complets en temps réel.\n- Semaine 10 : relecture des fiches, exemples, règles d'orthographe fréquentes ; repos.\n\n## Points clés\n\n- Trois sujets au choix : résumé-discussion, commentaire composé, dissertation.\n- Langue soignée et exemples précis dans tous les cas.\n- Choisir vite, avec des critères, puis s'y tenir.\n\n## Exercices pratiques\n\nExercice 1. Pour chacun des sujets suivants, indiquez de quel exercice il s'agit : a) un poème suivi de la consigne « Vous ferez de ce texte un commentaire composé » ; b) un texte d'idées sur l'exode rural, suivi d'une consigne de nombre de mots ; c) « Le roman doit-il seulement divertir ? Vous répondrez en vous appuyant sur des œuvres précises ».\n\nExercice 2. Corrigez cette phrase de résumé : « L'auteur nous dit que les jeunes quittent les villages pour aller à Dakar. »\n\nExercice 3. Transformez cette phrase de commentaire en analyse : « Dans le vers 3, il y a une métaphore. »\n\nExercice 4. Remplissez une fiche de carnet de lecture pour une œuvre de votre choix étudiée au lycée (auteur, date, genre, thèmes, deux passages clés).\n\nExercice 5. Proposez trois thèmes pour lesquels vous pourriez citer au moins deux œuvres, et nommez ces œuvres.\n\n## Corrigé\n\nExercice 1. a) commentaire composé ; b) résumé suivi d'une discussion ; c) dissertation littéraire.\n\nExercice 2. Le résumé adopte le point de vue de l'auteur et ne le nomme pas ; il reformule : « Les jeunes ruraux quittent massivement leurs villages pour la capitale. »\n\nExercice 3. Il faut nommer la figure, citer, et interpréter : « Au vers 3, la métaphore qui assimile l'Afrique à une mère souligne le lien affectif et nourricier qui unit le poète à sa terre ; elle prépare le registre lyrique de la strophe suivante. »\n\nExercice 4. Exemple : Mariama Bâ, Une si longue lettre (1979), roman épistolaire. Ramatoulaye, veuve, écrit à son amie Aïssatou. Thèmes : la polygamie, la condition de la femme, l'amitié, l'éducation. Passages clés : l'annonce du second mariage de Modou ; le refus de Ramatoulaye d'épouser Daouda Dieng.\n\nExercice 5. Exemples : la colonisation (Ferdinand Oyono, Une vie de boy ; Mongo Beti, Le Pauvre Christ de Bomba) ; la tradition et la modernité (Cheikh Hamidou Kane, L'Aventure ambiguë ; Camara Laye, L'Enfant noir) ; le désenchantement après les indépendances (Ahmadou Kourouma, Les Soleils des indépendances ; Ousmane Sembène, Xala)."
+   },
+   {
+    "title": "Le résumé et la discussion : méthode complète",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Le commentaire composé et la poésie : de la Négritude à aujourd'hui",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "La dissertation littéraire : roman africain, théâtre et grands thèmes",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement complet corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive la veille du Bac de français",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-histoire-geographie",
+  "level": "Terminale",
+  "subject": "Histoire-Géographie",
+  "module": null,
+  "title": "Histoire-Géographie : réussir l'épreuve du Bac",
+  "description": "Ce cours prépare les élèves de Terminale des séries L, S et G à l'épreuve d'Histoire-Géographie du Baccalauréat, en révisant le programme du lycée avec un accent sur la Terminale : relations internationales depuis 1945 (guerre froide, décolonisation, non-alignement, unité africaine) et géographie de la mondialisation, du développement et de la population. Il entraîne aux méthodes de la dissertation, du commentaire de document et du croquis, avec des fiches, des exercices corrigés et un sujet d'entraînement complet. Prérequis : connaître les grandes étapes de l'histoire du XXe siècle et savoir lire une carte.",
+  "sort": 207,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que l'épreuve d'Histoire-Géographie du Baccalauréat attend de vous.\n- Maîtriser les trois exercices habituels : la dissertation, le commentaire de document et le croquis.\n- Repérer les erreurs qui font perdre le plus de points.\n- Construire un plan de révision réaliste sur dix semaines.\n\n## À qui s'adresse ce cours ?\n\nCe cours s'adresse aux élèves de Terminale des séries L, S et G qui passent l'épreuve d'Histoire-Géographie au Baccalauréat sénégalais. Les attentes de fond sont les mêmes pour tous ; ce qui change d'une série à l'autre (durée, coefficient, nombre de sujets proposés), c'est le cadre fixé selon les textes officiels en vigueur. Renseignez-vous auprès de votre établissement et ne vous fiez pas aux rumeurs.\n\nLe programme révisé couvre le lycée, avec un poids décisif sur la Terminale. En histoire : les relations internationales depuis 1945 (guerre froide, décolonisation de l'Asie et de l'Afrique, non-alignement, construction de l'unité africaine, mondialisation). En géographie : les grandes puissances et les ensembles économiques, l'Afrique et le Sénégal dans la mondialisation, les questions de développement et de population.\n\n## Ce que l'épreuve évalue\n\nLe correcteur vérifie quatre compétences. D'abord des connaissances exactes : dates, acteurs, notions, localisations. Ensuite la capacité à problématiser, c'est-à-dire à transformer un sujet en question à résoudre. Puis la capacité à organiser une démonstration en parties équilibrées. Enfin la qualité de l'expression : phrases correctes, vocabulaire précis, écriture lisible.\n\n## Exercice 1 : la dissertation\n\nLa dissertation est une réflexion organisée sur un sujet. Elle se prépare au brouillon en cinq étapes.\n\n- Analyser le sujet : souligner chaque mot, définir les termes clés, repérer les bornes chronologiques et l'espace concerné.\n- Formuler une problématique : une question centrale à laquelle tout le devoir répond.\n- Rassembler les connaissances : dates, faits, exemples précis, chiffres sûrs.\n- Construire un plan en deux ou trois parties, chacune divisée en deux ou trois sous-parties.\n- Rédiger l'introduction et la conclusion au brouillon, puis le développement directement au propre.\n\nL'introduction comprend une accroche (un fait ou une date forte), la définition des termes, la problématique et l'annonce du plan. La conclusion répond clairement à la problématique, puis ouvre sur une question voisine.\n\nTrois types de plans reviennent souvent. Le plan chronologique convient aux sujets d'évolution (par exemple « La guerre froide de 1947 à 1991 » : affrontement, détente, reprise puis fin). Le plan thématique convient aux sujets de bilan (causes, formes, conséquences). Le plan analytique (constat, explications, perspectives) convient bien aux sujets de géographie.\n\nExemple d'analyse : « La décolonisation de l'Afrique noire française (1944-1960) ». Les bornes sont précises : 1944 correspond à la conférence de Brazzaville, 1960 à l'année des indépendances. L'espace est l'Afrique occidentale et équatoriale françaises. Problématique possible : comment ces territoires sont-ils passés de la tutelle coloniale à l'indépendance, et par quelles étapes ?\n\n## Exercice 2 : le commentaire de document\n\nOn vous fournit un ou plusieurs documents (texte, carte, tableau statistique, graphique, caricature) et des questions ou une consigne générale.\n\n- Présenter le document : nature, auteur, date, source, contexte, idée générale.\n- Lire les questions avant le document, puis lire le document deux fois, crayon en main.\n- Prélever les informations utiles en citant le document entre guillemets ou en reprenant ses chiffres.\n- Expliquer ces informations avec vos connaissances : un document ne parle pas seul.\n- Porter un regard critique : point de vue de l'auteur, limites, ce que le document ne dit pas.\n\nErreur classique : paraphraser, c'est-à-dire recopier le texte avec d'autres mots. Le correcteur attend de l'explication, pas une répétition.\n\n## Exercice 3 : le croquis\n\nLe croquis est une représentation simplifiée d'un espace pour répondre à un sujet. Il se juge sur trois critères : la pertinence des informations, la lisibilité et la légende organisée.\n\n- Un titre qui reprend le sujet.\n- Une légende organisée en deux ou trois parties titrées, qui correspondent au plan d'une petite dissertation.\n- Des figurés adaptés : surfaces (couleurs, hachures) pour les zones, points ou symboles pour les villes et ports, lignes et flèches pour les flux et les axes.\n- Une nomenclature écrite à l'horizontale, lisible, en majuscules pour les États et océans.\n\n## Gérer le temps le jour de l'épreuve\n\nQuelle que soit la durée officielle, répartissez votre temps ainsi : environ un quart pour l'analyse du sujet et le brouillon, deux tiers pour la rédaction, et le reste pour la relecture.\n\n## Les erreurs les plus fréquentes\n\n- Hors-sujet : traiter la guerre froide en général quand le sujet porte sur la crise de Cuba.\n- Dates fausses ou approximatives : mieux vaut « au début des années 1960 » qu'une date inventée.\n- Plan déséquilibré : une partie de deux pages et une autre de cinq lignes.\n- Absence d'exemples africains alors que le programme les met au cœur des questions.\n- Croquis sans légende organisée ou sans titre.\n\n## Plan de révision sur dix semaines\n\n- Semaine 1 : méthode (dissertation, commentaire, croquis) et lecture du programme.\n- Semaine 2 : la guerre froide, des origines à la détente.\n- Semaine 3 : la guerre froide, de la reprise des tensions à la fin de l'URSS ; le monde après 1991.\n- Semaine 4 : la décolonisation de l'Asie, Bandung et le non-alignement.\n- Semaine 5 : la décolonisation de l'Afrique et le Sénégal, de Brazzaville à l'indépendance.\n- Semaine 6 : la construction de l'unité africaine (OUA, UA, organisations régionales).\n- Semaine 7 : les grandes puissances et les ensembles économiques.\n- Semaine 8 : l'Afrique et le Sénégal dans la mondialisation ; développement et population.\n- Semaine 9 : sujets d'entraînement en temps limité, un en histoire, un en géographie.\n- Semaine 10 : fiches de dates, de notions et de croquis ; repos la veille.\n\nPour chaque chapitre, fabriquez une fiche d'une page : dix dates, dix notions définies, trois exemples africains, un plan de dissertation type.\n\n## Points clés\n\n- Répondre au sujet, rien qu'au sujet.\n- Une problématique claire et un plan équilibré.\n- Des connaissances exactes et des exemples africains et sénégalais.\n\n## Exercices pratiques\n\n1. Définissez en une phrase chacun des termes suivants : problématique, paraphrase, nomenclature.\n\n2. Repérez les bornes chronologiques et l'espace du sujet : « Le non-alignement de 1955 à 1961 ».\n\n3. Proposez une problématique pour le sujet : « Les relations Est-Ouest de 1962 à 1975 ».\n\n4. Classez ces figurés selon leur type (surface, point, ligne) : un port, une zone agricole, une route maritime, une capitale, un désert.\n\n5. Une population passe de 12 à 18 millions d'habitants. Calculez l'augmentation absolue et le taux de croissance.\n\n6. Construisez un plan détaillé en deux parties pour le sujet : « Le Sénégal de 1944 à 1960 : de la colonie à l'État indépendant ».\n\n## Corrigé\n\n1. La problématique est la question centrale qui guide tout le devoir. La paraphrase consiste à répéter le document avec d'autres mots sans l'expliquer. La nomenclature est l'ensemble des noms de lieux écrits sur une carte ou un croquis.\n\n2. Bornes : 1955 (conférence de Bandung, avril 1955) et 1961 (conférence de Belgrade, septembre 1961, premier sommet des pays non alignés). Espace : les pays d'Asie et d'Afrique nouvellement indépendants, puis le monde entier dans le contexte de la guerre froide.\n\n3. Exemple : « Comment les relations entre les États-Unis et l'URSS passent-elles, après la crise de Cuba, d'une confrontation dangereuse à une coexistence plus apaisée, sans que la rivalité disparaisse ? »\n\n4. Surfaces : zone agricole, désert. Points : port, capitale. Lignes : route maritime.\n\n5. Augmentation absolue : 18 − 12 = 6 millions. Taux : 6 / 12 × 100 = 50 %.\n\n6. Partie 1 : une marche progressive vers l'autonomie (1944-1958) : conférence de Brazzaville (1944), citoyenneté accordée aux habitants des colonies par la loi Lamine Guèye (1946), rôle de Lamine Guèye et Léopold Sédar Senghor, loi-cadre Defferre (1956). Partie 2 : de la Communauté à l'indépendance (1958-1960) : référendum de septembre 1958 où le Sénégal vote « oui », Fédération du Mali avec le Soudan français, indépendance de la Fédération le 20 juin 1960, éclatement le 20 août 1960, Senghor élu président de la République en septembre 1960."
+   },
+   {
+    "title": "Histoire (1) : la guerre froide et le monde depuis 1945",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Histoire (2) : décolonisation, non-alignement et unité africaine",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Géographie : puissances, mondialisation, développement et population",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille du Bac en Histoire-Géographie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-economie",
+  "level": "Terminale",
+  "subject": "Économie (série G)",
+  "module": null,
+  "title": "Économie série G : réussir l'épreuve du Bac",
+  "description": "Ce cours prépare les élèves de Terminale série G à l'épreuve d'Économie du Baccalauréat : macroéconomie (agrégats, croissance, développement, inflation, chômage), monnaie et zone UEMOA, commerce international, finances publiques, entreprise et marché. Chaque leçon associe des fiches de cours, des exemples chiffrés en FCFA vérifiés et des exercices corrigés, jusqu'à un sujet d'entraînement complet. Prérequis : savoir calculer un pourcentage, un taux de variation et un indice.",
+  "sort": 208,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que l'épreuve d'Économie du Baccalauréat série G attend de vous.\n- Connaître les types d'exercices : questions de cours, exercices chiffrés, analyse de document, dissertation économique.\n- Éviter les erreurs les plus fréquentes.\n- Organiser ses révisions sur dix semaines.\n\n## À qui s'adresse ce cours ?\n\nCe cours s'adresse aux élèves de Terminale de la série G (techniques économiques et de gestion). Il révise le programme d'économie du lycée en insistant sur la Terminale : macroéconomie (agrégats, croissance, développement, inflation, chômage), monnaie et zone UEMOA, commerce international, finances publiques, entreprise et marché. La durée, le coefficient et le barème de l'épreuve sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement.\n\nPrérequis : savoir calculer un pourcentage, un taux de variation et un indice ; connaître les notions de base vues en Seconde et en Première (besoins, biens, agents économiques, circuit économique).\n\n## Ce que l'épreuve évalue\n\n- Des connaissances précises : définitions, mécanismes, relations entre les notions.\n- Des savoir-faire quantitatifs : calculer, lire un tableau, interpréter un résultat.\n- Une capacité d'analyse : expliquer un phénomène par ses causes et ses conséquences.\n- Une capacité d'argumentation : construire un raisonnement organisé et nuancé.\n\n## Type 1 : les questions de cours\n\nOn vous demande de définir, distinguer ou expliquer. Une bonne réponse comporte trois éléments : la définition exacte, un mécanisme ou une explication, un exemple concret. Exemple : « Définissez l'inflation. » Réponse attendue : hausse générale et durable du niveau des prix, qui entraîne une baisse du pouvoir d'achat de la monnaie ; elle se mesure par la variation de l'indice des prix à la consommation ; par exemple, si le prix moyen d'un panier de biens passe de 10 000 à 10 300 FCFA en un an, l'inflation est de 3 %.\n\n## Type 2 : les exercices chiffrés\n\nCe sont souvent les points les plus faciles à gagner, à condition d'être rigoureux.\n\n- Écrire la formule avant de calculer.\n- Poser le calcul avec les unités (FCFA, milliards de FCFA, %).\n- Arrondir à la fin seulement, et indiquer l'arrondi.\n- Interpréter chaque résultat par une phrase : un chiffre sans commentaire ne vaut que la moitié des points.\n\nLes formules à connaître par cœur : taux de variation = (valeur d'arrivée − valeur de départ) / valeur de départ × 100 ; indice = valeur de l'année / valeur de l'année de base × 100 ; coefficient multiplicateur = 1 + taux / 100 ; valeur réelle = valeur nominale / indice des prix × 100.\n\nExemple : un chiffre d'affaires passe de 40 à 46 millions de FCFA. Taux de variation = (46 − 40) / 40 × 100 = 15 %. Indice base 100 = 46 / 40 × 100 = 115. Interprétation : le chiffre d'affaires a augmenté de 15 % sur la période.\n\n## Type 3 : l'analyse de document\n\nOn vous donne un texte, un tableau ou un graphique. Méthode :\n\n- Présenter : nature, source, date, unité, thème.\n- Lire : que mesure chaque chiffre ? Ne confondez pas une valeur, un pourcentage et un indice.\n- Calculer si utile : écarts, taux, parts.\n- Expliquer avec vos connaissances : pourquoi ces évolutions ?\n- Conclure : ce que le document montre et ses limites.\n\nAttention : diminuer de 5 % à 3 % pour un taux d'inflation signifie que les prix augmentent encore, mais moins vite. Les prix ne baissent pas.\n\n## Type 4 : la dissertation économique\n\nUn sujet du type « La croissance économique suffit-elle à assurer le développement ? » se traite comme une dissertation : introduction (accroche, définitions, problématique, annonce du plan), développement en deux ou trois parties argumentées, conclusion (réponse et ouverture). Chaque argument suit le schéma : idée, explication, exemple. Les exemples africains et sénégalais sont attendus.\n\n## Les erreurs les plus fréquentes\n\n- Confondre grandeur nominale et grandeur réelle (en valeur ou en volume).\n- Confondre points de pourcentage et pourcentage : un taux de chômage qui passe de 10 % à 12 % augmente de 2 points, soit de 20 %.\n- Additionner des taux de croissance successifs au lieu de multiplier les coefficients.\n- Donner des chiffres officiels inventés : si vous n'êtes pas sûr, raisonnez sans chiffre.\n- Réciter le cours sans répondre à la question.\n\nExemple de l'erreur sur les taux successifs : +10 % puis +10 % ne font pas +20 %. Coefficient global = 1,10 × 1,10 = 1,21, soit +21 %.\n\n## Plan de révision sur dix semaines\n\n- Semaine 1 : méthode, formules de base (taux, indices, coefficients), vocabulaire.\n- Semaine 2 : les agrégats (PIB, valeur ajoutée, trois approches du PIB).\n- Semaine 3 : croissance et développement (facteurs, indicateurs, IDH).\n- Semaine 4 : inflation et chômage (mesures, causes, politiques).\n- Semaine 5 : monnaie, création monétaire, BCEAO et UEMOA.\n- Semaine 6 : commerce international (théories, balance des paiements, protectionnisme).\n- Semaine 7 : finances publiques (budget de l'État, impôts, déficit, dette).\n- Semaine 8 : entreprise et marché (coûts, seuil de rentabilité, offre et demande, structures de marché).\n- Semaine 9 : sujets d'entraînement en temps limité.\n- Semaine 10 : fiches de formules et de définitions, repos la veille.\n\n## Points clés\n\n- Définition, mécanisme, exemple : la règle de toute réponse.\n- Formule, calcul, unité, interprétation : la règle de tout exercice chiffré.\n- Distinguer valeur et volume, point et pourcentage.\n- Ne jamais inventer un chiffre officiel.\n\n## Exercices pratiques\n\n1. Définissez en une phrase : agrégat, inflation, chômage.\n\n2. Le prix d'un sac de riz passe de 15 000 à 16 500 FCFA. Calculez le taux de variation et l'indice base 100.\n\n3. Un taux d'intérêt passe de 4 % à 5 %. Exprimez cette hausse en points puis en pourcentage.\n\n4. Les ventes d'une entreprise augmentent de 20 % une année puis baissent de 20 % l'année suivante. Reviennent-elles à leur niveau initial ? Justifiez.\n\n5. Un salaire nominal augmente de 6 % pendant que les prix augmentent de 4 %. Calculez l'évolution du salaire réel (méthode exacte).\n\n6. Proposez une problématique et un plan pour le sujet : « L'inflation est-elle toujours un mal pour l'économie ? ».\n\n## Corrigé\n\n1. Un agrégat est une grandeur synthétique qui mesure l'activité de l'ensemble de l'économie (PIB, consommation nationale, investissement). L'inflation est une hausse générale et durable du niveau des prix. Le chômage est la situation des personnes en âge de travailler, sans emploi, disponibles et à la recherche d'un emploi.\n\n2. Taux = (16 500 − 15 000) / 15 000 × 100 = 10 %. Indice = 16 500 / 15 000 × 100 = 110. Le prix a augmenté de 10 %.\n\n3. Hausse de 5 − 4 = 1 point de pourcentage. En pourcentage : (5 − 4) / 4 × 100 = 25 %.\n\n4. Non. Coefficient global = 1,20 × 0,80 = 0,96. Les ventes ont baissé de 4 % par rapport au niveau initial. Exemple : 100 devient 120, puis 120 × 0,80 = 96.\n\n5. Indice du salaire réel = 1,06 / 1,04 × 100 ≈ 101,92. Le salaire réel augmente d'environ 1,92 %, un peu moins que la différence approximative de 2 points.\n\n6. Problématique : l'inflation est-elle seulement un danger, ou peut-elle accompagner la croissance ? I. Une inflation modérée peut accompagner la croissance (stimulation de la production, allègement réel des dettes). II. Une inflation forte est dangereuse (perte de pouvoir d'achat des ménages pauvres, perte de compétitivité, incertitude) ; c'est pourquoi la BCEAO a pour objectif principal la stabilité des prix."
+   },
+   {
+    "title": "Macroéconomie : agrégats, croissance, développement, inflation et chômage",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Monnaie, UEMOA-BCEAO et commerce international",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Finances publiques, entreprise et marché",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille du Bac en Économie",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-anglais",
+  "level": "Terminale",
+  "subject": "Anglais (toutes séries)",
+  "module": null,
+  "title": "Anglais : réussir l'épreuve du Bac",
+  "description": "Ce cours prépare les élèves de Terminale de toutes les séries (L, S, G) à l'épreuve d'Anglais du Baccalauréat : compréhension et analyse de texte, grammaire (temps, passif, discours indirect, conditionnels, relatives, mots de liaison), vocabulaire thématique et expression écrite (essay argumentatif, lettre, résumé). Les explications sont en français, les exemples et les exercices en anglais, avec des corrigés complets et un sujet d'entraînement. Prérequis : les bases de l'anglais du collège.",
+  "sort": 209,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 45,
+    "content": "## Objectifs de la leçon\n\n- Comprendre ce que l'épreuve d'Anglais du Baccalauréat attend de vous.\n- Connaître les trois grandes parties habituelles : compréhension du texte, langue (grammaire et vocabulaire), expression écrite.\n- Repérer les erreurs qui coûtent le plus de points.\n- Organiser ses révisions sur dix semaines.\n\n## À qui s'adresse ce cours ?\n\nCe cours s'adresse aux élèves de Terminale de toutes les séries (L, S et G). Le niveau d'exigence, la durée et le coefficient de l'épreuve varient selon les séries et sont fixés selon les textes officiels en vigueur : renseignez-vous auprès de votre établissement. Les explications sont données en français ; les exemples et les exercices sont en anglais, comme le jour de l'examen.\n\n## Ce que l'épreuve évalue\n\nLe sujet d'anglais se construit en général autour d'un texte de quelques paragraphes sur un thème d'actualité : mondialisation, environnement, technologie, éducation, santé, place des femmes, migrations. À partir de ce texte, on vérifie trois compétences.\n\n- Comprendre : saisir l'idée générale et les détails, retrouver une information, expliquer un mot.\n- Maîtriser la langue : conjuguer, transformer des phrases, employer le bon mot de liaison.\n- S'exprimer : rédiger un texte personnel, organisé et correct (essay, lettre, résumé).\n\n## Partie 1 : reading comprehension\n\nLes questions les plus fréquentes :\n\n- True or false? Justify with a sentence from the text. Il faut répondre « True » ou « False », puis recopier entre guillemets la phrase exacte qui le prouve.\n- Answer the questions. Répondez par une phrase complète, avec vos propres mots quand c'est possible.\n- Find in the text words or expressions that mean… Recherche de synonymes ou de définitions.\n- Who or what do the underlined words refer to? Il s'agit de retrouver ce que remplace un pronom (it, they, which, this).\n- Give a title to the text. Le titre doit résumer l'idée principale en quelques mots.\n\nMéthode : lisez d'abord le titre, la source et les questions ; lisez ensuite le texte une première fois pour l'idée générale, puis une seconde fois en soulignant les passages utiles. Les questions suivent souvent l'ordre du texte.\n\nExemple. Text: \"Many young Senegalese now use their phones to learn. Online courses, which were rare ten years ago, are becoming common.\" Question: True or false? Online courses have always been common. Answer: False. \"Online courses, which were rare ten years ago, are becoming common.\"\n\n## Partie 2 : grammar and vocabulary\n\nLes exercices classiques : mettre les verbes entre parenthèses au bon temps ; passer de l'actif au passif ; transformer au discours indirect ; compléter avec un pronom relatif ; relier deux phrases avec un mot de liaison ; former des mots (noun, adjective, adverb) ; compléter un texte à trous. Ces exercices sont mécaniques : avec des règles sûres, ce sont des points garantis. Les leçons 2 et 3 les révisent en détail.\n\n## Partie 3 : writing\n\nOn vous demande en général un texte d'une longueur indiquée (par exemple « about 150 words ») : un essay argumentatif, une lettre ou un résumé. Le correcteur regarde le respect de la consigne, l'organisation (introduction, développement, conclusion), la richesse du vocabulaire et la correction grammaticale. Respectez la longueur demandée : trop court comme trop long fait perdre des points.\n\n## Gérer le temps\n\nLisez tout le sujet d'abord. Commencez par la partie où vous êtes le plus à l'aise. Préparez l'expression écrite au brouillon par un plan rapide, mais ne rédigez pas tout au brouillon. Gardez quelques minutes pour vous relire en cherchant vos erreurs habituelles.\n\n## Les erreurs les plus fréquentes\n\n- Oublier le -s de la troisième personne au présent : \"She works\", pas \"She work\".\n- Mettre un -s aux adjectifs : \"important problems\", pas \"importants problems\".\n- Confondre \"since\" et \"for\" : \"since 2020\" (point de départ), \"for three years\" (durée).\n- Traduire mot à mot du français : \"I have 18 years\" au lieu de \"I am 18 years old\".\n- Recopier des phrases entières du texte dans l'expression écrite.\n- Répondre « True » sans justification.\n- Oublier le sujet de la phrase : \"It is important\", pas \"Is important\".\n\n## Plan de révision sur dix semaines\n\n- Semaine 1 : méthode et lecture de textes courts chaque jour.\n- Semaine 2 : les temps (présent, passé, present perfect, futur).\n- Semaine 3 : le passif et le discours indirect.\n- Semaine 4 : les conditionnels et les relatives.\n- Semaine 5 : les mots de liaison et la formation des mots.\n- Semaine 6 : vocabulaire de la mondialisation et de l'environnement.\n- Semaine 7 : vocabulaire de la technologie, de l'éducation et de la santé.\n- Semaine 8 : l'essay argumentatif, la lettre et le résumé.\n- Semaine 9 : sujets d'entraînement complets en temps limité.\n- Semaine 10 : fiches de grammaire, liste d'erreurs personnelles, repos la veille.\n\nConseil : tenez un carnet de vocabulaire par thème, avec dix mots par semaine et une phrase d'exemple pour chacun.\n\n## Points clés\n\n- Justifiez toujours un « True or false » par une citation exacte.\n- Les exercices de grammaire sont des points sûrs : révisez les règles.\n- En expression écrite, respectez la consigne et la longueur.\n- Relisez-vous en traquant vos erreurs habituelles.\n\n## Exercices pratiques\n\nText: \"Dakar is growing fast. Every year, thousands of young people leave rural areas to look for jobs in the capital. However, many of them end up working in the informal sector, where wages are low and jobs are not secure. The government has launched training programmes to help them.\"\n\n1. Give a title to the text.\n\n2. True or false? Justify. a) Dakar's population is decreasing. b) Jobs in the informal sector are well paid.\n\n3. Find in the text words that mean: a) countryside; b) salaries; c) started.\n\n4. What does \"them\" refer to in \"to help them\"?\n\n5. Correct the mistakes: a) \"He go to school every day.\" b) \"They are livings in Thiès since five years.\"\n\n6. Answer the question with a full sentence: Why do young people move to Dakar?\n\n## Corrigé\n\n1. Possible titles: \"Rural Exodus to Dakar\" or \"Young People and Jobs in Dakar\".\n\n2. a) False. \"Dakar is growing fast.\" b) False. \"wages are low and jobs are not secure.\"\n\n3. a) rural areas; b) wages; c) launched.\n\n4. \"them\" refers to the young people who leave rural areas (many of them working in the informal sector).\n\n5. a) \"He goes to school every day.\" b) \"They have been living in Thiès for five years.\" Explication : action commencée dans le passé et qui continue, donc present perfect continuous ; \"for\" introduit une durée.\n\n6. Young people move to Dakar because they are looking for jobs."
+   },
+   {
+    "title": "Grammaire (1) : les temps, le passif et le discours indirect",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Grammaire (2) : conditionnels, relatives, mots de liaison et formation des mots",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Vocabulaire thématique et expression écrite : essay, lettre, résumé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 75
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive veille du Bac en Anglais",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-espagnol",
+  "level": "Terminale",
+  "subject": "Espagnol (LV2)",
+  "module": null,
+  "title": "Espagnol LV2 : réussir l'épreuve du Bac",
+  "description": "Ce cours d'examen prépare l'épreuve d'espagnol LV2 du Baccalauréat : méthode de compréhension écrite et d'analyse de texte, grammaire du Bac (subjonctif présent et imparfait, concordance des temps, conditionnel et hypothèse, ser et estar, por et para, discours indirect), expression écrite (essai argumenté, lettre) et repères de civilisation hispanique (Espagne, Amérique latine, liens avec l'Afrique). Il s'adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l'espagnol en LV2. Les explications sont en français et les exemples en espagnol. Prérequis : les acquis d'espagnol de la Seconde et de la Première.",
+  "sort": 210,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir ce que l'on attend de toi à l'épreuve d'espagnol LV2 du Bac.\n- Connaître les grandes familles d'exercices et une méthode pour chacune.\n- Repérer et éviter les erreurs les plus fréquentes des candidats.\n- Organiser tes révisions sur 10 semaines.\n\n## À qui s'adresse ce cours\n\nCe cours s'adresse d'abord aux élèves de Terminale des séries L, pour qui la deuxième langue vivante occupe une place importante, mais aussi à tout candidat qui présente l'espagnol en LV2, quelle que soit sa série (L, S ou G), selon les choix d'options prévus par les textes officiels en vigueur. La durée de l'épreuve, son coefficient et son barème sont fixés par ces textes : vérifie-les auprès de ton établissement. Ici, nous travaillons la méthode, qui reste la même quelle que soit la série.\n\nLe programme révisé couvre les trois années du lycée : les bases de la Seconde (présent, passés, ser et estar), les structures de Première (subjonctif présent, impératif, por et para) et les exigences de Terminale (subjonctif imparfait, concordance des temps, hypothèse, discours indirect, argumentation).\n\n## Comment se présente l'épreuve\n\nL'épreuve s'appuie en général sur un texte authentique ou adapté : extrait de roman, article de presse, témoignage, lettre ou poème. Il est souvent accompagné d'un paratexte (auteur, titre de l'œuvre, date, source). Les questions se répartissent habituellement en trois familles.\n\n- Compréhension écrite : questions sur le sens du texte, vrai ou faux à justifier par une citation, recherche de synonymes ou de contraires, explication d'une expression.\n- Compétence linguistique : transformations grammaticales (mettre au passé, au discours indirect, conjuguer au subjonctif), exercices à trous, parfois une courte traduction.\n- Expression écrite : un ou deux sujets au choix, en lien avec le thème du texte (essai argumenté, lettre, dialogue, suite de récit).\n\nLa présentation exacte varie selon les sujets : lis toujours toutes les consignes avant de commencer.\n\n## Méthode pour la compréhension\n\nCommence par le paratexte : qui écrit, quand, dans quel pays ? Un texte de Gabriel García Márquez ne parle pas du même monde qu'un article d'un journal madrilène. Fais ensuite une première lecture complète sans t'arrêter sur les mots inconnus, pour saisir le thème général. Pendant la deuxième lecture, souligne les personnages, les lieux, les dates et les mots de liaison (pero, sin embargo, por eso, aunque).\n\nPour répondre, applique trois règles.\n\n- Réponds en espagnol par des phrases complètes, en reformulant la question : à « ¿Por qué se fue Moussa? », on répond « Moussa se fue porque buscaba trabajo ».\n- Justifie un vrai ou faux par une citation courte entre guillemets, suivie du numéro de ligne : « no hablaba ni una palabra de español » (l. 2).\n- Ne recopie jamais un paragraphe entier : le correcteur veut voir que tu as compris, pas que tu sais recopier.\n\n## Méthode pour la compétence linguistique\n\nLis la consigne deux fois et repère le temps demandé. Pour une transformation, identifie d'abord la structure (verbe principal, subordonnée, temps), puis applique la règle, puis relis l'accord du verbe avec son sujet. Les leçons 3 et 4 te donnent toutes les règles nécessaires, avec des tableaux à apprendre par cœur.\n\n## Méthode pour l'expression écrite\n\nPrends quelques minutes pour faire un plan au brouillon. Respecte le nombre de lignes ou de mots demandé. Écris des phrases simples et correctes plutôt que des phrases longues et fautives. Réutilise le vocabulaire du texte, mais sans le recopier. Garde du temps pour te relire : accents, accords, conjugaisons.\n\n## Organiser son temps le jour de l'épreuve\n\nVoici une répartition indicative à adapter à la durée officielle de ton épreuve : environ 15 % du temps pour lire le texte, 35 % pour la compréhension, 20 % pour la grammaire, 25 % pour l'expression écrite et 5 % pour la relecture. Si une question te bloque, passe à la suivante et reviens-y à la fin.\n\n## Les erreurs fréquentes à éviter\n\n- Les faux amis : « constipado » signifie enrhumé, « embarazada » signifie enceinte, « éxito » signifie succès (la sortie se dit « la salida »), « realizar » signifie accomplir ou réaliser un projet (« se rendre compte » se dit « darse cuenta »).\n- Les gallicismes de genre : on dit « el problema », « el tema », « el sistema », mais « la leche », « la sangre », « la costumbre ».\n- Le conditionnel après « si » : on n'écrit jamais « si tendría » ; on écrit « si tuviera ».\n- L'oubli des accents écrits, qui changent parfois le sens : « hablo » (je parle) et « habló » (il a parlé), « el » (le) et « él » (lui).\n- L'oubli des signes d'ouverture : ¿Dónde vives? ¡Qué calor!\n- La confusion de ser et estar : « estoy cansado » (état) mais « soy senegalés » (identité).\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : diagnostic (fais un sujet complet sans aide), lecture de cette leçon, constitution d'un carnet de vocabulaire.\n- Semaine 2 : méthode de compréhension, deux textes courts par semaine (leçon 2).\n- Semaine 3 : repères de civilisation : Espagne, Amérique latine, liens avec l'Afrique (leçon 2).\n- Semaine 4 : subjonctif présent et imparfait (leçon 3).\n- Semaine 5 : concordance des temps, conditionnel, phrases hypothétiques (leçon 3).\n- Semaine 6 : ser et estar, por et para, discours indirect (leçon 4).\n- Semaine 7 : expression écrite : essai et lettre, une production corrigée par semaine (leçon 4).\n- Semaine 8 : sujet type complet en temps limité (leçon 5).\n- Semaine 9 : deuxième sujet blanc, reprise des fiches d'erreurs.\n- Semaine 10 : révision légère, cours vidéo « veille du Bac », sommeil et sérénité.\n\nChaque jour, consacre au moins 20 minutes à l'espagnol : 10 minutes de vocabulaire, 10 minutes de lecture ou de grammaire. La régularité vaut mieux qu'une nuit blanche.\n\n## Points clés\n\n- Lis le paratexte et les consignes avant tout.\n- Réponds en phrases complètes et justifie par des citations courtes.\n- Apprends les tableaux de conjugaison et les règles de concordance.\n- Garde toujours du temps pour la relecture.\n\n## Exercices pratiques\n\nExercice 1. Cite les trois grandes familles d'exercices de l'épreuve et donne un exemple de question pour chacune.\n\nExercice 2. Traduis en français : « Mi hermana está embarazada y mi hermano está constipado. »\n\nExercice 3. Corrige les erreurs : « La problema es que si tendría dinero, viajaría a Sevilla. »\n\nExercice 4. Réponds par une phrase complète en reformulant la question : « ¿Dónde vive Awa? » (Awa vit à Saint-Louis.)\n\nExercice 5. Ajoute les accents et les signes manquants : « Donde esta el? Que alegria! »\n\nExercice 6. Ton épreuve dure, par hypothèse, 3 heures. Calcule le temps à consacrer à chaque partie selon la répartition indicative de la leçon.\n\n## Corrigé\n\nExercice 1. Compréhension écrite : « ¿Por qué decide el protagonista salir de su país? ». Compétence linguistique : « Pon el verbo entre paréntesis en subjuntivo ». Expression écrite : « Escribe una carta a un amigo para contarle tus proyectos ».\n\nExercice 2. « Ma sœur est enceinte et mon frère est enrhumé. » Deux faux amis classiques : « embarazada » ne veut pas dire embarrassée, « constipado » ne veut pas dire constipé.\n\nExercice 3. « El problema es que, si tuviera dinero, viajaría a Sevilla. » « Problema » est masculin ; après « si » d'hypothèse, on emploie le subjonctif imparfait.\n\nExercice 4. « Awa vive en Saint-Louis. » On reprend le verbe de la question et on ajoute l'information.\n\nExercice 5. « ¿Dónde está él? ¡Qué alegría! »\n\nExercice 6. 3 heures = 180 minutes. Lecture : 15 % de 180 = 27 min. Compréhension : 35 % = 63 min. Grammaire : 20 % = 36 min. Expression : 25 % = 45 min. Relecture : 5 % = 9 min. Total : 27 + 63 + 36 + 45 + 9 = 180 min."
+   },
+   {
+    "title": "Compréhension écrite, analyse de texte et civilisation hispanique",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Grammaire du Bac 1 : subjonctif, concordance des temps et hypothèse",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Grammaire du Bac 2 et expression écrite : ser et estar, por et para, discours indirect, essai et lettre",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive « veille du Bac » en espagnol",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
+ },
+ {
+  "slug": "bac-arabe",
+  "level": "Terminale",
+  "subject": "Arabe (LV2)",
+  "module": null,
+  "title": "Arabe LV2 : réussir l'épreuve du Bac",
+  "description": "Ce cours d'examen prépare l'épreuve d'arabe LV2 du Baccalauréat : lecture et analyse d'un texte, grammaire du Bac (cas et déclinaison, phrase nominale et phrase verbale, verbes dérivés usuels, nombres, relatifs, phrase conditionnelle), vocabulaire thématique (éducation, société, environnement) et expression écrite (essai court, lettre). Il s'adresse surtout aux candidats des séries L, et à tout élève de Terminale qui présente l'arabe en LV2. Les explications sont en français, les exemples en arabe vocalisé avec translittération et traduction. Prérequis : lire couramment l'arabe et maîtriser les bases du collège et de la Seconde.",
+  "sort": 211,
+  "lessons": [
+   {
+    "title": "Comprendre l'épreuve et méthode de travail",
+    "kind": "texte",
+    "is_free": true,
+    "duration_min": 50,
+    "content": "## Objectifs de la leçon\n\n- Savoir comment se présente l'épreuve d'arabe LV2 du Bac et ce que le correcteur attend.\n- Connaître une méthode pour chaque type d'exercice.\n- Repérer les erreurs les plus fréquentes et apprendre à les éviter.\n- Organiser tes révisions sur 10 semaines.\n\n## À qui s'adresse ce cours\n\nCe cours s'adresse d'abord aux élèves de Terminale des séries L, et plus largement à tout candidat qui présente l'arabe en deuxième langue vivante, quelle que soit sa série (L, S ou G), selon les options prévues par les textes officiels en vigueur. La durée de l'épreuve, son coefficient et son barème sont fixés par ces textes : renseigne-toi auprès de ton établissement. La méthode présentée ici reste valable dans tous les cas.\n\nLe programme révisé couvre le lycée : la Seconde (phrase nominale, phrase verbale, accompli et inaccompli), la Première (cas et déclinaison, كَانَ et إِنَّ, nombres) et la Terminale (verbes dérivés, relatifs, phrase conditionnelle, expression écrite argumentée).\n\nDans ce cours, chaque exemple arabe est vocalisé, suivi de sa translittération entre parenthèses et de sa traduction. Les lettres particulières sont notées ainsi : ʿ pour ع, ʾ pour la hamza ء, ḥ pour ح, kh pour خ, dh pour ذ, sh pour ش, ṣ pour ص, ḍ pour ض, ṭ pour ط, ẓ pour ظ, gh pour غ ; les voyelles longues sont ā, ī, ū.\n\n## Comment se présente l'épreuve\n\nL'épreuve repose en général sur un texte en arabe moderne : récit, article, lettre ou dialogue, souvent sur un thème de société (éducation, famille, jeunesse, environnement, santé, solidarité). On y trouve habituellement trois familles d'exercices.\n\n- Compréhension : questions sur le texte, vrai ou faux, recherche de synonymes ou de contraires, titre à proposer.\n- Langue : analyse grammaticale de mots (cas, fonction), transformations (pluriel, négation, ajout de كَانَ ou de إِنَّ), conjugaison, nombres, dérivés.\n- Expression écrite : un paragraphe ou un court essai, ou une lettre, en lien avec le thème du texte.\n\nLa présentation exacte varie : lis toutes les consignes avant de commencer.\n\n## Comprendre les consignes en arabe\n\nLes consignes sont souvent rédigées en arabe. Apprends-les par cœur.\n\n- أَجِبْ عَنِ الْأَسْئِلَةِ (ajib ʿani l-asʾilati) : réponds aux questions.\n- ضَعْ عُنْوَانًا مُنَاسِبًا لِلنَّصِّ (ḍaʿ ʿunwānan munāsiban li-n-naṣṣi) : donne un titre approprié au texte.\n- اِشْرَحِ الْكَلِمَاتِ التَّالِيَةَ (ishraḥi l-kalimāti t-tāliyata) : explique les mots suivants.\n- هَاتِ ضِدَّ (hāti ḍidda) : donne le contraire de.\n- هَاتِ جَمْعَ (hāti jamʿa) : donne le pluriel de ; هَاتِ مُفْرَدَ (hāti mufrada) : donne le singulier de.\n- أَعْرِبْ (aʿrib) : fais l'analyse grammaticale.\n- صَحِيحٌ أَمْ خَطَأٌ (ṣaḥīḥun am khaṭaʾun) : vrai ou faux.\n\nEt les mots interrogatifs : مَنْ (man, qui), مَاذَا (mādhā, que, quoi), أَيْنَ (ayna, où), مَتَى (matā, quand), كَيْفَ (kayfa, comment), لِمَاذَا (limādhā, pourquoi), كَمْ (kam, combien).\n\n## Méthode pour la compréhension\n\nLis le texte une première fois en entier pour saisir le thème. À la deuxième lecture, souligne les personnages, les lieux, les mots de liaison et les verbes principaux. Pour répondre, reprends les mots de la question et complète avec l'information du texte. À la question أَيْنَ تَعِيشُ فَاطِمَةُ؟ (ayna taʿīshu Fāṭimatu? : où vit Fatima ?), on répond : تَعِيشُ فَاطِمَةُ فِي قَرْيَةٍ صَغِيرَةٍ (taʿīshu Fāṭimatu fī qaryatin ṣaghīratin : Fatima vit dans un petit village). Pour un vrai ou faux, justifie toujours par une courte citation du texte.\n\n## Méthode pour la langue\n\nAvant de répondre, demande-toi trois choses : quel est le type de phrase (nominale ou verbale) ? Quelle est la fonction du mot ? Quel cas ou quel mode en découle ? Écris ensuite la voyelle finale clairement : c'est elle que le correcteur regarde.\n\n## Méthode pour l'expression écrite\n\nFais un plan au brouillon : une introduction d'une ou deux phrases, deux idées illustrées par un exemple, une conclusion. Écris des phrases courtes et correctes, vocalise les fins de mots dont tu es sûr, et réutilise le vocabulaire du texte. Garde du temps pour relire l'orthographe et les accords.\n\n## Organiser son temps\n\nRépartition indicative, à adapter à la durée officielle de ton épreuve : environ 15 % pour la lecture, 35 % pour la compréhension, 25 % pour la langue, 20 % pour l'expression et 5 % pour la relecture.\n\n## Les erreurs fréquentes\n\n- Accorder au pluriel un verbe placé avant son sujet : on écrit ذَهَبَ الطُّلَّابُ (dhahaba ṭ-ṭullābu : les étudiants sont partis), et non ذَهَبُوا الطُّلَّابُ.\n- Oublier qu'un pluriel de non-humains s'accorde au féminin singulier : الْكُتُبُ مُفِيدَةٌ (al-kutubu mufīdatun : les livres sont utiles).\n- Se tromper de démonstratif : هَذَا الْكِتَابُ (hādhā l-kitābu : ce livre), mais هَذِهِ الْمَدْرَسَةُ (hādhihi l-madrasatu : cette école).\n- Mettre la terminaison -a au lieu de -i après une préposition : فِي الْمَدْرَسَةِ (fī l-madrasati), avec une kasra.\n- Confondre la tāʾ marbūṭa ة et le hāʾ ه, ou le yāʾ ي et l'alif maqṣūra ى (عَلَى s'écrit avec ى).\n- Mal accorder les nombres de 3 à 10 : on écrit ثَلَاثَةُ كُتُبٍ (thalāthatu kutubin : trois livres), et non ثَلَاثُ كُتُبٍ.\n\n## Plan de révision sur 10 semaines\n\n- Semaine 1 : diagnostic sur un sujet complet, lecture de cette leçon, carnet de vocabulaire.\n- Semaine 2 : lecture et analyse de texte, consignes en arabe (leçon 2).\n- Semaine 3 : vocabulaire thématique et expression écrite (leçon 2).\n- Semaine 4 : cas et déclinaison (leçon 3).\n- Semaine 5 : phrase nominale, phrase verbale, كَانَ et إِنَّ, modes du verbe (leçon 3).\n- Semaine 6 : verbes dérivés et nombres (leçon 4).\n- Semaine 7 : relatifs et phrase conditionnelle (leçon 4).\n- Semaine 8 : sujet type en temps limité (leçon 5).\n- Semaine 9 : deuxième sujet blanc et fiche d'erreurs personnelles.\n- Semaine 10 : révision légère et cours vidéo « veille du Bac ».\n\nChaque jour, lis au moins un court paragraphe en arabe à voix haute et apprends cinq mots nouveaux.\n\n## Points clés\n\n- Apprends les consignes et les mots interrogatifs : ils rapportent des points faciles.\n- Réponds en phrases complètes en reprenant les mots de la question.\n- Vérifie la fonction du mot avant d'écrire sa voyelle finale.\n- La régularité compte plus que le volume.\n\n## Exercices pratiques\n\nExercice 1. Traduis les consignes : أَجِبْ عَنِ الْأَسْئِلَةِ ; هَاتِ ضِدَّ ; أَعْرِبْ.\n\nExercice 2. Associe chaque mot interrogatif à son sens : مَتَى ، كَيْفَ ، لِمَاذَا.\n\nExercice 3. Corrige : ذَهَبُوا الطُّلَّابُ إِلَى الْمَلْعَبِ.\n\nExercice 4. Corrige : هَذَا الْمَدْرَسَةُ كَبِيرَةٌ.\n\nExercice 5. Réponds par une phrase complète : أَيْنَ يَسْكُنُ عَلِيٌّ؟ (Ali habite à Touba.)\n\nExercice 6. Ton épreuve dure, par hypothèse, 2 heures. Calcule le temps de chaque partie selon la répartition indicative.\n\n## Corrigé\n\nExercice 1. « Réponds aux questions » ; « donne le contraire de » ; « fais l'analyse grammaticale ».\n\nExercice 2. مَتَى (matā) : quand ; كَيْفَ (kayfa) : comment ; لِمَاذَا (limādhā) : pourquoi.\n\nExercice 3. ذَهَبَ الطُّلَّابُ إِلَى الْمَلْعَبِ (dhahaba ṭ-ṭullābu ilā l-malʿabi : les étudiants sont allés au stade). Le verbe placé avant le sujet reste au singulier.\n\nExercice 4. هَذِهِ الْمَدْرَسَةُ كَبِيرَةٌ (hādhihi l-madrasatu kabīratun : cette école est grande). مَدْرَسَةٌ est féminin, donc démonstratif féminin.\n\nExercice 5. يَسْكُنُ عَلِيٌّ فِي طُوبَى (yaskunu ʿAliyyun fī Ṭūbā : Ali habite à Touba).\n\nExercice 6. 2 heures = 120 minutes. Lecture : 15 % = 18 min ; compréhension : 35 % = 42 min ; langue : 25 % = 30 min ; expression : 20 % = 24 min ; relecture : 5 % = 6 min. Total : 18 + 42 + 30 + 24 + 6 = 120 min."
+   },
+   {
+    "title": "Lecture, analyse de texte, vocabulaire thématique et expression écrite",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Grammaire du Bac 1 : cas et déclinaison, phrase nominale et phrase verbale",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Grammaire du Bac 2 : verbes dérivés, nombres, relatifs et phrase conditionnelle",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Sujet type d'examen : sujet d'entraînement corrigé",
+    "kind": "texte",
+    "is_free": false,
+    "duration_min": 60
+   },
+   {
+    "title": "Cours vidéo (1h30) : révision intensive « veille du Bac » en arabe",
+    "kind": "video",
+    "is_free": false,
+    "duration_min": 90
+   }
+  ]
  }
 ];
