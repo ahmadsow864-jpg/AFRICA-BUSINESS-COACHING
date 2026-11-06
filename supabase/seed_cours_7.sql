@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 7/7). À exécuter après seed.sql.
+-- Cours (partie 7/9). À exécuter après seed.sql.
 
 -- Cours : Espagnol LV2 : réussir l'épreuve du Bac
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
@@ -1291,3 +1291,2089 @@ Visuel : grille de relecture en cinq points (plan, connecteurs, accords, voyelle
 « Synthèse : -u, -a, -i selon la fonction ; كَانَ sur le prédicat, إِنَّ sur le sujet ; verbe singulier devant un sujet pluriel ; nombres de 3 à 10 au genre inverse ; relatif après un nom déterminé. Vous avez travaillé : faites-vous confiance. بِالتَّوْفِيقِ (bi-t-tawfīqi : bonne chance) et à bientôt ! »', 'video', 90, false, 60
 from public.courses c where c.slug = 'bac-arabe'
   and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : révision intensive « veille du Bac » en arabe');
+
+-- Cours : Ressources humaines Licence 1 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-rh-l1', (select id from public.levels where name = 'Licence 1'), null, 'Ressources humaines', 'Ressources humaines Licence 1 : réussir ses examens', 'Préparation aux partiels et examens semestriels de la Licence 1 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre l''introduction à la GRH, les bases du droit du travail (contrat, durée du travail, rupture, en tenant compte de la transition vers un nouveau Code du travail) et le comportement organisationnel et la communication. Fiches, exercices corrigés, sujet type et trois cours vidéo de 1h30. Aucun prérequis.', true, 301
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 1 en ressources humaines', '## Objectifs de la leçon
+
+- Comprendre l''organisation de la Licence 1 en système LMD : semestres, unités d''enseignement (UE), crédits et modalités d''évaluation.
+- Connaître les matières clés de la première année en ressources humaines et ce que l''on attend de vous à l''examen.
+- Disposer d''une méthode de révision efficace et d''un plan de travail sur 6 semaines.
+- Savoir aborder chaque type d''épreuve : cas pratique, QCM, dissertation, exercice chiffré, projet.
+
+## 1. La Licence 1 dans le système LMD
+
+Le système LMD (Licence, Master, Doctorat) est adopté par les universités et écoles de l''espace UEMOA, dont le Sénégal. La Licence compte trois années de deux semestres. Chaque semestre regroupe des unités d''enseignement (UE) qui rassemblent une ou plusieurs matières, par exemple une UE « Fondamentaux de la GRH ».
+
+Chaque UE porte des crédits qui traduisent le volume de travail demandé (cours, TD, travail personnel) et s''obtiennent en validant l''UE. Crédits, coefficients, règles de compensation et conditions de passage varient d''un établissement à l''autre : seul le règlement des études de votre établissement fait foi.
+
+Retenez trois mécanismes généraux :
+
+- Le contrôle continu : devoirs, exposés, travaux dirigés, petits tests pendant le semestre.
+- L''examen semestriel (ou examen terminal) : épreuve écrite en fin de semestre, souvent la plus lourde dans la note finale.
+- La session de rattrapage : seconde chance pour les UE non validées, selon les règles de l''établissement.
+
+## 2. Les matières de la Licence 1 en ressources humaines
+
+La première année pose les fondations. Ce cours travaille trois matières clés, à côté des matières de tronc commun (économie, comptabilité, expression écrite, informatique).
+
+- Introduction à la GRH : définitions, évolution de la fonction, missions du service RH, acteurs, grands processus (recruter, rémunérer, former, gérer les carrières, gérer les relations sociales).
+- Droit du travail (bases) : sources du droit du travail, contrat de travail, période d''essai, durée du travail, suspension et rupture du contrat, rôle de l''inspection du travail. Le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026) : vous devez connaître les mécanismes et rester prudent sur les détails.
+- Comportement organisationnel et communication : motivation, leadership, travail en groupe, culture d''entreprise, communication interpersonnelle et interne, gestion des conflits.
+
+## 3. Méthode de révision
+
+Réviser, ce n''est pas relire. Pour retenir durablement, utilisez trois outils.
+
+Premier outil : la fiche de synthèse, une page par chapitre (définitions, schéma, étapes d''une méthode, un exemple), rédigée par vous-même.
+
+Deuxième outil : la récupération active. Fermez le cours et essayez de restituer : « Quels sont les éléments du contrat de travail ? », « Citez trois théories de la motivation et leur auteur ». Ce qui ne revient pas est à retravailler.
+
+Troisième outil : l''entraînement sur sujets en temps limité, pour arriver à l''examen avec des réflexes.
+
+Travaillez aussi en petit groupe une fois par semaine : expliquer une notion à un camarade est une excellente façon de la comprendre.
+
+## 4. Les types d''épreuves et comment les aborder
+
+Le cas pratique : une situation d''entreprise est décrite (par exemple, la société fictive Teranga Distribution à Thiès qui embauche un magasinier) et vous devez l''analyser. Méthode en quatre temps : relever les faits utiles ; identifier le problème (juridique ou managérial) ; rappeler la règle ou le concept ; appliquer aux faits et conclure clairement.
+
+Le QCM : lisez toutes les propositions ; méfiez-vous des mots absolus (« toujours », « jamais ») ; vérifiez si les mauvaises réponses enlèvent des points.
+
+La dissertation ou question de réflexion : par exemple « La GRH est-elle une fonction stratégique dans les PME sénégalaises ? ». Introduction (accroche, définitions, problématique, annonce du plan), deux ou trois parties argumentées avec exemples, conclusion (réponse et ouverture).
+
+L''exercice chiffré : en L1, il s''agit surtout de calculs simples d''effectif, de taux d''absentéisme, d''heures de travail ou de coûts. Posez la formule, faites l''application numérique, donnez l''unité, interprétez le résultat en une phrase.
+
+Le projet ou dossier : par exemple rédiger une fiche de poste ou une note interne, en respectant consigne, forme et délais.
+
+## 5. Plan de révision sur 6 semaines
+
+- Semaine 1 : Introduction à la GRH. Fiches sur les définitions, l''histoire de la fonction, les missions et les acteurs. Un QCM d''auto-évaluation.
+- Semaine 2 : Droit du travail, partie 1. Sources, contrat de travail, période d''essai, CDD et CDI. Deux cas pratiques.
+- Semaine 3 : Droit du travail, partie 2. Durée du travail, heures supplémentaires, congés, suspension et rupture du contrat. Deux cas pratiques.
+- Semaine 4 : Comportement organisationnel. Motivation, leadership, groupes, culture. Une question de réflexion rédigée.
+- Semaine 5 : Communication et conflits. Schéma de la communication, communication interne, gestion des conflits. Un exercice de rédaction de note.
+- Semaine 6 : Sujets types en conditions réelles (sujet de la leçon 5), correction, reprise des fiches faibles, repos la veille.
+
+## Points clés
+
+- Le règlement des études de votre établissement fait foi pour les crédits, coefficients et compensations.
+- Trois matières clés en L1 RH : introduction à la GRH, droit du travail (bases), comportement organisationnel et communication.
+- Réviser = fiches + récupération active + entraînement chronométré.
+- Chaque type d''épreuve a sa méthode : maîtrisez-la avant le jour J.
+
+## Exercices pratiques
+
+- Exercice 1. Expliquez avec vos mots la différence entre une UE et une matière, et entre contrôle continu et examen semestriel.
+- Exercice 2. Rédigez la liste des étapes de la méthode du cas pratique et appliquez-la au cas suivant : Awa, embauchée par une boutique fictive de Ziguinchor, a signé un contrat de travail sans date de fin ; elle se demande si elle est en CDD ou en CDI.
+- Exercice 3. Proposez une problématique et un plan en deux parties pour le sujet : « La communication interne est-elle un luxe pour une petite entreprise ? ».
+- Exercice 4. Dans un atelier fictif, 20 salariés devaient travailler 160 heures chacun dans le mois ; 128 heures d''absence ont été relevées. Calculez le taux d''absentéisme.
+- Exercice 5 (cas pratique). Moussa a 6 semaines avant ses examens et travaille le week-end dans un commerce. Il dispose de 3 heures par jour du lundi au vendredi. Construisez-lui un plan de révision réaliste.
+
+## Corrigé
+
+Exercice 1. Une matière est un enseignement précis (par exemple le droit du travail) ; une UE est un bloc qui regroupe une ou plusieurs matières et auquel sont attachés des crédits. Le contrôle continu évalue l''étudiant tout au long du semestre (devoirs, TD, exposés) ; l''examen semestriel est une épreuve finale, généralement écrite, en fin de semestre.
+
+Exercice 2. Étapes : relever les faits ; poser le problème ; rappeler la règle ; appliquer et conclure. Application : Awa a signé un contrat sans terme précis. Problème : quelle est la nature de son contrat ? Règle générale : le contrat à durée indéterminée est la forme normale ; le contrat à durée déterminée doit préciser son terme ou l''objet qui le justifie, en principe par écrit. Conclusion : sauf disposition particulière à vérifier dans le texte en vigueur, un contrat sans date de fin ni objet précis s''analyse comme un CDI.
+
+Exercice 3. Problématique possible : une petite entreprise, aux moyens limités, peut-elle se passer d''organiser la circulation de l''information entre ses salariés ? Plan : I. Une communication interne souvent informelle et jugée coûteuse dans les petites structures (proximité, oral, manque de temps). II. Une nécessité pour la performance et le climat social (consignes claires, motivation, prévention des conflits), avec des outils simples et peu coûteux (réunion hebdomadaire, tableau d''affichage, groupe de messagerie professionnelle).
+
+Exercice 4. Heures théoriques = 20 × 160 = 3 200 heures. Taux d''absentéisme = 128 / 3 200 × 100 = 4 % du temps de travail prévu.
+
+Exercice 5. Moussa dispose de 15 heures par semaine, soit 90 heures en 6 semaines. Répartition proposée : semaine 1, introduction à la GRH (15 h) ; semaines 2 et 3, droit du travail (30 h) ; semaine 4, comportement organisationnel (15 h) ; semaine 5, communication et conflits (15 h) ; semaine 6, deux sujets complets en conditions réelles et révision des fiches (15 h). Chaque jour : 2 heures de fiches et exercices, 1 heure de récupération active.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en ressources humaines');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Introduction à la GRH : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Définir la GRH et situer son évolution historique.
+- Présenter les missions, les processus et les acteurs de la fonction RH.
+- Comprendre la place de la GRH dans les entreprises sénégalaises et africaines.
+- Savoir calculer et interpréter quelques indicateurs simples d''effectif.
+
+## Fiche 1 : définition et finalités
+
+La gestion des ressources humaines (GRH) est l''ensemble des activités qui permettent à une organisation de disposer, au bon moment, des personnes dont elle a besoin, en nombre et en compétences, et de les mobiliser pour atteindre ses objectifs, dans le respect du droit et des personnes.
+
+La GRH poursuit une double finalité :
+
+- Une finalité économique : contribuer à la performance de l''organisation (productivité, qualité, maîtrise des coûts salariaux).
+- Une finalité sociale : assurer des conditions de travail correctes, l''équité, le développement des compétences et le dialogue avec les salariés.
+
+Retenez la formule : la GRH cherche à concilier efficacité économique et satisfaction des salariés. À l''examen, une bonne copie montre que ces deux finalités peuvent être en tension (réduire les coûts ou augmenter les salaires ?) et que le rôle du responsable RH est de trouver un équilibre.
+
+## Fiche 2 : l''évolution de la fonction
+
+Schéma décrit en texte : une frise en quatre étapes.
+
+- Étape 1, la gestion administrative du personnel : tenir les registres, établir les bulletins de paie, appliquer la réglementation. Le « chef du personnel » est un administrateur.
+- Étape 2, la gestion du personnel : on ajoute le recrutement, la formation, les relations avec les représentants du personnel.
+- Étape 3, la gestion des ressources humaines : le salarié est vu comme une ressource à développer ; apparaissent la gestion des compétences et des carrières.
+- Étape 4, la GRH stratégique : la fonction RH participe aux choix de l''entreprise et devient un partenaire de la direction générale.
+
+En Afrique de l''Ouest, ces étapes coexistent : une grande banque ou une société de télécommunications dispose d''une direction des ressources humaines structurée, tandis que de nombreuses PME et entreprises familiales confient la paie à un comptable et le recrutement au gérant. L''importance du secteur informel, la jeunesse de la population active et le rôle des réseaux familiaux dans l''accès à l''emploi sont des traits à mentionner dans une copie.
+
+## Fiche 3 : les grands processus RH
+
+On présente souvent la GRH comme un cycle de vie du salarié dans l''entreprise :
+
+- Acquérir : prévoir les besoins, recruter, intégrer.
+- Rémunérer : fixer les salaires, gérer la paie, les avantages.
+- Développer : former, évaluer, gérer les carrières et les compétences.
+- Mobiliser : motiver, communiquer, améliorer les conditions de travail, la santé et la sécurité.
+- Administrer et dialoguer : contrats, dossiers du personnel, déclarations sociales, relations avec les représentants du personnel.
+- Gérer les départs : démissions, licenciements, retraites, fins de contrat.
+
+## Fiche 4 : les acteurs de la GRH
+
+- La direction générale fixe la stratégie et arbitre les budgets.
+- Le service ou la direction RH conçoit les politiques, les outils et assure l''administration.
+- Les managers de proximité (chefs d''équipe, chefs de service) appliquent au quotidien : ils accueillent, évaluent, organisent le travail. On dit que la GRH est « partagée ».
+- Les salariés et leurs représentants (délégués du personnel, syndicats) participent au dialogue social.
+- Les acteurs externes : inspection du travail, organismes de sécurité sociale et de retraite (au Sénégal : Caisse de sécurité sociale, IPRES, institutions de prévoyance maladie), cabinets de recrutement, organismes de formation.
+
+## Fiche 5 : quelques indicateurs de base
+
+L''effectif inscrit au 31 décembre est le nombre de salariés liés par un contrat à cette date. L''effectif moyen sur une période est souvent approché par la moyenne des effectifs de début et de fin de période, ou mieux par la moyenne des effectifs mensuels.
+
+Exemple chiffré : la société fictive Sahel Agro, à Kaolack, compte 80 salariés au 1er janvier et 100 au 31 décembre. Effectif moyen approché = (80 + 100) / 2 = 90 salariés.
+
+La masse salariale est la somme des rémunérations brutes versées sur la période. Si Sahel Agro a versé 324 000 000 FCFA de salaires bruts sur l''année, le salaire brut moyen annuel par salarié = 324 000 000 / 90 = 3 600 000 FCFA, soit 300 000 FCFA par mois.
+
+Le taux d''encadrement = nombre de cadres / effectif total × 100. Avec 9 cadres sur 90 salariés : 10 %.
+
+## Fiche 6 : la GRH au service de la stratégie, un cas fictif
+
+Teranga Logistique, entreprise fictive de transport basée à Dakar, décide d''ouvrir une agence à Tambacounda. Conséquences RH : prévoir les postes (chauffeurs, magasiniers, un chef d''agence), décider de recruter localement ou de muter des salariés de Dakar, organiser la formation à la sécurité routière, adapter la rémunération (indemnité de déplacement), informer les représentants du personnel. Cet exemple montre que chaque décision stratégique a une traduction RH.
+
+## Points clés
+
+- GRH = double finalité économique et sociale.
+- De l''administration du personnel à la GRH stratégique.
+- Six processus : acquérir, rémunérer, développer, mobiliser, administrer et dialoguer, gérer les départs.
+- La GRH est partagée entre le service RH et les managers.
+
+## Exercices pratiques
+
+- Exercice 1. Définissez la GRH et expliquez pourquoi ses deux finalités peuvent entrer en conflit. Donnez un exemple.
+- Exercice 2. QCM : lequel de ces acteurs n''est pas un acteur interne de la GRH ? a) le chef d''atelier ; b) l''inspection du travail ; c) le délégué du personnel ; d) le directeur général.
+- Exercice 3. Une entreprise fictive compte 150 salariés au 1er janvier et 130 au 31 décembre. Calculez l''effectif moyen approché.
+- Exercice 4. Avec l''effectif moyen de l''exercice 3 et une masse salariale annuelle de 504 000 000 FCFA, calculez le salaire brut moyen annuel puis mensuel.
+- Exercice 5. Dans la même entreprise, 21 salariés sont cadres. Calculez le taux d''encadrement sur l''effectif moyen.
+- Exercice 6 (cas pratique). Kër Couture, atelier de confection fictif de 12 salariés à Saint-Louis, vient de décrocher un gros marché d''uniformes scolaires. Le gérant fait tout lui-même : recrutement, paie, organisation. Identifiez les processus RH concernés et proposez trois actions prioritaires.
+
+## Corrigé
+
+Exercice 1. La GRH est l''ensemble des activités permettant à l''organisation de disposer des personnes et des compétences nécessaires et de les mobiliser au service de ses objectifs, dans le respect du droit et des personnes. La finalité économique pousse à maîtriser les coûts ; la finalité sociale pousse à améliorer salaires et conditions de travail. Exemple : une hausse générale des salaires améliore la motivation mais augmente la masse salariale ; le responsable RH doit argumenter un compromis (hausse ciblée, primes liées aux résultats).
+
+Exercice 2. Réponse b : l''inspection du travail est une administration publique, donc un acteur externe.
+
+Exercice 3. Effectif moyen = (150 + 130) / 2 = 140 salariés.
+
+Exercice 4. Salaire brut moyen annuel = 504 000 000 / 140 = 3 600 000 FCFA ; mensuel = 3 600 000 / 12 = 300 000 FCFA.
+
+Exercice 5. Taux d''encadrement = 21 / 140 × 100 = 15 %.
+
+Exercice 6. Processus concernés : acquérir (recruter des couturières temporaires), rémunérer (heures supplémentaires, primes de rendement), développer (former rapidement les nouvelles recrues), administrer (contrats, déclarations sociales) et mobiliser (organiser les équipes). Actions prioritaires : 1) évaluer le besoin en heures de travail et en postes et recruter en CDD justifié par le surcroît d''activité, en respectant la réglementation ; 2) désigner une couturière expérimentée comme tutrice pour former et encadrer les nouvelles ; 3) confier l''administration de la paie à un cabinet ou à un logiciel simple pour libérer du temps au gérant, et tenir à jour les dossiers du personnel.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Introduction à la GRH : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Droit du travail (bases) : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Connaître les sources du droit du travail et leur articulation.
+- Identifier un contrat de travail et distinguer CDI et CDD.
+- Maîtriser les mécanismes de la durée du travail et des heures supplémentaires.
+- Connaître les grands modes de rupture du contrat et la méthode du cas pratique juridique.
+
+## Avertissement préalable
+
+Au Sénégal, le droit du travail repose sur le Code du travail issu de la loi n°97-17 du 1er décembre 1997 et ses textes d''application. Une réforme est en cours (projet de loi n°15/2026 portant nouveau Code du travail). À l''examen, maîtrisez les mécanismes et les raisonnements, citez prudemment les textes, et vérifiez toujours avec votre enseignant quel texte sert de référence pour votre session. Dans cette leçon, tous les taux utilisés dans les exemples sont fictifs.
+
+## Fiche 1 : les sources du droit du travail
+
+Schéma décrit en texte : une pyramide, du haut vers le bas.
+
+- Normes internationales : conventions de l''OIT ratifiées par le Sénégal.
+- Constitution : droit au travail, liberté syndicale, droit de grève.
+- Loi : le Code du travail.
+- Règlements : décrets et arrêtés d''application (par exemple sur le salaire minimum, les heures supplémentaires).
+- Conventions collectives : la Convention collective nationale interprofessionnelle (CCNI) et les conventions de branche (commerce, banques, bâtiment, etc.), négociées entre employeurs et syndicats.
+- Règlement intérieur de l''entreprise : discipline, hygiène et sécurité.
+- Contrat de travail et usages.
+
+Principe essentiel : le principe de faveur. En cas de conflit entre deux normes, on applique en général la plus favorable au salarié, sans violer l''ordre public. Une convention collective peut accorder plus que la loi, jamais moins.
+
+## Fiche 2 : le contrat de travail
+
+Le contrat de travail est la convention par laquelle une personne (le travailleur) s''engage à mettre son activité professionnelle, moyennant rémunération, sous la direction et l''autorité d''une autre personne (l''employeur).
+
+Trois éléments cumulatifs :
+
+- Une prestation de travail.
+- Une rémunération.
+- Un lien de subordination juridique : pouvoir de donner des ordres, de contrôler et de sanctionner.
+
+Le lien de subordination est le critère décisif : il distingue le salarié du prestataire indépendant. Le juge regarde la réalité de la relation, pas le nom donné au contrat.
+
+La période d''essai permet à chaque partie d''apprécier l''autre. Prévue par écrit, sa durée maximale est encadrée par les textes et conventions. Pendant l''essai, la rupture est en principe libre, sans préavis ni indemnité, sauf abus.
+
+## Fiche 3 : CDI et CDD
+
+Le contrat à durée indéterminée (CDI) est la forme normale de la relation de travail. Il n''a pas de terme fixé à l''avance.
+
+Le contrat à durée déterminée (CDD) a un terme précis, fixé dès la conclusion ou lié à un objet (fin d''un chantier, retour d''un salarié absent). Il est encadré : écrit, durée maximale, renouvellements limités, selon des limites fixées par les textes. Sanction classique : un CDD qui ne respecte pas les règles ou qui se poursuit après son terme peut être requalifié en CDI.
+
+## Fiche 4 : la durée du travail
+
+Dans le Code de 1997, la durée légale du travail des établissements non agricoles est fixée à 40 heures par semaine ; les règles du nouveau Code devront être vérifiées. Au-delà de la durée légale, les heures sont des heures supplémentaires : elles sont majorées selon des taux fixés par voie réglementaire ou conventionnelle, et encadrées (autorisations, plafonds, repos).
+
+Méthode de calcul du taux horaire : pour un horaire de 40 heures par semaine, le nombre d''heures mensuelles moyen est 40 × 52 / 12 = 173,33 heures. Taux horaire = salaire mensuel de base / 173,33.
+
+Exemple chiffré : Fatou, caissière dans un supermarché fictif de Mbour, a un salaire de base de 260 000 FCFA. Taux horaire = 260 000 / 173,33 ≈ 1 500 FCFA (arrondi à l''unité). Ce mois-ci, elle a fait 8 heures supplémentaires : 6 heures majorées à 15 % et 2 heures majorées à 40 % (taux fictifs pour l''exemple).
+
+- 6 × 1 500 × 1,15 = 10 350 FCFA
+- 2 × 1 500 × 1,40 = 4 200 FCFA
+- Total des heures supplémentaires = 14 550 FCFA
+- Salaire brut du mois = 260 000 + 14 550 = 274 550 FCFA
+
+## Fiche 5 : suspension et rupture du contrat
+
+La suspension interrompt temporairement l''exécution du contrat sans le rompre : maladie, maternité, accident du travail, mise à pied, etc.
+
+La rupture du CDI :
+
+- La démission : initiative du salarié, volonté claire et non équivoque, respect du préavis.
+- Le licenciement pour motif personnel : il exige un motif légitime (faute, insuffisance professionnelle), une procédure et le respect du préavis. Le salarié peut avoir droit à une indemnité de licenciement selon son ancienneté. La faute lourde peut priver du préavis et des indemnités.
+- Le licenciement pour motif économique : suppression ou transformation d''emploi pour raisons économiques ou techniques ; procédure renforcée (information des délégués du personnel et de l''inspection du travail, ordre des licenciements).
+- Un licenciement sans motif légitime est abusif : le juge peut accorder des dommages-intérêts.
+
+La rupture du CDD : il prend fin à son terme. Avant, la rupture n''est en principe possible que dans des cas limités (faute lourde, accord des parties, force majeure), sinon des dommages-intérêts sont dus.
+
+Les litiges individuels passent par une conciliation devant l''inspection du travail, puis le tribunal du travail.
+
+## Points clés
+
+- Contrat de travail = prestation + rémunération + subordination.
+- Le CDI est la règle, le CDD l''exception encadrée.
+- Taux horaire = salaire mensuel / 173,33 pour 40 heures hebdomadaires.
+- Rupture : qui rompt, quel motif, quelle procédure, quel préavis, quelles indemnités.
+
+## Exercices pratiques
+
+- Exercice 1. Citez les trois éléments du contrat de travail et indiquez celui qui permet de distinguer un salarié d''un prestataire indépendant.
+- Exercice 2. Expliquez le principe de faveur avec un exemple.
+- Exercice 3. Un salarié perçoit 346 660 FCFA de salaire de base mensuel pour 40 heures hebdomadaires. Calculez son taux horaire.
+- Exercice 4. Il effectue 10 heures supplémentaires : 8 heures majorées à 15 % et 2 heures majorées à 50 % (taux fictifs). Calculez le montant des heures supplémentaires et le salaire brut.
+- Exercice 5 (cas pratique). Ibrahima est « prestataire informatique » pour une société fictive de Dakar depuis deux ans. Il pointe chaque jour de 8 h à 17 h, reçoit ses tâches de la directrice informatique et a reçu un avertissement écrit pour retard. La société met fin à la relation du jour au lendemain. Analysez sa situation.
+- Exercice 6. Un CDD de 6 mois est rompu au bout de 2 mois par l''employeur car « l''activité a baissé ». Est-ce régulier ?
+
+## Corrigé
+
+Exercice 1. Prestation de travail, rémunération, lien de subordination juridique. Le lien de subordination est le critère distinctif.
+
+Exercice 2. Lorsque plusieurs normes s''appliquent, on retient en principe la plus favorable au salarié. Exemple : si la convention de branche accorde plus de congés que la loi, la durée conventionnelle s''applique.
+
+Exercice 3. Taux horaire = 346 660 / 173,33 = 2 000 FCFA.
+
+Exercice 4. 8 × 2 000 × 1,15 = 18 400 FCFA ; 2 × 2 000 × 1,50 = 6 000 FCFA ; total = 24 400 FCFA. Salaire brut = 346 660 + 24 400 = 371 060 FCFA.
+
+Exercice 5. Faits : horaires imposés, ordres de la directrice, sanction disciplinaire. Problème : Ibrahima est-il un salarié ? Règle : le contrat de travail se caractérise par le lien de subordination, apprécié selon la réalité de la relation. Application : pouvoir de direction (tâches), de contrôle (pointage) et de sanction (avertissement) : la subordination est établie. Conclusion : il peut demander la requalification en contrat de travail, probablement à durée indéterminée ; la rupture brutale, sans motif ni procédure ni préavis, s''analyserait comme un licenciement irrégulier et potentiellement abusif, ouvrant droit à des indemnités. Démarche : saisir l''inspection du travail pour une tentative de conciliation, puis le tribunal du travail.
+
+Exercice 6. En principe non : la baisse d''activité n''est pas un cas de rupture anticipée du CDD (faute lourde, accord des parties, force majeure). L''employeur s''expose à des dommages-intérêts ; vérifiez la règle exacte dans le texte en vigueur.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Droit du travail (bases) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Comportement organisationnel et communication : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Connaître les principales théories de la motivation et du leadership et savoir les appliquer à un cas.
+- Comprendre le fonctionnement des groupes et la notion de culture d''organisation.
+- Maîtriser le schéma de la communication et les outils de communication interne.
+- Analyser un conflit et choisir un mode de gestion adapté.
+
+## Fiche 1 : le comportement organisationnel
+
+Le comportement organisationnel étudie la manière dont les individus et les groupes agissent dans les organisations, et comment ces comportements influencent la performance. Il s''intéresse à trois niveaux : l''individu (perception, motivation, satisfaction), le groupe (dynamique, leadership, conflits) et l''organisation (structure, culture, changement).
+
+## Fiche 2 : les théories de la motivation
+
+La motivation est l''ensemble des forces qui poussent une personne à agir, orientent son action et la font persister.
+
+- Maslow : hiérarchie des besoins, souvent représentée par une pyramide à cinq niveaux, de la base au sommet : besoins physiologiques, sécurité, appartenance, estime, accomplissement. Un besoin satisfait cesse de motiver. Limite : l''ordre n''est pas universel ; dans de nombreuses sociétés africaines, l''appartenance à la famille et à la communauté peut primer.
+- Herzberg : deux familles de facteurs. Les facteurs d''hygiène (salaire, conditions de travail, relations, politique de l''entreprise) évitent l''insatisfaction mais ne motivent pas durablement. Les facteurs moteurs (reconnaissance, responsabilité, intérêt du travail, progression) créent la satisfaction.
+- McGregor : la théorie X suppose que l''individu n''aime pas travailler et doit être contrôlé ; la théorie Y suppose qu''il peut s''engager et rechercher des responsabilités si les conditions s''y prêtent.
+- Vroom (théorie des attentes) : la force de motivation dépend de trois éléments : l''expectation E (probabilité que l''effort mène à la performance), l''instrumentalité I (probabilité que la performance soit récompensée) et la valence V (valeur accordée à la récompense). On écrit M = E × I × V, chaque terme étant noté ici entre 0 et 1.
+
+Exemple chiffré : chez Baobab Assurances, société fictive de Dakar, un commercial estime à 0,8 la probabilité d''atteindre son objectif s''il fait un effort, à 0,5 la probabilité que la prime promise soit réellement versée, et il attache une valeur de 0,9 à cette prime. M = 0,8 × 0,5 × 0,9 = 0,36. Si la direction rend la prime transparente et garantie (I = 0,9), M = 0,8 × 0,9 × 0,9 = 0,648. Leçon : la crédibilité des promesses de la hiérarchie est un levier de motivation.
+
+## Fiche 3 : le leadership
+
+Le leadership est la capacité d''influencer un groupe pour atteindre des objectifs.
+
+- Lewin distingue trois styles : autocratique (le chef décide seul), démocratique (le chef associe le groupe), laisser-faire (le chef intervient peu).
+- L''approche situationnelle de Hersey et Blanchard : le bon style dépend de la maturité des collaborateurs (compétence et motivation). On passe du style directif (collaborateur débutant) au style persuasif, puis participatif, enfin délégatif (collaborateur autonome et motivé).
+
+Exemple : une cheffe d''équipe d''une usine fictive de transformation de mangues à Sédhiou sera directive avec des saisonniers recrutés la veille, et délégative avec des opératrices de dix ans d''ancienneté.
+
+## Fiche 4 : les groupes et la culture
+
+Tuckman décrit les étapes du développement d''une équipe : formation (on se découvre), tension (conflits de rôle), normalisation (règles communes), performance (l''équipe est efficace), puis dissolution à la fin d''un projet.
+
+La culture d''organisation est l''ensemble des valeurs, croyances, normes et pratiques partagées par ses membres. Schein distingue trois niveaux : les artefacts visibles (locaux, tenue, rituels, langage), les valeurs affichées (charte, slogans) et les hypothèses de base, implicites et profondes. Dans le contexte sénégalais, des valeurs comme la teranga (hospitalité), le respect des aînés ou la solidarité influencent les relations de travail : prise de parole en réunion, rapport à la hiérarchie, gestion des absences pour événements familiaux.
+
+## Fiche 5 : la communication
+
+Schéma de la communication, décrit en texte : un émetteur code un message et l''envoie par un canal à un récepteur qui le décode ; des bruits (bruit physique, jargon, différence de langue, émotions) perturbent la transmission ; la rétroaction (feedback) du récepteur permet à l''émetteur de vérifier la compréhension.
+
+La communication interne vise à informer, coordonner et fédérer. On distingue :
+
+- La communication descendante : de la direction vers les salariés (notes de service, réunions, affichage).
+- La communication ascendante : des salariés vers la direction (boîte à idées, entretiens, enquêtes de satisfaction).
+- La communication horizontale : entre services ou collègues.
+- La communication formelle et la communication informelle (rumeurs, discussions autour du thé).
+
+Dans un contexte multilingue, choisir la langue (français, wolof, pulaar, sérère ou autre) et le canal (réunion orale plutôt que note écrite pour des équipes de terrain) améliore l''efficacité.
+
+## Fiche 6 : les conflits
+
+Un conflit est une opposition entre personnes ou groupes dont les intérêts, les valeurs ou les objectifs divergent. Le modèle de Thomas et Kilmann propose cinq modes de gestion, selon le degré d''affirmation de soi et de coopération : la compétition, la collaboration, le compromis, l''évitement et l''accommodation. La collaboration recherche une solution gagnant-gagnant ; elle prend du temps mais règle durablement les conflits importants.
+
+## Points clés
+
+- Motivation : Maslow, Herzberg, McGregor, Vroom (M = E × I × V).
+- Le leadership efficace s''adapte à la situation.
+- La culture se lit à trois niveaux (Schein) et s''inscrit dans la société environnante.
+- Communication : émetteur, message, canal, récepteur, bruit, feedback.
+
+## Exercices pratiques
+
+- Exercice 1. Classez selon Herzberg : salaire, reconnaissance du travail, climatisation des bureaux, possibilité de promotion, relation avec le chef.
+- Exercice 2. Un employé estime E = 0,6, I = 0,7 et V = 0,5. Calculez M. Quel facteur proposeriez-vous d''améliorer en priorité si la direction peut porter un seul des trois à 0,9 ?
+- Exercice 3. Identifiez les bruits possibles dans la situation suivante : un directeur envoie par courriel, en français technique, une consigne de sécurité à des manutentionnaires qui n''ont pas d''adresse électronique professionnelle.
+- Exercice 4. Quel style de leadership situationnel conseillez-vous pour : a) une stagiaire motivée mais sans expérience ; b) un comptable expérimenté et engagé ?
+- Exercice 5 (cas pratique). À la clinique fictive Santé Plus de Thiès, les infirmières de nuit se plaignent que l''équipe de jour leur laisse des tâches non terminées. Le ton monte. Analysez le conflit et proposez un mode de gestion ainsi que trois actions concrètes.
+
+## Corrigé
+
+Exercice 1. Facteurs d''hygiène : salaire, climatisation des bureaux, relation avec le chef. Facteurs moteurs : reconnaissance du travail, possibilité de promotion.
+
+Exercice 2. M = 0,6 × 0,7 × 0,5 = 0,21. Si E passe à 0,9 : 0,9 × 0,7 × 0,5 = 0,315. Si I passe à 0,9 : 0,6 × 0,9 × 0,5 = 0,27. Si V passe à 0,9 : 0,6 × 0,7 × 0,9 = 0,378. On améliore en priorité la valence (proposer une récompense qui a plus de valeur pour l''employé), qui donne la plus forte hausse.
+
+Exercice 3. Bruits : canal inadapté (courriel inaccessible), code inadapté (français technique), absence de feedback. Solution : briefing oral sur le lieu de travail, dans une langue comprise par tous, avec démonstration et vérification de la compréhension, complété par un affichage illustré.
+
+Exercice 4. a) Style persuasif (ou directif au tout début) : beaucoup de consignes et d''explications, tout en entretenant sa motivation. b) Style délégatif : fixer les objectifs et lui laisser l''autonomie.
+
+Exercice 5. Nature : conflit entre groupes, lié à l''organisation du travail (répartition des tâches, transmission) plus qu''aux personnes. Mode conseillé : la collaboration, car l''enjeu (qualité des soins) est important et la relation doit durer. Actions : 1) réunion de médiation animée par la cadre de santé avec des représentantes des deux équipes pour lister les tâches litigieuses ; 2) mise en place d''une fiche de transmission écrite et d''un temps de relève de 15 minutes ; 3) point de suivi après un mois et règle claire sur les tâches qui doivent être terminées avant la relève.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Comportement organisationnel et communication : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 1 RH (entraînement, corrigé détaillé)', '## Présentation du sujet
+
+Ce sujet d''entraînement couvre les trois matières clés de la Licence 1 RH. Il ne s''agit pas d''un sujet officiel : il a été conçu pour vous entraîner dans des conditions proches d''un examen semestriel. Durée conseillée : 3 heures. Barème indicatif, non officiel : 20 points. Documents non autorisés. Tous les taux sont fictifs pour l''exemple.
+
+## Dossier 1 : Introduction à la GRH (5 points)
+
+La société fictive Delta Riz, implantée à Richard-Toll, transforme et conditionne du riz local. Elle comptait 220 salariés au 1er janvier N et 260 au 31 décembre N. Elle a versé 1 008 000 000 FCFA de salaires bruts sur l''année N. Elle emploie 24 cadres en moyenne. La direction envisage de créer un véritable service RH ; aujourd''hui, la paie est faite par le service comptable et les recrutements par chaque chef d''atelier.
+
+- 1.1 Calculez l''effectif moyen approché, le salaire brut moyen mensuel et le taux d''encadrement. (2 points)
+- 1.2 À quelle étape de l''évolution de la fonction RH se situe Delta Riz ? Justifiez. (1 point)
+- 1.3 Proposez trois missions prioritaires pour le futur service RH et expliquez le rôle que conserveront les chefs d''atelier. (2 points)
+
+## Dossier 2 : Droit du travail (8 points)
+
+Situation A. Khady a été embauchée par Delta Riz le 1er mars N comme opératrice de conditionnement par un contrat écrit intitulé « contrat saisonnier », sans date de fin ni indication de la campagne concernée. En novembre, le chef d''atelier lui annonce oralement que « la saison est finie » et qu''elle ne doit plus revenir.
+
+Situation B. Ousmane, technicien de maintenance, perçoit un salaire de base de 433 325 FCFA pour 40 heures hebdomadaires. En octobre, il a effectué 12 heures supplémentaires : 8 heures majorées à 15 % et 4 heures majorées à 40 % (taux fictifs).
+
+- 2.1 Situation A : quelle est la nature du contrat de Khady ? Analysez la rupture selon la méthode du cas pratique. (4 points)
+- 2.2 Situation B : calculez le taux horaire, le montant des heures supplémentaires et le salaire brut d''octobre. (3 points)
+- 2.3 Citez deux sources conventionnelles du droit du travail. (1 point)
+
+## Dossier 3 : Comportement organisationnel et communication (7 points)
+
+Depuis l''arrivée d''une nouvelle machine d''ensachage, l''absentéisme augmente dans l''atelier 2 de Delta Riz. Les opérateurs disent ne pas avoir été informés, la cheffe d''atelier affirme qu''une note a été affichée. Une prime de productivité a été annoncée « si les résultats sont bons », sans plus de précision.
+
+- 3.1 Analysez la situation de communication à l''aide du schéma émetteur-récepteur. (2 points)
+- 3.2 À l''aide de la théorie de Vroom, expliquez pourquoi la prime annoncée motive peu. (2 points)
+- 3.3 Question de réflexion : « Le style de management doit-il changer lors de l''introduction d''une nouvelle technologie ? » Rédigez une introduction complète et le plan détaillé. (3 points)
+
+## Corrigé détaillé
+
+1.1 Effectif moyen = (220 + 260) / 2 = 240 salariés. Salaire brut moyen annuel = 1 008 000 000 / 240 = 4 200 000 FCFA ; mensuel = 4 200 000 / 12 = 350 000 FCFA. Taux d''encadrement = 24 / 240 × 100 = 10 %. Barème indicatif : 0,5 point pour l''effectif, 1 point pour le salaire (annuel et mensuel), 0,5 point pour le taux.
+
+1.2 Delta Riz se situe au stade de la gestion administrative du personnel, avec une GRH dispersée : la paie est un travail comptable, le recrutement est laissé aux chefs d''atelier sans politique commune, il n''existe pas de vision prévisionnelle. Avec 240 salariés, ce niveau devient insuffisant.
+
+1.3 Missions prioritaires : 1) sécuriser l''administration du personnel et la paie (contrats, dossiers, déclarations sociales) ; 2) harmoniser le recrutement et l''intégration (fiches de poste, procédure commune) ; 3) organiser la formation, notamment sur les nouvelles machines. Les chefs d''atelier restent des acteurs de la GRH partagée : ils expriment les besoins, participent aux entretiens, accueillent, forment sur le poste et évaluent leurs équipes.
+
+2.1 Faits : contrat écrit dit saisonnier, sans terme ni campagne précisée ; rupture orale en novembre. Problème : le contrat est-il un véritable CDD saisonnier et la rupture est-elle régulière ? Règle : le CDI est la forme normale ; le CDD, y compris saisonnier, doit préciser son terme ou l''objet qui le détermine (ici, la campagne) ; à défaut, il peut être requalifié en CDI. Le licenciement d''un salarié en CDI exige un motif légitime, le respect d''une procédure et d''un préavis. Application : le contrat ne mentionne ni date ni campagne ; l''intitulé ne suffit pas. Le contrat peut être requalifié en CDI. La rupture orale, sans motif légitime ni préavis, constitue alors un licenciement irrégulier et probablement abusif. Conclusion : Khady peut saisir l''inspection du travail en vue d''une conciliation, puis le tribunal du travail, pour obtenir l''indemnité de préavis, une éventuelle indemnité de licenciement selon les textes et des dommages-intérêts. Barème : 1 point pour les faits et le problème, 1 point pour la règle, 1,5 point pour l''application, 0,5 point pour la conclusion.
+
+2.2 Taux horaire = 433 325 / 173,33 ≈ 2 500 FCFA. Heures supplémentaires : 8 × 2 500 × 1,15 = 23 000 FCFA ; 4 × 2 500 × 1,40 = 14 000 FCFA ; total = 37 000 FCFA. Salaire brut d''octobre = 433 325 + 37 000 = 470 325 FCFA.
+
+2.3 La Convention collective nationale interprofessionnelle et les conventions collectives de branche ; on accepte aussi les accords d''entreprise et le règlement intérieur, en précisant que ce dernier est un acte de l''employeur.
+
+3.1 Émetteur : la cheffe d''atelier ; message : informations sur la nouvelle machine ; canal : note affichée ; récepteurs : les opérateurs. Bruits : canal peu adapté à des équipes en rotation, langue ou vocabulaire technique, absence d''explication orale. Pas de feedback : la cheffe n''a pas vérifié la compréhension. Le message a été émis mais pas reçu.
+
+3.2 Selon Vroom, M = E × I × V. L''instrumentalité est faible car le lien entre performance et prime est flou (« si les résultats sont bons ») ; l''expectation peut aussi être faible si les opérateurs ne maîtrisent pas la machine. Même si la valence est forte, le produit reste bas. Il faut fixer un objectif mesurable, un montant et des règles transparentes, et former les opérateurs.
+
+3.3 Introduction : accroche sur la mécanisation des ateliers agroalimentaires ; définitions (style de management, nouvelle technologie) ; problématique : le manager doit-il adapter sa manière de diriger quand les compétences de son équipe sont remises en cause par une technologie ? Annonce du plan. Plan : I. Le changement technologique fait baisser temporairement la maturité professionnelle des équipes (perte de repères, inquiétude) : un style plus directif et explicatif s''impose au départ (Hersey et Blanchard). II. Mais l''adhésion durable suppose la participation (consultation, formation, reconnaissance) avant de revenir à la délégation. Conclusion : le style doit évoluer au rythme de l''appropriation de la technologie.
+
+## Exercices pratiques
+
+- Exercice 1. Vrai ou faux : la faute lourde peut priver le salarié du préavis.
+- Exercice 2. Calculez le taux d''absentéisme d''un atelier de 30 salariés à 173 heures théoriques chacun, avec 519 heures d''absence.
+- Exercice 3. Citez les cinq modes de gestion des conflits de Thomas et Kilmann.
+- Exercice 4. Donnez deux différences entre une démission et un licenciement.
+- Exercice 5. Citez deux acteurs externes de la GRH au Sénégal.
+
+## Corrigé
+
+Exercice 1. Vrai, sous réserve des textes en vigueur et de l''appréciation du juge.
+
+Exercice 2. Heures théoriques = 30 × 173 = 5 190 heures ; taux = 519 / 5 190 × 100 = 10 %.
+
+Exercice 3. Compétition, collaboration, compromis, évitement, accommodation.
+
+Exercice 4. L''initiative : le salarié pour la démission, l''employeur pour le licenciement. Le motif : la démission n''a pas à être justifiée, le licenciement exige un motif légitime ; de plus, le licenciement peut ouvrir droit à une indemnité de licenciement.
+
+Exercice 5. L''inspection du travail et l''IPRES (ou la Caisse de sécurité sociale).', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 RH (entraînement, corrigé détaillé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Introduction à la GRH', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 en ressources humaines, gestion ou administration des entreprises.
+- Objectifs : définir la GRH et ses finalités, retracer son évolution, présenter les processus et les acteurs, calculer les indicateurs de base (effectif moyen, salaire moyen, taux d''encadrement), réussir une question de cours et un mini-cas à l''examen.
+- Matériel : diaporama (frise historique, schéma du cycle de vie du salarié, tableau des acteurs), tableau blanc, calculatrice, fiche d''exercices distribuée.
+- Prérequis : aucun, sinon avoir lu la leçon « Introduction à la GRH : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+Bonjour à toutes et à tous. Pendant une heure et demie, nous allons construire ensemble les fondations de votre Licence en ressources humaines. À la fin de cette séance, vous saurez définir la GRH sans hésiter, expliquer comment la fonction a évolué, citer ses grands processus et ses acteurs, et faire les petits calculs qui tombent souvent à l''examen. Préparez une feuille et une calculatrice. Toutes les entreprises citées sont fictives.
+
+Visuel : diapositive avec les quatre objectifs et le plan de la séance.
+
+## 05:00 – 15:00 · Définir la GRH et ses deux finalités
+
+Commençons par une question : selon vous, à quoi sert un service RH ? Notez une phrase. Beaucoup d''entre vous écrivent « à recruter » ou « à faire la paie ». C''est juste, mais incomplet. La GRH est l''ensemble des activités qui permettent à une organisation de disposer des personnes dont elle a besoin, en nombre et en compétences, au bon moment, et de les mobiliser pour atteindre ses objectifs, dans le respect du droit et des personnes.
+
+Retenez la double finalité. La finalité économique : la GRH contribue à la performance, à la productivité, à la maîtrise de la masse salariale. La finalité sociale : elle veille à l''équité, aux conditions de travail, au développement des personnes et au dialogue. Ces deux finalités ne vont pas toujours dans le même sens. Imaginez une entreprise de transport qui veut réduire ses coûts alors que ses chauffeurs demandent une revalorisation. Le responsable RH ne choisit pas un camp : il construit un compromis argumenté.
+
+Visuel : une balance avec « performance économique » d''un côté et « satisfaction et développement des salariés » de l''autre.
+
+## 15:00 – 27:00 · L''évolution de la fonction RH
+
+Regardons maintenant la frise. Au départ, on parlait de gestion administrative du personnel : tenir les registres, établir les bulletins de paie, appliquer les textes. Le responsable était un « chef du personnel ». Ensuite, la gestion du personnel s''est enrichie du recrutement, de la formation et des relations avec les représentants du personnel. Puis on a parlé de gestion des ressources humaines : le salarié devient une ressource à développer, on gère les compétences et les carrières. Enfin, la GRH stratégique associe la fonction RH aux grandes décisions de l''entreprise.
+
+Attention à un piège d''examen : ces étapes ne se remplacent pas partout au même rythme. Au Sénégal comme ailleurs en Afrique de l''Ouest, une grande entreprise de télécommunications peut avoir une direction RH très structurée, tandis qu''une PME familiale de Kaolack fait encore tout « à la main ». Mentionnez aussi le poids du secteur informel et la jeunesse de la population active : ce sont des éléments de contexte appréciés par les correcteurs.
+
+Question au public : dans quelle étape situeriez-vous une boulangerie de 15 salariés dont le gérant fait lui-même la paie ? Réponse attendue : la gestion administrative, avec quelques éléments de gestion du personnel.
+
+## 27:00 – 40:00 · Les processus RH : le cycle de vie du salarié
+
+Je projette le schéma circulaire. On entre dans l''entreprise : c''est le processus « acquérir », avec la prévision des besoins, le recrutement et l''intégration. On est payé : « rémunérer ». On progresse : « développer », avec la formation, l''évaluation, la gestion des carrières. On s''implique : « mobiliser », avec la motivation, la communication, la santé et la sécurité. Tout au long, il faut « administrer et dialoguer » : contrats, dossiers, déclarations sociales, relations avec les délégués du personnel. Et un jour, on part : « gérer les départs », qu''il s''agisse de démission, de licenciement, de fin de CDD ou de retraite.
+
+Prenons l''exemple de Teranga Logistique, entreprise fictive de Dakar, qui ouvre une agence à Tambacounda. Combien de processus sont touchés ? Tous ! Il faut prévoir les postes, recruter ou muter, former, fixer une indemnité de déplacement, informer les représentants du personnel. Voilà pourquoi on dit que chaque décision stratégique a une traduction RH.
+
+## 40:00 – 45:00 · Quiz interactif de mi-parcours
+
+Pause active. Répondez sur votre feuille, sans regarder vos notes.
+
+- Question 1 : citez les deux finalités de la GRH.
+- Question 2 : quelle étape suit la gestion du personnel dans la frise ?
+- Question 3 : à quel processus rattachez-vous l''accueil d''un nouvel embauché ?
+- Question 4 : vrai ou faux, la GRH n''est faite que par le service RH ?
+
+Réponses : 1) finalité économique et finalité sociale ; 2) la gestion des ressources humaines ; 3) au processus « acquérir », plus précisément l''intégration ; 4) faux, la GRH est partagée avec les managers de proximité.
+
+## 45:00 – 55:00 · Les acteurs de la GRH
+
+Construisons le tableau des acteurs au tableau blanc. En interne : la direction générale, qui fixe la stratégie et le budget ; la direction ou le service RH, qui conçoit les politiques et assure l''administration ; les managers de proximité, qui accueillent, organisent, évaluent ; les salariés et leurs représentants, délégués du personnel et syndicats. En externe : l''inspection du travail, les organismes de sécurité sociale et de retraite comme la Caisse de sécurité sociale et l''IPRES, les institutions de prévoyance maladie, les cabinets de recrutement, les organismes de formation.
+
+Insistez dans vos copies sur le rôle des managers. Un excellent dispositif d''intégration échoue si le chef d''équipe ne prend pas dix minutes pour accueillir la nouvelle recrue.
+
+## 55:00 – 1:10:00 · Les indicateurs de base : méthode et exercices corrigés
+
+Passons aux chiffres. Trois formules à connaître. Effectif moyen approché = (effectif de début + effectif de fin) / 2. Salaire brut moyen = masse salariale brute / effectif moyen. Taux d''encadrement = nombre de cadres / effectif × 100.
+
+Exercice projeté : Sahel Agro, à Kaolack, compte 80 salariés au 1er janvier et 100 au 31 décembre ; masse salariale brute annuelle 324 000 000 FCFA ; 9 cadres. Faites le calcul, je vous laisse trois minutes.
+
+Correction commentée. Effectif moyen = (80 + 100) / 2 = 90. Salaire moyen annuel = 324 000 000 / 90 = 3 600 000 FCFA, soit 300 000 FCFA par mois. Taux d''encadrement = 9 / 90 × 100 = 10 %. Erreur fréquente : diviser la masse salariale par l''effectif de fin, 100, ce qui donne 3 240 000 FCFA et sous-estime le salaire moyen. Autre erreur : oublier l''unité. Écrivez toujours FCFA, salariés, pourcentage.
+
+Deuxième exercice, plus rapide : 150 salariés au début, 130 à la fin, masse salariale 504 000 000 FCFA, 21 cadres. Résultats : effectif moyen 140, salaire moyen annuel 3 600 000 FCFA, soit 300 000 FCFA par mois, taux d''encadrement 15 %. Interprétation : l''effectif a baissé de 20 personnes ; il faudrait savoir pourquoi, départs volontaires ou licenciements, avant de conclure.
+
+## 1:10:00 – 1:20:00 · Méthode du mini-cas à l''examen
+
+À l''examen, on vous donnera souvent un mini-cas : « Kër Couture, atelier de 12 salariés à Saint-Louis, décroche un gros marché ; le gérant fait tout lui-même ». Méthode : identifier le contexte et le problème RH ; repérer les processus concernés ; proposer des actions concrètes, hiérarchisées et réalistes compte tenu des moyens. Ici : recruter en CDD justifié par le surcroît d''activité, désigner une tutrice pour former, externaliser la paie à un cabinet. Trois actions bien justifiées valent mieux que dix idées en vrac.
+
+Pour la présentation, je vous conseille un tableau à trois colonnes : action proposée, processus RH concerné, justification. Par exemple : « recruter quatre couturières en CDD » ; « acquérir » ; « surcroît temporaire d''activité lié au marché, sans alourdir durablement la masse salariale ». Le correcteur voit immédiatement que vous reliez la théorie au cas. Terminez par une phrase de conclusion qui hiérarchise : ce qu''il faut faire cette semaine, ce qui peut attendre la fin du marché.
+
+## 1:20:00 – 1:27:00 · Synthèse
+
+Résumons. La GRH a deux finalités. Elle a évolué de l''administration du personnel vers la GRH stratégique, à des rythmes différents selon les entreprises. Elle s''organise en six processus. Elle est partagée entre le service RH et les managers, et s''appuie sur des acteurs externes. Les indicateurs de base se calculent avec l''effectif moyen.
+
+## 1:27:00 – 1:30:00 · Évaluation finale
+
+Cinq questions pour vérifier vos acquis. Les réponses suivent.
+
+- Question 1 : définissez la GRH en une phrase.
+- Question 2 : citez quatre des six processus RH.
+- Question 3 : une entreprise passe de 60 à 80 salariés sur l''année ; quel est l''effectif moyen approché ?
+- Question 4 : avec une masse salariale annuelle de 252 000 000 FCFA, quel est le salaire brut moyen mensuel ?
+- Question 5 : pourquoi dit-on que la GRH est partagée ?
+
+Réponses : 1) l''ensemble des activités permettant à l''organisation de disposer des personnes et compétences nécessaires et de les mobiliser au service de ses objectifs, dans le respect du droit et des personnes ; 2) par exemple acquérir, rémunérer, développer, mobiliser ; 3) (60 + 80) / 2 = 70 salariés ; 4) 252 000 000 / 70 = 3 600 000 FCFA par an, soit 300 000 FCFA par mois ; 5) parce que les managers de proximité appliquent au quotidien les politiques RH : accueil, organisation du travail, évaluation. Merci et bonnes révisions.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Introduction à la GRH');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Droit du travail (bases)', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 en ressources humaines et en gestion.
+- Objectifs : maîtriser les sources du droit du travail, qualifier un contrat de travail, distinguer CDI et CDD, calculer des heures supplémentaires, analyser une rupture de contrat avec la méthode du cas pratique juridique.
+- Matériel : diaporama (pyramide des sources, tableau CDI/CDD, arbre de décision de la rupture), tableau blanc, calculatrice.
+- Prérequis : leçon « Droit du travail : l''essentiel pour l''examen ».
+- Avertissement : le Sénégal est en transition vers un nouveau Code du travail (projet de loi n°15/2026). Ce cours enseigne les mécanismes ; les taux utilisés sont fictifs pour l''exemple.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction et règles du jeu
+
+Bonjour. Le droit du travail fait peur à beaucoup d''étudiants de première année, parce qu''ils pensent qu''il faut apprendre des centaines d''articles. Ce n''est pas l''objectif en L1. L''objectif est de raisonner juste : qualifier une situation, trouver la règle applicable, l''appliquer aux faits. Je vous rappelle un point de prudence : le Code du travail sénégalais de 1997 est en cours de réforme. Quand vous citez un texte, restez général et vérifiez auprès de votre enseignant le texte de référence de votre session.
+
+## 05:00 – 17:00 · Les sources et le principe de faveur
+
+Je projette la pyramide. Au sommet, les normes internationales, notamment les conventions de l''Organisation internationale du travail ratifiées. Puis la Constitution, qui garantit la liberté syndicale et le droit de grève. Puis la loi, le Code du travail, et les règlements d''application. Viennent ensuite les conventions collectives : la Convention collective nationale interprofessionnelle et les conventions de branche. Enfin, le règlement intérieur, le contrat de travail et les usages.
+
+Retenez une idée forte : le principe de faveur. Quand deux normes s''appliquent, on retient en principe la plus favorable au salarié, sans porter atteinte à l''ordre public. Exemple : si une convention de branche accorde une prime d''ancienneté plus élevée que la convention interprofessionnelle, c''est la prime de branche qui s''applique. Question au public : un contrat de travail peut-il prévoir un salaire inférieur au salaire minimum ? Non, car le salaire minimum est d''ordre public ; une telle clause serait sans effet.
+
+## 17:00 – 30:00 · Qualifier un contrat de travail
+
+Trois éléments : une prestation de travail, une rémunération, un lien de subordination. Le troisième est décisif. La subordination, c''est le pouvoir de l''employeur de donner des ordres, d''en contrôler l''exécution et de sanctionner les manquements.
+
+Étudions le cas d''Ibrahima, présenté comme « prestataire informatique » depuis deux ans dans une société fictive de Dakar. Il pointe de 8 h à 17 h, reçoit ses tâches de la directrice informatique, a reçu un avertissement écrit pour retard. Qu''en pensez-vous ? Les trois pouvoirs sont présents : direction, contrôle, sanction. Le juge ne s''arrête pas au titre du contrat ; il regarde la réalité. Ibrahima peut demander la requalification en contrat de travail. C''est un raisonnement classique de cas pratique.
+
+Un mot sur la période d''essai : elle doit être prévue par écrit, sa durée maximale est encadrée par les textes, et pendant l''essai la rupture est en principe libre, sans préavis ni indemnité, sauf abus.
+
+## 30:00 – 42:00 · CDI et CDD
+
+Tableau comparatif au tableau blanc. Colonne CDI : forme normale, pas de terme, rupture par démission ou licenciement. Colonne CDD : exception, terme précis ou objet défini, écrit exigé, durée et renouvellements limités par les textes, fin normale à l''échéance, rupture anticipée limitée à quelques cas comme la faute lourde, l''accord des parties ou la force majeure.
+
+Sanction à retenir : un CDD irrégulier, par exemple sans terme ni objet, ou qui continue après son échéance, peut être requalifié en CDI. Exemple d''examen : un « contrat saisonnier » qui ne précise ni la campagne ni la date de fin. L''intitulé ne suffit pas : le risque de requalification est réel.
+
+## 42:00 – 47:00 · Quiz interactif
+
+Prenez deux minutes pour répondre.
+
+- Question 1 : quel est le critère décisif du contrat de travail ?
+- Question 2 : quelle est la forme normale du contrat de travail ?
+- Question 3 : une baisse d''activité permet-elle de rompre un CDD avant son terme ?
+- Question 4 : citez une source conventionnelle du droit du travail.
+
+Réponses : 1) le lien de subordination ; 2) le CDI ; 3) en principe non, ce n''est pas un des cas limités de rupture anticipée ; 4) la Convention collective nationale interprofessionnelle ou une convention de branche.
+
+## 47:00 – 1:02:00 · Durée du travail et heures supplémentaires : exercices corrigés
+
+Dans le Code de 1997, la durée légale hebdomadaire des établissements non agricoles est de 40 heures ; vérifiez ce que prévoit le texte réformé. Au-delà, ce sont des heures supplémentaires, majorées selon des taux fixés par les textes. Pour nos exercices, nous utiliserons des taux fictifs.
+
+Méthode en trois étapes. Étape 1 : heures mensuelles moyennes = 40 × 52 / 12 = 173,33. Étape 2 : taux horaire = salaire de base / 173,33. Étape 3 : pour chaque tranche, nombre d''heures × taux horaire × (1 + majoration).
+
+Exercice 1 : Fatou, salaire de base 260 000 FCFA, 6 heures à 15 % et 2 heures à 40 %. Taux horaire ≈ 1 500 FCFA. 6 × 1 500 × 1,15 = 10 350 ; 2 × 1 500 × 1,40 = 4 200 ; total 14 550 FCFA ; brut 274 550 FCFA.
+
+Exercice 2, à vous : salaire de base 346 660 FCFA, 8 heures à 15 % et 2 heures à 50 %. Je vous laisse quatre minutes. Correction : taux horaire = 346 660 / 173,33 = 2 000 FCFA. 8 × 2 000 × 1,15 = 18 400 ; 2 × 2 000 × 1,50 = 6 000 ; total 24 400 FCFA ; brut 371 060 FCFA. L''erreur la plus fréquente : ajouter seulement la majoration, par exemple 8 × 2 000 × 0,15, en oubliant de payer l''heure elle-même. Une heure supplémentaire, c''est l''heure plus la majoration.
+
+Retenez aussi la présentation attendue : posez la formule, faites l''application numérique ligne par ligne, totalisez, puis rédigez une phrase de conclusion, par exemple « Le salaire brut d''octobre s''élève à 371 060 FCFA ». Si l''énoncé vous donne plusieurs tranches de majoration, traitez chaque tranche sur une ligne séparée : vous limitez les erreurs et le correcteur peut vous donner des points partiels.
+
+## 1:02:00 – 1:15:00 · Suspension et rupture du contrat
+
+Distinguez d''abord suspension et rupture. La maladie, la maternité, l''accident du travail suspendent le contrat : il reprend ensuite. La rupture, elle, met fin au contrat.
+
+Arbre de décision projeté. Première question : quel contrat ? Si c''est un CDD, il prend fin à son terme ; avant, seulement dans des cas limités. Si c''est un CDI, deuxième question : qui prend l''initiative ? Le salarié : c''est une démission, qui doit être claire et non équivoque, avec respect du préavis. L''employeur : c''est un licenciement. Troisième question : pour quel motif ? Personnel, comme une faute ou une insuffisance professionnelle, ou économique, comme une suppression de poste. Quatrième question : la procédure et le préavis ont-ils été respectés ? Le licenciement économique impose notamment l''information des délégués du personnel et de l''inspection du travail. Cinquième question : quelles conséquences ? Indemnité de préavis si le préavis n''a pas été exécuté, indemnité de licenciement selon l''ancienneté, dommages-intérêts si le licenciement est abusif. La faute lourde peut priver le salarié du préavis et de l''indemnité.
+
+Dernier point : les litiges individuels passent d''abord par une tentative de conciliation devant l''inspection du travail, puis, à défaut, par le tribunal du travail.
+
+## 1:15:00 – 1:25:00 · Corrigé commenté d''un cas pratique complet
+
+Khady est embauchée par un « contrat saisonnier » sans date de fin ni campagne indiquée, puis renvoyée oralement en novembre. Rédigeons ensemble. Faits : contrat écrit sans terme ni objet, rupture orale. Problème : nature du contrat et régularité de la rupture. Règle : le CDD doit préciser son terme ou son objet, à défaut il peut être requalifié en CDI ; le licenciement exige motif légitime, procédure et préavis. Application : l''intitulé « saisonnier » ne suffit pas ; requalification probable ; rupture orale sans motif ni préavis. Conclusion : licenciement irrégulier et vraisemblablement abusif ; Khady peut saisir l''inspection du travail puis le tribunal pour obtenir indemnités et dommages-intérêts. Remarquez la structure : les correcteurs notent la méthode autant que la solution.
+
+Deux conseils de rédaction. D''abord, n''inventez pas de numéros d''articles ou de montants : écrivez « selon le Code du travail » ou « selon les textes en vigueur », c''est accepté et c''est plus honnête qu''un chiffre faux. Ensuite, envisagez l''argument adverse : l''employeur pourrait soutenir que tout le monde savait que l''emploi était lié à la campagne de conditionnement. Répondez-y : en droit du travail, l''écrit protège le salarié, et l''absence de précision joue contre celui qui a rédigé le contrat. Cette discussion en deux temps montre au correcteur que vous maîtrisez le raisonnement juridique et pas seulement la règle.
+
+## 1:25:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : citez les trois éléments du contrat de travail.
+- Question 2 : qu''est-ce que le principe de faveur ?
+- Question 3 : un salarié gagne 433 325 FCFA pour 40 heures hebdomadaires ; quel est son taux horaire ?
+- Question 4 : avec ce taux, combien valent 4 heures majorées à 25 % (taux fictif) ?
+- Question 5 : quelle est la première étape pour régler un litige individuel du travail ?
+
+Réponses : 1) prestation de travail, rémunération, lien de subordination ; 2) en cas de concours de normes, on applique en principe la plus favorable au salarié ; 3) 433 325 / 173,33 = 2 500 FCFA ; 4) 4 × 2 500 × 1,25 = 12 500 FCFA ; 5) la tentative de conciliation devant l''inspection du travail. Révisez l''arbre de décision de la rupture : c''est votre meilleur outil pour les cas pratiques.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Droit du travail (bases)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Comportement organisationnel et communication', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 1 en ressources humaines, gestion, communication.
+- Objectifs : appliquer les théories de la motivation (Maslow, Herzberg, McGregor, Vroom), choisir un style de leadership adapté, comprendre la dynamique des groupes et la culture, analyser une situation de communication, gérer un conflit.
+- Matériel : diaporama (pyramide de Maslow, tableau de Herzberg, formule de Vroom, schéma de la communication, grille des cinq modes de gestion des conflits), tableau blanc, calculatrice.
+- Prérequis : leçon « Comportement organisationnel et communication : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à tous. Je commence par une situation. Dans une usine fictive de transformation de mangues à Sédhiou, deux équipes ont le même salaire, les mêmes machines, le même horaire. L''une dépasse ses objectifs, l''autre accumule retards et absences. Pourquoi ? Les réponses sont rarement techniques : elles tiennent à la motivation, au management, à la communication. C''est l''objet du comportement organisationnel. Aujourd''hui, vous apprendrez à utiliser les théories comme des outils d''analyse, ce que les correcteurs attendent dans un cas pratique.
+
+## 05:00 – 20:00 · Maslow, Herzberg, McGregor
+
+Première théorie : Maslow. Je projette la pyramide : besoins physiologiques, sécurité, appartenance, estime, accomplissement. L''idée centrale : un besoin satisfait cesse d''être moteur, et l''individu cherche alors à satisfaire le besoin du niveau supérieur. Limite à citer : l''ordre n''est pas universel. Dans beaucoup de familles sénégalaises, un salarié peut privilégier l''appartenance et les obligations familiales avant sa propre sécurité financière.
+
+Deuxième théorie : Herzberg. Tableau à deux colonnes. À gauche, les facteurs d''hygiène : salaire, conditions de travail, relations avec le chef, politique de l''entreprise. S''ils manquent, il y a insatisfaction, mais leur amélioration ne crée pas une motivation durable. À droite, les facteurs moteurs : reconnaissance, responsabilité, intérêt du travail, possibilités de progression. Question au public : la climatisation des bureaux, à gauche ou à droite ? À gauche, c''est un facteur d''hygiène. Et la promotion ? À droite.
+
+Troisième théorie : McGregor. Le manager « X » pense que les salariés fuient le travail et doivent être contrôlés ; le manager « Y » pense qu''ils peuvent s''engager. Ces croyances deviennent souvent des prophéties autoréalisatrices : un chef qui contrôle tout obtient des salariés passifs.
+
+## 20:00 – 33:00 · Vroom : la théorie des attentes et les calculs
+
+Formule au tableau : M = E × I × V. E, l''expectation : est-ce que mon effort me permettra d''atteindre la performance ? I, l''instrumentalité : si j''atteins la performance, serai-je vraiment récompensé ? V, la valence : la récompense a-t-elle de la valeur pour moi ? Nous notons chaque terme entre 0 et 1. C''est un produit : si un seul terme est nul, la motivation est nulle.
+
+Exercice corrigé. Commercial de Baobab Assurances, société fictive : E = 0,8, I = 0,5, V = 0,9. M = 0,8 × 0,5 × 0,9 = 0,36. Si la direction garantit la prime par écrit, I monte à 0,9 : M = 0,8 × 0,9 × 0,9 = 0,648. La motivation a presque doublé sans changer le montant de la prime.
+
+Exercice à vous : E = 0,6, I = 0,7, V = 0,5. Calculez M puis dites quel facteur porter à 0,9 en priorité. Trois minutes. Correction : M = 0,21. E à 0,9 donne 0,315 ; I à 0,9 donne 0,27 ; V à 0,9 donne 0,378. On agit d''abord sur la valence : proposer une récompense qui compte pour la personne, par exemple une formation qualifiante plutôt qu''un bon d''achat. Astuce de calcul : on gagne le plus en relevant le facteur le plus faible, puisque le produit est multiplié par 0,9 divisé par ce facteur.
+
+## 33:00 – 43:00 · Le leadership
+
+Lewin distingue trois styles : autocratique, démocratique, laisser-faire. Mais le style idéal n''existe pas dans l''absolu. Hersey et Blanchard proposent le leadership situationnel : on adapte le style à la maturité du collaborateur. Débutant motivé : style directif, beaucoup de consignes. Collaborateur qui progresse mais doute : style persuasif, on explique et on encourage. Collaborateur compétent mais peu motivé : style participatif, on l''associe aux décisions. Collaborateur compétent et motivé : style délégatif.
+
+Application : la cheffe d''équipe de l''usine de mangues sera directive avec les saisonniers arrivés la veille, délégative avec les opératrices expérimentées. Un bon manager change de style plusieurs fois dans la même journée.
+
+Question au public : votre nouveau collègue est très compétent mais il vient d''apprendre que sa promotion est refusée, il est démotivé. Quel style ? Le style participatif : on ne lui explique pas son métier, il le connaît ; on l''associe aux décisions et on discute avec lui de ses perspectives. Vous voyez que le diagnostic porte sur deux dimensions, la compétence et la motivation, et qu''il faut les analyser séparément dans une copie.
+
+## 43:00 – 48:00 · Quiz de mi-parcours
+
+- Question 1 : le salaire est-il un facteur moteur selon Herzberg ?
+- Question 2 : que vaut M si E = 1, I = 0 et V = 1 ?
+- Question 3 : quel style pour un collaborateur compétent et motivé ?
+- Question 4 : citez les cinq niveaux de Maslow.
+
+Réponses : 1) non, c''est un facteur d''hygiène ; 2) M = 0, la récompense n''étant jamais versée, l''effort ne sert à rien ; 3) le style délégatif ; 4) physiologiques, sécurité, appartenance, estime, accomplissement.
+
+## 48:00 – 58:00 · Groupes et culture
+
+Les équipes passent par des étapes, selon Tuckman : formation, tension, normalisation, performance, et dissolution en fin de projet. La phase de tension est normale ; le manager ne doit pas paniquer mais clarifier les rôles.
+
+La culture d''organisation, selon Schein, se lit à trois niveaux. Les artefacts, visibles : tenue, locaux, rituels comme la réunion du lundi ou le thé partagé. Les valeurs affichées : la charte, les slogans. Les hypothèses de base, invisibles : ce que tout le monde tient pour évident, par exemple « on ne contredit pas un aîné en réunion ». Dans un cas pratique, montrez que la culture locale, la teranga, le respect des aînés, la solidarité familiale, peut être une force, cohésion et entraide, mais aussi une source de difficultés, prise de parole limitée des jeunes, absences pour cérémonies, si l''organisation ne l''intègre pas intelligemment.
+
+## 58:00 – 1:10:00 · La communication
+
+Schéma projeté : émetteur, codage, message, canal, décodage, récepteur, et la boucle de rétroaction. Sur tout le circuit, des bruits : vacarme de l''atelier, jargon technique, langue, émotions.
+
+Cas corrigé : à l''atelier 2 de Delta Riz, entreprise fictive, une note sur la nouvelle machine a été affichée, mais les opérateurs disent ne pas avoir été informés. Analyse : émetteur, la cheffe d''atelier ; canal, l''affichage, peu adapté à des équipes en rotation ; code, un vocabulaire technique ; absence de rétroaction. Conclusion : le message a été émis mais pas reçu. Remède : réunion de début de poste, explication orale dans une langue comprise par tous, démonstration, questions, affiche illustrée en complément.
+
+Rappelez aussi les directions de la communication interne : descendante, ascendante, horizontale ; et la place de l''informel, rumeurs et discussions, qui se développe quand l''information officielle manque.
+
+## 1:10:00 – 1:20:00 · Gérer un conflit
+
+Grille de Thomas et Kilmann : deux axes, l''affirmation de soi et la coopération. Cinq modes : compétition, forte affirmation et faible coopération ; accommodation, l''inverse ; évitement, faible sur les deux axes ; collaboration, forte sur les deux ; compromis, au milieu.
+
+Cas de la clinique fictive Santé Plus à Thiès : les infirmières de nuit reprochent à l''équipe de jour de laisser des tâches inachevées. Mode conseillé : la collaboration, car l''enjeu, la qualité des soins, est important et les équipes doivent continuer à travailler ensemble. Actions : réunion de médiation, fiche de transmission écrite, temps de relève de quinze minutes, point de suivi après un mois. L''évitement serait une erreur : le conflit grossirait.
+
+## 1:20:00 – 1:26:00 · Synthèse et méthode de rédaction
+
+Pour réussir un cas de comportement organisationnel : 1) décrire la situation avec les mots du cas ; 2) choisir la ou les théories pertinentes, pas toutes ; 3) appliquer la théorie aux faits, avec des calculs si c''est Vroom ; 4) proposer des actions concrètes et réalistes. Évitez la récitation de cours sans lien avec le cas : c''est l''erreur la plus sanctionnée.
+
+Exemple de bonne phrase de copie : « Selon Herzberg, l''amélioration de la cantine est un facteur d''hygiène : elle réduira l''insatisfaction des opérateurs de Delta Riz mais ne suffira pas à les motiver ; il faut y ajouter des facteurs moteurs, comme la reconnaissance des meilleurs opérateurs de la nouvelle machine. » En une phrase, on cite l''auteur, on qualifie le fait, on en tire une conséquence et une proposition. Exemple de mauvaise phrase : « Herzberg a distingué les facteurs d''hygiène et les facteurs moteurs. » C''est juste, mais cela ne répond pas au cas.
+
+## 1:26:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : citez deux facteurs d''hygiène et deux facteurs moteurs.
+- Question 2 : E = 0,5, I = 0,8, V = 0,75. Calculez M.
+- Question 3 : quels sont les trois niveaux de la culture selon Schein ?
+- Question 4 : quel élément du schéma de la communication permet de vérifier la compréhension ?
+- Question 5 : quel mode de gestion des conflits recherche une solution gagnant-gagnant ?
+
+Réponses : 1) hygiène : salaire, conditions de travail ; moteurs : reconnaissance, responsabilité ; 2) M = 0,5 × 0,8 × 0,75 = 0,3 ; 3) artefacts, valeurs affichées, hypothèses de base ; 4) la rétroaction ou feedback ; 5) la collaboration. Merci, et entraînez-vous sur le sujet type de la leçon 5.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-rh-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Comportement organisationnel et communication');
+
+-- Cours : Ressources humaines Licence 2 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-rh-l2', (select id from public.levels where name = 'Licence 2'), null, 'Ressources humaines', 'Ressources humaines Licence 2 : réussir ses examens', 'Préparation aux partiels et examens semestriels de la Licence 2 en gestion des ressources humaines (système LMD, contexte Sénégal et UEMOA). Le cours couvre le recrutement et l''intégration, la gestion de la paie et l''administration du personnel (mécanismes, avec des taux fictifs pour l''exemple) et la formation et la gestion des compétences. Fiches, exercices chiffrés corrigés, sujet type et trois cours vidéo de 1h30. Prérequis : les acquis de la Licence 1 RH (introduction à la GRH, bases du droit du travail).', true, 302
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 2 en ressources humaines', '## Objectifs de la leçon
+
+- Situer la Licence 2 dans le parcours LMD et comprendre ce qui change par rapport à la L1.
+- Identifier les trois matières clés de l''année et les compétences attendues à l''examen.
+- Adopter une méthode de révision adaptée aux matières techniques (paie, indicateurs) et rédactionnelles.
+- Planifier six semaines de révision et savoir traiter chaque type d''épreuve.
+
+## 1. La Licence 2 dans le système LMD
+
+En système LMD, la Licence 2 correspond aux semestres 3 et 4. Les unités d''enseignement (UE) deviennent plus professionnalisantes : après les fondamentaux de la L1 (introduction à la GRH, bases du droit du travail, comportement organisationnel), vous entrez dans les processus opérationnels de la fonction RH. Chaque UE est créditée ; le nombre de crédits, les coefficients, les règles de compensation et de rattrapage dépendent de votre établissement et figurent dans son règlement des études. Lisez-le dès la rentrée : certaines écoles exigent une note minimale dans chaque matière fondamentale, d''autres compensent à l''intérieur de l''UE.
+
+La L2 est souvent l''année du premier stage ou des premiers projets tutorés. Les enseignants attendent davantage de rigueur technique (calculs justes, documents bien présentés) et de capacité à proposer des solutions concrètes.
+
+## 2. Les matières clés de la Licence 2 RH
+
+- Recrutement et intégration : définition du besoin, fiche de poste et profil, sourcing, sélection (CV, tests, entretiens, grilles d''évaluation), décision, accueil et intégration, indicateurs de recrutement.
+- Gestion de la paie et administration du personnel : structure du bulletin de paie, du salaire de base au net à payer, cotisations sociales et retenues fiscales (mécanismes ; à l''examen, les taux sont fournis par l''énoncé), charges patronales et coût employeur, obligations administratives (registres, dossiers, déclarations), écriture comptable de la paie.
+- Formation et gestion des compétences : notion de compétence, référentiels, analyse des besoins, plan et budget de formation, ingénierie pédagogique, évaluation des formations, indicateurs.
+
+Les matières de tronc commun (comptabilité, statistiques, droit des affaires OHADA, anglais, informatique) restent importantes : la paie mobilise la comptabilité, les indicateurs mobilisent les statistiques.
+
+## 3. Méthode de révision adaptée à la L2
+
+Pour les matières techniques comme la paie, la règle d''or est la répétition : refaites les bulletins jusqu''à les produire sans hésitation, en respectant toujours le même ordre de calcul. Construisez une fiche « ordre de calcul » et une fiche « erreurs fréquentes » (oublier un plafond, appliquer un taux patronal à la place d''un taux salarial, oublier de déduire un acompte).
+
+Pour les matières rédactionnelles (recrutement, formation), préparez des « boîtes à outils » : les étapes d''un processus, deux ou trois outils par étape, un exemple d''entreprise. Exemple : pour l''intégration, retenez le livret d''accueil, le parrainage et le rapport d''étonnement.
+
+Dans tous les cas, entraînez-vous sur des sujets complets en temps limité et corrigez-vous avec un barème.
+
+## 4. Les types d''épreuves en L2
+
+- L''exercice chiffré de paie : on vous donne une situation (salaire, primes, heures supplémentaires, avantages, acompte) et des taux. Présentez le bulletin en tableau : rubrique, base, taux, montant salarial, montant patronal. Vérifiez par un contrôle : brut − retenues salariales = net.
+- Le cas pratique de recrutement ou de formation : analysez le besoin, proposez une démarche argumentée et des outils (fiche de poste, grille d''entretien, plan de formation), chiffrez si possible (coût, budget).
+- Le QCM ou les questions de cours : définitions précises (sourcing, onboarding, compétence, plan de formation, coût employeur).
+- La question de réflexion : par exemple « Le recrutement par cooptation est-il un atout ou un risque pour l''entreprise ? ».
+- Le projet : par exemple rédiger une annonce de recrutement ou un plan de formation pour une PME fictive.
+
+## 5. Plan de révision sur 6 semaines
+
+- Semaine 1 : Recrutement. Processus complet, outils de sélection, grilles pondérées, indicateurs (coût par recrutement, taux de transformation). Deux cas.
+- Semaine 2 : Intégration et administration du personnel. Dossier du salarié, registres, déclarations, documents de fin de contrat. Un QCM.
+- Semaine 3 : Paie, partie 1. Du salaire de base au brut, cotisations salariales, net à payer. Cinq bulletins.
+- Semaine 4 : Paie, partie 2. Charges patronales, coût employeur, écriture comptable, cas du cadre. Cinq bulletins.
+- Semaine 5 : Formation et compétences. Référentiel, analyse des besoins, plan et budget, évaluation à quatre niveaux. Deux cas.
+- Semaine 6 : Sujet type complet (leçon 5) en 3 heures, correction, reprise des fiches « erreurs fréquentes ».
+
+## Points clés
+
+- La L2 entre dans les processus opérationnels : recruter, payer, former.
+- Paie : un ordre de calcul fixe et un contrôle systématique.
+- À l''examen, les taux de cotisation et d''impôt sont fournis : on vous évalue sur le mécanisme.
+- Le règlement des études de votre établissement fixe crédits et compensations.
+
+## Exercices pratiques
+
+- Exercice 1. Citez dans l''ordre les grandes étapes du calcul d''un bulletin de paie.
+- Exercice 2. Expliquez la différence entre une cotisation salariale et une cotisation patronale.
+- Exercice 3. Un salaire brut de 400 000 FCFA supporte 32 000 FCFA de cotisations salariales et 25 000 FCFA de retenue fiscale (montants fictifs). Un acompte de 60 000 FCFA a été versé. Calculez le net à payer.
+- Exercice 4. Dans un recrutement, 120 candidatures ont été reçues, 24 candidats convoqués à un entretien, 6 en second entretien et 2 embauchés. Calculez le taux de transformation entre chaque étape et le taux global.
+- Exercice 5 (cas pratique). Mariama, étudiante en L2, a un stage de 4 semaines qui chevauche les semaines 2 à 5 de son plan de révision. Adaptez son plan.
+
+## Corrigé
+
+Exercice 1. Salaire de base ; ajout des primes, indemnités, heures supplémentaires et avantages en nature pour obtenir le brut ; calcul des cotisations salariales ; calcul de la retenue fiscale selon la base et le barème fournis ; net = brut − cotisations salariales − retenues fiscales ; net à payer = net − acomptes et autres retenues ; calcul des charges patronales et du coût employeur.
+
+Exercice 2. La cotisation salariale est retenue sur le salaire brut : elle diminue ce que reçoit le salarié. La cotisation patronale est payée par l''employeur en plus du brut : elle augmente le coût du travail sans figurer dans le net du salarié.
+
+Exercice 3. Net = 400 000 − 32 000 − 25 000 = 343 000 FCFA. Net à payer = 343 000 − 60 000 = 283 000 FCFA.
+
+Exercice 4. Candidatures vers premier entretien : 24 / 120 = 20 %. Premier vers second entretien : 6 / 24 = 25 %. Second entretien vers embauche : 2 / 6 ≈ 33,3 %. Taux global : 2 / 120 ≈ 1,7 %.
+
+Exercice 5. Mariama conserve le principe du plan mais réduit le volume quotidien pendant le stage : une heure par jour en semaine, consacrée à la récupération active sur ses fiches, et des séances de 3 heures le samedi et le dimanche pour les bulletins de paie et les cas. Elle utilise son stage comme ressource : observer comment l''entreprise organise l''accueil, consulter (avec autorisation et en respectant la confidentialité) un modèle de bulletin anonymisé. La semaine 6, libérée, est entièrement consacrée au sujet type et aux points faibles.', 'texte', 45, true, 10
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 2 en ressources humaines');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Recrutement et intégration : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Maîtriser les étapes du processus de recrutement, de l''expression du besoin à la décision.
+- Construire une fiche de poste, un profil et une grille d''évaluation pondérée.
+- Calculer les indicateurs de recrutement (taux de transformation, coût par recrutement).
+- Organiser l''intégration d''un nouveau salarié.
+
+## Fiche 1 : le processus de recrutement
+
+Recruter, c''est rechercher et sélectionner la personne dont les compétences, le potentiel et la motivation correspondent à un poste, pour un coût raisonnable et dans le respect du droit.
+
+Schéma décrit en texte : une chaîne de sept maillons.
+
+- 1. Analyse du besoin : s''agit-il d''un remplacement, d''une création de poste, d''un besoin temporaire ? Peut-on y répondre autrement (réorganisation, heures supplémentaires, mobilité interne) ?
+- 2. Définition du poste et du profil : fiche de poste (missions, activités, rattachement, conditions) et profil (diplôme, expérience, compétences, qualités).
+- 3. Recherche de candidats (sourcing) : interne ou externe.
+- 4. Présélection : tri des candidatures sur des critères annoncés.
+- 5. Sélection : tests, entretiens, mises en situation, vérification des références.
+- 6. Décision et proposition : choix argumenté, offre, contrat.
+- 7. Accueil et intégration, jusqu''à la fin de la période d''essai.
+
+## Fiche 2 : fiche de poste et profil
+
+La fiche de poste décrit le poste, pas la personne : intitulé, service, supérieur hiérarchique, finalité, activités principales, relations, conditions de travail, indicateurs de performance.
+
+Le profil décrit la personne recherchée : formation, expérience, compétences techniques et comportementales, langues. Distinguez critères indispensables et critères souhaitables.
+
+Exemple : la société fictive Niayes Maraîchage, à Pikine, recrute un chef de culture. Indispensable : formation agricole de niveau technicien, trois ans d''expérience en maraîchage. Souhaitable : maîtrise de l''irrigation goutte-à-goutte, pratique du wolof et du français, permis de conduire.
+
+## Fiche 3 : le sourcing
+
+Recrutement interne : promotion, mutation. Avantages : rapidité, coût faible, motivation du personnel, connaissance de l''entreprise. Limites : peu de sang neuf, poste à remplacer derrière.
+
+Recrutement externe : annonces sur sites d''emploi et réseaux sociaux professionnels, presse, écoles et universités, cabinets de recrutement, cooptation (recommandation par un salarié), candidatures spontanées, services publics de l''emploi. La cooptation est très pratiquée en Afrique de l''Ouest : elle est rapide et rassurante, mais elle comporte un risque de favoritisme et de reproduction des mêmes profils. Une bonne pratique consiste à soumettre les candidats cooptés aux mêmes épreuves que les autres.
+
+Principe juridique transversal : le recrutement doit être non discriminatoire. Les critères doivent être liés au poste ; les questions sur la religion, l''appartenance ethnique, les opinions, la grossesse ou la situation familiale sont à proscrire.
+
+## Fiche 4 : la sélection et la grille pondérée
+
+L''entretien structuré, avec les mêmes questions pour tous et une grille de notation, est plus fiable que l''entretien libre. Les questions comportementales (« Racontez une situation où vous avez dû… ») font parler de faits réels.
+
+La grille pondérée permet de comparer objectivement les candidats. Méthode : définir les critères, leur attribuer un poids dont la somme fait 100 %, noter chaque candidat sur une même échelle, calculer la note pondérée = somme des (poids × note).
+
+Exemple chiffré pour le chef de culture, notes sur 5 :
+
+- Critères et poids : compétences techniques 40 %, expérience 25 %, savoir-être 20 %, motivation 15 %.
+- Candidat A : 4, 3, 4, 3. Note = 0,40 × 4 + 0,25 × 3 + 0,20 × 4 + 0,15 × 3 = 1,60 + 0,75 + 0,80 + 0,45 = 3,60.
+- Candidat B : 3, 5, 3, 4. Note = 1,20 + 1,25 + 0,60 + 0,60 = 3,65.
+- Candidat C : 5, 2, 4, 4. Note = 2,00 + 0,50 + 0,80 + 0,60 = 3,90.
+
+Le candidat C arrive en tête grâce au critère le plus pondéré. La grille aide la décision sans la remplacer : vérifiez aussi les références.
+
+## Fiche 5 : les indicateurs de recrutement
+
+- Taux de transformation d''une étape = candidats retenus à l''étape suivante / candidats de l''étape × 100.
+- Coût par recrutement = coûts totaux du recrutement / nombre de personnes recrutées.
+- Délai de recrutement = nombre de jours entre l''expression du besoin et l''arrivée du salarié.
+- Taux de départ pendant la période d''essai : mesure la qualité du recrutement et de l''intégration.
+
+Exemple : Niayes Maraîchage a dépensé 150 000 FCFA d''annonces, 90 000 FCFA de tests, 60 000 FCFA de frais de déplacement des candidats, et ses responsables ont consacré 20 heures valorisées à 5 000 FCFA l''heure. Coût total = 150 000 + 90 000 + 60 000 + 20 × 5 000 = 400 000 FCFA. Pour 2 recrutements, le coût par recrutement est de 200 000 FCFA.
+
+## Fiche 6 : l''intégration
+
+L''intégration (ou onboarding) vise à rendre le nouveau salarié vite opérationnel et à lui donner envie de rester. Elle commence avant l''arrivée et dure jusqu''à la fin de la période d''essai.
+
+Outils : livret d''accueil (histoire, organisation, règles, contacts), journée d''accueil, parrainage par un salarié expérimenté, plan de formation au poste, entretiens de suivi (fin de première semaine, fin de premier mois, avant la fin de l''essai), rapport d''étonnement (le nouveau note ce qui le surprend, ce qui est un regard neuf précieux pour l''entreprise).
+
+## Points clés
+
+- Sept étapes, de l''analyse du besoin à l''intégration.
+- Fiche de poste = le poste ; profil = la personne ; critères indispensables et souhaitables.
+- Grille pondérée : somme des poids × notes.
+- Le recrutement se termine à la fin réussie de l''essai.
+
+## Exercices pratiques
+
+- Exercice 1. Distinguez fiche de poste et profil de poste.
+- Exercice 2. Donnez deux avantages et deux limites du recrutement interne.
+- Exercice 3. Pondérations : compétences 50 %, expérience 30 %, savoir-être 20 %. Candidat D : 3, 4, 5 ; candidat E : 4, 3, 3 (notes sur 5). Calculez les notes pondérées et classez.
+- Exercice 4. Un recrutement a coûté 300 000 FCFA d''annonces, 150 000 FCFA de cabinet, et 30 heures de travail interne valorisées à 6 000 FCFA. Trois personnes ont été recrutées. Calculez le coût par recrutement.
+- Exercice 5. Parmi ces questions d''entretien, lesquelles sont à proscrire : a) « Quelle est votre religion ? » ; b) « Décrivez un conflit que vous avez résolu » ; c) « Comptez-vous avoir des enfants bientôt ? » ; d) « Pourquoi ce poste vous intéresse-t-il ? »
+- Exercice 6 (cas pratique). Sahel Pharma Distribution, société fictive de Dakar, a perdu 4 des 10 délégués commerciaux recrutés l''an dernier avant la fin de leur période d''essai. Diagnostiquez les causes possibles et proposez un plan d''action.
+
+## Corrigé
+
+Exercice 1. La fiche de poste décrit le poste (missions, activités, rattachement, conditions). Le profil décrit la personne recherchée (formation, expérience, compétences, qualités).
+
+Exercice 2. Avantages : rapidité, faible coût, motivation. Limites : peu d''idées nouvelles, poste libéré à pourvoir.
+
+Exercice 3. D = 0,5 × 3 + 0,3 × 4 + 0,2 × 5 = 1,5 + 1,2 + 1,0 = 3,7. E = 0,5 × 4 + 0,3 × 3 + 0,2 × 3 = 2,0 + 0,9 + 0,6 = 3,5. Classement : D puis E.
+
+Exercice 4. Coût total = 300 000 + 150 000 + 30 × 6 000 = 630 000 FCFA. Coût par recrutement = 630 000 / 3 = 210 000 FCFA.
+
+Exercice 5. À proscrire : a) et c), discriminatoires et sans lien avec le poste. Les questions b) et d) sont pertinentes.
+
+Exercice 6. Taux de départ en période d''essai : 4 / 10 = 40 %, très élevé. Causes possibles : profil mal défini (objectifs commerciaux irréalistes), sélection insuffisante (pas de mise en situation de vente), promesses excessives à l''embauche, intégration absente (pas de formation aux produits, pas de parrain), management de terrain défaillant. Plan d''action : 1) mener des entretiens de départ et interroger les managers ; 2) revoir la fiche de poste et le profil avec les ventes ; 3) introduire une mise en situation et une grille pondérée ; 4) créer un parcours d''intégration : formation produits, parrainage par un délégué expérimenté, entretiens de suivi à une semaine et un mois ; 5) suivre l''indicateur de départ pendant l''essai à chaque promotion de recrues.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Recrutement et intégration : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Gestion de la paie et administration du personnel : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Connaître les obligations d''administration du personnel.
+- Établir un bulletin de paie complet, du salaire de base au net à payer, en appliquant des taux et plafonds donnés.
+- Calculer les charges patronales et le coût employeur.
+- Passer l''écriture de paie (SYSCOHADA révisé).
+
+## Avertissement
+
+Les taux, plafonds et montants de retenue fiscale de cette leçon sont fictifs pour l''exemple. Au Sénégal, les cotisations sont dues notamment à la Caisse de sécurité sociale (prestations familiales, accidents du travail et maladies professionnelles), à l''IPRES (retraite, avec un régime complémentaire pour les cadres) et aux institutions de prévoyance maladie ; l''employeur retient aussi l''impôt sur le revenu et la TRIMF. Les taux, plafonds et barèmes officiels évoluent : vérifiez toujours les textes en vigueur. À l''examen, ils sont fournis par l''énoncé.
+
+## Fiche 1 : l''administration du personnel
+
+L''administration du personnel regroupe les tâches qui permettent de respecter les obligations envers les salariés et les organismes :
+
+- À l''embauche : contrat écrit, déclaration aux services compétents, immatriculation du salarié auprès des caisses, ouverture du dossier individuel.
+- Pendant le contrat : registre d''employeur, absences et congés, bulletins et livre de paie, déclarations et versements périodiques des cotisations et impôts retenus, visites médicales.
+- À la sortie : certificat de travail, solde de tout compte, attestations, archivage.
+
+## Fiche 2 : l''ordre de calcul du bulletin
+
+Schéma décrit en texte : un escalier qui descend du brut au net, puis une marche qui remonte vers le coût employeur.
+
+- 1. Salaire de base (selon le contrat et la catégorie conventionnelle).
+- 2. + éléments soumis : primes (ancienneté, rendement), heures supplémentaires, indemnités imposables, avantages en nature. On obtient le salaire brut.
+- 3. − cotisations salariales, calculées sur le brut dans la limite d''éventuels plafonds.
+- 4. − retenues fiscales (impôt sur le revenu, TRIMF), calculées selon le barème et la situation familiale du salarié.
+- 5. = salaire net ; puis − acomptes et avances, + éléments non soumis éventuels = net à payer.
+- 6. Côté employeur : brut + cotisations patronales (+ contributions assises sur les salaires) = coût employeur.
+
+Un plafond limite l''assiette d''une cotisation. Exemple : taux de retraite salarial de 5 %, plafond mensuel de 400 000 FCFA (fictifs). Pour un brut de 335 000 FCFA, la cotisation est 335 000 × 5 % = 16 750 FCFA. Pour un brut de 500 000 FCFA, elle est 400 000 × 5 % = 20 000 FCFA, et non 25 000.
+
+## Fiche 3 : un bulletin complet
+
+Situation : Aïssatou, comptable non cadre chez Saloum Emballages, entreprise fictive de Kaolack. Salaire de base 300 000 FCFA ; prime d''ancienneté 15 000 FCFA ; heures supplémentaires du mois 20 000 FCFA ; acompte versé le 15 : 50 000 FCFA.
+
+Taux fictifs pour l''exemple : retraite salariale 5 % (plafond 400 000), retraite patronale 7,5 % (même plafond), maladie 3 % salarié et 3 % employeur, prestations familiales 6 % employeur, accidents du travail 3 % employeur, contribution patronale forfaitaire sur salaires 3 %. Retenue fiscale du mois selon barème : 18 000 FCFA (montant fictif).
+
+- Salaire brut = 300 000 + 15 000 + 20 000 = 335 000 FCFA.
+- Retraite salariale = 335 000 × 5 % = 16 750 FCFA.
+- Maladie salariale = 335 000 × 3 % = 10 050 FCFA.
+- Total des cotisations salariales = 26 800 FCFA.
+- Retenue fiscale = 18 000 FCFA.
+- Salaire net = 335 000 − 26 800 − 18 000 = 290 200 FCFA.
+- Net à payer = 290 200 − 50 000 = 240 200 FCFA.
+
+Charges patronales :
+
+- Retraite = 335 000 × 7,5 % = 25 125 FCFA.
+- Maladie = 10 050 FCFA ; prestations familiales = 20 100 FCFA ; accidents du travail = 10 050 FCFA.
+- Contribution forfaitaire = 10 050 FCFA.
+- Total = 75 375 FCFA. Coût employeur = 335 000 + 75 375 = 410 375 FCFA.
+
+## Fiche 4 : l''écriture comptable de la paie (SYSCOHADA révisé)
+
+Écriture 1, constatation des salaires :
+
+- Débit 661 Rémunérations directes versées au personnel national : 335 000.
+- Crédit 432 Caisses de retraite : 16 750.
+- Crédit 433 Autres organismes sociaux (prévoyance maladie) : 10 050.
+- Crédit 447 État, impôts retenus à la source : 18 000.
+- Crédit 421 Personnel, avances et acomptes : 50 000.
+- Crédit 422 Personnel, rémunérations dues : 240 200.
+
+Total débit 335 000 = total crédit 335 000.
+
+Écriture 2, charges patronales :
+
+- Débit 664 Charges sociales : 65 325 (retraite 25 125 + maladie 10 050 + prestations familiales 20 100 + accidents du travail 10 050).
+- Débit 641 Impôts et taxes directs : 10 050 (contribution forfaitaire).
+- Crédit 431 Sécurité sociale : 30 150 (prestations familiales et accidents du travail).
+- Crédit 432 Caisses de retraite : 25 125.
+- Crédit 433 Autres organismes sociaux : 10 050.
+- Crédit 442 État, autres impôts et taxes : 10 050.
+
+Total débit 75 375 = total crédit 75 375 (subdivisions à adapter à votre cours).
+
+## Points clés
+
+- Brut − cotisations salariales − retenue fiscale = net ; net − acomptes = net à payer.
+- Coût employeur = brut + charges patronales.
+- Vérifier les plafonds avant chaque cotisation.
+- Écriture de paie : le brut se répartit entre organismes, État, acomptes et net dû.
+
+## Exercices pratiques
+
+- Exercice 1. Citez trois documents à remettre ou établir à la sortie d''un salarié.
+- Exercice 2. Brut 520 000 FCFA, retraite salariale 5 % plafonnée à 400 000 FCFA, maladie 3 % sans plafond (taux fictifs). Calculez les cotisations salariales.
+- Exercice 3. Avec les cotisations de l''exercice 2, une retenue fiscale de 41 000 FCFA (fictive) et un acompte de 100 000 FCFA, calculez le net et le net à payer.
+- Exercice 4. Pour le même salarié, charges patronales fictives : retraite 7,5 % plafonnée à 400 000 FCFA, maladie 3 %, prestations familiales 6 %, accidents du travail 3 %, contribution forfaitaire 3 %. Calculez le coût employeur.
+- Exercice 5. Passez l''écriture de constatation des salaires de l''exercice 3.
+- Exercice 6 (cas pratique). Moussa, cadre : brut 950 000 FCFA. Taux fictifs : retraite générale 5 % plafonnée à 400 000 FCFA ; retraite complémentaire cadre 2,4 % plafonnée à 1 200 000 FCFA ; maladie 3 %. Retenue fiscale fictive : 120 000 FCFA. Calculez son net. Il conteste : « On me prélève plus de retraite qu''à mes collègues non cadres. » Que lui répondez-vous ?
+
+## Corrigé
+
+Exercice 1. Certificat de travail, solde de tout compte, attestations destinées aux organismes sociaux.
+
+Exercice 2. Retraite = 400 000 × 5 % = 20 000 FCFA (plafond appliqué). Maladie = 520 000 × 3 % = 15 600 FCFA. Total = 35 600 FCFA.
+
+Exercice 3. Net = 520 000 − 35 600 − 41 000 = 443 400 FCFA. Net à payer = 443 400 − 100 000 = 343 400 FCFA.
+
+Exercice 4. Retraite = 400 000 × 7,5 % = 30 000 ; maladie = 15 600 ; prestations familiales = 31 200 ; accidents du travail = 15 600 ; contribution forfaitaire = 15 600. Total = 108 000 FCFA. Coût employeur = 520 000 + 108 000 = 628 000 FCFA.
+
+Exercice 5. Débit 661 : 520 000. Crédit 432 : 20 000 ; crédit 433 : 15 600 ; crédit 447 : 41 000 ; crédit 421 : 100 000 ; crédit 422 : 343 400. Total crédit = 520 000, l''écriture est équilibrée.
+
+Exercice 6. Retraite générale = 400 000 × 5 % = 20 000 ; retraite cadre = 950 000 × 2,4 % = 22 800 ; maladie = 950 000 × 3 % = 28 500 ; total = 71 300 FCFA. Net = 950 000 − 71 300 − 120 000 = 758 700 FCFA. Réponse : en tant que cadre, Moussa cotise en plus à un régime de retraite complémentaire réservé aux cadres, qui lui ouvrira des droits à une pension complémentaire. Ce n''est pas une erreur, sous réserve que les taux et plafonds appliqués soient ceux en vigueur.', 'texte', 60, false, 30
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Gestion de la paie et administration du personnel : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Formation et gestion des compétences : l''essentiel pour l''examen', '## Objectifs de la leçon
+
+- Définir la compétence et construire un référentiel et une matrice de compétences.
+- Conduire l''analyse des besoins de formation et élaborer un plan de formation.
+- Calculer un budget, des indicateurs de formation et un retour sur investissement simple.
+- Évaluer une formation selon les quatre niveaux de Kirkpatrick.
+
+## Fiche 1 : la compétence
+
+Une compétence est la capacité à mobiliser, dans une situation de travail donnée, un ensemble de ressources (savoirs, savoir-faire, savoir-être) pour obtenir un résultat attendu. Elle est contextualisée (elle se voit dans l''action), évolutive (elle se développe ou se perd) et évaluable (on peut l''observer).
+
+- Savoirs : connaissances théoriques (règles d''hygiène, notions de comptabilité).
+- Savoir-faire : pratiques maîtrisées (conduire un chariot élévateur, établir un bulletin de paie).
+- Savoir-être : comportements professionnels (rigueur, sens du service, travail en équipe).
+
+On distingue aussi les compétences techniques, propres à un métier, et les compétences transversales, utiles dans plusieurs métiers (communication, organisation, usage du numérique).
+
+## Fiche 2 : référentiel et matrice de compétences
+
+Le référentiel de compétences liste, pour un emploi, les compétences requises et le niveau attendu pour chacune. Une échelle courante comporte quatre niveaux : 1 notions, 2 application avec aide, 3 maîtrise autonome, 4 expertise (capable de former les autres).
+
+La matrice de compétences (ou de polyvalence), décrite en texte : un tableau avec les salariés en lignes, les compétences en colonnes, et dans chaque case le niveau actuel. On y repère les écarts entre niveau requis et niveau détenu, les compétences rares (une seule personne au niveau 3) et les possibilités de polyvalence.
+
+Exemple : à l''atelier de conditionnement d''Atlantic Pêche, entreprise fictive de Mbour, seule une opératrice maîtrise le réglage de la machine de mise sous vide (niveau 3). Si elle est absente, la production s''arrête : c''est une compétence critique à transmettre en priorité.
+
+## Fiche 3 : l''analyse des besoins de formation
+
+Un besoin de formation est un écart entre les compétences requises et les compétences détenues, qu''une formation peut réduire. Attention : tous les écarts ne relèvent pas de la formation (un problème de matériel, d''organisation ou de motivation ne se règle pas en formant).
+
+Sources des besoins :
+
+- La stratégie : nouveau produit, nouvelle machine, nouveau logiciel, exigences de clients ou de normes.
+- Les entretiens annuels et professionnels, qui recueillent les besoins exprimés par les salariés et leurs managers.
+- Les indicateurs de dysfonctionnement : accidents, rebuts, réclamations clients.
+- Les obligations réglementaires : sécurité, hygiène.
+
+## Fiche 4 : le plan de formation et l''ingénierie
+
+Le plan de formation rassemble les actions retenues pour une période, généralement l''année : objectif, public, durée, modalité (interne, externe, en situation de travail, à distance), prestataire, coût, calendrier, priorité. Il est arbitré par la direction en fonction du budget et présenté pour information ou consultation aux représentants du personnel selon les règles applicables. Au Sénégal, le Fonds de financement de la formation professionnelle et technique (3FPT) peut, selon ses dispositifs et conditions, contribuer au financement de certaines formations : renseignez-vous sur les modalités en vigueur.
+
+L''ingénierie de formation suit un cycle : analyser le besoin, concevoir le dispositif (objectifs pédagogiques, contenus, méthodes), réaliser, évaluer, puis ajuster. Un objectif pédagogique bien formulé commence par un verbe d''action observable : « À l''issue de la formation, l''opératrice sera capable de régler la machine en moins de 15 minutes sans aide. »
+
+## Fiche 5 : budget et indicateurs, exemple chiffré
+
+Atlantic Pêche (150 salariés, masse salariale annuelle de 900 000 000 FCFA) retient trois actions :
+
+- A, sécurité à bord : 40 marins, 14 heures, coût 2 800 000 FCFA.
+- B, hygiène et maîtrise des risques sanitaires : 30 opératrices, 21 heures, coût 3 150 000 FCFA.
+- C, management d''équipe : 10 chefs d''équipe, 35 heures, coût 4 200 000 FCFA.
+
+Calculs (chaque salarié ne suit qu''une action) :
+
+- Coût total = 2 800 000 + 3 150 000 + 4 200 000 = 10 150 000 FCFA.
+- Heures-stagiaires = 40 × 14 + 30 × 21 + 10 × 35 = 560 + 630 + 350 = 1 540 heures.
+- Coût par heure-stagiaire : A = 2 800 000 / 560 = 5 000 FCFA ; B = 3 150 000 / 630 = 5 000 FCFA ; C = 4 200 000 / 350 = 12 000 FCFA.
+- Taux d''accès à la formation = 80 / 150 × 100 ≈ 53,3 %.
+- Effort de formation = 10 150 000 / 900 000 000 × 100 ≈ 1,13 % de la masse salariale.
+
+Retour sur investissement de l''action B : les pertes liées aux produits non conformes passent de 12 000 000 à 7 000 000 FCFA par an, soit un gain de 5 000 000 FCFA. ROI = (gain − coût) / coût × 100 = (5 000 000 − 3 150 000) / 3 150 000 × 100 ≈ 58,7 %. Prudence : il faut s''assurer que la baisse des pertes est bien due à la formation et non à un autre facteur (nouveau matériel, changement de fournisseur).
+
+## Fiche 6 : évaluer une formation, les quatre niveaux de Kirkpatrick
+
+- Niveau 1, réaction : les participants sont-ils satisfaits ? (questionnaire à chaud)
+- Niveau 2, apprentissage : ont-ils acquis les connaissances et savoir-faire ? (test, mise en situation)
+- Niveau 3, comportement : appliquent-ils ces acquis au travail ? (observation par le manager quelques semaines plus tard)
+- Niveau 4, résultats : quel impact sur les indicateurs de l''entreprise ? (accidents, rebuts, ventes)
+
+Plus on monte, plus l''évaluation est utile, et plus elle est difficile à mener.
+
+## Points clés
+
+- Compétence = savoirs + savoir-faire + savoir-être mobilisés en situation.
+- Référentiel (requis) + matrice (détenu) = écarts.
+- Tout écart ne se règle pas par la formation.
+- Indicateurs : taux d''accès, heures par salarié, coût par heure-stagiaire, effort de formation, ROI.
+
+## Exercices pratiques
+
+- Exercice 1. Classez en savoir, savoir-faire ou savoir-être : connaître les règles d''hygiène ; accueillir un client avec courtoisie ; utiliser un tableur.
+- Exercice 2. Reformulez en objectif pédagogique : « former les caissières au nouveau logiciel ».
+- Exercice 3. Une formation de 18 heures pour 12 personnes coûte 1 728 000 FCFA. Calculez le coût par heure-stagiaire.
+- Exercice 4. Entreprise de 240 salariés, 96 salariés formés, masse salariale de 1 200 000 000 FCFA, budget de formation de 15 000 000 FCFA. Calculez le taux d''accès et l''effort de formation.
+- Exercice 5. Une formation de 2 000 000 FCFA permet d''économiser 2 600 000 FCFA par an. Calculez le ROI sur un an.
+- Exercice 6 (cas pratique). Dans une agence fictive de transfert d''argent à Touba, les erreurs de saisie se multiplient depuis l''arrivée d''un nouveau logiciel. La directrice veut « envoyer tout le monde en formation ». Que lui conseillez-vous ?
+
+## Corrigé
+
+Exercice 1. Connaître les règles d''hygiène : savoir. Accueillir un client avec courtoisie : savoir-être. Utiliser un tableur : savoir-faire.
+
+Exercice 2. « À l''issue de la formation, chaque caissière sera capable d''enregistrer une vente, un retour et une remise dans le nouveau logiciel, sans erreur et sans aide. »
+
+Exercice 3. Heures-stagiaires = 18 × 12 = 216. Coût = 1 728 000 / 216 = 8 000 FCFA par heure-stagiaire.
+
+Exercice 4. Taux d''accès = 96 / 240 × 100 = 40 %. Effort de formation = 15 000 000 / 1 200 000 000 × 100 = 1,25 %.
+
+Exercice 5. ROI = (2 600 000 − 2 000 000) / 2 000 000 × 100 = 30 %.
+
+Exercice 6. D''abord diagnostiquer : relever les erreurs (types, agents, moments), interroger les agents, vérifier le paramétrage du logiciel et l''ergonomie des écrans. Si l''écart est bien un manque de compétences, cibler la formation sur les agents et les opérations concernés, avec des objectifs mesurables, une formation pratique sur le logiciel, un agent référent formé au niveau 4 pour assister les autres, puis une évaluation aux niveaux 2 (test), 3 (observation après un mois) et 4 (nombre d''erreurs). Si le problème vient du logiciel ou de la charge de travail, la formation ne suffira pas.', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Formation et gestion des compétences : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 2 RH (entraînement, corrigé détaillé)', '## Présentation du sujet
+
+Sujet d''entraînement multi-matières de Licence 2 RH. Ce n''est pas un sujet officiel. Durée conseillée : 3 heures. Barème indicatif, non officiel : 20 points. Calculatrice autorisée. Tous les taux, plafonds et montants de retenue fiscale sont fictifs pour l''exemple.
+
+Contexte commun : Casamance Fruits, entreprise fictive de transformation de fruits implantée à Ziguinchor, 200 salariés, masse salariale annuelle de 1 000 000 000 FCFA. Elle lance une ligne de jus en bouteille et doit recruter deux techniciens de maintenance, gérer la paie de nouveaux profils et former ses équipes.
+
+## Dossier 1 : Recrutement et intégration (6 points)
+
+La DRH a retenu la grille suivante pour le poste de technicien de maintenance : compétences techniques 35 %, expérience 25 %, relationnel 25 %, langues 15 %. Deux finalistes, notés sur 5 : Pape (4, 4, 3, 5) et Seynabou (5, 3, 4, 3). Le recrutement a coûté : cabinet 1 200 000 FCFA, annonces 200 000 FCFA, 25 heures de travail interne valorisées à 8 000 FCFA. Deux techniciens seront finalement recrutés.
+
+- 1.1 Calculez la note pondérée de chaque finaliste et commentez. (2 points)
+- 1.2 Calculez le coût par recrutement. (1 point)
+- 1.3 Proposez un parcours d''intégration de trois mois pour les deux techniciens. (3 points)
+
+## Dossier 2 : Paie et administration du personnel (8 points)
+
+Ndèye, technicienne non cadre, a pour le mois de mars : salaire de base 380 000 FCFA ; prime de rendement 40 000 FCFA ; heures supplémentaires 25 000 FCFA ; acompte versé 80 000 FCFA. Taux fictifs : retraite salariale 5 % et patronale 7,5 %, plafond 400 000 FCFA ; maladie 3 % salarié et 3 % employeur ; prestations familiales 6 % ; accidents du travail 3 % ; contribution forfaitaire employeur 3 % ; ces quatre dernières sans plafond. Retenue fiscale selon barème : 30 000 FCFA.
+
+- 2.1 Établissez le bulletin : brut, cotisations salariales, net, net à payer. (3 points)
+- 2.2 Calculez les charges patronales et le coût employeur. (2 points)
+- 2.3 Passez l''écriture de constatation des salaires (SYSCOHADA révisé). (2 points)
+- 2.4 Citez deux obligations administratives liées à l''embauche des nouveaux techniciens. (1 point)
+
+## Dossier 3 : Formation et gestion des compétences (6 points)
+
+Deux actions sont prévues : action 1, hygiène alimentaire pour 25 opérateurs, 16 heures, 2 400 000 FCFA ; action 2, maintenance de la nouvelle ligne pour 15 techniciens, 24 heures, 2 880 000 FCFA. Chaque salarié suit une seule action.
+
+- 3.1 Calculez le coût total, les heures-stagiaires, le coût par heure-stagiaire de chaque action, le taux d''accès et l''effort de formation. (3 points)
+- 3.2 Proposez un dispositif d''évaluation de l''action 2 selon les quatre niveaux de Kirkpatrick. (3 points)
+
+## Corrigé détaillé
+
+1.1 Pape = 0,35 × 4 + 0,25 × 4 + 0,25 × 3 + 0,15 × 5 = 1,40 + 1,00 + 0,75 + 0,75 = 3,90. Seynabou = 0,35 × 5 + 0,25 × 3 + 0,25 × 4 + 0,15 × 3 = 1,75 + 0,75 + 1,00 + 0,45 = 3,95. Seynabou devance très légèrement Pape. L''écart (0,05) est trop faible pour trancher mécaniquement : on vérifie les références, on peut organiser une mise en situation technique ; comme deux postes sont ouverts, les deux peuvent d''ailleurs être recrutés s''ils satisfont tous les critères indispensables.
+
+1.2 Coût total = 1 200 000 + 200 000 + 25 × 8 000 = 1 600 000 FCFA. Coût par recrutement = 1 600 000 / 2 = 800 000 FCFA.
+
+1.3 Avant l''arrivée : poste et outillage prêts, équipements de protection, annonce à l''équipe, désignation d''un parrain. Semaine 1 : accueil, livret d''accueil, visite du site, règles de sécurité et d''hygiène, présentation de la ligne. Mois 1 : formation au poste avec le parrain, interventions en binôme, entretien de suivi en fin de mois. Mois 2 : autonomie progressive sur les interventions courantes, formation de maintenance (action 2). Mois 3 : rapport d''étonnement, évaluation des compétences par le responsable maintenance, entretien de fin de période d''essai et décision de confirmation. Barème : 1 point pour la chronologie, 1 point pour les outils, 1 point pour le suivi et l''évaluation.
+
+2.1 Brut = 380 000 + 40 000 + 25 000 = 445 000 FCFA. Retraite = 400 000 × 5 % = 20 000 (plafond). Maladie = 445 000 × 3 % = 13 350. Total salarial = 33 350 FCFA. Net = 445 000 − 33 350 − 30 000 = 381 650 FCFA. Net à payer = 381 650 − 80 000 = 301 650 FCFA.
+
+2.2 Retraite patronale = 400 000 × 7,5 % = 30 000 ; maladie = 13 350 ; prestations familiales = 445 000 × 6 % = 26 700 ; accidents du travail = 13 350 ; contribution forfaitaire = 13 350. Total = 96 750 FCFA. Coût employeur = 445 000 + 96 750 = 541 750 FCFA.
+
+2.3 Débit 661 Rémunérations directes versées au personnel national : 445 000. Crédit 432 Caisses de retraite : 20 000 ; crédit 433 Autres organismes sociaux : 13 350 ; crédit 447 État, impôts retenus à la source : 30 000 ; crédit 421 Personnel, avances et acomptes : 80 000 ; crédit 422 Personnel, rémunérations dues : 301 650. Total crédit = 445 000 : équilibre vérifié.
+
+2.4 Contrat de travail écrit, déclaration d''embauche aux services compétents, immatriculation auprès des organismes sociaux, ouverture du dossier individuel, inscription au registre d''employeur (deux réponses suffisent).
+
+3.1 Coût total = 2 400 000 + 2 880 000 = 5 280 000 FCFA. Heures-stagiaires : 25 × 16 = 400 ; 15 × 24 = 360 ; total 760. Coût par heure-stagiaire : action 1 = 2 400 000 / 400 = 6 000 FCFA ; action 2 = 2 880 000 / 360 = 8 000 FCFA. Taux d''accès = 40 / 200 × 100 = 20 %. Effort de formation = 5 280 000 / 1 000 000 000 × 100 = 0,528 %.
+
+3.2 Niveau 1 : questionnaire de satisfaction en fin de session (contenu, formateur, organisation). Niveau 2 : test pratique de diagnostic d''une panne simulée sur la ligne, avec grille de notation. Niveau 3 : après six semaines, observation des interventions par le responsable maintenance et revue des fiches d''intervention. Niveau 4 : suivi des indicateurs de la ligne (taux d''arrêt, durée moyenne de réparation) sur trois à six mois, comparés à l''objectif. Barème : 0,75 point par niveau correctement décrit.
+
+## Exercices pratiques
+
+- Exercice 1. Un brut de 380 000 FCFA est soumis à une retraite salariale de 5 % plafonnée à 400 000 FCFA : montant ?
+- Exercice 2. Quel compte crédite-t-on pour un acompte versé au salarié et récupéré sur la paie ?
+- Exercice 3. Citez deux outils d''intégration.
+- Exercice 4. Différence entre taux d''accès et effort de formation ?
+- Exercice 5. Une formation coûte 1 500 000 FCFA et génère 1 950 000 FCFA d''économies par an : ROI ?
+
+## Corrigé
+
+Exercice 1. Le brut est sous le plafond : 380 000 × 5 % = 19 000 FCFA.
+
+Exercice 2. Le compte 421 Personnel, avances et acomptes.
+
+Exercice 3. Le parrainage et le livret d''accueil (ou le rapport d''étonnement, les entretiens de suivi).
+
+Exercice 4. Le taux d''accès mesure la part des salariés formés dans l''effectif ; l''effort de formation mesure la part des dépenses de formation dans la masse salariale.
+
+Exercice 5. ROI = (1 950 000 − 1 500 000) / 1 500 000 × 100 = 30 %.', 'texte', 60, false, 50
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 2 RH (entraînement, corrigé détaillé)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Recrutement et intégration', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 2 en ressources humaines et en gestion.
+- Objectifs : maîtriser les sept étapes du recrutement, rédiger une fiche de poste et un profil, construire et utiliser une grille d''évaluation pondérée, calculer les indicateurs de recrutement, concevoir un parcours d''intégration.
+- Matériel : diaporama (chaîne du recrutement, modèle de fiche de poste, grille pondérée, tableau des indicateurs), tableau blanc, calculatrice, modèle de grille vierge à distribuer.
+- Prérequis : leçon « Recrutement et intégration : l''essentiel pour l''examen » ; notions de L1 sur le contrat de travail et la période d''essai.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Pourquoi le recrutement est une décision d''investissement
+
+Bonjour à toutes et à tous. Je vous pose une question pour démarrer : combien coûte une erreur de recrutement ? Pensez au salaire versé pendant des mois sans résultat, au temps que le manager passe à corriger les erreurs, au climat de l''équipe, puis au coût d''un nouveau recrutement. Recruter, c''est investir. Aujourd''hui, nous allons dérouler le processus complet, avec ses outils et ses calculs, comme vous devrez le faire dans un cas d''examen. Les entreprises citées sont fictives.
+
+## 05:00 – 18:00 · La chaîne du recrutement et l''analyse du besoin
+
+Je projette la chaîne à sept maillons : analyse du besoin, définition du poste et du profil, sourcing, présélection, sélection, décision et proposition, accueil et intégration.
+
+Le premier maillon est souvent bâclé. Avant de publier une annonce, il faut se demander : ce besoin est-il durable ou temporaire ? S''agit-il d''un remplacement à l''identique ou faut-il profiter du départ pour faire évoluer le poste ? Peut-on répondre autrement, par une réorganisation, de la polyvalence, une mobilité interne ? Exemple : chez Niayes Maraîchage, à Pikine, le chef de culture part à la retraite. Le gérant veut un remplaçant identique. Mais l''entreprise vient d''investir dans l''irrigation goutte-à-goutte : le nouveau chef de culture devra maîtriser cette technique. L''analyse du besoin change donc le profil.
+
+Question au public : un pic d''activité de trois mois justifie-t-il un recrutement en CDI ? Réponse attendue : plutôt un CDD justifié par le surcroît d''activité, ou des heures supplémentaires encadrées, ou encore l''intérim selon les possibilités légales.
+
+## 18:00 – 30:00 · Fiche de poste et profil
+
+Construisons ensemble la fiche de poste du chef de culture. Intitulé. Rattachement : le gérant. Finalité : assurer la production maraîchère en quantité et en qualité. Activités : planifier les cultures, encadrer les ouvriers agricoles, piloter l''irrigation, suivre les traitements, tenir les fiches de production. Relations : fournisseurs d''intrants, acheteurs. Conditions : travail en plein air, horaires matinaux. Indicateurs : rendement par parcelle, pertes.
+
+Puis le profil, en deux colonnes. Indispensable : formation agricole de niveau technicien, trois ans d''expérience. Souhaitable : goutte-à-goutte, permis de conduire, bilinguisme wolof-français. Rappel important : les critères doivent être liés au poste et non discriminatoires. Jamais de critère de religion, d''ethnie, de situation familiale ou de grossesse.
+
+## 30:00 – 42:00 · Le sourcing : où trouver les candidats
+
+Deux grandes voies. Interne : promotion, mutation ; avantages, rapidité, coût faible, motivation ; limites, pas de sang neuf et un poste à remplacer. Externe : sites d''emploi, réseaux sociaux professionnels, écoles et universités, cabinets, services publics de l''emploi, candidatures spontanées, cooptation.
+
+Arrêtons-nous sur la cooptation, très pratiquée au Sénégal. Elle est rapide, le candidat est recommandé, on lui fait confiance. Mais elle peut favoriser les proches au détriment des plus compétents et uniformiser les profils. La bonne pratique : accepter la cooptation comme source de candidatures, mais soumettre les cooptés aux mêmes épreuves que tout le monde. C''est une excellente idée de plan pour une question de réflexion : I. un atout, II. un risque à encadrer.
+
+Un mot aussi sur l''annonce de recrutement, qui est souvent demandée en projet. Elle doit présenter l''entreprise en deux phrases, le poste et ses missions principales, le profil avec les critères indispensables, les conditions proposées (lieu, type de contrat), et la manière de candidater avec une date limite. Rédigez-la avec des mots simples et attractifs : une annonce est aussi un outil de communication de l''image de l''employeur. Évitez toute mention discriminatoire, y compris des formules apparemment anodines comme une limite d''âge sans justification liée au poste.
+
+## 42:00 – 47:00 · Quiz de mi-parcours
+
+- Question 1 : quelle différence entre fiche de poste et profil ?
+- Question 2 : citez deux sources de recrutement externe.
+- Question 3 : vrai ou faux, on peut demander à une candidate si elle envisage une grossesse ?
+- Question 4 : quel est le premier maillon de la chaîne ?
+
+Réponses : 1) la fiche décrit le poste, le profil décrit la personne ; 2) par exemple un cabinet et une école ; 3) faux, c''est une question discriminatoire ; 4) l''analyse du besoin.
+
+## 47:00 – 1:02:00 · La sélection et la grille pondérée : exercices corrigés
+
+L''entretien structuré, avec les mêmes questions pour tous, est plus fiable qu''une conversation libre. Préférez les questions comportementales : « Décrivez une situation où une panne d''irrigation a menacé une récolte. Qu''avez-vous fait ? » On obtient des faits, pas des déclarations.
+
+Pour comparer, on utilise la grille pondérée. Méthode : critères, poids totalisant 100 %, notes sur une même échelle, note pondérée égale à la somme des poids multipliés par les notes.
+
+Exercice 1 projeté : compétences techniques 40 %, expérience 25 %, savoir-être 20 %, motivation 15 %. A : 4, 3, 4, 3. B : 3, 5, 3, 4. C : 5, 2, 4, 4. Trois minutes. Correction : A = 1,60 + 0,75 + 0,80 + 0,45 = 3,60. B = 1,20 + 1,25 + 0,60 + 0,60 = 3,65. C = 2,00 + 0,50 + 0,80 + 0,60 = 3,90. C est en tête. Commentaire : C n''a que 2 en expérience ; si l''expérience minimale de trois ans est un critère indispensable et qu''il ne la remplit pas, il est éliminé quelle que soit sa note. La grille ne remplace pas les critères éliminatoires.
+
+Exercice 2 : poids 50 %, 30 %, 20 % ; D : 3, 4, 5 ; E : 4, 3, 3. Correction : D = 1,5 + 1,2 + 1,0 = 3,7 ; E = 2,0 + 0,9 + 0,6 = 3,5. Erreur fréquente : additionner les notes sans les pondérer, ce qui donnerait 12 contre 10, le même classement ici, mais pas toujours. Montrez toujours le calcul pondéré.
+
+## 1:02:00 – 1:12:00 · Les indicateurs de recrutement
+
+Quatre indicateurs. Le taux de transformation à chaque étape. Le coût par recrutement. Le délai de recrutement. Le taux de départ pendant la période d''essai.
+
+Exercice : 120 candidatures, 24 premiers entretiens, 6 seconds entretiens, 2 embauches. Taux : 20 %, 25 %, environ 33,3 %, et global environ 1,7 %. Coûts : annonces 150 000 FCFA, tests 90 000 FCFA, déplacements 60 000 FCFA, 20 heures internes à 5 000 FCFA. Total : 400 000 FCFA, soit 200 000 FCFA par recrutement. Remarquez que le temps interne compte : l''oublier est l''erreur classique.
+
+Interprétation : si le taux de transformation entre candidatures et entretiens est très bas, l''annonce attire des profils inadaptés ; il faut revoir sa rédaction ou le canal choisi.
+
+## 1:12:00 – 1:22:00 · L''intégration : du premier jour à la fin de l''essai
+
+Cas Sahel Pharma Distribution : 4 délégués commerciaux sur 10 partis pendant l''essai, soit 40 %. Le recrutement ne s''arrête pas à la signature. Concevons un parcours. Avant l''arrivée : poste, téléphone, véhicule, fichier clients prêts. Semaine 1 : accueil par le directeur commercial, livret d''accueil, formation produits. Mois 1 : tournées en binôme avec un parrain expérimenté, entretien de suivi. Mois 2 : premières tournées seul, objectifs progressifs. Fin de l''essai : rapport d''étonnement et entretien de bilan. Ajoutez un indicateur : le taux de départ pendant l''essai, suivi à chaque promotion.
+
+Le rapport d''étonnement mérite une explication. Après quelques semaines, on demande au nouveau d''écrire ce qui l''a surpris, en bien et en mal. C''est un regard neuf, précieux pour améliorer l''organisation, à condition de lui répondre.
+
+## 1:22:00 – 1:26:00 · Synthèse et conseils d''examen
+
+Dans un cas de recrutement, suivez la chaîne : partez du besoin, justifiez le profil, choisissez des canaux adaptés, proposez des outils de sélection objectifs, chiffrez, et terminez par l''intégration. Respectez le droit : non-discrimination, contrat écrit, période d''essai prévue par écrit.
+
+## 1:26:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : citez les sept étapes du recrutement.
+- Question 2 : poids 60 % et 40 % ; notes 4 et 5. Note pondérée ?
+- Question 3 : coût total 630 000 FCFA pour 3 recrutements. Coût par recrutement ?
+- Question 4 : citez deux outils d''intégration.
+- Question 5 : pourquoi les cooptés doivent-ils passer les mêmes épreuves ?
+
+Réponses : 1) analyse du besoin, poste et profil, sourcing, présélection, sélection, décision et proposition, intégration ; 2) 0,6 × 4 + 0,4 × 5 = 4,4 ; 3) 210 000 FCFA ; 4) parrainage, livret d''accueil ; 5) pour garantir l''égalité de traitement, limiter le favoritisme et recruter sur les compétences. Bon travail.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Recrutement et intégration');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Gestion de la paie et administration du personnel', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 2 en ressources humaines, gestion et comptabilité.
+- Objectifs : connaître les obligations d''administration du personnel, établir un bulletin de paie complet avec plafonds, calculer le coût employeur, passer les écritures de paie selon le SYSCOHADA révisé, traiter le cas d''un cadre.
+- Matériel : diaporama (escalier du brut au net, modèle de bulletin en tableau, schéma des écritures), tableau blanc, calculatrice, modèle de bulletin vierge à distribuer.
+- Prérequis : leçon « Gestion de la paie et administration du personnel : l''essentiel pour l''examen » ; calcul du taux horaire et des heures supplémentaires vu en L1.
+- Avertissement : tous les taux, plafonds et montants de retenue fiscale utilisés sont fictifs pour l''exemple. Les taux officiels sont fixés par les textes et évoluent ; à l''examen, ils sont fournis.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bonjour. La paie est la matière où l''on gagne ou perd le plus de points en L2, parce qu''elle est mécanique : si vous suivez l''ordre de calcul et vérifiez chaque ligne, vous obtenez tous les points. Si vous inversez un taux ou oubliez un plafond, l''erreur se propage jusqu''au net. Aujourd''hui, nous allons calculer ensemble, lentement, puis de plus en plus vite. Ayez votre calculatrice et le modèle de bulletin.
+
+## 05:00 – 15:00 · L''administration du personnel en trois temps
+
+Avant la paie, l''administration. À l''embauche : contrat écrit, déclaration aux services compétents, immatriculation auprès des organismes sociaux, ouverture du dossier individuel. Pendant le contrat : registre d''employeur, suivi des absences et congés, bulletins et livre de paie, déclarations et versements périodiques des cotisations et des impôts retenus à la Caisse de sécurité sociale, à l''IPRES, aux institutions de prévoyance maladie et à l''administration fiscale. À la sortie : certificat de travail, solde de tout compte, attestations.
+
+Insistez sur la confidentialité : un dossier du personnel contient des données personnelles. Accès limité, armoire fermée ou logiciel protégé par des droits d''accès.
+
+## 15:00 – 27:00 · L''ordre de calcul : l''escalier
+
+Je projette l''escalier. Marche 1, le salaire de base. Marche 2, on ajoute les éléments soumis : primes, heures supplémentaires, indemnités imposables, avantages en nature ; on obtient le brut. Marche 3, on retire les cotisations salariales, dans la limite des plafonds. Marche 4, on retire la retenue fiscale, impôt sur le revenu et TRIMF, selon le barème et la situation familiale. On obtient le net. Marche 5, on retire les acomptes : c''est le net à payer. Enfin, on remonte de l''autre côté : brut plus charges patronales égale coût employeur.
+
+Le plafond, maintenant. Retraite salariale 5 %, plafond 400 000 FCFA, taux fictifs. Brut de 335 000 : 335 000 × 5 % = 16 750. Brut de 500 000 : on plafonne, 400 000 × 5 % = 20 000, et non 25 000. Question au public : brut de 400 000 exactement ? 20 000, le plafond est atteint mais pas dépassé.
+
+## 27:00 – 42:00 · Exercice corrigé : le bulletin d''Aïssatou
+
+Aïssatou, comptable non cadre chez Saloum Emballages : base 300 000, ancienneté 15 000, heures supplémentaires 20 000, acompte 50 000. Taux fictifs : retraite 5 % salarié et 7,5 % employeur, plafond 400 000 ; maladie 3 % et 3 % ; prestations familiales 6 % employeur ; accidents du travail 3 % employeur ; contribution forfaitaire 3 %. Retenue fiscale selon barème : 18 000.
+
+Remplissons le tableau. Brut : 335 000. Retraite salariale : 16 750. Maladie salariale : 10 050. Total salarial : 26 800. Retenue fiscale : 18 000. Net : 335 000 − 26 800 − 18 000 = 290 200. Net à payer : 240 200.
+
+Côté employeur : retraite 25 125 ; maladie 10 050 ; prestations familiales 20 100 ; accidents du travail 10 050 ; contribution forfaitaire 10 050 ; total 75 375. Coût employeur : 410 375.
+
+Contrôle : brut − total des retenues salariales et fiscales = 335 000 − 44 800 = 290 200. C''est bien le net. Faites toujours ce contrôle en fin de bulletin : il prend trente secondes et sauve des points.
+
+Présentation conseillée sur votre copie : un tableau à cinq colonnes, rubrique, base, taux salarial, montant salarial, taux et montant patronal. Une ligne par cotisation. Sous le tableau, les totaux, puis le net, l''acompte et le net à payer. Si l''énoncé ne fournit pas un taux, n''en inventez pas : signalez-le et raisonnez sur le mécanisme.
+
+## 42:00 – 47:00 · Quiz de mi-parcours
+
+- Question 1 : le salaire net est-il calculé avant ou après la retenue fiscale ?
+- Question 2 : brut 600 000, retraite 5 % plafonnée à 400 000 : cotisation ?
+- Question 3 : les prestations familiales sont-elles retenues sur le salaire dans notre exemple ?
+- Question 4 : que vaut le coût employeur ?
+
+Réponses : 1) après, le net tient compte de la retenue fiscale ; 2) 20 000 FCFA ; 3) non, ce sont des charges patronales ; 4) brut + charges patronales.
+
+## 47:00 – 1:00:00 · Les écritures comptables de la paie
+
+Passons à la comptabilité, SYSCOHADA révisé. Première écriture : constatation des salaires. Au débit, le brut au compte 661 Rémunérations directes versées au personnel national : 335 000. Au crédit, ce que l''entreprise doit à chacun : 432 Caisses de retraite 16 750 ; 433 Autres organismes sociaux 10 050 ; 447 État, impôts retenus à la source 18 000 ; 421 Personnel, avances et acomptes 50 000, qui solde l''acompte déjà versé ; 422 Personnel, rémunérations dues 240 200. Total : 335 000 de chaque côté.
+
+Deuxième écriture : charges patronales. Débit 664 Charges sociales 65 325 ; débit 641 Impôts et taxes directs 10 050 pour la contribution forfaitaire. Crédit 431 Sécurité sociale 30 150 ; 432 Caisses de retraite 25 125 ; 433 Autres organismes sociaux 10 050 ; 442 État, autres impôts et taxes 10 050. Total : 75 375 de chaque côté.
+
+Troisième étape, au paiement : débit 422, crédit compte de trésorerie, pour 240 200. Puis, lors des versements aux organismes et à l''État, on solde les comptes 431, 432, 433, 442 et 447 par la trésorerie.
+
+Erreur classique : débiter 661 du net au lieu du brut. Retenez : la charge de personnel, c''est le brut ; les retenues ne sont qu''une répartition de ce brut entre plusieurs créanciers.
+
+## 1:00:00 – 1:12:00 · Le cas du cadre
+
+Moussa, cadre, brut 950 000. Taux fictifs : retraite générale 5 % plafonnée à 400 000 ; retraite complémentaire cadre 2,4 % plafonnée à 1 200 000 ; maladie 3 %. Retenue fiscale : 120 000. À vous, quatre minutes.
+
+Correction. Retraite générale : 400 000 × 5 % = 20 000. Retraite cadre : 950 000 est sous le plafond de 1 200 000, donc 950 000 × 2,4 % = 22 800. Maladie : 28 500. Total : 71 300. Net : 950 000 − 71 300 − 120 000 = 758 700.
+
+Moussa se plaint de cotiser davantage. Réponse : le statut cadre l''affilie à un régime complémentaire qui lui ouvrira une pension complémentaire. Ce type de question de communication avec le salarié tombe souvent : expliquer clairement, sans jargon, et vérifier que les paramètres appliqués sont bien ceux en vigueur.
+
+## 1:12:00 – 1:22:00 · Exercice d''entraînement rapide
+
+Brut 520 000 ; retraite 5 % plafonnée à 400 000 ; maladie 3 % ; retenue fiscale 41 000 ; acompte 100 000. Patronal : retraite 7,5 % plafonnée ; maladie 3 % ; prestations familiales 6 % ; accidents du travail 3 % ; contribution forfaitaire 3 %.
+
+Correction. Salarial : 20 000 + 15 600 = 35 600. Net : 443 400. Net à payer : 343 400. Patronal : 30 000 + 15 600 + 31 200 + 15 600 + 15 600 = 108 000. Coût employeur : 628 000. Écriture : débit 661 520 000 ; crédits 432 20 000, 433 15 600, 447 41 000, 421 100 000, 422 343 400. Contrôle : 20 000 + 15 600 + 41 000 + 100 000 + 343 400 = 520 000.
+
+## 1:22:00 – 1:26:00 · Synthèse
+
+Retenez l''escalier, les plafonds, le contrôle brut − retenues = net, le débit du brut en 661 et la répartition au crédit. Et surtout, gardez le réflexe de prudence : dans la vie professionnelle, les taux et barèmes se vérifient dans les textes en vigueur, ils ne s''apprennent pas par cœur une fois pour toutes.
+
+## 1:26:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : brut 300 000, cotisations salariales 24 000, retenue fiscale 15 000. Net ?
+- Question 2 : avec un acompte de 40 000, net à payer ?
+- Question 3 : quel compte enregistre le brut ?
+- Question 4 : charges patronales 70 000. Coût employeur ?
+- Question 5 : citez deux documents de fin de contrat.
+
+Réponses : 1) 261 000 FCFA ; 2) 221 000 FCFA ; 3) le compte 661 ; 4) 370 000 FCFA ; 5) certificat de travail et solde de tout compte. À la prochaine séance.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Gestion de la paie et administration du personnel');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Formation et gestion des compétences', '## Fiche du cours vidéo
+
+- Durée : 1h30.
+- Public : étudiants de Licence 2 en ressources humaines.
+- Objectifs : définir la compétence, construire un référentiel et une matrice de compétences, analyser les besoins de formation, élaborer et chiffrer un plan de formation, calculer les indicateurs et le retour sur investissement, évaluer une formation selon Kirkpatrick.
+- Matériel : diaporama (schéma savoir, savoir-faire, savoir-être ; matrice de compétences ; cycle de l''ingénierie ; tableau du plan ; pyramide de Kirkpatrick), tableau blanc, calculatrice.
+- Prérequis : leçon « Formation et gestion des compétences : l''essentiel pour l''examen ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à tous. Une entreprise qui ne forme pas ses salariés vieillit avec ses machines. Mais une entreprise qui forme au hasard gaspille son argent. Aujourd''hui, nous allons apprendre à former juste : identifier les vrais besoins, construire un plan, le chiffrer, et prouver qu''il sert à quelque chose. Les entreprises citées sont fictives.
+
+## 05:00 – 15:00 · Qu''est-ce qu''une compétence ?
+
+Une compétence, c''est la capacité à mobiliser, dans une situation de travail, des savoirs, des savoir-faire et des savoir-être pour obtenir un résultat. Je projette les trois cercles qui se recoupent. Au centre, la compétence. Prenons l''exemple d''une opératrice de conditionnement chez Atlantic Pêche, à Mbour. Savoir : les règles d''hygiène et la chaîne du froid. Savoir-faire : régler la machine de mise sous vide. Savoir-être : rigueur et vigilance. Seule la combinaison des trois produit un emballage conforme.
+
+Trois caractéristiques à citer en copie : la compétence est contextualisée, elle se voit dans l''action ; elle est évolutive ; elle est évaluable. On distingue aussi compétences techniques, propres à un métier, et transversales, comme la communication ou l''usage du numérique.
+
+## 15:00 – 27:00 · Référentiel et matrice de compétences
+
+Le référentiel dit ce qui est requis pour un emploi, avec un niveau : 1 notions, 2 application avec aide, 3 maîtrise autonome, 4 expertise. La matrice dit ce que chaque salarié détient. Je projette une matrice de l''atelier : cinq opératrices en lignes, quatre compétences en colonnes. Colonne « réglage de la mise sous vide » : une seule opératrice au niveau 3, les autres au niveau 1. Que concluez-vous ? C''est une compétence critique : si cette opératrice est malade, la production s''arrête. Priorité de formation : faire monter deux autres opératrices au niveau 3, et l''opératrice experte au niveau 4 pour qu''elle puisse transmettre.
+
+La matrice sert donc à trois choses : repérer les écarts, identifier les compétences rares, organiser la polyvalence et le remplacement.
+
+## 27:00 – 40:00 · L''analyse des besoins de formation
+
+Un besoin de formation est un écart entre compétences requises et détenues qu''une formation peut réduire. La deuxième partie de la phrase est essentielle. Prenons le cas de l''agence de transfert d''argent de Touba : les erreurs de saisie augmentent depuis le nouveau logiciel, la directrice veut former tout le monde. Avant, il faut diagnostiquer. Les erreurs viennent-elles de tous les agents ou de quelques-uns ? D''une opération précise ? D''un écran mal conçu ? D''une surcharge aux heures de pointe ? Si c''est un problème de logiciel ou d''organisation, la formation ne servira à rien.
+
+Les sources de besoins : la stratégie, comme une nouvelle ligne ou un nouveau marché ; les entretiens annuels et professionnels ; les indicateurs de dysfonctionnement, accidents, rebuts, réclamations ; les obligations de sécurité et d''hygiène.
+
+Question au public : un vendeur atteint ses objectifs mais est souvent en retard. Faut-il le former ? Réponse attendue : probablement pas, le problème relève du management et du dialogue, pas d''un manque de compétence.
+
+## 40:00 – 45:00 · Quiz de mi-parcours
+
+- Question 1 : citez les trois composantes d''une compétence.
+- Question 2 : que signifie le niveau 4 dans notre échelle ?
+- Question 3 : un écart de compétences se règle-t-il toujours par la formation ?
+- Question 4 : citez deux sources de besoins de formation.
+
+Réponses : 1) savoirs, savoir-faire, savoir-être ; 2) l''expertise, capable de former les autres ; 3) non, il peut venir de l''organisation, du matériel ou de la motivation ; 4) la stratégie et les entretiens annuels, par exemple.
+
+## 45:00 – 55:00 · Le plan de formation et l''ingénierie
+
+Le plan de formation rassemble les actions de l''année : objectif, public, durée, modalité, prestataire, coût, calendrier, priorité. Il est arbitré par la direction et présenté aux représentants du personnel selon les règles applicables. Pour le financement, le Fonds de financement de la formation professionnelle et technique peut, selon ses dispositifs et conditions, contribuer à certaines actions ; renseignez-vous sur les modalités en vigueur.
+
+L''ingénierie suit un cycle : analyser, concevoir, réaliser, évaluer, ajuster. Concevoir, c''est d''abord écrire des objectifs pédagogiques avec un verbe d''action observable. Mauvais objectif : « sensibiliser à l''hygiène ». Bon objectif : « À l''issue de la formation, l''opérateur sera capable d''appliquer les cinq étapes du lavage des mains et du nettoyage du poste, sans oubli, lors d''un contrôle inopiné ».
+
+## 55:00 – 1:10:00 · Budget et indicateurs : exercices corrigés
+
+Exercice projeté. Atlantic Pêche, 150 salariés, masse salariale 900 000 000 FCFA. Action A : 40 marins, 14 heures, 2 800 000 FCFA. Action B : 30 opératrices, 21 heures, 3 150 000 FCFA. Action C : 10 chefs d''équipe, 35 heures, 4 200 000 FCFA. Calculez coût total, heures-stagiaires, coût par heure-stagiaire, taux d''accès et effort de formation. Cinq minutes.
+
+Correction. Coût total : 10 150 000 FCFA. Heures-stagiaires : 560 + 630 + 350 = 1 540. Coût par heure-stagiaire : A et B, 5 000 FCFA ; C, 12 000 FCFA, ce qui est normal pour une formation de management plus spécialisée. Taux d''accès : 80 / 150, environ 53,3 %. Effort de formation : 10 150 000 / 900 000 000, environ 1,13 %. Attention : le taux d''accès suppose que chaque salarié ne suit qu''une action. Si un même salarié suivait deux actions, il ne faudrait le compter qu''une fois.
+
+Retour sur investissement de l''action B : les pertes passent de 12 000 000 à 7 000 000 FCFA par an. Gain : 5 000 000. ROI = (5 000 000 − 3 150 000) / 3 150 000, environ 58,7 %. Commentaire indispensable : le gain doit être attribuable à la formation ; s''il y a eu en même temps un nouveau fournisseur d''emballages, la prudence s''impose.
+
+Exercice rapide : 18 heures, 12 personnes, 1 728 000 FCFA. Coût par heure-stagiaire : 1 728 000 / 216 = 8 000 FCFA.
+
+## 1:10:00 – 1:20:00 · Évaluer une formation : Kirkpatrick
+
+Je projette la pyramide à quatre niveaux. Niveau 1, réaction : questionnaire de satisfaction à chaud. Niveau 2, apprentissage : test ou mise en situation en fin de formation. Niveau 3, comportement : quelques semaines plus tard, le manager observe-t-il l''application au poste ? Niveau 4, résultats : les indicateurs de l''entreprise s''améliorent-ils ?
+
+Application à la formation maintenance de Casamance Fruits : niveau 1, questionnaire ; niveau 2, diagnostic d''une panne simulée ; niveau 3, revue des fiches d''intervention après six semaines ; niveau 4, taux d''arrêt de la ligne et durée moyenne de réparation sur plusieurs mois. Beaucoup d''entreprises s''arrêtent au niveau 1 : c''est insuffisant, la satisfaction ne prouve pas l''efficacité.
+
+Pour réussir le niveau 3, impliquez le manager dès le départ. Avant la formation, il explique au salarié pourquoi il y va et ce qu''il attend ; après, il lui confie rapidement des tâches où il peut appliquer ce qu''il a appris, et fait un point au bout de quelques semaines. Sans ce relais, une grande partie des acquis se perd : le salarié revient dans une organisation qui n''a pas changé et reprend ses anciennes habitudes. C''est un argument fort à placer dans une question de réflexion sur l''efficacité de la formation.
+
+## 1:20:00 – 1:26:00 · Synthèse et méthode pour le cas d''examen
+
+Pour un cas de formation : 1) diagnostiquer l''écart et vérifier qu''il relève de la formation ; 2) formuler des objectifs pédagogiques observables ; 3) choisir modalités et public ; 4) chiffrer le coût et les indicateurs ; 5) prévoir l''évaluation sur plusieurs niveaux. Un plan présenté en tableau, avec une colonne priorité, impressionne toujours favorablement le correcteur.
+
+Exemple de ligne de plan : action « maintenance de la nouvelle ligne » ; public, 15 techniciens ; objectif, diagnostiquer et réparer les pannes courantes en moins de 30 minutes ; modalité, formation pratique sur site par le fournisseur de la ligne ; durée, 24 heures ; coût, 2 880 000 FCFA ; période, avant le démarrage de la production ; priorité, haute. Chaque colonne répond à une question que se pose la direction.
+
+## 1:26:00 – 1:30:00 · Évaluation finale
+
+- Question 1 : définissez la compétence.
+- Question 2 : 240 salariés, 96 formés. Taux d''accès ?
+- Question 3 : budget 15 000 000 FCFA, masse salariale 1 200 000 000 FCFA. Effort de formation ?
+- Question 4 : coût 2 000 000 FCFA, gain annuel 2 600 000 FCFA. ROI ?
+- Question 5 : quel niveau de Kirkpatrick mesure l''application au poste ?
+
+Réponses : 1) la capacité à mobiliser savoirs, savoir-faire et savoir-être en situation de travail pour obtenir un résultat ; 2) 40 % ; 3) 1,25 % ; 4) 30 % ; 5) le niveau 3, comportement. Merci et bonnes révisions.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-rh-l2'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Formation et gestion des compétences');
+
+-- Cours : Gestion de projets Licence 1 : réussir ses examens
+insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
+select 'lic-projet-l1', (select id from public.levels where name = 'Licence 1'), null, 'Gestion de projets', 'Gestion de projets Licence 1 : réussir ses examens', 'Ce cours prépare les partiels et examens semestriels de première année de Licence en gestion de projets : fondamentaux du management de projet (cycle de vie, acteurs, cadrage, cahier des charges), outils de planification (WBS, Gantt, PERT et chemin critique) et communication en équipe projet. Il propose des fiches de révision, des exercices corrigés, un sujet type et trois cours vidéo de 1h30. Aucun prérequis autre que le niveau baccalauréat.', true, 311
+on conflict (slug) do nothing;
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Réussir ses examens de Licence 1 en Gestion de projets', '## Objectifs de la leçon
+
+À la fin de cette leçon, vous saurez comment est organisée votre première année de Licence en gestion de projets dans le système LMD, quelles matières vous attendent aux partiels et aux examens semestriels, quels types d''épreuves vous devrez affronter et comment bâtir un plan de révision efficace sur six semaines.
+
+## Le système LMD en quelques mots
+
+Le système LMD (Licence, Master, Doctorat) est appliqué dans les universités publiques et la plupart des écoles privées du Sénégal et de l''espace UEMOA. La Licence se prépare en trois ans, soit six semestres. Chaque semestre regroupe plusieurs unités d''enseignement (UE). Une UE rassemble des matières proches, appelées éléments constitutifs (EC), par exemple une UE « Fondamentaux du management de projet » qui contient un cours magistral et des travaux dirigés.
+
+Chaque UE donne des crédits. Les crédits mesurent la charge de travail de l''étudiant (cours, TD, travail personnel), pas seulement les heures passées en amphithéâtre. Le nombre exact de crédits par UE, les règles de compensation entre matières et les conditions de passage en année supérieure varient selon les établissements : consultez toujours le règlement des études et le guide de l''étudiant de votre université ou de votre école. Retenez le principe général : une UE validée est acquise définitivement, et une note faible dans une matière peut parfois être compensée par une bonne note dans une autre matière de la même UE ou du même semestre, selon les règles locales.
+
+## Les matières clés de la Licence 1 en gestion de projets
+
+En première année, l''objectif est de poser les bases. Ce cours se concentre sur trois matières centrales, que vous retrouverez sous des intitulés proches dans la plupart des maquettes :
+
+- Fondamentaux du management de projet : définition d''un projet, cycle de vie, acteurs (maître d''ouvrage, maître d''œuvre, chef de projet, parties prenantes), cadrage, note de cadrage et cahier des charges.
+- Outils de planification : structure de découpage du projet (WBS ou organigramme des tâches), diagramme de Gantt, réseau PERT et calcul du chemin critique avec les marges.
+- Communication et travail en équipe projet : plan de communication, réunions, comptes rendus, rôles dans l''équipe, gestion des conflits, matrice des responsabilités.
+
+Ces matières s''accompagnent souvent de cours transversaux (économie générale, comptabilité, mathématiques appliquées, informatique bureautique, expression écrite) qui ne sont pas traités ici mais qui comptent dans votre moyenne. Les notions de coûts, de risques et de méthodes agiles seront approfondies en Licence 2, et l''évaluation financière de projets en Licence 3.
+
+## Les types d''épreuves
+
+Aux partiels comme aux examens semestriels, vous rencontrerez principalement cinq formats.
+
+- Le cas pratique : un texte décrit une organisation fictive (une ONG à Kaolack, une PME de transformation de fruits à Ziguinchor) et vous demande de cadrer le projet, d''identifier les acteurs ou de proposer un plan de communication. On attend une réponse appliquée au cas, pas une récitation du cours.
+- L''exercice chiffré : calcul des dates au plus tôt et au plus tard, des marges et du chemin critique d''un réseau PERT, construction d''un Gantt, calcul d''une durée moyenne avec trois estimations.
+- Le QCM ou les questions courtes : définitions précises (qu''est-ce qu''un livrable ? un jalon ? la marge libre ?).
+- La dissertation ou question de réflexion : par exemple « Le chef de projet doit-il être avant tout un technicien ou un communicant ? ». On attend une introduction, un plan en deux ou trois parties et une conclusion.
+- Le projet tutoré ou dossier de groupe : rédaction d''une note de cadrage, présentation orale, travail collectif évalué.
+
+## Méthode de révision
+
+Révisez en trois temps. D''abord, comprenez : relisez le cours en reformulant chaque notion avec vos propres mots et un exemple sénégalais. Ensuite, mémorisez : fabriquez des fiches courtes (une notion, une définition, un exemple, un piège). Enfin, entraînez-vous : refaites les exercices de TD sans regarder la correction, chronométrez-vous et comparez ensuite.
+
+Pour les exercices de planification, la régularité compte plus que la quantité. Un réseau PERT par jour pendant deux semaines vaut mieux que dix réseaux la veille de l''examen. Écrivez toujours vos calculs dans un tableau propre : tâche, durée, antériorités, début au plus tôt, fin au plus tôt, début au plus tard, fin au plus tard, marge totale, marge libre. Le correcteur suit votre raisonnement ligne par ligne et peut vous accorder des points même si une erreur s''est glissée au début.
+
+Travaillez aussi en groupe. La gestion de projets est un métier collectif : expliquer le chemin critique à un camarade est le meilleur moyen de vérifier que vous l''avez compris.
+
+## Plan de révision sur six semaines
+
+- Semaine 1 : relecture des fondamentaux (définitions, cycle de vie, acteurs). Fiches de vocabulaire. Une question de cours par jour.
+- Semaine 2 : cadrage et cahier des charges. Rédiger une note de cadrage complète sur un projet fictif (par exemple l''ouverture d''une cantine scolaire à Saint-Louis).
+- Semaine 3 : WBS et Gantt. Construire deux WBS et deux Gantt à la main, puis sur tableur.
+- Semaine 4 : PERT et chemin critique. Un réseau par jour, avec calcul des marges totales et libres.
+- Semaine 5 : communication et équipe. Plan de communication, matrice RACI, gestion de conflits. Entraînement à la rédaction de comptes rendus.
+- Semaine 6 : sujets types en conditions réelles (3 heures), correction, reprise des points faibles, repos la veille.
+
+## Points clés à retenir
+
+- Lisez le règlement des études de votre établissement pour connaître les crédits et les règles de compensation.
+- Trois matières clés en L1 : fondamentaux, planification, communication et équipe.
+- Les exercices chiffrés rapportent des points sûrs si la méthode est rigoureuse et présentée en tableau.
+- Révisez tôt, régulièrement et en vous entraînant sur des sujets complets.
+
+## Exercices pratiques
+
+1. Citez trois matières clés de la Licence 1 en gestion de projets et donnez pour chacune une notion importante.
+2. Quelle est la différence entre une UE et un EC ?
+3. Expliquez pourquoi un crédit ne correspond pas seulement à des heures de cours.
+4. Classez les épreuves suivantes par type : « Calculez le chemin critique », « Le chef de projet est-il un manager ? », « Rédigez la note de cadrage du projet de l''association Jappo ».
+5. Cas pratique : Aminata dispose de six semaines avant ses examens, mais elle travaille le samedi dans une boutique à Pikine. Proposez-lui un plan de révision réaliste en indiquant le contenu de chaque semaine et le nombre d''heures par jour.
+
+## Corrigé
+
+1. Fondamentaux du management de projet (cycle de vie) ; outils de planification (chemin critique) ; communication et travail en équipe projet (plan de communication). D''autres notions sont acceptées si elles relèvent bien de la matière.
+
+2. L''UE (unité d''enseignement) est un ensemble cohérent de matières qui donne des crédits. L''EC (élément constitutif) est l''une des matières qui composent l''UE. Une UE peut contenir un ou plusieurs EC.
+
+3. Le crédit mesure la charge de travail totale de l''étudiant : cours, TD, TP, travail personnel, préparation des examens. Deux matières ayant le même volume horaire en salle peuvent donc représenter des charges différentes.
+
+4. « Calculez le chemin critique » : exercice chiffré. « Le chef de projet est-il un manager ? » : dissertation ou question de réflexion. « Rédigez la note de cadrage » : cas pratique.
+
+5. Proposition : du lundi au vendredi, 3 heures par jour ; le dimanche, 4 heures ; le samedi, révision légère de fiches dans les transports (30 minutes). Semaine 1 : fondamentaux ; semaine 2 : cadrage et cahier des charges ; semaine 3 : WBS et Gantt ; semaine 4 : PERT ; semaine 5 : communication et équipe ; semaine 6 : sujets complets en 3 heures le dimanche et le mercredi, reprise des erreurs les autres jours. L''essentiel est que le plan soit réaliste, régulier et qu''il comporte des entraînements en conditions d''examen.', 'texte', 50, true, 10
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Réussir ses examens de Licence 1 en Gestion de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Fondamentaux du management de projet : l''essentiel pour l''examen', '## Objectifs
+
+Maîtriser les définitions de base (projet, livrable, jalon), décrire le cycle de vie d''un projet, identifier les acteurs et leurs rôles, réaliser le cadrage et connaître le contenu d''un cahier des charges.
+
+## Fiche 1 : qu''est-ce qu''un projet ?
+
+Un projet est un effort temporaire, unique, entrepris pour atteindre un objectif précis, dans des contraintes de délai, de coût et de qualité. Trois caractéristiques le distinguent des opérations courantes : il a un début et une fin ; il produit un résultat nouveau ; il mobilise des ressources limitées.
+
+Exemple : la gestion quotidienne d''une boulangerie à Dakar est une opération. L''ouverture d''une deuxième boulangerie à Mbour est un projet.
+
+Le triangle des contraintes (ou triangle « coût – délai – qualité/périmètre ») rappelle que ces trois dimensions sont liées : si l''on réduit le délai sans changer le périmètre, le coût augmente souvent ; si l''on réduit le budget, il faut parfois réduire le périmètre.
+
+Vocabulaire indispensable :
+
+- Livrable : résultat tangible et vérifiable produit par le projet (un rapport d''étude, un bâtiment, un logiciel).
+- Jalon : événement clé de durée nulle qui marque une étape (validation du cahier des charges, réception des travaux).
+- Tâche (ou activité) : travail élémentaire qui consomme du temps et des ressources.
+- Périmètre : ensemble de ce que le projet doit produire, et de ce qu''il ne produira pas.
+
+Les référentiels internationaux de management de projet, comme le guide PMBOK ou la méthode PRINCE2, proposent chacun leur vocabulaire et leurs processus ; vous en verrez les grands principes, mais l''examen porte avant tout sur les notions générales.
+
+## Fiche 2 : le cycle de vie du projet
+
+Le cycle de vie décrit les grandes phases qu''un projet traverse. Un découpage classique comprend cinq phases :
+
+- Initialisation (ou avant-projet) : identifier le besoin, étudier l''opportunité, désigner le chef de projet.
+- Cadrage et planification : définir les objectifs, le périmètre, les livrables, le planning, le budget et l''organisation.
+- Exécution : réaliser les travaux, coordonner les équipes.
+- Suivi et maîtrise : mesurer l''avancement, comparer au prévu, corriger les écarts (cette phase se déroule en parallèle de l''exécution).
+- Clôture : réceptionner les livrables, faire le bilan, capitaliser les leçons apprises, libérer les ressources.
+
+À chaque fin de phase correspond souvent un jalon de décision (« go / no go ») : le commanditaire décide de continuer, d''ajuster ou d''arrêter.
+
+Schéma décrit en texte : imaginez une flèche horizontale découpée en cinq blocs successifs, avec sous les blocs « exécution » une bande parallèle « suivi et maîtrise », et un losange de décision entre chaque bloc.
+
+## Fiche 3 : les acteurs du projet
+
+- Maître d''ouvrage (MOA) : celui pour qui le projet est réalisé ; il exprime le besoin, finance et réceptionne. Exemple : la mairie de Thiès qui veut un marché couvert.
+- Maître d''œuvre (MOE) : celui qui conçoit et/ou réalise la solution technique. Exemple : le bureau d''études et l''entreprise de BTP.
+- Commanditaire (ou sponsor) : personne de haut niveau qui soutient le projet et arbitre.
+- Chef de projet : il planifie, coordonne, suit et rend compte. Il est responsable de l''atteinte des objectifs.
+- Comité de pilotage : instance de décision qui valide les grandes étapes.
+- Parties prenantes : toutes les personnes ou organisations concernées par le projet ou qui peuvent l''influencer (riverains, commerçants, services techniques, bailleurs).
+
+Méthode d''analyse des parties prenantes : classez chaque acteur selon son pouvoir (influence) et son intérêt pour le projet. Pouvoir fort et intérêt fort : gérer de près. Pouvoir fort et intérêt faible : satisfaire. Pouvoir faible et intérêt fort : informer. Pouvoir faible et intérêt faible : surveiller.
+
+## Fiche 4 : le cadrage et la note de cadrage
+
+Le cadrage répond à six questions : pourquoi (contexte, enjeux), quoi (objectifs, périmètre, livrables), qui (acteurs, organisation), quand (jalons principaux), combien (budget estimatif), comment (démarche, risques majeurs).
+
+Un bon objectif est SMART : spécifique, mesurable, atteignable, réaliste, temporellement défini. « Améliorer la cantine » n''est pas SMART. « Servir 300 repas par jour aux élèves de l''école de Médina Gounass d''ici le 1er mars, pour un coût unitaire inférieur à 400 FCFA » l''est.
+
+La note de cadrage tient en quelques pages et est validée par le commanditaire. Elle précise aussi ce qui est hors périmètre, ce qui évite les malentendus.
+
+## Fiche 5 : le cahier des charges
+
+Le cahier des charges fonctionnel exprime le besoin en termes de fonctions attendues, sans imposer de solution technique. Il comprend généralement : présentation du contexte et de l''organisation ; objectifs ; description des fonctions attendues, avec critères d''appréciation et niveaux ; contraintes (budget, délais, normes, environnement) ; modalités de réception ; annexes.
+
+Exemple : pour un logiciel de gestion des stocks d''une pharmacie à Kaolack, la fonction « alerter en cas de rupture » a pour critère « délai d''alerte » et pour niveau « dès que le stock passe sous le seuil défini ».
+
+## Exemple chiffré : estimation du budget de cadrage
+
+La coopérative fictive Ndiambour Lait veut installer un point de collecte. Le cadrage retient : équipement de réfrigération 4 500 000 FCFA ; aménagement du local 2 800 000 FCFA ; formation des collecteurs 700 000 FCFA. Sous-total : 8 000 000 FCFA. Avec une provision pour imprévus de 10 % (choix de gestion du projet), le budget de cadrage est de 8 800 000 FCFA.
+
+## Exercices pratiques
+
+1. Définissez : projet, livrable, jalon.
+2. Pour chacune des situations suivantes, dites s''il s''agit d''un projet ou d''une opération : (a) la paie mensuelle d''une PME ; (b) la construction d''un forage à Linguère ; (c) la migration du système informatique d''une banque.
+3. Reformulez l''objectif « Améliorer l''accès à l''eau » en objectif SMART.
+4. Dans le projet de construction d''un marché par la commune de Thiès, identifiez le MOA, le MOE et trois parties prenantes, puis classez-les dans la matrice pouvoir/intérêt.
+5. Calculez le budget de cadrage d''un projet comprenant 3 200 000 FCFA d''équipements, 1 500 000 FCFA de travaux, 300 000 FCFA de formation, avec une provision pour imprévus de 8 %.
+6. Cas pratique : l''association fictive Jappo veut créer un centre de soutien scolaire à Pikine. Rédigez les six rubriques d''une note de cadrage.
+
+## Corrigé
+
+1. Projet : effort temporaire et unique pour atteindre un objectif dans des contraintes de coût, de délai et de qualité. Livrable : résultat tangible et vérifiable produit par le projet. Jalon : événement de durée nulle marquant une étape importante.
+
+2. (a) Opération (répétitive). (b) Projet (unique, temporaire). (c) Projet.
+
+3. Exemple : « Mettre en service, d''ici le 30 juin, un forage alimentant 2 bornes-fontaines pour 1 500 habitants du village de Keur Samba, avec un débit d''au moins 10 m³ par heure. »
+
+4. MOA : la commune de Thiès. MOE : le bureau d''études et l''entreprise de construction. Parties prenantes : commerçants (pouvoir moyen, intérêt fort : informer et associer), services techniques de l''État (pouvoir fort, intérêt moyen : satisfaire), riverains (pouvoir faible, intérêt fort : informer). Le classement peut varier si la justification est cohérente.
+
+5. Sous-total : 3 200 000 + 1 500 000 + 300 000 = 5 000 000 FCFA. Provision : 5 000 000 × 8 % = 400 000 FCFA. Budget : 5 400 000 FCFA.
+
+6. Pourquoi : taux d''échec scolaire élevé dans le quartier, demande des parents. Quoi : ouvrir un centre accueillant 80 élèves de CM2 et de 3e, deux salles équipées, un programme de soutien ; hors périmètre : la cantine. Qui : MOA l''association Jappo, chef de projet bénévole désigné, enseignants vacataires, mairie, parents. Quand : local trouvé en septembre, ouverture en novembre. Combien : budget estimatif détaillé par poste avec provision. Comment : démarche par étapes, principaux risques (local indisponible, manque d''enseignants) et parades.', 'texte', 60, false, 20
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Fondamentaux du management de projet : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Outils de planification (WBS, Gantt, PERT) : l''essentiel pour l''examen', '## Objectifs
+
+Savoir découper un projet avec une WBS, construire un diagramme de Gantt, tracer un réseau PERT, calculer les dates au plus tôt et au plus tard, les marges totale et libre, et identifier le chemin critique.
+
+## Fiche 1 : la WBS (organigramme des tâches)
+
+La WBS (Work Breakdown Structure), ou structure de découpage du projet, décompose le projet en livrables puis en lots de travail, de façon hiérarchique. Le niveau le plus fin s''appelle le lot de travail : il doit pouvoir être estimé, attribué à un responsable et suivi.
+
+Règle des 100 % : les éléments d''un niveau représentent exactement tout le travail du niveau supérieur.
+
+Exemple décrit en texte, projet « Centre de formation à Thiès » :
+
+- 1 Études : 1.1 Étude des besoins ; 1.2 Conception des plans.
+- 2 Financement : 2.1 Recherche de financement.
+- 3 Construction : 3.1 Appel d''offres travaux ; 3.2 Travaux.
+- 4 Équipement : 4.1 Achat des équipements ; 4.2 Installation.
+- 5 Démarrage : 5.1 Recrutement des formateurs ; 5.2 Lancement.
+
+## Fiche 2 : le diagramme de Gantt
+
+Le Gantt représente les tâches en lignes et le temps en colonnes ; chaque tâche est une barre horizontale dont la longueur est proportionnelle à sa durée. Les jalons sont des losanges. Le Gantt est lisible par tous, idéal pour communiquer, mais il montre mal les dépendances complexes : on le combine donc avec le PERT.
+
+Quatre types de liens : fin-début (le plus courant), début-début, fin-fin, début-fin (rare).
+
+## Fiche 3 : le réseau PERT et le chemin critique
+
+Le réseau représente les tâches et leurs antériorités, soit sur les flèches (PERT classique), soit dans des nœuds (méthode des potentiels). Restez cohérent avec la convention de votre cours.
+
+Méthode de calcul (en tableau) :
+
+- Passe avant : début au plus tôt (DTO) d''une tâche = maximum des fins au plus tôt de ses prédécesseurs (0 pour une tâche sans prédécesseur). Fin au plus tôt (FTO) = DTO + durée. La durée du projet = la plus grande FTO.
+- Passe arrière : fin au plus tard (FTA) d''une tâche = minimum des débuts au plus tard de ses successeurs (durée du projet pour une tâche finale). Début au plus tard (DTA) = FTA − durée.
+- Marge totale (MT) = DTA − DTO : retard maximal possible sans retarder le projet.
+- Marge libre (ML) = minimum des DTO des successeurs − FTO : retard possible sans retarder aucun successeur.
+- Chemin critique : suite des tâches de marge totale nulle. Tout retard sur une tâche critique retarde le projet entier.
+
+## Exemple complet chiffré (durées en semaines)
+
+Projet « Centre de formation à Thiès » :
+
+- A Étude des besoins : 4 ; aucun prédécesseur.
+- B Conception des plans : 6 ; après A.
+- C Recherche de financement : 8 ; après A.
+- D Appel d''offres travaux : 5 ; après B.
+- E Travaux : 12 ; après C et D.
+- F Achat des équipements : 6 ; après C.
+- G Installation des équipements : 3 ; après E et F.
+- H Recrutement des formateurs : 5 ; après C.
+- I Lancement : 2 ; après G et H.
+
+Passe avant : A : 0 → 4. B : 4 → 10. C : 4 → 12. D : 10 → 15. E : max(12 ; 15) = 15 → 27. F : 12 → 18. H : 12 → 17. G : max(27 ; 18) = 27 → 30. I : max(30 ; 17) = 30 → 32. Durée du projet : 32 semaines.
+
+Passe arrière : I : 30 → 32. G : 27 → 30. H : FTA 30, DTA 25. E : FTA 27, DTA 15. F : FTA 27, DTA 21. D : FTA 15, DTA 10. C : FTA = min(15 ; 21 ; 25) = 15, DTA 7. B : FTA 10, DTA 4. A : FTA = min(4 ; 7) = 4, DTA 0.
+
+Marges :
+
+- A : MT 0, ML 0.
+- B : MT 0, ML 0.
+- C : MT 7 − 4 = 3 ; ML = min(15 ; 12 ; 12) − 12 = 0.
+- D : MT 0, ML 0.
+- E : MT 0, ML 0.
+- F : MT 21 − 12 = 9 ; ML = 27 − 18 = 9.
+- G : MT 0, ML 0.
+- H : MT 25 − 12 = 13 ; ML = 30 − 17 = 13.
+- I : MT 0, ML 0.
+
+Chemin critique : A – B – D – E – G – I (4 + 6 + 5 + 12 + 3 + 2 = 32 semaines). Remarquez que C a une marge totale de 3 mais une marge libre nulle : si C prend 2 semaines de retard, F et H démarrent plus tard, mais le projet n''est pas retardé.
+
+## Fiche 4 : les durées probabilistes (PERT à trois estimations)
+
+Quand la durée est incertaine, on demande trois estimations : optimiste (o), la plus probable (m), pessimiste (p). Durée moyenne te = (o + 4m + p) / 6. Écart-type σ = (p − o) / 6. Exemple : o = 2, m = 5, p = 14 semaines. te = (2 + 20 + 14) / 6 = 36 / 6 = 6 semaines ; σ = (14 − 2) / 6 = 2 semaines.
+
+## Points clés
+
+- Passe avant avec le maximum, passe arrière avec le minimum.
+- Marge totale nulle = tâche critique ; marge libre ≤ marge totale.
+
+## Exercices pratiques
+
+1. Énoncez la règle des 100 % de la WBS.
+2. Citez les quatre types de liens entre tâches.
+3. Une tâche a pour estimations o = 4, m = 6, p = 8 jours. Calculez te et σ.
+4. Réseau (durées en jours) : A 3 (aucun) ; B 5 (après A) ; C 2 (après A) ; D 4 (après C) ; E 6 (après B et D) ; F 3 (après B). Calculez les dates, les marges et le chemin critique.
+5. Dans l''exercice 4, que se passe-t-il si B prend 2 jours de retard ?
+6. Cas pratique : l''entreprise fictive Sahel Agro Services organise un salon agricole à Kaolack. Proposez une WBS à deux niveaux comprenant au moins quatre livrables.
+
+## Corrigé
+
+1. La somme du travail des éléments enfants doit représenter exactement 100 % du travail de l''élément parent : rien ne manque, rien n''est en trop.
+
+2. Fin-début, début-début, fin-fin, début-fin.
+
+3. te = (4 + 24 + 8) / 6 = 36 / 6 = 6 jours ; σ = (8 − 4) / 6 ≈ 0,67 jour.
+
+4. Passe avant : A 0 → 3 ; B 3 → 8 ; C 3 → 5 ; D 5 → 9 ; E max(8 ; 9) = 9 → 15 ; F 8 → 11. Durée : 15 jours. Passe arrière : E 9 → 15 ; F DTA 12, FTA 15 ; D DTA 5, FTA 9 ; B FTA = min(9 ; 12) = 9, DTA 4 ; C DTA 3, FTA 5 ; A FTA = min(4 ; 3) = 3, DTA 0. Marges : A 0/0 ; B MT 1, ML = min(9 ; 8) − 8 = 0 ; C 0/0 ; D 0/0 ; E 0/0 ; F MT 4, ML 4. Chemin critique : A – C – D – E (3 + 2 + 4 + 6 = 15 jours).
+
+5. B a une marge totale de 1 jour. Un retard de 2 jours dépasse la marge de 1 jour : le projet est retardé de 1 jour (B finit à 10, E démarre à 10 et finit à 16). Le chemin critique devient A – B – E.
+
+6. Exemple : 1 Organisation (1.1 réservation du site ; 1.2 autorisations) ; 2 Exposants (2.1 prospection ; 2.2 contrats) ; 3 Communication (3.1 affiches et radios locales ; 3.2 réseaux sociaux) ; 4 Logistique (4.1 stands ; 4.2 sécurité ; 4.3 sonorisation) ; 5 Bilan (5.1 enquête de satisfaction ; 5.2 rapport final).', 'texte', 75, false, 30
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Outils de planification (WBS, Gantt, PERT) : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Communication et travail en équipe projet : l''essentiel pour l''examen', '## Objectifs
+
+Construire un plan de communication de projet, organiser des réunions efficaces, rédiger un compte rendu, répartir les responsabilités avec une matrice RACI, comprendre la dynamique d''une équipe et gérer les conflits.
+
+## Fiche 1 : pourquoi la communication est vitale
+
+Une grande partie du temps d''un chef de projet est consacrée à communiquer : informer le commanditaire, coordonner l''équipe, rassurer les bénéficiaires, négocier avec les fournisseurs. Les échecs de projets s''expliquent souvent moins par des problèmes techniques que par des malentendus : objectifs mal compris, décisions non transmises, parties prenantes oubliées.
+
+Le schéma classique de la communication comprend un émetteur, un message, un canal, un récepteur et un retour (feedback). Des « bruits » perturbent la transmission : langue (français, wolof, pulaar…), jargon technique, distance, réseau téléphonique instable.
+
+Nombre de canaux de communication dans une équipe de n personnes : n(n − 1) / 2. Avec 5 personnes : 5 × 4 / 2 = 10 canaux ; avec 10 personnes : 10 × 9 / 2 = 45 canaux. Ce calcul montre pourquoi la communication devient plus difficile quand l''équipe grandit.
+
+## Fiche 2 : le plan de communication
+
+Le plan de communication est un tableau qui précise, pour chaque public : quoi communiquer, pourquoi, par quel canal, à quelle fréquence, qui est responsable.
+
+Exemple, projet fictif d''électrification solaire de cinq villages dans la région de Tambacounda :
+
+- Comité de pilotage : avancement, budget, risques ; réunion et rapport ; mensuel ; chef de projet.
+- Équipe technique : planning de la semaine, consignes de sécurité ; réunion de chantier ; hebdomadaire ; chef de chantier.
+- Populations bénéficiaires : dates des travaux, coupures, formation à l''usage ; assemblée villageoise et radio communautaire ; à chaque étape ; animateur social.
+- Bailleur : rapport d''activité et financier ; document écrit ; trimestriel ; chef de projet.
+
+Distinguez communication formelle (rapports, comptes rendus, courriers) et informelle (échanges de couloir, messagerie instantanée). La seconde est utile mais ne remplace pas la trace écrite des décisions.
+
+## Fiche 3 : réunions et comptes rendus
+
+Une réunion efficace a un objectif clair, un ordre du jour envoyé à l''avance, un animateur, un secrétaire et une durée maîtrisée. Les principaux types : réunion de lancement (kick-off), réunion d''avancement, comité de pilotage, revue de fin de phase, réunion de clôture.
+
+Le compte rendu comporte : date, lieu, participants et absents, ordre du jour, points discutés, décisions prises, actions à mener (quoi, qui, pour quand), date de la prochaine réunion. Il est diffusé rapidement, idéalement dans les 48 heures.
+
+## Fiche 4 : la matrice RACI
+
+La matrice RACI attribue à chaque tâche quatre rôles :
+
+- R (Responsible, réalise) : celui qui fait le travail.
+- A (Accountable, approuve) : celui qui rend des comptes et valide ; un seul A par tâche.
+- C (Consulted, consulté) : celui dont on demande l''avis avant.
+- I (Informed, informé) : celui qu''on tient au courant après.
+
+Exemple pour la tâche « Choisir le fournisseur de panneaux » : R = responsable achats, A = chef de projet, C = ingénieur électricien, I = comité de pilotage.
+
+Erreurs fréquentes : plusieurs A sur une tâche, tâche sans R, personne avec trop de R (surcharge).
+
+## Fiche 5 : l''équipe projet et la gestion des conflits
+
+Le modèle de Tuckman décrit cinq étapes de développement d''une équipe : formation (on se découvre), tension (on s''affronte sur les rôles), normalisation (on fixe les règles), performance (on travaille efficacement), dissolution (fin du projet). Le chef de projet adapte son style : directif au début, plus participatif ensuite.
+
+Les sources de conflit dans un projet : priorités, ressources partagées, plannings, choix techniques, personnalités. Cinq attitudes face au conflit : évitement, accommodation (céder), compétition (imposer), compromis (chacun cède une partie), collaboration (chercher ensemble une solution qui satisfait les deux). La collaboration est souvent la meilleure pour les problèmes importants, mais elle prend du temps ; le compromis est utile quand le temps presse.
+
+Le contexte culturel compte : le respect de la hiérarchie et des aînés, l''importance de la palabre et du consensus, le rôle des chefs de village ou des imams dans un projet communautaire. Un chef de projet efficace s''appuie sur ces relais plutôt que de les ignorer.
+
+## Points clés
+
+- Un plan de communication répond à : qui, quoi, pourquoi, comment, quand, par qui.
+- Toute décision doit être écrite dans un compte rendu avec un responsable et une échéance.
+- RACI : un seul A par tâche.
+- Les conflits se gèrent ; ils ne disparaissent pas seuls.
+
+## Exercices pratiques
+
+1. Combien de canaux de communication existe-t-il dans une équipe de 8 personnes ? Et si l''on passe à 12 personnes ?
+2. Citez les rubriques obligatoires d''un compte rendu de réunion.
+3. Qu''est-ce qui ne va pas dans une matrice RACI où la tâche « valider le budget » a deux A ?
+4. Une équipe projet vient de se former ; deux membres se disputent la responsabilité des achats. À quelle étape de Tuckman se trouve l''équipe ? Que doit faire le chef de projet ?
+5. Cas pratique : la mutuelle de santé fictive Kër Wér Gi lance une campagne d''adhésion dans trois quartiers de Rufisque. Proposez un plan de communication pour quatre publics.
+
+## Corrigé
+
+1. 8 × 7 / 2 = 28 canaux. 12 × 11 / 2 = 66 canaux, soit 38 canaux de plus.
+
+2. Date, lieu, participants et absents, ordre du jour, points discutés, décisions, actions (quoi, qui, quand), prochaine réunion.
+
+3. Il ne doit y avoir qu''un seul A, c''est-à-dire une seule personne qui rend des comptes ; sinon chacun pense que l''autre décide et la validation risque de ne jamais se faire. Il faut désigner un A unique et passer l''autre en C ou I.
+
+4. Étape de tension. Le chef de projet clarifie les rôles (matrice RACI), écoute les deux personnes, rappelle l''objectif commun et tranche si nécessaire, puis formalise la répartition.
+
+5. Exemple : conseil d''administration de la mutuelle (objectifs, résultats d''adhésion ; réunion ; mensuel ; coordonnateur) ; relais communautaires et délégués de quartier (argumentaire, calendrier ; réunion de formation ; au lancement puis tous les quinze jours ; animateur) ; populations (avantages, cotisation, démarches ; radio communautaire, causeries, porte-à-porte ; pendant toute la campagne ; relais) ; partenaires (structures de santé : conventions, circuit de prise en charge ; courrier et rencontre ; au lancement ; coordonnateur).', 'texte', 60, false, 40
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Communication et travail en équipe projet : l''essentiel pour l''examen');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Sujet type d''examen de Licence 1 en Gestion de projets', '## Présentation
+
+Ce sujet d''entraînement multi-matières n''est pas un sujet officiel. Il reproduit le format d''un examen semestriel de 3 heures. Le barème est indicatif, non officiel. Faites-le d''abord seul, chronomètre en main, puis comparez avec le corrigé.
+
+## Énoncé
+
+Contexte. Le groupement d''intérêt économique fictif Saloum Céréales, basé à Kaolack, veut construire une petite unité de transformation de mil (farine et couscous) pour ses 120 membres. Le GIE a obtenu une promesse de financement d''une ONG partenaire. Vous êtes recruté comme chef de projet.
+
+Partie 1 – Fondamentaux (6 points)
+
+1. Expliquez pourquoi cette initiative est un projet et non une opération. (1 point)
+2. Identifiez le maître d''ouvrage, le maître d''œuvre probable et trois parties prenantes. (2 points)
+3. Formulez l''objectif principal de façon SMART. (1 point)
+4. Citez les phases du cycle de vie et dites dans quelle phase on rédige le cahier des charges. (2 points)
+
+Partie 2 – Planification (9 points)
+
+Les tâches du projet (durées en semaines) :
+
+- A Étude de faisabilité : 2 ; aucune.
+- B Choix et commande des machines : 4 ; après A.
+- C Aménagement du bâtiment : 3 ; après A.
+- D Livraison et installation des machines : 5 ; après B.
+- E Formation des opératrices : 2 ; après C.
+- F Essais et démarrage : 4 ; après D et E.
+
+5. Calculez les dates au plus tôt et au plus tard, les marges totales et libres. (5 points)
+6. Donnez le chemin critique et la durée du projet. (2 points)
+7. La durée de D est incertaine : o = 3, m = 5, p = 7. Calculez la durée moyenne et l''écart-type. (2 points)
+
+Partie 3 – Communication et équipe (5 points)
+
+8. Proposez une matrice RACI pour les tâches B, E et F, avec les acteurs : chef de projet, présidente du GIE, technicien fournisseur, formatrice. (3 points)
+9. Les membres du GIE se plaignent de ne pas être informés de l''avancement. Proposez deux actions concrètes. (2 points)
+
+## Corrigé détaillé
+
+1. Il s''agit d''un effort temporaire (début : décision du GIE ; fin : démarrage de l''unité), unique (une unité nouvelle) et soumis à des contraintes de coût, de délai et de qualité. La production quotidienne de farine qui suivra sera, elle, une opération.
+
+2. Maître d''ouvrage : le GIE Saloum Céréales (il exprime le besoin et réceptionnera l''unité). Maître d''œuvre : le fournisseur-installateur des machines et l''artisan ou l''entreprise chargés du bâtiment. Parties prenantes : l''ONG partenaire (financeur), les membres du GIE, les services techniques compétents (hygiène, agriculture), les clients commerçants, la commune.
+
+3. Exemple : « Mettre en service, dans un délai de 15 semaines, une unité capable de transformer au moins 500 kg de mil par jour en farine et couscous conformes aux règles d''hygiène, pour un budget ne dépassant pas l''enveloppe accordée. »
+
+4. Initialisation, cadrage et planification, exécution, suivi et maîtrise, clôture. Le cahier des charges est rédigé lors du cadrage et de la planification, avant l''exécution.
+
+5. Passe avant : A 0 → 2 ; B 2 → 6 ; C 2 → 5 ; D 6 → 11 ; E 5 → 7 ; F max(11 ; 7) = 11 → 15. Durée : 15 semaines.
+
+Passe arrière : F : DTA 11, FTA 15. D : FTA 11, DTA 6. E : FTA 11, DTA 9. B : FTA 6, DTA 2. C : FTA 9, DTA 6. A : FTA = min(2 ; 6) = 2, DTA 0.
+
+Marges : A MT 0, ML 0 ; B MT 0, ML 0 ; C MT 6 − 2 = 4, ML = 5 − 5 = 0 ; D MT 0, ML 0 ; E MT 9 − 5 = 4, ML = 11 − 7 = 4 ; F MT 0, ML 0.
+
+6. Chemin critique : A – B – D – F, soit 2 + 4 + 5 + 4 = 15 semaines.
+
+7. te = (3 + 4 × 5 + 7) / 6 = 30 / 6 = 5 semaines ; σ = (7 − 3) / 6 ≈ 0,67 semaine. La durée moyenne est inchangée : le planning reste à 15 semaines, mais D étant critique, son incertitude est un risque pour la date de fin.
+
+8. Exemple :
+
+- B Choix et commande des machines : R chef de projet ; A présidente du GIE ; C technicien fournisseur ; I formatrice.
+- E Formation des opératrices : R formatrice ; A chef de projet ; C technicien fournisseur ; I présidente.
+- F Essais et démarrage : R technicien fournisseur ; A chef de projet ; C formatrice ; I présidente.
+
+Toute répartition cohérente avec un seul A par tâche est acceptée.
+
+9. Une assemblée d''information mensuelle avec un point d''avancement simple (photos, planning affiché en wolof et en français) ; un groupe de messagerie animé par une déléguée, avec un message hebdomadaire validé par le chef de projet.
+
+## Barème indicatif, non officiel
+
+Partie 1 : 6 points ; partie 2 : 9 points (dont 5 pour le tableau complet et juste) ; partie 3 : 5 points. Une présentation claire, en tableau, est valorisée.
+
+## Exercices pratiques
+
+1. Dans le sujet, si C prend 3 semaines de retard, le projet est-il retardé ?
+2. Et si E prend 5 semaines de retard ?
+3. Combien de canaux de communication y a-t-il entre les 4 acteurs de la question 8 ?
+4. Quelle est la différence entre marge totale et marge libre, en une phrase ?
+
+## Corrigé
+
+1. Non : la marge totale de C est 4 semaines. En revanche, sa marge libre est nulle, donc E sera décalée de 3 semaines (E finira à 10 au lieu de 7), toujours sans retarder F qui démarre à 11.
+
+2. E a une marge totale de 4 semaines : un retard de 5 semaines retarde le projet de 1 semaine (fin à 16 semaines).
+
+3. 4 × 3 / 2 = 6 canaux.
+
+4. La marge totale est le retard admissible sans retarder la fin du projet ; la marge libre est le retard admissible sans retarder le début au plus tôt d''aucun successeur.', 'texte', 90, false, 50
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Sujet type d''examen de Licence 1 en Gestion de projets');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Fondamentaux du management de projet', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : étudiants de Licence 1 en gestion de projets. Objectifs : définir un projet et ses composantes, décrire le cycle de vie, identifier les acteurs, analyser les parties prenantes, rédiger une note de cadrage et connaître le contenu d''un cahier des charges. Matériel : tableau blanc, diaporama, feuilles pour le quiz. Prérequis : aucun, sinon la lecture de la leçon « Fondamentaux du management de projet ».
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Accueil et objectifs
+
+Bonjour à toutes et à tous. Pendant une heure et demie, nous allons poser les fondations de tout ce que vous ferez en gestion de projets. Si ces bases sont solides, la planification, les coûts et les risques des années suivantes seront beaucoup plus faciles. Notre fil rouge sera un projet fictif : la construction d''un marché couvert par la commune de Thiès. À l''écran, je vous montre le plan de la séance : définitions, cycle de vie, acteurs, parties prenantes, cadrage, cahier des charges, puis quiz et évaluation finale.
+
+## 05:00 – 15:00 · Qu''est-ce qu''un projet ?
+
+Commençons par une question : la vente quotidienne de pain dans une boulangerie de la Médina, est-ce un projet ? Réfléchissez dix secondes. Non : c''est une activité répétitive, une opération. En revanche, ouvrir une deuxième boulangerie à Mbour est un projet. Pourquoi ? Parce que c''est temporaire, il y a un début et une fin ; c''est unique, on n''ouvre pas cette boutique tous les jours ; et c''est contraint, on a un budget, un délai, une qualité à atteindre.
+
+Retenez la définition : un projet est un effort temporaire et unique entrepris pour atteindre un objectif précis dans des contraintes de coût, de délai et de qualité. Je dessine maintenant le triangle : un sommet coût, un sommet délai, un sommet qualité ou périmètre. Si la mairie de Thiès veut le marché trois mois plus tôt, que se passe-t-il ? Il faudra plus d''ouvriers ou des heures supplémentaires : le coût augmente. Tout est lié.
+
+Vocabulaire : un livrable est un résultat vérifiable, par exemple le plan d''architecte ou le bâtiment. Un jalon est un événement sans durée, par exemple « signature du contrat ». Une tâche consomme du temps et des ressources.
+
+## 15:00 – 27:00 · Le cycle de vie
+
+Je trace une flèche découpée en cinq blocs. Premier bloc : l''initialisation. La commune constate que les commerçants vendent au bord de la route, dans de mauvaises conditions. Elle étudie l''opportunité et désigne un chef de projet. Deuxième bloc : le cadrage et la planification, où l''on fixe objectifs, périmètre, budget, planning. Troisième bloc : l''exécution, les travaux. Quatrième : le suivi et la maîtrise, qui court en parallèle de l''exécution ; on mesure, on compare, on corrige. Cinquième : la clôture, avec la réception, le bilan et les leçons apprises.
+
+Entre chaque bloc, je dessine un losange : c''est un point de décision. Le commanditaire peut dire « on continue », « on ajuste » ou « on arrête ». Arrêter un mauvais projet tôt n''est pas un échec, c''est une bonne gestion de l''argent public. Les grands référentiels internationaux, comme le guide PMBOK ou PRINCE2, insistent tous sur ces points de contrôle, même si leurs découpages diffèrent.
+
+## 27:00 – 40:00 · Les acteurs
+
+Qui fait quoi dans le marché de Thiès ? Le maître d''ouvrage, c''est la commune : elle exprime le besoin, elle paie, elle réceptionne. Le maître d''œuvre, c''est le bureau d''études qui conçoit et l''entreprise de BTP qui construit. Le chef de projet coordonne. Le comité de pilotage, présidé par exemple par le maire ou son adjoint, valide les grandes étapes.
+
+Piège classique à l''examen : confondre maître d''ouvrage et maître d''œuvre. Moyen mnémotechnique : l''ouvrage, c''est ce qu''on veut avoir ; l''œuvre, c''est le travail pour le faire. Celui qui veut l''ouvrage est le maître d''ouvrage ; celui qui fait l''œuvre est le maître d''œuvre.
+
+## 40:00 – 50:00 · Analyse des parties prenantes
+
+Les parties prenantes sont toutes les personnes ou organisations concernées. Pour le marché : commerçants, clients, riverains, transporteurs, services d''hygiène, sapeurs-pompiers, bailleur éventuel. Je dessine une matrice : en abscisse l''intérêt, en ordonnée le pouvoir. En haut à droite, pouvoir fort et intérêt fort : on gère de près, par exemple le bailleur. En bas à droite, pouvoir faible et intérêt fort : on informe, par exemple les commerçants… mais attention, des commerçants organisés en association peuvent bloquer le projet ; leur pouvoir n''est donc pas si faible. L''analyse doit être honnête et mise à jour.
+
+## 50:00 – 58:00 · Pause et quiz interactif
+
+Faisons une pause active. Prenez une feuille et répondez en trois minutes.
+
+Question 1 : la paie mensuelle d''une entreprise est-elle un projet ? Question 2 : qui est le maître d''ouvrage dans la construction d''un forage financé et commandé par une communauté rurale ? Question 3 : un jalon a-t-il une durée ? Question 4 : citez les trois sommets du triangle des contraintes.
+
+Corrigeons. 1 : non, c''est une opération répétitive. 2 : la communauté rurale. 3 : non, un jalon a une durée nulle. 4 : coût, délai, qualité ou périmètre. Si vous avez quatre bonnes réponses, bravo ; sinon, notez la notion à revoir.
+
+## 58:00 – 1:10:00 · Le cadrage et la note de cadrage
+
+Le cadrage répond à six questions : pourquoi, quoi, qui, quand, combien, comment. Appliquons au marché. Pourquoi : améliorer l''hygiène et la sécurité des commerçants, augmenter les recettes communales. Quoi : un marché de 200 cantines avec toilettes, point d''eau et éclairage ; hors périmètre : la voirie autour. Qui : commune, bureau d''études, entreprise, association des commerçants. Quand : études en six mois, travaux en douze mois. Combien : un budget estimatif par poste avec une provision pour imprévus. Comment : démarche, principaux risques et parades.
+
+L''objectif doit être SMART. Je vous propose de corriger ensemble cet objectif : « Construire un beau marché ». Ce n''est ni mesurable ni daté. Version SMART : « Livrer un marché couvert de 200 cantines conformes au cahier des charges, au plus tard le 31 décembre, dans la limite du budget voté. »
+
+Exercice commenté : la coopérative fictive Ndiambour Lait prévoit 4 500 000 FCFA d''équipements, 2 800 000 FCFA d''aménagement et 700 000 FCFA de formation. Sous-total : 8 000 000 FCFA. Avec 10 % d''imprévus : 800 000 FCFA, soit un budget de 8 800 000 FCFA. Les erreurs typiques : oublier la provision, ou l''appliquer à un seul poste.
+
+## 1:10:00 – 1:20:00 · Le cahier des charges
+
+Le cahier des charges fonctionnel exprime ce que le produit doit faire, pas comment le faire. Pour le marché, une fonction : « permettre aux commerçants de stocker leurs marchandises en sécurité la nuit ». Critère : fermeture des cantines. Niveau : porte métallique avec cadenas pour chaque cantine. On ajoute les contraintes, comme le budget, les délais, les normes d''accessibilité, et les modalités de réception.
+
+Un bon cahier des charges évite le célèbre problème du « ce n''est pas ce que nous voulions » à la livraison. Il sert aussi de base à l''appel d''offres.
+
+Correction commentée d''un exercice de TD. Énoncé : pour un logiciel de gestion des stocks d''une pharmacie de Kaolack, formulez deux fonctions avec critère et niveau. Une copie a écrit : « Le logiciel doit être rapide et utiliser une base de données moderne. » Deux erreurs : « rapide » n''a ni critère ni niveau, et « base de données moderne » impose une solution technique au lieu d''exprimer un besoin. Correction proposée. Fonction 1 : alerter le pharmacien en cas de rupture ; critère : délai d''alerte ; niveau : dès que le stock passe sous le seuil défini pour chaque produit. Fonction 2 : suivre les dates de péremption ; critère : anticipation ; niveau : liste des produits périmant dans les 60 jours, éditable chaque semaine. Voyez la différence : on dit ce que l''outil doit permettre, et comment on vérifiera à la réception que c''est bien le cas.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Résumons. Un projet est temporaire, unique et contraint. Il suit un cycle de vie en cinq phases avec des points de décision. Le maître d''ouvrage veut l''ouvrage, le maître d''œuvre le réalise. Les parties prenantes s''analysent selon le pouvoir et l''intérêt. Le cadrage répond à six questions et fixe un objectif SMART. Le cahier des charges exprime le besoin en fonctions.
+
+Évaluation finale, cinq questions.
+
+1. Donnez la définition d''un projet. Réponse : un effort temporaire et unique pour atteindre un objectif dans des contraintes de coût, de délai et de qualité.
+2. Quelle phase se déroule en parallèle de l''exécution ? Réponse : le suivi et la maîtrise.
+3. Où classer, dans la matrice pouvoir/intérêt, un bailleur qui finance 80 % du projet ? Réponse : pouvoir fort, intérêt fort, à gérer de près.
+4. Que contient la rubrique « hors périmètre » d''une note de cadrage ? Réponse : ce que le projet ne réalisera pas, pour éviter les malentendus.
+5. Un budget de 6 000 000 FCFA avec 5 % d''imprévus donne quel total ? Réponse : 6 000 000 + 300 000 = 6 300 000 FCFA.
+
+Merci pour votre attention. Pour la prochaine séance, rédigez la note de cadrage d''un projet de votre quartier.', 'video', 90, false, 60
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Fondamentaux du management de projet');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : Licence 1 gestion de projets. Objectifs : construire une WBS, un Gantt et un réseau PERT, calculer les dates, les marges et le chemin critique, utiliser les durées probabilistes. Matériel : tableau, diaporama, papier quadrillé, calculatrice, tableur facultatif. Prérequis : notions de projet, tâche, livrable et jalon.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Introduction
+
+Bonjour. Aujourd''hui, nous faisons la séance qui rapporte le plus de points à l''examen : la planification. Un exercice de PERT bien présenté, c''est souvent un tiers de la note. Notre fil rouge : l''entreprise fictive Teranga Events organise un festival culturel à Saint-Louis. Plan de la séance : WBS, Gantt, réseau, calcul des dates, marges, chemin critique, quiz, exercices et évaluation.
+
+## 05:00 – 15:00 · La WBS
+
+Avant de planifier, il faut savoir quoi planifier. La WBS découpe le projet en livrables puis en lots de travail. Je l''écris au tableau sous forme d''arbre. Niveau 0 : Festival. Niveau 1 : programmation artistique, site et logistique, communication, billetterie, bilan. Niveau 2 pour la logistique : scène, sonorisation, sécurité, restauration.
+
+Règle des 100 % : si j''additionne les lots de niveau 2 d''une branche, je dois retrouver toute la branche, pas plus. Si j''oublie la sécurité, ma WBS est incomplète et le jour J sera dangereux. Un lot de travail doit pouvoir être estimé et confié à un responsable : « organiser le festival » est trop large ; « louer la sonorisation » est un bon lot.
+
+## 15:00 – 25:00 · Le diagramme de Gantt
+
+Je trace un tableau : les tâches en lignes, les semaines en colonnes. Chaque tâche est une barre. Les jalons, comme « contrat avec les artistes signé », sont des losanges. Le Gantt est parfait pour communiquer avec le comité ou les partenaires, car tout le monde le comprend. Mais regardez : quand j''ai vingt tâches, je ne vois plus quelles tâches dépendent de quelles autres. C''est pourquoi on calcule d''abord avec le réseau PERT, puis on dessine le Gantt.
+
+Conseil pratique : sur le Gantt, coloriez en rouge les barres des tâches critiques, que nous allons apprendre à identifier, et laissez apparaître les marges sous forme de barre en pointillés après les tâches non critiques. Le Gantt devient alors un véritable outil de pilotage : chaque lundi, vous tracez une ligne verticale à la date du jour et vous voyez immédiatement quelles tâches sont en retard. Sur tableur, une simple mise en forme conditionnelle suffit pour produire ce graphique.
+
+Les liens : fin-début, le plus courant ; début-début, par exemple la communication commence en même temps que la billetterie ; fin-fin, par exemple la décoration doit finir quand la scène finit.
+
+## 25:00 – 42:00 · Calcul du réseau : passe avant et passe arrière
+
+Passons au calcul avec l''exemple du centre de formation de Thiès, que vous avez dans votre leçon. Tâches en semaines : A 4 ; B 6 après A ; C 8 après A ; D 5 après B ; E 12 après C et D ; F 6 après C ; G 3 après E et F ; H 5 après C ; I 2 après G et H.
+
+Passe avant, je remplis la colonne début au plus tôt. A commence à 0, finit à 4. B commence à 4, finit à 10. C commence à 4, finit à 12. D commence à 10, finit à 15. E attend C et D : je prends le maximum entre 12 et 15, donc 15, et E finit à 27. F : 12 à 18. H : 12 à 17. G attend E et F : maximum de 27 et 18, donc 27, fin à 30. I attend G et H : maximum de 30 et 17, donc 30, fin à 32. Le projet dure 32 semaines.
+
+Passe arrière, je pars de la fin avec le minimum. I doit finir à 32, donc commencer au plus tard à 30. G finit au plus tard à 30, commence à 27. H finit au plus tard à 30, commence à 25. E finit à 27, commence à 15. F finit à 27, commence à 21. D finit à 15, commence à 10. C a trois successeurs, E, F et H, qui commencent au plus tard à 15, 21 et 25 : je prends le minimum, 15 ; C commence au plus tard à 7. B finit à 10, commence à 4. A a deux successeurs, B et C, qui commencent au plus tard à 4 et 7 : minimum 4, donc A commence à 0. Tout est cohérent : on retombe sur 0.
+
+## 42:00 – 50:00 · Marges et chemin critique
+
+La marge totale est la différence entre début au plus tard et début au plus tôt. A, B, D, E, G et I ont une marge nulle : c''est le chemin critique, 4 + 6 + 5 + 12 + 3 + 2 = 32. C a une marge totale de 3, F de 9, H de 13.
+
+La marge libre se calcule avec les successeurs : plus petit début au plus tôt des successeurs moins fin au plus tôt de la tâche. Pour C : successeurs E, F, H avec débuts au plus tôt 15, 12 et 12 ; minimum 12 ; 12 − 12 = 0. C a donc une marge totale de 3 mais une marge libre nulle. Si C glisse d''une semaine, la fin du projet ne bouge pas, mais F et H sont décalés. Pour F : 27 − 18 = 9. Pour H : 30 − 17 = 13.
+
+## 50:00 – 57:00 · Pause et quiz interactif
+
+Trois questions, deux minutes. Un : dans la passe avant, maximum ou minimum ? Deux : peut-on avoir une marge libre plus grande que la marge totale ? Trois : si une tâche critique prend deux semaines de retard, combien de retard pour le projet ?
+
+Réponses : un, le maximum ; deux, non, la marge libre est toujours inférieure ou égale à la marge totale ; trois, deux semaines, si rien n''est fait pour rattraper.
+
+## 57:00 – 1:07:00 · Durées probabilistes
+
+Dans un pays où la saison des pluies peut bloquer un chantier, une durée unique est souvent illusoire. Le PERT probabiliste demande trois estimations. Exemple : o = 2, m = 5, p = 14 semaines. La moyenne pondérée vaut (2 + 4 × 5 + 14) / 6 = 36 / 6 = 6 semaines, et l''écart-type (14 − 2) / 6 = 2 semaines. Remarquez que la moyenne, 6, est supérieure à la valeur la plus probable, 5, parce que le pessimiste tire vers le haut. Dans la vie réelle, les retards sont plus fréquents que les avances.
+
+## 1:07:00 – 1:20:00 · Correction commentée d''exercice
+
+Prenons l''exercice 4 de votre leçon : A 3 ; B 5 après A ; C 2 après A ; D 4 après C ; E 6 après B et D ; F 3 après B. Faites-le seuls cinq minutes, puis corrigeons.
+
+Passe avant : A 0 à 3 ; B 3 à 8 ; C 3 à 5 ; D 5 à 9 ; E maximum de 8 et 9, soit 9 à 15 ; F 8 à 11. Durée 15 jours. Passe arrière : E 9 à 15 ; F 12 à 15 ; D 5 à 9 ; B : successeurs E et F débutant au plus tard à 9 et 12, minimum 9, donc B de 4 à 9 ; C de 3 à 5 ; A : minimum de 4 et 3, soit 3, donc A de 0 à 3. Chemin critique : A, C, D, E. B a une marge totale de 1 jour et une marge libre de 0. F a 4 et 4.
+
+L''erreur que je vois le plus souvent dans les copies : prendre le maximum dans la passe arrière. Si vous trouvez un début au plus tard négatif pour la première tâche, c''est le signal d''une erreur.
+
+## 1:20:00 – 1:30:00 · Synthèse et évaluation finale
+
+Résumé : WBS pour découper, réseau pour calculer, Gantt pour communiquer. Passe avant avec le maximum, passe arrière avec le minimum. Marge totale nulle signifie tâche critique.
+
+Évaluation finale :
+
+1. Que dit la règle des 100 % ? Réponse : les éléments enfants représentent exactement tout le travail du parent.
+2. Une tâche a un début au plus tôt de 6 et un début au plus tard de 9. Quelle est sa marge totale ? Réponse : 3.
+3. Tâche avec o = 4, m = 6, p = 14. Durée moyenne ? Réponse : (4 + 24 + 14) / 6 = 7.
+4. Pourquoi combiner Gantt et PERT ? Réponse : le PERT calcule les dépendances et le chemin critique, le Gantt communique visuellement le planning.
+5. Une tâche de marge totale 5 prend 7 jours de retard. Effet sur le projet ? Réponse : 2 jours de retard, toutes choses égales par ailleurs.
+
+Bon travail, et faites un réseau par jour jusqu''à l''examen.', 'video', 90, false, 70
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Outils de planification (WBS, Gantt, PERT)');
+insert into public.lessons (course_id, title, content, kind, duration_min, is_free, sort)
+select c.id, 'Cours vidéo (1h30) : Communication et travail en équipe projet', '## Fiche du cours vidéo
+
+Durée : 1h30. Public : Licence 1 gestion de projets. Objectifs : expliquer le rôle de la communication dans le projet, bâtir un plan de communication, conduire une réunion et rédiger un compte rendu, construire une matrice RACI, comprendre la dynamique d''équipe et gérer un conflit. Matériel : tableau, diaporama, fiches de jeu de rôle. Prérequis : notions d''acteurs et de parties prenantes.
+
+## Déroulé minuté
+
+## 00:00 – 05:00 · Ouverture
+
+Bonjour à tous. On pense souvent que la gestion de projets, ce sont des plannings et des budgets. Mais demandez à un chef de projet expérimenté de Dakar ou d''Abidjan comment il passe ses journées : il vous dira qu''il parle, écoute, écrit, négocie. Aujourd''hui, notre fil rouge est un projet fictif d''électrification solaire de cinq villages de la région de Tambacounda, porté par une ONG avec une équipe de huit personnes.
+
+## 05:00 – 15:00 · Les bases de la communication
+
+Je dessine le schéma : émetteur, message, canal, récepteur, retour. Entre l''émetteur et le récepteur, je dessine des éclairs : ce sont les bruits. Dans notre projet, quels bruits ? La langue, car beaucoup de villageois parlent pulaar ou mandinka ; le jargon technique, « onduleur », « kilowatt-crête » ; le réseau téléphonique faible ; la distance avec le siège à Dakar. Le retour est essentiel : si vous ne vérifiez pas que le message a été compris, vous ne savez pas s''il a été reçu.
+
+Calcul utile : le nombre de canaux dans une équipe de n personnes vaut n(n − 1)/2. Notre équipe de 8 personnes : 8 × 7 / 2 = 28 canaux. Si l''on recrute 4 personnes de plus, 12 × 11 / 2 = 66. Plus de deux fois plus de canaux pour 50 % de personnes en plus. D''où l''intérêt de structurer la communication.
+
+## 15:00 – 30:00 · Le plan de communication
+
+Le plan de communication est un tableau avec six colonnes : public, contenu, objectif, canal, fréquence, responsable. Construisons-le ensemble pour le projet solaire.
+
+Le comité de pilotage : avancement, budget, risques ; pour décider ; réunion plus rapport écrit ; mensuel ; chef de projet. L''équipe technique : planning de la semaine et sécurité ; pour coordonner ; réunion de chantier ; hebdomadaire ; chef de chantier. Les populations : dates des travaux, formation à l''usage, tarifs ; pour obtenir l''adhésion ; assemblée villageoise, radio communautaire, en langue locale ; à chaque étape ; animateur social. Le bailleur : rapport d''activité et financier ; pour rendre compte ; rapport écrit ; trimestriel ; chef de projet.
+
+Notez l''importance des relais traditionnels : chef de village, notables, imams, associations de femmes. Une assemblée sous l''arbre à palabres avec le chef de village peut être plus efficace qu''une affiche.
+
+Deuxième point : adaptez le message au public. Le comité de pilotage veut des chiffres et des décisions à prendre : trois pages maximum, avec un résumé en tête. Les villageois veulent savoir ce qui va changer pour eux : quand l''électricité arrivera, combien ils paieront, qui contacter en cas de panne. Le bailleur veut des preuves : indicateurs, photos, justificatifs. Un même fait, « le chantier a deux semaines de retard », se dira différemment à chacun : au comité, avec la cause et le plan de rattrapage ; aux villageois, avec la nouvelle date et des excuses ; au bailleur, avec l''impact sur le calendrier des décaissements.
+
+## 30:00 – 42:00 · Réunions et comptes rendus
+
+Une réunion coûte cher. Huit personnes pendant deux heures, c''est seize heures de travail. Elle doit donc être préparée : objectif, ordre du jour envoyé à l''avance, animateur, secrétaire, heure de fin respectée.
+
+Le compte rendu fixe les décisions. Rubriques : date, lieu, présents et absents, ordre du jour, points discutés, décisions, actions avec responsable et échéance, prochaine réunion. Je vous montre à l''écran un mauvais compte rendu : « On a parlé des panneaux. Il faut avancer. » Qui fait quoi ? Pour quand ? Personne ne sait. Version correcte : « Décision : commande de 40 panneaux auprès du fournisseur retenu. Action : Moussa envoie le bon de commande avant vendredi 12. »
+
+Quelques règles d''animation que je vous conseille. Commencez à l''heure, même si tout le monde n''est pas là : sinon vous récompensez les retardataires. Rappelez l''objectif en une phrase. Donnez la parole à chacun, y compris aux plus jeunes ou aux plus timides, qui hésitent parfois à contredire un aîné. Notez les sujets hors ordre du jour dans un « parking » pour une prochaine réunion. Terminez en relisant à voix haute les décisions et les actions : c''est le moment où l''on découvre les malentendus. Pour les réunions à distance, avec des collègues sur le terrain, vérifiez la connexion avant et envoyez les documents à l''avance, car beaucoup suivront depuis un téléphone.
+
+## 42:00 – 50:00 · Pause et quiz interactif
+
+Cinq minutes de quiz à main levée. Question 1 : combien de canaux pour 6 personnes ? Question 2 : un compte rendu doit-il mentionner les absents ? Question 3 : le canal le plus adapté pour informer des villageois non alphabétisés ? Question 4 : quelle différence entre communication formelle et informelle ?
+
+Réponses : 1, 6 × 5 / 2 = 15 ; 2, oui ; 3, l''oral, assemblée villageoise ou radio communautaire en langue locale ; 4, la formelle est organisée et laisse une trace écrite, l''informelle est spontanée.
+
+## 50:00 – 1:02:00 · La matrice RACI
+
+Prenons trois tâches : choisir le fournisseur de panneaux ; installer les kits ; former les comités de gestion villageois. Quatre acteurs : chef de projet, responsable achats, ingénieur électricien, animateur social.
+
+Choisir le fournisseur : R responsable achats, A chef de projet, C ingénieur, I animateur. Installer les kits : R ingénieur, A chef de projet, C responsable achats, I animateur. Former les comités : R animateur, A chef de projet, C ingénieur, I responsable achats.
+
+Contrôles : chaque tâche a un R et un seul A. Lisez aussi la matrice en colonne : si une personne a des R partout, elle est surchargée. Ici, le chef de projet est A partout : c''est normal dans une petite équipe, mais il pourrait déléguer l''approbation de la formation à un responsable social expérimenté.
+
+## 1:02:00 – 1:15:00 · Dynamique d''équipe et conflits
+
+Le modèle de Tuckman : formation, tension, normalisation, performance, dissolution. Au début, chacun est poli ; puis vient la tension, les désaccords sur les rôles ; ensuite on fixe des règles ; puis l''équipe devient performante ; enfin elle se dissout à la clôture. Le chef de projet est plutôt directif au début et devient plus délégatif.
+
+Jeu de rôle commenté. Situation : l''ingénieur veut installer d''abord dans le plus gros village ; l''animateur social veut commencer par le village le plus enclavé, qui a été promis en premier. Cinq attitudes possibles. L''évitement : on reporte, le chantier prend du retard. L''accommodation : l''un cède, mais garde de la rancœur. La compétition : le chef de projet impose. Le compromis : on coupe l''équipe en deux. La collaboration : on cherche ensemble ; par exemple, on commence par le village enclavé pour tenir la promesse, mais avec une équipe renforcée pour ne pas perdre de temps, et l''on explique la décision au grand village. Discutez en binôme : quelle solution choisiriez-vous et pourquoi ? Retenez que la collaboration demande du temps et de la confiance ; elle est réservée aux enjeux importants. Pour un désaccord mineur, sur la couleur des tee-shirts du projet par exemple, le compromis ou même l''accommodation suffisent.
+
+## 1:15:00 – 1:23:00 · Correction commentée d''un exercice
+
+Exercice : la mutuelle de santé fictive Kër Wér Gi lance une campagne d''adhésion à Rufisque. Proposez un plan de communication pour quatre publics. Correction : conseil d''administration, réunion mensuelle avec les chiffres d''adhésion ; relais de quartier, formation au lancement puis réunion tous les quinze jours ; populations, radio communautaire, causeries et porte-à-porte pendant toute la campagne ; structures de santé partenaires, courrier et rencontre pour expliquer le circuit de prise en charge. Les copies qui obtiennent tous les points précisent toujours le responsable et la fréquence.
+
+## 1:23:00 – 1:30:00 · Synthèse et évaluation finale
+
+À retenir : communiquer, c''est vérifier que le message est compris ; le plan de communication organise qui informe qui, de quoi, comment et quand ; toute décision s''écrit ; RACI avec un seul A ; les conflits se gèrent, de préférence par la collaboration quand l''enjeu est important.
+
+Évaluation finale :
+
+1. Combien de canaux dans une équipe de 10 personnes ? Réponse : 10 × 9 / 2 = 45.
+2. Citez les six colonnes d''un plan de communication. Réponse : public, contenu, objectif, canal, fréquence, responsable.
+3. Que signifie le A de RACI ? Réponse : celui qui approuve et rend des comptes ; un seul par tâche.
+4. Quelle est la deuxième étape du modèle de Tuckman ? Réponse : la tension.
+5. Quand le compromis est-il préférable à la collaboration ? Réponse : quand le temps presse et que l''enjeu est modéré.
+
+Merci et à bientôt.', 'video', 90, false, 80
+from public.courses c where c.slug = 'lic-projet-l1'
+  and not exists (select 1 from public.lessons x where x.course_id = c.id and x.title = 'Cours vidéo (1h30) : Communication et travail en équipe projet');

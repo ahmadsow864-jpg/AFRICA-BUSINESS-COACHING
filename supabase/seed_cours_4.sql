@@ -1,5 +1,5 @@
 -- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.
--- Cours (partie 4/7). À exécuter après seed.sql.
+-- Cours (partie 4/9). À exécuter après seed.sql.
 
 -- Cours : Vendre des véhicules : du stock à l'après-vente
 insert into public.courses (slug, level_id, module_id, subject, title, description, published, sort)
