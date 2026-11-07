@@ -84,19 +84,24 @@ courseFiles.forEach((f, i) => {
     `-- Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.\n-- Cours (partie ${i + 1}/${courseFiles.length}). À exécuter après seed.sql.\n\n` + f.lines.join("\n"));
 });
 
-// Catalogue public pour le site sans base : titres de toutes les leçons,
-// mais texte complet UNIQUEMENT pour les leçons gratuites (le reste est réservé aux abonnés).
+// Catalogue local pour le site SANS Supabase (démonstration, test sur l'ordinateur du
+// fondateur). Toutes les leçons sont incluses en clair, gratuites ou non : tant que Supabase
+// n'est pas installé, il n'y a ni compte ni abonnement, donc rien à protéger. Une fois Supabase
+// branché, c'est lui qui décide — via ses propres règles de sécurité (RLS) — qui voit quoi :
+// ce fichier ne sert alors plus que de secours si la base est temporairement injoignable.
 const catalog = courses.map((c) => ({
   slug: c.slug, level: c.level, subject: c.subject || "", module: c.module || null,
   title: c.title, description: c.description || "", sort: c.sort || 100,
-  lessons: c.lessons.map((l) => Object.assign(
-    { title: l.title, kind: l.kind === "video" ? "video" : "texte", is_free: !!l.is_free, duration_min: Number(l.duration_min) || 45 },
-    l.is_free ? { content: l.content } : {}
-  ))
+  lessons: c.lessons.map((l) => ({
+    title: l.title, kind: l.kind === "video" ? "video" : "texte",
+    is_free: !!l.is_free, duration_min: Number(l.duration_min) || 45, content: l.content
+  }))
 }));
 writeFileSync(join(root, "site/js/courses-catalog.js"),
   "// Fichier généré par tools/generate-seed.mjs — ne pas modifier à la main.\n" +
-  "// Catalogue public : seules les leçons gratuites contiennent leur texte.\n" +
+  "// Catalogue local (toutes les leçons) : utilisé tant que Supabase n'est pas installé.\n" +
+  "// Une fois Supabase installé, ce sont ses propres règles de sécurité qui protègent les\n" +
+  "// leçons payantes — ce fichier ne doit alors plus être considéré comme la protection réelle.\n" +
   "window.ABC_CATALOG = " + JSON.stringify(catalog, null, 1) + ";\n");
 
 console.log("supabase/seed.sql généré :", data.services.length, "services,", levels.length, "niveaux,",
