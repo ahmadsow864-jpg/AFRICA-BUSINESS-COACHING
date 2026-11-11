@@ -294,6 +294,14 @@
       contact_email: "Email de contact", contact_phone: "Téléphone", contact_city: "Ville / pays",
       payment_instructions: "Instructions de paiement (affichées aux élèves)"
     };
+    var freeForAll = values.courses_free_for_all === "true";
+    var toggle = h("div", { class: "panel" },
+      h("h2", { text: "Accès aux cours" }),
+      checkbox("courses_free_for_all", freeForAll, "Tous les cours sont gratuits pour tout le monde, sans abonnement"),
+      h("p", { class: "muted", text: "Activé : chaque leçon, même marquée « Abonnés », s'ouvre pour n'importe quel visiteur, y compris sans compte. "
+        + "Désactivé : les leçons marquées « Abonnés » redeviennent réservées aux élèves avec un abonnement actif. "
+        + "Ce choix ne change rien aux formules ni aux abonnements déjà enregistrés : vous pouvez l'activer et le désactiver à tout moment." })
+    );
     var form = h("form", { class: "form form--light form--wide" },
       Object.keys(LABELS).map(function (k) { return field(LABELS[k], textarea(k, values[k], k.length > 12 ? 3 : 1)); }),
       h("button", { class: "btn", type: "submit", text: "Enregistrer" })
@@ -303,6 +311,12 @@
       var rows = Object.keys(LABELS).map(function (k) { return { key: k, value: form.elements[k].value.trim(), updated_at: new Date().toISOString() }; });
       if (!fail(await sb.from("site_settings").upsert(rows))) flash("Paramètres enregistrés.", "ok");
     });
+    toggle.querySelector("input[type=checkbox]").addEventListener("change", async function (e) {
+      var r2 = await sb.from("site_settings").upsert({ key: "courses_free_for_all", value: e.target.checked ? "true" : "false", updated_at: new Date().toISOString() });
+      if (fail(r2)) { e.target.checked = !e.target.checked; return; }
+      flash(e.target.checked ? "Tous les cours sont maintenant gratuits pour tout le monde." : "Les abonnements sont de nouveau nécessaires pour les leçons payantes.", "ok");
+    });
+    c.appendChild(toggle);
     c.appendChild(form);
   };
 

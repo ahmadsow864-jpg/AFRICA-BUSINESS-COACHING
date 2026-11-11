@@ -185,6 +185,22 @@ node tools/generate-seed.mjs   # régénère supabase/seed*.sql et site/js/cours
 
 Une fois Supabase branché, il est plus simple de tout modifier depuis `/admin/`.
 
+## Tous les cours gratuits (choix du fondateur, modifiable à tout moment)
+
+Par défaut, **tous les cours sont ouverts à tout le monde, sans compte ni abonnement** — c'est le
+choix fait au lancement du site. Techniquement, un seul réglage contrôle cela :
+**Admin → Paramètres → « Tous les cours sont gratuits pour tout le monde »**.
+
+- **Coché** (réglage de départ) : même les leçons marquées « 🔒 Abonnés » s'ouvrent pour n'importe
+  quel visiteur, y compris sans compte. Rien n'est supprimé : les formules, les abonnements et le
+  marquage « gratuit/payant » de chaque leçon restent enregistrés tels quels.
+- **Décoché** : les leçons marquées « Abonnés » redeviennent réservées aux élèves ayant un
+  abonnement actif, comme décrit plus bas (« Parcours d'un élève / étudiant »).
+
+Vous pouvez basculer ce réglage autant de fois que vous voulez, sans perdre aucune donnée. Sans
+Supabase installé (site testé en local via `Ouvrir-Site-Edge.bat`), toutes les leçons sont de
+toute façon lisibles, car il n'y a alors ni compte ni abonnement à protéger.
+
 ## Les cours fournis
 
 27 cours complets (162 leçons) rangés dans `content/courses/` (un fichier par cours) :

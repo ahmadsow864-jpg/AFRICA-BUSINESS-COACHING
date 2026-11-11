@@ -22,7 +22,8 @@ insert into public.site_settings (key, value) values
   ('contact_city', 'Thiès, Sénégal'),
   ('hero_title', 'Des logiciels de gestion pour les entreprises de la francophonie'),
   ('hero_lead', 'Paie & Ressources Humaines, transport et logistique, carburant, parkings, stations-service, flottes, vente de véhicules, GPS et éducation en ligne : une plateforme de services pensée au Sénégal pour l''Afrique et toute la francophonie.'),
-  ('payment_instructions', 'Effectuez le paiement selon les instructions communiquées par l''administrateur, puis saisissez la référence de la transaction. Votre accès est activé après vérification.')
+  ('payment_instructions', 'Effectuez le paiement selon les instructions communiquées par l''administrateur, puis saisissez la référence de la transaction. Votre accès est activé après vérification.'),
+  ('courses_free_for_all', 'true')
 on conflict (key) do nothing;
 
 insert into public.levels (cycle, name, sort) values

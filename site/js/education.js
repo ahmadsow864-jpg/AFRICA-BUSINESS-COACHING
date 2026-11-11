@@ -202,6 +202,8 @@
     var slug = qs.get("c") || "", id = qs.get("id") || "";
     var box = $("c-lesson");
     var c = null, outline = [], local = CATALOG.filter(function (x) { return x.slug === slug; })[0];
+    var settings = await A.loadSettings();
+    var freeForAll = settings.courses_free_for_all === "true";
 
     if (sb) {
       var q = sb.from("courses").select("id,slug,title,description,subject,levels(name,cycle)");
@@ -231,7 +233,7 @@
         h("span", { class: "lesson-link__title" },
           h("span", { text: l.title }),
           h("small", { class: "muted", text: (l.kind === "video" ? "🎬 Vidéo · " : "📄 ") + duration(l.duration_min) })),
-        h("span", { class: "tag" + (l.is_free ? " tag--free" : ""), text: l.is_free ? "Gratuit" : "🔒 Abonnés" })
+        h("span", { class: "tag" + (l.is_free || freeForAll ? " tag--free" : ""), text: l.is_free || freeForAll ? "Gratuit" : "🔒 Abonnés" })
       )));
     });
     if (!outline.length) ol.appendChild(h("li", { class: "muted", text: "Leçons en préparation." }));
