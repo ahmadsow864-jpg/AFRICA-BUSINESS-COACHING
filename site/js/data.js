@@ -216,6 +216,9 @@ window.ABC_DATA = {
     contact_city: "Thiès, Sénégal",
     hero_title: "Des logiciels de gestion pour les entreprises de la francophonie",
     hero_lead: "Paie & Ressources Humaines, transport et logistique, carburant, parkings, stations-service, flottes, vente de véhicules, GPS et éducation en ligne : une plateforme de services pensée au Sénégal pour l'Afrique et toute la francophonie.",
-    payment_instructions: "Effectuez le paiement selon les instructions communiquées par l'administrateur, puis saisissez la référence de la transaction. Votre accès est activé après vérification."
+    payment_instructions: "Effectuez le paiement selon les instructions communiquées par l'administrateur, puis saisissez la référence de la transaction. Votre accès est activé après vérification.",
+    // Choix du fondateur : tous les cours sont accessibles sans abonnement, pour l'instant.
+    // Désactivable à tout moment depuis Admin → Paramètres.
+    courses_free_for_all: "true"
   }
 };

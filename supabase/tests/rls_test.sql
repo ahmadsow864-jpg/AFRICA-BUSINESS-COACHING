@@ -14,6 +14,10 @@ select pg_temp.ok((select count(*) = count(distinct (l.course_id, l.title)) from
 select pg_temp.ok((select bool_and(n in (6, 8, 9, 10)) from (select count(*) n from public.lessons l join public.courses c on c.id = l.course_id where c.slug is not null group by c.id) t), 'chaque cours du seed a 6, 8, 9 ou 10 leçons');
 select pg_temp.ok((select bool_and(v >= 1) from (select count(*) filter (where l.kind = 'video' and l.duration_min = 90) v from public.courses c join public.lessons l on l.course_id = c.id where c.slug is not null group by c.id) t), 'au moins un cours vidéo de 1h30 par cours');
 
+-- Base de référence pour les tests qui suivent, quelle que soit la valeur posée par le seed
+-- (le fondateur peut choisir "true" par défaut en production : c'est testé plus bas).
+update public.site_settings set value = 'false' where key = 'courses_free_for_all';
+
 -- Utilisateurs de test
 insert into auth.users (id, email, raw_user_meta_data) values
   ('00000000-0000-0000-0000-0000000000a1', 'admin@test.sn',  '{"full_name":"Admin"}'),
@@ -169,6 +173,24 @@ update public.subscriptions set starts_at = now() - interval '40 days', ends_at 
 set role authenticated;
 set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated","aal":"aal1"}';
 select pg_temp.ok((select count(*) = 1 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'abonnement expiré : plus d''accès aux leçons payantes');
+reset role;
+
+-- ===== Interrupteur du fondateur : « tous les cours gratuits » =====
+update public.site_settings set value = 'true' where key = 'courses_free_for_all';
+set role anon;
+set request.jwt.claims = '{"role":"anon"}';
+select pg_temp.ok((select count(*) = 3 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'interrupteur activé : un visiteur anonyme lit aussi les leçons payantes');
+reset role;
+set role authenticated;
+set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b2","role":"authenticated","aal":"aal1"}';
+select pg_temp.ok((select count(*) = 3 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'interrupteur activé : un élève sans abonnement lit aussi les leçons payantes');
+update public.site_settings set value = 'false' where key = 'courses_free_for_all';
+select pg_temp.ok((select value = 'true' from public.site_settings where key = 'courses_free_for_all'), 'élève ne peut pas désactiver lui-même l''interrupteur');
+reset role;
+update public.site_settings set value = 'false' where key = 'courses_free_for_all';
+set role authenticated;
+set request.jwt.claims = '{"sub":"00000000-0000-0000-0000-0000000000b2","role":"authenticated","aal":"aal1"}';
+select pg_temp.ok((select count(*) = 1 from public.lessons where course_id in ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222','33333333-3333-3333-3333-333333333333')), 'interrupteur désactivé : les leçons payantes redeviennent réservées');
 reset role;
 
 \echo '=== TOUS LES TESTS RLS SONT PASSÉS ==='

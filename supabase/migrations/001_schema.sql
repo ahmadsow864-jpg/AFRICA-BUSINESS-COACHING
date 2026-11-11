@@ -352,10 +352,21 @@ create policy courses_admin on public.courses for all to authenticated
 
 -- Leçons : leçons gratuites visibles de tous ; leçons payantes visibles seulement
 -- avec un abonnement actif sur le niveau du cours ; admin : tout.
+-- Interrupteur du fondateur : quand actif, toutes les leçons sont lisibles par tout le monde,
+-- sans compte ni abonnement (choix réversible depuis l'admin, à tout moment).
+create or replace function public.courses_free_for_all()
+returns boolean
+language sql stable security definer
+set search_path = public
+as $$
+  select coalesce((select value from public.site_settings where key = 'courses_free_for_all'), 'false') = 'true';
+$$;
+
 drop policy if exists lessons_read on public.lessons;
 create policy lessons_read on public.lessons for select to anon, authenticated
   using (
     public.is_admin()
+    or public.courses_free_for_all()
     or exists (
       select 1 from public.courses c
       where c.id = lessons.course_id and c.published
